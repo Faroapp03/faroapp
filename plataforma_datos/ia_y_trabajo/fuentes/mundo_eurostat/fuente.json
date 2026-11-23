@@ -1,0 +1,79 @@
+{
+  "schema_version": 1,
+  "id": "mundo_eurostat",
+  "tema": "ia_y_trabajo",
+  "nombre": "Eurostat: IA, formación y empleo por país",
+  "institucion": "Eurostat",
+  "lector": "plataforma_datos.ia_y_trabajo.fuentes.mundo_eurostat.lector",
+  "casa_datos": "mundo-eurostat",
+  "significado": "Uso de la IA en Europa, de Eurostat: empresas que usan IA y personas que usan IA generativa, por país.",
+  "alcance": [
+    "Las encuestas comunitarias (uso de las TIC en las empresas y en los hogares, y la EPA) hacen la misma pregunta en todos los países europeos, así que sus cifras se comparan entre sí. Cada cifra se guarda desde 2023 (las empresas con IA y la formación de adultos, desde 2021), la más reciente primero, para dibujar su evolución. Se guardan, de la versión vigente de cada tabla:",
+    "- `isoc_eb_ai`: % de empresas de 10 o más personas que usan alguna tecnología de IA (`E_AI_TANY`), desde 2021 (2022 no preguntó por la IA); la cifra de 2021 lleva la nota «definicion_anterior»: la encuesta preguntaba por menos tecnologías; - `isoc_ai_iaiu`: % de personas de 16 a 74 años que usaron IA generativa en tres meses (`I_IUAI`) y para trabajar (`I_IUAIWP`), en total, por sexo y en las ocupaciones no manuales, manuales y TIC (solo hay 2025); - `trng_lfse_04`: % de personas de 25 a 64 años en educación o formación en las 4 últimas semanas (EPA), en total y por sexo, desde 2021, en los países, la UE-27 y Cataluña (región NUTS 2 ES51); - `lfsa_egai2d`: personas ocupadas por gran grupo ISCO-08 en Alemania, España, Francia e Italia, que no llega al paquete del motor: se guarda en el conjunto validado para el contraste del empleo de ILOSTAT (`mercado/fuentes/ilostat/lector.py`).",
+    "La etiqueta oficial de cada código se guarda al preparar y la validación se detiene si cambia: una definición que cambia (como la entrada de la generación de imagen, vídeo o audio en `E_AI_TANY`) no se compara con la anterior sin que una persona lo decida. Cada cifra conserva su marca. Python estándar."
+  ],
+  "recursos": [
+    {
+      "id": "recurso-01",
+      "tipo": "url",
+      "ubicacion": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/isoc_eb_ai?format=JSON&lang=EN&indic_is=E_AI_TANY&unit=PC_ENT&size_emp=GE10",
+      "licencia": "Aviso de copyright de Eurostat (https://ec.europa.eu/eurostat/help/copyright-notice, consultado el 06/10/2026), que aplica la Decisión 2011/833/UE de la Comisión: reutilización autorizada, también comercial, citando la fuente; una versión filtrada se cita con el enlace del conjunto y la fecha de consulta.",
+      "descripcion": "Eurostat, isoc_eb_ai: empresas de 10 o más personas que usan alguna tecnología de IA, por país"
+    },
+    {
+      "id": "recurso-02",
+      "tipo": "url",
+      "ubicacion": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/isoc_ai_iaiu?format=JSON&lang=EN&unit=PC_IND&unit=PC_IND_IU3&indic_is=I_IUAI&indic_is=I_IUAIWP&ind_type=IND_TOTAL&ind_type=F_Y16_74&ind_type=M_Y16_74&ind_type=ISCO0_5&ind_type=ISCO6_9&ind_type=ISCO_ICT",
+      "licencia": "Aviso de copyright de Eurostat (https://ec.europa.eu/eurostat/help/copyright-notice, consultado el 06/10/2026), que aplica la Decisión 2011/833/UE de la Comisión: reutilización autorizada, también comercial, citando la fuente; una versión filtrada se cita con el enlace del conjunto y la fecha de consulta.",
+      "descripcion": "Eurostat, isoc_ai_iaiu: personas que usan IA generativa (total, por sexo y por ocupación), por país, en % de toda la población y de los usuarios de internet"
+    },
+    {
+      "id": "recurso-03",
+      "tipo": "url",
+      "ubicacion": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/trng_lfse_04?format=JSON&lang=EN&age=Y25-64&unit=PC&sinceTimePeriod=2021",
+      "licencia": "Aviso de copyright de Eurostat (https://ec.europa.eu/eurostat/help/copyright-notice, consultado el 06/10/2026), que aplica la Decisión 2011/833/UE de la Comisión: reutilización autorizada, también comercial, citando la fuente; una versión filtrada se cita con el enlace del conjunto y la fecha de consulta.",
+      "descripcion": "Eurostat, trng_lfse_04: personas de 25 a 64 años en educación o formación en las 4 últimas semanas, por sexo, países y regiones NUTS 2, desde 2021"
+    },
+    {
+      "id": "recurso-04",
+      "tipo": "url",
+      "ubicacion": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/lfsa_egai2d?format=JSON&lang=EN&unit=THS_PER&age=Y_GE15&sex=T&sex=F&geo=DE&geo=ES&geo=FR&geo=IT&isco08=TOTAL&isco08=OC1&isco08=OC2&isco08=OC3&isco08=OC4&isco08=OC5&isco08=OC6&isco08=OC7&isco08=OC8&isco08=OC9&isco08=OC0&sinceTimePeriod=2023",
+      "licencia": "Aviso de copyright de Eurostat (https://ec.europa.eu/eurostat/help/copyright-notice, consultado el 06/10/2026), que aplica la Decisión 2011/833/UE de la Comisión: reutilización autorizada, también comercial, citando la fuente; una versión filtrada se cita con el enlace del conjunto y la fecha de consulta.",
+      "descripcion": "Eurostat, lfsa_egai2d: personas ocupadas de 15 años o más por gran grupo ISCO-08 y sexo, DE, ES, FR e IT, desde 2023 (contraste del empleo de ILOSTAT)"
+    }
+  ],
+  "canales": [
+    {
+      "id": "consulta",
+      "tipo": "remoto",
+      "recursos": ["recurso-01", "recurso-02", "recurso-03", "recurso-04"],
+      "autenticacion": "El lector no configura credenciales de autenticación para estos recursos públicos; no acredita acceso a otros servicios.",
+      "limites": [
+        "Cuotas y límites oficiales de servicio no acreditados por este descriptor; rigen los límites de transporte y validación del lector.",
+        "Este descriptor no acredita la disponibilidad remota actual; una URL conservada no acredita consulta satisfactoria ni una tarea instalada."
+      ],
+      "observaciones": "API oficial de estadísticas Eurostat: indicadores de IA, formación y empleo con filtros explícitos. La serie se conserva por año, geografía, base y marcas de cada tabla."
+    }
+  ],
+  "actualizacion": {
+    "politica": "mensual",
+    "red": true,
+    "frecuencia": "anual (encuestas TIC y EPA de Eurostat)",
+    "renovar_dias": null,
+    "originales": "mundo-eurostat"
+  },
+  "conjuntos": [
+    {
+      "id": "mundo_eurostat",
+      "fuente": "mundo_eurostat",
+      "clase": "cambiante",
+      "alcance": "serie-abierta",
+      "operacion": "descargar",
+      "intervalo_dias": 30
+    }
+  ],
+  "dependencias": ["tich", "empresas"],
+  "contratos": ["lector.py:preparar", "lector.py:validar", "plataforma_datos/orquestacion/admision.py:exigir_admitido"],
+  "retirada": "Se conserva la admisión del conjunto y sus guardas actuales. Un fallo o una ausencia de captura no se convierte en retirada de entidades ni en disponibilidad confirmada.",
+  "conservacion": "Originales, procedencias, preparados y validaciones conservan sus casas actuales en var/actualizacion. Esta ficha no habilita limpieza automática ni cambia fechas históricas, periodos, licencias o retención."
+}

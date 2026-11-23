@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="referrer" content="no-referrer" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta
+      name="description"
+      content="Activa el acceso de tu institución a los datos de Faro."
+      data-texto-content="activacion.descripcion"
+    />
+    <meta name="theme-color" content="#f4f3f0" />
+    <title data-texto="activacion.titulo">Activar el acceso · Faro</title>
+    <link rel="icon" href="imagenes/identidad/faro-editorial-icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="imagenes/identidad/icon-180.png" />
+    <link rel="manifest" href="manifest.webmanifest" crossorigin="use-credentials" />
+    <script src="scripts/tema-inicial.js"></script>
+    <script src="scripts/idioma-inicial.js"></script>
+    <link rel="stylesheet" href="estilos/tipografias.css" />
+    <link rel="stylesheet" href="estilos/tokens.css" />
+    <link rel="stylesheet" href="estilos/base.css" />
+    <link rel="stylesheet" href="estilos/contenidos.css" />
+    <link rel="stylesheet" href="estilos/conectividad.css" />
+    <script type="module" src="scripts/activar-acceso.js"></script>
+  </head>
+  <body>
+    <a class="salto" href="#contenido" data-texto="comun.saltar">Saltar al contenido</a>
+    <header class="cabecera">
+      <button
+        class="menu-boton"
+        type="button"
+        aria-label="Abrir menú"
+        data-texto-aria-label="comun.menu.abrir"
+        aria-expanded="false"
+        aria-controls="menu"
+      >
+        <span></span><span></span><span></span>
+      </button>
+      <a class="marca" href="inicio.html">
+        <span class="solo-lectores" data-texto="comun.marca.inicio">Faro, inicio</span>
+        <span class="marca-nombre" aria-hidden="true"
+          ><span class="marca-inicial"
+            >F<svg class="marca-luz" viewBox="0 0 18 8" focusable="false" aria-hidden="true"
+              ><path d="M1 4h16" /></svg
+            ></span
+          >ARO</span
+        >
+      </a>
+      <div class="cabecera-herramientas">
+        <div class="idioma" data-selector-idioma>
+          <button
+            class="idioma-boton"
+            type="button"
+            id="idioma-boton"
+            aria-label="Idioma: Castellano"
+            data-texto-aria-label="comun.idioma.boton"
+            aria-haspopup="menu"
+            aria-expanded="false"
+            aria-controls="idioma-opciones"
+          >
+            <img
+              class="idioma-bandera idioma-bandera-es"
+              src="imagenes/identidad/bandera-espana.svg"
+              alt=""
+              width="24"
+              height="16"
+            />
+            <img
+              class="idioma-bandera idioma-bandera-ca"
+              src="imagenes/identidad/bandera-catalunya.svg"
+              alt=""
+              width="24"
+              height="16"
+            />
+          </button>
+          <div class="idioma-opciones" id="idioma-opciones" role="menu" aria-labelledby="idioma-boton" hidden>
+            <button type="button" role="menuitemradio" aria-checked="true" data-cambiar-idioma="es" lang="es"
+              ><img class="idioma-bandera" src="imagenes/identidad/bandera-espana.svg" alt="" width="24" height="16" />
+              <span>Castellano</span></button
+            >
+            <button type="button" role="menuitemradio" aria-checked="false" data-cambiar-idioma="ca" lang="ca"
+              ><img
+                class="idioma-bandera"
+                src="imagenes/identidad/bandera-catalunya.svg"
+                alt=""
+                width="24"
+                height="16"
+              /><span>Català</span></button
+            >
+          </div>
+        </div>
+        <button
+          class="tema-boton"
+          type="button"
+          aria-label="Cambiar a modo día"
+          title="Modo día / noche"
+          data-texto-title="comun.tema.titulo"
+        >
+          <svg class="icono-sol" viewBox="0 0 24 24" aria-hidden="true" focusable="false"
+            ><circle cx="12" cy="12" r="4.5" />
+            <path
+              d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"
+            /></svg
+          >
+          <svg class="icono-luna" viewBox="0 0 24 24" aria-hidden="true" focusable="false"
+            ><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z" /></svg
+          >
+        </button>
+      </div>
+    </header>
+    <div class="menu-velo" id="menu-velo" hidden></div>
+    <nav id="menu" class="menu" hidden aria-label="Menú principal" data-texto-aria-label="comun.menu.nombre">
+      <ul class="menu-lista">
+        <li
+          ><a href="inicio.html"><span class="menu-destino" data-texto="comun.seccion.inicio">Inicio</span></a></li
+        >
+        <li
+          ><a href="entender-ia.html"
+            ><span class="menu-destino" data-texto="comun.seccion.ia">Qué es la IA</span></a
+          ></li
+        >
+        <li
+          ><a href="que-es-faro.html"><span class="menu-destino">Faro</span></a></li
+        >
+        <li
+          ><a href="recorrido.html"><span class="menu-destino" data-texto="comun.seccion.empezar">Empezar</span></a></li
+        >
+        <li
+          ><a href="biblioteca.html"
+            ><span class="menu-destino" data-texto="comun.seccion.biblioteca">Biblioteca</span></a
+          ></li
+        >
+        <li
+          ><a href="cursos.html"><span class="menu-destino" data-texto="comun.seccion.cursos">Cursos</span></a></li
+        >
+        <li
+          ><a href="datos-globales.html"
+            ><span class="menu-destino" data-texto="comun.seccion.datos-globales">Datos globales</span></a
+          ></li
+        >
+        <li data-pasar-entrada hidden
+          ><button type="button" class="menu-pasar" data-pasar-dispositivo
+            ><span class="menu-destino" data-texto="comun.menu.pasar">Pasar a otro dispositivo</span></button
+          ></li
+        >
+      </ul>
+    </nav>
+    <main id="contenido" class="pagina conectividad">
+      <p><a href="que-es-faro.html#conectividad" data-texto="conectividad.volver">Volver a Conectividad</a></p>
+      <header class="seccion-cabecera seccion-cabecera--sin-foto">
+        <h1 id="activacion-encabezado">Activar el acceso</h1>
+        <p class="entradilla" data-texto="activacion.intro"
+          >Esta invitación permite generar una clave de acceso para tu institución.</p
+        >
+      </header>
+      <p id="activacion-estado" role="status" aria-live="polite" data-texto="activacion.estado.consultando"
+        >Comprobando la invitación…</p
+      >
+      <p><time id="activacion-fecha" hidden></time></p>
+      <div class="conectividad-acciones">
+        <button
+          id="activacion-generar"
+          class="boton boton-secundario"
+          type="button"
+          data-texto="activacion.generar"
+          hidden
+          disabled
+          >Generar clave</button
+        >
+        <button
+          id="activacion-repetir"
+          class="boton boton-secundario"
+          type="button"
+          data-texto="activacion.repetir"
+          hidden
+          >Volver a comprobar</button
+        >
+      </div>
+      <section id="activacion-credenciales" aria-labelledby="activacion-clave-titulo" hidden>
+        <h2 id="activacion-clave-titulo" data-texto="activacion.clave.titulo">Guarda tus credenciales</h2>
+        <p data-texto="activacion.clave.una-vez">Guarda los dos valores ahora. Faro no puede volver a mostrarlos.</p>
+        <label for="activacion-cliente" data-texto="activacion.cliente"
+          >Identificador de la institución (client_id)</label
+        >
+        <input
+          id="activacion-cliente"
+          class="conectividad-direccion"
+          type="text"
+          readonly
+          autocomplete="off"
+          spellcheck="false"
+        />
+        <label for="activacion-secreto" data-texto="activacion.secreto">Clave secreta (client_secret)</label>
+        <input
+          id="activacion-secreto"
+          class="conectividad-direccion"
+          type="text"
+          readonly
+          autocomplete="off"
+          spellcheck="false"
+          aria-describedby="activacion-servidor"
+        />
+        <p id="activacion-servidor" data-texto="activacion.servidor"
+          >La clave se guarda solo en el servidor de tu institución. Nunca la incluyas en una web ni en código que se
+          ejecute en un navegador.</p
+        >
+        <button
+          id="activacion-copiar"
+          class="boton boton-secundario"
+          type="button"
+          data-texto="activacion.copiar"
+          disabled
+          >Copiar credenciales</button
+        >
+      </section>
+      <p class="nota" data-texto="activacion.enlace"
+        >El enlace caduca a los siete días y se consume al generar la clave. Si pierdes la clave o la respuesta no
+        llega, pide una nueva invitación a quien administra Faro.</p
+      >
+      <noscript
+        ><p data-texto="activacion.sin-script"
+          >Activa JavaScript para usar la invitación. El enlace no se consume al abrir esta página.</p
+        ></noscript
+      >
+    </main>
+
+    <footer class="pie">
+      <div class="pie-fila"
+        ><nav aria-label="Información y ayuda" data-texto-aria-label="comun.pie.nombre"
+          ><a href="creditos.html" data-texto="comun.pie.creditos">Créditos</a
+          ><a href="informacion-y-creditos.html#t-datos" data-texto="comun.pie.datos">Tus datos</a
+          ><a href="accesibilidad.html" data-texto="comun.pie.accesibilidad">Accesibilidad</a
+          ><a href="verificable.html" data-texto="comun.pie.verificable">Faro verificable</a
+          ><a class="pie-doctor" href="doctor.html" data-texto="comun.pie.doctor">Comprobar Faro</a
+          ><a class="pie-instalar" href="instalar.html" data-texto="comun.pie.instalar">Instalar Faro</a></nav
+        ><p class="pie-derechos" data-texto="comun.pie.derechos">© 2026 Equipo Faro</p></div
+      >
+    </footer>
+  </body>
+</html>

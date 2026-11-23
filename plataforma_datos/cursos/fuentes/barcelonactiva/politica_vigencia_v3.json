@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "id": "faro:vigencia:barcelonactiva",
+  "version": "3",
+  "fuente_id": "barcelonactiva",
+  "responsable": "Equipo Faro",
+  "naturaleza": "politica-interna-operativa",
+  "criterios": {
+    "ttl_ficha_segundos": 86400,
+    "ttl_catalogo_segundos": null,
+    "requiere_catalogo": false,
+    "zona_fechas_dia": null,
+    "inicio_dia_inclusivo": null,
+    "fin_dia_inclusivo": null,
+    "plazo_tecnico": "revision_interna",
+    "regla_disponibilidad": "matricula-actual-cibernarium-edicion-1"
+  },
+  "justificacion": "La matrícula actual se acredita por el ID nativo y estado publicado de esa edición, corroborado en la API y ligado a su calendario. El plazo técnico de 24 horas marca la próxima revisión interna de Faro y solo avisa en el panel: no retira la oferta, no cambia sus datos y no es un plazo del proveedor. No es una fecha publicada de cierre. No acredita plaza reservada, acceso al Campus, admisión personal, gratuidad o nivel. Un cierre o un límite publicado del calendario conservan precedencia. Las políticas anteriores se mantienen inmutables para su propia semántica.",
+  "revision_equipo_faro": {
+    "estado": "criterio-aprobado-sin-activacion",
+    "fecha": null,
+    "alcance": "Método versionado de matrícula por edición autorizado para Barcelona Activa. La interpretación automática reproduce las pruebas y no representa una revisión editorial nueva."
+  }
+}

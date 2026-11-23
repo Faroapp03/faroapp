@@ -1,0 +1,670 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Contrato del catálogo local de formación, versiones 1, 2 y 3",
+  "description": "El módulo añade validación UTC, URL pública sin credenciales, referencias, unicidad y capturas locales confinadas. No requiere descargar el esquema. Para ciclos de fuente con pertenencias, importar_y_conciliar confirma importación e instantánea en una única transacción; las APIs autónomas no deben encadenarse para ese fin. La versión 2 añade variantes, centros y anuncios independientes. Un anuncio no acredita una edición o plaza. Importar un subconjunto nunca retira entidades ausentes. La versión 3 incorpora aprendizaje previsto con registro común identificado por huella. No acredita dominio ni equivalencias. El formato de lote 3 guarda en el catálogo la procedencia individual de cada decisión. No cambia el formato de entrada de aprendizaje.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "observado_utc", "fuente_lote", "proveedores", "programas", "ediciones"],
+  "properties": {
+    "schema_version": {
+      "enum": [1, 2, 3],
+      "type": "integer"
+    },
+    "observado_utc": {
+      "$ref": "#/$defs/fecha_utc"
+    },
+    "fuente_lote": {
+      "type": "string",
+      "minLength": 1
+    },
+    "proveedores": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/proveedor"
+      }
+    },
+    "programas": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/programa"
+      }
+    },
+    "ediciones": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/edicion"
+      }
+    },
+    "variantes": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/variante"
+      }
+    },
+    "centros": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/centro"
+      }
+    },
+    "anuncios": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/anuncio"
+      }
+    }
+  },
+  "$defs": {
+    "fecha_utc": {
+      "type": "string",
+      "format": "date-time",
+      "pattern": "T.*(?:Z|[+]00:00)$"
+    },
+    "url_publica": {
+      "type": "string",
+      "format": "uri",
+      "pattern": "^https?://",
+      "description": "Solo host público, sin credenciales. Se excluyen IP privadas/reservadas y hosts locales. No se resuelve DNS."
+    },
+    "evidencia": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["url", "capturado_utc", "sha256", "archivo"],
+      "properties": {
+        "url": {
+          "$ref": "#/$defs/url_publica"
+        },
+        "capturado_utc": {
+          "$ref": "#/$defs/fecha_utc"
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "archivo": {
+          "type": ["string", "null"],
+          "description": "Ruta relativa bajo raíz explícita. Nunca absoluta ni con ascensos ..; puede ser null si no se comprueban capturas."
+        }
+      }
+    },
+    "etiqueta": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["codigo", "estado", "metodo", "evidencia"],
+      "properties": {
+        "codigo": {
+          "type": "string",
+          "minLength": 1
+        },
+        "estado": {
+          "enum": ["propuesta", "sustentada"]
+        },
+        "metodo": {
+          "type": "string",
+          "minLength": 1
+        },
+        "evidencia": {}
+      },
+      "description": "Importar no resuelve revisión humana. Se preserva una decisión sustentada existente ante discrepancias derivadas; las promociones propuesta→sustentada se conservan como conflictos para revisión."
+    },
+    "proveedor": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "nombre", "territorio", "naturaleza"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "nombre": {
+          "type": "string",
+          "minLength": 1
+        },
+        "territorio": {
+          "type": ["string", "null"]
+        },
+        "naturaleza": {
+          "type": ["string", "null"]
+        }
+      }
+    },
+    "programa": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "proveedor_id", "titulo", "url", "tipo_unidad", "datos", "evidencias", "etiquetas"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "proveedor_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "titulo": {
+          "type": "string",
+          "minLength": 1
+        },
+        "url": {
+          "$ref": "#/$defs/url_publica"
+        },
+        "tipo_unidad": {
+          "type": "string",
+          "minLength": 1
+        },
+        "datos": {
+          "type": "object",
+          "properties": {
+            "temario_huella": {
+              "anyOf": [
+                {
+                  "type": "null"
+                },
+                {
+                  "type": "string",
+                  "pattern": "^[0-9a-f]{64}$"
+                }
+              ]
+            },
+            "contenido_huella": {
+              "anyOf": [
+                {
+                  "type": "null"
+                },
+                {
+                  "type": "string",
+                  "pattern": "^[0-9a-f]{64}$"
+                }
+              ],
+              "description": "Huella de los campos pedagógicos realmente observados; no acredita temario completo ni aprobación. El adaptador declara su alcance en datos."
+            },
+            "aprendizaje": {
+              "$ref": "#/$defs/aprendizaje"
+            }
+          },
+          "additionalProperties": true,
+          "description": "Metadatos y síntesis curadas. Desconocido se conserva como null; temario_huella solo resume contenido pedagógico extraído, nunca HTML dinámico completo. Los cambios de título, temario_huella, contenido_huella, resumen_investigacion, nivel_publicado, requisitos_publicados o capacidades_revisadas requieren revisar clasificación previa aunque el temario sea desconocido. aprendizaje se admite únicamente en lotes 3, con registro compartido, sin niveles inferidos a partir del título. Su omisión en lotes 1/2 conserva el enriquecimiento previo; cambios pedagógicos requieren revisión."
+        },
+        "evidencias": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/evidencia"
+          }
+        },
+        "etiquetas": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/etiqueta"
+          }
+        }
+      }
+    },
+    "edicion": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "programa_id", "datos", "evidencias"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "programa_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "datos": {
+          "type": "object"
+        },
+        "evidencias": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/evidencia"
+          }
+        }
+      }
+    },
+    "variante": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "programa_id", "datos", "evidencias"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "programa_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "datos": {
+          "type": "object"
+        },
+        "evidencias": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/evidencia"
+          }
+        }
+      }
+    },
+    "centro": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "proveedor_id", "nombre", "datos", "evidencias"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "proveedor_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "nombre": {
+          "type": "string",
+          "minLength": 1
+        },
+        "datos": {
+          "type": "object"
+        },
+        "evidencias": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/evidencia"
+          }
+        }
+      }
+    },
+    "anuncio": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "variante_id", "proveedor_id", "centro_id", "datos", "evidencias"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "variante_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "proveedor_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "centro_id": {
+          "type": ["string", "null"],
+          "minLength": 1
+        },
+        "datos": {
+          "type": "object"
+        },
+        "evidencias": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/evidencia"
+          }
+        }
+      }
+    },
+    "referencia_competencia": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["marco", "version", "codigo"],
+      "properties": {
+        "marco": {
+          "type": "string",
+          "minLength": 1
+        },
+        "version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "codigo": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "referencia_escala": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "version"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "version": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "metodo_aprendizaje": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["nombre", "version"],
+      "properties": {
+        "nombre": {
+          "type": "string",
+          "minLength": 1
+        },
+        "version": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "referencia_registro": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "version", "sha256"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        }
+      }
+    },
+    "evidencia_aprendizaje": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["url", "capturado_utc", "sha256", "localizador", "fragmento"],
+      "properties": {
+        "url": {
+          "$ref": "#/$defs/url_publica"
+        },
+        "capturado_utc": {
+          "$ref": "#/$defs/fecha_utc"
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "localizador": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["tipo", "valor"],
+          "properties": {
+            "tipo": {
+              "enum": ["objetivo", "modulo", "requisito"]
+            },
+            "valor": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        "fragmento": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "revision_aprendizaje": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["tipo", "referencia", "metodo", "fecha_utc"],
+      "properties": {
+        "tipo": {
+          "enum": ["humana", "automatizada"]
+        },
+        "referencia": {
+          "type": "string",
+          "minLength": 1
+        },
+        "metodo": {
+          "$ref": "#/$defs/metodo_aprendizaje"
+        },
+        "fecha_utc": {
+          "$ref": "#/$defs/fecha_utc"
+        }
+      }
+    },
+    "discrepancia_aprendizaje": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["descripcion", "evidencias"],
+      "properties": {
+        "descripcion": {
+          "type": "string",
+          "minLength": 1
+        },
+        "evidencias": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/evidencia_aprendizaje"
+          },
+          "minItems": 1
+        }
+      }
+    },
+    "afirmacion_aprendizaje": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "competencia",
+        "dimension",
+        "descripcion",
+        "nivel",
+        "origen",
+        "estado",
+        "metodo",
+        "revision",
+        "evidencias",
+        "discrepancias",
+        "revision_requerida"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "competencia": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/referencia_competencia"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "dimension": {
+          "enum": ["requisito_entrada", "resultado_previsto"]
+        },
+        "descripcion": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "nivel": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["escala", "valor"],
+          "properties": {
+            "escala": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/referencia_escala"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "valor": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "minLength": 1
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          }
+        },
+        "origen": {
+          "enum": ["extraccion_oficial", "inferencia"]
+        },
+        "estado": {
+          "enum": ["extraida", "propuesta", "revisada"]
+        },
+        "metodo": {
+          "$ref": "#/$defs/metodo_aprendizaje"
+        },
+        "revision": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/revision_aprendizaje"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "evidencias": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/evidencia_aprendizaje"
+          }
+        },
+        "discrepancias": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/discrepancia_aprendizaje"
+          }
+        },
+        "revision_requerida": {
+          "type": "boolean"
+        }
+      },
+      "description": "El núcleo exige evidencia ligada a captura del programa para toda afirmación conocida, origen/estado coherentes, revisión con procedencia, escala/valor y competencia registrados para nivel conocido. Referencias de competencia no registradas quedan pendientes; nunca clasificadas. Entrada conocida solo como requisito oficial declarado. Resultado previsto no garantiza dominio."
+    },
+    "aprendizaje": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["schema_version", "registro", "contenido_observado", "afirmaciones"],
+      "properties": {
+        "schema_version": {
+          "type": "integer",
+          "const": 1
+        },
+        "registro": {
+          "$ref": "#/$defs/referencia_registro"
+        },
+        "contenido_observado": {
+          "type": "boolean"
+        },
+        "afirmaciones": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/afirmacion_aprendizaje"
+          }
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "contenido_observado": {
+                "const": false
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "afirmaciones": {
+                "maxItems": 0
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "schema_version": {
+            "enum": [2, 3]
+          }
+        }
+      },
+      "then": {
+        "required": ["variantes", "centros", "anuncios"]
+      },
+      "else": {
+        "not": {
+          "anyOf": [
+            {
+              "required": ["variantes"]
+            },
+            {
+              "required": ["centros"]
+            },
+            {
+              "required": ["anuncios"]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "schema_version": {
+            "const": 3
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "programas": {
+            "items": {
+              "properties": {
+                "datos": {
+                  "required": ["aprendizaje"]
+                }
+              }
+            }
+          }
+        }
+      },
+      "else": {
+        "properties": {
+          "programas": {
+            "items": {
+              "properties": {
+                "datos": {
+                  "not": {
+                    "required": ["aprendizaje"]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

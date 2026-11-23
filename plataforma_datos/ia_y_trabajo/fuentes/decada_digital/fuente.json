@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "id": "decada_digital",
+  "tema": "ia_y_trabajo",
+  "nombre": "Programa estratégico de la Década Digital para 2030",
+  "institucion": "Unión Europea",
+  "lector": "plataforma_datos.ia_y_trabajo.fuentes.decada_digital.lector",
+  "casa_datos": "decada-digital",
+  "significado": "Las metas de la Década Digital para 2030: el texto literal del artículo 4 de la Decisión (UE) 2022/2481.",
+  "alcance": [
+    "Se descarga el texto original español del Diario Oficial de la Oficina de Publicaciones (Cellar) y se guarda el artículo 4. La validación exige que el texto de cada meta de `catalogo_ue.METAS` (la que mide un indicador del archivo) esté en ese original, letra por letra. Esta consulta no comprueba la vigencia, las modificaciones ni las versiones consolidadas de la decisión; requieren una revisión aparte. Es la ley, no una medida: el archivo de datos globales lo lleva en su bloque `metas`, aparte de las cifras. Python estándar."
+  ],
+  "recursos": [
+    {
+      "id": "recurso-01",
+      "tipo": "url",
+      "ubicacion": "https://publications.europa.eu/resource/cellar/26514cb9-7f40-11ed-9887-01aa75ed71a1.0023.03/DOC_1",
+      "licencia": "Aviso jurídico de EUR-Lex (https://eur-lex.europa.eu/content/legal-notice/legal-notice.html), que aplica la Decisión 2011/833/UE de la Comisión: reutilización autorizada citando la fuente. Solo da fe la edición impresa o electrónica del Diario Oficial de la Unión Europea.",
+      "descripcion": "Decisión (UE) 2022/2481 (programa estratégico de la Década Digital para 2030), versión española"
+    }
+  ],
+  "canales": [
+    {
+      "id": "consulta",
+      "tipo": "remoto",
+      "recursos": ["recurso-01"],
+      "autenticacion": "El lector no configura credenciales de autenticación para estos recursos públicos; no acredita acceso a otros servicios.",
+      "limites": [
+        "Cuotas y límites oficiales de servicio no acreditados por este descriptor; rigen los límites de transporte y validación del lector.",
+        "Este descriptor no acredita la disponibilidad remota actual; una URL conservada no acredita consulta satisfactoria ni una tarea instalada.",
+        "La comprobación del recurso conocido no acredita una revisión general de ediciones o disposiciones posteriores."
+      ],
+      "observaciones": "Documento XHTML oficial de EUR-Lex de la Decisión (UE) 2022/2481. El lector extrae el artículo 4; una consulta del texto conocido no descubre por sí misma disposiciones posteriores."
+    }
+  ],
+  "actualizacion": {
+    "politica": "fija",
+    "red": true,
+    "frecuencia": "cuando se modifique la Decisión (UE) 2022/2481",
+    "renovar_dias": null,
+    "originales": "decada-digital"
+  },
+  "conjuntos": [
+    {
+      "id": "decada_digital",
+      "fuente": "decada_digital",
+      "clase": "cambiante",
+      "alcance": "edicion-conocida",
+      "operacion": "descargar",
+      "intervalo_dias": 7
+    }
+  ],
+  "dependencias": [],
+  "contratos": ["lector.py:preparar", "lector.py:validar", "plataforma_datos/orquestacion/admision.py:exigir_admitido"],
+  "retirada": "Se conserva la admisión del conjunto y sus guardas actuales. Un fallo o una ausencia de captura no se convierte en retirada de entidades ni en disponibilidad confirmada.",
+  "conservacion": "Originales, procedencias, preparados y validaciones conservan sus casas actuales en var/actualizacion. Esta ficha no habilita limpieza automática ni cambia fechas históricas, periodos, licencias o retención."
+}

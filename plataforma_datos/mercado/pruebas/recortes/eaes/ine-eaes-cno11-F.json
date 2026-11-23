@@ -1,0 +1,16 @@
+[
+  {
+    "Id": 22695,
+    "FK_Variable": 456,
+    "Nombre": "Empleados de agencias de viajes, recepcionistas y telefonistas; empleados de ventanilla y afines (excepto taquilleros)",
+    "Codigo": "44",
+    "FK_JerarquiaPadres": [22694]
+  },
+  {
+    "Id": 22713,
+    "FK_Variable": 456,
+    "Nombre": "Empleados administrativos con tareas de atención al público no clasificados bajo otros epígrafes",
+    "Codigo": "45",
+    "FK_JerarquiaPadres": [22694]
+  }
+]

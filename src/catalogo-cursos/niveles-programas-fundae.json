@@ -1,0 +1,132 @@
+{
+  "ADGD056PO": {
+    "ca": "El temari combina estratègia, plans de màrqueting i decisions per crear un negoci en línia.",
+    "capturadoEl": "2026-11-19T09:34:01.895760Z",
+    "es": "El temario combina estrategia, planes de marketing y decisiones para crear un negocio en línea.",
+    "localizador": "p. 4, contenidos formativos",
+    "sha256": "0cc5740487e6adc516a8834e5b42a078ded1451b41a59827f8ab81b35a2fb44c",
+    "titulo": "creacion de empresas on line",
+    "url": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/tic/ADGD056PO.pdf",
+    "valor": "intermedio"
+  },
+  "ADGG021PO": {
+    "ca": "El curs comença per introduir dades a les cel·les i fer servir les operacions i funcions bàsiques de l’Excel.",
+    "capturadoEl": "2026-11-19T16:26:19.608397Z",
+    "es": "El curso empieza por introducir datos en celdas y usar las operaciones y funciones básicas de Excel.",
+    "localizador": "p. 2 y 4, objetivos y contenidos",
+    "sha256": "b1ca82e70cfa6c205ea6474d9aa0b80cddd6cd121283cb9d1a3dd6313948f3b3",
+    "titulo": "fundamentos excel",
+    "url": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-formativas/ADGG021PO.pdf",
+    "valor": "inicial"
+  },
+  "ADGG042PO": {
+    "ca": "El programa introdueix els conceptes bàsics de les TIC a l’empresa i proposa analitzar-ne els costos i beneficis.",
+    "capturadoEl": "2026-11-19T16:26:27.175876Z",
+    "es": "El programa introduce los conceptos básicos de las TIC en la empresa y propone analizar sus costes y beneficios.",
+    "localizador": "p. 2, objetivo general",
+    "sha256": "3779ba2ea7517fe607125301a396f1d855cd8cc91d9da1286f233c9bb8ffc23e",
+    "titulo": "la tecnologia de la informacion aplicada a la empresa",
+    "url": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/tic/ADGG042PO.pdf",
+    "valor": "inicial"
+  },
+  "ADGG052PO": {
+    "ca": "El temari comença per gestionar fitxers i per les operacions bàsiques amb documents i fulls de càlcul.",
+    "capturadoEl": "2026-11-19T09:35:16.950032Z",
+    "es": "El temario empieza por manejar archivos y por las operaciones básicas con documentos y hojas de cálculo.",
+    "localizador": "p. 4, introducción a Windows, Word y Excel",
+    "sha256": "c38922ab7341b8d36f7d769471f86f1ee65d965da44c3a90bbeccdb63a04988e",
+    "titulo": "office word excel access y power point",
+    "url": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-formativas/ADGG052PO.pdf",
+    "valor": "inicial"
+  },
+  "ADGG055PO": {
+    "ca": "El programa porta de la introducció fins a gestionar documents compartits, permisos i revisions al Google Drive.",
+    "capturadoEl": "2026-11-19T09:34:12.699974Z",
+    "es": "El programa lleva desde la introducción hasta gestionar documentos compartidos, permisos y revisiones en Google Drive.",
+    "localizador": "p. 4–7, contenidos formativos",
+    "sha256": "03817050feb544aa0da7ec0768b0ebcfbc1778d4a64d33c6449783a86f6d0b36",
+    "titulo": "ofimatica en la nube google drive",
+    "url": "https://sede.sepe.gob.es/es/portaltrabaja/resources/pdf/especialidades/ADGG055PO.pdf",
+    "valor": "intermedio"
+  },
+  "ADGG057PO": {
+    "ca": "El temari parteix de gestionar l’escriptori i les carpetes del Windows i presenta les aplicacions ofimàtiques.",
+    "capturadoEl": "2026-11-19T16:26:23.388667Z",
+    "es": "El temario parte de manejar el escritorio y las carpetas de Windows y presenta las aplicaciones de ofimática.",
+    "localizador": "p. 2 y 4, objetivos y contenidos",
+    "sha256": "dc0d77de07599467776337c4c4428870590cb02636f28f6e169e2fa585a81f8e",
+    "titulo": "ofimatica aplicaciones informaticas de gestion",
+    "url": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-formativas/ADGG057PO.pdf",
+    "valor": "inicial"
+  },
+  "CTRD0021": {
+    "ca": "El programa comença per cercar informació i navegar per internet. Indica que no exigeix experiència professional.",
+    "capturadoEl": "2026-11-19T09:33:55.751291Z",
+    "es": "El programa empieza por buscar información y navegar por internet. Indica que no exige experiencia profesional.",
+    "localizador": "p. 2, nivel 1 y requisitos de acceso",
+    "sha256": "e0a407a68a7532c68b6c22ab7903d62db08e7488d71df6a499fcb310867932c2",
+    "titulo": "busqueda de informacion y navegacion por internet accesible triple a",
+    "url": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/planes_2025/especialidades/CTRD0021.pdf",
+    "valor": "inicial"
+  },
+  "CTRD0022": {
+    "ca": "El programa ensenya a fer servir les aplicacions ofimàtiques des dels conceptes principals i no exigeix experiència professional.",
+    "capturadoEl": "2026-11-19T09:33:58.835371Z",
+    "es": "El programa enseña a usar las aplicaciones de ofimática desde los conceptos principales y no exige experiencia profesional.",
+    "localizador": "p. 2, nivel 1 y requisitos de acceso",
+    "sha256": "2ba6087e88e5ca6da65546a43dba26c2e467514c51fbe31ad5edefc9fa2dfa20",
+    "titulo": "ofimatica aplicaciones informaticas de gestion",
+    "url": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/planes_2024/especialidades/CTRD0022.pdf",
+    "valor": "inicial"
+  },
+  "IFCD011PO": {
+    "ca": "Les pràctiques inclouen publicar fitxers per FTP, configurar Joomla i gestionar menús, mòduls i plantilles.",
+    "capturadoEl": "2026-11-19T09:35:20.092687Z",
+    "es": "Las prácticas incluyen publicar archivos por FTP, configurar Joomla y gestionar menús, módulos y plantillas.",
+    "localizador": "p. 4, CSS, alojamiento y Joomla",
+    "sha256": "71b393d40355821ef76c2bd3079bb4eb647ac1d6a2431c3beab43c9dacf7d460",
+    "titulo": "desarrollo de paginas web css y joomla",
+    "url": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-formativas/IFCD011PO.pdf",
+    "valor": "intermedio"
+  },
+  "IFCD091PO": {
+    "ca": "El programa inclou dissenyar un magatzem de dades amb Redshift que pugui escalar i integrar diversos serveis d’AWS.",
+    "capturadoEl": "2026-11-19T16:26:30.937787Z",
+    "es": "El programa incluye diseñar un almacén de datos con Redshift que pueda escalar e integrar varios servicios de AWS.",
+    "localizador": "p. 2 y 4, objetivos y diseño de almacenes",
+    "sha256": "fbe7c8a3b03d5e9c5fa352b59f3943a3f833e76981f68affd99a12255dc277e2",
+    "titulo": "data warehousing on aws",
+    "url": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-formativas/IFCD091PO.pdf",
+    "valor": "avanzado"
+  },
+  "IFCD82": {
+    "ca": "El programa ensenya JavaScript des dels fonaments fins a fer servir objectes, llistes i funcions en aplicacions web. La fitxa detalla els requisits d’accés.",
+    "capturadoEl": "2026-11-19T09:35:22.978634Z",
+    "es": "El programa enseña JavaScript desde sus fundamentos hasta usar objetos, listas y funciones en aplicaciones web. La ficha detalla los requisitos de acceso.",
+    "localizador": "p. 2, módulos y requisitos del alumnado",
+    "sha256": "3e5100e79535df6a1f19fee8d2c3ef9ae7dc63244b494c76611a9dcf1e45e5c9",
+    "titulo": "java script",
+    "url": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/planes_2025/especialidades/IFCD82.pdf",
+    "valor": "intermedio"
+  },
+  "IFCT095PO": {
+    "ca": "El temari arriba al disseny d’aplicacions Django amb models relacionats, validació, sessions, seguretat i desplegament.",
+    "capturadoEl": "2026-11-19T09:34:04.734250Z",
+    "es": "El temario llega al diseño de aplicaciones Django con modelos relacionados, validación, sesiones, seguridad y despliegue.",
+    "localizador": "p. 4, contenidos formativos",
+    "sha256": "b0886504d49adf826f6021b515fd6720fefb467e23b8daa712da8478fa131776",
+    "titulo": "python y django",
+    "url": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/convocatoria-programas-2021/especialidades-formativas/IFCT095PO.pdf",
+    "valor": "avanzado"
+  },
+  "IFCT161PO": {
+    "ca": "El temari combina consultes a diverses fonts, transformació de dades i modelització al Power BI.",
+    "capturadoEl": "2026-11-19T09:35:13.885761Z",
+    "es": "El temario combina consultas a varias fuentes, transformación de datos y modelización en Power BI.",
+    "localizador": "p. 5, minería, transformación y visualización",
+    "sha256": "3ee91570388ac4c71d51940c383d68494abca64262d9eafe846d427331d29996",
+    "titulo": "analisis de datos y programacion con microsoft power bi",
+    "url": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/planes_2024/especialidades/IFCT161PO.pdf",
+    "valor": "intermedio"
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "schema_version": 1,
+  "id": "empresas",
+  "tema": "mercado",
+  "lector": "plataforma_datos.mercado.fuentes.empresas.lector",
+  "casa_datos": "empresas",
+  "nombre": "Uso empresarial de IA, plantilla y formación TIC: ETICCE y Eurostat",
+  "institucion": "INE; Eurostat",
+  "significado": "Uso de IA por actividad, tamaño y territorio en las empresas; conserva las definiciones y denominadores de ETICCE/Eurostat y no calcula una probabilidad de uso individual. Las tablas de especialistas y formación TIC conservan cada medida y sus bases de empresas o personal por separado; formación TIC no equivale a formación en IA.",
+  "alcance": [
+    "Descubre edición ETICCE en índice y cuatro capítulos; conserva sectores, comunidades, menos de diez personas y errores de muestreo.",
+    "Edición revisada desde 2026 con CNAE-2025 y denominador admitido por contrato; no reparte o convierte categorías por parecido.",
+    "Eurostat conserva periodo propio, marcas y ventana regional; la continuidad de originales previos requiere prueba explícita y no acredita una descarga fresca ni rejuvenece su fecha.",
+    "En los mismos capítulos de actividad y comunidades descubre las tablas Especialistas TIC; el contrato revisado de 2026 admite 82386/82408 y conserva las 5.304 series sin fusionar códigos de cuestionario.",
+    "Las variables con 2025 explícito mantienen ese año. I.1/I.1.1 sin año conservan el periodo compuesto literal 2025 o primer trimestre de 2026; no representan una observación anual o trimestral única.",
+    "El bloque plantilla_tic se añade al conjunto validado de empresas; no tiene exportación ni consumidor en el informe o motores."
+  ],
+  "recursos": [
+    {
+      "id": "ine-eticce",
+      "tipo": "familia",
+      "ubicacion": "https://www.ine.es/dyngs/INEbase/es/operacion.htm?c=Estadistica_C&cid=1254736176743&menu=resultados&idp=1254735576692",
+      "licencia": "Creative Commons Reconocimiento 4.0 (CC BY 4.0), según el aviso legal del INE (https://www.ine.es/dyngs/AYU/index.htm?cid=125): citar la fuente («Elaboración propia con datos extraídos del sitio web del INE: www.ine.es»), mencionar la fecha de la última actualización y no sugerir que el INE participa, patrocina o apoya la reutilización.",
+      "descripcion": "Índice, cuatro capítulos, tablas IA y especialistas TIC y sus notas del INE."
+    },
+    {
+      "id": "eurostat",
+      "tipo": "familia",
+      "ubicacion": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data",
+      "licencia": "Aviso de copyright de Eurostat (https://ec.europa.eu/eurostat/help/copyright-notice, consultado el 06/10/2026), que aplica la Decisión 2011/833/UE de la Comisión: reutilización autorizada, también comercial, citando la fuente; una versión filtrada se cita con el enlace del conjunto y la fecha de consulta.",
+      "descripcion": "isoc_eb_ain2 España e isoc_r_eb_ain2 Cataluña, con marcas y definición conservadas."
+    },
+    {
+      "id": "calendario-ine",
+      "tipo": "url",
+      "ubicacion": "https://www.ine.es/dynt3/Calendario/calendario.ics",
+      "licencia": "Creative Commons Reconocimiento 4.0 (CC BY 4.0), según el aviso legal del INE (https://www.ine.es/dyngs/AYU/index.htm?cid=125): citar la fuente («Elaboración propia con datos extraídos del sitio web del INE: www.ine.es»), mencionar la fecha de la última actualización y no sugerir que el INE participa, patrocina o apoya la reutilización.",
+      "descripcion": "Calendario de publicaciones del INE (iCalendar): da la fecha de publicación de cada edición de la encuesta y, si ya la trae, la de la siguiente; se captura con los demás originales."
+    },
+    {
+      "id": "contratos",
+      "tipo": "familia",
+      "ubicacion": "plataforma_datos/mercado/fuentes/empresas/contratos/",
+      "licencia": null,
+      "descripcion": "empresas-eticce2026.json y empresas-cnae2025.json; rutas y SHA contractuales permanecen actuales."
+    },
+    {
+      "id": "contrato-plantilla-tic",
+      "tipo": "archivo",
+      "ubicacion": "plataforma_datos/mercado/fuentes/empresas/piezas/plantilla-tic2026.json",
+      "licencia": null,
+      "descripcion": "Firma, literales, bases y periodos revisados de plantilla TIC; sus bytes se vinculan por SHA cuando se admite ese bloque."
+    }
+  ],
+  "canales": [
+    {
+      "id": "oficial",
+      "tipo": "remoto",
+      "recursos": ["ine-eticce", "eurostat", "calendario-ine"],
+      "autenticacion": "No se configura autenticación de cuenta en el lector.",
+      "limites": [
+        "Vincula índice, capítulos, tablas y notas INE y recursos Eurostat según el contrato aplicable, con edición, definición y periodos comprobados.",
+        "El permiso de sustituir bytes no autoriza cambiar metodología; la continuidad Eurostat conserva su periodo y su procedencia histórica, con contraste declarado pendiente cuando corresponde."
+      ],
+      "observaciones": "HTML de descubrimiento y API estadísticas, sin cuentas configuradas por el lector."
+    },
+    {
+      "id": "contratos",
+      "tipo": "local",
+      "recursos": ["contratos", "contrato-plantilla-tic"],
+      "autenticacion": "No aplicable al procesamiento local; no acredita acceso remoto ni una cuenta configurada.",
+      "limites": [
+        "Los dos contratos históricos se leen y vinculan por SHA durante validación. La ampliación plantilla_tic exige además el tercer recurso, leído una sola vez y comprobado otra vez al admitir."
+      ],
+      "observaciones": "Admisión contractual CNAE-2025 y ETICCE."
+    }
+  ],
+  "actualizacion": {
+    "politica": "mensual",
+    "red": true,
+    "frecuencia": "anual (ETICCE del INE y Eurostat)",
+    "renovar_dias": null,
+    "originales": "empresas"
+  },
+  "conjuntos": [
+    {
+      "id": "empresas",
+      "fuente": "empresas",
+      "clase": "cambiante",
+      "alcance": "descubre-edicion",
+      "operacion": "descargar",
+      "intervalo_dias": 30
+    }
+  ],
+  "dependencias": ["sectores"],
+  "contratos": [
+    "lector.py:validar",
+    "plataforma_datos/mercado/fuentes/empresas/contratos/empresas-eticce2026.json",
+    "plataforma_datos/mercado/fuentes/empresas/contratos/empresas-cnae2025.json",
+    "plataforma_datos/mercado/fuentes/empresas/piezas/plantilla-tic2026.json"
+  ],
+  "retirada": "Se mantienen los controles de admisión y reconstrucción del lector; un fallo de consulta o una lectura parcial no autoriza una retirada ni una cifra cero.",
+  "conservacion": "Las rutas, originales, procedencias y revisiones actuales en var/actualizacion se conservan; este descriptor no activa limpieza automática ni fija nuevos plazos de retención."
+}

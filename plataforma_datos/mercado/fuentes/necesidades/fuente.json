@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "id": "necesidades",
+  "tema": "mercado",
+  "lector": "plataforma_datos.mercado.fuentes.necesidades.lector",
+  "casa_datos": "sepe-necesidades",
+  "nombre": "SEPE: necesidades formativas por ocupación",
+  "institucion": "SEPE, Observatorio de las Ocupaciones",
+  "significado": "Competencias señaladas como necesidades formativas en fichas ocupacionales del SEPE; conserva porcentajes literales cuyo denominador no define la fuente, sin atribuir carencias a una persona.",
+  "alcance": [
+    "CNO-11 a cuatro cifras y año propio de cada ficha; solo ocupaciones con al menos dos respuestas sobre necesidades técnicas.",
+    "Tipos técnicos, digitales, personales, idiomas y otras transversales; marca IA solo donde la ficha la nombra.",
+    "Fichas anteriores a 2025 con todo cero no se usan como medida; capturas truncadas conocidas permanecen identificadas."
+  ],
+  "recursos": [
+    {
+      "id": "fichas",
+      "tipo": "familia",
+      "ubicacion": "var/actualizacion/originales/sepe-necesidades/",
+      "licencia": null,
+      "descripcion": "Capturas HTML manuales con procedencia y huella; no API ni descarga directa en este lector."
+    }
+  ],
+  "canales": [
+    {
+      "id": "manual",
+      "tipo": "local",
+      "recursos": ["fichas"],
+      "autenticacion": "No aplicable al procesamiento local; no acredita acceso remoto ni una cuenta configurada.",
+      "limites": [
+        "La renovación es humana; descargar solo explica el procedimiento y verifica huellas.",
+        "Conservar año y NOTA_PORCENTAJE/LIMITES; no expresar porcentajes como porcentaje de empresas o personas."
+      ],
+      "observaciones": "Entrada manual, sin consulta remota automática."
+    }
+  ],
+  "actualizacion": {
+    "politica": "manual",
+    "red": false,
+    "frecuencia": "anual (informe del SEPE)",
+    "renovar_dias": 365,
+    "originales": "sepe-necesidades"
+  },
+  "conjuntos": [
+    {
+      "id": "necesidades",
+      "fuente": "necesidades",
+      "clase": "manual",
+      "alcance": "copia-local",
+      "operacion": "revision",
+      "intervalo_dias": null
+    }
+  ],
+  "dependencias": ["clasificaciones"],
+  "contratos": ["lector.py:validar"],
+  "retirada": "Se mantienen los controles de admisión y reconstrucción del lector; un fallo de consulta o una lectura parcial no autoriza una retirada ni una cifra cero.",
+  "conservacion": "Las rutas, originales, procedencias y revisiones actuales en var/actualizacion se conservan; este descriptor no activa limpieza automática ni fija nuevos plazos de retención."
+}

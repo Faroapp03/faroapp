@@ -1,0 +1,4171 @@
+{
+  "schema_version": 1,
+  "registro": {
+    "id": "registro-compartido-formacion",
+    "version": "digcomp-3.0-captura-f282a4f76891",
+    "sha256": "a60ff6c94e71ead18c26186e63faf5f244866d3497799f73f8318df9ffa8315a"
+  },
+  "fichas": [
+    {
+      "programa_id": "hp-life:402:es",
+      "aprendizaje": {
+        "schema_version": 1,
+        "registro": {
+          "id": "registro-compartido-formacion",
+          "version": "digcomp-3.0-captura-f282a4f76891",
+          "sha256": "a60ff6c94e71ead18c26186e63faf5f244866d3497799f73f8318df9ffa8315a"
+        },
+        "contenido_observado": true,
+        "afirmaciones": [
+          {
+            "id": "hp-402-objetivo-1",
+            "competencia": null,
+            "dimension": "resultado_previsto",
+            "descripcion": "Conceptos clave de IA y sus aplicaciones, incluido el aprendizaje automático, la IA generativa y los grandes modelos lingüísticos.",
+            "nivel": {
+              "escala": null,
+              "valor": null
+            },
+            "origen": "extraccion_oficial",
+            "estado": "extraida",
+            "metodo": {
+              "nombre": "extraccion-literal-de-lista-de-objetivos-hp",
+              "version": "1"
+            },
+            "revision": null,
+            "evidencias": [
+              {
+                "url": "https://www.life-global.org/es/course/402-ia-para-principiantes",
+                "capturado_utc": "2026-10-23T11:25:42.034458Z",
+                "sha256": "c2e7dcc82b72707da4b0339d736d94ecd766fd252359c8f47e0eace8afb6808f",
+                "localizador": {
+                  "tipo": "objetivo",
+                  "valor": "__NEXT_DATA__/props/pageProps/initialCourseData/body/bloque[4]"
+                },
+                "fragmento": "Conceptos clave de IA y sus aplicaciones, incluido el aprendizaje automático, la IA generativa y los grandes modelos lingüísticos."
+              }
+            ],
+            "discrepancias": [],
+            "revision_requerida": false
+          },
+          {
+            "id": "hp-402-objetivo-2",
+            "competencia": null,
+            "dimension": "resultado_previsto",
+            "descripcion": "El importante papel que desempeñan los datos en la IA.",
+            "nivel": {
+              "escala": null,
+              "valor": null
+            },
+            "origen": "extraccion_oficial",
+            "estado": "extraida",
+            "metodo": {
+              "nombre": "extraccion-literal-de-lista-de-objetivos-hp",
+              "version": "1"
+            },
+            "revision": null,
+            "evidencias": [
+              {
+                "url": "https://www.life-global.org/es/course/402-ia-para-principiantes",
+                "capturado_utc": "2026-10-23T11:25:42.034458Z",
+                "sha256": "c2e7dcc82b72707da4b0339d736d94ecd766fd252359c8f47e0eace8afb6808f",
+                "localizador": {
+                  "tipo": "objetivo",
+                  "valor": "__NEXT_DATA__/props/pageProps/initialCourseData/body/bloque[5]"
+                },
+                "fragmento": "El importante papel que desempeñan los datos en la IA."
+              }
+            ],
+            "discrepancias": [],
+            "revision_requerida": false
+          },
+          {
+            "id": "hp-402-objetivo-3",
+            "competencia": null,
+            "dimension": "resultado_previsto",
+            "descripcion": "Implementación de herramientas de IA en la empresa y los flujos de trabajo.",
+            "nivel": {
+              "escala": null,
+              "valor": null
+            },
+            "origen": "extraccion_oficial",
+            "estado": "extraida",
+            "metodo": {
+              "nombre": "extraccion-literal-de-lista-de-objetivos-hp",
+              "version": "1"
+            },
+            "revision": null,
+            "evidencias": [
+              {
+                "url": "https://www.life-global.org/es/course/402-ia-para-principiantes",
+                "capturado_utc": "2026-10-23T11:25:42.034458Z",
+                "sha256": "c2e7dcc82b72707da4b0339d736d94ecd766fd252359c8f47e0eace8afb6808f",
+                "localizador": {
+                  "tipo": "objetivo",
+                  "valor": "__NEXT_DATA__/props/pageProps/initialCourseData/body/bloque[6]"
+                },
+                "fragmento": "Implementación de herramientas de IA en la empresa y los flujos de trabajo."
+              }
+            ],
+            "discrepancias": [],
+            "revision_requerida": false
+          },
+          {
+            "id": "hp-402-objetivo-4",
+            "competencia": null,
+            "dimension": "resultado_previsto",
+            "descripcion": "Ética, regulaciones y consideraciones legales de la IA.",
+            "nivel": {
+              "escala": null,
+              "valor": null
+            },
+            "origen": "extraccion_oficial",
+            "estado": "extraida",
+            "metodo": {
+              "nombre": "extraccion-literal-de-lista-de-objetivos-hp",
+              "version": "1"
+            },
+            "revision": null,
+            "evidencias": [
+              {
+                "url": "https://www.life-global.org/es/course/402-ia-para-principiantes",
+                "capturado_utc": "2026-10-23T11:25:42.034458Z",
+                "sha256": "c2e7dcc82b72707da4b0339d736d94ecd766fd252359c8f47e0eace8afb6808f",
+                "localizador": {
+                  "tipo": "objetivo",
+                  "valor": "__NEXT_DATA__/props/pageProps/initialCourseData/body/bloque[7]"
+                },
+                "fragmento": "Ética, regulaciones y consideraciones legales de la IA."
+              }
+            ],
+            "discrepancias": [],
+            "revision_requerida": false
+          },
+          {
+            "id": "hp-402-objetivo-5",
+            "competencia": null,
+            "dimension": "resultado_previsto",
+            "descripcion": "Tendencias emergentes en IA.",
+            "nivel": {
+              "escala": null,
+              "valor": null
+            },
+            "origen": "extraccion_oficial",
+            "estado": "extraida",
+            "metodo": {
+              "nombre": "extraccion-literal-de-lista-de-objetivos-hp",
+              "version": "1"
+            },
+            "revision": null,
+            "evidencias": [
+              {
+                "url": "https://www.life-global.org/es/course/402-ia-para-principiantes",
+                "capturado_utc": "2026-10-23T11:25:42.034458Z",
+                "sha256": "c2e7dcc82b72707da4b0339d736d94ecd766fd252359c8f47e0eace8afb6808f",
+                "localizador": {
+                  "tipo": "objetivo",
+                  "valor": "__NEXT_DATA__/props/pageProps/initialCourseData/body/bloque[8]"
+                },
+                "fragmento": "Tendencias emergentes en IA."
+              }
+            ],
+            "discrepancias": [],
+            "revision_requerida": false
+          }
+        ]
+      },
+      "requisitos": "no_publicados",
+      "cobertura": [],
+      "revision": {
+        "tipo": "automatizada",
+        "referencia": "revision-temario-hp-20261023",
+        "metodo": {
+          "nombre": "contraste-local-de-objetivos-y-huecos",
+          "version": "1"
+        },
+        "fecha_utc": "2026-10-23T12:50:25.216295Z"
+      },
+      "firmas_semanticas": {
+        "hp-402-objetivo-1": ["1b0a171fabc95d58ae8f34b0e6dbcfd34e9a111b561bb81ddd6f5b48382f7dd2"],
+        "hp-402-objetivo-2": ["ab65756daeb1770281a816e2747c3080be86a6769c2d1e2728b916642dfa3d4a"],
+        "hp-402-objetivo-3": ["9ab55b09459ef5e7fc536a502445bcd6626c5fff25328058d4f03f8c5d557705"],
+        "hp-402-objetivo-4": ["02331f37bccf2687c42432f9edf327b588c0add81fbf67ccb90fcd017d2c3a02"],
+        "hp-402-objetivo-5": ["8d515ce67a4deb2bf122d1698d81f0f880ea9fb969e1511081936f74a250d0c7"]
+      }
+    },
+    {
+      "programa_id": "hp-life:431:es",
+      "aprendizaje": {
+        "schema_version": 1,
+        "registro": {
+          "id": "registro-compartido-formacion",
+          "version": "digcomp-3.0-captura-f282a4f76891",
+          "sha256": "a60ff6c94e71ead18c26186e63faf5f244866d3497799f73f8318df9ffa8315a"
+        },
+        "contenido_observado": true,
+        "afirmaciones": [
+          {
+            "id": "hp-431-objetivo-1",
+            "competencia": null,
+            "dimension": "resultado_previsto",
+            "descripcion": "Analice la función de la IA en las empresas modernas y descubra por qué es fundamental para el desarrollo profesional y el crecimiento de las organizaciones.",
+            "nivel": {
+              "escala": null,
+              "valor": null
+            },
+            "origen": "extraccion_oficial",
+            "estado": "extraida",
+            "metodo": {
+              "nombre": "extraccion-literal-de-lista-de-objetivos-hp",
+              "version": "1"
+            },
+            "revision": null,
+            "evidencias": [
+              {
+                "url": "https://www.life-global.org/es/course/431",
+                "capturado_utc": "2026-10-23T11:25:47.562182Z",
+                "sha256": "22df7ca5cfadda7e81f003daa3bc6cc5e60817b4de4a79dbe977ce76968d6ba8",
+                "localizador": {
+                  "tipo": "objetivo",
+                  "valor": "__NEXT_DATA__/props/pageProps/initialCourseData/body/bloque[4]"
+                },
+                "fragmento": "Analice la función de la IA en las empresas modernas y descubra por qué es fundamental para el desarrollo profesional y el crecimiento de las organizaciones."
+              }
+            ],
+            "discrepancias": [],
+            "revision_requerida": false
+          },
+          {
+            "id": "hp-431-objetivo-2",
+            "competencia": null,
+            "dimension": "resultado_previsto",
+            "descripcion": "Explore las diferencias entre las herramientas de IA independientes y las funciones de IA integradas, y determine qué aplicaciones de uso real son adecuadas para satisfacer sus necesidades en áreas como el marketing, las comunicaciones y las operaciones.",
+            "nivel": {
+              "escala": null,
+              "valor": null
+            },
+            "origen": "extraccion_oficial",
+            "estado": "extraida",
+            "metodo": {
+              "nombre": "extraccion-literal-de-lista-de-objetivos-hp",
+              "version": "1"
+            },
+            "revision": null,
+            "evidencias": [
+              {
+                "url": "https://www.life-global.org/es/course/431",
+                "capturado_utc": "2026-10-23T11:25:47.562182Z",
+                "sha256": "22df7ca5cfadda7e81f003daa3bc6cc5e60817b4de4a79dbe977ce76968d6ba8",
+                "localizador": {
+                  "tipo": "objetivo",
+                  "valor": "__NEXT_DATA__/props/pageProps/initialCourseData/body/bloque[5]"
+                },
+                "fragmento": "Explore las diferencias entre las herramientas de IA independientes y las funciones de IA integradas, y determine qué aplicaciones de uso real son adecuadas para satisfacer sus necesidades en áreas como el marketing, las comunicaciones y las operaciones."
+              }
+            ],
+            "discrepancias": [],
+            "revision_requerida": false
+          },
+          {
+            "id": "hp-431-objetivo-3",
+            "competencia": null,
+            "dimension": "resultado_previsto",
+            "descripcion": "Descubra cómo crear instrucciones eficaces para optimizar los resultados de herramientas como ChatGPT y Canva.",
+            "nivel": {
+              "escala": null,
+              "valor": null
+            },
+            "origen": "extraccion_oficial",
+            "estado": "extraida",
+            "metodo": {
+              "nombre": "extraccion-literal-de-lista-de-objetivos-hp",
+              "version": "1"
+            },
+            "revision": null,
+            "evidencias": [
+              {
+                "url": "https://www.life-global.org/es/course/431",
+                "capturado_utc": "2026-10-23T11:25:47.562182Z",
+                "sha256": "22df7ca5cfadda7e81f003daa3bc6cc5e60817b4de4a79dbe977ce76968d6ba8",
+                "localizador": {
+                  "tipo": "objetivo",
+                  "valor": "__NEXT_DATA__/props/pageProps/initialCourseData/body/bloque[6]"
+                },
+                "fragmento": "Descubra cómo crear instrucciones eficaces para optimizar los resultados de herramientas como ChatGPT y Canva."
+              }
+            ],
+            "discrepancias": [],
+            "revision_requerida": false
+          },
+          {
+            "id": "hp-431-objetivo-4",
+            "competencia": null,
+            "dimension": "resultado_previsto",
+            "descripcion": "Cree un plan para integrar la IA en su trabajo diario y establezca objetivos mensurables para tener éxito.",
+            "nivel": {
+              "escala": null,
+              "valor": null
+            },
+            "origen": "extraccion_oficial",
+            "estado": "extraida",
+            "metodo": {
+              "nombre": "extraccion-literal-de-lista-de-objetivos-hp",
+              "version": "1"
+            },
+            "revision": null,
+            "evidencias": [
+              {
+                "url": "https://www.life-global.org/es/course/431",
+                "capturado_utc": "2026-10-23T11:25:47.562182Z",
+                "sha256": "22df7ca5cfadda7e81f003daa3bc6cc5e60817b4de4a79dbe977ce76968d6ba8",
+                "localizador": {
+                  "tipo": "objetivo",
+                  "valor": "__NEXT_DATA__/props/pageProps/initialCourseData/body/bloque[7]"
+                },
+                "fragmento": "Cree un plan para integrar la IA en su trabajo diario y establezca objetivos mensurables para tener éxito."
+              }
+            ],
+            "discrepancias": [],
+            "revision_requerida": false
+          },
+          {
+            "id": "hp-431-objetivo-5",
+            "competencia": null,
+            "dimension": "resultado_previsto",
+            "descripcion": "Aprenda a utilizar la IA de forma ética en su función considerando aspectos como la privacidad, la transparencia y la equidad.",
+            "nivel": {
+              "escala": null,
+              "valor": null
+            },
+            "origen": "extraccion_oficial",
+            "estado": "extraida",
+            "metodo": {
+              "nombre": "extraccion-literal-de-lista-de-objetivos-hp",
+              "version": "1"
+            },
+            "revision": null,
+            "evidencias": [
+              {
+                "url": "https://www.life-global.org/es/course/431",
+                "capturado_utc": "2026-10-23T11:25:47.562182Z",
+                "sha256": "22df7ca5cfadda7e81f003daa3bc6cc5e60817b4de4a79dbe977ce76968d6ba8",
+                "localizador": {
+                  "tipo": "objetivo",
+                  "valor": "__NEXT_DATA__/props/pageProps/initialCourseData/body/bloque[8]"
+                },
+                "fragmento": "Aprenda a utilizar la IA de forma ética en su función considerando aspectos como la privacidad, la transparencia y la equidad."
+              }
+            ],
+            "discrepancias": [],
+            "revision_requerida": false
+          }
+        ]
+      },
+      "requisitos": "no_publicados",
+      "cobertura": [
+        {
+          "criterio": "privacidad",
+          "afirmaciones": ["hp-431-objetivo-5"],
+          "justificacion": {
+            "es": "El temario incluye expresamente privacidad, transparencia y equidad en el uso profesional. No acredita contrastar una respuesta.",
+            "ca": "El temari inclou expressament privacitat, transparència i equitat en l’ús professional. No acredita contrastar una resposta."
+          },
+          "via": null
+        },
+        {
+          "criterio": "criterios_explicitos",
+          "afirmaciones": ["hp-431-objetivo-4"],
+          "justificacion": {
+            "es": "El objetivo publicado exige establecer objetivos mensurables para evaluar un plan de uso de IA. No prueba por sí solo una tarea real ni mejorar instrucciones de forma iterativa.",
+            "ca": "L’objectiu publicat exigeix establir objectius mesurables per avaluar un pla d’ús d’IA. No prova per si sol una tasca real ni millorar instruccions de manera iterativa."
+          },
+          "via": null
+        }
+      ],
+      "revision": {
+        "tipo": "automatizada",
+        "referencia": "revision-temario-hp-20261023",
+        "metodo": {
+          "nombre": "contraste-local-de-objetivos-y-huecos",
+          "version": "1"
+        },
+        "fecha_utc": "2026-10-23T12:50:25.216295Z"
+      },
+      "firmas_semanticas": {
+        "hp-431-objetivo-1": ["f8387eca53129ac712ec85e2f3166a80599233c1378e194e0c9f805165ab7654"],
+        "hp-431-objetivo-2": ["df228de6efd81e7d0ffadaafe42d90dd5946124a1c820a7a179b6cf82f65e908"],
+        "hp-431-objetivo-3": ["4e41dcc686944d35e48439f7108be9998c25840ee1c3405b6f874e0dc57a3d78"],
+        "hp-431-objetivo-4": ["5f862d9c12dde1f696057fcc76421704bf6d86cdd999a4f56696e391030bceea"],
+        "hp-431-objetivo-5": ["120eb78c109b3a22cde82b5a02e79af16a0c40f9cb2b173b1f68818f5b519726"]
+      }
+    },
+    {
+      "programa_id": "hp-life:441:es",
+      "aprendizaje": {
+        "schema_version": 1,
+        "registro": {
+          "id": "registro-compartido-formacion",
+          "version": "digcomp-3.0-captura-f282a4f76891",
+          "sha256": "a60ff6c94e71ead18c26186e63faf5f244866d3497799f73f8318df9ffa8315a"
+        },
+        "contenido_observado": true,
+        "afirmaciones": [
+          {
+            "id": "hp-441-objetivo-1",
+            "competencia": null,
+            "dimension": "resultado_previsto",
+            "descripcion": "Desarrollarás las habilidades necesarias para reconocer la información errónea y la desinformación, y comprenderás cómo el contenido generado por la IA puede distorsionar la verdad.",
+            "nivel": {
+              "escala": null,
+              "valor": null
+            },
+            "origen": "extraccion_oficial",
+            "estado": "extraida",
+            "metodo": {
+              "nombre": "extraccion-literal-de-lista-de-objetivos-hp",
+              "version": "1"
+            },
+            "revision": null,
+            "evidencias": [
+              {
+                "url": "https://www.life-global.org/es/course/441-pensamiento-cr%C3%ADtico-en-la-era-de-la-ia",
+                "capturado_utc": "2026-10-23T11:25:53.143628Z",
+                "sha256": "fb2d828372b28a3fc339609af817a399dccb1dbed56492996ae070d02a25f649",
+                "localizador": {
+                  "tipo": "objetivo",
+                  "valor": "__NEXT_DATA__/props/pageProps/initialCourseData/body/bloque[3]"
+                },
+                "fragmento": "Desarrollarás las habilidades necesarias para reconocer la información errónea y la desinformación, y comprenderás cómo el contenido generado por la IA puede distorsionar la verdad."
+              }
+            ],
+            "discrepancias": [],
+            "revision_requerida": false
+          },
+          {
+            "id": "hp-441-objetivo-2",
+            "competencia": null,
+            "dimension": "resultado_previsto",
+            "descripcion": "Fortalecerás tu capacidad para evaluar fuentes de manera eficaz cuestionando la credibilidad, las pruebas y la intención.",
+            "nivel": {
+              "escala": null,
+              "valor": null
+            },
+            "origen": "extraccion_oficial",
+            "estado": "extraida",
+            "metodo": {
+              "nombre": "extraccion-literal-de-lista-de-objetivos-hp",
+              "version": "1"
+            },
+            "revision": null,
+            "evidencias": [
+              {
+                "url": "https://www.life-global.org/es/course/441-pensamiento-cr%C3%ADtico-en-la-era-de-la-ia",
+                "capturado_utc": "2026-10-23T11:25:53.143628Z",
+                "sha256": "fb2d828372b28a3fc339609af817a399dccb1dbed56492996ae070d02a25f649",
+                "localizador": {
+                  "tipo": "objetivo",
+                  "valor": "__NEXT_DATA__/props/pageProps/initialCourseData/body/bloque[4]"
+                },
+                "fragmento": "Fortalecerás tu capacidad para evaluar fuentes de manera eficaz cuestionando la credibilidad, las pruebas y la intención."
+              }
+            ],
+            "discrepancias": [],
+            "revision_requerida": false
+          },
+          {
+            "id": "hp-441-objetivo-3",
+            "competencia": null,
+            "dimension": "resultado_previsto",
+            "descripcion": "Explorarás el impacto de los sesgos que influyen en la toma de decisiones y aprenderás estrategias para contrarrestarlos.",
+            "nivel": {
+              "escala": null,
+              "valor": null
+            },
+            "origen": "extraccion_oficial",
+            "estado": "extraida",
+            "metodo": {
+              "nombre": "extraccion-literal-de-lista-de-objetivos-hp",
+              "version": "1"
+            },
+            "revision": null,
+            "evidencias": [
+              {
+                "url": "https://www.life-global.org/es/course/441-pensamiento-cr%C3%ADtico-en-la-era-de-la-ia",
+                "capturado_utc": "2026-10-23T11:25:53.143628Z",
+                "sha256": "fb2d828372b28a3fc339609af817a399dccb1dbed56492996ae070d02a25f649",
+                "localizador": {
+                  "tipo": "objetivo",
+                  "valor": "__NEXT_DATA__/props/pageProps/initialCourseData/body/bloque[5]"
+                },
+                "fragmento": "Explorarás el impacto de los sesgos que influyen en la toma de decisiones y aprenderás estrategias para contrarrestarlos."
+              }
+            ],
+            "discrepancias": [],
+            "revision_requerida": false
+          },
+          {
+            "id": "hp-441-objetivo-4",
+            "competencia": null,
+            "dimension": "resultado_previsto",
+            "descripcion": "Obtendrás herramientas prácticas para verificar la información utilizando técnicas como búsquedas inversas de imágenes, análisis de metadatos y recursos fiables de verificación de datos.",
+            "nivel": {
+              "escala": null,
+              "valor": null
+            },
+            "origen": "extraccion_oficial",
+            "estado": "extraida",
+            "metodo": {
+              "nombre": "extraccion-literal-de-lista-de-objetivos-hp",
+              "version": "1"
+            },
+            "revision": null,
+            "evidencias": [
+              {
+                "url": "https://www.life-global.org/es/course/441-pensamiento-cr%C3%ADtico-en-la-era-de-la-ia",
+                "capturado_utc": "2026-10-23T11:25:53.143628Z",
+                "sha256": "fb2d828372b28a3fc339609af817a399dccb1dbed56492996ae070d02a25f649",
+                "localizador": {
+                  "tipo": "objetivo",
+                  "valor": "__NEXT_DATA__/props/pageProps/initialCourseData/body/bloque[6]"
+                },
+                "fragmento": "Obtendrás herramientas prácticas para verificar la información utilizando técnicas como búsquedas inversas de imágenes, análisis de metadatos y recursos fiables de verificación de datos."
+              }
+            ],
+            "discrepancias": [],
+            "revision_requerida": false
+          }
+        ]
+      },
+      "requisitos": "no_publicados",
+      "cobertura": [
+        {
+          "criterio": "contraste",
+          "afirmaciones": ["hp-441-objetivo-1", "hp-441-objetivo-2", "hp-441-objetivo-4"],
+          "justificacion": {
+            "es": "El temario incluye detectar información errónea generada por IA, evaluar fuentes y verificar información con técnicas y recursos concretos. Aporta contraste; no acredita realizar una tarea con IA ni completar la etapa inicial.",
+            "ca": "El temari inclou detectar informació errònia generada per IA, avaluar fonts i verificar informació amb tècniques i recursos concrets. Aporta contrast; no acredita fer una tasca amb IA ni completar l’etapa inicial."
+          },
+          "via": null
+        }
+      ],
+      "revision": {
+        "tipo": "automatizada",
+        "referencia": "revision-temario-hp-441",
+        "metodo": {
+          "nombre": "contraste-local-de-objetivos-y-huecos",
+          "version": "1"
+        },
+        "fecha_utc": "2026-10-23T16:44:44.778925Z"
+      },
+      "firmas_semanticas": {
+        "hp-441-objetivo-1": ["184a584f3209aa6278994ee30ec4f1b5f94506ac4bc76df216daacfd1b915de1"],
+        "hp-441-objetivo-2": ["bbd33909078a35eb480a445fe05d0f153b43f07d0e929783c1323d7487a1a615"],
+        "hp-441-objetivo-3": ["3502b9b6bb9d159c27105eb39a8b261c573fe34590060b2c236ee489b5cfa91c"],
+        "hp-441-objetivo-4": ["cd373f709ee11e2811601cc4f4c1b50ce9ef7b2f5464953cf202d0630814762e"]
+      }
+    },
+    {
+      "programa_id": "claude-academy:claude-101",
+      "aprendizaje": {
+        "schema_version": 1,
+        "registro": {
+          "id": "registro-compartido-formacion",
+          "version": "digcomp-3.0-captura-f282a4f76891",
+          "sha256": "a60ff6c94e71ead18c26186e63faf5f244866d3497799f73f8318df9ffa8315a"
+        },
+        "contenido_observado": true,
+        "afirmaciones": [
+          {
+            "id": "claude-101-objetivo-1",
+            "competencia": null,
+            "dimension": "resultado_previsto",
+            "descripcion": "Explain what Claude is and have an effective first conversation with it",
+            "nivel": {
+              "escala": null,
+              "valor": null
+            },
+            "origen": "extraccion_oficial",
+            "estado": "extraida",
+            "metodo": {
+              "nombre": "extraccion-literal-de-bloque-academy",
+              "version": "1"
+            },
+            "revision": null,
+            "evidencias": [
+              {
+                "url": "https://academy.claude.com/courses/claude-101",
+                "capturado_utc": "2026-10-23T15:07:25.306903Z",
+                "sha256": "bf55779badeaadc751f7727befefc47e2ce8abf28ea82a355f15150246cf8d8d",
+                "localizador": {
+                  "tipo": "objetivo",
+                  "valor": "/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/div[1]/main[1]/div[1]/div[1]/div[1]/ul[1]/li[1] (línea 228, columna 22940)"
+                },
+                "fragmento": "Explain what Claude is and have an effective first conversation with it"
+              }
+            ],
+            "discrepancias": [],
+            "revision_requerida": false
+          },
+          {
+            "id": "claude-101-objetivo-2",
+            "competencia": null,
+            "dimension": "resultado_previsto",
+            "descripcion": "Write clear prompts, refine them when results miss, and apply the AI Fluency framework to get better outcomes",
+            "nivel": {
+              "escala": null,
+              "valor": null
+            },
+            "origen": "extraccion_oficial",
+            "estado": "extraida",
+            "metodo": {
+              "nombre": "extraccion-literal-de-bloque-academy",
+              "version": "1"
+            },
+            "revision": null,
+            "evidencias": [
+              {
+                "url": "https://academy.claude.com/courses/claude-101",
+                "capturado_utc": "2026-10-23T15:07:25.306903Z",
+                "sha256": "bf55779badeaadc751f7727befefc47e2ce8abf28ea82a355f15150246cf8d8d",
+                "localizador": {
+                  "tipo": "objetivo",
+                  "valor": "/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/div[1]/main[1]/div[1]/div[1]/div[1]/ul[1]/li[2] (línea 228, columna 23315)"
+                },
+                "fragmento": "Write clear prompts, refine them when results miss, and apply the AI Fluency framework to get better outcomes"
+              }
+            ],
+            "discrepancias": [],
+            "revision_requerida": false
+          },
+          {
+            "id": "claude-101-objetivo-3",
+            "competencia": null,
+            "dimension": "resultado_previsto",
+            "descripcion": "Distinguish the three shapes of work in the Claude desktop app — working turn by turn, handing work off, and building software — and recognize which one a task calls for",
+            "nivel": {
+              "escala": null,
+              "valor": null
+            },
+            "origen": "extraccion_oficial",
+            "estado": "extraida",
+            "metodo": {
+              "nombre": "extraccion-literal-de-bloque-academy",
+              "version": "1"
+            },
+            "revision": null,
+            "evidencias": [
+              {
+                "url": "https://academy.claude.com/courses/claude-101",
+                "capturado_utc": "2026-10-23T15:07:25.306903Z",
+                "sha256": "bf55779badeaadc751f7727befefc47e2ce8abf28ea82a355f15150246cf8d8d",
+                "localizador": {
+                  "tipo": "objetivo",
+                  "valor": "/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/div[1]/main[1]/div[1]/div[1]/div[1]/ul[1]/li[3] (línea 228, columna 23728)"
+                },
+                "fragmento": "Distinguish the three shapes of work in the Claude desktop app — working turn by turn, handing work off, and building software — and recognize which one a task calls for"
+              }
+            ],
+            "discrepancias": [],
+            "revision_requerida": false
+          },
+          {
+            "id": "claude-101-objetivo-4",
+            "competencia": null,
+            "dimension": "resultado_previsto",
+            "descripcion": "Use Projects and Skills to give Claude reusable context, and create and share your work — designs, decks, and documents — as artifacts",
+            "nivel": {
+              "escala": null,
+              "valor": null
+            },
+            "origen": "extraccion_oficial",
+            "estado": "extraida",
+            "metodo": {
+              "nombre": "extraccion-literal-de-bloque-academy",
+              "version": "1"
+            },
+            "revision": null,
+            "evidencias": [
+              {
+                "url": "https://academy.claude.com/courses/claude-101",
+                "capturado_utc": "2026-10-23T15:07:25.306903Z",
+                "sha256": "bf55779badeaadc751f7727befefc47e2ce8abf28ea82a355f15150246cf8d8d",
+                "localizador": {
+                  "tipo": "objetivo",
+                  "valor": "/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/div[1]/main[1]/div[1]/div[1]/div[1]/ul[1]/li[4] (línea 228, columna 24201)"
+                },
+                "fragmento": "Use Projects and Skills to give Claude reusable context, and create and share your work — designs, decks, and documents — as artifacts"
+              }
+            ],
+            "discrepancias": [],
+            "revision_requerida": false
+          },
+          {
+            "id": "claude-101-objetivo-5",
+            "competencia": null,
+            "dimension": "resultado_previsto",
+            "descripcion": "Connect your tools, company knowledge, and the web with Connectors, Enterprise Search, and Research",
+            "nivel": {
+              "escala": null,
+              "valor": null
+            },
+            "origen": "extraccion_oficial",
+            "estado": "extraida",
+            "metodo": {
+              "nombre": "extraccion-literal-de-bloque-academy",
+              "version": "1"
+            },
+            "revision": null,
+            "evidencias": [
+              {
+                "url": "https://academy.claude.com/courses/claude-101",
+                "capturado_utc": "2026-10-23T15:07:25.306903Z",
+                "sha256": "bf55779badeaadc751f7727befefc47e2ce8abf28ea82a355f15150246cf8d8d",
+                "localizador": {
+                  "tipo": "objetivo",
+                  "valor": "/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/div[1]/main[1]/div[1]/div[1]/div[1]/ul[1]/li[5] (línea 228, columna 24639)"
+                },
+                "fragmento": "Connect your tools, company knowledge, and the web with Connectors, Enterprise Search, and Research"
+              }
+            ],
+            "discrepancias": [],
+            "revision_requerida": false
+          },
+          {
+            "id": "claude-101-objetivo-6",
+            "competencia": null,
+            "dimension": "resultado_previsto",
+            "descripcion": "Apply Claude to tasks across common roles and explore Claude Code, Claude Tag, Claude Design, Claude for Microsoft 365, and Claude in Chrome",
+            "nivel": {
+              "escala": null,
+              "valor": null
+            },
+            "origen": "extraccion_oficial",
+            "estado": "extraida",
+            "metodo": {
+              "nombre": "extraccion-literal-de-bloque-academy",
+              "version": "1"
+            },
+            "revision": null,
+            "evidencias": [
+              {
+                "url": "https://academy.claude.com/courses/claude-101",
+                "capturado_utc": "2026-10-23T15:07:25.306903Z",
+                "sha256": "bf55779badeaadc751f7727befefc47e2ce8abf28ea82a355f15150246cf8d8d",
+                "localizador": {
+                  "tipo": "objetivo",
+                  "valor": "/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/div[1]/main[1]/div[1]/div[1]/div[1]/ul[1]/li[6] (línea 228, columna 25042)"
+                },
+                "fragmento": "Apply Claude to tasks across common roles and explore Claude Code, Claude Tag, Claude Design, Claude for Microsoft 365, and Claude in Chrome"
+              }
+            ],
+            "discrepancias": [],
+            "revision_requerida": false
+          },
+          {
+            "id": "claude-101-requisito-1",
+            "competencia": null,
+            "dimension": "requisito_entrada",
+            "descripcion": "A Claude account on any plan (Free, Pro, Max, Team, or Enterprise)",
+            "nivel": {
+              "escala": null,
+              "valor": null
+            },
+            "origen": "extraccion_oficial",
+            "estado": "extraida",
+            "metodo": {
+              "nombre": "extraccion-literal-de-bloque-academy",
+              "version": "1"
+            },
+            "revision": null,
+            "evidencias": [
+              {
+                "url": "https://academy.claude.com/courses/claude-101",
+                "capturado_utc": "2026-10-23T15:07:25.306903Z",
+                "sha256": "bf55779badeaadc751f7727befefc47e2ce8abf28ea82a355f15150246cf8d8d",
+                "localizador": {
+                  "tipo": "requisito",
+                  "valor": "/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/div[1]/main[1]/div[1]/div[1]/article[1]/ul[1]/li[1] (línea 231, columna 1)"
+                },
+                "fragmento": "A Claude account on any plan (Free, Pro, Max, Team, or Enterprise)"
+              }
+            ],
+            "discrepancias": [],
+            "revision_requerida": false
+          },
+          {
+            "id": "claude-101-requisito-2",
+            "competencia": null,
+            "dimension": "requisito_entrada",
+            "descripcion": "No prior experience with Claude or other AI assistants needed",
+            "nivel": {
+              "escala": null,
+              "valor": null
+            },
+            "origen": "extraccion_oficial",
+            "estado": "extraida",
+            "metodo": {
+              "nombre": "extraccion-literal-de-bloque-academy",
+              "version": "1"
+            },
+            "revision": null,
+            "evidencias": [
+              {
+                "url": "https://academy.claude.com/courses/claude-101",
+                "capturado_utc": "2026-10-23T15:07:25.306903Z",
+                "sha256": "bf55779badeaadc751f7727befefc47e2ce8abf28ea82a355f15150246cf8d8d",
+                "localizador": {
+                  "tipo": "requisito",
+                  "valor": "/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/div[1]/main[1]/div[1]/div[1]/article[1]/ul[1]/li[2] (línea 232, columna 1)"
+                },
+                "fragmento": "No prior experience with Claude or other AI assistants needed"
+              }
+            ],
+            "discrepancias": [],
+            "revision_requerida": false
+          },
+          {
+            "id": "claude-101-requisito-3",
+            "competencia": null,
+            "dimension": "requisito_entrada",
+            "descripcion": "A few features covered here require a paid plan to try hands-on: Cowork and Research (Pro, Max, Team, and Enterprise plans) and Enterprise Search (Team and Enterprise plans). On Team and Enterprise, your admin controls whether designs, decks, and documents are available. Each lesson notes where this applies.",
+            "nivel": {
+              "escala": null,
+              "valor": null
+            },
+            "origen": "extraccion_oficial",
+            "estado": "extraida",
+            "metodo": {
+              "nombre": "extraccion-literal-de-bloque-academy",
+              "version": "1"
+            },
+            "revision": null,
+            "evidencias": [
+              {
+                "url": "https://academy.claude.com/courses/claude-101",
+                "capturado_utc": "2026-10-23T15:07:25.306903Z",
+                "sha256": "bf55779badeaadc751f7727befefc47e2ce8abf28ea82a355f15150246cf8d8d",
+                "localizador": {
+                  "tipo": "requisito",
+                  "valor": "/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/div[1]/main[1]/div[1]/div[1]/article[1]/ul[1]/li[3] (línea 233, columna 1)"
+                },
+                "fragmento": "A few features covered here require a paid plan to try hands-on: Cowork and Research (Pro, Max, Team, and Enterprise plans) and Enterprise Search (Team and Enterprise plans). On Team and Enterprise, your admin controls whether designs, decks, and documents are available. Each lesson notes where this applies."
+              }
+            ],
+            "discrepancias": [],
+            "revision_requerida": false
+          }
+        ]
+      },
+      "requisitos": "publicados",
+      "cobertura": [
+        {
+          "criterio": "tarea_sencilla",
+          "afirmaciones": ["claude-101-objetivo-4"],
+          "justificacion": {
+            "es": "El objetivo declara crear y compartir diseños, presentaciones y documentos como artefactos; no acredita dominio ni acceso a funciones de pago.",
+            "ca": "L’objectiu declara crear i compartir dissenys, presentacions i documents com a artefactes; no acredita domini ni accés a funcions de pagament."
+          },
+          "via": null
+        },
+        {
+          "criterio": "mejorar_instrucciones",
+          "afirmaciones": ["claude-101-objetivo-2"],
+          "justificacion": {
+            "es": "El objetivo exige escribir instrucciones claras y refinarlas cuando el resultado no responde a lo esperado.",
+            "ca": "L’objectiu exigeix escriure instruccions clares i refinar-les quan el resultat no respon al que s’espera."
+          },
+          "via": null
+        }
+      ],
+      "revision": {
+        "tipo": "automatizada",
+        "referencia": "revision-academy-objetivos-20261023",
+        "metodo": {
+          "nombre": "contraste-de-bloques-completos-y-contexto",
+          "version": "1"
+        },
+        "fecha_utc": "2026-10-23T19:07:13.027342Z"
+      },
+      "firmas_semanticas": {
+        "claude-101-objetivo-1": ["edcafbdb31ca6a716c754dbbde9a7f7c5addcc652c84b27e04fb4d01d132fd6a"],
+        "claude-101-objetivo-2": ["df35a1a28db5a57c3f696894e9540d8b1bed4c2118aff27912fd48b6d0f9294e"],
+        "claude-101-objetivo-3": ["ee9c61ac85c093791af210e27f96ec9b34d63b5ad9a9bd6fb41b2e14ac93f7f8"],
+        "claude-101-objetivo-4": ["18692e366a12c61085f5473b7f8e752d914486314dd84e1841d004952a893efd"],
+        "claude-101-objetivo-5": ["df3f179d8f620588c5d497a6d4810e225459a01d14a2c388e7b8e4c29f018e71"],
+        "claude-101-objetivo-6": ["cdb70326b42021ce3a98f9ded6e87f12334bd1ba92b4c7bd57e5135eaf1461a5"],
+        "claude-101-requisito-1": ["3a35b4a1950e727ef496a22750c9b54709ba7829e702167894ab2e77358348cc"],
+        "claude-101-requisito-2": ["2b24a796561d7e9ec76b07b7a305c7b8829a0680cb096de1e9195bd0504261ff"],
+        "claude-101-requisito-3": ["e77d68dea56d913286579138fd9751e8805bb4b2dd1d79cd25df55ec7bac7827"]
+      }
+    },
+    {
+      "programa_id": "claude-academy:introduction-to-claude-tag",
+      "aprendizaje": {
+        "schema_version": 1,
+        "registro": {
+          "id": "registro-compartido-formacion",
+          "version": "digcomp-3.0-captura-f282a4f76891",
+          "sha256": "a60ff6c94e71ead18c26186e63faf5f244866d3497799f73f8318df9ffa8315a"
+        },
+        "contenido_observado": true,
+        "afirmaciones": [
+          {
+            "id": "introduction-to-claude-tag-objetivo-1",
+            "competencia": null,
+            "dimension": "resultado_previsto",
+            "descripcion": "Tag Claude in a channel and get an answer that draws on your organization's existing context",
+            "nivel": {
+              "escala": null,
+              "valor": null
+            },
+            "origen": "extraccion_oficial",
+            "estado": "extraida",
+            "metodo": {
+              "nombre": "extraccion-literal-de-bloque-academy",
+              "version": "1"
+            },
+            "revision": null,
+            "evidencias": [
+              {
+                "url": "https://academy.claude.com/courses/introduction-to-claude-tag",
+                "capturado_utc": "2026-10-23T15:08:06.537187Z",
+                "sha256": "3144fdecd26c434e56f488676dd3726a655aa613abe206a424bc0a95b7fe75c7",
+                "localizador": {
+                  "tipo": "objetivo",
+                  "valor": "/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/div[1]/main[1]/div[1]/div[1]/div[1]/ul[1]/li[1] (línea 228, columna 22325)"
+                },
+                "fragmento": "Tag Claude in a channel and get an answer that draws on your organization's existing context"
+              }
+            ],
+            "discrepancias": [],
+            "revision_requerida": false
+          },
+          {
+            "id": "introduction-to-claude-tag-objetivo-2",
+            "competencia": null,
+            "dimension": "resultado_previsto",
+            "descripcion": "Ask Claude anywhere with confidence, knowing when a DM, a private channel, or a public channel fits",
+            "nivel": {
+              "escala": null,
+              "valor": null
+            },
+            "origen": "extraccion_oficial",
+            "estado": "extraida",
+            "metodo": {
+              "nombre": "extraccion-literal-de-bloque-academy",
+              "version": "1"
+            },
+            "revision": null,
+            "evidencias": [
+              {
+                "url": "https://academy.claude.com/courses/introduction-to-claude-tag",
+                "capturado_utc": "2026-10-23T15:08:06.537187Z",
+                "sha256": "3144fdecd26c434e56f488676dd3726a655aa613abe206a424bc0a95b7fe75c7",
+                "localizador": {
+                  "tipo": "objetivo",
+                  "valor": "/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/div[1]/main[1]/div[1]/div[1]/div[1]/ul[1]/li[2] (línea 228, columna 22726)"
+                },
+                "fragmento": "Ask Claude anywhere with confidence, knowing when a DM, a private channel, or a public channel fits"
+              }
+            ],
+            "discrepancias": [],
+            "revision_requerida": false
+          },
+          {
+            "id": "introduction-to-claude-tag-objetivo-3",
+            "competencia": null,
+            "dimension": "resultado_previsto",
+            "descripcion": "Hand Claude one whole piece of work and check the result",
+            "nivel": {
+              "escala": null,
+              "valor": null
+            },
+            "origen": "extraccion_oficial",
+            "estado": "extraida",
+            "metodo": {
+              "nombre": "extraccion-literal-de-bloque-academy",
+              "version": "1"
+            },
+            "revision": null,
+            "evidencias": [
+              {
+                "url": "https://academy.claude.com/courses/introduction-to-claude-tag",
+                "capturado_utc": "2026-10-23T15:08:06.537187Z",
+                "sha256": "3144fdecd26c434e56f488676dd3726a655aa613abe206a424bc0a95b7fe75c7",
+                "localizador": {
+                  "tipo": "objetivo",
+                  "valor": "/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/div[1]/main[1]/div[1]/div[1]/div[1]/ul[1]/li[3] (línea 228, columna 23129)"
+                },
+                "fragmento": "Hand Claude one whole piece of work and check the result"
+              }
+            ],
+            "discrepancias": [],
+            "revision_requerida": false
+          },
+          {
+            "id": "introduction-to-claude-tag-objetivo-4",
+            "competencia": null,
+            "dimension": "resultado_previsto",
+            "descripcion": "Correct Claude in a way that sticks for everyone in the channel",
+            "nivel": {
+              "escala": null,
+              "valor": null
+            },
+            "origen": "extraccion_oficial",
+            "estado": "extraida",
+            "metodo": {
+              "nombre": "extraccion-literal-de-bloque-academy",
+              "version": "1"
+            },
+            "revision": null,
+            "evidencias": [
+              {
+                "url": "https://academy.claude.com/courses/introduction-to-claude-tag",
+                "capturado_utc": "2026-10-23T15:08:06.537187Z",
+                "sha256": "3144fdecd26c434e56f488676dd3726a655aa613abe206a424bc0a95b7fe75c7",
+                "localizador": {
+                  "tipo": "objetivo",
+                  "valor": "/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/div[1]/main[1]/div[1]/div[1]/div[1]/ul[1]/li[4] (línea 228, columna 23489)"
+                },
+                "fragmento": "Correct Claude in a way that sticks for everyone in the channel"
+              }
+            ],
+            "discrepancias": [],
+            "revision_requerida": false
+          },
+          {
+            "id": "introduction-to-claude-tag-objetivo-5",
+            "competencia": null,
+            "dimension": "resultado_previsto",
+            "descripcion": "Have one piece of work run without you, on a schedule or as a reply Claude offers without being tagged",
+            "nivel": {
+              "escala": null,
+              "valor": null
+            },
+            "origen": "extraccion_oficial",
+            "estado": "extraida",
+            "metodo": {
+              "nombre": "extraccion-literal-de-bloque-academy",
+              "version": "1"
+            },
+            "revision": null,
+            "evidencias": [
+              {
+                "url": "https://academy.claude.com/courses/introduction-to-claude-tag",
+                "capturado_utc": "2026-10-23T15:08:06.537187Z",
+                "sha256": "3144fdecd26c434e56f488676dd3726a655aa613abe206a424bc0a95b7fe75c7",
+                "localizador": {
+                  "tipo": "objetivo",
+                  "valor": "/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/div[1]/main[1]/div[1]/div[1]/div[1]/ul[1]/li[5] (línea 228, columna 23856)"
+                },
+                "fragmento": "Have one piece of work run without you, on a schedule or as a reply Claude offers without being tagged"
+              }
+            ],
+            "discrepancias": [],
+            "revision_requerida": false
+          },
+          {
+            "id": "introduction-to-claude-tag-objetivo-6",
+            "competencia": null,
+            "dimension": "resultado_previsto",
+            "descripcion": "Give Claude a clear job in at least one channel, and review how it is going with your team",
+            "nivel": {
+              "escala": null,
+              "valor": null
+            },
+            "origen": "extraccion_oficial",
+            "estado": "extraida",
+            "metodo": {
+              "nombre": "extraccion-literal-de-bloque-academy",
+              "version": "1"
+            },
+            "revision": null,
+            "evidencias": [
+              {
+                "url": "https://academy.claude.com/courses/introduction-to-claude-tag",
+                "capturado_utc": "2026-10-23T15:08:06.537187Z",
+                "sha256": "3144fdecd26c434e56f488676dd3726a655aa613abe206a424bc0a95b7fe75c7",
+                "localizador": {
+                  "tipo": "objetivo",
+                  "valor": "/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/div[1]/main[1]/div[1]/div[1]/div[1]/ul[1]/li[6] (línea 228, columna 24262)"
+                },
+                "fragmento": "Give Claude a clear job in at least one channel, and review how it is going with your team"
+              }
+            ],
+            "discrepancias": [],
+            "revision_requerida": false
+          },
+          {
+            "id": "introduction-to-claude-tag-requisito-1",
+            "competencia": null,
+            "dimension": "requisito_entrada",
+            "descripcion": "Claude Tag is installed in your team's workspace, so it can join channels there.",
+            "nivel": {
+              "escala": null,
+              "valor": null
+            },
+            "origen": "extraccion_oficial",
+            "estado": "extraida",
+            "metodo": {
+              "nombre": "extraccion-literal-de-bloque-academy",
+              "version": "1"
+            },
+            "revision": null,
+            "evidencias": [
+              {
+                "url": "https://academy.claude.com/courses/introduction-to-claude-tag",
+                "capturado_utc": "2026-10-23T15:08:06.537187Z",
+                "sha256": "3144fdecd26c434e56f488676dd3726a655aa613abe206a424bc0a95b7fe75c7",
+                "localizador": {
+                  "tipo": "requisito",
+                  "valor": "/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/div[1]/main[1]/div[1]/div[1]/article[1]/ul[1]/li[1] (línea 232, columna 1)"
+                },
+                "fragmento": "Claude Tag is installed in your team's workspace, so it can join channels there."
+              }
+            ],
+            "discrepancias": [],
+            "revision_requerida": false
+          },
+          {
+            "id": "introduction-to-claude-tag-requisito-2",
+            "competencia": null,
+            "dimension": "requisito_entrada",
+            "descripcion": "You have access to Claude Tag in one or more channels. Some organizations limit it to certain roles(opens in new tab), so if tagging it returns an access message, ask your admin.",
+            "nivel": {
+              "escala": null,
+              "valor": null
+            },
+            "origen": "extraccion_oficial",
+            "estado": "extraida",
+            "metodo": {
+              "nombre": "extraccion-literal-de-bloque-academy",
+              "version": "1"
+            },
+            "revision": null,
+            "evidencias": [
+              {
+                "url": "https://academy.claude.com/courses/introduction-to-claude-tag",
+                "capturado_utc": "2026-10-23T15:08:06.537187Z",
+                "sha256": "3144fdecd26c434e56f488676dd3726a655aa613abe206a424bc0a95b7fe75c7",
+                "localizador": {
+                  "tipo": "requisito",
+                  "valor": "/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/div[1]/main[1]/div[1]/div[1]/article[1]/ul[1]/li[2] (línea 233, columna 1)"
+                },
+                "fragmento": "You have access to Claude Tag in one or more channels. Some organizations limit it to certain roles(opens in new tab), so if tagging it returns an access message, ask your admin."
+              }
+            ],
+            "discrepancias": [],
+            "revision_requerida": false
+          },
+          {
+            "id": "introduction-to-claude-tag-requisito-3",
+            "competencia": null,
+            "dimension": "requisito_entrada",
+            "descripcion": "Helpful, not required: you have used Claude in a chat.",
+            "nivel": {
+              "escala": null,
+              "valor": null
+            },
+            "origen": "extraccion_oficial",
+            "estado": "extraida",
+            "metodo": {
+              "nombre": "extraccion-literal-de-bloque-academy",
+              "version": "1"
+            },
+            "revision": null,
+            "evidencias": [
+              {
+                "url": "https://academy.claude.com/courses/introduction-to-claude-tag",
+                "capturado_utc": "2026-10-23T15:08:06.537187Z",
+                "sha256": "3144fdecd26c434e56f488676dd3726a655aa613abe206a424bc0a95b7fe75c7",
+                "localizador": {
+                  "tipo": "requisito",
+                  "valor": "/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/div[1]/main[1]/div[1]/div[1]/article[1]/ul[1]/li[3] (línea 234, columna 1)"
+                },
+                "fragmento": "Helpful, not required: you have used Claude in a chat."
+              }
+            ],
+            "discrepancias": [],
+            "revision_requerida": false
+          }
+        ]
+      },
+      "requisitos": "publicados",
+      "cobertura": [
+        {
+          "criterio": "tarea_real",
+          "afirmaciones": ["introduction-to-claude-tag-objetivo-3"],
+          "justificacion": {
+            "es": "El objetivo declara delegar una pieza completa de trabajo y comprobar su resultado. Requiere el workspace y los permisos publicados; no acredita un procedimiento avanzado.",
+            "ca": "L’objectiu declara delegar una peça completa de treball i comprovar-ne el resultat. Requereix l’espai de treball i els permisos publicats; no acredita un procediment avançat."
+          },
+          "via": null
+        }
+      ],
+      "revision": {
+        "tipo": "automatizada",
+        "referencia": "revision-academy-objetivos-20261023",
+        "metodo": {
+          "nombre": "contraste-de-bloques-completos-y-contexto",
+          "version": "1"
+        },
+        "fecha_utc": "2026-10-23T19:07:13.032544Z"
+      },
+      "firmas_semanticas": {
+        "introduction-to-claude-tag-objetivo-1": ["5c6e44e1047c699e667f611b59adddf6438749bc00b5bc1e4eb5e252dac21ef4"],
+        "introduction-to-claude-tag-objetivo-2": ["b9c6dab65f7d8611fd3e2e5b1aa1f6061adca65dfd31c5778a3be529bd1148f2"],
+        "introduction-to-claude-tag-objetivo-3": ["265a58fe266fb6d340786170c69b255c5cb838532561cdd28c510d220cb215a8"],
+        "introduction-to-claude-tag-objetivo-4": ["db9697ec6afb97b52525f26a57e0d38b60c92d87faecde36857e655a87c734a2"],
+        "introduction-to-claude-tag-objetivo-5": ["a53ae6e192e06ada8c17c64b52c1a33a1a68b0cd70032794aedf4ce12b94a79a"],
+        "introduction-to-claude-tag-objetivo-6": ["927339a035153340ace78fc5c63cf180722af1c99145a0463af2cd7e9d8057d8"],
+        "introduction-to-claude-tag-requisito-1": ["b292c63b96e4f3704f49918ab33bcf3f46f5f9fde41dec77a4d469d19d78b08c"],
+        "introduction-to-claude-tag-requisito-2": ["6dd68298552a87400f1d32fcbd8c148177dd68f00b7b81cfe6dd316fd5b883a4"],
+        "introduction-to-claude-tag-requisito-3": ["0e2c3f6028006bb28dbb2fd2641cbeec6dae12b2839117da4cdd4279ef883ea1"]
+      }
+    },
+    {
+      "programa_id": "hp-life:355:es",
+      "aprendizaje": {
+        "schema_version": 1,
+        "registro": {
+          "id": "registro-compartido-formacion",
+          "version": "digcomp-3.0-captura-f282a4f76891",
+          "sha256": "a60ff6c94e71ead18c26186e63faf5f244866d3497799f73f8318df9ffa8315a"
+        },
+        "contenido_observado": true,
+        "afirmaciones": [
+          {
+            "id": "hp-life-355-es-objetivo-1",
+            "competencia": null,
+            "dimension": "resultado_previsto",
+            "descripcion": "Examinar los beneficios y desafíos cuando los enfoques son basados en datos para las empresas.",
+            "nivel": {
+              "escala": null,
+              "valor": null
+            },
+            "origen": "extraccion_oficial",
+            "estado": "extraida",
+            "metodo": {
+              "nombre": "extraccion-literal-de-bloques-publicados",
+              "version": "1"
+            },
+            "revision": null,
+            "evidencias": [
+              {
+                "url": "https://www.life-global.org/es/course/355-ciencia-y-an%C3%A1lisis-de-datos",
+                "capturado_utc": "2026-10-23T11:25:28.384282Z",
+                "sha256": "a28821eb93517a710f3bb9aecb887f1b658b6f4af9541bcbc2118df8b610bd38",
+                "localizador": {
+                  "tipo": "objetivo",
+                  "valor": "__NEXT_DATA__/props/pageProps/initialCourseData/body/bloque[4]"
+                },
+                "fragmento": "Examinar los beneficios y desafíos cuando los enfoques son basados en datos para las empresas."
+              }
+            ],
+            "discrepancias": [],
+            "revision_requerida": false
+          },
+          {
+            "id": "hp-life-355-es-objetivo-2",
+            "competencia": null,
+            "dimension": "resultado_previsto",
+            "descripcion": "Considerar estrategias para aprovechar los datos y así obtener una ventaja competitiva en diversos sectores.",
+            "nivel": {
+              "escala": null,
+              "valor": null
+            },
+            "origen": "extraccion_oficial",
+            "estado": "extraida",
+            "metodo": {
+              "nombre": "extraccion-literal-de-bloques-publicados",
+              "version": "1"
+            },
+            "revision": null,
+            "evidencias": [
+              {
+                "url": "https://www.life-global.org/es/course/355-ciencia-y-an%C3%A1lisis-de-datos",
+                "capturado_utc": "2026-10-23T11:25:28.384282Z",
+                "sha256": "a28821eb93517a710f3bb9aecb887f1b658b6f4af9541bcbc2118df8b610bd38",
+                "localizador": {
+                  "tipo": "objetivo",
+                  "valor": "__NEXT_DATA__/props/pageProps/initialCourseData/body/bloque[5]"
+                },
+                "fragmento": "Considerar estrategias para aprovechar los datos y así obtener una ventaja competitiva en diversos sectores."
+              }
+            ],
+            "discrepancias": [],
+            "revision_requerida": false
+          },
+          {
+            "id": "hp-life-355-es-objetivo-3",
+            "competencia": null,
+            "dimension": "resultado_previsto",
+            "descripcion": "Reconocer las habilidades y herramientas fundamentales necesarias para seguir una carrera en la ciencia de datos y el análisis de datos.",
+            "nivel": {
+              "escala": null,
+              "valor": null
+            },
+            "origen": "extraccion_oficial",
+            "estado": "extraida",
+            "metodo": {
+              "nombre": "extraccion-literal-de-bloques-publicados",
+              "version": "1"
+            },
+            "revision": null,
+            "evidencias": [
+              {
+                "url": "https://www.life-global.org/es/course/355-ciencia-y-an%C3%A1lisis-de-datos",
+                "capturado_utc": "2026-10-23T11:25:28.384282Z",
+                "sha256": "a28821eb93517a710f3bb9aecb887f1b658b6f4af9541bcbc2118df8b610bd38",
+                "localizador": {
+                  "tipo": "objetivo",
+                  "valor": "__NEXT_DATA__/props/pageProps/initialCourseData/body/bloque[6]"
+                },
+                "fragmento": "Reconocer las habilidades y herramientas fundamentales necesarias para seguir una carrera en la ciencia de datos y el análisis de datos."
+              }
+            ],
+            "discrepancias": [],
+            "revision_requerida": false
+          },
+          {
+            "id": "hp-life-355-es-objetivo-4",
+            "competencia": null,
+            "dimension": "resultado_previsto",
+            "descripcion": "Definir el aprendizaje automático y la inteligencia artificial y describir su papel en la remodelación de nuestro enfoque de los datos y la tecnología.",
+            "nivel": {
+              "escala": null,
+              "valor": null
+            },
+            "origen": "extraccion_oficial",
+            "estado": "extraida",
+            "metodo": {
+              "nombre": "extraccion-literal-de-bloques-publicados",
+              "version": "1"
+            },
+            "revision": null,
+            "evidencias": [
+              {
+                "url": "https://www.life-global.org/es/course/355-ciencia-y-an%C3%A1lisis-de-datos",
+                "capturado_utc": "2026-10-23T11:25:28.384282Z",
+                "sha256": "a28821eb93517a710f3bb9aecb887f1b658b6f4af9541bcbc2118df8b610bd38",
+                "localizador": {
+                  "tipo": "objetivo",
+                  "valor": "__NEXT_DATA__/props/pageProps/initialCourseData/body/bloque[7]"
+                },
+                "fragmento": "Definir el aprendizaje automático y la inteligencia artificial y describir su papel en la remodelación de nuestro enfoque de los datos y la tecnología."
+              }
+            ],
+            "discrepancias": [],
+            "revision_requerida": false
+          },
+          {
+            "id": "hp-life-355-es-objetivo-5",
+            "competencia": null,
+            "dimension": "resultado_previsto",
+            "descripcion": "Explorar la relación entre los datos y la tecnología e identificar las posibles implicaciones éticas y sociales que cada uno de ellos tiene en la Era Digital.",
+            "nivel": {
+              "escala": null,
+              "valor": null
+            },
+            "origen": "extraccion_oficial",
+            "estado": "extraida",
+            "metodo": {
+              "nombre": "extraccion-literal-de-bloques-publicados",
+              "version": "1"
+            },
+            "revision": null,
+            "evidencias": [
+              {
+                "url": "https://www.life-global.org/es/course/355-ciencia-y-an%C3%A1lisis-de-datos",
+                "capturado_utc": "2026-10-23T11:25:28.384282Z",
+                "sha256": "a28821eb93517a710f3bb9aecb887f1b658b6f4af9541bcbc2118df8b610bd38",
+                "localizador": {
+                  "tipo": "objetivo",
+                  "valor": "__NEXT_DATA__/props/pageProps/initialCourseData/body/bloque[8]"
+                },
+                "fragmento": "Explorar la relación entre los datos y la tecnología e identificar las posibles implicaciones éticas y sociales que cada uno de ellos tiene en la Era Digital."
+              }
+            ],
+            "discrepancias": [],
+            "revision_requerida": false
+          },
+          {
+            "id": "hp-life-355-es-objetivo-6",
+            "competencia": null,
+            "dimension": "resultado_previsto",
+            "descripcion": "Comprender la importancia de las estrategias de ciberseguridad y sus aplicaciones en la protección de datos.",
+            "nivel": {
+              "escala": null,
+              "valor": null
+            },
+            "origen": "extraccion_oficial",
+            "estado": "extraida",
+            "metodo": {
+              "nombre": "extraccion-literal-de-bloques-publicados",
+              "version": "1"
+            },
+            "revision": null,
+            "evidencias": [
+              {
+                "url": "https://www.life-global.org/es/course/355-ciencia-y-an%C3%A1lisis-de-datos",
+                "capturado_utc": "2026-10-23T11:25:28.384282Z",
+                "sha256": "a28821eb93517a710f3bb9aecb887f1b658b6f4af9541bcbc2118df8b610bd38",
+                "localizador": {
+                  "tipo": "objetivo",
+                  "valor": "__NEXT_DATA__/props/pageProps/initialCourseData/body/bloque[9]"
+                },
+                "fragmento": "Comprender la importancia de las estrategias de ciberseguridad y sus aplicaciones en la protección de datos."
+              }
+            ],
+            "discrepancias": [],
+            "revision_requerida": false
+          }
+        ]
+      },
+      "requisitos": "no_publicados",
+      "cobertura": [],
+      "revision": {
+        "tipo": "automatizada",
+        "referencia": "revision-temarios-admitidos-ampliacion-20261023",
+        "metodo": {
+          "nombre": "contraste-literal-de-bloques-condiciones-y-criterios",
+          "version": "1"
+        },
+        "fecha_utc": "2026-10-23T21:48:21Z"
+      },
+      "firmas_semanticas": {
+        "hp-life-355-es-objetivo-1": ["027926cfe38eebed36ea7ca5813a916db7cef8fcc0e670696f27542dfa1d750f"],
+        "hp-life-355-es-objetivo-2": ["a1f09f74a09ad059f40dda175137587508475ebf929b27dd1d063ade775473df"],
+        "hp-life-355-es-objetivo-3": ["1c1472518e3e1dc8943dafacc5a6f1655dd7a511239aa7758367fa5a375b6f8b"],
+        "hp-life-355-es-objetivo-4": ["7ea562378914fb3249160ca638aae4958438f9482ef3ac4cfb5c85af9edb3bcb"],
+        "hp-life-355-es-objetivo-5": ["8ec246a46c4236732521cb58017ae8248a4365ae529c2eacc810fb4d61d73fab"],
+        "hp-life-355-es-objetivo-6": ["2b4385b18b1a3894cfbb59c39471b24f8766129f530fc89e1085ed775def843d"]
+      }
+    },
+    {
+      "programa_id": "hp-life:375:es",
+      "aprendizaje": {
+        "schema_version": 1,
+        "registro": {
+          "id": "registro-compartido-formacion",
+          "version": "digcomp-3.0-captura-f282a4f76891",
+          "sha256": "a60ff6c94e71ead18c26186e63faf5f244866d3497799f73f8318df9ffa8315a"
+        },
+        "contenido_observado": true,
+        "afirmaciones": [
+          {
+            "id": "hp-life-375-es-objetivo-1",
+            "competencia": null,
+            "dimension": "resultado_previsto",
+            "descripcion": "Identificar las amenazas típicas para la información y los datos en línea.",
+            "nivel": {
+              "escala": null,
+              "valor": null
+            },
+            "origen": "extraccion_oficial",
+            "estado": "extraida",
+            "metodo": {
+              "nombre": "extraccion-literal-de-bloques-publicados",
+              "version": "1"
+            },
+            "revision": null,
+            "evidencias": [
+              {
+                "url": "https://www.life-global.org/es/course/375-introducci%C3%B3n-al-conocimiento-de-la-ciberseguridad",
+                "capturado_utc": "2026-10-23T11:25:33.740602Z",
+                "sha256": "45a3d3dbc05b79a12f269a51406f24249f77311debcfbc5a9b2d547ef70f1e02",
+                "localizador": {
+                  "tipo": "objetivo",
+                  "valor": "__NEXT_DATA__/props/pageProps/initialCourseData/body/bloque[4]"
+                },
+                "fragmento": "Identificar las amenazas típicas para la información y los datos en línea."
+              }
+            ],
+            "discrepancias": [],
+            "revision_requerida": false
+          },
+          {
+            "id": "hp-life-375-es-objetivo-2",
+            "competencia": null,
+            "dimension": "resultado_previsto",
+            "descripcion": "Implementar medidas básicas para proteger sus datos delicados.",
+            "nivel": {
+              "escala": null,
+              "valor": null
+            },
+            "origen": "extraccion_oficial",
+            "estado": "extraida",
+            "metodo": {
+              "nombre": "extraccion-literal-de-bloques-publicados",
+              "version": "1"
+            },
+            "revision": null,
+            "evidencias": [
+              {
+                "url": "https://www.life-global.org/es/course/375-introducci%C3%B3n-al-conocimiento-de-la-ciberseguridad",
+                "capturado_utc": "2026-10-23T11:25:33.740602Z",
+                "sha256": "45a3d3dbc05b79a12f269a51406f24249f77311debcfbc5a9b2d547ef70f1e02",
+                "localizador": {
+                  "tipo": "objetivo",
+                  "valor": "__NEXT_DATA__/props/pageProps/initialCourseData/body/bloque[5]"
+                },
+                "fragmento": "Implementar medidas básicas para proteger sus datos delicados."
+              }
+            ],
+            "discrepancias": [],
+            "revision_requerida": false
+          },
+          {
+            "id": "hp-life-375-es-objetivo-3",
+            "competencia": null,
+            "dimension": "resultado_previsto",
+            "descripcion": "Comprender los términos más utilizados sobre ciberseguridad.",
+            "nivel": {
+              "escala": null,
+              "valor": null
+            },
+            "origen": "extraccion_oficial",
+            "estado": "extraida",
+            "metodo": {
+              "nombre": "extraccion-literal-de-bloques-publicados",
+              "version": "1"
+            },
+            "revision": null,
+            "evidencias": [
+              {
+                "url": "https://www.life-global.org/es/course/375-introducci%C3%B3n-al-conocimiento-de-la-ciberseguridad",
+                "capturado_utc": "2026-10-23T11:25:33.740602Z",
+                "sha256": "45a3d3dbc05b79a12f269a51406f24249f77311debcfbc5a9b2d547ef70f1e02",
+                "localizador": {
+                  "tipo": "objetivo",
+                  "valor": "__NEXT_DATA__/props/pageProps/initialCourseData/body/bloque[6]"
+                },
+                "fragmento": "Comprender los términos más utilizados sobre ciberseguridad."
+              }
+            ],
+            "discrepancias": [],
+            "revision_requerida": false
+          }
+        ]
+      },
+      "requisitos": "no_publicados",
+      "cobertura": [
+        {
+          "criterio": "privacidad",
+          "afirmaciones": ["hp-life-375-es-objetivo-2"],
+          "justificacion": {
+            "es": "El objetivo exige implementar medidas básicas para proteger datos delicados; no acredita realizar una tarea con IA.",
+            "ca": "L’objectiu exigeix implementar mesures bàsiques per protegir dades sensibles; no acredita fer una tasca amb IA."
+          },
+          "via": null
+        }
+      ],
+      "revision": {
+        "tipo": "automatizada",
+        "referencia": "revision-temarios-admitidos-ampliacion-20261023",
+        "metodo": {
+          "nombre": "contraste-literal-de-bloques-condiciones-y-criterios",
+          "version": "1"
+        },
+        "fecha_utc": "2026-10-23T21:48:21Z"
+      },
+      "firmas_semanticas": {
+        "hp-life-375-es-objetivo-1": ["7faac8e9895e2469721d929ad21daaa1044b211c52b1f325b64812cc47eb2c7c"],
+        "hp-life-375-es-objetivo-2": ["91116356927aa30333ee33fb218d65e2f62a684291dc07782790553fc8cc5ca8"],
+        "hp-life-375-es-objetivo-3": ["7498f10011f041e8e7a53be432340af26170928ec3f569b39f716fd363167cd9"]
+      }
+    },
+    {
+      "programa_id": "hp-life:452:es",
+      "aprendizaje": {
+        "schema_version": 1,
+        "registro": {
+          "id": "registro-compartido-formacion",
+          "version": "digcomp-3.0-captura-f282a4f76891",
+          "sha256": "a60ff6c94e71ead18c26186e63faf5f244866d3497799f73f8318df9ffa8315a"
+        },
+        "contenido_observado": true,
+        "afirmaciones": [
+          {
+            "id": "hp-life-452-es-objetivo-1",
+            "competencia": null,
+            "dimension": "resultado_previsto",
+            "descripcion": "Conocer los componentes clave de un plan estratégico: visión, misión, metas y objetivos, prioridades estratégicas y acciones.",
+            "nivel": {
+              "escala": null,
+              "valor": null
+            },
+            "origen": "extraccion_oficial",
+            "estado": "extraida",
+            "metodo": {
+              "nombre": "extraccion-literal-de-bloques-publicados",
+              "version": "1"
+            },
+            "revision": null,
+            "evidencias": [
+              {
+                "url": "https://www.life-global.org/es/course/452-la-planificaci%C3%B3n-estrat%C3%A9gica-en-la-era-de-la-ia",
+                "capturado_utc": "2026-10-23T11:25:55.983556Z",
+                "sha256": "ba86f7aa11a4070b1ce6588e13414c422ecd9f8ea1f8c94e971fb4d98d11641e",
+                "localizador": {
+                  "tipo": "objetivo",
+                  "valor": "__NEXT_DATA__/props/pageProps/initialCourseData/body/bloque[4]"
+                },
+                "fragmento": "Conocer los componentes clave de un plan estratégico: visión, misión, metas y objetivos, prioridades estratégicas y acciones."
+              }
+            ],
+            "discrepancias": [],
+            "revision_requerida": false
+          },
+          {
+            "id": "hp-life-452-es-objetivo-2",
+            "competencia": null,
+            "dimension": "resultado_previsto",
+            "descripcion": "Descubrir cómo usar técnicas como el análisis FODA, los objetivos SMART, Ahora / Después / Más adelante y Zoom In / Zoom Out para fortalecer tu planificación y ejecución.",
+            "nivel": {
+              "escala": null,
+              "valor": null
+            },
+            "origen": "extraccion_oficial",
+            "estado": "extraida",
+            "metodo": {
+              "nombre": "extraccion-literal-de-bloques-publicados",
+              "version": "1"
+            },
+            "revision": null,
+            "evidencias": [
+              {
+                "url": "https://www.life-global.org/es/course/452-la-planificaci%C3%B3n-estrat%C3%A9gica-en-la-era-de-la-ia",
+                "capturado_utc": "2026-10-23T11:25:55.983556Z",
+                "sha256": "ba86f7aa11a4070b1ce6588e13414c422ecd9f8ea1f8c94e971fb4d98d11641e",
+                "localizador": {
+                  "tipo": "objetivo",
+                  "valor": "__NEXT_DATA__/props/pageProps/initialCourseData/body/bloque[5]"
+                },
+                "fragmento": "Descubrir cómo usar técnicas como el análisis FODA, los objetivos SMART, Ahora / Después / Más adelante y Zoom In / Zoom Out para fortalecer tu planificación y ejecución."
+              }
+            ],
+            "discrepancias": [],
+            "revision_requerida": false
+          },
+          {
+            "id": "hp-life-452-es-objetivo-3",
+            "competencia": null,
+            "dimension": "resultado_previsto",
+            "descripcion": "Aprender a evaluar la competencia, los recursos y el riesgo para tomar decisiones estratégicas realistas.",
+            "nivel": {
+              "escala": null,
+              "valor": null
+            },
+            "origen": "extraccion_oficial",
+            "estado": "extraida",
+            "metodo": {
+              "nombre": "extraccion-literal-de-bloques-publicados",
+              "version": "1"
+            },
+            "revision": null,
+            "evidencias": [
+              {
+                "url": "https://www.life-global.org/es/course/452-la-planificaci%C3%B3n-estrat%C3%A9gica-en-la-era-de-la-ia",
+                "capturado_utc": "2026-10-23T11:25:55.983556Z",
+                "sha256": "ba86f7aa11a4070b1ce6588e13414c422ecd9f8ea1f8c94e971fb4d98d11641e",
+                "localizador": {
+                  "tipo": "objetivo",
+                  "valor": "__NEXT_DATA__/props/pageProps/initialCourseData/body/bloque[6]"
+                },
+                "fragmento": "Aprender a evaluar la competencia, los recursos y el riesgo para tomar decisiones estratégicas realistas."
+              }
+            ],
+            "discrepancias": [],
+            "revision_requerida": false
+          },
+          {
+            "id": "hp-life-452-es-objetivo-4",
+            "competencia": null,
+            "dimension": "resultado_previsto",
+            "descripcion": "Explorar cómo utilizar las herramientas de IA de forma inteligente para ampliar tu perspectiva y potenciar el pensamiento estratégico.",
+            "nivel": {
+              "escala": null,
+              "valor": null
+            },
+            "origen": "extraccion_oficial",
+            "estado": "extraida",
+            "metodo": {
+              "nombre": "extraccion-literal-de-bloques-publicados",
+              "version": "1"
+            },
+            "revision": null,
+            "evidencias": [
+              {
+                "url": "https://www.life-global.org/es/course/452-la-planificaci%C3%B3n-estrat%C3%A9gica-en-la-era-de-la-ia",
+                "capturado_utc": "2026-10-23T11:25:55.983556Z",
+                "sha256": "ba86f7aa11a4070b1ce6588e13414c422ecd9f8ea1f8c94e971fb4d98d11641e",
+                "localizador": {
+                  "tipo": "objetivo",
+                  "valor": "__NEXT_DATA__/props/pageProps/initialCourseData/body/bloque[7]"
+                },
+                "fragmento": "Explorar cómo utilizar las herramientas de IA de forma inteligente para ampliar tu perspectiva y potenciar el pensamiento estratégico."
+              }
+            ],
+            "discrepancias": [],
+            "revision_requerida": false
+          }
+        ]
+      },
+      "requisitos": "no_publicados",
+      "cobertura": [],
+      "revision": {
+        "tipo": "automatizada",
+        "referencia": "revision-temarios-admitidos-ampliacion-20261023",
+        "metodo": {
+          "nombre": "contraste-literal-de-bloques-condiciones-y-criterios",
+          "version": "1"
+        },
+        "fecha_utc": "2026-10-23T21:48:21Z"
+      },
+      "firmas_semanticas": {
+        "hp-life-452-es-objetivo-1": ["9a478b79f7d5cf3742c80bf06e5e1673d023a40003c24b2472792ba0715234bd"],
+        "hp-life-452-es-objetivo-2": ["061e0bc361f0575551656e6d2d763a28c2b3ea648128c8da62534fcb8c0e3bb8"],
+        "hp-life-452-es-objetivo-3": ["78fdd13202c9f068ca51b4b0dcdb7040e85d52182239c7db794f2ef332541773"],
+        "hp-life-452-es-objetivo-4": ["a02726d87533cfc256c07e15fe6a444d6d36234e6f7b23c18ec912e5933812cb"]
+      }
+    },
+    {
+      "programa_id": "claude-academy:ai-capabilities-and-limitations",
+      "aprendizaje": {
+        "schema_version": 1,
+        "registro": {
+          "id": "registro-compartido-formacion",
+          "version": "digcomp-3.0-captura-f282a4f76891",
+          "sha256": "a60ff6c94e71ead18c26186e63faf5f244866d3497799f73f8318df9ffa8315a"
+        },
+        "contenido_observado": true,
+        "afirmaciones": [
+          {
+            "id": "claude-academy-ai-capabilities-and-limitations-objetivo-1",
+            "competencia": null,
+            "dimension": "resultado_previsto",
+            "descripcion": "Distinguish generative AI from classification and prediction AI, and frame its four core properties as capability-to-limitation continuums",
+            "nivel": {
+              "escala": null,
+              "valor": null
+            },
+            "origen": "extraccion_oficial",
+            "estado": "extraida",
+            "metodo": {
+              "nombre": "extraccion-literal-de-bloques-publicados",
+              "version": "1"
+            },
+            "revision": null,
+            "evidencias": [
+              {
+                "url": "https://academy.claude.com/courses/ai-capabilities-and-limitations",
+                "capturado_utc": "2026-10-23T15:06:25.080076Z",
+                "sha256": "edda45339d9d67fab48a376b2db76769ef661b357ad849d3363f3af034a248d8",
+                "localizador": {
+                  "tipo": "objetivo",
+                  "valor": "/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/div[1]/main[1]/div[1]/div[1]/div[1]/ul[1]/li[1] (línea 228, columna 23214)"
+                },
+                "fragmento": "Distinguish generative AI from classification and prediction AI, and frame its four core properties as capability-to-limitation continuums"
+              }
+            ],
+            "discrepancias": [],
+            "revision_requerida": false
+          },
+          {
+            "id": "claude-academy-ai-capabilities-and-limitations-objetivo-2",
+            "competencia": null,
+            "dimension": "resultado_previsto",
+            "descripcion": "Explain the two-stage training process (pretraining and fine-tuning) and recognize the behavioral fingerprints it leaves: sycophancy, verbosity, over-caution, and loose confidence calibration",
+            "nivel": {
+              "escala": null,
+              "valor": null
+            },
+            "origen": "extraccion_oficial",
+            "estado": "extraida",
+            "metodo": {
+              "nombre": "extraccion-literal-de-bloques-publicados",
+              "version": "1"
+            },
+            "revision": null,
+            "evidencias": [
+              {
+                "url": "https://academy.claude.com/courses/ai-capabilities-and-limitations",
+                "capturado_utc": "2026-10-23T15:06:25.080076Z",
+                "sha256": "edda45339d9d67fab48a376b2db76769ef661b357ad849d3363f3af034a248d8",
+                "localizador": {
+                  "tipo": "objetivo",
+                  "valor": "/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/div[1]/main[1]/div[1]/div[1]/div[1]/ul[1]/li[2] (línea 228, columna 23656)"
+                },
+                "fragmento": "Explain the two-stage training process (pretraining and fine-tuning) and recognize the behavioral fingerprints it leaves: sycophancy, verbosity, over-caution, and loose confidence calibration"
+              }
+            ],
+            "discrepancias": [],
+            "revision_requerida": false
+          },
+          {
+            "id": "claude-academy-ai-capabilities-and-limitations-objetivo-3",
+            "competencia": null,
+            "dimension": "resultado_previsto",
+            "descripcion": "Explain Next Token Prediction as the core generative mechanism and identify where fabrication concentrates",
+            "nivel": {
+              "escala": null,
+              "valor": null
+            },
+            "origen": "extraccion_oficial",
+            "estado": "extraida",
+            "metodo": {
+              "nombre": "extraccion-literal-de-bloques-publicados",
+              "version": "1"
+            },
+            "revision": null,
+            "evidencias": [
+              {
+                "url": "https://academy.claude.com/courses/ai-capabilities-and-limitations",
+                "capturado_utc": "2026-10-23T15:06:25.080076Z",
+                "sha256": "edda45339d9d67fab48a376b2db76769ef661b357ad849d3363f3af034a248d8",
+                "localizador": {
+                  "tipo": "objetivo",
+                  "valor": "/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/div[1]/main[1]/div[1]/div[1]/div[1]/ul[1]/li[3] (línea 228, columna 24151)"
+                },
+                "fragmento": "Explain Next Token Prediction as the core generative mechanism and identify where fabrication concentrates"
+              }
+            ],
+            "discrepancias": [],
+            "revision_requerida": false
+          },
+          {
+            "id": "claude-academy-ai-capabilities-and-limitations-objetivo-4",
+            "competencia": null,
+            "dimension": "resultado_previsto",
+            "descripcion": "Describe how the knowledge cutoff and uneven training coverage shape what a model knows, and recognize when web search, retrieval, or tool use is the fix",
+            "nivel": {
+              "escala": null,
+              "valor": null
+            },
+            "origen": "extraccion_oficial",
+            "estado": "extraida",
+            "metodo": {
+              "nombre": "extraccion-literal-de-bloques-publicados",
+              "version": "1"
+            },
+            "revision": null,
+            "evidencias": [
+              {
+                "url": "https://academy.claude.com/courses/ai-capabilities-and-limitations",
+                "capturado_utc": "2026-10-23T15:06:25.080076Z",
+                "sha256": "edda45339d9d67fab48a376b2db76769ef661b357ad849d3363f3af034a248d8",
+                "localizador": {
+                  "tipo": "objetivo",
+                  "valor": "/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/div[1]/main[1]/div[1]/div[1]/div[1]/ul[1]/li[4] (línea 228, columna 24561)"
+                },
+                "fragmento": "Describe how the knowledge cutoff and uneven training coverage shape what a model knows, and recognize when web search, retrieval, or tool use is the fix"
+              }
+            ],
+            "discrepancias": [],
+            "revision_requerida": false
+          },
+          {
+            "id": "claude-academy-ai-capabilities-and-limitations-objetivo-5",
+            "competencia": null,
+            "dimension": "resultado_previsto",
+            "descripcion": "Explain the context window as a hard-edged limit and apply context-placement strategies like front-loading, chunking, and re-supplying critical information",
+            "nivel": {
+              "escala": null,
+              "valor": null
+            },
+            "origen": "extraccion_oficial",
+            "estado": "extraida",
+            "metodo": {
+              "nombre": "extraccion-literal-de-bloques-publicados",
+              "version": "1"
+            },
+            "revision": null,
+            "evidencias": [
+              {
+                "url": "https://academy.claude.com/courses/ai-capabilities-and-limitations",
+                "capturado_utc": "2026-10-23T15:06:25.080076Z",
+                "sha256": "edda45339d9d67fab48a376b2db76769ef661b357ad849d3363f3af034a248d8",
+                "localizador": {
+                  "tipo": "objetivo",
+                  "valor": "/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/div[1]/main[1]/div[1]/div[1]/div[1]/ul[1]/li[5] (línea 228, columna 25018)"
+                },
+                "fragmento": "Explain the context window as a hard-edged limit and apply context-placement strategies like front-loading, chunking, and re-supplying critical information"
+              }
+            ],
+            "discrepancias": [],
+            "revision_requerida": false
+          },
+          {
+            "id": "claude-academy-ai-capabilities-and-limitations-objetivo-6",
+            "competencia": null,
+            "dimension": "resultado_previsto",
+            "descripcion": "Predict where instruction-following is tight versus loose, and recognize reasoning drift and letter-over-spirit as steerability failures",
+            "nivel": {
+              "escala": null,
+              "valor": null
+            },
+            "origen": "extraccion_oficial",
+            "estado": "extraida",
+            "metodo": {
+              "nombre": "extraccion-literal-de-bloques-publicados",
+              "version": "1"
+            },
+            "revision": null,
+            "evidencias": [
+              {
+                "url": "https://academy.claude.com/courses/ai-capabilities-and-limitations",
+                "capturado_utc": "2026-10-23T15:06:25.080076Z",
+                "sha256": "edda45339d9d67fab48a376b2db76769ef661b357ad849d3363f3af034a248d8",
+                "localizador": {
+                  "tipo": "objetivo",
+                  "valor": "/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/div[1]/main[1]/div[1]/div[1]/div[1]/ul[1]/li[6] (línea 228, columna 25477)"
+                },
+                "fragmento": "Predict where instruction-following is tight versus loose, and recognize reasoning drift and letter-over-spirit as steerability failures"
+              }
+            ],
+            "discrepancias": [],
+            "revision_requerida": false
+          },
+          {
+            "id": "claude-academy-ai-capabilities-and-limitations-objetivo-7",
+            "competencia": null,
+            "dimension": "resultado_previsto",
+            "descripcion": "Diagnose real-world AI failures by naming which properties are colliding and choose a targeted fix",
+            "nivel": {
+              "escala": null,
+              "valor": null
+            },
+            "origen": "extraccion_oficial",
+            "estado": "extraida",
+            "metodo": {
+              "nombre": "extraccion-literal-de-bloques-publicados",
+              "version": "1"
+            },
+            "revision": null,
+            "evidencias": [
+              {
+                "url": "https://academy.claude.com/courses/ai-capabilities-and-limitations",
+                "capturado_utc": "2026-10-23T15:06:25.080076Z",
+                "sha256": "edda45339d9d67fab48a376b2db76769ef661b357ad849d3363f3af034a248d8",
+                "localizador": {
+                  "tipo": "objetivo",
+                  "valor": "/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/div[1]/main[1]/div[1]/div[1]/div[1]/ul[1]/li[7] (línea 228, columna 25917)"
+                },
+                "fragmento": "Diagnose real-world AI failures by naming which properties are colliding and choose a targeted fix"
+              }
+            ],
+            "discrepancias": [],
+            "revision_requerida": false
+          },
+          {
+            "id": "claude-academy-ai-capabilities-and-limitations-objetivo-8",
+            "competencia": null,
+            "dimension": "resultado_previsto",
+            "descripcion": "Connect the four properties to the 4D Framework and practice calibrated trust by locating tasks on each continuum",
+            "nivel": {
+              "escala": null,
+              "valor": null
+            },
+            "origen": "extraccion_oficial",
+            "estado": "extraida",
+            "metodo": {
+              "nombre": "extraccion-literal-de-bloques-publicados",
+              "version": "1"
+            },
+            "revision": null,
+            "evidencias": [
+              {
+                "url": "https://academy.claude.com/courses/ai-capabilities-and-limitations",
+                "capturado_utc": "2026-10-23T15:06:25.080076Z",
+                "sha256": "edda45339d9d67fab48a376b2db76769ef661b357ad849d3363f3af034a248d8",
+                "localizador": {
+                  "tipo": "objetivo",
+                  "valor": "/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/div[1]/main[1]/div[1]/div[1]/div[1]/ul[1]/li[8] (línea 228, columna 26319)"
+                },
+                "fragmento": "Connect the four properties to the 4D Framework and practice calibrated trust by locating tasks on each continuum"
+              }
+            ],
+            "discrepancias": [],
+            "revision_requerida": false
+          },
+          {
+            "id": "claude-academy-ai-capabilities-and-limitations-objetivo-9",
+            "competencia": null,
+            "dimension": "resultado_previsto",
+            "descripcion": "A model knows what was in its training data — frequently, recently, and consistently. This section unpacks what that implies: it's strong on mainstream topics and popular languages, weaker on anything rare, recent, niche, or contested. You'll practice judging where a question sits on that spectrum, so you know when to trust the answer and when to bring your own sources.",
+            "nivel": {
+              "escala": null,
+              "valor": null
+            },
+            "origen": "extraccion_oficial",
+            "estado": "extraida",
+            "metodo": {
+              "nombre": "extraccion-literal-de-bloques-publicados",
+              "version": "1"
+            },
+            "revision": null,
+            "evidencias": [
+              {
+                "url": "https://academy.claude.com/courses/ai-capabilities-and-limitations",
+                "capturado_utc": "2026-10-23T15:06:25.080076Z",
+                "sha256": "edda45339d9d67fab48a376b2db76769ef661b357ad849d3363f3af034a248d8",
+                "localizador": {
+                  "tipo": "objetivo",
+                  "valor": "/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/div[1]/main[1]/div[1]/div[1]/section[1]/div[3]/p[1] (línea 235, columna 4554)"
+                },
+                "fragmento": "A model knows what was in its training data — frequently, recently, and consistently. This section unpacks what that implies: it's strong on mainstream topics and popular languages, weaker on anything rare, recent, niche, or contested. You'll practice judging where a question sits on that spectrum, so you know when to trust the answer and when to bring your own sources."
+              }
+            ],
+            "discrepancias": [],
+            "revision_requerida": false
+          },
+          {
+            "id": "claude-academy-ai-capabilities-and-limitations-objetivo-10",
+            "competencia": null,
+            "dimension": "resultado_previsto",
+            "descripcion": "Your instructions are how you steer — but not all instructions land equally. Short, concrete, verifiable asks ('respond as a table', 'under 100 words') work reliably; long reasoning chains, abstract requests, and demands for native precision are where steering starts to slip. This section helps you tell the difference and rewrite a wobbly instruction into one the model can actually follow.",
+            "nivel": {
+              "escala": null,
+              "valor": null
+            },
+            "origen": "extraccion_oficial",
+            "estado": "extraida",
+            "metodo": {
+              "nombre": "extraccion-literal-de-bloques-publicados",
+              "version": "1"
+            },
+            "revision": null,
+            "evidencias": [
+              {
+                "url": "https://academy.claude.com/courses/ai-capabilities-and-limitations",
+                "capturado_utc": "2026-10-23T15:06:25.080076Z",
+                "sha256": "edda45339d9d67fab48a376b2db76769ef661b357ad849d3363f3af034a248d8",
+                "localizador": {
+                  "tipo": "objetivo",
+                  "valor": "/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/div[1]/main[1]/div[1]/div[1]/section[1]/div[5]/p[1] (línea 235, columna 7888)"
+                },
+                "fragmento": "Your instructions are how you steer — but not all instructions land equally. Short, concrete, verifiable asks ('respond as a table', 'under 100 words') work reliably; long reasoning chains, abstract requests, and demands for native precision are where steering starts to slip. This section helps you tell the difference and rewrite a wobbly instruction into one the model can actually follow."
+              }
+            ],
+            "discrepancias": [],
+            "revision_requerida": false
+          },
+          {
+            "id": "claude-academy-ai-capabilities-and-limitations-requisito-1",
+            "competencia": null,
+            "dimension": "requisito_entrada",
+            "descripcion": "None. This course assumes no technical background and no prior experience with AI tools. If you've already completed AI Fluency: Framework & Foundations, you'll recognize where each property connects to the 4Ds — but it's not required.",
+            "nivel": {
+              "escala": null,
+              "valor": null
+            },
+            "origen": "extraccion_oficial",
+            "estado": "extraida",
+            "metodo": {
+              "nombre": "extraccion-literal-de-bloques-publicados",
+              "version": "1"
+            },
+            "revision": null,
+            "evidencias": [
+              {
+                "url": "https://academy.claude.com/courses/ai-capabilities-and-limitations",
+                "capturado_utc": "2026-10-23T15:06:25.080076Z",
+                "sha256": "edda45339d9d67fab48a376b2db76769ef661b357ad849d3363f3af034a248d8",
+                "localizador": {
+                  "tipo": "requisito",
+                  "valor": "/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/div[1]/main[1]/div[1]/div[1]/article[1]/p[5] (línea 233, columna 1)"
+                },
+                "fragmento": "None. This course assumes no technical background and no prior experience with AI tools. If you've already completed AI Fluency: Framework & Foundations, you'll recognize where each property connects to the 4Ds — but it's not required."
+              }
+            ],
+            "discrepancias": [],
+            "revision_requerida": false
+          }
+        ]
+      },
+      "requisitos": "publicados",
+      "cobertura": [
+        {
+          "criterio": "mejorar_instrucciones",
+          "afirmaciones": ["claude-academy-ai-capabilities-and-limitations-objetivo-10"],
+          "justificacion": {
+            "es": "El bloque explica cómo reescribir una instrucción imprecisa para que el modelo pueda seguirla.",
+            "ca": "El bloc explica com reescriure una instrucció imprecisa perquè el model la pugui seguir."
+          },
+          "via": null
+        },
+        {
+          "criterio": "criterios_explicitos",
+          "afirmaciones": ["claude-academy-ai-capabilities-and-limitations-objetivo-10"],
+          "justificacion": {
+            "es": "El bloque concreta resultados verificables: tabla y límite de palabras, diferenciados de peticiones abstractas.",
+            "ca": "El bloc concreta resultats verificables: taula i límit de paraules, diferenciats de peticions abstractes."
+          },
+          "via": null
+        },
+        {
+          "criterio": "fuentes_y_limites",
+          "afirmaciones": [
+            "claude-academy-ai-capabilities-and-limitations-objetivo-4",
+            "claude-academy-ai-capabilities-and-limitations-objetivo-9"
+          ],
+          "justificacion": {
+            "es": "Relaciona límites de conocimiento con búsqueda, recuperación y aportación de fuentes propias; no acredita por sí solo un caso complejo.",
+            "ca": "Relaciona límits de coneixement amb cerca, recuperació i aportació de fonts pròpies; no acredita per si sol un cas complex."
+          },
+          "via": null
+        }
+      ],
+      "revision": {
+        "tipo": "automatizada",
+        "referencia": "revision-temarios-admitidos-ampliacion-20261023",
+        "metodo": {
+          "nombre": "contraste-literal-de-bloques-condiciones-y-criterios",
+          "version": "1"
+        },
+        "fecha_utc": "2026-10-23T21:48:21Z"
+      },
+      "firmas_semanticas": {
+        "claude-academy-ai-capabilities-and-limitations-objetivo-1": [
+          "ff1b3d264fe3699886117300eea508dd260f41e73bf41fa1c03a6d76ea1c27e4"
+        ],
+        "claude-academy-ai-capabilities-and-limitations-objetivo-2": [
+          "6e090b64f804c1bebf2d86eb08f36fe4ff7c58260fc7bdda146fe55066a101b6"
+        ],
+        "claude-academy-ai-capabilities-and-limitations-objetivo-3": [
+          "0b7a7a3ecf6650c881f32bfa324fe8d6bb4b09fc0e5e60e6325e7da911bad986"
+        ],
+        "claude-academy-ai-capabilities-and-limitations-objetivo-4": [
+          "efa3980651e6e46fad7df57acddfe74c645cb26efca86971d6f55f012128077d"
+        ],
+        "claude-academy-ai-capabilities-and-limitations-objetivo-5": [
+          "0c90d35c2447621ccd624881a3405be9a9a5a3893e702c181d31ff1344defef5"
+        ],
+        "claude-academy-ai-capabilities-and-limitations-objetivo-6": [
+          "088a4ad2415864c34d93a0128cb633d5a0691731fdf403c7b1641a4d6d3ab0b4"
+        ],
+        "claude-academy-ai-capabilities-and-limitations-objetivo-7": [
+          "f169fc214734ca4193cb92e6ee5851afdc85a173eaa48b8725d00886ee0e1b68"
+        ],
+        "claude-academy-ai-capabilities-and-limitations-objetivo-8": [
+          "afcb9ff12ef512024d63ee57285f59509b09965734f2f147ad8400e0dd820782"
+        ],
+        "claude-academy-ai-capabilities-and-limitations-objetivo-9": [
+          "b065576f625ed3f70c53aa9e88d9e25ca0294c21fbce7adff1bcd9ea7df94439"
+        ],
+        "claude-academy-ai-capabilities-and-limitations-objetivo-10": [
+          "a343bce21088fe0698909c498bfa8e9e119c01bd22fdb5058e72fe147e8350fd"
+        ],
+        "claude-academy-ai-capabilities-and-limitations-requisito-1": [
+          "88b5753266d9828fd92fe6e217aa462cbc4a976b780cfb8db4d638fd36678d1f"
+        ]
+      }
+    },
+    {
+      "programa_id": "claude-academy:ai-native-sdlc-playbook",
+      "aprendizaje": {
+        "schema_version": 1,
+        "registro": {
+          "id": "registro-compartido-formacion",
+          "version": "digcomp-3.0-captura-f282a4f76891",
+          "sha256": "a60ff6c94e71ead18c26186e63faf5f244866d3497799f73f8318df9ffa8315a"
+        },
+        "contenido_observado": true,
+        "afirmaciones": [
+          {
+            "id": "claude-academy-ai-native-sdlc-playbook-objetivo-1",
+            "competencia": null,
+            "dimension": "resultado_previsto",
+            "descripcion": "Identify what changes at each of the six stages between a traditional and an AI-native SDLC, and choose a first play from the dependency graph",
+            "nivel": {
+              "escala": null,
+              "valor": null
+            },
+            "origen": "extraccion_oficial",
+            "estado": "extraida",
+            "metodo": {
+              "nombre": "extraccion-literal-de-bloques-publicados",
+              "version": "1"
+            },
+            "revision": null,
+            "evidencias": [
+              {
+                "url": "https://academy.claude.com/courses/ai-native-sdlc-playbook",
+                "capturado_utc": "2026-10-23T15:07:11.418096Z",
+                "sha256": "700f13b3afdbec5cdb40a7d593c092741423987c66234f663facb6cff28b45a0",
+                "localizador": {
+                  "tipo": "objetivo",
+                  "valor": "/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/div[1]/main[1]/div[1]/div[1]/div[1]/ul[1]/li[1] (línea 228, columna 22610)"
+                },
+                "fragmento": "Identify what changes at each of the six stages between a traditional and an AI-native SDLC, and choose a first play from the dependency graph"
+              }
+            ],
+            "discrepancias": [],
+            "revision_requerida": false
+          },
+          {
+            "id": "claude-academy-ai-native-sdlc-playbook-objetivo-2",
+            "competencia": null,
+            "dimension": "resultado_previsto",
+            "descripcion": "Explain how intent.md, a short version-controlled file stating what is wanted, why, and under which constraints, becomes a requirements and design spec in one working session with Claude",
+            "nivel": {
+              "escala": null,
+              "valor": null
+            },
+            "origen": "extraccion_oficial",
+            "estado": "extraida",
+            "metodo": {
+              "nombre": "extraccion-literal-de-bloques-publicados",
+              "version": "1"
+            },
+            "revision": null,
+            "evidencias": [
+              {
+                "url": "https://academy.claude.com/courses/ai-native-sdlc-playbook",
+                "capturado_utc": "2026-10-23T15:07:11.418096Z",
+                "sha256": "700f13b3afdbec5cdb40a7d593c092741423987c66234f663facb6cff28b45a0",
+                "localizador": {
+                  "tipo": "objetivo",
+                  "valor": "/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/div[1]/main[1]/div[1]/div[1]/div[1]/ul[1]/li[2] (línea 228, columna 23056)"
+                },
+                "fragmento": "Explain how intent.md, a short version-controlled file stating what is wanted, why, and under which constraints, becomes a requirements and design spec in one working session with Claude"
+              }
+            ],
+            "discrepancias": [],
+            "revision_requerida": false
+          },
+          {
+            "id": "claude-academy-ai-native-sdlc-playbook-objetivo-3",
+            "competencia": null,
+            "dimension": "resultado_previsto",
+            "descripcion": "Choose whether a piece of institutional knowledge belongs in CLAUDE.md, a skill, or a hook",
+            "nivel": {
+              "escala": null,
+              "valor": null
+            },
+            "origen": "extraccion_oficial",
+            "estado": "extraida",
+            "metodo": {
+              "nombre": "extraccion-literal-de-bloques-publicados",
+              "version": "1"
+            },
+            "revision": null,
+            "evidencias": [
+              {
+                "url": "https://academy.claude.com/courses/ai-native-sdlc-playbook",
+                "capturado_utc": "2026-10-23T15:07:11.418096Z",
+                "sha256": "700f13b3afdbec5cdb40a7d593c092741423987c66234f663facb6cff28b45a0",
+                "localizador": {
+                  "tipo": "objetivo",
+                  "valor": "/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/div[1]/main[1]/div[1]/div[1]/div[1]/ul[1]/li[3] (línea 228, columna 23546)"
+                },
+                "fragmento": "Choose whether a piece of institutional knowledge belongs in CLAUDE.md, a skill, or a hook"
+              }
+            ],
+            "discrepancias": [],
+            "revision_requerida": false
+          },
+          {
+            "id": "claude-academy-ai-native-sdlc-playbook-objetivo-4",
+            "competencia": null,
+            "dimension": "resultado_previsto",
+            "descripcion": "Explain how evals rerun whenever the agent's setup changes, how Claude reviews every pull request, and which code people still review by hand",
+            "nivel": {
+              "escala": null,
+              "valor": null
+            },
+            "origen": "extraccion_oficial",
+            "estado": "extraida",
+            "metodo": {
+              "nombre": "extraccion-literal-de-bloques-publicados",
+              "version": "1"
+            },
+            "revision": null,
+            "evidencias": [
+              {
+                "url": "https://academy.claude.com/courses/ai-native-sdlc-playbook",
+                "capturado_utc": "2026-10-23T15:07:11.418096Z",
+                "sha256": "700f13b3afdbec5cdb40a7d593c092741423987c66234f663facb6cff28b45a0",
+                "localizador": {
+                  "tipo": "objetivo",
+                  "valor": "/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/div[1]/main[1]/div[1]/div[1]/div[1]/ul[1]/li[4] (línea 228, columna 23940)"
+                },
+                "fragmento": "Explain how evals rerun whenever the agent's setup changes, how Claude reviews every pull request, and which code people still review by hand"
+              }
+            ],
+            "discrepancias": [],
+            "revision_requerida": false
+          },
+          {
+            "id": "claude-academy-ai-native-sdlc-playbook-objetivo-5",
+            "competencia": null,
+            "dimension": "resultado_previsto",
+            "descripcion": "Explain how hooks hold actions such as a release until a person approves, and how a production metric leaving its normal range becomes a new intent.md that restarts planning",
+            "nivel": {
+              "escala": null,
+              "valor": null
+            },
+            "origen": "extraccion_oficial",
+            "estado": "extraida",
+            "metodo": {
+              "nombre": "extraccion-literal-de-bloques-publicados",
+              "version": "1"
+            },
+            "revision": null,
+            "evidencias": [
+              {
+                "url": "https://academy.claude.com/courses/ai-native-sdlc-playbook",
+                "capturado_utc": "2026-10-23T15:07:11.418096Z",
+                "sha256": "700f13b3afdbec5cdb40a7d593c092741423987c66234f663facb6cff28b45a0",
+                "localizador": {
+                  "tipo": "objetivo",
+                  "valor": "/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/div[1]/main[1]/div[1]/div[1]/div[1]/ul[1]/li[5] (línea 228, columna 24390)"
+                },
+                "fragmento": "Explain how hooks hold actions such as a release until a person approves, and how a production metric leaving its normal range becomes a new intent.md that restarts planning"
+              }
+            ],
+            "discrepancias": [],
+            "revision_requerida": false
+          },
+          {
+            "id": "claude-academy-ai-native-sdlc-playbook-requisito-1",
+            "competencia": null,
+            "dimension": "requisito_entrada",
+            "descripcion": "To run the plays, you should be comfortable working in Claude Code day to day, and have a Git repository and CI pipeline you are allowed to change. Each play names its own prerequisites under Getting started, and several have none.",
+            "nivel": {
+              "escala": null,
+              "valor": null
+            },
+            "origen": "extraccion_oficial",
+            "estado": "extraida",
+            "metodo": {
+              "nombre": "extraccion-literal-de-bloques-publicados",
+              "version": "1"
+            },
+            "revision": null,
+            "evidencias": [
+              {
+                "url": "https://academy.claude.com/courses/ai-native-sdlc-playbook",
+                "capturado_utc": "2026-10-23T15:07:11.418096Z",
+                "sha256": "700f13b3afdbec5cdb40a7d593c092741423987c66234f663facb6cff28b45a0",
+                "localizador": {
+                  "tipo": "requisito",
+                  "valor": "/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/div[1]/main[1]/div[1]/div[1]/article[1]/p[5] (línea 234, columna 1)"
+                },
+                "fragmento": "To run the plays, you should be comfortable working in Claude Code day to day, and have a Git repository and CI pipeline you are allowed to change. Each play names its own prerequisites under Getting started, and several have none."
+              }
+            ],
+            "discrepancias": [],
+            "revision_requerida": false
+          }
+        ]
+      },
+      "requisitos": "publicados",
+      "cobertura": [],
+      "revision": {
+        "tipo": "automatizada",
+        "referencia": "revision-temarios-admitidos-ampliacion-20261023",
+        "metodo": {
+          "nombre": "contraste-literal-de-bloques-condiciones-y-criterios",
+          "version": "1"
+        },
+        "fecha_utc": "2026-10-23T21:48:21Z"
+      },
+      "firmas_semanticas": {
+        "claude-academy-ai-native-sdlc-playbook-objetivo-1": [
+          "4e262d393e985772cc862adc1327728f823e89f5e548eb38b316ba340adad56f"
+        ],
+        "claude-academy-ai-native-sdlc-playbook-objetivo-2": [
+          "cbd8561859d426bc547350efdf500c5e5901a731c13dd806dee31f58d214b5ba"
+        ],
+        "claude-academy-ai-native-sdlc-playbook-objetivo-3": [
+          "fd831f44cc05e7a2610cae4028683363ba6e906c0ecc7313e3b5a070041b0a60"
+        ],
+        "claude-academy-ai-native-sdlc-playbook-objetivo-4": [
+          "3287677bd3cb9439d32739a6755c6c42cd6aa2914531ca0072e5b39072e4edfe"
+        ],
+        "claude-academy-ai-native-sdlc-playbook-objetivo-5": [
+          "6765b69ce36b670c55eff38f3d50e3035d0adc623f8c77ad22893cf033c53333"
+        ],
+        "claude-academy-ai-native-sdlc-playbook-requisito-1": [
+          "3227b4dd10b49b8a7c3999707c2d52cabeaff06a4a917b0c4a76c2f7561f679b"
+        ]
+      }
+    },
+    {
+      "programa_id": "claude-academy:claude-code-101",
+      "aprendizaje": {
+        "schema_version": 1,
+        "registro": {
+          "id": "registro-compartido-formacion",
+          "version": "digcomp-3.0-captura-f282a4f76891",
+          "sha256": "a60ff6c94e71ead18c26186e63faf5f244866d3497799f73f8318df9ffa8315a"
+        },
+        "contenido_observado": true,
+        "afirmaciones": [
+          {
+            "id": "claude-academy-claude-code-101-objetivo-1",
+            "competencia": null,
+            "dimension": "resultado_previsto",
+            "descripcion": "Explain what an AI coding agent is and how Claude Code differs from chat-based AI tools",
+            "nivel": {
+              "escala": null,
+              "valor": null
+            },
+            "origen": "extraccion_oficial",
+            "estado": "extraida",
+            "metodo": {
+              "nombre": "extraccion-literal-de-bloques-publicados",
+              "version": "1"
+            },
+            "revision": null,
+            "evidencias": [
+              {
+                "url": "https://academy.claude.com/courses/claude-code-101",
+                "capturado_utc": "2026-10-23T15:07:29.913701Z",
+                "sha256": "fd7825978fbaeef471a24aa967e2dd250fa14f052b7680db6376f642b000b42b",
+                "localizador": {
+                  "tipo": "objetivo",
+                  "valor": "/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/div[1]/main[1]/div[1]/div[1]/div[1]/ul[1]/li[1] (línea 228, columna 23009)"
+                },
+                "fragmento": "Explain what an AI coding agent is and how Claude Code differs from chat-based AI tools"
+              }
+            ],
+            "discrepancias": [],
+            "revision_requerida": false
+          },
+          {
+            "id": "claude-academy-claude-code-101-objetivo-2",
+            "competencia": null,
+            "dimension": "resultado_previsto",
+            "descripcion": "Understand how the agentic loop, context window, tools, and permissions work together",
+            "nivel": {
+              "escala": null,
+              "valor": null
+            },
+            "origen": "extraccion_oficial",
+            "estado": "extraida",
+            "metodo": {
+              "nombre": "extraccion-literal-de-bloques-publicados",
+              "version": "1"
+            },
+            "revision": null,
+            "evidencias": [
+              {
+                "url": "https://academy.claude.com/courses/claude-code-101",
+                "capturado_utc": "2026-10-23T15:07:29.913701Z",
+                "sha256": "fd7825978fbaeef471a24aa967e2dd250fa14f052b7680db6376f642b000b42b",
+                "localizador": {
+                  "tipo": "objetivo",
+                  "valor": "/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/div[1]/main[1]/div[1]/div[1]/div[1]/ul[1]/li[2] (línea 228, columna 23400)"
+                },
+                "fragmento": "Understand how the agentic loop, context window, tools, and permissions work together"
+              }
+            ],
+            "discrepancias": [],
+            "revision_requerida": false
+          },
+          {
+            "id": "claude-academy-claude-code-101-objetivo-3",
+            "competencia": null,
+            "dimension": "resultado_previsto",
+            "descripcion": "Install and set up Claude Code in the terminal, VS Code, JetBrains, Claude Desktop, or on the web",
+            "nivel": {
+              "escala": null,
+              "valor": null
+            },
+            "origen": "extraccion_oficial",
+            "estado": "extraida",
+            "metodo": {
+              "nombre": "extraccion-literal-de-bloques-publicados",
+              "version": "1"
+            },
+            "revision": null,
+            "evidencias": [
+              {
+                "url": "https://academy.claude.com/courses/claude-code-101",
+                "capturado_utc": "2026-10-23T15:07:29.913701Z",
+                "sha256": "fd7825978fbaeef471a24aa967e2dd250fa14f052b7680db6376f642b000b42b",
+                "localizador": {
+                  "tipo": "objetivo",
+                  "valor": "/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/div[1]/main[1]/div[1]/div[1]/div[1]/ul[1]/li[3] (línea 228, columna 23789)"
+                },
+                "fragmento": "Install and set up Claude Code in the terminal, VS Code, JetBrains, Claude Desktop, or on the web"
+              }
+            ],
+            "discrepancias": [],
+            "revision_requerida": false
+          },
+          {
+            "id": "claude-academy-claude-code-101-objetivo-4",
+            "competencia": null,
+            "dimension": "resultado_previsto",
+            "descripcion": "Write effective prompts using manual mode, auto-accept, and Plan Mode",
+            "nivel": {
+              "escala": null,
+              "valor": null
+            },
+            "origen": "extraccion_oficial",
+            "estado": "extraida",
+            "metodo": {
+              "nombre": "extraccion-literal-de-bloques-publicados",
+              "version": "1"
+            },
+            "revision": null,
+            "evidencias": [
+              {
+                "url": "https://academy.claude.com/courses/claude-code-101",
+                "capturado_utc": "2026-10-23T15:07:29.913701Z",
+                "sha256": "fd7825978fbaeef471a24aa967e2dd250fa14f052b7680db6376f642b000b42b",
+                "localizador": {
+                  "tipo": "objetivo",
+                  "valor": "/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/div[1]/main[1]/div[1]/div[1]/div[1]/ul[1]/li[4] (línea 228, columna 24190)"
+                },
+                "fragmento": "Write effective prompts using manual mode, auto-accept, and Plan Mode"
+              }
+            ],
+            "discrepancias": [],
+            "revision_requerida": false
+          },
+          {
+            "id": "claude-academy-claude-code-101-objetivo-5",
+            "competencia": null,
+            "dimension": "resultado_previsto",
+            "descripcion": "Follow the Explore → Plan → Code → Commit workflow for any feature or task",
+            "nivel": {
+              "escala": null,
+              "valor": null
+            },
+            "origen": "extraccion_oficial",
+            "estado": "extraida",
+            "metodo": {
+              "nombre": "extraccion-literal-de-bloques-publicados",
+              "version": "1"
+            },
+            "revision": null,
+            "evidencias": [
+              {
+                "url": "https://academy.claude.com/courses/claude-code-101",
+                "capturado_utc": "2026-10-23T15:07:29.913701Z",
+                "sha256": "fd7825978fbaeef471a24aa967e2dd250fa14f052b7680db6376f642b000b42b",
+                "localizador": {
+                  "tipo": "objetivo",
+                  "valor": "/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/div[1]/main[1]/div[1]/div[1]/div[1]/ul[1]/li[5] (línea 228, columna 24563)"
+                },
+                "fragmento": "Follow the Explore → Plan → Code → Commit workflow for any feature or task"
+              }
+            ],
+            "discrepancias": [],
+            "revision_requerida": false
+          },
+          {
+            "id": "claude-academy-claude-code-101-objetivo-6",
+            "competencia": null,
+            "dimension": "resultado_previsto",
+            "descripcion": "Manage your context window with /compact, /clear, and /context to stay productive",
+            "nivel": {
+              "escala": null,
+              "valor": null
+            },
+            "origen": "extraccion_oficial",
+            "estado": "extraida",
+            "metodo": {
+              "nombre": "extraccion-literal-de-bloques-publicados",
+              "version": "1"
+            },
+            "revision": null,
+            "evidencias": [
+              {
+                "url": "https://academy.claude.com/courses/claude-code-101",
+                "capturado_utc": "2026-10-23T15:07:29.913701Z",
+                "sha256": "fd7825978fbaeef471a24aa967e2dd250fa14f052b7680db6376f642b000b42b",
+                "localizador": {
+                  "tipo": "objetivo",
+                  "valor": "/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/div[1]/main[1]/div[1]/div[1]/div[1]/ul[1]/li[6] (línea 228, columna 24941)"
+                },
+                "fragmento": "Manage your context window with /compact, /clear, and /context to stay productive"
+              }
+            ],
+            "discrepancias": [],
+            "revision_requerida": false
+          },
+          {
+            "id": "claude-academy-claude-code-101-objetivo-7",
+            "competencia": null,
+            "dimension": "resultado_previsto",
+            "descripcion": "Create and maintain a CLAUDE.md file to give Claude persistent project memory",
+            "nivel": {
+              "escala": null,
+              "valor": null
+            },
+            "origen": "extraccion_oficial",
+            "estado": "extraida",
+            "metodo": {
+              "nombre": "extraccion-literal-de-bloques-publicados",
+              "version": "1"
+            },
+            "revision": null,
+            "evidencias": [
+              {
+                "url": "https://academy.claude.com/courses/claude-code-101",
+                "capturado_utc": "2026-10-23T15:07:29.913701Z",
+                "sha256": "fd7825978fbaeef471a24aa967e2dd250fa14f052b7680db6376f642b000b42b",
+                "localizador": {
+                  "tipo": "objetivo",
+                  "valor": "/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/div[1]/main[1]/div[1]/div[1]/div[1]/ul[1]/li[7] (línea 228, columna 25326)"
+                },
+                "fragmento": "Create and maintain a CLAUDE.md file to give Claude persistent project memory"
+              }
+            ],
+            "discrepancias": [],
+            "revision_requerida": false
+          },
+          {
+            "id": "claude-academy-claude-code-101-objetivo-8",
+            "competencia": null,
+            "dimension": "resultado_previsto",
+            "descripcion": "Build custom subagents to delegate tasks and keep your main context clean",
+            "nivel": {
+              "escala": null,
+              "valor": null
+            },
+            "origen": "extraccion_oficial",
+            "estado": "extraida",
+            "metodo": {
+              "nombre": "extraccion-literal-de-bloques-publicados",
+              "version": "1"
+            },
+            "revision": null,
+            "evidencias": [
+              {
+                "url": "https://academy.claude.com/courses/claude-code-101",
+                "capturado_utc": "2026-10-23T15:07:29.913701Z",
+                "sha256": "fd7825978fbaeef471a24aa967e2dd250fa14f052b7680db6376f642b000b42b",
+                "localizador": {
+                  "tipo": "objetivo",
+                  "valor": "/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/div[1]/main[1]/div[1]/div[1]/div[1]/ul[1]/li[8] (línea 228, columna 25707)"
+                },
+                "fragmento": "Build custom subagents to delegate tasks and keep your main context clean"
+              }
+            ],
+            "discrepancias": [],
+            "revision_requerida": false
+          },
+          {
+            "id": "claude-academy-claude-code-101-objetivo-9",
+            "competencia": null,
+            "dimension": "resultado_previsto",
+            "descripcion": "Connect external tools and data sources using MCP servers",
+            "nivel": {
+              "escala": null,
+              "valor": null
+            },
+            "origen": "extraccion_oficial",
+            "estado": "extraida",
+            "metodo": {
+              "nombre": "extraccion-literal-de-bloques-publicados",
+              "version": "1"
+            },
+            "revision": null,
+            "evidencias": [
+              {
+                "url": "https://academy.claude.com/courses/claude-code-101",
+                "capturado_utc": "2026-10-23T15:07:29.913701Z",
+                "sha256": "fd7825978fbaeef471a24aa967e2dd250fa14f052b7680db6376f642b000b42b",
+                "localizador": {
+                  "tipo": "objetivo",
+                  "valor": "/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/div[1]/main[1]/div[1]/div[1]/div[1]/ul[1]/li[9] (línea 228, columna 26084)"
+                },
+                "fragmento": "Connect external tools and data sources using MCP servers"
+              }
+            ],
+            "discrepancias": [],
+            "revision_requerida": false
+          },
+          {
+            "id": "claude-academy-claude-code-101-objetivo-10",
+            "competencia": null,
+            "dimension": "resultado_previsto",
+            "descripcion": "Write hooks for deterministic control over formatting, command blocking, and notifications",
+            "nivel": {
+              "escala": null,
+              "valor": null
+            },
+            "origen": "extraccion_oficial",
+            "estado": "extraida",
+            "metodo": {
+              "nombre": "extraccion-literal-de-bloques-publicados",
+              "version": "1"
+            },
+            "revision": null,
+            "evidencias": [
+              {
+                "url": "https://academy.claude.com/courses/claude-code-101",
+                "capturado_utc": "2026-10-23T15:07:29.913701Z",
+                "sha256": "fd7825978fbaeef471a24aa967e2dd250fa14f052b7680db6376f642b000b42b",
+                "localizador": {
+                  "tipo": "objetivo",
+                  "valor": "/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/div[1]/main[1]/div[1]/div[1]/div[1]/ul[1]/li[10] (línea 228, columna 26445)"
+                },
+                "fragmento": "Write hooks for deterministic control over formatting, command blocking, and notifications"
+              }
+            ],
+            "discrepancias": [],
+            "revision_requerida": false
+          },
+          {
+            "id": "claude-academy-claude-code-101-objetivo-11",
+            "competencia": null,
+            "dimension": "resultado_previsto",
+            "descripcion": "This is where Claude Code becomes part of how you ship. Learn the Explore → Plan → Code → Commit rhythm for tackling real tasks, use the context-management commands to keep long sessions fast and focused, and review what Claude changed, with your own eyes and a fresh-context reviewer, before you commit it.",
+            "nivel": {
+              "escala": null,
+              "valor": null
+            },
+            "origen": "extraccion_oficial",
+            "estado": "extraida",
+            "metodo": {
+              "nombre": "extraccion-literal-de-bloques-publicados",
+              "version": "1"
+            },
+            "revision": null,
+            "evidencias": [
+              {
+                "url": "https://academy.claude.com/courses/claude-code-101",
+                "capturado_utc": "2026-10-23T15:07:29.913701Z",
+                "sha256": "fd7825978fbaeef471a24aa967e2dd250fa14f052b7680db6376f642b000b42b",
+                "localizador": {
+                  "tipo": "objetivo",
+                  "valor": "/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/div[1]/main[1]/div[1]/div[1]/section[1]/div[3]/p[1] (línea 235, columna 3874)"
+                },
+                "fragmento": "This is where Claude Code becomes part of how you ship. Learn the Explore → Plan → Code → Commit rhythm for tackling real tasks, use the context-management commands to keep long sessions fast and focused, and review what Claude changed, with your own eyes and a fresh-context reviewer, before you commit it."
+              }
+            ],
+            "discrepancias": [],
+            "revision_requerida": false
+          },
+          {
+            "id": "claude-academy-claude-code-101-requisito-1",
+            "competencia": null,
+            "dimension": "requisito_entrada",
+            "descripcion": "Basic familiarity with a code editor and the command line. You'll also need a Claude account (Pro, Max, Team, or Enterprise) or an API key. No prior experience with AI tools is assumed.",
+            "nivel": {
+              "escala": null,
+              "valor": null
+            },
+            "origen": "extraccion_oficial",
+            "estado": "extraida",
+            "metodo": {
+              "nombre": "extraccion-literal-de-bloques-publicados",
+              "version": "1"
+            },
+            "revision": null,
+            "evidencias": [
+              {
+                "url": "https://academy.claude.com/courses/claude-code-101",
+                "capturado_utc": "2026-10-23T15:07:29.913701Z",
+                "sha256": "fd7825978fbaeef471a24aa967e2dd250fa14f052b7680db6376f642b000b42b",
+                "localizador": {
+                  "tipo": "requisito",
+                  "valor": "/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/div[1]/main[1]/div[1]/div[1]/article[1]/p[5] (línea 233, columna 1)"
+                },
+                "fragmento": "Basic familiarity with a code editor and the command line. You'll also need a Claude account (Pro, Max, Team, or Enterprise) or an API key. No prior experience with AI tools is assumed."
+              }
+            ],
+            "discrepancias": [],
+            "revision_requerida": false
+          }
+        ]
+      },
+      "requisitos": "publicados",
+      "cobertura": [
+        {
+          "criterio": "tarea_real",
+          "afirmaciones": ["claude-academy-claude-code-101-objetivo-5", "claude-academy-claude-code-101-objetivo-11"],
+          "justificacion": {
+            "es": "El temario aplica un flujo de trabajo a tareas reales de desarrollo y exige revisar los cambios antes de incorporarlos. Requiere conocimientos y cuenta o API publicados.",
+            "ca": "El temari aplica un flux de treball a tasques reals de desenvolupament i exigeix revisar els canvis abans d’incorporar-los. Requereix coneixements i compte o API publicats."
+          },
+          "via": null
+        },
+        {
+          "criterio": "procedimiento_verificable",
+          "afirmaciones": ["claude-academy-claude-code-101-objetivo-5", "claude-academy-claude-code-101-objetivo-11"],
+          "justificacion": {
+            "es": "El flujo Explore → Plan → Code → Commit incluye revisión propia y con contexto nuevo antes del commit; no acredita por sí solo un caso complejo.",
+            "ca": "El flux Explore → Plan → Code → Commit inclou revisió pròpia i amb context nou abans del commit; no acredita per si sol un cas complex."
+          },
+          "via": null
+        }
+      ],
+      "revision": {
+        "tipo": "automatizada",
+        "referencia": "revision-temarios-admitidos-ampliacion-20261023",
+        "metodo": {
+          "nombre": "contraste-literal-de-bloques-condiciones-y-criterios",
+          "version": "1"
+        },
+        "fecha_utc": "2026-10-23T21:48:21Z"
+      },
+      "firmas_semanticas": {
+        "claude-academy-claude-code-101-objetivo-1": [
+          "3983142d072e2c1354ccf9d7e5e4184da4bfae442b29d5eb773a76a45c64fe54"
+        ],
+        "claude-academy-claude-code-101-objetivo-2": [
+          "50cde03bf6a30b2bc94f5f1667fb15a87fbe5e4d338dbf81deb534dd690da5ac"
+        ],
+        "claude-academy-claude-code-101-objetivo-3": [
+          "1e819580229a4fcf4b0c3a15196093fc1a95e5e9179a918e4d9fbdbb88f76d84"
+        ],
+        "claude-academy-claude-code-101-objetivo-4": [
+          "f7d5c8fa87631fb4b1474ae7e741d3d86e52ea2f1dd6b294249851f36316007b"
+        ],
+        "claude-academy-claude-code-101-objetivo-5": [
+          "572fe7a2effafc0499f5defccf0e57e7eb16d26ebfd7565e766389b18f93d10f"
+        ],
+        "claude-academy-claude-code-101-objetivo-6": [
+          "e0cfa1951a6a8d4ad486c309c9d96b449b922b4ef8bbb7eadb6887be2dbe5a68"
+        ],
+        "claude-academy-claude-code-101-objetivo-7": [
+          "a65a71b5c03fb4a36e72d9b2b966aa39f32f63985e10589c093184152b0146ee"
+        ],
+        "claude-academy-claude-code-101-objetivo-8": [
+          "3e73b574524ce0b5af6d43928d0a8bac9419c7b5fa0a8dcaf1652f365fc0d6de"
+        ],
+        "claude-academy-claude-code-101-objetivo-9": [
+          "9688d1a473e72af0ac82bcc4651ac777120811b2c6528db7dbc00e3a8af27b9d"
+        ],
+        "claude-academy-claude-code-101-objetivo-10": [
+          "d2616477eedf8abc83be38e406cf57aa9fea67a3deaa9e570c8d79d20acde4f8"
+        ],
+        "claude-academy-claude-code-101-objetivo-11": [
+          "db5394ab4dd2f67f1e574dbc7940f94b348b5532292665b6294a1a48651bba6a"
+        ],
+        "claude-academy-claude-code-101-requisito-1": [
+          "fe986f42f1897be8ffb63d3cdaaf088ec66c362659f2938a6ed930d335b80aa9"
+        ]
+      }
+    },
+    {
+      "programa_id": "claude-academy:claude-platform-101",
+      "aprendizaje": {
+        "schema_version": 1,
+        "registro": {
+          "id": "registro-compartido-formacion",
+          "version": "digcomp-3.0-captura-f282a4f76891",
+          "sha256": "a60ff6c94e71ead18c26186e63faf5f244866d3497799f73f8318df9ffa8315a"
+        },
+        "contenido_observado": true,
+        "afirmaciones": [
+          {
+            "id": "claude-academy-claude-platform-101-objetivo-1",
+            "competencia": null,
+            "dimension": "resultado_previsto",
+            "descripcion": "Send your first API request with messages.create and read the structured response",
+            "nivel": {
+              "escala": null,
+              "valor": null
+            },
+            "origen": "extraccion_oficial",
+            "estado": "extraida",
+            "metodo": {
+              "nombre": "extraccion-literal-de-bloques-publicados",
+              "version": "1"
+            },
+            "revision": null,
+            "evidencias": [
+              {
+                "url": "https://academy.claude.com/courses/claude-platform-101",
+                "capturado_utc": "2026-10-23T15:07:39.002885Z",
+                "sha256": "1ed59b84c9d1c9e04bb9a6b1e93a74421601d69550263ff10b32b57a9ea838f6",
+                "localizador": {
+                  "tipo": "objetivo",
+                  "valor": "/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/div[1]/main[1]/div[1]/div[1]/div[1]/ul[1]/li[1] (línea 228, columna 23092)"
+                },
+                "fragmento": "Send your first API request with messages.create and read the structured response"
+              }
+            ],
+            "discrepancias": [],
+            "revision_requerida": false
+          },
+          {
+            "id": "claude-academy-claude-platform-101-objetivo-2",
+            "competencia": null,
+            "dimension": "resultado_previsto",
+            "descripcion": "Choose the right model for a job (Fable, Opus, Sonnet, or Haiku) by running a simple evaluation and weighing cost and latency",
+            "nivel": {
+              "escala": null,
+              "valor": null
+            },
+            "origen": "extraccion_oficial",
+            "estado": "extraida",
+            "metodo": {
+              "nombre": "extraccion-literal-de-bloques-publicados",
+              "version": "1"
+            },
+            "revision": null,
+            "evidencias": [
+              {
+                "url": "https://academy.claude.com/courses/claude-platform-101",
+                "capturado_utc": "2026-10-23T15:07:39.002885Z",
+                "sha256": "1ed59b84c9d1c9e04bb9a6b1e93a74421601d69550263ff10b32b57a9ea838f6",
+                "localizador": {
+                  "tipo": "objetivo",
+                  "valor": "/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/div[1]/main[1]/div[1]/div[1]/div[1]/ul[1]/li[2] (línea 228, columna 23477)"
+                },
+                "fragmento": "Choose the right model for a job (Fable, Opus, Sonnet, or Haiku) by running a simple evaluation and weighing cost and latency"
+              }
+            ],
+            "discrepancias": [],
+            "revision_requerida": false
+          },
+          {
+            "id": "claude-academy-claude-platform-101-objetivo-3",
+            "competencia": null,
+            "dimension": "resultado_previsto",
+            "descripcion": "Build the agent loop by hand, then collapse it with the SDK's Tool Runner once you understand what it does for you",
+            "nivel": {
+              "escala": null,
+              "valor": null
+            },
+            "origen": "extraccion_oficial",
+            "estado": "extraida",
+            "metodo": {
+              "nombre": "extraccion-literal-de-bloques-publicados",
+              "version": "1"
+            },
+            "revision": null,
+            "evidencias": [
+              {
+                "url": "https://academy.claude.com/courses/claude-platform-101",
+                "capturado_utc": "2026-10-23T15:07:39.002885Z",
+                "sha256": "1ed59b84c9d1c9e04bb9a6b1e93a74421601d69550263ff10b32b57a9ea838f6",
+                "localizador": {
+                  "tipo": "objetivo",
+                  "valor": "/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/div[1]/main[1]/div[1]/div[1]/div[1]/ul[1]/li[3] (línea 228, columna 23906)"
+                },
+                "fragmento": "Build the agent loop by hand, then collapse it with the SDK's Tool Runner once you understand what it does for you"
+              }
+            ],
+            "discrepancias": [],
+            "revision_requerida": false
+          },
+          {
+            "id": "claude-academy-claude-platform-101-objetivo-4",
+            "competencia": null,
+            "dimension": "resultado_previsto",
+            "descripcion": "Give Claude reach through tool use and let it reason through hard problems with extended thinking",
+            "nivel": {
+              "escala": null,
+              "valor": null
+            },
+            "origen": "extraccion_oficial",
+            "estado": "extraida",
+            "metodo": {
+              "nombre": "extraccion-literal-de-bloques-publicados",
+              "version": "1"
+            },
+            "revision": null,
+            "evidencias": [
+              {
+                "url": "https://academy.claude.com/courses/claude-platform-101",
+                "capturado_utc": "2026-10-23T15:07:39.002885Z",
+                "sha256": "1ed59b84c9d1c9e04bb9a6b1e93a74421601d69550263ff10b32b57a9ea838f6",
+                "localizador": {
+                  "tipo": "objetivo",
+                  "valor": "/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/div[1]/main[1]/div[1]/div[1]/div[1]/ul[1]/li[4] (línea 228, columna 24329)"
+                },
+                "fragmento": "Give Claude reach through tool use and let it reason through hard problems with extended thinking"
+              }
+            ],
+            "discrepancias": [],
+            "revision_requerida": false
+          },
+          {
+            "id": "claude-academy-claude-platform-101-objetivo-5",
+            "competencia": null,
+            "dimension": "resultado_previsto",
+            "descripcion": "Extend an agent with Anthropic's built-in tools (web search, code execution, web fetch), Skills, and MCP servers",
+            "nivel": {
+              "escala": null,
+              "valor": null
+            },
+            "origen": "extraccion_oficial",
+            "estado": "extraida",
+            "metodo": {
+              "nombre": "extraccion-literal-de-bloques-publicados",
+              "version": "1"
+            },
+            "revision": null,
+            "evidencias": [
+              {
+                "url": "https://academy.claude.com/courses/claude-platform-101",
+                "capturado_utc": "2026-10-23T15:07:39.002885Z",
+                "sha256": "1ed59b84c9d1c9e04bb9a6b1e93a74421601d69550263ff10b32b57a9ea838f6",
+                "localizador": {
+                  "tipo": "objetivo",
+                  "valor": "/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/div[1]/main[1]/div[1]/div[1]/div[1]/ul[1]/li[5] (línea 228, columna 24730)"
+                },
+                "fragmento": "Extend an agent with Anthropic's built-in tools (web search, code execution, web fetch), Skills, and MCP servers"
+              }
+            ],
+            "discrepancias": [],
+            "revision_requerida": false
+          },
+          {
+            "id": "claude-academy-claude-platform-101-objetivo-6",
+            "competencia": null,
+            "dimension": "resultado_previsto",
+            "descripcion": "Keep a long-running agent inside the context window and affordable with the four context-management patterns",
+            "nivel": {
+              "escala": null,
+              "valor": null
+            },
+            "origen": "extraccion_oficial",
+            "estado": "extraida",
+            "metodo": {
+              "nombre": "extraccion-literal-de-bloques-publicados",
+              "version": "1"
+            },
+            "revision": null,
+            "evidencias": [
+              {
+                "url": "https://academy.claude.com/courses/claude-platform-101",
+                "capturado_utc": "2026-10-23T15:07:39.002885Z",
+                "sha256": "1ed59b84c9d1c9e04bb9a6b1e93a74421601d69550263ff10b32b57a9ea838f6",
+                "localizador": {
+                  "tipo": "objetivo",
+                  "valor": "/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/div[1]/main[1]/div[1]/div[1]/div[1]/ul[1]/li[6] (línea 228, columna 25151)"
+                },
+                "fragmento": "Keep a long-running agent inside the context window and affordable with the four context-management patterns"
+              }
+            ],
+            "discrepancias": [],
+            "revision_requerida": false
+          },
+          {
+            "id": "claude-academy-claude-platform-101-objetivo-7",
+            "competencia": null,
+            "dimension": "resultado_previsto",
+            "descripcion": "Build a managed agent end to end, consuming the event stream as Anthropic runs the loop and reports back",
+            "nivel": {
+              "escala": null,
+              "valor": null
+            },
+            "origen": "extraccion_oficial",
+            "estado": "extraida",
+            "metodo": {
+              "nombre": "extraccion-literal-de-bloques-publicados",
+              "version": "1"
+            },
+            "revision": null,
+            "evidencias": [
+              {
+                "url": "https://academy.claude.com/courses/claude-platform-101",
+                "capturado_utc": "2026-10-23T15:07:39.002885Z",
+                "sha256": "1ed59b84c9d1c9e04bb9a6b1e93a74421601d69550263ff10b32b57a9ea838f6",
+                "localizador": {
+                  "tipo": "objetivo",
+                  "valor": "/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/div[1]/main[1]/div[1]/div[1]/div[1]/ul[1]/li[7] (línea 228, columna 25563)"
+                },
+                "fragmento": "Build a managed agent end to end, consuming the event stream as Anthropic runs the loop and reports back"
+              }
+            ],
+            "discrepancias": [],
+            "revision_requerida": false
+          },
+          {
+            "id": "claude-academy-claude-platform-101-objetivo-8",
+            "competencia": null,
+            "dimension": "resultado_previsto",
+            "descripcion": "Build with the API using Claude Code itself, and review the code an agent writes for you",
+            "nivel": {
+              "escala": null,
+              "valor": null
+            },
+            "origen": "extraccion_oficial",
+            "estado": "extraida",
+            "metodo": {
+              "nombre": "extraccion-literal-de-bloques-publicados",
+              "version": "1"
+            },
+            "revision": null,
+            "evidencias": [
+              {
+                "url": "https://academy.claude.com/courses/claude-platform-101",
+                "capturado_utc": "2026-10-23T15:07:39.002885Z",
+                "sha256": "1ed59b84c9d1c9e04bb9a6b1e93a74421601d69550263ff10b32b57a9ea838f6",
+                "localizador": {
+                  "tipo": "objetivo",
+                  "valor": "/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/div[1]/main[1]/div[1]/div[1]/div[1]/ul[1]/li[8] (línea 228, columna 25971)"
+                },
+                "fragmento": "Build with the API using Claude Code itself, and review the code an agent writes for you"
+              }
+            ],
+            "discrepancias": [],
+            "revision_requerida": false
+          },
+          {
+            "id": "claude-academy-claude-platform-101-requisito-1",
+            "competencia": null,
+            "dimension": "requisito_entrada",
+            "descripcion": "Comfort reading and writing code in at least one language, plus basic command-line familiarity. Most demos use the Python SDK (anthropic, installed with pip). The lessons \"Your first API call\", \"What is tool use?\" and \"Building with Claude Code\" use the TypeScript SDK (@anthropic-ai/sdk) with Node and npm. You don't need to be an expert in either language, but you should be able to follow along and run a script. You'll need a Claude Console account and an API key from platform.claude.com. New accounts get a small amount of free credit to test the API. After that, you add credit under Settings > Billing. You don't need prior experience building with LLMs.",
+            "nivel": {
+              "escala": null,
+              "valor": null
+            },
+            "origen": "extraccion_oficial",
+            "estado": "extraida",
+            "metodo": {
+              "nombre": "extraccion-literal-de-bloques-publicados",
+              "version": "1"
+            },
+            "revision": null,
+            "evidencias": [
+              {
+                "url": "https://academy.claude.com/courses/claude-platform-101",
+                "capturado_utc": "2026-10-23T15:07:39.002885Z",
+                "sha256": "1ed59b84c9d1c9e04bb9a6b1e93a74421601d69550263ff10b32b57a9ea838f6",
+                "localizador": {
+                  "tipo": "requisito",
+                  "valor": "/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/div[1]/main[1]/div[1]/div[1]/article[1]/p[6] (línea 234, columna 1)"
+                },
+                "fragmento": "Comfort reading and writing code in at least one language, plus basic command-line familiarity. Most demos use the Python SDK (anthropic, installed with pip). The lessons \"Your first API call\", \"What is tool use?\" and \"Building with Claude Code\" use the TypeScript SDK (@anthropic-ai/sdk) with Node and npm. You don't need to be an expert in either language, but you should be able to follow along and run a script. You'll need a Claude Console account and an API key from platform.claude.com. New accounts get a small amount of free credit to test the API. After that, you add credit under Settings > Billing. You don't need prior experience building with LLMs."
+              }
+            ],
+            "discrepancias": [],
+            "revision_requerida": false
+          }
+        ]
+      },
+      "requisitos": "publicados",
+      "cobertura": [],
+      "revision": {
+        "tipo": "automatizada",
+        "referencia": "revision-temarios-admitidos-ampliacion-20261023",
+        "metodo": {
+          "nombre": "contraste-literal-de-bloques-condiciones-y-criterios",
+          "version": "1"
+        },
+        "fecha_utc": "2026-10-23T21:48:21Z"
+      },
+      "firmas_semanticas": {
+        "claude-academy-claude-platform-101-objetivo-1": [
+          "407a4b3b43395cd30fc8a7106d7b75a9e282546acfe0f4b7b76ba875a963871a"
+        ],
+        "claude-academy-claude-platform-101-objetivo-2": [
+          "3bbdef4789aee2d1e4781107e6eab3377af28f676d3d851caee3e666e682866c"
+        ],
+        "claude-academy-claude-platform-101-objetivo-3": [
+          "1b1024d4395cbd77cd0f3fa6b7e1cf4a8a54152bfb2d9271aea97b67a072aa74"
+        ],
+        "claude-academy-claude-platform-101-objetivo-4": [
+          "917490473ab96079ac0c238641cd2358071cebf205f101e396bcecfe04027e65"
+        ],
+        "claude-academy-claude-platform-101-objetivo-5": [
+          "0d6164d58163055a5a6b5c14b1e1649a9f290dca90f8ec6a3b4d4cafc4fe8f49"
+        ],
+        "claude-academy-claude-platform-101-objetivo-6": [
+          "80e9d452bd6ae980b719952ce028db9bb9689f494c6ae21c6aee285962b1ae12"
+        ],
+        "claude-academy-claude-platform-101-objetivo-7": [
+          "51a155da9e97a5a4d630c7d072c0c0777803d05add02100075841370d2e26242"
+        ],
+        "claude-academy-claude-platform-101-objetivo-8": [
+          "6ee044f6613fff90250164307e29dd3ae7e988c48b05c1e2c34f0524d45e5105"
+        ],
+        "claude-academy-claude-platform-101-requisito-1": [
+          "ff5adea0b4a82eecd2c5a23084a9eaa2a081cab99c0f1b1698fca456d6971895"
+        ]
+      }
+    },
+    {
+      "programa_id": "cibervoluntarios:material:9927659354",
+      "aprendizaje": {
+        "schema_version": 1,
+        "registro": {
+          "id": "registro-compartido-formacion",
+          "version": "digcomp-3.0-captura-f282a4f76891",
+          "sha256": "a60ff6c94e71ead18c26186e63faf5f244866d3497799f73f8318df9ffa8315a"
+        },
+        "contenido_observado": true,
+        "afirmaciones": [
+          {
+            "id": "cibervoluntarios-material-9927659354-objetivo-1",
+            "competencia": null,
+            "dimension": "resultado_previsto",
+            "descripcion": "Autonomía digital: cómo manejar la tecnología de forma independiente y segura.",
+            "nivel": {
+              "escala": null,
+              "valor": null
+            },
+            "origen": "extraccion_oficial",
+            "estado": "extraida",
+            "metodo": {
+              "nombre": "extraccion-literal-de-bloques-publicados",
+              "version": "1"
+            },
+            "revision": null,
+            "evidencias": [
+              {
+                "url": "https://www.cibervoluntarios.org/api/public/activity_catalogs?lang=es&itemsPerPage=100&page=1",
+                "capturado_utc": "2026-10-23T18:20:57.873036Z",
+                "sha256": "3e542708b04717878d9795a8d83962da9750f6f1ea193845a0a8ffe659897319",
+                "localizador": {
+                  "tipo": "objetivo",
+                  "valor": "/hydra:member/4/activityCatalogMaterials/1/aprenderContent/html/bloque[1] (li, línea 1, columna 1)"
+                },
+                "fragmento": "Autonomía digital: cómo manejar la tecnología de forma independiente y segura."
+              }
+            ],
+            "discrepancias": [],
+            "revision_requerida": false
+          },
+          {
+            "id": "cibervoluntarios-material-9927659354-objetivo-2",
+            "competencia": null,
+            "dimension": "resultado_previsto",
+            "descripcion": "Herramientas prácticas: escribir mejor, organizar tareas, traducir textos, crear imágenes o resumir información.",
+            "nivel": {
+              "escala": null,
+              "valor": null
+            },
+            "origen": "extraccion_oficial",
+            "estado": "extraida",
+            "metodo": {
+              "nombre": "extraccion-literal-de-bloques-publicados",
+              "version": "1"
+            },
+            "revision": null,
+            "evidencias": [
+              {
+                "url": "https://www.cibervoluntarios.org/api/public/activity_catalogs?lang=es&itemsPerPage=100&page=1",
+                "capturado_utc": "2026-10-23T18:20:57.873036Z",
+                "sha256": "3e542708b04717878d9795a8d83962da9750f6f1ea193845a0a8ffe659897319",
+                "localizador": {
+                  "tipo": "objetivo",
+                  "valor": "/hydra:member/4/activityCatalogMaterials/1/aprenderContent/html/bloque[2] (li, línea 1, columna 88)"
+                },
+                "fragmento": "Herramientas prácticas: escribir mejor, organizar tareas, traducir textos, crear imágenes o resumir información."
+              }
+            ],
+            "discrepancias": [],
+            "revision_requerida": false
+          },
+          {
+            "id": "cibervoluntarios-material-9927659354-objetivo-3",
+            "competencia": null,
+            "dimension": "resultado_previsto",
+            "descripcion": "Uso responsable: cómo proteger tus datos, evitar riesgos y desarrollar pensamiento crítico frente a la IA.",
+            "nivel": {
+              "escala": null,
+              "valor": null
+            },
+            "origen": "extraccion_oficial",
+            "estado": "extraida",
+            "metodo": {
+              "nombre": "extraccion-literal-de-bloques-publicados",
+              "version": "1"
+            },
+            "revision": null,
+            "evidencias": [
+              {
+                "url": "https://www.cibervoluntarios.org/api/public/activity_catalogs?lang=es&itemsPerPage=100&page=1",
+                "capturado_utc": "2026-10-23T18:20:57.873036Z",
+                "sha256": "3e542708b04717878d9795a8d83962da9750f6f1ea193845a0a8ffe659897319",
+                "localizador": {
+                  "tipo": "objetivo",
+                  "valor": "/hydra:member/4/activityCatalogMaterials/1/aprenderContent/html/bloque[3] (li, línea 1, columna 209)"
+                },
+                "fragmento": "Uso responsable: cómo proteger tus datos, evitar riesgos y desarrollar pensamiento crítico frente a la IA."
+              }
+            ],
+            "discrepancias": [],
+            "revision_requerida": false
+          },
+          {
+            "id": "cibervoluntarios-material-9927659354-requisito-1",
+            "competencia": null,
+            "dimension": "requisito_entrada",
+            "descripcion": "Este curso te ayudará a ganar autonomía digital a través del uso de la inteligencia artificial. Aprenderás de forma sencilla cómo aprovechar herramientas como asistentes virtuales, traductores, correctores de texto o generadores de imágenes para comunicarte mejor, organizarte, crear contenidos y aprender a tu propio ritmo. También conocerás los riesgos de depender demasiado de estas tecnologías y cómo usarlas con seguridad, protegiendo tus datos y desarrollando un pensamiento crítico. No necesitas experiencia previa, solo un dispositivo con conexión a Internet y ganas de descubrir cómo la IA puede hacer tu día a día más fácil.",
+            "nivel": {
+              "escala": null,
+              "valor": null
+            },
+            "origen": "extraccion_oficial",
+            "estado": "extraida",
+            "metodo": {
+              "nombre": "extraccion-literal-de-bloques-publicados",
+              "version": "1"
+            },
+            "revision": null,
+            "evidencias": [
+              {
+                "url": "https://www.cibervoluntarios.org/api/public/activity_catalogs?lang=es&itemsPerPage=100&page=1",
+                "capturado_utc": "2026-10-23T18:20:57.873036Z",
+                "sha256": "3e542708b04717878d9795a8d83962da9750f6f1ea193845a0a8ffe659897319",
+                "localizador": {
+                  "tipo": "requisito",
+                  "valor": "/hydra:member/4/activityCatalogMaterials/1/description/texto"
+                },
+                "fragmento": "Este curso te ayudará a ganar autonomía digital a través del uso de la inteligencia artificial. Aprenderás de forma sencilla cómo aprovechar herramientas como asistentes virtuales, traductores, correctores de texto o generadores de imágenes para comunicarte mejor, organizarte, crear contenidos y aprender a tu propio ritmo. También conocerás los riesgos de depender demasiado de estas tecnologías y cómo usarlas con seguridad, protegiendo tus datos y desarrollando un pensamiento crítico. No necesitas experiencia previa, solo un dispositivo con conexión a Internet y ganas de descubrir cómo la IA puede hacer tu día a día más fácil."
+              }
+            ],
+            "discrepancias": [],
+            "revision_requerida": false
+          },
+          {
+            "id": "cibervoluntarios-material-9927659354-requisito-2",
+            "competencia": null,
+            "dimension": "requisito_entrada",
+            "descripcion": "Tus ganas de aprender y una conexión a Internet son lo único que necesitas para empezar a aprender. Puedes hacer el curso que más te interese desde casa, el autobús, la playa o la universidad",
+            "nivel": {
+              "escala": null,
+              "valor": null
+            },
+            "origen": "extraccion_oficial",
+            "estado": "extraida",
+            "metodo": {
+              "nombre": "extraccion-literal-de-bloques-publicados",
+              "version": "1"
+            },
+            "revision": null,
+            "evidencias": [
+              {
+                "url": "https://frontend.cibervoluntarios.org/vite/assets/main-Bs1vWSHf.js",
+                "capturado_utc": "2026-10-23T18:23:12.831552Z",
+                "sha256": "f577c44e3d031592b6e4fbbe0949599a58526ab18bb61ceab41b1cf51dbeabaa",
+                "localizador": {
+                  "tipo": "requisito",
+                  "valor": "caracteres:854893:855086"
+                },
+                "fragmento": "Tus ganas de aprender y una conexión a Internet son lo único que necesitas para empezar a aprender. Puedes hacer el curso que más te interese desde casa, el autobús, la playa o la universidad"
+              }
+            ],
+            "discrepancias": [],
+            "revision_requerida": false
+          }
+        ]
+      },
+      "requisitos": "publicados",
+      "cobertura": [
+        {
+          "criterio": "tarea_sencilla",
+          "afirmaciones": ["cibervoluntarios-material-9927659354-objetivo-2"],
+          "justificacion": {
+            "es": "El objetivo enumera tareas concretas con IA: redactar, traducir, crear imágenes y resumir información.",
+            "ca": "L’objectiu enumera tasques concretes amb IA: redactar, traduir, crear imatges i resumir informació."
+          },
+          "via": null
+        },
+        {
+          "criterio": "privacidad",
+          "afirmaciones": ["cibervoluntarios-material-9927659354-objetivo-3"],
+          "justificacion": {
+            "es": "El objetivo incluye proteger los datos y evitar riesgos al usar IA; no equivale a verificar una respuesta.",
+            "ca": "L’objectiu inclou protegir les dades i evitar riscos en fer servir IA; no equival a verificar una resposta."
+          },
+          "via": null
+        }
+      ],
+      "revision": {
+        "tipo": "automatizada",
+        "referencia": "revision-temarios-admitidos-ampliacion-20261023",
+        "metodo": {
+          "nombre": "contraste-literal-de-bloques-condiciones-y-criterios",
+          "version": "1"
+        },
+        "fecha_utc": "2026-10-23T21:48:21Z"
+      },
+      "firmas_semanticas": {
+        "cibervoluntarios-material-9927659354-objetivo-1": [
+          "0cfe81261633bff5a08d3ff782ab986070cb4cedf51442d86581b04fb349c08d"
+        ],
+        "cibervoluntarios-material-9927659354-objetivo-2": [
+          "d87f453fa935cf3204f8b3ef25af582afbc383cdd3d0578ddf2e0c1cc7dfd3cc"
+        ],
+        "cibervoluntarios-material-9927659354-objetivo-3": [
+          "83f4ee48a8327ce39f676a9fbd7d14fddc1243f6d8a49d334a7c9b68e4b9953e"
+        ],
+        "cibervoluntarios-material-9927659354-requisito-1": [
+          "2886276ec6ad528ef1790172c04ac719f6eeba3bd21b41fab90d791bca81f8b7"
+        ],
+        "cibervoluntarios-material-9927659354-requisito-2": [
+          "370c99ad2480a879c43dd86ced21c2f00fe045e55a06faa4e4fa516ed2b25a46"
+        ]
+      },
+      "contexto_condiciones_sha256": "159c601ac1adadc3e0f4df3d2b3354868db9813159fcdd81e345f7a612f2b669"
+    },
+    {
+      "programa_id": "cibervoluntarios:material:10059787763",
+      "aprendizaje": {
+        "schema_version": 1,
+        "registro": {
+          "id": "registro-compartido-formacion",
+          "version": "digcomp-3.0-captura-f282a4f76891",
+          "sha256": "a60ff6c94e71ead18c26186e63faf5f244866d3497799f73f8318df9ffa8315a"
+        },
+        "contenido_observado": true,
+        "afirmaciones": [
+          {
+            "id": "cibervoluntarios-material-10059787763-objetivo-1",
+            "competencia": null,
+            "dimension": "resultado_previsto",
+            "descripcion": "Cómo piensa la IA: comprenderás el funcionamiento de los modelos conversacionales, su memoria, sus límites de razonamiento y qué factores afectan a la calidad de sus respuestas.",
+            "nivel": {
+              "escala": null,
+              "valor": null
+            },
+            "origen": "extraccion_oficial",
+            "estado": "extraida",
+            "metodo": {
+              "nombre": "extraccion-literal-de-bloques-publicados",
+              "version": "1"
+            },
+            "revision": null,
+            "evidencias": [
+              {
+                "url": "https://www.cibervoluntarios.org/api/public/activity_catalogs?lang=es&itemsPerPage=100&page=1",
+                "capturado_utc": "2026-10-23T18:20:57.873036Z",
+                "sha256": "3e542708b04717878d9795a8d83962da9750f6f1ea193845a0a8ffe659897319",
+                "localizador": {
+                  "tipo": "objetivo",
+                  "valor": "/hydra:member/61/activityCatalogMaterials/0/aprenderContent/html/bloque[1] (li, línea 1, columna 1)"
+                },
+                "fragmento": "Cómo piensa la IA: comprenderás el funcionamiento de los modelos conversacionales, su memoria, sus límites de razonamiento y qué factores afectan a la calidad de sus respuestas."
+              }
+            ],
+            "discrepancias": [],
+            "revision_requerida": false
+          },
+          {
+            "id": "cibervoluntarios-material-10059787763-objetivo-2",
+            "competencia": null,
+            "dimension": "resultado_previsto",
+            "descripcion": "Diseño de prompts eficaces: identificarás los elementos clave de una buena instrucción (rol, objetivo, audiencia, formato) y practicarás el refinamiento iterativo.",
+            "nivel": {
+              "escala": null,
+              "valor": null
+            },
+            "origen": "extraccion_oficial",
+            "estado": "extraida",
+            "metodo": {
+              "nombre": "extraccion-literal-de-bloques-publicados",
+              "version": "1"
+            },
+            "revision": null,
+            "evidencias": [
+              {
+                "url": "https://www.cibervoluntarios.org/api/public/activity_catalogs?lang=es&itemsPerPage=100&page=1",
+                "capturado_utc": "2026-10-23T18:20:57.873036Z",
+                "sha256": "3e542708b04717878d9795a8d83962da9750f6f1ea193845a0a8ffe659897319",
+                "localizador": {
+                  "tipo": "objetivo",
+                  "valor": "/hydra:member/61/activityCatalogMaterials/0/aprenderContent/html/bloque[2] (li, línea 1, columna 187)"
+                },
+                "fragmento": "Diseño de prompts eficaces: identificarás los elementos clave de una buena instrucción (rol, objetivo, audiencia, formato) y practicarás el refinamiento iterativo."
+              }
+            ],
+            "discrepancias": [],
+            "revision_requerida": false
+          },
+          {
+            "id": "cibervoluntarios-material-10059787763-objetivo-3",
+            "competencia": null,
+            "dimension": "resultado_previsto",
+            "descripcion": "Gestión de conversaciones complejas: aprenderás a mantener el contexto en diálogos largos, comparar propuestas y pedir distintas perspectivas.",
+            "nivel": {
+              "escala": null,
+              "valor": null
+            },
+            "origen": "extraccion_oficial",
+            "estado": "extraida",
+            "metodo": {
+              "nombre": "extraccion-literal-de-bloques-publicados",
+              "version": "1"
+            },
+            "revision": null,
+            "evidencias": [
+              {
+                "url": "https://www.cibervoluntarios.org/api/public/activity_catalogs?lang=es&itemsPerPage=100&page=1",
+                "capturado_utc": "2026-10-23T18:20:57.873036Z",
+                "sha256": "3e542708b04717878d9795a8d83962da9750f6f1ea193845a0a8ffe659897319",
+                "localizador": {
+                  "tipo": "objetivo",
+                  "valor": "/hydra:member/61/activityCatalogMaterials/0/aprenderContent/html/bloque[3] (li, línea 1, columna 359)"
+                },
+                "fragmento": "Gestión de conversaciones complejas: aprenderás a mantener el contexto en diálogos largos, comparar propuestas y pedir distintas perspectivas."
+              }
+            ],
+            "discrepancias": [],
+            "revision_requerida": false
+          },
+          {
+            "id": "cibervoluntarios-material-10059787763-requisito-1",
+            "competencia": null,
+            "dimension": "requisito_entrada",
+            "descripcion": "Ya usas ChatGPT o Gemini de forma puntual y quieres pasar a un uso más estratégico.",
+            "nivel": {
+              "escala": null,
+              "valor": null
+            },
+            "origen": "extraccion_oficial",
+            "estado": "extraida",
+            "metodo": {
+              "nombre": "extraccion-literal-de-bloques-publicados",
+              "version": "1"
+            },
+            "revision": null,
+            "evidencias": [
+              {
+                "url": "https://www.cibervoluntarios.org/api/public/activity_catalogs?lang=es&itemsPerPage=100&page=1",
+                "capturado_utc": "2026-10-23T18:20:57.873036Z",
+                "sha256": "3e542708b04717878d9795a8d83962da9750f6f1ea193845a0a8ffe659897319",
+                "localizador": {
+                  "tipo": "requisito",
+                  "valor": "/hydra:member/61/activityCatalogMaterials/0/paraTiContent/html/bloque[1] (li, línea 1, columna 1)"
+                },
+                "fragmento": "Ya usas ChatGPT o Gemini de forma puntual y quieres pasar a un uso más estratégico."
+              }
+            ],
+            "discrepancias": [],
+            "revision_requerida": false
+          },
+          {
+            "id": "cibervoluntarios-material-10059787763-requisito-2",
+            "competencia": null,
+            "dimension": "requisito_entrada",
+            "descripcion": "Tus ganas de aprender y una conexión a Internet son lo único que necesitas para empezar a aprender. Puedes hacer el curso que más te interese desde casa, el autobús, la playa o la universidad",
+            "nivel": {
+              "escala": null,
+              "valor": null
+            },
+            "origen": "extraccion_oficial",
+            "estado": "extraida",
+            "metodo": {
+              "nombre": "extraccion-literal-de-bloques-publicados",
+              "version": "1"
+            },
+            "revision": null,
+            "evidencias": [
+              {
+                "url": "https://frontend.cibervoluntarios.org/vite/assets/main-Bs1vWSHf.js",
+                "capturado_utc": "2026-10-23T18:23:12.831552Z",
+                "sha256": "f577c44e3d031592b6e4fbbe0949599a58526ab18bb61ceab41b1cf51dbeabaa",
+                "localizador": {
+                  "tipo": "requisito",
+                  "valor": "caracteres:854893:855086"
+                },
+                "fragmento": "Tus ganas de aprender y una conexión a Internet son lo único que necesitas para empezar a aprender. Puedes hacer el curso que más te interese desde casa, el autobús, la playa o la universidad"
+              }
+            ],
+            "discrepancias": [],
+            "revision_requerida": false
+          }
+        ]
+      },
+      "requisitos": "publicados",
+      "cobertura": [
+        {
+          "criterio": "mejorar_instrucciones",
+          "afirmaciones": ["cibervoluntarios-material-10059787763-objetivo-2"],
+          "justificacion": {
+            "es": "El objetivo declara practicar el refinamiento iterativo de instrucciones. Conserva la condición de uso previo de ChatGPT o Gemini.",
+            "ca": "L’objectiu declara practicar el refinament iteratiu d’instruccions. Conserva la condició d’ús previ de ChatGPT o Gemini."
+          },
+          "via": null
+        },
+        {
+          "criterio": "criterios_explicitos",
+          "afirmaciones": ["cibervoluntarios-material-10059787763-objetivo-2"],
+          "justificacion": {
+            "es": "El objetivo exige definir rol, objetivo, audiencia y formato de la respuesta, criterios explícitos de la instrucción.",
+            "ca": "L’objectiu exigeix definir rol, objectiu, audiència i format de la resposta, criteris explícits de la instrucció."
+          },
+          "via": null
+        }
+      ],
+      "revision": {
+        "tipo": "automatizada",
+        "referencia": "revision-temarios-admitidos-ampliacion-20261023",
+        "metodo": {
+          "nombre": "contraste-literal-de-bloques-condiciones-y-criterios",
+          "version": "1"
+        },
+        "fecha_utc": "2026-10-23T21:48:21Z"
+      },
+      "firmas_semanticas": {
+        "cibervoluntarios-material-10059787763-objetivo-1": [
+          "b59f8b1479a18da1a0e732d2d4e6d4093e330eacff11d114b905eba4b1d3e11a"
+        ],
+        "cibervoluntarios-material-10059787763-objetivo-2": [
+          "703cf0ef17d5296e648b7c311bdebe30c1041281d7f1fb8431c5d89072b4675c"
+        ],
+        "cibervoluntarios-material-10059787763-objetivo-3": [
+          "626aeaaeb77086320cb1f3c88131b4005620832788afeeb4c4f85ae56456aaf0"
+        ],
+        "cibervoluntarios-material-10059787763-requisito-1": [
+          "3d7b6c203b25900c24efc69f1b6eb8fe1f446ef816de5ff8379683d2d24b6cb6"
+        ],
+        "cibervoluntarios-material-10059787763-requisito-2": [
+          "370c99ad2480a879c43dd86ced21c2f00fe045e55a06faa4e4fa516ed2b25a46"
+        ]
+      },
+      "contexto_condiciones_sha256": "9bda124c8d6b7d6ead40c12f49e42f17a1c28f582e5e7d74dc0ada8bed9674c8"
+    },
+    {
+      "programa_id": "cibervoluntarios:material:10059787295",
+      "aprendizaje": {
+        "schema_version": 1,
+        "registro": {
+          "id": "registro-compartido-formacion",
+          "version": "digcomp-3.0-captura-f282a4f76891",
+          "sha256": "a60ff6c94e71ead18c26186e63faf5f244866d3497799f73f8318df9ffa8315a"
+        },
+        "contenido_observado": true,
+        "afirmaciones": [
+          {
+            "id": "cibervoluntarios-material-10059787295-objetivo-1",
+            "competencia": null,
+            "dimension": "resultado_previsto",
+            "descripcion": "Ingeniería de Prompts avanzada: Aprenderás a diseñar instrucciones precisas y complejas para obtener respuestas de máxima calidad y profesionalidad.",
+            "nivel": {
+              "escala": null,
+              "valor": null
+            },
+            "origen": "extraccion_oficial",
+            "estado": "extraida",
+            "metodo": {
+              "nombre": "extraccion-literal-de-bloques-publicados",
+              "version": "1"
+            },
+            "revision": null,
+            "evidencias": [
+              {
+                "url": "https://www.cibervoluntarios.org/api/public/activity_catalogs?lang=es&itemsPerPage=100&page=1",
+                "capturado_utc": "2026-10-23T18:20:57.873036Z",
+                "sha256": "3e542708b04717878d9795a8d83962da9750f6f1ea193845a0a8ffe659897319",
+                "localizador": {
+                  "tipo": "objetivo",
+                  "valor": "/hydra:member/99/activityCatalogMaterials/2/aprenderContent/html/bloque[1] (li, línea 1, columna 1)"
+                },
+                "fragmento": "Ingeniería de Prompts avanzada: Aprenderás a diseñar instrucciones precisas y complejas para obtener respuestas de máxima calidad y profesionalidad."
+              }
+            ],
+            "discrepancias": [],
+            "revision_requerida": false
+          },
+          {
+            "id": "cibervoluntarios-material-10059787295-objetivo-2",
+            "competencia": null,
+            "dimension": "resultado_previsto",
+            "descripcion": "Automatización de tareas administrativas: Descubrirás cómo delegar procesos de gestión recurrentes y tareas de oficina en la IA para ganar eficiencia diaria.",
+            "nivel": {
+              "escala": null,
+              "valor": null
+            },
+            "origen": "extraccion_oficial",
+            "estado": "extraida",
+            "metodo": {
+              "nombre": "extraccion-literal-de-bloques-publicados",
+              "version": "1"
+            },
+            "revision": null,
+            "evidencias": [
+              {
+                "url": "https://www.cibervoluntarios.org/api/public/activity_catalogs?lang=es&itemsPerPage=100&page=1",
+                "capturado_utc": "2026-10-23T18:20:57.873036Z",
+                "sha256": "3e542708b04717878d9795a8d83962da9750f6f1ea193845a0a8ffe659897319",
+                "localizador": {
+                  "tipo": "objetivo",
+                  "valor": "/hydra:member/99/activityCatalogMaterials/2/aprenderContent/html/bloque[2] (li, línea 1, columna 158)"
+                },
+                "fragmento": "Automatización de tareas administrativas: Descubrirás cómo delegar procesos de gestión recurrentes y tareas de oficina en la IA para ganar eficiencia diaria."
+              }
+            ],
+            "discrepancias": [],
+            "revision_requerida": false
+          },
+          {
+            "id": "cibervoluntarios-material-10059787295-objetivo-3",
+            "competencia": null,
+            "dimension": "resultado_previsto",
+            "descripcion": "Estrategias de contenido creativo: Desarrollarás habilidades para generar textos de marketing digital, análisis de datos y piezas creativas alineadas con tu marca.",
+            "nivel": {
+              "escala": null,
+              "valor": null
+            },
+            "origen": "extraccion_oficial",
+            "estado": "extraida",
+            "metodo": {
+              "nombre": "extraccion-literal-de-bloques-publicados",
+              "version": "1"
+            },
+            "revision": null,
+            "evidencias": [
+              {
+                "url": "https://www.cibervoluntarios.org/api/public/activity_catalogs?lang=es&itemsPerPage=100&page=1",
+                "capturado_utc": "2026-10-23T18:20:57.873036Z",
+                "sha256": "3e542708b04717878d9795a8d83962da9750f6f1ea193845a0a8ffe659897319",
+                "localizador": {
+                  "tipo": "objetivo",
+                  "valor": "/hydra:member/99/activityCatalogMaterials/2/aprenderContent/html/bloque[3] (li, línea 1, columna 324)"
+                },
+                "fragmento": "Estrategias de contenido creativo: Desarrollarás habilidades para generar textos de marketing digital, análisis de datos y piezas creativas alineadas con tu marca."
+              }
+            ],
+            "discrepancias": [],
+            "revision_requerida": false
+          },
+          {
+            "id": "cibervoluntarios-material-10059787295-requisito-1",
+            "competencia": null,
+            "dimension": "requisito_entrada",
+            "descripcion": "Tus ganas de aprender y una conexión a Internet son lo único que necesitas para empezar a aprender. Puedes hacer el curso que más te interese desde casa, el autobús, la playa o la universidad",
+            "nivel": {
+              "escala": null,
+              "valor": null
+            },
+            "origen": "extraccion_oficial",
+            "estado": "extraida",
+            "metodo": {
+              "nombre": "extraccion-literal-de-bloques-publicados",
+              "version": "1"
+            },
+            "revision": null,
+            "evidencias": [
+              {
+                "url": "https://frontend.cibervoluntarios.org/vite/assets/main-Bs1vWSHf.js",
+                "capturado_utc": "2026-10-23T18:23:12.831552Z",
+                "sha256": "f577c44e3d031592b6e4fbbe0949599a58526ab18bb61ceab41b1cf51dbeabaa",
+                "localizador": {
+                  "tipo": "requisito",
+                  "valor": "caracteres:854893:855086"
+                },
+                "fragmento": "Tus ganas de aprender y una conexión a Internet son lo único que necesitas para empezar a aprender. Puedes hacer el curso que más te interese desde casa, el autobús, la playa o la universidad"
+              }
+            ],
+            "discrepancias": [],
+            "revision_requerida": false
+          }
+        ]
+      },
+      "requisitos": "publicados",
+      "cobertura": [
+        {
+          "criterio": "tarea_real",
+          "afirmaciones": ["cibervoluntarios-material-10059787295-objetivo-2"],
+          "justificacion": {
+            "es": "El objetivo declara delegar procesos de gestión recurrentes y tareas administrativas en IA. No acredita por sí solo un procedimiento avanzado.",
+            "ca": "L’objectiu declara delegar processos de gestió recurrents i tasques administratives en IA. No acredita per si sol un procediment avançat."
+          },
+          "via": null
+        }
+      ],
+      "revision": {
+        "tipo": "automatizada",
+        "referencia": "revision-temarios-admitidos-ampliacion-20261023",
+        "metodo": {
+          "nombre": "contraste-literal-de-bloques-condiciones-y-criterios",
+          "version": "1"
+        },
+        "fecha_utc": "2026-10-23T21:48:21Z"
+      },
+      "firmas_semanticas": {
+        "cibervoluntarios-material-10059787295-objetivo-1": [
+          "b08c4bdd9daf2504a8963314ba7eede4b9b69c9b43cec77427594ca1641da2b5"
+        ],
+        "cibervoluntarios-material-10059787295-objetivo-2": [
+          "63d446d31a99c0106a312df59275f0843fe98da63c20d9a05fa27558603e5356"
+        ],
+        "cibervoluntarios-material-10059787295-objetivo-3": [
+          "6c394ee898b6c77258d2b1e8f6ed445cd3c2b2440071867a186220dc3ba4f8c9"
+        ],
+        "cibervoluntarios-material-10059787295-requisito-1": [
+          "370c99ad2480a879c43dd86ced21c2f00fe045e55a06faa4e4fa516ed2b25a46"
+        ]
+      },
+      "contexto_condiciones_sha256": "76ebd31955626eba44e42b0d52eff5a4c1e8119a71d7dbc17800375518e4e2df"
+    },
+    {
+      "programa_id": "cibervoluntarios:material:10059787708",
+      "aprendizaje": {
+        "schema_version": 1,
+        "registro": {
+          "id": "registro-compartido-formacion",
+          "version": "digcomp-3.0-captura-f282a4f76891",
+          "sha256": "a60ff6c94e71ead18c26186e63faf5f244866d3497799f73f8318df9ffa8315a"
+        },
+        "contenido_observado": true,
+        "afirmaciones": [
+          {
+            "id": "cibervoluntarios-material-10059787708-objetivo-1",
+            "competencia": null,
+            "dimension": "resultado_previsto",
+            "descripcion": "Arquitecturas de la IA generativa: distinguirás GANs, autoencoders y modelos de difusión, y sabrás qué fallo característico buscar en cada tipo de contenido sintético.",
+            "nivel": {
+              "escala": null,
+              "valor": null
+            },
+            "origen": "extraccion_oficial",
+            "estado": "extraida",
+            "metodo": {
+              "nombre": "extraccion-literal-de-bloques-publicados",
+              "version": "1"
+            },
+            "revision": null,
+            "evidencias": [
+              {
+                "url": "https://www.cibervoluntarios.org/api/public/activity_catalogs?lang=es&itemsPerPage=100&page=1",
+                "capturado_utc": "2026-10-23T18:20:57.873036Z",
+                "sha256": "3e542708b04717878d9795a8d83962da9750f6f1ea193845a0a8ffe659897319",
+                "localizador": {
+                  "tipo": "objetivo",
+                  "valor": "/hydra:member/67/activityCatalogMaterials/0/aprenderContent/html/bloque[1] (li, línea 1, columna 1)"
+                },
+                "fragmento": "Arquitecturas de la IA generativa: distinguirás GANs, autoencoders y modelos de difusión, y sabrás qué fallo característico buscar en cada tipo de contenido sintético."
+              }
+            ],
+            "discrepancias": [],
+            "revision_requerida": false
+          },
+          {
+            "id": "cibervoluntarios-material-10059787708-objetivo-2",
+            "competencia": null,
+            "dimension": "resultado_previsto",
+            "descripcion": "Análisis forense digital: aplicarás metadatos EXIF, credenciales C2PA y Error Level Analysis con herramientas como Forensically o InVID, conociendo también sus falsos positivos.",
+            "nivel": {
+              "escala": null,
+              "valor": null
+            },
+            "origen": "extraccion_oficial",
+            "estado": "extraida",
+            "metodo": {
+              "nombre": "extraccion-literal-de-bloques-publicados",
+              "version": "1"
+            },
+            "revision": null,
+            "evidencias": [
+              {
+                "url": "https://www.cibervoluntarios.org/api/public/activity_catalogs?lang=es&itemsPerPage=100&page=1",
+                "capturado_utc": "2026-10-23T18:20:57.873036Z",
+                "sha256": "3e542708b04717878d9795a8d83962da9750f6f1ea193845a0a8ffe659897319",
+                "localizador": {
+                  "tipo": "objetivo",
+                  "valor": "/hydra:member/67/activityCatalogMaterials/0/aprenderContent/html/bloque[2] (li, línea 1, columna 177)"
+                },
+                "fragmento": "Análisis forense digital: aplicarás metadatos EXIF, credenciales C2PA y Error Level Analysis con herramientas como Forensically o InVID, conociendo también sus falsos positivos."
+              }
+            ],
+            "discrepancias": [],
+            "revision_requerida": false
+          },
+          {
+            "id": "cibervoluntarios-material-10059787708-objetivo-3",
+            "competencia": null,
+            "dimension": "resultado_previsto",
+            "descripcion": "Protocolos de verificación propios: diseñarás flujos secuenciales de comprobación y un plan de respuesta institucional ante un bulo que te afecte directamente.",
+            "nivel": {
+              "escala": null,
+              "valor": null
+            },
+            "origen": "extraccion_oficial",
+            "estado": "extraida",
+            "metodo": {
+              "nombre": "extraccion-literal-de-bloques-publicados",
+              "version": "1"
+            },
+            "revision": null,
+            "evidencias": [
+              {
+                "url": "https://www.cibervoluntarios.org/api/public/activity_catalogs?lang=es&itemsPerPage=100&page=1",
+                "capturado_utc": "2026-10-23T18:20:57.873036Z",
+                "sha256": "3e542708b04717878d9795a8d83962da9750f6f1ea193845a0a8ffe659897319",
+                "localizador": {
+                  "tipo": "objetivo",
+                  "valor": "/hydra:member/67/activityCatalogMaterials/0/aprenderContent/html/bloque[3] (li, línea 1, columna 363)"
+                },
+                "fragmento": "Protocolos de verificación propios: diseñarás flujos secuenciales de comprobación y un plan de respuesta institucional ante un bulo que te afecte directamente."
+              }
+            ],
+            "discrepancias": [],
+            "revision_requerida": false
+          },
+          {
+            "id": "cibervoluntarios-material-10059787708-requisito-1",
+            "competencia": null,
+            "dimension": "requisito_entrada",
+            "descripcion": "Ya conoces lo básico sobre desinformación y buscas dar el salto a un análisis técnico y argumentable.",
+            "nivel": {
+              "escala": null,
+              "valor": null
+            },
+            "origen": "extraccion_oficial",
+            "estado": "extraida",
+            "metodo": {
+              "nombre": "extraccion-literal-de-bloques-publicados",
+              "version": "1"
+            },
+            "revision": null,
+            "evidencias": [
+              {
+                "url": "https://www.cibervoluntarios.org/api/public/activity_catalogs?lang=es&itemsPerPage=100&page=1",
+                "capturado_utc": "2026-10-23T18:20:57.873036Z",
+                "sha256": "3e542708b04717878d9795a8d83962da9750f6f1ea193845a0a8ffe659897319",
+                "localizador": {
+                  "tipo": "requisito",
+                  "valor": "/hydra:member/67/activityCatalogMaterials/0/paraTiContent/html/bloque[3] (li, línea 1, columna 216)"
+                },
+                "fragmento": "Ya conoces lo básico sobre desinformación y buscas dar el salto a un análisis técnico y argumentable."
+              }
+            ],
+            "discrepancias": [],
+            "revision_requerida": false
+          },
+          {
+            "id": "cibervoluntarios-material-10059787708-requisito-2",
+            "competencia": null,
+            "dimension": "requisito_entrada",
+            "descripcion": "Tus ganas de aprender y una conexión a Internet son lo único que necesitas para empezar a aprender. Puedes hacer el curso que más te interese desde casa, el autobús, la playa o la universidad",
+            "nivel": {
+              "escala": null,
+              "valor": null
+            },
+            "origen": "extraccion_oficial",
+            "estado": "extraida",
+            "metodo": {
+              "nombre": "extraccion-literal-de-bloques-publicados",
+              "version": "1"
+            },
+            "revision": null,
+            "evidencias": [
+              {
+                "url": "https://frontend.cibervoluntarios.org/vite/assets/main-Bs1vWSHf.js",
+                "capturado_utc": "2026-10-23T18:23:12.831552Z",
+                "sha256": "f577c44e3d031592b6e4fbbe0949599a58526ab18bb61ceab41b1cf51dbeabaa",
+                "localizador": {
+                  "tipo": "requisito",
+                  "valor": "caracteres:854893:855086"
+                },
+                "fragmento": "Tus ganas de aprender y una conexión a Internet son lo único que necesitas para empezar a aprender. Puedes hacer el curso que más te interese desde casa, el autobús, la playa o la universidad"
+              }
+            ],
+            "discrepancias": [],
+            "revision_requerida": false
+          }
+        ]
+      },
+      "requisitos": "publicados",
+      "cobertura": [
+        {
+          "criterio": "procedimiento_verificable",
+          "afirmaciones": ["cibervoluntarios-material-10059787708-objetivo-3"],
+          "justificacion": {
+            "es": "El objetivo exige diseñar flujos secuenciales de comprobación y un plan de respuesta institucional.",
+            "ca": "L’objectiu exigeix dissenyar fluxos seqüencials de comprovació i un pla de resposta institucional."
+          },
+          "via": null
+        },
+        {
+          "criterio": "fuentes_y_limites",
+          "afirmaciones": [
+            "cibervoluntarios-material-10059787708-objetivo-1",
+            "cibervoluntarios-material-10059787708-objetivo-2"
+          ],
+          "justificacion": {
+            "es": "El temario exige identificar fallos de arquitecturas generativas y analizar metadatos EXIF, credenciales C2PA y ELA con conocimiento de sus falsos positivos.",
+            "ca": "El temari exigeix identificar errors d’arquitectures generatives i analitzar metadades EXIF, credencials C2PA i ELA amb coneixement dels seus falsos positius."
+          },
+          "via": null
+        },
+        {
+          "criterio": "caso_complejo",
+          "afirmaciones": [
+            "cibervoluntarios-material-10059787708-objetivo-1",
+            "cibervoluntarios-material-10059787708-objetivo-2",
+            "cibervoluntarios-material-10059787708-objetivo-3"
+          ],
+          "justificacion": {
+            "es": "La verificación forense audiovisual combina procedencia, herramientas con falsos positivos y un protocolo secuencial de respuesta. La vía es verificación rigurosa, sin exigir programar; requiere conocimientos básicos previos de desinformación.",
+            "ca": "La verificació forense audiovisual combina procedència, eines amb falsos positius i un protocol seqüencial de resposta. La via és verificació rigorosa, sense exigir programar; requereix coneixements bàsics previs de desinformació."
+          },
+          "via": "verificacion_rigurosa"
+        }
+      ],
+      "revision": {
+        "tipo": "automatizada",
+        "referencia": "revision-temarios-admitidos-ampliacion-20261023",
+        "metodo": {
+          "nombre": "contraste-literal-de-bloques-condiciones-y-criterios",
+          "version": "1"
+        },
+        "fecha_utc": "2026-10-23T21:48:21Z"
+      },
+      "firmas_semanticas": {
+        "cibervoluntarios-material-10059787708-objetivo-1": [
+          "866333050b2302025585c702a40c01db5f3cfa8a1caad71128199b9ec02e631a"
+        ],
+        "cibervoluntarios-material-10059787708-objetivo-2": [
+          "05d02c70f8865b637cb4be4425bf66e00cfaa89eb3e48465100b4120664371a1"
+        ],
+        "cibervoluntarios-material-10059787708-objetivo-3": [
+          "33e9aedcea19631ffa07714ebc2e597911d05237448d3c46da0e54f0a0485e03"
+        ],
+        "cibervoluntarios-material-10059787708-requisito-1": [
+          "806e3e8a0fe3e1981618410c12f17ea72160601896bce23853a1e708e87170ec"
+        ],
+        "cibervoluntarios-material-10059787708-requisito-2": [
+          "370c99ad2480a879c43dd86ced21c2f00fe045e55a06faa4e4fa516ed2b25a46"
+        ]
+      },
+      "contexto_condiciones_sha256": "d053300139e4bd80d636fc14d0cbe885d2d5e4c7cab9c4764addc3aac77dc6f0"
+    }
+  ],
+  "caminos": [
+    {
+      "id": "inicio-privacidad-hp",
+      "etapa": "inicial",
+      "programas": ["hp-life:431:es", "hp-life:441:es"],
+      "justificacion": {
+        "es": "Combina privacidad en el uso profesional y contraste de información. Sigue sin demostrar la realización de una tarea sencilla con IA; el camino es parcial.",
+        "ca": "Combina privacitat en l’ús professional i contrast d’informació. Continua sense demostrar la realització d’una tasca senzilla amb IA; el camí és parcial."
+      },
+      "revision": {
+        "tipo": "automatizada",
+        "referencia": "revision-temario-hp-441",
+        "metodo": {
+          "nombre": "contraste-local-de-objetivos-y-huecos",
+          "version": "1"
+        },
+        "fecha_utc": "2026-10-23T16:44:44.778925Z"
+      }
+    },
+    {
+      "id": "trabajo-criterios-hp",
+      "etapa": "intermedio",
+      "programas": ["hp-life:431:es"],
+      "justificacion": {
+        "es": "Aporte parcial de objetivos mensurables. Quedan sin demostrar una tarea real y la mejora iterativa de las instrucciones.",
+        "ca": "Aportació parcial d’objectius mesurables. Queden sense demostrar una tasca real i la millora iterativa de les instruccions."
+      },
+      "revision": {
+        "tipo": "automatizada",
+        "referencia": "revision-temario-hp-20261023",
+        "metodo": {
+          "nombre": "contraste-local-de-objetivos-y-huecos",
+          "version": "1"
+        },
+        "fecha_utc": "2026-10-23T12:50:25.216295Z"
+      }
+    },
+    {
+      "id": "inicio-practica-contraste",
+      "etapa": "inicial",
+      "programas": ["hp-life:431:es", "hp-life:441:es", "claude-academy:claude-101"],
+      "justificacion": {
+        "es": "Combina una tarea con artefactos, privacidad y contraste de fuentes. Claude 101 está en inglés y exige confirmar sus condiciones de cuenta y prácticas; si falta cualquier apoyo o condición, el camino queda parcial.",
+        "ca": "Combina una tasca amb artefactes, privacitat i contrast de fonts. Claude 101 és en anglès i exigeix confirmar les condicions de compte i pràctiques; si falta qualsevol suport o condició, el camí queda parcial."
+      },
+      "revision": {
+        "tipo": "automatizada",
+        "referencia": "revision-academy-objetivos-20261023",
+        "metodo": {
+          "nombre": "contraste-de-bloques-completos-y-contexto",
+          "version": "1"
+        },
+        "fecha_utc": "2026-10-23T19:07:13.032544Z"
+      }
+    },
+    {
+      "id": "trabajo-mejora-criterios",
+      "etapa": "intermedio",
+      "programas": ["hp-life:431:es", "claude-academy:claude-101", "claude-academy:introduction-to-claude-tag"],
+      "justificacion": {
+        "es": "Combina una pieza completa de trabajo y su comprobación, mejora de instrucciones y objetivos mensurables. Las fichas Academy están en inglés; Tag requiere workspace, acceso y permisos publicados. No acredita un procedimiento avanzado.",
+        "ca": "Combina una peça completa de treball i la seva comprovació, millora d’instruccions i objectius mesurables. Les fitxes Academy són en anglès; Tag requereix espai de treball, accés i permisos publicats. No acredita un procediment avançat."
+      },
+      "revision": {
+        "tipo": "automatizada",
+        "referencia": "revision-academy-objetivos-20261023",
+        "metodo": {
+          "nombre": "contraste-de-bloques-completos-y-contexto",
+          "version": "1"
+        },
+        "fecha_utc": "2026-10-23T19:07:13.032544Z"
+      }
+    },
+    {
+      "id": "inicio-autonomia-contraste-es",
+      "etapa": "inicial",
+      "programas": ["cibervoluntarios:material:9927659354", "hp-life:441:es"],
+      "justificacion": {
+        "es": "Combina tareas cotidianas con IA, protección de datos y contraste de fuentes. Sólo se completa si las condiciones publicadas se confirman y todos los apoyos siguen vigentes.",
+        "ca": "Combina tasques quotidianes amb IA, protecció de dades i contrast de fonts. Només es completa si es confirmen les condicions publicades i tots els suports continuen vigents."
+      },
+      "revision": {
+        "tipo": "automatizada",
+        "referencia": "revision-temarios-admitidos-ampliacion-20261023",
+        "metodo": {
+          "nombre": "contraste-literal-de-bloques-condiciones-y-criterios",
+          "version": "1"
+        },
+        "fecha_utc": "2026-10-23T21:48:21Z"
+      }
+    },
+    {
+      "id": "trabajo-refinamiento-es",
+      "etapa": "intermedio",
+      "programas": ["cibervoluntarios:material:10059787295", "cibervoluntarios:material:10059787763"],
+      "justificacion": {
+        "es": "Combina procesos administrativos con IA, refinamiento iterativo y criterios explícitos. Requiere confirmar el uso previo de ChatGPT o Gemini y las condiciones publicadas.",
+        "ca": "Combina processos administratius amb IA, refinament iteratiu i criteris explícits. Requereix confirmar l’ús previ de ChatGPT o Gemini i les condicions publicades."
+      },
+      "revision": {
+        "tipo": "automatizada",
+        "referencia": "revision-temarios-admitidos-ampliacion-20261023",
+        "metodo": {
+          "nombre": "contraste-literal-de-bloques-condiciones-y-criterios",
+          "version": "1"
+        },
+        "fecha_utc": "2026-10-23T21:48:21Z"
+      }
+    },
+    {
+      "id": "trabajo-refinamiento-en",
+      "etapa": "intermedio",
+      "programas": ["claude-academy:introduction-to-claude-tag", "claude-academy:ai-capabilities-and-limitations"],
+      "justificacion": {
+        "es": "Combina una pieza completa de trabajo con mejora de instrucciones y resultados verificables. Requiere inglés y las condiciones de workspace, roles y prácticas publicadas por Tag.",
+        "ca": "Combina una peça completa de treball amb millora d’instruccions i resultats verificables. Requereix anglès i les condicions d’espai de treball, rols i pràctiques publicades per Tag."
+      },
+      "revision": {
+        "tipo": "automatizada",
+        "referencia": "revision-temarios-admitidos-ampliacion-20261023",
+        "metodo": {
+          "nombre": "contraste-literal-de-bloques-condiciones-y-criterios",
+          "version": "1"
+        },
+        "fecha_utc": "2026-10-23T21:48:21Z"
+      }
+    },
+    {
+      "id": "verificacion-forense-es",
+      "etapa": "avanzado",
+      "programas": ["cibervoluntarios:material:10059787708"],
+      "justificacion": {
+        "es": "Procedimiento secuencial, procedencia y falsos positivos en un caso de verificación forense audiovisual. Requiere confirmar conocimientos básicos previos de desinformación; no acredita automatización ni exige programación.",
+        "ca": "Procediment seqüencial, procedència i falsos positius en un cas de verificació forense audiovisual. Requereix confirmar coneixements bàsics previs de desinformació; no acredita automatització ni exigeix programació."
+      },
+      "revision": {
+        "tipo": "automatizada",
+        "referencia": "revision-temarios-admitidos-ampliacion-20261023",
+        "metodo": {
+          "nombre": "contraste-literal-de-bloques-condiciones-y-criterios",
+          "version": "1"
+        },
+        "fecha_utc": "2026-10-23T21:48:21Z"
+      }
+    }
+  ]
+}

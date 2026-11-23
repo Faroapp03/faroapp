@@ -1,0 +1,91 @@
+/* Documento: caja, tipografía, espera de traducción, [hidden], foco, enlace de salto, texto solo para lectores,
+   rótulo y aviso de prototipo. */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: var(--fuente-texto);
+  line-height: 1.5;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100dvh;
+  color: var(--color-tinta);
+  background: var(--color-fondo);
+}
+
+/* En otro idioma que el castellano del HTML, se oculta el cuerpo mientras llega el diccionario para evitar el cambio
+   de texto visible. scripts/idioma-inicial.js retira la espera al llegar los textos o al agotarse su plazo. */
+:root[data-traduciendo] body {
+  visibility: hidden;
+}
+
+/* El atributo hidden gana siempre: muchos componentes fijan su propio display y no deben reaparecer ocultos. */
+[hidden] {
+  /* biome-ignore lint/complexity/noImportantStyles: hidden debe ganar a cualquier display de componente */
+  display: none !important;
+}
+
+:focus-visible {
+  outline: var(--foco);
+  outline-offset: 5px;
+}
+
+.salto {
+  position: absolute;
+  left: -999px;
+  top: 8px;
+  padding: 8px 12px;
+  color: var(--color-tinta);
+  background: var(--color-panel);
+  border: 1px solid var(--color-linea);
+}
+
+.salto:focus {
+  left: 8px;
+  z-index: 50;
+}
+
+/* Fuera de la vista, pero dentro de lo que leen los lectores de pantalla */
+.solo-lectores {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Rótulo sobre un título */
+.antetitulo {
+  margin: 0 0 18px;
+  color: var(--color-tenue);
+  font-size: var(--texto-minimo);
+  font-weight: 400;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+/* Aviso de prototipo, bajo el enlace de salto: el informe de ejemplo */
+.aviso-prototipo {
+  padding: 8px 18px;
+  color: var(--color-aviso-tinta);
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  text-align: center;
+  background: var(--color-aviso-fondo);
+}
+
+.aviso-prototipo a {
+  color: inherit;
+  text-underline-offset: 3px;
+}

@@ -1,0 +1,418 @@
+{
+  "fuente": "Fuente: Citilab (citilab.eu)",
+  "copia": "2026-11-15",
+  "listado": "https://www.citilab.eu/formacio-tecnologia-informacio-comunicacio/",
+  "cursos": [
+    {
+      "id": 41667,
+      "titulo": "Electrònica creativa i robòtica",
+      "enlace": "https://www.citilab.eu/formacio-tecnologia-informacio-comunicacio/robotica-i-electronica-creativa-amb-microblocks/",
+      "modificado": "2026-11-03",
+      "publico": [
+        "12-anys"
+      ],
+      "temas": [
+        "electronica",
+        "programacio",
+        "robotica"
+      ],
+      "trata_ia": false,
+      "modalidad": "presencial",
+      "requisitos": "prueba",
+      "horas": 24.0,
+      "sesiones": 16.0,
+      "inicio": null,
+      "fin": null,
+      "horario": null,
+      "periodico": false,
+      "coste": {
+        "gratuito": false,
+        "precio_eur": 100.0,
+        "carnet_citilaber": false,
+        "descuento_paro_pct": 50.0
+      },
+      "lugar": {
+        "nombre": "Citilab",
+        "direccion": "Pl. Can Suris, s/n",
+        "municipio": "Cornellà",
+        "codigo_postal": "08940"
+      }
+    },
+    {
+      "id": 71169,
+      "titulo": "SeniorLab",
+      "enlace": "https://www.citilab.eu/formacio-tecnologia-informacio-comunicacio/seniorlab/",
+      "modificado": "2026-10-01",
+      "publico": [
+        "persones-grans"
+      ],
+      "temas": [
+        "competencies-digitals",
+        "envelliment-actiu",
+        "treball-per-projectes-2"
+      ],
+      "trata_ia": false,
+      "modalidad": "presencial",
+      "requisitos": "otros",
+      "horas": null,
+      "sesiones": null,
+      "inicio": null,
+      "fin": null,
+      "horario": [
+        {
+          "dias": [
+            2
+          ],
+          "desde": "11:00",
+          "hasta": "13:00",
+          "a_distancia": false
+        },
+        {
+          "dias": [
+            4
+          ],
+          "desde": "11:00",
+          "hasta": "13:00",
+          "a_distancia": false
+        }
+      ],
+      "periodico": true,
+      "coste": {
+        "gratuito": true,
+        "precio_eur": null,
+        "carnet_citilaber": true,
+        "descuento_paro_pct": null
+      },
+      "lugar": {
+        "nombre": "Citilab",
+        "direccion": "Pl. Can Suris, s/n",
+        "municipio": "Cornellà",
+        "codigo_postal": "08940"
+      }
+    },
+    {
+      "id": 71191,
+      "titulo": "Programa IA",
+      "enlace": "https://www.citilab.eu/formacio-tecnologia-informacio-comunicacio/programacio-intelligencia-artificial-ia/",
+      "modificado": "2026-10-01",
+      "publico": [
+        "12-anys"
+      ],
+      "temas": [
+        "programacio"
+      ],
+      "trata_ia": true,
+      "modalidad": "presencial",
+      "requisitos": "prueba",
+      "horas": 24.0,
+      "sesiones": 16.0,
+      "inicio": "2026-02-09",
+      "fin": "2026-06-15",
+      "horario": [
+        {
+          "dias": [
+            1
+          ],
+          "desde": "17:15",
+          "hasta": "18:45",
+          "a_distancia": false
+        }
+      ],
+      "periodico": false,
+      "coste": {
+        "gratuito": false,
+        "precio_eur": 75.0,
+        "carnet_citilaber": false,
+        "descuento_paro_pct": 50.0
+      },
+      "lugar": {
+        "nombre": "Citilab",
+        "direccion": "Pl. Can Suris, s/n",
+        "municipio": "Cornellà",
+        "codigo_postal": "08940"
+      }
+    },
+    {
+      "id": 71216,
+      "titulo": "Consulta i practica",
+      "enlace": "https://www.citilab.eu/formacio-tecnologia-informacio-comunicacio/consulta-i-practica/",
+      "modificado": "2026-10-05",
+      "publico": [
+        "adults"
+      ],
+      "temas": [
+        "competencies-digitals",
+        "envelliment-actiu",
+        "treball-per-projectes-2"
+      ],
+      "trata_ia": false,
+      "modalidad": "presencial",
+      "requisitos": "ninguno",
+      "horas": null,
+      "sesiones": null,
+      "inicio": null,
+      "fin": null,
+      "horario": [
+        {
+          "dias": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "desde": "16:00",
+          "hasta": "18:00",
+          "a_distancia": false
+        },
+        {
+          "dias": [
+            5
+          ],
+          "desde": "16:00",
+          "hasta": "18:00",
+          "a_distancia": true
+        }
+      ],
+      "periodico": true,
+      "coste": {
+        "gratuito": true,
+        "precio_eur": null,
+        "carnet_citilaber": true,
+        "descuento_paro_pct": null
+      },
+      "lugar": {
+        "nombre": "Citilab",
+        "direccion": "Pl. Can Suris, s/n",
+        "municipio": "Cornellà",
+        "codigo_postal": "08940"
+      }
+    },
+    {
+      "id": 71224,
+      "titulo": "Inicia’t al món digital",
+      "enlace": "https://www.citilab.eu/formacio-tecnologia-informacio-comunicacio/iniciat/",
+      "modificado": "2026-11-03",
+      "publico": [
+        "adults"
+      ],
+      "temas": [
+        "aplicacions-mobils",
+        "competencies-digitals"
+      ],
+      "trata_ia": false,
+      "modalidad": "presencial",
+      "requisitos": "ninguno",
+      "horas": 32.0,
+      "sesiones": 16.0,
+      "inicio": "2026-10-01",
+      "fin": "2026-11-24",
+      "horario": [
+        {
+          "dias": [
+            2,
+            4
+          ],
+          "desde": "11:00",
+          "hasta": "13:00",
+          "a_distancia": false
+        },
+        {
+          "dias": [
+            2,
+            4
+          ],
+          "desde": "16:00",
+          "hasta": "18:00",
+          "a_distancia": false
+        }
+      ],
+      "periodico": false,
+      "coste": {
+        "gratuito": true,
+        "precio_eur": null,
+        "carnet_citilaber": true,
+        "descuento_paro_pct": null
+      },
+      "lugar": {
+        "nombre": "Citilab",
+        "direccion": "Pl. Can Suris, s/n",
+        "municipio": "Cornellà",
+        "codigo_postal": "08940"
+      }
+    },
+    {
+      "id": 71229,
+      "titulo": "Avança en el món digital",
+      "enlace": "https://www.citilab.eu/formacio-tecnologia-informacio-comunicacio/avanca-en-el-mon-digital/",
+      "modificado": "2026-09-29",
+      "publico": [
+        "adults"
+      ],
+      "temas": [
+        "aplicacions-mobils",
+        "competencies-digitals"
+      ],
+      "trata_ia": false,
+      "modalidad": "presencial",
+      "requisitos": "prueba",
+      "horas": 24.0,
+      "sesiones": 12.0,
+      "inicio": "2026-09-28",
+      "fin": "2026-12-21",
+      "horario": [
+        {
+          "dias": [
+            1
+          ],
+          "desde": "11:00",
+          "hasta": "13:00",
+          "a_distancia": false
+        }
+      ],
+      "periodico": false,
+      "coste": {
+        "gratuito": true,
+        "precio_eur": null,
+        "carnet_citilaber": true,
+        "descuento_paro_pct": null
+      },
+      "lugar": {
+        "nombre": "Citilab",
+        "direccion": "Pl. Can Suris, s/n",
+        "municipio": "Cornellà",
+        "codigo_postal": "08940"
+      }
+    },
+    {
+      "id": 71508,
+      "titulo": "Aula Mentor",
+      "enlace": "https://www.citilab.eu/formacio-tecnologia-informacio-comunicacio/aula-mentor/",
+      "modificado": "2026-11-03",
+      "publico": [
+        "adults"
+      ],
+      "temas": [
+        "competencies-digitals",
+        "ocupacio"
+      ],
+      "trata_ia": false,
+      "modalidad": "en-linea",
+      "requisitos": null,
+      "horas": null,
+      "sesiones": null,
+      "inicio": null,
+      "fin": null,
+      "horario": [
+        {
+          "dias": [
+            2,
+            4
+          ],
+          "desde": "09:00",
+          "hasta": "14:00",
+          "a_distancia": false
+        }
+      ],
+      "periodico": true,
+      "coste": {
+        "gratuito": null,
+        "precio_eur": null,
+        "carnet_citilaber": true,
+        "descuento_paro_pct": null
+      },
+      "lugar": {
+        "nombre": "Citilab",
+        "direccion": "Pl. Can Suris, s/n",
+        "municipio": "Cornellà",
+        "codigo_postal": "08940"
+      }
+    },
+    {
+      "id": 78664,
+      "titulo": "Tràmits i gestions digitals",
+      "enlace": "https://www.citilab.eu/formacio-tecnologia-informacio-comunicacio/tramits-i-gestions-digitals/",
+      "modificado": "2025-10-31",
+      "publico": [
+        "adults",
+        "persones-grans"
+      ],
+      "temas": [
+        "competencies-digitals"
+      ],
+      "trata_ia": false,
+      "modalidad": "presencial",
+      "requisitos": null,
+      "horas": null,
+      "sesiones": null,
+      "inicio": null,
+      "fin": null,
+      "horario": [
+        {
+          "dias": [
+            5
+          ],
+          "desde": "10:00",
+          "hasta": "12:00",
+          "a_distancia": false
+        },
+        {
+          "dias": [
+            5
+          ],
+          "desde": "16:00",
+          "hasta": "18:00",
+          "a_distancia": false
+        }
+      ],
+      "periodico": true,
+      "coste": {
+        "gratuito": true,
+        "precio_eur": null,
+        "carnet_citilaber": false,
+        "descuento_paro_pct": null
+      },
+      "lugar": {
+        "nombre": "Citilab",
+        "direccion": "Pl. Can Suris, s/n",
+        "municipio": "Cornellà",
+        "codigo_postal": "08940"
+      }
+    },
+    {
+      "id": 82402,
+      "titulo": "Hacking ètic",
+      "enlace": "https://www.citilab.eu/formacio-tecnologia-informacio-comunicacio/hacking-etic/",
+      "modificado": "2026-11-05",
+      "publico": [
+        "16-anys",
+        "adults"
+      ],
+      "temas": [
+        "ciberseguretat",
+        "hacking-etic",
+        "treball-per-projectes"
+      ],
+      "trata_ia": false,
+      "modalidad": "presencial",
+      "requisitos": "otros",
+      "horas": 4.0,
+      "sesiones": 2.0,
+      "inicio": "2026-11-18",
+      "fin": "2026-11-25",
+      "horario": null,
+      "periodico": false,
+      "coste": {
+        "gratuito": true,
+        "precio_eur": null,
+        "carnet_citilaber": false,
+        "descuento_paro_pct": null
+      },
+      "lugar": {
+        "nombre": "Citilab",
+        "direccion": "Pl. Can Suris, s/n",
+        "municipio": "Cornellà",
+        "codigo_postal": "08940"
+      }
+    }
+  ]
+}

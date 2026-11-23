@@ -1,0 +1,9 @@
+-r requirements.txt
+# Ruff: comprobación y formato del Python propio.
+ruff==0.16.9
+# Propiedades de los lectores: casos reproducibles y reducción de contraejemplos.
+hypothesis==6.168.5
+sortedcontainers==2.4.0
+
+# Instalador del venv preparado exclusivamente desde ruedas locales verificadas.
+pip==26.2.2

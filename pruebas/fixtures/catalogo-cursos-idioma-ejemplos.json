@@ -1,0 +1,1048 @@
+{
+  "ofertas": [
+    {
+      "cierra_el": "2026-11-24T11:00:00Z",
+      "comprobado_el": "2026-11-18T18:13:59.273947Z",
+      "corte_evaluacion_utc": "2026-11-18T18:44:35.402501Z",
+      "evidencia_materia": {
+        "actividad_id": "1593887",
+        "censo_ia": null,
+        "contenido": {
+          "capturado_utc": "2026-11-18T18:13:59.273947Z",
+          "localizador": "/activities/4",
+          "metodo": "cibernarium-descripcion-api-v1",
+          "nivel_sugerido": {
+            "origen": "categoria",
+            "regla": "nivel-cibernarium-v1",
+            "valor": "inicial"
+          },
+          "reglas_sha256": "6470597ae6982a2bf66341cbb24cd3e589b736cffe8d2aa30972ce9185704c7d",
+          "sha256": "f224af2633beb19f49b54c8fd89fa62b3f2e2a7c735a175994a7df9ee9503430",
+          "sha256_captura": "8be4b61c99c2459b005bee17955a561d40dbc0210d6f72394d33e2a2f8e620c1",
+          "temas_sugeridos": ["ofimatica"],
+          "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=60&_cAct_INSTANCE_uhcx_end=75&_cAct_INSTANCE_uhcx_typeView=list"
+        },
+        "edicion_id": "cibernarium-edicion:1578980",
+        "estado_censo": "completo",
+        "programa_id": "cibernarium:1592279",
+        "version": 1,
+        "vinculo": {
+          "capturado_utc": "2026-11-18T18:13:59.273947Z",
+          "localizador": "/activities/4/listEditions/1/activityId",
+          "sha256": "8be4b61c99c2459b005bee17955a561d40dbc0210d6f72394d33e2a2f8e620c1",
+          "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=60&_cAct_INSTANCE_uhcx_end=75&_cAct_INSTANCE_uhcx_typeView=list"
+        }
+      },
+      "hechos": {
+        "acceso_fundae": {
+          "alcance": "edicion",
+          "moneda": null,
+          "motivo": "sin_soporte_de_campo",
+          "unidad": null,
+          "valor": null
+        },
+        "calendario_aula": {
+          "alcance": "edicion",
+          "moneda": null,
+          "motivo": "sin_soporte_de_campo",
+          "unidad": null,
+          "valor": null
+        },
+        "calendario_formacion": {
+          "alcance": "edicion",
+          "moneda": null,
+          "motivo": "conocido",
+          "unidad": null,
+          "valor": {
+            "sesiones": [
+              {
+                "fin": "2026-11-24T12:00:00+01:00",
+                "inicio": "2026-11-24T10:00:00+01:00"
+              }
+            ],
+            "tipo": "sesiones"
+          },
+          "vigencia": {
+            "comprobado_el": "2026-11-18T18:13:59.273947Z"
+          }
+        },
+        "calendario_matricula": {
+          "alcance": "edicion",
+          "moneda": null,
+          "motivo": "sin_soporte_de_campo",
+          "unidad": null,
+          "valor": null
+        },
+        "certificado_gratuito": {
+          "alcance": "edicion",
+          "moneda": null,
+          "motivo": "no_consta_en_evidencia",
+          "unidad": null,
+          "valor": null
+        },
+        "coste_certificado": {
+          "alcance": "edicion",
+          "moneda": null,
+          "motivo": "no_consta_en_evidencia",
+          "unidad": null,
+          "valor": null
+        },
+        "coste_formacion": {
+          "alcance": "edicion",
+          "moneda": null,
+          "motivo": "no_consta_en_evidencia",
+          "unidad": null,
+          "valor": null
+        },
+        "coste_formacion_tipo": {
+          "alcance": "declaracion_general",
+          "moneda": null,
+          "motivo": "conocido",
+          "unidad": null,
+          "valor": "gratis_formacion",
+          "vigencia": {
+            "comprobado_el": "2026-11-18T18:14:54.291838Z"
+          }
+        },
+        "coste_practicas": {
+          "alcance": "edicion",
+          "moneda": null,
+          "motivo": "no_consta_en_evidencia",
+          "unidad": null,
+          "valor": null
+        },
+        "horas_publicadas": {
+          "alcance": "edicion",
+          "moneda": null,
+          "motivo": "conocido",
+          "unidad": "h",
+          "valor": 2.0
+        },
+        "idiomas_declarados": {
+          "alcance": "edicion",
+          "moneda": null,
+          "motivo": "conocido",
+          "unidad": null,
+          "valor": ["ca"]
+        },
+        "idiomas_material_observado": {
+          "alcance": "material_observado",
+          "moneda": null,
+          "motivo": "sin_soporte_de_campo",
+          "unidad": null,
+          "valor": null
+        },
+        "marca_comercial": {
+          "alcance": "edicion",
+          "moneda": null,
+          "motivo": "sin_soporte_de_campo",
+          "unidad": null,
+          "valor": null
+        },
+        "modalidad": {
+          "alcance": "edicion",
+          "moneda": null,
+          "motivo": "conocido",
+          "unidad": null,
+          "valor": "presencial",
+          "vigencia": {
+            "comprobado_el": "2026-11-18T18:13:59.273947Z"
+          }
+        },
+        "nivel_entrada": {
+          "alcance": "edicion",
+          "moneda": null,
+          "motivo": "sin_soporte_de_campo",
+          "unidad": null,
+          "valor": null
+        },
+        "nivel_salida": {
+          "alcance": "edicion",
+          "moneda": null,
+          "motivo": "sin_soporte_de_campo",
+          "unidad": null,
+          "valor": null
+        },
+        "requiere_registro_previo": {
+          "alcance": "declaracion_general",
+          "moneda": null,
+          "motivo": "conocido",
+          "unidad": null,
+          "valor": true,
+          "vigencia": {
+            "comprobado_el": "2026-11-18T18:14:54.291838Z"
+          }
+        },
+        "requisitos_publicados": {
+          "alcance": "edicion",
+          "moneda": null,
+          "motivo": "no_consta_en_evidencia",
+          "unidad": null,
+          "valor": null
+        },
+        "sincronia": {
+          "alcance": "edicion",
+          "moneda": null,
+          "motivo": "conocido",
+          "unidad": null,
+          "valor": "sincrona",
+          "vigencia": {
+            "comprobado_el": "2026-11-18T18:13:59.273947Z"
+          }
+        }
+      },
+      "incidencia_enlace_el": null,
+      "proveedor_id": "cibernarium",
+      "referencias": [
+        {
+          "alcance": "entidad",
+          "fecha_referencia": "2026-10-21T23:38:12.344457+00:00",
+          "naturaleza_documento": "no_acreditada",
+          "naturaleza_fecha": "no_acreditada",
+          "sha256": "8a80cb648686c35d319f1ad1de67b0c2b73a1f28a83bc991abbd4244e1bd1684",
+          "url": "https://cibernarium.barcelonactiva.cat/ca/formacio?activityId=1592279"
+        },
+        {
+          "alcance": "entidad",
+          "fecha_referencia": "2026-10-21T23:28:49.994918+00:00",
+          "naturaleza_documento": "no_acreditada",
+          "naturaleza_fecha": "no_acreditada",
+          "sha256": "e77e8f42b1f1f399a024a497ad397aa3db9cc45d549e56cdccda7be69d40e8d0",
+          "url": "https://cibernarium.barcelonactiva.cat/ca/formacions"
+        },
+        {
+          "alcance": "entidad",
+          "fecha_referencia": "2026-11-18T18:14:54.291838Z",
+          "naturaleza_documento": "no_acreditada",
+          "naturaleza_fecha": "recepcion_conservada",
+          "sha256": "561cb54c2b11e41b9c22eebd938bdfe764f54fde731397821975bbd3e42cb073",
+          "url": "https://cibernarium.barcelonactiva.cat/ca/normesfaqs"
+        },
+        {
+          "alcance": "entidad",
+          "fecha_referencia": "2026-10-21T23:31:42.058630+00:00",
+          "naturaleza_documento": "no_acreditada",
+          "naturaleza_fecha": "no_acreditada",
+          "sha256": "61ead2a96f638242bc7df86162a5363506a663ae754381bc22d021023f1c73e3",
+          "url": "https://cibernarium.barcelonactiva.cat/ca/normesfaqs"
+        },
+        {
+          "alcance": "entidad",
+          "fecha_referencia": "2026-10-25T12:36:39.171150Z",
+          "naturaleza_documento": "no_acreditada",
+          "naturaleza_fecha": "no_acreditada",
+          "sha256": "38cc669a4c488fe430a27995aa3d20a0f95234c51e6cc1010a617f0e56cd14f5",
+          "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=30&_cAct_INSTANCE_uhcx_end=45&_cAct_INSTANCE_uhcx_typeView=list"
+        },
+        {
+          "alcance": "entidad",
+          "fecha_referencia": "2026-10-25T12:36:39.171150Z",
+          "naturaleza_documento": "no_acreditada",
+          "naturaleza_fecha": "no_acreditada",
+          "sha256": "66f2ed2aade289278cf6bedfc5aa686b4361b8e8c9d997c58318cea64e9a005d",
+          "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=30&_cAct_INSTANCE_uhcx_end=45&_cAct_INSTANCE_uhcx_typeView=list"
+        },
+        {
+          "alcance": "entidad",
+          "fecha_referencia": "2026-10-25T12:36:39.171150Z",
+          "naturaleza_documento": "no_acreditada",
+          "naturaleza_fecha": "no_acreditada",
+          "sha256": "676ed295680cf88b326f26bf45bcf1a571580fc4f05a574213d3f885fea5b303",
+          "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=30&_cAct_INSTANCE_uhcx_end=45&_cAct_INSTANCE_uhcx_typeView=list"
+        },
+        {
+          "alcance": "entidad",
+          "fecha_referencia": "2026-10-23T21:01:05.308848Z",
+          "naturaleza_documento": "no_acreditada",
+          "naturaleza_fecha": "no_acreditada",
+          "sha256": "324cc4dfc3477afe5cedd585f93cd21a0ee9646af6c259d58dcd5b146900d44f",
+          "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=45&_cAct_INSTANCE_uhcx_end=60&_cAct_INSTANCE_uhcx_typeView=list"
+        },
+        {
+          "alcance": "entidad",
+          "fecha_referencia": "2026-10-23T21:01:05.308848Z",
+          "naturaleza_documento": "no_acreditada",
+          "naturaleza_fecha": "no_acreditada",
+          "sha256": "53f622303402234cbbd67755d3994ced0a0d90fa2386980b4e1e89ce85f6ba5f",
+          "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=45&_cAct_INSTANCE_uhcx_end=60&_cAct_INSTANCE_uhcx_typeView=list"
+        },
+        {
+          "alcance": "entidad",
+          "fecha_referencia": "2026-10-23T21:01:05.308848Z",
+          "naturaleza_documento": "no_acreditada",
+          "naturaleza_fecha": "no_acreditada",
+          "sha256": "d4288fd6ea3f28d9e6f6b4653694cdd8c0166aca784aa53d67f77561f63ebb38",
+          "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=45&_cAct_INSTANCE_uhcx_end=60&_cAct_INSTANCE_uhcx_typeView=list"
+        },
+        {
+          "alcance": "entidad",
+          "fecha_referencia": "2026-11-18T08:04:34.559412Z",
+          "naturaleza_documento": "no_acreditada",
+          "naturaleza_fecha": "no_acreditada",
+          "sha256": "345ce3dd220b033f0a8e7670dbe65689b271c1bae0ed973a95495b6fe727582d",
+          "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=60&_cAct_INSTANCE_uhcx_end=75&_cAct_INSTANCE_uhcx_typeView=list"
+        },
+        {
+          "alcance": "entidad",
+          "fecha_referencia": "2026-11-18T18:13:59.273947Z",
+          "naturaleza_documento": "no_acreditada",
+          "naturaleza_fecha": "no_acreditada",
+          "sha256": "3c9086f3d3ba5fc1614cc9b103d09c406b4fae189602b3485c2052f6b0813bfa",
+          "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=60&_cAct_INSTANCE_uhcx_end=75&_cAct_INSTANCE_uhcx_typeView=list"
+        },
+        {
+          "alcance": "entidad",
+          "fecha_referencia": "2026-11-18T09:44:41.830871Z",
+          "naturaleza_documento": "no_acreditada",
+          "naturaleza_fecha": "no_acreditada",
+          "sha256": "480a9bbbd2d2b89188bd6f8821e2a88ef07eed4d59d6644eb625d20dc3f79d2c",
+          "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=60&_cAct_INSTANCE_uhcx_end=75&_cAct_INSTANCE_uhcx_typeView=list"
+        },
+        {
+          "alcance": "entidad",
+          "fecha_referencia": "2026-11-18T09:44:41.830871Z",
+          "naturaleza_documento": "no_acreditada",
+          "naturaleza_fecha": "no_acreditada",
+          "sha256": "613cb78f0a79246dec3f9172f54505de50d714c5e24780b96bc7f7e742c670d7",
+          "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=60&_cAct_INSTANCE_uhcx_end=75&_cAct_INSTANCE_uhcx_typeView=list"
+        },
+        {
+          "alcance": "entidad",
+          "fecha_referencia": "2026-11-18T08:04:34.559412Z",
+          "naturaleza_documento": "no_acreditada",
+          "naturaleza_fecha": "no_acreditada",
+          "sha256": "718908def0989bdb04030a8d10fd3146fd0962f70f65a9a28cffb21880bc89e3",
+          "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=60&_cAct_INSTANCE_uhcx_end=75&_cAct_INSTANCE_uhcx_typeView=list"
+        },
+        {
+          "alcance": "entidad",
+          "fecha_referencia": "2026-11-18T08:04:34.559412Z",
+          "naturaleza_documento": "no_acreditada",
+          "naturaleza_fecha": "no_acreditada",
+          "sha256": "72cb4d61ba6347ceabbdfea08e053aeed352e4f745196bd9cd93397c4f7b4b5d",
+          "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=60&_cAct_INSTANCE_uhcx_end=75&_cAct_INSTANCE_uhcx_typeView=list"
+        },
+        {
+          "alcance": "entidad",
+          "fecha_referencia": "2026-11-18T18:13:59.273947Z",
+          "naturaleza_documento": "no_acreditada",
+          "naturaleza_fecha": "no_acreditada",
+          "sha256": "8be4b61c99c2459b005bee17955a561d40dbc0210d6f72394d33e2a2f8e620c1",
+          "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=60&_cAct_INSTANCE_uhcx_end=75&_cAct_INSTANCE_uhcx_typeView=list"
+        },
+        {
+          "alcance": "entidad",
+          "fecha_referencia": "2026-11-18T09:44:41.830871Z",
+          "naturaleza_documento": "no_acreditada",
+          "naturaleza_fecha": "no_acreditada",
+          "sha256": "964f567a4233e7adc2454c11f67eacddaf9e0291d8d5c4d847270406d7c4594c",
+          "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=60&_cAct_INSTANCE_uhcx_end=75&_cAct_INSTANCE_uhcx_typeView=list"
+        },
+        {
+          "alcance": "entidad",
+          "fecha_referencia": "2026-10-21T23:34:52.487874+00:00",
+          "naturaleza_documento": "no_acreditada",
+          "naturaleza_fecha": "no_acreditada",
+          "sha256": "beda5e530fceea5c7366a2c42f1398548dbb154077bc205a2692a6143679ae8c",
+          "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=60&_cAct_INSTANCE_uhcx_end=75&_cAct_INSTANCE_uhcx_typeView=list"
+        },
+        {
+          "alcance": "entidad",
+          "fecha_referencia": "2026-11-18T18:13:59.273947Z",
+          "naturaleza_documento": "no_acreditada",
+          "naturaleza_fecha": "no_acreditada",
+          "sha256": "fb249220aa2ccf363c0e07b6a216a470c947db10d78fe6b48f3da6c6cd1bbc5e",
+          "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=60&_cAct_INSTANCE_uhcx_end=75&_cAct_INSTANCE_uhcx_typeView=list"
+        },
+        {
+          "alcance": "entidad",
+          "fecha_referencia": "2026-11-15T13:04:59.793459Z",
+          "naturaleza_documento": "no_acreditada",
+          "naturaleza_fecha": "no_acreditada",
+          "sha256": "2c5a53b97c7b8765d43da5420561b942a5029d2b0229e5ec125e4cbc6c3603c6",
+          "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=90&_cAct_INSTANCE_uhcx_end=105&_cAct_INSTANCE_uhcx_typeView=list"
+        },
+        {
+          "alcance": "entidad",
+          "fecha_referencia": "2026-11-15T13:04:59.793459Z",
+          "naturaleza_documento": "no_acreditada",
+          "naturaleza_fecha": "no_acreditada",
+          "sha256": "67368bc6c5e8299109cb7de5b971dca29dbccb5985f50d003dd33d23ad6c76e2",
+          "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=90&_cAct_INSTANCE_uhcx_end=105&_cAct_INSTANCE_uhcx_typeView=list"
+        },
+        {
+          "alcance": "entidad",
+          "fecha_referencia": "2026-11-15T13:04:59.793459Z",
+          "naturaleza_documento": "no_acreditada",
+          "naturaleza_fecha": "no_acreditada",
+          "sha256": "eb1b8f7b6df14ca8de0d103cc2fe070947ea9ad35fe58c811a9da3177a81ecd7",
+          "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=90&_cAct_INSTANCE_uhcx_end=105&_cAct_INSTANCE_uhcx_typeView=list"
+        }
+      ],
+      "tipo_unidad": "actividad-formativa",
+      "titulo_programa": "Gmail: Avança en l'ús del teu correu electrònic",
+      "unidad": {
+        "id": "cibernarium-edicion:1578980",
+        "programa_id": "cibernarium:1592279",
+        "tipo": "edicion"
+      },
+      "url": "https://cibernarium.barcelonactiva.cat/ficha-actividad?activityId=1593887"
+    },
+    {
+      "cierra_el": "2026-11-30T23:00:00Z",
+      "comprobado_el": "2026-11-18T09:18:23.473687Z",
+      "corte_evaluacion_utc": "2026-11-18T17:12:59.504248Z",
+      "evidencia_materia": null,
+      "hechos": {
+        "acceso_fundae": {
+          "alcance": "edicion",
+          "moneda": null,
+          "motivo": "sin_soporte_de_campo",
+          "unidad": null,
+          "valor": null
+        },
+        "calendario_aula": {
+          "alcance": "edicion",
+          "moneda": null,
+          "motivo": "sin_soporte_de_campo",
+          "unidad": null,
+          "valor": null
+        },
+        "calendario_formacion": {
+          "alcance": "edicion",
+          "moneda": null,
+          "motivo": "sin_soporte_de_campo",
+          "unidad": null,
+          "valor": null
+        },
+        "calendario_matricula": {
+          "alcance": "edicion",
+          "moneda": null,
+          "motivo": "sin_soporte_de_campo",
+          "unidad": null,
+          "valor": null
+        },
+        "certificado_gratuito": {
+          "alcance": "edicion",
+          "moneda": null,
+          "motivo": "no_consta_en_evidencia",
+          "unidad": null,
+          "valor": null
+        },
+        "coste_certificado": {
+          "alcance": "edicion",
+          "moneda": null,
+          "motivo": "no_consta_en_evidencia",
+          "unidad": null,
+          "valor": null
+        },
+        "coste_formacion": {
+          "alcance": "declaracion_general",
+          "moneda": "EUR",
+          "motivo": "conocido",
+          "unidad": null,
+          "valor": 0
+        },
+        "coste_formacion_tipo": {
+          "alcance": "declaracion_general",
+          "moneda": null,
+          "motivo": "conocido",
+          "unidad": null,
+          "valor": "gratis_formacion"
+        },
+        "coste_practicas": {
+          "alcance": "edicion",
+          "moneda": null,
+          "motivo": "no_consta_en_evidencia",
+          "unidad": null,
+          "valor": null
+        },
+        "horas_publicadas": {
+          "alcance": "edicion",
+          "moneda": null,
+          "motivo": "conocido",
+          "unidad": "h",
+          "valor": 90
+        },
+        "idiomas_declarados": {
+          "alcance": "edicion",
+          "moneda": null,
+          "motivo": "no_consta_en_evidencia",
+          "unidad": null,
+          "valor": null
+        },
+        "idiomas_material_observado": {
+          "alcance": "material_observado",
+          "moneda": null,
+          "motivo": "sin_soporte_de_campo",
+          "unidad": null,
+          "valor": null
+        },
+        "marca_comercial": {
+          "alcance": "edicion",
+          "moneda": null,
+          "motivo": "sin_soporte_de_campo",
+          "unidad": null,
+          "valor": null
+        },
+        "modalidad": {
+          "alcance": "edicion",
+          "moneda": null,
+          "motivo": "conocido",
+          "unidad": null,
+          "valor": "en-linea"
+        },
+        "nivel_entrada": {
+          "alcance": "edicion",
+          "moneda": null,
+          "motivo": "sin_soporte_de_campo",
+          "unidad": null,
+          "valor": null
+        },
+        "nivel_salida": {
+          "alcance": "edicion",
+          "moneda": null,
+          "motivo": "sin_soporte_de_campo",
+          "unidad": null,
+          "valor": null
+        },
+        "requiere_registro_previo": {
+          "alcance": "edicion",
+          "moneda": null,
+          "motivo": "no_consta_en_evidencia",
+          "unidad": null,
+          "valor": null
+        },
+        "requisitos_publicados": {
+          "alcance": "edicion",
+          "moneda": null,
+          "motivo": "no_consta_en_evidencia",
+          "unidad": null,
+          "valor": null
+        },
+        "sincronia": {
+          "alcance": "edicion",
+          "moneda": null,
+          "motivo": "no_consta_en_evidencia",
+          "unidad": null,
+          "valor": null
+        }
+      },
+      "incidencia_enlace_el": null,
+      "preinscripcion": {
+        "centro": "ABIRE ASESORES Y CONSULTORES EN FORMACION, S.L.",
+        "colectivos": ["autonomos", "administracion-publica", "desempleados", "erte"],
+        "fin": "2026-11-30",
+        "inicio": "2026-11-01",
+        "sector": "INTERSECTORIAL"
+      },
+      "proveedor_id": "fundae:publicador:catalogo:3",
+      "referencias": [
+        {
+          "alcance": "entidad",
+          "fecha_referencia": "2026-11-15T13:08:52.009852Z",
+          "naturaleza_documento": "no_acreditada",
+          "naturaleza_fecha": "no_acreditada",
+          "sha256": "ccf41ba04c3a308cb6833184adea85a9b7512da15e8bfdee71a565bdcc95f5db",
+          "url": "https://agora.fundae.es/Buscador/BuscarRecursosFormativosFundaeSEB?idCatalogo=3"
+        },
+        {
+          "alcance": "entidad",
+          "fecha_referencia": "2026-11-15T13:08:46.558130Z",
+          "naturaleza_documento": "no_acreditada",
+          "naturaleza_fecha": "no_acreditada",
+          "sha256": "de6b35693bec675666fa810992e6be1c060200206ff00cdab864b85a1345d009",
+          "url": "https://agora.fundae.es/Buscador/RecuperarCatalogosEspacioPlataforma?idEspacioPlataforma=1"
+        },
+        {
+          "alcance": "entidad",
+          "fecha_referencia": "2026-11-15T13:14:17.811029Z",
+          "naturaleza_documento": "no_acreditada",
+          "naturaleza_fecha": "no_acreditada",
+          "sha256": "3e377e7986cb9a9a7de01b9f011ccbc8647b460105ddadd2b2fe756a3d5092e6",
+          "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=IFCT110"
+        },
+        {
+          "alcance": "entidad",
+          "fecha_referencia": "2026-11-15T13:14:22.354953Z",
+          "naturaleza_documento": "no_acreditada",
+          "naturaleza_fecha": "no_acreditada",
+          "sha256": "144f0b796e48f3a9c966083bf30497a75d941150563217809cc3db29d44e8a2b",
+          "url": "https://agora.fundae.es/Oferta/RecuperarColectivosDeDifusion?idDifusionAccionFormativa=1021"
+        },
+        {
+          "alcance": "entidad",
+          "fecha_referencia": "2026-11-18T09:16:02.123776Z",
+          "naturaleza_documento": "no_acreditada",
+          "naturaleza_fecha": "no_acreditada",
+          "sha256": "7574d8856ff68fb8be3ea73dda93403dd1df46e4377f0899ece33ed6ab5022bd",
+          "url": "https://agora.fundae.es/Buscador/BuscarRecursosFormativosFundaeSEB?idCatalogo=3"
+        },
+        {
+          "alcance": "entidad",
+          "fecha_referencia": "2026-11-18T09:15:56.378786Z",
+          "naturaleza_documento": "no_acreditada",
+          "naturaleza_fecha": "no_acreditada",
+          "sha256": "de6b35693bec675666fa810992e6be1c060200206ff00cdab864b85a1345d009",
+          "url": "https://agora.fundae.es/Buscador/RecuperarCatalogosEspacioPlataforma?idEspacioPlataforma=1"
+        },
+        {
+          "alcance": "entidad",
+          "fecha_referencia": "2026-11-18T09:18:23.473687Z",
+          "naturaleza_documento": "no_acreditada",
+          "naturaleza_fecha": "no_acreditada",
+          "sha256": "3e377e7986cb9a9a7de01b9f011ccbc8647b460105ddadd2b2fe756a3d5092e6",
+          "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=IFCT110"
+        },
+        {
+          "alcance": "entidad",
+          "fecha_referencia": "2026-11-18T09:16:02.123776Z",
+          "naturaleza_documento": "no_acreditada",
+          "naturaleza_fecha": "no_acreditada",
+          "sha256": "7574d8856ff68fb8be3ea73dda93403dd1df46e4377f0899ece33ed6ab5022bd",
+          "url": "https://agora.fundae.es/Buscador/BuscarRecursosFormativosFundaeSEB?idCatalogo=3"
+        },
+        {
+          "alcance": "entidad",
+          "fecha_referencia": "2026-11-18T09:15:56.378786Z",
+          "naturaleza_documento": "no_acreditada",
+          "naturaleza_fecha": "no_acreditada",
+          "sha256": "de6b35693bec675666fa810992e6be1c060200206ff00cdab864b85a1345d009",
+          "url": "https://agora.fundae.es/Buscador/RecuperarCatalogosEspacioPlataforma?idEspacioPlataforma=1"
+        }
+      ],
+      "tipo_unidad": "especialidad_por_codigo",
+      "titulo_programa": "GESTIÓN DE HERRAMIENTAS AVANZADAS DE MICROSOFT 365",
+      "unidad": {
+        "id": "fundae:edicion:1021",
+        "programa_id": "fundae:oferta:programa:IFCT110",
+        "tipo": "edicion"
+      },
+      "url": "https://experienciafundae.es/ficha-curso/oferta/2/IFCT110"
+    },
+    {
+      "cierra_el": null,
+      "comprobado_el": "2026-11-18T07:45:12.121121Z",
+      "corte_evaluacion_utc": "2026-11-18T17:12:59.504248Z",
+      "evidencia_materia": null,
+      "hechos": {
+        "acceso_fundae": {
+          "alcance": "unidad",
+          "moneda": null,
+          "motivo": "sin_soporte_de_campo",
+          "unidad": null,
+          "valor": null
+        },
+        "calendario_aula": {
+          "alcance": "unidad",
+          "moneda": null,
+          "motivo": "sin_soporte_de_campo",
+          "unidad": null,
+          "valor": null
+        },
+        "calendario_formacion": {
+          "alcance": "unidad",
+          "moneda": null,
+          "motivo": "sin_soporte_de_campo",
+          "unidad": null,
+          "valor": null
+        },
+        "calendario_matricula": {
+          "alcance": "unidad",
+          "moneda": null,
+          "motivo": "sin_soporte_de_campo",
+          "unidad": null,
+          "valor": null
+        },
+        "certificado_gratuito": {
+          "alcance": "unidad",
+          "moneda": null,
+          "motivo": "no_consta_en_evidencia",
+          "unidad": null,
+          "valor": null
+        },
+        "coste_certificado": {
+          "alcance": "unidad",
+          "moneda": null,
+          "motivo": "no_consta_en_evidencia",
+          "unidad": null,
+          "valor": null
+        },
+        "coste_formacion": {
+          "alcance": "unidad",
+          "moneda": null,
+          "motivo": "no_consta_en_evidencia",
+          "unidad": null,
+          "valor": null
+        },
+        "coste_formacion_tipo": {
+          "alcance": "declaracion_general",
+          "moneda": null,
+          "motivo": "conocido",
+          "unidad": null,
+          "valor": "gratis_formacion",
+          "vigencia": {
+            "comprobado_el": "2026-11-18T07:45:14.313662Z"
+          }
+        },
+        "coste_practicas": {
+          "alcance": "unidad",
+          "moneda": null,
+          "motivo": "no_consta_en_evidencia",
+          "unidad": null,
+          "valor": null
+        },
+        "horas_publicadas": {
+          "alcance": "unidad",
+          "moneda": null,
+          "motivo": "no_consta_en_evidencia",
+          "unidad": "h",
+          "valor": null
+        },
+        "idiomas_declarados": {
+          "alcance": "unidad",
+          "moneda": null,
+          "motivo": "no_consta_en_evidencia",
+          "unidad": null,
+          "valor": null
+        },
+        "idiomas_material_observado": {
+          "alcance": "material_observado",
+          "moneda": null,
+          "motivo": "sin_soporte_de_campo",
+          "unidad": null,
+          "valor": null
+        },
+        "marca_comercial": {
+          "alcance": "unidad",
+          "moneda": null,
+          "motivo": "sin_soporte_de_campo",
+          "unidad": null,
+          "valor": null
+        },
+        "modalidad": {
+          "alcance": "unidad",
+          "moneda": null,
+          "motivo": "conocido",
+          "unidad": null,
+          "valor": "en-linea"
+        },
+        "nivel_entrada": {
+          "alcance": "unidad",
+          "moneda": null,
+          "motivo": "sin_soporte_de_campo",
+          "unidad": null,
+          "valor": null
+        },
+        "nivel_salida": {
+          "alcance": "unidad",
+          "moneda": null,
+          "motivo": "sin_soporte_de_campo",
+          "unidad": null,
+          "valor": null
+        },
+        "requiere_registro_previo": {
+          "alcance": "unidad",
+          "moneda": null,
+          "motivo": "no_consta_en_evidencia",
+          "unidad": null,
+          "valor": null
+        },
+        "requisitos_publicados": {
+          "alcance": "unidad",
+          "moneda": null,
+          "motivo": "no_consta_en_evidencia",
+          "unidad": null,
+          "valor": null
+        },
+        "sincronia": {
+          "alcance": "unidad",
+          "moneda": null,
+          "motivo": "no_consta_en_evidencia",
+          "unidad": null,
+          "valor": null
+        }
+      },
+      "incidencia_enlace_el": null,
+      "proveedor_id": "anthropic",
+      "referencias": [
+        {
+          "alcance": "entidad",
+          "fecha_referencia": "2026-11-18T07:45:14.313662Z",
+          "naturaleza_documento": "no_acreditada",
+          "naturaleza_fecha": "recepcion_conservada",
+          "sha256": "a07e8954bdc2ebcce629faf947006b85ada92f0b375730f54f773c1720fc1498",
+          "url": "https://academy.claude.com/"
+        },
+        {
+          "alcance": "entidad",
+          "fecha_referencia": "2026-11-15T11:10:32.711865Z",
+          "naturaleza_documento": "no_acreditada",
+          "naturaleza_fecha": "no_acreditada",
+          "sha256": "17809731c0a1050a772495f6e3ae0ac4611af56fc8012b3da14950c78041687e",
+          "url": "https://academy.claude.com/courses/introduction-to-evals"
+        },
+        {
+          "alcance": "entidad",
+          "fecha_referencia": "2026-11-15T11:10:32.711865Z",
+          "naturaleza_documento": "no_acreditada",
+          "naturaleza_fecha": "no_acreditada",
+          "sha256": "43623e4226927618d3b92242e277125fa60c6311c85239f479f38e76692c7a70",
+          "url": "https://academy.claude.com/courses/introduction-to-evals"
+        },
+        {
+          "alcance": "entidad",
+          "fecha_referencia": "2026-11-18T07:47:00.034955Z",
+          "naturaleza_documento": "no_acreditada",
+          "naturaleza_fecha": "no_acreditada",
+          "sha256": "998c29a3c91fab0fec77e8ad92080e1ab49a0d6199f5f04fd4b1af1b5f1e820c",
+          "url": "https://academy.claude.com/courses/introduction-to-evals"
+        },
+        {
+          "alcance": "entidad",
+          "fecha_referencia": "2026-11-18T07:47:00.034955Z",
+          "naturaleza_documento": "no_acreditada",
+          "naturaleza_fecha": "no_acreditada",
+          "sha256": "c69457470da76b05707367bfa39d4d4e2d5f748bd6fb61f90a4ddd7fa93a542c",
+          "url": "https://academy.claude.com/courses/introduction-to-evals"
+        },
+        {
+          "alcance": "entidad",
+          "fecha_referencia": "2026-11-18T07:47:00.034955Z",
+          "naturaleza_documento": "no_acreditada",
+          "naturaleza_fecha": "no_acreditada",
+          "sha256": "d6a68486a8e61343baa92b62738a71e8f85b4fa2c58cf8daf2a54d45e0277d9c",
+          "url": "https://academy.claude.com/courses/introduction-to-evals"
+        },
+        {
+          "alcance": "entidad",
+          "fecha_referencia": "2026-11-15T11:10:32.711865Z",
+          "naturaleza_documento": "no_acreditada",
+          "naturaleza_fecha": "no_acreditada",
+          "sha256": "e0f0c10f4e2b2dce6878ceb3e41b70070dfe62cfd515aa85d12d7de5903b742f",
+          "url": "https://academy.claude.com/courses/introduction-to-evals"
+        }
+      ],
+      "tipo_unidad": "curso",
+      "titulo_programa": "Introduction to evals",
+      "unidad": {
+        "id": "claude-academy:introduction-to-evals",
+        "programa_id": "claude-academy:introduction-to-evals",
+        "tipo": "recurso"
+      },
+      "url": "https://academy.claude.com/courses/introduction-to-evals"
+    },
+    {
+      "cierra_el": null,
+      "comprobado_el": "2026-11-18T07:45:12.121121Z",
+      "corte_evaluacion_utc": "2026-11-18T17:12:59.504248Z",
+      "evidencia_materia": null,
+      "hechos": {
+        "acceso_fundae": {
+          "alcance": "unidad",
+          "moneda": null,
+          "motivo": "sin_soporte_de_campo",
+          "unidad": null,
+          "valor": null
+        },
+        "calendario_aula": {
+          "alcance": "unidad",
+          "moneda": null,
+          "motivo": "sin_soporte_de_campo",
+          "unidad": null,
+          "valor": null
+        },
+        "calendario_formacion": {
+          "alcance": "unidad",
+          "moneda": null,
+          "motivo": "sin_soporte_de_campo",
+          "unidad": null,
+          "valor": null
+        },
+        "calendario_matricula": {
+          "alcance": "unidad",
+          "moneda": null,
+          "motivo": "sin_soporte_de_campo",
+          "unidad": null,
+          "valor": null
+        },
+        "certificado_gratuito": {
+          "alcance": "unidad",
+          "moneda": null,
+          "motivo": "no_consta_en_evidencia",
+          "unidad": null,
+          "valor": null
+        },
+        "coste_certificado": {
+          "alcance": "unidad",
+          "moneda": null,
+          "motivo": "no_consta_en_evidencia",
+          "unidad": null,
+          "valor": null
+        },
+        "coste_formacion": {
+          "alcance": "unidad",
+          "moneda": null,
+          "motivo": "no_consta_en_evidencia",
+          "unidad": null,
+          "valor": null
+        },
+        "coste_formacion_tipo": {
+          "alcance": "declaracion_general",
+          "moneda": null,
+          "motivo": "conocido",
+          "unidad": null,
+          "valor": "gratis_formacion",
+          "vigencia": {
+            "comprobado_el": "2026-11-18T07:45:14.313662Z"
+          }
+        },
+        "coste_practicas": {
+          "alcance": "unidad",
+          "moneda": null,
+          "motivo": "no_consta_en_evidencia",
+          "unidad": null,
+          "valor": null
+        },
+        "horas_publicadas": {
+          "alcance": "unidad",
+          "moneda": null,
+          "motivo": "no_consta_en_evidencia",
+          "unidad": "h",
+          "valor": null
+        },
+        "idiomas_declarados": {
+          "alcance": "unidad",
+          "moneda": null,
+          "motivo": "no_consta_en_evidencia",
+          "unidad": null,
+          "valor": null
+        },
+        "idiomas_material_observado": {
+          "alcance": "material_observado",
+          "moneda": null,
+          "motivo": "sin_soporte_de_campo",
+          "unidad": null,
+          "valor": null
+        },
+        "marca_comercial": {
+          "alcance": "unidad",
+          "moneda": null,
+          "motivo": "sin_soporte_de_campo",
+          "unidad": null,
+          "valor": null
+        },
+        "modalidad": {
+          "alcance": "unidad",
+          "moneda": null,
+          "motivo": "conocido",
+          "unidad": null,
+          "valor": "en-linea"
+        },
+        "nivel_entrada": {
+          "alcance": "unidad",
+          "moneda": null,
+          "motivo": "sin_soporte_de_campo",
+          "unidad": null,
+          "valor": null
+        },
+        "nivel_salida": {
+          "alcance": "unidad",
+          "moneda": null,
+          "motivo": "sin_soporte_de_campo",
+          "unidad": null,
+          "valor": null
+        },
+        "requiere_registro_previo": {
+          "alcance": "unidad",
+          "moneda": null,
+          "motivo": "no_consta_en_evidencia",
+          "unidad": null,
+          "valor": null
+        },
+        "requisitos_publicados": {
+          "alcance": "unidad",
+          "moneda": null,
+          "motivo": "no_consta_en_evidencia",
+          "unidad": null,
+          "valor": null
+        },
+        "sincronia": {
+          "alcance": "unidad",
+          "moneda": null,
+          "motivo": "no_consta_en_evidencia",
+          "unidad": null,
+          "valor": null
+        }
+      },
+      "incidencia_enlace_el": null,
+      "proveedor_id": "anthropic",
+      "referencias": [
+        {
+          "alcance": "entidad",
+          "fecha_referencia": "2026-11-18T07:45:14.313662Z",
+          "naturaleza_documento": "no_acreditada",
+          "naturaleza_fecha": "recepcion_conservada",
+          "sha256": "a07e8954bdc2ebcce629faf947006b85ada92f0b375730f54f773c1720fc1498",
+          "url": "https://academy.claude.com/"
+        },
+        {
+          "alcance": "entidad",
+          "fecha_referencia": "2026-11-15T11:10:54.884041Z",
+          "naturaleza_documento": "no_acreditada",
+          "naturaleza_fecha": "no_acreditada",
+          "sha256": "17e84bd9af9391f49db994f49a6693b132aeca9aff2260a224dad3b03d50b805",
+          "url": "https://academy.claude.com/courses/tool-use-with-the-messages-api"
+        },
+        {
+          "alcance": "entidad",
+          "fecha_referencia": "2026-11-18T07:47:22.009890Z",
+          "naturaleza_documento": "no_acreditada",
+          "naturaleza_fecha": "no_acreditada",
+          "sha256": "1f90bbbcfa60662d14aad1314bb17cd1768b23c4b37ba2f1f2b9f446c845edf4",
+          "url": "https://academy.claude.com/courses/tool-use-with-the-messages-api"
+        },
+        {
+          "alcance": "entidad",
+          "fecha_referencia": "2026-11-15T11:10:54.884041Z",
+          "naturaleza_documento": "no_acreditada",
+          "naturaleza_fecha": "no_acreditada",
+          "sha256": "2a22f5aecdb6457b75d0317c8712aaa662a6053ff95ea4c07a3fdd3a7a96f30e",
+          "url": "https://academy.claude.com/courses/tool-use-with-the-messages-api"
+        },
+        {
+          "alcance": "entidad",
+          "fecha_referencia": "2026-11-15T11:10:54.884041Z",
+          "naturaleza_documento": "no_acreditada",
+          "naturaleza_fecha": "no_acreditada",
+          "sha256": "421938b0168526931de86a0cedb6155627839491ba74d0f4d77abf316e91d979",
+          "url": "https://academy.claude.com/courses/tool-use-with-the-messages-api"
+        },
+        {
+          "alcance": "entidad",
+          "fecha_referencia": "2026-11-18T07:47:22.009890Z",
+          "naturaleza_documento": "no_acreditada",
+          "naturaleza_fecha": "no_acreditada",
+          "sha256": "8ea318f314292dde2600dac7de938f35f8e90b707b41f8da45098e53bc6c6ccc",
+          "url": "https://academy.claude.com/courses/tool-use-with-the-messages-api"
+        },
+        {
+          "alcance": "entidad",
+          "fecha_referencia": "2026-11-18T07:47:22.009890Z",
+          "naturaleza_documento": "no_acreditada",
+          "naturaleza_fecha": "no_acreditada",
+          "sha256": "a69c924387722e6a0001597982c7c697db773633b63fe109aa41e96a8078f5de",
+          "url": "https://academy.claude.com/courses/tool-use-with-the-messages-api"
+        }
+      ],
+      "tipo_unidad": "curso",
+      "titulo_programa": "Tool use with the Messages API",
+      "unidad": {
+        "id": "claude-academy:tool-use-with-the-messages-api",
+        "programa_id": "claude-academy:tool-use-with-the-messages-api",
+        "tipo": "recurso"
+      },
+      "url": "https://academy.claude.com/courses/tool-use-with-the-messages-api"
+    }
+  ]
+}

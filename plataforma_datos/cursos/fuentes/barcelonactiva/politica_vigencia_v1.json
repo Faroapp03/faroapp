@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "id": "faro:vigencia:barcelonactiva",
+  "version": "1",
+  "fuente_id": "barcelonactiva",
+  "responsable": "Equipo Faro",
+  "naturaleza": "politica-interna-operativa",
+  "criterios": {
+    "ttl_ficha_segundos": 86400,
+    "ttl_catalogo_segundos": null,
+    "requiere_catalogo": false,
+    "zona_fechas_dia": null,
+    "inicio_dia_inclusivo": null,
+    "fin_dia_inclusivo": null
+  },
+  "justificacion": "Plazo técnico de Faro de 24 horas por la volatilidad de la inscripción y el objetivo de comprobación diaria. No es una garantía del proveedor ni una cadencia extraída del descriptor. Una ficha individual con identidad y edición acreditadas no exige un índice de catálogo. No se atribuye zona ni inclusión del día sin evidencia suficiente.",
+  "revision_equipo_faro": {
+    "estado": "criterio-aprobado-sin-activacion",
+    "fecha": null,
+    "alcance": "Política exclusiva de Barcelona Activa. La revisión automática verifica integridad y aplica el criterio; no representa otra revisión editorial del Equipo Faro."
+  }
+}

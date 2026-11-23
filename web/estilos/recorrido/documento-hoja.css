@@ -1,0 +1,206 @@
+/* Documento de formación: la identidad del informe laboral en dos hojas; en papel, las páginas A4 que necesiten.
+   En pantalla pequeña crece en altura; ningún texto se oculta ni se encoge para simular que cabe. */
+.rc-informe:not([data-vista="hoja"]) > .rc-hoja-documento,
+.rc-informe[data-vista="hoja"] > :not(.rc-hoja-documento) {
+  display: none;
+}
+.hd {
+  color-scheme: light;
+  --hd-papel: #fdfcf8;
+  --hd-tinta: #17212a;
+  --hd-tenue: #4f5b66;
+  --hd-linea: #d9dde0;
+  --hd-laton: #7a5c2b;
+  --hd-azul: var(--azul-profundo);
+  --hd-titulo: "Sora", "Space Grotesk", system-ui, sans-serif;
+  padding: 16px var(--sangria-informe) 32px;
+  color: var(--hd-tinta);
+  font-family: var(--fuente-texto);
+}
+.hd * {
+  box-sizing: border-box;
+}
+.hd-documento {
+  display: grid;
+  gap: 24px;
+  width: min(900px, 100%);
+  margin: 0 auto;
+}
+.hd-hoja {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  aspect-ratio: 210 / 297;
+  container-type: inline-size;
+  background: var(--hd-papel);
+  border: 1px solid var(--hd-linea);
+  --hd-margen: 5.8cqi;
+  --hd-texto: 1.8cqi;
+  --hd-pequeno: 1.5cqi;
+  --hd-espacio: 1.5cqi;
+}
+.hd-banda {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.5cqi var(--hd-margen);
+  color: var(--blanco);
+  font: 1.3cqi var(--fuente-mono);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  background: var(--pizarra-portada);
+}
+.hd-cuerpo {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: var(--hd-espacio);
+  min-height: 0;
+  padding: 0 var(--hd-margen) 2cqi;
+  font-size: var(--hd-texto);
+  line-height: 1.45;
+}
+.hd-cuerpo > * {
+  flex-shrink: 0;
+}
+.hd a {
+  color: var(--hd-azul);
+  overflow-wrap: anywhere;
+}
+.hd a:focus-visible {
+  outline: 2px solid var(--hd-azul);
+  outline-offset: 2px;
+}
+.hd-pie {
+  display: flex;
+  flex-shrink: 0;
+  justify-content: space-between;
+  gap: 2cqi;
+  margin: auto var(--hd-margen) 2.5cqi;
+  padding-top: 1cqi;
+  color: var(--hd-tenue);
+  font-size: 1.3cqi;
+  border-top: 1px solid var(--hd-linea);
+}
+.hd-pie p {
+  margin: 0;
+}
+.hd-error-impresion {
+  margin: 16px auto;
+  padding: 12px;
+  max-width: 60ch;
+  color: var(--rc-aviso-tinta);
+  background: var(--rc-aviso-fondo);
+}
+/* En papel la hoja de ruta ocupa las páginas que necesite. El folio lo numera el propio motor de impresión con la
+   página real y el total real, también detrás del informe en «Guardar los dos». */
+@page formacion {
+  size: A4 portrait;
+  margin: 10mm 0 12mm;
+
+  @bottom-right {
+    content: counter(page) " / " counter(pages);
+    margin-right: 14.7mm;
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 8pt;
+    color: #5b6670;
+  }
+}
+@media screen and (max-width: 759px) {
+  .hd {
+    padding-inline: 8px;
+  }
+  .hd-hoja {
+    aspect-ratio: auto;
+    --hd-margen: 20px;
+    --hd-texto: 15px;
+    --hd-pequeno: 13px;
+    --hd-espacio: 16px;
+  }
+  .hd-cuerpo {
+    gap: 16px;
+    padding-bottom: 20px;
+  }
+  .hd-banda,
+  .hd-pie {
+    font-size: 11px;
+  }
+  .hd-pie {
+    margin-top: 24px;
+    padding-top: 12px;
+  }
+}
+@media print {
+  :is(.imprimir-informe, .imprimir-hoja, .imprimir-los-dos) #paso-4 {
+    /* biome-ignore lint/complexity/noImportantStyles: debe vencer al atributo hidden del paso que se imprime. */
+    display: block !important;
+  }
+  .imprimir-informe #paso-4 > .rc-hoja-documento,
+  .imprimir-hoja #paso-4 > :not(.rc-hoja-documento),
+  .imprimir-los-dos #paso-4 > :not(#informe, .rc-hoja-documento) {
+    display: none;
+  }
+  .imprimir-informe #paso-4 > #informe,
+  .imprimir-hoja #paso-4 > .rc-hoja-documento,
+  .imprimir-los-dos #paso-4 > :is(#informe, .rc-hoja-documento) {
+    display: block;
+  }
+  .imprimir-los-dos #paso-4 > .rc-hoja-documento {
+    break-before: page;
+  }
+  /* Con el informe solo, la raíz va en su página: Firefox abre una página en blanco para el final de los ascendientes
+     con página «auto». Con la hoja o «los dos» no hace falta, y en Firefox añadiría una página. */
+  html.imprimir-informe {
+    page: informe;
+  }
+  :is(.imprimir-hoja, .imprimir-los-dos) #paso-4 {
+    padding: 0;
+  }
+  .hd {
+    padding: 0;
+  }
+  .hd-documento {
+    display: block;
+    width: 210mm;
+    margin: 0;
+  }
+  /* Cada hoja empieza página y continúa en la siguiente si no cabe: sin alto fijo ni recorte, en flujo de bloque para
+     que cualquier motor de impresión la parta entre páginas, y con el pie al final de su contenido. */
+  .hd-hoja {
+    display: block;
+    width: 210mm;
+    aspect-ratio: auto;
+    border: 0;
+    break-after: page;
+    page: formacion;
+    print-color-adjust: exact;
+  }
+  .hd-hoja:last-child {
+    break-after: auto;
+  }
+  .hd-cuerpo {
+    display: block;
+  }
+  /* La separación del gap de pantalla, como margen. Con el peso de dos clases vence al «margin: 0» de cada bloque, que
+     en pantalla no quita el gap. */
+  .hd-hoja > .hd-cuerpo > * + * {
+    margin-top: var(--hd-espacio);
+  }
+  /* El aire bajo el pie lo da el margen de la página, sin margen ni relleno debajo, y el pie no se parte ni se separa
+     de lo anterior: si la hoja no cabe en su página, pasa con el último bloque del cuerpo. WebKit no evita el salto
+     antes del pie: un aire propio podría formar solo otra página. */
+  .hd-pie {
+    margin: 0 var(--hd-margen);
+    padding-bottom: 0;
+    break-before: avoid;
+    break-inside: avoid;
+  }
+  .hd-error-impresion {
+    display: none;
+  }
+  .formacion-no-imprimible .rc-hoja-documento .hd {
+    display: none;
+  }
+  .formacion-no-imprimible .hd-error-impresion {
+    display: block;
+  }
+}

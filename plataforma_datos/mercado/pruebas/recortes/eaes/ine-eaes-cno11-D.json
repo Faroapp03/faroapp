@@ -1,0 +1,58 @@
+[
+  {
+    "Id": 22543,
+    "FK_Variable": 456,
+    "Nombre": "Técnicos de las ciencias y de las ingenierías",
+    "Codigo": "31",
+    "FK_JerarquiaPadres": [22542]
+  },
+  {
+    "Id": 22575,
+    "FK_Variable": 456,
+    "Nombre": "Supervisores en ingeniería de minas, de industrias manufactureras y de la construcción",
+    "Codigo": "32",
+    "FK_JerarquiaPadres": [22542]
+  },
+  {
+    "Id": 22585,
+    "FK_Variable": 456,
+    "Nombre": "Técnicos sanitarios y profesionales de las terapias alternativas",
+    "Codigo": "33",
+    "FK_JerarquiaPadres": [22542]
+  },
+  {
+    "Id": 22606,
+    "FK_Variable": 456,
+    "Nombre": "Profesionales de apoyo en finanzas y matemáticas",
+    "Codigo": "34",
+    "FK_JerarquiaPadres": [22542]
+  },
+  {
+    "Id": 22613,
+    "FK_Variable": 456,
+    "Nombre": "Representantes, agentes comerciales y afines",
+    "Codigo": "35",
+    "FK_JerarquiaPadres": [22542]
+  },
+  {
+    "Id": 22627,
+    "FK_Variable": 456,
+    "Nombre": "Profesionales de apoyo a la gestión administrativa; técnicos de las fuerzas y cuerpos de seguridad",
+    "Codigo": "36",
+    "FK_JerarquiaPadres": [22542]
+  },
+  {
+    "Id": 22641,
+    "FK_Variable": 456,
+    "Nombre": "Profesionales de apoyo de servicios jurídicos, sociales, culturales, deportivos y afines",
+    "Codigo": "37",
+    "FK_JerarquiaPadres": [22542]
+  },
+  {
+    "Id": 22660,
+    "FK_Variable": 456,
+    "Nombre": "Técnicos de las tecnologías de la información y las comunicaciones (TIC)",
+    "Codigo": "38",
+    "FK_JerarquiaPadres": [22542]
+  }
+]

@@ -1,0 +1,151 @@
+{
+  "vigencia": {
+    "periodo": "2026-09-15",
+    "publicado": "2026-07-21",
+    "siguiente_prevista": null,
+    "calendario": "Sin calendario: el modelo cambia por orden del departamento, publicada en el DOGC.",
+    "fuente": "Generalitat de Catalunya: Ordre EMT/47/2026 y Ordre EMT/48/2026, de 17 de març (DOGC núm. 9634), Ordre EMT/136/2026, de 10 de juliol (DOGC núm. 9712), y portal ACTIC (actic.gencat.cat)."
+  },
+  "fuentes": {
+    "actic": "Generalitat de Catalunya: Ordre EMT/47/2026 y Ordre EMT/48/2026, de 17 de març (DOGC núm. 9634), Ordre EMT/136/2026, de 10 de juliol (DOGC núm. 9712), y portal ACTIC (actic.gencat.cat)."
+  },
+  "enlace": "https://actic.gencat.cat/",
+  "niveles": [
+    {
+      "nivel": 1,
+      "clave": "basico",
+      "ca": "bàsic",
+      "es": "básico",
+      "perfil_ca": "Participant",
+      "minutos": 120
+    },
+    {
+      "nivel": 2,
+      "clave": "medio",
+      "ca": "mitjà",
+      "es": "medio",
+      "perfil_ca": "Actiu",
+      "minutos": 120
+    },
+    {
+      "nivel": 3,
+      "clave": "avanzado",
+      "ca": "avançat",
+      "es": "avanzado",
+      "perfil_ca": "Transformador",
+      "minutos": 120
+    }
+  ],
+  "requisito_nivel_3": "nivel 2",
+  "areas": [
+    {
+      "area": 1,
+      "ca": "Cerca, gestió i anàlisi de la informació",
+      "es": "Búsqueda, gestión y análisis de la información",
+      "competencias_ca": [
+        "Cerca, selecciona i contrasta informació amb eines digitals",
+        "Organitza la informació i les dades amb eines digitals",
+        "Analitza, explota i visualitza dades amb eines digitals"
+      ]
+    },
+    {
+      "area": 2,
+      "ca": "Comunicació i col·laboració",
+      "es": "Comunicación y colaboración",
+      "competencias_ca": [
+        "Interacciona i comparteix informació i continguts digitals",
+        "Col·labora amb altres persones mitjançant tecnologies digitals",
+        "Participa en la transformació social i cultural a través de la societat digital"
+      ]
+    },
+    {
+      "area": 3,
+      "ca": "Creació de continguts, programació i fabricació d'objectes",
+      "es": "Creación de contenidos, programación y fabricación de objetos",
+      "competencias_ca": [
+        "Crea i edita continguts digitals",
+        "Dissenya, integra i reelabora continguts digitals amb formats diversos",
+        "Dissenya i fabrica objectes mitjançant tecnologia digital",
+        "Programa"
+      ]
+    },
+    {
+      "area": 4,
+      "ca": "Seguretat, benestar i civisme",
+      "es": "Seguridad, bienestar y civismo",
+      "competencias_ca": [
+        "Protegeix sistemes, dispositius i continguts digitals",
+        "Protegeix dades personals i la seva privacitat",
+        "Protegeix la salut, el benestar i l'entorn",
+        "Gestiona la identitat i els perfils digitals",
+        "Actua cívicament en l'entorn digital"
+      ]
+    },
+    {
+      "area": 5,
+      "ca": "Autonomia i resolució de problemes",
+      "es": "Autonomía y resolución de problemas",
+      "competencias_ca": [
+        "Comprèn els fonaments de la tecnologia digital i la utilitza",
+        "Identifica necessitats personals i professionals i aplica solucions digitals",
+        "S'actualitza en competència digital",
+        "Resol problemes tècnics"
+      ]
+    }
+  ],
+  "prueba": {
+    "tramite": "telemático, en actic.gencat.cat o tramits.gencat.cat (EMT/48, art. 2.1)",
+    "lugar": "un centro colaborador ACTIC, con reserva de día y hora (EMT/48, art. 6.3)",
+    "sesion_unica": true,
+    "tasa_importe": null,
+    "tasa_motivo": "Las normas (EMT/48, art. 3 y 4) remiten a la ley de tasas de la Generalitat y no fijan el importe.",
+    "exencion": [
+      "discapacidad",
+      "desempleo",
+      "jubilacion",
+      "centro-penitenciario"
+    ],
+    "bonificacion": [
+      "familia-numerosa",
+      "familia-monoparental"
+    ]
+  },
+  "modelo": {
+    "vigente_desde": "2026-09-15",
+    "transitorio": "Las solicitudes de inscripción anteriores al 15/09/2026 siguen con los contenidos de la Ordre PRE/18/2016 (EMT/47, disposición transitoria).",
+    "competic": "Para la equivalencia COMPETIC–ACTIC (Ordre PRE/206/2017), las matriculaciones al COMPETIC anteriores al 15/09/2026 siguen con los contenidos de la Ordre PRE/18/2016 (EMT/136, disposición transitoria segunda).",
+    "certificado_caduca": false
+  },
+  "disposiciones": [
+    {
+      "titulo": "Ordre EMT/47/2026, de 17 de març, per la qual s'aproven els continguts actualitzats per a l'acreditació de competències en tecnologies de la informació i la comunicació (ACTIC)",
+      "url": "https://portaljuridic.gencat.cat/eli/es-ct/o/2026/03/17/emt47/dof/cat/pdf",
+      "sha256": "ed0fee057868420fd1e8d9d5bf42afd2463b1c5f2d9fdd4ce33a680207483415",
+      "consultado_utc": "2026-10-07T01:34:59+00:00",
+      "fecha": "2026-03-17",
+      "dogc": "9634",
+      "publicado": "2026-03-27",
+      "cve": "DOGC-A-26084039-2026"
+    },
+    {
+      "titulo": "Ordre EMT/48/2026, de 17 de març, per la qual s'aproven les normes complementàries en relació amb l'acreditació de competències en tecnologies de la informació i la comunicació (ACTIC)",
+      "url": "https://portaljuridic.gencat.cat/eli/es-ct/o/2026/03/17/emt48/dof/cat/pdf",
+      "sha256": "3d4a7fc57acb7fb5ef677d1c9ce0e48c21919027728c8772c6e2d7b5b71e7878",
+      "consultado_utc": "2026-10-07T01:35:45+00:00",
+      "fecha": "2026-03-17",
+      "dogc": "9634",
+      "publicado": "2026-03-27",
+      "cve": "DOGC-A-26084038-2026"
+    },
+    {
+      "titulo": "Ordre EMT/136/2026, de 10 de juliol, per la qual es modifica l'Ordre EMT/47/2026, de 17 de març (ACTIC)",
+      "url": "https://portaljuridic.gencat.cat/eli/es-ct/o/2026/07/10/emt136/dof/cat/pdf",
+      "sha256": "d5b49cede8a7c9683590d6410292077d9f5c071fabd888038b12a788a377b009",
+      "consultado_utc": "2026-10-07T01:34:50+00:00",
+      "fecha": "2026-07-10",
+      "dogc": "9712",
+      "publicado": "2026-07-21",
+      "cve": "DOGC-A-26198048-2026"
+    }
+  ]
+}

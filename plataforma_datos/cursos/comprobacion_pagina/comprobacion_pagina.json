@@ -1,0 +1,169 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Comprobación de la página de un curso (comprobacion-pagina, versión 1)",
+  "description": "Lo que se observó al pedir la página pública de un curso y qué dice de su estado: la respuesta (estado HTTP, dirección final, saltos, huella del cuerpo), las señales literales que sostienen el veredicto, la huella de la respuesta de la sonda del dominio (una ficha que no puede existir), el veredicto de la lista cerrada, su motivo y la regla que lo decidió. sin_respuesta no es evidencia de nada. Las reglas que atan el veredicto y su motivo a la respuesta (cada veredicto tiene sus motivos; una página sin estado HTTP es siempre sin_respuesta y no lleva señales; cerrado, no_existe y disponible necesitan una respuesta sin error del servidor) se ejecutan en Python, en contrato.py.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "version",
+    "curso",
+    "fuente",
+    "url",
+    "pedido_utc",
+    "http",
+    "url_final",
+    "saltos",
+    "longitud_texto",
+    "sha256_cuerpo",
+    "titulo_presente",
+    "senales",
+    "sonda_sha256",
+    "veredicto",
+    "motivo",
+    "regla"
+  ],
+  "properties": {
+    "version": {
+      "const": 1
+    },
+    "curso": {
+      "$ref": "#/$defs/texto"
+    },
+    "fuente": {
+      "type": "string",
+      "maxLength": 64,
+      "pattern": "^[a-z0-9]+(?:[_-][a-z0-9]+)*$"
+    },
+    "url": {
+      "$ref": "#/$defs/direccion"
+    },
+    "pedido_utc": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}Z$"
+    },
+    "http": {
+      "oneOf": [
+        {
+          "type": "integer",
+          "minimum": 100,
+          "maximum": 599
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "url_final": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/direccion"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "saltos": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 20
+    },
+    "longitud_texto": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "sha256_cuerpo": {
+      "$ref": "#/$defs/sha256"
+    },
+    "titulo_presente": {
+      "type": "boolean"
+    },
+    "senales": {
+      "type": "array",
+      "maxItems": 16,
+      "uniqueItems": true,
+      "items": {
+        "$ref": "#/$defs/texto"
+      }
+    },
+    "sonda_sha256": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/sha256"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "veredicto": {
+      "enum": ["disponible", "cerrado", "no_existe", "dudoso", "sin_respuesta"]
+    },
+    "motivo": {
+      "enum": [
+        "acceso_rechazado",
+        "contenido_con_javascript",
+        "datos_con_otro_titulo",
+        "datos_publicados_en_la_ficha",
+        "datos_sin_publicar",
+        "error_de_red",
+        "error_del_servidor",
+        "ficha_con_senal_de_apertura",
+        "ficha_sin_datos_del_curso",
+        "fuente_sin_reconocedor",
+        "http_no_encontrada",
+        "igual_a_la_sonda",
+        "igual_a_la_sonda_con_titulo",
+        "pagina_identica_para_todo",
+        "redirige_fuera_de_la_ficha",
+        "senal_de_cierre",
+        "senales_contradictorias",
+        "servidor_igual_a_la_sonda",
+        "sin_senal_de_apertura",
+        "sin_sonda",
+        "texto_muy_corto",
+        "titulo_ausente"
+      ]
+    },
+    "regla": {
+      "$ref": "#/$defs/regla"
+    }
+  },
+  "$defs": {
+    "sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "texto": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 512,
+      "pattern": "^[^\\u0000-\\u001f\\u007f]+$"
+    },
+    "direccion": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 2048,
+      "pattern": "^https?://[^\\u0000-\\u001f\\u007f]+$"
+    },
+    "regla": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "version", "sha256"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "maxLength": 80,
+          "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+        },
+        "version": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "sha256": {
+          "$ref": "#/$defs/sha256"
+        }
+      }
+    }
+  }
+}

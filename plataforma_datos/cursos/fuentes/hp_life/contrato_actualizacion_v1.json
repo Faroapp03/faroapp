@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "fuente_id": "hp_life",
+  "version": "1",
+  "alcance": "refresco_de_identidades_conocidas_no_censo",
+  "canal": {
+    "schema_version": 1,
+    "id": "hp-life-ficha",
+    "version": 1,
+    "entidad": "programa",
+    "campos": [
+      "/titulo",
+      "/datos/identidad_fuente/codigo",
+      "/datos/cuerpo_html_publicado",
+      "/datos/descripcion_publicada",
+      "/datos/idiomas_publicados",
+      "/datos/estado_fuente_literal",
+      "/datos/contenido_huella"
+    ]
+  },
+  "metodo_acceso": {
+    "id": "hp-life:inscripcion-publica-inferida-js:1",
+    "naturaleza": "inferencia_versionada_de_codigo_oficial_no_control_renderizado",
+    "soportes": [
+      {
+        "url": "https://www.life-global.org/_next/static/chunks/pages/course/%5Bslug%5D-314db3a8a9fd4aee.js",
+        "sha256": "9bfd083d32ee1e095759e40496585cd2a3b7ced16238df839944606619392f34"
+      },
+      {
+        "url": "https://www.life-global.org/_next/static/chunks/pages/_app-52049ba10e75b4de.js",
+        "sha256": "623ae773889dfa98578f4db2394423f592d8c25b002b96cd9a3fb2540d921f7a"
+      }
+    ],
+    "coste_universal_acreditado": false
+  },
+  "antecedentes": "Los canales históricos se conservan sin atribución retroactiva. El primer anclaje requiere negocio íntegro idéntico. Soporte de acceso anterior, investigación y hechos generales conservan sus fechas y alcance; no se rejuvenecen por la consulta de ficha.",
+  "censo_completo": false,
+  "publicacion_confirmada": null
+}

@@ -1,0 +1,1117 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Contrato 2 de evaluación pura de vigencia pública",
+  "description": "API evaluar_vigencia(oferta, observaciones, politica, *, ahora). Ejecuta validar_entrada y el contrato de fichas antes de decidir. Sin red, reloj, SQLite, modelos o tareas programadas. Desconocido o fallo no acreditan disponible. El plazo técnico de la política solo fija la próxima revisión interna (aviso de panel): el tiempo cambia la oferta únicamente al alcanzar un límite publicado con evidencia. Un fallo sin respuesta no anula ni renueva una comprobación previa válida; se conserva su diagnóstico y se evalúa la última respuesta, incluidas contradicciones y cierres. Publicación no acredita elegibilidad o idoneidad pedagógica. Reglas referenciales y temporales adicionales se ejecutan en Python; no es un intérprete de prosa.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["oferta", "observaciones", "politica", "ahora"],
+  "properties": {
+    "oferta": {
+      "$ref": "#/$defs/oferta"
+    },
+    "observaciones": {
+      "type": "array",
+      "minItems": 0,
+      "items": {
+        "$ref": "#/$defs/observacion"
+      }
+    },
+    "politica": {
+      "allOf": [{ "$ref": "#/$defs/politica" }, { "required": ["plazo_tecnico"] }],
+      "description": "Toda evaluación nueva exige plazo_tecnico=revision_interna. El registro histórico cita políticas anteriores por huella y no se reevalúa."
+    },
+    "ahora": {
+      "$ref": "#/$defs/fecha_utc"
+    }
+  },
+  "$defs": {
+    "fecha_utc": {
+      "type": "string",
+      "format": "date-time",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}(?::\\d{2}(?:\\.\\d{1,6})?)?(?:Z|\\+00:00)$"
+    },
+    "url_publica": {
+      "type": "string",
+      "format": "uri",
+      "pattern": "^https?://",
+      "description": "El validador ejecutado exige host público sintáctico sin credenciales ni direcciones privadas; no consulta DNS."
+    },
+    "localizador": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["tipo", "valor"],
+      "properties": {
+        "tipo": {
+          "enum": ["selector", "pagina", "campo", "seccion"]
+        },
+        "valor": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^[^\\u0000-\\u001f]*\\S[^\\u0000-\\u001f]*$"
+        }
+      }
+    },
+    "evidencia": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["alcance", "url", "capturado_utc", "sha256", "localizador"],
+      "properties": {
+        "alcance": {
+          "enum": ["identidad", "disponibilidad", "calendario", "catalogo", "politica", "diagnostico"]
+        },
+        "url": {
+          "$ref": "#/$defs/url_publica"
+        },
+        "capturado_utc": {
+          "$ref": "#/$defs/fecha_utc"
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "localizador": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/localizador"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      }
+    },
+    "oferta": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "fuente_id", "url"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^[^\\u0000-\\u001f]*\\S[^\\u0000-\\u001f]*$"
+        },
+        "fuente_id": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^[^\\u0000-\\u001f]*\\S[^\\u0000-\\u001f]*$"
+        },
+        "url": {
+          "$ref": "#/$defs/url_publica"
+        }
+      }
+    },
+    "politica": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "fuente_id",
+        "version",
+        "ttl_ficha_segundos",
+        "ttl_catalogo_segundos",
+        "requiere_catalogo",
+        "zona_fechas_dia",
+        "inicio_dia_inclusivo",
+        "fin_dia_inclusivo",
+        "evidencias"
+      ],
+      "properties": {
+        "fuente_id": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^[^\\u0000-\\u001f]*\\S[^\\u0000-\\u001f]*$"
+        },
+        "version": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^[^\\u0000-\\u001f]*\\S[^\\u0000-\\u001f]*$"
+        },
+        "ttl_ficha_segundos": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "ttl_catalogo_segundos": {
+          "anyOf": [
+            {
+              "type": "integer",
+              "minimum": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "requiere_catalogo": {
+          "type": "boolean"
+        },
+        "zona_fechas_dia": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "^[^\\u0000-\\u001f]*\\S[^\\u0000-\\u001f]*$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "inicio_dia_inclusivo": {
+          "type": ["boolean", "null"]
+        },
+        "fin_dia_inclusivo": {
+          "type": ["boolean", "null"]
+        },
+        "plazo_tecnico": {
+          "const": "revision_interna",
+          "description": "Los TTL marcan la próxima revisión interna de Faro: solo avisan en el panel, no retiran la oferta ni cambian sus datos. Ausente solo en políticas históricas."
+        },
+        "evidencias": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "oneOf": [
+              {
+                "$ref": "#/$defs/evidencia"
+              },
+              {
+                "$ref": "#/$defs/evidencia_interna_politica"
+              }
+            ]
+          }
+        },
+        "regla_disponibilidad": {
+          "enum": ["oferta-publicada-continua-1", "matricula-actual-cibernarium-edicion-1"],
+          "description": "Opt-in versionado; ausente mantiene las reglas anteriores. No inventa periodos ni acceso sin registro."
+        }
+      },
+      "description": "Plazo de revisión interna (TTL) por fuente y canal, solo para avisar en el panel, zona IANA acreditada y convención explícita de inclusión de día. null no impone una convención; el día límite queda pendiente. Una evidencia localizada de alcance politica debe justificar versión/alcance. Instantes fin son exclusivos en este contrato. Si la fuente no requiere catálogo, su TTL puede ser null: no se inventa un canal inexistente. La referencia interna Faro conserva ID/versión/SHA del recurso y no atribuye TTL al proveedor. Sin zona, un día se resuelve solo si todas las interpretaciones de offsets válidos coinciden; su cota conservadora de confianza no es una hora publicada.",
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "requiere_catalogo": {
+                "const": true
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "ttl_catalogo_segundos": {
+                "type": "integer",
+                "minimum": 1
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "required": ["regla_disponibilidad"],
+            "properties": { "regla_disponibilidad": { "const": "matricula-actual-cibernarium-edicion-1" } }
+          },
+          "then": { "properties": { "fuente_id": { "const": "barcelonactiva" }, "version": { "enum": ["2", "3"] } } }
+        }
+      ]
+    },
+    "periodo": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["inicio", "fin"],
+      "properties": {
+        "inicio": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "^[^\\u0000-\\u001f]*\\S[^\\u0000-\\u001f]*$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "fin": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "^[^\\u0000-\\u001f]*\\S[^\\u0000-\\u001f]*$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "description": "Fechas normalizadas por contrato_fichas: conserva día, minuto, segundo, fracción y zona explícita; no se inventa hora o zona ausente."
+    },
+    "fechas_publicadas": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["tipo", "inicio", "fin"],
+      "properties": {
+        "tipo": {
+          "enum": [null, "periodo-formativo", "ventana-acceso", "sesiones"]
+        },
+        "inicio": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "^[^\\u0000-\\u001f]*\\S[^\\u0000-\\u001f]*$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "fin": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "^[^\\u0000-\\u001f]*\\S[^\\u0000-\\u001f]*$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      }
+    },
+    "detalle_fecha": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["precision", "zona"],
+      "properties": {
+        "precision": {
+          "enum": [null, "dia", "minuto", "segundo", "fraccion-segundo"]
+        },
+        "zona": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "^[^\\u0000-\\u001f]*\\S[^\\u0000-\\u001f]*$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      }
+    },
+    "detalles_periodo": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["inicio", "fin"],
+      "properties": {
+        "inicio": {
+          "$ref": "#/$defs/detalle_fecha"
+        },
+        "fin": {
+          "$ref": "#/$defs/detalle_fecha"
+        }
+      }
+    },
+    "datos_edicion": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "schema_ficha_version",
+        "modalidad",
+        "sincronia",
+        "coste_formacion_tipo",
+        "estado_inscripcion",
+        "estado_edicion",
+        "acceso_territorial",
+        "horas_publicadas",
+        "fechas_publicadas",
+        "fechas_publicadas_detalle",
+        "fechas_matricula",
+        "fechas_matricula_detalle",
+        "plaza_confirmada_persona",
+        "admisibilidad_persona",
+        "publicacion_original",
+        "diagnosticos_normalizacion"
+      ],
+      "properties": {
+        "schema_ficha_version": {
+          "type": "integer",
+          "const": 1
+        },
+        "modalidad": {
+          "enum": ["en-linea", "mixta", "presencial", null]
+        },
+        "sincronia": {
+          "enum": ["asincrona", "mixta", "sincrona", null]
+        },
+        "coste_formacion_tipo": {
+          "enum": [
+            "contenido_gratuito_practicas_por_confirmar",
+            "de_pago",
+            "gratis_formacion",
+            "gratis_parcial",
+            "gratis_parcial_temporal",
+            null
+          ]
+        },
+        "estado_inscripcion": {
+          "enum": [
+            "apertura-futura",
+            "cerrada",
+            "disponible-publicamente",
+            "senal-publica-sin-confirmar",
+            "sin-plazas",
+            null
+          ]
+        },
+        "estado_edicion": {
+          "enum": ["archivada", "finalizada", "futura", "vigente", null]
+        },
+        "acceso_territorial": {
+          "enum": [
+            "restriccion-territorial-publicada",
+            "sin-restriccion-residencia-en-norma-general",
+            "sin-restriccion-territorial-declarada",
+            null
+          ]
+        },
+        "horas_publicadas": {
+          "anyOf": [
+            {
+              "type": "number",
+              "minimum": 0
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "fechas_publicadas": {
+          "$ref": "#/$defs/fechas_publicadas"
+        },
+        "fechas_publicadas_detalle": {
+          "$ref": "#/$defs/detalles_periodo"
+        },
+        "fechas_matricula": {
+          "$ref": "#/$defs/periodo"
+        },
+        "fechas_matricula_detalle": {
+          "$ref": "#/$defs/detalles_periodo"
+        },
+        "plaza_confirmada_persona": {
+          "type": "null"
+        },
+        "admisibilidad_persona": {
+          "type": "null"
+        },
+        "publicacion_original": {
+          "type": "object"
+        },
+        "diagnosticos_normalizacion": {
+          "type": "array"
+        },
+        "calendarios_publicados": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/calendario_edicion"
+          },
+          "description": "Extensión aditiva de ficha v1: obligatoria al coexistir calendarios o declarar un alcance distinto de edición. El validador Python exige inventario completo reconstruible desde publicacion_original, primera entrada igual a fechas_publicadas y su detalle, y diagnósticos de ambigüedades/conflictos conservados. La ausencia solo admite una ficha de calendario único de esta edición."
+        }
+      },
+      "description": "evaluar_vigencia ejecuta validar_datos_edicion del contrato existente, incluidas coherencia de extremos, precisión, zona y prohibición de admisión individual. Los costes o certificados no deciden vigencia."
+    },
+    "detalle_ficha": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "url_final",
+        "codigo_http",
+        "tipo_destino",
+        "identidad_observada",
+        "datos_edicion",
+        "acceso_abierto"
+      ],
+      "properties": {
+        "url_final": {
+          "$ref": "#/$defs/url_publica"
+        },
+        "codigo_http": {
+          "type": "integer",
+          "minimum": 100,
+          "maximum": 599
+        },
+        "tipo_destino": {
+          "enum": ["ficha", "portada", "error", "desconocido"]
+        },
+        "identidad_observada": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "^[^\\u0000-\\u001f]*\\S[^\\u0000-\\u001f]*$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "datos_edicion": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/datos_edicion"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "acceso_abierto": {
+          "type": ["boolean", "null"]
+        },
+        "oferta_publicada_continua": {
+          "$ref": "#/$defs/oferta_publicada_continua"
+        },
+        "matricula_actual_edicion": {
+          "$ref": "#/$defs/matricula_actual_edicion"
+        },
+        "cabecera_cibernarium_edicion": {
+          "$ref": "#/$defs/cabecera_cibernarium_edicion"
+        }
+      },
+      "description": "URL trasladada puede ser válida conservando identidad. HTTP200 solo, portada, otra identidad o ficha finalizada no acredita disponible. acceso_abierto es declaración explícita de acceso continuo, no se deduce del título ni de fechas ausentes."
+    },
+    "detalle_catalogo": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["url_final", "codigo_http", "tipo_destino", "identidad_buscada", "lectura_completa", "presente"],
+      "properties": {
+        "url_final": {
+          "$ref": "#/$defs/url_publica"
+        },
+        "codigo_http": {
+          "type": "integer",
+          "minimum": 100,
+          "maximum": 599
+        },
+        "tipo_destino": {
+          "enum": ["catalogo", "portada", "error", "desconocido"]
+        },
+        "identidad_buscada": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^[^\\u0000-\\u001f]*\\S[^\\u0000-\\u001f]*$"
+        },
+        "lectura_completa": {
+          "type": "boolean"
+        },
+        "presente": {
+          "type": ["boolean", "null"]
+        }
+      }
+    },
+    "detalle_fallo": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["motivo"],
+      "properties": {
+        "motivo": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^[^\\u0000-\\u001f]*\\S[^\\u0000-\\u001f]*$"
+        }
+      }
+    },
+    "observacion": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "tipo",
+        "intentado_el",
+        "terminado_el",
+        "resultado",
+        "url_consultada",
+        "detalle",
+        "evidencias"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^[^\\u0000-\\u001f]*\\S[^\\u0000-\\u001f]*$"
+        },
+        "tipo": {
+          "enum": ["ficha", "catalogo"]
+        },
+        "intentado_el": {
+          "$ref": "#/$defs/fecha_utc"
+        },
+        "terminado_el": {
+          "$ref": "#/$defs/fecha_utc"
+        },
+        "resultado": {
+          "enum": ["correcta", "fallo"]
+        },
+        "url_consultada": {
+          "$ref": "#/$defs/url_publica"
+        },
+        "detalle": {
+          "type": "object"
+        },
+        "evidencias": {
+          "type": "array",
+          "minItems": 0,
+          "items": {
+            "$ref": "#/$defs/evidencia"
+          }
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "resultado": {
+                "const": "fallo"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "detalle": {
+                "$ref": "#/$defs/detalle_fallo"
+              }
+            }
+          },
+          "else": {
+            "properties": {
+              "evidencias": {
+                "minItems": 1
+              }
+            },
+            "if": {
+              "properties": {
+                "tipo": {
+                  "const": "ficha"
+                }
+              }
+            },
+            "then": {
+              "properties": {
+                "detalle": {
+                  "$ref": "#/$defs/detalle_ficha"
+                }
+              }
+            },
+            "else": {
+              "properties": {
+                "detalle": {
+                  "$ref": "#/$defs/detalle_catalogo"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "description": "Fechas de intento/fin y capturas coherentes: inicio <= cada captura <= fin <= ahora. Fin de procesamiento no es fecha de conocimiento de la fuente. Capturas ligadas a URL consultada/final. Ficha identificada exige evidencias localizadas de identidad y, cuando aplica, disponibilidad/calendario; catálogo requiere evidencia de lectura/presencia. Las capturas multipágina pueden tener instantes distintos. No se verifica el contenido semántico de una captura."
+    },
+    "resultado": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schema_version",
+        "oferta_id",
+        "estado",
+        "motivos",
+        "evaluado_el",
+        "ultimo_intento_el",
+        "comprobado_el",
+        "cierra_el",
+        "revisar_el",
+        "ultimo_intento_fallido_el",
+        "incidencia_enlace",
+        "alcance",
+        "trazabilidad",
+        "ultimo_fin_el"
+      ],
+      "properties": {
+        "schema_version": {
+          "type": "integer",
+          "const": 2
+        },
+        "oferta_id": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^[^\\u0000-\\u001f]*\\S[^\\u0000-\\u001f]*$"
+        },
+        "estado": {
+          "enum": ["disponible-publicamente", "no-disponible-publicamente", "apertura-futura", "sin-confirmar"]
+        },
+        "motivos": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "^[^\\u0000-\\u001f]*\\S[^\\u0000-\\u001f]*$"
+          }
+        },
+        "evaluado_el": {
+          "$ref": "#/$defs/fecha_utc"
+        },
+        "ultimo_intento_el": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/fecha_utc"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "comprobado_el": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/fecha_utc"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "cierra_el": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/fecha_utc"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "revisar_el": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/fecha_utc"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "ultimo_intento_fallido_el": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/fecha_utc"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "incidencia_enlace": {
+          "anyOf": [
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["el", "origen", "tipo", "codigo_http"],
+              "properties": {
+                "el": {
+                  "$ref": "#/$defs/fecha_utc"
+                },
+                "origen": {
+                  "enum": ["ficha", "catalogo"]
+                },
+                "tipo": {
+                  "enum": ["no_encontrado", "otra_identidad", "redireccion_sin_identidad"]
+                },
+                "codigo_http": {
+                  "type": "integer",
+                  "minimum": 100,
+                  "maximum": 599
+                }
+              }
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "alcance": {
+          "const": "disponibilidad-publica"
+        },
+        "trazabilidad": {
+          "type": "object"
+        },
+        "ultimo_fin_el": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/fecha_utc"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "description": "comprobado_el es la fecha efectiva de los apoyos de la última ficha identificada: el menor instante de captura necesario, nunca el fin del procesamiento; solo una respuesta válida nueva lo renueva. ultimo_intento_el/ultimo_fin_el se conservan separados. Resolución y recuperación se ordenan por el intervalo de todos los apoyos necesarios; apoyos concurrentes incompatibles quedan pendientes y una respuesta antigua tardía no pisa una reciente. cierra_el es el mínimo de las cotas operativas exclusivas de límites publicados con evidencia (trazabilidad.limites_calculados) o null; disponible implica ahora < cierra_el cuando existe. revisar_el es la próxima revisión interna (comprobación + TTL) y ultimo_intento_fallido_el el último intento sin respuesta válida posterior a la última válida: ambos solo avisan en el panel y nunca cambian el estado. Una 404/410, una redirección sin identidad, una ficha de otra identidad o una página que no es el catálogo requerido son incidencias del enlace (incidencia_enlace, con origen ficha o catalogo: la más reciente posterior a la última respuesta válida de su canal); una lectura completa del catálogo sin la oferta no es incidencia sino un hecho observado (ausente_o_no_identificada_en_catalogo_completo): no participan en el estado, no retiran ni cambian hechos o fechas y no se confirman por repetición; si nunca hubo respuesta de este curso, describen el desconocimiento. Una ficha identificada puede estar cerrada: no equivale a admisión."
+    },
+    "resultado_v1": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schema_version",
+        "oferta_id",
+        "estado",
+        "motivos",
+        "evaluado_el",
+        "ultimo_intento_el",
+        "comprobado_el",
+        "vence_el",
+        "alcance",
+        "trazabilidad",
+        "ultimo_fin_el"
+      ],
+      "properties": {
+        "schema_version": {
+          "type": "integer",
+          "const": 1
+        },
+        "oferta_id": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^[^\\u0000-\\u001f]*\\S[^\\u0000-\\u001f]*$"
+        },
+        "estado": {
+          "enum": [
+            "disponible-publicamente",
+            "no-disponible-publicamente",
+            "apertura-futura",
+            "sin-confirmar",
+            "comprobacion-caducada"
+          ]
+        },
+        "motivos": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "^[^\\u0000-\\u001f]*\\S[^\\u0000-\\u001f]*$"
+          }
+        },
+        "evaluado_el": {
+          "$ref": "#/$defs/fecha_utc"
+        },
+        "ultimo_intento_el": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/fecha_utc"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "comprobado_el": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/fecha_utc"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "vence_el": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/fecha_utc"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "alcance": {
+          "const": "disponibilidad-publica"
+        },
+        "trazabilidad": {
+          "type": "object"
+        },
+        "ultimo_fin_el": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/fecha_utc"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "description": "Resultado histórico del contrato 1 (TTL como límite), conservado solo para leer el registro por huella. comprobado_el es la fecha efectiva de los apoyos de la última ficha identificada: el menor instante de captura necesario, nunca el fin del procesamiento. Cada apoyo mantiene su edad para TTL. ultimo_intento_el/ultimo_fin_el se conservan separados. Resolución y recuperación se ordenan por el intervalo de todos los apoyos necesarios; apoyos concurrentes incompatibles quedan pendientes. vence_el es cota operativa exclusiva, mínimo de TTL y todas las restricciones temporales aplicables. Disponible implica ahora < vence_el cuando hay cota. Una ficha identificada puede estar cerrada: no equivale a admisión."
+    },
+    "calendario_edicion": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["campo", "alcance", "periodo", "detalle", "vinculo_edicion"],
+      "properties": {
+        "campo": {
+          "enum": [
+            "fechas_edicion",
+            "fechas_aula",
+            "fechas_sesiones",
+            "fechas",
+            "inicio/fin",
+            "run",
+            "run.fechas_edicion",
+            "run.fechas_aula",
+            "run.fechas_sesiones",
+            "run.fechas"
+          ]
+        },
+        "alcance": {
+          "enum": ["edicion", "material-auxiliar", "desconocido"]
+        },
+        "periodo": {
+          "$ref": "#/$defs/fechas_publicadas"
+        },
+        "detalle": {
+          "$ref": "#/$defs/detalles_periodo"
+        },
+        "vinculo_edicion": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/vinculo_calendario"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "description": "Calendario interpretado, alcance y vínculo son dimensiones distintas. alcance edicion no acredita pertenencia por defecto. Sin vínculo explícito o relación inequívoca ya conservada en observación, identidad y localizador, la pertenencia permanece desconocida. Material auxiliar y otra edición no restringen cursado. No se infiere del título o cercanía en página. Sesiones no equivalen a final del acceso."
+    },
+    "vinculo_calendario": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["tipo", "valor", "edicion", "evidencia"],
+      "properties": {
+        "tipo": {
+          "enum": ["id", "url", "relacion-estructurada"]
+        },
+        "valor": {
+          "type": "string",
+          "minLength": 1
+        },
+        "edicion": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["id", "url"],
+          "properties": {
+            "id": {
+              "type": ["string", "null"]
+            },
+            "url": {
+              "type": ["string", "null"]
+            }
+          }
+        },
+        "evidencia": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["url", "capturado_utc", "sha256", "localizador"],
+          "properties": {
+            "url": {
+              "$ref": "#/$defs/url_publica"
+            },
+            "capturado_utc": {
+              "$ref": "#/$defs/fecha_utc"
+            },
+            "sha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "localizador": {
+              "$ref": "#/$defs/localizador"
+            }
+          }
+        }
+      },
+      "description": "Relación declarada por el productor con destino y captura localizada. El evaluador debe cotejar identidad, fecha, URL y huella con la observación; esta forma no certifica por sí sola la verdad del vínculo. No se quitan prefijos de ID ni se inventa un identificador si existe una URL específica."
+    },
+    "evidencia_interna_politica": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["alcance", "tipo", "documento_id", "version", "sha256", "localizador"],
+      "properties": {
+        "alcance": {
+          "const": "politica"
+        },
+        "tipo": {
+          "const": "interna-faro"
+        },
+        "documento_id": {
+          "type": "string",
+          "pattern": "^faro:vigencia:[a-z][a-z0-9_-]*$"
+        },
+        "version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "localizador": {
+          "const": {
+            "tipo": "campo",
+            "valor": "/criterios"
+          }
+        }
+      },
+      "description": "Decisión operativa de Faro, no captura HTTP del proveedor. El lector explícito verifica bytes y SHA del recurso estático. La API pura comprueba identidad/versión/coherencia sin E/S. No admite fecha de captura o URL fingidas. No está admitida en observaciones remotas."
+    },
+    "criterio_oferta_continua": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["valor", "apoyos"],
+      "properties": {
+        "valor": {
+          "type": ["boolean", "null"]
+        },
+        "apoyos": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "integer",
+            "minimum": 0
+          }
+        }
+      },
+      "description": "Un criterio positivo necesita evidencia localizada de disponibilidad; los índices se cotejan con el array real."
+    },
+    "cabecera_cibernarium_edicion": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["version", "metodo", "actividad_id", "edicion_id", "apoyos"],
+      "properties": {
+        "version": { "const": 1 },
+        "metodo": { "const": "cabecera-cibernarium-edicion-1" },
+        "actividad_id": { "type": "string", "pattern": "^[1-9][0-9]*$" },
+        "edicion_id": { "type": "string", "pattern": "^[1-9][0-9]*$" },
+        "apoyos": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["actividad", "edicion"],
+          "properties": {
+            "actividad": { "type": "integer", "minimum": 0 },
+            "edicion": { "type": "integer", "minimum": 0 }
+          }
+        }
+      },
+      "description": "Cabecera de una respuesta API de esta edición nativa, incluida incertidumbre o cierre. Solo Barcelona Activa 2 registrada; Python coteja identidad, localizadores y la URL de la última respuesta identificada por instante, rechazando empates incompatibles. No cambia el padre canónico ni acredita disponibilidad por sí sola."
+    },
+    "matricula_actual_edicion": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["version", "metodo", "actividad_id", "edicion_id", "registro", "apoyos"],
+      "properties": {
+        "version": { "const": 1 },
+        "metodo": { "const": "matricula-actual-cibernarium-edicion-1" },
+        "actividad_id": { "type": "string", "pattern": "^[1-9][0-9]*$" },
+        "edicion_id": { "type": "string", "pattern": "^[1-9][0-9]*$" },
+        "registro": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["registrationCode", "registrationDesc", "openingsAvailable", "tancada", "isFinished"],
+          "properties": {
+            "registrationCode": { "type": ["string", "null"], "maxLength": 160 },
+            "registrationDesc": { "type": ["string", "null"], "maxLength": 160 },
+            "openingsAvailable": { "type": ["boolean", "null"] },
+            "tancada": { "type": ["boolean", "null"] },
+            "isFinished": { "type": ["boolean", "null"] }
+          }
+        },
+        "apoyos": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "actividad",
+            "edicion",
+            "registrationCode",
+            "registrationDesc",
+            "openingsAvailable",
+            "tancada",
+            "isFinished",
+            "calendario"
+          ],
+          "properties": {
+            "actividad": { "type": "integer", "minimum": 0 },
+            "edicion": { "type": "integer", "minimum": 0 },
+            "registrationCode": { "type": "integer", "minimum": 0 },
+            "registrationDesc": { "type": "integer", "minimum": 0 },
+            "openingsAvailable": { "type": "integer", "minimum": 0 },
+            "tancada": { "type": "integer", "minimum": 0 },
+            "isFinished": { "type": "integer", "minimum": 0 },
+            "calendario": { "type": "integer", "minimum": 0 }
+          }
+        }
+      },
+      "description": "Matrícula observada para una edición nativa de Cibernàrium, solo política Barcelona Activa 2. Python coteja los IDs y localizadores del mismo objeto/captura, DISP0 corroborado, calendario de esa edición y TTL. No inventa plazo de matrícula, acceso al aula, admisión personal ni plaza reservada. El productor debe reextraer estos hechos del cuerpo admitido."
+    },
+    "oferta_publicada_continua": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["version", "metodo", "curso_id", "criterios"],
+      "properties": {
+        "version": {
+          "enum": [1]
+        },
+        "metodo": {
+          "enum": ["oferta-publicada-continua-1"]
+        },
+        "curso_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "criterios": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "curso_completo",
+            "formacion_gratuita",
+            "cta_identificado",
+            "destino_identificado",
+            "destinatarios_constatados",
+            "requisitos_constatados"
+          ],
+          "properties": {
+            "curso_completo": {
+              "$ref": "#/$defs/criterio_oferta_continua"
+            },
+            "formacion_gratuita": {
+              "$ref": "#/$defs/criterio_oferta_continua"
+            },
+            "cta_identificado": {
+              "$ref": "#/$defs/criterio_oferta_continua"
+            },
+            "destino_identificado": {
+              "$ref": "#/$defs/criterio_oferta_continua"
+            },
+            "destinatarios_constatados": {
+              "$ref": "#/$defs/criterio_oferta_continua"
+            },
+            "requisitos_constatados": {
+              "$ref": "#/$defs/criterio_oferta_continua"
+            }
+          }
+        }
+      },
+      "description": "Oferta del curso completo publicada continuamente: no equivale a muestra, acceso sin registro o requisitos personales satisfechos. Los apoyos conservan su edad; el más antiguo limita la comprobación."
+    }
+  }
+}

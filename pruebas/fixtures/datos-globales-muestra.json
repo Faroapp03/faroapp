@@ -1,0 +1,992 @@
+{
+  "version": "1",
+  "generado": "2026-10-11",
+  "muestra": true,
+  "indicadores": [
+    {
+      "id": "empresas-ia",
+      "nombre": {
+        "es": "Empresas que usan IA",
+        "ca": "Empreses que fan servir IA"
+      },
+      "definicion": {
+        "es": "Porcentaje de empresas de 10 o más personas que usan al menos una de las ocho tecnologías de inteligencia artificial de la encuesta europea (análisis de texto, voz, generación de lenguaje o código, imagen, aprendizaje automático, automatización de procesos, robots autónomos o generación de imagen, vídeo o audio). Sin agricultura, minería ni sector financiero.",
+        "ca": "Percentatge d'empreses de 10 o més persones que fan servir almenys una de les vuit tecnologies d'intel·ligència artificial de l'enquesta europea (anàlisi de text, veu, generació de llenguatge o codi, imatge, aprenentatge automàtic, automatització de processos, robots autònoms o generació d'imatge, vídeo o àudio). Sense agricultura, mineria ni sector financer."
+      },
+      "unidad": "porcentaje",
+      "naturaleza": "medido",
+      "fuente": "Eurostat",
+      "tabla": "isoc_eb_ai",
+      "licencia": "Aviso de copyright de Eurostat (https://ec.europa.eu/eurostat/help/copyright-notice, consultado el 06/10/2026), que aplica la Decisión 2011/833/UE de la Comisión: reutilización autorizada, también comercial, citando la fuente; una versión filtrada se cita con el enlace del conjunto y la fecha de consulta.",
+      "url": "https://doi.org/10.2908/ISOC_EB_AI",
+      "comparable": true,
+      "cobertura": "ue"
+    },
+    {
+      "id": "personas-ia-generativa",
+      "nombre": {
+        "es": "Personas que usan IA generativa",
+        "ca": "Persones que fan servir IA generativa"
+      },
+      "definicion": {
+        "es": "Porcentaje de personas de 16 a 74 años que usaron alguna herramienta de IA generativa en los tres meses anteriores a la encuesta.",
+        "ca": "Percentatge de persones de 16 a 74 anys que van fer servir alguna eina d'IA generativa en els tres mesos anteriors a l'enquesta."
+      },
+      "unidad": "porcentaje",
+      "naturaleza": "medido",
+      "fuente": "Eurostat",
+      "tabla": "isoc_ai_iaiu",
+      "licencia": "Aviso de copyright de Eurostat (https://ec.europa.eu/eurostat/help/copyright-notice, consultado el 06/10/2026), que aplica la Decisión 2011/833/UE de la Comisión: reutilización autorizada, también comercial, citando la fuente; una versión filtrada se cita con el enlace del conjunto y la fecha de consulta.",
+      "url": "https://doi.org/10.2908/ISOC_AI_IAIU",
+      "comparable": true,
+      "cobertura": "ue"
+    },
+    {
+      "id": "personas-ia-generativa-usuarios-internet",
+      "nombre": {
+        "es": "Personas que usan IA generativa (usuarios de internet)",
+        "ca": "Persones que fan servir IA generativa (usuaris d'internet)"
+      },
+      "definicion": {
+        "es": "Porcentaje de personas de 16 a 74 años que usaron alguna herramienta de IA generativa en los tres meses anteriores a la encuesta. Base: personas que usaron internet en los tres meses anteriores.",
+        "ca": "Percentatge de persones de 16 a 74 anys que van fer servir alguna eina d'IA generativa en els tres mesos anteriors a l'enquesta. Base: persones que van fer servir internet en els tres mesos anteriors."
+      },
+      "unidad": "porcentaje",
+      "naturaleza": "medido",
+      "fuente": "Eurostat; Cataluña: Idescat, a partir de la TIC-H del INE",
+      "tabla": "isoc_ai_iaiu (PC_IND_IU3); Cataluña: ticll25, taula 3.4.1",
+      "licencia": "Aviso de copyright de Eurostat (https://ec.europa.eu/eurostat/help/copyright-notice, consultado el 06/10/2026), que aplica la Decisión 2011/833/UE de la Comisión: reutilización autorizada, también comercial, citando la fuente; una versión filtrada se cita con el enlace del conjunto y la fecha de consulta.",
+      "url": "https://doi.org/10.2908/ISOC_AI_IAIU",
+      "comparable": true,
+      "cobertura": "ue"
+    },
+    {
+      "id": "personas-ia-generativa-trabajo-usuarios-internet",
+      "nombre": {
+        "es": "Personas que usan IA generativa para trabajar (usuarios de internet)",
+        "ca": "Persones que fan servir IA generativa per treballar (usuaris d'internet)"
+      },
+      "definicion": {
+        "es": "Porcentaje de personas de 16 a 74 años que usaron alguna herramienta de IA generativa por motivos de trabajo en los tres meses anteriores a la encuesta. Base: personas que usaron internet en los tres meses anteriores.",
+        "ca": "Percentatge de persones de 16 a 74 anys que van fer servir alguna eina d'IA generativa per motius de feina en els tres mesos anteriors a l'enquesta. Base: persones que van fer servir internet en els tres mesos anteriors."
+      },
+      "unidad": "porcentaje",
+      "naturaleza": "medido",
+      "fuente": "Eurostat; Cataluña: Idescat, a partir de la TIC-H del INE",
+      "tabla": "isoc_ai_iaiu (PC_IND_IU3); Cataluña: ticll25, taula 3.4.1",
+      "licencia": "Aviso de copyright de Eurostat (https://ec.europa.eu/eurostat/help/copyright-notice, consultado el 06/10/2026), que aplica la Decisión 2011/833/UE de la Comisión: reutilización autorizada, también comercial, citando la fuente; una versión filtrada se cita con el enlace del conjunto y la fecha de consulta.",
+      "url": "https://doi.org/10.2908/ISOC_AI_IAIU",
+      "comparable": true,
+      "cobertura": "ue"
+    },
+    {
+      "id": "mujeres-ia-generativa-usuarios-internet",
+      "nombre": {
+        "es": "Mujeres que usan IA generativa (usuarios de internet)",
+        "ca": "Dones que fan servir IA generativa (usuaris d'internet)"
+      },
+      "definicion": {
+        "es": "Porcentaje de mujeres de 16 a 74 años que usaron alguna herramienta de IA generativa en los tres meses anteriores a la encuesta. Base: personas que usaron internet en los tres meses anteriores.",
+        "ca": "Percentatge de dones de 16 a 74 anys que van fer servir alguna eina d'IA generativa en els tres mesos anteriors a l'enquesta. Base: persones que van fer servir internet en els tres mesos anteriors."
+      },
+      "unidad": "porcentaje",
+      "naturaleza": "medido",
+      "fuente": "Eurostat; Cataluña: Idescat, a partir de la TIC-H del INE",
+      "tabla": "isoc_ai_iaiu (PC_IND_IU3); Cataluña: ticll25, taula 3.4.1",
+      "licencia": "Aviso de copyright de Eurostat (https://ec.europa.eu/eurostat/help/copyright-notice, consultado el 06/10/2026), que aplica la Decisión 2011/833/UE de la Comisión: reutilización autorizada, también comercial, citando la fuente; una versión filtrada se cita con el enlace del conjunto y la fecha de consulta.",
+      "url": "https://doi.org/10.2908/ISOC_AI_IAIU",
+      "comparable": true,
+      "cobertura": "ue"
+    },
+    {
+      "id": "hombres-ia-generativa-usuarios-internet",
+      "nombre": {
+        "es": "Hombres que usan IA generativa (usuarios de internet)",
+        "ca": "Homes que fan servir IA generativa (usuaris d'internet)"
+      },
+      "definicion": {
+        "es": "Porcentaje de hombres de 16 a 74 años que usaron alguna herramienta de IA generativa en los tres meses anteriores a la encuesta. Base: personas que usaron internet en los tres meses anteriores.",
+        "ca": "Percentatge d'homes de 16 a 74 anys que van fer servir alguna eina d'IA generativa en els tres mesos anteriors a l'enquesta. Base: persones que van fer servir internet en els tres mesos anteriors."
+      },
+      "unidad": "porcentaje",
+      "naturaleza": "medido",
+      "fuente": "Eurostat; Cataluña: Idescat, a partir de la TIC-H del INE",
+      "tabla": "isoc_ai_iaiu (PC_IND_IU3); Cataluña: ticll25, taula 3.4.1",
+      "licencia": "Aviso de copyright de Eurostat (https://ec.europa.eu/eurostat/help/copyright-notice, consultado el 06/10/2026), que aplica la Decisión 2011/833/UE de la Comisión: reutilización autorizada, también comercial, citando la fuente; una versión filtrada se cita con el enlace del conjunto y la fecha de consulta.",
+      "url": "https://doi.org/10.2908/ISOC_AI_IAIU",
+      "comparable": true,
+      "cobertura": "ue"
+    },
+    {
+      "id": "ia-generativa-trabajo-no-manual-usuarios-internet",
+      "nombre": {
+        "es": "IA generativa para trabajar en ocupaciones no manuales (usuarios de internet)",
+        "ca": "IA generativa per treballar en ocupacions no manuals (usuaris d'internet)"
+      },
+      "definicion": {
+        "es": "Porcentaje de personas ocupadas en ocupaciones no manuales (grandes grupos 0 a 5 de la ISCO-08) que usaron IA generativa por motivos de trabajo en los tres meses anteriores a la encuesta. Base: personas que usaron internet en los tres meses anteriores. En Cataluña, «treballador no manual» del Idescat: grandes grupos 0 y 1 a 5 de la CNO-94, la misma división según la metodología de su encuesta (https://www.idescat.cat/pub/?id=ticll25&m=m).",
+        "ca": "Percentatge de persones ocupades en ocupacions no manuals (grans grups 0 a 5 de la ISCO-08) que van fer servir IA generativa per motius de feina en els tres mesos anteriors a l'enquesta. Base: persones que van fer servir internet en els tres mesos anteriors. A Catalunya, «treballador no manual» de l'Idescat: grans grups 0 i 1 a 5 de la CNO-94, la mateixa divisió segons la metodologia de la seva enquesta (https://www.idescat.cat/pub/?id=ticll25&m=m)."
+      },
+      "unidad": "porcentaje",
+      "naturaleza": "medido",
+      "fuente": "Eurostat; Cataluña: Idescat, a partir de la TIC-H del INE",
+      "tabla": "isoc_ai_iaiu (PC_IND_IU3); Cataluña: ticll25, taula 3.4.1, per ocupació",
+      "licencia": "Aviso de copyright de Eurostat (https://ec.europa.eu/eurostat/help/copyright-notice, consultado el 06/10/2026), que aplica la Decisión 2011/833/UE de la Comisión: reutilización autorizada, también comercial, citando la fuente; una versión filtrada se cita con el enlace del conjunto y la fecha de consulta.",
+      "url": "https://doi.org/10.2908/ISOC_AI_IAIU",
+      "comparable": true,
+      "cobertura": "ue"
+    },
+    {
+      "id": "ia-generativa-trabajo-manual-usuarios-internet",
+      "nombre": {
+        "es": "IA generativa para trabajar en ocupaciones manuales (usuarios de internet)",
+        "ca": "IA generativa per treballar en ocupacions manuals (usuaris d'internet)"
+      },
+      "definicion": {
+        "es": "Porcentaje de personas ocupadas en ocupaciones manuales (grandes grupos 6 a 9 de la ISCO-08) que usaron IA generativa por motivos de trabajo en los tres meses anteriores a la encuesta. Base: personas que usaron internet en los tres meses anteriores. En Cataluña, «treballador manual» del Idescat: grandes grupos 6 a 9 de la CNO-94, la misma división según la metodología de su encuesta (https://www.idescat.cat/pub/?id=ticll25&m=m).",
+        "ca": "Percentatge de persones ocupades en ocupacions manuals (grans grups 6 a 9 de la ISCO-08) que van fer servir IA generativa per motius de feina en els tres mesos anteriors a l'enquesta. Base: persones que van fer servir internet en els tres mesos anteriors. A Catalunya, «treballador manual» de l'Idescat: grans grups 6 a 9 de la CNO-94, la mateixa divisió segons la metodologia de la seva enquesta (https://www.idescat.cat/pub/?id=ticll25&m=m)."
+      },
+      "unidad": "porcentaje",
+      "naturaleza": "medido",
+      "fuente": "Eurostat; Cataluña: Idescat, a partir de la TIC-H del INE",
+      "tabla": "isoc_ai_iaiu (PC_IND_IU3); Cataluña: ticll25, taula 3.4.1, per ocupació",
+      "licencia": "Aviso de copyright de Eurostat (https://ec.europa.eu/eurostat/help/copyright-notice, consultado el 06/10/2026), que aplica la Decisión 2011/833/UE de la Comisión: reutilización autorizada, también comercial, citando la fuente; una versión filtrada se cita con el enlace del conjunto y la fecha de consulta.",
+      "url": "https://doi.org/10.2908/ISOC_AI_IAIU",
+      "comparable": true,
+      "cobertura": "ue"
+    },
+    {
+      "id": "ia-generativa-trabajo-tic-usuarios-internet",
+      "nombre": {
+        "es": "IA generativa para trabajar entre profesionales TIC (usuarios de internet)",
+        "ca": "IA generativa per treballar entre professionals TIC (usuaris d'internet)"
+      },
+      "definicion": {
+        "es": "Porcentaje de profesionales de las tecnologías de la información y la comunicación que usaron IA generativa por motivos de trabajo en los tres meses anteriores a la encuesta. Base: personas que usaron internet en los tres meses anteriores.",
+        "ca": "Percentatge de professionals de les tecnologies de la informació i la comunicació que van fer servir IA generativa per motius de feina en els tres mesos anteriors a l'enquesta. Base: persones que van fer servir internet en els tres mesos anteriors."
+      },
+      "unidad": "porcentaje",
+      "naturaleza": "medido",
+      "fuente": "Eurostat",
+      "tabla": "isoc_ai_iaiu (PC_IND_IU3)",
+      "licencia": "Aviso de copyright de Eurostat (https://ec.europa.eu/eurostat/help/copyright-notice, consultado el 06/10/2026), que aplica la Decisión 2011/833/UE de la Comisión: reutilización autorizada, también comercial, citando la fuente; una versión filtrada se cita con el enlace del conjunto y la fecha de consulta.",
+      "url": "https://doi.org/10.2908/ISOC_AI_IAIU",
+      "comparable": true,
+      "cobertura": "ue"
+    },
+    {
+      "id": "formacion-adultos",
+      "nombre": {
+        "es": "Personas de 25 a 64 años en formación",
+        "ca": "Persones de 25 a 64 anys en formació"
+      },
+      "definicion": {
+        "es": "Porcentaje de personas de 25 a 64 años que siguieron alguna actividad de educación o formación (reglada o no) en las cuatro semanas anteriores a la encuesta de población activa.",
+        "ca": "Percentatge de persones de 25 a 64 anys que van seguir alguna activitat d'educació o formació (reglada o no) en les quatre setmanes anteriors a l'enquesta de població activa."
+      },
+      "unidad": "porcentaje",
+      "naturaleza": "medido",
+      "fuente": "Eurostat",
+      "tabla": "trng_lfse_04",
+      "licencia": "Aviso de copyright de Eurostat (https://ec.europa.eu/eurostat/help/copyright-notice, consultado el 06/10/2026), que aplica la Decisión 2011/833/UE de la Comisión: reutilización autorizada, también comercial, citando la fuente; una versión filtrada se cita con el enlace del conjunto y la fecha de consulta.",
+      "url": "https://doi.org/10.2908/TRNG_LFSE_04",
+      "comparable": true,
+      "cobertura": "ue"
+    },
+    {
+      "id": "ia-generativa-no-sabe-usarla",
+      "nombre": {
+        "es": "Personas que no la usan porque no saben cómo",
+        "ca": "Persones que no la fan servir perquè no en saben"
+      },
+      "definicion": {
+        "es": "Porcentaje de las personas de 16 a 74 años que usaron internet y no usaron IA generativa en los tres meses anteriores que dan como motivo que no saben cómo usarla (2025).",
+        "ca": "Percentatge de les persones de 16 a 74 anys que van fer servir internet i no van fer servir IA generativa en els tres mesos anteriors que donen com a motiu que no saben com fer-la servir (2025)."
+      },
+      "unidad": "porcentaje",
+      "naturaleza": "medido",
+      "fuente": "Idescat",
+      "tabla": "Enquesta sobre equipament i ús de TIC a les llars 2025 (ticll25), taula 3.4.2",
+      "licencia": "Aviso legal del Idescat (https://www.idescat.cat/institut/web/?lang=es) y condiciones de uso de sus API (https://www.idescat.cat/dev/api/?lang=es): reutilización permitida citando la fuente («Fuente: elaboración propia a partir de datos del Idescat») con la fecha de la última actualización, enlazando con idescat.cat, sin modificar los datos al presentarlos y sin sugerir que el Idescat apoya el uso.",
+      "url": "https://www.idescat.cat/pub/?id=ticll25&n=3.4.2",
+      "comparable": false,
+      "cobertura": "cataluna"
+    },
+    {
+      "id": "establecimientos-ia-personal-cualificado",
+      "nombre": {
+        "es": "Establecimientos donde usan IA las personas trabajadoras cualificadas o muy cualificadas",
+        "ca": "Establiments on fan servir IA les persones treballadores qualificades o molt qualificades"
+      },
+      "definicion": {
+        "es": "Porcentaje de los establecimientos de Cataluña en que usan tecnologías de inteligencia artificial las personas trabajadoras cualificadas o muy cualificadas (2.º trimestre de 2024).",
+        "ca": "Percentatge dels establiments de Catalunya en què fan servir tecnologies d'intel·ligència artificial les persones treballadores qualificades o molt qualificades (2n trimestre del 2024)."
+      },
+      "unidad": "porcentaje",
+      "naturaleza": "medido",
+      "fuente": "Idescat",
+      "tabla": "Enquesta de clima empresarial, mòdul d'actualitat, taula 18162",
+      "licencia": "Aviso legal del Idescat (https://www.idescat.cat/institut/web/?lang=es) y condiciones de uso de sus API (https://www.idescat.cat/dev/api/?lang=es): reutilización permitida citando la fuente («Fuente: elaboración propia a partir de datos del Idescat») con la fecha de la última actualización, enlazando con idescat.cat, sin modificar los datos al presentarlos y sin sugerir que el Idescat apoya el uso.",
+      "url": "https://www.idescat.cat/pub/?id=clem&n=18162",
+      "comparable": false,
+      "cobertura": "cataluna"
+    },
+    {
+      "id": "establecimientos-ia-directivos",
+      "nombre": {
+        "es": "Establecimientos donde usan IA las personas directivas, gerentes o gestoras",
+        "ca": "Establiments on fan servir IA les persones directives, gerents o gestores"
+      },
+      "definicion": {
+        "es": "Porcentaje de los establecimientos de Cataluña en que usan tecnologías de inteligencia artificial las personas directivas, gerentes o gestoras (2.º trimestre de 2024).",
+        "ca": "Percentatge dels establiments de Catalunya en què fan servir tecnologies d'intel·ligència artificial les persones directives, gerents o gestores (2n trimestre del 2024)."
+      },
+      "unidad": "porcentaje",
+      "naturaleza": "medido",
+      "fuente": "Idescat",
+      "tabla": "Enquesta de clima empresarial, mòdul d'actualitat, taula 18162",
+      "licencia": "Aviso legal del Idescat (https://www.idescat.cat/institut/web/?lang=es) y condiciones de uso de sus API (https://www.idescat.cat/dev/api/?lang=es): reutilización permitida citando la fuente («Fuente: elaboración propia a partir de datos del Idescat») con la fecha de la última actualización, enlazando con idescat.cat, sin modificar los datos al presentarlos y sin sugerir que el Idescat apoya el uso.",
+      "url": "https://www.idescat.cat/pub/?id=clem&n=18162",
+      "comparable": false,
+      "cobertura": "cataluna"
+    },
+    {
+      "id": "establecimientos-ia-personal-poco-cualificado",
+      "nombre": {
+        "es": "Establecimientos donde usan IA las personas trabajadoras no cualificadas o poco cualificadas",
+        "ca": "Establiments on fan servir IA les persones treballadores no qualificades o poc qualificades"
+      },
+      "definicion": {
+        "es": "Porcentaje de los establecimientos de Cataluña en que usan tecnologías de inteligencia artificial las personas trabajadoras no cualificadas o poco cualificadas (2.º trimestre de 2024).",
+        "ca": "Percentatge dels establiments de Catalunya en què fan servir tecnologies d'intel·ligència artificial les persones treballadores no qualificades o poc qualificades (2n trimestre del 2024)."
+      },
+      "unidad": "porcentaje",
+      "naturaleza": "medido",
+      "fuente": "Idescat",
+      "tabla": "Enquesta de clima empresarial, mòdul d'actualitat, taula 18162",
+      "licencia": "Aviso legal del Idescat (https://www.idescat.cat/institut/web/?lang=es) y condiciones de uso de sus API (https://www.idescat.cat/dev/api/?lang=es): reutilización permitida citando la fuente («Fuente: elaboración propia a partir de datos del Idescat») con la fecha de la última actualización, enlazando con idescat.cat, sin modificar los datos al presentarlos y sin sugerir que el Idescat apoya el uso.",
+      "url": "https://www.idescat.cat/pub/?id=clem&n=18162",
+      "comparable": false,
+      "cobertura": "cataluna"
+    },
+    {
+      "id": "establecimientos-competencias-digitales",
+      "nombre": {
+        "es": "Establecimientos que valoran mucho las competencias digitales al contratar",
+        "ca": "Establiments que valoren molt les competències digitals en contractar"
+      },
+      "definicion": {
+        "es": "Porcentaje de los establecimientos de Cataluña que dan «mucha» importancia a las competencias tecnológicas y digitales (ofimática, sistemas TIC, programación, ciberseguridad, inteligencia artificial, etc.) al contratar personal (4.º trimestre de 2025).",
+        "ca": "Percentatge dels establiments de Catalunya que donen «molta» importància a les competències tecnològiques i digitals (ofimàtica, sistemes TIC, programació, ciberseguretat, intel·ligència artificial, etc.) en contractar personal (4t trimestre del 2025)."
+      },
+      "unidad": "porcentaje",
+      "naturaleza": "medido",
+      "fuente": "Idescat",
+      "tabla": "Enquesta de clima empresarial, mòdul d'actualitat, taula 22205",
+      "licencia": "Aviso legal del Idescat (https://www.idescat.cat/institut/web/?lang=es) y condiciones de uso de sus API (https://www.idescat.cat/dev/api/?lang=es): reutilización permitida citando la fuente («Fuente: elaboración propia a partir de datos del Idescat») con la fecha de la última actualización, enlazando con idescat.cat, sin modificar los datos al presentarlos y sin sugerir que el Idescat apoya el uso.",
+      "url": "https://www.idescat.cat/pub/?id=clem&n=22205",
+      "comparable": false,
+      "cobertura": "cataluna"
+    }
+  ],
+  "territorios": [
+    {
+      "codigo": "ES51",
+      "iso3": null,
+      "tipo": "region",
+      "nombre": {
+        "es": "Cataluña",
+        "ca": "Catalunya"
+      },
+      "valores": [
+        {
+          "indicador": "empresas-ia",
+          "valor": 24.04,
+          "anio": 2025,
+          "nota": null
+        },
+        {
+          "indicador": "empresas-ia",
+          "valor": 13.98,
+          "anio": 2024,
+          "nota": null
+        },
+        {
+          "indicador": "empresas-ia",
+          "valor": 10.7,
+          "anio": 2023,
+          "nota": null
+        },
+        {
+          "indicador": "personas-ia-generativa-usuarios-internet",
+          "valor": 46.0,
+          "anio": 2025,
+          "nota": null
+        },
+        {
+          "indicador": "personas-ia-generativa-trabajo-usuarios-internet",
+          "valor": 24.3,
+          "anio": 2025,
+          "nota": null
+        },
+        {
+          "indicador": "mujeres-ia-generativa-usuarios-internet",
+          "valor": 42.9,
+          "anio": 2025,
+          "nota": null
+        },
+        {
+          "indicador": "hombres-ia-generativa-usuarios-internet",
+          "valor": 49.0,
+          "anio": 2025,
+          "nota": null
+        },
+        {
+          "indicador": "ia-generativa-trabajo-no-manual-usuarios-internet",
+          "valor": 44.2,
+          "anio": 2025,
+          "nota": null
+        },
+        {
+          "indicador": "ia-generativa-trabajo-manual-usuarios-internet",
+          "valor": 8.0,
+          "anio": 2025,
+          "nota": null
+        },
+        {
+          "indicador": "formacion-adultos",
+          "valor": 16.2,
+          "anio": 2025,
+          "nota": null
+        },
+        {
+          "indicador": "formacion-adultos",
+          "valor": 16.0,
+          "anio": 2024,
+          "nota": null
+        },
+        {
+          "indicador": "formacion-adultos",
+          "valor": 14.1,
+          "anio": 2023,
+          "nota": null
+        },
+        {
+          "indicador": "ia-generativa-no-sabe-usarla",
+          "valor": 41.3,
+          "anio": 2025,
+          "nota": null
+        },
+        {
+          "indicador": "establecimientos-ia-personal-cualificado",
+          "valor": 9.8,
+          "anio": 2024,
+          "nota": null
+        },
+        {
+          "indicador": "establecimientos-ia-directivos",
+          "valor": 8.4,
+          "anio": 2024,
+          "nota": null
+        },
+        {
+          "indicador": "establecimientos-ia-personal-poco-cualificado",
+          "valor": 1.9,
+          "anio": 2024,
+          "nota": null
+        },
+        {
+          "indicador": "establecimientos-competencias-digitales",
+          "valor": 19.7,
+          "anio": 2025,
+          "nota": null
+        }
+      ]
+    },
+    {
+      "codigo": "EU27_2020",
+      "iso3": null,
+      "tipo": "agregado",
+      "nombre": {
+        "es": "Unión Europea (27 países)",
+        "ca": "Unió Europea (27 països)"
+      },
+      "valores": [
+        {
+          "indicador": "empresas-ia",
+          "valor": 19.95,
+          "anio": 2025,
+          "nota": null
+        },
+        {
+          "indicador": "empresas-ia",
+          "valor": 13.48,
+          "anio": 2024,
+          "nota": null
+        },
+        {
+          "indicador": "empresas-ia",
+          "valor": 8.06,
+          "anio": 2023,
+          "nota": null
+        },
+        {
+          "indicador": "personas-ia-generativa",
+          "valor": 32.66,
+          "anio": 2025,
+          "nota": null
+        },
+        {
+          "indicador": "personas-ia-generativa-usuarios-internet",
+          "valor": 34.82,
+          "anio": 2025,
+          "nota": null
+        },
+        {
+          "indicador": "personas-ia-generativa-trabajo-usuarios-internet",
+          "valor": 16.37,
+          "anio": 2025,
+          "nota": null
+        },
+        {
+          "indicador": "mujeres-ia-generativa-usuarios-internet",
+          "valor": 32.49,
+          "anio": 2025,
+          "nota": null
+        },
+        {
+          "indicador": "hombres-ia-generativa-usuarios-internet",
+          "valor": 37.2,
+          "anio": 2025,
+          "nota": null
+        },
+        {
+          "indicador": "ia-generativa-trabajo-no-manual-usuarios-internet",
+          "valor": 27.91,
+          "anio": 2025,
+          "nota": null
+        },
+        {
+          "indicador": "ia-generativa-trabajo-manual-usuarios-internet",
+          "valor": 5.57,
+          "anio": 2025,
+          "nota": null
+        },
+        {
+          "indicador": "ia-generativa-trabajo-tic-usuarios-internet",
+          "valor": 58.47,
+          "anio": 2025,
+          "nota": null
+        },
+        {
+          "indicador": "formacion-adultos",
+          "valor": 13.7,
+          "anio": 2025,
+          "nota": null
+        },
+        {
+          "indicador": "formacion-adultos",
+          "valor": 13.5,
+          "anio": 2024,
+          "nota": null
+        },
+        {
+          "indicador": "formacion-adultos",
+          "valor": 12.8,
+          "anio": 2023,
+          "nota": null
+        }
+      ]
+    },
+    {
+      "codigo": "DEU",
+      "iso3": "DEU",
+      "tipo": "pais",
+      "nombre": {
+        "es": "Alemania",
+        "ca": "Alemanya"
+      },
+      "valores": [
+        {
+          "indicador": "empresas-ia",
+          "valor": 25.97,
+          "anio": 2025,
+          "nota": null
+        },
+        {
+          "indicador": "empresas-ia",
+          "valor": 19.75,
+          "anio": 2024,
+          "nota": null
+        },
+        {
+          "indicador": "empresas-ia",
+          "valor": 11.55,
+          "anio": 2023,
+          "nota": null
+        },
+        {
+          "indicador": "personas-ia-generativa",
+          "valor": 32.25,
+          "anio": 2025,
+          "nota": null
+        },
+        {
+          "indicador": "personas-ia-generativa-usuarios-internet",
+          "valor": 34.1,
+          "anio": 2025,
+          "nota": null
+        },
+        {
+          "indicador": "personas-ia-generativa-trabajo-usuarios-internet",
+          "valor": 16.69,
+          "anio": 2025,
+          "nota": null
+        },
+        {
+          "indicador": "mujeres-ia-generativa-usuarios-internet",
+          "valor": 31.4,
+          "anio": 2025,
+          "nota": null
+        },
+        {
+          "indicador": "hombres-ia-generativa-usuarios-internet",
+          "valor": 36.78,
+          "anio": 2025,
+          "nota": null
+        },
+        {
+          "indicador": "ia-generativa-trabajo-no-manual-usuarios-internet",
+          "valor": 25.18,
+          "anio": 2025,
+          "nota": null
+        },
+        {
+          "indicador": "ia-generativa-trabajo-manual-usuarios-internet",
+          "valor": 5.07,
+          "anio": 2025,
+          "nota": null
+        },
+        {
+          "indicador": "ia-generativa-trabajo-tic-usuarios-internet",
+          "valor": 50.64,
+          "anio": 2025,
+          "nota": null
+        },
+        {
+          "indicador": "formacion-adultos",
+          "valor": 9.3,
+          "anio": 2025,
+          "nota": null
+        },
+        {
+          "indicador": "formacion-adultos",
+          "valor": 9.3,
+          "anio": 2024,
+          "nota": "ruptura_de_serie"
+        },
+        {
+          "indicador": "formacion-adultos",
+          "valor": 8.1,
+          "anio": 2023,
+          "nota": null
+        }
+      ]
+    },
+    {
+      "codigo": "ESP",
+      "iso3": "ESP",
+      "tipo": "pais",
+      "nombre": {
+        "es": "España",
+        "ca": "Espanya"
+      },
+      "valores": [
+        {
+          "indicador": "empresas-ia",
+          "valor": 20.27,
+          "anio": 2025,
+          "nota": null
+        },
+        {
+          "indicador": "empresas-ia",
+          "valor": 11.31,
+          "anio": 2024,
+          "nota": null
+        },
+        {
+          "indicador": "empresas-ia",
+          "valor": 9.18,
+          "anio": 2023,
+          "nota": null
+        },
+        {
+          "indicador": "personas-ia-generativa",
+          "valor": 37.88,
+          "anio": 2025,
+          "nota": null
+        },
+        {
+          "indicador": "personas-ia-generativa-usuarios-internet",
+          "valor": 39.32,
+          "anio": 2025,
+          "nota": null
+        },
+        {
+          "indicador": "personas-ia-generativa-trabajo-usuarios-internet",
+          "valor": 18.63,
+          "anio": 2025,
+          "nota": null
+        },
+        {
+          "indicador": "mujeres-ia-generativa-usuarios-internet",
+          "valor": 37.2,
+          "anio": 2025,
+          "nota": null
+        },
+        {
+          "indicador": "hombres-ia-generativa-usuarios-internet",
+          "valor": 41.48,
+          "anio": 2025,
+          "nota": null
+        },
+        {
+          "indicador": "ia-generativa-trabajo-no-manual-usuarios-internet",
+          "valor": 33.9,
+          "anio": 2025,
+          "nota": null
+        },
+        {
+          "indicador": "ia-generativa-trabajo-manual-usuarios-internet",
+          "valor": 7.89,
+          "anio": 2025,
+          "nota": null
+        },
+        {
+          "indicador": "ia-generativa-trabajo-tic-usuarios-internet",
+          "valor": 73.77,
+          "anio": 2025,
+          "nota": null
+        },
+        {
+          "indicador": "formacion-adultos",
+          "valor": 15.8,
+          "anio": 2025,
+          "nota": null
+        },
+        {
+          "indicador": "formacion-adultos",
+          "valor": 16.0,
+          "anio": 2024,
+          "nota": null
+        },
+        {
+          "indicador": "formacion-adultos",
+          "valor": 15.8,
+          "anio": 2023,
+          "nota": null
+        }
+      ]
+    },
+    {
+      "codigo": "FRA",
+      "iso3": "FRA",
+      "tipo": "pais",
+      "nombre": {
+        "es": "Francia",
+        "ca": "França"
+      },
+      "valores": [
+        {
+          "indicador": "empresas-ia",
+          "valor": 18.16,
+          "anio": 2025,
+          "nota": null
+        },
+        {
+          "indicador": "empresas-ia",
+          "valor": 9.91,
+          "anio": 2024,
+          "nota": null
+        },
+        {
+          "indicador": "empresas-ia",
+          "valor": 5.88,
+          "anio": 2023,
+          "nota": "ruptura_de_serie"
+        },
+        {
+          "indicador": "personas-ia-generativa",
+          "valor": 37.46,
+          "anio": 2025,
+          "nota": null
+        },
+        {
+          "indicador": "personas-ia-generativa-usuarios-internet",
+          "valor": 39.44,
+          "anio": 2025,
+          "nota": null
+        },
+        {
+          "indicador": "personas-ia-generativa-trabajo-usuarios-internet",
+          "valor": 19.41,
+          "anio": 2025,
+          "nota": null
+        },
+        {
+          "indicador": "mujeres-ia-generativa-usuarios-internet",
+          "valor": 36.95,
+          "anio": 2025,
+          "nota": null
+        },
+        {
+          "indicador": "hombres-ia-generativa-usuarios-internet",
+          "valor": 42.06,
+          "anio": 2025,
+          "nota": null
+        },
+        {
+          "indicador": "ia-generativa-trabajo-tic-usuarios-internet",
+          "valor": 65.41,
+          "anio": 2025,
+          "nota": null
+        },
+        {
+          "indicador": "formacion-adultos",
+          "valor": 15.5,
+          "anio": 2025,
+          "nota": null
+        },
+        {
+          "indicador": "formacion-adultos",
+          "valor": 15.1,
+          "anio": 2024,
+          "nota": "ruptura_de_serie"
+        },
+        {
+          "indicador": "formacion-adultos",
+          "valor": 14.9,
+          "anio": 2023,
+          "nota": null
+        }
+      ]
+    },
+    {
+      "codigo": "ITA",
+      "iso3": "ITA",
+      "tipo": "pais",
+      "nombre": {
+        "es": "Italia",
+        "ca": "Itàlia"
+      },
+      "valores": [
+        {
+          "indicador": "empresas-ia",
+          "valor": 16.4,
+          "anio": 2025,
+          "nota": null
+        },
+        {
+          "indicador": "empresas-ia",
+          "valor": 8.2,
+          "anio": 2024,
+          "nota": null
+        },
+        {
+          "indicador": "empresas-ia",
+          "valor": 5.05,
+          "anio": 2023,
+          "nota": null
+        },
+        {
+          "indicador": "personas-ia-generativa",
+          "valor": 19.86,
+          "anio": 2025,
+          "nota": null
+        },
+        {
+          "indicador": "personas-ia-generativa-usuarios-internet",
+          "valor": 21.99,
+          "anio": 2025,
+          "nota": null
+        },
+        {
+          "indicador": "personas-ia-generativa-trabajo-usuarios-internet",
+          "valor": 8.86,
+          "anio": 2025,
+          "nota": null
+        },
+        {
+          "indicador": "mujeres-ia-generativa-usuarios-internet",
+          "valor": 20.39,
+          "anio": 2025,
+          "nota": null
+        },
+        {
+          "indicador": "hombres-ia-generativa-usuarios-internet",
+          "valor": 23.58,
+          "anio": 2025,
+          "nota": null
+        },
+        {
+          "indicador": "ia-generativa-trabajo-no-manual-usuarios-internet",
+          "valor": 17.26,
+          "anio": 2025,
+          "nota": null
+        },
+        {
+          "indicador": "ia-generativa-trabajo-manual-usuarios-internet",
+          "valor": 3.24,
+          "anio": 2025,
+          "nota": null
+        },
+        {
+          "indicador": "ia-generativa-trabajo-tic-usuarios-internet",
+          "valor": 42.4,
+          "anio": 2025,
+          "nota": null
+        },
+        {
+          "indicador": "formacion-adultos",
+          "valor": 10.8,
+          "anio": 2025,
+          "nota": null
+        },
+        {
+          "indicador": "formacion-adultos",
+          "valor": 10.4,
+          "anio": 2024,
+          "nota": null
+        },
+        {
+          "indicador": "formacion-adultos",
+          "valor": 11.6,
+          "anio": 2023,
+          "nota": null
+        }
+      ]
+    },
+    {
+      "codigo": "USA",
+      "iso3": "USA",
+      "tipo": "pais",
+      "nombre": {
+        "es": "Estados Unidos",
+        "ca": "Estats Units"
+      },
+      "valores": []
+    }
+  ],
+  "encuestas": [
+    {
+      "id": "opinion-ia-en-el-trabajo-positiva",
+      "nombre": {
+        "es": "Ven positivo el uso de robots e IA en el trabajo",
+        "ca": "Veuen positiu l'ús de robots i IA a la feina"
+      },
+      "definicion": {
+        "es": "Porcentaje de personas de 15 años o más que perciben de forma muy o bastante positiva el uso de robots e inteligencia artificial en el lugar de trabajo. Opinión, no una medida.",
+        "ca": "Percentatge de persones de 15 anys o més que perceben de manera molt o força positiva l'ús de robots i intel·ligència artificial al lloc de treball. Opinió, no una mesura."
+      },
+      "pregunta": "QB5. How positively or negatively do you perceive the use of robots and Artificial Intelligence in the workplace?",
+      "respuesta": "Total 'Positively'",
+      "base": "Personas de 15 años o más (All respondents)",
+      "campo": "25/04/2024 – 22/05/2024",
+      "unidad": "porcentaje",
+      "naturaleza": "opinion",
+      "fuente": "Comisión Europea, Eurobarómetro especial 554",
+      "tabla": "Volumen A, QB5",
+      "licencia": "Política de reutilización de la Comisión Europea (Decisión 2011/833/UE): reutilización autorizada, también comercial, citando la fuente (© Unión Europea, Eurobarómetro especial 554).",
+      "url": "https://data.europa.eu/data/datasets/s3222_101_4_sp554_eng",
+      "comparable": true,
+      "cobertura": "ue",
+      "valores": [
+        {
+          "territorio": "EU27_2020",
+          "valor": 62,
+          "anio": 2024,
+          "nota": null
+        },
+        {
+          "territorio": "ESP",
+          "valor": 56,
+          "anio": 2024,
+          "nota": null
+        },
+        {
+          "territorio": "DEU",
+          "valor": 65,
+          "anio": 2024,
+          "nota": null
+        },
+        {
+          "territorio": "FRA",
+          "valor": 53,
+          "anio": 2024,
+          "nota": null
+        },
+        {
+          "territorio": "ITA",
+          "valor": 61,
+          "anio": 2024,
+          "nota": null
+        }
+      ]
+    },
+    {
+      "id": "opinion-ia-destruira-mas-empleo",
+      "nombre": {
+        "es": "Creen que la IA hará desaparecer más empleos de los que creará",
+        "ca": "Creuen que la IA farà desaparèixer més feines de les que crearà"
+      },
+      "definicion": {
+        "es": "Porcentaje de personas de 15 años o más muy o bastante de acuerdo en que, por el uso de robots e inteligencia artificial, desaparecerán más empleos de los que se crearán. Opinión, no una medida.",
+        "ca": "Percentatge de persones de 15 anys o més molt o força d'acord que, per l'ús de robots i intel·ligència artificial, desapareixeran més feines de les que se'n crearan. Opinió, no una mesura."
+      },
+      "pregunta": "QB6.1. Please tell me to what extent you agree or disagree with each of the following statements. Due to the use of robots and Artificial Intelligence, more jobs will disappear than new jobs will be created",
+      "respuesta": "Total 'Agree'",
+      "base": "Personas de 15 años o más (All respondents)",
+      "campo": "25/04/2024 – 22/05/2024",
+      "unidad": "porcentaje",
+      "naturaleza": "opinion",
+      "fuente": "Comisión Europea, Eurobarómetro especial 554",
+      "tabla": "Volumen A, QB6_1",
+      "licencia": "Política de reutilización de la Comisión Europea (Decisión 2011/833/UE): reutilización autorizada, también comercial, citando la fuente (© Unión Europea, Eurobarómetro especial 554).",
+      "url": "https://data.europa.eu/data/datasets/s3222_101_4_sp554_eng",
+      "comparable": true,
+      "cobertura": "ue",
+      "valores": [
+        {
+          "territorio": "EU27_2020",
+          "valor": 66,
+          "anio": 2024,
+          "nota": null
+        },
+        {
+          "territorio": "ESP",
+          "valor": 74,
+          "anio": 2024,
+          "nota": null
+        },
+        {
+          "territorio": "DEU",
+          "valor": 53,
+          "anio": 2024,
+          "nota": null
+        },
+        {
+          "territorio": "FRA",
+          "valor": 71,
+          "anio": 2024,
+          "nota": null
+        },
+        {
+          "territorio": "ITA",
+          "valor": 71,
+          "anio": 2024,
+          "nota": null
+        }
+      ]
+    }
+  ]
+}

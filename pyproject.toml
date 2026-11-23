@@ -1,0 +1,35 @@
+# Estilo del Python propio: límites, tipos, docstrings y formato.
+[tool.ruff]
+line-length = 120
+target-version = "py312"
+src = ["."]
+extend-exclude = ["node_modules", ".venv"]
+
+[tool.ruff.format]
+quote-style = "double"
+line-ending = "lf"
+
+[tool.ruff.lint]
+select = [
+  "E", "W", "F", "I", "UP", "B", "SIM", "C4", "N", "PTH", "D", "DOC201", "DOC402", "DOC501", "ANN", "C90", "PLR09",
+  "PLR2004", "RUF100",
+]
+preview = true
+explicit-preview-rules = true
+ignore = [
+  "D401", # El imperativo se comprueba con un diccionario inglés; los docstrings propios están en castellano.
+  "D105", # Los métodos mágicos se explican por su nombre.
+  "D107", # El constructor se documenta en la clase.
+  "N818", # Las excepciones propias se nombran en castellano, sin sufijo inglés.
+]
+
+[tool.ruff.lint.mccabe]
+max-complexity = 10
+
+[tool.ruff.lint.pylint]
+max-args = 5
+max-branches = 12
+max-statements = 40
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"

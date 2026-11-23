@@ -1,0 +1,146 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Registro compartido por unidad tipada en SQLite V9",
+  "description": "Unión de contratos lógicos: schema 1 exclusivamente edición y schema 2 exclusivamente recurso nativo existente. La clave física es JSON canónico [tipo,id]; el tipo no se deduce del prefijo ni del título. La migración explícita conserva registros y hashes lógicos 1. Hay un solo evaluador y diario; ninguna evaluación confirma publicación o nueva consulta remota. Las reglas referenciales y temporales se ejecutan en Python.",
+  "oneOf": [
+    {
+      "$ref": "registro_vigencia.json"
+    },
+    {
+      "$ref": "#/$defs/recurso"
+    }
+  ],
+  "$defs": {
+    "recurso": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "entradas",
+        "evaluador",
+        "corte_utc",
+        "resultado",
+        "huella_entradas",
+        "huella_resultado",
+        "schema_version",
+        "unidad"
+      ],
+      "properties": {
+        "entradas": {
+          "$ref": "registro_vigencia.json#/properties/entradas"
+        },
+        "evaluador": {
+          "$ref": "registro_vigencia.json#/properties/evaluador"
+        },
+        "corte_utc": {
+          "$ref": "registro_vigencia.json#/properties/corte_utc"
+        },
+        "resultado": {
+          "$ref": "registro_vigencia.json#/properties/resultado"
+        },
+        "huella_entradas": {
+          "$ref": "registro_vigencia.json#/properties/huella_entradas"
+        },
+        "huella_resultado": {
+          "$ref": "registro_vigencia.json#/properties/huella_resultado"
+        },
+        "schema_version": {
+          "const": 2
+        },
+        "unidad": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["tipo", "id", "huella"],
+          "properties": {
+            "tipo": {
+              "const": "recurso"
+            },
+            "id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "huella": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            }
+          }
+        }
+      }
+    },
+    "formato_fisico3": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["formato_registro", "revision_observaciones", "registro"],
+      "properties": {
+        "formato_registro": {
+          "const": 3
+        },
+        "revision_observaciones": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "registro": {
+          "oneOf": [
+            {
+              "$ref": "registro_vigencia.json#/$defs/formato_fisico2/properties/registro"
+            },
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "entradas",
+                "evaluador",
+                "corte_utc",
+                "resultado",
+                "huella_entradas",
+                "huella_resultado",
+                "schema_version",
+                "unidad"
+              ],
+              "properties": {
+                "entradas": {
+                  "$ref": "registro_vigencia.json#/$defs/formato_fisico2/properties/registro/properties/entradas"
+                },
+                "evaluador": {
+                  "$ref": "registro_vigencia.json#/properties/evaluador"
+                },
+                "corte_utc": {
+                  "$ref": "registro_vigencia.json#/properties/corte_utc"
+                },
+                "resultado": {
+                  "$ref": "registro_vigencia.json#/properties/resultado"
+                },
+                "huella_entradas": {
+                  "$ref": "registro_vigencia.json#/properties/huella_entradas"
+                },
+                "huella_resultado": {
+                  "$ref": "registro_vigencia.json#/properties/huella_resultado"
+                },
+                "schema_version": {
+                  "const": 2
+                },
+                "unidad": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": ["tipo", "id", "huella"],
+                  "properties": {
+                    "tipo": {
+                      "const": "recurso"
+                    },
+                    "id": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "huella": {
+                      "type": "string",
+                      "pattern": "^[0-9a-f]{64}$"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    }
+  }
+}

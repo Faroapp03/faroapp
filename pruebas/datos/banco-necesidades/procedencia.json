@@ -1,0 +1,161 @@
+{
+  "version": 3,
+  "fecha": "2026-10-22",
+  "fuentesDeAnclajes": [
+    {
+      "id": "banco-240",
+      "ambito": "producto",
+      "ruta": "pruebas/datos/banco-hoja-240/personas.json",
+      "sha256": "f7fbc58580f6695ec8d9bfb27e470bd7415d0f2b9b953b40cfb00caf1c881ac3"
+    },
+    {
+      "id": "veinte-perfiles",
+      "ambito": "taller",
+      "ruta": "veinte-perfiles/perfiles.json",
+      "sha256": "a44b523044f59c8ff2fc0c5ed0565bdd2f61ecbe22248fa5289426cfcac842a0"
+    },
+    {
+      "id": "anexo-historico",
+      "ambito": "taller",
+      "ruta": "veinte-perfiles/anexo-rubrica.md",
+      "sha256": "4074428779786308bd32210b90614d8513ff0933571bbac2d1da8441459a80c6"
+    }
+  ],
+  "instantaneaLocal": {
+    "ruta": "pruebas/datos/banco-necesidades/anclajes.json",
+    "sha256": "a2439a3b75fe1f514bce76520148180cd5385e291f9a184d893740cad6a1beff"
+  },
+  "bancoProtegido": {
+    "pruebas/datos/banco-necesidades/personas.json": "4fc4ecf6b537188c61a7b1cf991968228b657ff7a318a8082d16dd383bb4aa55",
+    "pruebas/datos/banco-necesidades/contrato.json": "836876e4a2ab8aa6b6466ef3a06fe95d3e5d8c18ddcfbdb210ce6f410eecb3c7"
+  },
+  "catalogo": {
+    "datos/manifiesto.json": "639a5743885b04281d51114ea2317b1cf5e0d3b244abc72c388e1924e8e0666a",
+    "datos/esco.json": "1847fb2f7bca798d0d8c78a82c3300e9db9863cf6358fd9c740fb8d16176d6d4",
+    "datos/oit.json": "5441d245f1d919bb35427db62157f8d2cbafd436c6ce88889cd6c1617a9b4451",
+    "datos/textos.json": "c45556e3a8316778f262aec7433daf0d704c6b9093f969a1796ec278cfa42407",
+    "datos/formacion.json": "c202c3e123da6a6f41ce6cbe41373c6be3b97de12aa177e3ec69f5e84c21803b",
+    "datos/consorci.json": "91ff07ce3a1244f3369196062be1fef44e583e73f6dfd0b5838968ab5c6f684a",
+    "datos/fundae.json": "b4d8edcb4ca60ac353e7d075d3b816ea60d80d7a06472033a183a7b46bd5b9a3",
+    "datos/barcelonactiva.json": "d60cddf5da1af4c53dd0c454ad4e0744269589c9a75e4be2aa89374efbc77bad",
+    "datos/formacion-abierta.json": "8b0677c3d277eaf0c89eab8ccb4e1d3c5ec42cc952919256089855f8dd2a593c",
+    "datos/comarcas.json": "659e4d65d3795edac33323a24a192c774b00f1a4eccc29b052c2918a57f74ee9",
+    "datos/temarios.json": "5f4ed24a58c4b0697d64e3cb5ba723b5eaf2c8ded1f330ae380314e1893e1507",
+    "datos/citilab.json": "9f6d3d8ea5991325f04051a67da87f8ca2f6e9b1be89bb3deee2968c6bb0135a"
+  },
+  "usoDelCatalogo": {
+    "fecha": "2026-10-25",
+    "descripcion": "«catalogo» registra las huellas del catálogo con el que se revisó el banco por última vez (manifiesto del 23/10/2026); «revisionesCatalogo» conserva los anteriores. Es procedencia histórica: la verificación no exige que el catálogo vigente coincida con ella, de modo que publicar cursos nuevos no obliga a congelar el catálogo. Las mediciones y revisiones hechas con estas huellas pertenecen a ese catálogo y no se atribuyen a ningún catálogo posterior; medir con otro catálogo exige registrarlo como medición nueva.",
+    "validacionVigente": "Perfiles, pares, ocupaciones ESCO con su código ISCO-08, tareas OIT y reglas del contrato se comprueban siempre contra los datos vigentes.",
+    "proteccion": "Este registro, los perfiles, el contrato, la instantánea de anclajes y el banco 240 están fijados por huella: cambiarlos exige revisar el banco y registrar la revisión, nunca sustituir huellas para obtener verde."
+  },
+  "transformacion": "La proyección conserva oficio, tareas/necesidades y acceso de los anclajes; elimina nombres y edad de las entradas. Cada par fija todo salvo campoVariable. Antes de intervenir, el nivel actual del anclaje es desconocido. n01/n09 sustituyen explícitamente ese dato por supuestos sintéticos de conocimiento actual y mantienen deseo null; sus valores no proceden del anexo histórico. En los demás anclajes veinte-perfiles, nivelIa se conserva como deseado por la descripción elige/pide, no como actual. El banco 240 aporta tarea por posición ordenada por indice OIT, horas 2/5/10 y comarca supuesta de capital provincial, no residencia real. Su nivel genérico no se convierte en nivel de IA ni dominio por tarea.",
+  "etiquetasHistoricas": [
+    {
+      "ruta": "pruebas/datos/banco-hoja-240/etiquetas.tsv",
+      "unidad": "ocupación|curso",
+      "uso": "material pendiente; no valida personalización"
+    },
+    {
+      "rutaTaller": "veinte-perfiles/etiquetado/etiquetas-20-perfiles.tsv",
+      "unidad": "persona|curso",
+      "uso": "pendiente de revisar con nueva rúbrica; no copiada"
+    },
+    {
+      "rutaTaller": "veinte-perfiles/etiquetado/etiquetas-no-considerados.tsv",
+      "unidad": "persona|curso",
+      "uso": "pendiente de revisar; no copiada"
+    }
+  ],
+  "evaluadoresHistoricos": {
+    "identificadores": ["PA", "PB", "PC"],
+    "modelos": "desconocidos en los artefactos revisados",
+    "metodo": "dos etiquetadores ciegos y desempate; no se afirma que fueran dos personas ni independencia de modelos"
+  },
+  "modelosProductivos": {
+    "juez": "Qwen3-8B según pruebas/datos/banco-necesidades/FUENTE.md (procedencia histórica)",
+    "ordenadores": "regresiones logísticas por carril con calibración sigmoide y rúbrica v2",
+    "independencia": "pendiente cotejar modelos de evaluadores y manifiesto de pares de entrenamiento; no reutilizar predicciones del juez como etiquetas"
+  },
+  "intervenciones": [
+    {
+      "par": "n01",
+      "origen": "intervencion-sintetica",
+      "campo": "necesidad.nivelIAActual",
+      "valores": {
+        "a": "inicial",
+        "b": "avanzado"
+      },
+      "nivelIADeseadoFijo": null,
+      "fundamento": "Supuesto explícito de diseño de un perfil sintético para cubrir conocimiento actual; no recuperado ni inferido del anclaje histórico y sin asignar utilidad."
+    },
+    {
+      "par": "n09",
+      "origen": "intervencion-sintetica",
+      "campo": "necesidad.nivelIAActual",
+      "valores": {
+        "a": "avanzado",
+        "b": null
+      },
+      "nivelIADeseadoFijo": null,
+      "fundamento": "Supuesto explícito de diseño de un perfil sintético para cubrir conocimiento actual; no recuperado ni inferido del anclaje histórico y sin asignar utilidad."
+    }
+  ],
+  "revisionesCatalogo": [
+    {
+      "fecha": "2026-10-22",
+      "revisionPaquete": "e89d976",
+      "catalogoAnterior": {
+        "datos/manifiesto.json": "e8b331cf6164eaba739bee17a1dc84948605cab57b393fad7bad4bbce65c6dc9",
+        "datos/esco.json": "1847fb2f7bca798d0d8c78a82c3300e9db9863cf6358fd9c740fb8d16176d6d4",
+        "datos/oit.json": "5441d245f1d919bb35427db62157f8d2cbafd436c6ce88889cd6c1617a9b4451",
+        "datos/textos.json": "c45556e3a8316778f262aec7433daf0d704c6b9093f969a1796ec278cfa42407",
+        "datos/formacion.json": "c202c3e123da6a6f41ce6cbe41373c6be3b97de12aa177e3ec69f5e84c21803b",
+        "datos/consorci.json": "91ff07ce3a1244f3369196062be1fef44e583e73f6dfd0b5838968ab5c6f684a",
+        "datos/fundae.json": "b4d8edcb4ca60ac353e7d075d3b816ea60d80d7a06472033a183a7b46bd5b9a3",
+        "datos/barcelonactiva.json": "bcc1af3072153879a57dcdf4dd3cd890169923f11b9f2640f20561887776911e",
+        "datos/formacion-abierta.json": "8b0677c3d277eaf0c89eab8ccb4e1d3c5ec42cc952919256089855f8dd2a593c",
+        "datos/comarcas.json": "659e4d65d3795edac33323a24a192c774b00f1a4eccc29b052c2918a57f74ee9",
+        "datos/temarios.json": "5f4ed24a58c4b0697d64e3cb5ba723b5eaf2c8ded1f330ae380314e1893e1507",
+        "datos/citilab.json": "9f6d3d8ea5991325f04051a67da87f8ca2f6e9b1be89bb3deee2968c6bb0135a"
+      },
+      "cambios": {
+        "datos/manifiesto.json": {
+          "anterior": "e8b331cf6164eaba739bee17a1dc84948605cab57b393fad7bad4bbce65c6dc9",
+          "actual": "4006caa868201b8e782a89fd46c2083f373df9ef7372155bcfb673ddaf056d4a"
+        },
+        "datos/barcelonactiva.json": {
+          "anterior": "bcc1af3072153879a57dcdf4dd3cd890169923f11b9f2640f20561887776911e",
+          "actual": "d60cddf5da1af4c53dd0c454ad4e0744269589c9a75e4be2aa89374efbc77bad"
+        }
+      },
+      "motivo": "Incorporación de los hechos revisados de 45 fichas de Cibernàrium: 44 ediciones vinculadas y una pendiente. Se separan disponibilidad, sesiones, modalidad, horas, inscripción, plazas y procedencia. No cambia el resto del catálogo ni los veinte perfiles.",
+      "efectoEnLaEvaluacion": "Repetir acceso, calendario y selección con la nueva instantánea. Las mediciones anteriores conservan su catálogo y no se atribuyen a esta versión; las expectativas y umbrales no cambian. Las etiquetas sintéticas de contenido se conservan con las huellas originales de sus fichas y no acreditan el acceso actualizado."
+    },
+    {
+      "fecha": "2026-10-23",
+      "catalogoAnterior": {
+        "datos/manifiesto.json": "86d90519443e493ecbe13e5c5ee036aca105c84c1ab45e24dab7af8effc594bf",
+        "datos/esco.json": "1847fb2f7bca798d0d8c78a82c3300e9db9863cf6358fd9c740fb8d16176d6d4",
+        "datos/oit.json": "5441d245f1d919bb35427db62157f8d2cbafd436c6ce88889cd6c1617a9b4451",
+        "datos/textos.json": "c45556e3a8316778f262aec7433daf0d704c6b9093f969a1796ec278cfa42407",
+        "datos/formacion.json": "c202c3e123da6a6f41ce6cbe41373c6be3b97de12aa177e3ec69f5e84c21803b",
+        "datos/consorci.json": "91ff07ce3a1244f3369196062be1fef44e583e73f6dfd0b5838968ab5c6f684a",
+        "datos/fundae.json": "b4d8edcb4ca60ac353e7d075d3b816ea60d80d7a06472033a183a7b46bd5b9a3",
+        "datos/barcelonactiva.json": "d60cddf5da1af4c53dd0c454ad4e0744269589c9a75e4be2aa89374efbc77bad",
+        "datos/formacion-abierta.json": "8b0677c3d277eaf0c89eab8ccb4e1d3c5ec42cc952919256089855f8dd2a593c",
+        "datos/comarcas.json": "659e4d65d3795edac33323a24a192c774b00f1a4eccc29b052c2918a57f74ee9",
+        "datos/temarios.json": "5f4ed24a58c4b0697d64e3cb5ba723b5eaf2c8ded1f330ae380314e1893e1507",
+        "datos/citilab.json": "9f6d3d8ea5991325f04051a67da87f8ca2f6e9b1be89bb3deee2968c6bb0135a"
+      },
+      "cambios": {
+        "datos/manifiesto.json": {
+          "anterior": "86d90519443e493ecbe13e5c5ee036aca105c84c1ab45e24dab7af8effc594bf",
+          "actual": "639a5743885b04281d51114ea2317b1cf5e0d3b244abc72c388e1924e8e0666a"
+        }
+      },
+      "motivo": "Retirada de formacion-faro.json sin consumidor del selector actual; todas las demás entradas, cifras, fuentes y fechas del paquete permanecen idénticas.",
+      "efectoEnLaEvaluacion": "No cambia ningún perfil, par, expectativa ni umbral. La prueba sigue fijando el catálogo activo; las revisiones y mediciones anteriores conservan su huella original."
+    }
+  ]
+}

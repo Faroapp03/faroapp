@@ -1,0 +1,44 @@
+{
+  "id": "./",
+  "name": "Faro · La teva feina i la IA",
+  "short_name": "Faro",
+  "description": "Faro: explica la teva feina i descobreix, tasca a tasca, què pot canviar la IA generativa segons l’OIT, amb dades de Catalunya i formació oficial. No guarda el que escrius.",
+  "lang": "ca",
+  "start_url": "./inicio.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f4f3f0",
+  "theme_color": "#f4f3f0",
+  "icons": [
+    {
+      "src": "imagenes/identidad/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "imagenes/identidad/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "imagenes/identidad/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Començar",
+      "url": "./recorrido.html",
+      "icons": [
+        {
+          "src": "imagenes/identidad/icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    }
+  ]
+}

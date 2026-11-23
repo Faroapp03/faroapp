@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "id": "censo",
+  "tema": "mercado",
+  "lector": "plataforma_datos.mercado.fuentes.censo.lector",
+  "casa_datos": "censo",
+  "nombre": "Censo 2021: residencia, lugar de trabajo y perfiles ocupacionales",
+  "institucion": "INE",
+  "significado": "Contexto histórico municipal y perfiles por estudios, situación profesional y nacionalidad del grupo ocupacional en enero de 2021; no caracteriza a una persona.",
+  "alcance": [
+    "Tabla viv.ppal: personas ocupadas de dieciséis o más años; CNO-11 a dos y tres cifras.",
+    "Celdas perturbadas por confidencialidad; umbral municipal cien y perfil mil personas, con descenso al agregado válido o supresión.",
+    "Situación profesional anterior a la reforma laboral de 2022; no sustituye censos anuales ni EPA."
+  ],
+  "recursos": [
+    {
+      "id": "copias",
+      "tipo": "familia",
+      "ubicacion": "var/actualizacion/originales/censo/",
+      "licencia": "Creative Commons Reconocimiento 4.0 (CC BY 4.0), según el aviso legal del INE (https://www.ine.es/dyngs/AYU/index.htm?cid=125): citar la fuente («Elaboración propia con datos extraídos del sitio web del INE: www.ine.es»), mencionar la fecha de la última actualización y no sugerir que el INE participa, patrocina o apoya la reutilización.",
+      "descripcion": "Consultas censales archivadas con procedencia y SHA."
+    },
+    {
+      "id": "api-censo",
+      "tipo": "url",
+      "ubicacion": "https://www.ine.es/Censo2021/api",
+      "licencia": "Creative Commons Reconocimiento 4.0 (CC BY 4.0), según el aviso legal del INE (https://www.ine.es/dyngs/AYU/index.htm?cid=125): citar la fuente («Elaboración propia con datos extraídos del sitio web del INE: www.ine.es»), mencionar la fecha de la última actualización y no sugerir que el INE participa, patrocina o apoya la reutilización.",
+      "descripcion": "API de difusión del Censo 2021; consultas POST sobre viv.ppal."
+    }
+  ],
+  "canales": [
+    {
+      "id": "archivo",
+      "tipo": "local",
+      "recursos": ["copias"],
+      "autenticacion": "No aplicable al procesamiento local; no acredita acceso remoto ni una cuenta configurada.",
+      "limites": ["La política fija comprueba integridad, no ejecuta consultas periódicas."],
+      "observaciones": "Reproduce las copias históricas."
+    },
+    {
+      "id": "consulta-explicita",
+      "tipo": "remoto",
+      "recursos": ["api-censo"],
+      "autenticacion": "No se configura autenticación de cuenta en el lector.",
+      "limites": [
+        "Solo la CLI explícita con --aceptar-cambio vuelve a consultar; cada respuesta puede tener perturbación distinta.",
+        "Aceptar bytes no cambia población, categorías ni reglas de publicación."
+      ],
+      "observaciones": "Canal disponible en el lector, excluido de la actualización remota automática por su política fija."
+    }
+  ],
+  "actualizacion": {
+    "politica": "fija",
+    "red": false,
+    "frecuencia": "decenal (Censo 2021)",
+    "renovar_dias": null,
+    "originales": "censo"
+  },
+  "conjuntos": [
+    {
+      "id": "censo",
+      "fuente": "censo",
+      "clase": "historica",
+      "alcance": "copia-local",
+      "operacion": "integridad",
+      "intervalo_dias": null
+    }
+  ],
+  "dependencias": ["clasificaciones", "cataluna", "ocupados"],
+  "contratos": ["lector.py:validar"],
+  "retirada": "Se mantienen los controles de admisión y reconstrucción del lector; un fallo de consulta o una lectura parcial no autoriza una retirada ni una cifra cero.",
+  "conservacion": "Las rutas, originales, procedencias y revisiones actuales en var/actualizacion se conservan; este descriptor no activa limpieza automática ni fija nuevos plazos de retención."
+}

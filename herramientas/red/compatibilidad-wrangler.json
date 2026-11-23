@@ -1,0 +1,7 @@
+{
+  "version": "4.151.1",
+  "archivos": {
+    "bin/wrangler.js": "780661a508810f3b65786895b1ca9aacbc4f55d329ae6b8c1e49ec8433569f77",
+    "wrangler-dist/cli.js": "a1b3cf7023a53d0d7f7ca4a183f2f904573cdb00737cd1a034890207431f1d8e"
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "componente": "cursos",
+  "paquete": "plataforma_datos.cursos",
+  "funcion": "Lectores actuales y contratos, normalización, procedencia y almacenamiento del catálogo candidato de formación",
+  "entrada": {
+    "lotes": "esquemas/contrato.json",
+    "versiones_lote": [1, 2, 3],
+    "canales_temporales": "Metadatos separados del negocio, con capturas reales verificables",
+    "conciliacion": "InstantaneaCatalogo con censo y fecha; OpcionesCiclo con verificación y canales",
+    "capturas": "Raíz externa explícita; no incluida en el paquete",
+    "vigencia": "Oferta, observaciones, política y ahora explícitos"
+  },
+  "salida": {
+    "sqlite_version": 5,
+    "ubicacion_sqlite": "Argumento explícito; no incluida en el paquete",
+    "historia": "Entidades, versiones, evidencias, ejecuciones y pertenencia de catálogo",
+    "diagnosticos": "Recuentos, incidencias y rechazos estructurados",
+    "vigencia": "Resultado puro; no activa por sí solo una oferta"
+  },
+  "fuentes": ["Digitalízate", "FUNDAE subvencionada", "Cibernàrium", "investigación contrastada"],
+  "conservacion": {
+    "transaccion": "Importación y conciliación confirman juntas o se revierten",
+    "ausencia_parcial": "No borra ni retira por omisión",
+    "repeticion": "Negocio idéntico no crea nuevas versiones de negocio",
+    "migracion": "Explícita sobre copia; sin fabricar continuidad histórica",
+    "temporal": "Una auxiliar nueva no rejuvenece una captura antigua de otro canal"
+  },
+  "limites": [
+    "No selecciona ni puntúa cursos para una persona",
+    "No confirma plazas, inscripción ni elegibilidad",
+    "Los adaptadores del catálogo candidato no alimentan aún la entrega pública",
+    "Actualización compuesta ambigua queda pendiente",
+    "Integridad y continuidad de captura no garantizan precisión semántica universal",
+    "Sin instalación global, SQLite ni capturas externas incorporadas"
+  ],
+  "fuentes_entrega": [
+    "formacion",
+    "consorci",
+    "agencia",
+    "acreditacion",
+    "citilab",
+    "abierta",
+    "certificados2016",
+    "actic",
+    "barcelonactiva",
+    "fundae",
+    "memoria"
+  ]
+}

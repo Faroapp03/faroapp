@@ -1,0 +1,211 @@
+{
+  "descripcion": "Contrato de POST /mantenimiento/reserva entre el paso del workflow (plataforma_datos/orquestacion/reserva_a_demanda.py) y el receptor del servidor (src/administracion/reserva-a-demanda.ts). Lo leen las pruebas de los dos lados: cada caso es el cuerpo que envía el run, lo que decide la autoridad y la respuesta HTTP que recibe el run.",
+  "version": 1,
+  "acciones": ["actualizar-datos", "actualizar-cursos", "comprobar-vencidas"],
+  "motivosDeRechazo": [
+    "ocupado",
+    "activacion_pendiente",
+    "candidato_en_plazo",
+    "separacion",
+    "tope_dia",
+    "tope_mes",
+    "presupuesto"
+  ],
+  "casos": [
+    {
+      "nombre": "reservar",
+      "peticion": {
+        "operacion": "reservar",
+        "accion": "actualizar-datos"
+      },
+      "autoridad": {
+        "estado": "reservada",
+        "solicitudId": "12345678-1234-4234-8234-123456789abc",
+        "revisionReserva": 7
+      },
+      "respuesta": {
+        "estado": 200,
+        "cuerpo": {
+          "estado": "reservada",
+          "solicitudId": "12345678-1234-4234-8234-123456789abc",
+          "revisionReserva": 7
+        }
+      }
+    },
+    {
+      "nombre": "reservar repetida",
+      "peticion": {
+        "operacion": "reservar",
+        "accion": "actualizar-cursos"
+      },
+      "autoridad": {
+        "estado": "repetida",
+        "solicitudId": "12345678-1234-4234-8234-123456789abc",
+        "revisionReserva": 7
+      },
+      "respuesta": {
+        "estado": 200,
+        "cuerpo": {
+          "estado": "repetida",
+          "solicitudId": "12345678-1234-4234-8234-123456789abc",
+          "revisionReserva": 7
+        }
+      }
+    },
+    {
+      "nombre": "rechazo ocupado",
+      "peticion": {
+        "operacion": "reservar",
+        "accion": "comprobar-vencidas"
+      },
+      "autoridad": {
+        "estado": "rechazada",
+        "motivo": "ocupado"
+      },
+      "respuesta": {
+        "estado": 409,
+        "cuerpo": {
+          "error": "ocupado"
+        }
+      }
+    },
+    {
+      "nombre": "rechazo activacion_pendiente",
+      "peticion": {
+        "operacion": "reservar",
+        "accion": "comprobar-vencidas"
+      },
+      "autoridad": {
+        "estado": "rechazada",
+        "motivo": "activacion_pendiente"
+      },
+      "respuesta": {
+        "estado": 409,
+        "cuerpo": {
+          "error": "activacion_pendiente"
+        }
+      }
+    },
+    {
+      "nombre": "rechazo candidato_en_plazo",
+      "peticion": {
+        "operacion": "reservar",
+        "accion": "comprobar-vencidas"
+      },
+      "autoridad": {
+        "estado": "rechazada",
+        "motivo": "candidato_en_plazo"
+      },
+      "respuesta": {
+        "estado": 409,
+        "cuerpo": {
+          "error": "candidato_en_plazo"
+        }
+      }
+    },
+    {
+      "nombre": "rechazo separacion",
+      "peticion": {
+        "operacion": "reservar",
+        "accion": "comprobar-vencidas"
+      },
+      "autoridad": {
+        "estado": "rechazada",
+        "motivo": "separacion"
+      },
+      "respuesta": {
+        "estado": 409,
+        "cuerpo": {
+          "error": "separacion"
+        }
+      }
+    },
+    {
+      "nombre": "rechazo tope_dia",
+      "peticion": {
+        "operacion": "reservar",
+        "accion": "comprobar-vencidas"
+      },
+      "autoridad": {
+        "estado": "rechazada",
+        "motivo": "tope_dia"
+      },
+      "respuesta": {
+        "estado": 409,
+        "cuerpo": {
+          "error": "tope_dia"
+        }
+      }
+    },
+    {
+      "nombre": "rechazo tope_mes",
+      "peticion": {
+        "operacion": "reservar",
+        "accion": "comprobar-vencidas"
+      },
+      "autoridad": {
+        "estado": "rechazada",
+        "motivo": "tope_mes"
+      },
+      "respuesta": {
+        "estado": 409,
+        "cuerpo": {
+          "error": "tope_mes"
+        }
+      }
+    },
+    {
+      "nombre": "rechazo presupuesto",
+      "peticion": {
+        "operacion": "reservar",
+        "accion": "comprobar-vencidas"
+      },
+      "autoridad": {
+        "estado": "rechazada",
+        "motivo": "presupuesto"
+      },
+      "respuesta": {
+        "estado": 409,
+        "cuerpo": {
+          "error": "presupuesto"
+        }
+      }
+    },
+    {
+      "nombre": "consultar",
+      "peticion": {
+        "operacion": "consultar",
+        "accion": "actualizar-datos"
+      },
+      "autoridad": {
+        "estado": "reservada",
+        "solicitudId": "12345678-1234-4234-8234-123456789abc",
+        "revisionReserva": 9
+      },
+      "respuesta": {
+        "estado": 200,
+        "cuerpo": {
+          "estado": "reservada",
+          "solicitudId": "12345678-1234-4234-8234-123456789abc",
+          "revisionReserva": 9
+        }
+      }
+    },
+    {
+      "nombre": "consultar sin reserva",
+      "peticion": {
+        "operacion": "consultar",
+        "accion": "actualizar-cursos"
+      },
+      "autoridad": {
+        "estado": "sin_reserva"
+      },
+      "respuesta": {
+        "estado": 404,
+        "cuerpo": {
+          "error": "sin_reserva"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "diseno": "lexico+clf",
+  "vectores": [],
+  "fecha": "2026-10-19T20:47:26.200Z",
+  "lambda": 0.1,
+  "entrenado": "fuera de este repositorio: 2112 textos de desarrollo, λ y temperatura con 3 pliegues internos por familias",
+  "pesos": {
+    "lex": 0.2097064980428925,
+    "sinLex": 3.398176750578896e-8,
+    "lexExacto": 1.9540368114159257,
+    "lexCa": 0.039872693047260675,
+    "lexCorto": 0.111765378227793,
+    "lexGen": -0.2254389385529163,
+    "sector": 0.826346142580054,
+    "pr": 1.717806442856044,
+    "clfG": 1.0921916732014403,
+    "sinClfG": 1.1290890450478508,
+    "clfGCa": 0.3133498274455748
+  },
+  "fondo": -2.0989189622240194,
+  "temperatura": 1,
+  "ocupacion": {
+    "lex": 2,
+    "vec": 0
+  },
+  "opciones": {},
+  "umbral": 0.9931526193544948,
+  "acuerdo": true
+}

@@ -1,0 +1,618 @@
+/* Recorrido · Tarjetas de cada paso, dentro de la conversación: sus botones y campos, las ocupaciones (paso 2) y
+   las tareas con su tiempo (paso 3). */
+
+/* La tarjeta de cada paso es un mensaje enriquecido de Faro: una burbuja ancha, con la esquina de la punta. */
+.rc-tarjeta {
+  /* El relleno de la tarjeta, que también usa su pie (.rc-acciones) para llegar a los bordes. */
+  --rc-relleno-tarjeta: 20px;
+  margin: 12px 0 0 var(--rc-sangria-turno);
+  padding: var(--rc-relleno-tarjeta);
+  background: var(--rc-superficie);
+  border: 1px solid var(--rc-linea);
+  border-radius: 3px 12px 12px;
+}
+
+.rc-tarjeta h3 {
+  margin: 0 0 14px;
+  font-family: var(--fuente-marca);
+  font-size: 1.0625rem;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+.rc-tarjeta h3:has(+ .rc-tarjeta-subtitulo:not(:empty)) {
+  margin-bottom: 2px;
+}
+
+.rc-tarjeta-subtitulo {
+  margin: 0 0 14px;
+  color: var(--rc-tenue);
+  font-size: 0.9375rem;
+}
+
+.rc-tarjeta-subtitulo:empty {
+  display: none;
+}
+
+.rc-acciones {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 10px;
+  margin: 20px 0 0;
+}
+
+/* Las acciones cierran la tarjeta en su posición natural, después de todas las preguntas.
+   No se superponen a las tareas cuando la conversación se desplaza. */
+.rc-tarjeta .rc-acciones {
+  position: static;
+  margin: 20px calc(-1 * var(--rc-relleno-tarjeta)) calc(-1 * var(--rc-relleno-tarjeta));
+  padding: 14px var(--rc-relleno-tarjeta);
+  background: var(--rc-superficie);
+  border-top: 1px solid var(--rc-linea);
+  border-radius: 0 0 12px 12px;
+}
+
+.rc-tarjeta .rc-acciones:empty {
+  display: none;
+}
+
+.rc-boton-principal,
+.rc-boton-secundario {
+  min-height: 44px;
+  padding: 10px 20px;
+  font: inherit;
+  font-size: 0.9375rem;
+  white-space: nowrap;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.rc-boton-principal {
+  color: var(--rc-sobre-boton);
+  font-weight: 600;
+  background: var(--rc-boton);
+  border: 1px solid var(--rc-boton);
+}
+
+.rc-boton-secundario {
+  color: var(--rc-tinta);
+  background: transparent;
+  border: 1px solid var(--rc-linea-campo);
+}
+
+.rc-boton-secundario:hover {
+  background: var(--rc-lateral);
+}
+
+/* Mientras Faro responde, el formulario está ocupado; pagina.js bloquea sus botones salvo «Volver».
+   Se marcan con aria-disabled, no con disabled, para conservar el foco; «Volver» permite cancelar la espera. */
+.rc-pagina form[aria-busy="true"] {
+  cursor: progress;
+}
+
+/* Solo los botones del formulario ocupado: el de enviar sin conexión tiene su propio aspecto (barra-de-escritura.css). */
+.rc-pagina form[aria-busy="true"] button[aria-disabled="true"] {
+  opacity: 0.55;
+  cursor: progress;
+}
+
+/* Campos de las tarjetas */
+.rc-campo {
+  display: block;
+  margin: 0 0 6px;
+  color: var(--rc-tenue);
+  font-size: 0.875rem;
+}
+
+.rc-tarjeta input[type="text"],
+.rc-tarjeta input[type="search"],
+.rc-tarjeta select {
+  width: 100%;
+  padding: 10px 12px;
+  color: var(--rc-tinta);
+  font: inherit;
+  font-size: 1rem;
+  background: var(--rc-superficie);
+  border: 1px solid var(--rc-linea-campo);
+  border-radius: 8px;
+}
+
+.rc-nota {
+  margin: 6px 0 0;
+  color: var(--rc-tenue);
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.rc-vacio {
+  margin: 0;
+  padding: 14px 16px;
+  color: var(--rc-tenue);
+  font-size: 0.9375rem;
+  list-style: none;
+  border: 1px dashed var(--rc-linea-campo);
+  border-radius: 10px;
+}
+
+/* Paso 2 · Ocupaciones */
+.rc-grupo {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.rc-opciones {
+  display: grid;
+  gap: 10px;
+}
+
+.rc-opcion {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: start;
+  gap: 4px 12px;
+  padding: 14px 16px;
+  border: 1px solid var(--rc-linea);
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.rc-opcion:hover {
+  border-color: var(--rc-acento);
+}
+
+.rc-opcion:has(input:checked) {
+  background: var(--rc-acento-fondo);
+  border-color: var(--rc-acento);
+  box-shadow: inset 0 0 0 1px var(--rc-acento);
+}
+
+.rc-opcion:has(input:focus-visible) {
+  outline: var(--foco);
+  outline-offset: 2px;
+}
+
+.rc-opcion input {
+  width: 18px;
+  height: 18px;
+  margin: 3px 0 0;
+  accent-color: var(--rc-boton);
+}
+
+.rc-opcion input:focus-visible {
+  outline: none;
+}
+
+.rc-opcion strong {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.rc-opcion small {
+  grid-column: 2;
+  color: var(--rc-tenue);
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.rc-opcion small.rc-grupo-isco {
+  font-family: var(--fuente-mono);
+  font-size: 0.8125rem;
+  letter-spacing: 0.02em;
+}
+
+/* El código ESCO de cada ocupación, en latón, el color de los códigos oficiales. */
+.rc-opcion small.rc-codigo {
+  color: var(--rc-laton);
+  font-family: var(--fuente-mono);
+  font-size: var(--texto-minimo);
+  letter-spacing: 0.02em;
+}
+
+/* Las opciones de Faro, los grupos de la clasificación y las candidatas son botones con el aspecto de una opción:
+   el texto arriba y, en pequeño, el título oficial o cuántas ocupaciones tiene. */
+button.rc-opcion {
+  grid-template-columns: minmax(0, 1fr);
+  width: 100%;
+  color: var(--rc-tinta);
+  font: inherit;
+  text-align: left;
+  background:
+    linear-gradient(var(--rc-acento-fondo), var(--rc-acento-fondo)) no-repeat left / 0% 100%,
+    var(--rc-superficie);
+}
+
+/* Al pasar por encima, la fila se pinta de izquierda a derecha (la transición, en pantallas.css). */
+button.rc-opcion:hover,
+button.rc-opcion:focus-visible {
+  background-size: 100% 100%;
+  border-color: var(--rc-acento);
+}
+
+button.rc-opcion small {
+  grid-column: 1;
+}
+
+/* El título oficial del grupo que se confirma, con su código ISCO-08 al lado, discreto. */
+.rc-grupo-oficial {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 10px;
+  margin: 0 0 14px;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.rc-codigo-isco {
+  color: var(--rc-tenue);
+  font-family: var(--fuente-mono);
+  font-size: var(--texto-minimo);
+  font-weight: 400;
+  letter-spacing: 0.04em;
+}
+
+.rc-grupo-oficial + .rc-nota {
+  margin: -8px 0 14px;
+}
+
+/* El filtro por palabra de una lista larga de ocupaciones */
+.rc-filtro {
+  margin: 0 0 12px;
+}
+
+.rc-opciones + .rc-vacio,
+.rc-grupo + .rc-vacio {
+  margin-top: 10px;
+}
+
+/* Los títulos de cada bloque dentro de una tarjeta: candidatas, clasificación oficial, «¿Haces algo más?» */
+.rc-bloque-titulo {
+  margin: 18px 0 10px;
+  font-size: 0.9375rem;
+  font-weight: 600;
+}
+
+.rc-bloque-titulo:first-child {
+  margin-top: 0;
+}
+
+/* Paso 3 · Tareas */
+.rc-avisos {
+  display: grid;
+  gap: 8px;
+  margin: 0 0 14px;
+}
+
+.rc-avisos:empty {
+  display: none;
+}
+
+.rc-avisos p {
+  margin: 0;
+  padding: 10px 14px;
+  font-size: 0.9375rem;
+  line-height: 1.55;
+  background: var(--rc-acento-fondo);
+  border-radius: 8px;
+}
+
+.rc-avisos p[data-tipo="ocupacion"] {
+  font-weight: 500;
+}
+
+.rc-revisar {
+  margin: 0 0 14px;
+}
+
+.rc-tareas {
+  display: grid;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.rc-tarea {
+  display: grid;
+  gap: 12px;
+  padding: 14px;
+  background: var(--rc-fondo);
+  border: 1px solid var(--rc-linea);
+  border-radius: 10px;
+}
+
+/* Falta el tiempo: borde y marca a la izquierda, no solo un cambio de color. */
+.rc-tarea[data-falta="tiempo"] {
+  border-color: var(--color-error-linea);
+  box-shadow: inset 3px 0 0 var(--color-error-linea);
+}
+
+.rc-tarea-cabecera {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.rc-tarea-cabecera label {
+  color: var(--rc-tenue);
+  font-family: var(--fuente-mono);
+  font-size: var(--texto-minimo);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* Alturas mínimas de los controles de esta hoja: 32 px (.rc-quitar, secundario dentro de la tarjeta), 40 px
+   (.rc-tiempo label), 44 px (botones) y 48 px (.rc-boton-anadir); todas superan el mínimo de 24 px de WCAG 2.5.8. */
+.rc-quitar {
+  min-height: 32px;
+  padding: 4px 2px;
+  color: var(--rc-tinta);
+  font: inherit;
+  font-size: 0.875rem;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+/* El tiempo, como un selector de tres botones. Los radios siguen ahí (teclado y lectores de pantalla), a la vista
+   solo como botón; el elegido se rellena. */
+.rc-tiempo {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* float: left en las leyendas (aquí y en .rc-oficiales legend): una leyenda con float deja de pintarse sobre el borde del
+   fieldset y pasa a ser un bloque más, que respeta sus márgenes y su anchura. */
+.rc-tiempo legend {
+  float: left;
+  margin: 0 8px 0 0;
+  padding: 0;
+  font-size: 0.9375rem;
+}
+
+.rc-tiempo label {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  min-height: 40px;
+  padding: 7px 18px;
+  font-size: 0.9375rem;
+  background: var(--rc-superficie);
+  border: 1px solid var(--rc-linea-campo);
+  border-radius: 7px;
+  cursor: pointer;
+}
+
+.rc-tiempo input {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.rc-tiempo label:has(input:checked) {
+  color: #fff;
+  font-weight: 500;
+  background: #2e7d4f;
+  border-color: #2e7d4f;
+}
+
+/* En colores forzados el relleno se pierde y el radio no se ve: el tiempo elegido toma los colores de selección del
+   sistema. */
+@media (forced-colors: active) {
+  .rc-tiempo label:has(input:checked) {
+    color: HighlightText;
+    background: Highlight;
+    border-color: Highlight;
+  }
+}
+
+.rc-tiempo label:has(input:focus-visible) {
+  outline: var(--foco);
+  outline-offset: 2px;
+}
+
+.rc-emparejada {
+  margin: -4px 0 0;
+  color: var(--rc-tenue);
+  font-size: 0.875rem;
+}
+
+.rc-boton-anadir {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  min-height: 48px;
+  margin: 12px 0 0;
+  color: var(--rc-tinta);
+  font: inherit;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  background: transparent;
+  border: 1px dashed var(--rc-linea-campo);
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.rc-boton-anadir:hover {
+  background: var(--rc-lateral);
+}
+
+.rc-boton-anadir svg {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+
+/* Las salidas de la tarjeta de la ocupación («Ninguna de estas…», «No, es otra cosa», «Prefiero contártelo con mis
+   palabras») cierran la lista, con el aspecto de «Añadir otra tarea» (.rc-boton-anadir) y 10 px de margen superior en
+   lugar de 12 px. */
+#form-ocupacion .rc-boton-anadir {
+  margin-top: 10px;
+}
+
+.rc-oficiales {
+  margin: 0 0 16px;
+  padding: 14px 16px;
+  border: 1px solid var(--rc-linea);
+  border-radius: 10px;
+}
+
+/* La leyenda, como un título dentro del recuadro y no sobre su borde. */
+.rc-oficiales legend {
+  float: left;
+  width: 100%;
+  margin: 0 0 2px;
+  padding: 0;
+  font-weight: 600;
+}
+
+.rc-tarea[data-falta="tiempo"] .rc-tiempo legend {
+  font-weight: 600;
+}
+
+/* Las tareas oficiales para marcar: la casilla con su nombre y, marcada, el tiempo debajo. */
+.rc-marcables {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.rc-marcable .rc-tiempo {
+  margin: 10px 0 0 30px;
+}
+
+.rc-marcable[data-falta="tiempo"] .rc-opcion {
+  border-color: var(--color-error-linea);
+  box-shadow: inset 3px 0 0 var(--color-error-linea);
+}
+
+.rc-marcable[data-falta="tiempo"] .rc-tiempo legend {
+  font-weight: 600;
+}
+
+.rc-opcion:has(input:disabled) {
+  color: var(--rc-tenue);
+  cursor: default;
+}
+
+.rc-bloque .rc-nota {
+  margin: 0 0 12px;
+}
+
+.rc-oficiales legend + .rc-nota {
+  clear: both;
+  margin: 0 0 12px;
+}
+
+/* Las tareas oficiales, como en una lista para marcar: una fila por tarea, separadas por una línea, con la casilla a la
+   izquierda y, al marcarla, los tres tiempos debajo a todo el ancho. La casilla y los tiempos siguen siendo controles
+   reales (checkbox y radios). */
+.rc-oficiales .rc-marcables {
+  gap: 0;
+}
+
+.rc-marcable {
+  border-top: 1px solid var(--rc-linea);
+}
+
+.rc-oficiales .rc-marcable .rc-opcion {
+  align-items: center;
+  padding: 11px 4px;
+  border: 0;
+  border-radius: 6px;
+}
+
+.rc-oficiales .rc-marcable .rc-opcion:has(input:checked) {
+  background: none;
+  box-shadow: none;
+}
+
+.rc-oficiales .rc-marcable .rc-opcion:hover {
+  background: var(--rc-lateral);
+}
+
+/* Falta el tiempo: la marca a la izquierda, también en una tarea marcada. */
+.rc-oficiales .rc-marcable[data-falta="tiempo"] .rc-opcion {
+  box-shadow: inset 3px 0 0 var(--color-error-linea);
+}
+
+.rc-oficiales .rc-marcable .rc-opcion input[type="checkbox"] {
+  accent-color: #2e7d4f;
+}
+
+.rc-oficiales .rc-marcable .rc-opcion input {
+  width: 20px;
+  height: 20px;
+  margin: 0;
+}
+
+.rc-oficiales .rc-marcable .rc-opcion small {
+  margin-top: -2px;
+}
+
+.rc-marcable .rc-tiempo {
+  margin: 0 0 12px 36px;
+}
+
+.rc-oficiales .rc-marcable .rc-tiempo legend {
+  float: none;
+  width: 100%;
+  margin: 0 0 6px;
+  color: var(--rc-tenue);
+  font-size: 0.875rem;
+}
+
+.rc-marcable .rc-tiempo label {
+  flex: 1 1 0;
+  justify-content: center;
+  min-height: 38px;
+  padding: 6px 8px;
+  font-size: 0.875rem;
+  text-align: center;
+}
+
+/* Al pie, junto a los botones, lo que falta para confirmar. */
+.rc-falta {
+  align-self: center;
+  margin: 0 auto 0 0;
+  color: var(--rc-tenue);
+  font-size: 0.875rem;
+}
+
+.rc-falta:empty {
+  display: none;
+}
+
+/* «✓ Confirmado»: las tareas se han enviado y Faro prepara el informe; el botón queda en celeste. */
+.rc-boton-principal[data-confirmado] {
+  color: var(--rc-acento);
+  background: var(--rc-acento-fondo);
+  border-color: var(--rc-acento-fondo);
+}
+
+@media (max-width: 760px) {
+  .rc-acciones .rc-falta {
+    flex-basis: 100%;
+  }
+}

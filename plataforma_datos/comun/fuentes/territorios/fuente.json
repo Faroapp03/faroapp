@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "id": "territorios",
+  "tema": "comun",
+  "nombre": "Nombres y códigos de territorios CLDR",
+  "institucion": "Unicode Consortium",
+  "lector": "plataforma_datos.comun.fuentes.territorios.lector",
+  "casa_datos": "territorios",
+  "significado": "Nombres de los países en castellano y en catalán, y su código ISO 3166-1 de dos y de tres letras (Unicode CLDR).",
+  "alcance": [
+    "`datos-globales.json` nombra cada país en las dos lenguas de la web y lo identifica por su código ISO 3166-1 alfa-3, el que casa con las fronteras de Natural Earth. Eurostat publica los países con dos letras (con dos excepciones propias: «EL» para Grecia y «UK» para el Reino Unido) e ILOSTAT, con tres. El Common Locale Data Repository de Unicode es la referencia de los nombres de territorio por lengua (la que usan los navegadores y los sistemas) y trae la correspondencia entre los códigos de dos y de tres letras. Se fija una versión publicada: es una fuente fija, que solo cambia con un cambio de proyecto. Python estándar."
+  ],
+  "recursos": [
+    {
+      "id": "recurso-01",
+      "tipo": "url",
+      "ubicacion": "https://raw.githubusercontent.com/unicode-org/cldr-json/48.0.0/cldr-json/cldr-localenames-full/main/es/territories.json",
+      "licencia": "Unicode License v3 (https://www.unicode.org/license.txt): uso, copia y redistribución libres siempre que el aviso de copyright y permiso acompañe a las copias o a su documentación (va en la procedencia y en datos/README.md).",
+      "descripcion": "Unicode CLDR 48.0.0: nombres de territorios en castellano (es)"
+    },
+    {
+      "id": "recurso-02",
+      "tipo": "url",
+      "ubicacion": "https://raw.githubusercontent.com/unicode-org/cldr-json/48.0.0/cldr-json/cldr-localenames-full/main/ca/territories.json",
+      "licencia": "Unicode License v3 (https://www.unicode.org/license.txt): uso, copia y redistribución libres siempre que el aviso de copyright y permiso acompañe a las copias o a su documentación (va en la procedencia y en datos/README.md).",
+      "descripcion": "Unicode CLDR 48.0.0: nombres de territorios en catalán (ca)"
+    },
+    {
+      "id": "recurso-03",
+      "tipo": "url",
+      "ubicacion": "https://raw.githubusercontent.com/unicode-org/cldr-json/48.0.0/cldr-json/cldr-core/supplemental/codeMappings.json",
+      "licencia": "Unicode License v3 (https://www.unicode.org/license.txt): uso, copia y redistribución libres siempre que el aviso de copyright y permiso acompañe a las copias o a su documentación (va en la procedencia y en datos/README.md).",
+      "descripcion": "Unicode CLDR 48.0.0: correspondencia de los códigos de territorio (ISO 3166-1)"
+    },
+    {
+      "id": "recurso-04",
+      "tipo": "url",
+      "ubicacion": "https://raw.githubusercontent.com/unicode-org/cldr-json/48.0.0/LICENSE",
+      "licencia": "Unicode License v3 (https://www.unicode.org/license.txt): uso, copia y redistribución libres siempre que el aviso de copyright y permiso acompañe a las copias o a su documentación (va en la procedencia y en datos/README.md).",
+      "descripcion": "Unicode CLDR 48.0.0: aviso de copyright y permiso (Unicode License v3)"
+    }
+  ],
+  "canales": [
+    {
+      "id": "consulta",
+      "tipo": "remoto",
+      "recursos": ["recurso-01", "recurso-02", "recurso-03", "recurso-04"],
+      "autenticacion": "No se configura autenticación de cuenta en este lector.",
+      "limites": [
+        "Rigen los controles y límites del lector; no se acredita una cuota remota nueva.",
+        "Sin consulta de red nueva en esta preparación; URL conservada no acredita disponibilidad actual."
+      ],
+      "observaciones": "Recursos JSON de CLDR y su licencia; se conserva versión 48 y sus códigos. Una consulta de versión conocida no descubre sucesores ni modifica nombres."
+    }
+  ],
+  "actualizacion": {
+    "politica": "fija",
+    "red": true,
+    "frecuencia": "por versión (Unicode CLDR 48)",
+    "renovar_dias": null,
+    "originales": "territorios"
+  },
+  "conjuntos": [
+    {
+      "id": "territorios",
+      "fuente": "territorios",
+      "clase": "referencia-versionada",
+      "alcance": "edicion-conocida",
+      "operacion": "descargar",
+      "intervalo_dias": 30
+    }
+  ],
+  "dependencias": [],
+  "contratos": ["lector.py:validar"],
+  "retirada": "No se retira contenido por fallo de consulta o ausencia de un original; se conservan las guardas de admisión existentes.",
+  "conservacion": "Casas y bytes operativos en var/actualizacion conservados. Este descriptor no rejuvenece fechas, no genera traducciones, no limpia originales ni cambia la política de admisión."
+}

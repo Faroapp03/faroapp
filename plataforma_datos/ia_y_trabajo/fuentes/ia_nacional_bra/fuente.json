@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "id": "ia_nacional_bra",
+  "tema": "ia_y_trabajo",
+  "nombre": "Brasil: uso de IA en empresas, medida nacional",
+  "institucion": "Cetic.br / NIC.br",
+  "lector": "plataforma_datos.ia_y_trabajo.fuentes.ia_nacional_bra.lector",
+  "casa_datos": "ia-nacional-bra",
+  "significado": "Uso de la IA por las empresas de Brasil (Cetic.br/NIC.br, TIC Empresas 2025, tabla H9): su propio módulo.",
+  "alcance": [
+    "Cetic.br, del Núcleo de Informação e Coordenação do Ponto BR (NIC.br), pregunta en TIC Empresas si la empresa usó alguna tecnología de IA, con la lista de siete tecnologías que usó la encuesta europea hasta 2024. Universo: empresas activas de 10 o más personas ocupadas. La pregunta solo se hizo a las empresas con especialistas, área o departamento de TI, y el resultado se da sobre el total de empresas: la cifra es un mínimo. Se lee la fila «TOTAL», columna «Sim», de la página de la tabla H9, y se comprueban literales su título, su base y su nota al pie. Python estándar."
+  ],
+  "recursos": [
+    {
+      "id": "recurso-01",
+      "tipo": "url",
+      "ubicacion": "https://cetic.br/en/tics/pesquisa/2025/empresas/H9/",
+      "licencia": "Creative Commons Atribuição-CompartilhaIgual 4.0 Internacional (CC BY-SA 4.0, https://creativecommons.org/licenses/by-sa/4.0/): se cita a Cetic.br/NIC.br; la cifra se toma sin cambios y lo que se adapte de esta tabla se comparte con la misma licencia.",
+      "descripcion": "Cetic.br/NIC.br, TIC Empresas 2025, tabla H9: empresas que usaron tecnologías de IA (HTML)"
+    },
+    {
+      "id": "recurso-02",
+      "tipo": "url",
+      "ubicacion": "https://cetic.br/en/pesquisa/empresas/indicadores/",
+      "licencia": "Creative Commons Atribuição-CompartilhaIgual 4.0 Internacional (CC BY-SA 4.0, https://creativecommons.org/licenses/by-sa/4.0/): se cita a Cetic.br/NIC.br; la cifra se toma sin cambios y lo que se adapte de esta tabla se comparte con la misma licencia.",
+      "descripcion": "Cetic.br, TIC Empresas, ediciones disponibles"
+    }
+  ],
+  "canales": [
+    {
+      "id": "consulta",
+      "tipo": "remoto",
+      "recursos": ["recurso-01", "recurso-02"],
+      "autenticacion": "El lector no configura credenciales de autenticación para estos recursos públicos; no acredita acceso a otros servicios.",
+      "limites": [
+        "Cuotas y límites oficiales de servicio no acreditados por este descriptor; rigen los límites de transporte y validación del lector.",
+        "Este descriptor no acredita la disponibilidad remota actual; una URL conservada no acredita consulta satisfactoria ni una tarea instalada.",
+        "Medida nacional con su universo, pregunta, periodo y licencia propios; el contrato la declara no comparable entre países ni con Eurostat."
+      ],
+      "observaciones": "Catálogo de ediciones y tabla HTML H9 del portal oficial Cetic.br. El lector contrasta título, base y nota de la tabla, sin convertir el mínimo en tasa comparable europea."
+    }
+  ],
+  "actualizacion": {
+    "politica": "edición",
+    "red": true,
+    "frecuencia": "anual (TIC Empresas de Cetic.br)",
+    "renovar_dias": null,
+    "originales": "ia-nacional-bra"
+  },
+  "conjuntos": [
+    {
+      "id": "ia_nacional_bra",
+      "fuente": "ia_nacional_bra",
+      "clase": "cambiante",
+      "alcance": "descubre-edicion",
+      "operacion": "descargar",
+      "intervalo_dias": 30
+    }
+  ],
+  "dependencias": [],
+  "contratos": ["lector.py:preparar", "lector.py:validar", "plataforma_datos/orquestacion/admision.py:exigir_admitido"],
+  "retirada": "Se conserva la admisión del conjunto y sus guardas actuales. Un fallo o una ausencia de captura no se convierte en retirada de entidades ni en disponibilidad confirmada.",
+  "conservacion": "Originales, procedencias, preparados y validaciones conservan sus casas actuales en var/actualizacion. Esta ficha no habilita limpieza automática ni cambia fechas históricas, periodos, licencias o retención."
+}

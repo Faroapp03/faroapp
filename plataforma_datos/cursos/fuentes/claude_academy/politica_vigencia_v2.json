@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "id": "faro:vigencia:claude_academy",
+  "version": "2",
+  "fuente_id": "claude_academy",
+  "responsable": "Equipo Faro",
+  "naturaleza": "politica-interna-operativa",
+  "criterios": {
+    "ttl_ficha_segundos": 86400,
+    "ttl_catalogo_segundos": null,
+    "requiere_catalogo": false,
+    "zona_fechas_dia": null,
+    "inicio_dia_inclusivo": null,
+    "fin_dia_inclusivo": null,
+    "plazo_tecnico": "revision_interna",
+    "regla_disponibilidad": "oferta-publicada-continua-1"
+  },
+  "justificacion": "El plazo técnico de 24 horas marca la próxima revisión interna de Faro y solo avisa en el panel: no retira la oferta, no cambia sus datos y no es un plazo del proveedor. La oferta completa debe estar declarada gratuita, con ficha, CTA y destino coherentes, destinatarios y requisitos constatados. Una muestra no acredita curso entero. Registro, prácticas y certificado conservan sus condiciones y desconocidos; ningún fallo rejuvenece una comprobación.",
+  "revision_equipo_faro": {
+    "estado": "criterio-aprobado-sin-activacion",
+    "fecha": null,
+    "alcance": "Curso publicado continuamente con declaraciones y destinos contrastados; no infiere acceso sin registro ni crea fechas de matrícula."
+  }
+}

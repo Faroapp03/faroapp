@@ -1,0 +1,29 @@
+Vectores de Faro derivados de EmbeddingGemma 2
+
+Modelo de origen: Google DeepMind, google/embeddinggemma-2.
+Revisión: 914f7f89142e33e77833254d9c9b90c3cef7303b.
+Ficha: https://huggingface.co/google/embeddinggemma-2/blob/914f7f89142e33e77833254d9c9b90c3cef7303b/README.md
+Licencia: Apache License 2.0; el texto íntegro acompaña este aviso en LICENSE.
+La ficha exige también respetar la política de usos prohibidos de Gemma:
+https://ai.google.dev/gemma/prohibited_use_policy
+
+Modificaciones de Faro (08/10/2026): ajuste de la parte de texto con datos
+oficiales, cálculo de vectores de documentos y destilación de una tabla
+palabra-vector para el móvil (PCA a 256 dimensiones, SIF, mínimos cuadrados
+e int8). No se distribuye el modelo completo de Google en el navegador.
+
+Textos de origen: ESCO v1.2.1 (© Unión Europea, CC BY 4.0), tareas de la
+CIUO-08 y su exposición a la IA (Gmyrek et al., ILO Working Paper 140, 2025,
+© OIT), títulos de ocupaciones del INE y del Idescat. Conservan sus licencias
+y avisos propios, detallados en la página de créditos de Faro.
+
+Las traducciones de las tareas de la OIT son de Faro, hechas con IA:
+This is a translation of a copyrighted work of the International Labour
+Organization (ILO). This translation has not been prepared, reviewed or
+endorsed by the ILO and should not be considered an official ILO translation.
+The ILO disclaims all responsibility for its content and accuracy.
+Responsibility rests solely with the author(s) of the translation.
+
+Estas atribuciones no implican que Google, la Unión Europea, la OIT, el INE
+o el Idescat avalen Faro. La licencia del modelo y de sus derivados no cambia
+la licencia del código propio de Faro ni la de las fuentes de datos.

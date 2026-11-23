@@ -1,0 +1,57 @@
+{
+  "1607488": {
+    "ca": "Introdueix el funcionament dels models de llenguatge i com redactar les primeres instruccions per a tasques de feina.",
+    "capturadoEl": "2026-11-19T16:37:38.328580Z",
+    "contenido": "df35d506d02746a73c908fceb302726e010ab959c1dfb5b206ead97a3d18fbcb",
+    "es": "Introduce cómo funcionan los modelos de lenguaje y cómo redactar las primeras instrucciones para tareas de trabajo.",
+    "localizador": "Objectius específics | Temari",
+    "sha256": "7d0a5642eb61f0c92f622e95fd318396384ab13fa6b5759f518e434792a5cb29",
+    "titulo": "Masterclass - Millora les teves habilitats digitals i professionals amb la IA",
+    "url": "https://cibernarium.barcelonactiva.cat/ca/formacio?activityId=1607488",
+    "valor": "inicial"
+  },
+  "1616964": {
+    "ca": "Al taller s’analitzen riscos de l’ús d’IA i es trien pràctiques concretes per aplicar i supervisar a l’equip.",
+    "capturadoEl": "2026-11-19T16:37:34.122428Z",
+    "contenido": "b54f8ef4f038d2ac23ff4f58b6e55bf9f598555a1c5d32139ec538d1e96a30d3",
+    "es": "En el taller se analizan riesgos del uso de IA y se eligen prácticas concretas para aplicar y supervisar en el equipo.",
+    "idioma": {
+      "edicion": "cibernarium-edicion:1616964",
+      "localizador": "#edicionesList .item-ediciones.izq.item1 .idioma.language",
+      "sesiones": [
+        {
+          "fin": "2026-11-19T18:00:00+01:00",
+          "inicio": "2026-11-19T15:00:00+01:00"
+        }
+      ],
+      "valor": "es"
+    },
+    "localizador": "Objectius específics | Temari",
+    "sha256": "561eed7359a9fbd24eab778e1dfeef4a92cd98618b106481c19de074375c921b",
+    "titulo": "Upskilling Week - El teu equip ja fa servir IA. Qui decideix a què van les hores que estalvia?",
+    "url": "https://cibernarium.barcelonactiva.cat/ca/formacio?activityId=1616964",
+    "valor": "intermedio"
+  },
+  "1620327": {
+    "ca": "El temari combina adaptar les instruccions a l’estil propi i revisar els textos generats per eliminar patrons repetitius.",
+    "capturadoEl": "2026-11-19T16:37:42.373694Z",
+    "contenido": "8e5b34748a2576058a6ae8e3c0842266b775366552c2383d65dd8d26c19644f3",
+    "es": "El temario combina adaptar las instrucciones al estilo propio y revisar los textos generados para quitar patrones repetitivos.",
+    "localizador": "Objectius específics | Temari",
+    "sha256": "ea64619bb8a3fbdc25a3d1cb486a51e94e0021410c39ab890f112808f1edc945",
+    "titulo": "Masterclass: IA aplicada a l'escriptura i el copywriting",
+    "url": "https://cibernarium.barcelonactiva.cat/ca/formacio?activityId=1620327",
+    "valor": "intermedio"
+  },
+  "1621534": {
+    "ca": "La sessió presenta una iniciativa de desenvolupament professional i proposa reflexionar sobre com comunicar els propis assoliments.",
+    "capturadoEl": "2026-11-19T16:37:45.271072Z",
+    "contenido": "05d9e241093df343a8b5177bd31907432f3a0238f416c045efbc2765ca6120a7",
+    "es": "La sesión presenta una iniciativa de desarrollo profesional y propone reflexionar sobre cómo comunicar los propios logros.",
+    "localizador": "Objectius específics | Temari",
+    "sha256": "a30974dd25901f2399be4052bc5ae20877edbe202b93d177e6da0ecc4b12eb73",
+    "titulo": "Masterclass: Friends of Figma presenta Èxit sense complexos",
+    "url": "https://cibernarium.barcelonactiva.cat/ca/formacio?activityId=1621534",
+    "valor": "inicial"
+  }
+}

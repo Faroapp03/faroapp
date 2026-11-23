@@ -1,0 +1,9 @@
+[
+  {
+    "Id": 22789,
+    "FK_Variable": 456,
+    "Nombre": "Trabajadores de los servicios de protección y seguridad",
+    "Codigo": "59",
+    "FK_JerarquiaPadres": [22788]
+  }
+]

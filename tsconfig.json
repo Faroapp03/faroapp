@@ -1,0 +1,40 @@
+{
+  "compilerOptions": {
+    "target": "es2024",
+    "lib": ["es2024"],
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
+    "resolveJsonModule": true,
+    "types": ["node"],
+    "noEmit": true,
+    "allowImportingTsExtensions": true,
+    "allowJs": true,
+    "checkJs": true,
+    "erasableSyntaxOnly": true,
+    "verbatimModuleSyntax": true,
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitOverride": true,
+    "noImplicitReturns": true,
+    "exactOptionalPropertyTypes": true,
+    "noUncheckedIndexedAccess": true,
+    "skipLibCheck": false
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.js",
+    "motores/**/*.ts",
+    "compartido/**/*.ts",
+    "scripts/**/*.ts",
+    "pruebas/**/*.ts",
+    "herramientas/**/*.ts",
+    "web/scripts/protocolo-web.js",
+    "web/scripts/json.js",
+    "web/scripts/datos-globales/calculados.js",
+    "web/scripts/datos-globales/contrato.js",
+    "web/scripts/datos-globales/datos.js"
+  ],
+  "exclude": ["pruebas/web-*/**/*.ts", "pruebas/navegadores/**/*.ts", "src/service-worker/**"]
+}

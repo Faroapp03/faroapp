@@ -1,0 +1,352 @@
+/* Recorrido · Barra de escritura: el campo con sus controles, los avisos sobre ella y los paneles que se abren
+   encima (privacidad y ayudas). Como la caja de escribir de una app de mensajería: una franja al pie, el campo
+   redondeado y el botón de enviar redondo. */
+
+.rc-compositor {
+  flex: none;
+  padding: 10px var(--rc-margen) max(12px, env(safe-area-inset-bottom));
+  background: var(--rc-fondo);
+  border-top: 1px solid var(--rc-linea);
+}
+
+.rc-compositor-interior {
+  position: relative;
+}
+
+/* El campo y sus herramientas, en una sola caja. Su borde llega a 3:1 (--rc-linea-campo); enfocada, se marca con el
+   azul del acento en dos píxeles. */
+.rc-caja {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 14px 8px 6px 20px;
+  background: var(--rc-superficie);
+  border: 1px solid var(--rc-linea-campo);
+  border-radius: 23px;
+  box-shadow: var(--rc-sombra);
+}
+
+.rc-caja:has(textarea:focus-visible) {
+  border-color: var(--rc-acento);
+  box-shadow:
+    0 0 0 1px var(--rc-acento),
+    var(--rc-sombra);
+}
+
+/* En colores forzados (el alto contraste de Windows) el borde toma un solo color y la sombra desaparece: el foco de la
+   caja se marca con un recuadro del color de selección del sistema. */
+@media (forced-colors: active) {
+  .rc-caja:has(textarea:focus-visible) {
+    outline: 2px solid Highlight;
+    outline-offset: 2px;
+  }
+}
+
+/* La etiqueta del campo se ve, en pequeño (WCAG 3.3.2): el texto de ejemplo desaparece al escribir, y la etiqueta
+   sigue diciendo qué se pide en cada paso (la cambia scripts/recorrido/compositor.js, `cambiarModo`). */
+.rc-caja-etiqueta {
+  color: var(--rc-tenue);
+  font-size: var(--texto-minimo);
+  line-height: 1.4;
+}
+
+.rc-caja textarea {
+  flex: none;
+  width: 100%;
+  min-height: 48px;
+  max-height: min(210px, 30dvh);
+  padding: 0 6px 0 0;
+  overflow-y: hidden;
+  color: var(--rc-tinta);
+  font: inherit;
+  /* iOS Safari amplía la página al enfocar un campo cuyo tamaño calculado es menor de 16 px; 1rem no baja de 16 px con
+     el tamaño de letra de la raíz por defecto (y sube si la persona lo agranda). */
+  font-size: 1rem;
+  line-height: 1.7;
+  background: transparent;
+  border: 0;
+  resize: none;
+}
+
+.rc-caja textarea:focus-visible {
+  outline: none;
+}
+
+.rc-caja textarea.rc-desborda {
+  overflow-y: auto;
+}
+
+.rc-caja textarea::placeholder {
+  color: var(--rc-tenue);
+  opacity: 1;
+}
+
+/* Escritura ampliada: más sitio para un texto largo (scripts/recorrido/compositor.js). */
+.rc-compositor[data-ampliado="true"] .rc-caja textarea {
+  min-height: min(180px, 28dvh);
+  max-height: min(420px, 50dvh);
+}
+
+.rc-caja-barra,
+.rc-caja-herramientas,
+.rc-caja-envio {
+  display: flex;
+  align-items: center;
+}
+
+.rc-caja-barra {
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.rc-caja-herramientas {
+  gap: 2px;
+  margin-left: -8px;
+}
+
+.rc-caja-envio {
+  gap: 14px;
+}
+
+.rc-control {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 7px;
+  min-height: 44px;
+  padding: 8px 10px;
+  color: var(--rc-tenue);
+  font: inherit;
+  font-size: 0.8125rem;
+  background: transparent;
+  border: 0;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+/* El trazo de los iconos (fill: none, stroke: currentColor y los extremos redondos) viene de guia.css; aquí solo las
+   medidas. */
+.rc-control svg {
+  width: 17px;
+  height: 17px;
+  stroke-width: 1.2;
+}
+
+.rc-control:hover,
+.rc-control[aria-expanded="true"],
+.rc-compositor[data-ampliado="true"] #ampliar {
+  color: var(--rc-tinta);
+  background: var(--rc-lateral);
+}
+
+/* Mientras se elige en una tarjeta de la ocupación no hay comienzos de frase que ofrecer
+   (scripts/recorrido/ayudas.js). */
+.rc-cuerpo[data-paso="2"] #abrir-ayudas {
+  display: none;
+}
+
+.rc-teclas {
+  color: var(--rc-tenue);
+  font-size: var(--texto-minimo);
+}
+
+.rc-enviar {
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  padding: 0;
+  color: var(--rc-sobre-boton);
+  background: var(--rc-boton);
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* Sin nada escrito, el botón se apaga a la vista, pero sigue activo: enviarlo vacío solo devuelve el foco al campo. */
+.rc-caja:has(textarea:placeholder-shown) .rc-enviar {
+  color: var(--rc-tenue);
+  background: var(--rc-linea);
+}
+
+.rc-enviar svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Sin conexión, el botón de enviar se ve bloqueado (aria-disabled, para que el foco se quede donde está). */
+.rc-enviar[aria-disabled="true"] {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.rc-contador {
+  margin: 6px 4px 0;
+  color: var(--rc-tenue);
+  font-size: var(--texto-minimo);
+  text-align: right;
+}
+
+.rc-contador:empty {
+  display: none;
+}
+
+.rc-compositor-pie {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0 12px;
+  margin: 2px 2px 0;
+  color: var(--rc-tenue);
+  font-size: var(--texto-minimo);
+  line-height: 1.5;
+}
+
+.rc-enlace {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  min-height: 44px;
+  padding: 0 2px;
+  color: var(--rc-tenue);
+  font: inherit;
+  text-decoration: none;
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+.rc-enlace:hover,
+.rc-enlace[aria-expanded="true"] {
+  color: var(--rc-tinta);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.rc-enlace svg {
+  width: 13px;
+  height: 13px;
+  stroke-width: 1.3;
+}
+
+/* Paneles que flotan sobre la barra: el aviso de privacidad y las ayudas. No tapan la barra: se abren encima. */
+.rc-panel {
+  position: absolute;
+  z-index: 10;
+  bottom: calc(100% + 10px);
+  left: 0;
+  overflow-y: auto;
+  color: var(--rc-tinta);
+  background: var(--rc-superficie);
+  border: 1px solid var(--rc-linea);
+  border-radius: 12px;
+  box-shadow: var(--rc-sombra-panel);
+}
+
+.rc-privacidad {
+  right: 0;
+  max-height: min(470px, 60dvh);
+  padding: 20px 22px;
+}
+
+.rc-privacidad h2 {
+  margin: 0 0 8px;
+  font-family: var(--fuente-marca);
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.rc-privacidad h2:focus {
+  outline: none;
+}
+
+.rc-privacidad h2:focus-visible {
+  outline: var(--foco);
+  outline-offset: 4px;
+}
+
+.rc-privacidad p {
+  margin: 0 0 10px;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+}
+
+.rc-privacidad a {
+  color: var(--rc-acento);
+  text-underline-offset: 3px;
+}
+
+.rc-privacidad-pie {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.rc-privacidad .rc-privacidad-pie {
+  margin: 0;
+}
+
+.rc-ayudas {
+  width: min(430px, 100%);
+  max-height: min(380px, 45dvh);
+  padding: 14px 16px 16px 18px;
+}
+
+.rc-panel-cabecera {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.rc-panel-cabecera h2 {
+  margin: 0;
+  font-size: 0.9375rem;
+  font-weight: 500;
+}
+
+.rc-ayudas-descripcion {
+  margin: 0 0 12px;
+  color: var(--rc-tenue);
+  font-size: var(--texto-minimo);
+  line-height: 1.6;
+}
+
+.rc-ayudas-opciones {
+  display: grid;
+  gap: 7px;
+}
+
+.rc-ayudas-opciones button {
+  min-height: 44px;
+  padding: 10px 12px;
+  color: var(--rc-tinta);
+  font: inherit;
+  font-size: 0.875rem;
+  text-align: left;
+  background: none;
+  border: 1px solid var(--rc-linea-campo);
+  border-radius: 7px;
+  cursor: pointer;
+}
+
+.rc-ayudas-opciones button:hover {
+  background: var(--rc-acento-fondo);
+  border-color: var(--rc-acento);
+}
+
+.rc-ayudas-nota {
+  margin: 12px 0 0;
+  color: var(--rc-tenue);
+  font-size: var(--texto-minimo);
+  line-height: 1.5;
+}

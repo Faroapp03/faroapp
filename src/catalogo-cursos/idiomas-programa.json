@@ -1,0 +1,2933 @@
+{
+  "version": 1,
+  "registros": [
+    {
+      "unidad": {
+        "id": "fundae:edicion:1021",
+        "programa_id": "fundae:oferta:programa:IFCT110",
+        "tipo": "edicion"
+      },
+      "titulo": "GESTIÓN DE HERRAMIENTAS AVANZADAS DE MICROSOFT 365",
+      "codigo": "IFCT110",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=IFCT110",
+        "sha256": "3e377e7986cb9a9a7de01b9f011ccbc8647b460105ddadd2b2fe756a3d5092e6",
+        "capturadoEl": "2026-11-15T13:14:17.811029Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:1116",
+        "programa_id": "fundae:oferta:programa:IFCT110",
+        "tipo": "edicion"
+      },
+      "titulo": "GESTIÓN DE HERRAMIENTAS AVANZADAS DE MICROSOFT 365",
+      "codigo": "IFCT110",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=IFCT110",
+        "sha256": "3e377e7986cb9a9a7de01b9f011ccbc8647b460105ddadd2b2fe756a3d5092e6",
+        "capturadoEl": "2026-11-15T13:14:17.811029Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:115",
+        "programa_id": "fundae:oferta:programa:IFCT0138",
+        "tipo": "edicion"
+      },
+      "titulo": "INTRODUCCIÓN AL BIG DATA E INTELIGENCIA ARTIFICIAL",
+      "codigo": "IFCT0138",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=IFCT0138",
+        "sha256": "49ac09828bb9ac9f3314c9473231be3718ced57feeef51efa2c52caa413a6b53",
+        "capturadoEl": "2026-11-15T13:11:54.599177Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:1186",
+        "programa_id": "fundae:oferta:programa:IFCT0169",
+        "tipo": "edicion"
+      },
+      "titulo": "BIG DATA EN LA NUBE",
+      "codigo": "IFCT0169",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=IFCT0169",
+        "sha256": "6470e7025f1173d2437d13d082c6f50da10fa7d5cef13cad92ed5fbba12419c4",
+        "capturadoEl": "2026-11-15T13:13:00.546107Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:1187",
+        "programa_id": "fundae:oferta:programa:IFCT0174",
+        "tipo": "edicion"
+      },
+      "titulo": "HERRAMIENTAS DE GESTIÓN DE CONTENIDOS",
+      "codigo": "IFCT0174",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=IFCT0174",
+        "sha256": "1890e973bfe0ff263381b9aeb29e8ee36cd6315923a2914fe24bcdc34b29362c",
+        "capturadoEl": "2026-11-15T13:13:11.964056Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:1191",
+        "programa_id": "fundae:oferta:programa:IFCD0179",
+        "tipo": "edicion"
+      },
+      "titulo": "WORDPRESS",
+      "codigo": "IFCD0179",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=IFCD0179",
+        "sha256": "46cd6ee0ebb8728dd18c0bc91cb3339dde26e59a568162188184143ec0820b3c",
+        "capturadoEl": "2026-11-15T13:24:08.445005Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:1250",
+        "programa_id": "fundae:oferta:programa:IFCT153",
+        "tipo": "edicion"
+      },
+      "titulo": "ANÁLISIS DE DATOS CON EXCEL: POWER QUERY, POWER PIVOT Y POWER BI",
+      "codigo": "IFCT153",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=IFCT153",
+        "sha256": "73126b8a823208eeccfef762e5c04b38c4cfe81c821bf43acd73c957ac1c4886",
+        "capturadoEl": "2026-11-15T13:15:59.973457Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:1256",
+        "programa_id": "fundae:oferta:programa:IFCD0038",
+        "tipo": "edicion"
+      },
+      "titulo": "DISEÑO DE PÁGINAS WEBS PARA HOSTELERIA",
+      "codigo": "IFCD0038",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=IFCD0038",
+        "sha256": "f812b9da48ee63fb9c0bda97fbf98e327c45c1df405e86b5a1e4f2bcc55d4cdc",
+        "capturadoEl": "2026-11-15T13:23:11.346688Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:1330",
+        "programa_id": "fundae:oferta:programa:IFCT0049",
+        "tipo": "edicion"
+      },
+      "titulo": "CHATGPT E INTELIGENCIA ARTIFICAL",
+      "codigo": "IFCT0049",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=IFCT0049",
+        "sha256": "829de8adb745762238a31912cd36a9a84457f5a97c7df67b2824ce94171a1f71",
+        "capturadoEl": "2026-11-15T13:10:39.461090Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:1382",
+        "programa_id": "fundae:oferta:programa:ARGG014PO",
+        "tipo": "edicion"
+      },
+      "titulo": "PHOTOSHOP BÁSICO",
+      "codigo": "ARGG014PO",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=ARGG014PO",
+        "sha256": "a711a1129a7745c2e56c077f77b821c815f34f0159b020dfedece742f567d7e3",
+        "capturadoEl": "2026-11-15T13:21:28.877732Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:1384",
+        "programa_id": "fundae:oferta:programa:IFCT0049",
+        "tipo": "edicion"
+      },
+      "titulo": "CHATGPT E INTELIGENCIA ARTIFICAL",
+      "codigo": "IFCT0049",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=IFCT0049",
+        "sha256": "829de8adb745762238a31912cd36a9a84457f5a97c7df67b2824ce94171a1f71",
+        "capturadoEl": "2026-11-15T13:10:39.461090Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:1388",
+        "programa_id": "fundae:oferta:programa:IFCD0209",
+        "tipo": "edicion"
+      },
+      "titulo": "DESARROLLO DE SERVICIOS WEB",
+      "codigo": "IFCD0209",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=IFCD0209",
+        "sha256": "bf209ea687a3c82f597ecbf7b27a3dc6ac0a60379c655ffbf6c784442d7abbe6",
+        "capturadoEl": "2026-11-15T13:24:40.408441Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:1418",
+        "programa_id": "fundae:oferta:programa:IFCT45",
+        "tipo": "edicion"
+      },
+      "titulo": "COMPETENCIAS DIGITALES BÁSICAS",
+      "codigo": "IFCT45",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=IFCT45",
+        "sha256": "525d8dd1c05d58bc3eb8e3df77f81c268b3eefaa5de70709f037cccf8f43ab95",
+        "capturadoEl": "2026-11-15T13:16:52.501191Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:1419",
+        "programa_id": "fundae:oferta:programa:IFCT46",
+        "tipo": "edicion"
+      },
+      "titulo": "COMPETENCIAS DIGITALES AVANZADAS",
+      "codigo": "IFCT46",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=IFCT46",
+        "sha256": "36d3767d7d5af29ec2af74fe3c5be2b3d8ca1bf455193221e5a03977b85fc94e",
+        "capturadoEl": "2026-11-15T13:17:22.014080Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:1424",
+        "programa_id": "fundae:oferta:programa:IFCT110",
+        "tipo": "edicion"
+      },
+      "titulo": "GESTIÓN DE HERRAMIENTAS AVANZADAS DE MICROSOFT 365",
+      "codigo": "IFCT110",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=IFCT110",
+        "sha256": "3e377e7986cb9a9a7de01b9f011ccbc8647b460105ddadd2b2fe756a3d5092e6",
+        "capturadoEl": "2026-11-15T13:14:17.811029Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:1425",
+        "programa_id": "fundae:oferta:programa:IFCM0006",
+        "tipo": "edicion"
+      },
+      "titulo": "GOOGLE Y SUS APLICACIONES",
+      "codigo": "IFCM0006",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=IFCM0006",
+        "sha256": "8df6575f05adb0a09580645318c68cf82460ec772b2164900b3705fdeaeed0dc",
+        "capturadoEl": "2026-11-15T13:25:41.846791Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:1454",
+        "programa_id": "fundae:oferta:programa:IFCT115",
+        "tipo": "edicion"
+      },
+      "titulo": "SEGURIDAD Y PRIVACIDAD DE LOS JÓVENES EN LA RED",
+      "codigo": "IFCT115",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=IFCT115",
+        "sha256": "af958e94df7c1404981b9d68998ca98bea17750c7687705b71db9f77a155d050",
+        "capturadoEl": "2026-11-15T13:14:38.269648Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:1461",
+        "programa_id": "fundae:oferta:programa:ADGG042PO",
+        "tipo": "edicion"
+      },
+      "titulo": "LA TECNOLOGÍA DE LA INFORMACIÓN APLICADA A LA EMPRESA.",
+      "codigo": "ADGG042PO",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=ADGG042PO",
+        "sha256": "60382b86ac1a428c891314abb77a1faa77b793a2d36f3a5ec3cac2f01f39dd23",
+        "capturadoEl": "2026-11-15T13:20:02.305281Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:1465",
+        "programa_id": "fundae:oferta:programa:IFCT150",
+        "tipo": "edicion"
+      },
+      "titulo": "COMPETENCIAS DIGITALES PARA LA CIUDADANÍA – BÁSICO ACCESIBLE DOBLE-A",
+      "codigo": "IFCT150",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=IFCT150",
+        "sha256": "09eea311098af3f808dd3458cb8d80fed90436267e28f502389df3e14d3baba5",
+        "capturadoEl": "2026-11-15T13:15:53.175426Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:1468",
+        "programa_id": "fundae:oferta:programa:ADGD056PO",
+        "tipo": "edicion"
+      },
+      "titulo": "CREACIÓN DE EMPRESAS ON-LINE",
+      "codigo": "ADGD056PO",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=ADGD056PO",
+        "sha256": "9c66e48956ea794950c2e9bb07b1cafc14913d68b8c75ea7f365b00e39f65d27",
+        "capturadoEl": "2026-11-15T13:18:46.061011Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:1474",
+        "programa_id": "fundae:oferta:programa:ADGG057PO",
+        "tipo": "edicion"
+      },
+      "titulo": "OFIMÁTICA: APLICACIONES INFORMÁTICAS DE GESTIÓN",
+      "codigo": "ADGG057PO",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=ADGG057PO",
+        "sha256": "b74f680cc900d4af7e59e291e29bdb9e2b85cb3af6f37fa22feb24d5d1a01ce7",
+        "capturadoEl": "2026-11-15T13:20:36.594452Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:1483",
+        "programa_id": "fundae:oferta:programa:FCOI29",
+        "tipo": "edicion"
+      },
+      "titulo": "TELETRABAJO: HERRAMIENTAS Y RENTABILIDAD",
+      "codigo": "FCOI29",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=FCOI29",
+        "sha256": "634c1be623bd426249b4491f6f3cfb0c54a4315b5220e9c2da2b9f4fbb071c7f",
+        "capturadoEl": "2026-11-15T13:23:04.468306Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:1484",
+        "programa_id": "fundae:oferta:programa:IFCT0164",
+        "tipo": "edicion"
+      },
+      "titulo": "CREACIÓN DE BLOGS Y REDES SOCIALES",
+      "codigo": "IFCT0164",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=IFCT0164",
+        "sha256": "55050a798b39807608e49c48345f14379be0a186f1a32d30b66110b7da9a11a5",
+        "capturadoEl": "2026-11-15T13:12:53.661817Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:1497",
+        "programa_id": "fundae:oferta:programa:IFCT0138",
+        "tipo": "edicion"
+      },
+      "titulo": "INTRODUCCIÓN AL BIG DATA E INTELIGENCIA ARTIFICIAL",
+      "codigo": "IFCT0138",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=IFCT0138",
+        "sha256": "49ac09828bb9ac9f3314c9473231be3718ced57feeef51efa2c52caa413a6b53",
+        "capturadoEl": "2026-11-15T13:11:54.599177Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:1502",
+        "programa_id": "fundae:oferta:programa:ADGD0090",
+        "tipo": "edicion"
+      },
+      "titulo": "INTELIGENCIA ARTIFICIAL APLICADA A LA GESTIÓN DE RECURSOS HUMANOS",
+      "codigo": "ADGD0090",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=ADGD0090",
+        "sha256": "8a8c6e3e9cb9aff449e667d6ba7d0c94ca9e291383a62cd9fbf2b32245119e7d",
+        "capturadoEl": "2026-11-15T13:18:34.731456Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:1506",
+        "programa_id": "fundae:oferta:programa:ADGG055PO",
+        "tipo": "edicion"
+      },
+      "titulo": "OFIMÁTICA EN LA NUBE: GOOGLE DRIVE",
+      "codigo": "ADGG055PO",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=ADGG055PO",
+        "sha256": "37141766702b87d87914c2297d5384d31eda93d99c29021edab2ee41571d103f",
+        "capturadoEl": "2026-11-15T13:20:20.620866Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:1507",
+        "programa_id": "fundae:oferta:programa:ADGG057PO",
+        "tipo": "edicion"
+      },
+      "titulo": "OFIMÁTICA: APLICACIONES INFORMÁTICAS DE GESTIÓN",
+      "codigo": "ADGG057PO",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=ADGG057PO",
+        "sha256": "b74f680cc900d4af7e59e291e29bdb9e2b85cb3af6f37fa22feb24d5d1a01ce7",
+        "capturadoEl": "2026-11-15T13:20:36.594452Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:1515",
+        "programa_id": "fundae:oferta:programa:IFCT0049",
+        "tipo": "edicion"
+      },
+      "titulo": "CHATGPT E INTELIGENCIA ARTIFICAL",
+      "codigo": "IFCT0049",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=IFCT0049",
+        "sha256": "829de8adb745762238a31912cd36a9a84457f5a97c7df67b2824ce94171a1f71",
+        "capturadoEl": "2026-11-15T13:10:39.461090Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:1518",
+        "programa_id": "fundae:oferta:programa:ADGG020PO",
+        "tipo": "edicion"
+      },
+      "titulo": "EXCEL AVANZADO",
+      "codigo": "ADGG020PO",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=ADGG020PO",
+        "sha256": "b2ffa2bc81036340e653f10a33e9c9f3c89b126e8b1eb0409c4103d7d335e162",
+        "capturadoEl": "2026-11-15T13:19:29.383318Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:1521",
+        "programa_id": "fundae:oferta:programa:IFCT0141",
+        "tipo": "edicion"
+      },
+      "titulo": "INTRODUCCIÓN A LA INTELIGENCIA ARTIFICIAL Y LOS ALGORITMOS",
+      "codigo": "IFCT0141",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=IFCT0141",
+        "sha256": "ea0f223da8c33545f7fbf6d7f803002300a04c6d3da0d8aa8a898cda53f39782",
+        "capturadoEl": "2026-11-15T13:12:37.793462Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:1522",
+        "programa_id": "fundae:oferta:programa:IFCT0213",
+        "tipo": "edicion"
+      },
+      "titulo": "SEGURIDAD INFORMÁTICA Y FIRMA DIGITAL",
+      "codigo": "IFCT0213",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=IFCT0213",
+        "sha256": "5b02ff4895960cc972913f087b7ce64e4cccd5cd14bc1a3deb8e997e2c2fb084",
+        "capturadoEl": "2026-11-15T13:13:30.162095Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:1523",
+        "programa_id": "fundae:oferta:programa:IFCT45",
+        "tipo": "edicion"
+      },
+      "titulo": "COMPETENCIAS DIGITALES BÁSICAS",
+      "codigo": "IFCT45",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=IFCT45",
+        "sha256": "525d8dd1c05d58bc3eb8e3df77f81c268b3eefaa5de70709f037cccf8f43ab95",
+        "capturadoEl": "2026-11-15T13:16:52.501191Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:1524",
+        "programa_id": "fundae:oferta:programa:IFCT46",
+        "tipo": "edicion"
+      },
+      "titulo": "COMPETENCIAS DIGITALES AVANZADAS",
+      "codigo": "IFCT46",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=IFCT46",
+        "sha256": "36d3767d7d5af29ec2af74fe3c5be2b3d8ca1bf455193221e5a03977b85fc94e",
+        "capturadoEl": "2026-11-15T13:17:22.014080Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:1586",
+        "programa_id": "fundae:oferta:programa:IFCT153",
+        "tipo": "edicion"
+      },
+      "titulo": "ANÁLISIS DE DATOS CON EXCEL: POWER QUERY, POWER PIVOT Y POWER BI",
+      "codigo": "IFCT153",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=IFCT153",
+        "sha256": "1728c997949aae1007bdebd9d26c622f9a18e12a8bb821bd1fa3e56b4d79c2cf",
+        "capturadoEl": "2026-11-18T09:18:41.767886Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:1726",
+        "programa_id": "fundae:oferta:programa:ADGD350PO",
+        "tipo": "edicion"
+      },
+      "titulo": "PROGRAMA AVANZADO TALENTO, CULTURA Y EMPRESA DIGITAL",
+      "codigo": "ADGD350PO",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=ADGD350PO",
+        "sha256": "baedc3fbcca515bf533ff9eb7eb7f64666b39f9d361a044247bcdb508413b0ab",
+        "capturadoEl": "2026-11-15T13:19:06.557147Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:1742",
+        "programa_id": "fundae:oferta:programa:IFCM0006",
+        "tipo": "edicion"
+      },
+      "titulo": "GOOGLE Y SUS APLICACIONES",
+      "codigo": "IFCM0006",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=IFCM0006",
+        "sha256": "8df6575f05adb0a09580645318c68cf82460ec772b2164900b3705fdeaeed0dc",
+        "capturadoEl": "2026-11-15T13:25:41.846791Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:1752",
+        "programa_id": "fundae:oferta:programa:ADGG020PO",
+        "tipo": "edicion"
+      },
+      "titulo": "EXCEL AVANZADO",
+      "codigo": "ADGG020PO",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=ADGG020PO",
+        "sha256": "b2ffa2bc81036340e653f10a33e9c9f3c89b126e8b1eb0409c4103d7d335e162",
+        "capturadoEl": "2026-11-15T13:19:29.383318Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:1776",
+        "programa_id": "fundae:oferta:programa:IFCT0138",
+        "tipo": "edicion"
+      },
+      "titulo": "INTRODUCCIÓN AL BIG DATA E INTELIGENCIA ARTIFICIAL",
+      "codigo": "IFCT0138",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=IFCT0138",
+        "sha256": "49ac09828bb9ac9f3314c9473231be3718ced57feeef51efa2c52caa413a6b53",
+        "capturadoEl": "2026-11-15T13:11:54.599177Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:1777",
+        "programa_id": "fundae:oferta:programa:IFCT153",
+        "tipo": "edicion"
+      },
+      "titulo": "ANÁLISIS DE DATOS CON EXCEL: POWER QUERY, POWER PIVOT Y POWER BI",
+      "codigo": "IFCT153",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=IFCT153",
+        "sha256": "73126b8a823208eeccfef762e5c04b38c4cfe81c821bf43acd73c957ac1c4886",
+        "capturadoEl": "2026-11-15T13:15:59.973457Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:1971",
+        "programa_id": "fundae:oferta:programa:FCOI02",
+        "tipo": "edicion"
+      },
+      "titulo": "ALFABETIZACIÓN INFORMÁTICA: INFORMÁTICA E INTERNET",
+      "codigo": "FCOI02",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=FCOI02",
+        "sha256": "360add4ac830005be90ecd58ebc4f3b2c5735db201dfb7b249bc3e87bc0e7f91",
+        "capturadoEl": "2026-11-15T13:22:23.537681Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:2024",
+        "programa_id": "fundae:oferta:programa:IFCT0135",
+        "tipo": "edicion"
+      },
+      "titulo": "INFOARQUITECTURA 3D CON SOFTWARE-NIVEL USUARIO",
+      "codigo": "IFCT0135",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=IFCT0135",
+        "sha256": "a6dab264a904c6c8057232ca10327336686e94d08fe1ad6c3d7c0082ab2396f0",
+        "capturadoEl": "2026-11-15T13:11:47.820162Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:2025",
+        "programa_id": "fundae:oferta:programa:IFCM0013",
+        "tipo": "edicion"
+      },
+      "titulo": "DISEÑO DE REDES LAN",
+      "codigo": "IFCM0013",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=IFCM0013",
+        "sha256": "8c40f6ecc81c7f5dbb1e9d971bc76a33139da3931bffd9f6fc1285e53eac3230",
+        "capturadoEl": "2026-11-15T13:26:04.611309Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:2083",
+        "programa_id": "fundae:oferta:programa:ADGG052PO",
+        "tipo": "edicion"
+      },
+      "titulo": "OFFICE: WORD, EXCEL, ACCESS Y POWER POINT",
+      "codigo": "ADGG052PO",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=ADGG052PO",
+        "sha256": "3bbc66cc4fcc44f042a6d19b589e72c916565c8b6a6aa87fd4ae9a046be68ceb",
+        "capturadoEl": "2026-11-15T13:20:13.766384Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:2091",
+        "programa_id": "fundae:oferta:programa:FCOI09",
+        "tipo": "edicion"
+      },
+      "titulo": "INICIACIÓN A LA APLICACIÓN DE LAS NUEVAS TECNOLOGÍAS EN LAS EMPRESAS",
+      "codigo": "FCOI09",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=FCOI09",
+        "sha256": "0ea7c0c87866ea9a0dcf1c70e65171f251b9d2327b83198b780697021a0ab239",
+        "capturadoEl": "2026-11-15T13:22:53.073680Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:2092",
+        "programa_id": "fundae:oferta:programa:IFCT45",
+        "tipo": "edicion"
+      },
+      "titulo": "COMPETENCIAS DIGITALES BÁSICAS",
+      "codigo": "IFCT45",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=IFCT45",
+        "sha256": "525d8dd1c05d58bc3eb8e3df77f81c268b3eefaa5de70709f037cccf8f43ab95",
+        "capturadoEl": "2026-11-15T13:16:52.501191Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:2093",
+        "programa_id": "fundae:oferta:programa:IFCT46",
+        "tipo": "edicion"
+      },
+      "titulo": "COMPETENCIAS DIGITALES AVANZADAS",
+      "codigo": "IFCT46",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=IFCT46",
+        "sha256": "36d3767d7d5af29ec2af74fe3c5be2b3d8ca1bf455193221e5a03977b85fc94e",
+        "capturadoEl": "2026-11-15T13:17:22.014080Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:2130",
+        "programa_id": "fundae:oferta:programa:ADGG042PO",
+        "tipo": "edicion"
+      },
+      "titulo": "LA TECNOLOGÍA DE LA INFORMACIÓN APLICADA A LA EMPRESA.",
+      "codigo": "ADGG042PO",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=ADGG042PO",
+        "sha256": "60382b86ac1a428c891314abb77a1faa77b793a2d36f3a5ec3cac2f01f39dd23",
+        "capturadoEl": "2026-11-15T13:20:02.305281Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:222",
+        "programa_id": "fundae:oferta:programa:IFCT119",
+        "tipo": "edicion"
+      },
+      "titulo": "BIG DATA Y BUSINESS INTELLIGENCE",
+      "codigo": "IFCT119",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=IFCT119",
+        "sha256": "41284963dc876b89a10a30e9652c80671c358964c799a7379e66846b065552f8",
+        "capturadoEl": "2026-11-15T13:15:35.000350Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:231",
+        "programa_id": "fundae:oferta:programa:IFCT0022",
+        "tipo": "edicion"
+      },
+      "titulo": "BIG DATA",
+      "codigo": "IFCT0022",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=IFCT0022",
+        "sha256": "3ca02377199b8988ea65559745ad3b411a7d76337f4f5e62ca9fac80dba0b5a8",
+        "capturadoEl": "2026-11-15T13:26:41.026513Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:290",
+        "programa_id": "fundae:oferta:programa:IFCT118",
+        "tipo": "edicion"
+      },
+      "titulo": "SOCIAL MEDIA, REDES SOCIALES Y COMUNITY MANAGEMENT",
+      "codigo": "IFCT118",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=IFCT118",
+        "sha256": "754b85c415fe94258e31535f48fca71e23ed6f5e28cc5d0159d2d6f8004ee6d2",
+        "capturadoEl": "2026-11-15T13:15:14.633210Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:299",
+        "programa_id": "fundae:oferta:programa:IFCT121",
+        "tipo": "edicion"
+      },
+      "titulo": "CIBERSEGURIDAD. RIESGOS Y AMENAZAS EN LA RED",
+      "codigo": "IFCT121",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=IFCT121",
+        "sha256": "705daf6dfbaffde337c299d7f7feaa9d422962574158aab8d3c258c1abc4043d",
+        "capturadoEl": "2026-11-15T13:15:41.774792Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:301",
+        "programa_id": "fundae:oferta:programa:IFCT118",
+        "tipo": "edicion"
+      },
+      "titulo": "SOCIAL MEDIA, REDES SOCIALES Y COMUNITY MANAGEMENT",
+      "codigo": "IFCT118",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=IFCT118",
+        "sha256": "754b85c415fe94258e31535f48fca71e23ed6f5e28cc5d0159d2d6f8004ee6d2",
+        "capturadoEl": "2026-11-15T13:15:14.633210Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:313",
+        "programa_id": "fundae:oferta:programa:IFCT103",
+        "tipo": "edicion"
+      },
+      "titulo": "CIBERSEGURIDAD: PREVENCIÓN, ANALISIS Y RESPUESTA A INCIDENTES DE SEGURIDAD",
+      "codigo": "IFCT103",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=IFCT103",
+        "sha256": "ec07f1d6a6489d0a30c1bd65810a03e4fc93f349d350ff1c683add75fb0051d9",
+        "capturadoEl": "2026-11-15T13:14:06.457519Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:3170",
+        "programa_id": "fundae:oferta:programa:IFCT45",
+        "tipo": "edicion"
+      },
+      "titulo": "COMPETENCIAS DIGITALES BÁSICAS",
+      "codigo": "IFCT45",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=IFCT45",
+        "sha256": "525d8dd1c05d58bc3eb8e3df77f81c268b3eefaa5de70709f037cccf8f43ab95",
+        "capturadoEl": "2026-11-15T13:16:52.501191Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:3177",
+        "programa_id": "fundae:oferta:programa:IFCT0049",
+        "tipo": "edicion"
+      },
+      "titulo": "CHATGPT E INTELIGENCIA ARTIFICAL",
+      "codigo": "IFCT0049",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=IFCT0049",
+        "sha256": "829de8adb745762238a31912cd36a9a84457f5a97c7df67b2824ce94171a1f71",
+        "capturadoEl": "2026-11-15T13:10:39.461090Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:3180",
+        "programa_id": "fundae:oferta:programa:IFCT153",
+        "tipo": "edicion"
+      },
+      "titulo": "ANÁLISIS DE DATOS CON EXCEL: POWER QUERY, POWER PIVOT Y POWER BI",
+      "codigo": "IFCT153",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=IFCT153",
+        "sha256": "73126b8a823208eeccfef762e5c04b38c4cfe81c821bf43acd73c957ac1c4886",
+        "capturadoEl": "2026-11-15T13:15:59.973457Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:3181",
+        "programa_id": "fundae:oferta:programa:ADGN29",
+        "tipo": "edicion"
+      },
+      "titulo": "INTELIGENCIA ARTIFICIAL Y SECTOR FINANCIERO",
+      "codigo": "ADGN29",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=ADGN29",
+        "sha256": "8c78a4004d98f79a65437351a84eb42a10ae4dc60788fbad6259d800de99db70",
+        "capturadoEl": "2026-11-15T13:21:17.504946Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:3196",
+        "programa_id": "fundae:oferta:programa:IFCT153",
+        "tipo": "edicion"
+      },
+      "titulo": "ANÁLISIS DE DATOS CON EXCEL: POWER QUERY, POWER PIVOT Y POWER BI",
+      "codigo": "IFCT153",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=IFCT153",
+        "sha256": "73126b8a823208eeccfef762e5c04b38c4cfe81c821bf43acd73c957ac1c4886",
+        "capturadoEl": "2026-11-15T13:15:59.973457Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:3212",
+        "programa_id": "fundae:oferta:programa:IFCT0138",
+        "tipo": "edicion"
+      },
+      "titulo": "INTRODUCCIÓN AL BIG DATA E INTELIGENCIA ARTIFICIAL",
+      "codigo": "IFCT0138",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=IFCT0138",
+        "sha256": "49ac09828bb9ac9f3314c9473231be3718ced57feeef51efa2c52caa413a6b53",
+        "capturadoEl": "2026-11-15T13:11:54.599177Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:3223",
+        "programa_id": "fundae:oferta:programa:IFCD0122",
+        "tipo": "edicion"
+      },
+      "titulo": "INTRODUCCIÓN A ANGULAR",
+      "codigo": "IFCD0122",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=IFCD0122",
+        "sha256": "0dd97b7295599130ca202745511456a4c6a0330661ba948148dc5ff96dc05904",
+        "capturadoEl": "2026-11-15T13:23:52.309556Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:3224",
+        "programa_id": "fundae:oferta:programa:IFCT46",
+        "tipo": "edicion"
+      },
+      "titulo": "COMPETENCIAS DIGITALES AVANZADAS",
+      "codigo": "IFCT46",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=IFCT46",
+        "sha256": "36d3767d7d5af29ec2af74fe3c5be2b3d8ca1bf455193221e5a03977b85fc94e",
+        "capturadoEl": "2026-11-15T13:17:22.014080Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:3252",
+        "programa_id": "fundae:oferta:programa:ADGG057PO",
+        "tipo": "edicion"
+      },
+      "titulo": "OFIMÁTICA: APLICACIONES INFORMÁTICAS DE GESTIÓN",
+      "codigo": "ADGG057PO",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=ADGG057PO",
+        "sha256": "b74f680cc900d4af7e59e291e29bdb9e2b85cb3af6f37fa22feb24d5d1a01ce7",
+        "capturadoEl": "2026-11-15T13:20:36.594452Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:3263",
+        "programa_id": "fundae:oferta:programa:IFCT85",
+        "tipo": "edicion"
+      },
+      "titulo": "TECNOLOGÍAS PARA LA COMERCIALIZACIÓN Y LA GESTIÓN DEL CLIENTE EN LA ERA POST COVID",
+      "codigo": "IFCT85",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=IFCT85",
+        "sha256": "f763e89f9671863b7257c99b64b1f7dc7b0907181c4a6a535b3c1030cf986926",
+        "capturadoEl": "2026-11-15T13:17:44.768442Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:3273",
+        "programa_id": "fundae:oferta:programa:ADGG21",
+        "tipo": "edicion"
+      },
+      "titulo": "HERRAMIENTAS COLABORATIVAS OFFICCE 365",
+      "codigo": "ADGG21",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=ADGG21",
+        "sha256": "0665072e80e92d293ccb510aaa237dcfb58d58eb2c810cf587664bfb5be236ed",
+        "capturadoEl": "2026-11-15T13:21:01.513912Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:3304",
+        "programa_id": "fundae:oferta:programa:IFCD011PO",
+        "tipo": "edicion"
+      },
+      "titulo": "DESARROLLO DE PAGINAS WEB CSS Y JOOMLA",
+      "codigo": "IFCD011PO",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=IFCD011PO",
+        "sha256": "2e303e711b17c2e7a932834e9d6f55f0c8ee261e448849004ed4ee42c2b250fe",
+        "capturadoEl": "2026-11-15T13:23:43.224917Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:3316",
+        "programa_id": "fundae:oferta:programa:IFCT0169",
+        "tipo": "edicion"
+      },
+      "titulo": "BIG DATA EN LA NUBE",
+      "codigo": "IFCT0169",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=IFCT0169",
+        "sha256": "6470e7025f1173d2437d13d082c6f50da10fa7d5cef13cad92ed5fbba12419c4",
+        "capturadoEl": "2026-11-15T13:13:00.546107Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:3318",
+        "programa_id": "fundae:oferta:programa:IFCT0174",
+        "tipo": "edicion"
+      },
+      "titulo": "HERRAMIENTAS DE GESTIÓN DE CONTENIDOS",
+      "codigo": "IFCT0174",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=IFCT0174",
+        "sha256": "1890e973bfe0ff263381b9aeb29e8ee36cd6315923a2914fe24bcdc34b29362c",
+        "capturadoEl": "2026-11-15T13:13:11.964056Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:3322",
+        "programa_id": "fundae:oferta:programa:IFCD0179",
+        "tipo": "edicion"
+      },
+      "titulo": "WORDPRESS",
+      "codigo": "IFCD0179",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=IFCD0179",
+        "sha256": "46cd6ee0ebb8728dd18c0bc91cb3339dde26e59a568162188184143ec0820b3c",
+        "capturadoEl": "2026-11-15T13:24:08.445005Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:3403",
+        "programa_id": "fundae:oferta:programa:IFCT0138",
+        "tipo": "edicion"
+      },
+      "titulo": "INTRODUCCIÓN AL BIG DATA E INTELIGENCIA ARTIFICIAL",
+      "codigo": "IFCT0138",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=IFCT0138",
+        "sha256": "49ac09828bb9ac9f3314c9473231be3718ced57feeef51efa2c52caa413a6b53",
+        "capturadoEl": "2026-11-15T13:11:54.599177Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:3404",
+        "programa_id": "fundae:oferta:programa:IFCM0006",
+        "tipo": "edicion"
+      },
+      "titulo": "GOOGLE Y SUS APLICACIONES",
+      "codigo": "IFCM0006",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=IFCM0006",
+        "sha256": "8df6575f05adb0a09580645318c68cf82460ec772b2164900b3705fdeaeed0dc",
+        "capturadoEl": "2026-11-15T13:25:41.846791Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:3420",
+        "programa_id": "fundae:oferta:programa:IFCT161PO",
+        "tipo": "edicion"
+      },
+      "titulo": "ANÁLISIS DE DATOS Y PROGRAMACIÓN CON MICROSOFT POWER BI",
+      "codigo": "IFCT161PO",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=IFCT161PO",
+        "sha256": "827b48d8283f753156cacdd869c3483d8c345a6b763c93eec74012b8413b4f16",
+        "capturadoEl": "2026-11-15T13:16:29.611299Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:3432",
+        "programa_id": "fundae:oferta:programa:IFCT0207",
+        "tipo": "edicion"
+      },
+      "titulo": "GESTIÓN DE PROYECTOS DE DESARROLLO DE SOFTWARE",
+      "codigo": "IFCT0207",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=IFCT0207",
+        "sha256": "3e422838bafadbcdc3a97446b0a4706a8c804474b0eb984249234b04d626801c",
+        "capturadoEl": "2026-11-15T13:13:23.316352Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:3433",
+        "programa_id": "fundae:oferta:programa:IFCD0206",
+        "tipo": "edicion"
+      },
+      "titulo": "DESARROLLO DE APLICACIONES MÓVILES CON TECNOLOGÍAS WEB",
+      "codigo": "IFCD0206",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=IFCD0206",
+        "sha256": "f2a2570ec586fab3ead052e636e7e63fa72853b76824def39ef84db4ecafc67d",
+        "capturadoEl": "2026-11-15T13:24:33.607898Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:3467",
+        "programa_id": "fundae:oferta:programa:IFCD091PO",
+        "tipo": "edicion"
+      },
+      "titulo": "DATA WAREHOUSING ON AWS",
+      "codigo": "IFCD091PO",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=IFCD091PO",
+        "sha256": "395c02060b8d6420d80f36ea5dc65c15df911ba2fae1f7bcb8ec6fe1f52aee43",
+        "capturadoEl": "2026-11-15T13:24:47.189031Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:3480",
+        "programa_id": "fundae:oferta:programa:IFCT0022",
+        "tipo": "edicion"
+      },
+      "titulo": "BIG DATA",
+      "codigo": "IFCT0022",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=IFCT0022",
+        "sha256": "3ca02377199b8988ea65559745ad3b411a7d76337f4f5e62ca9fac80dba0b5a8",
+        "capturadoEl": "2026-11-15T13:26:41.026513Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:3511",
+        "programa_id": "fundae:oferta:programa:IFCT0022",
+        "tipo": "edicion"
+      },
+      "titulo": "BIG DATA",
+      "codigo": "IFCT0022",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=IFCT0022",
+        "sha256": "3ca02377199b8988ea65559745ad3b411a7d76337f4f5e62ca9fac80dba0b5a8",
+        "capturadoEl": "2026-11-15T13:26:41.026513Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:3568",
+        "programa_id": "fundae:oferta:programa:ADGD0022",
+        "tipo": "edicion"
+      },
+      "titulo": "IMPUESTO SOBRE LA RENTA DE LAS PERSONAS FÍSICAS (IRPF)",
+      "codigo": "ADGD0022",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=ADGD0022",
+        "sha256": "91b7208f73a3916ee4e6adf9370a0e27a0ea1f2b604f29d1b6f8e551c346425a",
+        "capturadoEl": "2026-11-15T13:18:27.899722Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:3569",
+        "programa_id": "fundae:oferta:programa:ADGD0090",
+        "tipo": "edicion"
+      },
+      "titulo": "INTELIGENCIA ARTIFICIAL APLICADA A LA GESTIÓN DE RECURSOS HUMANOS",
+      "codigo": "ADGD0090",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=ADGD0090",
+        "sha256": "8a8c6e3e9cb9aff449e667d6ba7d0c94ca9e291383a62cd9fbf2b32245119e7d",
+        "capturadoEl": "2026-11-15T13:18:34.731456Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:3572",
+        "programa_id": "fundae:oferta:programa:ADGG055PO",
+        "tipo": "edicion"
+      },
+      "titulo": "OFIMÁTICA EN LA NUBE: GOOGLE DRIVE",
+      "codigo": "ADGG055PO",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=ADGG055PO",
+        "sha256": "37141766702b87d87914c2297d5384d31eda93d99c29021edab2ee41571d103f",
+        "capturadoEl": "2026-11-15T13:20:20.620866Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:3575",
+        "programa_id": "fundae:oferta:programa:IFCT45",
+        "tipo": "edicion"
+      },
+      "titulo": "COMPETENCIAS DIGITALES BÁSICAS",
+      "codigo": "IFCT45",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=IFCT45",
+        "sha256": "525d8dd1c05d58bc3eb8e3df77f81c268b3eefaa5de70709f037cccf8f43ab95",
+        "capturadoEl": "2026-11-15T13:16:52.501191Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:3586",
+        "programa_id": "fundae:oferta:programa:ADGG21",
+        "tipo": "edicion"
+      },
+      "titulo": "HERRAMIENTAS COLABORATIVAS OFFICCE 365",
+      "codigo": "ADGG21",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=ADGG21",
+        "sha256": "0665072e80e92d293ccb510aaa237dcfb58d58eb2c810cf587664bfb5be236ed",
+        "capturadoEl": "2026-11-15T13:21:01.513912Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:3596",
+        "programa_id": "fundae:oferta:programa:IFCT0118",
+        "tipo": "edicion"
+      },
+      "titulo": "BIG DATA PARA INGENIERÍAS",
+      "codigo": "IFCT0118",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=IFCT0118",
+        "sha256": "b06308c09251d262cade86d47a7983503360db04bc3e5bde670b04e0dded8e05",
+        "capturadoEl": "2026-11-15T13:11:34.112222Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:3605",
+        "programa_id": "fundae:oferta:programa:FCOI02",
+        "tipo": "edicion"
+      },
+      "titulo": "ALFABETIZACIÓN INFORMÁTICA: INFORMÁTICA E INTERNET",
+      "codigo": "FCOI02",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=FCOI02",
+        "sha256": "360add4ac830005be90ecd58ebc4f3b2c5735db201dfb7b249bc3e87bc0e7f91",
+        "capturadoEl": "2026-11-15T13:22:23.537681Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:3612",
+        "programa_id": "fundae:oferta:programa:COMM0079",
+        "tipo": "edicion"
+      },
+      "titulo": "ANALÍTICA WEB PARA LA MEDICIÓN DE RESULTADOS DE MARKETING",
+      "codigo": "COMM0079",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=COMM0079",
+        "sha256": "cbb1669c0baf90d59d1cb3b68de7fa4d4278c9cb1b724dff398904d285998ecf",
+        "capturadoEl": "2026-11-15T13:21:40.193052Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:3621",
+        "programa_id": "fundae:oferta:programa:IFCD94",
+        "tipo": "edicion"
+      },
+      "titulo": "HERRAMIENTAS DEL BIG DATA Y GOBIERNO DEL DATO",
+      "codigo": "IFCD94",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=IFCD94",
+        "sha256": "b3f0f15e4167a628ee4a0d43e0b0c2fd3e10a6467965fdf44734ad9123e52330",
+        "capturadoEl": "2026-11-15T13:25:35.048547Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:3628",
+        "programa_id": "fundae:oferta:programa:IFCT85",
+        "tipo": "edicion"
+      },
+      "titulo": "TECNOLOGÍAS PARA LA COMERCIALIZACIÓN Y LA GESTIÓN DEL CLIENTE EN LA ERA POST COVID",
+      "codigo": "IFCT85",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=IFCT85",
+        "sha256": "f763e89f9671863b7257c99b64b1f7dc7b0907181c4a6a535b3c1030cf986926",
+        "capturadoEl": "2026-11-15T13:17:44.768442Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:3638",
+        "programa_id": "fundae:oferta:programa:IFCD32",
+        "tipo": "edicion"
+      },
+      "titulo": "PROGRAMACIÓN EN PYTHON",
+      "codigo": "IFCD32",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=IFCD32",
+        "sha256": "23b5e73bccd355d84e7b34315f18b2aab6dcf044bd54fd33c7ea6a5ab9d3edea",
+        "capturadoEl": "2026-11-15T13:25:00.860924Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:3645",
+        "programa_id": "fundae:oferta:programa:ADGG055PO",
+        "tipo": "edicion"
+      },
+      "titulo": "OFIMÁTICA EN LA NUBE: GOOGLE DRIVE",
+      "codigo": "ADGG055PO",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=ADGG055PO",
+        "sha256": "37141766702b87d87914c2297d5384d31eda93d99c29021edab2ee41571d103f",
+        "capturadoEl": "2026-11-15T13:20:20.620866Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:3646",
+        "programa_id": "fundae:oferta:programa:IFCT0049",
+        "tipo": "edicion"
+      },
+      "titulo": "CHATGPT E INTELIGENCIA ARTIFICAL",
+      "codigo": "IFCT0049",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=IFCT0049",
+        "sha256": "829de8adb745762238a31912cd36a9a84457f5a97c7df67b2824ce94171a1f71",
+        "capturadoEl": "2026-11-15T13:10:39.461090Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:3650",
+        "programa_id": "fundae:oferta:programa:ADGG021PO",
+        "tipo": "edicion"
+      },
+      "titulo": "FUNDAMENTOS EXCEL",
+      "codigo": "ADGG021PO",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=ADGG021PO",
+        "sha256": "d21cf70b91ee9eb2c8ed26827fb492dc9c6603f35e9fa97d7dd0338a76d030e6",
+        "capturadoEl": "2026-11-15T13:19:49.932215Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:3724",
+        "programa_id": "fundae:oferta:programa:IFCT0022",
+        "tipo": "edicion"
+      },
+      "titulo": "BIG DATA",
+      "codigo": "IFCT0022",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=IFCT0022",
+        "sha256": "3ca02377199b8988ea65559745ad3b411a7d76337f4f5e62ca9fac80dba0b5a8",
+        "capturadoEl": "2026-11-15T13:26:41.026513Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:3725",
+        "programa_id": "fundae:oferta:programa:IFCT101",
+        "tipo": "edicion"
+      },
+      "titulo": "BUSINESS INTELLIGENCE Y TRANSFORMACIÓN DIGITAL",
+      "codigo": "IFCT101",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=IFCT101",
+        "sha256": "f534bd7b5d0fa993ea5ad5b513684910c278e253b3caea1fc300439c6c61d257",
+        "capturadoEl": "2026-11-15T13:13:43.785561Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:3727",
+        "programa_id": "fundae:oferta:programa:ADGD056PO",
+        "tipo": "edicion"
+      },
+      "titulo": "CREACIÓN DE EMPRESAS ON-LINE",
+      "codigo": "ADGD056PO",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=ADGD056PO",
+        "sha256": "9c66e48956ea794950c2e9bb07b1cafc14913d68b8c75ea7f365b00e39f65d27",
+        "capturadoEl": "2026-11-15T13:18:46.061011Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:3770",
+        "programa_id": "fundae:oferta:programa:IFCT101",
+        "tipo": "edicion"
+      },
+      "titulo": "BUSINESS INTELLIGENCE Y TRANSFORMACIÓN DIGITAL",
+      "codigo": "IFCT101",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=IFCT101",
+        "sha256": "f534bd7b5d0fa993ea5ad5b513684910c278e253b3caea1fc300439c6c61d257",
+        "capturadoEl": "2026-11-15T13:13:43.785561Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:3771",
+        "programa_id": "fundae:oferta:programa:IFCT103",
+        "tipo": "edicion"
+      },
+      "titulo": "CIBERSEGURIDAD: PREVENCIÓN, ANALISIS Y RESPUESTA A INCIDENTES DE SEGURIDAD",
+      "codigo": "IFCT103",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=IFCT103",
+        "sha256": "ec07f1d6a6489d0a30c1bd65810a03e4fc93f349d350ff1c683add75fb0051d9",
+        "capturadoEl": "2026-11-15T13:14:06.457519Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:3779",
+        "programa_id": "fundae:oferta:programa:IFCT0138",
+        "tipo": "edicion"
+      },
+      "titulo": "INTRODUCCIÓN AL BIG DATA E INTELIGENCIA ARTIFICIAL",
+      "codigo": "IFCT0138",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=IFCT0138",
+        "sha256": "49ac09828bb9ac9f3314c9473231be3718ced57feeef51efa2c52caa413a6b53",
+        "capturadoEl": "2026-11-15T13:11:54.599177Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:3818",
+        "programa_id": "fundae:oferta:programa:IFCT0138",
+        "tipo": "edicion"
+      },
+      "titulo": "INTRODUCCIÓN AL BIG DATA E INTELIGENCIA ARTIFICIAL",
+      "codigo": "IFCT0138",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=IFCT0138",
+        "sha256": "49ac09828bb9ac9f3314c9473231be3718ced57feeef51efa2c52caa413a6b53",
+        "capturadoEl": "2026-11-15T13:11:54.599177Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:3819",
+        "programa_id": "fundae:oferta:programa:IFCD110",
+        "tipo": "edicion"
+      },
+      "titulo": "SERVICIOS EN LA NUBE (CLOUD) CON AWS",
+      "codigo": "IFCD110",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=IFCD110",
+        "sha256": "ca8a42b48750d4bcdcca1ec2916f3ab731582211ef21150040d9e70996fe2656",
+        "capturadoEl": "2026-11-15T13:24:54.022345Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:3836",
+        "programa_id": "fundae:oferta:programa:IFCD0099",
+        "tipo": "edicion"
+      },
+      "titulo": "INTELIGENCIA ARTIFICIAL GENERATIVA Y MEJORA DE LA PRODUCTIVIDAD",
+      "codigo": "IFCD0099",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=IFCD0099",
+        "sha256": "455707495e5bb3cccd9b80a472946f3b899c8d0be3d65025860ad546e91a2d6a",
+        "capturadoEl": "2026-11-15T13:23:22.723714Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:3863",
+        "programa_id": "fundae:oferta:programa:IFCD0186",
+        "tipo": "edicion"
+      },
+      "titulo": "WORDPRESS PARA PUBLICIDAD",
+      "codigo": "IFCD0186",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=IFCD0186",
+        "sha256": "70a657f07fbdc8608fe651553d0ab3ae2653efc03dab3137766817229fbdefef",
+        "capturadoEl": "2026-11-15T13:24:26.772813Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:3875",
+        "programa_id": "fundae:oferta:programa:ADGD350PO",
+        "tipo": "edicion"
+      },
+      "titulo": "PROGRAMA AVANZADO TALENTO, CULTURA Y EMPRESA DIGITAL",
+      "codigo": "ADGD350PO",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=ADGD350PO",
+        "sha256": "baedc3fbcca515bf533ff9eb7eb7f64666b39f9d361a044247bcdb508413b0ab",
+        "capturadoEl": "2026-11-15T13:19:06.557147Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:3877",
+        "programa_id": "fundae:oferta:programa:IFCT0049",
+        "tipo": "edicion"
+      },
+      "titulo": "CHATGPT E INTELIGENCIA ARTIFICAL",
+      "codigo": "IFCT0049",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=IFCT0049",
+        "sha256": "829de8adb745762238a31912cd36a9a84457f5a97c7df67b2824ce94171a1f71",
+        "capturadoEl": "2026-11-15T13:10:39.461090Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:3879",
+        "programa_id": "fundae:oferta:programa:ADGD056PO",
+        "tipo": "edicion"
+      },
+      "titulo": "CREACIÓN DE EMPRESAS ON-LINE",
+      "codigo": "ADGD056PO",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=ADGD056PO",
+        "sha256": "9c66e48956ea794950c2e9bb07b1cafc14913d68b8c75ea7f365b00e39f65d27",
+        "capturadoEl": "2026-11-15T13:18:46.061011Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:3887",
+        "programa_id": "fundae:oferta:programa:FCOI02",
+        "tipo": "edicion"
+      },
+      "titulo": "ALFABETIZACIÓN INFORMÁTICA: INFORMÁTICA E INTERNET",
+      "codigo": "FCOI02",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=FCOI02",
+        "sha256": "360add4ac830005be90ecd58ebc4f3b2c5735db201dfb7b249bc3e87bc0e7f91",
+        "capturadoEl": "2026-11-15T13:22:23.537681Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:3889",
+        "programa_id": "fundae:oferta:programa:IFCD0181",
+        "tipo": "edicion"
+      },
+      "titulo": "INTRODUCCIÓN A LA PROGRAMACIÓN JAVA",
+      "codigo": "IFCD0181",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=IFCD0181",
+        "sha256": "520fd776a7d895e50719d49b91a7c1b1fdc8ae96d6fd7c12dfe88d9fc1452542",
+        "capturadoEl": "2026-11-15T13:24:19.855099Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:3890",
+        "programa_id": "fundae:oferta:programa:IFCD0174",
+        "tipo": "edicion"
+      },
+      "titulo": "PROGRAMA MACHINE LEARNING E INTELIGENCIA ARTIFICIAL",
+      "codigo": "IFCD0174",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=IFCD0174",
+        "sha256": "42d61788ddf7af3dc4830e3e983b750885f103f46f9845df23d5c628180195e9",
+        "capturadoEl": "2026-11-15T13:24:01.619961Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:3891",
+        "programa_id": "fundae:oferta:programa:IFCD68",
+        "tipo": "edicion"
+      },
+      "titulo": "INTRODUCCIÓN A LA PROGRAMACIÓN EN PYTHON",
+      "codigo": "IFCD68",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=IFCD68",
+        "sha256": "476c1a829867c5979cc06fb76e3edc2fb81e6c4b37f8a6e8b74f51c24a72a85b",
+        "capturadoEl": "2026-11-15T13:25:07.714703Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:3892",
+        "programa_id": "fundae:oferta:programa:IFCD82",
+        "tipo": "edicion"
+      },
+      "titulo": "JAVA SCRIPT",
+      "codigo": "IFCD82",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=IFCD82",
+        "sha256": "fea47dd195d17d29ee0f3ca9d35e550bd37b00e7206c1909c457c05a712480de",
+        "capturadoEl": "2026-11-15T13:25:21.377785Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:3935",
+        "programa_id": "fundae:oferta:programa:ADGD0003",
+        "tipo": "edicion"
+      },
+      "titulo": "DIRIGIR EQUIPOS DE TRABAJO EN ENTORNOS VIRTUALES",
+      "codigo": "ADGD0003",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=ADGD0003",
+        "sha256": "0b02bba06045f6e09b287329a08d91a84b8b5c7d7566c0247723ebb8e63904e2",
+        "capturadoEl": "2026-11-15T13:18:02.910494Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:3937",
+        "programa_id": "fundae:oferta:programa:ADGG057PO",
+        "tipo": "edicion"
+      },
+      "titulo": "OFIMÁTICA: APLICACIONES INFORMÁTICAS DE GESTIÓN",
+      "codigo": "ADGG057PO",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=ADGG057PO",
+        "sha256": "b74f680cc900d4af7e59e291e29bdb9e2b85cb3af6f37fa22feb24d5d1a01ce7",
+        "capturadoEl": "2026-11-15T13:20:36.594452Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:3980",
+        "programa_id": "fundae:oferta:programa:ADGG020PO",
+        "tipo": "edicion"
+      },
+      "titulo": "EXCEL AVANZADO",
+      "codigo": "ADGG020PO",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=ADGG020PO",
+        "sha256": "b2ffa2bc81036340e653f10a33e9c9f3c89b126e8b1eb0409c4103d7d335e162",
+        "capturadoEl": "2026-11-15T13:19:29.383318Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:4028",
+        "programa_id": "fundae:oferta:programa:COMM18",
+        "tipo": "edicion"
+      },
+      "titulo": "INTELIGENCIA ARTIFICIAL (IA) APLICADA A MARKETING DIGITAL",
+      "codigo": "COMM18",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=COMM18",
+        "sha256": "e49cf3b7c944ca2a02877d31017d835d83649c62fe48bba16947585aecb0291d",
+        "capturadoEl": "2026-11-15T13:21:56.184954Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:4029",
+        "programa_id": "fundae:oferta:programa:IFCT0019",
+        "tipo": "edicion"
+      },
+      "titulo": "INTELIGENCIA ARTIFICIAL APLICADA A LA EMPRESA",
+      "codigo": "IFCT0019",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=IFCT0019",
+        "sha256": "7ac6dd3461106cf42727585afd8aa2507d811d5c015309406b79392fe4eb625d",
+        "capturadoEl": "2026-11-15T13:26:18.243968Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:4030",
+        "programa_id": "fundae:oferta:programa:IFCT095PO",
+        "tipo": "edicion"
+      },
+      "titulo": "PYTHON Y DJANGO",
+      "codigo": "IFCT095PO",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=IFCT095PO",
+        "sha256": "93c69c164faebef8923cf52558bf789babf0cde32ab82b4bee516e93e49fe768",
+        "capturadoEl": "2026-11-15T13:13:36.943665Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:4056",
+        "programa_id": "fundae:oferta:programa:ADGG057PO",
+        "tipo": "edicion"
+      },
+      "titulo": "OFIMÁTICA: APLICACIONES INFORMÁTICAS DE GESTIÓN",
+      "codigo": "ADGG057PO",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=ADGG057PO",
+        "sha256": "b74f680cc900d4af7e59e291e29bdb9e2b85cb3af6f37fa22feb24d5d1a01ce7",
+        "capturadoEl": "2026-11-15T13:20:36.594452Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:4057",
+        "programa_id": "fundae:oferta:programa:ARGG014PO",
+        "tipo": "edicion"
+      },
+      "titulo": "PHOTOSHOP BÁSICO",
+      "codigo": "ARGG014PO",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=ARGG014PO",
+        "sha256": "a711a1129a7745c2e56c077f77b821c815f34f0159b020dfedece742f567d7e3",
+        "capturadoEl": "2026-11-15T13:21:28.877732Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:4063",
+        "programa_id": "fundae:oferta:programa:ADGG021PO",
+        "tipo": "edicion"
+      },
+      "titulo": "FUNDAMENTOS EXCEL",
+      "codigo": "ADGG021PO",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=ADGG021PO",
+        "sha256": "d21cf70b91ee9eb2c8ed26827fb492dc9c6603f35e9fa97d7dd0338a76d030e6",
+        "capturadoEl": "2026-11-15T13:19:49.932215Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:4065",
+        "programa_id": "fundae:oferta:programa:IFCT0023",
+        "tipo": "edicion"
+      },
+      "titulo": "CIBERSEGURIDAD",
+      "codigo": "IFCT0023",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=IFCT0023",
+        "sha256": "3cc85cbca74c2a454c438e8fb31033667f9c311a8da75c7e681cc4ecd592cb27",
+        "capturadoEl": "2026-11-15T13:27:01.507560Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:4067",
+        "programa_id": "fundae:oferta:programa:ADGG020PO",
+        "tipo": "edicion"
+      },
+      "titulo": "EXCEL AVANZADO",
+      "codigo": "ADGG020PO",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=ADGG020PO",
+        "sha256": "b2ffa2bc81036340e653f10a33e9c9f3c89b126e8b1eb0409c4103d7d335e162",
+        "capturadoEl": "2026-11-15T13:19:29.383318Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:4072",
+        "programa_id": "fundae:oferta:programa:FCOI09",
+        "tipo": "edicion"
+      },
+      "titulo": "INICIACIÓN A LA APLICACIÓN DE LAS NUEVAS TECNOLOGÍAS EN LAS EMPRESAS",
+      "codigo": "FCOI09",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=FCOI09",
+        "sha256": "0ea7c0c87866ea9a0dcf1c70e65171f251b9d2327b83198b780697021a0ab239",
+        "capturadoEl": "2026-11-15T13:22:53.073680Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:4077",
+        "programa_id": "fundae:oferta:programa:COMM33",
+        "tipo": "edicion"
+      },
+      "titulo": "PROGRAMA AVANZADO PARA EL DISEÑO Y DIRECCIÓN DE PRODUCTO DIGITAL ",
+      "codigo": "COMM33",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=COMM33",
+        "sha256": "c0a1a86360cf36fe8831a55b831604e6eb3301eea41c6fb961c121ac7984902a",
+        "capturadoEl": "2026-11-15T13:22:07.659042Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:4079",
+        "programa_id": "fundae:oferta:programa:ADGD350PO",
+        "tipo": "edicion"
+      },
+      "titulo": "PROGRAMA AVANZADO TALENTO, CULTURA Y EMPRESA DIGITAL",
+      "codigo": "ADGD350PO",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=ADGD350PO",
+        "sha256": "baedc3fbcca515bf533ff9eb7eb7f64666b39f9d361a044247bcdb508413b0ab",
+        "capturadoEl": "2026-11-15T13:19:06.557147Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:4082",
+        "programa_id": "fundae:oferta:programa:ADGD056PO",
+        "tipo": "edicion"
+      },
+      "titulo": "CREACIÓN DE EMPRESAS ON-LINE",
+      "codigo": "ADGD056PO",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=ADGD056PO",
+        "sha256": "9c66e48956ea794950c2e9bb07b1cafc14913d68b8c75ea7f365b00e39f65d27",
+        "capturadoEl": "2026-11-15T13:18:46.061011Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:4083",
+        "programa_id": "fundae:oferta:programa:IFCT110",
+        "tipo": "edicion"
+      },
+      "titulo": "GESTIÓN DE HERRAMIENTAS AVANZADAS DE MICROSOFT 365",
+      "codigo": "IFCT110",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=IFCT110",
+        "sha256": "3e377e7986cb9a9a7de01b9f011ccbc8647b460105ddadd2b2fe756a3d5092e6",
+        "capturadoEl": "2026-11-15T13:14:17.811029Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:4086",
+        "programa_id": "fundae:oferta:programa:ADGD56",
+        "tipo": "edicion"
+      },
+      "titulo": "HABILIDADES PARA LA TRANSFORMACIÓN DIGITAL",
+      "codigo": "ADGD56",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=ADGD56",
+        "sha256": "57ca6dbdfaf5e10c4439ae6f5e629cc140509923a1fb3623498813678fda0936",
+        "capturadoEl": "2026-11-15T13:19:22.556326Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:4093",
+        "programa_id": "fundae:oferta:programa:IFCT161PO",
+        "tipo": "edicion"
+      },
+      "titulo": "ANÁLISIS DE DATOS Y PROGRAMACIÓN CON MICROSOFT POWER BI",
+      "codigo": "IFCT161PO",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=IFCT161PO",
+        "sha256": "827b48d8283f753156cacdd869c3483d8c345a6b763c93eec74012b8413b4f16",
+        "capturadoEl": "2026-11-15T13:16:29.611299Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:4109",
+        "programa_id": "fundae:oferta:programa:IFCD0099",
+        "tipo": "edicion"
+      },
+      "titulo": "INTELIGENCIA ARTIFICIAL GENERATIVA Y MEJORA DE LA PRODUCTIVIDAD",
+      "codigo": "IFCD0099",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=IFCD0099",
+        "sha256": "455707495e5bb3cccd9b80a472946f3b899c8d0be3d65025860ad546e91a2d6a",
+        "capturadoEl": "2026-11-15T13:23:22.723714Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:4124",
+        "programa_id": "fundae:oferta:programa:COMM0079",
+        "tipo": "edicion"
+      },
+      "titulo": "ANALÍTICA WEB PARA LA MEDICIÓN DE RESULTADOS DE MARKETING",
+      "codigo": "COMM0079",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=COMM0079",
+        "sha256": "cbb1669c0baf90d59d1cb3b68de7fa4d4278c9cb1b724dff398904d285998ecf",
+        "capturadoEl": "2026-11-15T13:21:40.193052Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:4126",
+        "programa_id": "fundae:oferta:programa:ADGD0003",
+        "tipo": "edicion"
+      },
+      "titulo": "DIRIGIR EQUIPOS DE TRABAJO EN ENTORNOS VIRTUALES",
+      "codigo": "ADGD0003",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=ADGD0003",
+        "sha256": "0b02bba06045f6e09b287329a08d91a84b8b5c7d7566c0247723ebb8e63904e2",
+        "capturadoEl": "2026-11-15T13:18:02.910494Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:4127",
+        "programa_id": "fundae:oferta:programa:IFCT0133",
+        "tipo": "edicion"
+      },
+      "titulo": "FUNDAMENTOS DE HERRAMIENTAS DIGITALES",
+      "codigo": "IFCT0133",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=IFCT0133",
+        "sha256": "aef187617f54394f94a2276067ef16d324860aaca1ef2f2d9f9fda50a9732fcb",
+        "capturadoEl": "2026-11-15T13:11:41.037943Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:4128",
+        "programa_id": "fundae:oferta:programa:IFCM0012",
+        "tipo": "edicion"
+      },
+      "titulo": "GOOGLE ADS",
+      "codigo": "IFCM0012",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=IFCM0012",
+        "sha256": "031aced60c263960dea7d78735826b92d1b6ef6f4ead655c5276f4be6c513111",
+        "capturadoEl": "2026-11-15T13:25:57.764512Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:4131",
+        "programa_id": "fundae:oferta:programa:IFCT0019",
+        "tipo": "edicion"
+      },
+      "titulo": "INTELIGENCIA ARTIFICIAL APLICADA A LA EMPRESA",
+      "codigo": "IFCT0019",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=IFCT0019",
+        "sha256": "7ac6dd3461106cf42727585afd8aa2507d811d5c015309406b79392fe4eb625d",
+        "capturadoEl": "2026-11-15T13:26:18.243968Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:4179",
+        "programa_id": "fundae:oferta:programa:IFCD0099",
+        "tipo": "edicion"
+      },
+      "titulo": "INTELIGENCIA ARTIFICIAL GENERATIVA Y MEJORA DE LA PRODUCTIVIDAD",
+      "codigo": "IFCD0099",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=IFCD0099",
+        "sha256": "455707495e5bb3cccd9b80a472946f3b899c8d0be3d65025860ad546e91a2d6a",
+        "capturadoEl": "2026-11-15T13:23:22.723714Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:4180",
+        "programa_id": "fundae:oferta:programa:IFCT0138",
+        "tipo": "edicion"
+      },
+      "titulo": "INTRODUCCIÓN AL BIG DATA E INTELIGENCIA ARTIFICIAL",
+      "codigo": "IFCT0138",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=IFCT0138",
+        "sha256": "49ac09828bb9ac9f3314c9473231be3718ced57feeef51efa2c52caa413a6b53",
+        "capturadoEl": "2026-11-15T13:11:54.599177Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:4200",
+        "programa_id": "fundae:oferta:programa:IFCD011PO",
+        "tipo": "edicion"
+      },
+      "titulo": "DESARROLLO DE PAGINAS WEB CSS Y JOOMLA",
+      "codigo": "IFCD011PO",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=IFCD011PO",
+        "sha256": "2e303e711b17c2e7a932834e9d6f55f0c8ee261e448849004ed4ee42c2b250fe",
+        "capturadoEl": "2026-11-15T13:23:43.224917Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:4210",
+        "programa_id": "fundae:oferta:programa:IFCD77",
+        "tipo": "edicion"
+      },
+      "titulo": "DESARROLLO DE APLICACIONES WEB CON ANGULAR +",
+      "codigo": "IFCD77",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=IFCD77",
+        "sha256": "68d6daf34ea3541c92782c31f0807d68401f4bd6072875cd652abc38d08cc94f",
+        "capturadoEl": "2026-11-15T13:25:14.572731Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:4213",
+        "programa_id": "fundae:oferta:programa:IFCD0122",
+        "tipo": "edicion"
+      },
+      "titulo": "INTRODUCCIÓN A ANGULAR",
+      "codigo": "IFCD0122",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=IFCD0122",
+        "sha256": "0dd97b7295599130ca202745511456a4c6a0330661ba948148dc5ff96dc05904",
+        "capturadoEl": "2026-11-15T13:23:52.309556Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:4219",
+        "programa_id": "fundae:oferta:programa:IFCT0085",
+        "tipo": "edicion"
+      },
+      "titulo": "PROTECCIÓN DE EQUIPOS EN LA RED",
+      "codigo": "IFCT0085",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=IFCT0085",
+        "sha256": "32b91ff39b5bbc44b7a212edd6aa7f6d88c143d05d78e2d16ac85c944b4c9364",
+        "capturadoEl": "2026-11-15T13:11:27.306939Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:4261",
+        "programa_id": "fundae:oferta:programa:IFCT0023",
+        "tipo": "edicion"
+      },
+      "titulo": "CIBERSEGURIDAD",
+      "codigo": "IFCT0023",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=IFCT0023",
+        "sha256": "3cc85cbca74c2a454c438e8fb31033667f9c311a8da75c7e681cc4ecd592cb27",
+        "capturadoEl": "2026-11-15T13:27:01.507560Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:4291",
+        "programa_id": "fundae:oferta:programa:IFCT102",
+        "tipo": "edicion"
+      },
+      "titulo": "CIBERSEGURIDAD EN EL TELETRABAJO",
+      "codigo": "IFCT102",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=IFCT102",
+        "sha256": "8207fe1b89f4a1f8d011346aafff657abbe593995a9d69b8a63eb7594936c603",
+        "capturadoEl": "2026-11-15T13:13:59.655524Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:4292",
+        "programa_id": "fundae:oferta:programa:ADGD0003",
+        "tipo": "edicion"
+      },
+      "titulo": "DIRIGIR EQUIPOS DE TRABAJO EN ENTORNOS VIRTUALES",
+      "codigo": "ADGD0003",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=ADGD0003",
+        "sha256": "0b02bba06045f6e09b287329a08d91a84b8b5c7d7566c0247723ebb8e63904e2",
+        "capturadoEl": "2026-11-15T13:18:02.910494Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:4296",
+        "programa_id": "fundae:oferta:programa:CTRD0021",
+        "tipo": "edicion"
+      },
+      "titulo": "BÚSQUEDA DE INFORMACIÓN Y NAVEGACIÓN POR INTERNET - ACCESIBLE TRIPLE- A",
+      "codigo": "CTRD0021",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=CTRD0021",
+        "sha256": "f468f183dbff38b9c65387392ad921b3bc2d1ce701f42179fc453c63f3246ac5",
+        "capturadoEl": "2026-11-15T13:22:16.717201Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:4308",
+        "programa_id": "fundae:oferta:programa:FCOI02",
+        "tipo": "edicion"
+      },
+      "titulo": "ALFABETIZACIÓN INFORMÁTICA: INFORMÁTICA E INTERNET",
+      "codigo": "FCOI02",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=FCOI02",
+        "sha256": "360add4ac830005be90ecd58ebc4f3b2c5735db201dfb7b249bc3e87bc0e7f91",
+        "capturadoEl": "2026-11-15T13:22:23.537681Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:4352",
+        "programa_id": "fundae:oferta:programa:ADGD0003",
+        "tipo": "edicion"
+      },
+      "titulo": "DIRIGIR EQUIPOS DE TRABAJO EN ENTORNOS VIRTUALES",
+      "codigo": "ADGD0003",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=ADGD0003",
+        "sha256": "0b02bba06045f6e09b287329a08d91a84b8b5c7d7566c0247723ebb8e63904e2",
+        "capturadoEl": "2026-11-15T13:18:02.910494Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:4370",
+        "programa_id": "fundae:oferta:programa:IFCT117",
+        "tipo": "edicion"
+      },
+      "titulo": "INTRODUCCIÓN A LA INTELIGENCIA ARTIFICIAL",
+      "codigo": "IFCT117",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=IFCT117",
+        "sha256": "fe2d78243cd630eacc4a778e43235c6935d1c7e2e3d339b2196082dcd843afd3",
+        "capturadoEl": "2026-11-15T13:14:58.698346Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:4372",
+        "programa_id": "fundae:oferta:programa:COMM0079",
+        "tipo": "edicion"
+      },
+      "titulo": "ANALÍTICA WEB PARA LA MEDICIÓN DE RESULTADOS DE MARKETING",
+      "codigo": "COMM0079",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=COMM0079",
+        "sha256": "cbb1669c0baf90d59d1cb3b68de7fa4d4278c9cb1b724dff398904d285998ecf",
+        "capturadoEl": "2026-11-15T13:21:40.193052Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:4375",
+        "programa_id": "fundae:oferta:programa:IFCT117",
+        "tipo": "edicion"
+      },
+      "titulo": "INTRODUCCIÓN A LA INTELIGENCIA ARTIFICIAL",
+      "codigo": "IFCT117",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=IFCT117",
+        "sha256": "fe2d78243cd630eacc4a778e43235c6935d1c7e2e3d339b2196082dcd843afd3",
+        "capturadoEl": "2026-11-15T13:14:58.698346Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:4385",
+        "programa_id": "fundae:oferta:programa:IFCT0049",
+        "tipo": "edicion"
+      },
+      "titulo": "CHATGPT E INTELIGENCIA ARTIFICAL",
+      "codigo": "IFCT0049",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=IFCT0049",
+        "sha256": "829de8adb745762238a31912cd36a9a84457f5a97c7df67b2824ce94171a1f71",
+        "capturadoEl": "2026-11-15T13:10:39.461090Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:4387",
+        "programa_id": "fundae:oferta:programa:IFCT45",
+        "tipo": "edicion"
+      },
+      "titulo": "COMPETENCIAS DIGITALES BÁSICAS",
+      "codigo": "IFCT45",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=IFCT45",
+        "sha256": "525d8dd1c05d58bc3eb8e3df77f81c268b3eefaa5de70709f037cccf8f43ab95",
+        "capturadoEl": "2026-11-15T13:16:52.501191Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:4388",
+        "programa_id": "fundae:oferta:programa:IFCT118",
+        "tipo": "edicion"
+      },
+      "titulo": "SOCIAL MEDIA, REDES SOCIALES Y COMUNITY MANAGEMENT",
+      "codigo": "IFCT118",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=IFCT118",
+        "sha256": "754b85c415fe94258e31535f48fca71e23ed6f5e28cc5d0159d2d6f8004ee6d2",
+        "capturadoEl": "2026-11-15T13:15:14.633210Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:4389",
+        "programa_id": "fundae:oferta:programa:IFCT117",
+        "tipo": "edicion"
+      },
+      "titulo": "INTRODUCCIÓN A LA INTELIGENCIA ARTIFICIAL",
+      "codigo": "IFCT117",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=IFCT117",
+        "sha256": "fe2d78243cd630eacc4a778e43235c6935d1c7e2e3d339b2196082dcd843afd3",
+        "capturadoEl": "2026-11-15T13:14:58.698346Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:4390",
+        "programa_id": "fundae:oferta:programa:IFCT0141",
+        "tipo": "edicion"
+      },
+      "titulo": "INTRODUCCIÓN A LA INTELIGENCIA ARTIFICIAL Y LOS ALGORITMOS",
+      "codigo": "IFCT0141",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=IFCT0141",
+        "sha256": "ea0f223da8c33545f7fbf6d7f803002300a04c6d3da0d8aa8a898cda53f39782",
+        "capturadoEl": "2026-11-15T13:12:37.793462Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:4391",
+        "programa_id": "fundae:oferta:programa:IFCT0049",
+        "tipo": "edicion"
+      },
+      "titulo": "CHATGPT E INTELIGENCIA ARTIFICAL",
+      "codigo": "IFCT0049",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=IFCT0049",
+        "sha256": "829de8adb745762238a31912cd36a9a84457f5a97c7df67b2824ce94171a1f71",
+        "capturadoEl": "2026-11-15T13:10:39.461090Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:4392",
+        "programa_id": "fundae:oferta:programa:IFCT0021",
+        "tipo": "edicion"
+      },
+      "titulo": "POSICIONAMIENTO WEB Y MARKETING DIGITAL EN BUSCADORES",
+      "codigo": "IFCT0021",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=IFCT0021",
+        "sha256": "306639ff746b801f5e4685fdc5375053baa08cb737a7aa826d102972638a82fa",
+        "capturadoEl": "2026-11-15T13:26:34.230631Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:4411",
+        "programa_id": "fundae:oferta:programa:IFCT155",
+        "tipo": "edicion"
+      },
+      "titulo": "BLUE TEAM. SEGURIDAD DEFENSIVA",
+      "codigo": "IFCT155",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=IFCT155",
+        "sha256": "bef25cce1b3eb20c0e7563ccefa0a9888d659cbe50e7e7cd995060c7e144e6a5",
+        "capturadoEl": "2026-11-15T13:16:22.749203Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:4427",
+        "programa_id": "fundae:oferta:programa:FCOI02",
+        "tipo": "edicion"
+      },
+      "titulo": "ALFABETIZACIÓN INFORMÁTICA: INFORMÁTICA E INTERNET",
+      "codigo": "FCOI02",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=FCOI02",
+        "sha256": "360add4ac830005be90ecd58ebc4f3b2c5735db201dfb7b249bc3e87bc0e7f91",
+        "capturadoEl": "2026-11-15T13:22:23.537681Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:4436",
+        "programa_id": "fundae:oferta:programa:IFCD0038",
+        "tipo": "edicion"
+      },
+      "titulo": "DISEÑO DE PÁGINAS WEBS PARA HOSTELERIA",
+      "codigo": "IFCD0038",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=IFCD0038",
+        "sha256": "f812b9da48ee63fb9c0bda97fbf98e327c45c1df405e86b5a1e4f2bcc55d4cdc",
+        "capturadoEl": "2026-11-15T13:23:11.346688Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:4448",
+        "programa_id": "fundae:oferta:programa:IFCT0019",
+        "tipo": "edicion"
+      },
+      "titulo": "INTELIGENCIA ARTIFICIAL APLICADA A LA EMPRESA",
+      "codigo": "IFCT0019",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=IFCT0019",
+        "sha256": "7ac6dd3461106cf42727585afd8aa2507d811d5c015309406b79392fe4eb625d",
+        "capturadoEl": "2026-11-15T13:26:18.243968Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:4449",
+        "programa_id": "fundae:oferta:programa:IFCT0141",
+        "tipo": "edicion"
+      },
+      "titulo": "INTRODUCCIÓN A LA INTELIGENCIA ARTIFICIAL Y LOS ALGORITMOS",
+      "codigo": "IFCT0141",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=IFCT0141",
+        "sha256": "ea0f223da8c33545f7fbf6d7f803002300a04c6d3da0d8aa8a898cda53f39782",
+        "capturadoEl": "2026-11-15T13:12:37.793462Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:4527",
+        "programa_id": "fundae:oferta:programa:FCOI02",
+        "tipo": "edicion"
+      },
+      "titulo": "ALFABETIZACIÓN INFORMÁTICA: INFORMÁTICA E INTERNET",
+      "codigo": "FCOI02",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=FCOI02",
+        "sha256": "360add4ac830005be90ecd58ebc4f3b2c5735db201dfb7b249bc3e87bc0e7f91",
+        "capturadoEl": "2026-11-15T13:22:23.537681Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:4541",
+        "programa_id": "fundae:oferta:programa:IFCT38",
+        "tipo": "edicion"
+      },
+      "titulo": "COMMUNITY MANAGER, HERRAMIENTAS, ANALÍTICA E INFORMES",
+      "codigo": "IFCT38",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=IFCT38",
+        "sha256": "1813bd8e3014fb281b7b38f919548328a8de5aecd6a78a25187d8ad42c1b12e6",
+        "capturadoEl": "2026-11-15T13:16:45.701084Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:4543",
+        "programa_id": "fundae:oferta:programa:ADGD0003",
+        "tipo": "edicion"
+      },
+      "titulo": "DIRIGIR EQUIPOS DE TRABAJO EN ENTORNOS VIRTUALES",
+      "codigo": "ADGD0003",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=ADGD0003",
+        "sha256": "0b02bba06045f6e09b287329a08d91a84b8b5c7d7566c0247723ebb8e63904e2",
+        "capturadoEl": "2026-11-15T13:18:02.910494Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:4576",
+        "programa_id": "fundae:oferta:programa:COMM18",
+        "tipo": "edicion"
+      },
+      "titulo": "INTELIGENCIA ARTIFICIAL (IA) APLICADA A MARKETING DIGITAL",
+      "codigo": "COMM18",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=COMM18",
+        "sha256": "e49cf3b7c944ca2a02877d31017d835d83649c62fe48bba16947585aecb0291d",
+        "capturadoEl": "2026-11-15T13:21:56.184954Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:4593",
+        "programa_id": "fundae:oferta:programa:IFCT0024",
+        "tipo": "edicion"
+      },
+      "titulo": "CIBERSEGURIDAD PARA USUARIOS",
+      "codigo": "IFCT0024",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=IFCT0024",
+        "sha256": "91c18162a98abced54fa4f854dac0f1d4e1283a428d17f9f437fea8474eb3d63",
+        "capturadoEl": "2026-11-18T09:21:10.480883Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:4598",
+        "programa_id": "fundae:oferta:programa:IFCT0023",
+        "tipo": "edicion"
+      },
+      "titulo": "CIBERSEGURIDAD",
+      "codigo": "IFCT0023",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=IFCT0023",
+        "sha256": "f5c1bea8ce2f6645eb4a2d1d21ad616166275da9c4c040ac7523db79ba1979bc",
+        "capturadoEl": "2026-11-18T09:21:03.596907Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:4600",
+        "programa_id": "fundae:oferta:programa:IFCT0049",
+        "tipo": "edicion"
+      },
+      "titulo": "CHATGPT E INTELIGENCIA ARTIFICAL",
+      "codigo": "IFCT0049",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=IFCT0049",
+        "sha256": "7d50f1a32c2c1b118512ae1d733de62c7e5fe359b94edfcbf5815582007872b5",
+        "capturadoEl": "2026-11-18T09:21:17.510466Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:462",
+        "programa_id": "fundae:oferta:programa:SSCE0043",
+        "tipo": "edicion"
+      },
+      "titulo": "INSTRUMENTOS Y RECURSOS PARA FORMADORES",
+      "codigo": "SSCE0043",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=SSCE0043",
+        "sha256": "ebfb5a9c38c06861e59f92a643e0f18b5c0403443ea57255e5cc71a384ed867e",
+        "capturadoEl": "2026-11-15T13:17:56.124355Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:532",
+        "programa_id": "fundae:oferta:programa:ADGG21",
+        "tipo": "edicion"
+      },
+      "titulo": "HERRAMIENTAS COLABORATIVAS OFFICCE 365",
+      "codigo": "ADGG21",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=ADGG21",
+        "sha256": "0665072e80e92d293ccb510aaa237dcfb58d58eb2c810cf587664bfb5be236ed",
+        "capturadoEl": "2026-11-15T13:21:01.513912Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:539",
+        "programa_id": "fundae:oferta:programa:IFCD0099",
+        "tipo": "edicion"
+      },
+      "titulo": "INTELIGENCIA ARTIFICIAL GENERATIVA Y MEJORA DE LA PRODUCTIVIDAD",
+      "codigo": "IFCD0099",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=IFCD0099",
+        "sha256": "455707495e5bb3cccd9b80a472946f3b899c8d0be3d65025860ad546e91a2d6a",
+        "capturadoEl": "2026-11-15T13:23:22.723714Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:540",
+        "programa_id": "fundae:oferta:programa:IFCT116",
+        "tipo": "edicion"
+      },
+      "titulo": "GESTIÓN DE LA SEGURIDAD INFORMATICA EN LA EMPRESA",
+      "codigo": "IFCT116",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=IFCT116",
+        "sha256": "8fb456e51a5d49c7fdfbf6072785b5cea65180e4a34f3976242a819540f3576e",
+        "capturadoEl": "2026-11-15T13:14:51.884504Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:541",
+        "programa_id": "fundae:oferta:programa:IFCT118",
+        "tipo": "edicion"
+      },
+      "titulo": "SOCIAL MEDIA, REDES SOCIALES Y COMUNITY MANAGEMENT",
+      "codigo": "IFCT118",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=IFCT118",
+        "sha256": "754b85c415fe94258e31535f48fca71e23ed6f5e28cc5d0159d2d6f8004ee6d2",
+        "capturadoEl": "2026-11-15T13:15:14.633210Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:542",
+        "programa_id": "fundae:oferta:programa:IFCT121",
+        "tipo": "edicion"
+      },
+      "titulo": "CIBERSEGURIDAD. RIESGOS Y AMENAZAS EN LA RED",
+      "codigo": "IFCT121",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=IFCT121",
+        "sha256": "705daf6dfbaffde337c299d7f7feaa9d422962574158aab8d3c258c1abc4043d",
+        "capturadoEl": "2026-11-15T13:15:41.774792Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:543",
+        "programa_id": "fundae:oferta:programa:IFCT161PO",
+        "tipo": "edicion"
+      },
+      "titulo": "ANÁLISIS DE DATOS Y PROGRAMACIÓN CON MICROSOFT POWER BI",
+      "codigo": "IFCT161PO",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=IFCT161PO",
+        "sha256": "827b48d8283f753156cacdd869c3483d8c345a6b763c93eec74012b8413b4f16",
+        "capturadoEl": "2026-11-15T13:16:29.611299Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:639",
+        "programa_id": "fundae:oferta:programa:IFCM04",
+        "tipo": "edicion"
+      },
+      "titulo": "COMPETENCIAS DIGITALES",
+      "codigo": "IFCM04",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=IFCM04",
+        "sha256": "93e62f3fe9598b59280f6b32c9835cc472acb157c00d17f4657789c836580703",
+        "capturadoEl": "2026-11-15T13:26:11.413711Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:653",
+        "programa_id": "fundae:oferta:programa:IFCT0049",
+        "tipo": "edicion"
+      },
+      "titulo": "CHATGPT E INTELIGENCIA ARTIFICAL",
+      "codigo": "IFCT0049",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=IFCT0049",
+        "sha256": "829de8adb745762238a31912cd36a9a84457f5a97c7df67b2824ce94171a1f71",
+        "capturadoEl": "2026-11-15T13:10:39.461090Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:657",
+        "programa_id": "fundae:oferta:programa:IFCT101",
+        "tipo": "edicion"
+      },
+      "titulo": "BUSINESS INTELLIGENCE Y TRANSFORMACIÓN DIGITAL",
+      "codigo": "IFCT101",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=IFCT101",
+        "sha256": "f534bd7b5d0fa993ea5ad5b513684910c278e253b3caea1fc300439c6c61d257",
+        "capturadoEl": "2026-11-15T13:13:43.785561Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:698",
+        "programa_id": "fundae:oferta:programa:IFCT115",
+        "tipo": "edicion"
+      },
+      "titulo": "SEGURIDAD Y PRIVACIDAD DE LOS JÓVENES EN LA RED",
+      "codigo": "IFCT115",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=IFCT115",
+        "sha256": "af958e94df7c1404981b9d68998ca98bea17750c7687705b71db9f77a155d050",
+        "capturadoEl": "2026-11-15T13:14:38.269648Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:703",
+        "programa_id": "fundae:oferta:programa:ADGN29",
+        "tipo": "edicion"
+      },
+      "titulo": "INTELIGENCIA ARTIFICIAL Y SECTOR FINANCIERO",
+      "codigo": "ADGN29",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=ADGN29",
+        "sha256": "8c78a4004d98f79a65437351a84eb42a10ae4dc60788fbad6259d800de99db70",
+        "capturadoEl": "2026-11-15T13:21:17.504946Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:708",
+        "programa_id": "fundae:oferta:programa:IFCD88",
+        "tipo": "edicion"
+      },
+      "titulo": "GOOGLE ANALYTICS Y GOOGLE METATAGS",
+      "codigo": "IFCD88",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=IFCD88",
+        "sha256": "6de83313397934c6bc5fc69be7decfdd9006318a80e8b14a62566653b3ec9986",
+        "capturadoEl": "2026-11-15T13:25:28.253456Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:709",
+        "programa_id": "fundae:oferta:programa:IFCT0024",
+        "tipo": "edicion"
+      },
+      "titulo": "CIBERSEGURIDAD PARA USUARIOS",
+      "codigo": "IFCT0024",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=IFCT0024",
+        "sha256": "2f983e549a2db36cc19abb8ff3d2b1160f142d714c02dcc1b50e9e950e7cc102",
+        "capturadoEl": "2026-11-15T13:27:12.813740Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:710",
+        "programa_id": "fundae:oferta:programa:IFCT0138",
+        "tipo": "edicion"
+      },
+      "titulo": "INTRODUCCIÓN AL BIG DATA E INTELIGENCIA ARTIFICIAL",
+      "codigo": "IFCT0138",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=IFCT0138",
+        "sha256": "49ac09828bb9ac9f3314c9473231be3718ced57feeef51efa2c52caa413a6b53",
+        "capturadoEl": "2026-11-15T13:11:54.599177Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:711",
+        "programa_id": "fundae:oferta:programa:IFCT153",
+        "tipo": "edicion"
+      },
+      "titulo": "ANÁLISIS DE DATOS CON EXCEL: POWER QUERY, POWER PIVOT Y POWER BI",
+      "codigo": "IFCT153",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=IFCT153",
+        "sha256": "73126b8a823208eeccfef762e5c04b38c4cfe81c821bf43acd73c957ac1c4886",
+        "capturadoEl": "2026-11-15T13:15:59.973457Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    },
+    {
+      "unidad": {
+        "id": "fundae:edicion:794",
+        "programa_id": "fundae:oferta:programa:IFCT0138",
+        "tipo": "edicion"
+      },
+      "titulo": "INTRODUCCIÓN AL BIG DATA E INTELIGENCIA ARTIFICIAL",
+      "codigo": "IFCT0138",
+      "idioma": "es",
+      "evidencia": {
+        "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?idModalidad=2&codigoTitulacion=IFCT0138",
+        "sha256": "49ac09828bb9ac9f3314c9473231be3718ced57feeef51efa2c52caa413a6b53",
+        "capturadoEl": "2026-11-15T13:11:54.599177Z",
+        "localizador": "/curso/descripcionIdioma"
+      }
+    }
+  ]
+}

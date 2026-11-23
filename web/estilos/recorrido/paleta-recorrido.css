@@ -1,0 +1,63 @@
+/* Paleta del chat de Faro: papel, tinta negra y grises. Los informes conservan su escala de datos. */
+.rc-cuerpo {
+  --rc-fondo: #f4f3f0;
+  --rc-lateral: #eeedea;
+  --rc-superficie: #fff;
+  --rc-tinta: #111317;
+  --rc-tenue: #5b5d60;
+  --rc-linea: #d4d4d0;
+  --rc-linea-campo: #858582;
+  --rc-acento: #111317;
+  --rc-acento-fondo: #eae9e5;
+  --rc-boton: #111317;
+  --rc-sobre-boton: #fff;
+  --rc-marino: #111317;
+  --rc-sobre-marino: #f4f3f0;
+  --rc-sobre-marino-tenue: #b7b7b4;
+  --rc-fondo-chat: #f4f3f0;
+  --rc-burbuja-mia: #e4e3df;
+  --rc-avance: #deded9;
+  --rc-papel: #f4f3f0;
+  --rc-laton: #68645c;
+  --color-acento: #111317;
+}
+
+:root[data-tema="oscuro"] .rc-cuerpo {
+  --rc-fondo: #111317;
+  --rc-lateral: #1a1b1e;
+  --rc-superficie: #202124;
+  --rc-tinta: #f2f1ef;
+  --rc-tenue: #b4b4b0;
+  --rc-linea: #3a3b3d;
+  --rc-linea-campo: #838480;
+  --rc-acento: #f2f1ef;
+  --rc-acento-fondo: #303132;
+  --rc-boton: #f2f1ef;
+  --rc-sobre-boton: #111317;
+  --rc-fondo-chat: #17181b;
+  --rc-burbuja-mia: #303132;
+  --rc-papel: #111317;
+  --rc-laton: #beb9ac;
+  --color-acento: #f2f1ef;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-tema="claro"]):not([data-tema="oscuro"]) .rc-cuerpo {
+    --rc-fondo: #111317;
+    --rc-lateral: #1a1b1e;
+    --rc-superficie: #202124;
+    --rc-tinta: #f2f1ef;
+    --rc-tenue: #b4b4b0;
+    --rc-linea: #3a3b3d;
+    --rc-linea-campo: #838480;
+    --rc-acento: #f2f1ef;
+    --rc-acento-fondo: #303132;
+    --rc-boton: #f2f1ef;
+    --rc-sobre-boton: #111317;
+    --rc-fondo-chat: #17181b;
+    --rc-burbuja-mia: #303132;
+    --rc-papel: #111317;
+    --rc-laton: #beb9ac;
+    --color-acento: #f2f1ef;
+  }
+}

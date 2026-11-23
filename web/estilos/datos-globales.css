@@ -1,0 +1,1273 @@
+/* «Datos globales» (scripts/datos-globales/): las tres páginas del dossier. Lo común (portada, capítulos de método y
+   fuentes, cuadro, avisos y el enganche del globo) va arriba; el sistema de «Cataluña y países» y «Unión Europea»
+   (.dg-dossier--datos: portada mínima con su clave de colores, índice de preguntas, «Lo esencial», capítulos con raíl,
+   figuras delimitadas, lectura y ficha técnica), después. Los gráficos, en datos-globales-graficos.css. Usa los tokens
+   de Faro: el color de los datos sale de --dato-* (tokens.css) y ninguna regla escribe un color. Las clases llevan el
+   prefijo dg- para no chocar con las comunes. Nada se mueve: ni transiciones, ni animaciones, ni sombras. */
+
+.dg-dossier {
+  --dg-linea-suave: color-mix(in srgb, var(--color-linea) 55%, var(--color-panel));
+  font-size: 1.125rem;
+}
+
+/* El dossier usa todo el ancho de la pantalla, con márgenes laterales proporcionados. */
+.pagina.dg-dossier {
+  max-width: none;
+  padding-inline: clamp(24px, 4vw, 72px);
+}
+
+.dg-dossier p {
+  line-height: 1.65;
+}
+
+/* Portada */
+.dg-portada {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 420px);
+  gap: 64px;
+  align-items: end;
+  padding-bottom: 40px;
+  margin-bottom: 48px;
+  border-bottom: 3px solid var(--color-tinta);
+}
+
+.dg-portada h1 {
+  max-width: 20ch;
+}
+
+/* La portada de las tres páginas presenta únicamente el título y la entradilla, sin columna de edición. */
+.dg-portada--sola {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+/* La línea discreta al pie de «El mundo» que lleva a las fuentes y licencias, en la página de créditos. */
+.dg-pie-creditos {
+  margin: 48px 0 0;
+  padding-top: 16px;
+  border-top: 1px solid var(--color-linea);
+  color: var(--color-tenue);
+  font-size: 0.9375rem;
+}
+
+.dg-dossier .entradilla {
+  max-width: 60ch;
+  font-size: 1.25rem;
+  line-height: 1.6;
+}
+
+/* La cifra destacada de la ficha del globo («El mundo», scripts/globo/). */
+.dg-clave {
+  padding-top: 18px;
+  border-top: 3px solid var(--color-tinta);
+}
+
+.dg-clave--propia {
+  border-top-color: var(--color-acento);
+}
+
+.dg-clave p {
+  margin: 0;
+}
+
+.dg-clave-cifra {
+  font-size: clamp(2.6rem, 4.4vw, 3.6rem);
+  font-weight: 500;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  font-variant-numeric: tabular-nums;
+}
+
+.dg-clave--propia .dg-clave-cifra {
+  color: var(--color-acento);
+}
+
+.dg-dossier .dg-clave-texto {
+  margin-top: 12px;
+  font-size: 1.05rem;
+  line-height: 1.55;
+}
+
+/* Capítulos: el raíl con su número y su tema, y el texto */
+.dg-capitulo {
+  display: grid;
+  grid-template-columns: 150px minmax(0, 1fr);
+  gap: 32px;
+  padding: 48px 0 56px;
+  border-top: 1px solid var(--color-linea);
+  scroll-margin-top: 24px;
+}
+
+.dg-capitulo-rail p {
+  margin: 0;
+}
+
+.dg-capitulo-numero {
+  font-family: var(--fuente-marca);
+  font-size: 3.4rem;
+  font-weight: 300;
+  line-height: 1;
+  color: var(--color-acento);
+}
+
+.dg-dossier .dg-capitulo-tema {
+  margin-top: 10px;
+  color: var(--color-tenue);
+  font-size: 0.85rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.dg-capitulo h2 {
+  max-width: 26ch;
+  margin: 0 0 12px;
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  text-wrap: balance;
+}
+
+.dg-lateral-nota {
+  margin: 0;
+  color: var(--color-tenue);
+  font-size: 1rem;
+}
+
+/* Ficha técnica: solo el método, plegada y sin animación */
+.dg-ficha {
+  margin: 0 0 8px;
+  border-top: 1px solid var(--color-linea);
+  border-bottom: 1px solid var(--color-linea);
+}
+
+.dg-ficha summary {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  min-height: 52px;
+  font-size: 1rem;
+  font-weight: 600;
+  list-style: none;
+  cursor: pointer;
+}
+
+.dg-ficha summary::-webkit-details-marker {
+  display: none;
+}
+
+.dg-ficha summary::before {
+  width: 18px;
+  color: var(--color-tenue);
+  font-family: var(--fuente-mono);
+  font-size: 1.125rem;
+  font-weight: 500;
+  content: "+";
+}
+
+.dg-ficha[open] summary::before {
+  content: "−";
+}
+
+.dg-ficha dl {
+  max-width: 82ch;
+  margin: 4px 0 20px;
+}
+
+.dg-ficha dl div + div {
+  margin-top: 14px;
+}
+
+.dg-ficha dt {
+  color: var(--color-tenue);
+  font-family: var(--fuente-mono);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.dg-ficha dd {
+  margin: 4px 0 0;
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
+.dg-tipo {
+  color: var(--color-semaforo-bien);
+  font-weight: 500;
+}
+
+.dg-tipo--estimado {
+  color: var(--color-tenue);
+}
+
+/* Encuestas de opinión: se distinguen de las cifras medidas (color tenue y círculo hueco) */
+.dg-opinion {
+  color: var(--color-tenue);
+  font-size: 0.875rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+/* Tablas: la tabla gráfica año a año y el cuadro */
+.dg-tabla-marco {
+  overflow-x: auto;
+}
+
+.dg-tabla-marco:focus-visible {
+  outline: var(--foco);
+  outline-offset: 3px;
+}
+
+.dg-tabla {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.dg-tabla th,
+.dg-tabla td {
+  padding: 8px 10px;
+  text-align: right;
+  border-bottom: 1px solid var(--dg-linea-suave);
+}
+
+.dg-cuadro th,
+.dg-cuadro td {
+  padding: 14px 16px;
+}
+
+.dg-tabla-anual caption {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.dg-tabla-anual td {
+  min-width: 64px;
+  vertical-align: top;
+}
+
+.dg-ta-valor {
+  display: block;
+  font-weight: 500;
+}
+
+.dg-ta-barra {
+  display: block;
+  margin-top: 4px;
+}
+
+.dg-ta-sin {
+  color: var(--color-tenue);
+}
+
+.dg-ta-cat th,
+.dg-ta-cat td,
+.dg-cuadro-propia th,
+.dg-cuadro-propia td {
+  font-weight: 600;
+  background: var(--dato-cataluna-fondo);
+}
+
+.dg-ta-cat .dg-ta-valor,
+.dg-cuadro-propia td {
+  color: var(--dato-cataluna);
+}
+
+.dg-ta-ue th,
+.dg-ta-ue .dg-ta-valor,
+.dg-cuadro-ue th,
+.dg-cuadro-ue td {
+  color: var(--dato-ue);
+  font-weight: 600;
+}
+
+.dg-cuadro-ue th,
+.dg-cuadro-ue td {
+  border-top: 1px solid var(--color-linea);
+}
+
+.dg-tabla th:first-child {
+  text-align: left;
+}
+
+.dg-tabla thead th {
+  color: var(--color-tenue);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  vertical-align: bottom;
+  border-bottom: 1px solid var(--color-linea);
+}
+
+.dg-tabla tbody th {
+  font-weight: 400;
+}
+
+.dg-tabla-anual tbody th {
+  white-space: nowrap;
+}
+
+/* Cuadro resumen */
+.dg-cuadro-marco {
+  padding: 8px 24px 4px;
+  background: var(--color-panel);
+  border: 1px solid var(--color-linea);
+}
+
+.dg-cuadro {
+  min-width: 600px;
+  font-size: 1rem;
+}
+
+.dg-cuadro caption {
+  padding: 12px 0;
+  font-size: 1.05rem;
+  font-weight: 500;
+  text-align: left;
+}
+
+.dg-cuadro-detalle {
+  display: block;
+  margin-top: 4px;
+  color: var(--color-tenue);
+  font-size: 0.8rem;
+  font-weight: 400;
+}
+
+.dg-cuadro td {
+  font-size: 1.15rem;
+}
+
+.dg-cuadro .dg-sin {
+  color: var(--color-tenue);
+}
+
+.dg-dossier .dg-cuadro-nota {
+  margin: 12px 0 0;
+  color: var(--color-tenue);
+  font-size: 0.9rem;
+}
+
+/* Método y fuentes */
+.dg-dos-columnas {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(260px, 1fr);
+  gap: 56px;
+  align-items: start;
+}
+
+.dg-no-dicen {
+  max-width: 70ch;
+  padding: 18px 20px;
+  background: var(--color-panel);
+  border-left: 3px solid var(--color-tinta);
+}
+
+.dg-dossier .dg-no-dicen p {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.55;
+}
+
+.dg-dossier .dg-no-dicen .dg-diferencia-titulo {
+  margin-bottom: 6px;
+  color: var(--color-tenue);
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.dg-dos-columnas .dg-no-dicen {
+  margin-top: 64px;
+}
+
+.dg-reglas {
+  max-width: 70ch;
+  margin: 0 0 32px;
+  padding-left: 1.4em;
+}
+
+.dg-reglas li {
+  margin-bottom: 14px;
+  line-height: 1.6;
+}
+
+.dg-reglas strong {
+  font-weight: 600;
+}
+
+.dg-fuentes {
+  max-width: 80ch;
+  margin: 0 0 20px;
+  padding-left: 1.4em;
+}
+
+.dg-fuentes li {
+  margin-bottom: 10px;
+  font-size: 1rem;
+  line-height: 1.55;
+}
+
+.dg-fuentes cite {
+  font-style: italic;
+}
+
+/* Estado de la página, aviso de muestra, nota sin JavaScript y punto de enganche del globo. */
+.dg-aviso {
+  display: inline-block;
+  margin: 28px 0 0;
+  padding: 6px 12px;
+  color: var(--color-aviso-tinta);
+  background: var(--color-aviso-fondo);
+}
+
+/* Sin JavaScript (sin data-tema, que pone tema-inicial.js) solo se ve esta nota: las cifras las pinta el script. */
+:root[data-tema] .dg-sin-script {
+  display: none;
+}
+
+.dg-estado:empty {
+  display: none;
+}
+
+.dg-globo {
+  margin-bottom: 48px;
+}
+
+/* Sin cifra oficial: un recuadro discontinuo con el porqué, nunca una cifra estimada. */
+.dg-dossier .dg-falta {
+  margin: 0;
+  padding: 14px 18px;
+  color: var(--color-tenue);
+  font-style: italic;
+  background: none;
+  border: 1px dashed var(--color-linea);
+}
+
+@media (max-width: 1100px) {
+  /* Una sola columna: con dos, sus mínimos (280 px + 64 px y 260 px + 56 px) desbordan una pantalla de 360 px. */
+  .dg-portada,
+  .dg-dos-columnas {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+  }
+
+  .dg-dos-columnas .dg-no-dicen {
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 760px) {
+  .dg-capitulo {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 8px;
+  }
+
+  .dg-capitulo-rail {
+    display: flex;
+    gap: 16px;
+    align-items: baseline;
+  }
+
+  .dg-capitulo-numero {
+    font-size: 2.4rem;
+  }
+}
+
+/* ---------- «Cataluña y países» y «Unión Europea»: el sistema del dossier ---------- */
+
+/* Página: 1200 px de contenido como mucho, con 16 px de margen en el móvil y cifras tabulares en todo. */
+.pagina.dg-dossier--datos {
+  max-width: 1296px;
+  padding-inline: clamp(16px, 4vw, 48px);
+  font-variant-numeric: tabular-nums;
+}
+
+.dg-dossier--datos .dg-portada {
+  padding-bottom: 32px;
+  margin-bottom: 0;
+  border-bottom: 0;
+}
+
+.dg-dossier--datos .dg-portada h1 {
+  max-width: 18ch;
+  margin-top: 14px;
+}
+
+.dg-dossier--datos .entradilla {
+  max-width: 50ch;
+  font-size: clamp(1.125rem, 2vw, 1.3125rem);
+  line-height: 1.5;
+}
+
+/* La línea de prudencia, separada por una raya fina */
+.dg-dossier .dg-prudencia {
+  max-width: 70ch;
+  margin: 20px 0 0;
+  padding-top: 12px;
+  color: var(--color-tenue);
+  font-size: 0.9375rem;
+  border-top: 1px solid var(--color-linea);
+}
+
+.dg-prudencia strong {
+  color: var(--color-tinta);
+  font-weight: 600;
+}
+
+/* La clave de colores: una sola vez, arriba */
+.dg-clave-colores {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+  margin: 24px 0 0;
+  padding: 0;
+  color: var(--color-tenue);
+  font-size: 0.875rem;
+  list-style: none;
+}
+
+.dg-clave-colores li {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.dg-muestra {
+  flex: none;
+}
+
+.dg-muestra .m-cat {
+  fill: var(--dato-cataluna);
+}
+
+.dg-muestra .m-ue {
+  stroke: var(--dato-ue);
+  stroke-width: 2;
+  stroke-dasharray: 5 4;
+}
+
+.dg-muestra .m-ue-barra {
+  fill: var(--dato-ue);
+}
+
+.dg-muestra .m-gris {
+  fill: var(--dato-gris);
+}
+
+.dg-muestra .m-meta {
+  stroke: var(--color-tinta);
+  stroke-width: 2;
+}
+
+.dg-dossier .dg-clave-nota {
+  max-width: 70ch;
+  margin: 10px 0 0;
+  color: var(--color-tenue);
+  font-size: 0.875rem;
+}
+
+/* «Volver a las preguntas» */
+.dg-volver {
+  margin: 16px 0 0;
+}
+
+.dg-volver a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: var(--color-tenue);
+  font-size: 0.9375rem;
+  text-underline-offset: 3px;
+}
+
+.dg-volver a::before {
+  margin-right: 8px;
+  font-family: var(--fuente-mono);
+  content: "↑";
+}
+
+/* El índice de preguntas, sin cifras: dos columnas (una en el móvil), cada pregunta un enlace de 52 px */
+.dg-preguntas {
+  border-top: 2px solid var(--color-tinta);
+}
+
+.dg-preguntas h2,
+.dg-bloque-cabeza h2 {
+  margin: 0;
+  padding: 14px 0 4px;
+  font-family: var(--fuente-mono);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.dg-preguntas h2:focus {
+  outline: none;
+}
+
+.dg-preguntas h2:focus-visible {
+  outline: var(--foco);
+  outline-offset: 4px;
+}
+
+.dg-indice {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 32px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.dg-indice li {
+  border-bottom: 1px solid var(--color-linea);
+}
+
+.pagina .dg-indice a {
+  display: grid;
+  grid-template-columns: 34px minmax(0, 1fr);
+  gap: 12px;
+  align-items: baseline;
+  min-height: 52px;
+  padding: 14px 0;
+  color: var(--color-tinta);
+  text-decoration: none;
+}
+
+.pagina .dg-indice a:focus-visible {
+  outline: var(--foco);
+  outline-offset: 2px;
+}
+
+.dg-indice-numero {
+  color: var(--color-tenue);
+  font-family: var(--fuente-mono);
+  font-size: 0.8125rem;
+  font-weight: 500;
+}
+
+.dg-indice-pregunta {
+  font-size: 1.0625rem;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.dg-indice a:hover .dg-indice-pregunta {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* La cabecera de un bloque («Lo esencial»): su nombre y, a la derecha, el aviso que le toca */
+.dg-resumen {
+  padding: 56px 0 8px;
+}
+
+.dg-bloque-cabeza {
+  display: flex;
+  gap: 16px;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  border-top: 2px solid var(--color-tinta);
+}
+
+.dg-dossier .dg-bloque-cabeza p {
+  max-width: 64ch;
+  margin: 0;
+  color: var(--color-tenue);
+  font-size: 0.875rem;
+  text-align: right;
+}
+
+/* «Lo esencial»: cuatro cifras clave en un panel de cuatro columnas */
+.dg-esencial {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin: 0 0 16px;
+  padding: 0;
+  list-style: none;
+  background: var(--color-panel);
+  border: 1px solid var(--color-linea);
+}
+
+.dg-esencial-tarjeta {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 0;
+  padding: 22px 22px 20px;
+  border-left: 1px solid var(--color-linea);
+}
+
+.dg-esencial-tarjeta:first-child {
+  border-left: 0;
+}
+
+.dg-dossier .dg-esencial-tarjeta p {
+  margin: 0;
+}
+
+.dg-dossier .dg-esencial-tema {
+  color: var(--color-tenue);
+  font-family: var(--fuente-mono);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.dg-dossier .dg-esencial-cifra {
+  margin-top: 2px;
+  color: var(--dato-cataluna);
+  font-family: var(--fuente-marca);
+  font-size: clamp(2.5rem, 4.4vw, 3.25rem);
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.dg-esencial-tarjeta--ue .dg-esencial-cifra {
+  color: var(--dato-ue);
+}
+
+.dg-esencial-cifra small {
+  margin-left: 0.15em;
+  font-size: 0.5em;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+.dg-dossier .dg-esencial-significado {
+  min-height: 4.4em;
+  font-size: 1rem;
+  line-height: 1.45;
+}
+
+.dg-dossier .dg-esencial-comparacion {
+  color: var(--color-tenue);
+  font-size: 0.8125rem;
+  line-height: 1.4;
+}
+
+.dg-dossier .dg-esencial-pie {
+  margin-top: auto;
+  padding-top: 10px;
+  color: var(--color-tenue);
+  font-size: 0.8125rem;
+  line-height: 1.45;
+  border-top: 1px solid var(--dg-linea-suave);
+}
+
+/* El capítulo: un raíl de 180 px con el número y el tema, y el contenido a su derecha */
+.dg-dossier--datos .dg-capitulo {
+  grid-template-columns: 180px minmax(0, 1fr);
+  column-gap: 40px;
+  padding: 56px 0 8px;
+  margin-top: 16px;
+  scroll-margin-top: 16px;
+}
+
+.dg-dossier--datos .dg-capitulo-rail {
+  padding-top: 6px;
+}
+
+.dg-dossier--datos .dg-capitulo-numero {
+  margin-bottom: 10px;
+  color: var(--color-tenue);
+  font-size: 2.75rem;
+}
+
+.dg-dossier--datos .dg-capitulo-tema {
+  margin-top: 0;
+  font-family: var(--fuente-mono);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+}
+
+.dg-dossier .dg-pregunta {
+  margin: 0 0 8px;
+  color: var(--dato-cataluna);
+  font-size: 1.0625rem;
+  font-weight: 500;
+  line-height: 1.35;
+}
+
+.dg-dossier--ue .dg-pregunta {
+  color: var(--dato-ue);
+}
+
+.dg-dossier--datos .dg-capitulo h2 {
+  max-width: 24ch;
+  margin: 0 0 14px;
+  font-family: var(--fuente-marca);
+  font-size: clamp(1.625rem, 3.2vw, 2.375rem);
+  line-height: 1.12;
+  letter-spacing: -0.015em;
+}
+
+.dg-capitulo h2:focus {
+  outline: none;
+}
+
+.dg-capitulo h2:focus-visible {
+  outline: var(--foco);
+  outline-offset: 4px;
+}
+
+.dg-dossier .dg-entradilla {
+  max-width: 62ch;
+  margin: 0 0 28px;
+  color: var(--color-tenue);
+  font-size: 1.125rem;
+}
+
+/* La figura: un panel delimitado, con su título, su subtítulo, el gráfico y el pie */
+.dg-figura {
+  margin: 0 0 24px;
+  padding: 22px 24px 16px;
+  background: var(--color-panel);
+  border: 1px solid var(--color-linea);
+}
+
+.dg-figura-cabeza {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 16px;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.dg-dossier .dg-figura-titulo {
+  max-width: 60ch;
+  margin: 0;
+  font-size: 1.0625rem;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.dg-dossier .dg-figura-sub {
+  max-width: 72ch;
+  margin: 4px 0 0;
+  color: var(--color-tenue);
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.dg-figura-pie {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 24px;
+  justify-content: space-between;
+  margin-top: 12px;
+  padding-top: 10px;
+  color: var(--color-tenue);
+  font-size: 0.8125rem;
+  border-top: 1px solid var(--dg-linea-suave);
+}
+
+.dg-dossier .dg-figura-pie p {
+  max-width: 80ch;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.dg-paneles {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 32px;
+}
+
+.dg-dossier .dg-panel-titulo {
+  margin: 0 0 6px;
+  font-size: 0.9375rem;
+  font-weight: 600;
+}
+
+/* El interruptor de un gráfico: botones con estado, de 44 px */
+.dg-interruptor {
+  display: inline-flex;
+  padding: 2px;
+  background: var(--color-fondo);
+  border: 1px solid var(--color-linea);
+  border-radius: 6px;
+}
+
+.dg-interruptor button {
+  min-height: 44px;
+  padding: 0 14px;
+  color: var(--color-tenue);
+  font: 500 0.875rem / 1 var(--fuente-texto);
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.dg-interruptor button[aria-pressed="true"] {
+  color: var(--color-tinta);
+  background: var(--color-panel);
+  border-color: var(--color-linea);
+}
+
+.dg-interruptor button:focus-visible {
+  outline: var(--foco);
+  outline-offset: 2px;
+}
+
+/* La lectura: dos o tres frases en una banda fina, sin tarjetas */
+.dg-lectura {
+  display: grid;
+  grid-auto-columns: minmax(0, 1fr);
+  grid-auto-flow: column;
+  margin: 0 0 24px;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--color-linea);
+}
+
+.dg-lectura li {
+  padding: 14px 20px 14px 0;
+  color: var(--color-tenue);
+  font-size: 0.9375rem;
+  line-height: 1.45;
+}
+
+.dg-lectura li + li {
+  padding-left: 20px;
+  border-left: 1px solid var(--dg-linea-suave);
+}
+
+.dg-lectura strong {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--color-tinta);
+  font-family: var(--fuente-marca);
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+/* Tableta: «Lo esencial» en dos columnas y el raíl, una línea encima del titular */
+@media (max-width: 1080px) {
+  .dg-esencial {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .dg-esencial-tarjeta:nth-child(3) {
+    border-left: 0;
+  }
+
+  .dg-esencial-tarjeta:nth-child(n + 3) {
+    border-top: 1px solid var(--color-linea);
+  }
+
+  .dg-dossier--datos .dg-capitulo {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .dg-dossier--datos .dg-capitulo-rail {
+    display: flex;
+    gap: 14px;
+    align-items: baseline;
+    margin-bottom: 10px;
+  }
+
+  .dg-dossier--datos .dg-capitulo-numero {
+    margin: 0;
+    font-size: 2rem;
+  }
+}
+
+/* Móvil: una columna; la figura ocupa todo el ancho, sin rayas laterales */
+@media (max-width: 720px) {
+  .dg-indice,
+  .dg-esencial,
+  .dg-paneles {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .dg-esencial-tarjeta {
+    padding: 18px 16px;
+    border-top: 1px solid var(--color-linea);
+    border-left: 0;
+  }
+
+  .dg-esencial-tarjeta:first-child {
+    border-top: 0;
+  }
+
+  .dg-dossier .dg-esencial-significado {
+    min-height: 0;
+  }
+
+  .dg-bloque-cabeza {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .dg-dossier .dg-bloque-cabeza p {
+    text-align: left;
+  }
+
+  .dg-dossier--datos .dg-capitulo {
+    padding-top: 40px;
+    margin-top: 8px;
+  }
+
+  .dg-figura {
+    margin-inline: calc(-1 * clamp(16px, 4vw, 48px));
+    padding: 16px 14px 12px;
+    border-right: 0;
+    border-left: 0;
+  }
+
+  .dg-paneles {
+    gap: 28px;
+  }
+
+  .dg-lectura {
+    grid-auto-flow: row;
+  }
+
+  .dg-lectura li,
+  .dg-lectura li + li {
+    padding: 12px 0;
+    border-top: 1px solid var(--dg-linea-suave);
+    border-left: 0;
+  }
+
+  .dg-lectura li:first-child {
+    border-top: 0;
+  }
+
+  .dg-tabla-anual th,
+  .dg-tabla-anual td {
+    padding: 8px 6px;
+    font-size: 0.8125rem;
+  }
+
+  .dg-tabla-anual td {
+    min-width: 52px;
+  }
+
+  .dg-cuadro-marco {
+    padding-inline: 8px;
+  }
+}
+
+/* Metas para 2030 (página «Unión Europea»): una fila por meta, con su nombre, lo que falta y su barra */
+.dg-metas {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.dg-meta-fila {
+  padding: 16px 0 12px;
+  border-top: 1px solid var(--dg-linea-suave);
+}
+
+.dg-meta-fila:first-child {
+  padding-top: 4px;
+  border-top: 0;
+}
+
+.dg-meta-cabeza {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 16px;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.dg-dossier .dg-meta-nombre {
+  margin: 0;
+  font-weight: 500;
+}
+
+.dg-dossier .dg-meta-falta {
+  margin: 0;
+  color: var(--color-tenue);
+  font-family: var(--fuente-mono);
+  font-size: 0.875rem;
+}
+
+.dg-dossier .dg-meta-nota {
+  margin: 0;
+  color: var(--color-tenue);
+  font-size: 0.8125rem;
+}
+
+.dg-dossier--ue .dg-capitulo-numero {
+  color: var(--color-tenue);
+}
+
+/* La paginación de los capítulos: un capítulo por página, con los números del índice en una fila centrada, cada uno
+   con su zona táctil de 44 px; el actual, relleno de tinta, como en la Biblioteca (lecturas.css). Sin animaciones. */
+.dg-paginas {
+  margin: 32px 0 8px;
+  padding-top: 20px;
+  border-top: 1px solid var(--color-linea);
+}
+
+.dg-paginas-lista {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.dg-pagina {
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0 12px;
+  color: var(--color-tinta);
+  font: inherit;
+  font-size: 1rem;
+  font-variant-numeric: tabular-nums;
+  font-weight: 500;
+  cursor: pointer;
+  background: var(--color-panel);
+  border: 1px solid var(--color-linea);
+  border-radius: 7px;
+}
+
+.dg-pagina:hover,
+.dg-pagina:focus-visible {
+  border-color: var(--color-tinta);
+}
+
+.dg-pagina:focus-visible {
+  outline: var(--foco);
+  outline-offset: 2px;
+}
+
+.dg-pagina[aria-current="page"] {
+  color: var(--color-panel);
+  background: var(--color-tinta);
+  border-color: var(--color-tinta);
+}
+
+@media (forced-colors: active) {
+  .dg-pagina[aria-current="page"] {
+    forced-color-adjust: none;
+    color: HighlightText;
+    background: Highlight;
+  }
+}
+
+/* «Anterior» y «Siguiente» (scripts/pasos-de-pagina.js): la misma caja que los números, con un chevron de trazo de
+   adorno. Desactivados en los extremos. En el móvil queda solo la flecha; el nombre lo leen los lectores de pantalla. */
+.dg-paso {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0 14px;
+  color: var(--color-tinta);
+  font: inherit;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  background: var(--color-panel);
+  border: 1px solid var(--color-linea);
+  border-radius: 7px;
+}
+
+.dg-paso:hover:not(:disabled),
+.dg-paso:focus-visible {
+  border-color: var(--color-tinta);
+}
+
+.dg-paso:focus-visible {
+  outline: var(--foco);
+  outline-offset: 2px;
+}
+
+.dg-paso:disabled {
+  cursor: default;
+  opacity: 0.4;
+}
+
+.dg-paso svg {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: currentcolor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+@media (max-width: 560px) {
+  .dg-paginas-lista {
+    gap: 4px;
+  }
+
+  .dg-paso {
+    justify-content: center;
+    padding: 0;
+  }
+
+  .dg-paso-texto {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+}
+
+/* Método y Fuentes, plegados: un desplegable nativo cerrado por defecto, con su título (sin número: no son capítulos) y un
+   «+» / «−» a la derecha. Sin animación; 56 px de alto para pulsarlo y su foco a la vista. Abierto, el contenido va a
+   todo el ancho del dossier, en una o dos columnas que nunca pasan de él. */
+.dg-dossier--datos .dg-capitulo--plegable {
+  display: block;
+  padding: 0;
+  margin-top: 0;
+}
+
+.dg-capitulo--plegable + .dg-capitulo--plegable {
+  border-top: 1px solid var(--color-linea);
+}
+
+/* El resumen, el «+» / «−», el foco, el subrayado al pasar y el cuerpo base del desplegable son comunes y están en
+   contenidos.css (`.desplegable*`, con estas mismas clases `.dg-desplegable*`). Aquí, solo lo propio de Datos globales. */
+.dg-dossier--datos .dg-desplegable-resumen h2 {
+  max-width: none;
+  margin: 0;
+  font-family: var(--fuente-marca);
+  font-size: clamp(1.375rem, 2.4vw, 1.75rem);
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.dg-desplegable-cuerpo.dg-dos-columnas {
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+}
+
+.dg-desplegable-cuerpo .dg-no-dicen {
+  max-width: none;
+  margin-top: 0;
+}
+
+@media (max-width: 1100px) {
+  .dg-desplegable-cuerpo.dg-dos-columnas {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

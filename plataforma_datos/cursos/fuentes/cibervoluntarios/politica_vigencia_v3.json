@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "id": "faro:vigencia:cibervoluntarios",
+  "version": "3",
+  "fuente_id": "cibervoluntarios",
+  "responsable": "Equipo Faro",
+  "naturaleza": "politica-interna-operativa",
+  "criterios": {
+    "ttl_ficha_segundos": 86400,
+    "ttl_catalogo_segundos": null,
+    "requiere_catalogo": false,
+    "zona_fechas_dia": null,
+    "inicio_dia_inclusivo": null,
+    "fin_dia_inclusivo": null,
+    "plazo_tecnico": "revision_interna",
+    "regla_disponibilidad": "oferta-publicada-continua-1"
+  },
+  "justificacion": "El plazo técnico de 24 horas marca la próxima revisión interna de Faro y solo avisa en el panel: no retira la oferta, no cambia sus datos y no es un plazo del proveedor. Requiere material de autoformación identificado, declaración de formación gratuita, destinatarios y requisitos constatados, y selección/CTA por el componente público revisado. Disponible o HTTP200 por sí solos no acreditan oferta. El registro previo se declara separado; prácticas, certificado, plaza y admisión personal siguen desconocidos. Un fallo no renueva el último comprobado. Un material se retira solo cuando el censo público completo del proveedor lo declara borrado, o cuando no lo trae y el destino registrado del material responde que el curso no existe; esa observación afirma la retirada y una lectura posterior del material en un censo completo, sin borrar, la contradice. Las políticas anteriores se mantienen inmutables para su propia semántica.",
+  "revision_equipo_faro": {
+    "estado": "criterio-aprobado-sin-activacion",
+    "fecha": null,
+    "alcance": "Autoformación publicada con método estático revisado y retirada por el censo público completo del proveedor; excluye el destinatario familiar del ámbito profesional, sin inferir nivel Faro ni fechas de matrícula."
+  }
+}

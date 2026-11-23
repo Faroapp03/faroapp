@@ -1,0 +1,72 @@
+# Eurostat: indicadores de la UE-27
+
+Generado de `fuente.json`; editar el descriptor y regenerar.
+
+La Unión Europea en conjunto (UE-27), de Eurostat: lo que la Parte II de «Datos globales» cuenta de Europa.
+
+ID: `ue_eurostat` · tema: `ia_y_trabajo` · institución: Eurostat.
+Lector estático: `plataforma_datos.ia_y_trabajo.fuentes.ue_eurostat.lector`. Casa de datos: `ue-eurostat`.
+
+## Alcance
+
+- Empresas que usan IA (por tamaño, tecnología, uso, motivo y sector), personas que usan IA generativa (para qué, por edad, por estudios y por qué no la usan), capacidades digitales (niveles y áreas), especialistas en TIC (cuántos, su peso en el empleo y la parte de mujeres), empresas que los emplean, los buscan o no los encuentran, empresas que forman en TIC y pymes con intensidad digital al menos básica. Solo el agregado `EU27_2020`: los indicadores, sus códigos y sus nombres viven en `catalogo_ue.py`. Cada tabla se descarga filtrada a sus códigos; la etiqueta oficial de cada código se guarda al preparar y la validación se detiene si cambia; cada cifra conserva su marca («e», estimada; «b», ruptura de serie). Python estándar.
+
+## Recursos y condiciones de uso
+
+- `recurso-01` (url): Eurostat, isoc_eb_ai: UE-27 (EU27_2020), los códigos que usa la Parte II de «Datos globales», desde 2021
+  Ubicación: https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/isoc_eb_ai?format=JSON&lang=EN&geo=EU27_2020&nace_r2=C10-S951_X_K&size_emp=10-49&size_emp=50-249&size_emp=GE250&size_emp=GE10&unit=PC_ENT&indic_is=E_AI_TANY&indic_is=E_AI_TTM&indic_is=E_AI_TPVSG&indic_is=E_AI_TNLG&indic_is=E_AI_TSR&indic_is=E_AI_TPA&indic_is=E_AI_TML&indic_is=E_AI_TIR&indic_is=E_AI_TAR&indic_is=E_AI_PMS&indic_is=E_AI_PBAM&indic_is=E_AI_PFIN&indic_is=E_AI_PPP&indic_is=E_AI_PITS&indic_is=E_AI_PRDI&indic_is=E_AI_PLOG&indic_is=E_AI_EC&indic_is=E_AI_BLE&indic_is=E_AI_BLEG&indic_is=E_AI_BCDP&indic_is=E_AI_CC1SI_DA_ANY&sinceTimePeriod=2021. Licencia: Aviso de copyright de Eurostat (https://ec.europa.eu/eurostat/help/copyright-notice, consultado el 06/10/2026), que aplica la Decisión 2011/833/UE de la Comisión: reutilización autorizada, también comercial, citando la fuente; una versión filtrada se cita con el enlace del conjunto y la fecha de consulta.
+- `recurso-02` (url): Eurostat, isoc_eb_ain2: UE-27 (EU27_2020), los códigos que usa la Parte II de «Datos globales», desde 2021
+  Ubicación: https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/isoc_eb_ain2?format=JSON&lang=EN&geo=EU27_2020&indic_is=E_AI_TANY&nace_r2=J&nace_r2=F&size_emp=GE10&unit=PC_ENT&sinceTimePeriod=2021. Licencia: Aviso de copyright de Eurostat (https://ec.europa.eu/eurostat/help/copyright-notice, consultado el 06/10/2026), que aplica la Decisión 2011/833/UE de la Comisión: reutilización autorizada, también comercial, citando la fuente; una versión filtrada se cita con el enlace del conjunto y la fecha de consulta.
+- `recurso-03` (url): Eurostat, isoc_ai_iaiu: UE-27 (EU27_2020), los códigos que usa la Parte II de «Datos globales», desde 2021
+  Ubicación: https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/isoc_ai_iaiu?format=JSON&lang=EN&geo=EU27_2020&indic_is=I_IUAIPR&indic_is=I_IUAIFE&indic_is=I_IUAI&indic_is=I_IUAIWP&ind_type=IND_TOTAL&ind_type=F_Y16_74&ind_type=M_Y16_74&ind_type=Y16_24&ind_type=Y25_34&ind_type=Y35_44&ind_type=Y45_54&ind_type=Y55_64&ind_type=Y65_74&ind_type=SAL_SELF_FAM&ind_type=I0_2&ind_type=I3_4&ind_type=I5_8&unit=PC_IND&sinceTimePeriod=2021. Licencia: Aviso de copyright de Eurostat (https://ec.europa.eu/eurostat/help/copyright-notice, consultado el 06/10/2026), que aplica la Decisión 2011/833/UE de la Comisión: reutilización autorizada, también comercial, citando la fuente; una versión filtrada se cita con el enlace del conjunto y la fecha de consulta.
+- `recurso-04` (url): Eurostat, isoc_ai_iaiuxr: UE-27 (EU27_2020), los códigos que usa la Parte II de «Datos globales», desde 2021
+  Ubicación: https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/isoc_ai_iaiuxr?format=JSON&lang=EN&geo=EU27_2020&indic_is=I_IUAIX_NUNN&indic_is=I_IUAIX_NUUSE&indic_is=I_IUAIX_NUUNK&indic_is=I_IUAIX_NUSEC&ind_type=IND_TOTAL&unit=PC_IND_IUAIX&sinceTimePeriod=2021. Licencia: Aviso de copyright de Eurostat (https://ec.europa.eu/eurostat/help/copyright-notice, consultado el 06/10/2026), que aplica la Decisión 2011/833/UE de la Comisión: reutilización autorizada, también comercial, citando la fuente; una versión filtrada se cita con el enlace del conjunto y la fecha de consulta.
+- `recurso-05` (url): Eurostat, isoc_sk_dskl_i21: UE-27 (EU27_2020), los códigos que usa la Parte II de «Datos globales», desde 2021
+  Ubicación: https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/isoc_sk_dskl_i21?format=JSON&lang=EN&geo=EU27_2020&indic_is=I_DSK2_BAB&indic_is=I_DSK2_AB&indic_is=I_DSK2_B&indic_is=I_DSK2_LW&indic_is=I_DSK2_N&indic_is=I_DSK2_LM&indic_is=I_DSK2_X&indic_is=I_DSK2_NA&indic_is=I_DSK2_CC_BAB&indic_is=I_DSK2_IL_BAB&indic_is=I_DSK2_PS_BAB&indic_is=I_DSK2_SF_BAB&indic_is=I_DSK2_DCC_BAB&ind_type=IND_TOTAL&ind_type=F_Y16_74&ind_type=M_Y16_74&ind_type=Y16_24&ind_type=Y55_74&ind_type=ISCO0_5&ind_type=ISCO6_9&unit=PC_IND&sinceTimePeriod=2021. Licencia: Aviso de copyright de Eurostat (https://ec.europa.eu/eurostat/help/copyright-notice, consultado el 06/10/2026), que aplica la Decisión 2011/833/UE de la Comisión: reutilización autorizada, también comercial, citando la fuente; una versión filtrada se cita con el enlace del conjunto y la fecha de consulta.
+- `recurso-06` (url): Eurostat, isoc_sks_itspt: UE-27 (EU27_2020), los códigos que usa la Parte II de «Datos globales», desde 2021
+  Ubicación: https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/isoc_sks_itspt?format=JSON&lang=EN&geo=EU27_2020&unit=PC_EMP&unit=THS_PER&sinceTimePeriod=2021. Licencia: Aviso de copyright de Eurostat (https://ec.europa.eu/eurostat/help/copyright-notice, consultado el 06/10/2026), que aplica la Decisión 2011/833/UE de la Comisión: reutilización autorizada, también comercial, citando la fuente; una versión filtrada se cita con el enlace del conjunto y la fecha de consulta.
+- `recurso-07` (url): Eurostat, isoc_sks_itsps: UE-27 (EU27_2020), los códigos que usa la Parte II de «Datos globales», desde 2021
+  Ubicación: https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/isoc_sks_itsps?format=JSON&lang=EN&geo=EU27_2020&unit=PC&sex=F&sinceTimePeriod=2021. Licencia: Aviso de copyright de Eurostat (https://ec.europa.eu/eurostat/help/copyright-notice, consultado el 06/10/2026), que aplica la Decisión 2011/833/UE de la Comisión: reutilización autorizada, también comercial, citando la fuente; una versión filtrada se cita con el enlace del conjunto y la fecha de consulta.
+- `recurso-08` (url): Eurostat, isoc_ske_itspen2: UE-27 (EU27_2020), los códigos que usa la Parte II de «Datos globales», desde 2021
+  Ubicación: https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/isoc_ske_itspen2?format=JSON&lang=EN&geo=EU27_2020&nace_r2=C10-S951_X_K&size_emp=GE10&unit=PC_ENT&indic_is=E_ITSP2&sinceTimePeriod=2021. Licencia: Aviso de copyright de Eurostat (https://ec.europa.eu/eurostat/help/copyright-notice, consultado el 06/10/2026), que aplica la Decisión 2011/833/UE de la Comisión: reutilización autorizada, también comercial, citando la fuente; una versión filtrada se cita con el enlace del conjunto y la fecha de consulta.
+- `recurso-09` (url): Eurostat, isoc_ske_itrcrn2: UE-27 (EU27_2020), los códigos que usa la Parte II de «Datos globales», desde 2021
+  Ubicación: https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/isoc_ske_itrcrn2?format=JSON&lang=EN&geo=EU27_2020&nace_r2=C10-S951_X_K&size_emp=GE10&unit=PC_ENT&unit=PC_ENT_ITSPRCR2&indic_is=E_ITSPRCR2&indic_is=E_ITSPVAC2&indic_is=E_ITSPDLA&indic_is=E_ITSPDSAL&indic_is=E_ITSPDLET&indic_is=E_ITSPDLWE&sinceTimePeriod=2021. Licencia: Aviso de copyright de Eurostat (https://ec.europa.eu/eurostat/help/copyright-notice, consultado el 06/10/2026), que aplica la Decisión 2011/833/UE de la Comisión: reutilización autorizada, también comercial, citando la fuente; una versión filtrada se cita con el enlace del conjunto y la fecha de consulta.
+- `recurso-10` (url): Eurostat, isoc_ske_ittn2: UE-27 (EU27_2020), los códigos que usa la Parte II de «Datos globales», desde 2021
+  Ubicación: https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/isoc_ske_ittn2?format=JSON&lang=EN&geo=EU27_2020&nace_r2=C10-S951_X_K&size_emp=GE10&unit=PC_ENT&indic_is=E_ITT2&indic_is=E_ITSPT2&indic_is=E_ITUST2&sinceTimePeriod=2021. Licencia: Aviso de copyright de Eurostat (https://ec.europa.eu/eurostat/help/copyright-notice, consultado el 06/10/2026), que aplica la Decisión 2011/833/UE de la Comisión: reutilización autorizada, también comercial, citando la fuente; una versión filtrada se cita con el enlace del conjunto y la fecha de consulta.
+- `recurso-11` (url): Eurostat, isoc_e_dii: UE-27 (EU27_2020), los códigos que usa la Parte II de «Datos globales», desde 2021
+  Ubicación: https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/isoc_e_dii?format=JSON&lang=EN&geo=EU27_2020&indic_is=E_DI3_GELO&indic_is=E_DI4_GELO&size_emp=10-249&nace_r2=C10-S951_X_K&unit=PC_ENT&sinceTimePeriod=2021. Licencia: Aviso de copyright de Eurostat (https://ec.europa.eu/eurostat/help/copyright-notice, consultado el 06/10/2026), que aplica la Decisión 2011/833/UE de la Comisión: reutilización autorizada, también comercial, citando la fuente; una versión filtrada se cita con el enlace del conjunto y la fecha de consulta.
+
+La licencia del código está en `LICENSE`; no concede derechos sobre recursos externos.
+
+## Canales utilizados
+
+- `consulta` (remoto): API oficial de estadísticas Eurostat para tablas y filtros UE-27 explícitos. No descubre ni activa indicadores ajenos al contrato actual.
+  Recursos: recurso-01, recurso-02, recurso-03, recurso-04, recurso-05, recurso-06, recurso-07, recurso-08, recurso-09, recurso-10, recurso-11. Autenticación: El lector no configura credenciales de autenticación para estos recursos públicos; no acredita acceso a otros servicios.
+  - Cuotas y límites oficiales de servicio no acreditados por este descriptor; rigen los límites de transporte y validación del lector.
+  - Este descriptor no acredita la disponibilidad remota actual; una URL conservada no acredita consulta satisfactoria ni una tarea instalada.
+
+## Operación actual
+
+Política: `mensual`. Consulta red: sí.
+Frecuencia declarada: anual (encuestas TIC de Eurostat, UE-27). Aviso de renovación: no definido días.
+Originales: `ue-eurostat`.
+
+| Conjunto | Clase | Alcance | Operación | Intervalo de consulta (días UTC) |
+| --- | --- | --- | --- | --- |
+| ue_eurostat | cambiante | serie-abierta | descargar | 30 |
+
+El intervalo de consulta no es la frecuencia de publicación ni acredita una tarea instalada.
+Dependencias: ninguna declarada.
+Contratos y controles: lector.py:preparar, lector.py:validar, plataforma_datos/orquestacion/admision.py:exigir_admitido.
+
+Retirada: Se conserva la admisión del conjunto y sus guardas actuales. Un fallo o una ausencia de captura no se convierte en retirada de entidades ni en disponibilidad confirmada.
+
+Conservación: Originales, procedencias, preparados y validaciones conservan sus casas actuales en var/actualizacion. Esta ficha no habilita limpieza automática ni cambia fechas históricas, periodos, licencias o retención.
+
+## Reproducción
+
+```sh
+python -m plataforma_datos.ia_y_trabajo.fuentes.ue_eurostat.lector preparar
+python -m plataforma_datos.ia_y_trabajo.fuentes.ue_eurostat.lector validar
+python -m plataforma_datos.contratos.fuentes --fuente ue_eurostat --tema ia_y_trabajo --comprobar
+```

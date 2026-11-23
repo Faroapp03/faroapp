@@ -1,0 +1,289 @@
+/* Entrega final: dos portadas editoriales con lectura e impresión independientes. */
+.rc-cuerpo .rc-texto:has(> .rc-carpeta) {
+  width: min(100%, 640px);
+}
+
+.rc-cuerpo .rc-carpeta {
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.rc-cuerpo .rc-carpeta-titulo {
+  margin-bottom: 2px;
+  color: var(--rc-tenue);
+}
+
+.rc-cuerpo .rc-carpeta .rc-documento-entrega {
+  display: grid;
+  grid-template-columns: 112px minmax(0, 1fr);
+  grid-template-rows: 1fr auto;
+  align-items: start;
+  gap: 18px 24px;
+  min-width: 0;
+  margin: 0;
+  padding: 22px;
+  color: var(--rc-tinta);
+  background: var(--rc-superficie);
+  border: 1px solid var(--rc-linea);
+  border-radius: 16px;
+}
+
+.rc-documento-entrega .rc-doc-portada {
+  display: flex;
+  grid-row: 1 / -1;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+  min-height: 158px;
+  padding: 13px;
+  overflow: hidden;
+  color: var(--rc-tinta);
+  background: var(--rc-fondo);
+  border: 1px solid var(--rc-linea);
+  border-radius: 2px 8px 8px 2px;
+  box-shadow: 3px 3px 0 var(--rc-acento-fondo);
+}
+
+.rc-doc-portada .rc-doc-marca {
+  font-size: 0.625rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+}
+
+.rc-doc-portada .rc-doc-signo {
+  align-self: flex-end;
+  font-size: 3.5rem;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -0.08em;
+}
+
+.rc-doc-portada-plan .rc-doc-signo {
+  align-self: flex-start;
+  font-size: 4rem;
+  font-weight: 300;
+}
+
+.rc-doc-portada .rc-doc-edicion {
+  padding-top: 8px;
+  font-size: 0.625rem;
+  font-weight: 500;
+  line-height: 1.4;
+  border-top: 1px solid var(--rc-linea);
+}
+
+.rc-documento-entrega .rc-doc-cabeza {
+  display: block;
+  min-width: 0;
+  padding: 0;
+  background: none;
+  border-radius: 0;
+}
+
+.rc-documento-entrega .rc-doc-numero {
+  display: block;
+  margin-bottom: 10px;
+  color: var(--rc-tenue);
+  font-family: var(--fuente-mono);
+  font-size: 0.75rem;
+  line-height: 1;
+}
+
+.rc-documento-entrega .rc-doc-cabeza strong {
+  margin-bottom: 7px;
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+}
+
+.rc-documento-entrega .rc-doc-cabeza strong + span {
+  display: block;
+  color: var(--rc-tenue);
+  font-size: 0.8125rem;
+  line-height: 1.5;
+}
+
+.rc-documento-entrega .rc-doc-acciones {
+  grid-column: 2;
+  gap: 8px;
+  align-self: end;
+}
+
+.rc-documento-entrega .rc-doc-acciones > :is(a, button) {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: auto;
+  min-width: 0;
+  min-height: 44px;
+  margin: 0;
+  padding: 9px 16px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.4;
+  white-space: normal;
+  border-radius: 999px;
+}
+
+.rc-documento-entrega .rc-doc-acciones > :focus-visible {
+  outline: 2px solid var(--rc-acento);
+  outline-offset: 3px;
+}
+
+.rc-documento-entrega .rc-carpeta-pendiente {
+  grid-column: 2;
+  margin: 0;
+}
+
+.rc-cuerpo .rc-carpeta > .rc-carpeta-los-dos {
+  justify-self: start;
+  width: auto;
+  min-height: 44px;
+  padding: 8px 0;
+  color: var(--rc-tenue);
+  font-size: 0.8125rem;
+  text-align: left;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  background: transparent;
+  border-color: transparent;
+}
+
+@media (max-width: 480px) {
+  .rc-cuerpo .rc-carpeta .rc-documento-entrega {
+    grid-template-columns: 76px minmax(0, 1fr);
+    gap: 16px;
+    padding: 16px;
+  }
+
+  .rc-documento-entrega .rc-doc-portada {
+    grid-row: 1;
+    min-height: 112px;
+    padding: 9px;
+  }
+
+  .rc-doc-portada .rc-doc-signo {
+    font-size: 2.5rem;
+  }
+
+  .rc-doc-portada .rc-doc-edicion {
+    font-size: 0.5625rem;
+  }
+
+  .rc-documento-entrega .rc-doc-cabeza strong {
+    font-size: 1rem;
+  }
+
+  .rc-documento-entrega .rc-doc-acciones,
+  .rc-documento-entrega .rc-carpeta-pendiente {
+    grid-column: 1 / -1;
+  }
+}
+
+/* Pantalla final de dos documentos; las acciones permiten volver a editar o comenzar otra conversación. */
+.rc-cuerpo[data-entrega="final"] .rc-guia,
+.rc-cuerpo[data-entrega="final"] .rc-chat-cabecera,
+.rc-cuerpo[data-entrega="final"] .rc-avance,
+.rc-cuerpo[data-entrega="final"] .rc-compositor,
+.rc-cuerpo[data-entrega="final"] #sugerencias,
+.rc-cuerpo[data-entrega="final"] .rc-fecha,
+.rc-cuerpo[data-entrega="final"] .rc-vacio,
+.rc-cuerpo[data-entrega="final"] .rc-mensaje:not(.rc-entrega-final),
+.rc-cuerpo[data-entrega="final"] .rc-entrega-final .rc-autor,
+.rc-cuerpo[data-entrega="final"] .rc-entrega-final .rc-carpeta-titulo,
+.rc-cuerpo[data-entrega="final"] .rc-entrega-final .rc-texto > p {
+  display: none;
+}
+.rc-cuerpo[data-entrega="final"] .rc-espacio {
+  display: flex;
+}
+.rc-cuerpo[data-entrega="final"] .rc {
+  flex: 1;
+}
+.rc-cuerpo[data-entrega="final"] .rc-conversacion {
+  padding: 32px 20px;
+}
+.rc-cuerpo[data-entrega="final"] .rc-log {
+  width: min(100%, 740px);
+  margin-inline: auto;
+}
+.rc-cuerpo[data-entrega="final"] .rc-entrega-final .rc-texto {
+  width: 100%;
+  max-width: 100%;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  animation: none;
+  opacity: 1;
+}
+.rc-cuerpo[data-entrega="final"] .rc-entrega-final .rc-texto::before {
+  display: none;
+}
+.rc-cuerpo[data-entrega="final"] .rc-entrega-final {
+  display: block;
+  opacity: 1;
+  transform: none;
+  animation: none;
+}
+.rc-cuerpo[data-entrega="final"] .rc-entrega-final .rc-carpeta {
+  margin: 0;
+}
+.rc-entrega-titulo {
+  margin: 0 0 12px;
+  font-size: 1.75rem;
+  font-weight: 500;
+}
+.rc-entrega-acciones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 12px;
+}
+.rc-entrega-acciones button {
+  white-space: normal;
+}
+/* La invitación a la encuesta del piloto, solo con una invitación guardada (recorrido/entrega-final.js). */
+.rc-entrega-encuesta {
+  display: grid;
+  justify-items: start;
+  gap: 10px;
+  margin-top: 20px;
+  padding: 20px 22px;
+  background: var(--rc-superficie);
+  border: 1px solid var(--rc-linea);
+  border-radius: 16px;
+}
+.rc-entrega-encuesta > h3 {
+  margin: 0;
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+.rc-entrega-encuesta > .rc-entrega-encuesta-texto {
+  margin: 0;
+}
+.rc-entrega-encuesta .rc-boton-principal {
+  display: inline-flex;
+  align-items: center;
+  white-space: normal;
+  text-decoration: none;
+}
+#volver-documentos,
+#paso-4[data-vista="hoja"] > #volver-documentos {
+  display: block;
+  margin-bottom: 20px;
+}
+.rc-cuerpo[data-entrega="final"]:not([data-informe="oculto"]) .rc-conversacion {
+  display: none;
+}
+@media print {
+  .rc-entrega-encuesta {
+    display: none;
+  }
+  #paso-4 #volver-documentos,
+  #paso-4[data-vista] > #volver-documentos {
+    display: none;
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "registros": [
+    {
+      "unidad": {
+        "id": "claude-academy:introduction-to-evals",
+        "programa_id": "claude-academy:introduction-to-evals",
+        "tipo": "recurso"
+      },
+      "titulo": "Introduction to evals",
+      "url": "https://academy.claude.com/courses/introduction-to-evals",
+      "sha256": "c69457470da76b05707367bfa39d4d4e2d5f748bd6fb61f90a4ddd7fa93a542c",
+      "capturadoEl": "2026-11-18T07:47:00.034955Z"
+    },
+    {
+      "unidad": {
+        "id": "claude-academy:tool-use-with-the-messages-api",
+        "programa_id": "claude-academy:tool-use-with-the-messages-api",
+        "tipo": "recurso"
+      },
+      "titulo": "Tool use with the Messages API",
+      "url": "https://academy.claude.com/courses/tool-use-with-the-messages-api",
+      "sha256": "8ea318f314292dde2600dac7de938f35f8e90b707b41f8da45098e53bc6c6ccc",
+      "capturadoEl": "2026-11-18T07:47:22.009890Z"
+    }
+  ]
+}

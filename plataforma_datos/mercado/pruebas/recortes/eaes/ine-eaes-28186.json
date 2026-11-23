@@ -1,0 +1,776 @@
+[
+  {
+    "COD": "EAES2556",
+    "Nombre": "Todas las ocupaciones. Ambos sexos. Salario medio bruto. Total Nacional. Dato base. ",
+    "FK_Unidad": 7,
+    "FK_Escala": 1,
+    "Data": [
+      { "Fecha": 1704063600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2024, "Valor": 29540.26, "Secreto": false },
+      { "Fecha": 1672527600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2023, "Valor": 28049.94, "Secreto": false },
+      { "Fecha": 1640991600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2022, "Valor": 26948.87, "Secreto": false }
+    ]
+  },
+  {
+    "COD": "EAES2555",
+    "Nombre": "Todas las ocupaciones. Mujeres. Salario medio bruto. Total Nacional. Dato base. ",
+    "FK_Unidad": 7,
+    "FK_Escala": 1,
+    "Data": [
+      { "Fecha": 1704063600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2024, "Valor": 26904.9, "Secreto": false },
+      { "Fecha": 1672527600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2023, "Valor": 25591.31, "Secreto": false },
+      { "Fecha": 1640991600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2022, "Valor": 24359.82, "Secreto": false }
+    ]
+  },
+  {
+    "COD": "EAES2554",
+    "Nombre": "Todas las ocupaciones. Hombres. Salario medio bruto. Total Nacional. Dato base. ",
+    "FK_Unidad": 7,
+    "FK_Escala": 1,
+    "Data": [
+      { "Fecha": 1704063600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2024, "Valor": 32057.55, "Secreto": false },
+      { "Fecha": 1672527600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2023, "Valor": 30372.49, "Secreto": false },
+      { "Fecha": 1640991600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2022, "Valor": 29381.84, "Secreto": false }
+    ]
+  },
+  {
+    "COD": "EAES2553",
+    "Nombre": "Directores y gerentes. Ambos sexos. Salario medio bruto. Total Nacional. Dato base. ",
+    "FK_Unidad": 7,
+    "FK_Escala": 1,
+    "Data": [
+      { "Fecha": 1704063600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2024, "Valor": 63865.45, "Secreto": false },
+      { "Fecha": 1672527600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2023, "Valor": 60985.96, "Secreto": false },
+      { "Fecha": 1640991600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2022, "Valor": 59478.63, "Secreto": false }
+    ]
+  },
+  {
+    "COD": "EAES2552",
+    "Nombre": "Directores y gerentes. Mujeres. Salario medio bruto. Total Nacional. Dato base. ",
+    "FK_Unidad": 7,
+    "FK_Escala": 1,
+    "Data": [
+      { "Fecha": 1704063600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2024, "Valor": 57365.21, "Secreto": false },
+      { "Fecha": 1672527600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2023, "Valor": 54003.51, "Secreto": false },
+      { "Fecha": 1640991600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2022, "Valor": 53368.32, "Secreto": false }
+    ]
+  },
+  {
+    "COD": "EAES2551",
+    "Nombre": "Directores y gerentes. Hombres. Salario medio bruto. Total Nacional. Dato base. ",
+    "FK_Unidad": 7,
+    "FK_Escala": 1,
+    "Data": [
+      { "Fecha": 1704063600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2024, "Valor": 68222.22, "Secreto": false },
+      { "Fecha": 1672527600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2023, "Valor": 65870.11, "Secreto": false },
+      { "Fecha": 1640991600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2022, "Valor": 62991.86, "Secreto": false }
+    ]
+  },
+  {
+    "COD": "EAES2550",
+    "Nombre": "Técnicos y profesionales científicos e intelectuales de la salud y la enseñanza. Ambos sexos. Salario medio bruto. Total Nacional. Dato base. ",
+    "FK_Unidad": 7,
+    "FK_Escala": 1,
+    "Data": [
+      { "Fecha": 1704063600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2024, "Valor": 40554.53, "Secreto": false },
+      { "Fecha": 1672527600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2023, "Valor": 38857.91, "Secreto": false },
+      { "Fecha": 1640991600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2022, "Valor": 37456.34, "Secreto": false }
+    ]
+  },
+  {
+    "COD": "EAES2549",
+    "Nombre": "Técnicos y profesionales científicos e intelectuales de la salud y la enseñanza. Mujeres. Salario medio bruto. Total Nacional. Dato base. ",
+    "FK_Unidad": 7,
+    "FK_Escala": 1,
+    "Data": [
+      { "Fecha": 1704063600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2024, "Valor": 39385.36, "Secreto": false },
+      { "Fecha": 1672527600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2023, "Valor": 37939.33, "Secreto": false },
+      { "Fecha": 1640991600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2022, "Valor": 36240.4, "Secreto": false }
+    ]
+  },
+  {
+    "COD": "EAES2548",
+    "Nombre": "Técnicos y profesionales científicos e intelectuales de la salud y la enseñanza. Hombres. Salario medio bruto. Total Nacional. Dato base. ",
+    "FK_Unidad": 7,
+    "FK_Escala": 1,
+    "Data": [
+      { "Fecha": 1704063600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2024, "Valor": 43328.38, "Secreto": false },
+      { "Fecha": 1672527600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2023, "Valor": 41035.77, "Secreto": false },
+      { "Fecha": 1640991600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2022, "Valor": 40183.85, "Secreto": false }
+    ]
+  },
+  {
+    "COD": "EAES2547",
+    "Nombre": "Otros técnicos y profesionales científicos e intelectuales. Ambos sexos. Salario medio bruto. Total Nacional. Dato base. ",
+    "FK_Unidad": 7,
+    "FK_Escala": 1,
+    "Data": [
+      { "Fecha": 1704063600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2024, "Valor": 45513.91, "Secreto": false },
+      { "Fecha": 1672527600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2023, "Valor": 42996.72, "Secreto": false },
+      { "Fecha": 1640991600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2022, "Valor": 41382.28, "Secreto": false }
+    ]
+  },
+  {
+    "COD": "EAES2546",
+    "Nombre": "Otros técnicos y profesionales científicos e intelectuales. Mujeres. Salario medio bruto. Total Nacional. Dato base. ",
+    "FK_Unidad": 7,
+    "FK_Escala": 1,
+    "Data": [
+      { "Fecha": 1704063600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2024, "Valor": 41784.25, "Secreto": false },
+      { "Fecha": 1672527600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2023, "Valor": 39654.07, "Secreto": false },
+      { "Fecha": 1640991600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2022, "Valor": 37828.59, "Secreto": false }
+    ]
+  },
+  {
+    "COD": "EAES2545",
+    "Nombre": "Otros técnicos y profesionales científicos e intelectuales. Hombres. Salario medio bruto. Total Nacional. Dato base. ",
+    "FK_Unidad": 7,
+    "FK_Escala": 1,
+    "Data": [
+      { "Fecha": 1704063600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2024, "Valor": 49202.05, "Secreto": false },
+      { "Fecha": 1672527600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2023, "Valor": 46213.05, "Secreto": false },
+      { "Fecha": 1640991600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2022, "Valor": 44874.37, "Secreto": false }
+    ]
+  },
+  {
+    "COD": "EAES2544",
+    "Nombre": "Técnicos; profesionales de apoyo. Ambos sexos. Salario medio bruto. Total Nacional. Dato base. ",
+    "FK_Unidad": 7,
+    "FK_Escala": 1,
+    "Data": [
+      { "Fecha": 1704063600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2024, "Valor": 34917.46, "Secreto": false },
+      { "Fecha": 1672527600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2023, "Valor": 33242.65, "Secreto": false },
+      { "Fecha": 1640991600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2022, "Valor": 31899.95, "Secreto": false }
+    ]
+  },
+  {
+    "COD": "EAES2543",
+    "Nombre": "Técnicos; profesionales de apoyo. Mujeres. Salario medio bruto. Total Nacional. Dato base. ",
+    "FK_Unidad": 7,
+    "FK_Escala": 1,
+    "Data": [
+      { "Fecha": 1704063600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2024, "Valor": 31082.47, "Secreto": false },
+      { "Fecha": 1672527600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2023, "Valor": 29902.47, "Secreto": false },
+      { "Fecha": 1640991600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2022, "Valor": 28515.6, "Secreto": false }
+    ]
+  },
+  {
+    "COD": "EAES2542",
+    "Nombre": "Técnicos; profesionales de apoyo. Hombres. Salario medio bruto. Total Nacional. Dato base. ",
+    "FK_Unidad": 7,
+    "FK_Escala": 1,
+    "Data": [
+      { "Fecha": 1704063600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2024, "Valor": 38045.99, "Secreto": false },
+      { "Fecha": 1672527600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2023, "Valor": 35947.05, "Secreto": false },
+      { "Fecha": 1640991600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2022, "Valor": 34550.52, "Secreto": false }
+    ]
+  },
+  {
+    "COD": "EAES2541",
+    "Nombre": "Empleados de oficina que no atienden al público. Ambos sexos. Salario medio bruto. Total Nacional. Dato base. ",
+    "FK_Unidad": 7,
+    "FK_Escala": 1,
+    "Data": [
+      { "Fecha": 1704063600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2024, "Valor": 29918.88, "Secreto": false },
+      { "Fecha": 1672527600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2023, "Valor": 28148.26, "Secreto": false },
+      { "Fecha": 1640991600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2022, "Valor": 27402.9, "Secreto": false }
+    ]
+  },
+  {
+    "COD": "EAES2540",
+    "Nombre": "Empleados de oficina que no atienden al público. Mujeres. Salario medio bruto. Total Nacional. Dato base. ",
+    "FK_Unidad": 7,
+    "FK_Escala": 1,
+    "Data": [
+      { "Fecha": 1704063600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2024, "Valor": 28264.34, "Secreto": false },
+      { "Fecha": 1672527600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2023, "Valor": 26551.09, "Secreto": false },
+      { "Fecha": 1640991600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2022, "Valor": 25646.72, "Secreto": false }
+    ]
+  },
+  {
+    "COD": "EAES2539",
+    "Nombre": "Empleados de oficina que no atienden al público. Hombres. Salario medio bruto. Total Nacional. Dato base. ",
+    "FK_Unidad": 7,
+    "FK_Escala": 1,
+    "Data": [
+      { "Fecha": 1704063600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2024, "Valor": 32468.67, "Secreto": false },
+      { "Fecha": 1672527600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2023, "Valor": 30717.82, "Secreto": false },
+      { "Fecha": 1640991600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2022, "Valor": 30217.44, "Secreto": false }
+    ]
+  },
+  {
+    "COD": "EAES2538",
+    "Nombre": "Empleados de oficina que atienden al público. Ambos sexos. Salario medio bruto. Total Nacional. Dato base. ",
+    "FK_Unidad": 7,
+    "FK_Escala": 1,
+    "Data": [
+      { "Fecha": 1704063600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2024, "Valor": 23138.15, "Secreto": false },
+      { "Fecha": 1672527600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2023, "Valor": 22263.18, "Secreto": false },
+      { "Fecha": 1640991600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2022, "Valor": 21462.56, "Secreto": false }
+    ]
+  },
+  {
+    "COD": "EAES2537",
+    "Nombre": "Empleados de oficina que atienden al público. Mujeres. Salario medio bruto. Total Nacional. Dato base. ",
+    "FK_Unidad": 7,
+    "FK_Escala": 1,
+    "Data": [
+      { "Fecha": 1704063600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2024, "Valor": 22276.21, "Secreto": false },
+      { "Fecha": 1672527600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2023, "Valor": 21272.71, "Secreto": false },
+      { "Fecha": 1640991600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2022, "Valor": 20467.84, "Secreto": false }
+    ]
+  },
+  {
+    "COD": "EAES2536",
+    "Nombre": "Empleados de oficina que atienden al público. Hombres. Salario medio bruto. Total Nacional. Dato base. ",
+    "FK_Unidad": 7,
+    "FK_Escala": 1,
+    "Data": [
+      { "Fecha": 1704063600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2024, "Valor": 25551.58, "Secreto": false },
+      { "Fecha": 1672527600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2023, "Valor": 24956.61, "Secreto": false },
+      { "Fecha": 1640991600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2022, "Valor": 24273.47, "Secreto": false }
+    ]
+  },
+  {
+    "COD": "EAES2535",
+    "Nombre": "Trabajadores de los servicios de restauración y comercio. Ambos sexos. Salario medio bruto. Total Nacional. Dato base. ",
+    "FK_Unidad": 7,
+    "FK_Escala": 1,
+    "Data": [
+      { "Fecha": 1704063600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2024, "Valor": 18918.65, "Secreto": false },
+      { "Fecha": 1672527600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2023, "Valor": 18028.33, "Secreto": false },
+      { "Fecha": 1640991600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2022, "Valor": 17168.88, "Secreto": false }
+    ]
+  },
+  {
+    "COD": "EAES2534",
+    "Nombre": "Trabajadores de los servicios de restauración y comercio. Mujeres. Salario medio bruto. Total Nacional. Dato base. ",
+    "FK_Unidad": 7,
+    "FK_Escala": 1,
+    "Data": [
+      { "Fecha": 1704063600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2024, "Valor": 17630.53, "Secreto": false },
+      { "Fecha": 1672527600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2023, "Valor": 16854.35, "Secreto": false },
+      { "Fecha": 1640991600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2022, "Valor": 16057.61, "Secreto": false }
+    ]
+  },
+  {
+    "COD": "EAES2533",
+    "Nombre": "Trabajadores de los servicios de restauración y comercio. Hombres. Salario medio bruto. Total Nacional. Dato base. ",
+    "FK_Unidad": 7,
+    "FK_Escala": 1,
+    "Data": [
+      { "Fecha": 1704063600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2024, "Valor": 20902.12, "Secreto": false },
+      { "Fecha": 1672527600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2023, "Valor": 19927.01, "Secreto": false },
+      { "Fecha": 1640991600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2022, "Valor": 18930.29, "Secreto": false }
+    ]
+  },
+  {
+    "COD": "EAES2532",
+    "Nombre": "Trabajadores de los servicios de salud y el cuidado de personas. Ambos sexos. Salario medio bruto. Total Nacional. Dato base. ",
+    "FK_Unidad": 7,
+    "FK_Escala": 1,
+    "Data": [
+      { "Fecha": 1704063600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2024, "Valor": 19479.94, "Secreto": false },
+      { "Fecha": 1672527600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2023, "Valor": 18739.11, "Secreto": false },
+      { "Fecha": 1640991600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2022, "Valor": 18232.24, "Secreto": false }
+    ]
+  },
+  {
+    "COD": "EAES2531",
+    "Nombre": "Trabajadores de los servicios de salud y el cuidado de personas. Mujeres. Salario medio bruto. Total Nacional. Dato base. ",
+    "FK_Unidad": 7,
+    "FK_Escala": 1,
+    "Data": [
+      { "Fecha": 1704063600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2024, "Valor": 18290.3, "Secreto": false },
+      { "Fecha": 1672527600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2023, "Valor": 17609.56, "Secreto": false },
+      { "Fecha": 1640991600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2022, "Valor": 17155.7, "Secreto": false }
+    ]
+  },
+  {
+    "COD": "EAES2530",
+    "Nombre": "Trabajadores de los servicios de salud y el cuidado de personas. Hombres. Salario medio bruto. Total Nacional. Dato base. ",
+    "FK_Unidad": 7,
+    "FK_Escala": 1,
+    "Data": [
+      { "Fecha": 1704063600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2024, "Valor": 23363.44, "Secreto": false },
+      { "Fecha": 1672527600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2023, "Valor": 22421.02, "Secreto": false },
+      { "Fecha": 1640991600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2022, "Valor": 21996.86, "Secreto": false }
+    ]
+  },
+  {
+    "COD": "EAES2529",
+    "Nombre": "Trabajadores de los servicios de protección y seguridad. Ambos sexos. Salario medio bruto. Total Nacional. Dato base. ",
+    "FK_Unidad": 7,
+    "FK_Escala": 1,
+    "Data": [
+      { "Fecha": 1704063600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2024, "Valor": 35621.47, "Secreto": false },
+      { "Fecha": 1672527600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2023, "Valor": 35215.11, "Secreto": false },
+      { "Fecha": 1640991600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2022, "Valor": 31896.15, "Secreto": false }
+    ]
+  },
+  {
+    "COD": "EAES2528",
+    "Nombre": "Trabajadores de los servicios de protección y seguridad. Mujeres. Salario medio bruto. Total Nacional. Dato base. ",
+    "FK_Unidad": 7,
+    "FK_Escala": 1,
+    "Data": [
+      { "Fecha": 1704063600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2024, "Valor": 29428.84, "Secreto": false },
+      { "Fecha": 1672527600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2023, "Valor": 29465.71, "Secreto": false },
+      { "Fecha": 1640991600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2022, "Valor": 26809.79, "Secreto": false }
+    ]
+  },
+  {
+    "COD": "EAES2527",
+    "Nombre": "Trabajadores de los servicios de protección y seguridad. Hombres. Salario medio bruto. Total Nacional. Dato base. ",
+    "FK_Unidad": 7,
+    "FK_Escala": 1,
+    "Data": [
+      { "Fecha": 1704063600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2024, "Valor": 36847.15, "Secreto": false },
+      { "Fecha": 1672527600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2023, "Valor": 36215.0, "Secreto": false },
+      { "Fecha": 1640991600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2022, "Valor": 32779.4, "Secreto": false }
+    ]
+  },
+  {
+    "COD": "EAES2526",
+    "Nombre": "Trabajadores cualificados en el sector agrícola, ganadero, forestal y pesquero. Ambos sexos. Salario medio bruto. Total Nacional. Dato base. ",
+    "FK_Unidad": 7,
+    "FK_Escala": 1,
+    "Data": [
+      { "Fecha": 1704063600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2024, "Valor": 26045.04, "Secreto": false },
+      { "Fecha": 1672527600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2023, "Valor": 24550.71, "Secreto": false },
+      { "Fecha": 1640991600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2022, "Valor": 21383.06, "Secreto": false }
+    ]
+  },
+  {
+    "COD": "EAES2525",
+    "Nombre": "Trabajadores cualificados en el sector agrícola, ganadero, forestal y pesquero. Mujeres. Salario medio bruto. Total Nacional. Dato base. ",
+    "FK_Unidad": 7,
+    "FK_Escala": 1,
+    "Data": [
+      {
+        "Fecha": 1704063600000,
+        "FK_TipoDato": 1,
+        "FK_Periodo": 28,
+        "Anyo": 2024,
+        "Valor": -24001.36,
+        "Secreto": false,
+        "Notas": [
+          {
+            "texto": "Un signo '-' antes del dato, indica que el número de observaciones muestrales está comprendido entre 100 y 500, por lo que la cifra está sujeta a gran variabilidad",
+            "Fk_TipoNota": 1,
+            "textoTipo": null
+          }
+        ]
+      },
+      {
+        "Fecha": 1672527600000,
+        "FK_TipoDato": 1,
+        "FK_Periodo": 28,
+        "Anyo": 2023,
+        "Valor": null,
+        "Secreto": false,
+        "Notas": [
+          { "texto": "El número de observaciones muestrales es inferior a 100", "Fk_TipoNota": 1, "textoTipo": null }
+        ]
+      },
+      {
+        "Fecha": 1640991600000,
+        "FK_TipoDato": 1,
+        "FK_Periodo": 28,
+        "Anyo": 2022,
+        "Valor": null,
+        "Secreto": false,
+        "Notas": [
+          { "texto": "El número de observaciones muestrales es inferior a 100", "Fk_TipoNota": 1, "textoTipo": null }
+        ]
+      }
+    ]
+  },
+  {
+    "COD": "EAES2524",
+    "Nombre": "Trabajadores cualificados en el sector agrícola, ganadero, forestal y pesquero. Hombres. Salario medio bruto. Total Nacional. Dato base. ",
+    "FK_Unidad": 7,
+    "FK_Escala": 1,
+    "Data": [
+      { "Fecha": 1704063600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2024, "Valor": 26365.91, "Secreto": false },
+      { "Fecha": 1672527600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2023, "Valor": 24636.19, "Secreto": false },
+      { "Fecha": 1640991600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2022, "Valor": 21715.91, "Secreto": false }
+    ]
+  },
+  {
+    "COD": "EAES2523",
+    "Nombre": "Trabajadores cualificados de la construcción, excepto operadores de máquinas. Ambos sexos. Salario medio bruto. Total Nacional. Dato base. ",
+    "FK_Unidad": 7,
+    "FK_Escala": 1,
+    "Data": [
+      { "Fecha": 1704063600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2024, "Valor": 24445.11, "Secreto": false },
+      { "Fecha": 1672527600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2023, "Valor": 23320.75, "Secreto": false },
+      { "Fecha": 1640991600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2022, "Valor": 22273.76, "Secreto": false }
+    ]
+  },
+  {
+    "COD": "EAES2522",
+    "Nombre": "Trabajadores cualificados de la construcción, excepto operadores de máquinas. Mujeres. Salario medio bruto. Total Nacional. Dato base. ",
+    "FK_Unidad": 7,
+    "FK_Escala": 1,
+    "Data": [
+      {
+        "Fecha": 1704063600000,
+        "FK_TipoDato": 1,
+        "FK_Periodo": 28,
+        "Anyo": 2024,
+        "Valor": -21772.51,
+        "Secreto": false,
+        "Notas": [
+          {
+            "texto": "Un signo '-' antes del dato, indica que el número de observaciones muestrales está comprendido entre 100 y 500, por lo que la cifra está sujeta a gran variabilidad",
+            "Fk_TipoNota": 1,
+            "textoTipo": null
+          }
+        ]
+      },
+      {
+        "Fecha": 1672527600000,
+        "FK_TipoDato": 1,
+        "FK_Periodo": 28,
+        "Anyo": 2023,
+        "Valor": -20666.84,
+        "Secreto": false,
+        "Notas": [
+          {
+            "texto": "Un signo '-' antes del dato, indica que el número de observaciones muestrales está comprendido entre 100 y 500, por lo que la cifra está sujeta a gran variabilidad",
+            "Fk_TipoNota": 1,
+            "textoTipo": null
+          }
+        ]
+      },
+      {
+        "Fecha": 1640991600000,
+        "FK_TipoDato": 1,
+        "FK_Periodo": 28,
+        "Anyo": 2022,
+        "Valor": -19314.99,
+        "Secreto": false,
+        "Notas": [
+          {
+            "texto": "Un signo '-' antes del dato, indica que el número de observaciones muestrales está comprendido entre 100 y 500, por lo que la cifra está sujeta a gran variabilidad",
+            "Fk_TipoNota": 1,
+            "textoTipo": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "COD": "EAES2521",
+    "Nombre": "Trabajadores cualificados de la construcción, excepto operadores de máquinas. Hombres. Salario medio bruto. Total Nacional. Dato base. ",
+    "FK_Unidad": 7,
+    "FK_Escala": 1,
+    "Data": [
+      { "Fecha": 1704063600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2024, "Valor": 24508.92, "Secreto": false },
+      { "Fecha": 1672527600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2023, "Valor": 23396.16, "Secreto": false },
+      { "Fecha": 1640991600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2022, "Valor": 22348.0, "Secreto": false }
+    ]
+  },
+  {
+    "COD": "EAES2520",
+    "Nombre": "Trabajadores cualificados de las industrias manufactureras, excepto operadores de instalaciones y máquinas. Ambos sexos. Salario medio bruto. Total Nacional. Dato base. ",
+    "FK_Unidad": 7,
+    "FK_Escala": 1,
+    "Data": [
+      { "Fecha": 1704063600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2024, "Valor": 27531.44, "Secreto": false },
+      { "Fecha": 1672527600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2023, "Valor": 26344.74, "Secreto": false },
+      { "Fecha": 1640991600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2022, "Valor": 25304.77, "Secreto": false }
+    ]
+  },
+  {
+    "COD": "EAES2519",
+    "Nombre": "Trabajadores cualificados de las industrias manufactureras, excepto operadores de instalaciones y máquinas. Mujeres. Salario medio bruto. Total Nacional. Dato base. ",
+    "FK_Unidad": 7,
+    "FK_Escala": 1,
+    "Data": [
+      { "Fecha": 1704063600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2024, "Valor": 21362.59, "Secreto": false },
+      { "Fecha": 1672527600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2023, "Valor": 20428.55, "Secreto": false },
+      { "Fecha": 1640991600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2022, "Valor": 19772.34, "Secreto": false }
+    ]
+  },
+  {
+    "COD": "EAES2518",
+    "Nombre": "Trabajadores cualificados de las industrias manufactureras, excepto operadores de instalaciones y máquinas. Hombres. Salario medio bruto. Total Nacional. Dato base. ",
+    "FK_Unidad": 7,
+    "FK_Escala": 1,
+    "Data": [
+      { "Fecha": 1704063600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2024, "Valor": 28696.46, "Secreto": false },
+      { "Fecha": 1672527600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2023, "Valor": 27386.64, "Secreto": false },
+      { "Fecha": 1640991600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2022, "Valor": 26400.67, "Secreto": false }
+    ]
+  },
+  {
+    "COD": "EAES2517",
+    "Nombre": "Operadores de instalaciones y maquinaria fijas, y montadores. Ambos sexos. Salario medio bruto. Total Nacional. Dato base. ",
+    "FK_Unidad": 7,
+    "FK_Escala": 1,
+    "Data": [
+      { "Fecha": 1704063600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2024, "Valor": 30835.88, "Secreto": false },
+      { "Fecha": 1672527600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2023, "Valor": 28851.99, "Secreto": false },
+      { "Fecha": 1640991600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2022, "Valor": 28251.07, "Secreto": false }
+    ]
+  },
+  {
+    "COD": "EAES2516",
+    "Nombre": "Operadores de instalaciones y maquinaria fijas, y montadores. Mujeres. Salario medio bruto. Total Nacional. Dato base. ",
+    "FK_Unidad": 7,
+    "FK_Escala": 1,
+    "Data": [
+      { "Fecha": 1704063600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2024, "Valor": 25205.7, "Secreto": false },
+      { "Fecha": 1672527600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2023, "Valor": 22816.31, "Secreto": false },
+      { "Fecha": 1640991600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2022, "Valor": 21935.96, "Secreto": false }
+    ]
+  },
+  {
+    "COD": "EAES2515",
+    "Nombre": "Operadores de instalaciones y maquinaria fijas, y montadores. Hombres. Salario medio bruto. Total Nacional. Dato base. ",
+    "FK_Unidad": 7,
+    "FK_Escala": 1,
+    "Data": [
+      { "Fecha": 1704063600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2024, "Valor": 32344.55, "Secreto": false },
+      { "Fecha": 1672527600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2023, "Valor": 30472.86, "Secreto": false },
+      { "Fecha": 1640991600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2022, "Valor": 29847.5, "Secreto": false }
+    ]
+  },
+  {
+    "COD": "EAES2514",
+    "Nombre": "Conductores y operadores de maquinaria móvil. Ambos sexos. Salario medio bruto. Total Nacional. Dato base. ",
+    "FK_Unidad": 7,
+    "FK_Escala": 1,
+    "Data": [
+      { "Fecha": 1704063600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2024, "Valor": 24741.48, "Secreto": false },
+      { "Fecha": 1672527600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2023, "Valor": 23536.09, "Secreto": false },
+      { "Fecha": 1640991600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2022, "Valor": 22996.64, "Secreto": false }
+    ]
+  },
+  {
+    "COD": "EAES2513",
+    "Nombre": "Conductores y operadores de maquinaria móvil. Mujeres. Salario medio bruto. Total Nacional. Dato base. ",
+    "FK_Unidad": 7,
+    "FK_Escala": 1,
+    "Data": [
+      { "Fecha": 1704063600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2024, "Valor": 22895.14, "Secreto": false },
+      { "Fecha": 1672527600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2023, "Valor": 21311.05, "Secreto": false },
+      {
+        "Fecha": 1640991600000,
+        "FK_TipoDato": 1,
+        "FK_Periodo": 28,
+        "Anyo": 2022,
+        "Valor": -19904.66,
+        "Secreto": false,
+        "Notas": [
+          {
+            "texto": "Un signo '-' antes del dato, indica que el número de observaciones muestrales está comprendido entre 100 y 500, por lo que la cifra está sujeta a gran variabilidad",
+            "Fk_TipoNota": 1,
+            "textoTipo": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "COD": "EAES2512",
+    "Nombre": "Conductores y operadores de maquinaria móvil. Hombres. Salario medio bruto. Total Nacional. Dato base. ",
+    "FK_Unidad": 7,
+    "FK_Escala": 1,
+    "Data": [
+      { "Fecha": 1704063600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2024, "Valor": 24849.64, "Secreto": false },
+      { "Fecha": 1672527600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2023, "Valor": 23646.12, "Secreto": false },
+      { "Fecha": 1640991600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2022, "Valor": 23136.9, "Secreto": false }
+    ]
+  },
+  {
+    "COD": "EAES2511",
+    "Nombre": "Trabajadores no cualificados en servicios (excepto transportes). Ambos sexos. Salario medio bruto. Total Nacional. Dato base. ",
+    "FK_Unidad": 7,
+    "FK_Escala": 1,
+    "Data": [
+      { "Fecha": 1704063600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2024, "Valor": 16062.57, "Secreto": false },
+      { "Fecha": 1672527600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2023, "Valor": 15276.84, "Secreto": false },
+      { "Fecha": 1640991600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2022, "Valor": 14665.4, "Secreto": false }
+    ]
+  },
+  {
+    "COD": "EAES2510",
+    "Nombre": "Trabajadores no cualificados en servicios (excepto transportes). Mujeres. Salario medio bruto. Total Nacional. Dato base. ",
+    "FK_Unidad": 7,
+    "FK_Escala": 1,
+    "Data": [
+      { "Fecha": 1704063600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2024, "Valor": 14558.57, "Secreto": false },
+      { "Fecha": 1672527600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2023, "Valor": 13933.33, "Secreto": false },
+      { "Fecha": 1640991600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2022, "Valor": 13353.87, "Secreto": false }
+    ]
+  },
+  {
+    "COD": "EAES2509",
+    "Nombre": "Trabajadores no cualificados en servicios (excepto transportes). Hombres. Salario medio bruto. Total Nacional. Dato base. ",
+    "FK_Unidad": 7,
+    "FK_Escala": 1,
+    "Data": [
+      { "Fecha": 1704063600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2024, "Valor": 19660.64, "Secreto": false },
+      { "Fecha": 1672527600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2023, "Valor": 18601.7, "Secreto": false },
+      { "Fecha": 1640991600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2022, "Valor": 18018.35, "Secreto": false }
+    ]
+  },
+  {
+    "COD": "EAES2508",
+    "Nombre": "Peones de la agricultura, pesca, construcción, industrias manufactureras y transportes. Ambos sexos. Salario medio bruto. Total Nacional. Dato base. ",
+    "FK_Unidad": 7,
+    "FK_Escala": 1,
+    "Data": [
+      { "Fecha": 1704063600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2024, "Valor": 22030.03, "Secreto": false },
+      { "Fecha": 1672527600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2023, "Valor": 20817.06, "Secreto": false },
+      { "Fecha": 1640991600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2022, "Valor": 20241.79, "Secreto": false }
+    ]
+  },
+  {
+    "COD": "EAES2507",
+    "Nombre": "Peones de la agricultura, pesca, construcción, industrias manufactureras y transportes. Mujeres. Salario medio bruto. Total Nacional. Dato base. ",
+    "FK_Unidad": 7,
+    "FK_Escala": 1,
+    "Data": [
+      { "Fecha": 1704063600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2024, "Valor": 19274.22, "Secreto": false },
+      { "Fecha": 1672527600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2023, "Valor": 17821.4, "Secreto": false },
+      { "Fecha": 1640991600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2022, "Valor": 17470.05, "Secreto": false }
+    ]
+  },
+  {
+    "COD": "EAES2506",
+    "Nombre": "Peones de la agricultura, pesca, construcción, industrias manufactureras y transportes. Hombres. Salario medio bruto. Total Nacional. Dato base. ",
+    "FK_Unidad": 7,
+    "FK_Escala": 1,
+    "Data": [
+      { "Fecha": 1704063600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2024, "Valor": 22857.84, "Secreto": false },
+      { "Fecha": 1672527600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2023, "Valor": 21718.88, "Secreto": false },
+      { "Fecha": 1640991600000, "FK_TipoDato": 1, "FK_Periodo": 28, "Anyo": 2022, "Valor": 20998.67, "Secreto": false }
+    ]
+  },
+  {
+    "COD": "EAES2505",
+    "Nombre": "Ocupaciones militares. Ambos sexos. Salario medio bruto. Total Nacional. Dato base. ",
+    "FK_Unidad": 7,
+    "FK_Escala": 1,
+    "Data": [
+      {
+        "Fecha": 1704063600000,
+        "FK_TipoDato": 1,
+        "FK_Periodo": 28,
+        "Anyo": 2024,
+        "Valor": null,
+        "Secreto": false,
+        "Notas": [
+          { "texto": "El número de observaciones muestrales es inferior a 100", "Fk_TipoNota": 1, "textoTipo": null }
+        ]
+      },
+      {
+        "Fecha": 1672527600000,
+        "FK_TipoDato": 1,
+        "FK_Periodo": 28,
+        "Anyo": 2023,
+        "Valor": null,
+        "Secreto": false,
+        "Notas": [
+          { "texto": "El número de observaciones muestrales es inferior a 100", "Fk_TipoNota": 1, "textoTipo": null }
+        ]
+      },
+      {
+        "Fecha": 1640991600000,
+        "FK_TipoDato": 1,
+        "FK_Periodo": 28,
+        "Anyo": 2022,
+        "Valor": null,
+        "Secreto": false,
+        "Notas": [
+          { "texto": "El número de observaciones muestrales es inferior a 100", "Fk_TipoNota": 1, "textoTipo": null }
+        ]
+      }
+    ]
+  },
+  {
+    "COD": "EAES2504",
+    "Nombre": "Ocupaciones militares. Mujeres. Salario medio bruto. Total Nacional. Dato base. ",
+    "FK_Unidad": 7,
+    "FK_Escala": 1,
+    "Data": [
+      {
+        "Fecha": 1704063600000,
+        "FK_TipoDato": 1,
+        "FK_Periodo": 28,
+        "Anyo": 2024,
+        "Valor": null,
+        "Secreto": false,
+        "Notas": [
+          { "texto": "El número de observaciones muestrales es inferior a 100", "Fk_TipoNota": 1, "textoTipo": null }
+        ]
+      },
+      {
+        "Fecha": 1672527600000,
+        "FK_TipoDato": 1,
+        "FK_Periodo": 28,
+        "Anyo": 2023,
+        "Valor": null,
+        "Secreto": false,
+        "Notas": [
+          { "texto": "El número de observaciones muestrales es inferior a 100", "Fk_TipoNota": 1, "textoTipo": null }
+        ]
+      },
+      {
+        "Fecha": 1640991600000,
+        "FK_TipoDato": 1,
+        "FK_Periodo": 28,
+        "Anyo": 2022,
+        "Valor": null,
+        "Secreto": false,
+        "Notas": [
+          { "texto": "El número de observaciones muestrales es inferior a 100", "Fk_TipoNota": 1, "textoTipo": null }
+        ]
+      }
+    ]
+  },
+  {
+    "COD": "EAES2503",
+    "Nombre": "Ocupaciones militares. Hombres. Salario medio bruto. Total Nacional. Dato base. ",
+    "FK_Unidad": 7,
+    "FK_Escala": 1,
+    "Data": [
+      {
+        "Fecha": 1704063600000,
+        "FK_TipoDato": 1,
+        "FK_Periodo": 28,
+        "Anyo": 2024,
+        "Valor": null,
+        "Secreto": false,
+        "Notas": [
+          { "texto": "El número de observaciones muestrales es inferior a 100", "Fk_TipoNota": 1, "textoTipo": null }
+        ]
+      },
+      {
+        "Fecha": 1672527600000,
+        "FK_TipoDato": 1,
+        "FK_Periodo": 28,
+        "Anyo": 2023,
+        "Valor": null,
+        "Secreto": false,
+        "Notas": [
+          { "texto": "El número de observaciones muestrales es inferior a 100", "Fk_TipoNota": 1, "textoTipo": null }
+        ]
+      },
+      {
+        "Fecha": 1640991600000,
+        "FK_TipoDato": 1,
+        "FK_Periodo": 28,
+        "Anyo": 2022,
+        "Valor": null,
+        "Secreto": false,
+        "Notas": [
+          { "texto": "El número de observaciones muestrales es inferior a 100", "Fk_TipoNota": 1, "textoTipo": null }
+        ]
+      }
+    ]
+  }
+]

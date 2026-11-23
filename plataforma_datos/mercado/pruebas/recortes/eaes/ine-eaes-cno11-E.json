@@ -1,0 +1,23 @@
+[
+  {
+    "Id": 22674,
+    "FK_Variable": 456,
+    "Nombre": "Empleados en servicios contables, financieros, y de servicios de apoyo a la producción y al transporte",
+    "Codigo": "41",
+    "FK_JerarquiaPadres": [22673]
+  },
+  {
+    "Id": 22683,
+    "FK_Variable": 456,
+    "Nombre": "Empleados de bibliotecas, servicios de correos y afines",
+    "Codigo": "42",
+    "FK_JerarquiaPadres": [22673]
+  },
+  {
+    "Id": 22690,
+    "FK_Variable": 456,
+    "Nombre": "Otros empleados administrativos sin tareas de atención al público",
+    "Codigo": "43",
+    "FK_JerarquiaPadres": [22673]
+  }
+]

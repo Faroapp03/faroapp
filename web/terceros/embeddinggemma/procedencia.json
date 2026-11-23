@@ -1,0 +1,29 @@
+{
+  "modelo": "google/embeddinggemma-2",
+  "revision": "914f7f89142e33e77833254d9c9b90c3cef7303b",
+  "consulta": "2026-10-21",
+  "licencia": "Apache-2.0",
+  "condicionesDeUso": "https://ai.google.dev/gemma/prohibited_use_policy",
+  "fuentesConsultadas": [
+    {
+      "url": "https://huggingface.co/google/embeddinggemma-2/raw/914f7f89142e33e77833254d9c9b90c3cef7303b/README.md",
+      "sha256": "b677a0ee2818c36f091b65fd3d9b4baea9f04d53b02b49cae916c74bf9682037"
+    },
+    {
+      "url": "https://ai.google.dev/gemma/docs/gemma_4_license",
+      "sha256": "2721b8960b150d7458b2995c051a10176f789227baeb1233a56422f0c91c3997"
+    },
+    {
+      "url": "https://ai.google.dev/gemma/prohibited_use_policy",
+      "sha256": "13671de0d089e8cbed51e2f9df22fa6a52cc45cfda314986ae0e984b79a4a6f9"
+    },
+    {
+      "url": "https://www.apache.org/licenses/LICENSE-2.0.txt",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    }
+  ],
+  "archivos": {
+    "LICENSE": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+    "AVISOS.txt": "9ecd38266b1230201a22ecf3fa64e2eec589ee1dd100e0c73927d1c1a25bb269"
+  }
+}

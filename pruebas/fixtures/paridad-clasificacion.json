@@ -1,0 +1,122 @@
+{
+  "anthropic": {
+    "distintos": [],
+    "recuentos": {
+      "idioma": {
+        "distinto": 0,
+        "igual": 0,
+        "sin-decidir": 8
+      },
+      "materia": {
+        "distinto": 0,
+        "igual": 0,
+        "sin-decidir": 8
+      },
+      "nivel": {
+        "distinto": 0,
+        "igual": 0,
+        "sin-decidir": 8
+      }
+    }
+  },
+  "cibernarium": {
+    "distintos": [],
+    "recuentos": {
+      "idioma": {
+        "distinto": 0,
+        "igual": 0,
+        "sin-decidir": 313
+      },
+      "materia": {
+        "distinto": 0,
+        "igual": 0,
+        "sin-decidir": 313
+      },
+      "nivel": {
+        "distinto": 0,
+        "igual": 0,
+        "sin-decidir": 313
+      }
+    }
+  },
+  "cibervoluntarios": {
+    "distintos": [],
+    "recuentos": {
+      "idioma": {
+        "distinto": 0,
+        "igual": 0,
+        "sin-decidir": 247
+      },
+      "materia": {
+        "distinto": 0,
+        "igual": 0,
+        "sin-decidir": 247
+      },
+      "nivel": {
+        "distinto": 0,
+        "igual": 0,
+        "sin-decidir": 247
+      }
+    }
+  },
+  "fundae:publicador:catalogo:1": {
+    "distintos": [],
+    "recuentos": {
+      "idioma": {
+        "distinto": 0,
+        "igual": 0,
+        "sin-decidir": 1
+      },
+      "materia": {
+        "distinto": 0,
+        "igual": 0,
+        "sin-decidir": 1
+      },
+      "nivel": {
+        "distinto": 0,
+        "igual": 0,
+        "sin-decidir": 1
+      }
+    }
+  },
+  "fundae:publicador:catalogo:3": {
+    "distintos": [],
+    "recuentos": {
+      "idioma": {
+        "distinto": 0,
+        "igual": 0,
+        "sin-decidir": 183
+      },
+      "materia": {
+        "distinto": 0,
+        "igual": 0,
+        "sin-decidir": 183
+      },
+      "nivel": {
+        "distinto": 0,
+        "igual": 0,
+        "sin-decidir": 183
+      }
+    }
+  },
+  "hp-life": {
+    "distintos": [],
+    "recuentos": {
+      "idioma": {
+        "distinto": 0,
+        "igual": 0,
+        "sin-decidir": 37
+      },
+      "materia": {
+        "distinto": 0,
+        "igual": 0,
+        "sin-decidir": 37
+      },
+      "nivel": {
+        "distinto": 0,
+        "igual": 0,
+        "sin-decidir": 37
+      }
+    }
+  }
+}

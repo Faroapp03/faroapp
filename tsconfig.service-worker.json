@@ -1,0 +1,13 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "lib": ["es2024", "webworker"],
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "moduleDetection": "legacy",
+    "types": []
+  },
+  "files": ["web/tipos-del-service-worker.d.ts", "src/service-worker/servicio.js"],
+  "include": [],
+  "exclude": []
+}

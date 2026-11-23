@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta
+      name="description"
+      content="Instala Faro como una aplicación en tu ordenador o tu móvil: cómo hacerlo en Brave, Chrome, Edge, Safari y Firefox."
+      data-texto-content="instalar.descripcion"
+    />
+    <meta name="theme-color" content="#f4f3f0" />
+    <meta name="apple-mobile-web-app-title" content="Faro" />
+    <!-- En iPhone y iPad instalada: barra de estado opaca y negra, como el modo noche con el que abre Faro (el
+         sistema no admite una por tema; donde lo admite, el color lo pone el theme-color de arriba). -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <title data-texto="instalar.titulo">Instalación · Faro</title>
+    <link rel="icon" href="imagenes/identidad/faro-editorial-icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="imagenes/identidad/icon-180.png" />
+    <link rel="manifest" href="manifest.webmanifest" crossorigin="use-credentials" />
+    <script src="scripts/tema-inicial.js"></script>
+    <script src="scripts/idioma-inicial.js"></script>
+    <link rel="stylesheet" href="estilos/tipografias.css" />
+    <link rel="stylesheet" href="estilos/tokens.css" />
+    <link rel="stylesheet" href="estilos/base.css" />
+    <link rel="stylesheet" href="estilos/contenidos.css" />
+    <link rel="stylesheet" href="estilos/etapas.css" />
+    <link rel="stylesheet" href="estilos/instalar.css" />
+    <!-- La página empieza importando sitio.js y carga después las pestañas (scripts/etapas.js), con la del navegador
+         de quien la abre ya elegida (scripts/instalar.js). Sin JavaScript, las dos se leen seguidas. -->
+    <script type="module" src="scripts/instalar.js"></script>
+    <!-- Los textos se escriben en cuanto se ejecuta sitio.js: sus diccionarios se piden a la vez que él. -->
+    <link rel="modulepreload" href="idiomas/cargar.js" />
+    <link rel="modulepreload" href="scripts/idioma.js" />
+    <link rel="modulepreload" href="scripts/textos.js" />
+    <link rel="modulepreload" href="scripts/version.js" />
+    <link rel="modulepreload" href="scripts/sitio.js" />
+    <link rel="modulepreload" href="scripts/etapas.js" />
+  </head>
+  <body>
+    <a class="salto" href="#contenido" data-texto="comun.saltar">Saltar al contenido</a>
+    <header class="cabecera">
+      <button
+        class="menu-boton"
+        type="button"
+        aria-label="Abrir menú"
+        data-texto-aria-label="comun.menu.abrir"
+        aria-expanded="false"
+        aria-controls="menu"
+      >
+        <span></span><span></span><span></span>
+      </button>
+      <a class="marca" href="inicio.html">
+        <span class="solo-lectores" data-texto="comun.marca.inicio">Faro, inicio</span>
+        <span class="marca-nombre" aria-hidden="true"
+          ><span class="marca-inicial"
+            >F<svg class="marca-luz" viewBox="0 0 18 8" focusable="false" aria-hidden="true"
+              ><path d="M1 4h16" /></svg
+            ></span
+          >ARO</span
+        >
+      </a>
+      <div class="cabecera-herramientas">
+        <div class="idioma" data-selector-idioma>
+          <button
+            class="idioma-boton"
+            type="button"
+            id="idioma-boton"
+            aria-label="Idioma: Castellano"
+            data-texto-aria-label="comun.idioma.boton"
+            aria-haspopup="menu"
+            aria-expanded="false"
+            aria-controls="idioma-opciones"
+          >
+            <img
+              class="idioma-bandera idioma-bandera-es"
+              src="imagenes/identidad/bandera-espana.svg"
+              alt=""
+              width="24"
+              height="16"
+            />
+            <img
+              class="idioma-bandera idioma-bandera-ca"
+              src="imagenes/identidad/bandera-catalunya.svg"
+              alt=""
+              width="24"
+              height="16"
+            />
+          </button>
+          <div class="idioma-opciones" id="idioma-opciones" role="menu" aria-labelledby="idioma-boton" hidden>
+            <button type="button" role="menuitemradio" aria-checked="true" data-cambiar-idioma="es" lang="es"
+              ><img class="idioma-bandera" src="imagenes/identidad/bandera-espana.svg" alt="" width="24" height="16" />
+              <span>Castellano</span></button
+            >
+            <button type="button" role="menuitemradio" aria-checked="false" data-cambiar-idioma="ca" lang="ca"
+              ><img
+                class="idioma-bandera"
+                src="imagenes/identidad/bandera-catalunya.svg"
+                alt=""
+                width="24"
+                height="16"
+              /><span>Català</span></button
+            >
+          </div>
+        </div>
+        <button
+          class="tema-boton"
+          type="button"
+          aria-label="Cambiar a modo día"
+          title="Modo día / noche"
+          data-texto-title="comun.tema.titulo"
+        >
+          <svg class="icono-sol" viewBox="0 0 24 24" aria-hidden="true" focusable="false"
+            ><circle cx="12" cy="12" r="4.5" />
+            <path
+              d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"
+            /></svg
+          >
+          <svg class="icono-luna" viewBox="0 0 24 24" aria-hidden="true" focusable="false"
+            ><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z" /></svg
+          >
+        </button>
+      </div>
+    </header>
+    <div class="menu-velo" id="menu-velo" hidden></div>
+    <nav id="menu" class="menu" hidden aria-label="Menú principal" data-texto-aria-label="comun.menu.nombre">
+      <ul class="menu-lista">
+        <li
+          ><a href="inicio.html"><span class="menu-destino" data-texto="comun.seccion.inicio">Inicio</span></a></li
+        >
+        <li
+          ><a href="entender-ia.html"
+            ><span class="menu-destino" data-texto="comun.seccion.ia">Qué es la IA</span></a
+          ></li
+        >
+        <li
+          ><a href="que-es-faro.html"><span class="menu-destino">Faro</span></a></li
+        >
+        <li
+          ><a href="recorrido.html"><span class="menu-destino" data-texto="comun.seccion.empezar">Empezar</span></a></li
+        >
+        <li
+          ><a href="biblioteca.html"
+            ><span class="menu-destino" data-texto="comun.seccion.biblioteca">Biblioteca</span></a
+          ></li
+        >
+        <li
+          ><a href="cursos.html"><span class="menu-destino" data-texto="comun.seccion.cursos">Cursos</span></a></li
+        >
+        <li
+          ><a href="datos-globales.html"
+            ><span class="menu-destino" data-texto="comun.seccion.datos-globales">Datos globales</span></a
+          ></li
+        >
+        <li data-pasar-entrada hidden
+          ><button type="button" class="menu-pasar" data-pasar-dispositivo
+            ><span class="menu-destino" data-texto="comun.menu.pasar">Pasar a otro dispositivo</span></button
+          ></li
+        >
+      </ul>
+    </nav>
+    <!-- data-instalar: esta es la página «Instalar Faro»; el menú no lleva aquí su enlace (scripts/instalacion.js). -->
+    <main id="contenido" class="pagina instalar" data-instalar>
+      <header class="seccion-cabecera seccion-cabecera--sin-foto"
+        ><p class="antetitulo" data-texto="instalar.rotulo">Aplicación</p>
+        <h1 data-texto="instalacion.titulo">Instalar Faro</h1>
+        <p class="entradilla" data-texto="instalar.entradilla"
+          >Usa Faro como una aplicación en tu ordenador o tu móvil, con su propio icono y en su propia ventana. Es la
+          misma web, con los mismos datos y la misma privacidad. Elige tu navegador.</p
+        ></header
+      >
+
+      <!-- Dos pestañas (scripts/etapas.js, variante «segmentos»); scripts/instalar.js elige la inicial según lo que
+           sabe hacer el navegador, y un fragmento en la dirección (#chromium, #safari-firefox) manda sobre ella. -->
+      <div class="etapas" id="instalar-navegadores" data-etapas="segmentos"
+        ><nav
+          class="etapas-barra"
+          aria-label="Instalar según el navegador"
+          data-texto-aria-label="instalar.navegadores"
+          data-etapas-barra
+          hidden
+          ><ol
+            ><li
+              ><a href="#chromium"
+                ><span class="etapas-nombre" data-texto="instalar.chromium.titulo">Brave, Chrome y Edge</span></a
+              ></li
+            ><li
+              ><a href="#safari-firefox"
+                ><span class="etapas-nombre" data-texto="instalar.safari-firefox.titulo">Safari y Firefox</span></a
+              ></li
+            ></ol
+          ></nav
+        ><section class="etapa bloque" id="chromium" data-etapa aria-labelledby="t-chromium"
+          ><h2 id="t-chromium" data-texto="instalar.chromium.titulo">Brave, Chrome y Edge</h2
+          ><p data-texto="instalar.chromium.intro"
+            >Estos navegadores pueden instalar Faro como una aplicación.</p
+          ><!-- Lo que se ve lo decide scripts/instalar.js según el navegador y el estado de la instalación: en Brave,
+               Chrome y Edge, siempre el botón (o el mensaje de Faro ya instalado); los pasos, al pulsarlo si el
+               navegador no abre su ventana. Sin JavaScript, solo los pasos. -->
+          <div class="instalar-estado" id="instalar-estado"
+            ><div id="instalar-accion" hidden
+              ><button type="button" class="boton instalar-boton" id="instalar-boton"
+                ><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"
+                  ><path d="M12 4v11M7.5 10.5 12 15l4.5-4.5M5 19.5h14" /></svg
+                ><span data-texto="instalar.boton">Descargar e instalar Faro</span></button
+              ><p class="nota" id="instalar-nota" hidden data-texto="instalar.boton.nota"
+                >Se abre la ventana del navegador que te pregunta si quieres instalarlo.</p
+              ></div
+            ><p id="instalar-abierta" tabindex="-1" hidden data-texto="instalar.abierta"
+              >Faro ya está instalado: lo estás usando como aplicación.</p
+            ><p id="instalar-instalada" tabindex="-1" hidden data-texto="instalar.instalada"
+              >Faro está instalado. Ya puedes abrirlo desde su icono, como cualquier otra aplicación.</p
+            ><div id="instalar-pasos" tabindex="-1"
+              ><p data-texto="instalar.manual"
+                >Ahora el navegador no abre su ventana de instalación desde esta página. Instálalo desde el icono de
+                instalar de la barra de direcciones o desde el menú del navegador:</p
+              ><ul class="lista"
+                ><li data-navegador="brave" data-texto="instalar.brave"
+                  ><strong>Brave</strong>: el icono «Instalar» de la barra de direcciones o, en el menú principal,
+                  «Guardar y compartir» › «Instalar Faro…».</li
+                ><li data-navegador="chrome" data-texto="instalar.chrome"
+                  ><strong>Chrome</strong>: el botón «Instalar» de la barra de direcciones o, en el menú Más, «Enviar,
+                  guardar y compartir» › «Instalar página como aplicación…». En Android, Más › «Instalar y crear acceso
+                  directo» › «Instalar».</li
+                ><li data-navegador="edge" data-texto="instalar.edge"
+                  ><strong>Edge</strong>: avisa cuando se puede instalar; si no, en «Configuración y más» (…), «Más
+                  herramientas» › «Aplicaciones» › «Instala este sitio como una aplicación».</li
+                ></ul
+              ><p data-texto="instalar.ya-instalada">Si ya lo instalaste, búscalo entre tus aplicaciones.</p></div
+            ></div
+          ></section
+        ><section class="etapa bloque" id="safari-firefox" data-etapa aria-labelledby="t-safari-firefox"
+          ><h2 id="t-safari-firefox" data-texto="instalar.safari-firefox.titulo">Safari y Firefox</h2
+          ><h3 data-texto="instalar.mac.titulo">Safari en Mac</h3
+          ><ol class="lista"
+            ><li data-texto="instalar.mac.1">Abre Faro en Safari. Hace falta macOS Sonoma 14 o posterior.</li
+            ><li data-texto="instalar.mac.2"
+              >En la barra de menús, elige Archivo › «Añadir al Dock». También puedes pulsar el botón Compartir de la
+              barra de herramientas y elegir «Añadir al Dock».</li
+            ><li data-texto="instalar.mac.3"
+              >Haz clic en «Añadir». Faro queda en el Dock y en las aplicaciones de Spotlight.</li
+            ></ol
+          ><h3 data-texto="instalar.iphone.titulo">Safari en iPhone o iPad</h3
+          ><ol class="lista"
+            ><li data-texto="instalar.iphone.1">Abre Faro en Safari.</li
+            ><li data-texto="instalar.iphone.2"
+              >Toca el botón «Menú de página» y después «Compartir». Si tus pestañas están arriba o abajo, toca
+              directamente el botón «Compartir».</li
+            ><li data-texto="instalar.iphone.3"
+              >Desplázate por la lista y toca «Añadir a pantalla de inicio». Si no está, al final de la lista toca
+              «Editar acciones» y añádela.</li
+            ><li data-texto="instalar.iphone.4">Activa «Abrir como app web» y toca «Añadir».</li></ol
+          ><p data-texto="instalar.iphone.otros"
+            >En iPhone y iPad también puedes hacerlo desde el menú Compartir de Chrome, Edge o Firefox.</p
+          ><h3 data-texto="instalar.firefox.titulo">Firefox</h3
+          ><p data-texto="instalar.firefox.ordenador"
+            >En el ordenador, Firefox no instala Faro como aplicación en Mac ni en Linux. En Windows, desde la versión
+            143, puede fijarlo en la barra de tareas para abrirlo en una ventana sencilla.</p
+          ><p data-texto="instalar.firefox.android"
+            >En Android, Firefox no lo instala como aplicación: puede añadir a la pantalla de inicio un acceso directo
+            que abre Faro en el navegador. Búscalo en el menú de Firefox.</p
+          ><p class="instalar-alternativa" data-texto="instalar.alternativa"
+            >Si tu navegador no permite instalarlo, puedes usar Faro en una pestaña, con todo lo que ofrece, o
+            instalarlo desde Brave, Chrome o Edge.</p
+          ></section
+        ></div
+      >
+    </main>
+
+    <footer class="pie">
+      <div class="pie-fila"
+        ><nav aria-label="Información y ayuda" data-texto-aria-label="comun.pie.nombre"
+          ><a href="creditos.html" data-texto="comun.pie.creditos">Créditos</a
+          ><a href="informacion-y-creditos.html#t-datos" data-texto="comun.pie.datos">Tus datos</a
+          ><a href="accesibilidad.html" data-texto="comun.pie.accesibilidad">Accesibilidad</a
+          ><a href="verificable.html" data-texto="comun.pie.verificable">Faro verificable</a
+          ><a class="pie-doctor" href="doctor.html" data-texto="comun.pie.doctor">Comprobar Faro</a
+          ><a class="pie-instalar" href="instalar.html" aria-current="page" data-texto="comun.pie.instalar"
+            >Instalar Faro</a
+          ></nav
+        ><p class="pie-derechos" data-texto="comun.pie.derechos">© 2026 Equipo Faro</p></div
+      >
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "id": "agencia",
+  "tema": "cursos",
+  "lector": "plataforma_datos.cursos.fuentes.agencia.lector",
+  "casa_datos": "agencia",
+  "nombre": "Oferta de acreditación FP.CAT",
+  "institucion": "Agència FP.CAT",
+  "significado": "Oferta de acreditación, cualificaciones no disponibles y requisitos publicados; una coincidencia no comprobada no significa indisponibilidad.",
+  "alcance": [
+    "Procedencia con SHA; fecha oferta 12/09/2025, no disponibles febrero 2025, guía agosto 2024",
+    "Oferta de acreditación; no calendario/plazas de cursos"
+  ],
+  "recursos": [
+    {
+      "id": "oferta",
+      "tipo": "archivo",
+      "ubicacion": "var/actualizacion/originales/agencia/agencia-oferta-ecp-2025-09-12.pdf",
+      "licencia": "Llicència oberta d'ús d'informació – Catalunya, declarada por el lector; conservar atribución.",
+      "descripcion": "Oferta de agrupaciones de ECP del 12/09/2025."
+    },
+    {
+      "id": "no-disponibles",
+      "tipo": "archivo",
+      "ubicacion": "var/actualizacion/originales/agencia/agencia-ecp-no-disponibles-2025-02.pdf",
+      "licencia": "Llicència oberta d'ús d'informació – Catalunya, declarada por el lector; conservar atribución.",
+      "descripcion": "Lista de no disponibles de febrero de 2025."
+    },
+    {
+      "id": "guia",
+      "tipo": "archivo",
+      "ubicacion": "var/actualizacion/originales/agencia/agencia-guia-persona-usuaria-2024-08.pdf",
+      "licencia": "Llicència oberta d'ús d'informació – Catalunya, declarada por el lector; conservar atribución.",
+      "descripcion": "Guía de la persona usuaria de agosto de 2024."
+    }
+  ],
+  "canales": [
+    {
+      "id": "agencia",
+      "tipo": "local",
+      "recursos": ["oferta", "no-disponibles", "guia"],
+      "autenticacion": "No aplicable al lector; requisito de la web desconocido aquí",
+      "limites": [
+        "Robots fp.gencat.cat impide descarga automatizada según declaración local; edición y recuentos fijados, no API acreditada"
+      ],
+      "observaciones": "No hay descarga automática en el lector."
+    }
+  ],
+  "actualizacion": {
+    "politica": "manual",
+    "red": false,
+    "frecuencia": "cuando la Agència publica una oferta nueva",
+    "renovar_dias": 180,
+    "originales": "agencia"
+  },
+  "conjuntos": [
+    {
+      "id": "agencia",
+      "fuente": "agencia",
+      "clase": "manual",
+      "alcance": "copia-local",
+      "operacion": "revision",
+      "intervalo_dias": null
+    }
+  ],
+  "dependencias": [],
+  "contratos": ["lector.py:validar"],
+  "retirada": "Se mantienen los controles de admisión y reconstrucción del lector actual; no se declara una conciliación genérica de entidades ni se interpreta un fallo como baja.",
+  "conservacion": "Se conservan las rutas, originales, procedencias y revisiones actuales en var/actualizacion; este descriptor no habilita limpieza automática ni fija nuevos plazos de retención."
+}

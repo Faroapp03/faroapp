@@ -1,0 +1,355 @@
+{
+  "umbral": 400,
+  "medida": "Líneas donde hay código: sin líneas en blanco, sin comentarios y sin el interior de las cadenas de varias líneas. TypeScript y JavaScript los mide Biome (style/noExcessiveLinesPerFile); Python, plataforma_datos/comun/pruebas/test_tamano_de_archivos.py.",
+  "motivos": {
+    "catalogo-y-contratos": "Reúne el modelo del catálogo de cursos o de sus contratos con todas sus entidades. Se divide por entidades; mientras tanto no crece.",
+    "vigencia": "Decide y registra la vigencia de los cursos. Se divide en validación de entradas, calendarios y plazos, selección de la evidencia, decisión del estado, construcción del resultado y registro.",
+    "operacion-de-fuentes": "Aplica las respuestas de cada fuente al catálogo: recepción, fallos por unidad y pendientes. Se divide por esas etapas.",
+    "orquestacion": "Coordina la actualización de los datos: planificación, ejecución de pasos, almacenes, publicación e informe. Se divide por esas etapas.",
+    "lector-de-fuente": "Lee una fuente con un formato extenso o con varias publicaciones. Se divide por etapas (obtención, lectura, validación y salida).",
+    "tablas-de-referencia": "Tabla de referencia escrita a mano (constantes, correspondencias o catálogo de indicadores) que crece con el contenido, no con la lógica.",
+    "utilidad-comun": "Utilidad compartida que reúne varios formatos o casos del mismo tipo. Se divide por formato.",
+    "motor-protegido": "Motor de ocupaciones protegido: solo se reorganiza con permiso expreso y demostrando un banco de resultados idéntico.",
+    "diccionario": "Diccionario de textos de una sección en un idioma. Crece con el contenido, no con la lógica; se divide por capítulos si la sección se divide.",
+    "panel-de-administracion": "Panel de administración: vistas, estado y acciones en un mismo módulo. Se divide por vista.",
+    "plataforma": "Adaptador de servidor o de almacenamiento con varias operaciones sobre el mismo recurso. Se divide por operación.",
+    "guion-web": "Guion de una página o de un paso del recorrido con su dibujo, sus datos y sus eventos. Se divide por responsabilidad.",
+    "herramienta": "Herramienta de construcción o de comprobación con varias fases. Se divide por fase.",
+    "informe": "Construye el informe de la persona por secciones. Se divide por sección."
+  },
+  "fuera_de_la_medida": {
+    "pruebas/**": "Pruebas: se agrupan por el comportamiento que acreditan, sin techo por archivo.",
+    "**/pruebas/**": "Pruebas de cada módulo, con el mismo criterio.",
+    "**/*.test.ts": "Pruebas TypeScript fuera de las carpetas de pruebas.",
+    "**/*.test.js": "Pruebas JavaScript fuera de las carpetas de pruebas.",
+    "**/*.html": "Páginas: contenido, no código.",
+    "**/*.css": "Hojas de estilo: fuera de esta convención; las ordena Biome con sus reglas de formato.",
+    "web/administracion/estado-datos.js": "Generado: copia publicada de src/administracion/estado-datos.js, que sí se mide."
+  },
+  "excepciones": {
+    "herramientas/api/openapi.ts": {
+      "techo": 450,
+      "motivo": "herramienta"
+    },
+    "herramientas/cloudflare/comprobar-construccion.ts": {
+      "techo": 484,
+      "motivo": "herramienta"
+    },
+    "herramientas/cloudflare/versiones.ts": {
+      "techo": 516,
+      "motivo": "herramienta"
+    },
+    "herramientas/web/copia-sin-conexion.ts": {
+      "techo": 446,
+      "motivo": "herramienta"
+    },
+    "herramientas/web/lecturas.ts": {
+      "techo": 465,
+      "motivo": "herramienta"
+    },
+    "motores/ocupaciones/src/busqueda/denominaciones-de-diccionario.ts": {
+      "techo": 723,
+      "motivo": "motor-protegido"
+    },
+    "motores/ocupaciones/src/recorrido/pantalla/previa-fusion.ts": {
+      "techo": 436,
+      "motivo": "motor-protegido"
+    },
+    "motores/ocupaciones/src/recorrido/pantalla/servicio.ts": {
+      "techo": 741,
+      "motivo": "motor-protegido"
+    },
+    "motores/ocupaciones/src/recorrido/preguntas/motor.ts": {
+      "techo": 895,
+      "motivo": "motor-protegido"
+    },
+    "src/administracion/estado-datos.js": {
+      "techo": 546,
+      "motivo": "panel-de-administracion"
+    },
+    "src/administracion/http.ts": {
+      "techo": 664,
+      "motivo": "panel-de-administracion"
+    },
+    "src/dominio/informe-breve.ts": {
+      "techo": 546,
+      "motivo": "informe"
+    },
+    "src/plataforma/acceso-publico/durable.ts": {
+      "techo": 912,
+      "motivo": "plataforma"
+    },
+    "src/plataforma/acceso-publico/sesion-sqlite.ts": {
+      "techo": 600,
+      "motivo": "plataforma"
+    },
+    "src/plataforma/acceso-publico/trabajos-sqlite.ts": {
+      "techo": 464,
+      "motivo": "plataforma"
+    },
+    "src/plataforma/acceso-publico/vigilante-sqlite.ts": {
+      "techo": 583,
+      "motivo": "plataforma"
+    },
+    "src/plataforma/cloudflare/worker.ts": {
+      "techo": 495,
+      "motivo": "plataforma"
+    },
+    "src/plataforma/node/servidor.ts": {
+      "techo": 564,
+      "motivo": "plataforma"
+    },
+    "web/administracion/cliente.js": {
+      "techo": 1177,
+      "motivo": "panel-de-administracion"
+    },
+    "web/administracion/panel.js": {
+      "techo": 644,
+      "motivo": "panel-de-administracion"
+    },
+    "web/administracion/vista-datos.js": {
+      "techo": 474,
+      "motivo": "panel-de-administracion"
+    },
+    "web/idiomas/ca/datos-globales.js": {
+      "techo": 718,
+      "motivo": "diccionario"
+    },
+    "web/idiomas/ca/lecturas.js": {
+      "techo": 447,
+      "motivo": "diccionario"
+    },
+    "web/idiomas/ca/paginas.js": {
+      "techo": 512,
+      "motivo": "diccionario"
+    },
+    "web/idiomas/ca/panel.js": {
+      "techo": 494,
+      "motivo": "diccionario"
+    },
+    "web/idiomas/ca/recorrido.js": {
+      "techo": 423,
+      "motivo": "diccionario"
+    },
+    "web/idiomas/es/datos-globales.js": {
+      "techo": 718,
+      "motivo": "diccionario"
+    },
+    "web/idiomas/es/lecturas.js": {
+      "techo": 452,
+      "motivo": "diccionario"
+    },
+    "web/idiomas/es/paginas.js": {
+      "techo": 511,
+      "motivo": "diccionario"
+    },
+    "web/idiomas/es/panel.js": {
+      "techo": 498,
+      "motivo": "diccionario"
+    },
+    "web/idiomas/es/recorrido.js": {
+      "techo": 422,
+      "motivo": "diccionario"
+    },
+    "web/scripts/datos-globales/dibujo.js": {
+      "techo": 652,
+      "motivo": "guion-web"
+    },
+    "web/scripts/datos-globales/pintar.js": {
+      "techo": 561,
+      "motivo": "guion-web"
+    },
+    "web/scripts/datos-globales/union-europea-capitulos.js": {
+      "techo": 584,
+      "motivo": "guion-web"
+    },
+    "web/scripts/datos-globales/union-europea-metas.js": {
+      "techo": 547,
+      "motivo": "guion-web"
+    },
+    "web/scripts/recorrido/ocupacion-local.js": {
+      "techo": 401,
+      "motivo": "guion-web"
+    },
+    "web/scripts/recorrido/paso-informe.js": {
+      "techo": 526,
+      "motivo": "guion-web"
+    },
+    "web/scripts/recorrido/paso-ocupacion.js": {
+      "techo": 534,
+      "motivo": "guion-web"
+    },
+    "plataforma_datos/biblioteca/fuentes/enlaces_lecturas/lector.py": {
+      "techo": 448,
+      "motivo": "lector-de-fuente"
+    },
+    "plataforma_datos/comun/fuentes/catalan/lector.py": {
+      "techo": 405,
+      "motivo": "lector-de-fuente"
+    },
+    "plataforma_datos/comun/fuentes/nombres/lector.py": {
+      "techo": 440,
+      "motivo": "lector-de-fuente"
+    },
+    "plataforma_datos/comun/hojas.py": {
+      "techo": 408,
+      "motivo": "utilidad-comun"
+    },
+    "plataforma_datos/contratos/fuentes.py": {
+      "techo": 530,
+      "motivo": "catalogo-y-contratos"
+    },
+    "plataforma_datos/cursos/catalogo.py": {
+      "techo": 1408,
+      "motivo": "catalogo-y-contratos"
+    },
+    "plataforma_datos/cursos/contrato_entrega_catalogo.py": {
+      "techo": 524,
+      "motivo": "catalogo-y-contratos"
+    },
+    "plataforma_datos/cursos/contrato_fichas.py": {
+      "techo": 961,
+      "motivo": "catalogo-y-contratos"
+    },
+    "plataforma_datos/cursos/entrega_catalogo.py": {
+      "techo": 478,
+      "motivo": "catalogo-y-contratos"
+    },
+    "plataforma_datos/cursos/fuentes/barcelonactiva/adquisicion.py": {
+      "techo": 500,
+      "motivo": "operacion-de-fuentes"
+    },
+    "plataforma_datos/cursos/fuentes/barcelonactiva/idiomas_edicion.py": {
+      "techo": 511,
+      "motivo": "lector-de-fuente"
+    },
+    "plataforma_datos/cursos/fuentes/barcelonactiva/robot_cibernarium.py": {
+      "techo": 852,
+      "motivo": "lector-de-fuente"
+    },
+    "plataforma_datos/cursos/fuentes/cibervoluntarios/actualizacion.py": {
+      "techo": 578,
+      "motivo": "lector-de-fuente"
+    },
+    "plataforma_datos/cursos/fuentes/citilab/lector.py": {
+      "techo": 435,
+      "motivo": "lector-de-fuente"
+    },
+    "plataforma_datos/cursos/fuentes/fundae/digitalizate.py": {
+      "techo": 485,
+      "motivo": "lector-de-fuente"
+    },
+    "plataforma_datos/cursos/fuentes/hp_life/actualizacion.py": {
+      "techo": 462,
+      "motivo": "lector-de-fuente"
+    },
+    "plataforma_datos/cursos/herramientas/normalizar_investigacion.py": {
+      "techo": 452,
+      "motivo": "utilidad-comun"
+    },
+    "plataforma_datos/cursos/operacion_fuente.py": {
+      "techo": 719,
+      "motivo": "operacion-de-fuentes"
+    },
+    "plataforma_datos/cursos/panel_catalogo.py": {
+      "techo": 415,
+      "motivo": "catalogo-y-contratos"
+    },
+    "plataforma_datos/cursos/registro_vigencia.py": {
+      "techo": 673,
+      "motivo": "vigencia"
+    },
+    "plataforma_datos/cursos/vigencia.py": {
+      "techo": 1187,
+      "motivo": "vigencia"
+    },
+    "plataforma_datos/derechos/fuentes/derechos/lector.py": {
+      "techo": 476,
+      "motivo": "lector-de-fuente"
+    },
+    "plataforma_datos/derivados/fuentes/datos_globales/lector.py": {
+      "techo": 401,
+      "motivo": "lector-de-fuente"
+    },
+    "plataforma_datos/derivados/fuentes/datos_globales/piezas/catalogo_ue.py": {
+      "techo": 726,
+      "motivo": "tablas-de-referencia"
+    },
+    "plataforma_datos/derivados/fuentes/datos_globales/piezas/constantes_datos_globales.py": {
+      "techo": 526,
+      "motivo": "tablas-de-referencia"
+    },
+    "plataforma_datos/ia_y_trabajo/fuentes/cambra/lector.py": {
+      "techo": 410,
+      "motivo": "lector-de-fuente"
+    },
+    "plataforma_datos/ia_y_trabajo/fuentes/encuestas_isco4/lector.py": {
+      "techo": 502,
+      "motivo": "lector-de-fuente"
+    },
+    "plataforma_datos/ia_y_trabajo/fuentes/ia_nacional/lector.py": {
+      "techo": 412,
+      "motivo": "lector-de-fuente"
+    },
+    "plataforma_datos/ia_y_trabajo/fuentes/mundo_eurostat/lector.py": {
+      "techo": 412,
+      "motivo": "lector-de-fuente"
+    },
+    "plataforma_datos/ia_y_trabajo/fuentes/tic_llars/lector.py": {
+      "techo": 491,
+      "motivo": "lector-de-fuente"
+    },
+    "plataforma_datos/ia_y_trabajo/fuentes/tich/lector.py": {
+      "techo": 612,
+      "motivo": "lector-de-fuente"
+    },
+    "plataforma_datos/mercado/fuentes/empresas/lector.py": {
+      "techo": 774,
+      "motivo": "lector-de-fuente"
+    },
+    "plataforma_datos/mercado/fuentes/empresas/piezas/cifras_empresas.py": {
+      "techo": 431,
+      "motivo": "lector-de-fuente"
+    },
+    "plataforma_datos/mercado/fuentes/observatori/lector.py": {
+      "techo": 425,
+      "motivo": "lector-de-fuente"
+    },
+    "plataforma_datos/mercado/fuentes/ocupados/lector.py": {
+      "techo": 660,
+      "motivo": "lector-de-fuente"
+    },
+    "plataforma_datos/mercado/fuentes/salarios/lector.py": {
+      "techo": 511,
+      "motivo": "lector-de-fuente"
+    },
+    "plataforma_datos/mercado/fuentes/sectores/lector.py": {
+      "techo": 444,
+      "motivo": "lector-de-fuente"
+    },
+    "plataforma_datos/ocupaciones/fuentes/oit/lector.py": {
+      "techo": 429,
+      "motivo": "lector-de-fuente"
+    },
+    "plataforma_datos/orquestacion/actualizar.py": {
+      "techo": 789,
+      "motivo": "orquestacion"
+    },
+    "plataforma_datos/orquestacion/almacen_trabajos.py": {
+      "techo": 427,
+      "motivo": "orquestacion"
+    },
+    "plataforma_datos/orquestacion/catalogo_de_datos.py": {
+      "techo": 463,
+      "motivo": "orquestacion"
+    },
+    "plataforma_datos/orquestacion/comprobaciones_remotas.py": {
+      "techo": 448,
+      "motivo": "orquestacion"
+    },
+    "plataforma_datos/orquestacion/generacion_operativa.py": {
+      "techo": 515,
+      "motivo": "orquestacion"
+    }
+  }
+}

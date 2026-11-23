@@ -1,0 +1,82 @@
+import assert from 'node:assert/strict';
+import { test } from 'node:test';
+import { cargarDiccionario } from '../../web/idiomas/cargar.js';
+import { barra, base, documento, entorno, evento } from './dom.ts';
+
+// Importar después del DOM: idioma y la tecla de plataforma se fijan al cargar el módulo.
+test('compositor conserva borrador, lleno, teclado compuesto y foco de privacidad', async (t) => {
+  entorno(t);
+  base();
+  const { campo, form } = barra();
+  await cargarDiccionario('es');
+  const c = await import('../../web/scripts/recorrido/compositor.js');
+  const enviados: string[] = [];
+  c.cambiarModo({ etiqueta: 'Etiqueta', marcador: 'Ejemplo', limite: 30, alEnviar: (s) => enviados.push(s) });
+  c.iniciarCompositor();
+  campo.value = 'nuevo';
+  c.ponerTexto('anterior');
+  assert.equal(campo.value, 'anterior nuevo');
+  campo.value = 'texto nuevo que ocupa todo';
+  c.ponerTexto('anterior');
+  assert.equal(campo.value, 'texto nuevo que ocupa todo');
+  campo.value = ' IME ';
+  campo.dispatchEvent(evento('keydown', { key: 'Enter', isComposing: true }));
+  assert.deepEqual(enviados, []);
+  assert.equal(campo.value, ' IME ');
+  campo.dispatchEvent(evento('keydown', { key: 'Enter' }));
+  assert.deepEqual(enviados, ['IME']);
+  documento.getElementById('ampliar')?.dispatchEvent(evento('click'));
+  campo.value = 'largo';
+  campo.dispatchEvent(evento('keydown', { key: 'Enter' }));
+  assert.deepEqual(enviados, ['IME']);
+  campo.dispatchEvent(evento('keydown', { key: 'Enter', ctrlKey: true }));
+  assert.deepEqual(enviados, ['IME', 'largo']);
+  campo.value = 'conservar';
+  c.cambiarModo({ etiqueta: '', marcador: '', limite: 0, alEnviar: () => assert.fail() });
+  form.dispatchEvent(evento('submit'));
+  assert.equal(campo.value, 'conservar');
+  assert.equal(campo.readOnly, true);
+  assert.equal(campo.maxLength, c.MAX_LETRAS_MENSAJE);
+  documento.getElementById('abrir-privacidad')?.dispatchEvent(evento('click'));
+  assert.equal(documento.activeElement?.id, 't-privacidad');
+  documento.getElementById('aviso-privacidad')?.dispatchEvent(evento('keydown', { key: 'Escape' }));
+  assert.equal(documento.activeElement?.id, 'abrir-privacidad');
+  c.mostrarCompositor(false);
+  assert.equal(form.hidden, true);
+  c.vaciarBarra();
+  assert.equal(c.textoEnLaBarra(), '');
+});
+
+test('límites UTF16 de borrador no fabrican un sustituto aislado al recortar texto válido', async (t) => {
+  entorno(t);
+  base();
+  const { campo } = barra();
+  const c = await import('../../web/scripts/recorrido/compositor.js');
+  c.cambiarModo({ etiqueta: '', marcador: '', limite: 2, alEnviar: () => {} });
+  c.ponerTexto('a😀b');
+  assert.equal(campo.value, 'a');
+  assert.equal(campo.value.isWellFormed(), true);
+  campo.value = 'a😀b';
+  c.cambiarModo({ etiqueta: '', marcador: '', limite: 2, alEnviar: () => {} });
+  assert.equal(campo.value, 'a');
+  assert.equal(campo.value.isWellFormed(), true);
+  campo.value = '';
+  c.anadirAlBorrador('a😀b');
+  assert.equal(campo.value, 'a');
+  assert.deepEqual(campo.seleccion, [1, 1]);
+  assert.equal(documento.activeElement, campo);
+  campo.value = '😀';
+  c.cambiarModo({ etiqueta: '', marcador: '', limite: 0, alEnviar: () => {} });
+  assert.equal(campo.value, '😀');
+  assert.equal(campo.readOnly, true);
+  c.cambiarModo({ etiqueta: '', marcador: '', limite: 1, alEnviar: () => {} });
+  assert.equal(campo.value, '');
+  c.ponerTexto('😀');
+  assert.equal(campo.value, '');
+  c.cambiarModo({ etiqueta: '', marcador: '', limite: 2, alEnviar: () => {} });
+  for (const texto of ['áé', '漢字', 'ab', '😀']) {
+    campo.value = '';
+    c.ponerTexto(texto);
+    assert.equal(campo.value, texto);
+  }
+});

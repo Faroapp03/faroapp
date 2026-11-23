@@ -1,0 +1,380 @@
+/* Recorrido · Pantallas: lo que cambia con el ancho y el alto de la pantalla, el movimiento que se permite y la
+   impresión. Es la última hoja, para que estas reglas ganen en la cascada a las de cada componente. */
+
+/* ---------- Pantallas anchas pero bajas: todo un poco más junto ---------- */
+
+@media (min-width: 761px) and (max-height: 800px) {
+  .rc-guia {
+    padding-top: 24px;
+  }
+
+  .rc-nueva {
+    margin-bottom: 24px;
+  }
+
+  .rc-pasos li {
+    min-height: 64px;
+    padding-bottom: 14px;
+  }
+
+  .rc-chat-cabecera {
+    min-height: 76px;
+    padding-top: 14px;
+    padding-bottom: 14px;
+  }
+
+  .rc-cuerpo:not([data-conversacion]) .rc-mensaje[data-tipo="saludo"] .rc-texto {
+    font-size: 2.4375rem;
+  }
+}
+
+/* ---------- Pantallas medianas: la guía, más estrecha ---------- */
+
+@media (min-width: 761px) and (max-width: 1100px) {
+  .rc-guia {
+    width: 216px;
+    padding-right: 18px;
+    padding-left: 18px;
+  }
+
+  .rc-chat-cabecera {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+}
+
+/* ---------- Móviles: la cabecera común, la de la conversación y el recorrido en un diálogo desde el paso ---------- */
+
+@media (max-width: 760px), (max-width: 1024px) and (max-height: 500px) {
+  .rc-guia,
+  .rc-alternar-guia {
+    display: none;
+  }
+
+  .rc-espacio {
+    display: flex;
+  }
+
+  .rc {
+    flex: 1;
+    --rc-margen: 24px;
+  }
+
+  .rc-chat-cabecera {
+    min-height: 60px;
+    gap: 4px;
+    padding: max(6px, env(safe-area-inset-top)) 8px 6px 4px;
+  }
+
+  /* El avance, bajo la cabecera, con los márgenes de la cabecera del móvil. */
+  .rc-avance {
+    padding: 0 10px 8px;
+  }
+
+  .rc-chat-identidad {
+    gap: 6px;
+  }
+
+  .rc-chat-herramientas {
+    gap: 0;
+  }
+
+  .rc-volver,
+  .rc-nueva-corta {
+    display: grid;
+  }
+
+  .rc-volver {
+    width: 36px;
+    color: var(--rc-tinta);
+  }
+
+  .rc-chat-cabecera > .rc-chat-identidad > .rc-monograma {
+    width: 38px;
+    height: 38px;
+    margin-right: 3px;
+    font-size: 1.125rem;
+    border-radius: 10px;
+  }
+
+  .rc-identidad-lema {
+    max-width: 170px;
+  }
+
+  .rc-ver-recorrido {
+    gap: 5px;
+    padding: 5px 10px;
+    font-size: 0.75rem;
+  }
+
+  .rc-paso-nombre {
+    display: none;
+  }
+
+  .rc-conversacion {
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
+
+  .rc-texto {
+    max-width: 88%;
+    font-size: 0.9375rem;
+    line-height: 1.5;
+  }
+
+  .rc-cuerpo:not([data-conversacion]) .rc-mensaje[data-tipo="saludo"] .rc-texto {
+    font-size: clamp(1.875rem, 8.9vw, 2.4375rem);
+  }
+
+  .rc-log {
+    gap: 12px;
+  }
+
+  .rc-mensaje {
+    gap: 10px;
+  }
+
+  .rc-avatar.rc-monograma {
+    width: 28px;
+    height: 28px;
+    font-size: 0.9375rem;
+  }
+
+  .rc-mensaje[data-autor="persona"] .rc-turno {
+    max-width: 88%;
+  }
+
+  .rc-sugerencias,
+  .rc-tarjeta {
+    margin-left: 0;
+  }
+
+  .rc-tarjeta {
+    --rc-relleno-tarjeta: 16px;
+  }
+
+  .rc-tarea {
+    padding: 12px;
+  }
+
+  .rc-tiempo legend {
+    float: none;
+    width: 100%;
+    margin: 0 0 6px;
+  }
+
+  .rc-tiempo label {
+    flex: 1 1 0;
+    justify-content: center;
+    padding: 7px 10px;
+  }
+
+  .rc-acciones > * {
+    flex: 1 1 auto;
+  }
+
+  .rc-acciones .rc-boton-principal {
+    flex-basis: 100%;
+  }
+
+  .rc-marcable .rc-tiempo {
+    margin-left: 0;
+  }
+
+  .rc-compositor {
+    padding: 10px 14px max(8px, env(safe-area-inset-bottom));
+  }
+
+  .rc-cuerpo:not([data-conversacion]) .rc-compositor {
+    padding-top: 18px;
+    padding-bottom: max(20px, env(safe-area-inset-bottom));
+  }
+
+  .rc-caja {
+    gap: 6px;
+    padding: 12px 8px 6px 16px;
+    border-radius: 23px;
+  }
+
+  .rc-caja textarea {
+    min-height: 44px;
+  }
+
+  .rc-compositor[data-ampliado="true"] .rc-caja textarea {
+    min-height: min(140px, 26dvh);
+  }
+
+  .rc-teclas {
+    display: none;
+  }
+
+  .rc-control {
+    padding-right: 8px;
+    padding-left: 8px;
+  }
+
+  .rc-compositor-pie {
+    gap: 0 8px;
+  }
+
+  /* La marca de traducción, en su propia línea bajo el aviso y «Privacidad», sin robar alto a la conversación. */
+  .rc-marca-traduccion {
+    flex-basis: 100%;
+    order: 1;
+    min-height: 24px;
+  }
+
+  .rc-ayudas {
+    width: 100%;
+    padding: 12px 14px;
+  }
+
+  /* El aviso de privacidad es largo: en los móviles se abre como una hoja en medio de la pantalla. */
+  .rc-privacidad {
+    position: fixed;
+    top: 10%;
+    right: 12px;
+    bottom: auto;
+    left: 12px;
+    max-height: 75%;
+    padding: 18px;
+  }
+
+  .rc-dialogo {
+    width: calc(100% - 24px);
+    max-width: 430px;
+    padding: 22px;
+  }
+}
+
+/* Con poco alto (un móvil apaisado) no caben dos cabeceras: queda la de la conversación, con «Volver» al inicio y los
+   enlaces del diálogo del paso. En un móvil vertical, mientras se escribe con el teclado en pantalla, la cabecera común
+   se aparta para dejar sitio a la conversación y vuelve en cuanto el foco sale de la barra; sin animación. */
+@media (max-width: 1024px) and (max-height: 500px) {
+  .rc-cuerpo {
+    grid-template-rows: minmax(0, 1fr);
+  }
+
+  .rc-cuerpo > .cabecera {
+    display: none;
+  }
+
+  .rc-pagina {
+    grid-row: 1;
+  }
+}
+
+@media (max-width: 760px) and (pointer: coarse) {
+  .rc-cuerpo:has(#mensaje:focus) > .cabecera {
+    display: none;
+  }
+}
+
+@media (max-width: 760px) and (max-height: 700px), (max-width: 1024px) and (max-height: 500px) {
+  .rc-chat-cabecera {
+    min-height: 64px;
+    padding-top: max(4px, env(safe-area-inset-top));
+    padding-bottom: 4px;
+  }
+
+  .rc-cuerpo:not([data-conversacion]) .rc-conversacion {
+    padding-top: 16px;
+  }
+
+  .rc-cuerpo:not([data-conversacion]) .rc-mensaje[data-tipo="saludo"] .rc-texto {
+    font-size: 1.9375rem;
+  }
+
+  .rc-cuerpo:not([data-conversacion]) .rc-compositor {
+    padding-top: 14px;
+  }
+}
+
+@media (max-width: 360px) {
+  .rc {
+    --rc-margen: 20px;
+  }
+
+  .rc-chat-cabecera {
+    padding-right: 4px;
+  }
+
+  .rc-identidad-lema {
+    max-width: 124px;
+  }
+
+  .rc-compositor {
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+}
+
+/* Con muy poco alto (un móvil apaisado con el teclado abierto), la bienvenida deja de centrarse: la barra, abajo. */
+@media (max-height: 500px) {
+  .rc-cuerpo:not([data-conversacion]) .rc-conversacion {
+    flex: 1 1 auto;
+  }
+
+  .rc-cuerpo:not([data-conversacion]) .rc-compositor {
+    margin-bottom: 0;
+  }
+
+  .rc-ayudas {
+    max-height: 38dvh;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .rc-cuerpo button {
+    transition:
+      background-color 0.15s ease,
+      border-color 0.15s ease,
+      color 0.15s ease;
+  }
+
+  /* Las respuestas rápidas y las opciones de Faro se pintan de izquierda a derecha al pasar por encima. */
+  .rc-cuerpo .rc-sugerencia,
+  .rc-cuerpo button.rc-opcion {
+    transition:
+      background-size 0.2s ease,
+      border-color 0.2s ease,
+      color 0.15s ease;
+  }
+}
+
+@media print {
+  .rc-cuerpo,
+  .rc-cuerpo[data-paso="4"] {
+    display: block;
+    height: auto;
+    overflow: visible;
+  }
+
+  .rc-guia,
+  .rc-chat-cabecera,
+  .rc-avance,
+  .rc-conversacion,
+  .rc-compositor,
+  .rc-dialogo,
+  .rc-pasar {
+    display: none;
+  }
+
+  .rc-informe {
+    border-top: 0;
+  }
+
+  /* Delante del informe no puede quedar ninguna caja en el flujo: el informe imprime en su página con nombre
+     (@page informe, informe-breve.css) y el navegador abriría antes otra página, en blanco. La alerta vacía y la nota
+     de idioma del informe (que habla de la pantalla, no del papel) no se imprimen. */
+  #rc-sin-textos:empty,
+  .rc-nota-informe {
+    display: none;
+  }
+
+  /* El último aviso para lectores de pantalla («Tarea marcada…») describe la interacción en pantalla, no el
+     documento: no va al PDF, donde al copiar el texto saldría delante del informe. */
+  #rc-estado {
+    display: none;
+  }
+}

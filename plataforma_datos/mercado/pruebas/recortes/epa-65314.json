@@ -1,0 +1,206 @@
+[
+  {
+    "COD": "EPA444194",
+    "Nombre": "Ocupados. Ambos sexos. Cataluña. Total. Valor absoluto. ",
+    "FK_Unidad": 3,
+    "FK_Escala": 4,
+    "Data": [
+      { "Fecha": 1774994400000, "FK_TipoDato": 1, "FK_Periodo": 20, "Anyo": 2026, "Valor": 3997.8, "Secreto": false },
+      { "Fecha": 1767222000000, "FK_TipoDato": 1, "FK_Periodo": 19, "Anyo": 2026, "Valor": 3867.0, "Secreto": false },
+      { "Fecha": 1759269600000, "FK_TipoDato": 1, "FK_Periodo": 22, "Anyo": 2025, "Valor": 3913.2, "Secreto": false },
+      { "Fecha": 1751320800000, "FK_TipoDato": 1, "FK_Periodo": 21, "Anyo": 2025, "Valor": 3950.6, "Secreto": false },
+      { "Fecha": 1743458400000, "FK_TipoDato": 1, "FK_Periodo": 20, "Anyo": 2025, "Valor": 3944.7, "Secreto": false },
+      { "Fecha": 1735686000000, "FK_TipoDato": 1, "FK_Periodo": 19, "Anyo": 2025, "Valor": 3850.1, "Secreto": false },
+      { "Fecha": 1727733600000, "FK_TipoDato": 1, "FK_Periodo": 22, "Anyo": 2024, "Valor": 3855.9, "Secreto": false },
+      { "Fecha": 1719784800000, "FK_TipoDato": 1, "FK_Periodo": 21, "Anyo": 2024, "Valor": 3861.1, "Secreto": false },
+      { "Fecha": 1711922400000, "FK_TipoDato": 1, "FK_Periodo": 20, "Anyo": 2024, "Valor": 3807.6, "Secreto": false }
+    ]
+  },
+  {
+    "COD": "EPA444195",
+    "Nombre": "Ocupados. Ambos sexos. Cataluña. Directores y gerentes. Valor absoluto. ",
+    "FK_Unidad": 3,
+    "FK_Escala": 4,
+    "Data": [
+      { "Fecha": 1774994400000, "FK_TipoDato": 1, "FK_Periodo": 20, "Anyo": 2026, "Valor": 182.6, "Secreto": false },
+      { "Fecha": 1767222000000, "FK_TipoDato": 1, "FK_Periodo": 19, "Anyo": 2026, "Valor": 191.3, "Secreto": false },
+      { "Fecha": 1759269600000, "FK_TipoDato": 1, "FK_Periodo": 22, "Anyo": 2025, "Valor": 199.7, "Secreto": false },
+      { "Fecha": 1751320800000, "FK_TipoDato": 1, "FK_Periodo": 21, "Anyo": 2025, "Valor": 205.4, "Secreto": false },
+      { "Fecha": 1743458400000, "FK_TipoDato": 1, "FK_Periodo": 20, "Anyo": 2025, "Valor": 193.4, "Secreto": false },
+      { "Fecha": 1735686000000, "FK_TipoDato": 1, "FK_Periodo": 19, "Anyo": 2025, "Valor": 180.9, "Secreto": false },
+      { "Fecha": 1727733600000, "FK_TipoDato": 1, "FK_Periodo": 22, "Anyo": 2024, "Valor": 196.9, "Secreto": false },
+      { "Fecha": 1719784800000, "FK_TipoDato": 1, "FK_Periodo": 21, "Anyo": 2024, "Valor": 179.8, "Secreto": false },
+      { "Fecha": 1711922400000, "FK_TipoDato": 1, "FK_Periodo": 20, "Anyo": 2024, "Valor": 188.3, "Secreto": false }
+    ]
+  },
+  {
+    "COD": "EPA444196",
+    "Nombre": "Ocupados. Ambos sexos. Cataluña. Técnicos y profesionales científicos e intelectuales. Valor absoluto. ",
+    "FK_Unidad": 3,
+    "FK_Escala": 4,
+    "Data": [
+      { "Fecha": 1774994400000, "FK_TipoDato": 1, "FK_Periodo": 20, "Anyo": 2026, "Valor": 861.4, "Secreto": false },
+      { "Fecha": 1767222000000, "FK_TipoDato": 1, "FK_Periodo": 19, "Anyo": 2026, "Valor": 865.5, "Secreto": false },
+      { "Fecha": 1759269600000, "FK_TipoDato": 1, "FK_Periodo": 22, "Anyo": 2025, "Valor": 869.5, "Secreto": false },
+      { "Fecha": 1751320800000, "FK_TipoDato": 1, "FK_Periodo": 21, "Anyo": 2025, "Valor": 857.1, "Secreto": false },
+      { "Fecha": 1743458400000, "FK_TipoDato": 1, "FK_Periodo": 20, "Anyo": 2025, "Valor": 859.2, "Secreto": false },
+      { "Fecha": 1735686000000, "FK_TipoDato": 1, "FK_Periodo": 19, "Anyo": 2025, "Valor": 860.1, "Secreto": false },
+      { "Fecha": 1727733600000, "FK_TipoDato": 1, "FK_Periodo": 22, "Anyo": 2024, "Valor": 776.3, "Secreto": false },
+      { "Fecha": 1719784800000, "FK_TipoDato": 1, "FK_Periodo": 21, "Anyo": 2024, "Valor": 765.3, "Secreto": false },
+      { "Fecha": 1711922400000, "FK_TipoDato": 1, "FK_Periodo": 20, "Anyo": 2024, "Valor": 808.4, "Secreto": false }
+    ]
+  },
+  {
+    "COD": "EPA444197",
+    "Nombre": "Ocupados. Ambos sexos. Cataluña. Técnicos; profesionales de apoyo. Valor absoluto. ",
+    "FK_Unidad": 3,
+    "FK_Escala": 4,
+    "Data": [
+      { "Fecha": 1774994400000, "FK_TipoDato": 1, "FK_Periodo": 20, "Anyo": 2026, "Valor": 558.4, "Secreto": false },
+      { "Fecha": 1767222000000, "FK_TipoDato": 1, "FK_Periodo": 19, "Anyo": 2026, "Valor": 545.4, "Secreto": false },
+      { "Fecha": 1759269600000, "FK_TipoDato": 1, "FK_Periodo": 22, "Anyo": 2025, "Valor": 517.4, "Secreto": false },
+      { "Fecha": 1751320800000, "FK_TipoDato": 1, "FK_Periodo": 21, "Anyo": 2025, "Valor": 495.5, "Secreto": false },
+      { "Fecha": 1743458400000, "FK_TipoDato": 1, "FK_Periodo": 20, "Anyo": 2025, "Valor": 529.6, "Secreto": false },
+      { "Fecha": 1735686000000, "FK_TipoDato": 1, "FK_Periodo": 19, "Anyo": 2025, "Valor": 519.2, "Secreto": false },
+      { "Fecha": 1727733600000, "FK_TipoDato": 1, "FK_Periodo": 22, "Anyo": 2024, "Valor": 518.5, "Secreto": false },
+      { "Fecha": 1719784800000, "FK_TipoDato": 1, "FK_Periodo": 21, "Anyo": 2024, "Valor": 531.0, "Secreto": false },
+      { "Fecha": 1711922400000, "FK_TipoDato": 1, "FK_Periodo": 20, "Anyo": 2024, "Valor": 508.6, "Secreto": false }
+    ]
+  },
+  {
+    "COD": "EPA444198",
+    "Nombre": "Ocupados. Ambos sexos. Cataluña. Empleados contables, administrativos y otros empleados de oficina. Valor absoluto. ",
+    "FK_Unidad": 3,
+    "FK_Escala": 4,
+    "Data": [
+      { "Fecha": 1774994400000, "FK_TipoDato": 1, "FK_Periodo": 20, "Anyo": 2026, "Valor": 458.0, "Secreto": false },
+      { "Fecha": 1767222000000, "FK_TipoDato": 1, "FK_Periodo": 19, "Anyo": 2026, "Valor": 438.5, "Secreto": false },
+      { "Fecha": 1759269600000, "FK_TipoDato": 1, "FK_Periodo": 22, "Anyo": 2025, "Valor": 453.6, "Secreto": false },
+      { "Fecha": 1751320800000, "FK_TipoDato": 1, "FK_Periodo": 21, "Anyo": 2025, "Valor": 482.7, "Secreto": false },
+      { "Fecha": 1743458400000, "FK_TipoDato": 1, "FK_Periodo": 20, "Anyo": 2025, "Valor": 474.6, "Secreto": false },
+      { "Fecha": 1735686000000, "FK_TipoDato": 1, "FK_Periodo": 19, "Anyo": 2025, "Valor": 480.6, "Secreto": false },
+      { "Fecha": 1727733600000, "FK_TipoDato": 1, "FK_Periodo": 22, "Anyo": 2024, "Valor": 489.5, "Secreto": false },
+      { "Fecha": 1719784800000, "FK_TipoDato": 1, "FK_Periodo": 21, "Anyo": 2024, "Valor": 496.3, "Secreto": false },
+      { "Fecha": 1711922400000, "FK_TipoDato": 1, "FK_Periodo": 20, "Anyo": 2024, "Valor": 453.3, "Secreto": false }
+    ]
+  },
+  {
+    "COD": "EPA444199",
+    "Nombre": "Ocupados. Ambos sexos. Cataluña. Trabajadores de los servicios de restauración, personales, protección y vendedores. Valor absoluto. ",
+    "FK_Unidad": 3,
+    "FK_Escala": 4,
+    "Data": [
+      { "Fecha": 1774994400000, "FK_TipoDato": 1, "FK_Periodo": 20, "Anyo": 2026, "Valor": 728.2, "Secreto": false },
+      { "Fecha": 1767222000000, "FK_TipoDato": 1, "FK_Periodo": 19, "Anyo": 2026, "Valor": 680.9, "Secreto": false },
+      { "Fecha": 1759269600000, "FK_TipoDato": 1, "FK_Periodo": 22, "Anyo": 2025, "Valor": 732.0, "Secreto": false },
+      { "Fecha": 1751320800000, "FK_TipoDato": 1, "FK_Periodo": 21, "Anyo": 2025, "Valor": 752.8, "Secreto": false },
+      { "Fecha": 1743458400000, "FK_TipoDato": 1, "FK_Periodo": 20, "Anyo": 2025, "Valor": 750.3, "Secreto": false },
+      { "Fecha": 1735686000000, "FK_TipoDato": 1, "FK_Periodo": 19, "Anyo": 2025, "Valor": 710.9, "Secreto": false },
+      { "Fecha": 1727733600000, "FK_TipoDato": 1, "FK_Periodo": 22, "Anyo": 2024, "Valor": 754.2, "Secreto": false },
+      { "Fecha": 1719784800000, "FK_TipoDato": 1, "FK_Periodo": 21, "Anyo": 2024, "Valor": 775.3, "Secreto": false },
+      { "Fecha": 1711922400000, "FK_TipoDato": 1, "FK_Periodo": 20, "Anyo": 2024, "Valor": 728.1, "Secreto": false }
+    ]
+  },
+  {
+    "COD": "EPA444200",
+    "Nombre": "Ocupados. Ambos sexos. Cataluña. Trabajadores cualificados en el sector agrícola, ganadero, forestal y pesquero. Valor absoluto. ",
+    "FK_Unidad": 3,
+    "FK_Escala": 4,
+    "Data": [
+      { "Fecha": 1774994400000, "FK_TipoDato": 1, "FK_Periodo": 20, "Anyo": 2026, "Valor": 44.2, "Secreto": false },
+      { "Fecha": 1767222000000, "FK_TipoDato": 1, "FK_Periodo": 19, "Anyo": 2026, "Valor": 49.8, "Secreto": false },
+      { "Fecha": 1759269600000, "FK_TipoDato": 1, "FK_Periodo": 22, "Anyo": 2025, "Valor": 49.2, "Secreto": false },
+      { "Fecha": 1751320800000, "FK_TipoDato": 1, "FK_Periodo": 21, "Anyo": 2025, "Valor": 51.3, "Secreto": false },
+      { "Fecha": 1743458400000, "FK_TipoDato": 1, "FK_Periodo": 20, "Anyo": 2025, "Valor": 40.7, "Secreto": false },
+      { "Fecha": 1735686000000, "FK_TipoDato": 1, "FK_Periodo": 19, "Anyo": 2025, "Valor": 44.2, "Secreto": false },
+      { "Fecha": 1727733600000, "FK_TipoDato": 1, "FK_Periodo": 22, "Anyo": 2024, "Valor": 40.0, "Secreto": false },
+      { "Fecha": 1719784800000, "FK_TipoDato": 1, "FK_Periodo": 21, "Anyo": 2024, "Valor": 41.8, "Secreto": false },
+      { "Fecha": 1711922400000, "FK_TipoDato": 1, "FK_Periodo": 20, "Anyo": 2024, "Valor": 43.3, "Secreto": false }
+    ]
+  },
+  {
+    "COD": "EPA444201",
+    "Nombre": "Ocupados. Ambos sexos. Cataluña. Artesanos y trabajadores cualificados de las industrias manufactureras y la construcción (excepto operadores de instalaciones y maquinaria). Valor absoluto. ",
+    "FK_Unidad": 3,
+    "FK_Escala": 4,
+    "Data": [
+      { "Fecha": 1774994400000, "FK_TipoDato": 1, "FK_Periodo": 20, "Anyo": 2026, "Valor": 406.5, "Secreto": false },
+      { "Fecha": 1767222000000, "FK_TipoDato": 1, "FK_Periodo": 19, "Anyo": 2026, "Valor": 391.6, "Secreto": false },
+      { "Fecha": 1759269600000, "FK_TipoDato": 1, "FK_Periodo": 22, "Anyo": 2025, "Valor": 391.3, "Secreto": false },
+      { "Fecha": 1751320800000, "FK_TipoDato": 1, "FK_Periodo": 21, "Anyo": 2025, "Valor": 388.8, "Secreto": false },
+      { "Fecha": 1743458400000, "FK_TipoDato": 1, "FK_Periodo": 20, "Anyo": 2025, "Valor": 416.2, "Secreto": false },
+      { "Fecha": 1735686000000, "FK_TipoDato": 1, "FK_Periodo": 19, "Anyo": 2025, "Valor": 390.5, "Secreto": false },
+      { "Fecha": 1727733600000, "FK_TipoDato": 1, "FK_Periodo": 22, "Anyo": 2024, "Valor": 409.3, "Secreto": false },
+      { "Fecha": 1719784800000, "FK_TipoDato": 1, "FK_Periodo": 21, "Anyo": 2024, "Valor": 388.6, "Secreto": false },
+      { "Fecha": 1711922400000, "FK_TipoDato": 1, "FK_Periodo": 20, "Anyo": 2024, "Valor": 377.4, "Secreto": false }
+    ]
+  },
+  {
+    "COD": "EPA444202",
+    "Nombre": "Ocupados. Ambos sexos. Cataluña. Operadores de instalaciones y maquinaria, y montadores. Valor absoluto. ",
+    "FK_Unidad": 3,
+    "FK_Escala": 4,
+    "Data": [
+      { "Fecha": 1774994400000, "FK_TipoDato": 1, "FK_Periodo": 20, "Anyo": 2026, "Valor": 315.4, "Secreto": false },
+      { "Fecha": 1767222000000, "FK_TipoDato": 1, "FK_Periodo": 19, "Anyo": 2026, "Valor": 291.4, "Secreto": false },
+      { "Fecha": 1759269600000, "FK_TipoDato": 1, "FK_Periodo": 22, "Anyo": 2025, "Valor": 280.6, "Secreto": false },
+      { "Fecha": 1751320800000, "FK_TipoDato": 1, "FK_Periodo": 21, "Anyo": 2025, "Valor": 292.7, "Secreto": false },
+      { "Fecha": 1743458400000, "FK_TipoDato": 1, "FK_Periodo": 20, "Anyo": 2025, "Valor": 279.6, "Secreto": false },
+      { "Fecha": 1735686000000, "FK_TipoDato": 1, "FK_Periodo": 19, "Anyo": 2025, "Valor": 265.3, "Secreto": false },
+      { "Fecha": 1727733600000, "FK_TipoDato": 1, "FK_Periodo": 22, "Anyo": 2024, "Valor": 275.7, "Secreto": false },
+      { "Fecha": 1719784800000, "FK_TipoDato": 1, "FK_Periodo": 21, "Anyo": 2024, "Valor": 272.9, "Secreto": false },
+      { "Fecha": 1711922400000, "FK_TipoDato": 1, "FK_Periodo": 20, "Anyo": 2024, "Valor": 286.3, "Secreto": false }
+    ]
+  },
+  {
+    "COD": "EPA444203",
+    "Nombre": "Ocupados. Ambos sexos. Cataluña. Ocupaciones elementales. Valor absoluto. ",
+    "FK_Unidad": 3,
+    "FK_Escala": 4,
+    "Data": [
+      { "Fecha": 1774994400000, "FK_TipoDato": 1, "FK_Periodo": 20, "Anyo": 2026, "Valor": 442.3, "Secreto": false },
+      { "Fecha": 1767222000000, "FK_TipoDato": 1, "FK_Periodo": 19, "Anyo": 2026, "Valor": 409.7, "Secreto": false },
+      { "Fecha": 1759269600000, "FK_TipoDato": 1, "FK_Periodo": 22, "Anyo": 2025, "Valor": 419.1, "Secreto": false },
+      { "Fecha": 1751320800000, "FK_TipoDato": 1, "FK_Periodo": 21, "Anyo": 2025, "Valor": 423.4, "Secreto": false },
+      { "Fecha": 1743458400000, "FK_TipoDato": 1, "FK_Periodo": 20, "Anyo": 2025, "Valor": 400.0, "Secreto": false },
+      { "Fecha": 1735686000000, "FK_TipoDato": 1, "FK_Periodo": 19, "Anyo": 2025, "Valor": 398.4, "Secreto": false },
+      { "Fecha": 1727733600000, "FK_TipoDato": 1, "FK_Periodo": 22, "Anyo": 2024, "Valor": 395.6, "Secreto": false },
+      { "Fecha": 1719784800000, "FK_TipoDato": 1, "FK_Periodo": 21, "Anyo": 2024, "Valor": 408.3, "Secreto": false },
+      { "Fecha": 1711922400000, "FK_TipoDato": 1, "FK_Periodo": 20, "Anyo": 2024, "Valor": 413.3, "Secreto": false }
+    ]
+  },
+  {
+    "COD": "EPA444204",
+    "Nombre": "Ocupados. Ambos sexos. Cataluña. Ocupaciones militares. Valor absoluto. ",
+    "FK_Unidad": 3,
+    "FK_Escala": 4,
+    "Data": [
+      { "Fecha": 1774994400000, "FK_TipoDato": 1, "FK_Periodo": 20, "Anyo": 2026, "Valor": 0.7, "Secreto": false },
+      { "Fecha": 1767222000000, "FK_TipoDato": 1, "FK_Periodo": 19, "Anyo": 2026, "Valor": 2.9, "Secreto": false },
+      { "Fecha": 1759269600000, "FK_TipoDato": 1, "FK_Periodo": 22, "Anyo": 2025, "Valor": 1.0, "Secreto": false },
+      { "Fecha": 1751320800000, "FK_TipoDato": 1, "FK_Periodo": 21, "Anyo": 2025, "Valor": 0.9, "Secreto": false },
+      { "Fecha": 1743458400000, "FK_TipoDato": 1, "FK_Periodo": 20, "Anyo": 2025, "Valor": 1.2, "Secreto": false },
+      { "Fecha": 1735686000000, "FK_TipoDato": 1, "FK_Periodo": 19, "Anyo": 2025, "Valor": null, "Secreto": false },
+      { "Fecha": 1727733600000, "FK_TipoDato": 1, "FK_Periodo": 22, "Anyo": 2024, "Valor": null, "Secreto": false },
+      { "Fecha": 1719784800000, "FK_TipoDato": 1, "FK_Periodo": 21, "Anyo": 2024, "Valor": 1.8, "Secreto": false },
+      { "Fecha": 1711922400000, "FK_TipoDato": 1, "FK_Periodo": 20, "Anyo": 2024, "Valor": 0.6, "Secreto": false }
+    ]
+  },
+  {
+    "COD": "EPA444403",
+    "Nombre": "Ocupados. Hombres. Cataluña. Total. Valor absoluto. ",
+    "FK_Unidad": 3,
+    "FK_Escala": 4,
+    "Data": [
+      { "Fecha": 1774994400000, "FK_TipoDato": 1, "FK_Periodo": 20, "Anyo": 2026, "Valor": 2118.4, "Secreto": false },
+      { "Fecha": 1767222000000, "FK_TipoDato": 1, "FK_Periodo": 19, "Anyo": 2026, "Valor": 2047.1, "Secreto": false },
+      { "Fecha": 1759269600000, "FK_TipoDato": 1, "FK_Periodo": 22, "Anyo": 2025, "Valor": 2070.9, "Secreto": false },
+      { "Fecha": 1751320800000, "FK_TipoDato": 1, "FK_Periodo": 21, "Anyo": 2025, "Valor": 2100.7, "Secreto": false },
+      { "Fecha": 1743458400000, "FK_TipoDato": 1, "FK_Periodo": 20, "Anyo": 2025, "Valor": 2093.7, "Secreto": false },
+      { "Fecha": 1735686000000, "FK_TipoDato": 1, "FK_Periodo": 19, "Anyo": 2025, "Valor": 2046.3, "Secreto": false },
+      { "Fecha": 1727733600000, "FK_TipoDato": 1, "FK_Periodo": 22, "Anyo": 2024, "Valor": 2071.7, "Secreto": false },
+      { "Fecha": 1719784800000, "FK_TipoDato": 1, "FK_Periodo": 21, "Anyo": 2024, "Valor": 2057.6, "Secreto": false },
+      { "Fecha": 1711922400000, "FK_TipoDato": 1, "FK_Periodo": 20, "Anyo": 2024, "Valor": 2025.3, "Secreto": false }
+    ]
+  }
+]

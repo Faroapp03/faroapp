@@ -1,0 +1,394 @@
+{
+  "cibernarium": [
+    {
+      "id": "1567420",
+      "titulo": "Treballa amb Copilot dins l'entorn Microsoft 365",
+      "inicio": "2026-10-22",
+      "fin": "2026-10-23",
+      "modalidad": "presencial",
+      "edicion": {
+        "idFuente": null,
+        "identidadInterna": "ba-edicion-v1:cdc8d04998325f2fdf26841e9cc4ba611f0b16850e6804816597e67f14ca88e6",
+        "vinculacion": "fechas-coincidentes",
+        "modalidad": "en-linea",
+        "sincronia": "horario-fijo",
+        "horas": 8.0,
+        "duracionPublicada": "2 sessions (8h)",
+        "idioma": "ca",
+        "disponibilidad": null,
+        "sesiones": [
+          {
+            "fecha": "2026-10-22",
+            "inicioLocal": "14:00",
+            "finLocal": "18:00"
+          },
+          {
+            "fecha": "2026-10-23",
+            "inicioLocal": "14:00",
+            "finLocal": "18:00"
+          }
+        ],
+        "inscripcion": {
+          "continuaDeclarada": null,
+          "apertura": null,
+          "botonVisible": false
+        },
+        "plazas": "sin-plazas",
+        "evidencia": {
+          "url": "https://cibernarium.barcelonactiva.cat/ficha-actividad?activityId=1567420",
+          "observadoUTC": "2026-10-21T21:35:41.650349+00:00",
+          "origenFechaObservacion": "consulta-http",
+          "sha256Captura": "ca85b29263540d97e6576aa20757d62c07feec62784038e5364654f9ae5019bd",
+          "normalizacionFechas": "ano-del-registro-original",
+          "localizador": "#edicionesList .item-ediciones:first-child; [data-mobile-index=\"3\"]; [data-mobile-index=\"12\"]",
+          "revisionSha256": "0c7b68288581c94d6e055484e85a9ce31055ce5b3612e2b8ed49624737b137e4"
+        }
+      }
+    },
+    {
+      "id": "1583112",
+      "titulo": "Crea presentacions i documents espectaculars amb Canva i la seva IA",
+      "inicio": "2026-10-27",
+      "fin": "2026-10-28",
+      "modalidad": "presencial",
+      "edicion": {
+        "idFuente": null,
+        "identidadInterna": "ba-edicion-v1:38e771d28750b964767a4d5e989be352b8fe24d31657da1ecdc625d2756ab6dc",
+        "vinculacion": "fechas-coincidentes",
+        "modalidad": "presencial",
+        "sincronia": "horario-fijo",
+        "horas": 6.0,
+        "duracionPublicada": "2 sessions (6h)",
+        "idioma": "ca",
+        "disponibilidad": null,
+        "sesiones": [
+          {
+            "fecha": "2026-10-27",
+            "inicioLocal": "16:00",
+            "finLocal": "19:00"
+          },
+          {
+            "fecha": "2026-10-28",
+            "inicioLocal": "16:00",
+            "finLocal": "19:00"
+          }
+        ],
+        "inscripcion": {
+          "continuaDeclarada": null,
+          "apertura": null,
+          "botonVisible": false
+        },
+        "plazas": "sin-plazas",
+        "evidencia": {
+          "url": "https://cibernarium.barcelonactiva.cat/ficha-actividad?activityId=1583112",
+          "observadoUTC": "2026-10-21T21:35:48.645735+00:00",
+          "origenFechaObservacion": "consulta-http",
+          "sha256Captura": "bce6cf5a66fb19fb361183d0220bac0bb764934e2449d3e800035bdc614c2c02",
+          "normalizacionFechas": "ano-del-registro-original",
+          "localizador": "#edicionesList .item-ediciones:first-child; [data-mobile-index=\"3\"]; [data-mobile-index=\"12\"]",
+          "revisionSha256": "0c7b68288581c94d6e055484e85a9ce31055ce5b3612e2b8ed49624737b137e4"
+        }
+      }
+    },
+    {
+      "id": "1603906",
+      "titulo": "Claude Nivell 1: Introducció a la intel·ligència artificial generativa",
+      "inicio": "2026-11-02",
+      "fin": "2026-11-02",
+      "modalidad": "presencial",
+      "edicion": {
+        "idFuente": null,
+        "identidadInterna": "ba-edicion-v1:1821b9de7f94e221036b242eecd6205e6574be06b7f0bf3a381ee9b48daca015",
+        "vinculacion": "fechas-coincidentes",
+        "modalidad": "en-linea",
+        "sincronia": "horario-fijo",
+        "horas": 3.0,
+        "duracionPublicada": "1 sessió (3h)",
+        "idioma": "ca",
+        "disponibilidad": null,
+        "sesiones": [
+          {
+            "fecha": "2026-11-02",
+            "inicioLocal": "09:30",
+            "finLocal": "12:30"
+          }
+        ],
+        "inscripcion": {
+          "continuaDeclarada": null,
+          "apertura": null,
+          "botonVisible": false
+        },
+        "plazas": "sin-plazas",
+        "evidencia": {
+          "url": "https://cibernarium.barcelonactiva.cat/ficha-actividad?activityId=1603906",
+          "observadoUTC": "2026-10-21T21:35:57.519288+00:00",
+          "origenFechaObservacion": "consulta-http",
+          "sha256Captura": "9991b499765c6a98e7072cc2584686329043cc374f2cf65dedf81caef2754a8f",
+          "normalizacionFechas": "ano-del-registro-original",
+          "localizador": "#edicionesList .item-ediciones:first-child; [data-mobile-index=\"3\"]; [data-mobile-index=\"12\"]",
+          "revisionSha256": "0c7b68288581c94d6e055484e85a9ce31055ce5b3612e2b8ed49624737b137e4"
+        }
+      }
+    },
+    {
+      "id": "1588261",
+      "titulo": "Noves tendències en intel·ligència artificial (IA)",
+      "inicio": "2026-11-05",
+      "fin": "2026-11-05",
+      "modalidad": "presencial",
+      "edicion": {
+        "idFuente": null,
+        "identidadInterna": "ba-edicion-v1:985fa50c7cfdb882717c1f06afcde71baf46a4f80ece9604fe1dd40f708b8938",
+        "vinculacion": "fechas-coincidentes",
+        "modalidad": "en-linea",
+        "sincronia": "horario-fijo",
+        "horas": 3.0,
+        "duracionPublicada": "1 sessió (3h)",
+        "idioma": "ca",
+        "disponibilidad": null,
+        "sesiones": [
+          {
+            "fecha": "2026-11-05",
+            "inicioLocal": "15:30",
+            "finLocal": "18:30"
+          }
+        ],
+        "inscripcion": {
+          "continuaDeclarada": null,
+          "apertura": null,
+          "botonVisible": false
+        },
+        "plazas": "sin-plazas",
+        "evidencia": {
+          "url": "https://cibernarium.barcelonactiva.cat/ficha-actividad?activityId=1588261",
+          "observadoUTC": "2026-10-21T21:36:09.599340+00:00",
+          "origenFechaObservacion": "consulta-http",
+          "sha256Captura": "9182074710aa6c9a3dbfe7ebd0cefcb9dd634c31d630708645d940483c81b563",
+          "normalizacionFechas": "ano-del-registro-original",
+          "localizador": "#edicionesList .item-ediciones:first-child; [data-mobile-index=\"3\"]; [data-mobile-index=\"12\"]",
+          "revisionSha256": "0c7b68288581c94d6e055484e85a9ce31055ce5b3612e2b8ed49624737b137e4"
+        }
+      }
+    },
+    {
+      "id": "1587938",
+      "titulo": "Ciberseguretat en IA Generativa i Agents Autònoms Nivell 1: Fonaments i riscos",
+      "inicio": "2026-11-06",
+      "fin": "2026-11-13",
+      "modalidad": "presencial",
+      "edicion": {
+        "idFuente": null,
+        "identidadInterna": "ba-edicion-v1:b77510b8d2553f5d9fc5d7779a725b251e476fa84bb6fde728a55a57e3ba32ff",
+        "vinculacion": "fechas-coincidentes",
+        "modalidad": "presencial",
+        "sincronia": "horario-fijo",
+        "horas": 6.0,
+        "duracionPublicada": "2 sessions (6h)",
+        "idioma": "ca",
+        "disponibilidad": null,
+        "sesiones": [
+          {
+            "fecha": "2026-11-06",
+            "inicioLocal": "09:30",
+            "finLocal": "12:30"
+          },
+          {
+            "fecha": "2026-11-13",
+            "inicioLocal": "09:30",
+            "finLocal": "12:30"
+          }
+        ],
+        "inscripcion": {
+          "continuaDeclarada": null,
+          "apertura": null,
+          "botonVisible": false
+        },
+        "plazas": "sin-plazas",
+        "evidencia": {
+          "url": "https://cibernarium.barcelonactiva.cat/ficha-actividad?activityId=1587938",
+          "observadoUTC": "2026-10-21T21:36:13.409752+00:00",
+          "origenFechaObservacion": "consulta-http",
+          "sha256Captura": "c7729b67acb8058c823135bd53449b4fa507b3c22b985eb8adc0f11d25a0dbc6",
+          "normalizacionFechas": "ano-del-registro-original",
+          "localizador": "#edicionesList .item-ediciones:first-child; [data-mobile-index=\"3\"]; [data-mobile-index=\"12\"]",
+          "revisionSha256": "0c7b68288581c94d6e055484e85a9ce31055ce5b3612e2b8ed49624737b137e4"
+        }
+      }
+    },
+    {
+      "id": "1587419",
+      "titulo": "Storytelling: Creació d'històries interactives amb IA per comunicar projectes",
+      "inicio": "2026-11-09",
+      "fin": "2026-11-10",
+      "modalidad": "presencial",
+      "edicion": {
+        "idFuente": null,
+        "identidadInterna": "ba-edicion-v1:848696728be989a550bc3ffdd6fc7f1a01d2dc38d95f174ab7a7946f3b81adbc",
+        "vinculacion": "fechas-coincidentes",
+        "modalidad": "en-linea",
+        "sincronia": "horario-fijo",
+        "horas": 4.0,
+        "duracionPublicada": "2 sessions (4h)",
+        "idioma": "ca",
+        "disponibilidad": null,
+        "sesiones": [
+          {
+            "fecha": "2026-11-09",
+            "inicioLocal": "10:00",
+            "finLocal": "12:00"
+          },
+          {
+            "fecha": "2026-11-10",
+            "inicioLocal": "10:00",
+            "finLocal": "12:00"
+          }
+        ],
+        "inscripcion": {
+          "continuaDeclarada": null,
+          "apertura": {
+            "fecha": "2026-10-25",
+            "horaLocal": "08:30"
+          },
+          "botonVisible": false
+        },
+        "plazas": null,
+        "evidencia": {
+          "url": "https://cibernarium.barcelonactiva.cat/ficha-actividad?activityId=1587419",
+          "observadoUTC": "2026-10-21T21:36:20.662041+00:00",
+          "origenFechaObservacion": "consulta-http",
+          "sha256Captura": "eb7a0baf42aeb558337bd431f0a6265d330ba20672d4d2c827359a1dd5d15b19",
+          "normalizacionFechas": "ano-del-registro-original",
+          "localizador": "#edicionesList .item-ediciones:first-child; [data-mobile-index=\"3\"]; [data-mobile-index=\"12\"]",
+          "revisionSha256": "0c7b68288581c94d6e055484e85a9ce31055ce5b3612e2b8ed49624737b137e4"
+        }
+      }
+    },
+    {
+      "id": "1587895",
+      "titulo": "Copilot, la IA de Microsoft per crear/editar continguts amb Word, Power Point, Outlook, Excel, OneNote",
+      "inicio": "2026-11-18",
+      "fin": "2026-11-20",
+      "modalidad": "presencial",
+      "edicion": {
+        "idFuente": null,
+        "identidadInterna": "ba-edicion-v1:bfca053bff977fb55ed5ba50e97be372d96a868e7834698fb47631e010950cc2",
+        "vinculacion": "fechas-coincidentes",
+        "modalidad": "en-linea",
+        "sincronia": "horario-fijo",
+        "horas": 6.0,
+        "duracionPublicada": "2 sessions (6h)",
+        "idioma": "ca",
+        "disponibilidad": null,
+        "sesiones": [
+          {
+            "fecha": "2026-11-18",
+            "inicioLocal": "10:00",
+            "finLocal": "13:00"
+          },
+          {
+            "fecha": "2026-11-20",
+            "inicioLocal": "10:00",
+            "finLocal": "13:00"
+          }
+        ],
+        "inscripcion": {
+          "continuaDeclarada": null,
+          "apertura": {
+            "fecha": "2026-11-03",
+            "horaLocal": "08:30"
+          },
+          "botonVisible": false
+        },
+        "plazas": null,
+        "evidencia": {
+          "url": "https://cibernarium.barcelonactiva.cat/ficha-actividad?activityId=1587895",
+          "observadoUTC": "2026-10-21T21:36:31.481782+00:00",
+          "origenFechaObservacion": "consulta-http",
+          "sha256Captura": "4d528a7dc2bafa9c94a69d3a96a0786a128502f5ff89925403d653491b704cbd",
+          "normalizacionFechas": "ano-del-registro-original",
+          "localizador": "#edicionesList .item-ediciones:first-child; [data-mobile-index=\"3\"]; [data-mobile-index=\"12\"]",
+          "revisionSha256": "0c7b68288581c94d6e055484e85a9ce31055ce5b3612e2b8ed49624737b137e4"
+        }
+      }
+    },
+    {
+      "id": "1589041",
+      "titulo": "Chatgpt de zero a experts/es: Domina aquesta eina d'intel·ligència artificial (IA)",
+      "inicio": "2026-11-18",
+      "fin": "2026-11-19",
+      "modalidad": "presencial",
+      "edicion": {
+        "idFuente": null,
+        "identidadInterna": "ba-edicion-v1:55b4ef206ee7a01f086dc6ad1082fa5d327e46e14cf41d497d37247894248bfe",
+        "vinculacion": "fechas-coincidentes",
+        "modalidad": "en-linea",
+        "sincronia": "horario-fijo",
+        "horas": 8.0,
+        "duracionPublicada": "2 sessions (8h)",
+        "idioma": "ca",
+        "disponibilidad": null,
+        "sesiones": [
+          {
+            "fecha": "2026-11-18",
+            "inicioLocal": "16:00",
+            "finLocal": "20:00"
+          },
+          {
+            "fecha": "2026-11-19",
+            "inicioLocal": "16:00",
+            "finLocal": "20:00"
+          }
+        ],
+        "inscripcion": {
+          "continuaDeclarada": null,
+          "apertura": null,
+          "botonVisible": false
+        },
+        "plazas": "sin-plazas",
+        "evidencia": {
+          "url": "https://cibernarium.barcelonactiva.cat/ficha-actividad?activityId=1589041",
+          "observadoUTC": "2026-10-21T21:36:35.526823+00:00",
+          "origenFechaObservacion": "consulta-http",
+          "sha256Captura": "536a8141f8d0c01c7fc10b378684327184783f5b2a61e10886ae2ed209ae74f9",
+          "normalizacionFechas": "ano-del-registro-original",
+          "localizador": "#edicionesList .item-ediciones:first-child; [data-mobile-index=\"3\"]; [data-mobile-index=\"12\"]",
+          "revisionSha256": "0c7b68288581c94d6e055484e85a9ce31055ce5b3612e2b8ed49624737b137e4"
+        }
+      }
+    },
+    {
+      "id": "1587950",
+      "titulo": "Tècniques de creativitat per treballar amb intel·ligència artificial",
+      "inicio": "2026-11-25",
+      "fin": "2026-11-26",
+      "modalidad": "presencial",
+      "edicion": {
+        "idFuente": null,
+        "identidadInterna": "ba-edicion-v1:6e84ca91008aec10432301e381a8f1579755ed2c02aac8299e873a74b39b3ff5",
+        "vinculacion": "pendiente",
+        "modalidad": null,
+        "sincronia": null,
+        "horas": null,
+        "duracionPublicada": null,
+        "idioma": null,
+        "disponibilidad": null,
+        "sesiones": [],
+        "inscripcion": {
+          "continuaDeclarada": null,
+          "apertura": null,
+          "botonVisible": false
+        },
+        "plazas": null,
+        "evidencia": {
+          "url": "https://cibernarium.barcelonactiva.cat/ficha-actividad?activityId=1587950",
+          "observadoUTC": "2026-10-21T21:36:39.428945+00:00",
+          "origenFechaObservacion": "consulta-http",
+          "sha256Captura": "3a5df8ed157f58ab24c57af4aa22c7c036b9dcee80d3a898c1b52d259cdec3e8",
+          "normalizacionFechas": "ano-del-registro-original",
+          "localizador": "#edicionesList .item-ediciones:first-child; [data-mobile-index=\"3\"]; [data-mobile-index=\"12\"]",
+          "revisionSha256": "0c7b68288581c94d6e055484e85a9ce31055ce5b3612e2b8ed49624737b137e4"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+/* La página «Instalar Faro» (instalar.html): los pasos de cada navegador, en sus pestañas (estilos/etapas.css), y el
+   botón que abre la ventana de instalación del navegador (scripts/instalar.js). Sin movimiento. */
+
+.instalar .etapa h3 {
+  margin: 30px 0 12px;
+  font-size: 1.08rem;
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: -0.015em;
+}
+
+/* El botón de la página es un <button>: toma la letra de la página, como los enlaces .boton. */
+.instalar-boton {
+  gap: 10px;
+  margin: 4px 0 14px;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+/* La flecha que baja a la bandeja: el trazo de los iconos de la cabecera. */
+.instalar-boton svg {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Al cambiar de estado (Faro recién instalado), el guion lleva el foco al texto nuevo: un foco programático en algo que
+   no se pulsa, sin contorno, como el de los títulos de etapas.css. */
+.instalar-estado > [tabindex="-1"]:focus {
+  outline: none;
+}
+
+.instalar-alternativa {
+  margin-top: 26px;
+  padding-top: 18px;
+  border-top: 1px solid var(--color-linea);
+}
+
+@media (max-width: 700px) {
+  .instalar .etapa h3 {
+    margin-top: 26px;
+    font-size: 1.02rem;
+  }
+
+  .instalar-boton {
+    width: 100%;
+  }
+}

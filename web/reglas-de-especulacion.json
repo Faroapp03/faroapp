@@ -1,0 +1,14 @@
+{
+  "prefetch": [
+    {
+      "source": "document",
+      "where": {
+        "and": [
+          { "href_matches": "/*.html" },
+          { "not": { "selector_matches": "[download], [target], [rel~='nofollow'], [href*='?']" } }
+        ]
+      },
+      "eagerness": "moderate"
+    }
+  ]
+}

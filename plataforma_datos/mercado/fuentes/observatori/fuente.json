@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "id": "observatori",
+  "tema": "mercado",
+  "lector": "plataforma_datos.mercado.fuentes.observatori.lector",
+  "casa_datos": "observatori",
+  "nombre": "Observatori: comarcas, series y demanda por ocupación",
+  "institucion": "Observatori del Treball i Model Productiu; Idescat",
+  "significado": "Contratos, personas contratadas y demandantes por ocupación del visor Treball per ocupacions; distingue sus unidades y deriva provincias desde comarcas con correspondencia versionada.",
+  "alcance": [
+    "CNO-11 a cuatro cifras; comarca, total catalán y series de trece/cuarenta y nueve meses según indicador.",
+    "Demanda puede contar a una persona en varias ocupaciones; DONO no se declara idéntico al paro EPA.",
+    "Mismo corte que cataluna; metodología textual debe conservar subárbol registrado, sin retirar datos por fallo o lectura parcial."
+  ],
+  "recursos": [
+    {
+      "id": "visor",
+      "tipo": "familia",
+      "ubicacion": "https://treballperocupacions.observatoritreball.gencat.cat/treballperocupacions/assets/datas",
+      "licencia": "Aviso legal del propio visor «Treball per ocupacions» (pie de la página, texto global.pie.texto de assets/i18n/cat.json; consultado el 07/10/2026): reutilización de los contenidos y los datos citando la fuente y la fecha de actualización, sin desnaturalizar la información (art. 17.1 de la Ley 19/2014 y art. 8 de la Ley 37/2007); los ficheros de datos no declaran licencia específica. Es el régimen de la Llicència oberta d'ús d'informació – Catalunya del aviso legal de la Generalitat (https://tramits.gencat.cat/ca/ajuda/avis_legal/).",
+      "descripcion": "Cinco tablas complementarias y textos metodológicos assets/i18n/cat.json; comparte C_P2_MES_IND ya conservada por cataluna."
+    },
+    {
+      "id": "comarca-provincia",
+      "tipo": "archivo",
+      "ubicacion": "var/actualizacion/preparados/observatori/comarca-provincia.json",
+      "licencia": "Aviso legal del Idescat (https://www.idescat.cat/institut/web/?lang=es) y condiciones de uso de sus API (https://www.idescat.cat/dev/api/?lang=es): reutilización permitida citando la fuente («Fuente: elaboración propia a partir de datos del Idescat») con la fecha de la última actualización, enlazando con idescat.cat, sin modificar los datos al presentarlos y sin sugerir que el Idescat apoya el uso.",
+      "descripcion": "Tabla versionada a mano a partir de los códigos territoriales y el padrón (EMEX) del Idescat, que preparar y validar leen como entrada adicional; conserva URL, fecha, huella y la cita de la fuente."
+    }
+  ],
+  "canales": [
+    {
+      "id": "visor",
+      "tipo": "remoto",
+      "recursos": ["visor"],
+      "autenticacion": "No se configura autenticación de cuenta en el lector.",
+      "limites": [
+        "Ficheros de visor, no API documentada; las tablas deben tener el periodo de cataluna.",
+        "Respeta bases mínimas y metodología; no lee el portal institucional prohibido en este lector."
+      ],
+      "observaciones": "Captura acotada del visor, sin duplicar el productor cataluna."
+    },
+    {
+      "id": "correspondencia",
+      "tipo": "local",
+      "recursos": ["comarca-provincia"],
+      "autenticacion": "No aplicable al procesamiento local; no acredita acceso remoto ni una cuenta configurada.",
+      "limites": ["Provincia de mayoría de municipios; se conserva la tabla y su procedencia."],
+      "observaciones": "Derivación provincial declarada, no desglose publicado directamente por el Observatori."
+    }
+  ],
+  "actualizacion": {
+    "politica": "mensual",
+    "red": true,
+    "frecuencia": "trimestral (Observatori del Treball)",
+    "renovar_dias": null,
+    "originales": "observatori"
+  },
+  "conjuntos": [
+    {
+      "id": "observatori",
+      "fuente": "observatori",
+      "clase": "cambiante",
+      "alcance": "catalogo-actual",
+      "operacion": "descargar",
+      "intervalo_dias": 30
+    }
+  ],
+  "dependencias": ["clasificaciones", "cataluna"],
+  "contratos": ["lector.py:validar"],
+  "retirada": "Se mantienen los controles de admisión y reconstrucción del lector; un fallo de consulta o una lectura parcial no autoriza una retirada ni una cifra cero.",
+  "conservacion": "Las rutas, originales, procedencias y revisiones actuales en var/actualizacion se conservan; este descriptor no activa limpieza automática ni fija nuevos plazos de retención."
+}

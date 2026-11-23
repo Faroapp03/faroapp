@@ -1,0 +1,398 @@
+/* Página por etapas (scripts/etapas.js): una barra de pestañas de texto, la etapa a la vista y sus controles al pie.
+   Las etapas se ocultan solo con .etapas--activas, que pone el módulo cuando todo está en orden, y solo en pantalla:
+   sin él, o al imprimir, la página se lee entera. Barra y controles llegan con hidden y los muestra el módulo.
+   Las pestañas siguen el lenguaje de .dg-pestanas (datos-globales-paginas.css). Sin movimiento: ni bucles ni
+   desplazamientos. Como mucho, un cambio de color breve y único al pasar, enfocar o avanzar de paso, que
+   prefers-reduced-motion quita (base-adaptaciones.css). La variante «segmentos» (data-etapas="segmentos", la
+   Biblioteca) usa la misma barra sin controles al pie y con los nombres a la vista también en el móvil. */
+
+.etapas {
+  scroll-margin-top: 16px;
+}
+
+@media screen {
+  .etapas--activas > .etapa:not(.etapa--actual) {
+    display: none;
+  }
+}
+
+/* Al pasar de etapa con «Siguiente» o «Anterior», el guion enfoca el título de la etapa nueva: un foco programático en
+   un elemento que no se pulsa, sin contorno. El foco de teclado de enlaces y pestañas conserva el suyo. */
+.etapa :is(h2, h3, h4, h5, h6)[tabindex="-1"]:focus {
+  outline: none;
+}
+
+.etapas-barra {
+  max-width: var(--ancho-lectura);
+  margin: 0 0 32px;
+}
+
+/* «Recorrido · Paso 3 de 5»: el rótulo de la barra en pantallas anchas; en el móvil, la línea de debajo. */
+.etapas-rotulo {
+  margin: 0 0 14px;
+  color: var(--color-tenue);
+  font-family: var(--fuente-mono);
+  font-size: var(--texto-minimo);
+  font-weight: 400;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+/* Una sola fila de pestañas iguales, en una caja como la de .dg-pestanas. */
+.etapas-barra ol {
+  display: grid;
+  grid-auto-columns: minmax(0, 1fr);
+  grid-auto-flow: column;
+  gap: 4px;
+  margin: 0;
+  padding: 4px;
+  list-style: none;
+  background: var(--color-panel);
+  border: 1px solid var(--color-linea);
+  border-radius: 10px;
+}
+
+.etapas-barra li {
+  position: relative;
+  display: flex;
+  min-width: 0;
+}
+
+/* Más específico que los enlaces de las listas de lectura (.pagina li a), que van subrayados. */
+.etapas .etapas-barra a {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 8px 6px;
+  color: var(--color-tenue);
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.3;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 7px;
+  transition:
+    color 0.15s,
+    background-color 0.15s;
+}
+
+.etapas .etapas-barra a:hover,
+.etapas .etapas-barra a:focus-visible {
+  color: var(--color-tinta);
+  background: color-mix(in srgb, var(--color-acento) 8%, var(--color-panel));
+}
+
+.etapas .etapas-barra a:focus-visible {
+  outline-offset: 2px;
+}
+
+/* El actual (aria-current="step" en un recorrido, "true" en unos segmentos), relleno de tinta. Los pasos vistos no
+   llevan marca: solo el aviso de lectores que escribe el módulo. */
+.etapas .etapas-barra a[aria-current] {
+  color: var(--color-panel);
+  background: var(--color-tinta);
+}
+
+/* El número solo se ve en el móvil; aquí queda para los lectores de pantalla. */
+.etapas-numero {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* «Paso 3 de 5 · …»: solo en el móvil, donde no caben los nombres. */
+.etapas-estado {
+  display: none;
+}
+
+/* Al pie de cada etapa: la tarjeta del paso siguiente, a todo el ancho, y debajo, discreto, el enlace al anterior. */
+.etapas-controles {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  margin: 48px 0 0;
+}
+
+/* Toda la tarjeta es el enlace: rótulo y nombre del paso a la izquierda, la flecha a la derecha. Sin movimiento. */
+.etapas .etapas-siguiente {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-areas:
+    "rotulo flecha"
+    "nombre flecha";
+  align-items: center;
+  column-gap: 24px;
+  row-gap: 6px;
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 44px;
+  padding: 20px 24px;
+  color: var(--color-tinta);
+  text-decoration: none;
+  cursor: pointer;
+  border: 1px solid var(--color-linea);
+  border-radius: var(--radio);
+  transition: border-color 0.15s;
+}
+
+.etapas-siguiente-rotulo {
+  grid-area: rotulo;
+  color: var(--color-tenue);
+  font-family: var(--fuente-mono);
+  font-size: var(--texto-minimo);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.etapas-siguiente-nombre {
+  grid-area: nombre;
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+}
+
+.etapas-siguiente svg,
+.etapas-anterior svg {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.etapas-siguiente svg {
+  grid-area: flecha;
+  width: 24px;
+  height: 15px;
+  color: var(--color-tenue);
+  stroke-width: 1.2;
+  transition: color 0.15s;
+}
+
+.etapas-anterior svg {
+  flex: none;
+  width: 16px;
+  height: 10px;
+}
+
+.etapas .etapas-siguiente:hover,
+.etapas .etapas-siguiente:focus-visible {
+  border-color: var(--color-tinta);
+}
+
+.etapas .etapas-siguiente:focus-visible {
+  outline-offset: 4px;
+}
+
+.etapas-siguiente:hover svg,
+.etapas-siguiente:focus-visible svg {
+  color: var(--color-tinta);
+}
+
+.etapas .etapas-anterior {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+  color: var(--color-tenue);
+  font-size: 0.9375rem;
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.15s;
+}
+
+.etapas .etapas-anterior:hover,
+.etapas .etapas-anterior:focus-visible {
+  color: var(--color-tinta);
+}
+
+/* Móvil: no caben los cinco nombres. La misma caja enseña segmentos compactos con solo el número y, debajo, el paso que
+   se ve; los nombres siguen en cada enlace para los lectores de pantalla. Cada segmento conserva sus 44 px. */
+@media (width <= 600px) {
+  .etapas-barra {
+    margin-bottom: 26px;
+  }
+
+  .etapas-rotulo {
+    display: none;
+  }
+
+  .etapas .etapas-barra a {
+    min-width: 0;
+    padding: 8px 4px;
+    font-size: 1rem;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .etapas-nombre {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+
+  .etapas .etapas-barra .etapas-numero {
+    position: static;
+    width: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    clip-path: none;
+  }
+
+  .etapas-estado {
+    display: block;
+    margin: 12px 0 0;
+    color: var(--color-tinta);
+    font-size: 0.875rem;
+    text-align: center;
+  }
+
+  .etapas-controles {
+    margin-top: 40px;
+  }
+
+  .etapas .etapas-siguiente {
+    padding: 18px 18px;
+    column-gap: 16px;
+  }
+
+  .etapas-siguiente-nombre {
+    font-size: 1.125rem;
+  }
+}
+
+/* Una barra larga (.etapas-barra--ancha, la guía «Qué es la IA», con siete partes): cada pestaña toma el ancho de su
+   nombre y, en pantallas anchas, la barra ocupa el ancho de la página para que cada nombre quepa en una línea. */
+@media (width > 600px) {
+  .etapas-barra--ancha ol {
+    grid-auto-columns: auto;
+  }
+}
+
+@media (width >= 900px) {
+  .etapas .etapas-barra--ancha {
+    max-width: none;
+  }
+
+  .etapas .etapas-barra--ancha a {
+    padding-inline: 12px;
+    white-space: nowrap;
+  }
+}
+
+/* Un paso con data-etapas-con-nombre (un glosario, un desafío) enseña su nombre también en el móvil, en vez del número:
+   no es una parte numerada del recorrido. Su pestaña toma el ancho del nombre y los números se reparten el resto. */
+@media (width <= 600px) {
+  .etapas-barra ol:has(> li[data-etapas-con-nombre]) {
+    display: flex;
+    gap: 2px;
+  }
+
+  .etapas-barra ol:has(> li[data-etapas-con-nombre]) > li {
+    flex: 1 1 0;
+  }
+
+  .etapas-barra ol:has(> li[data-etapas-con-nombre]) > li[data-etapas-con-nombre] {
+    flex: 0 0 auto;
+  }
+
+  .etapas .etapas-barra [data-etapas-con-nombre] a {
+    padding: 6px 8px;
+    font-size: 0.8125rem;
+    font-variant-numeric: normal;
+  }
+
+  .etapas .etapas-barra [data-etapas-con-nombre] .etapas-nombre {
+    position: static;
+    width: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    clip-path: none;
+    white-space: nowrap;
+  }
+
+  .etapas .etapas-barra [data-etapas-con-nombre] .etapas-numero {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+}
+
+/* Segmentos en el móvil: los cinco nombres, sin números, en la misma caja. Cada pestaña toma el ancho de su palabra
+   más larga, sin partirla; un nombre de dos palabras pasa a dos líneas. */
+@media (width <= 600px) {
+  .etapas[data-etapas="segmentos"] .etapas-barra ol {
+    grid-auto-columns: auto;
+    gap: 2px;
+  }
+
+  .etapas[data-etapas="segmentos"] .etapas-barra a {
+    padding: 6px 3px;
+    font-size: 0.8125rem;
+    line-height: 1.2;
+  }
+
+  .etapas[data-etapas="segmentos"] .etapas-nombre {
+    position: static;
+    width: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    clip-path: none;
+    white-space: normal;
+  }
+}
+
+/* En los móviles más estrechos las palabras no caben enteras: letra algo menor y, por debajo de 360 px, columnas
+   iguales en las que una palabra larga se parte con guion. */
+@media (width <= 380px) {
+  .etapas[data-etapas="segmentos"] .etapas-barra a {
+    padding: 6px 2px;
+    font-size: 0.75rem;
+  }
+}
+
+@media (width < 360px) {
+  .etapas[data-etapas="segmentos"] .etapas-barra ol {
+    grid-auto-columns: minmax(0, 1fr);
+  }
+
+  .etapas[data-etapas="segmentos"] .etapas-barra a {
+    hyphens: auto;
+  }
+}
+
+/* Con colores forzados no hay relleno de tinta: el paso actual usa los colores de selección del sistema. */
+@media (forced-colors: active) {
+  .etapas .etapas-barra a[aria-current] {
+    forced-color-adjust: none;
+    color: HighlightText;
+    background: Highlight;
+  }
+}
+
+@media print {
+  .etapas-barra,
+  .etapas-controles {
+    display: none;
+  }
+}

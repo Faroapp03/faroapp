@@ -1,0 +1,96 @@
+/* Recorrido · Página: la cabecera común en una fila y, debajo, la guía y la conversación en el alto que queda. */
+
+/* Con más de 320 px de alto, la página ocupa el alto visible (--alto-visible, de scripts/recorrido/altura-visible.js):
+   solo se desplaza la conversación, y la barra de escritura queda a la vista, también con el teclado abierto.
+   Una sola columna, del ancho de la ventana: lo que contenga la página no puede ensancharla. */
+.rc-cuerpo {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1fr);
+  height: var(--alto-visible, 100dvh);
+  min-height: 0;
+  overflow: hidden;
+  font-family: var(--fuente-conversacion);
+}
+
+/* El aviso de descarga solo se ve si la barrera de versión no llega a ejecutarse: es ella quien carga estas hojas, así
+   que con ellas el aviso no se pinta nunca. */
+#faro-aviso-descarga {
+  display: none;
+}
+
+/* Con menos de 320 px de alto (400 % de ampliación sobre 1280 × 1024 deja 320 × 256, WCAG 1.4.10), la cabecera de la
+   conversación y la barra de escritura, unos 270 px a 320 de ancho, no dejan sitio a la conversación ni a sus tarjetas.
+   Entonces se desplaza la página entera, como en el paso 4, y la barra queda en el flujo, al final: fijada, taparía lo
+   enfocado (2.4.11). Con más alto, el diseño no cambia. */
+@media (max-height: 320px) {
+  .rc-cuerpo {
+    height: auto;
+    min-height: 100dvh;
+    overflow: visible;
+  }
+
+  .rc-cuerpo .rc-conversacion {
+    overflow: visible;
+  }
+
+  /* Lo que se desplaza es la página: el margen que la conversación deja a lo enfocado (scroll-padding, en
+     conversacion.css) pasa a ella, y el recuadro de foco no queda cortado en el borde de la pantalla. */
+  :root:has(> .rc-cuerpo) {
+    scroll-padding-block: 24px;
+  }
+}
+
+/* La fila de la cabecera, la misma del resto del sitio y en la misma posición (base-cabecera.css): a todo el ancho de
+   la ventana, encima de la guía y de la conversación, con sus propias columnas: el botón del menú, la marca en el centro
+   y las herramientas a la derecha. La cabecera y el menú llevan la letra del resto del sitio, no la de la conversación. */
+.rc-cuerpo > .cabecera {
+  grid-row: 1;
+  grid-column: 1 / -1;
+}
+
+.rc-cuerpo > .cabecera,
+.rc-cuerpo > .menu {
+  font-family: var(--fuente-texto);
+}
+
+/* El pie común no cabe en una aplicación a pantalla completa: sus enlaces están en la guía y en el diálogo del
+   recorrido. */
+.rc-cuerpo > .pie {
+  display: none;
+}
+
+/* El aviso flotante (scripts/aviso.js) no flota sobre el alto fijo de los pasos 1 a 3: encima de la barra de escritura
+   taparía el control enfocado (WCAG 2.4.11). Ocupa su propia fila al pie, que existe solo mientras se ve, y la
+   conversación se acorta lo que él mide. Con la página desplazándose entera, queda al final, tras la barra. */
+.rc-cuerpo:not(.rc-cuerpo[data-paso="4"]:not([data-informe="oculto"])) > .aviso-flotante {
+  position: static;
+  grid-column: 1 / -1;
+  justify-self: center;
+  margin-bottom: max(12px, env(safe-area-inset-bottom));
+  transform: none;
+}
+
+.rc-pagina {
+  grid-row: 2;
+  grid-column: 1 / -1;
+  display: flex;
+  min-width: 0;
+  min-height: 0;
+  color: var(--rc-tinta);
+  background: var(--rc-fondo);
+}
+
+.rc-espacio {
+  display: grid;
+  flex: 1;
+  grid-template-columns: auto minmax(0, 1fr);
+  min-width: 0;
+  min-height: 0;
+}
+
+/* Empata en especificidad (0,2,0) con .rc-conversacion:focus-visible (conversacion.css), que gana por cargarse después:
+   el orden de enlace de las hojas en recorrido.html es parte del contrato. */
+.rc-cuerpo :focus-visible {
+  outline-offset: 3px;
+}

@@ -1,0 +1,1485 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="referrer" content="no-referrer" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title data-texto="panel.titulo">Panel de Control · Faro</title>
+    <link rel="icon" type="image/svg+xml" href="/imagenes/identidad/faro-editorial-icon.svg" />
+    <meta name="theme-color" content="#f4f3f0" />
+    <link rel="manifest" href="/manifest.webmanifest" crossorigin="use-credentials" />
+    <script src="/scripts/tema-inicial.js"></script>
+    <script src="/scripts/idioma-inicial.js"></script>
+    <link rel="stylesheet" href="/estilos/tipografias.css" />
+    <link rel="stylesheet" href="/estilos/tokens.css" />
+    <link rel="stylesheet" href="/estilos/base.css" />
+    <link rel="stylesheet" href="/administracion/panel.css" />
+    <link rel="stylesheet" href="/administracion/panel-estructura.css" />
+    <script type="module" src="/administracion/panel.js"></script>
+  </head>
+  <body class="panel-cuerpo">
+    <a class="salto" href="#contenido" data-texto="comun.saltar">Saltar al contenido</a>
+    <svg class="panel-simbolos" width="0" height="0" aria-hidden="true" focusable="false">
+      <symbol id="panel-i-estado-bien" viewBox="0 0 16 16"
+        ><circle cx="8" cy="8" r="7" fill="currentColor" />
+        <path
+          d="M4.8 8.2l2.1 2.1 4.3-4.4"
+          fill="none"
+          stroke="#fff"
+          stroke-width="1.7"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        /></symbol
+      >
+      <symbol id="panel-i-estado-curso" viewBox="0 0 16 16"
+        ><circle cx="8" cy="8" r="7" fill="currentColor" />
+        <path d="M8 4.6V8l2.4 1.5" fill="none" stroke="#fff" stroke-width="1.7" stroke-linecap="round" /></symbol
+      >
+      <symbol id="panel-i-estado-atencion" viewBox="0 0 16 16"
+        ><path d="M8 1.2l7.2 12.9H.8z" fill="currentColor" />
+        <path d="M8 6v3.6M8 11.6v.1" stroke="#fff" stroke-width="1.8" stroke-linecap="round" /></symbol
+      >
+      <symbol id="panel-i-estado-fallo" viewBox="0 0 16 16"
+        ><circle cx="8" cy="8" r="7" fill="currentColor" />
+        <path d="M5.6 5.6l4.8 4.8M10.4 5.6l-4.8 4.8" stroke="#fff" stroke-width="1.7" stroke-linecap="round" /></symbol
+      >
+      <symbol id="panel-i-estado-nada" viewBox="0 0 16 16"
+        ><circle cx="8" cy="8" r="6.2" fill="none" stroke="currentColor" stroke-width="1.6" />
+        <path d="M5 8h6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" /></symbol
+      >
+      <symbol id="panel-i-chevron" viewBox="0 0 16 16"
+        ><path
+          d="M6 3.5L10.5 8 6 12.5"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.6"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        /></symbol
+      >
+      <symbol id="panel-i-inicio" viewBox="0 0 16 16"
+        ><path
+          d="M2 7.2L8 2l6 5.2V14H9.8v-4H6.2v4H2z"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.4"
+          stroke-linejoin="round"
+        /></symbol
+      >
+      <symbol id="panel-i-datos" viewBox="0 0 16 16"
+        ><ellipse cx="8" cy="3.6" rx="5.5" ry="2" fill="none" stroke="currentColor" stroke-width="1.4" />
+        <path
+          d="M2.5 3.6v8.8c0 1.1 2.5 2 5.5 2s5.5-.9 5.5-2V3.6M2.5 8c0 1.1 2.5 2 5.5 2s5.5-.9 5.5-2"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.4"
+        /></symbol
+      >
+      <symbol id="panel-i-web" viewBox="0 0 16 16"
+        ><circle cx="8" cy="8" r="6.3" fill="none" stroke="currentColor" stroke-width="1.4" />
+        <path
+          d="M1.7 8h12.6M8 1.7c1.8 2 2.5 4 2.5 6.3S9.8 12.3 8 14.3M8 1.7C6.2 3.7 5.5 5.7 5.5 8s.7 4.3 2.5 6.3"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.4"
+        /></symbol
+      >
+      <symbol id="panel-i-accesos" viewBox="0 0 16 16"
+        ><circle cx="5.5" cy="8" r="3.2" fill="none" stroke="currentColor" stroke-width="1.4" />
+        <path
+          d="M8.7 8h6M12 8v2.3M14 8v1.8"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.4"
+          stroke-linecap="round"
+        /></symbol
+      >
+      <symbol id="panel-i-avisos" viewBox="0 0 16 16"
+        ><path
+          d="M4 11V7a4 4 0 0 1 8 0v4l1.3 1.6H2.7zM6.5 14h3"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.4"
+          stroke-linejoin="round"
+          stroke-linecap="round"
+        /></symbol
+      >
+      <symbol id="panel-i-encuesta" viewBox="0 0 16 16"
+        ><path
+          d="M2.5 2.5h11v8H6.5L2.5 13.5z"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.4"
+          stroke-linejoin="round"
+        /></symbol
+      >
+      <symbol id="panel-i-registro" viewBox="0 0 16 16"
+        ><path
+          d="M3 2.5h10v11H3zM5.5 5.5h5M5.5 8h5M5.5 10.5h3"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.4"
+          stroke-linecap="round"
+        /></symbol
+      >
+      <symbol id="panel-i-recargar" viewBox="0 0 16 16"
+        ><path
+          d="M13 8a5 5 0 1 1-1.5-3.6M13 2.5v3h-3"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.4"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        /></symbol
+      >
+      <symbol id="panel-i-bajar" viewBox="0 0 16 16"
+        ><path
+          d="M8 2.5v8M4.5 7L8 10.5 11.5 7M3 13.5h10"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.4"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        /></symbol
+      >
+      <symbol id="panel-i-actualizar" viewBox="0 0 16 16"
+        ><path
+          d="M5 3.2l8 4.8-8 4.8z"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.4"
+          stroke-linejoin="round"
+        /></symbol
+      >
+      <symbol id="panel-i-lupa" viewBox="0 0 16 16"
+        ><circle cx="7" cy="7" r="4.5" fill="none" stroke="currentColor" stroke-width="1.4" />
+        <path d="M10.4 10.4L14 14" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" /></symbol
+      >
+      <symbol id="panel-i-menu" viewBox="0 0 16 16"
+        ><path
+          d="M2.5 4h11M2.5 8h11M2.5 12h11"
+          stroke="currentColor"
+          stroke-width="1.4"
+          stroke-linecap="round"
+        /></symbol
+      >
+    </svg>
+    <header class="panel-app">
+      <button
+        class="panel-app-menu"
+        id="plegar-navegacion"
+        type="button"
+        aria-controls="navegacion-panel"
+        aria-expanded="true"
+        aria-label="Mostrar u ocultar la navegación"
+        data-texto-aria-label="panel.nav.plegar"
+        ><svg class="panel-icono" aria-hidden="true" focusable="false"><use href="#panel-i-menu" /></svg></button
+      >
+      <a
+        class="panel-app-nombre"
+        href="/inicio.html"
+        aria-label="Faro, ver la web"
+        data-texto-aria-label="panel.ver-web"
+        ><strong>FARO</strong> <span data-texto="panel.encabezado">Panel de Control</span></a
+      >
+      <search class="panel-app-buscar">
+        <svg class="panel-icono" aria-hidden="true" focusable="false"><use href="#panel-i-lupa" /></svg>
+        <input
+          id="panel-buscar"
+          type="search"
+          list="panel-buscar-apartados"
+          autocomplete="off"
+          placeholder="Buscar en el panel: fuentes, instituciones, registro…"
+          aria-label="Buscar un apartado del panel"
+          aria-keyshortcuts="Meta+K Control+K"
+          data-texto-placeholder="panel.buscar.ejemplo"
+          data-texto-aria-label="panel.buscar.nombre"
+        />
+        <datalist id="panel-buscar-apartados"></datalist>
+        <kbd aria-hidden="true">⌘K</kbd>
+      </search>
+      <div class="panel-app-sesion" id="sesion-barra"></div>
+      <div class="cabecera-herramientas">
+        <div class="idioma" data-selector-idioma>
+          <button
+            class="idioma-boton"
+            type="button"
+            id="idioma-boton"
+            aria-label="Idioma: Castellano"
+            data-texto-aria-label="comun.idioma.boton"
+            aria-haspopup="menu"
+            aria-expanded="false"
+            aria-controls="idioma-opciones"
+          >
+            <img
+              class="idioma-bandera idioma-bandera-es"
+              src="/imagenes/identidad/bandera-espana.svg"
+              alt=""
+              width="24"
+              height="16"
+            />
+            <img
+              class="idioma-bandera idioma-bandera-ca"
+              src="/imagenes/identidad/bandera-catalunya.svg"
+              alt=""
+              width="24"
+              height="16"
+            />
+          </button>
+          <div class="idioma-opciones" id="idioma-opciones" role="menu" aria-labelledby="idioma-boton" hidden>
+            <button type="button" role="menuitemradio" aria-checked="true" data-cambiar-idioma="es" lang="es"
+              ><img class="idioma-bandera" src="/imagenes/identidad/bandera-espana.svg" alt="" width="24" height="16" />
+              <span>Castellano</span></button
+            >
+            <button type="button" role="menuitemradio" aria-checked="false" data-cambiar-idioma="ca" lang="ca"
+              ><img
+                class="idioma-bandera"
+                src="/imagenes/identidad/bandera-catalunya.svg"
+                alt=""
+                width="24"
+                height="16"
+              /><span>Català</span></button
+            >
+          </div>
+        </div>
+        <button
+          class="tema-boton"
+          type="button"
+          aria-label="Cambiar a modo día"
+          title="Modo día / noche"
+          data-texto-title="comun.tema.titulo"
+        >
+          <svg class="icono-sol" viewBox="0 0 24 24" aria-hidden="true" focusable="false"
+            ><circle cx="12" cy="12" r="4.5" />
+            <path
+              d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"
+            /></svg
+          >
+          <svg class="icono-luna" viewBox="0 0 24 24" aria-hidden="true" focusable="false"
+            ><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z" /></svg
+          >
+        </button>
+      </div>
+    </header>
+    <div class="panel-estado-sesion">
+      <p id="estado" role="status" aria-live="polite" tabindex="-1"></p>
+      <p id="estado-deshacer" role="status" aria-live="polite"></p>
+      <button id="deshacer" type="button" class="secundario" hidden data-texto="panel.deshacer.boton"
+        >Deshacer el último cambio</button
+      >
+      <button id="reconectar" type="button" hidden data-texto="panel.reconectar">Comprobar conexión</button>
+    </div>
+    <main id="contenido" class="panel-administracion panel-principal">
+      <h1 class="solo-lectores" data-texto="panel.encabezado">Panel de Control</h1>
+      <section
+        id="bienvenida-panel"
+        class="panel-bienvenida"
+        aria-label="Bienvenida"
+        data-texto-aria-label="panel.sesion-unica.titulo"
+      >
+        <noscript data-texto="panel.sin-script"
+          >El panel necesita JavaScript para comprobar la sesión y aplicar los cambios.</noscript
+        >
+      </section>
+      <div class="panel-armazon" id="armazon-panel" data-armazon data-navegacion="abierta" hidden>
+        <nav
+          class="panel-lateral"
+          id="navegacion-panel"
+          aria-label="Navegación del Panel de Control"
+          data-texto-aria-label="panel.nav.nombre"
+        >
+          <ul class="panel-nav">
+            <li
+              ><a class="panel-nav-item" href="#apartado-inicio" data-ir="inicio"
+                ><svg class="panel-icono" aria-hidden="true" focusable="false"><use href="#panel-i-inicio" /></svg
+                ><span data-texto="panel.nav.inicio">Inicio</span></a
+              ></li
+            >
+            <li class="panel-nav-separador" aria-hidden="true"></li>
+            <li>
+              <button
+                class="panel-nav-item panel-nav-grupo"
+                type="button"
+                data-grupo="datos"
+                aria-expanded="false"
+                aria-controls="nav-datos"
+                ><svg class="panel-icono" aria-hidden="true" focusable="false"><use href="#panel-i-datos" /></svg
+                ><span data-texto="panel.nav.datos">Datos</span
+                ><svg class="panel-icono panel-nav-flecha" aria-hidden="true" focusable="false"
+                  ><use href="#panel-i-chevron" /></svg
+                ></button
+              >
+              <ul class="panel-nav-sub" id="nav-datos" data-de="datos" hidden>
+                <li
+                  ><a class="panel-nav-item" href="#apartado-fuentes" data-ir="fuentes"
+                    ><span data-texto="panel.nav.fuentes">Fuentes</span></a
+                  ></li
+                >
+                <li
+                  ><a class="panel-nav-item" href="#apartado-actualizaciones" data-ir="actualizaciones"
+                    ><span data-texto="panel.nav.actualizaciones">Actualizaciones</span></a
+                  ></li
+                >
+                <li
+                  ><a class="panel-nav-item" href="#apartado-publicaciones" data-ir="publicaciones"
+                    ><span data-texto="panel.nav.publicaciones">Publicaciones</span></a
+                  ></li
+                >
+                <li
+                  ><a class="panel-nav-item" href="#apartado-revision" data-ir="revision"
+                    ><span data-texto="panel.nav.revision">Revisión editorial</span></a
+                  ></li
+                >
+              </ul>
+            </li>
+            <li>
+              <button
+                class="panel-nav-item panel-nav-grupo"
+                type="button"
+                data-grupo="web"
+                aria-expanded="false"
+                aria-controls="nav-web"
+                ><svg class="panel-icono" aria-hidden="true" focusable="false"><use href="#panel-i-web" /></svg
+                ><span data-texto="panel.nav.web">Web</span
+                ><svg class="panel-icono panel-nav-flecha" aria-hidden="true" focusable="false"
+                  ><use href="#panel-i-chevron" /></svg
+                ></button
+              >
+              <ul class="panel-nav-sub" id="nav-web" data-de="web" hidden>
+                <li
+                  ><a class="panel-nav-item" href="#apartado-secciones" data-ir="secciones"
+                    ><span data-texto="panel.nav.secciones">Secciones</span></a
+                  ></li
+                >
+                <li
+                  ><a class="panel-nav-item" href="#apartado-conectividad" data-ir="conectividad"
+                    ><span data-texto="panel.nav.conectividad">Conectividad</span></a
+                  ></li
+                >
+              </ul>
+            </li>
+            <li>
+              <button
+                class="panel-nav-item panel-nav-grupo"
+                type="button"
+                data-grupo="accesos"
+                aria-expanded="false"
+                aria-controls="nav-accesos"
+                ><svg class="panel-icono" aria-hidden="true" focusable="false"><use href="#panel-i-accesos" /></svg
+                ><span data-texto="panel.nav.accesos">Accesos</span
+                ><svg class="panel-icono panel-nav-flecha" aria-hidden="true" focusable="false"
+                  ><use href="#panel-i-chevron" /></svg
+                ></button
+              >
+              <ul class="panel-nav-sub" id="nav-accesos" data-de="accesos" hidden>
+                <li
+                  ><a class="panel-nav-item" href="#apartado-administradores" data-ir="administradores"
+                    ><span data-texto="panel.nav.administradores">Administradores</span></a
+                  ></li
+                >
+                <li
+                  ><a class="panel-nav-item" href="#apartado-instituciones" data-ir="instituciones"
+                    ><span data-texto="panel.nav.instituciones">Instituciones</span></a
+                  ></li
+                >
+                <li
+                  ><a class="panel-nav-item" href="#apartado-claves" data-ir="claves"
+                    ><span data-texto="panel.nav.claves">Claves de acceso</span></a
+                  ></li
+                >
+              </ul>
+            </li>
+            <li
+              ><a class="panel-nav-item" href="#apartado-avisos" data-ir="avisos"
+                ><svg class="panel-icono" aria-hidden="true" focusable="false"><use href="#panel-i-avisos" /></svg
+                ><span data-texto="panel.nav.avisos">Avisos</span></a
+              ></li
+            >
+            <li
+              ><a class="panel-nav-item" href="#apartado-encuesta" data-ir="encuesta"
+                ><svg class="panel-icono" aria-hidden="true" focusable="false"><use href="#panel-i-encuesta" /></svg
+                ><span data-texto="panel.nav.encuesta">Encuesta</span></a
+              ></li
+            >
+            <li class="panel-nav-separador" aria-hidden="true"></li>
+            <li
+              ><a class="panel-nav-item" href="#apartado-registro" data-ir="registro"
+                ><svg class="panel-icono" aria-hidden="true" focusable="false"><use href="#panel-i-registro" /></svg
+                ><span data-texto="panel.nav.registro">Registro del panel</span></a
+              ></li
+            >
+          </ul>
+        </nav>
+        <div class="panel-contenido">
+          <section
+            class="panel-apartado"
+            id="apartado-inicio"
+            data-apartado="inicio"
+            aria-labelledby="titulo-apartado-inicio"
+            hidden
+          >
+            <p class="panel-migas" data-texto="panel.encabezado">Panel de Control</p>
+            <h2 class="panel-apartado-titulo" id="titulo-apartado-inicio" tabindex="-1" data-texto="panel.nav.inicio"
+              >Inicio</h2
+            >
+            <p class="panel-frase" data-texto="panel.frase.inicio"
+              >El estado de Faro de un vistazo. Lo que requiere atención aparece primero.</p
+            >
+            <div class="panel-ordenes"
+              ><button type="button" class="panel-orden" id="inicio-actualizar"
+                ><svg class="panel-icono" aria-hidden="true" focusable="false"><use href="#panel-i-recargar" /></svg
+                ><span data-texto="panel.ordenes.actualizar">Actualizar</span></button
+              ><button type="button" class="panel-orden" data-orden="actualizar-datos"
+                ><svg class="panel-icono" aria-hidden="true" focusable="false"><use href="#panel-i-actualizar" /></svg
+                ><span data-texto="panel.ordenes.actualizar-datos">Actualizar datos ahora</span></button
+              ><button type="button" class="panel-orden" id="inicio-exportar" disabled
+                ><svg class="panel-icono" aria-hidden="true" focusable="false"><use href="#panel-i-bajar" /></svg
+                ><span data-texto="panel.ordenes.exportar-informe">Exportar informe</span></button
+              ><p class="panel-ordenes-nota" id="inicio-comprobado" aria-live="polite"></p></div
+            >
+            <div class="panel-rejilla">
+              <div class="panel-indicadores" id="inicio-indicadores"></div>
+              <section class="tarjeta panel-c8" aria-labelledby="titulo-inicio-estado">
+                <header class="tarjeta-cabecera"
+                  ><h3 id="titulo-inicio-estado" data-texto="panel.inicio.estado.titulo"
+                    >Estado del servicio</h3
+                  ></header
+                >
+                <table class="panel-tabla">
+                  <thead
+                    ><tr
+                      ><th scope="col" data-texto="panel.inicio.columna.area">Área</th
+                      ><th scope="col" data-texto="panel.inicio.columna.estado">Estado</th
+                      ><th scope="col" data-texto="panel.inicio.columna.detalle">Detalle</th
+                      ><th scope="col" data-texto="panel.inicio.columna.comprobado">Comprobado</th
+                      ><th scope="col"
+                        ><span class="solo-lectores" data-texto="panel.inicio.columna.abrir">Abrir</span></th
+                      ></tr
+                    ></thead
+                  >
+                  <tbody id="inicio-estado"></tbody>
+                </table>
+              </section>
+              <div class="panel-c4 panel-columna">
+                <section class="tarjeta" aria-labelledby="titulo-inicio-atencion">
+                  <header class="tarjeta-cabecera"
+                    ><h3 id="titulo-inicio-atencion" data-texto="panel.inicio.atencion.titulo">Requiere atención</h3
+                    ><span class="panel-contador" id="inicio-atencion-cuenta"></span></header
+                  >
+                  <ul class="panel-lista" id="inicio-atencion"></ul>
+                </section>
+                <section class="tarjeta" aria-labelledby="titulo-inicio-actividad">
+                  <header class="tarjeta-cabecera"
+                    ><h3 id="titulo-inicio-actividad" data-texto="panel.inicio.actividad.titulo">Actividad reciente</h3
+                    ><a href="#apartado-registro" data-texto="panel.inicio.actividad.ver">Ver registro</a></header
+                  >
+                  <ul class="panel-lista" id="inicio-actividad"></ul>
+                  <footer class="tarjeta-pie" data-texto="panel.inicio.actividad.retencion">Se guarda 90 días.</footer>
+                </section>
+              </div>
+            </div>
+          </section>
+          <section
+            class="panel-apartado"
+            id="apartado-fuentes"
+            data-apartado="fuentes"
+            aria-labelledby="titulo-apartado-fuentes"
+            hidden
+          >
+            <p class="panel-migas"
+              ><a href="#apartado-inicio" data-texto="panel.encabezado">Panel de Control</a>
+              › <span data-texto="panel.nav.datos">Datos</span> › <span data-texto="panel.nav.fuentes">Fuentes</span></p
+            >
+            <h2 class="panel-apartado-titulo" id="titulo-apartado-fuentes" tabindex="-1" data-texto="panel.nav.fuentes"
+              >Fuentes</h2
+            >
+            <p class="panel-frase" data-texto="panel.frase.fuentes"
+              >Qué fuentes se han consultado bien, cuáles necesitan atención y qué conviene hacer.</p
+            >
+            <div class="panel-ordenes"
+              ><button type="button" class="panel-orden" data-orden="consultar-datos"
+                ><svg class="panel-icono" aria-hidden="true" focusable="false"><use href="#panel-i-recargar" /></svg
+                ><span data-texto="panel.ordenes.actualizar">Actualizar</span></button
+              ></div
+            >
+            <div class="panel-rejilla">
+              <section id="datos" class="tarjeta" hidden aria-labelledby="titulo-datos">
+                <h3 id="titulo-datos" data-texto="panel.datos.titulo">Estado de las fuentes</h3>
+                <p data-texto="panel.datos.intro"
+                  >Comprueba qué fuentes se han consultado bien, cuáles necesitan atención y qué conviene hacer. Esta
+                  lectura no dice qué versión de los datos ven ahora las personas.</p
+                >
+                <button id="consultar-datos" type="button" class="secundario" data-texto="panel.datos.consultar"
+                  >Consultar estado de los datos</button
+                >
+                <div id="estado-datos" aria-live="polite"></div>
+                <section id="retenidos-datos" hidden aria-labelledby="titulo-retenidos">
+                  <h4 id="titulo-retenidos" data-texto="panel.retenidos.titulo">Cambios retenidos</h4>
+                  <p data-texto="panel.retenidos.intro"
+                    >Cuando una actualización trae muchos menos datos de los que hay publicados, Faro no los publica:
+                    conserva lo que ya ven las personas y espera a que alguien lo revise.</p
+                  >
+                  <div id="retenidos-lista"></div>
+                </section>
+              </section>
+              <section class="tarjeta panel-servicio" aria-labelledby="titulo-servicio">
+                <h4 id="titulo-servicio" data-texto="panel.servicio.titulo">Estado de los datos</h4>
+                <p data-texto="panel.servicio.intro"
+                  >Una fila por tema y otra para los datos nuevos. Cada estado sale de la última lectura del servidor;
+                  si algo no se ha podido leer, lo verás como «sin comprobar».</p
+                >
+                <div id="servicio-temas" class="panel-servicio-filas"></div>
+              </section>
+              <section class="tarjeta panel-revisiones" aria-labelledby="titulo-revisiones">
+                <h4 id="titulo-revisiones" data-texto="panel.revisiones.titulo">Revisiones que tocan</h4>
+                <p data-texto="panel.revisiones.intro"
+                  >Revisiones que se hacen a mano y que el servidor ya tiene calculadas. Son un recordatorio: no cambian
+                  lo que ven las personas.</p
+                >
+                <div id="revisiones-panel"></div>
+              </section>
+              <section id="ofertas-ocultas" class="tarjeta" hidden aria-labelledby="titulo-ocultas">
+                <h3 id="titulo-ocultas" data-texto="panel.ocultas.titulo">Ofertas retenidas del catálogo</h3>
+                <p data-texto="panel.ocultas.intro"
+                  >Decisiones conservadas del registro admitido. No confirma que una retirada se haya publicado. Esta
+                  consulta no vuelve a evaluar cursos ni consulta a sus proveedores.</p
+                >
+                <label for="ocultas-tipo" data-texto="panel.ocultas.filtro">Tipo de unidad</label>
+                <select id="ocultas-tipo"
+                  ><option value="todos" data-texto="panel.ocultas.todos">Todos</option
+                  ><option value="recurso" data-texto="panel.ocultas.recurso">Recurso</option
+                  ><option value="edicion" data-texto="panel.ocultas.edicion">Edición</option></select
+                >
+                <button
+                  id="consultar-ocultas"
+                  type="button"
+                  class="secundario"
+                  disabled
+                  data-texto="panel.ocultas.consultar"
+                  >Consultar desde la primera página</button
+                >
+                <p id="ocultas-estado" role="status" aria-live="polite"></p><p id="ocultas-resumen"></p>
+                <div id="ocultas-lista"></div>
+                <div class="acciones"
+                  ><button id="ocultas-anterior" type="button" disabled data-texto="panel.ocultas.anterior"
+                    >Página anterior</button
+                  ><button id="ocultas-siguiente" type="button" disabled data-texto="panel.ocultas.siguiente"
+                    >Página siguiente</button
+                  ></div
+                >
+              </section>
+            </div>
+          </section>
+          <section
+            class="panel-apartado"
+            id="apartado-actualizaciones"
+            data-apartado="actualizaciones"
+            aria-labelledby="titulo-apartado-actualizaciones"
+            hidden
+          >
+            <p class="panel-migas"
+              ><a href="#apartado-inicio" data-texto="panel.encabezado">Panel de Control</a>
+              › <span data-texto="panel.nav.datos">Datos</span> ›
+              <span data-texto="panel.nav.actualizaciones">Actualizaciones</span></p
+            >
+            <h2
+              class="panel-apartado-titulo"
+              id="titulo-apartado-actualizaciones"
+              tabindex="-1"
+              data-texto="panel.nav.actualizaciones"
+              >Actualizaciones</h2
+            >
+            <p class="panel-frase" data-texto="panel.frase.actualizaciones"
+              >Cómo va la actualización de los datos y qué ha encontrado la última comprobación.</p
+            >
+            <div class="panel-ordenes"
+              ><button type="button" class="panel-orden" data-orden="consultar-trabajo"
+                ><svg class="panel-icono" aria-hidden="true" focusable="false"><use href="#panel-i-recargar" /></svg
+                ><span data-texto="panel.ordenes.actualizar">Actualizar</span></button
+              ></div
+            >
+            <div class="panel-rejilla">
+              <section id="trabajos" class="tarjeta" hidden aria-labelledby="titulo-trabajos">
+                <h3 id="titulo-trabajos" data-texto="panel.trabajos.titulo">Comprobar actualizaciones</h3>
+                <p data-texto="panel.trabajos.intro"
+                  >Faro busca datos nuevos en las fuentes y los revisa antes de prepararlos. Los datos preparados no se
+                  ven en la web hasta que se publican.</p
+                >
+                <div class="acciones">
+                  <button
+                    id="consultar-trabajo"
+                    type="button"
+                    class="secundario"
+                    disabled
+                    data-texto="panel.trabajos.consultar"
+                    >Ver cómo va la actualización</button
+                  >
+                  <button id="actualizar-datos" type="button" disabled data-texto="panel.trabajos.buscar"
+                    >Actualizar datos</button
+                  >
+                  <button
+                    id="reintentar-pendientes"
+                    type="button"
+                    class="secundario"
+                    disabled
+                    data-texto="panel.trabajos.reintentar"
+                    >Volver a intentar lo que quedó pendiente</button
+                  >
+                </div>
+                <p class="ayuda" data-texto="panel.trabajos.ayuda"
+                  >Vuelve a consultar solo las fuentes que no se pudieron comprobar la última vez. Si no queda nada
+                  pendiente, termina sin cambios.</p
+                >
+                <div id="estado-trabajos" role="status" aria-live="polite"></div>
+                <p id="seguimiento-trabajo" class="ayuda"></p>
+                <div class="acciones">
+                  <button
+                    id="retirar-trabajo"
+                    type="button"
+                    class="secundario"
+                    disabled
+                    data-texto="panel.trabajos.retirar"
+                    >Retirar la solicitud</button
+                  >
+                  <button
+                    id="reconciliar-trabajo"
+                    type="button"
+                    class="secundario"
+                    disabled
+                    data-texto="panel.trabajos.reconciliar"
+                    >Comprobar cómo terminó</button
+                  >
+                </div>
+                <p class="ayuda" data-texto="panel.trabajos.limites"
+                  >Retirar la solicitud no detiene una actualización que ya ha empezado. «Comprobar cómo terminó»
+                  pregunta por su resultado y lo anota; no publica datos.</p
+                >
+              </section>
+              <section id="vigilante" class="tarjeta" hidden aria-labelledby="titulo-vigilante">
+                <h3 id="titulo-vigilante" data-texto="panel.vigilante.titulo">Comprobar estado</h3>
+                <p data-texto="panel.vigilante.intro"
+                  >Evalúa la evidencia disponible sin iniciar una actualización de datos.</p
+                >
+                <div class="acciones">
+                  <button id="comprobar-vigilante" type="button" data-texto="panel.vigilante.comprobar"
+                    >Comprobar estado</button
+                  >
+                  <button
+                    id="historial-vigilante"
+                    type="button"
+                    class="secundario"
+                    data-texto="panel.vigilante.historial"
+                    >Consultar historial</button
+                  >
+                  <button
+                    id="siguiente-vigilante"
+                    type="button"
+                    class="secundario"
+                    hidden
+                    data-texto="panel.vigilante.siguiente"
+                    >Página siguiente</button
+                  >
+                </div>
+                <div id="estado-vigilante" role="status" aria-live="polite"></div>
+              </section>
+            </div>
+          </section>
+          <section
+            class="panel-apartado"
+            id="apartado-publicaciones"
+            data-apartado="publicaciones"
+            aria-labelledby="titulo-apartado-publicaciones"
+            hidden
+          >
+            <p class="panel-migas"
+              ><a href="#apartado-inicio" data-texto="panel.encabezado">Panel de Control</a>
+              › <span data-texto="panel.nav.datos">Datos</span> ›
+              <span data-texto="panel.nav.publicaciones">Publicaciones</span></p
+            >
+            <h2
+              class="panel-apartado-titulo"
+              id="titulo-apartado-publicaciones"
+              tabindex="-1"
+              data-texto="panel.nav.publicaciones"
+              >Publicaciones</h2
+            >
+            <p class="panel-frase" data-texto="panel.frase.publicaciones"
+              >La última publicación de los datos que ha anotado el servidor.</p
+            >
+            <div class="panel-ordenes"
+              ><button type="button" class="panel-orden" data-orden="consultar-activacion"
+                ><svg class="panel-icono" aria-hidden="true" focusable="false"><use href="#panel-i-recargar" /></svg
+                ><span data-texto="panel.ordenes.actualizar">Actualizar</span></button
+              ></div
+            >
+            <div class="panel-rejilla">
+              <section id="activacion" class="tarjeta" hidden aria-labelledby="titulo-activacion">
+                <h3 id="titulo-activacion" data-texto="panel.activacion.titulo">Publicación de los datos</h3>
+                <p data-texto="panel.activacion.intro"
+                  >Muestra la última publicación de datos anotada por el servidor. No comprueba qué versión ven ahora
+                  las personas.</p
+                >
+                <button
+                  id="consultar-activacion"
+                  type="button"
+                  class="secundario"
+                  disabled
+                  data-texto="panel.activacion.consultar"
+                  >Consultar la última publicación</button
+                >
+                <div id="estado-activacion" role="status" aria-live="polite"></div>
+              </section>
+            </div>
+          </section>
+          <section
+            class="panel-apartado"
+            id="apartado-revision"
+            data-apartado="revision"
+            aria-labelledby="titulo-apartado-revision"
+            hidden
+          >
+            <p class="panel-migas"
+              ><a href="#apartado-inicio" data-texto="panel.encabezado">Panel de Control</a>
+              › <span data-texto="panel.nav.datos">Datos</span> ›
+              <span data-texto="panel.nav.revision">Revisión editorial</span></p
+            >
+            <h2
+              class="panel-apartado-titulo"
+              id="titulo-apartado-revision"
+              tabindex="-1"
+              data-texto="panel.nav.revision"
+              >Revisión editorial</h2
+            >
+            <p class="panel-frase" data-texto="panel.frase.revision"
+              >La revisión de materia y nivel de los cursos publicados.</p
+            >
+            <div class="panel-ordenes"
+              ><button type="button" class="panel-orden" data-orden="consultar-clasificacion"
+                ><svg class="panel-icono" aria-hidden="true" focusable="false"><use href="#panel-i-recargar" /></svg
+                ><span data-texto="panel.ordenes.actualizar">Actualizar</span></button
+              ></div
+            >
+            <div class="panel-rejilla">
+              <section id="revision-editorial" class="tarjeta" aria-labelledby="titulo-clasificacion">
+                <h3 id="titulo-clasificacion" data-texto="panel.clasificacion.titulo">Revisión editorial de Cursos</h3>
+                <p data-texto="panel.clasificacion.intro"
+                  >Consulta la revisión de materia y nivel de la publicación construida. Estas incidencias no son
+                  retenciones de las fuentes.</p
+                >
+                <button
+                  id="consultar-clasificacion"
+                  type="button"
+                  class="secundario"
+                  data-texto="panel.clasificacion.consultar"
+                  >Consultar revisión editorial</button
+                >
+                <div id="clasificacion-estado" role="status" aria-live="polite"></div>
+                <div id="clasificacion-resumen"></div>
+                <ul id="clasificacion-lista"></ul>
+                <div class="acciones">
+                  <button
+                    id="clasificacion-anterior"
+                    type="button"
+                    class="secundario"
+                    data-texto="panel.clasificacion.anterior"
+                    disabled
+                    >Página anterior</button
+                  >
+                  <button
+                    id="clasificacion-siguiente"
+                    type="button"
+                    class="secundario"
+                    data-texto="panel.clasificacion.siguiente"
+                    disabled
+                    >Página siguiente</button
+                  >
+                </div>
+              </section>
+            </div>
+          </section>
+          <section
+            class="panel-apartado"
+            id="apartado-secciones"
+            data-apartado="secciones"
+            aria-labelledby="titulo-apartado-secciones"
+            hidden
+          >
+            <p class="panel-migas"
+              ><a href="#apartado-inicio" data-texto="panel.encabezado">Panel de Control</a>
+              › <span data-texto="panel.nav.web">Web</span> › <span data-texto="panel.nav.secciones">Secciones</span></p
+            >
+            <h2
+              class="panel-apartado-titulo"
+              id="titulo-apartado-secciones"
+              tabindex="-1"
+              data-texto="panel.nav.secciones"
+              >Secciones</h2
+            >
+            <p class="panel-frase" data-texto="panel.frase.secciones"
+              >Qué páginas de la web están abiertas al público.</p
+            >
+            <div class="panel-ordenes"
+              ><button type="button" class="panel-orden" data-orden="consultar-secciones"
+                ><svg class="panel-icono" aria-hidden="true" focusable="false"><use href="#panel-i-recargar" /></svg
+                ><span data-texto="panel.ordenes.actualizar">Actualizar</span></button
+              ></div
+            >
+            <div class="panel-rejilla">
+              <section id="secciones" class="tarjeta" hidden aria-labelledby="titulo-secciones">
+                <h3 id="titulo-secciones" data-texto="panel.secciones.titulo">Secciones públicas</h3>
+                <p data-texto="panel.secciones.intro"
+                  >Abre o cierra estas páginas y sus enlaces. Las conexiones para aplicaciones y asistentes de IA se
+                  gestionan en Conectividad.</p
+                >
+                <p class="ayuda" data-texto="panel.secciones.copias"
+                  >Quien use Faro sin conexión verá el último estado que conoció hasta que vuelva a conectarse. Inicio y
+                  las páginas legales, de accesibilidad y de verificación siempre están disponibles.</p
+                >
+                <button
+                  id="consultar-secciones"
+                  type="button"
+                  class="secundario"
+                  disabled
+                  data-texto="panel.secciones.consultar"
+                  >Consultar secciones</button
+                >
+                <p id="estado-secciones" role="status" aria-live="polite"></p>
+                <fieldset id="campos-secciones" disabled hidden>
+                  <legend data-texto="panel.secciones.leyenda">Páginas disponibles</legend>
+                  <label class="interruptor" for="seccion-entender-ia"
+                    ><span data-texto="panel.seccion.ia">Qué es IA</span>
+                    <input id="seccion-entender-ia" type="checkbox" /></label
+                  >
+                  <label class="interruptor" for="seccion-que-es-faro"
+                    ><span data-texto="panel.seccion.faro">Qué es Faro</span>
+                    <input id="seccion-que-es-faro" type="checkbox" /></label
+                  >
+                  <label class="interruptor" for="seccion-recorrido"
+                    ><span data-texto="panel.seccion.recorrido">Empezar: recorrido e informe de ejemplo</span>
+                    <input id="seccion-recorrido" type="checkbox" aria-describedby="ayuda-seccion-recorrido" /></label
+                  >
+                  <p id="ayuda-seccion-recorrido" class="ayuda" data-texto="panel.seccion.recorrido-ayuda"
+                    >Abre o cierra el recorrido de Faro y el informe de ejemplo.</p
+                  >
+                  <label class="interruptor" for="seccion-cursos"
+                    ><span data-texto="panel.seccion.cursos">Cursos</span>
+                    <input id="seccion-cursos" type="checkbox" /></label
+                  >
+                  <label class="interruptor" for="seccion-biblioteca"
+                    ><span data-texto="panel.seccion.biblioteca">Biblioteca</span>
+                    <input id="seccion-biblioteca" type="checkbox" /></label
+                  >
+
+                  <label class="interruptor" for="seccion-datos-globales"
+                    ><span data-texto="panel.seccion.globales">Datos globales: Cataluña, UE y mundo</span>
+                    <input id="seccion-datos-globales" type="checkbox" /></label
+                  >
+                  <label class="interruptor" for="seccion-doctor"
+                    ><span data-texto="panel.seccion.doctor">Comprobar</span>
+                    <input id="seccion-doctor" type="checkbox" /></label
+                  >
+                  <button id="guardar-secciones" type="button" disabled data-texto="panel.secciones.guardar"
+                    >Guardar secciones</button
+                  >
+                </fieldset>
+              </section>
+            </div>
+          </section>
+          <section
+            class="panel-apartado"
+            id="apartado-conectividad"
+            data-apartado="conectividad"
+            aria-labelledby="titulo-apartado-conectividad"
+            hidden
+          >
+            <p class="panel-migas"
+              ><a href="#apartado-inicio" data-texto="panel.encabezado">Panel de Control</a>
+              › <span data-texto="panel.nav.web">Web</span> ›
+              <span data-texto="panel.nav.conectividad">Conectividad</span></p
+            >
+            <h2
+              class="panel-apartado-titulo"
+              id="titulo-apartado-conectividad"
+              tabindex="-1"
+              data-texto="panel.nav.conectividad"
+              >Conectividad</h2
+            >
+            <p class="panel-frase" data-texto="panel.frase.conectividad"
+              >Las conexiones para aplicaciones, asistentes y agentes de IA.</p
+            >
+            <div class="panel-ordenes"
+              ><button type="button" class="panel-orden" data-orden="consultar-controles"
+                ><svg class="panel-icono" aria-hidden="true" focusable="false"><use href="#panel-i-recargar" /></svg
+                ><span data-texto="panel.ordenes.actualizar">Actualizar</span></button
+              ></div
+            >
+            <div class="panel-rejilla">
+              <section id="controles" hidden aria-labelledby="titulo-controles">
+                <div class="cabecera-controles">
+                  <h3 id="titulo-controles" data-texto="panel.controles.titulo">Controles</h3>
+                  <p id="revision"></p>
+                </div>
+                <button
+                  id="consultar-controles"
+                  type="button"
+                  class="secundario"
+                  disabled
+                  data-texto="panel.controles.consultar"
+                  >Consultar controles</button
+                >
+                <p id="estado-revision-controles" class="ayuda" role="status" aria-live="polite"></p>
+                <fieldset id="campos" disabled>
+                  <legend data-texto="panel.controles.leyenda">Configuración de los servicios</legend>
+                  <h4 id="titulo-conectividad" data-texto="panel.conectividad.titulo">Conectividad</h4>
+                  <div class="conexiones-rejilla">
+                    <section class="tarjeta" aria-labelledby="titulo-api">
+                      <h4 id="titulo-api">API</h4>
+                      <label class="interruptor" for="api"
+                        ><span data-texto="panel.api">API para aplicaciones</span>
+                        <input id="api" type="checkbox" aria-describedby="ayuda-api" /></label
+                      >
+                      <p id="ayuda-api" class="ayuda" data-texto="panel.api.ayuda"
+                        >Apagar la API conserva las claves de las instituciones. Para retirar una clave o un acceso, usa
+                        Instituciones.</p
+                      >
+                    </section>
+                    <section class="tarjeta" aria-labelledby="titulo-mcp">
+                      <h4 id="titulo-mcp">MCP</h4>
+                      <label class="interruptor" for="mcp"
+                        ><span data-texto="panel.tablero.mcp-nombre">Asistentes de IA</span>
+                        <input id="mcp" type="checkbox" aria-describedby="ayuda-mcp" /></label
+                      >
+                      <p id="ayuda-mcp" class="ayuda" data-texto="panel.tablero.mcp-ayuda"
+                        >Permite consultar Faro desde asistentes compatibles.</p
+                      >
+                    </section>
+                    <section class="tarjeta" aria-labelledby="titulo-a2a">
+                      <h4 id="titulo-a2a">A2A</h4>
+                      <label class="interruptor" for="a2a"
+                        ><span data-texto="panel.tablero.a2a-nombre">Agentes de IA</span>
+                        <input id="a2a" type="checkbox" aria-describedby="ayuda-a2a" /></label
+                      >
+                      <p id="ayuda-a2a" class="ayuda" data-texto="panel.tablero.a2a-ayuda"
+                        >Permite consultar Faro desde agentes compatibles.</p
+                      >
+                    </section>
+                  </div>
+                  <p class="ayuda" data-texto="panel.conectividad.ayuda"
+                    >Cada conexión se gestiona de forma independiente. La web puede seguir funcionando con estas
+                    conexiones apagadas.</p
+                  >
+                  <div class="guardar"
+                    ><button id="guardar" type="button" data-texto="panel.guardar">Guardar cambios</button
+                    ><span data-texto="panel.guardar.confirmacion"
+                      >Los cambios se aplican al confirmarlos el servidor.</span
+                    ></div
+                  >
+                </fieldset>
+              </section>
+            </div>
+          </section>
+          <section
+            class="panel-apartado"
+            id="apartado-administradores"
+            data-apartado="administradores"
+            aria-labelledby="titulo-apartado-administradores"
+            hidden
+          >
+            <p class="panel-migas"
+              ><a href="#apartado-inicio" data-texto="panel.encabezado">Panel de Control</a>
+              › <span data-texto="panel.nav.accesos">Accesos</span> ›
+              <span data-texto="panel.nav.administradores">Administradores</span></p
+            >
+            <h2
+              class="panel-apartado-titulo"
+              id="titulo-apartado-administradores"
+              tabindex="-1"
+              data-texto="panel.nav.administradores"
+              >Administradores</h2
+            >
+            <p class="panel-frase" data-texto="panel.frase.administradores"
+              >Quién puede entrar en el Panel de Control. Cada administrador entra con su correo, su contraseña y un
+              segundo factor; los cambios necesitan la sesión única.</p
+            >
+            <div class="panel-ordenes"
+              ><button type="button" class="panel-orden" data-enfocar=".administradores-alta-correo" disabled
+                ><svg class="panel-icono" aria-hidden="true" focusable="false"><use href="#panel-i-accesos" /></svg
+                ><span data-texto="panel.ordenes.anadir-administrador">Añadir administrador</span></button
+              ><button type="button" class="panel-orden" id="administradores-exportar" disabled
+                ><svg class="panel-icono" aria-hidden="true" focusable="false"><use href="#panel-i-bajar" /></svg
+                ><span data-texto="panel.ordenes.exportar-csv">Exportar CSV</span></button
+              ><p class="panel-ordenes-nota" id="administradores-resumen" aria-live="polite"></p></div
+            >
+            <div class="panel-rejilla">
+              <div class="panel-administradores">
+                <header class="tarjeta-cabecera"
+                  ><h3 id="titulo-administradores" data-texto="panel.administradores.registrados"
+                    >Administradores registrados</h3
+                  ></header
+                >
+                <div id="vista-administradores"
+                  ><p class="administradores-mensaje" role="status" data-texto="panel.administradores.leyendo"
+                    >Estamos leyendo la lista de administradores; aparecerá aquí en unos segundos.</p
+                  ></div
+                >
+              </div>
+            </div>
+          </section>
+          <section
+            class="panel-apartado"
+            id="apartado-instituciones"
+            data-apartado="instituciones"
+            aria-labelledby="titulo-apartado-instituciones"
+            hidden
+          >
+            <p class="panel-migas"
+              ><a href="#apartado-inicio" data-texto="panel.encabezado">Panel de Control</a>
+              › <span data-texto="panel.nav.accesos">Accesos</span> ›
+              <span data-texto="panel.nav.instituciones">Instituciones</span></p
+            >
+            <h2
+              class="panel-apartado-titulo"
+              id="titulo-apartado-instituciones"
+              tabindex="-1"
+              data-texto="panel.nav.instituciones"
+              >Instituciones</h2
+            >
+            <p class="panel-frase" data-texto="panel.frase.instituciones"
+              >Las instituciones invitadas y sus claves para la API.</p
+            >
+            <div class="panel-ordenes"
+              ><button type="button" class="panel-orden" data-orden="consultar-instituciones"
+                ><svg class="panel-icono" aria-hidden="true" focusable="false"><use href="#panel-i-recargar" /></svg
+                ><span data-texto="panel.ordenes.actualizar">Actualizar</span></button
+              ></div
+            >
+            <div class="panel-rejilla">
+              <section id="instituciones" class="tarjeta" hidden aria-labelledby="titulo-instituciones">
+                <h3 id="titulo-instituciones" data-texto="panel.instituciones.titulo">Instituciones</h3>
+                <p data-texto="panel.instituciones.intro"
+                  >Invita a una institución, entrega el enlace y gestiona sus claves. Faro no envía correos. El estado
+                  de la institución describe sus credenciales; la API se enciende o apaga en Conectividad.</p
+                >
+                <button
+                  id="consultar-instituciones"
+                  type="button"
+                  class="secundario"
+                  disabled
+                  data-texto="panel.instituciones.consultar"
+                  >Consultar instituciones</button
+                >
+                <p id="instituciones-estado" role="status" aria-live="polite"></p>
+                <form id="instituciones-formulario" autocomplete="off">
+                  <fieldset id="instituciones-campos" disabled>
+                    <legend data-texto="panel.instituciones.nueva">Nueva institución</legend>
+                    <label for="institucion-nombre" data-texto="panel.instituciones.nombre"
+                      >Nombre de la institución o del sistema</label
+                    >
+                    <input
+                      id="institucion-nombre"
+                      class="institucion-entrada"
+                      type="text"
+                      required
+                      maxlength="120"
+                      autocomplete="off"
+                    />
+                    <label for="institucion-correo" data-texto="panel.instituciones.correo-opcional"
+                      >Correo de la institución (opcional)</label
+                    >
+                    <input
+                      id="institucion-correo"
+                      class="institucion-entrada"
+                      type="email"
+                      maxlength="254"
+                      autocomplete="off"
+                      aria-describedby="institucion-correo-ayuda"
+                    />
+                    <p id="institucion-correo-ayuda" class="ayuda" data-texto="panel.instituciones.correo-ayuda"
+                      >Solo se anota en esta ficha. El envío del enlace es manual.</p
+                    >
+                    <button type="submit" data-texto="panel.instituciones.invitar">Invitar</button>
+                  </fieldset>
+                </form>
+                <section id="institucion-entrega" aria-labelledby="institucion-entrega-titulo" hidden>
+                  <h4 id="institucion-entrega-titulo" data-texto="panel.instituciones.entrega">Entrega este enlace</h4>
+                  <p data-texto="panel.instituciones.enlace-ayuda"
+                    >El enlace es de un solo uso y caduca a los siete días. No se puede recuperar al volver a consultar
+                    la lista.</p
+                  >
+                  <label for="institucion-enlace" data-texto="panel.instituciones.enlace">Enlace de invitación</label>
+                  <input
+                    id="institucion-enlace"
+                    class="institucion-entrada"
+                    type="text"
+                    readonly
+                    autocomplete="off"
+                    spellcheck="false"
+                  />
+                  <p id="institucion-caduca" role="status" aria-live="polite"></p>
+                  <div class="acciones">
+                    <button
+                      id="institucion-copiar"
+                      type="button"
+                      class="secundario"
+                      disabled
+                      data-texto="panel.instituciones.copiar"
+                      >Copiar enlace</button
+                    >
+                    <button
+                      id="institucion-enviar"
+                      type="button"
+                      class="secundario"
+                      disabled
+                      data-texto="panel.instituciones.enviar"
+                      >Abrir correo para entregar</button
+                    >
+                    <button
+                      id="institucion-descartar"
+                      type="button"
+                      class="secundario"
+                      disabled
+                      data-texto="panel.instituciones.descartar"
+                      >Ocultar y olvidar el enlace</button
+                    >
+                  </div>
+                </section>
+                <div id="instituciones-lista"></div>
+              </section>
+            </div>
+          </section>
+          <section
+            class="panel-apartado"
+            id="apartado-claves"
+            data-apartado="claves"
+            aria-labelledby="titulo-apartado-claves"
+            hidden
+          >
+            <p class="panel-migas"
+              ><a href="#apartado-inicio" data-texto="panel.encabezado">Panel de Control</a>
+              › <span data-texto="panel.nav.accesos">Accesos</span> ›
+              <span data-texto="panel.nav.claves">Claves de acceso</span></p
+            >
+            <h2 class="panel-apartado-titulo" id="titulo-apartado-claves" tabindex="-1" data-texto="panel.nav.claves"
+              >Claves de acceso</h2
+            >
+            <p class="panel-frase" data-texto="panel.frase.claves"
+              >Los registros de uso de la API, de los asistentes y de los agentes.</p
+            >
+            <div class="panel-ordenes"
+              ><button type="button" class="panel-orden" data-orden="consultar-accesos"
+                ><svg class="panel-icono" aria-hidden="true" focusable="false"><use href="#panel-i-recargar" /></svg
+                ><span data-texto="panel.ordenes.actualizar">Actualizar</span></button
+              ></div
+            >
+            <div class="panel-rejilla">
+              <section id="accesos" class="tarjeta" hidden aria-labelledby="titulo-accesos">
+                <h3 id="titulo-accesos" data-texto="panel.accesos.titulo">Accesos</h3>
+                <p data-texto="panel.accesos.intro"
+                  >Consulta los registros conservados de los tres servicios. La paginación reúne hasta 50 filas entre
+                  todos los canales. Los recuentos diarios pueden incluir varias consultas en una sola fila.</p
+                >
+                <p class="ayuda" data-texto="panel.accesos.privacidad"
+                  >El registro no contiene el contenido ni los argumentos de las consultas. El nombre de cliente MCP es
+                  una declaración del cliente, sin verificar su identidad.</p
+                >
+                <button
+                  id="consultar-accesos"
+                  type="button"
+                  class="secundario"
+                  disabled
+                  data-texto="panel.accesos.consultar"
+                  >Consultar accesos desde la primera página</button
+                >
+                <p id="accesos-estado" role="status" aria-live="polite"></p>
+                <p id="accesos-resumen"></p>
+                <div id="accesos-lista"></div>
+                <div class="acciones">
+                  <button
+                    id="accesos-anterior"
+                    type="button"
+                    class="secundario"
+                    disabled
+                    data-texto="panel.accesos.anterior"
+                    >Más recientes</button
+                  >
+                  <button
+                    id="accesos-siguiente"
+                    type="button"
+                    class="secundario"
+                    disabled
+                    data-texto="panel.accesos.siguiente"
+                    >Más antiguos</button
+                  >
+                </div>
+              </section>
+            </div>
+          </section>
+          <section
+            class="panel-apartado"
+            id="apartado-avisos"
+            data-apartado="avisos"
+            aria-labelledby="titulo-apartado-avisos"
+            hidden
+          >
+            <p class="panel-migas"
+              ><a href="#apartado-inicio" data-texto="panel.encabezado">Panel de Control</a>
+              › <span data-texto="panel.nav.avisos">Avisos</span></p
+            >
+            <h2 class="panel-apartado-titulo" id="titulo-apartado-avisos" tabindex="-1" data-texto="panel.nav.avisos"
+              >Avisos</h2
+            >
+            <p class="panel-frase" data-texto="panel.frase.avisos"
+              >A qué dirección llegan los avisos por correo si la actualización se para.</p
+            >
+            <div class="panel-ordenes"
+              ><button type="button" class="panel-orden" data-orden="avisos-reintentar"
+                ><svg class="panel-icono" aria-hidden="true" focusable="false"><use href="#panel-i-recargar" /></svg
+                ><span data-texto="panel.ordenes.actualizar">Actualizar</span></button
+              ></div
+            >
+            <div class="panel-rejilla">
+              <section id="avisos" class="tarjeta" hidden aria-labelledby="titulo-avisos" aria-busy="false">
+                <h3 id="titulo-avisos" data-texto="panel.avisos.titulo">Avisos</h3>
+                <p data-texto="panel.avisos.intro"
+                  >Si la actualización de los datos se para o necesita atención, Faro te avisa por correo. Aquí eliges a
+                  qué dirección llegan los avisos.</p
+                >
+                <p id="avisos-resumen"></p>
+                <label for="avisos-correo" data-texto="panel.avisos.campo">Dirección de correo</label>
+                <input
+                  id="avisos-correo"
+                  class="institucion-entrada"
+                  type="email"
+                  maxlength="254"
+                  autocomplete="off"
+                  spellcheck="false"
+                  disabled
+                />
+                <div class="acciones">
+                  <button id="avisos-guardar" type="button" data-texto="panel.avisos.guardar" disabled>Guardar</button>
+                  <button id="avisos-probar" type="button" class="secundario" data-texto="panel.avisos.probar" disabled
+                    >Enviar un aviso de prueba</button
+                  >
+                  <button id="avisos-quitar" type="button" class="secundario" data-texto="panel.avisos.quitar" disabled
+                    >Quitar</button
+                  >
+                  <button
+                    id="avisos-reintentar"
+                    type="button"
+                    class="secundario"
+                    data-texto="panel.avisos.reintentar"
+                    hidden
+                    >Volver a consultar</button
+                  >
+                </div>
+                <p id="avisos-estado" role="status" aria-live="polite"></p>
+              </section>
+            </div>
+          </section>
+          <section
+            class="panel-apartado"
+            id="apartado-encuesta"
+            data-apartado="encuesta"
+            aria-labelledby="titulo-apartado-encuesta"
+            hidden
+          >
+            <p class="panel-migas"
+              ><a href="#apartado-inicio" data-texto="panel.encabezado">Panel de Control</a>
+              › <span data-texto="panel.nav.encuesta">Encuesta</span></p
+            >
+            <h2
+              class="panel-apartado-titulo"
+              id="titulo-apartado-encuesta"
+              tabindex="-1"
+              data-texto="panel.nav.encuesta"
+              >Encuesta</h2
+            >
+            <p class="panel-frase" data-texto="panel.frase.encuesta"
+              >Las invitaciones de la encuesta y sus resultados.</p
+            >
+            <div class="panel-ordenes"
+              ><button type="button" class="panel-orden" data-orden="consultar-encuesta"
+                ><svg class="panel-icono" aria-hidden="true" focusable="false"><use href="#panel-i-recargar" /></svg
+                ><span data-texto="panel.ordenes.actualizar">Actualizar</span></button
+              ></div
+            >
+            <div class="panel-rejilla">
+              <div id="vista-encuesta-visibilidad"></div>
+              <section id="encuesta" class="tarjeta" hidden aria-labelledby="titulo-encuesta">
+                <h3 id="titulo-encuesta" data-texto="panel.piloto.titulo">Encuesta del piloto</h3>
+                <p data-texto="panel.piloto.intro"
+                  >Crea un lote de invitaciones para cada entidad colaboradora y envíale sus enlaces. Cada enlace es
+                  para una sola persona: con él hace el recorrido y responde una encuesta anónima al terminar.</p
+                >
+                <button id="consultar-encuesta" type="button" class="secundario" data-texto="panel.piloto.consultar"
+                  >Consultar la encuesta</button
+                >
+                <p id="encuesta-estado" role="status" aria-live="polite"></p>
+                <form id="encuesta-formulario" novalidate>
+                  <fieldset id="encuesta-campos" disabled>
+                    <legend data-texto="panel.piloto.nuevo-lote">Nuevo lote de invitaciones</legend>
+                    <label for="encuesta-nombre" data-texto="panel.piloto.nombre"
+                      >Nombre de la entidad colaboradora</label
+                    >
+                    <input
+                      id="encuesta-nombre"
+                      type="text"
+                      maxlength="60"
+                      required
+                      autocomplete="off"
+                      aria-describedby="encuesta-nombre-ayuda"
+                    />
+                    <p id="encuesta-nombre-ayuda" class="ayuda" data-texto="panel.piloto.nombre-ayuda"
+                      >De 1 a 60 caracteres. Sirve para reconocer el lote y nombrar el archivo de enlaces.</p
+                    >
+                    <fieldset>
+                      <legend data-texto="panel.piloto.quien">¿Quién responderá?</legend>
+                      <label for="encuesta-tipo-participante"
+                        ><input
+                          id="encuesta-tipo-participante"
+                          type="radio"
+                          name="encuesta-tipo"
+                          value="participante"
+                          checked
+                        /> <span data-texto="panel.piloto.tipo.participante">Participantes</span></label
+                      >
+                      <label for="encuesta-tipo-profesional"
+                        ><input id="encuesta-tipo-profesional" type="radio" name="encuesta-tipo" value="profesional" />
+                        <span data-texto="panel.piloto.tipo.profesional">Profesionales de orientación</span></label
+                      >
+                    </fieldset>
+                    <label for="encuesta-cantidad" data-texto="panel.piloto.cantidad">¿Cuántas invitaciones?</label>
+                    <input
+                      id="encuesta-cantidad"
+                      type="number"
+                      min="3"
+                      max="200"
+                      step="1"
+                      required
+                      inputmode="numeric"
+                      aria-describedby="encuesta-cantidad-ayuda"
+                    />
+                    <p id="encuesta-cantidad-ayuda" class="ayuda" data-texto="panel.piloto.cantidad-ayuda"
+                      >Entre 3 y 200. Con menos de 3, el uso del lote dejaría ver si una persona concreta ha
+                      respondido.</p
+                    >
+                    <button id="encuesta-crear" type="submit" data-texto="panel.piloto.crear"
+                      >Crear las invitaciones</button
+                    >
+                  </fieldset>
+                </form>
+                <section id="encuesta-enlaces" hidden aria-labelledby="encuesta-enlaces-titulo">
+                  <h4 id="encuesta-enlaces-titulo" tabindex="-1" data-texto="panel.piloto.enlaces.encabezado"
+                    >Enlaces para enviar</h4
+                  >
+                  <p id="encuesta-enlaces-para"></p>
+                  <p class="aviso" data-texto="panel.piloto.enlaces.aviso"
+                    >Estos enlaces solo se pueden ver ahora: Faro no los guarda y desaparecen al salir de este apartado.
+                    Cópialos o descárgalos antes de seguir. Si se pierden, crea otro lote.</p
+                  >
+                  <label for="encuesta-lista" data-texto="panel.piloto.enlaces.lista">Enlaces, uno por línea</label>
+                  <textarea id="encuesta-lista" readonly rows="8" spellcheck="false" autocomplete="off"></textarea>
+                  <div class="acciones">
+                    <button id="encuesta-copiar" type="button" data-texto="panel.piloto.copiar"
+                      >Copiar todos los enlaces</button
+                    >
+                    <button id="encuesta-descargar" type="button" class="secundario" data-texto="panel.piloto.descargar"
+                      >Descargar los enlaces en un archivo de texto</button
+                    >
+                    <button id="encuesta-olvidar" type="button" class="secundario" data-texto="panel.piloto.olvidar"
+                      >Ocultar y olvidar los enlaces</button
+                    >
+                  </div>
+                  <label for="encuesta-correo" data-texto="panel.piloto.correo"
+                    >Texto para el correo a la entidad</label
+                  >
+                  <textarea id="encuesta-correo" readonly rows="10" autocomplete="off"></textarea>
+                  <button
+                    id="encuesta-copiar-correo"
+                    type="button"
+                    class="secundario"
+                    data-texto="panel.piloto.copiar-correo"
+                    >Copiar el texto del correo</button
+                  >
+                </section>
+                <div id="encuesta-lotes"></div>
+                <div id="encuesta-resultados"></div>
+                <p class="ayuda" data-texto="panel.piloto.cerrar-ayuda"
+                  >Ciérrala cuando el piloto haya terminado. Es definitivo: no se puede volver a abrir.</p
+                >
+                <div class="acciones">
+                  <button
+                    id="encuesta-cerrar"
+                    type="button"
+                    class="secundario"
+                    disabled
+                    data-texto="panel.piloto.cerrar"
+                    >Cerrar la encuesta</button
+                  >
+                  <button id="encuesta-csv" type="button" hidden data-texto="panel.piloto.csv"
+                    >Descargar los resultados (CSV)</button
+                  >
+                </div>
+              </section>
+            </div>
+          </section>
+          <section
+            class="panel-apartado"
+            id="apartado-registro"
+            data-apartado="registro"
+            aria-labelledby="titulo-apartado-registro"
+            hidden
+          >
+            <p class="panel-migas"
+              ><a href="#apartado-inicio" data-texto="panel.encabezado">Panel de Control</a>
+              › <span data-texto="panel.nav.registro">Registro del panel</span></p
+            >
+            <h2
+              class="panel-apartado-titulo"
+              id="titulo-apartado-registro"
+              tabindex="-1"
+              data-texto="panel.nav.registro"
+              >Registro del panel</h2
+            >
+            <p class="panel-frase" data-texto="panel.frase.registro"
+              >Quién entra en el panel y quién abre la sesión única. Lo más reciente arriba; las entradas, atenuadas.</p
+            >
+            <div class="panel-ordenes"
+              ><button type="button" class="panel-orden" id="actualizar-registro"
+                ><svg class="panel-icono" aria-hidden="true" focusable="false"><use href="#panel-i-recargar" /></svg
+                ><span data-texto="panel.ordenes.actualizar">Actualizar</span></button
+              ></div
+            >
+            <div class="panel-rejilla">
+              <section class="tarjeta" aria-labelledby="titulo-registro-tabla">
+                <header class="tarjeta-cabecera"
+                  ><h3 id="titulo-registro-tabla" data-texto="panel.registro.tabla"
+                    >Accesos al Panel de Control</h3
+                  ></header
+                >
+                <div id="registro-panel-lista" class="panel-registro" aria-live="polite"></div>
+                <footer class="tarjeta-pie" data-texto="panel.inicio.actividad.retencion">Se guarda 90 días.</footer>
+              </section>
+            </div>
+          </section>
+        </div>
+      </div>
+      <p class="panel-reserva" data-texto="panel.reserva"
+        >Acceso reservado a los usuarios administradores autorizados.</p
+      >
+    </main>
+    <footer class="pie">
+      <div class="pie-fila"
+        ><nav aria-label="Información y ayuda" data-texto-aria-label="comun.pie.nombre"
+          ><a href="/creditos.html" data-texto="comun.pie.creditos">Créditos</a
+          ><a href="/informacion-y-creditos.html#t-datos" data-texto="comun.pie.datos">Tus datos</a
+          ><a href="/accesibilidad.html" data-texto="comun.pie.accesibilidad">Accesibilidad</a
+          ><a href="/verificable.html" data-texto="comun.pie.verificable">Faro verificable</a
+          ><a class="pie-doctor" href="/doctor.html" data-texto="comun.pie.doctor">Comprobar Faro</a
+          ><a class="pie-instalar" href="/instalar.html" data-texto="comun.pie.instalar">Instalar Faro</a></nav
+        ><p class="pie-derechos" data-texto="comun.pie.derechos">© 2026 Equipo Faro</p></div
+      >
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "id": "consorci",
+  "tema": "cursos",
+  "lector": "plataforma_datos.cursos.fuentes.consorci.lector",
+  "casa_datos": "consorci",
+  "nombre": "Consorci de formación continua",
+  "institucion": "Consorci per a la Formació Contínua de Catalunya",
+  "significado": "Ediciones programadas, cursos en programación y acciones previstas para personas trabajadoras; no son una sola unidad de disponibilidad.",
+  "alcance": [
+    "rowsUpdatedAt, recuento y reparto por origen; copias exactas de filas/metadatos, historial admitido jdcj para contraste",
+    "Programación, ediciones con fecha y previstas separadas; iniciado no equivale a matrícula abierta"
+  ],
+  "recursos": [
+    {
+      "id": "jdcj-za6r",
+      "tipo": "url",
+      "ubicacion": "https://analisi.transparenciacatalunya.cat/resource/jdcj-za6r.json",
+      "licencia": "Condiciones de reutilización de la Generalitat declaradas en socrata.py; atribución y conservación del sentido.",
+      "descripcion": "Cursos programados y en programación."
+    },
+    {
+      "id": "7vig-4syr",
+      "tipo": "url",
+      "ubicacion": "https://analisi.transparenciacatalunya.cat/resource/7vig-4syr.json",
+      "licencia": "Condiciones de reutilización de la Generalitat declaradas en socrata.py; atribución y conservación del sentido.",
+      "descripcion": "Oferta FPCAT: solo filas de origen CFCC; no todo el conjunto."
+    },
+    {
+      "id": "qv5z-dgk3",
+      "tipo": "url",
+      "ubicacion": "https://analisi.transparenciacatalunya.cat/resource/qv5z-dgk3.json",
+      "licencia": "Condiciones de reutilización de la Generalitat declaradas en socrata.py; atribución y conservación del sentido.",
+      "descripcion": "Acciones programadas con fechas."
+    },
+    {
+      "id": "hhvr-cedj",
+      "tipo": "url",
+      "ubicacion": "https://analisi.transparenciacatalunya.cat/resource/hhvr-cedj.json",
+      "licencia": "Condiciones de reutilización de la Generalitat declaradas en socrata.py; atribución y conservación del sentido.",
+      "descripcion": "Acciones previstas sin fecha."
+    }
+  ],
+  "canales": [
+    {
+      "id": "consorci",
+      "tipo": "remoto",
+      "recursos": ["jdcj-za6r", "7vig-4syr", "qv5z-dgk3", "hhvr-cedj"],
+      "autenticacion": "No token ni cuenta configurados por este lector/Socrata",
+      "limites": [
+        "50 000 filas por petición; se exige estrictamente menos y recuento igual a metadatos; no paginación ni cuota de servidor acreditada"
+      ],
+      "observaciones": "jdcj-za6r, 7vig-4syr filtrado CFCC, qv5z-dgk3, hhvr-cedj; ocho recursos por copia"
+    }
+  ],
+  "actualizacion": {
+    "politica": "diaria",
+    "red": true,
+    "frecuencia": "Consulta diaria de Dades Obertes de Catalunya; el panel avisa de revisar la copia con el mismo plazo que la aplicación.",
+    "renovar_dias": 30,
+    "originales": "consorci"
+  },
+  "conjuntos": [
+    {
+      "id": "consorci",
+      "fuente": "consorci",
+      "clase": "cambiante",
+      "alcance": "catalogo-actual",
+      "operacion": "descargar",
+      "intervalo_dias": 1
+    }
+  ],
+  "dependencias": ["formacion"],
+  "contratos": ["lector.py:validar"],
+  "retirada": "Se mantienen los controles de admisión y reconstrucción del lector actual; no se declara una conciliación genérica de entidades ni se interpreta un fallo como baja.",
+  "conservacion": "Se conservan las rutas, originales, procedencias y revisiones actuales en var/actualizacion; este descriptor no habilita limpieza automática ni fija nuevos plazos de retención."
+}

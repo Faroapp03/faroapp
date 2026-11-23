@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "programas": [
+    {
+      "programaId": "claude-academy:introduction-to-evals",
+      "proveedorId": "anthropic",
+      "titulo": "Introduction to evals",
+      "temas": ["ia"],
+      "evidencia": {
+        "url": "https://academy.claude.com/courses/introduction-to-evals",
+        "sha256": "c69457470da76b05707367bfa39d4d4e2d5f748bd6fb61f90a4ddd7fa93a542c"
+      }
+    },
+    {
+      "programaId": "claude-academy:tool-use-with-the-messages-api",
+      "proveedorId": "anthropic",
+      "titulo": "Tool use with the Messages API",
+      "temas": ["ia", "datos"],
+      "evidencia": {
+        "url": "https://academy.claude.com/courses/tool-use-with-the-messages-api",
+        "sha256": "8ea318f314292dde2600dac7de938f35f8e90b707b41f8da45098e53bc6c6ccc"
+      }
+    }
+  ]
+}

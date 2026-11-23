@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "id": "ocupados",
+  "tema": "mercado",
+  "lector": "plataforma_datos.mercado.fuentes.ocupados.lector",
+  "casa_datos": "ocupados",
+  "nombre": "Ocupados por ocupación: censos INE e Idescat",
+  "institucion": "INE; Idescat",
+  "significado": "Población ocupada censal por ocupación y sexo a uno de enero, con Cataluña, comarcas y municipios publicados; no es la EPA.",
+  "alcance": [
+    "CNO-11 a tres cifras en Cataluña y dos en territorios; año 2021 decenal y desde 2022 anual con otro método.",
+    "Solo variaciones entre años comparables desde 2022; publicación desde cien personas y redondeo oficial.",
+    "Metadatos determinan años y particiones; contrastes INE, Cambra y Censo 2021 preservados."
+  ],
+  "recursos": [
+    {
+      "id": "idescat-censos",
+      "tipo": "familia",
+      "ubicacion": "https://api.idescat.cat/taules/v2/censph",
+      "licencia": "Aviso legal del Idescat (https://www.idescat.cat/institut/web/?lang=es) y condiciones de uso de sus API (https://www.idescat.cat/dev/api/?lang=es): reutilización permitida citando la fuente («Fuente: elaboración propia a partir de datos del Idescat») con la fecha de la última actualización, enlazando con idescat.cat, sin modificar los datos al presentarlos y sin sugerir que el Idescat apoya el uso.",
+      "descripcion": "Metadatos y datos de los nodos 17980/21518 y 17977/21517, por territorios y años disponibles."
+    },
+    {
+      "id": "nomenclator",
+      "tipo": "url",
+      "ubicacion": "https://api.idescat.cat/emex/v1/nodes.json?lang=es&tipus=com,mun",
+      "licencia": "Aviso legal del Idescat (https://www.idescat.cat/institut/web/?lang=es) y condiciones de uso de sus API (https://www.idescat.cat/dev/api/?lang=es): reutilización permitida citando la fuente («Fuente: elaboración propia a partir de datos del Idescat») con la fecha de la última actualización, enlazando con idescat.cat, sin modificar los datos al presentarlos y sin sugerir que el Idescat apoya el uso.",
+      "descripcion": "Pertenencia municipal a comarcas."
+    },
+    {
+      "id": "ine-control",
+      "tipo": "familia",
+      "ubicacion": "https://servicios.ine.es/wstempus/js/ES/DATOS_TABLA",
+      "licencia": "Creative Commons Reconocimiento 4.0 (CC BY 4.0), según el aviso legal del INE (https://www.ine.es/dyngs/AYU/index.htm?cid=125): citar la fuente («Elaboración propia con datos extraídos del sitio web del INE: www.ine.es»), mencionar la fecha de la última actualización y no sugerir que el INE participa, patrocina o apoya la reutilización.",
+      "descripcion": "Tablas 69959 y 69979 de control por Cataluña y ciudades publicadas."
+    }
+  ],
+  "canales": [
+    {
+      "id": "api",
+      "tipo": "remoto",
+      "recursos": ["idescat-censos", "nomenclator", "ine-control"],
+      "autenticacion": "No se configura autenticación de cuenta en el lector.",
+      "limites": [
+        "Idescat limita a veinte mil celdas por petición: el lector parte por años según metadatos.",
+        "Exige cobertura exacta de partes, periodos/categorías y controles; no amplía municipios por inferencia."
+      ],
+      "observaciones": "JSON-stat de Idescat y Tempus del INE; se conservan los periodos reales."
+    }
+  ],
+  "actualizacion": {
+    "politica": "mensual",
+    "red": true,
+    "frecuencia": "anual (Idescat e INE)",
+    "renovar_dias": null,
+    "originales": "ocupados"
+  },
+  "conjuntos": [
+    {
+      "id": "ocupados",
+      "fuente": "ocupados",
+      "clase": "cambiante",
+      "alcance": "serie-abierta",
+      "operacion": "descargar",
+      "intervalo_dias": 30
+    }
+  ],
+  "dependencias": ["clasificaciones", "cambra", "cataluna"],
+  "contratos": ["lector.py:validar"],
+  "retirada": "Se mantienen los controles de admisión y reconstrucción del lector; un fallo de consulta o una lectura parcial no autoriza una retirada ni una cifra cero.",
+  "conservacion": "Las rutas, originales, procedencias y revisiones actuales en var/actualizacion se conservan; este descriptor no activa limpieza automática ni fija nuevos plazos de retención."
+}

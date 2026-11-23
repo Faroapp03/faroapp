@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "id": "eaes",
+  "tema": "mercado",
+  "lector": "plataforma_datos.mercado.fuentes.eaes.lector",
+  "casa_datos": "eaes",
+  "nombre": "EAES: ganancia media anual por grupo de ocupación",
+  "institucion": "Instituto Nacional de Estadística (INE)",
+  "significado": "Ganancia media anual por trabajador en España por grupo de ocupación A a Q y sexo, de la Encuesta Anual de Estructura Salarial (tabla 28186), con los subgrupos principales de la CNO-11 de cada grupo.",
+  "alcance": [
+    "Últimos tres años de la tabla 28186, valores de su variable de ocupación y subgrupos de dos cifras de cada grupo según la jerarquía de la variable 456.",
+    "El último año se lee de los datos; se admite si sus datos son definitivos, los años son consecutivos y no retrocede respecto a lo validado.",
+    "Se conservan el signo «-» (gran variabilidad) y el nulo (menos de 100 observaciones) del INE; la cita dice el último año leído."
+  ],
+  "recursos": [
+    {
+      "id": "tabla-28186",
+      "tipo": "url",
+      "ubicacion": "https://servicios.ine.es/wstempus/js/ES/DATOS_TABLA/28186?nult=3",
+      "licencia": "Creative Commons Reconocimiento 4.0 (CC BY 4.0), según el aviso legal del INE (https://www.ine.es/dyngs/AYU/index.htm?cid=125): citar la fuente («Elaboración propia con datos extraídos del sitio web del INE: www.ine.es»), mencionar la fecha de la última actualización y no sugerir que el INE participa, patrocina o apoya la reutilización.",
+      "descripcion": "Ganancia media anual por trabajador por grupo de ocupación y sexo, España, últimos tres años (JSON de la API Tempus)."
+    },
+    {
+      "id": "grupos-28186",
+      "tipo": "url",
+      "ubicacion": "https://servicios.ine.es/wstempus/js/ES/VALORES_GRUPOSTABLA/28186/88012",
+      "licencia": "Creative Commons Reconocimiento 4.0 (CC BY 4.0), según el aviso legal del INE (https://www.ine.es/dyngs/AYU/index.htm?cid=125): citar la fuente («Elaboración propia con datos extraídos del sitio web del INE: www.ine.es»), mencionar la fecha de la última actualización y no sugerir que el INE participa, patrocina o apoya la reutilización.",
+      "descripcion": "Valores y códigos de la variable de ocupación de la tabla (grupos A a Q y todas las ocupaciones)."
+    },
+    {
+      "id": "subgrupos-456",
+      "tipo": "familia",
+      "ubicacion": "https://servicios.ine.es/wstempus/js/ES/VALORES_HIJOS/456",
+      "licencia": "Creative Commons Reconocimiento 4.0 (CC BY 4.0), según el aviso legal del INE (https://www.ine.es/dyngs/AYU/index.htm?cid=125): citar la fuente («Elaboración propia con datos extraídos del sitio web del INE: www.ine.es»), mencionar la fecha de la última actualización y no sugerir que el INE participa, patrocina o apoya la reutilización.",
+      "descripcion": "Hijos de cada grupo en la variable OCUPACIONES (456), por el identificador que da la tabla de grupos."
+    }
+  ],
+  "canales": [
+    {
+      "id": "tempus",
+      "tipo": "remoto",
+      "recursos": ["tabla-28186", "grupos-28186", "subgrupos-456"],
+      "autenticacion": "No se configura autenticación de cuenta en el lector.",
+      "limites": [
+        "Solo JSON del mismo origen, con respuesta 200 y un tope de 4 MB por archivo; una respuesta mal formada no sustituye el original.",
+        "No se acredita un calendario de publicación: el año nuevo se conoce al consultar la tabla."
+      ],
+      "observaciones": "API Tempus pública del INE. El tipo de dato 1 es «Definitivo»: la misma tabla pedida con tip=A trae T3_TipoDato «Definitivo» en esos datos."
+    }
+  ],
+  "actualizacion": {
+    "politica": "mensual",
+    "red": true,
+    "frecuencia": "anual (INE)",
+    "renovar_dias": null,
+    "originales": "eaes"
+  },
+  "conjuntos": [
+    {
+      "id": "eaes",
+      "fuente": "eaes",
+      "clase": "cambiante",
+      "alcance": "serie-abierta",
+      "operacion": "descargar",
+      "intervalo_dias": 30
+    }
+  ],
+  "dependencias": [],
+  "contratos": ["lector.py:validar"],
+  "retirada": "Se mantienen los controles de admisión del lector; un fallo de consulta, una respuesta mal formada o un año que retrocede no autoriza una retirada ni una cifra cero: se conserva lo validado.",
+  "conservacion": "Las rutas, originales, procedencias y revisiones actuales en var/actualizacion se conservan; este descriptor no activa limpieza automática ni fija nuevos plazos de retención."
+}

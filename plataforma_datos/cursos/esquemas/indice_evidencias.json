@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Inventario de evidencias físicas en un control de productor",
+  "description": "Solo archivos_conservados declara referencias. Los otros metadatos del control no autorizan rutas ni operaciones. La admisión comprueba los bytes físicos con estos SHA esperados.",
+  "type": "object",
+  "required": ["schema_version", "archivos_conservados"],
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "archivos_conservados": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 100000,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["archivo", "sha256"],
+        "properties": {
+          "archivo": {
+            "type": "string",
+            "minLength": 1
+          },
+          "sha256": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "id": "lecturas",
+  "tema": "biblioteca",
+  "nombre": "Catálogo editorial de lecturas",
+  "institucion": null,
+  "lector": "plataforma_datos.biblioteca.fuentes.lecturas.lector",
+  "casa_datos": "lecturas",
+  "significado": "Selección editorial de guías, informes y notas de la Biblioteca, con textos propios y referencias a publicaciones externas.",
+  "alcance": [
+    "La autoría en git es catalogo.json; datos/lecturas.json es su entrega byte a byte. La incorporación inicial conserva 75 lecturas y todos sus textos, idiomas, tipos, enlaces, fechas y licencias.",
+    "La revisión general declarada 2026-10-07 y las consultas individuales se conservan como datos editoriales; ejecutar no comprueba enlaces ni renueva vigencia. Sin plazo editorial declarado, la vigencia queda no acreditada y la revisión pendiente.",
+    "Los idiomas y tipos se validan mediante los contratos TypeScript existentes de la Biblioteca, sin trasladar sus reglas a Python. No se descargan ni redistribuyen documentos externos."
+  ],
+  "recursos": [
+    {
+      "id": "catalogo",
+      "tipo": "archivo",
+      "ubicacion": "plataforma_datos/biblioteca/fuentes/lecturas/catalogo.json",
+      "licencia": "Textos editoriales propios; las condiciones de las publicaciones enlazadas se conservan por lectura.",
+      "descripcion": "Autoría versionada del catálogo editorial."
+    },
+    {
+      "id": "procedencia",
+      "tipo": "archivo",
+      "ubicacion": "plataforma_datos/biblioteca/fuentes/lecturas/procedencia.json",
+      "licencia": null,
+      "descripcion": "Huella de incorporación, autoría declarada y alcance de la fecha de revisión."
+    }
+  ],
+  "canales": [
+    {
+      "id": "editorial",
+      "tipo": "editorial",
+      "recursos": ["catalogo", "procedencia"],
+      "autenticacion": "Ninguna; lectura local del repositorio.",
+      "limites": [
+        "No consulta servicios remotos ni acredita que los enlaces sigan disponibles.",
+        "No hay plazo de vigencia editorial ni cadencia automática declarados.",
+        "Requiere Python 3.12 y Node local compatible con los módulos TypeScript del repositorio."
+      ],
+      "observaciones": "Preparación y validación locales con procedencia; una modificación editorial exige revisar el catálogo y registrar su nueva huella."
+    }
+  ],
+  "actualizacion": {
+    "politica": "redactada",
+    "red": false,
+    "frecuencia": "revisión editorial explícita, sin cadencia automática declarada",
+    "renovar_dias": null,
+    "originales": null
+  },
+  "conjuntos": [
+    {
+      "id": "lecturas",
+      "fuente": "lecturas",
+      "clase": "editorial",
+      "alcance": "copia-local",
+      "operacion": "revision",
+      "intervalo_dias": null
+    }
+  ],
+  "dependencias": [],
+  "contratos": [
+    "herramientas/web/lecturas/registro.ts:comoRegistro",
+    "herramientas/web/lecturas/referencias.ts:comprobarReferencias",
+    "procedencia.json:sha256 y revision_declarada",
+    "lector.py:preparar, validar y exportar"
+  ],
+  "retirada": "Solo una modificación editorial explícita del catálogo retira una lectura. Un fallo local o un enlace no comprobado no se interpreta como retirada.",
+  "conservacion": "La autoría y la procedencia quedan versionadas en git; preparados y admitidos se guardan en la casa lecturas de var/actualizacion. Exportar conserva bytes y fechas, comprueba las huellas actuales y no limpia históricos."
+}

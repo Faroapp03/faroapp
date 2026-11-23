@@ -1,0 +1,338 @@
+{
+  "cambra": {
+    "actualizacion": {
+      "politica": "manual",
+      "red": false,
+      "frecuencia": "anual (tabla de la Cambra)",
+      "renovar_dias": 365,
+      "originales": "cambra"
+    },
+    "conjuntos": [
+      {
+        "id": "cambra",
+        "fuente": "cambra",
+        "clase": "manual",
+        "alcance": "copia-local",
+        "operacion": "revision",
+        "intervalo_dias": null
+      }
+    ],
+    "dependencias": ["clasificaciones"],
+    "casa_datos": "cambra"
+  },
+  "ceo_panel": {
+    "actualizacion": {
+      "politica": "fija",
+      "red": true,
+      "frecuencia": "cerrada (3a onada, 2025; cada ola es otro estudio del REO)",
+      "renovar_dias": null,
+      "originales": "ceo-panel"
+    },
+    "conjuntos": [
+      {
+        "id": "ceo_panel",
+        "fuente": "ceo_panel",
+        "clase": "historica",
+        "alcance": "edicion-conocida",
+        "operacion": "integridad",
+        "intervalo_dias": null
+      }
+    ],
+    "dependencias": [],
+    "casa_datos": "ceo-panel"
+  },
+  "clima_empresarial": {
+    "actualizacion": {
+      "politica": "edición",
+      "red": true,
+      "frecuencia": "trimestral, con temas variables y sin periodicidad fija por tema (Idescat)",
+      "renovar_dias": null,
+      "originales": "clima-empresarial"
+    },
+    "conjuntos": [
+      {
+        "id": "clima_empresarial",
+        "fuente": "clima_empresarial",
+        "clase": "cambiante",
+        "alcance": "edicion-conocida",
+        "operacion": "descargar",
+        "intervalo_dias": 30
+      }
+    ],
+    "dependencias": [],
+    "casa_datos": "clima-empresarial"
+  },
+  "decada_digital": {
+    "actualizacion": {
+      "politica": "fija",
+      "red": true,
+      "frecuencia": "cuando se modifique la Decisión (UE) 2022/2481",
+      "renovar_dias": null,
+      "originales": "decada-digital"
+    },
+    "conjuntos": [
+      {
+        "id": "decada_digital",
+        "fuente": "decada_digital",
+        "clase": "cambiante",
+        "alcance": "edicion-conocida",
+        "operacion": "descargar",
+        "intervalo_dias": 7
+      }
+    ],
+    "dependencias": [],
+    "casa_datos": "decada-digital"
+  },
+  "eurobarometro": {
+    "actualizacion": {
+      "politica": "fija",
+      "red": true,
+      "frecuencia": "cerrada (Eurobarómetro especial 554, 2024)",
+      "renovar_dias": null,
+      "originales": "eurobarometro"
+    },
+    "conjuntos": [
+      {
+        "id": "eurobarometro",
+        "fuente": "eurobarometro",
+        "clase": "historica",
+        "alcance": "edicion-conocida",
+        "operacion": "integridad",
+        "intervalo_dias": null
+      }
+    ],
+    "dependencias": [],
+    "casa_datos": "eurobarometro"
+  },
+  "ia_nacional_bra": {
+    "actualizacion": {
+      "politica": "edición",
+      "red": true,
+      "frecuencia": "anual (TIC Empresas de Cetic.br)",
+      "renovar_dias": null,
+      "originales": "ia-nacional-bra"
+    },
+    "conjuntos": [
+      {
+        "id": "ia_nacional_bra",
+        "fuente": "ia_nacional_bra",
+        "clase": "cambiante",
+        "alcance": "descubre-edicion",
+        "operacion": "descargar",
+        "intervalo_dias": 30
+      }
+    ],
+    "dependencias": [],
+    "casa_datos": "ia-nacional-bra"
+  },
+  "ia_nacional_che": {
+    "actualizacion": {
+      "politica": "edición",
+      "red": true,
+      "frecuencia": "bienal (encuesta de innovación del KOF, publicada por el BFS)",
+      "renovar_dias": null,
+      "originales": "ia-nacional-che"
+    },
+    "conjuntos": [
+      {
+        "id": "ia_nacional_che",
+        "fuente": "ia_nacional_che",
+        "clase": "cambiante",
+        "alcance": "edicion-conocida",
+        "operacion": "descargar",
+        "intervalo_dias": 30
+      }
+    ],
+    "dependencias": [],
+    "casa_datos": "ia-nacional-che"
+  },
+  "ia_nacional_gbr": {
+    "actualizacion": {
+      "politica": "edición",
+      "red": true,
+      "frecuencia": "trimestral (artículo de la ONS con la serie de BICS)",
+      "renovar_dias": null,
+      "originales": "ia-nacional-gbr"
+    },
+    "conjuntos": [
+      {
+        "id": "ia_nacional_gbr",
+        "fuente": "ia_nacional_gbr",
+        "clase": "cambiante",
+        "alcance": "descubre-edicion",
+        "operacion": "descargar",
+        "intervalo_dias": 30
+      }
+    ],
+    "dependencias": [],
+    "casa_datos": "ia-nacional-gbr"
+  },
+  "ia_nacional_isl": {
+    "actualizacion": {
+      "politica": "edición",
+      "red": true,
+      "frecuencia": "anual (encuesta TIC en las empresas de Statistics Iceland)",
+      "renovar_dias": null,
+      "originales": "ia-nacional-isl"
+    },
+    "conjuntos": [
+      {
+        "id": "ia_nacional_isl",
+        "fuente": "ia_nacional_isl",
+        "clase": "cambiante",
+        "alcance": "recurso-actual-sin-edicion",
+        "operacion": "descargar",
+        "intervalo_dias": 30
+      }
+    ],
+    "dependencias": [],
+    "casa_datos": "ia-nacional-isl"
+  },
+  "ia_nacional_isr": {
+    "actualizacion": {
+      "politica": "edición",
+      "red": true,
+      "frecuencia": "por tema rotatorio (encuesta de coyuntura empresarial del CBS)",
+      "renovar_dias": null,
+      "originales": "ia-nacional-isr"
+    },
+    "conjuntos": [
+      {
+        "id": "ia_nacional_isr",
+        "fuente": "ia_nacional_isr",
+        "clase": "cambiante",
+        "alcance": "edicion-conocida",
+        "operacion": "descargar",
+        "intervalo_dias": 30
+      }
+    ],
+    "dependencias": [],
+    "casa_datos": "ia-nacional-isr"
+  },
+  "ia_nacional_kor": {
+    "actualizacion": {
+      "politica": "edición",
+      "red": true,
+      "frecuencia": "anual (encuesta de uso de internet del MSIT y la NIA)",
+      "renovar_dias": null,
+      "originales": "ia-nacional-kor"
+    },
+    "conjuntos": [
+      {
+        "id": "ia_nacional_kor",
+        "fuente": "ia_nacional_kor",
+        "clase": "cambiante",
+        "alcance": "edicion-conocida",
+        "operacion": "descargar",
+        "intervalo_dias": 30
+      }
+    ],
+    "dependencias": [],
+    "casa_datos": "ia-nacional-kor"
+  },
+  "mundo_eurostat": {
+    "actualizacion": {
+      "politica": "mensual",
+      "red": true,
+      "frecuencia": "anual (encuestas TIC y EPA de Eurostat)",
+      "renovar_dias": null,
+      "originales": "mundo-eurostat"
+    },
+    "conjuntos": [
+      {
+        "id": "mundo_eurostat",
+        "fuente": "mundo_eurostat",
+        "clase": "cambiante",
+        "alcance": "serie-abierta",
+        "operacion": "descargar",
+        "intervalo_dias": 30
+      }
+    ],
+    "dependencias": ["tich", "empresas"],
+    "casa_datos": "mundo-eurostat"
+  },
+  "tic_llars": {
+    "actualizacion": {
+      "politica": "edición",
+      "red": true,
+      "frecuencia": "anual (Idescat, a partir de la TIC-H del INE)",
+      "renovar_dias": null,
+      "originales": "tic-llars"
+    },
+    "conjuntos": [
+      {
+        "id": "tic_llars",
+        "fuente": "tic_llars",
+        "clase": "cambiante",
+        "alcance": "descubre-edicion",
+        "operacion": "descargar",
+        "intervalo_dias": 30
+      }
+    ],
+    "dependencias": ["tich"],
+    "casa_datos": "tic-llars"
+  },
+  "tich": {
+    "actualizacion": {
+      "politica": "edición",
+      "red": true,
+      "frecuencia": "anual (TIC-H del INE)",
+      "renovar_dias": null,
+      "originales": "tich"
+    },
+    "conjuntos": [
+      {
+        "id": "tich",
+        "fuente": "tich",
+        "clase": "cambiante",
+        "alcance": "descubre-edicion",
+        "operacion": "descargar",
+        "intervalo_dias": 30
+      }
+    ],
+    "dependencias": ["clasificaciones"],
+    "casa_datos": "tich"
+  },
+  "ue_eurostat": {
+    "actualizacion": {
+      "politica": "mensual",
+      "red": true,
+      "frecuencia": "anual (encuestas TIC de Eurostat, UE-27)",
+      "renovar_dias": null,
+      "originales": "ue-eurostat"
+    },
+    "conjuntos": [
+      {
+        "id": "ue_eurostat",
+        "fuente": "ue_eurostat",
+        "clase": "cambiante",
+        "alcance": "serie-abierta",
+        "operacion": "descargar",
+        "intervalo_dias": 30
+      }
+    ],
+    "dependencias": [],
+    "casa_datos": "ue-eurostat"
+  },
+  "hechos_informe": {
+    "actualizacion": {
+      "politica": "redactada",
+      "red": false,
+      "frecuencia": "revisión editorial explícita cada siete días; no actualización remota autónoma",
+      "renovar_dias": 7,
+      "originales": null
+    },
+    "conjuntos": [
+      {
+        "id": "hechos_informe",
+        "fuente": "hechos_informe",
+        "clase": "editorial",
+        "alcance": "copia-local",
+        "operacion": "revision",
+        "intervalo_dias": null
+      }
+    ],
+    "dependencias": [],
+    "casa_datos": "hechos_informe"
+  }
+}

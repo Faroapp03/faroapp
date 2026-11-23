@@ -1,0 +1,640 @@
+/* Páginas de lectura (todas salvo la portada, el recorrido y el informe): Qué es la IA, Qué es Faro (con «Cómo
+   funciona»), Créditos, Biblioteca (con las guías), Tus datos, Sin conexión y Comprobaciones. */
+
+.pagina {
+  max-width: var(--ancho-pagina);
+  margin: 0 auto;
+  padding: 64px 40px 72px;
+}
+
+/* El título de página; `.titulo-pagina` da la misma forma a un título que no es el h1 (la Parte II de Datos globales). */
+.pagina h1,
+.pagina .titulo-pagina {
+  max-width: 16ch;
+  margin: 0 0 24px;
+  font-size: clamp(2.5rem, 4.2vw, 3.8rem);
+  font-weight: 500;
+  line-height: 1.09;
+  letter-spacing: -0.05em;
+  text-wrap: balance;
+  overflow-wrap: anywhere;
+}
+
+.pagina .entradilla {
+  max-width: 49ch;
+  margin: 0;
+  color: var(--color-tenue);
+  font-size: 1.06rem;
+  line-height: 1.8;
+}
+
+.pagina p a,
+.pagina li a {
+  color: var(--color-tinta);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.pagina :target {
+  scroll-margin-top: 32px;
+}
+
+/* Cabecera de sección con fotografía */
+.seccion-cabecera {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 31%;
+  gap: 64px;
+  align-items: center;
+  margin-bottom: 58px;
+}
+
+.seccion-cabecera--sin-foto {
+  display: block;
+}
+
+.seccion-foto {
+  height: 285px;
+  margin: 0;
+  overflow: hidden;
+  background: var(--color-panel);
+}
+
+.seccion-foto img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.seccion-foto--trabajo img {
+  object-position: 60% center;
+}
+.seccion-foto--faro img {
+  object-position: 50% 38%;
+}
+
+/*
+ * Bloques de texto: empiezan en el mismo borde que el título y su línea ocupa el ancho de la página; lo que hay dentro
+ * conserva un ancho de lectura cómodo.
+ */
+.bloque {
+  padding: 32px 0 20px;
+  border-top: 1px solid var(--color-linea);
+  scroll-margin-top: 28px;
+}
+
+.bloque > * {
+  max-width: var(--ancho-lectura);
+}
+
+.bloque h2 {
+  margin: 0 0 15px;
+  font-size: 1.4rem;
+  font-weight: 500;
+  line-height: 1.35;
+  letter-spacing: -0.025em;
+}
+
+.bloque p {
+  margin: 0 0 14px;
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+.bloque strong {
+  font-weight: 500;
+}
+
+.bloque sup a {
+  margin-left: 3px;
+  font-family: var(--fuente-mono);
+  font-size: var(--texto-minimo);
+}
+
+.lista {
+  margin: 0 0 14px;
+  padding-left: 20px;
+}
+
+.lista li {
+  margin-bottom: 8px;
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+.pagina .nota {
+  color: var(--color-tenue);
+  font-size: 0.9rem;
+}
+
+/* Referencias numeradas */
+.referencias {
+  color: var(--color-tenue);
+}
+
+.bloque.referencias h2 {
+  font-size: 1.06rem;
+}
+
+.referencias ol {
+  margin: 0;
+  padding-left: 22px;
+}
+
+.referencias li {
+  margin-bottom: 8px;
+  font-size: 0.84rem;
+  line-height: 1.75;
+}
+
+.referencias li:target {
+  color: var(--color-tinta);
+}
+
+/*
+ * Desplegable nativo cerrado por defecto (<details class="desplegable">), como las Fuentes de Datos globales: el título en
+ * el resumen y un «+» / «−» a la derecha. Sin animación; 56 px de alto para pulsarlo y su foco a la vista. Lo comparten
+ * las referencias de las guías y Datos globales (`.dg-desplegable*`, que añade lo suyo en datos-globales.css).
+ */
+.desplegable-resumen,
+.dg-desplegable-resumen {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  min-height: 56px;
+  padding: 8px 0;
+  list-style: none;
+  cursor: pointer;
+}
+
+.desplegable-resumen::-webkit-details-marker,
+.dg-desplegable-resumen::-webkit-details-marker {
+  display: none;
+}
+
+.desplegable-resumen::after,
+.dg-desplegable-resumen::after {
+  margin-left: auto;
+  color: var(--color-tenue);
+  font-family: var(--fuente-mono);
+  font-size: 1.25rem;
+  font-weight: 500;
+  content: "+";
+}
+
+.desplegable[open] > .desplegable-resumen::after,
+.dg-desplegable[open] > .dg-desplegable-resumen::after {
+  content: "−";
+}
+
+.desplegable-resumen:focus-visible,
+.dg-desplegable-resumen:focus-visible {
+  outline: var(--foco);
+  outline-offset: 4px;
+}
+
+/* biome-ignore lint/style/noDescendingSpecificity: .bloque.referencias h2 solo fija el tamaño de letra y esta regla solo el margen; no compiten */
+.desplegable-resumen h2 {
+  margin: 0;
+}
+
+.desplegable-resumen:hover h2,
+.dg-desplegable-resumen:hover h2 {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.desplegable-cuerpo,
+.dg-desplegable-cuerpo {
+  min-width: 0;
+  padding: 8px 0 32px;
+}
+
+.referencias .desplegable-cuerpo {
+  padding-bottom: 8px;
+}
+
+/* Fuentes: una ficha por origen */
+.origen {
+  padding: 25px 0 14px;
+}
+
+.origen + .origen {
+  border-top: 1px solid var(--color-linea);
+}
+
+.origen h3 {
+  margin: 0 0 8px;
+  font-size: 1.08rem;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.origen p {
+  font-size: 0.93rem;
+  overflow-wrap: anywhere;
+}
+
+.origen .literal {
+  padding-left: 12px;
+  color: var(--color-tenue);
+  border-left: 2px solid var(--color-linea);
+}
+
+.borrar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 16px;
+  margin: 6px 0 16px;
+}
+
+.borrar .nota {
+  flex: 1 1 220px;
+  margin: 0;
+}
+
+/* Botones de las páginas de lectura */
+.boton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 12px 26px;
+  color: var(--color-fondo);
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
+  background: var(--color-tinta);
+  border: 1px solid var(--color-tinta);
+  border-radius: var(--radio);
+}
+
+.boton:hover {
+  filter: brightness(1.06);
+}
+
+/* La acción que sigue a la entradilla (las páginas «no existe» y «sin conexión») se separa del texto como las acciones
+   de Comprobaciones. */
+.pagina .entradilla + .boton {
+  margin-top: 24px;
+}
+
+.boton-secundario {
+  color: var(--color-tinta);
+  background: transparent;
+  border-color: var(--color-tenue);
+}
+
+/* Ejemplo interactivo de IA (scripts/ejemplo-ia.js): tres frases en botones del mismo ancho, la frase elegida como
+   título del gráfico, una lista de palabras con barra y porcentaje en columnas fijas, el desplegable y una frase que
+   resume el resto. Sin movimiento: al cambiar de frase o abrir el desplegable, la lista se repinta sin animación. */
+.ejemplo {
+  margin: 24px 0 12px;
+  padding: 28px;
+  background: var(--color-panel);
+  border: 1px solid var(--color-linea);
+  border-radius: var(--radio);
+}
+
+/* El ejemplo lo pinta scripts/ejemplo-ia.js: sin JavaScript (sin data-tema, que pone tema-inicial.js) no se muestra. */
+:root:not([data-tema]) .ejemplo {
+  display: none;
+}
+
+.bloque .ejemplo-titulo {
+  margin: 0;
+  color: var(--color-tenue);
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+/* Tres columnas iguales: los botones miden lo mismo y, por la rejilla, tienen la misma altura aunque uno ocupe dos
+   líneas. En el móvil, uno debajo de otro. */
+.ejemplo-opciones {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  min-width: 0;
+  margin: 14px 0 0;
+  padding: 0;
+  border: 0;
+}
+
+.ejemplo-opcion {
+  display: flex;
+  align-items: center;
+  min-height: 56px;
+  padding: 12px 14px;
+  color: var(--color-tinta);
+  font: inherit;
+  font-size: 0.86rem;
+  line-height: 1.35;
+  text-align: left;
+  background: transparent;
+  border: 1px solid var(--color-linea);
+  border-radius: var(--radio);
+  cursor: pointer;
+}
+
+.ejemplo-opcion:hover {
+  border-color: var(--color-tinta);
+}
+
+.ejemplo-opcion[aria-pressed="true"] {
+  color: var(--color-fondo);
+  background: var(--color-tinta);
+  border-color: var(--color-tinta);
+}
+
+.ejemplo-grafico {
+  margin: 26px 0 0;
+  padding: 24px 0 0;
+  border-top: 1px solid var(--color-linea);
+}
+
+.bloque .ejemplo-frase {
+  margin: 0;
+  font-size: 1.12rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.bloque .ejemplo-cabecera {
+  margin: 4px 0 18px;
+  color: var(--color-tenue);
+  font-size: var(--texto-minimo);
+}
+
+.ejemplo-lista {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Tres columnas fijas en todas las filas: palabra, barra y porcentaje alineado a la derecha. */
+.ejemplo-lista li {
+  display: grid;
+  grid-template-columns: 14ch minmax(0, 1fr) 8ch;
+  gap: 14px;
+  align-items: center;
+  font-size: 0.9rem;
+}
+
+.ejemplo-lista li[hidden] {
+  display: none;
+}
+
+.ejemplo-lista .palabra {
+  overflow-wrap: anywhere;
+}
+
+.ejemplo-lista .barra {
+  height: 8px;
+  overflow: hidden;
+  background: var(--dato-pista);
+  border-radius: var(--radio);
+}
+
+/* La palabra más probable ocupa la barra entera; las demás, en proporción a ella. */
+.ejemplo-lista .barra i {
+  display: block;
+  width: var(--ancho, 0%);
+  height: 100%;
+  background: var(--color-acento);
+}
+
+.ejemplo-lista .porcentaje {
+  color: var(--color-tenue);
+  font-family: var(--fuente-mono);
+  font-size: 0.82rem;
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+  white-space: nowrap;
+}
+
+/* El desplegable, con el mismo «+» / «−» que los demás de la web. */
+.ejemplo-mas {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+  margin: 16px 0 0;
+  padding: 8px 14px;
+  color: var(--color-tinta);
+  font: inherit;
+  font-size: 0.86rem;
+  background: transparent;
+  border: 1px solid var(--color-linea);
+  border-radius: var(--radio);
+  cursor: pointer;
+}
+
+.ejemplo-mas:hover {
+  border-color: var(--color-tinta);
+}
+
+.ejemplo-mas::after {
+  color: var(--color-tenue);
+  font-family: var(--fuente-mono);
+  font-size: 1.05rem;
+  content: "+";
+}
+
+.ejemplo-mas[aria-expanded="true"]::after {
+  content: "−";
+}
+
+.bloque .ejemplo-resumen {
+  margin: 18px 0 0;
+  padding: 14px 16px;
+  font-size: 0.9rem;
+  line-height: 1.55;
+  background: var(--color-fondo);
+  border-left: 3px solid var(--color-linea);
+}
+
+.bloque .ejemplo-nota {
+  margin: 20px 0 0;
+  color: var(--color-tenue);
+  font-size: var(--texto-minimo);
+  line-height: 1.6;
+}
+
+/* Continuar a la sección siguiente */
+.seccion-siguiente {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  margin: 42px 0 0;
+  padding-top: 30px;
+  border-top: 1px solid var(--color-linea);
+}
+
+.seccion-siguiente p {
+  margin: 0 0 7px;
+  color: var(--color-tenue);
+  font-size: 0.78rem;
+}
+
+.seccion-siguiente strong {
+  font-size: 1.15rem;
+  font-weight: 500;
+}
+
+.seccion-siguiente a:not(.boton-empezar) {
+  padding: 12px 0;
+  color: var(--color-tinta);
+  font-size: 0.85rem;
+  text-underline-offset: 6px;
+}
+
+/* Qué es la IA: tabla de dos columnas de texto y glosario */
+.cuadro {
+  width: 100%;
+  margin: 6px 0 18px;
+  border-collapse: collapse;
+}
+
+.cuadro th,
+.cuadro td {
+  width: 50%;
+  padding: 12px 14px 12px 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid var(--color-linea);
+}
+
+.cuadro thead th {
+  font-weight: 500;
+  border-bottom-color: var(--color-tinta);
+}
+
+.glosario {
+  margin: 0 0 14px;
+}
+
+.glosario div {
+  padding: 11px 0;
+  border-bottom: 1px solid var(--color-linea);
+}
+
+.glosario dt {
+  font-weight: 500;
+}
+
+.glosario dd {
+  margin: 2px 0 0;
+  color: var(--color-tenue);
+  line-height: 1.7;
+}
+
+/* En tableta vertical, como en el móvil: la foto debajo del título, a todo el ancho. */
+@media (max-width: 960px) {
+  .seccion-cabecera {
+    display: block;
+  }
+
+  .seccion-foto {
+    height: clamp(190px, 40vw, 340px);
+    margin-top: 28px;
+  }
+}
+
+@media (max-width: 700px) {
+  .cuadro th,
+  .cuadro td {
+    padding-right: 10px;
+    font-size: 0.88rem;
+  }
+
+  .pagina {
+    padding: 38px 21px 50px;
+  }
+
+  .seccion-cabecera {
+    display: block;
+    margin-bottom: 34px;
+  }
+
+  .pagina h1,
+  .pagina .titulo-pagina {
+    margin-bottom: 20px;
+    font-size: clamp(2.3rem, 9vw, 3rem);
+  }
+
+  .pagina .entradilla {
+    font-size: 0.99rem;
+  }
+
+  .seccion-foto {
+    height: 190px;
+    margin-top: 27px;
+  }
+
+  .seccion-foto--faro img {
+    object-position: 50% 36%;
+  }
+
+  .bloque {
+    padding: 27px 0 16px;
+  }
+
+  .bloque h2,
+  .bloque.referencias h2 {
+    font-size: 1.28rem;
+  }
+
+  .bloque p,
+  .lista li {
+    font-size: 0.95rem;
+  }
+
+  .ejemplo {
+    padding: 20px 16px;
+  }
+
+  .ejemplo-opciones {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .ejemplo-opcion {
+    min-height: 48px;
+  }
+
+  .ejemplo-lista li {
+    grid-template-columns: 12ch minmax(0, 1fr) 8ch;
+    gap: 10px;
+    font-size: 0.85rem;
+  }
+
+  .seccion-siguiente {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+}
+
+/* Con colores forzados el relleno del botón elegido se pierde: un borde grueso lo sigue marcando. */
+@media (forced-colors: active) {
+  .ejemplo-opcion[aria-pressed="true"] {
+    border-width: 3px;
+  }
+}
+
+/* Al imprimir, el desplegable sale abierto aunque esté cerrado en pantalla. */
+@media print {
+  .desplegable:not([open])::details-content {
+    content-visibility: visible;
+  }
+
+  .desplegable-resumen::after {
+    display: none;
+  }
+}

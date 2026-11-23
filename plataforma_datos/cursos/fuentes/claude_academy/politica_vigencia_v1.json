@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "id": "faro:vigencia:claude_academy",
+  "version": "1",
+  "fuente_id": "claude_academy",
+  "responsable": "Equipo Faro",
+  "naturaleza": "politica-interna-operativa",
+  "criterios": {
+    "ttl_ficha_segundos": 86400,
+    "ttl_catalogo_segundos": null,
+    "requiere_catalogo": false,
+    "zona_fechas_dia": null,
+    "inicio_dia_inclusivo": null,
+    "fin_dia_inclusivo": null,
+    "regla_disponibilidad": "oferta-publicada-continua-1"
+  },
+  "justificacion": "Caducidad técnica conservadora de 24 horas de los apoyos pertinentes, con renovación diaria. No es plazo comercial ni garantía del proveedor. La oferta completa debe estar declarada gratuita, con ficha, CTA y destino coherentes, destinatarios y requisitos constatados. Una muestra no acredita curso entero. Registro, prácticas y certificado conservan sus condiciones y desconocidos; ningún fallo rejuvenece una comprobación.",
+  "revision_equipo_faro": {
+    "estado": "criterio-aprobado-sin-activacion",
+    "fecha": null,
+    "alcance": "Curso publicado continuamente con declaraciones y destinos contrastados; no infiere acceso sin registro ni crea fechas de matrícula."
+  }
+}

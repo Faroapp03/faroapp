@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "id": "cambra",
+  "tema": "ia_y_trabajo",
+  "nombre": "ODEE / Cambra de Comerç de Barcelona",
+  "institucion": "ODEE / Cambra de Comerç de Barcelona",
+  "lector": "plataforma_datos.ia_y_trabajo.fuentes.cambra.lector",
+  "casa_datos": "cambra",
+  "significado": "ODEE / Cambra de Comerç de Barcelona (2026): exposición a la IA y personas ocupadas por sexo en Cataluña.",
+  "alcance": [
+    "El ODEE y la Cambra enviaron la tabla completa de su estudio, con autorización escrita para usarla en Faro (ver la procedencia): para cada una de las 163 ocupaciones de la CNO-11 a 3 cifras, la puntuación de exposición potencial de la OIT (media y máximo de las ocupaciones ISCO-08 de 4 cifras del grupo ISCO de 3 cifras que le corresponde), su nivel en la escala propia del estudio (cinco tramos de 0,1: nivel 1 por debajo de 0,2 … nivel 5 desde 0,5; no son los gradientes de la OIT ni las franjas de Faro) y las personas ocupadas por sexo (Cens de població i habitatges 2022). Se lee con el lector propio de .xls (hojas.py) y se comprueba que reproduce exactamente las cifras que publica el estudio: el reparto por sexo (pág. impresa 14) y la Taula 4 (pág. impresa 21).",
+    "La Taula 13 (personas contratadas por ocupación, pág. impresa 38) no está en la tabla: sus cifras se transcriben del PDF publicado, con su página, y se comprueban con sus variaciones e índices y, en `mercado/fuentes/cataluna/lector.py`, con el Observatori.",
+    "Uso en el informe: solo el reparto por sexo de toda Cataluña, citado con su escala y su censo (2022), como contexto colectivo: nunca ajusta la nota de una persona. Es exposición potencial, no adopción en las empresas ni pérdida de empleo. Las cifras por ocupación del informe salen del INE (Censo 2021) y del Observatori del Treball para todas las ocupaciones (`mercado/fuentes/cataluna/lector.py`), que se contrastan con la Taula 4 y la Taula 13. Depende de la validación de las clasificaciones (códigos CNO-11). Python estándar."
+  ],
+  "recursos": [
+    {
+      "id": "recurso-01",
+      "tipo": "url",
+      "ubicacion": "https://www.donaempresaeconomia.org/wp-content/uploads/2026/06/ESTUDI-IMPACTE-IA_PORTADA.pdf",
+      "licencia": "Sin licencia abierta. Autorización escrita del ODEE para usar los datos del estudio en Faro, con las condiciones de «autorizacion».",
+      "descripcion": "Impacte de la IA generativa sobre el mercat laboral (PDF publicado: es el informe completo, aunque el archivo se llame «PORTADA»)"
+    },
+    {
+      "id": "recurso-02",
+      "tipo": "archivo",
+      "ubicacion": "var/actualizacion/originales/cambra/iaexpo-desagregados-2022-genero.xls",
+      "licencia": "Sin licencia abierta. Autorización escrita del ODEE para usar los datos del estudio en Faro, con las condiciones de «autorizacion».",
+      "descripcion": "Exposición a la IA generativa y personas ocupadas por sexo de las 163 ocupaciones de la CNO-11 a 3 cifras, Cataluña, 2022"
+    }
+  ],
+  "canales": [
+    {
+      "id": "capturas",
+      "tipo": "local",
+      "recursos": ["recurso-01", "recurso-02"],
+      "autenticacion": "No aplicable al lector local",
+      "limites": [
+        "Cuotas y límites oficiales de servicio no acreditados por este descriptor; rigen los límites de transporte y validación del lector.",
+        "Este descriptor no acredita la disponibilidad remota actual; una URL conservada no acredita consulta satisfactoria ni una tarea instalada.",
+        "Citar expresamente al ODEE (Observatori Dona, Empresa i Economia) y a la Cambra de Comerç de Barcelona como fuente de los datos.",
+        "Informarles de cualquier publicación, herramienta o proyecto en el que se usen los datos, con su enlace o referencia."
+      ],
+      "observaciones": "Copias conservadas manualmente del PDF publicado y la tabla cedida por ODEE/Cambra con autorización escrita declarada en la procedencia. El lector no descarga esos originales: `descargar` solo avisa de que se registran a mano."
+    }
+  ],
+  "actualizacion": {
+    "politica": "manual",
+    "red": false,
+    "frecuencia": "anual (tabla de la Cambra)",
+    "renovar_dias": 365,
+    "originales": "cambra"
+  },
+  "conjuntos": [
+    {
+      "id": "cambra",
+      "fuente": "cambra",
+      "clase": "manual",
+      "alcance": "copia-local",
+      "operacion": "revision",
+      "intervalo_dias": null
+    }
+  ],
+  "dependencias": ["clasificaciones"],
+  "contratos": ["lector.py:preparar", "lector.py:validar", "plataforma_datos/orquestacion/admision.py:exigir_admitido"],
+  "retirada": "Se conserva la admisión del conjunto y sus guardas actuales. Un fallo o una ausencia de captura no se convierte en retirada de entidades ni en disponibilidad confirmada.",
+  "conservacion": "Originales, procedencias, preparados y validaciones conservan sus casas actuales en var/actualizacion. Esta ficha no habilita limpieza automática ni cambia fechas históricas, periodos, licencias o retención."
+}

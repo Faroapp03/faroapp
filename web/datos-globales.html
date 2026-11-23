@@ -1,0 +1,426 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta
+      name="description"
+      content="Datos globales: la IA en el trabajo en Cataluña, España y Europa, con estadísticas oficiales de territorios, cada cifra con su fuente y su año."
+      data-texto-content="datos-globales.descripcion"
+    />
+    <meta name="theme-color" content="#f4f3f0" />
+    <meta name="apple-mobile-web-app-title" content="Faro" />
+    <!-- En iPhone y iPad instalada: barra de estado opaca y negra, como el modo noche con el que abre Faro (el
+         sistema no admite una por tema; donde lo admite, el color lo pone el theme-color de arriba). -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <title data-texto="datos-globales.titulo">Datos globales · Faro</title>
+    <link rel="icon" href="imagenes/identidad/faro-editorial-icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="imagenes/identidad/icon-180.png" />
+    <link rel="manifest" href="manifest.webmanifest" crossorigin="use-credentials" />
+    <script src="scripts/tema-inicial.js"></script>
+    <script src="scripts/idioma-inicial.js"></script>
+    <link rel="stylesheet" href="estilos/tipografias.css" />
+    <link rel="stylesheet" href="estilos/tokens.css" />
+    <link rel="stylesheet" href="estilos/base.css" />
+    <link rel="stylesheet" href="estilos/contenidos.css" />
+    <link rel="stylesheet" href="estilos/datos-globales.css" />
+    <link rel="stylesheet" href="estilos/datos-globales-graficos.css" />
+    <link rel="stylesheet" href="estilos/globo.css" />
+    <link rel="stylesheet" href="estilos/datos-globales-paginas.css" />
+    <script type="module" src="scripts/datos-globales.js"></script>
+    <!-- Los textos se escriben en cuanto se ejecuta sitio.js: sus diccionarios se piden a la vez que él. -->
+    <link rel="modulepreload" href="idiomas/cargar.js" />
+    <link rel="modulepreload" href="scripts/idioma.js" />
+    <link rel="modulepreload" href="scripts/textos.js" />
+    <link rel="modulepreload" href="scripts/version.js" />
+    <link rel="modulepreload" href="scripts/sitio.js" />
+    <link rel="modulepreload" href="scripts/datos-globales/cuadro.js" />
+    <link rel="modulepreload" href="scripts/datos-globales/datos.js" />
+    <link rel="modulepreload" href="scripts/datos-globales/capitulos.js" />
+    <link rel="modulepreload" href="scripts/datos-globales/ficha.js" />
+    <link rel="modulepreload" href="scripts/datos-globales/pintar.js" />
+  </head>
+  <body>
+    <a class="salto" href="#contenido" data-texto="comun.saltar">Saltar al contenido</a>
+    <header class="cabecera">
+      <button
+        class="menu-boton"
+        type="button"
+        aria-label="Abrir menú"
+        data-texto-aria-label="comun.menu.abrir"
+        aria-expanded="false"
+        aria-controls="menu"
+      >
+        <span></span><span></span><span></span>
+      </button>
+      <a class="marca" href="inicio.html">
+        <span class="solo-lectores" data-texto="comun.marca.inicio">Faro, inicio</span>
+        <span class="marca-nombre" aria-hidden="true"
+          ><span class="marca-inicial"
+            >F<svg class="marca-luz" viewBox="0 0 18 8" focusable="false" aria-hidden="true"
+              ><path d="M1 4h16" /></svg
+            ></span
+          >ARO</span
+        >
+      </a>
+      <div class="cabecera-herramientas">
+        <div class="idioma" data-selector-idioma>
+          <button
+            class="idioma-boton"
+            type="button"
+            id="idioma-boton"
+            aria-label="Idioma: Castellano"
+            data-texto-aria-label="comun.idioma.boton"
+            aria-haspopup="menu"
+            aria-expanded="false"
+            aria-controls="idioma-opciones"
+          >
+            <img
+              class="idioma-bandera idioma-bandera-es"
+              src="imagenes/identidad/bandera-espana.svg"
+              alt=""
+              width="24"
+              height="16"
+            />
+            <img
+              class="idioma-bandera idioma-bandera-ca"
+              src="imagenes/identidad/bandera-catalunya.svg"
+              alt=""
+              width="24"
+              height="16"
+            />
+          </button>
+          <div class="idioma-opciones" id="idioma-opciones" role="menu" aria-labelledby="idioma-boton" hidden>
+            <button type="button" role="menuitemradio" aria-checked="true" data-cambiar-idioma="es" lang="es"
+              ><img class="idioma-bandera" src="imagenes/identidad/bandera-espana.svg" alt="" width="24" height="16" />
+              <span>Castellano</span></button
+            >
+            <button type="button" role="menuitemradio" aria-checked="false" data-cambiar-idioma="ca" lang="ca"
+              ><img
+                class="idioma-bandera"
+                src="imagenes/identidad/bandera-catalunya.svg"
+                alt=""
+                width="24"
+                height="16"
+              /><span>Català</span></button
+            >
+          </div>
+        </div>
+        <button
+          class="tema-boton"
+          type="button"
+          aria-label="Cambiar a modo día"
+          title="Modo día / noche"
+          data-texto-title="comun.tema.titulo"
+        >
+          <svg class="icono-sol" viewBox="0 0 24 24" aria-hidden="true" focusable="false"
+            ><circle cx="12" cy="12" r="4.5" />
+            <path
+              d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"
+            /></svg
+          >
+          <svg class="icono-luna" viewBox="0 0 24 24" aria-hidden="true" focusable="false"
+            ><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z" /></svg
+          >
+        </button>
+      </div>
+    </header>
+    <div class="menu-velo" id="menu-velo" hidden></div>
+    <nav id="menu" class="menu" hidden aria-label="Menú principal" data-texto-aria-label="comun.menu.nombre">
+      <ul class="menu-lista">
+        <li
+          ><a href="inicio.html"><span class="menu-destino" data-texto="comun.seccion.inicio">Inicio</span></a></li
+        >
+        <li
+          ><a href="entender-ia.html"
+            ><span class="menu-destino" data-texto="comun.seccion.ia">Qué es la IA</span></a
+          ></li
+        >
+        <li
+          ><a href="que-es-faro.html"><span class="menu-destino">Faro</span></a></li
+        >
+        <li
+          ><a href="recorrido.html"><span class="menu-destino" data-texto="comun.seccion.empezar">Empezar</span></a></li
+        >
+        <li
+          ><a href="biblioteca.html"
+            ><span class="menu-destino" data-texto="comun.seccion.biblioteca">Biblioteca</span></a
+          ></li
+        >
+        <li
+          ><a href="cursos.html"><span class="menu-destino" data-texto="comun.seccion.cursos">Cursos</span></a></li
+        >
+        <li
+          ><a href="datos-globales.html" aria-current="page"
+            ><span class="menu-destino" data-texto="comun.seccion.datos-globales">Datos globales</span></a
+          ></li
+        >
+        <li data-pasar-entrada hidden
+          ><button type="button" class="menu-pasar" data-pasar-dispositivo
+            ><span class="menu-destino" data-texto="comun.menu.pasar">Pasar a otro dispositivo</span></button
+          ></li
+        >
+      </ul>
+    </nav>
+    <main id="contenido" class="pagina dg-dossier dg-dossier--datos">
+      <nav
+        class="dg-pestanas"
+        aria-label="Páginas de Datos globales"
+        data-texto-aria-label="datos-globales.pestanas.nombre"
+      >
+        <a href="datos-globales.html" aria-current="page" data-texto="datos-globales.pestanas.paises">Cataluña</a>
+        <a href="datos-globales-ue.html" data-texto="datos-globales.pestanas.ue">Unión Europea</a>
+        <a href="datos-globales-mundo.html" data-texto="datos-globales.pestanas.mundo">El mundo</a>
+      </nav>
+      <header class="dg-portada dg-portada--sola">
+        <div>
+          <p class="antetitulo" data-texto="datos-globales.antetitulo">Datos globales · La IA en el trabajo</p>
+          <h1 data-texto="datos-globales.titulo-principal">Cataluña frente a Europa</h1>
+          <p class="entradilla" data-texto="datos-globales.entradilla"
+            >Cuántas empresas usan inteligencia artificial y cuánta gente usa IA generativa, según las estadísticas
+            oficiales. Cataluña, comparada con España, Alemania, Francia e Italia, y con la media de la UE como
+            referencia.</p
+          >
+          <p class="dg-prudencia"
+            ><strong data-texto="datos-globales.prudencia.titulo">Son datos de territorios, no de personas.</strong>
+            <span data-texto="datos-globales.prudencia.texto"
+              >Describen poblaciones enteras y no dicen nada del empleo de quien lee. Usar la IA, o estar expuesto a
+              ella, no equivale a perder el trabajo.</span
+            ></p
+          >
+          <ul
+            class="dg-clave-colores"
+            aria-label="Cómo se distinguen los territorios en los gráficos"
+            data-texto-aria-label="datos-globales.clave-colores.nombre"
+          >
+            <li
+              ><svg class="dg-muestra" width="22" height="12" viewBox="0 0 22 12" aria-hidden="true" focusable="false"
+                ><rect class="m-cat" x="0" y="1" width="22" height="10" /></svg
+              ><span data-texto="datos-globales.clave-colores.cataluna">Cataluña</span></li
+            >
+            <li
+              ><svg class="dg-muestra" width="22" height="12" viewBox="0 0 22 12" aria-hidden="true" focusable="false"
+                ><line class="m-ue" x1="0" x2="22" y1="6" y2="6" /></svg
+              ><span data-texto="datos-globales.clave-colores.ue">Media de la UE-27, como referencia</span></li
+            >
+            <li
+              ><svg class="dg-muestra" width="22" height="12" viewBox="0 0 22 12" aria-hidden="true" focusable="false"
+                ><rect class="m-gris" x="0" y="1" width="22" height="10" /></svg
+              ><span data-texto="datos-globales.clave-colores.resto">España, Alemania, Francia e Italia</span></li
+            >
+          </ul>
+          <p class="dg-clave-nota" data-texto="datos-globales.clave-colores.nota"
+            >Se puede comparar porque son encuestas europeas armonizadas: mismas preguntas, mismas edades y mismo año.
+            Pero España incluye a Cataluña, y la media de la UE incluye a España: sirven de referencia, no son
+            rivales.</p
+          >
+          <p class="dg-aviso" id="datos-globales-muestra" hidden data-texto="datos-globales.muestra"
+            >Cifras de muestra para probar la página: no son datos reales.</p
+          >
+          <p class="dg-sin-script" data-texto="datos-globales.sin-script"
+            >Las cifras se dibujan en tu navegador: para verlas hace falta tener JavaScript activado.</p
+          >
+          <p class="dg-estado" id="datos-globales-estado" role="status"></p>
+        </div>
+      </header>
+      <nav class="dg-preguntas" id="datos-globales-preguntas" aria-labelledby="dg-indice-titulo" hidden>
+        <h2 id="dg-indice-titulo" tabindex="-1" data-texto="datos-globales.indice.titulo"
+          >Las preguntas de este dossier</h2
+        >
+        <ol class="dg-indice" id="datos-globales-indice"></ol>
+      </nav>
+      <section class="dg-resumen" id="datos-globales-resumen" aria-labelledby="t-dg-resumen" hidden>
+        <div class="dg-bloque-cabeza">
+          <h2 id="t-dg-resumen" data-texto="datos-globales.resumen.titulo">Lo esencial</h2>
+          <p data-texto="datos-globales.margen"
+            >La muestra de Cataluña es más pequeña que la de un país: diferencias de uno o dos puntos pueden no ser
+            reales.</p
+          >
+        </div>
+        <ol class="dg-esencial" id="datos-globales-claves"></ol>
+      </section>
+      <div id="datos-globales-capitulos" hidden></div>
+      <nav
+        class="dg-paginas"
+        id="datos-globales-paginas"
+        aria-label="Páginas de capítulos"
+        data-texto-aria-label="datos-globales.paginas.nombre"
+        hidden
+      >
+        <ol class="dg-paginas-lista" id="datos-globales-paginas-lista"></ol>
+        <p class="solo-lectores" id="datos-globales-pagina-estado" role="status"></p>
+      </nav>
+      <section
+        class="dg-capitulo dg-capitulo--plegable"
+        id="datos-globales-metodo"
+        aria-labelledby="t-dg-metodo"
+        hidden
+      >
+        <details class="dg-desplegable" id="datos-globales-metodo-desplegable">
+          <summary class="dg-desplegable-resumen"
+            ><h2 id="t-dg-metodo"><span data-texto="datos-globales.metodo.titulo">Cómo comparamos</span></h2></summary
+          >
+          <div class="dg-desplegable-cuerpo dg-dos-columnas">
+            <div>
+              <ol class="dg-reglas">
+                <li
+                  ><strong data-texto="datos-globales.metodo.misma.titulo">Lo mismo con lo mismo.</strong>
+                  <span data-texto="datos-globales.metodo.misma.texto"
+                    >Misma pregunta, mismas edades, misma base y mismo año en cada comparación. Lo que no se mide igual
+                    no se compara, y se dice. Por eso no está Estados Unidos.</span
+                  ></li
+                >
+                <li
+                  ><strong data-texto="datos-globales.metodo.comparable.titulo">Solo lo comparable.</strong>
+                  <span data-texto="datos-globales.metodo.comparable.texto"
+                    >Una cifra que la fuente marca como no comparable (otra definición o una ruptura de serie) no se
+                    muestra ni entra en ningún cálculo. Por eso la serie de empresas no incluye 2021: entonces se
+                    preguntaba por menos tecnologías. Cada ficha técnica dice qué se queda fuera.</span
+                  ></li
+                >
+                <li
+                  ><strong data-texto="datos-globales.metodo.orden.titulo">De mayor a menor.</strong>
+                  <span data-texto="datos-globales.metodo.orden.texto"
+                    >En cada gráfico, los territorios van de la cifra más alta a la más baja. En las tablas, siempre en
+                    el mismo orden: Cataluña, España (con Cataluña), Alemania, Francia e Italia, y la media de la UE al
+                    final.</span
+                  ></li
+                >
+                <li
+                  ><strong data-texto="datos-globales.metodo.ue.titulo">La media de la UE, como referencia.</strong>
+                  <span data-texto="datos-globales.metodo.ue.texto"
+                    >Es la cifra de los 27 países juntos e incluye a España, Alemania, Francia e Italia. Por eso va en
+                    naranja y discontinua, nunca como un país más. Sus propios capítulos están en la página «Unión
+                    Europea».</span
+                  ></li
+                >
+                <li
+                  ><strong data-texto="datos-globales.metodo.base.titulo">Personas: cada página, su base.</strong>
+                  <span data-texto="datos-globales.metodo.base.texto"
+                    >Aquí, las cifras de personas se cuentan sobre quienes usan internet; en la página «Unión Europea»,
+                    sobre toda la población de 16 a 74 años. Cada gráfico lo dice en su subtítulo.</span
+                  ></li
+                >
+                <li
+                  ><strong data-texto="datos-globales.metodo.margen.titulo">Un punto, como mínimo.</strong>
+                  <span data-texto="datos-globales.metodo.margen.texto"
+                    >La muestra de Cataluña es más pequeña que la de un país. No decimos que un territorio va por
+                    delante si no le saca al menos un punto al siguiente.</span
+                  ></li
+                >
+                <li
+                  ><strong data-texto="datos-globales.metodo.sin-cifra.titulo">Sin dato oficial, no hay cifra.</strong>
+                  <span data-texto="datos-globales.metodo.sin-cifra.texto">Lo decimos; no lo estimamos.</span></li
+                >
+                <li
+                  ><strong data-texto="datos-globales.metodo.medido.titulo"
+                    ><span aria-hidden="true">●</span>
+                    Medido</strong
+                  >
+                  <span data-texto="datos-globales.metodo.medido.texto"
+                    >quiere decir que sale de una encuesta oficial.</span
+                  >
+                  <span id="datos-globales-todas-medidas" data-texto="datos-globales.metodo.medido.todas" hidden
+                    >Todas las cifras de este dossier son medidas, salvo las de los capítulos de opinión, marcadas «<span
+                      aria-hidden="true"
+                      >○</span
+                    >
+                    Encuesta de opinión»: dicen lo que la gente cree, no lo que pasa. La de especialistas en TIC de la
+                    UE sale de la encuesta de población activa y Eurostat la marca como estimada («e»); lo dice su
+                    ficha.</span
+                  ></li
+                >
+              </ol>
+            </div>
+            <div class="dg-no-dicen">
+              <p class="dg-diferencia-titulo" data-texto="datos-globales.metodo.no-dicen.titulo"
+                >Lo que estos datos no dicen</p
+              >
+              <p data-texto="datos-globales.metodo.no-dicen.texto"
+                >Describen territorios. No dicen nada de una persona concreta, ni de su empleo, ni de lo que le va a
+                pasar. Usar la IA, o estar expuesto a ella, no equivale a perder el trabajo.</p
+              >
+            </div>
+          </div>
+        </details>
+      </section>
+      <section
+        class="dg-capitulo dg-capitulo--plegable"
+        id="datos-globales-fuentes"
+        aria-labelledby="t-dg-fuentes"
+        hidden
+      >
+        <details class="dg-desplegable" id="datos-globales-fuentes-desplegable">
+          <summary class="dg-desplegable-resumen"
+            ><h2 id="t-dg-fuentes"><span data-texto="datos-globales.fuentes.titulo">Fuentes</span></h2></summary
+          >
+          <div class="dg-desplegable-cuerpo">
+            <ol class="dg-fuentes">
+              <li data-texto="datos-globales.fuentes.eurostat"
+                >Eurostat. <cite lang="en">Artificial intelligence by size class of enterprise</cite> (<span
+                  >isoc_eb_ai</span
+                >). Actualización:
+                <time datetime="2026-06-15">15/06/2026</time>.</li
+              >
+              <li data-texto="datos-globales.fuentes.eurostat"
+                >Eurostat.
+                <cite lang="en">Artificial intelligence by NACE Rev. 2 activity and NUTS 2 region</cite>
+                (<span>isoc_r_eb_ain2</span>). Actualización:
+                <time datetime="2026-06-15">15/06/2026</time>.</li
+              >
+              <li data-texto="datos-globales.fuentes.eurostat"
+                >Eurostat. <cite lang="en">Individuals – use of generative AI tools</cite> (<span>isoc_ai_iaiu</span>).
+                Actualización:
+                <time datetime="2026-06-05">05/06/2026</time>.</li
+              >
+              <li data-texto="datos-globales.fuentes.eurostat"
+                >Eurostat.
+                <cite lang="en">Participation rate in education and training (last 4 weeks) by NUTS 2 region</cite>
+                (<span>trng_lfse_04</span>). Actualización:
+                <time datetime="2026-09-10">10/09/2026</time>.</li
+              >
+              <li data-texto="datos-globales.fuentes.eurobarometro"
+                >Comisión Europea.
+                <cite lang="en">Special Eurobarometer 554: Artificial Intelligence and the future of work</cite>
+                (oleada 101.4, abril y mayo de 2024), volumen A. Encuesta de opinión.</li
+              >
+              <li data-texto="datos-globales.fuentes.ceo"
+                >Centre d’Estudis d’Opinió. <cite lang="ca">Enquesta longitudinal (Panel Ciutadà), 3a onada, 2025</cite>
+                (REO 1151), pregunta P26. Encuesta de opinión.</li
+              >
+              <li data-texto="datos-globales.fuentes.tic-h"
+                >Idescat, a partir de la encuesta TIC-H del INE. <cite lang="ca">Enquesta TIC a les llars 2025</cite>,
+                tablas 3.4.1 y 3.4.2 («IA generativa»). Publicación: <time datetime="2026-01-30">30/01/2026</time>.</li
+              >
+              <li data-texto="datos-globales.fuentes.clima"
+                >Idescat. <cite lang="ca">Indicadors de clima empresarial</cite>, módulo «Intel·ligència artificial»,
+                2.º trimestre de 2024.</li
+              >
+            </ol>
+            <p class="dg-lateral-nota"
+              ><span id="datos-globales-consultadas"></span>
+              <span data-texto="datos-globales.fuentes.licencias"
+                >Eurostat y la Comisión Europea (Decisión 2011/833/UE) permiten reutilizar sus datos citando la fuente;
+                el Idescat, citando «Font: Idescat»; el CEO, con la Llicència oberta d’ús d’informació – Catalunya,
+                citándolo y enlazando con la licencia.</span
+              ></p
+            >
+          </div>
+        </details>
+      </section>
+    </main>
+
+    <footer class="pie">
+      <div class="pie-fila"
+        ><nav aria-label="Información y ayuda" data-texto-aria-label="comun.pie.nombre"
+          ><a href="creditos.html" data-texto="comun.pie.creditos">Créditos</a
+          ><a href="informacion-y-creditos.html#t-datos" data-texto="comun.pie.datos">Tus datos</a
+          ><a href="accesibilidad.html" data-texto="comun.pie.accesibilidad">Accesibilidad</a
+          ><a href="verificable.html" data-texto="comun.pie.verificable">Faro verificable</a
+          ><a class="pie-doctor" href="doctor.html" data-texto="comun.pie.doctor">Comprobar Faro</a
+          ><a class="pie-instalar" href="instalar.html" data-texto="comun.pie.instalar">Instalar Faro</a></nav
+        ><p class="pie-derechos" data-texto="comun.pie.derechos">© 2026 Equipo Faro</p></div
+      >
+    </footer>
+  </body>
+</html>

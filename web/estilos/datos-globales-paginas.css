@@ -1,0 +1,53 @@
+/* Las pestañas que unen las tres páginas de «Datos globales» (datos-globales.html, datos-globales-ue.html y
+   datos-globales-mundo.html). Con los tokens de tokens.css: los colores cambian con el tema sin reglas propias. Sin
+   transiciones ni animaciones. */
+
+.dg-pestanas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  width: fit-content;
+  max-width: 100%;
+  margin: 0 0 40px;
+  padding: 4px;
+  background: var(--color-panel);
+  border: 1px solid var(--color-linea);
+  border-radius: 10px;
+}
+
+.dg-pestanas a {
+  padding: 10px 18px;
+  color: var(--color-tenue);
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: none;
+  border-radius: 7px;
+}
+
+.dg-pestanas a:hover {
+  color: var(--color-tinta);
+  background: color-mix(in srgb, var(--color-acento) 8%, var(--color-panel));
+}
+
+.dg-pestanas a[aria-current="page"] {
+  color: var(--color-panel);
+  background: var(--color-tinta);
+}
+
+/* En un móvil, las tres pestañas caben en una sola línea: el texto, a 13 px, y menos relleno. */
+@media (max-width: 480px) {
+  .dg-pestanas {
+    flex-wrap: nowrap;
+    gap: 2px;
+    margin-bottom: 28px;
+  }
+
+  .dg-pestanas a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 0 9px;
+    font-size: 0.8125rem;
+    white-space: nowrap;
+  }
+}

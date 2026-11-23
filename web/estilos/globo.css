@@ -1,0 +1,492 @@
+/* El globo de «El mundo» (scripts/globo/). Arriba, la escena con sus mandos (las instrucciones, solo para los lectores
+   de pantalla; los créditos, en creditos.html) y, a su lado, «Escribe o elige tu país» con el arranque de la ficha; debajo, el resto de la ficha en una
+   rejilla de tarjetas de media anchura, de margen a margen. En pantallas estrechas, todo en una columna, con la escena
+   primero. Los gráficos de la ficha son los de las otras páginas (datos-globales-graficos.css). Nada se anima ni
+   tiene transiciones: el globo solo se mueve con la persona. Los espacios se fijan aquí con medidas en rem. */
+
+.globo {
+  display: grid;
+  gap: 2rem;
+}
+
+.globo-arriba {
+  display: grid;
+  gap: 2rem;
+  align-items: start;
+}
+
+/* Las tarjetas: las de debajo del globo y las del empleo plegado. Las de una misma fila, igual de altas. */
+.globo-tarjetas {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1.25rem 2rem;
+}
+
+/* Desde el ancho de una tableta apaisada, dos columnas iguales: el globo arriba a la derecha y, a su izquierda, desde
+   su misma altura, el selector y el arranque de la ficha; debajo, las tarjetas de dos en dos, con el mismo hueco entre
+   columnas para que caigan bajo las de arriba. */
+@media (min-width: 64rem) {
+  .globo-arriba {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .globo-columna-globo {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .globo-columna-ficha {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .globo-tarjetas {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .globo-tarjetas > .globo-empleo {
+    grid-column: 1 / -1;
+  }
+}
+
+.globo-columna-globo,
+.globo-columna-ficha {
+  display: grid;
+  gap: 0.75rem;
+  align-content: start;
+  min-width: 0;
+}
+
+/* Sin WebGL, una línea pequeña dice que se ve el mapa plano: sin caja, en el tono tenue. */
+.globo-nota {
+  margin: 0;
+  color: var(--color-tenue);
+  font-size: 0.8125rem;
+}
+
+/* La escena: siempre en el espacio, de día y de noche. */
+.globo-escena {
+  position: relative;
+  overflow: hidden;
+  background: var(--globo-espacio);
+  border-radius: 8px;
+}
+
+/* El lienzo solo captura el gesto de arrastrar sobre sí mismo: fuera de él, la página se desplaza como siempre. */
+.globo-lienzo {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  max-height: 40rem;
+  touch-action: none;
+  cursor: grab;
+}
+
+.globo-lienzo:active {
+  cursor: grabbing;
+}
+
+.globo-lienzo--con-datos {
+  cursor: pointer;
+}
+
+/* El foco va por dentro del lienzo, en claro sobre el espacio: por fuera lo cortaría la escena. */
+.globo-lienzo:focus-visible {
+  outline: 2px solid var(--globo-frontera);
+  outline-offset: -6px;
+}
+
+/* Los mandos, abajo a la derecha: un anillo de cristal oscuro con las cuatro direcciones y, en su centro, «Volver a mi
+   país»; a su lado, el zoom en una píldora vertical. Cada botón mide 44 px (WCAG 2.5.5) y los del anillo no se pisan:
+   ocupan las casillas en cruz de una rejilla de 3 × 3. Sin sombras ni transiciones. Los símbolos son trazos de CSS:
+   chevrons para girar, un círculo para volver y + y − para el zoom. */
+.globo-mandos {
+  position: absolute;
+  inset-inline-end: 0.75rem;
+  bottom: 0.75rem;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.globo-mandos-anillo,
+.globo-mandos-zoom {
+  display: grid;
+  background: var(--globo-mandos-fondo);
+  border: 1px solid var(--globo-mandos-filete);
+  backdrop-filter: blur(6px);
+}
+
+.globo-mandos-anillo {
+  grid-template: repeat(3, 2.75rem) / repeat(3, 2.75rem);
+  border-radius: 50%;
+}
+
+.globo-mandos-zoom {
+  grid-template-rows: repeat(2, 2.75rem);
+  border-radius: 1.375rem;
+}
+
+/* El mapa plano es para navegadores sin aceleración gráfica: allí el desenfoque de cada fotograma pesaría. */
+.globo-escena[data-vista="plana"] .globo-mandos-anillo,
+.globo-escena[data-vista="plana"] .globo-mandos-zoom {
+  backdrop-filter: none;
+}
+
+.globo-mando {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  padding: 0;
+  color: var(--pizarra-tinta);
+  background: none;
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.globo-mando:hover {
+  background: var(--globo-mando-encima);
+}
+
+/* El foco, por dentro del botón: así no lo corta el anillo ni la escena. */
+.globo-mando:focus-visible {
+  outline: 2px solid var(--pizarra-tinta);
+  outline-offset: -3px;
+}
+
+.globo-mando--arriba {
+  grid-area: 1 / 2;
+}
+
+.globo-mando--izquierda {
+  grid-area: 2 / 1;
+}
+
+.globo-mando--centrar {
+  grid-area: 2 / 2;
+}
+
+.globo-mando--derecha {
+  grid-area: 2 / 3;
+}
+
+.globo-mando--abajo {
+  grid-area: 3 / 2;
+}
+
+/* Un chevron de trazo: dos lados de un cuadrado girado hacia donde va el globo (bordes físicos: en una página de
+   derecha a izquierda, cada flecha sigue apuntando a su lado, porque el globo gira igual). */
+.globo-mando--arriba::before,
+.globo-mando--izquierda::before,
+.globo-mando--derecha::before,
+.globo-mando--abajo::before {
+  content: "";
+  width: 0.5625rem;
+  height: 0.5625rem;
+  border-top: 2px solid currentcolor;
+  border-left: 2px solid currentcolor;
+}
+
+.globo-mando--arriba::before {
+  transform: translateY(0.1875rem) rotate(45deg);
+}
+
+.globo-mando--abajo::before {
+  transform: translateY(-0.1875rem) rotate(-135deg);
+}
+
+.globo-mando--izquierda::before {
+  transform: translateX(0.1875rem) rotate(-45deg);
+}
+
+.globo-mando--derecha::before {
+  transform: translateX(-0.1875rem) rotate(135deg);
+}
+
+/* «Volver a mi país»: un círculo de trazo, como una diana. */
+.globo-mando--centrar::before {
+  content: "";
+  width: 0.625rem;
+  height: 0.625rem;
+  border: 2px solid currentcolor;
+  border-radius: 50%;
+}
+
+/* + y −: barras de 2 px, del mismo trazo que los chevrons. */
+.globo-mando--acercar::before,
+.globo-mando--acercar::after,
+.globo-mando--alejar::before {
+  content: "";
+  grid-area: 1 / 1;
+  width: 0.875rem;
+  height: 2px;
+  background: currentcolor;
+  border-radius: 1px;
+}
+
+.globo-mando--acercar::after {
+  transform: rotate(90deg);
+}
+
+.globo-aviso {
+  margin: 0;
+  padding: 1rem;
+  color: var(--color-tinta);
+  background: var(--color-panel);
+  border: 1px solid var(--color-linea);
+  border-radius: var(--radio);
+}
+
+/* «Escribe o elige tu país»: el campo, su botón de lista y la lista desplegable encima de la ficha. La lista lleva
+   siempre todos los países: lo escrito solo la desplaza hasta la coincidencia (opción activa), y el país elegido lleva
+   su marca. Sin animaciones: el desplazamiento dentro de la lista es inmediato. */
+.globo-selector {
+  display: grid;
+  gap: 0.375rem;
+}
+
+.globo-selector label {
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.globo-selector-campo {
+  position: relative;
+}
+
+.globo-selector-entrada {
+  position: relative;
+}
+
+.globo-selector-campo input {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 3rem;
+  padding: 0.625rem 3.25rem 0.625rem 0.875rem;
+  color: var(--color-tinta);
+  font: inherit;
+  font-size: 1.05rem;
+  background: var(--color-panel);
+  border: 1px solid var(--color-tenue);
+  border-radius: 8px;
+}
+
+.globo-selector-campo input:focus-visible {
+  outline: var(--foco);
+  outline-offset: 2px;
+}
+
+.globo-selector-abrir {
+  position: absolute;
+  inset-block: 1px;
+  inset-inline-end: 1px;
+  display: grid;
+  place-items: center;
+  width: 2.75rem;
+  color: var(--color-tinta);
+  background: transparent;
+  border: 0;
+  border-left: 1px solid var(--color-linea);
+  border-radius: 0 8px 8px 0;
+  cursor: pointer;
+}
+
+.globo-selector-abrir svg {
+  width: 1rem;
+  height: 1rem;
+  fill: none;
+  stroke: currentcolor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.globo-selector-lista {
+  position: absolute;
+  z-index: 5;
+  inset-inline: 0;
+  top: calc(100% + 0.25rem);
+  max-height: min(22rem, 60vh);
+  margin: 0;
+  padding: 0.25rem;
+  overflow-y: auto;
+  scroll-behavior: auto;
+  list-style: none;
+  background: var(--color-panel);
+  border: 1px solid var(--color-tenue);
+  border-radius: 8px;
+}
+
+.globo-selector-opcion {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  min-height: 2.75rem;
+  padding: 0 0.75rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.globo-selector-opcion:hover {
+  background: color-mix(in srgb, var(--color-acento) 8%, var(--color-panel));
+}
+
+/* El territorio elegido se marca con el grosor de la letra y una barra al borde, no solo con un color: ámbar, como su
+   marca y su contorno amarillos en el globo. */
+.globo-selector-opcion[aria-selected="true"] {
+  font-weight: 600;
+  box-shadow: inset 0.25rem 0 0 var(--color-globo-elegido);
+}
+
+/* Lo que sigue al nombre de una región, como «región de España»: en letra normal y tenue. */
+.globo-selector-nota {
+  font-weight: 400;
+  color: var(--color-tenue);
+}
+
+.globo-selector-opcion[data-activa="true"] .globo-selector-nota {
+  color: inherit;
+}
+
+/* La opción activa (la coincidencia o la que recorre el teclado) se marca con el fondo y el grosor de la letra. */
+.globo-selector-opcion[data-activa="true"] {
+  font-weight: 600;
+  color: var(--color-panel);
+  background: var(--color-tinta);
+}
+
+.globo-selector-bandera {
+  display: inline-flex;
+  flex: none;
+  width: 24px;
+}
+
+.globo-selector-ninguno {
+  margin: 0.375rem 0 0;
+  color: var(--color-tenue);
+}
+
+/* La ficha del país: cabecera con la línea gruesa del dossier, «La IA en…» y el empleo plegado. */
+.globo-ficha-cabecera {
+  padding: 1rem 0 0.75rem;
+  border-bottom: 3px solid var(--color-tinta);
+}
+
+.globo-ficha-cabecera .antetitulo {
+  margin: 0;
+}
+
+.globo-ficha-titulo {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  margin: 0.25rem 0;
+  font-size: clamp(1.9rem, 3vw, 2.5rem);
+}
+
+.globo-ficha-titulo:focus-visible {
+  outline: var(--foco);
+  outline-offset: 4px;
+}
+
+.globo-ficha-datos {
+  margin: 0;
+  color: var(--color-tenue);
+}
+
+/* Sin cifras oficiales de la IA, una frase llana. */
+.globo-ficha-apartado {
+  margin: 1.75rem 0 0.75rem;
+  font-size: 1.4rem;
+}
+
+/* Cada bloque, una tarjeta: la cifra grande al lado de su frase, el gráfico y la fuente. */
+.globo-dato {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0.75rem;
+  min-width: 0;
+  align-content: start;
+  padding: 1.125rem 1.25rem 1rem;
+  background: var(--color-panel);
+  border: 1px solid var(--color-linea);
+  border-radius: 8px;
+}
+
+.globo-dato-titulo {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.globo-dato .dg-clave {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 0 0.875rem;
+  align-items: baseline;
+  padding-top: 0;
+  border-top: 0;
+}
+
+/* La cifra grande, en tinta: el azul es solo de Cataluña en los gráficos, como en las otras páginas. */
+.globo-dato .dg-clave-cifra {
+  color: var(--color-tinta);
+  font-family: var(--fuente-marca);
+  font-size: 2.6rem;
+}
+
+.globo-dato .dg-clave-texto {
+  margin-top: 0;
+}
+
+/* En la tarjeta, cada gráfico es una figura del mismo sistema que «Cataluña» y «Unión Europea» (dibujo.js): título,
+   año, gráfico y fuente; la tarjeta ya la delimita, así que la figura va sin caja propia y sin salirse por los lados
+   en el móvil. */
+.globo-dato .dg-figura {
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: 0;
+}
+
+.globo-dato-nota {
+  margin: 0;
+  color: var(--color-tenue);
+  font-size: 0.9375rem;
+}
+
+/* «Sin dato para Cataluña»: lo que la ficha de un país enseña y la región no tiene, en una lista sencilla. */
+.globo-sin-dato {
+  margin: 0;
+  padding-inline-start: 1.25rem;
+}
+
+.globo-empleo {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--color-linea);
+}
+
+/* En el móvil el globo deja sitio para desplazar la página y los mandos van debajo. */
+@media (max-width: 40rem) {
+  .globo-lienzo {
+    aspect-ratio: 4 / 3;
+  }
+
+  /* En el móvil los mandos van debajo del lienzo, dentro de la escena: así no tapan el globo. */
+  .globo-mandos {
+    position: static;
+    justify-content: center;
+    padding: 0.5rem;
+  }
+}
+
+/* En papel no hay globo que girar ni lista que abrir: se imprime la ficha. */
+@media print {
+  .globo-escena,
+  .globo-selector {
+    display: none;
+  }
+}

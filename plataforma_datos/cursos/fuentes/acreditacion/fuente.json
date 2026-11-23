@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "id": "acreditacion",
+  "tema": "cursos",
+  "lector": "plataforma_datos.cursos.fuentes.acreditacion.lector",
+  "casa_datos": "acreditacion",
+  "nombre": "Certificados y relaciones de acreditación",
+  "institucion": "BOE; INE; SOC; Agència FP.CAT",
+  "significado": "Catálogo de certificados y relaciones revisadas con ocupaciones, con norma, cita y procedencia; la propuesta de una regla no sustituye una admisión.",
+  "alcance": [
+    "URL/SHA/fecha captura/robots; citas, revisión admitidas/descartadas y huella de regla; advertencia manual a los 60 días",
+    "Solo si casa con seguridad oferta Agència; no coincidencia => sin comprobar, no indisponible"
+  ],
+  "recursos": [
+    {
+      "id": "boe",
+      "tipo": "familia",
+      "ubicacion": null,
+      "licencia": null,
+      "descripcion": "Reales decretos y normas explícitos de piezas/constantes.py y descarga.py; texto consolidado o PDF de anexo."
+    },
+    {
+      "id": "correspondencia-ine",
+      "tipo": "familia",
+      "ubicacion": null,
+      "licencia": null,
+      "descripcion": "Correspondencia CNO-94/CNO-11 declarada en el lector; relaciona grupos, no equivalencia de ocupaciones individuales."
+    },
+    {
+      "id": "soc",
+      "tipo": "archivo",
+      "ubicacion": "var/actualizacion/originales/formacion/soc-especialidades.json",
+      "licencia": "ODC-BY, según declaración del lector de acreditación.",
+      "descripcion": "Original SOC conservado por Formación; no otra ingesta independiente."
+    },
+    {
+      "id": "revision",
+      "tipo": "familia",
+      "ubicacion": "var/actualizacion/revisiones/acreditacion/",
+      "licencia": null,
+      "descripcion": "Admitidas, descartadas y páginas registradas manualmente; no se fabrican al generar este descriptor."
+    }
+  ],
+  "canales": [
+    {
+      "id": "corpus-remoto",
+      "tipo": "remoto",
+      "recursos": ["boe", "correspondencia-ine"],
+      "autenticacion": "Sin autenticación configurada en lector",
+      "limites": [
+        "Índice histórico RD 189/2013 + lista posterior explícita + RD de original SOC; no descubre sucesoras, páginas manuales no se consultan por red"
+      ],
+      "observaciones": "Corpus acotado de normativa y correspondencia, con robots y pausas comunes; no una API de cursos"
+    },
+    {
+      "id": "entradas-locales",
+      "tipo": "local",
+      "recursos": ["soc", "revision"],
+      "autenticacion": "No aplicable al procesamiento de originales y revisiones locales.",
+      "limites": [
+        "Original SOC ya registrado; las relaciones requieren citas y listas de admitidas/descartadas con la huella de su regla. Este canal local no descubre publicaciones ni descarga páginas manuales."
+      ],
+      "observaciones": "Original SOC ya conservado y revisiones manuales; no concede otras descargas."
+    }
+  ],
+  "actualizacion": {
+    "politica": "mensual",
+    "red": true,
+    "frecuencia": "cuando el BOE consolida un real decreto",
+    "renovar_dias": null,
+    "originales": "acreditacion"
+  },
+  "conjuntos": [
+    {
+      "id": "acreditacion",
+      "fuente": "acreditacion",
+      "clase": "cambiante",
+      "alcance": "contenido-actual-acotado",
+      "operacion": "descargar",
+      "intervalo_dias": 7
+    }
+  ],
+  "dependencias": ["esco", "clasificaciones", "cataluna", "formacion", "agencia"],
+  "contratos": ["lector.py:validar"],
+  "retirada": "Se mantienen los controles de admisión y reconstrucción del lector actual; no se declara una conciliación genérica de entidades ni se interpreta un fallo como baja.",
+  "conservacion": "Se conservan las rutas, originales, procedencias y revisiones actuales en var/actualizacion; este descriptor no habilita limpieza automática ni fija nuevos plazos de retención."
+}

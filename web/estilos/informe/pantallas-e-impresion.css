@@ -1,0 +1,58 @@
+/* Informe · Pantallas estrechas e impresión: las tablas del método por debajo de 640 px y la hoja A4 del PDF. */
+
+@media (max-width: 640px) {
+  /* Desplazable a lo ancho, recorta lo que sale de su caja: el margen interior de los lados, compensado por fuera, deja
+     sitio al recuadro de foco de los enlaces del borde (2 px de recuadro y 5 de separación) sin mover el texto. */
+  .contenido {
+    margin-inline: -7px;
+    padding-inline: 7px;
+    overflow-x: auto;
+  }
+}
+
+/* Impresión y PDF: A4 y con los colores tal como se ven. El modo día y el papel blanco de la página los fija
+   base-adaptaciones.css para todas las páginas.
+   Sin print-color-adjust el navegador elimina los fondos y el texto claro de los paneles oscuros desaparece. */
+@page {
+  size: A4;
+  margin: 12mm 12mm 14mm;
+}
+
+@media print {
+  * {
+    print-color-adjust: exact;
+  }
+
+  /* Solo alcanza al texto que hereda o usa em: los tamaños en rem se miden contra la raíz. */
+  body {
+    font-size: 11pt;
+  }
+
+  /* Lo que solo oyen los lectores de pantalla también va en el PDF etiquetado: el título principal de la página, el
+     de la tabla y el rótulo de cada cifra. Chromium deja fuera del PDF lo que el recorte de base.css no deja pintar;
+     sin recorte, en letra de 1 px (0,0625 rem) y transparente, se pinta, no se ve y conserva su etiqueta. Sin el
+     margen negativo, para que no quede fuera de la hoja al principio de la página
+     (impresión nativa: web/scripts/pdf/README.md). */
+  .solo-lectores {
+    margin: 0;
+    clip-path: none;
+    color: transparent;
+    font-size: 0.0625rem;
+  }
+
+  .salto,
+  .cabecera,
+  .menu,
+  .menu-velo,
+  .pie,
+  .aviso-flotante,
+  .acciones,
+  .estado,
+  .ayuda-de-accion {
+    display: none;
+  }
+
+  .contenido tr {
+    break-inside: avoid;
+  }
+}

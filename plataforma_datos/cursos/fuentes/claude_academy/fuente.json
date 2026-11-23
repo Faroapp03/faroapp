@@ -1,0 +1,130 @@
+{
+  "schema_version": 1,
+  "id": "claude_academy",
+  "tema": "cursos",
+  "lector": "plataforma_datos.cursos.fuentes.claude_academy.lector",
+  "casa_datos": "claude_academy",
+  "actualizacion": {
+    "politica": "diaria",
+    "red": true,
+    "frecuencia": "Consulta diaria del índice, declaración pública, FAQ, fichas conocidas y altas enlazadas; copiar no renueva pruebas históricas.",
+    "renovar_dias": 1,
+    "originales": "claude_academy"
+  },
+  "conjuntos": [
+    {
+      "id": "claude_academy",
+      "fuente": "claude_academy",
+      "clase": "cambiante",
+      "alcance": "contenido-actual-acotado",
+      "operacion": "descargar",
+      "intervalo_dias": 1
+    }
+  ],
+  "dependencias": [],
+  "retirada": "Un error de transporte no da de baja ni renueva la última comprobación. Solo una respuesta identificada contraria participa como hecho nuevo; una ausencia sin censo acreditado no borra entidades ni historia.",
+  "conservacion": "Cuerpos deduplicados por SHA y recibos inmutables por consulta. Fechas de recepción, revisión e ingestión separadas. La composición final conserva la instantánea de una fuente fallida y promueve conjuntamente SQLite, recurso y referencia; sin limpieza automática.",
+  "nombre": "Claude Academy: actualización y oferta publicada continua",
+  "institucion": "Anthropic / Claude Academy",
+  "significado": "Productor del catálogo Cursos: recepción pública y control propios, conservación de hechos y preparación de la única SQLite compartida; la entrega final usa admisión, proyección y publicación comunes.",
+  "alcance": [
+    "Contrasta identidad de curso, URL exacta, canonical, título, h1 y slug cuando corresponde; exige HTTP 200 declarado, captura completa, bytes y SHA coincidentes, UTC y cierre documental.",
+    "Conserva secuencia íntegra del main, bloques, enlaces y declaraciones explícitas de requisitos/destinatarios; ausencia de coincidencia queda desconocida, no significa ausencia de requisito.",
+    "La lectura de una ficha pública no acredita contenido íntegro de lecciones protegidas, idioma completo del curso, licencia, acceso personal, disponibilidad ni una conexión remota configurada.",
+    "El módulo registrado conserva índice, declaración y primera lección por separado; descubrimiento no implica admisión, matrícula ni publicación.",
+    "La composición común aplica altas y cambios a la instantánea nativa y evalúa la regla versionada de oferta continua; ningún booleano de investigación se convierte por sí solo en oferta.",
+    "Contrasta condiciones comerciales específicas de ficha: precio/inscripción, contexto de complementos, compra y metadatos Course/Offer identificados; una contradicción o condición pertinente no resuelta no se tapa con la declaración general gratuita. Los ámbitos HTML con una identidad explícita ajena se conservan como originales, pero sus precios y cierres no deciden la disponibilidad de esta ficha.",
+    "La inscripción, el progreso y las acreditaciones se contrastan con FAQ y enlace de login propio; no se afirma que una cuenta sea necesaria para leer todo el material. La modalidad procede del CourseInstance de la identidad exacta. El fallo auxiliar no impide renovar fichas: conserva la última FAQ válida con su fecha y caducidad propias; una FAQ cambiada o vencida deja inscripción desconocida. La vigencia de inscripción es independiente de la disponibilidad del curso."
+  ],
+  "recursos": [
+    {
+      "id": "fichas",
+      "tipo": "familia",
+      "ubicacion": "https://academy.claude.com/courses/{slug}",
+      "licencia": null,
+      "descripcion": "Familia de fichas HTML cuya identidad valida el lector; la plantilla es una familia, no una URL consultada por este componente."
+    },
+    {
+      "id": "captura",
+      "tipo": "familia",
+      "ubicacion": null,
+      "licencia": null,
+      "descripcion": "Bytes HTML y metadatos suministrados por el llamador; no se versionan páginas completas. Los fragmentos mínimos de contrato de las pruebas se identifican y no se presentan como nuevas consultas."
+    },
+    {
+      "id": "indice-publico",
+      "tipo": "url",
+      "ubicacion": "https://academy.claude.com/courses",
+      "licencia": null,
+      "descripcion": "Descubrimiento de URLs nativas; ausencia del índice no acredita retirada."
+    },
+    {
+      "id": "declaracion-publica",
+      "tipo": "url",
+      "ubicacion": "https://academy.claude.com/",
+      "licencia": null,
+      "descripcion": "Declaración completa del proveedor sobre gratuidad de formación, distinta de prácticas o productos."
+    },
+    {
+      "id": "primera-leccion",
+      "tipo": "familia",
+      "ubicacion": null,
+      "licencia": null,
+      "descripcion": "Destino Start course del mismo curso; solo su texto didáctico se contrasta sin cuenta. No garantiza acceso al resto, vídeo, quiz o badge."
+    },
+    {
+      "id": "faq-inscripcion",
+      "tipo": "url",
+      "ubicacion": "https://academy.claude.com/help/faq",
+      "licencia": null,
+      "descripcion": "Declaración general de cuenta para inscripción, progreso y completion badges; no equivale a muro de lectura ni a cuenta o plan de prácticas."
+    }
+  ],
+  "canales": [
+    {
+      "id": "entrada-local",
+      "tipo": "local",
+      "recursos": ["fichas", "captura"],
+      "autenticacion": "La lectura de capturas locales no usa credenciales ni acredita una consulta nueva.",
+      "limites": [
+        "No adquiere capturas ni registra una fuente automática.",
+        "Verifica integridad de los bytes y declaraciones recibidas, no su autenticidad remota ni exhaustividad del curso.",
+        "Mapeo textual acotado; no clasifica nivel, producto, elegibilidad, precio o licencia."
+      ],
+      "observaciones": "Parser puro de capturas históricas; el canal remoto usa la operación común declarada y conserva su propia recepción."
+    },
+    {
+      "id": "consulta-publica",
+      "tipo": "remoto",
+      "recursos": ["fichas", "indice-publico", "declaracion-publica", "primera-leccion", "faq-inscripcion"],
+      "autenticacion": "Ninguna. Sin cuentas, cookies, claves, login, CAPTCHA o bypass.",
+      "limites": [
+        "Transporte común, identidad genérica, sin cookies ni cuenta; serie y al menos dos segundos por dominio.",
+        "Unión de identidades conocidas y enlaces nativos del índice; no retirar por ausencia del índice.",
+        "URL, canonical, título y artículo didáctico propios; HTTP200 genérico no acredita acceso.",
+        "La declaración general de formación gratuita y el texto de primera lección son pruebas distintas; no garantizan curso completo, vídeo, prácticas, productos, quiz o badge."
+      ],
+      "observaciones": "Operación declarada en el ciclo común, con salud y recibo por fuente; la extracción conserva campos y desconocidos propios."
+    }
+  ],
+  "contratos": [
+    "lector.py:extraer_ficha",
+    "lector.py:FichaAcademy",
+    "contrato-lectura.md",
+    "plataforma_datos/cursos/pruebas/test_lectura_claude_academy.py",
+    "plataforma_datos/cursos/operacion_fuente.py",
+    "plataforma_datos/cursos/componer_catalogo.py",
+    "observaciones_vigencia.py:construir",
+    "actualizacion.py:aplicar",
+    "politica_vigencia_v2.json",
+    "plataforma_datos/cursos/oferta_continua.py",
+    "plataforma_datos/cursos/pruebas/test_academy_actualizacion.py",
+    "condiciones_publicadas.py:examinar",
+    "condiciones_formacion.py:declaracion_inscripcion",
+    "condiciones_formacion.py:enlace_inscripcion",
+    "condiciones_formacion.py:modalidad",
+    "control_actual.py:validar",
+    "plataforma_datos/cursos/contenido_academy.py",
+    "plataforma_datos/cursos/pruebas/test_condiciones_formacion_academy.py"
+  ]
+}

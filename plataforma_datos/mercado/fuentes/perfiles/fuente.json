@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "id": "perfiles",
+  "tema": "mercado",
+  "lector": "plataforma_datos.mercado.fuentes.perfiles.lector",
+  "casa_datos": "perfiles",
+  "nombre": "SEPE: certificados nombrados en perfiles ocupacionales",
+  "institucion": "SEPE, Observatorio de las Ocupaciones",
+  "significado": "Relaciones explícitas entre perfil, año, grupo CNO-11 y certificado nombrado en perfiles de oferta de empleo 2016–2025; no equivalencia individual ni oferta formativa vigente.",
+  "alcance": [
+    "Conserva mención literal/página y código presente en catálogo de acreditación; no expande rangos.",
+    "Elige perfil más reciente y aplica solo a ESCO con un único CNO-11 de cuatro cifras; excluye relaciones ya comprobadas o descartadas por revisión.",
+    "Advertencia solo-SEPE separada de relaciones verificadas por Faro; años distintos no son una nueva comprobación."
+  ],
+  "recursos": [
+    {
+      "id": "apartados",
+      "tipo": "archivo",
+      "ubicacion": "var/actualizacion/originales/perfiles/apartados-de-certificados.tsv",
+      "licencia": null,
+      "descripcion": "Tabla manual de apartados nombrados con perfil/año/CNO/certificado/tipo/página/línea literal y procedencia."
+    }
+  ],
+  "canales": [
+    {
+      "id": "manual",
+      "tipo": "local",
+      "recursos": ["apartados"],
+      "autenticacion": "No aplicable al procesamiento local; no acredita acceso remoto ni una cuenta configurada.",
+      "limites": [
+        "La renovación es humana; no se descargan perfiles automáticamente.",
+        "Solo códigos nombrados explícitamente y presentes en catálogo; conservar revisión y límites del productor."
+      ],
+      "observaciones": "Entrada operativa manual del Observatorio."
+    }
+  ],
+  "actualizacion": {
+    "politica": "manual",
+    "red": false,
+    "frecuencia": "continua (perfiles del SEPE)",
+    "renovar_dias": 180,
+    "originales": "perfiles"
+  },
+  "conjuntos": [
+    {
+      "id": "perfiles",
+      "fuente": "perfiles",
+      "clase": "manual",
+      "alcance": "copia-local",
+      "operacion": "revision",
+      "intervalo_dias": null
+    }
+  ],
+  "dependencias": ["esco", "clasificaciones", "cataluna", "formacion", "agencia", "acreditacion"],
+  "contratos": ["lector.py:validar"],
+  "retirada": "Se mantienen los controles de admisión y reconstrucción del lector; un fallo de consulta o una lectura parcial no autoriza una retirada ni una cifra cero.",
+  "conservacion": "Las rutas, originales, procedencias y revisiones actuales en var/actualizacion se conservan; este descriptor no activa limpieza automática ni fija nuevos plazos de retención."
+}

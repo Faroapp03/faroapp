@@ -1,0 +1,152 @@
+/* Adaptaciones de la portada por anchura, después de los componentes para conservar la cascada. */
+
+@media (max-width: 960px) {
+  .apertura-cuerpo {
+    min-height: 520px;
+  }
+
+  .apertura-cuerpo {
+    padding-inline: 40px;
+  }
+
+  .historias {
+    gap: 12px;
+  }
+
+  .historia {
+    min-height: 380px;
+    padding: 20px;
+  }
+
+  .historia-texto h3 {
+    font-size: 1.5rem;
+  }
+
+  .historia-texto p {
+    min-height: 6.5em;
+    font-size: 0.8rem;
+  }
+}
+
+/* Móvil: el título empieza a 305 px (--apertura-titulo) y la foto mide 510 px de alto en una pantalla alta. En una más
+   baja, el título sube para que «Empezar» se vea sin desplazar: debajo de la cabecera (72 px) caben el título y el
+   texto hasta el borde del botón (unos 265 px; hasta 282 px a 320 px de ancho, con los márgenes reducidos de abajo),
+   con margen para los textos que ocupan una línea más. El mínimo de 80 px deja el botón a la vista también en un
+   móvil de 320 px con las barras del navegador (unos 460 px de alto visible). La foto se reduce en la misma proporción, de modo que el título sigue montado sobre la parte baja de la foto, donde el
+   degradado móvil la oscurece; quien cambie una de estas cifras debe revisar las otras. La apertura mide lo que su
+   texto, que siempre es más alto que la foto. */
+@media (max-width: 700px) {
+  .apertura {
+    --apertura-titulo: clamp(80px, calc(100svh - 400px), 305px);
+  }
+
+  .apertura-imagen {
+    bottom: auto;
+    height: calc(var(--apertura-titulo) * 510 / 305);
+  }
+
+  .apertura-imagen img {
+    object-position: 40% top;
+    transform: none;
+    mask-image: none;
+  }
+
+  .apertura-imagen::after {
+    background: linear-gradient(0deg, #000 0%, rgb(0 0 0 / 94%) 16%, rgb(0 0 0 / 70%) 36%, rgb(0 0 0 / 4%) 72%);
+  }
+
+  .apertura-cuerpo {
+    justify-content: flex-end;
+    min-height: 0;
+    padding: var(--apertura-titulo) 26px 28px;
+  }
+
+  .apertura-cuerpo h1 {
+    font-size: clamp(2.45rem, 9.5vw, 3.7rem);
+    letter-spacing: -0.055em;
+  }
+
+  .apertura-marca .marca-nombre {
+    font-size: clamp(3.2rem, 16vw, 4.6rem);
+  }
+
+  .apertura-entradilla {
+    max-width: 320px;
+    margin-top: 20px;
+    font-size: 0.91rem;
+  }
+
+  .explorar {
+    padding: 43px 21px 48px;
+  }
+
+  .explorar-cabecera {
+    display: block;
+    margin-bottom: 23px;
+  }
+
+  .explorar-cabecera h2 {
+    max-width: 15ch;
+    font-size: 1.9rem;
+  }
+
+  .historias {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .historia {
+    min-height: 345px;
+    padding: 23px;
+  }
+
+  .historia-texto {
+    padding-top: 62px;
+  }
+
+  .historia-texto h3 {
+    font-size: 1.95rem;
+  }
+
+  .historia-texto p {
+    max-width: 33ch;
+    min-height: 0;
+    font-size: 0.87rem;
+  }
+
+  .historia-accion {
+    margin-top: 24px;
+  }
+
+  .historia-ia img {
+    object-position: center;
+  }
+
+  .historia-faro img {
+    object-position: 50% 45%;
+  }
+
+  .historia-proceso img {
+    object-position: 50% 53%;
+  }
+}
+
+/* En los móviles más estrechos el texto ocupa una línea más: los huecos entre bloques se acortan para que «Empezar»
+   siga en la primera pantalla. */
+@media (max-width: 360px) {
+  .apertura-cuerpo {
+    padding-inline: 20px;
+  }
+
+  .apertura-entradilla {
+    margin-top: 14px;
+  }
+
+  .apertura-hechos {
+    margin-top: 12px;
+  }
+
+  .apertura-acciones {
+    margin-top: 18px;
+  }
+}

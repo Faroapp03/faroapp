@@ -1,0 +1,44 @@
+{
+  "id": "eticce-cnae2025-internet",
+  "clasificacion": "CNAE-2025",
+  "denominador": "empresas con conexión a Internet",
+  "publicacion": "2026-10-22",
+  "ruptura": "La edición 2025–1T2026 utiliza CNAE-2025 y amplía el ámbito de actividad. No es estrictamente comparable con la edición anterior.",
+  "fuente": "https://www.ine.es/dyngs/Prensa/ETICCE20251T2026.htm",
+  "partes": {
+    "sectores": {
+      "tabla_referencia": "82382",
+      "url": "https://www.ine.es/jaxi/Tabla.htm?tpx=82382&L=0",
+      "sha256_captura": "0f90d2851bff3e5d14ebac4064a19f1ab3e557abf6543533f7666e7b373d3536",
+      "sha256_definicion": "dd41b40ce11920944d4203907d73f8e41852ac9e9a4f2bcd14f6394b92962245",
+      "notas": "1) Los códigos al comienzo de cada literal se refieren a la pregunta de cuestionario correspondiente o al apartado del que han derivado 2) Principales variables: 3) (1) Porcentaje sobre el total de empresas con conexión a Internet 4) (2) Porcentaje sobre el total de empresas que utilizan tecnologías de Inteligencia Artificial 5) (3) Porcentaje sobre el total de empresas que alguna vez han considerado utilizar alguna de las tecnologías de IA enumeradas en D.1 6) (4) Porcentaje sobre el total de empresas que adquirieron software o sistemas de IA de código abierto o cerrado"
+    },
+    "menos_de_10": {
+      "tabla_referencia": "82394",
+      "url": "https://www.ine.es/jaxi/Tabla.htm?tpx=82394&L=0",
+      "sha256_captura": "9824c62776e5884f41046058fd8c07990fb96fcf9eedcd1f1ed1b4491349d61b",
+      "sha256_definicion": "223979760a3a6f12cc42d1f985ea64cc14e8a49ad610bbf190395a725236743c",
+      "notas": "1) Los códigos al comienzo de cada literal se refieren a la pregunta de cuestionario correspondiente o al apartado del que han derivado 2) Principales variables: 3) (1) Porcentaje sobre el total de empresas con conexión a Internet 4) (2) Porcentaje sobre el total de empresas que utilizan tecnologías de Inteligencia Artificial 5) (3) Porcentaje sobre el total de empresas que alguna vez han considerado utilizar alguna de las tecnologías de IA enumeradas en D.1 6) (4) Porcentaje sobre el total de empresas que adquirieron software o sistemas de IA de código abierto o cerrado"
+    },
+    "comunidades": {
+      "tabla_referencia": "82404",
+      "url": "https://www.ine.es/jaxi/Tabla.htm?tpx=82404&L=0",
+      "sha256_captura": "07fbf14e612c25c5aa69cb461c41e4a4853e70ab4645e7dcf1ecc46276d6996c",
+      "sha256_definicion": "58bd125b1b17a83ce5b84b96c7fc3c95b5b5eaea44833e0b0b770d7f78acc44f",
+      "notas": "1) Los códigos al comienzo de cada literal se refieren a la pregunta de cuestionario correspondiente o al apartado del que han derivado 2) Principales variables: 3) (1) Porcentaje sobre el total de empresas con conexión a Internet 4) (2) Porcentaje sobre el total de empresas que utilizan tecnologías de Inteligencia Artificial 5) (3) Porcentaje sobre el total de empresas que alguna vez han considerado utilizar alguna de las tecnologías de IA enumeradas en D.1 6) (4) Porcentaje sobre el total de empresas que adquirieron software o sistemas de IA de código abierto o cerrado"
+    },
+    "errores": {
+      "tabla_referencia": "82415",
+      "url": "https://www.ine.es/jaxi/Tabla.htm?tpx=82415&L=0",
+      "sha256_captura": "f91d969b1fd5db1bc23f97fa103fd4318c4e7c2c8531076486d94062b25f2a1c",
+      "sha256_definicion": "08229c30ca6d1c4195fed878f61b25f1e463495c351b6a317959b9973acf3558",
+      "notas": "1) Los códigos al comienzo de cada literal se refieren a la pregunta de cuestionario correspondiente o al apartado del que han derivado 2) Principales variables: 3) (2) Porcentaje sobre el total de empresas que utilizan tecnologías de Inteligencia Artificial"
+    }
+  },
+  "ambito": {
+    "secciones": ["C", "D", "E", "F", "G", "H", "I", "J", "K", "M", "N", "O"],
+    "grupo_adicional": "95.1",
+    "clasificacion": "CNAE-2025",
+    "nota": "Secciones C a O, excepto L, y grupo 95.1; unidad: empresa estadística. Las letras pertenecen a CNAE-2025."
+  }
+}

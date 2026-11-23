@@ -1,0 +1,975 @@
+{
+  "descripcion": "Sectores (y un colectivo: las personas mayores) que la gente escribe solos («hostelería», «trabajo en limpieza», «treballo a l’hostaleria») y los oficios más comunes de cada uno en Cataluña, en orden, con su ocupación general de ESCO v1.2.1. Con un sector solo, el recorrido pregunta «¿Qué haces sobre todo en…?» con estos oficios en vez de buscar la palabra en los títulos. Cada uno lleva la frase con que se pregunta («¿Qué haces sobre todo en la hostelería?», «… con personas mayores?»).",
+  "fuente": "Tabla escrita a partir del catálogo de ESCO y de los ocupados del Censo 2021 (Idescat), sin revisión humana independiente.",
+  "sectores": [
+    {
+      "clave": "hosteleria",
+      "frase": {
+        "es": "en la hostelería",
+        "ca": "a l'hostaleria"
+      },
+      "formas": [
+        "hostelería",
+        "hosteleria",
+        "hostaleria",
+        "hoteleria",
+        "hotelería",
+        "sector de la hostelería",
+        "sector de l'hostaleria",
+        "bares",
+        "hoteles",
+        "hotels"
+      ],
+      "ocupaciones": ["5131.2", "5120.1", "9412.1", "9112.4", "4224.1", "5132.1"]
+    },
+    {
+      "clave": "restauracion",
+      "frase": {
+        "es": "en la restauración",
+        "ca": "a la restauració"
+      },
+      "formas": [
+        "restauración",
+        "restauracion",
+        "restauració",
+        "restauracio",
+        "restaurantes",
+        "restaurants",
+        "restaurante",
+        "restaurant"
+      ],
+      "ocupaciones": ["5131.2", "5120.1", "9412.1", "5132.1", "3434.1", "5246.1"]
+    },
+    {
+      "clave": "comercio",
+      "frase": {
+        "es": "en el comercio",
+        "ca": "al comerç"
+      },
+      "formas": [
+        "comercio",
+        "comerç",
+        "comerc",
+        "comercios",
+        "comerços",
+        "tiendas",
+        "tienda",
+        "botiga",
+        "botigues",
+        "retail",
+        "venta al público",
+        "venda al públic",
+        "ventas",
+        "vendes",
+        "supermercado",
+        "supermercat",
+        "súper",
+        "super",
+        "supermercados",
+        "supermercats",
+        "híper",
+        "hipermercado",
+        "hipermercat"
+      ],
+      "ocupaciones": ["5223.4", "5230.1", "9334.1", "5221.1", "5222.1", "1420.4"]
+    },
+    {
+      "clave": "sanidad",
+      "frase": {
+        "es": "en la sanidad",
+        "ca": "a la sanitat"
+      },
+      "formas": [
+        "sanidad",
+        "sanitat",
+        "salud",
+        "salut",
+        "sector sanitario",
+        "sector sanitari",
+        "hospital",
+        "hospitales",
+        "hospitals",
+        "ámbito sanitario",
+        "àmbit sanitari"
+      ],
+      "ocupaciones": ["2221.2", "5329.3", "2211.1", "2212.1", "5329.1", "3344.1"]
+    },
+    {
+      "clave": "educacion",
+      "frase": {
+        "es": "en la educación",
+        "ca": "a l'educació"
+      },
+      "formas": [
+        "educación",
+        "educacion",
+        "educació",
+        "educacio",
+        "enseñanza",
+        "ensenanza",
+        "ensenyament",
+        "docencia",
+        "docència",
+        "colegio",
+        "escuela",
+        "escola",
+        "escoles",
+        "sector educativo",
+        "sector educatiu"
+      ],
+      "ocupaciones": ["2341.1", "2330.1", "2342.1", "2310.1", "2320.1", "5312.1"]
+    },
+    {
+      "clave": "construccion",
+      "frase": {
+        "es": "en la construcción",
+        "ca": "a la construcció"
+      },
+      "formas": [
+        "construcción",
+        "construccion",
+        "construcció",
+        "construccio",
+        "obra",
+        "obras",
+        "obres",
+        "sector de la construcción",
+        "sector de la construcció",
+        "paleteria"
+      ],
+      "ocupaciones": ["7112.1", "9313.1", "7411.1", "7126.8", "7131.1", "7115.1"]
+    },
+    {
+      "clave": "industria",
+      "frase": {
+        "es": "en la industria",
+        "ca": "a la indústria"
+      },
+      "formas": [
+        "industria",
+        "indústria",
+        "fábrica",
+        "fabrica",
+        "fàbrica",
+        "fábricas",
+        "fabricas",
+        "fàbriques",
+        "manufactura",
+        "sector industrial",
+        "industrial"
+      ],
+      "ocupaciones": ["9329.1", "9321.2", "7233.7", "7223.4", "3122.4", "8344.1"]
+    },
+    {
+      "clave": "transporte",
+      "frase": {
+        "es": "en el transporte",
+        "ca": "al transport"
+      },
+      "formas": [
+        "transporte",
+        "transportes",
+        "transport",
+        "transports",
+        "sector del transporte",
+        "sector del transport"
+      ],
+      "ocupaciones": ["8332.2", "8322.2", "8331.1", "8322.7", "4323.9"]
+    },
+    {
+      "clave": "logistica",
+      "frase": {
+        "es": "en la logística",
+        "ca": "a la logística"
+      },
+      "formas": [
+        "logística",
+        "logistica",
+        "almacén",
+        "almacen",
+        "almacenes",
+        "magatzem",
+        "magatzems",
+        "sector logístico",
+        "sector logístic"
+      ],
+      "ocupaciones": ["9333.4", "9333.3", "8344.1", "9321.2", "4321.1", "1324.3.4"]
+    },
+    {
+      "clave": "limpieza",
+      "frase": {
+        "es": "en la limpieza",
+        "ca": "a la neteja"
+      },
+      "formas": [
+        "limpieza",
+        "limpiezas",
+        "neteja",
+        "netejes",
+        "servicios de limpieza",
+        "serveis de neteja",
+        "sector de la limpieza",
+        "sector de la neteja"
+      ],
+      "ocupaciones": ["9112.2", "9111.1", "9112.4", "5151.2", "9613.1"]
+    },
+    {
+      "clave": "seguridad",
+      "frase": {
+        "es": "en la seguridad",
+        "ca": "a la seguretat"
+      },
+      "formas": [
+        "seguridad",
+        "seguretat",
+        "seguridad privada",
+        "seguretat privada",
+        "vigilancia",
+        "vigilància",
+        "vigilancia de seguridad"
+      ],
+      "ocupaciones": ["5414.1", "5412.1", "5419.2", "5411.1", "5414.1.9"]
+    },
+    {
+      "clave": "banca",
+      "frase": {
+        "es": "en la banca",
+        "ca": "a la banca"
+      },
+      "formas": [
+        "banca",
+        "banco",
+        "bancos",
+        "banc",
+        "bancs",
+        "sector bancario",
+        "sector bancari",
+        "finanzas",
+        "finances",
+        "sector financiero",
+        "sector financer",
+        "entidad bancaria",
+        "entitat bancària"
+      ],
+      "ocupaciones": ["4211.1", "3312.1", "3312.2", "2412.6", "2413.1", "1346.1"]
+    },
+    {
+      "clave": "seguros",
+      "frase": {
+        "es": "en los seguros",
+        "ca": "a les assegurances"
+      },
+      "formas": [
+        "seguros",
+        "assegurances",
+        "aseguradora",
+        "aseguradoras",
+        "asseguradora",
+        "asseguradores",
+        "sector asegurador",
+        "sector assegurador"
+      ],
+      "ocupaciones": ["3321.1", "4312.4", "3321.3.1", "3315.5", "1346.4"]
+    },
+    {
+      "clave": "informatica",
+      "frase": {
+        "es": "en la informática",
+        "ca": "a la informàtica"
+      },
+      "formas": [
+        "informática",
+        "informatica",
+        "informàtica",
+        "tic",
+        "tecnología",
+        "tecnologia",
+        "tecnologías de la información",
+        "tecnologies de la informació",
+        "sector tecnológico",
+        "sector tecnològic",
+        "programación",
+        "programacion",
+        "programació",
+        "programacio"
+      ],
+      "ocupaciones": ["2512.4", "3512.4", "2513.5", "2522.1", "2511.3", "3512.1"]
+    },
+    {
+      "clave": "administracion_publica",
+      "frase": {
+        "es": "en la administración pública",
+        "ca": "a l'administració pública"
+      },
+      "formas": [
+        "administración pública",
+        "administracion publica",
+        "administració pública",
+        "administracio publica",
+        "sector público",
+        "sector publico",
+        "sector públic",
+        "sector public",
+        "función pública",
+        "funcion publica",
+        "funció pública",
+        "ayuntamiento",
+        "ajuntament",
+        "generalitat"
+      ],
+      "ocupaciones": ["2422.1", "3343.1", "4110.1", "5419.2", "3352.1", "1112.6"]
+    },
+    {
+      "clave": "agricultura",
+      "frase": {
+        "es": "en la agricultura",
+        "ca": "a l'agricultura"
+      },
+      "formas": [
+        "agricultura",
+        "campo",
+        "el campo",
+        "camp",
+        "el camp",
+        "pagesia",
+        "agrícola",
+        "agricola",
+        "sector agrario",
+        "sector agrari",
+        "sector agrícola"
+      ],
+      "ocupaciones": ["9213.1", "9211.1", "6130.2", "6113.5", "8341.2"]
+    },
+    {
+      "clave": "ganaderia",
+      "frase": {
+        "es": "en la ganadería",
+        "ca": "a la ramaderia"
+      },
+      "formas": [
+        "ganadería",
+        "ganaderia",
+        "ramaderia",
+        "granja",
+        "granjas",
+        "granges",
+        "sector ganadero",
+        "sector ramader"
+      ],
+      "ocupaciones": ["6121.1", "9212.4", "6121.4", "6122.1", "2250.6"]
+    },
+    {
+      "clave": "pesca",
+      "frase": {
+        "es": "en la pesca",
+        "ca": "a la pesca"
+      },
+      "formas": ["pesca", "sector pesquero", "sector pesquer", "pesquero", "acuicultura", "aqüicultura", "aquicultura"],
+      "ocupaciones": ["6222.1", "8350.4", "6223.2", "9216.3", "6221.5"]
+    },
+    {
+      "clave": "turismo",
+      "frase": {
+        "es": "en el turismo",
+        "ca": "al turisme"
+      },
+      "formas": [
+        "turismo",
+        "turisme",
+        "sector turístico",
+        "sector turístic",
+        "agencia de viajes",
+        "agència de viatges",
+        "viajes",
+        "viatges"
+      ],
+      "ocupaciones": ["4224.1", "4221.7", "5113.1", "4221.4", "2659.4"]
+    },
+    {
+      "clave": "telecomunicaciones",
+      "frase": {
+        "es": "en las telecomunicaciones",
+        "ca": "a les telecomunicacions"
+      },
+      "formas": [
+        "telecomunicaciones",
+        "telecomunicacions",
+        "telecos",
+        "teleco",
+        "telefonía",
+        "telefonia",
+        "operadora de telefonía",
+        "operadora de telefonia"
+      ],
+      "ocupaciones": ["7422.7", "7422.8", "3522.1", "2153.1", "4222.1"]
+    },
+    {
+      "clave": "energia",
+      "frase": {
+        "es": "en la energía",
+        "ca": "a l'energia"
+      },
+      "formas": [
+        "energía",
+        "energia",
+        "sector energético",
+        "sector energètic",
+        "energías renovables",
+        "energies renovables",
+        "eléctrica",
+        "electrica",
+        "elèctrica",
+        "compañía eléctrica",
+        "companyia elèctrica"
+      ],
+      "ocupaciones": ["7413.1", "3131.3", "7411.1", "2151.1", "3131.2", "3322.1.1"]
+    },
+    {
+      "clave": "automocion",
+      "frase": {
+        "es": "en la automoción",
+        "ca": "a l'automoció"
+      },
+      "formas": [
+        "automoción",
+        "automocion",
+        "automoció",
+        "automocio",
+        "sector del automóvil",
+        "sector de l'automòbil",
+        "sector automovilístico",
+        "taller mecánico",
+        "taller de coches",
+        "taller de cotxes"
+      ],
+      "ocupaciones": ["7231.10", "8211.5", "7231.2", "7132.3", "7412.2", "1439.4"]
+    },
+    {
+      "clave": "alimentacion",
+      "frase": {
+        "es": "en la alimentación",
+        "ca": "a l'alimentació"
+      },
+      "formas": [
+        "alimentación",
+        "alimentacion",
+        "alimentació",
+        "alimentacio",
+        "industria alimentaria",
+        "indústria alimentària",
+        "sector alimentario",
+        "sector alimentari",
+        "agroalimentario",
+        "agroalimentari"
+      ],
+      "ocupaciones": ["8160.34", "7511.1", "7512.1", "7511.4", "8183.1", "9321.2"]
+    },
+    {
+      "clave": "textil",
+      "frase": {
+        "es": "en el textil",
+        "ca": "al tèxtil"
+      },
+      "formas": [
+        "textil",
+        "tèxtil",
+        "confección",
+        "confeccion",
+        "confecció",
+        "confeccio",
+        "moda",
+        "sector textil",
+        "sector tèxtil"
+      ],
+      "ocupaciones": ["8153.1", "8152.2", "7532.2", "7531.2", "8154.3", "9321.1"]
+    },
+    {
+      "clave": "quimica",
+      "frase": {
+        "es": "en la química",
+        "ca": "a la química"
+      },
+      "formas": [
+        "industria química",
+        "industria quimica",
+        "indústria química",
+        "sector químico",
+        "sector quimico",
+        "sector químic",
+        "químicas",
+        "petroquímica",
+        "petroquimica"
+      ],
+      "ocupaciones": ["8131.2", "3111.1", "3133.1", "2145.1", "2113.1"]
+    },
+    {
+      "clave": "farmacia",
+      "frase": {
+        "es": "en la farmacia",
+        "ca": "a la farmàcia"
+      },
+      "formas": [
+        "farmacia",
+        "farmàcia",
+        "farmacias",
+        "farmàcies",
+        "industria farmacéutica",
+        "indústria farmacèutica",
+        "sector farmacéutico",
+        "sector farmacèutic",
+        "farmacéutica",
+        "farmacèutica"
+      ],
+      "ocupaciones": ["3213.1", "2262.1", "2262.2", "8131.17", "2433.2"]
+    },
+    {
+      "clave": "inmobiliaria",
+      "frase": {
+        "es": "en el sector inmobiliario",
+        "ca": "al sector immobiliari"
+      },
+      "formas": [
+        "inmobiliaria",
+        "inmobiliario",
+        "immobiliària",
+        "immobiliaria",
+        "inmobiliarias",
+        "sector inmobiliario",
+        "sector immobiliari",
+        "fincas",
+        "finques"
+      ],
+      "ocupaciones": ["3334.3", "3334.1", "3334.4", "3334.5", "3315.7"]
+    },
+    {
+      "clave": "marketing",
+      "frase": {
+        "es": "en el marketing",
+        "ca": "al màrqueting"
+      },
+      "formas": [
+        "marketing",
+        "márketing",
+        "mercadotecnia",
+        "màrqueting",
+        "marqueting",
+        "publicidad",
+        "publicitat",
+        "sector publicitario",
+        "agencia de publicidad",
+        "agència de publicitat"
+      ],
+      "ocupaciones": ["2431.10", "1221.5", "2431.3", "2432.5", "2166.9", "1221.3"]
+    },
+    {
+      "clave": "comunicacion",
+      "frase": {
+        "es": "en los medios de comunicación",
+        "ca": "als mitjans de comunicació"
+      },
+      "formas": [
+        "medios de comunicación",
+        "medios de comunicacion",
+        "mitjans de comunicació",
+        "mitjans de comunicacio",
+        "comunicación",
+        "comunicacion",
+        "comunicació",
+        "comunicacio",
+        "periodismo",
+        "periodisme",
+        "prensa",
+        "premsa",
+        "audiovisual",
+        "sector audiovisual"
+      ],
+      "ocupaciones": ["2642.1", "3521.1", "2656.3", "3431.1", "1222.1"]
+    },
+    {
+      "clave": "cultura",
+      "frase": {
+        "es": "en la cultura",
+        "ca": "a la cultura"
+      },
+      "formas": [
+        "cultura",
+        "sector cultural",
+        "món de la cultura",
+        "mundo de la cultura",
+        "espectáculos",
+        "espectacles",
+        "artes escénicas",
+        "arts escèniques",
+        "arte",
+        "art"
+      ],
+      "ocupaciones": ["2652.3", "2655.1", "3435.25", "3435.3", "2654.6", "2651.1"]
+    },
+    {
+      "clave": "deporte",
+      "frase": {
+        "es": "en el deporte",
+        "ca": "a l'esport"
+      },
+      "formas": [
+        "deporte",
+        "deportes",
+        "esport",
+        "esports",
+        "sector deportivo",
+        "sector esportiu",
+        "gimnasio",
+        "gimnàs",
+        "gimnas",
+        "fitness"
+      ],
+      "ocupaciones": ["3422.4", "3423.2", "3422.3", "5419.7", "1431.3", "3421.1"]
+    },
+    {
+      "clave": "ocio",
+      "frase": {
+        "es": "en el ocio",
+        "ca": "al lleure"
+      },
+      "formas": [
+        "ocio",
+        "tiempo libre",
+        "ocio y tiempo libre",
+        "lleure",
+        "temps de lleure",
+        "educació en el lleure",
+        "esplai",
+        "colonias",
+        "colònies"
+      ],
+      "ocupaciones": ["3423.1", "3423.1.1", "2659.4", "9629.3", "1431.2"]
+    },
+    {
+      "clave": "servicios_sociales",
+      "frase": {
+        "es": "en los servicios sociales",
+        "ca": "als serveis socials"
+      },
+      "formas": [
+        "servicios sociales",
+        "serveis socials",
+        "sector social",
+        "tercer sector",
+        "ámbito social",
+        "àmbit social",
+        "acción social",
+        "acció social",
+        "dependencia",
+        "dependència",
+        "geriatría",
+        "geriatria",
+        "residencias",
+        "residències"
+      ],
+      "ocupaciones": ["5321.1", "5322.1", "2635.3", "2635.2", "3412.5", "5311.1"]
+    },
+    {
+      "clave": "servicio_domestico",
+      "frase": {
+        "es": "en el servicio doméstico",
+        "ca": "al servei domèstic"
+      },
+      "formas": [
+        "servicio doméstico",
+        "servicio domestico",
+        "servei domèstic",
+        "servei domestic",
+        "trabajo doméstico",
+        "treball domèstic",
+        "hogar",
+        "llar",
+        "casas particulares",
+        "cases particulars"
+      ],
+      "ocupaciones": ["9111.1", "5152.2", "5322.1", "5311.1", "5162.1"]
+    },
+    {
+      "clave": "atencion_al_cliente",
+      "frase": {
+        "es": "en la atención al cliente",
+        "ca": "a l'atenció al client"
+      },
+      "formas": [
+        "atención al cliente",
+        "atencion al cliente",
+        "atenció al client",
+        "atencio al client",
+        "servicio al cliente",
+        "servei al client",
+        "call center",
+        "centro de llamadas",
+        "centre de trucades",
+        "teleoperación",
+        "telemarketing"
+      ],
+      "ocupaciones": ["4222.1", "4225.1", "5244.1", "4226.1", "3341.4", "4223.1"]
+    },
+    {
+      "clave": "peluqueria_estetica",
+      "frase": {
+        "es": "en la peluquería o la estética",
+        "ca": "a la perruqueria o l'estètica"
+      },
+      "formas": [
+        "peluquería",
+        "peluqueria",
+        "perruqueria",
+        "peluquerías",
+        "perruqueries",
+        "estética",
+        "estetica",
+        "estètica",
+        "belleza",
+        "bellesa",
+        "centro de estética",
+        "centre d'estètica"
+      ],
+      "ocupaciones": ["5141.1", "5142.1", "5141.1.2", "5142.6", "5142.5", "5142.7"]
+    },
+    {
+      "clave": "artes_graficas",
+      "frase": {
+        "es": "en las artes gráficas",
+        "ca": "a les arts gràfiques"
+      },
+      "formas": [
+        "artes gráficas",
+        "artes graficas",
+        "arts gràfiques",
+        "arts grafiques",
+        "imprenta",
+        "imprentas",
+        "impremta",
+        "impremtes",
+        "sector gráfico",
+        "sector gràfic"
+      ],
+      "ocupaciones": ["7322.5", "7322.1", "7321.1", "2166.9", "7323.1", "7322.8"]
+    },
+    {
+      "clave": "mineria",
+      "frase": {
+        "es": "en la minería",
+        "ca": "a la mineria"
+      },
+      "formas": ["minería", "mineria", "mina", "minas", "mines", "canteras", "cantera", "pedrera", "pedreres"],
+      "ocupaciones": ["8111.5", "9311.1", "8112.2", "8342.10", "3121.1", "3117.5"]
+    },
+    {
+      "clave": "medio_ambiente",
+      "frase": {
+        "es": "en el medio ambiente",
+        "ca": "al medi ambient"
+      },
+      "formas": [
+        "medio ambiente",
+        "medioambiente",
+        "medi ambient",
+        "sector ambiental",
+        "sector medioambiental",
+        "residuos",
+        "residus",
+        "reciclaje",
+        "reciclatge",
+        "gestión de residuos",
+        "gestió de residus"
+      ],
+      "ocupaciones": ["9611.1", "9612.1", "3132.4", "2133.15", "2143.1", "2133.4"]
+    },
+    {
+      "clave": "investigacion",
+      "frase": {
+        "es": "en la investigación",
+        "ca": "a la recerca"
+      },
+      "formas": [
+        "investigación",
+        "investigacion",
+        "investigació",
+        "investigacio",
+        "recerca",
+        "i+d",
+        "i+d+i",
+        "ciencia",
+        "ciència",
+        "laboratorio",
+        "laboratori",
+        "laboratorios",
+        "laboratoris"
+      ],
+      "ocupaciones": ["3141.2", "2131.4", "2113.1", "2269.16", "2310.1", "2632.6.1"]
+    },
+    {
+      "clave": "justicia",
+      "frase": {
+        "es": "en la justicia",
+        "ca": "a la justícia"
+      },
+      "formas": [
+        "justicia",
+        "justícia",
+        "juzgados",
+        "juzgado",
+        "jutjats",
+        "jutjat",
+        "tribunales",
+        "tribunals",
+        "sector jurídico",
+        "sector jurídic",
+        "derecho",
+        "dret",
+        "despacho de abogados",
+        "despatx d'advocats"
+      ],
+      "ocupaciones": ["3411.3", "2611.1", "3411.5", "3411.4", "2612.1", "3411.1"]
+    },
+    {
+      "clave": "ejercito",
+      "frase": {
+        "es": "en el ejército",
+        "ca": "a l'exèrcit"
+      },
+      "formas": [
+        "ejército",
+        "ejercito",
+        "exèrcit",
+        "exercit",
+        "fuerzas armadas",
+        "forces armades",
+        "militar",
+        "militares",
+        "militars",
+        "defensa",
+        "armada"
+      ],
+      "ocupaciones": ["0310.3", "0210.1", "0210.2", "0110.10", "0110.3"]
+    },
+    {
+      "clave": "oficina",
+      "frase": {
+        "es": "en una oficina",
+        "ca": "en una oficina"
+      },
+      "formas": [
+        "oficina",
+        "oficinas",
+        "oficines",
+        "administración",
+        "administracion",
+        "administració",
+        "administracio",
+        "gestoría",
+        "gestoria",
+        "gestories",
+        "administración de empresas"
+      ],
+      "ocupaciones": ["4110.1", "3343.1", "4120.1", "3313.2", "4226.1", "2411.1"]
+    },
+    {
+      "clave": "mantenimiento",
+      "frase": {
+        "es": "en el mantenimiento",
+        "ca": "al manteniment"
+      },
+      "formas": [
+        "mantenimiento",
+        "manteniment",
+        "sector del mantenimiento",
+        "mantenimiento de edificios",
+        "manteniment d'edificis"
+      ],
+      "ocupaciones": ["7233.7", "9622.1", "7411.1", "7126.8", "7127.1", "5153.1"]
+    },
+    {
+      "clave": "mensajeria",
+      "frase": {
+        "es": "en la mensajería",
+        "ca": "a la missatgeria"
+      },
+      "formas": [
+        "mensajería",
+        "mensajeria",
+        "missatgeria",
+        "paquetería",
+        "paqueteria",
+        "reparto",
+        "repartos",
+        "repartiment",
+        "última milla",
+        "darrera milla"
+      ],
+      "ocupaciones": ["8322.2", "8321.1", "9331.1", "4412.2", "9333.4"]
+    },
+    {
+      "clave": "metal",
+      "frase": {
+        "es": "en el metal",
+        "ca": "al metall"
+      },
+      "formas": [
+        "metal",
+        "metalurgia",
+        "metal·lúrgia",
+        "metallurgia",
+        "siderurgia",
+        "siderúrgia",
+        "sector del metal",
+        "metalmecánica",
+        "metal·lomecànica"
+      ],
+      "ocupaciones": ["7212.3", "7223.7", "7223.4", "7213.4", "7213.1", "7222.4"]
+    },
+    {
+      "clave": "jardineria",
+      "frase": {
+        "es": "en la jardinería",
+        "ca": "a la jardineria"
+      },
+      "formas": [
+        "jardinería",
+        "jardineria",
+        "jardines",
+        "jardins",
+        "parques y jardines",
+        "parcs i jardins",
+        "paisajismo",
+        "paisatgisme"
+      ],
+      "ocupaciones": ["9214.1", "6113.5", "6113.6", "6113.1"]
+    },
+    {
+      "clave": "personas_mayores",
+      "frase": {
+        "es": "con personas mayores",
+        "ca": "amb gent gran"
+      },
+      "formas": [
+        "personas mayores",
+        "persona mayor",
+        "gente mayor",
+        "mayores",
+        "ancianos",
+        "ancianas",
+        "tercera edad",
+        "residencia de ancianos",
+        "residencia de mayores",
+        "residencia de personas mayores",
+        "geriatría",
+        "geriatria",
+        "gent gran",
+        "persones grans",
+        "persona gran",
+        "gent més gran",
+        "tercera edat",
+        "residència de gent gran",
+        "residencia de gent gran"
+      ],
+      "ocupaciones": ["5321.1", "5322.1", "3412.4.2", "2635.3.14"]
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+# Configuración local de Faro. Copiar como .dev.vars solo si se necesitan cambios.
+# Solo la lee el servidor local (npm run servir): los secretos y variables de los Workers se configuran en el
+# alojamiento, con los nombres de docs/configuracion.md. La orden de despliegue no utiliza este archivo.
+# Los motores del recorrido funcionan en el dispositivo.
+# Semillas para una instalación nueva: el panel conserva después su propia política.
+FARO_MCP=no
+FARO_A2A=no
+FARO_API_SOCIOS=no
+
+# Contacto de seguridad de la entidad que publique. No hay contacto preasignado.
+# FARO_SEGURIDAD_CONTACTO=mailto:seguridad@example.org
+# FARO_SEGURIDAD_POLITICA=https://example.org/seguridad
+# FARO_SEGURIDAD_CADUCA=2027-10-01T00:00:00.000Z
+
+# Administración: preparar identidad, origen y almacenamiento antes de activarla.
+# Montaje: docs/administracion.md. Uso: docs/conectividad.md.
+FARO_ADMINISTRACION=no
+# FARO_ADMIN_ORIGEN=https://faro.example.org
+# FARO_ADMIN_ACCESS_EQUIPO=equipo-de-la-entidad
+# FARO_ADMIN_ACCESS_AUD=<audiencia exclusiva de administración>
+# Requiere FARO_SECRETO_FIRMA como secreto del servidor y un almacén persistente.
+# La conectividad activa requiere administración. Las claves se entregan por invitación desde el panel.

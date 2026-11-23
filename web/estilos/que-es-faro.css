@@ -1,0 +1,20 @@
+/* «Qué es Faro» (que-es-faro.html): lo poco que añade a contenidos.css y etapas.css. Subtítulos, la frase destacada
+   con una raya, los cuatro pasos numerados, las fuentes y los destinos de la última pestaña.
+   Todo con líneas finas y colores de tokens.css: sin recuadros de adorno, sin sombras, sin halos y sin movimiento. */
+
+.que-es-faro .bloque h3 {
+  margin: 34px 0 10px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: -0.015em;
+}
+
+/* La frase de la casa: letra mayor y una raya, como la definición de la guía «Qué es la IA» */
+.que-es-faro .bloque p.definicion {
+  margin: 4px 0 22px;
+  padding: 2px 0 2px 20px;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  border-left: 3px solid var(--color-acento);
+}

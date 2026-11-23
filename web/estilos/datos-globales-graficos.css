@@ -1,0 +1,203 @@
+/* Los gráficos de «Datos globales» y las fichas del globo (scripts/datos-globales/dibujo.js): SVG dibujado a su
+   ancho real, con el texto a 12 o 13 px. Cada marca toma su color de una clase (c-cat, c-ue, c-esp, c-resto) y los
+   colores, de los tokens --dato-*: Cataluña en azul, la UE en naranja y el resto en gris. Sin sombras, halos ni degradados. */
+
+.dg-g {
+  width: 100%;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.dg-svg {
+  display: block;
+  overflow: visible;
+  font-family: var(--fuente-texto);
+  font-variant-numeric: tabular-nums;
+}
+
+.dg-svg text {
+  fill: var(--color-tinta);
+  font-size: 13px;
+}
+
+.dg-svg .eje,
+.dg-svg .leyenda {
+  fill: var(--color-tenue);
+  font-size: 12px;
+}
+
+.dg-svg .t-dato {
+  fill: var(--color-tinta);
+}
+
+.dg-svg .t-cat {
+  fill: var(--dato-cataluna);
+  font-weight: 600;
+}
+
+.dg-svg .t-ue {
+  fill: var(--dato-ue);
+  font-weight: 600;
+}
+
+.dg-svg .rejilla {
+  stroke: var(--dg-linea-suave);
+  stroke-width: 1;
+}
+
+.dg-svg .eje-cero {
+  stroke: var(--color-tenue);
+  stroke-width: 1;
+}
+
+.dg-svg .separador {
+  stroke: var(--color-linea);
+  stroke-width: 1;
+}
+
+.dg-svg .pista {
+  fill: var(--dato-pista);
+}
+
+/* Barras, puntos y cuadrados: el color del territorio */
+.dg-svg .barra.c-cat,
+.dg-svg .punto.c-cat {
+  fill: var(--dato-cataluna);
+}
+
+.dg-svg .barra.c-ue,
+.dg-svg .punto.c-ue {
+  fill: var(--dato-ue);
+}
+
+.dg-svg .barra.c-esp,
+.dg-svg .barra.c-resto,
+.dg-svg .punto.c-esp,
+.dg-svg .punto.c-resto {
+  fill: var(--dato-gris);
+}
+
+/* Encuestas de opinión: barras tenues, solo con su contorno */
+.dg-svg .barra.b-opinion {
+  fill: var(--dato-pista);
+  stroke-width: 1.5;
+}
+
+.dg-svg .barra.b-opinion.c-esp,
+.dg-svg .barra.b-opinion.c-resto {
+  stroke: var(--dato-gris);
+}
+
+.dg-svg .barra.b-opinion.c-ue {
+  stroke: var(--dato-ue);
+}
+
+/* La media de la UE, como referencia: una raya discontinua, nunca una barra */
+.dg-svg .raya-ue {
+  stroke: var(--dato-ue);
+  stroke-width: 2;
+  stroke-dasharray: 5 4;
+}
+
+/* Líneas de evolución: Cataluña gruesa; la UE discontinua (continua en su página); España, gris medio; el resto, fino */
+.dg-svg .linea {
+  fill: none;
+  stroke-linecap: round;
+}
+
+.dg-svg .linea.c-cat {
+  stroke: var(--dato-cataluna);
+  stroke-width: 3;
+}
+
+.dg-svg .linea.c-ue {
+  stroke: var(--dato-ue);
+  stroke-width: 2.25;
+  stroke-dasharray: 6 4;
+}
+
+.dg-svg .linea.l-protagonista {
+  stroke-width: 3;
+  stroke-dasharray: none;
+}
+
+.dg-svg .linea.c-esp {
+  stroke: var(--dato-gris);
+  stroke-width: 2.25;
+}
+
+.dg-svg .linea.c-resto {
+  stroke: var(--dato-gris);
+  stroke-width: 1.75;
+}
+
+/* La guía de un rótulo desplazado retoma el color de su territorio, sin ocultar su nombre ni su cifra. */
+.dg-svg .conector {
+  fill: none;
+  stroke-width: 1.25;
+}
+
+.dg-svg .conector.c-cat {
+  stroke: var(--dato-cataluna);
+}
+
+.dg-svg .conector.c-ue {
+  stroke: var(--dato-ue);
+}
+
+.dg-svg .conector.c-esp,
+.dg-svg .conector.c-resto {
+  stroke: var(--dato-gris);
+}
+
+/* Pesas: la unión entre el círculo y el cuadrado es adorno; las cifras van escritas */
+.dg-svg .union {
+  stroke: var(--dato-gris-claro);
+  stroke-width: 3;
+}
+
+/* Metas: la raya de la meta y las mediciones anteriores dentro de la barra */
+.dg-svg .raya-meta {
+  stroke: var(--color-tinta);
+  stroke-width: 2;
+}
+
+.dg-svg .marca-anterior {
+  stroke: var(--color-panel);
+  stroke-width: 2;
+}
+
+@media (forced-colors: active) {
+  .dg-svg text,
+  .dg-svg .barra,
+  .dg-svg .punto {
+    fill: CanvasText;
+  }
+
+  .dg-svg .barra.b-opinion,
+  .dg-svg .pista {
+    fill: Canvas;
+    stroke: CanvasText;
+  }
+
+  .dg-svg .linea,
+  .dg-svg .conector,
+  .dg-svg .raya-ue,
+  .dg-svg .raya-meta,
+  .dg-svg .union,
+  .dg-svg .rejilla,
+  .dg-svg .eje-cero {
+    stroke: CanvasText;
+  }
+
+  .dg-muestra .m-cat,
+  .dg-muestra .m-gris,
+  .dg-muestra .m-ue-barra {
+    fill: CanvasText;
+  }
+
+  .dg-muestra .m-ue,
+  .dg-muestra .m-meta {
+    stroke: CanvasText;
+  }
+}

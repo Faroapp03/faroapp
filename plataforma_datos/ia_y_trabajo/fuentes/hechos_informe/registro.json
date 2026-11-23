@@ -1,0 +1,96 @@
+{
+  "version": 1,
+  "revision": {
+    "fecha": "2026-11-15",
+    "plazo_dias": 7,
+    "alcance": "Revisión editorial de las afirmaciones y sus capturas primarias conservadas; ejecutar una validación no renueva esta fecha ni acredita consulta remota nueva."
+  },
+  "afirmaciones": {
+    "capacidad": {
+      "tipo": "resultado-de-ensayo",
+      "porcentaje": 20.6,
+      "horas_persona": 1.6,
+      "anio": 2026,
+      "poblacion": "108 flujos largos de trabajo de ordenador del ensayo OSWorld 2.0",
+      "denominador": "Tareas evaluadas por configuración según la métrica de finalización binaria publicada; se conserva la proporción del artículo sin reconstruir recuentos",
+      "medida": "Finalización estricta del mejor sistema comunicado, con presupuesto de 500 pasos; no puntuación parcial ni capacidad de un puesto de trabajo.",
+      "presupuesto_pasos": 500,
+      "territorio": null,
+      "periodo": "OSWorld 2.0, versión 2 de 13/07/2026",
+      "fuente": {
+        "nombre": "OSWorld 2.0",
+        "url": "https://arxiv.org/pdf/2606.29537v2",
+        "version": "arXiv:2606.29537v2",
+        "publicado": "2026-07-13",
+        "captura_sha256": "a1e4d52bbf3a5fae8e3153835adcfd5f314efc45bbc8e9e73b19bcbf20d3fefc",
+        "localizador": "Resumen y sección 3.2 (tabla 3): configuración de mayor finalización binaria con presupuesto de 500 pasos",
+        "cita_corta": "OSWorld 2.0",
+        "revisado_captura": "2026-11-15",
+        "capturado": "2026-11-15"
+      },
+      "flujos_del_benchmark": 108
+    },
+    "ofertas_ia": {
+      "tipo": "proporcion-de-anuncios",
+      "de_cada_100": 13,
+      "anio": 2026,
+      "poblacion": "Anuncios de empleo de Indeed en España",
+      "denominador": "Anuncios de Indeed en España, no el total de ofertas o contrataciones del país",
+      "medida": "Proporción de anuncios que mencionan IA",
+      "territorio": "España",
+      "periodo": "julio de 2026",
+      "fecha_corte": null,
+      "fuente": {
+        "nombre": "Indeed Hiring Lab, European Labour Market Chartbook",
+        "url": "https://hiringlab.indeed.com/uk/blog/2026/07/27/july-2026-european-labour-market-chartbook/",
+        "version": "julio de 2026",
+        "publicado": "2026-07-27",
+        "captura_sha256": "6b69798d00118d8d3fa7964724d52e3ef254c923a66ccb51093638da1a04f7ee",
+        "localizador": "Párrafo «According to the Indeed AI Tracker, the share of job postings mentioning AI continues to climb, led by Ireland (15%), Spain (13%), and the UK (9%).»",
+        "cita_corta": "Indeed (jul. 2026)",
+        "revisado_captura": "2026-11-15",
+        "capturado": "2026-11-15"
+      }
+    },
+    "proxima_tich": {
+      "tipo": "prevision-de-publicacion",
+      "fecha": "2026-11-11",
+      "edicion": "TIC-H Año 2026",
+      "estado": "publicada-segun-calendario",
+      "poblacion": "Edición de la Encuesta sobre equipamiento y uso de TIC en los hogares del INE con fecha en el calendario de publicaciones",
+      "territorio": "España",
+      "periodo": "Año 2026",
+      "fuente": {
+        "nombre": "INE, calendario de publicaciones",
+        "url": "https://www.ine.es/dynt3/Calendario/calendario.ics",
+        "version": null,
+        "publicado": null,
+        "captura_sha256": "72a55e4163500bb031af39b09837590da9537b70d3849fc4602a2b569297ca5b",
+        "localizador": "UID 175-12380; TIC-H Año 2026; DTSTART 20261111T110000 Europe/Madrid; captura de 15/11/2026: el evento (DTSTAMP 20261113T103836Z) trae en DESCRIPTION los valores publicados; eventos hasta el 30/12/2026 y sin fecha para la TIC-H del año 2027",
+        "cita_corta": "INE: calendario TIC-H",
+        "revisado_captura": "2026-11-15",
+        "capturado": "2026-11-15"
+      }
+    },
+    "normas": {
+      "tipo": "aplicacion-normativa",
+      "fecha": "2027-12-02",
+      "fecha_anterior": "2026-08-02",
+      "poblacion": "Sistemas de alto riesgo del artículo 6.2 y anexo III del Reglamento (UE) 2024/1689, incluido empleo",
+      "territorio": "Unión Europea",
+      "periodo": "Aplicación del capítulo III, secciones 1, 2 y 3, salvo artículo 6.5",
+      "alcance": "No aplaza todo el Reglamento; los sistemas del artículo 6.1 y anexo I tienen otra fecha. No determina la situación jurídica de una persona o empresa.",
+      "fuente": {
+        "nombre": "Reglamento (UE) 2026/1744",
+        "url": "https://eur-lex.europa.eu/legal-content/ES/TXT/?uri=CELEX:32026R1744",
+        "version": "CELEX:32026R1744",
+        "publicado": null,
+        "captura_sha256": "8d6d9825b8131aff76a6a062d210e354b2b985b154390e3b8712e7299ffd4641",
+        "localizador": "Artículo 1, punto 40(b), modificación del artículo 113 del Reglamento (UE) 2024/1689",
+        "cita_corta": "Reglamento (UE) 2024/1689 y 2026/1744",
+        "revisado_captura": "2026-11-15",
+        "capturado": "2026-11-14"
+      }
+    }
+  }
+}

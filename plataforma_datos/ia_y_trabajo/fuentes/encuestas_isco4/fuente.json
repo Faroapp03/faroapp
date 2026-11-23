@@ -1,0 +1,317 @@
+{
+  "schema_version": 1,
+  "id": "encuestas_isco4",
+  "tema": "ia_y_trabajo",
+  "lector": "plataforma_datos.ia_y_trabajo.fuentes.encuestas_isco4.lector",
+  "actualizacion": null,
+  "retirada": "Productor externo al registro principal: un error o captura ausente no acredita retirada ni sustituye un conjunto previamente admitido. Se conservan sus validaciones y límites semánticos existentes.",
+  "conservacion": "Originales, procedencia, preparados y admisión conservan la casa actual. Este descriptor no ejecuta limpieza ni rejuvenece capturas, periodos o licencias; los microdatos no se incorporan a Git ni a entregas públicas.",
+  "nombre": "Exposición calculada con encuestas ISCO-08 a cuatro dígitos",
+  "institucion": "Ministerio de Desarrollo Social y Familia (Chile); DANE (Colombia); INE (Uruguay); IBGE (Brasil)",
+  "casa_datos": "encuestas-isco4",
+  "significado": "Productor externo existente de exposición potencial calculada mediante microdatos ponderados y gradientes OIT. No mide uso de IA, pérdidas de empleo o idoneidad personal; conserva cotas, población y diseño de cada encuesta.",
+  "alcance": [
+    "Casen 2022 (base 18/03/2024), GEIH 2024 (12 meses), ECH 2023 (12 meses) y PNAD Contínua trimestre 02/2026 fijado deliberadamente en el código; el trimestre nuevo no se descubre ni cambia automáticamente.",
+    "La correspondencia ISCO-08 solo es exacta donde coinciden los grupos oficiales; en adaptaciones sin concordancia exacta conserva cotas sin reparto inventado. Excluye empleo sin ocupación y fuerzas armadas sin gradiente del denominador e informa su peso.",
+    "Chile usa Taylor con estrato/UPM publicados; Colombia y Uruguay conservan aproximaciones declaradas que infravaloran el error; Brasil utiliza 200 pesos replicados. Exige total de ocupados coherente, códigos válidos, n ≥ 30 y coherencia de cotas.",
+    "preparar lee gradientes del conjunto OIT admitido y estructura ISCO-08 de clasificaciones; son dependencias existentes, no productores nuevos. ECH requiere aceptación humana previa y sus 12 originales/procedencia; descargar no acepta términos ni descarga esos meses."
+  ],
+  "recursos": [
+    {
+      "id": "recurso-01",
+      "tipo": "url",
+      "ubicacion": "https://observatorio.ministeriodesarrollosocial.gob.cl/storage/docs/casen/2022/Base%20de%20datos%20Casen%202022%20STATA_18%20marzo%202024.dta.zip",
+      "licencia": "Ministerio de Desarrollo Social y Familia (Chile): Creative Commons Attribution 4.0 (https://creativecommons.org/licenses/by/4.0/deed.es), licencia del conjunto «base-de-datos-casen-2022-historicas» en su portal de datos abiertos (https://bid-ckan.ministeriodesarrollosocial.gob.cl); se cita como «Ministerio de Desarrollo Social y Familia, Encuesta Casen 2022».",
+      "descripcion": "Ministerio de Desarrollo Social y Familia, Base de datos Casen 2022, Stata (versión del 18/03/2024)"
+    },
+    {
+      "id": "recurso-02",
+      "tipo": "url",
+      "ubicacion": "https://observatorio.ministeriodesarrollosocial.gob.cl/storage/docs/casen/2022/Libro_de_codigos_Base_de_datos_Casen_2022(18marzo2024).xlsx",
+      "licencia": "Ministerio de Desarrollo Social y Familia (Chile): Creative Commons Attribution 4.0 (https://creativecommons.org/licenses/by/4.0/deed.es), licencia del conjunto «base-de-datos-casen-2022-historicas» en su portal de datos abiertos (https://bid-ckan.ministeriodesarrollosocial.gob.cl); se cita como «Ministerio de Desarrollo Social y Familia, Encuesta Casen 2022».",
+      "descripcion": "Ministerio de Desarrollo Social y Familia, Libro de códigos de la base de datos Casen 2022 (18/03/2024), con el anexo 1 de los códigos CIUO-08"
+    },
+    {
+      "id": "recurso-03",
+      "tipo": "url",
+      "ubicacion": "https://microdatos.dane.gov.co/index.php/catalog/819/download/23313",
+      "licencia": "DANE (Colombia), condiciones del catálogo de microdatos (GEIH 2024): «Se autoriza el uso de la información contenida en esta portal, siempre y cuando se haga la siguiente cita textual: \"Fuente: Departamento Administrativo Nacional de Estadística: www.dane.gov.co\". Queda en cambio prohibida la copia o reproducción de los datos en cualquier medio electrónico […] que permita la disponibilidad de esta información a múltiples usuarios sin el previo visto bueno del DANE por medio escrito.» Los microdatos no se redistribuyen: solo se publican cifras agregadas.",
+      "descripcion": "DANE, Gran Encuesta Integrada de Hogares (GEIH) 2024, microdatos del mes 01"
+    },
+    {
+      "id": "recurso-04",
+      "tipo": "url",
+      "ubicacion": "https://microdatos.dane.gov.co/index.php/catalog/819/download/23362",
+      "licencia": "DANE (Colombia), condiciones del catálogo de microdatos (GEIH 2024): «Se autoriza el uso de la información contenida en esta portal, siempre y cuando se haga la siguiente cita textual: \"Fuente: Departamento Administrativo Nacional de Estadística: www.dane.gov.co\". Queda en cambio prohibida la copia o reproducción de los datos en cualquier medio electrónico […] que permita la disponibilidad de esta información a múltiples usuarios sin el previo visto bueno del DANE por medio escrito.» Los microdatos no se redistribuyen: solo se publican cifras agregadas.",
+      "descripcion": "DANE, Gran Encuesta Integrada de Hogares (GEIH) 2024, microdatos del mes 02"
+    },
+    {
+      "id": "recurso-05",
+      "tipo": "url",
+      "ubicacion": "https://microdatos.dane.gov.co/index.php/catalog/819/download/23596",
+      "licencia": "DANE (Colombia), condiciones del catálogo de microdatos (GEIH 2024): «Se autoriza el uso de la información contenida en esta portal, siempre y cuando se haga la siguiente cita textual: \"Fuente: Departamento Administrativo Nacional de Estadística: www.dane.gov.co\". Queda en cambio prohibida la copia o reproducción de los datos en cualquier medio electrónico […] que permita la disponibilidad de esta información a múltiples usuarios sin el previo visto bueno del DANE por medio escrito.» Los microdatos no se redistribuyen: solo se publican cifras agregadas.",
+      "descripcion": "DANE, Gran Encuesta Integrada de Hogares (GEIH) 2024, microdatos del mes 03"
+    },
+    {
+      "id": "recurso-06",
+      "tipo": "url",
+      "ubicacion": "https://microdatos.dane.gov.co/index.php/catalog/819/download/23496",
+      "licencia": "DANE (Colombia), condiciones del catálogo de microdatos (GEIH 2024): «Se autoriza el uso de la información contenida en esta portal, siempre y cuando se haga la siguiente cita textual: \"Fuente: Departamento Administrativo Nacional de Estadística: www.dane.gov.co\". Queda en cambio prohibida la copia o reproducción de los datos en cualquier medio electrónico […] que permita la disponibilidad de esta información a múltiples usuarios sin el previo visto bueno del DANE por medio escrito.» Los microdatos no se redistribuyen: solo se publican cifras agregadas.",
+      "descripcion": "DANE, Gran Encuesta Integrada de Hogares (GEIH) 2024, microdatos del mes 04"
+    },
+    {
+      "id": "recurso-07",
+      "tipo": "url",
+      "ubicacion": "https://microdatos.dane.gov.co/index.php/catalog/819/download/23598",
+      "licencia": "DANE (Colombia), condiciones del catálogo de microdatos (GEIH 2024): «Se autoriza el uso de la información contenida en esta portal, siempre y cuando se haga la siguiente cita textual: \"Fuente: Departamento Administrativo Nacional de Estadística: www.dane.gov.co\". Queda en cambio prohibida la copia o reproducción de los datos en cualquier medio electrónico […] que permita la disponibilidad de esta información a múltiples usuarios sin el previo visto bueno del DANE por medio escrito.» Los microdatos no se redistribuyen: solo se publican cifras agregadas.",
+      "descripcion": "DANE, Gran Encuesta Integrada de Hogares (GEIH) 2024, microdatos del mes 05"
+    },
+    {
+      "id": "recurso-08",
+      "tipo": "url",
+      "ubicacion": "https://microdatos.dane.gov.co/index.php/catalog/819/download/23625",
+      "licencia": "DANE (Colombia), condiciones del catálogo de microdatos (GEIH 2024): «Se autoriza el uso de la información contenida en esta portal, siempre y cuando se haga la siguiente cita textual: \"Fuente: Departamento Administrativo Nacional de Estadística: www.dane.gov.co\". Queda en cambio prohibida la copia o reproducción de los datos en cualquier medio electrónico […] que permita la disponibilidad de esta información a múltiples usuarios sin el previo visto bueno del DANE por medio escrito.» Los microdatos no se redistribuyen: solo se publican cifras agregadas.",
+      "descripcion": "DANE, Gran Encuesta Integrada de Hogares (GEIH) 2024, microdatos del mes 06"
+    },
+    {
+      "id": "recurso-09",
+      "tipo": "url",
+      "ubicacion": "https://microdatos.dane.gov.co/index.php/catalog/819/download/23631",
+      "licencia": "DANE (Colombia), condiciones del catálogo de microdatos (GEIH 2024): «Se autoriza el uso de la información contenida en esta portal, siempre y cuando se haga la siguiente cita textual: \"Fuente: Departamento Administrativo Nacional de Estadística: www.dane.gov.co\". Queda en cambio prohibida la copia o reproducción de los datos en cualquier medio electrónico […] que permita la disponibilidad de esta información a múltiples usuarios sin el previo visto bueno del DANE por medio escrito.» Los microdatos no se redistribuyen: solo se publican cifras agregadas.",
+      "descripcion": "DANE, Gran Encuesta Integrada de Hogares (GEIH) 2024, microdatos del mes 07"
+    },
+    {
+      "id": "recurso-10",
+      "tipo": "url",
+      "ubicacion": "https://microdatos.dane.gov.co/index.php/catalog/819/download/23651",
+      "licencia": "DANE (Colombia), condiciones del catálogo de microdatos (GEIH 2024): «Se autoriza el uso de la información contenida en esta portal, siempre y cuando se haga la siguiente cita textual: \"Fuente: Departamento Administrativo Nacional de Estadística: www.dane.gov.co\". Queda en cambio prohibida la copia o reproducción de los datos en cualquier medio electrónico […] que permita la disponibilidad de esta información a múltiples usuarios sin el previo visto bueno del DANE por medio escrito.» Los microdatos no se redistribuyen: solo se publican cifras agregadas.",
+      "descripcion": "DANE, Gran Encuesta Integrada de Hogares (GEIH) 2024, microdatos del mes 08"
+    },
+    {
+      "id": "recurso-11",
+      "tipo": "url",
+      "ubicacion": "https://microdatos.dane.gov.co/index.php/catalog/819/download/23671",
+      "licencia": "DANE (Colombia), condiciones del catálogo de microdatos (GEIH 2024): «Se autoriza el uso de la información contenida en esta portal, siempre y cuando se haga la siguiente cita textual: \"Fuente: Departamento Administrativo Nacional de Estadística: www.dane.gov.co\". Queda en cambio prohibida la copia o reproducción de los datos en cualquier medio electrónico […] que permita la disponibilidad de esta información a múltiples usuarios sin el previo visto bueno del DANE por medio escrito.» Los microdatos no se redistribuyen: solo se publican cifras agregadas.",
+      "descripcion": "DANE, Gran Encuesta Integrada de Hogares (GEIH) 2024, microdatos del mes 09"
+    },
+    {
+      "id": "recurso-12",
+      "tipo": "url",
+      "ubicacion": "https://microdatos.dane.gov.co/index.php/catalog/819/download/23677",
+      "licencia": "DANE (Colombia), condiciones del catálogo de microdatos (GEIH 2024): «Se autoriza el uso de la información contenida en esta portal, siempre y cuando se haga la siguiente cita textual: \"Fuente: Departamento Administrativo Nacional de Estadística: www.dane.gov.co\". Queda en cambio prohibida la copia o reproducción de los datos en cualquier medio electrónico […] que permita la disponibilidad de esta información a múltiples usuarios sin el previo visto bueno del DANE por medio escrito.» Los microdatos no se redistribuyen: solo se publican cifras agregadas.",
+      "descripcion": "DANE, Gran Encuesta Integrada de Hogares (GEIH) 2024, microdatos del mes 10"
+    },
+    {
+      "id": "recurso-13",
+      "tipo": "url",
+      "ubicacion": "https://microdatos.dane.gov.co/index.php/catalog/819/download/23729",
+      "licencia": "DANE (Colombia), condiciones del catálogo de microdatos (GEIH 2024): «Se autoriza el uso de la información contenida en esta portal, siempre y cuando se haga la siguiente cita textual: \"Fuente: Departamento Administrativo Nacional de Estadística: www.dane.gov.co\". Queda en cambio prohibida la copia o reproducción de los datos en cualquier medio electrónico […] que permita la disponibilidad de esta información a múltiples usuarios sin el previo visto bueno del DANE por medio escrito.» Los microdatos no se redistribuyen: solo se publican cifras agregadas.",
+      "descripcion": "DANE, Gran Encuesta Integrada de Hogares (GEIH) 2024, microdatos del mes 11"
+    },
+    {
+      "id": "recurso-14",
+      "tipo": "url",
+      "ubicacion": "https://microdatos.dane.gov.co/index.php/catalog/819/download/23794",
+      "licencia": "DANE (Colombia), condiciones del catálogo de microdatos (GEIH 2024): «Se autoriza el uso de la información contenida en esta portal, siempre y cuando se haga la siguiente cita textual: \"Fuente: Departamento Administrativo Nacional de Estadística: www.dane.gov.co\". Queda en cambio prohibida la copia o reproducción de los datos en cualquier medio electrónico […] que permita la disponibilidad de esta información a múltiples usuarios sin el previo visto bueno del DANE por medio escrito.» Los microdatos no se redistribuyen: solo se publican cifras agregadas.",
+      "descripcion": "DANE, Gran Encuesta Integrada de Hogares (GEIH) 2024, microdatos del mes 12"
+    },
+    {
+      "id": "recurso-15",
+      "tipo": "url",
+      "ubicacion": "https://www.dane.gov.co/files/sen/nomenclatura/ciuo/CIUO_08_AC_2015_07_21.pdf",
+      "licencia": "DANE (Colombia), condiciones del catálogo de microdatos (GEIH 2024): «Se autoriza el uso de la información contenida en esta portal, siempre y cuando se haga la siguiente cita textual: \"Fuente: Departamento Administrativo Nacional de Estadística: www.dane.gov.co\". Queda en cambio prohibida la copia o reproducción de los datos en cualquier medio electrónico […] que permita la disponibilidad de esta información a múltiples usuarios sin el previo visto bueno del DANE por medio escrito.» Los microdatos no se redistribuyen: solo se publican cifras agregadas.",
+      "descripcion": "DANE, Clasificación Internacional Uniforme de Ocupaciones adaptada para Colombia (CIUO-08 A.C.)"
+    },
+    {
+      "id": "recurso-16",
+      "tipo": "url",
+      "ubicacion": "https://www4.ine.gub.uy/Anda5/index.php/catalog/735/download/1280",
+      "licencia": "INE (Uruguay), términos y condiciones del catálogo de microdatos (ANDA) para la ECH 2023, que una persona acepta antes de descargar (quién y cuándo constan en `terminos_aceptados`): los datos no se redistribuyen ni se venden sin el consentimiento escrito del INE; se usan solo para investigación científica y estadística y exclusivamente para presentar información agregada; no se intenta reidentificar a los encuestados ni vincular estos datos con otros que pudieran identificarlos; las publicaciones citan la fuente («Fuente: INE-ECH 2023») y se envía al INE una copia electrónica de los informes y publicaciones basados en los datos; el INE no responde del uso ni de las interpretaciones (Ley 16.616, artículos 15 y 16). Los microdatos no entran en el repositorio: solo se publican cifras agregadas.",
+      "descripcion": "INE, Encuesta Continua de Hogares (ECH) 2023, microdatos del mes 01"
+    },
+    {
+      "id": "recurso-17",
+      "tipo": "url",
+      "ubicacion": "https://www4.ine.gub.uy/Anda5/index.php/catalog/735/download/1281",
+      "licencia": "INE (Uruguay), términos y condiciones del catálogo de microdatos (ANDA) para la ECH 2023, que una persona acepta antes de descargar (quién y cuándo constan en `terminos_aceptados`): los datos no se redistribuyen ni se venden sin el consentimiento escrito del INE; se usan solo para investigación científica y estadística y exclusivamente para presentar información agregada; no se intenta reidentificar a los encuestados ni vincular estos datos con otros que pudieran identificarlos; las publicaciones citan la fuente («Fuente: INE-ECH 2023») y se envía al INE una copia electrónica de los informes y publicaciones basados en los datos; el INE no responde del uso ni de las interpretaciones (Ley 16.616, artículos 15 y 16). Los microdatos no entran en el repositorio: solo se publican cifras agregadas.",
+      "descripcion": "INE, Encuesta Continua de Hogares (ECH) 2023, microdatos del mes 02"
+    },
+    {
+      "id": "recurso-18",
+      "tipo": "url",
+      "ubicacion": "https://www4.ine.gub.uy/Anda5/index.php/catalog/735/download/1282",
+      "licencia": "INE (Uruguay), términos y condiciones del catálogo de microdatos (ANDA) para la ECH 2023, que una persona acepta antes de descargar (quién y cuándo constan en `terminos_aceptados`): los datos no se redistribuyen ni se venden sin el consentimiento escrito del INE; se usan solo para investigación científica y estadística y exclusivamente para presentar información agregada; no se intenta reidentificar a los encuestados ni vincular estos datos con otros que pudieran identificarlos; las publicaciones citan la fuente («Fuente: INE-ECH 2023») y se envía al INE una copia electrónica de los informes y publicaciones basados en los datos; el INE no responde del uso ni de las interpretaciones (Ley 16.616, artículos 15 y 16). Los microdatos no entran en el repositorio: solo se publican cifras agregadas.",
+      "descripcion": "INE, Encuesta Continua de Hogares (ECH) 2023, microdatos del mes 03"
+    },
+    {
+      "id": "recurso-19",
+      "tipo": "url",
+      "ubicacion": "https://www4.ine.gub.uy/Anda5/index.php/catalog/735/download/1283",
+      "licencia": "INE (Uruguay), términos y condiciones del catálogo de microdatos (ANDA) para la ECH 2023, que una persona acepta antes de descargar (quién y cuándo constan en `terminos_aceptados`): los datos no se redistribuyen ni se venden sin el consentimiento escrito del INE; se usan solo para investigación científica y estadística y exclusivamente para presentar información agregada; no se intenta reidentificar a los encuestados ni vincular estos datos con otros que pudieran identificarlos; las publicaciones citan la fuente («Fuente: INE-ECH 2023») y se envía al INE una copia electrónica de los informes y publicaciones basados en los datos; el INE no responde del uso ni de las interpretaciones (Ley 16.616, artículos 15 y 16). Los microdatos no entran en el repositorio: solo se publican cifras agregadas.",
+      "descripcion": "INE, Encuesta Continua de Hogares (ECH) 2023, microdatos del mes 04"
+    },
+    {
+      "id": "recurso-20",
+      "tipo": "url",
+      "ubicacion": "https://www4.ine.gub.uy/Anda5/index.php/catalog/735/download/1284",
+      "licencia": "INE (Uruguay), términos y condiciones del catálogo de microdatos (ANDA) para la ECH 2023, que una persona acepta antes de descargar (quién y cuándo constan en `terminos_aceptados`): los datos no se redistribuyen ni se venden sin el consentimiento escrito del INE; se usan solo para investigación científica y estadística y exclusivamente para presentar información agregada; no se intenta reidentificar a los encuestados ni vincular estos datos con otros que pudieran identificarlos; las publicaciones citan la fuente («Fuente: INE-ECH 2023») y se envía al INE una copia electrónica de los informes y publicaciones basados en los datos; el INE no responde del uso ni de las interpretaciones (Ley 16.616, artículos 15 y 16). Los microdatos no entran en el repositorio: solo se publican cifras agregadas.",
+      "descripcion": "INE, Encuesta Continua de Hogares (ECH) 2023, microdatos del mes 05"
+    },
+    {
+      "id": "recurso-21",
+      "tipo": "url",
+      "ubicacion": "https://www4.ine.gub.uy/Anda5/index.php/catalog/735/download/1285",
+      "licencia": "INE (Uruguay), términos y condiciones del catálogo de microdatos (ANDA) para la ECH 2023, que una persona acepta antes de descargar (quién y cuándo constan en `terminos_aceptados`): los datos no se redistribuyen ni se venden sin el consentimiento escrito del INE; se usan solo para investigación científica y estadística y exclusivamente para presentar información agregada; no se intenta reidentificar a los encuestados ni vincular estos datos con otros que pudieran identificarlos; las publicaciones citan la fuente («Fuente: INE-ECH 2023») y se envía al INE una copia electrónica de los informes y publicaciones basados en los datos; el INE no responde del uso ni de las interpretaciones (Ley 16.616, artículos 15 y 16). Los microdatos no entran en el repositorio: solo se publican cifras agregadas.",
+      "descripcion": "INE, Encuesta Continua de Hogares (ECH) 2023, microdatos del mes 06"
+    },
+    {
+      "id": "recurso-22",
+      "tipo": "url",
+      "ubicacion": "https://www4.ine.gub.uy/Anda5/index.php/catalog/735/download/1286",
+      "licencia": "INE (Uruguay), términos y condiciones del catálogo de microdatos (ANDA) para la ECH 2023, que una persona acepta antes de descargar (quién y cuándo constan en `terminos_aceptados`): los datos no se redistribuyen ni se venden sin el consentimiento escrito del INE; se usan solo para investigación científica y estadística y exclusivamente para presentar información agregada; no se intenta reidentificar a los encuestados ni vincular estos datos con otros que pudieran identificarlos; las publicaciones citan la fuente («Fuente: INE-ECH 2023») y se envía al INE una copia electrónica de los informes y publicaciones basados en los datos; el INE no responde del uso ni de las interpretaciones (Ley 16.616, artículos 15 y 16). Los microdatos no entran en el repositorio: solo se publican cifras agregadas.",
+      "descripcion": "INE, Encuesta Continua de Hogares (ECH) 2023, microdatos del mes 07"
+    },
+    {
+      "id": "recurso-23",
+      "tipo": "url",
+      "ubicacion": "https://www4.ine.gub.uy/Anda5/index.php/catalog/735/download/1287",
+      "licencia": "INE (Uruguay), términos y condiciones del catálogo de microdatos (ANDA) para la ECH 2023, que una persona acepta antes de descargar (quién y cuándo constan en `terminos_aceptados`): los datos no se redistribuyen ni se venden sin el consentimiento escrito del INE; se usan solo para investigación científica y estadística y exclusivamente para presentar información agregada; no se intenta reidentificar a los encuestados ni vincular estos datos con otros que pudieran identificarlos; las publicaciones citan la fuente («Fuente: INE-ECH 2023») y se envía al INE una copia electrónica de los informes y publicaciones basados en los datos; el INE no responde del uso ni de las interpretaciones (Ley 16.616, artículos 15 y 16). Los microdatos no entran en el repositorio: solo se publican cifras agregadas.",
+      "descripcion": "INE, Encuesta Continua de Hogares (ECH) 2023, microdatos del mes 08"
+    },
+    {
+      "id": "recurso-24",
+      "tipo": "url",
+      "ubicacion": "https://www4.ine.gub.uy/Anda5/index.php/catalog/735/download/1288",
+      "licencia": "INE (Uruguay), términos y condiciones del catálogo de microdatos (ANDA) para la ECH 2023, que una persona acepta antes de descargar (quién y cuándo constan en `terminos_aceptados`): los datos no se redistribuyen ni se venden sin el consentimiento escrito del INE; se usan solo para investigación científica y estadística y exclusivamente para presentar información agregada; no se intenta reidentificar a los encuestados ni vincular estos datos con otros que pudieran identificarlos; las publicaciones citan la fuente («Fuente: INE-ECH 2023») y se envía al INE una copia electrónica de los informes y publicaciones basados en los datos; el INE no responde del uso ni de las interpretaciones (Ley 16.616, artículos 15 y 16). Los microdatos no entran en el repositorio: solo se publican cifras agregadas.",
+      "descripcion": "INE, Encuesta Continua de Hogares (ECH) 2023, microdatos del mes 09"
+    },
+    {
+      "id": "recurso-25",
+      "tipo": "url",
+      "ubicacion": "https://www4.ine.gub.uy/Anda5/index.php/catalog/735/download/1289",
+      "licencia": "INE (Uruguay), términos y condiciones del catálogo de microdatos (ANDA) para la ECH 2023, que una persona acepta antes de descargar (quién y cuándo constan en `terminos_aceptados`): los datos no se redistribuyen ni se venden sin el consentimiento escrito del INE; se usan solo para investigación científica y estadística y exclusivamente para presentar información agregada; no se intenta reidentificar a los encuestados ni vincular estos datos con otros que pudieran identificarlos; las publicaciones citan la fuente («Fuente: INE-ECH 2023») y se envía al INE una copia electrónica de los informes y publicaciones basados en los datos; el INE no responde del uso ni de las interpretaciones (Ley 16.616, artículos 15 y 16). Los microdatos no entran en el repositorio: solo se publican cifras agregadas.",
+      "descripcion": "INE, Encuesta Continua de Hogares (ECH) 2023, microdatos del mes 10"
+    },
+    {
+      "id": "recurso-26",
+      "tipo": "url",
+      "ubicacion": "https://www4.ine.gub.uy/Anda5/index.php/catalog/735/download/1290",
+      "licencia": "INE (Uruguay), términos y condiciones del catálogo de microdatos (ANDA) para la ECH 2023, que una persona acepta antes de descargar (quién y cuándo constan en `terminos_aceptados`): los datos no se redistribuyen ni se venden sin el consentimiento escrito del INE; se usan solo para investigación científica y estadística y exclusivamente para presentar información agregada; no se intenta reidentificar a los encuestados ni vincular estos datos con otros que pudieran identificarlos; las publicaciones citan la fuente («Fuente: INE-ECH 2023») y se envía al INE una copia electrónica de los informes y publicaciones basados en los datos; el INE no responde del uso ni de las interpretaciones (Ley 16.616, artículos 15 y 16). Los microdatos no entran en el repositorio: solo se publican cifras agregadas.",
+      "descripcion": "INE, Encuesta Continua de Hogares (ECH) 2023, microdatos del mes 11"
+    },
+    {
+      "id": "recurso-27",
+      "tipo": "url",
+      "ubicacion": "https://www4.ine.gub.uy/Anda5/index.php/catalog/735/download/1291",
+      "licencia": "INE (Uruguay), términos y condiciones del catálogo de microdatos (ANDA) para la ECH 2023, que una persona acepta antes de descargar (quién y cuándo constan en `terminos_aceptados`): los datos no se redistribuyen ni se venden sin el consentimiento escrito del INE; se usan solo para investigación científica y estadística y exclusivamente para presentar información agregada; no se intenta reidentificar a los encuestados ni vincular estos datos con otros que pudieran identificarlos; las publicaciones citan la fuente («Fuente: INE-ECH 2023») y se envía al INE una copia electrónica de los informes y publicaciones basados en los datos; el INE no responde del uso ni de las interpretaciones (Ley 16.616, artículos 15 y 16). Los microdatos no entran en el repositorio: solo se publican cifras agregadas.",
+      "descripcion": "INE, Encuesta Continua de Hogares (ECH) 2023, microdatos del mes 12"
+    },
+    {
+      "id": "recurso-28",
+      "tipo": "url",
+      "ubicacion": "https://www5.ine.gub.uy/documents/Clasificadores/Clasificador%20Internacional%20Uniforme%20de%20Ocupaciones/NOTA%20EXPLICATIVA%20CIUO_08.pdf",
+      "licencia": "INE (Uruguay), documento público; se cita como «Fuente: INE».",
+      "descripcion": "INE, Nota explicativa CIUO_08 (agosto de 2013): la ocupación se codifica con la estructura CIUO-08"
+    },
+    {
+      "id": "recurso-29",
+      "tipo": "url",
+      "ubicacion": "https://ftp.ibge.gov.br/Trabalho_e_Rendimento/Pesquisa_Nacional_por_Amostra_de_Domicilios_continua/Trimestral/Microdados/2026/PNADC_022026.zip",
+      "licencia": "IBGE: archivos públicos de su servidor de descargas («Todos os arquivos aqui disponíveis são públicos», https://ftp.ibge.gov.br/); se cita al IBGE como fuente. La página de términos de uso de www.ibge.gov.br respondió 403 a la consulta (11/10/2026): su texto no se pudo leer.",
+      "descripcion": "IBGE, PNAD Contínua trimestral, microdatos públicos del trimestre 02/2026 (texto de ancho fijo en zip)"
+    },
+    {
+      "id": "recurso-30",
+      "tipo": "url",
+      "ubicacion": "https://ftp.ibge.gov.br/Trabalho_e_Rendimento/Pesquisa_Nacional_por_Amostra_de_Domicilios_continua/Trimestral/Microdados/Documentacao/Dicionario_e_input_20221031.zip",
+      "licencia": "IBGE: archivos públicos de su servidor de descargas («Todos os arquivos aqui disponíveis são públicos», https://ftp.ibge.gov.br/); se cita al IBGE como fuente. La página de términos de uso de www.ibge.gov.br respondió 403 a la consulta (11/10/2026): su texto no se pudo leer.",
+      "descripcion": "IBGE, PNAD Contínua trimestral: diccionario y archivo de entrada con las posiciones de cada variable (31/10/2022, el vigente)"
+    },
+    {
+      "id": "recurso-31",
+      "tipo": "url",
+      "ubicacion": "https://ftp.ibge.gov.br/Trabalho_e_Rendimento/Pesquisa_Nacional_por_Amostra_de_Domicilios_continua/Trimestral/Microdados/Documentacao/Estrutura_Ocupacao_COD.xls",
+      "licencia": "IBGE: archivos públicos de su servidor de descargas («Todos os arquivos aqui disponíveis são públicos», https://ftp.ibge.gov.br/); se cita al IBGE como fuente. La página de términos de uso de www.ibge.gov.br respondió 403 a la consulta (11/10/2026): su texto no se pudo leer.",
+      "descripcion": "IBGE, Estrutura da Classificação de Ocupações para Pesquisas Domiciliares (COD)"
+    }
+  ],
+  "canales": [
+    {
+      "id": "descarga-explicita",
+      "tipo": "remoto",
+      "recursos": [
+        "recurso-01",
+        "recurso-02",
+        "recurso-03",
+        "recurso-04",
+        "recurso-05",
+        "recurso-06",
+        "recurso-07",
+        "recurso-08",
+        "recurso-09",
+        "recurso-10",
+        "recurso-11",
+        "recurso-12",
+        "recurso-13",
+        "recurso-14",
+        "recurso-15",
+        "recurso-28",
+        "recurso-29",
+        "recurso-30",
+        "recurso-31"
+      ],
+      "autenticacion": "El código no configura credenciales para estas descargas públicas; las cuotas oficiales no están acreditadas aquí",
+      "limites": [
+        "Descarga únicamente mediante CLI explícita; revisión externa sin consulta automática programada.",
+        "No redistribuye microdatos; conserva atribuciones y condiciones exactas por recurso.",
+        "El texto de términos IBGE no leído por 403 histórico se conserva como límite de la licencia declarada, no se rellena."
+      ],
+      "observaciones": "Descarga Casen, GEIH, clasificación DANE, nota CIUO-08 INE y archivos PNAD/COD de IBGE con huellas y procedencia."
+    },
+    {
+      "id": "ech-conservada",
+      "tipo": "local",
+      "recursos": [
+        "recurso-16",
+        "recurso-17",
+        "recurso-18",
+        "recurso-19",
+        "recurso-20",
+        "recurso-21",
+        "recurso-22",
+        "recurso-23",
+        "recurso-24",
+        "recurso-25",
+        "recurso-26",
+        "recurso-27"
+      ],
+      "autenticacion": "Una persona acepta los términos del ANDA del INE y aporta archivos/procedencia con terminos_aceptados; este productor no inicia sesión ni acepta por ella",
+      "limites": [
+        "Exige los 12 meses ya registrados y conserva sus huellas; la ficha no acredita que existan en una instalación concreta.",
+        "No redistribución sin consentimiento escrito del INE; solo agregados y obligaciones de cita/envío de publicaciones conservadas en licencia."
+      ],
+      "observaciones": "Preserva ECH 2023 de adquisición humana y la combina solo en el cálculo local, sin atribuir nueva descarga."
+    }
+  ],
+  "conjuntos": [
+    {
+      "id": "encuestas_isco4",
+      "fuente": null,
+      "clase": "externa",
+      "alcance": "productor-externo",
+      "operacion": "revision",
+      "intervalo_dias": null
+    }
+  ],
+  "dependencias": ["oit", "clasificaciones"],
+  "contratos": [
+    "lector.py:ARCHIVOS",
+    "lector.py:ARCHIVOS_DANE",
+    "lector.py:ARCHIVOS_ECH",
+    "pnadc.py:ARCHIVOS_IBGE",
+    "lector.py:preparar",
+    "lector.py:validar",
+    "diseno.py:isco4_oficial",
+    "plataforma_datos/orquestacion/admision.py:cerrar_validacion"
+  ]
+}

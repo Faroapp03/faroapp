@@ -1,0 +1,390 @@
+{
+  "oficina-ia": {
+    "fuente": "veinte-perfiles",
+    "registro": {
+      "id": "oficina-ia",
+      "oficio": "4110",
+      "tipo": "domina-quiere-ia",
+      "nombre": "Marta",
+      "edad": 46,
+      "ocupacion": {
+        "esco": "4110.1",
+        "isco08": "4110",
+        "titulo": "empleado de oficina/empleada de oficina"
+      },
+      "tareas": [
+        {
+          "id": "4110-4",
+          "texto": "Preparar informes y correspondencia",
+          "nivel": "la domino",
+          "queLeCuesta": "Los redacta bien, pero cada semana repite los mismos informes y cartas y le quitan horas."
+        },
+        {
+          "id": "4110-6",
+          "texto": "Atender consultas telefónicas y electrónicas",
+          "nivel": "la domino",
+          "queLeCuesta": "Contesta cada día decenas de correos casi iguales y quiere hacerlo más rápido."
+        }
+      ],
+      "objetivo": "Usar la IA para ahorrar tiempo en los informes y los correos que ya domina.",
+      "destino": null,
+      "nivelIa": "medio",
+      "situacionLaboral": "trabaja",
+      "modalidad": "en-linea",
+      "horasPorSemana": 3,
+      "comarca": "Vallès Occidental",
+      "respuestas": {
+        "para": "ia",
+        "nivel": "mejorar"
+      }
+    }
+  },
+  "oficina-cuesta": {
+    "fuente": "veinte-perfiles",
+    "registro": {
+      "id": "oficina-cuesta",
+      "oficio": "4110",
+      "tipo": "le-cuesta-una-tarea",
+      "nombre": "Jordi",
+      "edad": 34,
+      "ocupacion": {
+        "esco": "4110.1",
+        "isco08": "4110",
+        "titulo": "empleado de oficina/empleada de oficina"
+      },
+      "tareas": [
+        {
+          "id": "4110-7",
+          "texto": "Preparar facturas y registrar operaciones",
+          "nivel": "me cuesta",
+          "queLeCuesta": "Se pierde con la hoja de cálculo cuando tiene que cuadrar facturas e IVA a final de mes."
+        },
+        {
+          "id": "4110-1",
+          "texto": "Registrar y archivar información",
+          "nivel": "la domino",
+          "queLeCuesta": "Nada en especial: archiva y registra sin problemas."
+        }
+      ],
+      "objetivo": "Hacer bien las facturas y las cuentas con la hoja de cálculo sin depender de una compañera.",
+      "destino": null,
+      "nivelIa": "inicial",
+      "situacionLaboral": "trabaja",
+      "modalidad": "igual",
+      "horasPorSemana": 4,
+      "comarca": "Barcelonès",
+      "respuestas": {
+        "para": "mejorar",
+        "nivel": "basico"
+      }
+    }
+  },
+  "cocina-cuesta": {
+    "fuente": "veinte-perfiles",
+    "registro": {
+      "id": "cocina-cuesta",
+      "oficio": "5120",
+      "tipo": "le-cuesta-una-tarea",
+      "nombre": "Ahmed",
+      "edad": 31,
+      "ocupacion": {
+        "esco": "5120.1",
+        "isco08": "5120",
+        "titulo": "cocinero/cocinera"
+      },
+      "tareas": [
+        {
+          "id": "5120-2",
+          "texto": "Coordinar al personal de cocina",
+          "nivel": "me cuesta",
+          "queLeCuesta": "Acaba de ascender a jefe de partida y no sabe repartir el trabajo ni corregir a los ayudantes sin conflictos."
+        },
+        {
+          "id": "5120-6",
+          "texto": "Inspeccionar y limpiar la cocina",
+          "nivel": "la domino",
+          "queLeCuesta": "La higiene la tiene al día con su carné de manipulador."
+        }
+      ],
+      "objetivo": "Aprender a dirigir a su equipo de cocina.",
+      "destino": null,
+      "nivelIa": "avanzado",
+      "situacionLaboral": "trabaja",
+      "modalidad": "presencial",
+      "horasPorSemana": 4,
+      "comarca": "Barcelonès",
+      "respuestas": {
+        "para": "mejorar",
+        "nivel": "mejorar"
+      }
+    }
+  },
+  "cocina-ia": {
+    "fuente": "veinte-perfiles",
+    "registro": {
+      "id": "cocina-ia",
+      "oficio": "5120",
+      "tipo": "domina-quiere-ia",
+      "nombre": "Lucía",
+      "edad": 41,
+      "ocupacion": {
+        "esco": "5120.1",
+        "isco08": "5120",
+        "titulo": "cocinero/cocinera"
+      },
+      "tareas": [
+        {
+          "id": "5120-1",
+          "texto": "Planificar y preparar comidas",
+          "nivel": "la domino",
+          "queLeCuesta": "Planifica los menús semanales y los escandallos a mano y le llevan horas cada domingo."
+        },
+        {
+          "id": "5120-3",
+          "texto": "Comprobar la calidad de los alimentos",
+          "nivel": "la domino",
+          "queLeCuesta": "Lleva los registros de control sanitario en papel y quiere pasarlos a algo más rápido."
+        }
+      ],
+      "objetivo": "Usar la IA para planificar menús, escandallos y registros en menos tiempo.",
+      "destino": null,
+      "nivelIa": "medio",
+      "situacionLaboral": "trabaja",
+      "modalidad": "en-linea",
+      "horasPorSemana": 2,
+      "comarca": "Gironès",
+      "respuestas": {
+        "para": "ia",
+        "nivel": "mejorar"
+      }
+    }
+  },
+  "enfermeria-paro": {
+    "fuente": "veinte-perfiles",
+    "registro": {
+      "id": "enfermeria-paro",
+      "oficio": "2221",
+      "tipo": "paro-quiere-volver",
+      "nombre": "Elena",
+      "edad": 50,
+      "ocupacion": {
+        "esco": "2221.2",
+        "isco08": "2221",
+        "titulo": "enfermero responsable de cuidados generales/enfermera responsable de cuidados generales"
+      },
+      "tareas": [
+        {
+          "id": "2221-4",
+          "texto": "Administrar cuidados y tratamientos",
+          "nivel": "me cuesta",
+          "queLeCuesta": "Tras cinco años cuidando a su madre, los protocolos de medicación y los programas de prescripción han cambiado."
+        },
+        {
+          "id": "2221-5",
+          "texto": "Limpiar y vendar heridas",
+          "nivel": "me cuesta",
+          "queLeCuesta": "Quiere ponerse al día en curas y apósitos actuales antes de volver a una planta."
+        }
+      ],
+      "objetivo": "Volver a trabajar de enfermera con la práctica clínica al día.",
+      "destino": null,
+      "nivelIa": "inicial",
+      "situacionLaboral": "paro",
+      "modalidad": "igual",
+      "horasPorSemana": 10,
+      "comarca": "Vallès Oriental",
+      "respuestas": {
+        "para": "mejorar",
+        "nivel": "mejorar"
+      }
+    }
+  },
+  "electricidad-cuesta": {
+    "fuente": "veinte-perfiles",
+    "registro": {
+      "id": "electricidad-cuesta",
+      "oficio": "7411",
+      "tipo": "le-cuesta-una-tarea",
+      "nombre": "Óscar",
+      "edad": 33,
+      "ocupacion": {
+        "esco": "7411.1",
+        "isco08": "7411",
+        "titulo": "electricista"
+      },
+      "tareas": [
+        {
+          "id": "7411-7",
+          "texto": "Instalar cuadros eléctricos",
+          "nivel": "me cuesta",
+          "queLeCuesta": "Domina las viviendas, pero le cuestan los cuadros de las naves industriales que ahora le encargan."
+        },
+        {
+          "id": "7411-4",
+          "texto": "Inspeccionar sistemas eléctricos",
+          "nivel": "me cuesta",
+          "queLeCuesta": "Duda con las mediciones de aislamiento y de tierra que exige la revisión."
+        }
+      ],
+      "objetivo": "Hacer instalaciones industriales de baja tensión con seguridad.",
+      "destino": null,
+      "nivelIa": "medio",
+      "situacionLaboral": "trabaja",
+      "modalidad": "presencial",
+      "horasPorSemana": 5,
+      "comarca": "Vallès Occidental",
+      "respuestas": {
+        "para": "mejorar",
+        "nivel": "especializarme"
+      }
+    }
+  },
+  "c022-p2": {
+    "fuente": "banco-240",
+    "registro": {
+      "id": "c022-p2",
+      "caso": "c022",
+      "esco": "2267.2",
+      "isco08": "2267",
+      "situacion": "asalariada",
+      "sector": "OTRO",
+      "provincia": "43",
+      "modalidad": "igual",
+      "objetivo": "mejorar",
+      "nivel": "mejorar",
+      "tiempo": "medio",
+      "tarea": 1
+    }
+  },
+  "c018-p1": {
+    "fuente": "banco-240",
+    "registro": {
+      "id": "c018-p1",
+      "caso": "c018",
+      "esco": "2512.2",
+      "isco08": "2512",
+      "situacion": "asalariada",
+      "sector": "OTRO",
+      "provincia": "08",
+      "modalidad": "igual",
+      "objetivo": "mejorar",
+      "nivel": "mejorar",
+      "tiempo": "poco",
+      "tarea": 3
+    }
+  },
+  "electricidad-ia": {
+    "fuente": "veinte-perfiles",
+    "registro": {
+      "id": "electricidad-ia",
+      "oficio": "7411",
+      "tipo": "domina-quiere-ia",
+      "nombre": "Xavier",
+      "edad": 50,
+      "ocupacion": {
+        "esco": "7411.1",
+        "isco08": "7411",
+        "titulo": "electricista"
+      },
+      "tareas": [
+        {
+          "id": "7411-3",
+          "texto": "Planificar instalaciones eléctricas",
+          "nivel": "la domino",
+          "queLeCuesta": "Es autónomo y hace presupuestos y memorias técnicas de noche."
+        },
+        {
+          "id": "7411-2",
+          "texto": "Examinar planos eléctricos",
+          "nivel": "la domino",
+          "queLeCuesta": "Lo domina; pierde tiempo pasando a limpio esquemas y listas de material."
+        }
+      ],
+      "objetivo": "Usar la IA para hacer presupuestos, memorias y listas de material en menos tiempo.",
+      "destino": null,
+      "nivelIa": "avanzado",
+      "situacionLaboral": "autonomo",
+      "modalidad": "en-linea",
+      "horasPorSemana": 3,
+      "comarca": "Garrotxa",
+      "respuestas": {
+        "para": "ia",
+        "nivel": "mejorar"
+      }
+    }
+  },
+  "oficina-paro": {
+    "fuente": "veinte-perfiles",
+    "registro": {
+      "id": "oficina-paro",
+      "oficio": "4110",
+      "tipo": "paro-quiere-volver",
+      "nombre": "Carmen",
+      "edad": 52,
+      "ocupacion": {
+        "esco": "4110.1",
+        "isco08": "4110",
+        "titulo": "empleado de oficina/empleada de oficina"
+      },
+      "tareas": [
+        {
+          "id": "4110-8",
+          "texto": "Transcribir y corregir textos",
+          "nivel": "me cuesta",
+          "queLeCuesta": "Lleva ocho meses en paro y los programas de oficina nuevos (en la nube) la han dejado atrás."
+        },
+        {
+          "id": "4110-6",
+          "texto": "Atender consultas telefónicas y electrónicas",
+          "nivel": "la domino",
+          "queLeCuesta": "La atención al público la domina; le falta soltura con el correo y las agendas compartidas."
+        }
+      ],
+      "objetivo": "Volver a trabajar en una oficina, con la ofimática al día.",
+      "destino": null,
+      "nivelIa": "inicial",
+      "situacionLaboral": "paro",
+      "modalidad": "presencial",
+      "horasPorSemana": 15,
+      "comarca": "Baix Llobregat",
+      "respuestas": {
+        "para": "mejorar",
+        "nivel": "mejorar"
+      }
+    }
+  },
+  "c022-p3": {
+    "fuente": "banco-240",
+    "registro": {
+      "id": "c022-p3",
+      "caso": "c022",
+      "esco": "2267.2",
+      "isco08": "2267",
+      "situacion": "asalariada",
+      "sector": "OTRO",
+      "provincia": "17",
+      "modalidad": "igual",
+      "objetivo": "mejorar",
+      "nivel": "mejorar",
+      "tiempo": "medio",
+      "tarea": 1
+    }
+  },
+  "c018-p4": {
+    "fuente": "banco-240",
+    "registro": {
+      "id": "c018-p4",
+      "caso": "c018",
+      "esco": "2512.2",
+      "isco08": "2512",
+      "situacion": "asalariada",
+      "sector": "OTRO",
+      "provincia": "08",
+      "modalidad": "igual",
+      "objetivo": "mejorar",
+      "nivel": "mejorar",
+      "tiempo": "medio",
+      "tarea": 3
+    }
+  }
+}

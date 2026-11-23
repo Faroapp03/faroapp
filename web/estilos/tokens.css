@@ -1,0 +1,396 @@
+/* Variables de diseño de Faro: color, tipografía, medidas, sombras y degradados. Ninguna otra hoja escribe un color.
+   Día y noche con un solo mecanismo: cada color de tema es light-dark(día, noche) y lo resuelve color-scheme.
+   scripts/tema-inicial.js pone data-tema en <html>: la elección guardada o, sin ella, "claro". Sin JavaScript no hay
+   data-tema y se sigue al sistema.
+   Los navegadores sin light-dark() (Safari anterior a 17.5) toman los mismos valores del bloque del final. */
+
+:root {
+  color-scheme: light dark;
+
+  /* Tema: superficies, texto y líneas */
+  --color-fondo: light-dark(#f4f3f0, #111317);
+  --color-panel: light-dark(#fff, #1a1d23);
+  --color-tinta: light-dark(#17212a, #f2f1ef);
+  --color-tenue: light-dark(#4f5b66, #aeb2b9);
+  --color-linea: light-dark(#c8ccce, #34373d);
+  --color-acento: light-dark(#215c96, #b9d7ff);
+
+  /* Los datos de «Datos globales» (datos-globales.html y datos-globales-ue.html): cada color, un solo significado.
+     Cataluña, en azul; la media de la UE-27, en naranja (referencia discontinua; protagonista en su página); el resto de
+     los territorios y los grupos, en gris. El color nunca va solo: Cataluña va además en negrita y con su nombre, la UE
+     discontinua y con su rótulo, y mujeres y hombres se distinguen por la forma. Azul frente a naranja es la pareja que
+     mejor resiste el daltonismo. Contraste, WCAG 2.x, sobre el fondo y sobre el panel:
+       día:   Cataluña 6,4 / 7,1 · UE 4,8 / 5,3 · gris 3,1 / 3,5
+       noche: Cataluña 10,0 / 9,1 · UE 9,1 / 8,3 · gris 4,1 / 3,7
+     --dato-gris-claro (la unión de las pesas) y --dato-pista (el fondo de las barras finas) son adorno: la cifra va
+     escrita al lado. --dato-cataluna-fondo resalta la fila de Cataluña en las tablas: su azul sobre él, día 6,0 y
+     noche 7,8. */
+  --dato-cataluna: light-dark(#1f5a94, #8ec2ff);
+  --dato-cataluna-fondo: light-dark(#e3edf7, #1d2a3a);
+  --dato-ue: light-dark(#a8550a, #f0a65c);
+  --dato-gris: light-dark(#848b92, #6f767e);
+  --dato-gris-claro: light-dark(#b9bec2, #4a5057);
+  --dato-pista: light-dark(#e2e4e5, #2a2e34);
+
+  /* Fallos que cuenta Faro en el recorrido: fondo y raya a la izquierda. Contraste, WCAG 2.x: la tinta del recorrido
+     (--rc-tinta) sobre el fondo del fallo, día 10,9 · noche 14,1; la raya sobre su fondo, 3:1 como mínimo para un
+     elemento gráfico, día 4,5 · noche 7,1. */
+  --color-error-fondo: light-dark(#f9ece6, #2b1f1b);
+  --color-error-linea: light-dark(#b0512c, #e79a78);
+
+  /* Semáforo de la página «Comprobaciones»: la marca de cada comprobación. Siempre va con su palabra («Bien», «Atención»,
+     «No funciona»), así que el color no es lo único que la distingue; como elemento gráfico, 3:1 como mínimo sobre
+     el panel y sobre el fondo. El fallo es la raya de los fallos del recorrido. */
+  --color-semaforo-bien: light-dark(#2e7d4f, #7fd1a0);
+  --color-semaforo-atencion: light-dark(#9a6700, #e3b341);
+  --color-semaforo-fallo: var(--color-error-linea);
+  /* Interruptores: contraste estable del pulgar sobre ambas pistas. */
+  --interruptor-encendido: #16763b;
+  --interruptor-apagado: #626a73;
+  --interruptor-pulgar: var(--blanco);
+
+  /* Desafío de «Qué es la IA» (estilos/guia-ia.css): la respuesta correcta en verde y la incorrecta en rojo, siempre
+     con su icono (✓ o ✗) y su palabra para lectores de pantalla, así que el color no es lo único que las distingue.
+     Contraste, WCAG 2.x: la tinta sobre cada fondo, día 14,8 y 14,5 · noche 13,9 y 15,0; el borde sobre su fondo,
+     día 4,6 y 5,9 · noche 8,6 y 7,7; el signo sobre la marca llena, día 5,1 y 6,6 · noche 10,2 y 8,4. */
+  --color-acierto: var(--color-semaforo-bien);
+  --color-acierto-fondo: light-dark(#edf6f0, #16271d);
+  --color-fallo: light-dark(#b42318, #ff8f85);
+  --color-fallo-fondo: light-dark(#fcefee, #2e1614);
+  --color-sobre-marca: light-dark(#fff, #111317);
+
+  /* Recorrido: la conversación con Faro tiene su propia paleta, la de un chat: una cabecera marina, el hilo
+     gris azulado con puntos, las burbujas blancas de Faro y las azules de la persona, y el azul profundo como acento.
+     La página (body.rc-cuerpo, más abajo) la usa también para la cabecera común y para el informe. Contraste, WCAG 2.x:
+       día:   tinta sobre fondo 15,2, sobre el hilo 14,0, sobre acento-fondo 13,9 y sobre la burbuja de la persona
+              13,2 · tenue sobre fondo 5,3, sobre lateral 5,0, sobre el hilo 4,9, sobre acento-fondo 4,9 y sobre la
+              burbuja de la persona 4,6 · acento sobre fondo 7,5, sobre superficie 8,1 y sobre el hilo 6,9 ·
+              sobre-botón sobre botón 8,1 · borde de campo sobre superficie 3,6 y sobre fondo 3,3 · sobre-marino sobre
+              marino 15,0 y su tenue 8,0
+       noche: tinta sobre superficie 13,0, sobre acento-fondo 11,2 y sobre la burbuja de la persona 10,0 · tenue sobre
+              fondo 8,6, sobre lateral 7,9, sobre superficie 7,3 y sobre la burbuja de la persona 5,6 · acento sobre
+              fondo 9,1 y sobre el hilo 8,6 · sobre-botón sobre botón 9,1 · borde de campo sobre superficie 3,8 ·
+              sobre-marino sobre marino 15,9 y su tenue 8,4
+     --rc-linea es solo separación (no delimita ningún campo); los campos usan --rc-linea-campo, 3:1 como mínimo.
+     --rc-avance es el relleno de la barra de avance (decorativa, sobre el marino); --rc-puntos, la trama del hilo.
+     Latón (los códigos oficiales y «La más parecida») y el aviso del principio de la conversación: latón sobre
+     superficie 6,0 de día y 8,6 de noche · tinta de «La más parecida» sobre su fondo 6,0 y 9,0 · tinta del aviso
+     sobre su fondo 7,0 y 10,4. */
+  --rc-fondo: light-dark(#f4f6f8, #0f1820);
+  --rc-lateral: light-dark(#eceff3, #15212b);
+  --rc-superficie: light-dark(#fff, #1a2733);
+  --rc-tinta: light-dark(#15202a, #e8eef3);
+  --rc-tenue: light-dark(#5b6772, #a7b6c3);
+  --rc-linea: light-dark(#d7dde2, #2c3b48);
+  --rc-linea-campo: light-dark(#7b8895, #6e8191);
+  --rc-acento: light-dark(#184f95, #8fbcf0);
+  --rc-acento-fondo: light-dark(#e3edf7, #1d3247);
+  --rc-boton: light-dark(#184f95, #8fbcf0);
+  --rc-sobre-boton: light-dark(#fff, #0c1822);
+  --rc-sombra: 0 5px 25px light-dark(rgb(16 32 45 / 6%), rgb(0 0 0 / 14%));
+  --rc-sombra-panel: 0 10px 40px light-dark(rgb(16 32 45 / 14%), rgb(0 0 0 / 38%));
+  --rc-velo: rgb(10 20 28 / 42%);
+  --rc-marino: light-dark(#10202d, #0a141c);
+  --rc-sobre-marino: light-dark(#f1f4f7, #e8eef3);
+  --rc-sobre-marino-tenue: light-dark(#a7b6c3, #9fb0bf);
+  --rc-fondo-chat: light-dark(#e9edf1, #121d27);
+  --rc-puntos: light-dark(rgb(16 32 45 / 6%), rgb(255 255 255 / 4%));
+  --rc-burbuja-mia: light-dark(#d9e8f8, #1f3a57);
+  --rc-avance: light-dark(#86b6ef, #86b6ef);
+  --rc-laton: light-dark(#7a5f2f, #dcbf86);
+  --rc-sugerida-fondo: light-dark(#f3ece0, #3a3122);
+  --rc-sugerida-tinta: light-dark(#6f5427, #ecd6a8);
+  --rc-aviso-fondo: light-dark(#fbf3df, #2d2a1e);
+  --rc-aviso-tinta: light-dark(#5c5236, #e6dbbb);
+
+  /* Avisos (el de prototipo del informe de ejemplo y los de Datos globales): los mismos en los dos temas */
+  --color-aviso-fondo: #eaf0ec;
+  --color-aviso-tinta: #263b32;
+
+  /* Velos bajo el menú y el buscador */
+  --velo-menu: rgb(8 14 20 / 30%);
+  --velo-buscador: rgb(3 8 18 / 71%);
+
+  /* Sombras */
+  --sombra-menu: 14px 0 40px rgb(0 0 0 / 8%);
+  --sombra-buscador: 0 28px 110px rgb(0 0 0 / 40%);
+  --sombra-aviso: 0 8px 36px rgb(0 0 0 / 20%);
+  --sombra-idioma: 0 12px 32px rgb(0 0 0 / 16%);
+
+  --blanco: #fff;
+
+  /* Texto sobre fotografía (portada de inicio y tarjetas): no cambia con el tema */
+  --foto-fondo: #151a20;
+  --foto-tarjeta: #14212e;
+  --foto-texto: #e1e5e8;
+  --foto-linea: #737b83;
+  /* La franja de arriba sostiene el rótulo «01 / Entender» (blanco, 12 px): se mantiene oscura hasta el 16 % del alto
+     para que llegue a 4,5:1 sobre la parte más clara de cada fotografía. */
+  --degradado-tarjeta: linear-gradient(
+    180deg,
+    rgb(6 12 19 / 64%),
+    rgb(6 12 19 / 56%) 16%,
+    rgb(6 12 19 / 8%) 32%,
+    rgb(6 12 19 / 58%) 53%,
+    rgb(6 12 19 / 95%)
+  );
+
+  /* Portada y pizarra del informe: paneles siempre oscuros */
+  --pizarra-portada: #10202d;
+  --pizarra-tinta: #f4f5f3;
+
+  /* Escala de colores y sus valores para los temas. El informe breve usa data-franja en
+     src/presentacion/informe-breve/hoja-ia.ts y asigna sus colores en informe-breve.css.
+     Esa hoja redefine --azul-claro dentro de .informe-breve para otros elementos del informe. */
+  --azul-claro: #9ec5f4;
+  --azul-medio: #3987e5;
+  /* El medio de día, más oscuro que --azul-medio para que el texto blanco llegue a 4,5:1 (con #3987e5 da 3,64). */
+  --azul-medio-dia: #2f74c8;
+  --azul-oscuro: #1f5fae;
+  --azul-profundo: #184f95;
+  --azul-suave: #86b6ef;
+  --tinta-sobre-claro: #0d1b2a;
+  --gris-sin-datos: #8a94a3;
+  --alta: light-dark(var(--azul-profundo), var(--azul-claro));
+  --media: light-dark(var(--azul-medio-dia), var(--azul-medio));
+  --baja: light-dark(var(--azul-suave), var(--azul-oscuro));
+
+  /* Tipografía. Ningún texto baja de 12 px (--texto-minimo). La conversación del recorrido se lee con la letra del
+     sistema, la más cómoda para textos largos en cada dispositivo; Sora queda para la marca y los títulos. */
+  --fuente-texto: "Space Grotesk", system-ui, sans-serif;
+  --fuente-conversacion: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --fuente-marca: "Sora", var(--fuente-texto);
+  --fuente-mono: "JetBrains Mono", ui-monospace, monospace;
+  --texto-minimo: 0.75rem;
+  /* Tamaños propios de la cabecera y el menú en pantallas de hasta 700 px (base-adaptaciones.css). */
+  --texto-marca-movil: 1.5625rem;
+  --texto-menu-movil: 1.23rem;
+
+  /* Medidas */
+  --ancho-portada: 1520px;
+  --ancho-sitio: 1328px;
+  --ancho-pagina: 1160px;
+  /* La sangría lateral del informe (.esencial) y de lo que se alinea con él en la página (la nota de su idioma). */
+  --sangria-informe: 24px;
+  --ancho-lectura: 760px;
+  --ancho-conversacion: 748px;
+  --ancho-guia: 246px;
+  --radio: 2px;
+  --alto-control: 40px;
+  --foco: 2px solid var(--color-tinta);
+
+  /* El globo de «Datos globales» (scripts/globo/, que los lee para WebGL): el espacio con sus estrellas, el mar mientras
+     llega la imagen de la Tierra, las fronteras y el amarillo del territorio elegido. Iguales de día y de noche: el
+     globo está siempre en el espacio, como los paneles sobre fotografía. El color de las fronteras da 17,8:1 sobre el
+     espacio. La marca de cada territorio con datos (scripts/globo/luces.js) es una chincheta blanca con filete oscuro y
+     la bandera del territorio en la cabeza, rodeada de un aro fino del color del filete: el blanco da 14,5:1 sobre el
+     mar y el filete, 14,7:1 sobre el hielo y las nubes (#eef2f5) y 11:1 sobre una tierra clara (#d9d3b8), así que se ve
+     en todo el globo (WCAG 1.4.11). La del elegido es amarilla, más grande y con el mismo filete y aro oscuros (10,8:1
+     frente al amarillo; el amarillo da 9,5:1 sobre el mar y 13:1 sobre el espacio, y sobre la tierra clara la separa el
+     filete): no se distingue solo por el color. El mismo amarillo tiñe el
+     territorio elegido, a medias, para que se vean el relieve y las fronteras.
+     Los mandos son de cristal oscuro, como los paneles sobre fotografía, con un filete claro: sobre ellos, la tinta
+     clara de la pizarra. */
+  --globo-espacio: #05080f;
+  --globo-mar: #0b2a4a;
+  --globo-frontera: #f2f1ef;
+  --globo-resalte: #ffc93c;
+  --globo-resalte-filete: #14202b;
+  --globo-estrella: #e6ecf5;
+  --globo-marca: #fff;
+  --globo-marca-filete: #14202b;
+  --globo-mandos-fondo: rgb(10 16 24 / 72%);
+  --globo-mandos-filete: rgb(255 255 255 / 16%);
+  --globo-mando-encima: rgb(255 255 255 / 8%);
+  /* La raya del territorio elegido en la lista del selector del globo: el ámbar del semáforo, con sus dos modos (4,87:1
+     sobre el panel de día y 8,5:1 de noche), para que la lista diga lo mismo que el globo con un amarillo que se lea
+     también de día. */
+  --color-globo-elegido: var(--color-semaforo-atencion);
+}
+
+:root[data-tema="claro"] {
+  color-scheme: light;
+}
+
+:root[data-tema="oscuro"] {
+  color-scheme: dark;
+}
+
+/* La página del recorrido usa la paleta de la conversación en todo lo que pinta con las variables comunes: la cabecera,
+   el menú y el informe del motor. */
+.rc-cuerpo {
+  --color-fondo: var(--rc-fondo);
+  --color-panel: var(--rc-superficie);
+  --color-tinta: var(--rc-tinta);
+  --color-tenue: var(--rc-tenue);
+  --color-linea: var(--rc-linea);
+  --foco: 2px solid var(--rc-acento);
+}
+
+/* Navegadores sin light-dark() (Safari anterior a 17.5): los mismos colores de día y de
+   noche, elegidos con el tema de <html> o, si no lo hay (sin JavaScript), con el del sistema. Sin esto, cada variable
+   de tema se queda sin valor y la página cae a los colores del sistema (la barra de escritura, sin borde ni botones).
+   Cada valor repite el de su light-dark() de arriba: al cambiar uno, se cambia también aquí. */
+@supports not (color: light-dark(#000, #fff)) {
+  :root {
+    --color-fondo: #f4f3f0;
+    --color-panel: #fff;
+    --color-tinta: #17212a;
+    --color-tenue: #4f5b66;
+    --color-linea: #c8ccce;
+    --color-acento: #215c96;
+    --dato-cataluna: #1f5a94;
+    --dato-cataluna-fondo: #e3edf7;
+    --dato-ue: #a8550a;
+    --dato-gris: #848b92;
+    --dato-gris-claro: #b9bec2;
+    --dato-pista: #e2e4e5;
+    --color-error-fondo: #f9ece6;
+    --color-error-linea: #b0512c;
+    --color-semaforo-bien: #2e7d4f;
+    --color-semaforo-atencion: #9a6700;
+    --color-acierto-fondo: #edf6f0;
+    --color-fallo: #b42318;
+    --color-fallo-fondo: #fcefee;
+    --color-sobre-marca: #fff;
+    --rc-fondo: #f4f6f8;
+    --rc-lateral: #eceff3;
+    --rc-superficie: #fff;
+    --rc-tinta: #15202a;
+    --rc-tenue: #5b6772;
+    --rc-linea: #d7dde2;
+    --rc-linea-campo: #7b8895;
+    --rc-acento: #184f95;
+    --rc-acento-fondo: #e3edf7;
+    --rc-boton: #184f95;
+    --rc-sobre-boton: #fff;
+    --rc-sombra: 0 5px 25px rgb(16 32 45 / 6%);
+    --rc-sombra-panel: 0 10px 40px rgb(16 32 45 / 14%);
+    --rc-marino: #10202d;
+    --rc-sobre-marino: #f1f4f7;
+    --rc-sobre-marino-tenue: #a7b6c3;
+    --rc-fondo-chat: #e9edf1;
+    --rc-puntos: rgb(16 32 45 / 6%);
+    --rc-burbuja-mia: #d9e8f8;
+    --rc-avance: #86b6ef;
+    --rc-laton: #7a5f2f;
+    --rc-sugerida-fondo: #f3ece0;
+    --rc-sugerida-tinta: #6f5427;
+    --rc-aviso-fondo: #fbf3df;
+    --rc-aviso-tinta: #5c5236;
+    --alta: var(--azul-profundo);
+    --media: var(--azul-medio-dia);
+    --baja: var(--azul-suave);
+  }
+
+  :root[data-tema="oscuro"] {
+    --color-fondo: #111317;
+    --color-panel: #1a1d23;
+    --color-tinta: #f2f1ef;
+    --color-tenue: #aeb2b9;
+    --color-linea: #34373d;
+    --color-acento: #b9d7ff;
+    --dato-cataluna: #8ec2ff;
+    --dato-cataluna-fondo: #1d2a3a;
+    --dato-ue: #f0a65c;
+    --dato-gris: #6f767e;
+    --dato-gris-claro: #4a5057;
+    --dato-pista: #2a2e34;
+    --color-error-fondo: #2b1f1b;
+    --color-error-linea: #e79a78;
+    --color-semaforo-bien: #7fd1a0;
+    --color-semaforo-atencion: #e3b341;
+    --color-acierto-fondo: #16271d;
+    --color-fallo: #ff8f85;
+    --color-fallo-fondo: #2e1614;
+    --color-sobre-marca: #111317;
+    --rc-fondo: #0f1820;
+    --rc-lateral: #15212b;
+    --rc-superficie: #1a2733;
+    --rc-tinta: #e8eef3;
+    --rc-tenue: #a7b6c3;
+    --rc-linea: #2c3b48;
+    --rc-linea-campo: #6e8191;
+    --rc-acento: #8fbcf0;
+    --rc-acento-fondo: #1d3247;
+    --rc-boton: #8fbcf0;
+    --rc-sobre-boton: #0c1822;
+    --rc-sombra: 0 5px 25px rgb(0 0 0 / 14%);
+    --rc-sombra-panel: 0 10px 40px rgb(0 0 0 / 38%);
+    --rc-marino: #0a141c;
+    --rc-sobre-marino: #e8eef3;
+    --rc-sobre-marino-tenue: #9fb0bf;
+    --rc-fondo-chat: #121d27;
+    --rc-puntos: rgb(255 255 255 / 4%);
+    --rc-burbuja-mia: #1f3a57;
+    --rc-avance: #86b6ef;
+    --rc-laton: #dcbf86;
+    --rc-sugerida-fondo: #3a3122;
+    --rc-sugerida-tinta: #ecd6a8;
+    --rc-aviso-fondo: #2d2a1e;
+    --rc-aviso-tinta: #e6dbbb;
+    --alta: var(--azul-claro);
+    --media: var(--azul-medio);
+    --baja: var(--azul-oscuro);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-tema]) {
+      --color-fondo: #111317;
+      --color-panel: #1a1d23;
+      --color-tinta: #f2f1ef;
+      --color-tenue: #aeb2b9;
+      --color-linea: #34373d;
+      --color-acento: #b9d7ff;
+      --dato-cataluna: #8ec2ff;
+      --dato-cataluna-fondo: #1d2a3a;
+      --dato-ue: #f0a65c;
+      --dato-gris: #6f767e;
+      --dato-gris-claro: #4a5057;
+      --dato-pista: #2a2e34;
+      --color-error-fondo: #2b1f1b;
+      --color-error-linea: #e79a78;
+      --color-semaforo-bien: #7fd1a0;
+      --color-semaforo-atencion: #e3b341;
+      --color-acierto-fondo: #16271d;
+      --color-fallo: #ff8f85;
+      --color-fallo-fondo: #2e1614;
+      --color-sobre-marca: #111317;
+      --rc-fondo: #0f1820;
+      --rc-lateral: #15212b;
+      --rc-superficie: #1a2733;
+      --rc-tinta: #e8eef3;
+      --rc-tenue: #a7b6c3;
+      --rc-linea: #2c3b48;
+      --rc-linea-campo: #6e8191;
+      --rc-acento: #8fbcf0;
+      --rc-acento-fondo: #1d3247;
+      --rc-boton: #8fbcf0;
+      --rc-sobre-boton: #0c1822;
+      --rc-sombra: 0 5px 25px rgb(0 0 0 / 14%);
+      --rc-sombra-panel: 0 10px 40px rgb(0 0 0 / 38%);
+      --rc-marino: #0a141c;
+      --rc-sobre-marino: #e8eef3;
+      --rc-sobre-marino-tenue: #9fb0bf;
+      --rc-fondo-chat: #121d27;
+      --rc-puntos: rgb(255 255 255 / 4%);
+      --rc-burbuja-mia: #1f3a57;
+      --rc-avance: #86b6ef;
+      --rc-laton: #dcbf86;
+      --rc-sugerida-fondo: #3a3122;
+      --rc-sugerida-tinta: #ecd6a8;
+      --rc-aviso-fondo: #2d2a1e;
+      --rc-aviso-tinta: #e6dbbb;
+      --alta: var(--azul-claro);
+      --media: var(--azul-medio);
+      --baja: var(--azul-oscuro);
+    }
+  }
+}
+
+/* En una pantalla estrecha, el informe estrecha su sangría (informe/pantallas-e-impresion.css). */
+@media (max-width: 640px) {
+  :root {
+    --sangria-informe: 16px;
+  }
+}

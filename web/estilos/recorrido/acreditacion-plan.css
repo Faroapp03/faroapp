@@ -1,0 +1,110 @@
+/* Acreditación elegida: orientación en el chat y fuente en el documento. */
+.rc-acreditaciones {
+  display: grid;
+  gap: 10px;
+  margin-top: 18px;
+}
+.rc-acreditaciones h3 {
+  margin: 0;
+  color: var(--rc-acento);
+  font-size: 1.1rem;
+  font-weight: 600;
+  line-height: 1.35;
+}
+.rc-acreditaciones p {
+  margin: 0 0 4px;
+  color: var(--rc-tenue);
+  line-height: 1.4;
+}
+.rc-acreditacion-opcion {
+  width: 100%;
+  padding: 16px 18px;
+  color: var(--rc-acento);
+  text-align: left;
+  font: inherit;
+  background: var(--rc-superficie);
+  border: 1px solid var(--rc-linea-campo);
+  border-radius: 12px;
+  cursor: pointer;
+}
+.rc-acreditacion-opcion:hover {
+  background: var(--rc-acento-fondo);
+  border-color: var(--rc-acento);
+}
+.rc-acreditacion-opcion:focus-visible {
+  outline: 2px solid var(--rc-acento);
+  outline-offset: 3px;
+}
+.pe-acreditacion {
+  padding: 1cqi 1.2cqi;
+  font-size: 1.7cqi;
+  line-height: 1.35;
+  border: 1px solid var(--hd-linea, #d8d3c7);
+  border-radius: 1cqi;
+}
+.pe-acreditacion h3,
+.pe-acreditacion p {
+  margin: 0 0 0.4cqi;
+}
+.pe-acreditacion h3 {
+  font-size: 1.1em;
+}
+.pe-acreditacion small {
+  font-size: 0.9em;
+}
+@media screen and (width <= 759px) {
+  .pe-acreditacion {
+    padding: 12px;
+    font-size: 14px;
+    border-radius: 8px;
+  }
+}
+@media print {
+  .hd[data-plan-elegido] .hd-hoja:has(.pe-acreditacion) {
+    --hd-espacio: 1cqi;
+  }
+  .hd-hoja:has(.pe-acreditacion) .pe-cabecera {
+    padding-top: 1.5cqi;
+    padding-bottom: 1.5cqi;
+  }
+  .hd-hoja:has(.pe-acreditacion) .pe-preferencias {
+    gap: 0.7cqi 2cqi;
+    padding-bottom: 0.8cqi;
+  }
+  .hd-hoja:has(.pe-acreditacion) .pe-camino > li {
+    min-height: auto;
+    padding-bottom: 1cqi;
+  }
+}
+@media (width <= 580px) {
+  .rc-acreditacion-opcion {
+    padding: 14px;
+  }
+}
+
+.rc-acreditacion-opcion {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.rc-acreditacion-contenido {
+  display: grid;
+  flex: 1;
+  min-width: 0;
+  gap: 5px;
+}
+.rc-acreditacion-nombre {
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+.rc-acreditacion-codigo,
+.rc-acreditacion-relacion {
+  color: var(--rc-tenue);
+  font-size: 0.85rem;
+}
+.rc-acreditacion-acciones {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px 20px;
+}

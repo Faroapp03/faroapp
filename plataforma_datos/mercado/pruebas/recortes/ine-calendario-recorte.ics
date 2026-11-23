@@ -1,0 +1,234 @@
+BEGIN:VCALENDAR
+PRODID:-//Instituto Nacional de Estadística//Calendario de Publicaciones
+VERSION:2.0
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-TIMEZONE:Europe/Madrid
+X-WR-CALNAME:Publicaciones INE
+X-WR-CALDESC:Calendario de publicaciones del INE
+BEGIN:VTIMEZONE
+TZID:Europe/Madrid
+LAST-MODIFIED:20261113T103836Z
+TZURL:http://tzurl.org/zoneinfo/Europe/Madrid
+COMMENT: HORARIO DE INVIERNO (STANDARD)
+BEGIN:STANDARD
+DTSTART:19961027T030000
+RRULE:FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU
+TZOFFSETFROM:+0200
+TZOFFSETTO:+0100
+TZNAME:EST
+END:STANDARD
+COMMENT:HORARIO DE VERANO (DAYLIGHT)
+BEGIN:DAYLIGHT
+DTSTART:19960331T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=-1SU
+TZOFFSETFROM:+0100
+TZOFFSETTO:+0200
+TZNAME:EDT
+END:DAYLIGHT
+END:VTIMEZONE
+BEGIN:VEVENT
+DTSTAMP:20261113T103836Z
+UID:92-12323@tempus.ine.es
+DTSTART;TZID=Europe/Madrid:20260716T110000
+DTEND;TZID=Europe/Madrid:20260716T110000
+SUMMARY:Indicadores del Sector de Tecnologías de la Información y las Comu
+ nicaciones (TIC). Año 2024
+DESCRIPTION:Indicadores del Sector de Tecnologías de la Información y las 
+ Comunicaciones (TIC)\nPrincipales variables del sector TIC\n
+ Número de empresas\n
+ Valor:  82.323 \n
+ Variación:  7,2 %\n
+ Cifra de negocios\n
+ Valor:  143.288 €\n
+ Variación:  4,8 %\n
+ Valor añadido\n
+ Valor:  56.251 €\n
+ Variación:  9,1 %\n
+ Número de ocupados\n
+ Valor:  688.727 \n
+ Variación:  5,1 %
+X-ALT-DESC;FMTTYPE=text/html:<html><body><strong>Indicadores del Sector de
+  Tecnologías de la Información y las Comunicaciones (TIC)</strong>
+ <hr><strong>Principales variables del sector TIC</strong>
+ <table style="padding: 2px; margin: 0px; border-bottom: 2px solid #6786B
+ 3;font: 0.8em Arial, Helvetica, sans-serif;color: #000000;">
+ <tbody>
+ <tr style="font-weight: bolder;color: #ffffff;background-color: #6786B3;
+ "><th ></th>            
+ <th style="min-width: 100px;">Valor</th>
+ <th style="min-width: 100px;">Variación</th>
+ </tr>
+ <tr>
+ <th style="font-weight: normal;">Número de empresas</th>
+ <td style="font-weight: bolder;text-align: right;">82.323 </td>     
+ <td style="font-weight: bolder;text-align: right;">7,2 %</td>     
+ <tr>
+ <tr>
+ <th style="font-weight: normal;">Cifra de negocios</th>
+ <td style="font-weight: bolder;text-align: right;">143.288 €</td>     
+ <td style="font-weight: bolder;text-align: right;">4,8 %</td>     
+ <tr>
+ <tr>
+ <th style="font-weight: normal;">Valor añadido</th>
+ <td style="font-weight: bolder;text-align: right;">56.251 €</td>     
+ <td style="font-weight: bolder;text-align: right;">9,1 %</td>     
+ <tr>
+ <tr>
+ <th style="font-weight: normal;">Número de ocupados</th>
+ <td style="font-weight: bolder;text-align: right;">688.727 </td>     
+ <td style="font-weight: bolder;text-align: right;">5,1 %</td>     
+ <tr>
+ </tbody>
+ </table>  
+ </body></html>
+END:VEVENT
+
+BEGIN:VEVENT
+DTSTAMP:20261113T103836Z
+UID:94-11784@tempus.ine.es
+DTSTART;TZID=Europe/Madrid:20251022T110000
+DTEND;TZID=Europe/Madrid:20251022T110000
+SUMMARY:Encuesta sobre el Uso de Tecnologías de la Información y las Comun
+ icaciones y del Comercio Electrónico en las Empresas 2024-2025
+DESCRIPTION:Encuesta sobre el Uso de Tecnologías de la Información y las C
+ omunicaciones y del Comercio Electrónico en las Empresas\n
+X-ALT-DESC;FMTTYPE=text/html:<html><body><strong>Encuesta sobre el Uso de 
+ Tecnologías de la Información y las Comunicaciones y del Comercio Electrón
+ ico en las Empresas</strong>
+ </body></html>
+END:VEVENT
+
+BEGIN:VEVENT
+DTSTAMP:20261113T103836Z
+UID:94-12326@tempus.ine.es
+DTSTART;TZID=Europe/Madrid:20261022T110000
+DTEND;TZID=Europe/Madrid:20261022T110000
+SUMMARY:Encuesta sobre el Uso de Tecnologías de la Información y las Comun
+ icaciones y del Comercio Electrónico en las Empresas 2025-2026
+DESCRIPTION:Encuesta sobre el Uso de Tecnologías de la Información y las C
+ omunicaciones y del Comercio Electrónico en las Empresas\nIndicadores sobr
+ e uso TIC en las empresas\n
+ Emplean tecnologías de Inteligencia Artificial\n
+ Empresas con menos de 10 empleados:  21,36 %\n
+ Empresas con más de 10 empleados:  33,60 %\n
+ Tiene conexión a internet\n
+ Empresas con menos de 10 empleados:  81,21 %\n
+ Empresas con más de 10 empleados:  98,33 %\n
+ Tiene conexión a internet y página web\n
+ Empresas con menos de 10 empleados:  36,15 %\n
+ Empresas con más de 10 empleados:  82,92 %\n
+ Utilizan medios sociales\n
+ Empresas con menos de 10 empleados:  32,09 %\n
+ Empresas con más de 10 empleados:  65,43 %\n
+ Realizan ventas por comercio electrónico\n
+ Empresas con menos de 10 empleados:  11,81 %\n
+ Empresas con más de 10 empleados:  28,97 %\n
+ Realizan compras por comercio electrónico\n
+ Empresas con menos de 10 empleados:  29,28 %\n
+ Empresas con más de 10 empleados:  48,64 %
+X-ALT-DESC;FMTTYPE=text/html:<html><body><strong>Encuesta sobre el Uso de 
+ Tecnologías de la Información y las Comunicaciones y del Comercio Electrón
+ ico en las Empresas</strong>
+ <hr><strong>Indicadores sobre uso TIC en las empresas</strong>
+ <table style="padding: 2px; margin: 0px; border-bottom: 2px solid #6786B
+ 3;font: 0.8em Arial, Helvetica, sans-serif;color: #000000;">
+ <tbody>
+ <tr style="font-weight: bolder;color: #ffffff;background-color: #6786B3;
+ "><th ></th>            
+ <th style="min-width: 100px;">Empresas con menos de 10 empleados</th>
+ <th style="min-width: 100px;">Empresas con más de 10 empleados</th>
+ </tr>
+ <tr>
+ <th style="font-weight: normal;">Emplean tecnologías de Inteligencia Ar
+ tificial</th>
+ <td style="font-weight: bolder;text-align: right;">21,36 %</td>     
+ <td style="font-weight: bolder;text-align: right;">33,60 %</td>     
+ <tr>
+ <tr>
+ <th style="font-weight: normal;">Tiene conexión a internet</th>
+ <td style="font-weight: bolder;text-align: right;">81,21 %</td>     
+ <td style="font-weight: bolder;text-align: right;">98,33 %</td>     
+ <tr>
+ <tr>
+ <th style="font-weight: normal;">Tiene conexión a internet y página web
+ </th>
+ <td style="font-weight: bolder;text-align: right;">36,15 %</td>     
+ <td style="font-weight: bolder;text-align: right;">82,92 %</td>     
+ <tr>
+ <tr>
+ <th style="font-weight: normal;">Utilizan medios sociales</th>
+ <td style="font-weight: bolder;text-align: right;">32,09 %</td>     
+ <td style="font-weight: bolder;text-align: right;">65,43 %</td>     
+ <tr>
+ <tr>
+ <th style="font-weight: normal;">Realizan ventas por comercio electróni
+ co</th>
+ <td style="font-weight: bolder;text-align: right;">11,81 %</td>     
+ <td style="font-weight: bolder;text-align: right;">28,97 %</td>     
+ <tr>
+ <tr>
+ <th style="font-weight: normal;">Realizan compras por comercio electrón
+ ico</th>
+ <td style="font-weight: bolder;text-align: right;">29,28 %</td>     
+ <td style="font-weight: bolder;text-align: right;">48,64 %</td>     
+ <tr>
+ </tbody>
+ </table>  
+ </body></html>
+END:VEVENT
+
+BEGIN:VEVENT
+DTSTAMP:20261113T103836Z
+UID:100-11793@tempus.ine.es
+DTSTART;TZID=Europe/Madrid:20250711T110000
+DTEND;TZID=Europe/Madrid:20250711T110000
+SUMMARY:Estadísticas sobre las actividades de protección medioambiental. A
+ ño 2023
+DESCRIPTION:Estadísticas sobre las Actividades de Protección Medioambienta
+ l\nGasto de la industria en protección ambiental\n
+ Gasto total\n
+ Valor:  4.380.579,1 Unidades\n
+ Variación:  12,7 Unidades\n
+ Gasto corriente\n
+ Valor:  2.927.971,2 Unidades\n
+ Variación:  9,5 Unidades\n
+ Inversión\n
+ Valor:  1.452.607,9 Unidades\n
+ Variación:  19,6 Unidades
+X-ALT-DESC;FMTTYPE=text/html:<html><body><strong>Estadísticas sobre las Ac
+ tividades de Protección Medioambiental</strong>
+ <hr><strong>Gasto de la industria en protección ambiental</strong>
+ <table style="padding: 2px; margin: 0px; border-bottom: 2px solid #6786B
+ 3;font: 0.8em Arial, Helvetica, sans-serif;color: #000000;">
+ <tbody>
+ <tr style="font-weight: bolder;color: #ffffff;background-color: #6786B3;
+ "><th ></th>            
+ <th style="min-width: 100px;">Valor</th>
+ <th style="min-width: 100px;">Variación</th>
+ </tr>
+ <tr>
+ <th style="font-weight: normal;">Gasto total</th>
+ <td style="font-weight: bolder;text-align: right;">4.380.579,1 Unidades
+ </td>     
+ <td style="font-weight: bolder;text-align: right;">12,7 Unidades</td>  
+ <tr>
+ <tr>
+ <th style="font-weight: normal;">Gasto corriente</th>
+ <td style="font-weight: bolder;text-align: right;">2.927.971,2 Unidades
+ </td>     
+ <td style="font-weight: bolder;text-align: right;">9,5 Unidades</td>   
+ <tr>
+ <tr>
+ <th style="font-weight: normal;">Inversión</th>
+ <td style="font-weight: bolder;text-align: right;">1.452.607,9 Unidades
+ </td>     
+ <td style="font-weight: bolder;text-align: right;">19,6 Unidades</td>  
+ <tr>
+ </tbody>
+ </table>  
+ </body></html>
+END:VEVENT
+
+
+END:VCALENDAR

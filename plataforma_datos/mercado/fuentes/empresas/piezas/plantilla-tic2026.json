@@ -1,0 +1,295 @@
+{
+  "id": "eticce-plantilla-tic2026",
+  "edicion": "2025–1T2026",
+  "clasificacion": "CNAE-2025",
+  "poblacion": "Empresas de 10 o más personas del ámbito ETICCE: secciones C–O excepto L y grupo 95.1, CNAE-2025. Cada variable conserva su base condicionada.",
+  "partes": {
+    "sectores": {
+      "tabla": "82386",
+      "sha256_definicion": "368c06c24fa890a782e7e3a35027f2e463304fca521dc083518a0b9d2eec91e4",
+      "series": 2584,
+      "notas": "1) Los códigos al comienzo de cada literal se refieren a la pregunta de cuestionario correspondiente o al apartado del que han derivado 2) Principales variables: 3) (0) Porcentaje sobre el total de empresas 4) (1) Porcentaje sobre el total de empresas que proporcionaron actividades formativas en TIC a sus empleados 5) (2) Porcentaje sobre el total de empresas que emplean especialistas en TIC 6) (3) Porcentaje sobre el total de empresas con dificultades para cubrir alguna vacante de especialistas en TIC 7) (4) Porcentaje sobre el total de personal especialistas TIC"
+    },
+    "comunidades": {
+      "tabla": "82408",
+      "sha256_definicion": "8976d8459f942814ad0d64b4aa77a18631f4079975431ef1c209045256b5b24e",
+      "series": 2720,
+      "notas": "1) Los códigos al comienzo de cada literal se refieren a la pregunta de cuestionario correspondiente o al apartado del que han derivado 2) Principales variables: 3) (0) Porcentaje sobre el total de empresas 4) (1) Porcentaje sobre el total de empresas que proporcionaron actividades formativas en TIC a sus empleados 5) (2) Porcentaje sobre el total de empresas que emplean especialistas en TIC 6) (3) Porcentaje sobre el total de empresas con dificultades para cubrir alguna vacante de especialistas en TIC 7) (4) Porcentaje sobre el total de personal especialistas TIC"
+    }
+  },
+  "variables": {
+    "I.1 % de empresas que emplean especialistas en TIC (0)": {
+      "nota": "0",
+      "base": "Porcentaje sobre el total de empresas",
+      "unidad": "porcentaje de empresas",
+      "periodo": "2025 o primer trimestre de 2026",
+      "origen_periodo": "Literal del capítulo oficial: 2025 o primer trimestre de 2026; la variable no indica un periodo más preciso.",
+      "precision_periodo": "anual_o_trimestral_no_desambiguado"
+    },
+    "I.1.1 % de empresas con mujeres especialistas TIC (2)": {
+      "nota": "2",
+      "base": "Porcentaje sobre el total de empresas que emplean especialistas en TIC",
+      "unidad": "porcentaje de empresas",
+      "periodo": "2025 o primer trimestre de 2026",
+      "origen_periodo": "Literal del capítulo oficial: 2025 o primer trimestre de 2026; la variable no indica un periodo más preciso.",
+      "precision_periodo": "anual_o_trimestral_no_desambiguado"
+    },
+    "I.1.1 % de mujeres especialistas TIC sobre el total de especialistas TIC en 2025 (4)": {
+      "nota": "4",
+      "base": "Porcentaje sobre el total de personal especialistas TIC",
+      "unidad": "porcentaje de personal",
+      "periodo": "2025",
+      "origen_periodo": "Año explícito del literal de la variable",
+      "precision_periodo": "anual_explicito_en_variable"
+    },
+    "I.1.1 % de personal especialista TIC sobre el total de personal en 2025": {
+      "nota": null,
+      "base": "Porcentaje sobre el total de personal",
+      "unidad": "porcentaje de personal",
+      "periodo": "2025",
+      "origen_periodo": "Año explícito del literal de la variable",
+      "precision_periodo": "anual_explicito_en_variable"
+    },
+    "I.1.1.A % de empresas con especialistas TIC en Ciberseguridad en 2025 (0)": {
+      "nota": "0",
+      "base": "Porcentaje sobre el total de empresas",
+      "unidad": "porcentaje de empresas",
+      "periodo": "2025",
+      "origen_periodo": "Año explícito del literal de la variable",
+      "precision_periodo": "anual_explicito_en_variable"
+    },
+    "I.1.1.A % de personal especialista TIC en Ciberseguridad en 2025 (4)": {
+      "nota": "4",
+      "base": "Porcentaje sobre el total de personal especialistas TIC",
+      "unidad": "porcentaje de personal",
+      "periodo": "2025",
+      "origen_periodo": "Año explícito del literal de la variable",
+      "precision_periodo": "anual_explicito_en_variable"
+    },
+    "I.1.1.B % de empresas con especialistas TIC en Inteligencia Artificial en 2025 (0)": {
+      "nota": "0",
+      "base": "Porcentaje sobre el total de empresas",
+      "unidad": "porcentaje de empresas",
+      "periodo": "2025",
+      "origen_periodo": "Año explícito del literal de la variable",
+      "precision_periodo": "anual_explicito_en_variable"
+    },
+    "I.1.1.B % de personal especialista TIC en Inteligencia artificial en 2025 (4)": {
+      "nota": "4",
+      "base": "Porcentaje sobre el total de personal especialistas TIC",
+      "unidad": "porcentaje de personal",
+      "periodo": "2025",
+      "origen_periodo": "Año explícito del literal de la variable",
+      "precision_periodo": "anual_explicito_en_variable"
+    },
+    "I.1.1.C % de empresas con especialistas TIC en Datos en 2025 (0)": {
+      "nota": "0",
+      "base": "Porcentaje sobre el total de empresas",
+      "unidad": "porcentaje de empresas",
+      "periodo": "2025",
+      "origen_periodo": "Año explícito del literal de la variable",
+      "precision_periodo": "anual_explicito_en_variable"
+    },
+    "I.1.1.C % de personal especialista TIC en Datos en 2025 (4)": {
+      "nota": "4",
+      "base": "Porcentaje sobre el total de personal especialistas TIC",
+      "unidad": "porcentaje de personal",
+      "periodo": "2025",
+      "origen_periodo": "Año explícito del literal de la variable",
+      "precision_periodo": "anual_explicito_en_variable"
+    },
+    "I.1.1.D % de empresas con especialistas TIC en Cloud Computing en 2025 (0)": {
+      "nota": "0",
+      "base": "Porcentaje sobre el total de empresas",
+      "unidad": "porcentaje de empresas",
+      "periodo": "2025",
+      "origen_periodo": "Año explícito del literal de la variable",
+      "precision_periodo": "anual_explicito_en_variable"
+    },
+    "I.1.1.D % de personal especialista TIC en Cloud Computing en 2025 (4)": {
+      "nota": "4",
+      "base": "Porcentaje sobre el total de personal especialistas TIC",
+      "unidad": "porcentaje de personal",
+      "periodo": "2025",
+      "origen_periodo": "Año explícito del literal de la variable",
+      "precision_periodo": "anual_explicito_en_variable"
+    },
+    "I.1.1.E % de empresas con especialistas TIC en otras áreas en 2025 (0)": {
+      "nota": "0",
+      "base": "Porcentaje sobre el total de empresas",
+      "unidad": "porcentaje de empresas",
+      "periodo": "2025",
+      "origen_periodo": "Año explícito del literal de la variable",
+      "precision_periodo": "anual_explicito_en_variable"
+    },
+    "I.1.1.E % de mujeres especialistas TIC en Ciberseguridad en 2025 (4)": {
+      "nota": "4",
+      "base": "Porcentaje sobre el total de personal especialistas TIC",
+      "unidad": "porcentaje de personal",
+      "periodo": "2025",
+      "origen_periodo": "Año explícito del literal de la variable",
+      "precision_periodo": "anual_explicito_en_variable"
+    },
+    "I.1.1.E % de personal especialista TIC en otras áreas en 2025 (4)": {
+      "nota": "4",
+      "base": "Porcentaje sobre el total de personal especialistas TIC",
+      "unidad": "porcentaje de personal",
+      "periodo": "2025",
+      "origen_periodo": "Año explícito del literal de la variable",
+      "precision_periodo": "anual_explicito_en_variable"
+    },
+    "I.1.1.F % de mujeres especialistas TIC en Inteligencia artificial en 2025 (4)": {
+      "nota": "4",
+      "base": "Porcentaje sobre el total de personal especialistas TIC",
+      "unidad": "porcentaje de personal",
+      "periodo": "2025",
+      "origen_periodo": "Año explícito del literal de la variable",
+      "precision_periodo": "anual_explicito_en_variable"
+    },
+    "I.1.1.G % de mujeres especialistas TIC en Datos en 2025 (4)": {
+      "nota": "4",
+      "base": "Porcentaje sobre el total de personal especialistas TIC",
+      "unidad": "porcentaje de personal",
+      "periodo": "2025",
+      "origen_periodo": "Año explícito del literal de la variable",
+      "precision_periodo": "anual_explicito_en_variable"
+    },
+    "I.1.1.H % de mujeres especialistas TIC en Cloud Computing en 2025 (4)": {
+      "nota": "4",
+      "base": "Porcentaje sobre el total de personal especialistas TIC",
+      "unidad": "porcentaje de personal",
+      "periodo": "2025",
+      "origen_periodo": "Año explícito del literal de la variable",
+      "precision_periodo": "anual_explicito_en_variable"
+    },
+    "I.1.1.I % de mujeres especialistas TIC en otras áreas en 2025 (4)": {
+      "nota": "4",
+      "base": "Porcentaje sobre el total de personal especialistas TIC",
+      "unidad": "porcentaje de personal",
+      "periodo": "2025",
+      "origen_periodo": "Año explícito del literal de la variable",
+      "precision_periodo": "anual_explicito_en_variable"
+    },
+    "I.1.1.J % de empresas con menos del 10% de mujeres especialistas TIC en 2025 (2)": {
+      "nota": "2",
+      "base": "Porcentaje sobre el total de empresas que emplean especialistas en TIC",
+      "unidad": "porcentaje de empresas",
+      "periodo": "2025",
+      "origen_periodo": "Año explícito del literal de la variable",
+      "precision_periodo": "anual_explicito_en_variable"
+    },
+    "I.1.1.K % de empresas con al menos el 10% pero menos del 25% de mujeres especialistas TIC en 2025 (2)": {
+      "nota": "2",
+      "base": "Porcentaje sobre el total de empresas que emplean especialistas en TIC",
+      "unidad": "porcentaje de empresas",
+      "periodo": "2025",
+      "origen_periodo": "Año explícito del literal de la variable",
+      "precision_periodo": "anual_explicito_en_variable"
+    },
+    "I.1.1.L % de empresas con al menos el 25% pero menos del 50% de mujeres especialistas TIC en 2025 (2)": {
+      "nota": "2",
+      "base": "Porcentaje sobre el total de empresas que emplean especialistas en TIC",
+      "unidad": "porcentaje de empresas",
+      "periodo": "2025",
+      "origen_periodo": "Año explícito del literal de la variable",
+      "precision_periodo": "anual_explicito_en_variable"
+    },
+    "I.1.1.M % de empresas con al menos el 50% de mujeres especialistas TIC en 2025 (2)": {
+      "nota": "2",
+      "base": "Porcentaje sobre el total de empresas que emplean especialistas en TIC",
+      "unidad": "porcentaje de empresas",
+      "periodo": "2025",
+      "origen_periodo": "Año explícito del literal de la variable",
+      "precision_periodo": "anual_explicito_en_variable"
+    },
+    "I.2 % de empresas que, en 2025, proporcionaron actividades formativas en TIC a sus empleados (0)": {
+      "nota": "0",
+      "base": "Porcentaje sobre el total de empresas",
+      "unidad": "porcentaje de empresas",
+      "periodo": "2025",
+      "origen_periodo": "Año explícito del literal de la variable",
+      "precision_periodo": "anual_explicito_en_variable"
+    },
+    "I.2.A % de empresas que, en 2025, proporcionaron actividades formativas en TIC a su personal especialista en TIC (1)": {
+      "nota": "1",
+      "base": "Porcentaje sobre el total de empresas que proporcionaron actividades formativas en TIC a sus empleados",
+      "unidad": "porcentaje de empresas",
+      "periodo": "2025",
+      "origen_periodo": "Año explícito del literal de la variable",
+      "precision_periodo": "anual_explicito_en_variable"
+    },
+    "I.2.B % de empresas que, en 2025, proporcionaron actividades formativas en TIC a otro personal empleado de la empresa (1)": {
+      "nota": "1",
+      "base": "Porcentaje sobre el total de empresas que proporcionaron actividades formativas en TIC a sus empleados",
+      "unidad": "porcentaje de empresas",
+      "periodo": "2025",
+      "origen_periodo": "Año explícito del literal de la variable",
+      "precision_periodo": "anual_explicito_en_variable"
+    },
+    "I.3 % de empresas que, en 2025, contrataron o intentaron contratar especialistas en TIC (0)": {
+      "nota": "0",
+      "base": "Porcentaje sobre el total de empresas",
+      "unidad": "porcentaje de empresas",
+      "periodo": "2025",
+      "origen_periodo": "Año explícito del literal de la variable",
+      "precision_periodo": "anual_explicito_en_variable"
+    },
+    "I.4 % de empresas que, en 2025, tuvieron dificultad para cubrir alguna vacante de especialista en TIC (0)": {
+      "nota": "0",
+      "base": "Porcentaje sobre el total de empresas",
+      "unidad": "porcentaje de empresas",
+      "periodo": "2025",
+      "origen_periodo": "Año explícito del literal de la variable",
+      "precision_periodo": "anual_explicito_en_variable"
+    },
+    "I.5.A % de empresas cuya dificultad para contratar especialistas TIC en 2025 fue la falta de solicitudes (3)": {
+      "nota": "3",
+      "base": "Porcentaje sobre el total de empresas con dificultades para cubrir alguna vacante de especialistas en TIC",
+      "unidad": "porcentaje de empresas",
+      "periodo": "2025",
+      "origen_periodo": "Año explícito del literal de la variable",
+      "precision_periodo": "anual_explicito_en_variable"
+    },
+    "I.5.B % de empresas cuya dificultad para contratar especialistas TIC en 2025 fue la falta de cualificación educativa y/o formativa adecuada en TIC de los solicitantes (3)": {
+      "nota": "3",
+      "base": "Porcentaje sobre el total de empresas con dificultades para cubrir alguna vacante de especialistas en TIC",
+      "unidad": "porcentaje de empresas",
+      "periodo": "2025",
+      "origen_periodo": "Año explícito del literal de la variable",
+      "precision_periodo": "anual_explicito_en_variable"
+    },
+    "I.5.C % de empresas cuya dificultad para contratar especialistas TIC en 2025 fue la falta de experiencia laboral adecuada en TIC de los solicitantes (3)": {
+      "nota": "3",
+      "base": "Porcentaje sobre el total de empresas con dificultades para cubrir alguna vacante de especialistas en TIC",
+      "unidad": "porcentaje de empresas",
+      "periodo": "2025",
+      "origen_periodo": "Año explícito del literal de la variable",
+      "precision_periodo": "anual_explicito_en_variable"
+    },
+    "I.5.D % de empresas cuya dificultad para contratar especialistas TIC en 2025 fue que las expectativas salariales de los solicitantes eran demasiado elevadas(3)": {
+      "nota": "3",
+      "base": "Porcentaje sobre el total de empresas con dificultades para cubrir alguna vacante de especialistas en TIC",
+      "unidad": "porcentaje de empresas",
+      "periodo": "2025",
+      "origen_periodo": "Año explícito del literal de la variable",
+      "precision_periodo": "anual_explicito_en_variable"
+    },
+    "I.6.A % de empresas en las cuales fueron los propios empleados quienes desarrollaron las funciones TIC de la empresa en 2025 (0)": {
+      "nota": "0",
+      "base": "Porcentaje sobre el total de empresas",
+      "unidad": "porcentaje de empresas",
+      "periodo": "2025",
+      "origen_periodo": "Año explícito del literal de la variable",
+      "precision_periodo": "anual_explicito_en_variable"
+    },
+    "I.6.B % de empresas en las cuales fueron proveedores externos quienes desarrollaron las funciones TIC de la empresa en 2025 (0)": {
+      "nota": "0",
+      "base": "Porcentaje sobre el total de empresas",
+      "unidad": "porcentaje de empresas",
+      "periodo": "2025",
+      "origen_periodo": "Año explícito del literal de la variable",
+      "precision_periodo": "anual_explicito_en_variable"
+    }
+  },
+  "anio": 2026
+}

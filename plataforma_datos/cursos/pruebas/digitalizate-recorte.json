@@ -1,0 +1,350 @@
+{
+  "empresas": [
+    {
+      "idEmpresaDigitalizate": 78,
+      "idCatalogo": 1,
+      "nombre": "Airbus",
+      "url": "https://www.airbus.com/en",
+      "descripcion": "<strong>Airbus</strong> pone a tu disposición los siguientes cursos  a los cuales tendrás acceso directo a través de los siguientes enlaces.",
+      "marcaComercial": "Airbus",
+      "idImagen": "d27dcfaa-9dac-406e-b7a7-3f87ab48f983",
+      "extImagen": ".png",
+      "textoAltImagen": "Airbus",
+      "rutaImagen": "https://gestorimagenes.fundae.es/CYP003/d27dcfaa-9dac-406e-b7a7-3f87ab48f983.png",
+      "baja": false,
+      "numeroCursos": 2
+    }
+  ],
+  "empresa_78": {
+    "respuesta": {
+      "idEmpresaDigitalizate": 78,
+      "nombre": "Airbus",
+      "url": "https://www.airbus.com/en",
+      "descripcion": "<strong>Airbus</strong> pone a tu disposición los siguientes cursos  a los cuales tendrás acceso directo a través de los siguientes enlaces.",
+      "idEmpresaDigitalizateImagen": "d27dcfaa-9dac-406e-b7a7-3f87ab48f983",
+      "titulo": "Airbus",
+      "extImagen": ".png",
+      "textoAltImagen": "Airbus",
+      "rutaImagen": "https://gestorimagenes.fundae.es/CYP003/d27dcfaa-9dac-406e-b7a7-3f87ab48f983.png",
+      "marcaComercial": "Airbus",
+      "baja": false,
+      "listaCatalogosResponse": [
+        {
+          "idCatalogo": 1,
+          "descripcionCatalogo": "Digitalizate",
+          "orden": 8,
+          "idImagen": "4956cb65-e880-4c1e-8481-f0e1bb25b322",
+          "extImagen": ".JPG",
+          "tituloCard": "Digitalizate",
+          "descripcionCard": "Digitalizate En este espacio encontrarás acceso a cursos gratuitos en competencias, incluyendo aquellas que te ayudarán al proceso de transformación digital, cedidos por grandes empresas gracias a convenios suscritos con Fundae y la colaboración del SEPE. Entra en cada una de ellas y descubre qué pueden ofrecerte para mejorar y actualizar tus conocimiento",
+          "textoBoton": "Ver más",
+          "urlCard": "/digitalizate/1",
+          "visible": true,
+          "color": "#44ab35",
+          "baja": false
+        }
+      ],
+      "listaCatalogosEmpresaResponse": [
+        {
+          "idCatalogo": 1,
+          "descripcion": "<strong>Airbus</strong> pone a tu disposición los siguientes cursos  a los cuales tendrás acceso directo a través de los siguientes enlaces.",
+          "baja": false
+        }
+      ],
+      "digitalizateCategoria": [
+        {
+          "idCategoria": 212,
+          "categoria": "Cursos",
+          "descripcion": null,
+          "numeroCursos": 2,
+          "orden": 1,
+          "baja": false,
+          "digitalizateRecursoFormativo": [
+            {
+              "idRecursoFormativo": 1880,
+              "denominacion": "How Digital is Modifying our Industry's DNA",
+              "edicion": null,
+              "descripcion": "Como lo digital esta modificando el ADN de nuestra industria",
+              "urlCurso": "https://www.youtube.com/watch?v=ayVZ96XnT5A",
+              "duracion": 1.0,
+              "rangoDuracion": 1,
+              "idModalidad": 2,
+              "modalidad": "Teleformación",
+              "idTipoRecurso": 1,
+              "tipoRecurso": "Curso",
+              "idNivelDigitalizacion": 1,
+              "nivelDigitalizacion": "Básico",
+              "idIdioma": 2,
+              "descripcionIdioma": "Inglés",
+              "idRecursoFormativoImagen": "3204b86f-9f3c-4cb7-872a-ccb3d4aee285",
+              "descripcionCard": null,
+              "botonSolicitud": true,
+              "digital": true,
+              "fechaAlta": null,
+              "periodoInscripcionInicio": null,
+              "periodoInscripcionFin": null,
+              "extImagen": ".png",
+              "textoAltImagen": "How Digital is Modifying our Industry's DNA",
+              "rutaImagen": "https://gestorimagenes.fundae.es/CYP003/3204b86f-9f3c-4cb7-872a-ccb3d4aee285.png",
+              "idCategoriaDigitalizate": 212,
+              "baja": false,
+              "orden": 1,
+              "meGusta": false,
+              "catalogos": [
+                {
+                  "idCatalogo": 1,
+                  "descripcionCatalogo": "Digitalizate",
+                  "orden": 8,
+                  "idImagen": "4956cb65-e880-4c1e-8481-f0e1bb25b322",
+                  "extImagen": ".JPG",
+                  "tituloCard": "Digitalizate",
+                  "descripcionCard": "Digitalizate En este espacio encontrarás acceso a cursos gratuitos en competencias, incluyendo aquellas que te ayudarán al proceso de transformación digital, cedidos por grandes empresas gracias a convenios suscritos con Fundae y la colaboración del SEPE. Entra en cada una de ellas y descubre qué pueden ofrecerte para mejorar y actualizar tus conocimiento",
+                  "textoBoton": "Ver más",
+                  "urlCard": "/digitalizate/1",
+                  "visible": true,
+                  "color": "#44ab35",
+                  "baja": false
+                }
+              ],
+              "areasInteres": [
+                {
+                  "idAreaInteres": 8,
+                  "descripcionAreasInteres": "Bases de datos / Blockchain",
+                  "orden": 8
+                },
+                {
+                  "idAreaInteres": 59,
+                  "descripcionAreasInteres": "Tratamiento de datos / Big Data",
+                  "orden": 59
+                }
+              ],
+              "etiquetas": [
+                {
+                  "idEtiqueta": 23,
+                  "descripcionEtiqueta": "Big data",
+                  "orden": 71
+                },
+                {
+                  "idEtiqueta": 51,
+                  "descripcionEtiqueta": "Inteligencia artificial",
+                  "orden": 319
+                },
+                {
+                  "idEtiqueta": 231,
+                  "descripcionEtiqueta": "Innovación",
+                  "orden": 312
+                }
+              ]
+            },
+            {
+              "idRecursoFormativo": 2743,
+              "denominacion": "Simulación al servicio de los gemelos digitales o \"Twin Digital\" y la nueva era de un tráfico aéreo optimizado",
+              "edicion": null,
+              "descripcion": "Airbus está desarrollando un entorno de simulación patentado para explorar cómo funcionará el espacio aéreo futuro. Este entorno proporciona un gemelo digital de cada elemento del ecosistema de Airbus, para probar servicios individuales y verificar la interoperabilidad",
+              "urlCurso": "https://www.youtube.com/watch?v=gKG4seNCh5I",
+              "duracion": 1.0,
+              "rangoDuracion": 1,
+              "idModalidad": 2,
+              "modalidad": "Teleformación",
+              "idTipoRecurso": 2,
+              "tipoRecurso": "Vídeo formativo",
+              "idNivelDigitalizacion": 1,
+              "nivelDigitalizacion": "Básico",
+              "idIdioma": 2,
+              "descripcionIdioma": "Inglés",
+              "idRecursoFormativoImagen": "819dfe44-f211-4b56-8910-141813e8474f",
+              "descripcionCard": null,
+              "botonSolicitud": true,
+              "digital": true,
+              "fechaAlta": null,
+              "periodoInscripcionInicio": null,
+              "periodoInscripcionFin": null,
+              "extImagen": ".jpg",
+              "textoAltImagen": "Simulación al servicio de los gemelos digitales o \"Twin Digital\" y la nueva era de un tráfico aéreo optimizado",
+              "rutaImagen": "https://gestorimagenes.fundae.es/CYP003/819dfe44-f211-4b56-8910-141813e8474f.jpg",
+              "idCategoriaDigitalizate": 212,
+              "baja": false,
+              "orden": 3,
+              "meGusta": false,
+              "catalogos": [
+                {
+                  "idCatalogo": 1,
+                  "descripcionCatalogo": "Digitalizate",
+                  "orden": 8,
+                  "idImagen": "4956cb65-e880-4c1e-8481-f0e1bb25b322",
+                  "extImagen": ".JPG",
+                  "tituloCard": "Digitalizate",
+                  "descripcionCard": "Digitalizate En este espacio encontrarás acceso a cursos gratuitos en competencias, incluyendo aquellas que te ayudarán al proceso de transformación digital, cedidos por grandes empresas gracias a convenios suscritos con Fundae y la colaboración del SEPE. Entra en cada una de ellas y descubre qué pueden ofrecerte para mejorar y actualizar tus conocimiento",
+                  "textoBoton": "Ver más",
+                  "urlCard": "/digitalizate/1",
+                  "visible": true,
+                  "color": "#44ab35",
+                  "baja": false
+                }
+              ],
+              "areasInteres": [],
+              "etiquetas": [
+                {
+                  "idEtiqueta": 231,
+                  "descripcionEtiqueta": "Innovación",
+                  "orden": 312
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "filtros": {
+      "rangoDuraciones": [
+        {
+          "id": 1,
+          "name": "Menos de 10h",
+          "activo": true
+        },
+        {
+          "id": 2,
+          "name": "Entre 10h y 30h",
+          "activo": false
+        },
+        {
+          "id": 3,
+          "name": "Más de 30h",
+          "activo": false
+        },
+        {
+          "id": 4,
+          "name": "Todos",
+          "activo": true
+        }
+      ],
+      "duracion": [0, 1.0, 4],
+      "provincia": [],
+      "areasInteres": [
+        {
+          "id": 3,
+          "name": "Análisis de datos, estadística, matemáticas aplicadas"
+        },
+        {
+          "id": 8,
+          "name": "Bases de datos / Blockchain"
+        },
+        {
+          "id": 13,
+          "name": "Cloud"
+        },
+        {
+          "id": 15,
+          "name": "Competencias personales y empresariales"
+        },
+        {
+          "id": 32,
+          "name": "Habilidades personales"
+        },
+        {
+          "id": 35,
+          "name": "Industria y maquinaria"
+        },
+        {
+          "id": 46,
+          "name": "Ofimática / Competencias digitales"
+        },
+        {
+          "id": 59,
+          "name": "Tratamiento de datos / Big Data"
+        }
+      ],
+      "idiomas": [
+        {
+          "id": 2,
+          "name": "Inglés"
+        }
+      ],
+      "tiposRecursos": [
+        {
+          "id": 1,
+          "name": "Curso"
+        },
+        {
+          "id": 2,
+          "name": "Vídeo formativo"
+        }
+      ],
+      "nivel": [
+        {
+          "id": 1,
+          "name": "Básico"
+        }
+      ],
+      "modalidad": [],
+      "competenciaDigital": [],
+      "nivelCompetenciaDigital": [],
+      "etiquetas": [
+        {
+          "id": 7,
+          "name": "Análisis de datos"
+        },
+        {
+          "id": 22,
+          "name": "Bases de datos"
+        },
+        {
+          "id": 23,
+          "name": "Big data"
+        },
+        {
+          "id": 26,
+          "name": "Ciberseguridad"
+        },
+        {
+          "id": 28,
+          "name": "Cloud"
+        },
+        {
+          "id": 114,
+          "name": "Competencias digitales"
+        },
+        {
+          "id": 310,
+          "name": "Herramientas digitales"
+        },
+        {
+          "id": 231,
+          "name": "Innovación"
+        },
+        {
+          "id": 51,
+          "name": "Inteligencia artificial"
+        },
+        {
+          "id": 61,
+          "name": "Machine learning"
+        },
+        {
+          "id": 84,
+          "name": "Realidad virtual"
+        },
+        {
+          "id": 212,
+          "name": "Sostenibilidad"
+        },
+        {
+          "id": 148,
+          "name": "Transformación digital"
+        }
+      ],
+      "codigoPostal": [],
+      "poblacion": [],
+      "years": [],
+      "meses": [],
+      "finalizado": [],
+      "tipoEstado": [],
+      "empresas": [],
+      "categorias": [],
+      "colectivos": [],
+      "estructurasSectoriales": [],
+      "inscripcionesAbiertas": [],
+      "habilitantesCapacitadoras": []
+    }
+  }
+}

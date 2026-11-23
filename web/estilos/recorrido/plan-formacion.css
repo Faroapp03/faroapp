@@ -1,0 +1,751 @@
+/* Dos A4: una ruta personal conectada y dos fichas documentadas.
+   Todo es texto y CSS vectorial. La guardia de impresión comprueba el contenido completo. */
+.hd[data-plan-elegido] {
+  --hd-titulo: "Space Grotesk", system-ui, sans-serif;
+  --hd-tinta: #191b1b;
+  --hd-papel: #fbf9f2;
+  --hd-tenue: #53564f;
+  --hd-linea: #d8d3c7;
+  --hd-laton: #79613a;
+}
+.hd[data-plan-elegido] .hd-hoja {
+  --hd-texto: 1.78cqi;
+  --hd-pequeno: 1.45cqi;
+  --hd-espacio: 2cqi;
+}
+.hd[data-plan-elegido] .hd-banda {
+  padding-top: 1.7cqi;
+  padding-bottom: 1.2cqi;
+  background: var(--hd-tinta);
+  font-size: 1.45cqi;
+}
+.hd[data-plan-elegido] .hd-cuerpo {
+  padding-top: 0;
+  line-height: 1.36;
+}
+.pe-cabecera {
+  margin: 0 calc(-1 * var(--hd-margen));
+  padding: 2.2cqi var(--hd-margen) 3.2cqi;
+  color: var(--hd-papel);
+  background: var(--hd-tinta);
+}
+.pe-cabecera h2 {
+  margin: 0;
+  font: 500 4.7cqi / 1.08 var(--hd-titulo);
+  letter-spacing: -0.045em;
+}
+.pe-antetitulo {
+  margin: 0 0 0.7cqi;
+  color: var(--hd-laton);
+  font: 1.45cqi / 1.3 var(--fuente-mono);
+  letter-spacing: 0.065em;
+  text-transform: uppercase;
+}
+.pe-cabecera .pe-antetitulo {
+  color: #d7c29c;
+}
+.pe-entradilla {
+  max-width: 62ch;
+  margin: 1.2cqi 0 0;
+  color: #e3e0d7;
+}
+.pe-seccion {
+  display: grid;
+  gap: 0.8cqi;
+}
+.pe-seccion h3 {
+  margin: 0;
+  font: 500 2.25cqi / 1.2 var(--hd-titulo);
+  letter-spacing: -0.025em;
+}
+.pe-seccion p {
+  margin: 0;
+}
+.pe-objetivo {
+  max-width: 65ch;
+  padding-left: 1.8cqi;
+  border-left: 0.4cqi solid var(--hd-laton);
+  font: 500 2.15cqi / 1.3 var(--hd-titulo);
+}
+.hd[data-plan-elegido] .pe-nota {
+  color: var(--hd-tenue);
+  font-size: var(--hd-pequeno);
+  line-height: 1.35;
+}
+.pe-preferencias {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.1cqi 2cqi;
+  margin: 0;
+  padding: 0.5cqi 0 1.8cqi;
+  border-bottom: 1px solid var(--hd-linea);
+}
+.pe-preferencias dt {
+  margin-bottom: 0.25cqi;
+  color: var(--hd-tenue);
+  font-size: var(--hd-pequeno);
+}
+.pe-preferencias dd {
+  margin: 0;
+  font-weight: 500;
+}
+.pe-ruta {
+  gap: 1cqi;
+}
+.pe-agenda {
+  color: var(--hd-tenue);
+}
+.pe-agenda strong {
+  color: var(--hd-tinta);
+  font-weight: 500;
+}
+.pe-camino {
+  display: grid;
+  margin: 0.5cqi 0;
+  padding: 0;
+  list-style: none;
+}
+.pe-camino > li {
+  position: relative;
+  display: grid;
+  grid-template-columns: 18cqi 4.4cqi minmax(0, 1fr);
+  gap: 1.8cqi;
+  min-height: 10.3cqi;
+  padding-bottom: 1.7cqi;
+  break-inside: avoid;
+}
+/* La línea une el centro de cada punto con el siguiente; no hay cuatro cajas aisladas. */
+.pe-camino > li:not(:last-child)::before {
+  position: absolute;
+  top: 2.2cqi;
+  bottom: -2.2cqi;
+  left: 22cqi;
+  width: 0.2cqi;
+  background: var(--hd-laton);
+  content: "";
+}
+.pe-camino > li:last-child {
+  min-height: auto;
+  padding-bottom: 0;
+}
+.pe-hito-numero {
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 4.4cqi;
+  height: 4.4cqi;
+  color: var(--hd-papel);
+  border: 0.25cqi solid var(--hd-laton);
+  border-radius: 50%;
+  background: var(--hd-tinta);
+  font: 1.5cqi var(--fuente-mono);
+}
+.pe-camino > li:first-child .pe-hito-numero,
+.pe-camino > li:last-child .pe-hito-numero {
+  color: var(--hd-laton);
+  background: var(--hd-papel);
+}
+.pe-hito-texto {
+  padding-top: 0.2cqi;
+}
+.pe-hito-texto h4 {
+  margin: 0 0 0.55cqi;
+  font: 500 2.1cqi / 1.2 var(--hd-titulo);
+  letter-spacing: -0.02em;
+}
+.pe-hito-texto p {
+  overflow-wrap: anywhere;
+}
+.pe-resultado {
+  margin-top: 0.65cqi;
+}
+.pe-criterios {
+  display: grid;
+  gap: 0.55cqi;
+  margin: 0;
+  padding-left: 1.5em;
+}
+.pe-hito-fecha {
+  display: block;
+  padding-top: 0.3cqi;
+  color: var(--hd-azul);
+  font-size: 1.75cqi;
+  font-weight: 500;
+}
+.pe-fecha-tipo {
+  display: block;
+  margin-bottom: 0.45cqi;
+  color: var(--hd-tenue);
+  font-size: var(--hd-pequeno);
+  font-weight: 400;
+}
+.pe-aviso {
+  margin: 0;
+  padding-top: 1.2cqi;
+  border-top: 1px solid var(--hd-linea);
+  color: var(--hd-tenue);
+  font-size: var(--hd-pequeno);
+  line-height: 1.35;
+}
+.pe-fichas {
+  display: grid;
+  gap: 1.5cqi;
+}
+.pe-ficha {
+  display: grid;
+  gap: 0.55cqi;
+  padding-bottom: 1.1cqi;
+  border-bottom: 1px solid var(--hd-linea);
+  break-inside: avoid;
+}
+.pe-ficha .pe-antetitulo {
+  margin-bottom: 0;
+}
+.pe-ficha h3 {
+  margin: 0;
+  font: 500 2.5cqi / 1.18 var(--hd-titulo);
+  letter-spacing: -0.025em;
+  overflow-wrap: anywhere;
+}
+.pe-proveedor {
+  margin: 0;
+  color: var(--hd-tenue);
+}
+.pe-nivel {
+  margin: 0;
+  color: var(--hd-tenue);
+  font-size: 1.7cqi;
+  line-height: 1.33;
+}
+.pe-aprender {
+  padding: 0.5cqi 0 0.5cqi 1.4cqi;
+  border-left: 0.25cqi solid var(--hd-laton);
+}
+.pe-aprender h4 {
+  margin: 0;
+  color: var(--hd-laton);
+  font-size: 1.7cqi;
+  font-weight: 600;
+}
+.pe-aprender p {
+  margin: 0.45cqi 0 0;
+}
+.pe-hechos {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.55cqi 2cqi;
+  margin: 0.4cqi 0;
+  font-size: 1.7cqi;
+  line-height: 1.33;
+}
+.pe-hechos > div {
+  min-width: 0;
+}
+.pe-hechos > div:nth-child(n + 5) {
+  grid-column: 1 / -1;
+}
+.pe-hechos dt,
+.pe-hechos dd {
+  display: inline;
+}
+.pe-hechos dt {
+  font-weight: 600;
+}
+.pe-hechos dt::after {
+  content: ": ";
+}
+.pe-hechos dd {
+  margin: 0;
+}
+.hd[data-plan-elegido] .pe-enlace,
+.pe-comprobado {
+  margin: 0;
+  font-size: var(--hd-pequeno);
+  overflow-wrap: anywhere;
+}
+.pe-comprobado {
+  color: var(--hd-tenue);
+}
+.hd[data-plan-elegido] .hd-pie {
+  justify-content: flex-end;
+  font-size: var(--hd-pequeno);
+}
+.pe-cabecera h2[tabindex="-1"]:focus {
+  outline: none;
+}
+.hd[data-plan-elegido] .hd-hoja[data-hoja="2"] .hd-cuerpo {
+  gap: 1.5cqi;
+}
+.hd[data-plan-elegido] .hd-hoja[data-hoja="2"] .pe-cabecera {
+  padding-top: 1.6cqi;
+  padding-bottom: 2.1cqi;
+}
+.hd[data-plan-elegido] .hd-hoja[data-hoja="2"] .pe-cabecera h2 {
+  font-size: 3.8cqi;
+}
+@media screen {
+  .hd[data-plan-elegido] .hd-hoja {
+    aspect-ratio: auto;
+  }
+}
+@media screen and (width <= 759px) {
+  .hd[data-plan-elegido] .hd-hoja {
+    --hd-texto: 15px;
+    --hd-pequeno: 13px;
+    --hd-espacio: 22px;
+  }
+  .hd[data-plan-elegido] .hd-banda,
+  .pe-antetitulo {
+    font-size: 12px;
+  }
+  .pe-cabecera {
+    padding-top: 18px;
+    padding-bottom: 24px;
+  }
+  .pe-cabecera h2,
+  .hd[data-plan-elegido] .hd-hoja[data-hoja="2"] .pe-cabecera h2 {
+    font-size: 30px;
+  }
+  .pe-seccion h3,
+  .pe-ficha h3,
+  .pe-objetivo {
+    font-size: 20px;
+  }
+  .pe-preferencias {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+  .pe-camino > li {
+    grid-template-columns: 36px minmax(0, 1fr);
+    gap: 8px 14px;
+    min-height: auto;
+    padding-bottom: 24px;
+  }
+  .pe-hito-fecha {
+    grid-column: 2;
+    grid-row: 1;
+    padding-top: 0;
+    font-size: 14px;
+  }
+  .pe-fecha-tipo {
+    display: inline;
+    margin-right: 6px;
+  }
+  .pe-hito-numero {
+    grid-column: 1;
+    grid-row: 1 / span 2;
+    width: 36px;
+    height: 36px;
+    font-size: 13px;
+  }
+  .pe-hito-texto {
+    grid-column: 2;
+    grid-row: 2;
+    padding-top: 0;
+  }
+  .pe-camino > li:not(:last-child)::before {
+    top: 18px;
+    bottom: -18px;
+    left: 17px;
+    width: 2px;
+  }
+  .pe-hito-texto h4 {
+    font-size: 18px;
+  }
+  .pe-hechos {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    font-size: 14px;
+  }
+  .pe-aprender h4 {
+    font-size: 14px;
+  }
+  .pe-nivel {
+    font-size: 14px;
+  }
+  .pe-fichas {
+    gap: 20px;
+  }
+}
+
+/* El calendario resume reservas personales y separa sus fechas de las del proveedor. */
+.pe-calendario,
+.pe-pasos,
+.pe-contactos {
+  display: grid;
+  gap: 1.2cqi;
+}
+.pe-calendario h3,
+.pe-pasos h3,
+.pe-contactos h3 {
+  margin: 0;
+  font: 500 2.5cqi / 1.2 var(--hd-titulo);
+}
+.pe-calendario h4 {
+  margin: 0;
+  font: 500 2.1cqi / 1.2 var(--hd-titulo);
+}
+.pe-calendario p {
+  margin: 0;
+}
+.pe-calendario-resumen {
+  padding: 1.3cqi;
+  background: #e8edf0;
+  color: #153956;
+}
+.pe-lineas-tiempo {
+  display: grid;
+  gap: 2cqi;
+}
+.pe-linea-curso {
+  display: grid;
+  grid-template-columns: 5cqi minmax(0, 1fr);
+  gap: 1.4cqi;
+  break-inside: avoid;
+}
+.pe-linea-curso strong {
+  font: 500 2.25cqi / 1.3 var(--hd-titulo);
+  overflow-wrap: anywhere;
+}
+.pe-numero-curso {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 4.4cqi;
+  height: 4.4cqi;
+  border-radius: 50%;
+  background: #215c96;
+  color: white;
+  font-size: 1.7cqi;
+}
+.pe-linea-1 .pe-numero-curso {
+  background: #79613a;
+}
+.pe-trazo {
+  position: relative;
+  height: 0.65cqi;
+  margin: 0.8cqi 0;
+  background: #215c96;
+}
+.pe-linea-1 .pe-trazo {
+  background: #a18150;
+}
+.pe-objetivo-publicado {
+  margin-top: 0.7cqi;
+}
+.pe-primeras {
+  padding: 1.4cqi;
+  border-left: 0.4cqi solid #215c96;
+  line-height: 1.55;
+}
+.pe-calendario-alerta {
+  padding: 1.4cqi;
+  border-left: 0.4cqi solid #a87530;
+  background: #f5eee0;
+}
+.pe-pasos ol {
+  display: grid;
+  gap: 1.2cqi;
+  margin: 0;
+  padding-left: 1.5em;
+  line-height: 1.5;
+}
+.pe-fichas-compactas {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2cqi;
+}
+.pe-ficha-compacta {
+  min-width: 0;
+  display: grid;
+  align-content: start;
+  gap: 0.5cqi;
+  border-top: 0.25cqi solid var(--hd-linea);
+  padding-top: 1cqi;
+}
+.pe-ficha-compacta h4,
+.pe-ficha-compacta p {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+.pe-ficha-compacta h4 {
+  font: 500 1.9cqi / 1.25 var(--hd-titulo);
+}
+.pe-ficha-compacta a {
+  overflow-wrap: anywhere;
+}
+@media screen and (width <= 759px) {
+  .pe-calendario h3,
+  .pe-pasos h3,
+  .pe-contactos h3 {
+    font-size: 20px;
+  }
+  .pe-calendario h4,
+  .pe-linea-curso strong,
+  .pe-ficha-compacta h4 {
+    font-size: 16px;
+  }
+  .pe-linea-curso {
+    grid-template-columns: 34px minmax(0, 1fr);
+    gap: 12px;
+  }
+  .pe-numero-curso {
+    width: 32px;
+    height: 32px;
+    font-size: 13px;
+  }
+  .pe-fichas-compactas {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+.pe-arranque {
+  display: grid;
+  gap: 1cqi;
+}
+.pe-arranque h3 {
+  margin: 0;
+  font: 500 2.5cqi / 1.2 var(--hd-titulo);
+}
+.pe-tabla-agenda {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 1.7cqi;
+}
+.pe-tabla-agenda th {
+  text-align: left;
+  color: var(--hd-tenue);
+  font-weight: 500;
+  border-bottom: 1px solid var(--hd-linea);
+}
+.pe-tabla-agenda td {
+  padding: 0.65cqi 0;
+  border-bottom: 1px solid var(--hd-linea);
+}
+.pe-tabla-agenda td:last-child,
+.pe-tabla-agenda th:last-child {
+  text-align: left;
+}
+.pe-trazo::before,
+.pe-trazo::after {
+  content: "";
+  position: absolute;
+  top: -0.35cqi;
+  width: 1.35cqi;
+  height: 1.35cqi;
+  border-radius: 50%;
+  background: inherit;
+}
+.pe-trazo-abierto::after {
+  display: none;
+}
+.pe-trazo::before {
+  left: 0;
+}
+.pe-trazo::after {
+  right: 0;
+}
+@media screen and (width <= 759px) {
+  .pe-arranque h3 {
+    font-size: 20px;
+  }
+  .pe-tabla-agenda {
+    font-size: 14px;
+  }
+  .pe-tabla-agenda td {
+    padding: 7px 0;
+  }
+}
+.pe-organizacion {
+  border-top: 1px solid var(--hd-linea);
+  padding-top: 1.4cqi;
+}
+.pe-organizacion h4 {
+  margin: 0 0 0.7cqi;
+}
+.pe-organizacion ol {
+  margin: 0;
+  padding-left: 1.5em;
+  line-height: 1.45;
+}
+.pe-organizacion li + li {
+  margin-top: 0.5cqi;
+}
+.pe-tabla-agenda td:nth-child(2) {
+  padding-inline: 1cqi;
+  overflow-wrap: anywhere;
+}
+
+/* Cada fila reúne las reservas del mismo día; el color complementa el número del curso. */
+.pe-leyenda-agenda {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1cqi 2cqi;
+}
+.pe-leyenda-agenda p {
+  margin: 0;
+  padding-left: 1cqi;
+  border-left: 0.4cqi solid #215c96;
+  overflow-wrap: anywhere;
+}
+.pe-leyenda-agenda .pe-leyenda-1 {
+  border-color: #79613a;
+}
+.pe-tabla-agenda {
+  table-layout: fixed;
+}
+.pe-tabla-agenda th:first-child {
+  width: 20%;
+}
+.pe-tabla-agenda tbody th {
+  vertical-align: top;
+  padding: 0.8cqi 0;
+  color: var(--hd-tinta);
+}
+.pe-tabla-agenda td {
+  vertical-align: top;
+  padding: 0.4cqi;
+  text-align: left;
+}
+.pe-bloque-agenda {
+  display: block;
+  padding: 0.55cqi 0.7cqi;
+  border-left: 0.35cqi solid #215c96;
+  background: #e8edf0;
+  overflow-wrap: anywhere;
+}
+.pe-bloque-agenda + .pe-bloque-agenda {
+  margin-top: 0.4cqi;
+}
+.pe-bloque-1 {
+  border-color: #79613a;
+  background: #f3ede1;
+}
+.pe-bloque-oficial {
+  font-weight: 600;
+}
+.pe-calendario-alerta {
+  margin-top: 1cqi;
+}
+.pe-calendario-alerta ul {
+  margin: 0.5cqi 0 0;
+  padding-left: 1.4em;
+}
+@media screen and (width <= 759px) {
+  .pe-leyenda-agenda {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  .pe-leyenda-agenda p {
+    padding-left: 8px;
+    border-left-width: 3px;
+  }
+  .pe-tabla-agenda th:first-child {
+    width: 24%;
+  }
+  .pe-bloque-agenda {
+    padding: 6px;
+    border-left-width: 3px;
+  }
+}
+
+.pe-capacidad-dia {
+  display: block;
+  margin-top: 0.4cqi;
+  color: var(--hd-tenue);
+  font-size: var(--hd-pequeno);
+  font-weight: 400;
+}
+
+@media screen and (width > 759px) {
+  .hd[data-plan-elegido] .hd-hoja {
+    --hd-texto: max(15px, 1.78cqi);
+    --hd-pequeno: max(13px, 1.45cqi);
+  }
+  .pe-tabla-agenda {
+    font-size: max(14px, 1.7cqi);
+  }
+  .hd[data-plan-elegido] .hd-banda,
+  .pe-antetitulo {
+    font-size: max(12px, 1.45cqi);
+  }
+}
+
+/* La página ya añade el folio físico; el folio de pantalla no se repite al imprimir. */
+@media print {
+  .hd[data-plan-elegido] .hd-pie {
+    display: none;
+  }
+}
+
+/* En papel, la fecha y su tiempo van en una sola línea y las filas se aprietan: así caben los siete primeros días en
+   la hoja; las reservas y las cifras siguen completas. */
+@media print {
+  .pe-capacidad-dia {
+    display: inline;
+    margin-top: 0;
+    margin-inline-start: 0.5cqi;
+  }
+  .pe-tabla-agenda th:first-child {
+    width: 36%;
+  }
+  .pe-tabla-agenda tbody th {
+    padding-block: 0.25cqi;
+    line-height: 1.3;
+    white-space: nowrap;
+  }
+  .pe-tabla-agenda td {
+    padding-block: 0;
+    line-height: 1.3;
+  }
+  .pe-bloque-agenda {
+    padding-block: 0.2cqi;
+  }
+}
+
+/* Lo que la persona respondió: una línea discreta bajo el objetivo, sin recuadro alto. */
+.hd[data-plan-elegido] .pe-dijiste {
+  max-width: 75ch;
+  margin-top: 0.8cqi;
+  color: var(--hd-tenue);
+  font-size: var(--hd-pequeno);
+  line-height: 1.35;
+}
+.pe-dijiste strong {
+  color: var(--hd-tinta);
+  font-weight: 600;
+}
+/* El idioma de un curso que no es el de la hoja se lee junto al título, en la misma línea de fechas. */
+.pe-idioma-curso {
+  font-weight: 600;
+}
+/* Hoja sin cursos: recursos abiertos en lugar del calendario. */
+.pe-mientras-tanto {
+  display: grid;
+  gap: 0.8cqi;
+  max-width: 75ch;
+}
+.pe-mientras-tanto h3,
+.pe-mientras-tanto p {
+  margin: 0;
+}
+.pe-mientras-tanto ul {
+  display: grid;
+  gap: 0.6cqi;
+  margin: 0;
+  padding-left: 1.5em;
+  line-height: 1.45;
+}
+/* El calendario se descarga en pantalla; en papel no hay nada que pulsar. */
+.pe-calendario-exportar {
+  display: grid;
+  justify-items: start;
+  gap: 0.8cqi;
+  margin-block: 1.4cqi;
+}
+@media print {
+  .pe-calendario-exportar {
+    display: none;
+  }
+}

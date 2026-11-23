@@ -1,0 +1,159 @@
+name: Calidad y navegadores
+
+# Una petición de cambios del propio repositorio ya tiene la calidad del push de su rama sobre el mismo commit. Solo las
+# ramas: una etiqueta (como la versión `datos-verificacion` que publica el instalador) apunta a un commit que ya tiene
+# su calidad, y repetirla gastaría minutos sin comprobar nada nuevo.
+on:
+  push:
+    branches: ['**']
+  workflow_dispatch:
+
+# Cada empuje deja obsoleta la calidad anterior de su rama: se cancela para no gastar minutos en un commit superado.
+concurrency:
+  group: calidad-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions: {}
+
+jobs:
+  calidad:
+    runs-on: ubuntu-24.04
+    # La instalación en frío, la verificación y los recorridos se ejecutan en serie.
+    timeout-minutes: 192
+    permissions:
+      contents: read
+    env:
+      npm_config_user_agent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36'
+      npm_config_update_notifier: 'false'
+      npm_config_audit: 'false'
+      npm_config_fund: 'false'
+    defaults:
+      run:
+        shell: bash --noprofile --norc -euo pipefail {0}
+    steps:
+      # Git recibe el token solo por entorno y emplea el perfil público comprobado contra config/identidad-web.json.
+      - name: Recuperar el commit del evento
+        timeout-minutes: 4
+        env:
+          TOKEN_LECTURA: ${{ github.token }}
+          ACTIONS_ID_TOKEN_REQUEST_URL: ''
+          ACTIONS_ID_TOKEN_REQUEST_TOKEN: ''
+          GIT_HTTP_USER_AGENT: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36'
+          GIT_CONFIG_NOSYSTEM: '1'
+          GIT_CONFIG_GLOBAL: /dev/null
+          GIT_TERMINAL_PROMPT: '0'
+        run: |
+          umask 077
+          [[ "$GITHUB_SERVER_URL" == https://github.com ]]
+          [[ "$GITHUB_SHA" =~ ^[0-9a-f]{40}$ ]]
+          [[ "$GITHUB_REPOSITORY" =~ ^[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+$ ]]
+          [[ -z "$(find "$GITHUB_WORKSPACE" -mindepth 1 -maxdepth 1 -print -quit)" ]]
+          git init --template= "$GITHUB_WORKSPACE"
+          git -C "$GITHUB_WORKSPACE" config core.hooksPath /dev/null
+          git -C "$GITHUB_WORKSPACE" config http.followRedirects false
+          export GIT_CONFIG_COUNT=4
+          export GIT_CONFIG_KEY_0=http.https://github.com/.extraheader
+          export GIT_CONFIG_VALUE_0="Authorization: Basic $(printf 'x-access-token:%s' "$TOKEN_LECTURA" | base64 -w 0)"
+          export GIT_CONFIG_KEY_1=http.https://github.com/.extraheader
+          export GIT_CONFIG_VALUE_1='sec-ch-ua: "Not:A-Brand";v="8", "Chromium";v="156", "Google Chrome";v="156"'
+          export GIT_CONFIG_KEY_2=http.https://github.com/.extraheader
+          export GIT_CONFIG_VALUE_2='sec-ch-ua-mobile: ?0'
+          export GIT_CONFIG_KEY_3=http.https://github.com/.extraheader
+          export GIT_CONFIG_VALUE_3='sec-ch-ua-platform: "Windows"'
+          # La guarda de juntas necesita todos los padres del commit; no se descargan otras ramas.
+          git -C "$GITHUB_WORKSPACE" fetch --no-tags --no-recurse-submodules \
+            "https://github.com/$GITHUB_REPOSITORY.git" "$GITHUB_SHA"
+          unset TOKEN_LECTURA GIT_CONFIG_COUNT GIT_CONFIG_KEY_0 GIT_CONFIG_VALUE_0 GIT_CONFIG_KEY_1 GIT_CONFIG_VALUE_1 GIT_CONFIG_KEY_2 GIT_CONFIG_VALUE_2 GIT_CONFIG_KEY_3 GIT_CONFIG_VALUE_3
+          git -C "$GITHUB_WORKSPACE" checkout --detach "$GITHUB_SHA"
+          [[ "$(git -C "$GITHUB_WORKSPACE" rev-parse HEAD)" == "$GITHUB_SHA" ]]
+
+      - name: Preparar dependencias fijadas
+        timeout-minutes: 20
+        env:
+          ACTIONS_ID_TOKEN_REQUEST_URL: ''
+          ACTIONS_ID_TOKEN_REQUEST_TOKEN: ''
+        run: bash herramientas/mantenimiento/preparar-runner.sh
+
+      # La tabla del ODEE y la Cambra no está en Git: su permiso no cubre repartirla. Se trae del almacén privado por la
+      # huella que fija datos/manifiesto.json y se coteja antes de los tipos, que ya la importan. No se imprime.
+      - name: Recuperar la tabla privada de la Cambra fijada por el manifiesto
+        timeout-minutes: 2
+        env:
+          ACTIONS_ID_TOKEN_REQUEST_URL: ''
+          ACTIONS_ID_TOKEN_REQUEST_TOKEN: ''
+          FARO_ALMACEN_S3: ${{ secrets.FARO_ALMACEN_S3 }}
+          FARO_ALMACEN_ACCESS_KEY_ID: ${{ secrets.FARO_ALMACEN_ACCESS_KEY_ID }}
+          FARO_ALMACEN_SECRET_ACCESS_KEY: ${{ secrets.FARO_ALMACEN_SECRET_ACCESS_KEY }}
+        run: .venv/bin/python -m plataforma_datos.ia_y_trabajo.fuentes.cambra.tabla_privada recuperar
+
+      # Los controles de pocos segundos van antes que navegadores y baterías: un fallo de estilo se ve enseguida.
+      - name: Comprobar tipos, estilo y juntas
+        timeout-minutes: 5
+        env:
+          NODE_OPTIONS: ''
+          ACTIONS_ID_TOKEN_REQUEST_URL: ''
+          ACTIONS_ID_TOKEN_REQUEST_TOKEN: ''
+        run: |
+          npm run juntas:comprobar
+          npm run tipos
+          npm run estilo
+          .venv/bin/python -m ruff check .
+          .venv/bin/python -m ruff format --check .
+
+      - name: Preparar los tres motores
+        timeout-minutes: 15
+        env:
+          ACTIONS_ID_TOKEN_REQUEST_URL: ''
+          ACTIONS_ID_TOKEN_REQUEST_TOKEN: ''
+        run: bash herramientas/mantenimiento/preparar-navegadores.sh
+
+      - name: Recuperar la base ESCO fijada por el manifiesto
+        timeout-minutes: 10
+        env:
+          TOKEN_LECTURA: ${{ github.token }}
+        run: .venv/bin/python -m plataforma_datos.orquestacion.base_esco_ci
+
+      - name: Construir la entrega para los recorridos
+        timeout-minutes: 5
+        env:
+          NODE_OPTIONS: ''
+          ACTIONS_ID_TOKEN_REQUEST_URL: ''
+          ACTIONS_ID_TOKEN_REQUEST_TOKEN: ''
+        run: npm run construir
+
+      - name: Verificar el manifiesto del portal con y sin sesión en WebKit
+        timeout-minutes: 4
+        env:
+          NODE_OPTIONS: ''
+          ACTIONS_ID_TOKEN_REQUEST_URL: ''
+          ACTIONS_ID_TOKEN_REQUEST_TOKEN: ''
+        run: |
+          npm run construir -- --solo-nuevo --destino-cloudflare oficial --revision-codigo "$GITHUB_SHA" --destino "$RUNNER_TEMP/portal-oficial"
+          node pruebas/navegadores/portal-manifiestos.mjs "$RUNNER_TEMP/portal-oficial"
+
+      - name: Recorridos limpios en Chromium, Firefox y WebKit
+        timeout-minutes: 16
+        env:
+          NODE_OPTIONS: ''
+          ACTIONS_ID_TOKEN_REQUEST_URL: ''
+          ACTIONS_ID_TOKEN_REQUEST_TOKEN: ''
+        run: npm run probar:navegadores -- --salida "$RUNNER_TEMP/resultados-navegadores"
+
+      - name: Verificar código, navegadores y datos
+        # Unidad 18 min, navegadores 12 y Python 75. Los demás controles también se ejecutan en serie.
+        timeout-minutes: 110
+        env:
+          NODE_OPTIONS: ''
+          ACTIONS_ID_TOKEN_REQUEST_URL: ''
+          ACTIONS_ID_TOKEN_REQUEST_TOKEN: ''
+        run: npm run verificar
+
+      - name: Conservar el resumen en el registro del job
+        if: ${{ always() }}
+        run: |
+          if [[ -f "$RUNNER_TEMP/resultados-navegadores/resumen.json" ]]; then
+            cat "$RUNNER_TEMP/resultados-navegadores/resumen.json"
+            printf 'Resultado de los tres motores:\n\n```json\n' >> "$GITHUB_STEP_SUMMARY"
+            cat "$RUNNER_TEMP/resultados-navegadores/resumen.json" >> "$GITHUB_STEP_SUMMARY"
+            printf '\n```\n' >> "$GITHUB_STEP_SUMMARY"
+          fi

@@ -1,0 +1,13 @@
+{
+  "version": 3,
+  "max_consultas": 600,
+  "plazo_minutos": 10,
+  "expuesto_max_dias": 2,
+  "ensenado_max_dias": 14,
+  "fichas_por_ciclo": 10,
+  "anomalia_min_consultas": 20,
+  "anomalia_porcentaje": 50,
+  "dia_largo": 7,
+  "max_consultas_dia_largo": 1200,
+  "minutos_dia_largo": 40
+}

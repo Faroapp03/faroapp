@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "id": "faro:vigencia:cibervoluntarios",
+  "version": "1",
+  "fuente_id": "cibervoluntarios",
+  "responsable": "Equipo Faro",
+  "naturaleza": "politica-interna-operativa",
+  "criterios": {
+    "ttl_ficha_segundos": 86400,
+    "ttl_catalogo_segundos": null,
+    "requiere_catalogo": false,
+    "zona_fechas_dia": null,
+    "inicio_dia_inclusivo": null,
+    "fin_dia_inclusivo": null,
+    "regla_disponibilidad": "oferta-publicada-continua-1"
+  },
+  "justificacion": "Caducidad técnica conservadora de 24 horas de los apoyos pertinentes, con renovación diaria. No es plazo comercial del proveedor. Requiere material de autoformación identificado, declaración de formación gratuita, destinatarios y requisitos constatados, y selección/CTA por el componente público revisado. Disponible o HTTP200 por sí solos no acreditan oferta. El registro previo se declara separado; prácticas, certificado, plaza y admisión personal siguen desconocidos. Una ausencia o un fallo no renuevan el último comprobado.",
+  "revision_equipo_faro": {
+    "estado": "criterio-aprobado-sin-activacion",
+    "fecha": null,
+    "alcance": "Autoformación publicada con método estático revisado; excluye el destinatario familiar del ámbito profesional, sin inferir nivel Faro ni fechas de matrícula."
+  }
+}

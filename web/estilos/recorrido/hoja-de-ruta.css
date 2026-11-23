@@ -1,0 +1,433 @@
+/* La hoja de ruta de formación en el chat (scripts/recorrido/hoja-de-ruta.js y propuesta-hoja.js): las preguntas con
+   casillas o lista, «Por qué te lo pregunto» y la propuesta «Faro elige, tú confirmas». Usa colores de tokens.css,
+   que cambian en claro y oscuro. Solo se
+   mueve lo que cambia una vez (el estado del agente, «Por qué te lo pregunto» al abrirse), y nada con
+   prefers-reduced-motion. */
+
+/* Un mensaje con un formulario o con la propuesta ocupa todo el ancho del turno. */
+.rc-texto:has(> .rc-hoja-pregunta),
+.rc-texto:has(> .rc-hoja) {
+  width: 100%;
+  max-width: 720px;
+}
+
+/* Las preguntas con formulario: las tareas (casillas) y la comarca (lista). */
+.rc-hoja-pregunta {
+  display: grid;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.rc-hoja-grupo {
+  display: grid;
+  gap: 8px;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.rc-hoja-opciones {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.rc-hoja-opcion {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: start;
+  gap: 10px;
+  padding: 10px 12px;
+  background: var(--rc-fondo);
+  border: 1px solid var(--rc-linea-campo);
+  border-radius: 8px;
+}
+
+.rc-hoja-opcion:has(input:checked) {
+  background: var(--rc-acento-fondo);
+  border-color: var(--rc-acento);
+}
+
+.rc-hoja-opcion:has(input:disabled:not(:checked)) {
+  color: var(--rc-tenue);
+}
+
+.rc-hoja-opcion input {
+  width: 20px;
+  height: 20px;
+  margin: 2px 0 0;
+  accent-color: var(--rc-boton);
+}
+
+.rc-hoja-opcion label {
+  cursor: pointer;
+}
+
+.rc-hoja-grupo select {
+  min-height: 44px;
+  padding: 8px 12px;
+  color: var(--rc-tinta);
+  font: inherit;
+  background: var(--rc-superficie);
+  border: 1px solid var(--rc-linea-campo);
+  border-radius: 8px;
+}
+
+.rc-hoja-pregunta .rc-boton-principal {
+  justify-self: start;
+}
+
+.rc-hoja-pregunta button:disabled,
+.rc-hoja-cerrada button:disabled {
+  opacity: 0.55;
+  cursor: default;
+}
+
+/* La propuesta */
+.rc-hoja {
+  display: grid;
+  gap: 14px;
+  margin-top: 12px;
+}
+
+.rc-hoja-titulo {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.rc-hoja ul {
+  margin: 0;
+  padding-left: 1.2em;
+}
+
+.rc-hoja-explica {
+  padding: 12px 14px;
+  color: var(--rc-aviso-tinta);
+  background: var(--rc-aviso-fondo);
+  border-left: 4px solid var(--rc-laton);
+  border-radius: 4px 10px 10px 4px;
+}
+
+.rc-hoja-explica + .rc-hoja-explica {
+  margin-top: -6px;
+}
+
+.rc-hoja-explica li + li {
+  margin-top: 4px;
+}
+
+.rc-hoja-cursos {
+  display: grid;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.rc-hoja-curso {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 6px 12px;
+  padding: 14px 16px;
+  background: var(--rc-superficie);
+  border: 1px solid var(--rc-linea-campo);
+  border-radius: 12px;
+}
+
+.rc-hoja-nombre {
+  align-self: center;
+  margin: 0;
+  font-size: 1.0625rem;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.rc-hoja-datos,
+.rc-hoja-botones {
+  grid-column: 1 / -1;
+}
+
+.rc-hoja-datos {
+  display: grid;
+  gap: 2px;
+  margin: 4px 0 0;
+}
+
+.rc-hoja-datos dt {
+  margin-top: 8px;
+  color: var(--rc-laton);
+  font-family: var(--fuente-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.rc-hoja-datos dd {
+  margin: 0;
+}
+
+.rc-hoja-datos dd p + p,
+.rc-hoja-datos dd p + ul,
+.rc-hoja-datos dd ul + p {
+  margin-top: 4px;
+}
+
+.rc-hoja-botones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.rc-hoja-pie {
+  display: grid;
+  gap: 10px;
+  padding: 14px 16px;
+  background: var(--rc-fondo);
+  border: 1px solid var(--rc-linea);
+  border-radius: 12px;
+}
+
+.rc-hoja-pie .rc-boton-principal {
+  justify-self: start;
+  white-space: normal;
+}
+
+.rc-hoja-cerrada {
+  opacity: 0.75;
+}
+
+/* La tarjeta del agente que prepara el informe: quieta mientras trabaja; al terminar, ✓ y el número de hojas, con un
+   cambio de color y un fundido de una sola vez (sin movimiento con prefers-reduced-motion). */
+.rc-agente {
+  display: grid;
+  grid-template-columns: 40px minmax(0, 1fr);
+  align-items: center;
+  gap: 12px;
+  margin-top: 10px;
+  padding: 10px 12px;
+  background: var(--rc-fondo);
+  border: 1px solid var(--rc-linea-campo);
+  border-radius: 10px;
+}
+
+.rc-agente-icono {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 48px;
+  color: var(--rc-acento);
+  font-family: var(--fuente-mono);
+  font-size: 0.6875rem;
+  background: var(--rc-acento-fondo);
+  border-radius: 4px;
+}
+
+.rc-agente-datos strong {
+  display: block;
+  font-size: 0.9375rem;
+  font-weight: 600;
+}
+
+.rc-agente-estado {
+  color: var(--rc-tenue);
+  font-size: 0.8125rem;
+}
+
+.rc-agente[data-estado="hecho"] {
+  border-color: var(--color-acierto);
+}
+
+.rc-agente[data-estado="hecho"] .rc-agente-estado {
+  color: var(--color-acierto);
+  font-weight: 600;
+}
+
+.rc-agente[data-estado="hecho"] .rc-agente-estado::before {
+  content: "✓ ";
+}
+
+.rc-agente[data-estado="fallo"] {
+  border-color: var(--color-error-linea);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .rc-agente {
+    transition: border-color 200ms ease;
+  }
+
+  .rc-agente-estado {
+    transition: color 200ms ease;
+  }
+
+  .rc-agente:is([data-estado="hecho"], [data-estado="fallo"]) .rc-agente-estado {
+    animation: rc-funde 300ms ease-out 1 both;
+  }
+}
+
+/* «Tu carpeta»: los documentos como tarjetas. */
+.rc-texto:has(> .rc-carpeta) {
+  width: min(100%, 520px);
+}
+
+.rc-carpeta {
+  display: grid;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.rc-carpeta-titulo {
+  margin: 0;
+  color: var(--rc-laton);
+  font-family: var(--fuente-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.rc-carpeta .rc-documento {
+  margin-top: 0;
+  padding: 10px;
+  border: 1px solid var(--rc-linea);
+  border-radius: 10px;
+}
+
+.rc-carpeta-pendiente {
+  color: var(--rc-tenue);
+  font-size: 0.875rem;
+}
+
+.rc-carpeta-preparar {
+  justify-self: start;
+  white-space: normal;
+}
+
+/* Un enlace con aspecto de botón dentro de un mensaje («Leer el informe»): el color de los enlaces del mensaje no lo
+   pisa, o el texto quedaría del mismo color que el fondo del botón. */
+.rc-texto a.rc-boton-principal {
+  color: var(--rc-sobre-boton);
+  text-decoration: none;
+}
+
+/* La selección ocupa una columna fija; el contenido dispone del ancho restante. */
+.rc-formacion-curso {
+  grid-template-columns: 20px minmax(0, 1fr);
+}
+
+/* Elecciones reales: tarjetas legibles y una selección visible en cada bloque. */
+.rc-hoja-grupo > legend {
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.rc-hoja .rc-hoja-cursos {
+  padding: 0;
+}
+
+.rc-hoja-curso:has(input:checked) {
+  background: var(--rc-acento-fondo);
+  border-color: var(--rc-acento);
+}
+
+.rc-hoja-curso input {
+  width: 20px;
+  height: 20px;
+  margin: 2px 0 0;
+  accent-color: var(--rc-acento);
+}
+
+.rc-hoja-curso label {
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.rc-hoja-curso > :not(input, label) {
+  grid-column: 2;
+}
+
+/* El nombre de una acción larga cabe en la columna de una pantalla estrecha. */
+.rc-hoja-curso button {
+  min-width: 0;
+  max-width: 100%;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+.rc-hoja-curso:focus-within {
+  outline: 2px solid var(--rc-acento);
+  outline-offset: 2px;
+}
+
+/* Objetivos procedentes de la ficha, sin ocultar condiciones ni acciones. */
+.rc-ficha-curso {
+  min-width: 0;
+  padding: 12px;
+  border: 1px solid var(--rc-linea);
+  border-radius: 8px;
+}
+.rc-ficha-curso summary {
+  cursor: pointer;
+  font-weight: 600;
+}
+.rc-hoja .rc-ficha-curso li {
+  overflow-wrap: anywhere;
+}
+
+/* Fila compacta de la elección: lo esencial a la vista y el resto en «Ver detalles». */
+.rc-curso-resumen {
+  margin: 0;
+  color: var(--rc-tenue);
+  overflow-wrap: anywhere;
+}
+.rc-ficha-curso[open] > summary {
+  margin-bottom: 8px;
+}
+.rc-hoja .rc-ficha-curso > p {
+  margin: 4px 0 0;
+}
+.rc-ficha-objetivos {
+  margin-top: 8px;
+}
+.rc-hoja .rc-ficha-objetivos > p {
+  margin: 0;
+  font-weight: 600;
+}
+/* Deshacer la elección de un grupo es otra opción del mismo grupo, con su propia etiqueta. */
+.rc-hoja-ninguno {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 12px 0 0;
+}
+.rc-hoja-ninguno input {
+  width: 20px;
+  height: 20px;
+  margin: 0;
+  accent-color: var(--rc-acento);
+}
+.rc-hoja-ninguno label {
+  cursor: pointer;
+}
+/* Sin ofertas en ningún grupo: recursos abiertos de Faro con ancho de lectura. */
+.rc-hoja-mientras {
+  max-width: 65ch;
+}
+.rc-hoja-mientras h3 {
+  margin: 0 0 6px;
+}
+.rc-hoja .rc-hoja-mientras ul {
+  display: grid;
+  gap: 6px;
+  margin: 8px 0;
+  padding-left: 1.4em;
+}
+/* Lo que se guardará se lee justo encima del botón, también en el móvil. */
+.rc-hoja-pie > [role="status"] {
+  margin: 0;
+}

@@ -1,0 +1,23 @@
+[
+  {
+    "Id": 22751,
+    "FK_Variable": 456,
+    "Nombre": "Trabajadores de los cuidados a las personas en servicios de salud",
+    "Codigo": "56",
+    "FK_JerarquiaPadres": [22750]
+  },
+  {
+    "Id": 22759,
+    "FK_Variable": 456,
+    "Nombre": "Otros trabajadores de los cuidados a las personas",
+    "Codigo": "57",
+    "FK_JerarquiaPadres": [22750]
+  },
+  {
+    "Id": 22765,
+    "FK_Variable": 456,
+    "Nombre": "Trabajadores de los servicios personales",
+    "Codigo": "58",
+    "FK_JerarquiaPadres": [22750]
+  }
+]

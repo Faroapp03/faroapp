@@ -1,0 +1,1075 @@
+{
+  "descripcion": "Vocabulario de la calle: nombres coloquiales o regionales de oficios («paleta», «segurata», «manyà») y expresiones que el buscador leía palabra a palabra («con el toro» → «con la carretilla elevadora», «de cara al público»). Los nombres se suman a denominaciones-de-diccionario.ts y las expresiones a frases-de-diccionario.ts. Fuera: las palabras ofensivas, las ambiguas, los nombres que apuntan a ocupaciones de varios grupos («limpiador», «chófer»: mejor preguntar) y las expresiones sin forma.",
+  "fuente": "Contenido elaborado automáticamente, sin acceso a los bancos de evaluación. Referencias declaradas: DLE, DIEC y uso común. 44 de sus 178 entradas citan su referencia sin haberla consultado en la fuente y sin cotejarla después; las de «uso común» lo dicen en su propia fuente. Consta una comprobación local de códigos ESCO y duplicados contra el paquete y sus diccionarios; ese control no verifica las acepciones ni las referencias citadas. Sin revisión humana independiente.",
+  "nombres": [
+    {
+      "nombre": "paleta",
+      "idioma": "es",
+      "esco": ["7112.1"],
+      "fuente": "DLE, «paleta»: m. Esp. albañil"
+    },
+    {
+      "nombre": "peón de albañil",
+      "idioma": "es",
+      "esco": ["9313.1"],
+      "fuente": "uso común en España (peón que sirve al albañil)"
+    },
+    {
+      "nombre": "azulejero",
+      "idioma": "es",
+      "esco": ["7122.4"],
+      "fuente": "uso común en España"
+    },
+    {
+      "nombre": "azulejera",
+      "idioma": "es",
+      "esco": ["7122.4"],
+      "fuente": "uso común en España"
+    },
+    {
+      "nombre": "pintor de brocha gorda",
+      "idioma": "es",
+      "esco": ["7131.1"],
+      "fuente": "DLE, «pintor de brocha gorda»: el de puertas, ventanas y paredes"
+    },
+    {
+      "nombre": "pintor de paredes",
+      "idioma": "es",
+      "esco": ["7131.1"],
+      "fuente": "uso común en España"
+    },
+    {
+      "nombre": "pintor de pisos",
+      "idioma": "es",
+      "esco": ["7131.1"],
+      "fuente": "uso común en España"
+    },
+    {
+      "nombre": "pintora de pisos",
+      "idioma": "es",
+      "esco": ["7131.1"],
+      "fuente": "uso común en España"
+    },
+    {
+      "nombre": "carretillero",
+      "idioma": "es",
+      "esco": ["8344.1"],
+      "fuente": "uso común en España en logística (conductor de carretilla o «toro»)"
+    },
+    {
+      "nombre": "carretillera",
+      "idioma": "es",
+      "esco": ["8344.1"],
+      "fuente": "uso común en España en logística"
+    },
+    {
+      "nombre": "hormigonero",
+      "idioma": "es",
+      "esco": ["8332.3"],
+      "fuente": "uso común en España (ESCO lo recoge como «operador de hormigonera»)"
+    },
+    {
+      "nombre": "antenista",
+      "idioma": "es",
+      "esco": ["7422.7"],
+      "fuente": "uso común en España (instalador de antenas)"
+    },
+    {
+      "nombre": "limpiacristales",
+      "idioma": "es",
+      "esco": ["9123.1"],
+      "fuente": "uso común en España (persona que limpia cristales y ventanas)"
+    },
+    {
+      "nombre": "kellys",
+      "idioma": "es",
+      "esco": ["9112.4"],
+      "fuente": "uso común en España (plural de «kelly», camarera de pisos)"
+    },
+    {
+      "nombre": "camarera de piso",
+      "idioma": "es",
+      "esco": ["9112.4"],
+      "fuente": "uso común en España (singular de «camarera de pisos»)"
+    },
+    {
+      "nombre": "friegaplatos",
+      "idioma": "es",
+      "esco": ["9412.2"],
+      "fuente": "DLE, «friegaplatos»: persona que tiene por oficio fregar platos"
+    },
+    {
+      "nombre": "pinche de cocina",
+      "idioma": "es",
+      "esco": ["9412.1"],
+      "fuente": "DLE, «pinche»: persona que presta servicios auxiliares en la cocina"
+    },
+    {
+      "nombre": "portero de finca",
+      "idioma": "es",
+      "esco": ["5153.1"],
+      "fuente": "uso común en España"
+    },
+    {
+      "nombre": "portera de finca",
+      "idioma": "es",
+      "esco": ["5153.1"],
+      "fuente": "uso común en España"
+    },
+    {
+      "nombre": "bedel",
+      "idioma": "es",
+      "esco": ["5153.1"],
+      "fuente": "DLE, «bedel»: en los centros de enseñanza, persona que cuida del orden fuera de las aulas"
+    },
+    {
+      "nombre": "taquillero",
+      "idioma": "es",
+      "esco": ["5230.3"],
+      "fuente": "DLE, «taquillero»: persona encargada de una taquilla"
+    },
+    {
+      "nombre": "taquillera",
+      "idioma": "es",
+      "esco": ["5230.3"],
+      "fuente": "DLE, «taquillero, ra»"
+    },
+    {
+      "nombre": "cajera de supermercado",
+      "idioma": "es",
+      "esco": ["5230.1"],
+      "fuente": "uso común en España"
+    },
+    {
+      "nombre": "cajero de supermercado",
+      "idioma": "es",
+      "esco": ["5230.1"],
+      "fuente": "uso común en España"
+    },
+    {
+      "nombre": "frutero",
+      "idioma": "es",
+      "esco": ["5223.7.19"],
+      "fuente": "DLE, «frutero»: persona que vende fruta"
+    },
+    {
+      "nombre": "frutera",
+      "idioma": "es",
+      "esco": ["5223.7.19"],
+      "fuente": "DLE, «frutero, ra»"
+    },
+    {
+      "nombre": "charcutero",
+      "idioma": "es",
+      "esco": ["5223.7.23"],
+      "fuente": "DLE, «charcutero»: persona que tiene una charcutería o trabaja en ella"
+    },
+    {
+      "nombre": "charcutera",
+      "idioma": "es",
+      "esco": ["5223.7.23"],
+      "fuente": "DLE, «charcutero, ra»"
+    },
+    {
+      "nombre": "mozo de carga y descarga",
+      "idioma": "es",
+      "esco": ["9333.8", "9333.4"],
+      "fuente": "uso común en España en ofertas de empleo"
+    },
+    {
+      "nombre": "camionero",
+      "idioma": "es",
+      "esco": ["8332.2"],
+      "fuente": "DLE, «camionero»: persona que conduce un camión"
+    },
+    {
+      "nombre": "camionera",
+      "idioma": "es",
+      "esco": ["8332.2"],
+      "fuente": "DLE, «camionero, ra»"
+    },
+    {
+      "nombre": "conductor de VTC",
+      "idioma": "es",
+      "esco": ["8322.6", "8322.7"],
+      "fuente": "uso común en España (vehículo de turismo con conductor)"
+    },
+    {
+      "nombre": "conductor de furgoneta",
+      "idioma": "es",
+      "esco": ["8322.2"],
+      "fuente": "uso común en España"
+    },
+    {
+      "nombre": "recadero",
+      "idioma": "es",
+      "esco": ["9331.1"],
+      "fuente": "DLE, «recadero»: persona que tiene por oficio llevar recados"
+    },
+    {
+      "nombre": "trapero",
+      "idioma": "es",
+      "esco": ["9612.1"],
+      "fuente": "DLE, «trapero»: persona que tiene por oficio recoger o comprar trapos y otros objetos usados"
+    },
+    {
+      "nombre": "sepulturero",
+      "idioma": "es",
+      "esco": ["5163.1"],
+      "fuente": "DLE, «sepulturero»: persona que tiene por oficio abrir sepulturas y enterrar a los muertos"
+    },
+    {
+      "nombre": "fisio",
+      "idioma": "es",
+      "esco": ["2264.2"],
+      "fuente": "uso común en España (acortamiento de «fisioterapeuta»)"
+    },
+    {
+      "nombre": "boticario",
+      "idioma": "es",
+      "esco": ["2262.1"],
+      "fuente": "DLE, «boticario»: persona que prepara y despacha medicamentos"
+    },
+    {
+      "nombre": "monitor de campamentos",
+      "idioma": "es",
+      "esco": ["3423.1"],
+      "fuente": "uso común en España"
+    },
+    {
+      "nombre": "monitora de campamentos",
+      "idioma": "es",
+      "esco": ["3423.1"],
+      "fuente": "uso común en España"
+    },
+    {
+      "nombre": "monitor de colonias",
+      "idioma": "es",
+      "esco": ["3423.1"],
+      "fuente": "uso común en Cataluña (calco de «colònies»)"
+    },
+    {
+      "nombre": "monitor de gimnasio",
+      "idioma": "es",
+      "esco": ["3423.2"],
+      "fuente": "uso común en España"
+    },
+    {
+      "nombre": "monitora de gimnasio",
+      "idioma": "es",
+      "esco": ["3423.2"],
+      "fuente": "uso común en España"
+    },
+    {
+      "nombre": "técnica de uñas",
+      "idioma": "es",
+      "esco": ["5142.6"],
+      "fuente": "uso común en España"
+    },
+    {
+      "nombre": "manicurista",
+      "idioma": "es",
+      "esco": ["5142.6"],
+      "fuente": "uso común en España (ESCO dice «manicuro/manicura»)"
+    },
+    {
+      "nombre": "secre",
+      "idioma": "es",
+      "esco": ["4120.1"],
+      "fuente": "uso común en España (acortamiento coloquial de «secretaria»)"
+    },
+    {
+      "nombre": "recogedor de fruta",
+      "idioma": "es",
+      "esco": ["9211.1"],
+      "fuente": "uso común en España"
+    },
+    {
+      "nombre": "recogedora de fruta",
+      "idioma": "es",
+      "esco": ["9211.1"],
+      "fuente": "uso común en España"
+    },
+    {
+      "nombre": "porquero",
+      "idioma": "es",
+      "esco": ["9212.4"],
+      "fuente": "DLE, «porquero»: persona que guarda los cerdos"
+    },
+    {
+      "nombre": "hortelano",
+      "idioma": "es",
+      "esco": ["9214.2"],
+      "fuente": "DLE, «hortelano»: persona que por oficio cultiva huertas"
+    },
+    {
+      "nombre": "guarda jurado",
+      "idioma": "es",
+      "esco": ["5414.1"],
+      "fuente": "DLE, «guarda jurado»: el que nombra la autoridad a propuesta de particulares"
+    },
+    {
+      "nombre": "vigilante jurado",
+      "idioma": "es",
+      "esco": ["5414.1"],
+      "fuente": "DLE, «vigilante jurado»"
+    },
+    {
+      "nombre": "segurata",
+      "idioma": "es",
+      "esco": ["5414.1"],
+      "fuente": "DLE, «segurata»: coloq. Esp. vigilante jurado"
+    },
+    {
+      "nombre": "portero de disco",
+      "idioma": "es",
+      "esco": ["5414.1.4"],
+      "fuente": "uso común en España"
+    },
+    {
+      "nombre": "guardia civil",
+      "idioma": "es",
+      "esco": ["5412.1"],
+      "fuente": "uso común en España (ESCO: «agente de la guardia civil»)"
+    },
+    {
+      "nombre": "manyà",
+      "idioma": "ca",
+      "esco": ["7222.3"],
+      "fuente": "DIEC, «manyà»: serraller"
+    },
+    {
+      "nombre": "manyaga",
+      "idioma": "ca",
+      "esco": ["7222.3"],
+      "fuente": "DIEC, «manyà, -aga»"
+    },
+    {
+      "nombre": "pintor de parets",
+      "idioma": "ca",
+      "esco": ["7131.1"],
+      "fuente": "ús comú a Catalunya"
+    },
+    {
+      "nombre": "pintor de pisos",
+      "idioma": "ca",
+      "esco": ["7131.1"],
+      "fuente": "ús comú a Catalunya"
+    },
+    {
+      "nombre": "mecànic de cotxes",
+      "idioma": "ca",
+      "esco": ["7231.10"],
+      "fuente": "ús comú a Catalunya"
+    },
+    {
+      "nombre": "drapaire",
+      "idioma": "ca",
+      "esco": ["9612.1"],
+      "fuente": "DIEC, «drapaire»: persona que compra i ven draps, ferralla i objectes vells"
+    },
+    {
+      "nombre": "enterramorts",
+      "idioma": "ca",
+      "esco": ["5163.1"],
+      "fuente": "DIEC, «enterramorts»: persona que té per ofici enterrar els morts"
+    },
+    {
+      "nombre": "xarcuter",
+      "idioma": "ca",
+      "esco": ["5223.7.23"],
+      "fuente": "DIEC, «xarcuter»: persona que té una xarcuteria"
+    },
+    {
+      "nombre": "xarcutera",
+      "idioma": "ca",
+      "esco": ["5223.7.23"],
+      "fuente": "DIEC, «xarcuter, -a»"
+    },
+    {
+      "nombre": "caixera de súper",
+      "idioma": "ca",
+      "esco": ["5230.1"],
+      "fuente": "ús comú a Catalunya"
+    },
+    {
+      "nombre": "marmitó",
+      "idioma": "ca",
+      "esco": ["9412.1"],
+      "fuente": "DIEC, «marmitó»: ajudant de cuina"
+    },
+    {
+      "nombre": "camioner",
+      "idioma": "ca",
+      "esco": ["8332.2"],
+      "fuente": "DIEC, «camioner»: conductor de camió"
+    },
+    {
+      "nombre": "camionera",
+      "idioma": "ca",
+      "esco": ["8332.2"],
+      "fuente": "DIEC, «camioner, -a»"
+    },
+    {
+      "nombre": "gruista",
+      "idioma": "ca",
+      "esco": ["8343.5", "8343.3"],
+      "fuente": "DIEC, «gruista»: persona que maneja una grua"
+    },
+    {
+      "nombre": "netejavidres",
+      "idioma": "ca",
+      "esco": ["9123.1"],
+      "fuente": "ús comú a Catalunya"
+    },
+    {
+      "nombre": "zelador",
+      "idioma": "ca",
+      "esco": ["5329.1"],
+      "fuente": "ús comú a Catalunya als hospitals (ESCO: «zelador sanitari»)"
+    },
+    {
+      "nombre": "zeladora",
+      "idioma": "ca",
+      "esco": ["5329.1"],
+      "fuente": "ús comú a Catalunya"
+    },
+    {
+      "nombre": "auxiliar de clínica",
+      "idioma": "ca",
+      "esco": ["5321.1.1"],
+      "fuente": "ús comú a Catalunya"
+    },
+    {
+      "nombre": "apotecari",
+      "idioma": "ca",
+      "esco": ["2262.1"],
+      "fuente": "DIEC, «apotecari»: farmacèutic"
+    },
+    {
+      "nombre": "monitor d'esplai",
+      "idioma": "ca",
+      "esco": ["3423.1"],
+      "fuente": "ús comú a Catalunya (DIEC, «esplai»: lleure)"
+    },
+    {
+      "nombre": "monitora d'esplai",
+      "idioma": "ca",
+      "esco": ["3423.1"],
+      "fuente": "ús comú a Catalunya"
+    },
+    {
+      "nombre": "monitor de colònies",
+      "idioma": "ca",
+      "esco": ["3423.1"],
+      "fuente": "ús comú a Catalunya"
+    },
+    {
+      "nombre": "monitora de colònies",
+      "idioma": "ca",
+      "esco": ["3423.1"],
+      "fuente": "ús comú a Catalunya"
+    },
+    {
+      "nombre": "monitor de casal",
+      "idioma": "ca",
+      "esco": ["3423.1"],
+      "fuente": "ús comú a Catalunya (casals d'estiu)"
+    },
+    {
+      "nombre": "monitora de casal",
+      "idioma": "ca",
+      "esco": ["3423.1"],
+      "fuente": "ús comú a Catalunya"
+    },
+    {
+      "nombre": "monitor de gimnàs",
+      "idioma": "ca",
+      "esco": ["3423.2"],
+      "fuente": "ús comú a Catalunya"
+    },
+    {
+      "nombre": "tècnica d'ungles",
+      "idioma": "ca",
+      "esco": ["5142.6"],
+      "fuente": "ús comú a Catalunya"
+    },
+    {
+      "nombre": "jornaler",
+      "idioma": "ca",
+      "esco": ["9213.1"],
+      "fuente": "DIEC, «jornaler»: persona que treballa a jornal"
+    },
+    {
+      "nombre": "collidor de fruita",
+      "idioma": "ca",
+      "esco": ["9211.1"],
+      "fuente": "ús comú a Catalunya (campanya de la fruita a Lleida)"
+    },
+    {
+      "nombre": "collidora de fruita",
+      "idioma": "ca",
+      "esco": ["9211.1"],
+      "fuente": "ús comú a Catalunya"
+    },
+    {
+      "nombre": "mosso de càrrega i descàrrega",
+      "idioma": "ca",
+      "esco": ["9333.8", "9333.4"],
+      "fuente": "ús comú a Catalunya"
+    },
+    {
+      "nombre": "parquetista",
+      "idioma": "es",
+      "esco": ["7122.2"],
+      "fuente": "uso común en España (instalador de parqué)"
+    },
+    {
+      "nombre": "gasista",
+      "idioma": "es",
+      "esco": ["7126.3"],
+      "fuente": "DLE, «gasista»: persona encargada de la instalación y reparación de aparatos de gas"
+    },
+    {
+      "nombre": "zapatero remendón",
+      "idioma": "es",
+      "esco": ["7536.2.8"],
+      "fuente": "DLE, «zapatero remendón»: el que remienda zapatos"
+    },
+    {
+      "nombre": "zapatera remendona",
+      "idioma": "es",
+      "esco": ["7536.2.8"],
+      "fuente": "DLE, «zapatero remendón»: el que remienda zapatos"
+    },
+    {
+      "nombre": "lotero",
+      "idioma": "es",
+      "esco": ["4212.6"],
+      "fuente": "DLE, «lotero, ra»: persona que tiene a su cargo un despacho de billetes de lotería"
+    },
+    {
+      "nombre": "lotera",
+      "idioma": "es",
+      "esco": ["4212.6"],
+      "fuente": "DLE, «lotero, ra»: persona que tiene a su cargo un despacho de billetes de lotería"
+    },
+    {
+      "nombre": "verdulero",
+      "idioma": "es",
+      "esco": ["5223.7.19"],
+      "fuente": "DLE, «verdulero, ra»: persona que vende verduras"
+    },
+    {
+      "nombre": "verdulera",
+      "idioma": "es",
+      "esco": ["5223.7.19"],
+      "fuente": "DLE, «verdulero, ra»: persona que vende verduras"
+    },
+    {
+      "nombre": "ferretero",
+      "idioma": "es",
+      "esco": ["5223.7.21"],
+      "fuente": "DLE, «ferretero, ra»: persona que tiene ferretería"
+    },
+    {
+      "nombre": "ferretera",
+      "idioma": "es",
+      "esco": ["5223.7.21"],
+      "fuente": "DLE, «ferretero, ra»: persona que tiene ferretería"
+    },
+    {
+      "nombre": "chamarilero",
+      "idioma": "es",
+      "esco": ["5223.7.30"],
+      "fuente": "DLE, «chamarilero, ra»: persona que compra y vende objetos viejos"
+    },
+    {
+      "nombre": "chamarilera",
+      "idioma": "es",
+      "esco": ["5223.7.30"],
+      "fuente": "DLE, «chamarilero, ra»: persona que compra y vende objetos viejos"
+    },
+    {
+      "nombre": "parrillero",
+      "idioma": "es",
+      "esco": ["5120.1.3"],
+      "fuente": "DLE, «parrillero, ra»: persona que asa a la parrilla"
+    },
+    {
+      "nombre": "parrillera",
+      "idioma": "es",
+      "esco": ["5120.1.3"],
+      "fuente": "DLE, «parrillero, ra»: persona que asa a la parrilla"
+    },
+    {
+      "nombre": "segundo de cocina",
+      "idioma": "es",
+      "esco": ["3434.1"],
+      "fuente": "uso común en cocinas profesionales (como «sous chef»)"
+    },
+    {
+      "nombre": "segunda de cocina",
+      "idioma": "es",
+      "esco": ["3434.1"],
+      "fuente": "uso común en cocinas profesionales (como «sous chef»)"
+    },
+    {
+      "nombre": "telefonista",
+      "idioma": "es",
+      "esco": ["4223.1"],
+      "fuente": "DLE, «telefonista»: persona que atiende un teléfono o una centralita"
+    },
+    {
+      "nombre": "mancebo de farmacia",
+      "idioma": "es",
+      "esco": ["3213.1"],
+      "fuente": "DLE, «mancebo»: auxiliar de farmacia"
+    },
+    {
+      "nombre": "manceba de farmacia",
+      "idioma": "es",
+      "esco": ["3213.1"],
+      "fuente": "DLE, «mancebo»: auxiliar de farmacia"
+    },
+    {
+      "nombre": "médico de cabecera",
+      "idioma": "es",
+      "esco": ["2211.1"],
+      "fuente": "DLE, «médico de cabecera»: el que asiste a un enfermo de modo continuo"
+    },
+    {
+      "nombre": "médica de cabecera",
+      "idioma": "es",
+      "esco": ["2211.1"],
+      "fuente": "DLE, «médico de cabecera»: el que asiste a un enfermo de modo continuo"
+    },
+    {
+      "nombre": "monitora de autobús",
+      "idioma": "es",
+      "esco": ["5311.2"],
+      "fuente": "uso común en España (transporte escolar)"
+    },
+    {
+      "nombre": "monitor de autobús",
+      "idioma": "es",
+      "esco": ["5311.2"],
+      "fuente": "uso común en España (transporte escolar)"
+    },
+    {
+      "nombre": "monitora de ruta",
+      "idioma": "es",
+      "esco": ["5311.2"],
+      "fuente": "uso común en España (transporte escolar)"
+    },
+    {
+      "nombre": "asistenta social",
+      "idioma": "es",
+      "esco": ["2635.3"],
+      "fuente": "uso común (denominación anterior del trabajador social)"
+    },
+    {
+      "nombre": "auxiliar de ayuda a domicilio",
+      "idioma": "es",
+      "esco": ["5322.1"],
+      "fuente": "uso común (servicio de ayuda a domicilio, SAD)"
+    },
+    {
+      "nombre": "mosso d'esquadra",
+      "idioma": "es",
+      "esco": ["5412.1"],
+      "fuente": "uso común en castellano en Cataluña (policía de la Generalitat)"
+    },
+    {
+      "nombre": "mossa d'esquadra",
+      "idioma": "es",
+      "esco": ["5412.1"],
+      "fuente": "uso común en castellano en Cataluña (policía de la Generalitat)"
+    },
+    {
+      "nombre": "ertzaina",
+      "idioma": "es",
+      "esco": ["5412.1"],
+      "fuente": "DLE, «ertzaina»: miembro de la policía autónoma vasca"
+    },
+    {
+      "nombre": "policía foral",
+      "idioma": "es",
+      "esco": ["5412.1"],
+      "fuente": "uso común en Navarra (Policía Foral)"
+    },
+    {
+      "nombre": "policía autonómico",
+      "idioma": "es",
+      "esco": ["5412.1"],
+      "fuente": "uso común en España"
+    },
+    {
+      "nombre": "policía autonómica",
+      "idioma": "es",
+      "esco": ["5412.1"],
+      "fuente": "uso común en España"
+    },
+    {
+      "nombre": "bombero forestal",
+      "idioma": "es",
+      "esco": ["5411.1"],
+      "fuente": "uso común en España (extinción de incendios forestales)"
+    },
+    {
+      "nombre": "bombera forestal",
+      "idioma": "es",
+      "esco": ["5411.1"],
+      "fuente": "uso común en España (extinción de incendios forestales)"
+    },
+    {
+      "nombre": "guagüero",
+      "idioma": "es",
+      "esco": ["8331.1"],
+      "fuente": "DLE, «guagüero, ra»: Can. y Cuba: conductor de guagua"
+    },
+    {
+      "nombre": "guagüera",
+      "idioma": "es",
+      "esco": ["8331.1"],
+      "fuente": "DLE, «guagüero, ra»: Can. y Cuba: conductor de guagua"
+    },
+    {
+      "nombre": "conductor de guagua",
+      "idioma": "es",
+      "esco": ["8331.1"],
+      "fuente": "uso común en Canarias"
+    },
+    {
+      "nombre": "conductora de guagua",
+      "idioma": "es",
+      "esco": ["8331.1"],
+      "fuente": "uso común en Canarias"
+    },
+    {
+      "nombre": "chófer de guagua",
+      "idioma": "es",
+      "esco": ["8331.1"],
+      "fuente": "uso común en Canarias"
+    },
+    {
+      "nombre": "tractorista",
+      "idioma": "es",
+      "esco": ["8341.2"],
+      "fuente": "DLE, «tractorista»: persona que conduce un tractor"
+    },
+    {
+      "nombre": "conductor de Uber",
+      "idioma": "es",
+      "esco": ["8322.6"],
+      "fuente": "uso común en España (VTC)"
+    },
+    {
+      "nombre": "conductora de Uber",
+      "idioma": "es",
+      "esco": ["8322.6"],
+      "fuente": "uso común en España (VTC)"
+    },
+    {
+      "nombre": "conductor de Cabify",
+      "idioma": "es",
+      "esco": ["8322.6"],
+      "fuente": "uso común en España (VTC)"
+    },
+    {
+      "nombre": "conductora de Cabify",
+      "idioma": "es",
+      "esco": ["8322.6"],
+      "fuente": "uso común en España (VTC)"
+    },
+    {
+      "nombre": "aceitunero",
+      "idioma": "es",
+      "esco": ["9211.1"],
+      "fuente": "DLE, «aceitunero, ra»: persona que coge aceitunas"
+    },
+    {
+      "nombre": "aceitunera",
+      "idioma": "es",
+      "esco": ["9211.1"],
+      "fuente": "DLE, «aceitunero, ra»: persona que coge aceitunas"
+    },
+    {
+      "nombre": "agranador",
+      "idioma": "ca",
+      "esco": ["9613.1"],
+      "fuente": "Diccionari normatiu valencià (AVL), «agranador»: escombrador de carrers"
+    },
+    {
+      "nombre": "agranadora",
+      "idioma": "ca",
+      "esco": ["9613.1"],
+      "fuente": "Diccionari normatiu valencià (AVL), «agranador»: escombrador de carrers"
+    },
+    {
+      "nombre": "peixater",
+      "idioma": "ca",
+      "esco": ["5223.7.16"],
+      "fuente": "DIEC, «peixater»: persona que ven peix"
+    },
+    {
+      "nombre": "peixatera",
+      "idioma": "ca",
+      "esco": ["5223.7.16"],
+      "fuente": "DIEC, «peixater»: persona que ven peix"
+    },
+    {
+      "nombre": "verduler",
+      "idioma": "ca",
+      "esco": ["5223.7.19"],
+      "fuente": "DIEC, «verduler», «fruiter»: persona que ven verdura, fruita"
+    },
+    {
+      "nombre": "verdulera",
+      "idioma": "ca",
+      "esco": ["5223.7.19"],
+      "fuente": "DIEC, «verduler», «fruiter»: persona que ven verdura, fruita"
+    },
+    {
+      "nombre": "ferreter",
+      "idioma": "ca",
+      "esco": ["5223.7.21"],
+      "fuente": "DIEC, «ferreter»: persona que té una ferreteria"
+    },
+    {
+      "nombre": "ferretera",
+      "idioma": "ca",
+      "esco": ["5223.7.21"],
+      "fuente": "DIEC, «ferreter»: persona que té una ferreteria"
+    },
+    {
+      "nombre": "segon de cuina",
+      "idioma": "ca",
+      "esco": ["3434.1"],
+      "fuente": "ús comú a les cuines professionals"
+    },
+    {
+      "nombre": "segona de cuina",
+      "idioma": "ca",
+      "esco": ["3434.1"],
+      "fuente": "ús comú a les cuines professionals"
+    },
+    {
+      "nombre": "treballadora de la llar",
+      "idioma": "ca",
+      "esco": ["5152.2"],
+      "fuente": "ús comú (Conveni 189 de l'OIT, treball de la llar)"
+    },
+    {
+      "nombre": "treballador de la llar",
+      "idioma": "ca",
+      "esco": ["5152.2"],
+      "fuente": "ús comú (Conveni 189 de l'OIT, treball de la llar)"
+    },
+    {
+      "nombre": "monitor de natació",
+      "idioma": "ca",
+      "esco": ["3422.4.6"],
+      "fuente": "ús comú"
+    },
+    {
+      "nombre": "monitora de natació",
+      "idioma": "ca",
+      "esco": ["3422.4.6"],
+      "fuente": "ús comú"
+    },
+    {
+      "nombre": "metge de capçalera",
+      "idioma": "ca",
+      "esco": ["2211.1"],
+      "fuente": "DIEC, «metge de capçalera»"
+    },
+    {
+      "nombre": "metgessa de capçalera",
+      "idioma": "ca",
+      "esco": ["2211.1"],
+      "fuente": "DIEC, «metge de capçalera»"
+    },
+    {
+      "nombre": "camiller",
+      "idioma": "ca",
+      "esco": ["5329.1"],
+      "fuente": "ús comú als hospitals (llitera: camilla)"
+    },
+    {
+      "nombre": "bidell",
+      "idioma": "ca",
+      "esco": ["5153.1"],
+      "fuente": "DIEC, «bidell»: subaltern d'un centre d'ensenyament"
+    },
+    {
+      "nombre": "bidella",
+      "idioma": "ca",
+      "esco": ["5153.1"],
+      "fuente": "DIEC, «bidell»: subaltern d'un centre d'ensenyament"
+    },
+    {
+      "nombre": "portera d'escala",
+      "idioma": "ca",
+      "esco": ["5153.1"],
+      "fuente": "ús comú a Barcelona (porter de finca)"
+    },
+    {
+      "nombre": "porter d'escala",
+      "idioma": "ca",
+      "esco": ["5153.1"],
+      "fuente": "ús comú a Barcelona (porter de finca)"
+    },
+    {
+      "nombre": "mosso d'esquadra",
+      "idioma": "ca",
+      "esco": ["5412.1"],
+      "fuente": "DIEC, «mosso d'esquadra»: membre de la policia de la Generalitat"
+    },
+    {
+      "nombre": "mossa d'esquadra",
+      "idioma": "ca",
+      "esco": ["5412.1"],
+      "fuente": "DIEC, «mosso d'esquadra»: membre de la policia de la Generalitat"
+    },
+    {
+      "nombre": "bomber forestal",
+      "idioma": "ca",
+      "esco": ["5411.1"],
+      "fuente": "ús comú (Bombers de la Generalitat, GRAF)"
+    },
+    {
+      "nombre": "bombera forestal",
+      "idioma": "ca",
+      "esco": ["5411.1"],
+      "fuente": "ús comú (Bombers de la Generalitat, GRAF)"
+    },
+    {
+      "nombre": "xofer d'autobús",
+      "idioma": "ca",
+      "esco": ["8331.1"],
+      "fuente": "DIEC, «xofer»: conductor d'un automòbil"
+    },
+    {
+      "nombre": "tractorista",
+      "idioma": "ca",
+      "esco": ["8341.2"],
+      "fuente": "DIEC, «tractorista»"
+    },
+    {
+      "nombre": "telefonista",
+      "idioma": "ca",
+      "esco": ["4223.1"],
+      "fuente": "DIEC, «telefonista»"
+    },
+    {
+      "nombre": "collidor de taronja",
+      "idioma": "ca",
+      "esco": ["9211.1"],
+      "fuente": "ús comú al País Valencià"
+    },
+    {
+      "nombre": "collidora de taronja",
+      "idioma": "ca",
+      "esco": ["9211.1"],
+      "fuente": "ús comú al País Valencià"
+    },
+    {
+      "nombre": "chico de los recados",
+      "idioma": "es",
+      "esco": ["9331.1"],
+      "fuente": "uso común en España (recadero)"
+    },
+    {
+      "nombre": "chica de los recados",
+      "idioma": "es",
+      "esco": ["9331.1"],
+      "fuente": "uso común en España (recadero)"
+    },
+    {
+      "nombre": "paseador de perros",
+      "idioma": "es",
+      "esco": ["5164.9"],
+      "fuente": "uso común (como «dog walker»)"
+    },
+    {
+      "nombre": "paseadora de perros",
+      "idioma": "es",
+      "esco": ["5164.9"],
+      "fuente": "uso común (como «dog walker»)"
+    },
+    {
+      "nombre": "peluquero canino",
+      "idioma": "es",
+      "esco": ["5164.1.1"],
+      "fuente": "uso común (peluquería de mascotas)"
+    },
+    {
+      "nombre": "peluquera canina",
+      "idioma": "es",
+      "esco": ["5164.1.1"],
+      "fuente": "uso común (peluquería de mascotas)"
+    },
+    {
+      "nombre": "maquinista de metro",
+      "idioma": "es",
+      "esco": ["8311.1"],
+      "fuente": "uso común (conductor de tren)"
+    },
+    {
+      "nombre": "socorrista de piscina",
+      "idioma": "es",
+      "esco": ["5419.7"],
+      "fuente": "uso común en España"
+    },
+    {
+      "nombre": "socorrista de piscina",
+      "idioma": "ca",
+      "esco": ["5419.7"],
+      "fuente": "ús comú"
+    },
+    {
+      "nombre": "pintor de coches",
+      "idioma": "es",
+      "esco": ["7132.1"],
+      "fuente": "uso común en talleres de chapa y pintura"
+    },
+    {
+      "nombre": "pintora de coches",
+      "idioma": "es",
+      "esco": ["7132.1"],
+      "fuente": "uso común en talleres de chapa y pintura"
+    },
+    {
+      "nombre": "passejador de gossos",
+      "idioma": "ca",
+      "esco": ["5164.9"],
+      "fuente": "ús comú"
+    },
+    {
+      "nombre": "passejadora de gossos",
+      "idioma": "ca",
+      "esco": ["5164.9"],
+      "fuente": "ús comú"
+    },
+    {
+      "nombre": "perruquera canina",
+      "idioma": "ca",
+      "esco": ["5164.1.1"],
+      "fuente": "ús comú"
+    },
+    {
+      "nombre": "perruquer caní",
+      "idioma": "ca",
+      "esco": ["5164.1.1"],
+      "fuente": "ús comú"
+    },
+    {
+      "nombre": "maquinista de metro",
+      "idioma": "ca",
+      "esco": ["8311.1"],
+      "fuente": "ús comú"
+    }
+  ],
+  "expresiones": []
+}

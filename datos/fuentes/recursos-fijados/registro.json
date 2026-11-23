@@ -1,0 +1,14 @@
+{
+  "vectores-formacion.json": {
+    "sha256": "0a207eee38b8c7eaca36a8e88492ab3de081bf5fcd4a2d2ebb5ca2e52677371d",
+    "tipo": "captura histórica fijada; no regeneración del recurso"
+  },
+  "vectores-oit.json": {
+    "sha256": "061cb7b476616638ff7a3533cb8f07e630784e355107b1df93e0bc07317ddd23",
+    "tipo": "captura histórica fijada; no regeneración del recurso"
+  },
+  "enlaces-comprobados.json": {
+    "sha256": "d7f2728b36f589ae6717eb512035a02f97c77a3d4bdd80a350834ba66a291b46",
+    "tipo": "captura histórica fijada; no regeneración del recurso"
+  }
+}

@@ -1,0 +1,195 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Registro lógico 1 de una evaluación de vigencia por edición en catálogo SQLite 7",
+  "description": "Contenido lógico reconstruido de una evaluación, idéntico al formato público de SQLite 6. SQLite 7 conserva observaciones inmutables deduplicadas y revisiones ordenadas; la fila física usa formato 2 y su propio sello, distinto de la huella lógica original. El API ejecuta el evaluador real y reglas Python referenciales, temporales y transaccionales, sin segundo evaluador. Capturas, política, IDs y fechas no se rejuvenecen al migrar.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "edicion_id",
+    "entradas",
+    "evaluador",
+    "corte_utc",
+    "resultado",
+    "huella_entradas",
+    "huella_resultado",
+    "huella_edicion"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "edicion_id": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Coincidencia exacta con ediciones.id y entradas.oferta.id; sin títulos, prefijos o mapeos inferidos."
+    },
+    "entradas": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["oferta", "observaciones", "politica"],
+      "properties": {
+        "oferta": {
+          "$ref": "contrato_vigencia.json#/$defs/oferta"
+        },
+        "observaciones": {
+          "type": "array",
+          "items": {
+            "$ref": "contrato_vigencia.json#/$defs/observacion"
+          }
+        },
+        "politica": {
+          "$ref": "contrato_vigencia.json#/$defs/politica"
+        }
+      }
+    },
+    "evaluador": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["version", "sha256", "version_contrato_vigencia", "archivos"],
+      "properties": {
+        "version": {
+          "enum": [1, 2],
+          "description": "2 para evaluaciones con plazo técnico de revisión interna; 1 solo en el historial."
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "version_contrato_vigencia": {
+          "enum": [1, 2],
+          "description": "Contrato de vigencia con que se evaluó; el historial conserva el suyo y no se reevalúa."
+        },
+        "archivos": {
+          "type": "object",
+          "description": "SHA256 de artefactos presentes en revisión congelada: vigencia, contrato_fichas/calendarios y normalizar_destinatarios. No acredita un runtime modificado en caliente.",
+          "additionalProperties": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          }
+        }
+      }
+    },
+    "corte_utc": {
+      "$ref": "contrato_vigencia.json#/$defs/fecha_utc"
+    },
+    "resultado": {
+      "oneOf": [
+        { "$ref": "contrato_vigencia.json#/$defs/resultado" },
+        { "$ref": "contrato_vigencia.json#/$defs/resultado_v1" }
+      ]
+    },
+    "huella_entradas": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "huella_resultado": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "huella_edicion": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    }
+  },
+  "$defs": {
+    "formato_fisico2": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["formato_registro", "revision_observaciones", "registro"],
+      "properties": {
+        "formato_registro": {
+          "const": 2
+        },
+        "revision_observaciones": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "registro": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "schema_version",
+            "edicion_id",
+            "entradas",
+            "evaluador",
+            "corte_utc",
+            "resultado",
+            "huella_entradas",
+            "huella_resultado",
+            "huella_edicion"
+          ],
+          "properties": {
+            "schema_version": {
+              "const": 1
+            },
+            "edicion_id": {
+              "type": "string",
+              "minLength": 1,
+              "description": "Coincidencia exacta con ediciones.id y entradas.oferta.id; sin títulos, prefijos o mapeos inferidos."
+            },
+            "entradas": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["oferta", "politica"],
+              "properties": {
+                "oferta": {
+                  "$ref": "contrato_vigencia.json#/$defs/oferta"
+                },
+                "politica": {
+                  "$ref": "contrato_vigencia.json#/$defs/politica"
+                }
+              }
+            },
+            "evaluador": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["version", "sha256", "version_contrato_vigencia", "archivos"],
+              "properties": {
+                "version": {
+                  "enum": [1, 2]
+                },
+                "sha256": {
+                  "type": "string",
+                  "pattern": "^[0-9a-f]{64}$"
+                },
+                "version_contrato_vigencia": {
+                  "enum": [1, 2]
+                },
+                "archivos": {
+                  "type": "object",
+                  "description": "SHA256 de artefactos presentes en revisión congelada: vigencia, contrato_fichas/calendarios y normalizar_destinatarios. No acredita un runtime modificado en caliente.",
+                  "additionalProperties": {
+                    "type": "string",
+                    "pattern": "^[0-9a-f]{64}$"
+                  }
+                }
+              }
+            },
+            "corte_utc": {
+              "$ref": "contrato_vigencia.json#/$defs/fecha_utc"
+            },
+            "resultado": {
+              "oneOf": [
+                { "$ref": "contrato_vigencia.json#/$defs/resultado" },
+                { "$ref": "contrato_vigencia.json#/$defs/resultado_v1" }
+              ]
+            },
+            "huella_entradas": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "huella_resultado": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "huella_edicion": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta
+      name="description"
+      content="Entiende cómo puede cambiar tu trabajo con la inteligencia artificial, tarea a tarea, y consulta la formación oficial relacionada con tu ocupación."
+      data-texto-content="inicio.descripcion"
+    />
+    <meta name="theme-color" content="#f4f3f0" />
+    <meta name="apple-mobile-web-app-title" content="Faro" />
+    <!-- En iPhone y iPad instalada: barra de estado opaca y negra, como el modo noche con el que abre Faro (el
+         sistema no admite una por tema; donde lo admite, el color lo pone el theme-color de arriba). -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <title data-texto="inicio.titulo">Faro · IA y tu futuro profesional</title>
+    <link rel="icon" href="imagenes/identidad/faro-editorial-icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="imagenes/identidad/icon-180.png" />
+    <link rel="manifest" href="manifest.webmanifest" crossorigin="use-credentials" />
+    <script src="scripts/tema-inicial.js"></script>
+    <script src="scripts/inicio-animacion-inicial.js"></script>
+    <script src="scripts/idioma-inicial.js"></script>
+    <link rel="stylesheet" href="estilos/tipografias.css" />
+    <link rel="stylesheet" href="estilos/tokens.css" />
+    <link rel="stylesheet" href="estilos/base.css" />
+    <link rel="stylesheet" href="estilos/portada.css" />
+    <script type="module" src="scripts/sitio.js"></script>
+    <!-- Los textos se escriben en cuanto se ejecuta sitio.js: sus diccionarios se piden a la vez que él. -->
+    <link rel="modulepreload" href="idiomas/cargar.js" />
+    <link rel="modulepreload" href="scripts/idioma.js" />
+    <link rel="modulepreload" href="scripts/textos.js" />
+    <link rel="modulepreload" href="scripts/version.js" />
+    <script type="module" src="scripts/sitio.js"></script>
+    <script type="module" src="scripts/inicio-animacion.js"></script>
+  </head>
+  <body>
+    <a class="salto" href="#contenido" data-texto="comun.saltar">Saltar al contenido</a>
+    <header class="cabecera">
+      <button
+        class="menu-boton"
+        type="button"
+        aria-label="Abrir menú"
+        data-texto-aria-label="comun.menu.abrir"
+        aria-expanded="false"
+        aria-controls="menu"
+      >
+        <span></span><span></span><span></span>
+      </button>
+      <a class="marca" href="inicio.html">
+        <span class="solo-lectores" data-texto="comun.marca.inicio">Faro, inicio</span>
+        <span class="marca-nombre" aria-hidden="true"
+          ><span class="marca-inicial"
+            >F<svg class="marca-luz" viewBox="0 0 18 8" focusable="false" aria-hidden="true"
+              ><path d="M1 4h16" /></svg
+            ></span
+          >ARO</span
+        >
+      </a>
+      <div class="cabecera-herramientas">
+        <div class="idioma" data-selector-idioma>
+          <button
+            class="idioma-boton"
+            type="button"
+            id="idioma-boton"
+            aria-label="Idioma: Castellano"
+            data-texto-aria-label="comun.idioma.boton"
+            aria-haspopup="menu"
+            aria-expanded="false"
+            aria-controls="idioma-opciones"
+          >
+            <img
+              class="idioma-bandera idioma-bandera-es"
+              src="imagenes/identidad/bandera-espana.svg"
+              alt=""
+              width="24"
+              height="16"
+            />
+            <img
+              class="idioma-bandera idioma-bandera-ca"
+              src="imagenes/identidad/bandera-catalunya.svg"
+              alt=""
+              width="24"
+              height="16"
+            />
+          </button>
+          <div class="idioma-opciones" id="idioma-opciones" role="menu" aria-labelledby="idioma-boton" hidden>
+            <button type="button" role="menuitemradio" aria-checked="true" data-cambiar-idioma="es" lang="es"
+              ><img class="idioma-bandera" src="imagenes/identidad/bandera-espana.svg" alt="" width="24" height="16" />
+              <span>Castellano</span></button
+            >
+            <button type="button" role="menuitemradio" aria-checked="false" data-cambiar-idioma="ca" lang="ca"
+              ><img
+                class="idioma-bandera"
+                src="imagenes/identidad/bandera-catalunya.svg"
+                alt=""
+                width="24"
+                height="16"
+              /><span>Català</span></button
+            >
+          </div>
+        </div>
+        <button
+          class="tema-boton"
+          type="button"
+          aria-label="Cambiar a modo día"
+          title="Modo día / noche"
+          data-texto-title="comun.tema.titulo"
+        >
+          <svg class="icono-sol" viewBox="0 0 24 24" aria-hidden="true" focusable="false"
+            ><circle cx="12" cy="12" r="4" />
+            <path
+              d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"
+            /></svg
+          >
+          <svg class="icono-luna" viewBox="0 0 24 24" aria-hidden="true" focusable="false"
+            ><path d="M20 14.3A8.5 8.5 0 0 1 9.7 4 8.5 8.5 0 1 0 20 14.3Z" /></svg
+          >
+        </button>
+      </div>
+    </header>
+    <div class="menu-velo" id="menu-velo" hidden></div>
+    <nav id="menu" class="menu" hidden aria-label="Menú principal" data-texto-aria-label="comun.menu.nombre">
+      <ul class="menu-lista">
+        <li
+          ><a href="inicio.html" aria-current="page"
+            ><span class="menu-destino" data-texto="comun.seccion.inicio">Inicio</span></a
+          ></li
+        >
+        <li
+          ><a href="entender-ia.html"
+            ><span class="menu-destino" data-texto="comun.seccion.ia">Qué es la IA</span></a
+          ></li
+        >
+        <li
+          ><a href="que-es-faro.html"><span class="menu-destino">Faro</span></a></li
+        >
+        <li
+          ><a href="recorrido.html"><span class="menu-destino" data-texto="comun.seccion.empezar">Empezar</span></a></li
+        >
+        <li
+          ><a href="biblioteca.html"
+            ><span class="menu-destino" data-texto="comun.seccion.biblioteca">Biblioteca</span></a
+          ></li
+        >
+        <li
+          ><a href="cursos.html"><span class="menu-destino" data-texto="comun.seccion.cursos">Cursos</span></a></li
+        >
+        <li
+          ><a href="datos-globales.html"
+            ><span class="menu-destino" data-texto="comun.seccion.datos-globales">Datos globales</span></a
+          ></li
+        >
+        <li data-pasar-entrada hidden
+          ><button type="button" class="menu-pasar" data-pasar-dispositivo
+            ><span class="menu-destino" data-texto="comun.menu.pasar">Pasar a otro dispositivo</span></button
+          ></li
+        >
+      </ul>
+    </nav>
+    <main id="contenido">
+      <section class="apertura" aria-labelledby="apertura-titulo">
+        <div class="apertura-imagen">
+          <!-- En un móvil la foto se dibuja hasta 510 px de alto con object-fit: cover (portada-adaptaciones.css), más
+               ancha que la pantalla: por eso sizes declara 1400 px por debajo de 700 px y se elige la de 1800w. -->
+          <img
+            src="imagenes/fotografias/faro-penmon.webp"
+            srcset="imagenes/fotografias/faro-penmon-800.webp 800w, imagenes/fotografias/faro-penmon.webp 1800w"
+            sizes="(max-width: 700px) 1400px, 100vw"
+            alt="Faro de Trwyn Du en Penmon, Gales, rodeado por el mar en calma bajo un cielo azul y rosado."
+            data-texto-alt="inicio.portada.foto"
+            width="1800"
+            height="1200"
+            fetchpriority="high"
+          />
+        </div>
+        <div class="apertura-cuerpo">
+          <h1 id="apertura-titulo" class="apertura-marca"
+            ><span class="solo-lectores"
+              >Faro. <span data-texto="inicio.portada.titulo-1">IA y tu futuro</span>
+              <span data-texto="inicio.portada.titulo-2">profesional.</span></span
+            ><span class="marca-nombre" aria-hidden="true"
+              ><span class="marca-inicial"
+                >F<svg class="marca-luz" viewBox="0 0 18 8" focusable="false" aria-hidden="true"
+                  ><path d="M1 4h16" /></svg
+                ></span
+              >ARO</span
+            ></h1
+          >
+          <p class="apertura-entradilla" data-texto="inicio.portada.intro"
+            >Descubre cómo la IA puede cambiar el trabajo y decide en qué quieres formarte.</p
+          >
+          <!-- biome-ignore lint/a11y/noRedundantRoles: Safari no anuncia como lista una lista sin viñetas. -->
+          <ul class="apertura-hechos" role="list">
+            <li data-texto="inicio.portada.hecho.gratis">Gratis</li>
+            <li data-texto="inicio.portada.hecho.registro">Sin registro</li>
+            <li data-texto="inicio.portada.hecho.dispositivo">Lo que escribes se queda en tu dispositivo</li>
+          </ul>
+          <!-- Con el recorrido cerrado desde el panel, secciones.js oculta el grupo entero, como el enlace del menú. -->
+          <div class="apertura-acciones"
+            ><a class="boton-empezar" href="recorrido.html"
+              ><span data-texto="comun.seccion.empezar">Empezar</span
+              ><svg viewBox="0 0 16 10" aria-hidden="true" focusable="false"
+                ><path d="M1 5h13M9.5 1.5 13 5l-3.5 3.5" /></svg
+              ></a
+            ><a class="apertura-ejemplo" href="informe-ejemplo.html" data-texto="inicio.portada.ejemplo"
+              >Ver un informe de ejemplo</a
+            ></div
+          >
+        </div>
+      </section>
+
+      <section id="explorar" class="explorar" aria-labelledby="explorar-titulo">
+        <div class="explorar-cabecera">
+          <h2 id="explorar-titulo" data-texto="inicio.explorar.titulo">Elige por dónde empezar.</h2>
+        </div>
+        <div class="historias">
+          <a class="historia historia-ia" href="entender-ia.html">
+            <img
+              src="imagenes/fotografias/trabajo-800.webp"
+              srcset="imagenes/fotografias/trabajo-800.webp 800w, imagenes/fotografias/trabajo.webp 1400w"
+              sizes="(max-width: 700px) 100vw, 45vw"
+              alt=""
+              width="1400"
+              height="788"
+              loading="lazy"
+              decoding="async"
+            />
+            <div class="historia-numero"><span data-texto="inicio.historia.ia.numero">01 / Entender</span></div>
+            <div class="historia-texto"
+              ><h3 data-texto="comun.seccion.ia">Qué es la IA</h3
+              ><p data-texto="inicio.historia.ia.texto"
+                >Qué es, cómo aprende y qué precauciones tomar, con un desafío al final.</p
+              ><span class="historia-accion" data-texto="comun.accion.entender-ia">Entender la IA</span></div
+            >
+          </a>
+          <a class="historia historia-faro" href="que-es-faro.html">
+            <img
+              src="imagenes/fotografias/faro-portland-800.webp"
+              srcset="imagenes/fotografias/faro-portland-800.webp 800w, imagenes/fotografias/faro-portland.webp 1607w"
+              sizes="(max-width: 700px) 100vw, 30vw"
+              alt=""
+              width="1607"
+              height="2409"
+              loading="lazy"
+              decoding="async"
+            />
+            <div class="historia-numero"><span data-texto="inicio.historia.faro.numero">02 / Conocer</span></div>
+            <div class="historia-texto"
+              ><h3 data-texto="comun.titulo.faro">Qué es Faro</h3
+              ><p data-texto="inicio.historia.faro.texto"
+                >Una herramienta para explorar cambios en tu trabajo y opciones de formación.</p
+              ><span class="historia-accion" data-texto="comun.accion.conocer-faro">Conocer Faro</span></div
+            >
+          </a>
+          <a class="historia historia-proceso" href="biblioteca.html">
+            <img
+              src="imagenes/fotografias/aprendizaje-800.webp"
+              srcset="imagenes/fotografias/aprendizaje-800.webp 800w, imagenes/fotografias/aprendizaje.webp 1400w"
+              sizes="(max-width: 700px) 100vw, 30vw"
+              alt=""
+              width="1400"
+              height="2104"
+              loading="lazy"
+              decoding="async"
+            />
+            <div class="historia-numero"><span data-texto="inicio.historia.proceso.numero">03 / Prepararte</span></div>
+            <div class="historia-texto"
+              ><h3 data-texto="comun.seccion.biblioteca">Biblioteca</h3
+              ><p data-texto="inicio.historia.proceso.texto"
+                >Guías, informes y notas de fuentes oficiales, de lo más sencillo a lo más avanzado.</p
+              ><span class="historia-accion" data-texto="comun.accion.ir-biblioteca">Ir a la Biblioteca</span></div
+            >
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="pie">
+      <div class="pie-fila"
+        ><nav aria-label="Información y ayuda" data-texto-aria-label="comun.pie.nombre"
+          ><a href="creditos.html" data-texto="comun.pie.creditos">Créditos</a
+          ><a href="informacion-y-creditos.html#t-datos" data-texto="comun.pie.datos">Tus datos</a
+          ><a href="accesibilidad.html" data-texto="comun.pie.accesibilidad">Accesibilidad</a
+          ><a href="verificable.html" data-texto="comun.pie.verificable">Faro verificable</a
+          ><a class="pie-doctor" href="doctor.html" data-texto="comun.pie.doctor">Comprobar Faro</a
+          ><a class="pie-instalar" href="instalar.html" data-texto="comun.pie.instalar">Instalar Faro</a></nav
+        ><p class="pie-derechos" data-texto="comun.pie.derechos">© 2026 Equipo Faro</p></div
+      >
+    </footer>
+  </body>
+</html>

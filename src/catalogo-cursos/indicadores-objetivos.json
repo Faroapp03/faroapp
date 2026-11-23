@@ -1,0 +1,16 @@
+{
+  "web": [["sistemas de gestion de contenidos", "wordpress"]],
+  "digital": [
+    ["competencias basicas", "buscador", "correo"],
+    ["conceptos y terminologia basicos", "tic", "gestion integral"],
+    ["competencias digitales", "transformacion digital"]
+  ],
+  "ofimatica": [["competencias basicas", "buscador", "correo"], ["herramientas", "teletrabajo", "tiempo", "tareas"]],
+  "empresa": [
+    ["tic", "gestion integral", "organizaciones empresariales"],
+    ["objetivos y estrategias", "empresa digital"],
+    ["impuesto", "rentas de las personas fisicas", "obligaciones de la empresa"]
+  ],
+  "diseno": [["maquetacion avanzada", "sistema visual"]],
+  "empleo": [["visibilidad", "encargos", "empleo", "colaboraciones"]]
+}

@@ -1,0 +1,2246 @@
+{
+  "catalogo_sha256": "6c31fe0b73ddf8380b6b14df96245879af70c987318a571cb64a4b4f56745a55",
+  "objetivos": [
+    {
+      "campo": "enlace",
+      "estado": "no_aplica_consulta_remota",
+      "id": "que-es-la-ia-generativa",
+      "objetivo": "que-es-la-ia-generativa:enlace",
+      "ultima_confirmacion": null,
+      "ultima_evidencia": null,
+      "ultimo_intento": null,
+      "url": "entender-ia.html"
+    },
+    {
+      "campo": "enlace",
+      "estado": "identidad_no_acreditada",
+      "id": "usar-la-ia-en-el",
+      "objetivo": "usar-la-ia-en-el:enlace",
+      "ultima_confirmacion": null,
+      "ultima_evidencia": null,
+      "ultimo_intento": {
+        "capturado_utc": "2026-11-15T12:58:36.547547+00:00",
+        "codigo_http": null,
+        "content_type": "application/pdf",
+        "cuerpo_sha256": "88d7aa5eead9b863c768513e5e2327e0610fcff59ffdd412d861b2a9d05939e1",
+        "error_tipo": null,
+        "estado": "identidad_no_acreditada",
+        "identidad_acreditada": false,
+        "lectura_tecnica": {
+          "caracteres": 4512,
+          "estado": "legible_texto_extraido",
+          "metodo": "pypdf-6.21.2-extract_text",
+          "paginas": 7,
+          "proteccion_memoria": "RSS_supervisado_pausa_50ms_ps_max1s_no_techo_estricto",
+          "revision_visual": false,
+          "texto_sha256": "a78c6c892d560ee412c95c5c00e1270bc21af6709bb68cbc1ee26e54f4926c6c"
+        },
+        "resultado": "respuesta",
+        "url": "https://www.aepd.es/guias/recomendaciones-ia-aepd.pdf",
+        "url_final": "https://www.aepd.es/guias/recomendaciones-ia-aepd.pdf",
+        "vence_utc": "2026-11-22T12:58:36.547547+00:00"
+      },
+      "url": "https://www.aepd.es/guias/recomendaciones-ia-aepd.pdf"
+    },
+    {
+      "campo": "enlace",
+      "estado": "pdf_limite_paginas",
+      "id": "introduccion-ia-lectura-facil-plena-inclusion",
+      "objetivo": "introduccion-ia-lectura-facil-plena-inclusion:enlace",
+      "ultima_confirmacion": null,
+      "ultima_evidencia": null,
+      "ultimo_intento": {
+        "capturado_utc": "2026-11-15T12:58:37.095591+00:00",
+        "codigo_http": null,
+        "content_type": "application/pdf",
+        "cuerpo_sha256": "476ab7aaf440cf73c6fb2b6f901cd9f0aa6be8e6f94f953d095bfff2387393d3",
+        "error_tipo": null,
+        "estado": "pdf_limite_paginas",
+        "identidad_acreditada": false,
+        "lectura_tecnica": {
+          "estado": "pdf_limite_paginas",
+          "proteccion_memoria": "RSS_supervisado_pausa_50ms_ps_max1s_no_techo_estricto"
+        },
+        "resultado": "respuesta",
+        "url": "https://plenainclusioncyl.org/wp-content/uploads/2026/07/Introduccion-a-la-Inteligencia-artificial-ManualLF.pdf",
+        "url_final": "https://plenainclusioncyl.org/wp-content/uploads/2026/07/Introduccion-a-la-Inteligencia-artificial-ManualLF.pdf",
+        "vence_utc": "2026-11-22T12:58:37.095591+00:00"
+      },
+      "url": "https://plenainclusioncyl.org/wp-content/uploads/2026/07/Introduccion-a-la-Inteligencia-artificial-ManualLF.pdf"
+    },
+    {
+      "campo": "enlace",
+      "estado": "identidad_no_acreditada",
+      "id": "detectar-y-reducir-alucinaciones-ia",
+      "objetivo": "detectar-y-reducir-alucinaciones-ia:enlace",
+      "ultima_confirmacion": null,
+      "ultima_evidencia": null,
+      "ultimo_intento": {
+        "capturado_utc": "2026-11-15T12:58:37.535222+00:00",
+        "codigo_http": null,
+        "content_type": "text/html;charset=UTF-8",
+        "cuerpo_sha256": "2240cb433aadebc8644d75c966b8eefcf71bc8b0b2ed38c0b109afc971e9c996",
+        "error_tipo": null,
+        "estado": "identidad_no_acreditada",
+        "identidad_acreditada": false,
+        "lectura_tecnica": {
+          "estado": "legible",
+          "metodo": "HTMLParser-texto-visible-conservador"
+        },
+        "resultado": "respuesta",
+        "url": "https://www.ehu.eus/es/web/adimen-artifiziala/c%C3%B3mo-detectar-y-reducir-alucinaciones",
+        "url_final": "https://www.ehu.eus/es/web/adimen-artifiziala/c%C3%B3mo-detectar-y-reducir-alucinaciones",
+        "vence_utc": "2026-11-22T12:58:37.535222+00:00"
+      },
+      "url": "https://www.ehu.eus/es/web/adimen-artifiziala/c%C3%B3mo-detectar-y-reducir-alucinaciones"
+    },
+    {
+      "campo": "enlace",
+      "estado": "identidad_no_acreditada",
+      "id": "xatejar-amb-la-ia-agencia-ciberseguretat",
+      "objetivo": "xatejar-amb-la-ia-agencia-ciberseguretat:enlace",
+      "ultima_confirmacion": null,
+      "ultima_evidencia": null,
+      "ultimo_intento": {
+        "capturado_utc": "2026-11-15T12:58:37.960593+00:00",
+        "codigo_http": null,
+        "content_type": "text/html;charset=utf-8",
+        "cuerpo_sha256": "0b21e24f853c3968dae455585cd5dafd7a9b153de551e5d41542435a666fc36c",
+        "error_tipo": null,
+        "estado": "identidad_no_acreditada",
+        "identidad_acreditada": false,
+        "lectura_tecnica": {
+          "estado": "legible",
+          "metodo": "HTMLParser-texto-visible-conservador"
+        },
+        "resultado": "respuesta",
+        "url": "https://ciberseguretat.gencat.cat/ca/ciutadania/intelligencia-artificial/xatejar-amb-la-IA",
+        "url_final": "https://ciberseguretat.gencat.cat/ca/ciutadania/intelligencia-artificial/xatejar-amb-la-IA",
+        "vence_utc": "2026-11-22T12:58:37.960593+00:00"
+      },
+      "url": "https://ciberseguretat.gencat.cat/ca/ciutadania/intelligencia-artificial/xatejar-amb-la-IA"
+    },
+    {
+      "campo": "enlace",
+      "estado": "identidad_no_acreditada",
+      "id": "detectar-noticies-falses-agencia-ciberseguretat",
+      "objetivo": "detectar-noticies-falses-agencia-ciberseguretat:enlace",
+      "ultima_confirmacion": null,
+      "ultima_evidencia": null,
+      "ultimo_intento": {
+        "capturado_utc": "2026-11-15T12:58:40.172572+00:00",
+        "codigo_http": null,
+        "content_type": "text/html;charset=utf-8",
+        "cuerpo_sha256": "4cb9dd6881d006a4312bd9d6074de67690ad7bd05fb8de4afdbd852f786ff79a",
+        "error_tipo": null,
+        "estado": "identidad_no_acreditada",
+        "identidad_acreditada": false,
+        "lectura_tecnica": {
+          "estado": "legible",
+          "metodo": "HTMLParser-texto-visible-conservador"
+        },
+        "resultado": "respuesta",
+        "url": "https://ciberseguretat.gencat.cat/es/ciutadania/intelligencia-artificial/noticies-falses",
+        "url_final": "https://ciberseguretat.gencat.cat/es/ciutadania/intelligencia-artificial/noticies-falses",
+        "vence_utc": "2026-11-22T12:58:40.172572+00:00"
+      },
+      "url": "https://ciberseguretat.gencat.cat/es/ciutadania/intelligencia-artificial/noticies-falses"
+    },
+    {
+      "campo": "enlace_ca",
+      "estado": "identidad_no_acreditada",
+      "id": "detectar-noticies-falses-agencia-ciberseguretat",
+      "objetivo": "detectar-noticies-falses-agencia-ciberseguretat:enlace_ca",
+      "ultima_confirmacion": null,
+      "ultima_evidencia": null,
+      "ultimo_intento": {
+        "capturado_utc": "2026-11-15T12:58:42.361139+00:00",
+        "codigo_http": null,
+        "content_type": "text/html;charset=utf-8",
+        "cuerpo_sha256": "2580b8cfef2dc9c183b85946d3f15c74b3ffc2628975900a58816f4807fcff3f",
+        "error_tipo": null,
+        "estado": "identidad_no_acreditada",
+        "identidad_acreditada": false,
+        "lectura_tecnica": {
+          "estado": "legible",
+          "metodo": "HTMLParser-texto-visible-conservador"
+        },
+        "resultado": "respuesta",
+        "url": "https://ciberseguretat.gencat.cat/ca/ciutadania/intelligencia-artificial/noticies-falses",
+        "url_final": "https://ciberseguretat.gencat.cat/ca/ciutadania/intelligencia-artificial/noticies-falses",
+        "vence_utc": "2026-11-22T12:58:42.361139+00:00"
+      },
+      "url": "https://ciberseguretat.gencat.cat/ca/ciutadania/intelligencia-artificial/noticies-falses"
+    },
+    {
+      "campo": "enlace",
+      "estado": "identidad_no_acreditada",
+      "id": "estafes-amb-intelligencia-artificial-consells",
+      "objetivo": "estafes-amb-intelligencia-artificial-consells:enlace",
+      "ultima_confirmacion": null,
+      "ultima_evidencia": null,
+      "ultimo_intento": {
+        "capturado_utc": "2026-11-15T12:58:44.558881+00:00",
+        "codigo_http": null,
+        "content_type": "text/html;charset=utf-8",
+        "cuerpo_sha256": "b00c92f3d8024e392ac92ebb9fedc14a0501fa54482df32a3128113b2b63c337",
+        "error_tipo": null,
+        "estado": "identidad_no_acreditada",
+        "identidad_acreditada": false,
+        "lectura_tecnica": {
+          "estado": "legible",
+          "metodo": "HTMLParser-texto-visible-conservador"
+        },
+        "resultado": "respuesta",
+        "url": "https://ciberseguretat.gencat.cat/es/ciutadania/frau-i-suplantacio/estafes-amb-intelligencia-artificial",
+        "url_final": "https://ciberseguretat.gencat.cat/es/ciutadania/frau-i-suplantacio/estafes-amb-intelligencia-artificial",
+        "vence_utc": "2026-11-22T12:58:44.558881+00:00"
+      },
+      "url": "https://ciberseguretat.gencat.cat/es/ciutadania/frau-i-suplantacio/estafes-amb-intelligencia-artificial"
+    },
+    {
+      "campo": "enlace_ca",
+      "estado": "identidad_no_acreditada",
+      "id": "estafes-amb-intelligencia-artificial-consells",
+      "objetivo": "estafes-amb-intelligencia-artificial-consells:enlace_ca",
+      "ultima_confirmacion": null,
+      "ultima_evidencia": null,
+      "ultimo_intento": {
+        "capturado_utc": "2026-11-15T12:58:46.747829+00:00",
+        "codigo_http": null,
+        "content_type": "text/html;charset=utf-8",
+        "cuerpo_sha256": "76344447d446f834a96c4dc4535c7d6f5d764a7a2f6f0e5e27ce122414c96396",
+        "error_tipo": null,
+        "estado": "identidad_no_acreditada",
+        "identidad_acreditada": false,
+        "lectura_tecnica": {
+          "estado": "legible",
+          "metodo": "HTMLParser-texto-visible-conservador"
+        },
+        "resultado": "respuesta",
+        "url": "https://ciberseguretat.gencat.cat/ca/ciutadania/frau-suplantacio/estafes-amb-intelligencia-artificial",
+        "url_final": "https://ciberseguretat.gencat.cat/ca/ciutadania/frau-suplantacio/estafes-amb-intelligencia-artificial",
+        "vence_utc": "2026-11-22T12:58:46.747829+00:00"
+      },
+      "url": "https://ciberseguretat.gencat.cat/ca/ciutadania/frau-suplantacio/estafes-amb-intelligencia-artificial"
+    },
+    {
+      "campo": "enlace",
+      "estado": "identidad_no_acreditada",
+      "id": "detectar-sesgos-respuestas-ia-ehu",
+      "objetivo": "detectar-sesgos-respuestas-ia-ehu:enlace",
+      "ultima_confirmacion": null,
+      "ultima_evidencia": null,
+      "ultimo_intento": {
+        "capturado_utc": "2026-11-15T12:58:47.031695+00:00",
+        "codigo_http": null,
+        "content_type": "text/html;charset=UTF-8",
+        "cuerpo_sha256": "c18d80d2f5326c8971a29850177f56ff6cd9b64f1350e46bc6cd8e68b5b3244e",
+        "error_tipo": null,
+        "estado": "identidad_no_acreditada",
+        "identidad_acreditada": false,
+        "lectura_tecnica": {
+          "estado": "legible",
+          "metodo": "HTMLParser-texto-visible-conservador"
+        },
+        "resultado": "respuesta",
+        "url": "https://www.ehu.eus/es/web/adimen-artifiziala/detecci%C3%B3n-de-sesgos",
+        "url_final": "https://www.ehu.eus/es/web/adimen-artifiziala/detecci%C3%B3n-de-sesgos",
+        "vence_utc": "2026-11-22T12:58:47.031695+00:00"
+      },
+      "url": "https://www.ehu.eus/es/web/adimen-artifiziala/detecci%C3%B3n-de-sesgos"
+    },
+    {
+      "campo": "enlace",
+      "estado": "identidad_no_acreditada",
+      "id": "derecho-revision-humana-decisiones-automatizadas",
+      "objetivo": "derecho-revision-humana-decisiones-automatizadas:enlace",
+      "ultima_confirmacion": null,
+      "ultima_evidencia": null,
+      "ultimo_intento": {
+        "capturado_utc": "2026-11-15T12:58:47.286239+00:00",
+        "codigo_http": null,
+        "content_type": "text/html; charset=UTF-8",
+        "cuerpo_sha256": "c463dbc07423276e086a4ba99455cb35c2d9f65b5eac76ac62bdc7c7e44efade",
+        "error_tipo": null,
+        "estado": "identidad_no_acreditada",
+        "identidad_acreditada": false,
+        "lectura_tecnica": {
+          "estado": "legible",
+          "metodo": "HTMLParser-texto-visible-conservador"
+        },
+        "resultado": "respuesta",
+        "url": "https://www.aepd.es/derechos-y-deberes/conoce-tus-derechos/derecho-no-ser-objeto-de-decisiones-individuales",
+        "url_final": "https://www.aepd.es/derechos-y-deberes/conoce-tus-derechos/derecho-no-ser-objeto-de-decisiones-individuales",
+        "vence_utc": "2026-11-22T12:58:47.286239+00:00"
+      },
+      "url": "https://www.aepd.es/derechos-y-deberes/conoce-tus-derechos/derecho-no-ser-objeto-de-decisiones-individuales"
+    },
+    {
+      "campo": "enlace",
+      "estado": "identidad_no_acreditada",
+      "id": "consells-ciberseguretat-gent-gran",
+      "objetivo": "consells-ciberseguretat-gent-gran:enlace",
+      "ultima_confirmacion": null,
+      "ultima_evidencia": null,
+      "ultimo_intento": {
+        "capturado_utc": "2026-11-15T12:58:48.930750+00:00",
+        "codigo_http": null,
+        "content_type": "text/html;charset=utf-8",
+        "cuerpo_sha256": "f4404d04788dff6d9daceb45b387dc023c4ae02d02a7f9a00e0524837b109926",
+        "error_tipo": null,
+        "estado": "identidad_no_acreditada",
+        "identidad_acreditada": false,
+        "lectura_tecnica": {
+          "estado": "legible",
+          "metodo": "HTMLParser-texto-visible-conservador"
+        },
+        "resultado": "respuesta",
+        "url": "https://ciberseguretat.gencat.cat/es/ciutadania/consells-per-a-la-gent-gran",
+        "url_final": "https://ciberseguretat.gencat.cat/es/ciutadania/consells-per-a-la-gent-gran",
+        "vence_utc": "2026-11-22T12:58:48.930750+00:00"
+      },
+      "url": "https://ciberseguretat.gencat.cat/es/ciutadania/consells-per-a-la-gent-gran"
+    },
+    {
+      "campo": "enlace_ca",
+      "estado": "identidad_no_acreditada",
+      "id": "consells-ciberseguretat-gent-gran",
+      "objetivo": "consells-ciberseguretat-gent-gran:enlace_ca",
+      "ultima_confirmacion": null,
+      "ultima_evidencia": null,
+      "ultimo_intento": {
+        "capturado_utc": "2026-11-15T12:58:51.114116+00:00",
+        "codigo_http": null,
+        "content_type": "text/html;charset=utf-8",
+        "cuerpo_sha256": "c96cbad5a564ca59b77d178c7ddaa137c4f08dcc7631f350c77488a13e632147",
+        "error_tipo": null,
+        "estado": "identidad_no_acreditada",
+        "identidad_acreditada": false,
+        "lectura_tecnica": {
+          "estado": "legible",
+          "metodo": "HTMLParser-texto-visible-conservador"
+        },
+        "resultado": "respuesta",
+        "url": "https://ciberseguretat.gencat.cat/ca/ciutadania/consells-per-a-la-gent-gran",
+        "url_final": "https://ciberseguretat.gencat.cat/ca/ciutadania/consells-per-a-la-gent-gran",
+        "vence_utc": "2026-11-22T12:58:51.114116+00:00"
+      },
+      "url": "https://ciberseguretat.gencat.cat/ca/ciutadania/consells-per-a-la-gent-gran"
+    },
+    {
+      "campo": "enlace",
+      "estado": "pdf_limite_paginas",
+      "id": "guia-practica-ejemplos-reglamento-ia-aesia",
+      "objetivo": "guia-practica-ejemplos-reglamento-ia-aesia:enlace",
+      "ultima_confirmacion": null,
+      "ultima_evidencia": null,
+      "ultimo_intento": {
+        "capturado_utc": "2026-11-15T12:58:51.564673+00:00",
+        "codigo_http": null,
+        "content_type": "application/pdf",
+        "cuerpo_sha256": "7f7af0e678093db7a51e74274540084d6db53f79d7bc21c69bbf509ff174cfe8",
+        "error_tipo": null,
+        "estado": "pdf_limite_paginas",
+        "identidad_acreditada": false,
+        "lectura_tecnica": {
+          "estado": "pdf_limite_paginas",
+          "proteccion_memoria": "RSS_supervisado_pausa_50ms_ps_max1s_no_techo_estricto"
+        },
+        "resultado": "respuesta",
+        "url": "https://aesia.digital.gob.es/storage/media/02-guia-practica-y-ejemplos-para-entender-el-reglamento-de-ia.pdf",
+        "url_final": "https://aesia.digital.gob.es/storage/media/02-guia-practica-y-ejemplos-para-entender-el-reglamento-de-ia.pdf",
+        "vence_utc": "2026-11-22T12:58:51.564673+00:00"
+      },
+      "url": "https://aesia.digital.gob.es/storage/media/02-guia-practica-y-ejemplos-para-entender-el-reglamento-de-ia.pdf"
+    },
+    {
+      "campo": "enlace",
+      "estado": "fallo_temporal",
+      "id": "informacion-algoritmica-en-el-trabajo",
+      "objetivo": "informacion-algoritmica-en-el-trabajo:enlace",
+      "ultima_confirmacion": null,
+      "ultima_evidencia": null,
+      "ultimo_intento": {
+        "capturado_utc": "2026-11-15T12:58:51.719550+00:00",
+        "codigo_http": null,
+        "content_type": "",
+        "cuerpo_sha256": null,
+        "error_tipo": "SSLCertVerificationError",
+        "estado": "fallo_temporal",
+        "identidad_acreditada": false,
+        "lectura_tecnica": {
+          "estado": "fallo_temporal"
+        },
+        "resultado": "fallo_temporal",
+        "url": "https://www.mites.gob.es/ficheros/ministerio/inicio_destacados/Guia_Algoritmos_ES.pdf",
+        "url_final": null,
+        "vence_utc": "2026-11-22T12:58:51.719550+00:00"
+      },
+      "url": "https://www.mites.gob.es/ficheros/ministerio/inicio_destacados/Guia_Algoritmos_ES.pdf"
+    },
+    {
+      "campo": "enlace",
+      "estado": "pdf_limite_paginas",
+      "id": "intervencion-sindical-en-la-gestion",
+      "objetivo": "intervencion-sindical-en-la-gestion:enlace",
+      "ultima_confirmacion": null,
+      "ultima_evidencia": null,
+      "ultimo_intento": {
+        "capturado_utc": "2026-11-15T12:58:52.069055+00:00",
+        "codigo_http": null,
+        "content_type": "application/pdf",
+        "cuerpo_sha256": "def410e85217faab51870a4d789965107255e59825a8845762b43495368e9a42",
+        "error_tipo": null,
+        "estado": "pdf_limite_paginas",
+        "identidad_acreditada": false,
+        "lectura_tecnica": {
+          "estado": "pdf_limite_paginas",
+          "proteccion_memoria": "RSS_supervisado_pausa_50ms_ps_max1s_no_techo_estricto"
+        },
+        "resultado": "respuesta",
+        "url": "https://www.ccoo.es/5f0cc66aa2a1d10922836ff3038cf100000001.pdf",
+        "url_final": "https://www.ccoo.es/5f0cc66aa2a1d10922836ff3038cf100000001.pdf",
+        "vence_utc": "2026-11-22T12:58:52.069055+00:00"
+      },
+      "url": "https://www.ccoo.es/5f0cc66aa2a1d10922836ff3038cf100000001.pdf"
+    },
+    {
+      "campo": "enlace",
+      "estado": "pdf_limite_paginas",
+      "id": "recomendaciones-sobre-la-ia-en",
+      "objetivo": "recomendaciones-sobre-la-ia-en:enlace",
+      "ultima_confirmacion": null,
+      "ultima_evidencia": null,
+      "ultimo_intento": {
+        "capturado_utc": "2026-11-15T12:58:52.772029+00:00",
+        "codigo_http": null,
+        "content_type": "application/pdf",
+        "cuerpo_sha256": "aad2b88f7e8f16f1332de695aed06c2d957920eb88dafa7597f3c2a0233e8d00",
+        "error_tipo": null,
+        "estado": "pdf_limite_paginas",
+        "identidad_acreditada": false,
+        "lectura_tecnica": {
+          "estado": "pdf_limite_paginas",
+          "proteccion_memoria": "RSS_supervisado_pausa_50ms_ps_max1s_no_techo_estricto"
+        },
+        "resultado": "respuesta",
+        "url": "https://treball.gencat.cat/web/.content/13_-_consell_relacions_laborals/documents/04_-_recursos/publicacions/Negociacio-collectiva/Recomanacions-IA/Recomendaciones-Digitalitzacion-IA-Cast-Acc-DEF.pdf",
+        "url_final": "https://treball.gencat.cat/web/.content/13_-_consell_relacions_laborals/documents/04_-_recursos/publicacions/Negociacio-collectiva/Recomanacions-IA/Recomendaciones-Digitalitzacion-IA-Cast-Acc-DEF.pdf",
+        "vence_utc": "2026-11-22T12:58:52.772029+00:00"
+      },
+      "url": "https://treball.gencat.cat/web/.content/13_-_consell_relacions_laborals/documents/04_-_recursos/publicacions/Negociacio-collectiva/Recomanacions-IA/Recomendaciones-Digitalitzacion-IA-Cast-Acc-DEF.pdf"
+    },
+    {
+      "campo": "enlace_ca",
+      "estado": "pdf_limite_paginas",
+      "id": "recomendaciones-sobre-la-ia-en",
+      "objetivo": "recomendaciones-sobre-la-ia-en:enlace_ca",
+      "ultima_confirmacion": null,
+      "ultima_evidencia": null,
+      "ultimo_intento": {
+        "capturado_utc": "2026-11-15T12:58:55.234302+00:00",
+        "codigo_http": null,
+        "content_type": "application/pdf",
+        "cuerpo_sha256": "1680b4fe475cde889b7ef0c4da6fbfbd8822055083663ff8fe87e3575f531b91",
+        "error_tipo": null,
+        "estado": "pdf_limite_paginas",
+        "identidad_acreditada": false,
+        "lectura_tecnica": {
+          "estado": "pdf_limite_paginas",
+          "proteccion_memoria": "RSS_supervisado_pausa_50ms_ps_max1s_no_techo_estricto"
+        },
+        "resultado": "respuesta",
+        "url": "https://treball.gencat.cat/web/.content/13_-_consell_relacions_laborals/documents/04_-_recursos/publicacions/Negociacio-collectiva/Recomanacions-IA/Recomanacions-Digitalitzacio-IA-Cat-v4.pdf",
+        "url_final": "https://treball.gencat.cat/web/.content/13_-_consell_relacions_laborals/documents/04_-_recursos/publicacions/Negociacio-collectiva/Recomanacions-IA/Recomanacions-Digitalitzacio-IA-Cat-v4.pdf",
+        "vence_utc": "2026-11-22T12:58:55.234302+00:00"
+      },
+      "url": "https://treball.gencat.cat/web/.content/13_-_consell_relacions_laborals/documents/04_-_recursos/publicacions/Negociacio-collectiva/Recomanacions-IA/Recomanacions-Digitalitzacio-IA-Cat-v4.pdf"
+    },
+    {
+      "campo": "enlace",
+      "estado": "http_error",
+      "id": "riesgos-laborales-de-la-digitalizacion",
+      "objetivo": "riesgos-laborales-de-la-digitalizacion:enlace",
+      "ultima_confirmacion": null,
+      "ultima_evidencia": null,
+      "ultimo_intento": {
+        "capturado_utc": "2026-11-15T12:58:55.453330+00:00",
+        "codigo_http": 403,
+        "content_type": "",
+        "cuerpo_sha256": null,
+        "error_tipo": "HTTPError",
+        "estado": "http_error",
+        "identidad_acreditada": false,
+        "lectura_tecnica": {
+          "estado": "http_error"
+        },
+        "resultado": "http_error",
+        "url": "https://www.ccoo.cat/wp-content/uploads/2024/07/guia-digitalitzacio_def_total3_maquet-1.pdf",
+        "url_final": null,
+        "vence_utc": "2026-11-22T12:58:55.453330+00:00"
+      },
+      "url": "https://www.ccoo.cat/wp-content/uploads/2024/07/guia-digitalitzacio_def_total3_maquet-1.pdf"
+    },
+    {
+      "campo": "enlace",
+      "estado": "identidad_no_acreditada",
+      "id": "ia-seleccion-personal-sesgos-genero",
+      "objetivo": "ia-seleccion-personal-sesgos-genero:enlace",
+      "ultima_confirmacion": null,
+      "ultima_evidencia": null,
+      "ultimo_intento": {
+        "capturado_utc": "2026-11-15T12:58:55.868307+00:00",
+        "codigo_http": null,
+        "content_type": "application/pdf",
+        "cuerpo_sha256": "03a9b8619367436403a15650b787dce64adc040a58641202b2c694aec29940b6",
+        "error_tipo": null,
+        "estado": "identidad_no_acreditada",
+        "identidad_acreditada": false,
+        "lectura_tecnica": {
+          "caracteres": 4183,
+          "estado": "legible_texto_extraido",
+          "metodo": "pypdf-6.21.2-extract_text",
+          "paginas": 3,
+          "proteccion_memoria": "RSS_supervisado_pausa_50ms_ps_max1s_no_techo_estricto",
+          "revision_visual": false,
+          "texto_sha256": "a9a34e6d097778941bb5745829c31cfb8deb73cb36fef98de8b00242fedc21ea"
+        },
+        "resultado": "respuesta",
+        "url": "https://observatorioigualdadyempleo.es/wp-content/uploads/2026/08/IA-y-seleccion-de-personal.pdf",
+        "url_final": "https://observatorioigualdadyempleo.es/wp-content/uploads/2026/08/IA-y-seleccion-de-personal.pdf",
+        "vence_utc": "2026-11-22T12:58:55.868307+00:00"
+      },
+      "url": "https://observatorioigualdadyempleo.es/wp-content/uploads/2026/08/IA-y-seleccion-de-personal.pdf"
+    },
+    {
+      "campo": "enlace",
+      "estado": "identidad_no_acreditada",
+      "id": "que-es-la-alfabetizacion-en",
+      "objetivo": "que-es-la-alfabetizacion-en:enlace",
+      "ultima_confirmacion": null,
+      "ultima_evidencia": null,
+      "ultimo_intento": {
+        "capturado_utc": "2026-11-15T12:58:56.797863+00:00",
+        "codigo_http": null,
+        "content_type": "text/html; charset=UTF-8",
+        "cuerpo_sha256": "42ea28ac18da28d59790cb49af466bf37b50040b72089109f7b5b39659753050",
+        "error_tipo": null,
+        "estado": "identidad_no_acreditada",
+        "identidad_acreditada": false,
+        "lectura_tecnica": {
+          "estado": "legible",
+          "metodo": "HTMLParser-texto-visible-conservador"
+        },
+        "resultado": "respuesta",
+        "url": "https://digital-strategy.ec.europa.eu/es/faqs/ai-literacy-questions-answers",
+        "url_final": "https://digital-strategy.ec.europa.eu/es/faqs/ai-literacy-questions-answers",
+        "vence_utc": "2026-11-22T12:58:56.797863+00:00"
+      },
+      "url": "https://digital-strategy.ec.europa.eu/es/faqs/ai-literacy-questions-answers"
+    },
+    {
+      "campo": "enlace",
+      "estado": "pdf_limite_paginas",
+      "id": "supervision-humana-de-los-sistemas",
+      "objetivo": "supervision-humana-de-los-sistemas:enlace",
+      "ultima_confirmacion": null,
+      "ultima_evidencia": null,
+      "ultimo_intento": {
+        "capturado_utc": "2026-11-15T12:58:57.220435+00:00",
+        "codigo_http": null,
+        "content_type": "application/pdf",
+        "cuerpo_sha256": "95e9c98b8cb6ac51c6d2bb887d3f5e90503d7fed8b31b88821812ee8bdfa3b28",
+        "error_tipo": null,
+        "estado": "pdf_limite_paginas",
+        "identidad_acreditada": false,
+        "lectura_tecnica": {
+          "estado": "pdf_limite_paginas",
+          "proteccion_memoria": "RSS_supervisado_pausa_50ms_ps_max1s_no_techo_estricto"
+        },
+        "resultado": "respuesta",
+        "url": "https://aesia.digital.gob.es/storage/media/06-guia-vigilancia-humana.pdf",
+        "url_final": "https://aesia.digital.gob.es/storage/media/06-guia-vigilancia-humana.pdf",
+        "vence_utc": "2026-11-22T12:58:57.220435+00:00"
+      },
+      "url": "https://aesia.digital.gob.es/storage/media/06-guia-vigilancia-humana.pdf"
+    },
+    {
+      "campo": "enlace",
+      "estado": "pdf_limite_paginas",
+      "id": "transparencia-que-deben-explicarte-de",
+      "objetivo": "transparencia-que-deben-explicarte-de:enlace",
+      "ultima_confirmacion": null,
+      "ultima_evidencia": null,
+      "ultimo_intento": {
+        "capturado_utc": "2026-11-15T12:58:59.646805+00:00",
+        "codigo_http": null,
+        "content_type": "application/pdf",
+        "cuerpo_sha256": "24531d7d6da70afdfb7fc007738ff5ab84d413c823a05e22ea5baf8f0ed17eac",
+        "error_tipo": null,
+        "estado": "pdf_limite_paginas",
+        "identidad_acreditada": false,
+        "lectura_tecnica": {
+          "estado": "pdf_limite_paginas",
+          "proteccion_memoria": "RSS_supervisado_pausa_50ms_ps_max1s_no_techo_estricto"
+        },
+        "resultado": "respuesta",
+        "url": "https://aesia.digital.gob.es/storage/media/08-guia-transparencia.pdf",
+        "url_final": "https://aesia.digital.gob.es/storage/media/08-guia-transparencia.pdf",
+        "vence_utc": "2026-11-22T12:58:59.646805+00:00"
+      },
+      "url": "https://aesia.digital.gob.es/storage/media/08-guia-transparencia.pdf"
+    },
+    {
+      "campo": "enlace",
+      "estado": "fallo_temporal",
+      "id": "como-implanta-algoritmos-un-ayuntamiento",
+      "objetivo": "como-implanta-algoritmos-un-ayuntamiento:enlace",
+      "ultima_confirmacion": null,
+      "ultima_evidencia": null,
+      "ultimo_intento": {
+        "capturado_utc": "2026-11-15T12:59:05.676414+00:00",
+        "codigo_http": null,
+        "content_type": "",
+        "cuerpo_sha256": null,
+        "error_tipo": "SSLEOFError",
+        "estado": "fallo_temporal",
+        "identidad_acreditada": false,
+        "lectura_tecnica": {
+          "estado": "fallo_temporal"
+        },
+        "resultado": "fallo_temporal",
+        "url": "https://ajuntament.barcelona.cat/digital/sites/default/files/2023-10/def_metodologia_sist_algoritmics_cat.pdf",
+        "url_final": null,
+        "vence_utc": "2026-11-22T12:59:05.676414+00:00"
+      },
+      "url": "https://ajuntament.barcelona.cat/digital/sites/default/files/2023-10/def_metodologia_sist_algoritmics_cat.pdf"
+    },
+    {
+      "campo": "enlace",
+      "estado": "fallo_temporal",
+      "id": "bones-practiques-xatbot-ia-generativa-aoc",
+      "objetivo": "bones-practiques-xatbot-ia-generativa-aoc:enlace",
+      "ultima_confirmacion": null,
+      "ultima_evidencia": null,
+      "ultimo_intento": {
+        "capturado_utc": "2026-11-15T12:59:13.758647+00:00",
+        "codigo_http": null,
+        "content_type": "",
+        "cuerpo_sha256": null,
+        "error_tipo": "SSLEOFError",
+        "estado": "fallo_temporal",
+        "identidad_acreditada": false,
+        "lectura_tecnica": {
+          "estado": "fallo_temporal"
+        },
+        "resultado": "fallo_temporal",
+        "url": "https://www.aoc.cat/guia-de-bones-practiques-ia/",
+        "url_final": null,
+        "vence_utc": "2026-11-22T12:59:13.758647+00:00"
+      },
+      "url": "https://www.aoc.cat/guia-de-bones-practiques-ia/"
+    },
+    {
+      "campo": "enlace",
+      "estado": "pdf_limite_paginas",
+      "id": "model-avaluacio-impacte-drets-fonamentals-apdcat",
+      "objetivo": "model-avaluacio-impacte-drets-fonamentals-apdcat:enlace",
+      "ultima_confirmacion": null,
+      "ultima_evidencia": null,
+      "ultimo_intento": {
+        "capturado_utc": "2026-11-15T12:59:14.053385+00:00",
+        "codigo_http": null,
+        "content_type": "application/pdf",
+        "cuerpo_sha256": "c11b0fe121f48bba19aa7e3ec8f6cd99af1f9d5524ddcbd98ce45492646363b4",
+        "error_tipo": null,
+        "estado": "pdf_limite_paginas",
+        "identidad_acreditada": false,
+        "lectura_tecnica": {
+          "estado": "pdf_limite_paginas",
+          "proteccion_memoria": "RSS_supervisado_pausa_50ms_ps_max1s_no_techo_estricto"
+        },
+        "resultado": "respuesta",
+        "url": "https://www.apdcat.cat/content/dam/aem-apdcat/recursos/aplicacions/fria/FRIA_ca.pdf_.pdf",
+        "url_final": "https://www.apdcat.cat/content/dam/aem-apdcat/recursos/aplicacions/fria/FRIA_ca.pdf_.pdf",
+        "vence_utc": "2026-11-22T12:59:14.053385+00:00"
+      },
+      "url": "https://www.apdcat.cat/content/dam/aem-apdcat/recursos/aplicacions/fria/FRIA_ca.pdf_.pdf"
+    },
+    {
+      "campo": "enlace",
+      "estado": "identidad_no_acreditada",
+      "id": "que-es-un-deepfake",
+      "objetivo": "que-es-un-deepfake:enlace",
+      "ultima_confirmacion": null,
+      "ultima_evidencia": null,
+      "ultimo_intento": {
+        "capturado_utc": "2026-11-15T12:59:16.443099+00:00",
+        "codigo_http": null,
+        "content_type": "text/html; charset=UTF-8",
+        "cuerpo_sha256": "a8fa8f80fc33e507389790bfb79700f319ad5d0e5e33cb106a7065ded9f49090",
+        "error_tipo": null,
+        "estado": "identidad_no_acreditada",
+        "identidad_acreditada": false,
+        "lectura_tecnica": {
+          "estado": "legible",
+          "metodo": "HTMLParser-texto-visible-conservador"
+        },
+        "resultado": "respuesta",
+        "url": "https://www.incibe.es/exploradorincibe/deepfake",
+        "url_final": "https://www.incibe.es/exploradorincibe/deepfake",
+        "vence_utc": "2026-11-22T12:59:16.443099+00:00"
+      },
+      "url": "https://www.incibe.es/exploradorincibe/deepfake"
+    },
+    {
+      "campo": "enlace",
+      "estado": "identidad_no_acreditada",
+      "id": "chatbots-demasiada-confianza-cuando-se-equivocan",
+      "objetivo": "chatbots-demasiada-confianza-cuando-se-equivocan:enlace",
+      "ultima_confirmacion": null,
+      "ultima_evidencia": null,
+      "ultimo_intento": {
+        "capturado_utc": "2026-11-15T12:59:16.854978+00:00",
+        "codigo_http": null,
+        "content_type": "text/html; charset=UTF-8",
+        "cuerpo_sha256": "8a0c3f2d6dc71ac8167f664872eaa6c07036f69f5c58a08e6fe8ae774dff339f",
+        "error_tipo": null,
+        "estado": "identidad_no_acreditada",
+        "identidad_acreditada": false,
+        "lectura_tecnica": {
+          "estado": "legible",
+          "metodo": "HTMLParser-texto-visible-conservador"
+        },
+        "resultado": "respuesta",
+        "url": "https://www.agenciasinc.es/Noticias/Los-chatbots-de-IA-tienen-demasiada-autoconfianza-incluso-cuando-se-equivocan",
+        "url_final": "https://www.agenciasinc.es/Noticias/Los-chatbots-de-IA-tienen-demasiada-autoconfianza-incluso-cuando-se-equivocan",
+        "vence_utc": "2026-11-22T12:59:16.854978+00:00"
+      },
+      "url": "https://www.agenciasinc.es/Noticias/Los-chatbots-de-IA-tienen-demasiada-autoconfianza-incluso-cuando-se-equivocan"
+    },
+    {
+      "campo": "enlace",
+      "estado": "identidad_no_acreditada",
+      "id": "ia-hospitales-limites-lectura-facil",
+      "objetivo": "ia-hospitales-limites-lectura-facil:enlace",
+      "ultima_confirmacion": null,
+      "ultima_evidencia": null,
+      "ultimo_intento": {
+        "capturado_utc": "2026-11-15T12:59:17.980715+00:00",
+        "codigo_http": null,
+        "content_type": "text/html; charset=UTF-8",
+        "cuerpo_sha256": "110bfcab482dfad6cc756da9700d2e905773e6dfd1a2f5669e26c4b9b82dd1aa",
+        "error_tipo": null,
+        "estado": "identidad_no_acreditada",
+        "identidad_acreditada": false,
+        "lectura_tecnica": {
+          "estado": "legible",
+          "metodo": "HTMLParser-texto-visible-conservador"
+        },
+        "resultado": "respuesta",
+        "url": "https://planetafacil.plenainclusion.org/la-inteligencia-artificial-ayuda-en-los-hospitales-pero-tiene-limites/",
+        "url_final": "https://planetafacil.plenainclusion.org/la-inteligencia-artificial-ayuda-en-los-hospitales-pero-tiene-limites/",
+        "vence_utc": "2026-11-22T12:59:17.980715+00:00"
+      },
+      "url": "https://planetafacil.plenainclusion.org/la-inteligencia-artificial-ayuda-en-los-hospitales-pero-tiene-limites/"
+    },
+    {
+      "campo": "enlace",
+      "estado": "identidad_no_acreditada",
+      "id": "ia-en-la-seleccion-de",
+      "objetivo": "ia-en-la-seleccion-de:enlace",
+      "ultima_confirmacion": null,
+      "ultima_evidencia": null,
+      "ultimo_intento": {
+        "capturado_utc": "2026-11-15T12:59:18.933838+00:00",
+        "codigo_http": null,
+        "content_type": "text/html;charset=utf-8",
+        "cuerpo_sha256": "0a2d44719b1dfe0d8945bfaf30ef046917470d9bc7e2e418115318841d5a9f1f",
+        "error_tipo": null,
+        "estado": "identidad_no_acreditada",
+        "identidad_acreditada": false,
+        "lectura_tecnica": {
+          "estado": "legible",
+          "metodo": "HTMLParser-texto-visible-conservador"
+        },
+        "resultado": "respuesta",
+        "url": "https://www.uoc.edu/es/news/2026/ia-seleccion-personal-discriminacion-genero",
+        "url_final": "https://www.uoc.edu/es/news/2026/ia-seleccion-personal-discriminacion-genero",
+        "vence_utc": "2026-11-22T12:59:18.933838+00:00"
+      },
+      "url": "https://www.uoc.edu/es/news/2026/ia-seleccion-personal-discriminacion-genero"
+    },
+    {
+      "campo": "enlace_ca",
+      "estado": "identidad_no_acreditada",
+      "id": "ia-en-la-seleccion-de",
+      "objetivo": "ia-en-la-seleccion-de:enlace_ca",
+      "ultima_confirmacion": null,
+      "ultima_evidencia": null,
+      "ultimo_intento": {
+        "capturado_utc": "2026-11-15T12:59:21.750256+00:00",
+        "codigo_http": null,
+        "content_type": "text/html;charset=utf-8",
+        "cuerpo_sha256": "a60577406b3923b4f0c3507a72d44541edfc026a76de5b342b0dccdc89eee21e",
+        "error_tipo": null,
+        "estado": "identidad_no_acreditada",
+        "identidad_acreditada": false,
+        "lectura_tecnica": {
+          "estado": "legible",
+          "metodo": "HTMLParser-texto-visible-conservador"
+        },
+        "resultado": "respuesta",
+        "url": "https://www.uoc.edu/ca/news/2026/ia-seleccio-personal-discriminacio-genere",
+        "url_final": "https://www.uoc.edu/ca/news/2026/ia-seleccio-personal-discriminacio-genere",
+        "vence_utc": "2026-11-22T12:59:21.750256+00:00"
+      },
+      "url": "https://www.uoc.edu/ca/news/2026/ia-seleccio-personal-discriminacio-genere"
+    },
+    {
+      "campo": "enlace",
+      "estado": "identidad_no_acreditada",
+      "id": "estereotipos-de-genero-en-los",
+      "objetivo": "estereotipos-de-genero-en-los:enlace",
+      "ultima_confirmacion": null,
+      "ultima_evidencia": null,
+      "ultimo_intento": {
+        "capturado_utc": "2026-11-15T12:59:22.160233+00:00",
+        "codigo_http": null,
+        "content_type": "text/html; charset=utf-8",
+        "cuerpo_sha256": "c25b25b49cf2170435fc4dcf6669cf1212b446dc750f4ec5dbc69d14833be1ad",
+        "error_tipo": null,
+        "estado": "identidad_no_acreditada",
+        "identidad_acreditada": false,
+        "lectura_tecnica": {
+          "estado": "legible",
+          "metodo": "HTMLParser-texto-visible-conservador"
+        },
+        "resultado": "respuesta",
+        "url": "https://www.unesco.org/es/articles/ia-generativa-un-estudio-de-la-unesco-revela-pruebas-alarmantes-de-estereotipos-de-genero-regresivos",
+        "url_final": "https://www.unesco.org/es/articles/ia-generativa-un-estudio-de-la-unesco-revela-pruebas-alarmantes-de-estereotipos-de-genero-regresivos",
+        "vence_utc": "2026-11-22T12:59:22.160233+00:00"
+      },
+      "url": "https://www.unesco.org/es/articles/ia-generativa-un-estudio-de-la-unesco-revela-pruebas-alarmantes-de-estereotipos-de-genero-regresivos"
+    },
+    {
+      "campo": "enlace",
+      "estado": "identidad_no_acreditada",
+      "id": "la-ia-discrimina-por-edad",
+      "objetivo": "la-ia-discrimina-por-edad:enlace",
+      "ultima_confirmacion": null,
+      "ultima_evidencia": null,
+      "ultimo_intento": {
+        "capturado_utc": "2026-11-15T12:59:22.526893+00:00",
+        "codigo_http": null,
+        "content_type": "text/html; charset=UTF-8",
+        "cuerpo_sha256": "d87d01026b0883e6202ec3832e33eee2cc61c50a2876076656d28f0bcffee5dc",
+        "error_tipo": null,
+        "estado": "identidad_no_acreditada",
+        "identidad_acreditada": false,
+        "lectura_tecnica": {
+          "estado": "legible",
+          "metodo": "HTMLParser-texto-visible-conservador"
+        },
+        "resultado": "respuesta",
+        "url": "https://www.agenciasinc.es/Noticias/La-IA-esquiva-el-sexismo-pero-aun-discrimina-por-edad",
+        "url_final": "https://www.agenciasinc.es/Noticias/La-IA-esquiva-el-sexismo-pero-aun-discrimina-por-edad",
+        "vence_utc": "2026-11-22T12:59:22.526893+00:00"
+      },
+      "url": "https://www.agenciasinc.es/Noticias/La-IA-esquiva-el-sexismo-pero-aun-discrimina-por-edad"
+    },
+    {
+      "campo": "enlace",
+      "estado": "identidad_no_acreditada",
+      "id": "de-los-chatbots-a-las",
+      "objetivo": "de-los-chatbots-a-las:enlace",
+      "ultima_confirmacion": null,
+      "ultima_evidencia": null,
+      "ultimo_intento": {
+        "capturado_utc": "2026-11-15T12:59:24.767072+00:00",
+        "codigo_http": null,
+        "content_type": "text/html;charset=utf-8",
+        "cuerpo_sha256": "c9fa74e6a7d411ad4525208d9a3e6ae56986cfa6da8eb1e16e07268e39392753",
+        "error_tipo": null,
+        "estado": "identidad_no_acreditada",
+        "identidad_acreditada": false,
+        "lectura_tecnica": {
+          "estado": "legible",
+          "metodo": "HTMLParser-texto-visible-conservador"
+        },
+        "resultado": "respuesta",
+        "url": "https://www.uoc.edu/es/news/2026/ia-en-la-seguridad-laboral",
+        "url_final": "https://www.uoc.edu/es/news/2026/ia-en-la-seguridad-laboral",
+        "vence_utc": "2026-11-22T12:59:24.767072+00:00"
+      },
+      "url": "https://www.uoc.edu/es/news/2026/ia-en-la-seguridad-laboral"
+    },
+    {
+      "campo": "enlace_ca",
+      "estado": "identidad_no_acreditada",
+      "id": "de-los-chatbots-a-las",
+      "objetivo": "de-los-chatbots-a-las:enlace_ca",
+      "ultima_confirmacion": null,
+      "ultima_evidencia": null,
+      "ultimo_intento": {
+        "capturado_utc": "2026-11-15T12:59:27.796516+00:00",
+        "codigo_http": null,
+        "content_type": "text/html;charset=utf-8",
+        "cuerpo_sha256": "516d5b7b84bd4e47126a7b730e1c360b41a9e9ec47ef1fe2d64c83a88bedae44",
+        "error_tipo": null,
+        "estado": "identidad_no_acreditada",
+        "identidad_acreditada": false,
+        "lectura_tecnica": {
+          "estado": "legible",
+          "metodo": "HTMLParser-texto-visible-conservador"
+        },
+        "resultado": "respuesta",
+        "url": "https://www.uoc.edu/ca/news/2026/ia-en-la-seguretat-laboral",
+        "url_final": "https://www.uoc.edu/ca/news/2026/ia-en-la-seguretat-laboral",
+        "vence_utc": "2026-11-22T12:59:27.796516+00:00"
+      },
+      "url": "https://www.uoc.edu/ca/news/2026/ia-en-la-seguretat-laboral"
+    },
+    {
+      "campo": "enlace",
+      "estado": "identidad_no_acreditada",
+      "id": "tus-derechos-ante-la-ia",
+      "objetivo": "tus-derechos-ante-la-ia:enlace",
+      "ultima_confirmacion": null,
+      "ultima_evidencia": null,
+      "ultimo_intento": {
+        "capturado_utc": "2026-11-15T12:59:27.928454+00:00",
+        "codigo_http": null,
+        "content_type": "application/pdf",
+        "cuerpo_sha256": "332183d430dc1a29c60e28c3bc591319af366b736fbf6d2f27f8d72ecc4aaf64",
+        "error_tipo": null,
+        "estado": "identidad_no_acreditada",
+        "identidad_acreditada": false,
+        "lectura_tecnica": {
+          "caracteres": 15855,
+          "estado": "legible_texto_extraido",
+          "metodo": "pypdf-6.21.2-extract_text",
+          "paginas": 8,
+          "proteccion_memoria": "RSS_supervisado_pausa_50ms_ps_max1s_no_techo_estricto",
+          "revision_visual": false,
+          "texto_sha256": "2b1cab45c4ac68df60402cedd819714f9d4b9e5f0712262228921a9c9a86ef5a"
+        },
+        "resultado": "respuesta",
+        "url": "https://www.aepd.es/guias/Nota-RD-723-2026-AI-00009-2026.pdf",
+        "url_final": "https://www.aepd.es/guias/Nota-RD-723-2026-AI-00009-2026.pdf",
+        "vence_utc": "2026-11-22T12:59:27.928454+00:00"
+      },
+      "url": "https://www.aepd.es/guias/Nota-RD-723-2026-AI-00009-2026.pdf"
+    },
+    {
+      "campo": "enlace",
+      "estado": "identidad_no_acreditada",
+      "id": "la-ley-europea-de-ia",
+      "objetivo": "la-ley-europea-de-ia:enlace",
+      "ultima_confirmacion": null,
+      "ultima_evidencia": null,
+      "ultimo_intento": {
+        "capturado_utc": "2026-11-15T12:59:28.598845+00:00",
+        "codigo_http": null,
+        "content_type": "text/html; charset=UTF-8",
+        "cuerpo_sha256": "ea802b6cca5cd729c7cf38baa62df0174825314595e2289540726512da2cccb6",
+        "error_tipo": null,
+        "estado": "identidad_no_acreditada",
+        "identidad_acreditada": false,
+        "lectura_tecnica": {
+          "estado": "legible",
+          "metodo": "HTMLParser-texto-visible-conservador"
+        },
+        "resultado": "respuesta",
+        "url": "https://digital-strategy.ec.europa.eu/es/policies/ai-talent-skills-and-literacy",
+        "url_final": "https://digital-strategy.ec.europa.eu/es/policies/ai-talent-skills-and-literacy",
+        "vence_utc": "2026-11-22T12:59:28.598845+00:00"
+      },
+      "url": "https://digital-strategy.ec.europa.eu/es/policies/ai-talent-skills-and-literacy"
+    },
+    {
+      "campo": "enlace",
+      "estado": "identidad_no_acreditada",
+      "id": "repensar-impacto-ia-futuro-trabajo",
+      "objetivo": "repensar-impacto-ia-futuro-trabajo:enlace",
+      "ultima_confirmacion": null,
+      "ultima_evidencia": null,
+      "ultimo_intento": {
+        "capturado_utc": "2026-11-15T12:59:28.812977+00:00",
+        "codigo_http": null,
+        "content_type": "text/html; charset=utf-8",
+        "cuerpo_sha256": "0c57b74c4bfe7a8e90a9ddd66628415843485888da5c46771b70249739f1a890",
+        "error_tipo": null,
+        "estado": "identidad_no_acreditada",
+        "identidad_acreditada": false,
+        "lectura_tecnica": {
+          "estado": "legible",
+          "metodo": "HTMLParser-texto-visible-conservador"
+        },
+        "resultado": "respuesta",
+        "url": "https://www.ilo.org/es/resource/articulo/repensando-el-impacto-de-la-ia-en-el-futuro-del-trabajo",
+        "url_final": "https://www.ilo.org/es/resource/articulo/repensando-el-impacto-de-la-ia-en-el-futuro-del-trabajo",
+        "vence_utc": "2026-11-22T12:59:28.812977+00:00"
+      },
+      "url": "https://www.ilo.org/es/resource/articulo/repensando-el-impacto-de-la-ia-en-el-futuro-del-trabajo"
+    },
+    {
+      "campo": "enlace",
+      "estado": "identidad_no_acreditada",
+      "id": "gestionar-personas-con-ia-oit",
+      "objetivo": "gestionar-personas-con-ia-oit:enlace",
+      "ultima_confirmacion": null,
+      "ultima_evidencia": null,
+      "ultimo_intento": {
+        "capturado_utc": "2026-11-15T12:59:31.038892+00:00",
+        "codigo_http": null,
+        "content_type": "text/html; charset=utf-8",
+        "cuerpo_sha256": "6c15286503dfc00b349b4ec6ca231806d0b3d05c0f505404ff56bb335772806b",
+        "error_tipo": null,
+        "estado": "identidad_no_acreditada",
+        "identidad_acreditada": false,
+        "lectura_tecnica": {
+          "estado": "legible",
+          "metodo": "HTMLParser-texto-visible-conservador"
+        },
+        "resultado": "respuesta",
+        "url": "https://www.ilo.org/es/resource/articulo/el-complejo-desafio-de-gestionar-personas-en-el-trabajo-es-la-ia-la",
+        "url_final": "https://www.ilo.org/es/resource/articulo/el-complejo-desafio-de-gestionar-personas-en-el-trabajo-es-la-ia-la",
+        "vence_utc": "2026-11-22T12:59:31.038892+00:00"
+      },
+      "url": "https://www.ilo.org/es/resource/articulo/el-complejo-desafio-de-gestionar-personas-en-el-trabajo-es-la-ia-la"
+    },
+    {
+      "campo": "enlace",
+      "estado": "fallo_temporal",
+      "id": "anonimitzar-actes-amb-ia-aoc",
+      "objetivo": "anonimitzar-actes-amb-ia-aoc:enlace",
+      "ultima_confirmacion": null,
+      "ultima_evidencia": null,
+      "ultimo_intento": {
+        "capturado_utc": "2026-11-15T12:59:41.151988+00:00",
+        "codigo_http": null,
+        "content_type": "",
+        "cuerpo_sha256": null,
+        "error_tipo": "SSLEOFError",
+        "estado": "fallo_temporal",
+        "identidad_acreditada": false,
+        "lectura_tecnica": {
+          "estado": "fallo_temporal"
+        },
+        "resultado": "fallo_temporal",
+        "url": "https://www.aoc.cat/blog/2026/anonimitzacio-actes-ple/",
+        "url_final": null,
+        "vence_utc": "2026-11-22T12:59:41.151988+00:00"
+      },
+      "url": "https://www.aoc.cat/blog/2026/anonimitzacio-actes-ple/"
+    },
+    {
+      "campo": "enlace",
+      "estado": "identidad_no_acreditada",
+      "id": "un-radar-para-anticipar-las",
+      "objetivo": "un-radar-para-anticipar-las:enlace",
+      "ultima_confirmacion": null,
+      "ultima_evidencia": null,
+      "ultimo_intento": {
+        "capturado_utc": "2026-11-15T12:59:41.892877+00:00",
+        "codigo_http": null,
+        "content_type": "text/html;charset=utf-8",
+        "cuerpo_sha256": "94c9c5c4ee27226189711deeaa075327b8c301c70c07d248c42141ee89dc57c5",
+        "error_tipo": null,
+        "estado": "identidad_no_acreditada",
+        "identidad_acreditada": false,
+        "lectura_tecnica": {
+          "estado": "legible",
+          "metodo": "HTMLParser-texto-visible-conservador"
+        },
+        "resultado": "respuesta",
+        "url": "https://www.uoc.edu/es/news/2026/la-uoc-activa-un-radar-per-anticipar-les-competencies-que-exigira-el-mercat-laboral",
+        "url_final": "https://www.uoc.edu/es/news/2026/la-uoc-activa-un-radar-per-anticipar-les-competencies-que-exigira-el-mercat-laboral",
+        "vence_utc": "2026-11-22T12:59:41.892877+00:00"
+      },
+      "url": "https://www.uoc.edu/es/news/2026/la-uoc-activa-un-radar-per-anticipar-les-competencies-que-exigira-el-mercat-laboral"
+    },
+    {
+      "campo": "enlace_ca",
+      "estado": "identidad_no_acreditada",
+      "id": "un-radar-para-anticipar-las",
+      "objetivo": "un-radar-para-anticipar-las:enlace_ca",
+      "ultima_confirmacion": null,
+      "ultima_evidencia": null,
+      "ultimo_intento": {
+        "capturado_utc": "2026-11-15T12:59:44.794696+00:00",
+        "codigo_http": null,
+        "content_type": "text/html;charset=utf-8",
+        "cuerpo_sha256": "5539f7dd781844b85eb8fe653c721fd237071203939d7234d012cb219b8b0c96",
+        "error_tipo": null,
+        "estado": "identidad_no_acreditada",
+        "identidad_acreditada": false,
+        "lectura_tecnica": {
+          "estado": "legible",
+          "metodo": "HTMLParser-texto-visible-conservador"
+        },
+        "resultado": "respuesta",
+        "url": "https://www.uoc.edu/ca/news/2026/la-uoc-activa-un-radar-per-anticipar-les-competencies-que-exigira-el-mercat-laboral",
+        "url_final": "https://www.uoc.edu/ca/news/2026/la-uoc-activa-un-radar-per-anticipar-les-competencies-que-exigira-el-mercat-laboral",
+        "vence_utc": "2026-11-22T12:59:44.794696+00:00"
+      },
+      "url": "https://www.uoc.edu/ca/news/2026/la-uoc-activa-un-radar-per-anticipar-les-competencies-que-exigira-el-mercat-laboral"
+    },
+    {
+      "campo": "enlace",
+      "estado": "identidad_no_acreditada",
+      "id": "la-recomendacion-de-la-unesco",
+      "objetivo": "la-recomendacion-de-la-unesco:enlace",
+      "ultima_confirmacion": null,
+      "ultima_evidencia": null,
+      "ultimo_intento": {
+        "capturado_utc": "2026-11-15T12:59:45.097588+00:00",
+        "codigo_http": null,
+        "content_type": "text/html; charset=utf-8",
+        "cuerpo_sha256": "ad2c9b9d4f2921de0bc895249b582d9ebca2a7372f9ba8aacd7d526e835b3fe2",
+        "error_tipo": null,
+        "estado": "identidad_no_acreditada",
+        "identidad_acreditada": false,
+        "lectura_tecnica": {
+          "estado": "legible",
+          "metodo": "HTMLParser-texto-visible-conservador"
+        },
+        "resultado": "respuesta",
+        "url": "https://www.unesco.org/es/articles/recomendacion-sobre-la-etica-de-la-inteligencia-artificial",
+        "url_final": "https://www.unesco.org/es/articles/recomendacion-sobre-la-etica-de-la-inteligencia-artificial",
+        "vence_utc": "2026-11-22T12:59:45.097588+00:00"
+      },
+      "url": "https://www.unesco.org/es/articles/recomendacion-sobre-la-etica-de-la-inteligencia-artificial"
+    },
+    {
+      "campo": "enlace",
+      "estado": "identidad_no_acreditada",
+      "id": "ideas-equivocadas-sobre-la-ia",
+      "objetivo": "ideas-equivocadas-sobre-la-ia:enlace",
+      "ultima_confirmacion": null,
+      "ultima_evidencia": null,
+      "ultimo_intento": {
+        "capturado_utc": "2026-11-15T12:59:45.319010+00:00",
+        "codigo_http": null,
+        "content_type": "text/html; charset=UTF-8",
+        "cuerpo_sha256": "4ce84776786cb1fd4eb1894d45d62d4e05e9285a7922c78d95d7baf82697318b",
+        "error_tipo": null,
+        "estado": "identidad_no_acreditada",
+        "identidad_acreditada": false,
+        "lectura_tecnica": {
+          "estado": "legible",
+          "metodo": "HTMLParser-texto-visible-conservador"
+        },
+        "resultado": "respuesta",
+        "url": "https://www.aepd.es/prensa-y-comunicacion/blog/abordando-conceptos-erroneos-de-la-inteligencia-artificial",
+        "url_final": "https://www.aepd.es/prensa-y-comunicacion/blog/abordando-conceptos-erroneos-de-la-inteligencia-artificial",
+        "vence_utc": "2026-11-22T12:59:45.319010+00:00"
+      },
+      "url": "https://www.aepd.es/prensa-y-comunicacion/blog/abordando-conceptos-erroneos-de-la-inteligencia-artificial"
+    },
+    {
+      "campo": "enlace",
+      "estado": "identidad_no_acreditada",
+      "id": "transcripcion-voz-ia-responsabilidad-derechos",
+      "objetivo": "transcripcion-voz-ia-responsabilidad-derechos:enlace",
+      "ultima_confirmacion": null,
+      "ultima_evidencia": null,
+      "ultimo_intento": {
+        "capturado_utc": "2026-11-15T12:59:47.442337+00:00",
+        "codigo_http": null,
+        "content_type": "text/html; charset=UTF-8",
+        "cuerpo_sha256": "0fcc6d8055d4fe1ef92fa35d4245a4fad3041815a91e6c42c2992950f56ac973",
+        "error_tipo": null,
+        "estado": "identidad_no_acreditada",
+        "identidad_acreditada": false,
+        "lectura_tecnica": {
+          "estado": "legible",
+          "metodo": "HTMLParser-texto-visible-conservador"
+        },
+        "resultado": "respuesta",
+        "url": "https://www.aepd.es/prensa-y-comunicacion/blog/transcripcion-de-voz-con-ia-ii-responsabilidad-derechos-y-transparencia",
+        "url_final": "https://www.aepd.es/prensa-y-comunicacion/blog/transcripcion-de-voz-con-ia-ii-responsabilidad-derechos-y-transparencia",
+        "vence_utc": "2026-11-22T12:59:47.442337+00:00"
+      },
+      "url": "https://www.aepd.es/prensa-y-comunicacion/blog/transcripcion-de-voz-con-ia-ii-responsabilidad-derechos-y-transparencia"
+    },
+    {
+      "campo": "enlace",
+      "estado": "identidad_no_acreditada",
+      "id": "modelos-lenguaje-confunden-creencias-hechos",
+      "objetivo": "modelos-lenguaje-confunden-creencias-hechos:enlace",
+      "ultima_confirmacion": null,
+      "ultima_evidencia": null,
+      "ultimo_intento": {
+        "capturado_utc": "2026-11-15T12:59:47.812890+00:00",
+        "codigo_http": null,
+        "content_type": "text/html; charset=UTF-8",
+        "cuerpo_sha256": "8b668038ce996900741ee02c9c3d3ae88efbbeaa8233c6898e34f1508d9a7dc2",
+        "error_tipo": null,
+        "estado": "identidad_no_acreditada",
+        "identidad_acreditada": false,
+        "lectura_tecnica": {
+          "estado": "legible",
+          "metodo": "HTMLParser-texto-visible-conservador"
+        },
+        "resultado": "respuesta",
+        "url": "https://www.agenciasinc.es/Noticias/Los-modelos-de-lenguaje-aun-confunden-las-creencias-con-los-hechos-incluso-los-mas-avanzados",
+        "url_final": "https://www.agenciasinc.es/Noticias/Los-modelos-de-lenguaje-aun-confunden-las-creencias-con-los-hechos-incluso-los-mas-avanzados",
+        "vence_utc": "2026-11-22T12:59:47.812890+00:00"
+      },
+      "url": "https://www.agenciasinc.es/Noticias/Los-modelos-de-lenguaje-aun-confunden-las-creencias-con-los-hechos-incluso-los-mas-avanzados"
+    },
+    {
+      "campo": "enlace",
+      "estado": "identidad_no_acreditada",
+      "id": "ia-empleo-personas-con-discapacidad-oit",
+      "objetivo": "ia-empleo-personas-con-discapacidad-oit:enlace",
+      "ultima_confirmacion": null,
+      "ultima_evidencia": null,
+      "ultimo_intento": {
+        "capturado_utc": "2026-11-15T12:59:48.076974+00:00",
+        "codigo_http": null,
+        "content_type": "text/html; charset=utf-8",
+        "cuerpo_sha256": "cce04e801b8d385da48ddb0510a1fc9570c4cc8174eb0dae205b7a8be20a78ff",
+        "error_tipo": null,
+        "estado": "identidad_no_acreditada",
+        "identidad_acreditada": false,
+        "lectura_tecnica": {
+          "estado": "legible",
+          "metodo": "HTMLParser-texto-visible-conservador"
+        },
+        "resultado": "respuesta",
+        "url": "https://www.ilo.org/es/resource/articulo/la-doble-cara-de-la-ia-una-nueva-frontera-para-el-empleo-de-las-personas",
+        "url_final": "https://www.ilo.org/es/resource/articulo/la-doble-cara-de-la-ia-una-nueva-frontera-para-el-empleo-de-las-personas",
+        "vence_utc": "2026-11-22T12:59:48.076974+00:00"
+      },
+      "url": "https://www.ilo.org/es/resource/articulo/la-doble-cara-de-la-ia-una-nueva-frontera-para-el-empleo-de-las-personas"
+    },
+    {
+      "campo": "enlace",
+      "estado": "fallo_temporal",
+      "id": "ia-necessita-bones-dades-aoc",
+      "objetivo": "ia-necessita-bones-dades-aoc:enlace",
+      "ultima_confirmacion": null,
+      "ultima_evidencia": null,
+      "ultimo_intento": {
+        "capturado_utc": "2026-11-15T12:59:53.266977+00:00",
+        "codigo_http": null,
+        "content_type": "",
+        "cuerpo_sha256": null,
+        "error_tipo": "SSLEOFError",
+        "estado": "fallo_temporal",
+        "identidad_acreditada": false,
+        "lectura_tecnica": {
+          "estado": "fallo_temporal"
+        },
+        "resultado": "fallo_temporal",
+        "url": "https://www.aoc.cat/blog/2026/ia-bones-dades-bons-algoritmes/",
+        "url_final": null,
+        "vence_utc": "2026-11-22T12:59:53.266977+00:00"
+      },
+      "url": "https://www.aoc.cat/blog/2026/ia-bones-dades-bons-algoritmes/"
+    },
+    {
+      "campo": "enlace",
+      "estado": "http_no_encontrado",
+      "id": "ine-uso-tic-hogares-2025",
+      "objetivo": "ine-uso-tic-hogares-2025:enlace",
+      "ultima_confirmacion": null,
+      "ultima_evidencia": {
+        "capturado_utc": "2026-11-15T12:59:53.518163+00:00",
+        "codigo_http": 404,
+        "content_type": "",
+        "cuerpo_sha256": null,
+        "error_tipo": "HTTPError",
+        "estado": "http_no_encontrado",
+        "identidad_acreditada": false,
+        "lectura_tecnica": {
+          "estado": "http_no_encontrado"
+        },
+        "resultado": "http_error",
+        "url": "https://ine.es/dyngs/Prensa/es/TICH2025.html",
+        "url_final": null,
+        "vence_utc": "2026-11-22T12:59:53.518163+00:00"
+      },
+      "ultimo_intento": {
+        "capturado_utc": "2026-11-15T12:59:53.518163+00:00",
+        "codigo_http": 404,
+        "content_type": "",
+        "cuerpo_sha256": null,
+        "error_tipo": "HTTPError",
+        "estado": "http_no_encontrado",
+        "identidad_acreditada": false,
+        "lectura_tecnica": {
+          "estado": "http_no_encontrado"
+        },
+        "resultado": "http_error",
+        "url": "https://ine.es/dyngs/Prensa/es/TICH2025.html",
+        "url_final": null,
+        "vence_utc": "2026-11-22T12:59:53.518163+00:00"
+      },
+      "url": "https://ine.es/dyngs/Prensa/es/TICH2025.html"
+    },
+    {
+      "campo": "enlace",
+      "estado": "identidad_no_acreditada",
+      "id": "ine-uso-ia-empresas-2025",
+      "objetivo": "ine-uso-ia-empresas-2025:enlace",
+      "ultima_confirmacion": null,
+      "ultima_evidencia": null,
+      "ultimo_intento": {
+        "capturado_utc": "2026-11-15T12:59:55.721006+00:00",
+        "codigo_http": null,
+        "content_type": "text/html;charset=UTF-8",
+        "cuerpo_sha256": "6482e8f91adde49f6eddf6065af4c1c0290de91ffee3ddbf0da56b2b5c7d443e",
+        "error_tipo": null,
+        "estado": "identidad_no_acreditada",
+        "identidad_acreditada": false,
+        "lectura_tecnica": {
+          "estado": "legible",
+          "metodo": "HTMLParser-texto-visible-conservador"
+        },
+        "resultado": "respuesta",
+        "url": "https://ine.es/dyngs/Prensa/ETICCE20241T2025.htm",
+        "url_final": "https://ine.es/dyngs/Prensa/ETICCE20241T2025.htm",
+        "vence_utc": "2026-11-22T12:59:55.721006+00:00"
+      },
+      "url": "https://ine.es/dyngs/Prensa/ETICCE20241T2025.htm"
+    },
+    {
+      "campo": "enlace",
+      "estado": "identidad_no_acreditada",
+      "id": "oit-uno-de-cada-cuatro-empleos",
+      "objetivo": "oit-uno-de-cada-cuatro-empleos:enlace",
+      "ultima_confirmacion": null,
+      "ultima_evidencia": null,
+      "ultimo_intento": {
+        "capturado_utc": "2026-11-15T12:59:55.983499+00:00",
+        "codigo_http": null,
+        "content_type": "text/html; charset=utf-8",
+        "cuerpo_sha256": "978b96c8bfc1957b9bc37b7dc892ac65742769d98630baedf1373c647a94ce89",
+        "error_tipo": null,
+        "estado": "identidad_no_acreditada",
+        "identidad_acreditada": false,
+        "lectura_tecnica": {
+          "estado": "legible",
+          "metodo": "HTMLParser-texto-visible-conservador"
+        },
+        "resultado": "respuesta",
+        "url": "https://www.ilo.org/es/resource/noticias/uno-de-cada-cuatro-empleos-en-riesgo-de-transformarse-por-la-ia-generativa",
+        "url_final": "https://www.ilo.org/es/resource/noticias/uno-de-cada-cuatro-empleos-en-riesgo-de-transformarse-por-la-ia-generativa",
+        "vence_utc": "2026-11-22T12:59:55.983499+00:00"
+      },
+      "url": "https://www.ilo.org/es/resource/noticias/uno-de-cada-cuatro-empleos-en-riesgo-de-transformarse-por-la-ia-generativa"
+    },
+    {
+      "campo": "enlace",
+      "estado": "identidad_no_acreditada",
+      "id": "brecha-digital-ia-resumen-ugt",
+      "objetivo": "brecha-digital-ia-resumen-ugt:enlace",
+      "ultima_confirmacion": null,
+      "ultima_evidencia": null,
+      "ultimo_intento": {
+        "capturado_utc": "2026-11-15T12:59:56.210435+00:00",
+        "codigo_http": null,
+        "content_type": "application/pdf",
+        "cuerpo_sha256": "bec6a4dae73e5f84ed962e19060d95fbd2abe4cab2c2a6ed57572be8f0341f0a",
+        "error_tipo": null,
+        "estado": "identidad_no_acreditada",
+        "identidad_acreditada": false,
+        "lectura_tecnica": {
+          "caracteres": 22971,
+          "estado": "legible_texto_extraido",
+          "metodo": "pypdf-6.21.2-extract_text",
+          "paginas": 12,
+          "proteccion_memoria": "RSS_supervisado_pausa_50ms_ps_max1s_no_techo_estricto",
+          "revision_visual": false,
+          "texto_sha256": "138cb2adabe475ed253bf25aef06d81d202d1f73261cdbe7689aa4dbd32fb47f"
+        },
+        "resultado": "respuesta",
+        "url": "https://www.ugt.es/sites/default/files/informes/RESUMEN_EJECUTIVO_INFORME_BRECHA_DIGITAL.pdf",
+        "url_final": "https://www.ugt.es/sites/default/files/informes/RESUMEN_EJECUTIVO_INFORME_BRECHA_DIGITAL.pdf",
+        "vence_utc": "2026-11-22T12:59:56.210435+00:00"
+      },
+      "url": "https://www.ugt.es/sites/default/files/informes/RESUMEN_EJECUTIVO_INFORME_BRECHA_DIGITAL.pdf"
+    },
+    {
+      "campo": "enlace",
+      "estado": "identidad_no_acreditada",
+      "id": "eurobarometro-ia-lugar-de-trabajo",
+      "objetivo": "eurobarometro-ia-lugar-de-trabajo:enlace",
+      "ultima_confirmacion": null,
+      "ultima_evidencia": null,
+      "ultimo_intento": {
+        "capturado_utc": "2026-11-15T12:59:56.944851+00:00",
+        "codigo_http": null,
+        "content_type": "text/html; charset=UTF-8",
+        "cuerpo_sha256": "4203084726f0622c63a61dfcb289a74876023e0e41ae5a2015e521af7f5402eb",
+        "error_tipo": null,
+        "estado": "identidad_no_acreditada",
+        "identidad_acreditada": false,
+        "lectura_tecnica": {
+          "estado": "legible",
+          "metodo": "HTMLParser-texto-visible-conservador"
+        },
+        "resultado": "respuesta",
+        "url": "https://digital-strategy.ec.europa.eu/es/news/commission-survey-shows-most-europeans-support-use-artificial-intelligence-workplace",
+        "url_final": "https://digital-strategy.ec.europa.eu/es/news/commission-survey-shows-most-europeans-support-use-artificial-intelligence-workplace",
+        "vence_utc": "2026-11-22T12:59:56.944851+00:00"
+      },
+      "url": "https://digital-strategy.ec.europa.eu/es/news/commission-survey-shows-most-europeans-support-use-artificial-intelligence-workplace"
+    },
+    {
+      "campo": "enlace",
+      "estado": "fallo_temporal",
+      "id": "osh-pulse-2025-espana-ficha",
+      "objetivo": "osh-pulse-2025-espana-ficha:enlace",
+      "ultima_confirmacion": null,
+      "ultima_evidencia": null,
+      "ultimo_intento": {
+        "capturado_utc": "2026-11-15T12:59:57.092836+00:00",
+        "codigo_http": null,
+        "content_type": "",
+        "cuerpo_sha256": null,
+        "error_tipo": "RemoteDisconnected",
+        "estado": "fallo_temporal",
+        "identidad_acreditada": false,
+        "lectura_tecnica": {
+          "estado": "fallo_temporal"
+        },
+        "resultado": "fallo_temporal",
+        "url": "https://healthy-workplaces.osha.europa.eu/sites/hwc/files/hwc/publication/OSH-pulse-2025-mental-health-digitalisation-work-ES_ES.pdf",
+        "url_final": null,
+        "vence_utc": "2026-11-22T12:59:57.092836+00:00"
+      },
+      "url": "https://healthy-workplaces.osha.europa.eu/sites/hwc/files/hwc/publication/OSH-pulse-2025-mental-health-digitalisation-work-ES_ES.pdf"
+    },
+    {
+      "campo": "enlace",
+      "estado": "identidad_no_acreditada",
+      "id": "tendencias-mercado-trabajo-sepe-2026",
+      "objetivo": "tendencias-mercado-trabajo-sepe-2026:enlace",
+      "ultima_confirmacion": null,
+      "ultima_evidencia": null,
+      "ultimo_intento": {
+        "capturado_utc": "2026-11-15T12:59:57.471110+00:00",
+        "codigo_http": null,
+        "content_type": "text/html;charset=UTF-8",
+        "cuerpo_sha256": "8c2ba837ae7e4bc2899f9caee228e6f70365d64dab70d4c732a60f9771dddfbd",
+        "error_tipo": null,
+        "estado": "identidad_no_acreditada",
+        "identidad_acreditada": false,
+        "lectura_tecnica": {
+          "estado": "legible",
+          "metodo": "HTMLParser-texto-visible-conservador"
+        },
+        "resultado": "respuesta",
+        "url": "https://www.sepe.es/HomeSepe/que-es-observatorio/publicaciones-observatorio/detalle-publicacion-observatorio~_publicaciones_publicaciones-observatorio_RESUMENES-EJECUTIVOS-2026_tendencias-2026~.html",
+        "url_final": "https://www.sepe.es/HomeSepe/que-es-observatorio/publicaciones-observatorio/detalle-publicacion-observatorio~_publicaciones_publicaciones-observatorio_RESUMENES-EJECUTIVOS-2026_tendencias-2026~.html",
+        "vence_utc": "2026-11-22T12:59:57.471110+00:00"
+      },
+      "url": "https://www.sepe.es/HomeSepe/que-es-observatorio/publicaciones-observatorio/detalle-publicacion-observatorio~_publicaciones_publicaciones-observatorio_RESUMENES-EJECUTIVOS-2026_tendencias-2026~.html"
+    },
+    {
+      "campo": "enlace",
+      "estado": "pdf_limite_paginas",
+      "id": "impacte-ia-generativa-mercat-laboral-cambra",
+      "objetivo": "impacte-ia-generativa-mercat-laboral-cambra:enlace",
+      "ultima_confirmacion": null,
+      "ultima_evidencia": null,
+      "ultimo_intento": {
+        "capturado_utc": "2026-11-15T12:59:57.718048+00:00",
+        "codigo_http": null,
+        "content_type": "application/pdf",
+        "cuerpo_sha256": "f3df367a3abcca70876836ba043b1ee3256bb750b4738d004efdc12624f5e523",
+        "error_tipo": null,
+        "estado": "pdf_limite_paginas",
+        "identidad_acreditada": false,
+        "lectura_tecnica": {
+          "estado": "pdf_limite_paginas",
+          "proteccion_memoria": "RSS_supervisado_pausa_50ms_ps_max1s_no_techo_estricto"
+        },
+        "resultado": "respuesta",
+        "url": "https://cambrabcn.org/wp-content/uploads/2026/05/Impacte-IA-mercat-laboral_Maig_2026-v2.pdf",
+        "url_final": "https://cambrabcn.org/wp-content/uploads/2026/05/Impacte-IA-mercat-laboral_Maig_2026-v2.pdf",
+        "vence_utc": "2026-11-22T12:59:57.718048+00:00"
+      },
+      "url": "https://cambrabcn.org/wp-content/uploads/2026/05/Impacte-IA-mercat-laboral_Maig_2026-v2.pdf"
+    },
+    {
+      "campo": "enlace",
+      "estado": "identidad_no_acreditada",
+      "id": "la-exposicion-a-la-ia-2",
+      "objetivo": "la-exposicion-a-la-ia-2:enlace",
+      "ultima_confirmacion": null,
+      "ultima_evidencia": null,
+      "ultimo_intento": {
+        "capturado_utc": "2026-11-15T12:59:58.024842+00:00",
+        "codigo_http": null,
+        "content_type": "application/pdf",
+        "cuerpo_sha256": "6262779ab77236455496546e5a79924a8963a12eecf43c71767a8273be676b06",
+        "error_tipo": null,
+        "estado": "identidad_no_acreditada",
+        "identidad_acreditada": false,
+        "lectura_tecnica": {
+          "caracteres": 17395,
+          "estado": "legible_texto_extraido",
+          "metodo": "pypdf-6.21.2-extract_text",
+          "paginas": 8,
+          "proteccion_memoria": "RSS_supervisado_pausa_50ms_ps_max1s_no_techo_estricto",
+          "revision_visual": false,
+          "texto_sha256": "afc294b17f56bee8956709b0bfa747dfda176de0629c3d140a91c7c080957047"
+        },
+        "resultado": "respuesta",
+        "url": "https://documentos.fedea.net/pubs/ap/2026/ap2026-22.pdf",
+        "url_final": "https://documentos.fedea.net/pubs/ap/2026/ap2026-22.pdf",
+        "vence_utc": "2026-11-22T12:59:58.024842+00:00"
+      },
+      "url": "https://documentos.fedea.net/pubs/ap/2026/ap2026-22.pdf"
+    },
+    {
+      "campo": "enlace",
+      "estado": "identidad_no_acreditada",
+      "id": "ia-generativa-empleo-oit-2025",
+      "objetivo": "ia-generativa-empleo-oit-2025:enlace",
+      "ultima_confirmacion": null,
+      "ultima_evidencia": null,
+      "ultimo_intento": {
+        "capturado_utc": "2026-11-15T12:59:58.349786+00:00",
+        "codigo_http": null,
+        "content_type": "application/pdf",
+        "cuerpo_sha256": "e5face10568d94480dcd10629004c05e2bd13e254ebb1e1e638fc86e62bab471",
+        "error_tipo": null,
+        "estado": "identidad_no_acreditada",
+        "identidad_acreditada": false,
+        "lectura_tecnica": {
+          "caracteres": 25446,
+          "estado": "legible_texto_extraido",
+          "metodo": "pypdf-6.21.2-extract_text",
+          "paginas": 8,
+          "proteccion_memoria": "RSS_supervisado_pausa_50ms_ps_max1s_no_techo_estricto",
+          "revision_visual": false,
+          "texto_sha256": "7c2f695325b0734f7479550c33bcbdbfc18e4563f396653b01c91c1d50454de1"
+        },
+        "resultado": "respuesta",
+        "url": "https://www.ilo.org/sites/default/files/2025-05/BRIEF_ESP_AI_and_Jobs_2025_19%20may.pdf",
+        "url_final": "https://www.ilo.org/sites/default/files/2025-05/BRIEF_ESP_AI_and_Jobs_2025_19%20may.pdf",
+        "vence_utc": "2026-11-22T12:59:58.349786+00:00"
+      },
+      "url": "https://www.ilo.org/sites/default/files/2025-05/BRIEF_ESP_AI_and_Jobs_2025_19%20may.pdf"
+    },
+    {
+      "campo": "enlace",
+      "estado": "pdf_limite_paginas",
+      "id": "dones-en-les-tic-2025",
+      "objetivo": "dones-en-les-tic-2025:enlace",
+      "ultima_confirmacion": null,
+      "ultima_evidencia": null,
+      "ultimo_intento": {
+        "capturado_utc": "2026-11-15T13:00:00.857774+00:00",
+        "codigo_http": null,
+        "content_type": "application/pdf",
+        "cuerpo_sha256": "479b7dd07c8955db98645f1676c15dfb68576f34b6c5a414a5d8b525c580099d",
+        "error_tipo": null,
+        "estado": "pdf_limite_paginas",
+        "identidad_acreditada": false,
+        "lectura_tecnica": {
+          "estado": "pdf_limite_paginas",
+          "proteccion_memoria": "RSS_supervisado_pausa_50ms_ps_max1s_no_techo_estricto"
+        },
+        "resultado": "respuesta",
+        "url": "https://dones.gencat.cat/ca/ambits-dactuacio/observatori-igualtat-genere/dossiers-estadistics-de-l-observatori-de-la-igualtat-de-genere/DonesalesTiC",
+        "url_final": "https://dones.gencat.cat/content/dam/dones/03_ambits/observatori/03_dossiers_estadistics/2026/Dones-en-les-TIC-2025-14-abril%20(1).pdf",
+        "vence_utc": "2026-11-22T13:00:00.857774+00:00"
+      },
+      "url": "https://dones.gencat.cat/ca/ambits-dactuacio/observatori-igualtat-genere/dossiers-estadistics-de-l-observatori-de-la-igualtat-de-genere/DonesalesTiC"
+    },
+    {
+      "campo": "enlace",
+      "estado": "limite_tamano",
+      "id": "ia-brechas-genero-empleo-bie",
+      "objetivo": "ia-brechas-genero-empleo-bie:enlace",
+      "ultima_confirmacion": null,
+      "ultima_evidencia": null,
+      "ultimo_intento": {
+        "capturado_utc": "2026-11-15T13:00:01.084958+00:00",
+        "codigo_http": null,
+        "content_type": "",
+        "cuerpo_sha256": null,
+        "error_tipo": "LimiteDescargaExcedido",
+        "estado": "limite_tamano",
+        "identidad_acreditada": false,
+        "lectura_tecnica": {
+          "estado": "limite_tamano"
+        },
+        "resultado": "fallo_temporal",
+        "url": "https://www.igualdadenlaempresa.es/actualidad/boletin/docs/BIE_Impacto_de_la_IA_en_las_brechas_de_genero_en_el_empleo.pdf",
+        "url_final": null,
+        "vence_utc": "2026-11-22T13:00:01.084958+00:00"
+      },
+      "url": "https://www.igualdadenlaempresa.es/actualidad/boletin/docs/BIE_Impacto_de_la_IA_en_las_brechas_de_genero_en_el_empleo.pdf"
+    },
+    {
+      "campo": "enlace",
+      "estado": "pdf_limite_paginas",
+      "id": "personas-mayores-y-exclusion-tecnologica",
+      "objetivo": "personas-mayores-y-exclusion-tecnologica:enlace",
+      "ultima_confirmacion": null,
+      "ultima_evidencia": null,
+      "ultimo_intento": {
+        "capturado_utc": "2026-11-15T13:00:01.308565+00:00",
+        "codigo_http": null,
+        "content_type": "application/pdf",
+        "cuerpo_sha256": "ba1a5d8339fd9ad4185e33a21de47b77982a1c71bb5463a5179524f62e83ef1d",
+        "error_tipo": null,
+        "estado": "pdf_limite_paginas",
+        "identidad_acreditada": false,
+        "lectura_tecnica": {
+          "estado": "pdf_limite_paginas",
+          "proteccion_memoria": "RSS_supervisado_pausa_50ms_ps_max1s_no_techo_estricto"
+        },
+        "resultado": "respuesta",
+        "url": "https://www.ugt.es/sites/default/files/informes/Estudio_Mayores_y_Exclusion_Tecnologica.pdf",
+        "url_final": "https://www.ugt.es/sites/default/files/informes/Estudio_Mayores_y_Exclusion_Tecnologica.pdf",
+        "vence_utc": "2026-11-22T13:00:01.308565+00:00"
+      },
+      "url": "https://www.ugt.es/sites/default/files/informes/Estudio_Mayores_y_Exclusion_Tecnologica.pdf"
+    },
+    {
+      "campo": "enlace",
+      "estado": "identidad_no_acreditada",
+      "id": "registro-de-sistemas-de-ia",
+      "objetivo": "registro-de-sistemas-de-ia:enlace",
+      "ultima_confirmacion": null,
+      "ultima_evidencia": null,
+      "ultimo_intento": {
+        "capturado_utc": "2026-11-15T13:00:02.390504+00:00",
+        "codigo_http": null,
+        "content_type": "text/html; charset=utf-8",
+        "cuerpo_sha256": "4199eb48db12c8c6683c65c92ec2ca32e81b433f8642435d2d0bdbcc65951496",
+        "error_tipo": null,
+        "estado": "identidad_no_acreditada",
+        "identidad_acreditada": false,
+        "lectura_tecnica": {
+          "estado": "legible",
+          "metodo": "HTMLParser-texto-visible-conservador"
+        },
+        "resultado": "respuesta",
+        "url": "https://analisi.transparenciacatalunya.cat/Sector-P-blic/Registre-de-sistemes-d-intel-lig-ncia-artificial-i/2auv-ctwd",
+        "url_final": "https://analisi.transparenciacatalunya.cat/Sector-P-blic/Registre-de-sistemes-d-intel-lig-ncia-artificial-i/2auv-ctwd",
+        "vence_utc": "2026-11-22T13:00:02.390504+00:00"
+      },
+      "url": "https://analisi.transparenciacatalunya.cat/Sector-P-blic/Registre-de-sistemes-d-intel-lig-ncia-artificial-i/2auv-ctwd"
+    },
+    {
+      "campo": "enlace",
+      "estado": "limite_tamano",
+      "id": "barometre-de-la-innovacio-a",
+      "objetivo": "barometre-de-la-innovacio-a:enlace",
+      "ultima_confirmacion": null,
+      "ultima_evidencia": null,
+      "ultimo_intento": {
+        "capturado_utc": "2026-11-15T13:00:02.805294+00:00",
+        "codigo_http": null,
+        "content_type": "",
+        "cuerpo_sha256": null,
+        "error_tipo": "LimiteDescargaExcedido",
+        "estado": "limite_tamano",
+        "identidad_acreditada": false,
+        "lectura_tecnica": {
+          "estado": "limite_tamano"
+        },
+        "resultado": "fallo_temporal",
+        "url": "https://www.accio.gencat.cat/web/.content/bancconeixement/documents/informes/2026/ACCIO-barometre-innovacio-catalunya-2026.pdf",
+        "url_final": null,
+        "vence_utc": "2026-11-22T13:00:02.805294+00:00"
+      },
+      "url": "https://www.accio.gencat.cat/web/.content/bancconeixement/documents/informes/2026/ACCIO-barometre-innovacio-catalunya-2026.pdf"
+    },
+    {
+      "campo": "enlace",
+      "estado": "identidad_no_acreditada",
+      "id": "ia-mercado-trabajo-espana-funcas",
+      "objetivo": "ia-mercado-trabajo-espana-funcas:enlace",
+      "ultima_confirmacion": null,
+      "ultima_evidencia": null,
+      "ultimo_intento": {
+        "capturado_utc": "2026-11-15T13:00:03.736498+00:00",
+        "codigo_http": null,
+        "content_type": "application/pdf",
+        "cuerpo_sha256": "d2359b0b36dd4312df836fdcab029400e82a70e0c2312269bc3e1bce88892874",
+        "error_tipo": null,
+        "estado": "identidad_no_acreditada",
+        "identidad_acreditada": false,
+        "lectura_tecnica": {
+          "caracteres": 47530,
+          "estado": "legible_texto_extraido",
+          "metodo": "pypdf-6.21.2-extract_text",
+          "paginas": 15,
+          "proteccion_memoria": "RSS_supervisado_pausa_50ms_ps_max1s_no_techo_estricto",
+          "revision_visual": false,
+          "texto_sha256": "cde5eb769d2a596126d22d1516f68ff83ff254b5e524ae0d411a2a3c35c90e85"
+        },
+        "resultado": "respuesta",
+        "url": "https://www.funcas.es/wp-content/uploads/2026/04/Inteligencia-artificial-y-mercado-de-trabajo-en-Espana.pdf",
+        "url_final": "https://www.funcas.es/wp-content/uploads/2026/04/Inteligencia-artificial-y-mercado-de-trabajo-en-Espana.pdf",
+        "vence_utc": "2026-11-22T13:00:03.736498+00:00"
+      },
+      "url": "https://www.funcas.es/wp-content/uploads/2026/04/Inteligencia-artificial-y-mercado-de-trabajo-en-Espana.pdf"
+    },
+    {
+      "campo": "enlace",
+      "estado": "identidad_no_acreditada",
+      "id": "adopcion-ia-empresas-espanolas-banco-espana",
+      "objetivo": "adopcion-ia-empresas-espanolas-banco-espana:enlace",
+      "ultima_confirmacion": null,
+      "ultima_evidencia": null,
+      "ultimo_intento": {
+        "capturado_utc": "2026-11-15T13:00:04.013553+00:00",
+        "codigo_http": null,
+        "content_type": "application/pdf",
+        "cuerpo_sha256": "9112771b5483c7910cbcb3b184a3b335814912bd07c31c8a57eeecbbd59b796e",
+        "error_tipo": null,
+        "estado": "identidad_no_acreditada",
+        "identidad_acreditada": false,
+        "lectura_tecnica": {
+          "caracteres": 41790,
+          "estado": "legible_texto_extraido",
+          "metodo": "pypdf-6.21.2-extract_text",
+          "paginas": 12,
+          "proteccion_memoria": "RSS_supervisado_pausa_50ms_ps_max1s_no_techo_estricto",
+          "revision_visual": false,
+          "texto_sha256": "2b19a4e6433571e59f5eb1ec3e0332c3cca61bd3b01af06e860e3aa8a92b890d"
+        },
+        "resultado": "respuesta",
+        "url": "https://www.bde.es/f/webbe/SES/Secciones/Publicaciones/InformesBoletinesRevistas/BoletinEconomico/25/T2/Fich/be2502-art06.pdf",
+        "url_final": "https://www.bde.es/f/webbe/SES/Secciones/Publicaciones/InformesBoletinesRevistas/BoletinEconomico/25/T2/Fich/be2502-art06.pdf",
+        "vence_utc": "2026-11-22T13:00:04.013553+00:00"
+      },
+      "url": "https://www.bde.es/f/webbe/SES/Secciones/Publicaciones/InformesBoletinesRevistas/BoletinEconomico/25/T2/Fich/be2502-art06.pdf"
+    },
+    {
+      "campo": "enlace",
+      "estado": "pdf_limite_paginas",
+      "id": "impacto-socioeconomico-laboral-cambio-tecnologico-ces",
+      "objetivo": "impacto-socioeconomico-laboral-cambio-tecnologico-ces:enlace",
+      "ultima_confirmacion": null,
+      "ultima_evidencia": null,
+      "ultimo_intento": {
+        "capturado_utc": "2026-11-15T13:00:04.524353+00:00",
+        "codigo_http": null,
+        "content_type": "application/pdf",
+        "cuerpo_sha256": "ce55ac4f9f452b937c5a9c4f318f843d044eb1c38ff1bbafdd18ca2d0c2edb50",
+        "error_tipo": null,
+        "estado": "pdf_limite_paginas",
+        "identidad_acreditada": false,
+        "lectura_tecnica": {
+          "estado": "pdf_limite_paginas",
+          "proteccion_memoria": "RSS_supervisado_pausa_50ms_ps_max1s_no_techo_estricto"
+        },
+        "resultado": "respuesta",
+        "url": "https://www.ces.es/documents/10180/5327928/DOCUMENTO_02_2025_marcadores.pdf",
+        "url_final": "https://www.ces.es/documents/10180/5327928/DOCUMENTO_02_2025_marcadores.pdf",
+        "vence_utc": "2026-11-22T13:00:04.524353+00:00"
+      },
+      "url": "https://www.ces.es/documents/10180/5327928/DOCUMENTO_02_2025_marcadores.pdf"
+    },
+    {
+      "campo": "enlace",
+      "estado": "fallo_temporal",
+      "id": "sesgos-genero-ia-perspectiva-interseccional",
+      "objetivo": "sesgos-genero-ia-perspectiva-interseccional:enlace",
+      "ultima_confirmacion": null,
+      "ultima_evidencia": null,
+      "ultimo_intento": {
+        "capturado_utc": "2026-11-15T13:00:24.114494+00:00",
+        "codigo_http": null,
+        "content_type": "",
+        "cuerpo_sha256": null,
+        "error_tipo": "ConnectionResetError",
+        "estado": "fallo_temporal",
+        "identidad_acreditada": false,
+        "lectura_tecnica": {
+          "estado": "fallo_temporal"
+        },
+        "resultado": "fallo_temporal",
+        "url": "https://servicios.mpr.es/VisorPublicaciones/visordocumentosicopo.aspx?NIPO=050230195&SUBNIPO=0001&IDPUBLICACION=005005023",
+        "url_final": null,
+        "vence_utc": "2026-11-22T13:00:24.114494+00:00"
+      },
+      "url": "https://servicios.mpr.es/VisorPublicaciones/visordocumentosicopo.aspx?NIPO=050230195&SUBNIPO=0001&IDPUBLICACION=005005023"
+    },
+    {
+      "campo": "enlace",
+      "estado": "http_no_encontrado",
+      "id": "indicadores-uso-ia-espana-ontsi-2026",
+      "objetivo": "indicadores-uso-ia-espana-ontsi-2026:enlace",
+      "ultima_confirmacion": null,
+      "ultima_evidencia": {
+        "capturado_utc": "2026-11-15T13:00:24.352930+00:00",
+        "codigo_http": 404,
+        "content_type": "",
+        "cuerpo_sha256": null,
+        "error_tipo": "HTTPError",
+        "estado": "http_no_encontrado",
+        "identidad_acreditada": false,
+        "lectura_tecnica": {
+          "estado": "http_no_encontrado"
+        },
+        "resultado": "http_error",
+        "url": "https://administracionelectronica.gob.es/pae_Home/dam/jcr:16d7afe8-4d93-441a-a639-a90c7bca6f61/2026-indicadores-de-uso-de-inteligencia-articifial_1.pdf",
+        "url_final": null,
+        "vence_utc": "2026-11-22T13:00:24.352930+00:00"
+      },
+      "ultimo_intento": {
+        "capturado_utc": "2026-11-15T13:00:24.352930+00:00",
+        "codigo_http": 404,
+        "content_type": "",
+        "cuerpo_sha256": null,
+        "error_tipo": "HTTPError",
+        "estado": "http_no_encontrado",
+        "identidad_acreditada": false,
+        "lectura_tecnica": {
+          "estado": "http_no_encontrado"
+        },
+        "resultado": "http_error",
+        "url": "https://administracionelectronica.gob.es/pae_Home/dam/jcr:16d7afe8-4d93-441a-a639-a90c7bca6f61/2026-indicadores-de-uso-de-inteligencia-articifial_1.pdf",
+        "url_final": null,
+        "vence_utc": "2026-11-22T13:00:24.352930+00:00"
+      },
+      "url": "https://administracionelectronica.gob.es/pae_Home/dam/jcr:16d7afe8-4d93-441a-a639-a90c7bca6f61/2026-indicadores-de-uso-de-inteligencia-articifial_1.pdf"
+    },
+    {
+      "campo": "enlace",
+      "estado": "fallo_temporal",
+      "id": "la-estrategia-de-barcelona-para",
+      "objetivo": "la-estrategia-de-barcelona-para:enlace",
+      "ultima_confirmacion": null,
+      "ultima_evidencia": null,
+      "ultimo_intento": {
+        "capturado_utc": "2026-11-15T13:00:32.266499+00:00",
+        "codigo_http": null,
+        "content_type": "",
+        "cuerpo_sha256": null,
+        "error_tipo": "SSLEOFError",
+        "estado": "fallo_temporal",
+        "identidad_acreditada": false,
+        "lectura_tecnica": {
+          "estado": "fallo_temporal"
+        },
+        "resultado": "fallo_temporal",
+        "url": "https://ajuntament.barcelona.cat/digital/sites/default/files/2023-11/Mesura-de-Govern-Intel-ligencia-artificial_cat-v2.47-ca-ES_.pdf",
+        "url_final": null,
+        "vence_utc": "2026-11-22T13:00:32.266499+00:00"
+      },
+      "url": "https://ajuntament.barcelona.cat/digital/sites/default/files/2023-11/Mesura-de-Govern-Intel-ligencia-artificial_cat-v2.47-ca-ES_.pdf"
+    },
+    {
+      "campo": "enlace",
+      "estado": "fallo_temporal",
+      "id": "ia-gestion-trabajadores-salud-eu-osha",
+      "objetivo": "ia-gestion-trabajadores-salud-eu-osha:enlace",
+      "ultima_confirmacion": null,
+      "ultima_evidencia": null,
+      "ultimo_intento": {
+        "capturado_utc": "2026-11-15T13:00:32.415402+00:00",
+        "codigo_http": null,
+        "content_type": "",
+        "cuerpo_sha256": null,
+        "error_tipo": "RemoteDisconnected",
+        "estado": "fallo_temporal",
+        "identidad_acreditada": false,
+        "lectura_tecnica": {
+          "estado": "fallo_temporal"
+        },
+        "resultado": "fallo_temporal",
+        "url": "https://healthy-workplaces.osha.europa.eu/sites/hwc/files/hwc/publication/artificial-intelligence-osh-summary_es.pdf",
+        "url_final": null,
+        "vence_utc": "2026-11-22T13:00:32.415402+00:00"
+      },
+      "url": "https://healthy-workplaces.osha.europa.eu/sites/hwc/files/hwc/publication/artificial-intelligence-osh-summary_es.pdf"
+    },
+    {
+      "campo": "enlace",
+      "estado": "pdf_limite_paginas",
+      "id": "inteligencia-artificial-genero-trabajo-uclm",
+      "objetivo": "inteligencia-artificial-genero-trabajo-uclm:enlace",
+      "ultima_confirmacion": null,
+      "ultima_evidencia": null,
+      "ultimo_intento": {
+        "capturado_utc": "2026-11-15T13:00:32.554507+00:00",
+        "codigo_http": null,
+        "content_type": "application/pdf",
+        "cuerpo_sha256": "25257b916acf45c0c6ce4751e3a6314183d10b259c517932f84cbc56bd4d3502",
+        "error_tipo": null,
+        "estado": "pdf_limite_paginas",
+        "identidad_acreditada": false,
+        "lectura_tecnica": {
+          "estado": "pdf_limite_paginas",
+          "proteccion_memoria": "RSS_supervisado_pausa_50ms_ps_max1s_no_techo_estricto"
+        },
+        "resultado": "respuesta",
+        "url": "https://www.derechosdigitales.gob.es/sites/default/files/2025-05/Inteligencia%20Artificial%20Genero%20y%20Trabajo.pdf",
+        "url_final": "https://www.derechosdigitales.gob.es/sites/default/files/2025-05/Inteligencia%20Artificial%20Genero%20y%20Trabajo.pdf",
+        "vence_utc": "2026-11-22T13:00:32.554507+00:00"
+      },
+      "url": "https://www.derechosdigitales.gob.es/sites/default/files/2025-05/Inteligencia%20Artificial%20Genero%20y%20Trabajo.pdf"
+    },
+    {
+      "campo": "enlace",
+      "estado": "identidad_no_acreditada",
+      "id": "estafas-fraudes-financieros-ia-autoridades-europeas",
+      "objetivo": "estafas-fraudes-financieros-ia-autoridades-europeas:enlace",
+      "ultima_confirmacion": null,
+      "ultima_evidencia": null,
+      "ultimo_intento": {
+        "capturado_utc": "2026-11-15T13:00:33.523384+00:00",
+        "codigo_http": null,
+        "content_type": "application/pdf",
+        "cuerpo_sha256": "9f8c6cebd202069d5a784a53ee52af08ba8ad41cfb743362255cf7efa0eedb37",
+        "error_tipo": null,
+        "estado": "identidad_no_acreditada",
+        "identidad_acreditada": false,
+        "lectura_tecnica": {
+          "caracteres": 16172,
+          "estado": "legible_texto_extraido",
+          "metodo": "pypdf-6.21.2-extract_text",
+          "paginas": 7,
+          "proteccion_memoria": "RSS_supervisado_pausa_50ms_ps_max1s_no_techo_estricto",
+          "revision_visual": false,
+          "texto_sha256": "99f8b65a5e42f46f6b20b47975ca8853dab4d4b08d79cb7acbdc4930febf337c"
+        },
+        "resultado": "respuesta",
+        "url": "https://www.cnmv.es/webservices/verdocumento/ver?t=%7B5e01413b-96fc-402b-a8cb-a66cd32b147d%7D",
+        "url_final": "https://www.cnmv.es/webservices/verdocumento/ver?t=%7B5e01413b-96fc-402b-a8cb-a66cd32b147d%7D",
+        "vence_utc": "2026-11-22T13:00:33.523384+00:00"
+      },
+      "url": "https://www.cnmv.es/webservices/verdocumento/ver?t=%7B5e01413b-96fc-402b-a8cb-a66cd32b147d%7D"
+    },
+    {
+      "campo": "enlace",
+      "estado": "identidad_no_acreditada",
+      "id": "guia-uso-seguro-ia-cyberzaintza",
+      "objetivo": "guia-uso-seguro-ia-cyberzaintza:enlace",
+      "ultima_confirmacion": null,
+      "ultima_evidencia": null,
+      "ultimo_intento": {
+        "capturado_utc": "2026-11-15T13:00:34.851590+00:00",
+        "codigo_http": null,
+        "content_type": "application/pdf",
+        "cuerpo_sha256": "0ad646eaa772c8798d7f56a695dec4b83566a25d9fa08155830fcb44fb35549b",
+        "error_tipo": null,
+        "estado": "identidad_no_acreditada",
+        "identidad_acreditada": false,
+        "lectura_tecnica": {
+          "caracteres": 32578,
+          "estado": "legible_texto_extraido",
+          "metodo": "pypdf-6.21.2-extract_text",
+          "paginas": 12,
+          "proteccion_memoria": "RSS_supervisado_pausa_50ms_ps_max1s_no_techo_estricto",
+          "revision_visual": false,
+          "texto_sha256": "8cee3cec57dbdd0697846292a62ceb31f0002a21bb6703b2b61e49ba2d8853b6"
+        },
+        "resultado": "respuesta",
+        "url": "https://ciberseguridad.euskadi.eus/contenidos/enlace/_cyb_guia_20260929/es_def/adjuntos/Guia-uso-seguro-IA.pdf",
+        "url_final": "https://ciberseguridad.euskadi.eus/contenidos/enlace/_cyb_guia_20260929/es_def/adjuntos/Guia-uso-seguro-IA.pdf",
+        "vence_utc": "2026-11-22T13:00:34.851590+00:00"
+      },
+      "url": "https://ciberseguridad.euskadi.eus/contenidos/enlace/_cyb_guia_20260929/es_def/adjuntos/Guia-uso-seguro-IA.pdf"
+    },
+    {
+      "campo": "enlace",
+      "estado": "pdf_sin_texto_extraible",
+      "id": "ia-mujeres-en-cifras-inmujeres-2026",
+      "objetivo": "ia-mujeres-en-cifras-inmujeres-2026:enlace",
+      "ultima_confirmacion": null,
+      "ultima_evidencia": null,
+      "ultimo_intento": {
+        "capturado_utc": "2026-11-15T13:00:35.154518+00:00",
+        "codigo_http": null,
+        "content_type": "application/pdf",
+        "cuerpo_sha256": "75bf5682aff83275668733e211cc49f1f6aca5f835314940afd7130aec1721fa",
+        "error_tipo": null,
+        "estado": "pdf_sin_texto_extraible",
+        "identidad_acreditada": false,
+        "lectura_tecnica": {
+          "estado": "pdf_sin_texto_extraible",
+          "proteccion_memoria": "RSS_supervisado_pausa_50ms_ps_max1s_no_techo_estricto"
+        },
+        "resultado": "respuesta",
+        "url": "https://www.inmujeres.gob.es/MujerCifras/Infografia/Docs/202602_IA.pdf",
+        "url_final": "https://www.inmujeres.gob.es/MujerCifras/Infografia/Docs/202602_IA.pdf",
+        "vence_utc": "2026-11-22T13:00:35.154518+00:00"
+      },
+      "url": "https://www.inmujeres.gob.es/MujerCifras/Infografia/Docs/202602_IA.pdf"
+    },
+    {
+      "campo": "enlace",
+      "estado": "fallo_temporal",
+      "id": "osh-pulse-2025-digitalizacion-infografia",
+      "objetivo": "osh-pulse-2025-digitalizacion-infografia:enlace",
+      "ultima_confirmacion": null,
+      "ultima_evidencia": null,
+      "ultimo_intento": {
+        "capturado_utc": "2026-11-15T13:00:35.293674+00:00",
+        "codigo_http": null,
+        "content_type": "",
+        "cuerpo_sha256": null,
+        "error_tipo": "RemoteDisconnected",
+        "estado": "fallo_temporal",
+        "identidad_acreditada": false,
+        "lectura_tecnica": {
+          "estado": "fallo_temporal"
+        },
+        "resultado": "fallo_temporal",
+        "url": "https://healthy-workplaces.osha.europa.eu/sites/hwc/files/hwc/infographic/OSH-pulse-2025-digitalisation_infographic_ES.pdf",
+        "url_final": null,
+        "vence_utc": "2026-11-22T13:00:35.293674+00:00"
+      },
+      "url": "https://healthy-workplaces.osha.europa.eu/sites/hwc/files/hwc/infographic/OSH-pulse-2025-digitalisation_infographic_ES.pdf"
+    },
+    {
+      "campo": "enlace",
+      "estado": "pdf_limite_paginas",
+      "id": "impacte-ia-mercat-laboral-presentacio-cambra",
+      "objetivo": "impacte-ia-mercat-laboral-presentacio-cambra:enlace",
+      "ultima_confirmacion": null,
+      "ultima_evidencia": null,
+      "ultimo_intento": {
+        "capturado_utc": "2026-11-15T13:00:35.435462+00:00",
+        "codigo_http": null,
+        "content_type": "application/pdf",
+        "cuerpo_sha256": "7c136e786b0987fbb904bd4bb8c3cba81b335ecd0b9939877e01fe1db923e255",
+        "error_tipo": null,
+        "estado": "pdf_limite_paginas",
+        "identidad_acreditada": false,
+        "lectura_tecnica": {
+          "estado": "pdf_limite_paginas",
+          "proteccion_memoria": "RSS_supervisado_pausa_50ms_ps_max1s_no_techo_estricto"
+        },
+        "resultado": "respuesta",
+        "url": "https://cambrabcn.org/wp-content/uploads/2026/05/Impacte-IA-mercat-laboral_Maig_2026-Presentacio.pdf",
+        "url_final": "https://cambrabcn.org/wp-content/uploads/2026/05/Impacte-IA-mercat-laboral_Maig_2026-Presentacio.pdf",
+        "vence_utc": "2026-11-22T13:00:35.435462+00:00"
+      },
+      "url": "https://cambrabcn.org/wp-content/uploads/2026/05/Impacte-IA-mercat-laboral_Maig_2026-Presentacio.pdf"
+    },
+    {
+      "campo": "enlace",
+      "estado": "fallo_temporal",
+      "id": "brecha-digital-genero-ontsi-2026",
+      "objetivo": "brecha-digital-genero-ontsi-2026:enlace",
+      "ultima_confirmacion": null,
+      "ultima_evidencia": null,
+      "ultimo_intento": {
+        "capturado_utc": "2026-11-15T13:00:55.094623+00:00",
+        "codigo_http": null,
+        "content_type": "",
+        "cuerpo_sha256": null,
+        "error_tipo": "ConnectionResetError",
+        "estado": "fallo_temporal",
+        "identidad_acreditada": false,
+        "lectura_tecnica": {
+          "estado": "fallo_temporal"
+        },
+        "resultado": "fallo_temporal",
+        "url": "https://servicios.mpr.es/VisorPublicaciones/visordocumentosicopo.aspx?NIPO=230260042&SUBNIPO=&IDPUBLICACION=007823026",
+        "url_final": null,
+        "vence_utc": "2026-11-22T13:00:55.094623+00:00"
+      },
+      "url": "https://servicios.mpr.es/VisorPublicaciones/visordocumentosicopo.aspx?NIPO=230260042&SUBNIPO=&IDPUBLICACION=007823026"
+    },
+    {
+      "campo": "enlace",
+      "estado": "identidad_no_acreditada",
+      "id": "viejas-competencias-nuevas-tecnologias-oit",
+      "objetivo": "viejas-competencias-nuevas-tecnologias-oit:enlace",
+      "ultima_confirmacion": null,
+      "ultima_evidencia": null,
+      "ultimo_intento": {
+        "capturado_utc": "2026-11-15T13:00:55.390538+00:00",
+        "codigo_http": null,
+        "content_type": "text/html; charset=utf-8",
+        "cuerpo_sha256": "772e17a846f18aff0a56af5a021dd9297fd227e4ce0be7539ad9da8b63a4d644",
+        "error_tipo": null,
+        "estado": "identidad_no_acreditada",
+        "identidad_acreditada": false,
+        "lectura_tecnica": {
+          "estado": "legible",
+          "metodo": "HTMLParser-texto-visible-conservador"
+        },
+        "resultado": "respuesta",
+        "url": "https://www.ilo.org/es/resource/articulo/viejas-competencias-para-nuevas-tecnologias",
+        "url_final": "https://www.ilo.org/es/resource/articulo/viejas-competencias-para-nuevas-tecnologias",
+        "vence_utc": "2026-11-22T13:00:55.390538+00:00"
+      },
+      "url": "https://www.ilo.org/es/resource/articulo/viejas-competencias-para-nuevas-tecnologias"
+    },
+    {
+      "campo": "enlace",
+      "estado": "identidad_no_acreditada",
+      "id": "ia-homogeniza-lenguaje-sinc",
+      "objetivo": "ia-homogeniza-lenguaje-sinc:enlace",
+      "ultima_confirmacion": null,
+      "ultima_evidencia": null,
+      "ultimo_intento": {
+        "capturado_utc": "2026-11-15T13:00:55.765255+00:00",
+        "codigo_http": null,
+        "content_type": "text/html; charset=UTF-8",
+        "cuerpo_sha256": "54e41a55dd8a3d35150962fae9f9497449c3be82d99b31396f034c64d0b96af2",
+        "error_tipo": null,
+        "estado": "identidad_no_acreditada",
+        "identidad_acreditada": false,
+        "lectura_tecnica": {
+          "estado": "legible",
+          "metodo": "HTMLParser-texto-visible-conservador"
+        },
+        "resultado": "respuesta",
+        "url": "https://www.agenciasinc.es/Noticias/Las-herramientas-de-IA-para-generar-texto-homogenizan-el-lenguaje",
+        "url_final": "https://www.agenciasinc.es/Noticias/Las-herramientas-de-IA-para-generar-texto-homogenizan-el-lenguaje",
+        "vence_utc": "2026-11-22T13:00:55.765255+00:00"
+      },
+      "url": "https://www.agenciasinc.es/Noticias/Las-herramientas-de-IA-para-generar-texto-homogenizan-el-lenguaje"
+    },
+    {
+      "campo": "enlace",
+      "estado": "identidad_no_acreditada",
+      "id": "us-segur-ia-empresa-agencia-ciberseguretat",
+      "objetivo": "us-segur-ia-empresa-agencia-ciberseguretat:enlace",
+      "ultima_confirmacion": null,
+      "ultima_evidencia": null,
+      "ultimo_intento": {
+        "capturado_utc": "2026-11-15T13:00:55.916084+00:00",
+        "codigo_http": null,
+        "content_type": "text/html;charset=utf-8",
+        "cuerpo_sha256": "d0833c17b57e00e2728a0be6c41db89281f7826825e63e5d90a3422291b02f84",
+        "error_tipo": null,
+        "estado": "identidad_no_acreditada",
+        "identidad_acreditada": false,
+        "lectura_tecnica": {
+          "estado": "legible",
+          "metodo": "HTMLParser-texto-visible-conservador"
+        },
+        "resultado": "respuesta",
+        "url": "https://ciberseguretat.gencat.cat/es/empresa/bones-practiques/us-segur-de-la-ia",
+        "url_final": "https://ciberseguretat.gencat.cat/es/empresa/bones-practiques/us-segur-de-la-ia",
+        "vence_utc": "2026-11-22T13:00:55.916084+00:00"
+      },
+      "url": "https://ciberseguretat.gencat.cat/es/empresa/bones-practiques/us-segur-de-la-ia"
+    },
+    {
+      "campo": "enlace_ca",
+      "estado": "identidad_no_acreditada",
+      "id": "us-segur-ia-empresa-agencia-ciberseguretat",
+      "objetivo": "us-segur-ia-empresa-agencia-ciberseguretat:enlace_ca",
+      "ultima_confirmacion": null,
+      "ultima_evidencia": null,
+      "ultimo_intento": {
+        "capturado_utc": "2026-11-15T13:00:58.178476+00:00",
+        "codigo_http": null,
+        "content_type": "text/html;charset=utf-8",
+        "cuerpo_sha256": "92a19202a13d0473eeb8ecbc386f046297664d78d97ba94e8026ec4a0db9141d",
+        "error_tipo": null,
+        "estado": "identidad_no_acreditada",
+        "identidad_acreditada": false,
+        "lectura_tecnica": {
+          "estado": "legible",
+          "metodo": "HTMLParser-texto-visible-conservador"
+        },
+        "resultado": "respuesta",
+        "url": "https://ciberseguretat.gencat.cat/ca/empresa/bones-practiques/us-segur-de-la-ia",
+        "url_final": "https://ciberseguretat.gencat.cat/ca/empresa/bones-practiques/us-segur-de-la-ia",
+        "vence_utc": "2026-11-22T13:00:58.178476+00:00"
+      },
+      "url": "https://ciberseguretat.gencat.cat/ca/empresa/bones-practiques/us-segur-de-la-ia"
+    },
+    {
+      "campo": "enlace",
+      "estado": "identidad_no_acreditada",
+      "id": "resumen-recomendaciones-ia-generativa-aepd",
+      "objetivo": "resumen-recomendaciones-ia-generativa-aepd:enlace",
+      "ultima_confirmacion": null,
+      "ultima_evidencia": null,
+      "ultimo_intento": {
+        "capturado_utc": "2026-11-15T13:01:00.424719+00:00",
+        "codigo_http": null,
+        "content_type": "application/pdf",
+        "cuerpo_sha256": "37dd48c55058ec9b94ce0808e8033ccf0ff656da254c85e94ec838c0c09824bb",
+        "error_tipo": null,
+        "estado": "identidad_no_acreditada",
+        "identidad_acreditada": false,
+        "lectura_tecnica": {
+          "caracteres": 7948,
+          "estado": "legible_texto_extraido",
+          "metodo": "pypdf-6.21.2-extract_text",
+          "paginas": 4,
+          "proteccion_memoria": "RSS_supervisado_pausa_50ms_ps_max1s_no_techo_estricto",
+          "revision_visual": false,
+          "texto_sha256": "b9f612713f450ac428e58cac9f2fb80ac14838d417de73cda94dce2b8388832f"
+        },
+        "resultado": "respuesta",
+        "url": "https://www.aepd.es/recurso-multimedia/resumen-basico-obligaciones-recomendaciones-iag-aepd",
+        "url_final": "https://www.aepd.es/guias/sumario-recomendaciones-iag-aepd.pdf",
+        "vence_utc": "2026-11-22T13:01:00.424719+00:00"
+      },
+      "url": "https://www.aepd.es/recurso-multimedia/resumen-basico-obligaciones-recomendaciones-iag-aepd"
+    },
+    {
+      "campo": "enlace",
+      "estado": "identidad_no_acreditada",
+      "id": "dades-compartides-ia-agencia-ciberseguretat",
+      "objetivo": "dades-compartides-ia-agencia-ciberseguretat:enlace",
+      "ultima_confirmacion": null,
+      "ultima_evidencia": null,
+      "ultimo_intento": {
+        "capturado_utc": "2026-11-15T13:01:00.942089+00:00",
+        "codigo_http": null,
+        "content_type": "text/html;charset=utf-8",
+        "cuerpo_sha256": "aeef74ff7a12a279fd0eda007974cacc2b61a8d185c4663ce2482856638a7cba",
+        "error_tipo": null,
+        "estado": "identidad_no_acreditada",
+        "identidad_acreditada": false,
+        "lectura_tecnica": {
+          "estado": "legible",
+          "metodo": "HTMLParser-texto-visible-conservador"
+        },
+        "resultado": "respuesta",
+        "url": "https://ciberseguretat.gencat.cat/es/ciutadania/intelligencia-artificial/dades-compartides-intelligencia-artificial",
+        "url_final": "https://ciberseguretat.gencat.cat/es/ciutadania/intelligencia-artificial/dades-compartides-intelligencia-artificial",
+        "vence_utc": "2026-11-22T13:01:00.942089+00:00"
+      },
+      "url": "https://ciberseguretat.gencat.cat/es/ciutadania/intelligencia-artificial/dades-compartides-intelligencia-artificial"
+    },
+    {
+      "campo": "enlace_ca",
+      "estado": "identidad_no_acreditada",
+      "id": "dades-compartides-ia-agencia-ciberseguretat",
+      "objetivo": "dades-compartides-ia-agencia-ciberseguretat:enlace_ca",
+      "ultima_confirmacion": null,
+      "ultima_evidencia": null,
+      "ultimo_intento": {
+        "capturado_utc": "2026-11-15T13:01:03.139834+00:00",
+        "codigo_http": null,
+        "content_type": "text/html;charset=utf-8",
+        "cuerpo_sha256": "8154473484d1dd06f2d0407a75225181e4335d28c479b89c86f2cb1fc248b54c",
+        "error_tipo": null,
+        "estado": "identidad_no_acreditada",
+        "identidad_acreditada": false,
+        "lectura_tecnica": {
+          "estado": "legible",
+          "metodo": "HTMLParser-texto-visible-conservador"
+        },
+        "resultado": "respuesta",
+        "url": "https://ciberseguretat.gencat.cat/ca/ciutadania/intelligencia-artificial/dades-compartides-intelligencia-artificial",
+        "url_final": "https://ciberseguretat.gencat.cat/ca/ciutadania/intelligencia-artificial/dades-compartides-intelligencia-artificial",
+        "vence_utc": "2026-11-22T13:01:03.139834+00:00"
+      },
+      "url": "https://ciberseguretat.gencat.cat/ca/ciutadania/intelligencia-artificial/dades-compartides-intelligencia-artificial"
+    }
+  ],
+  "revision_editorial": "fuera_del_alcance",
+  "validez_dias": 7,
+  "verificados": 0,
+  "version": 2
+}

@@ -1,0 +1,2512 @@
+/* Informe breve «La IA y tu trabajo»: dos hojas, impresas en dos páginas A4 (presentacion/informe-breve.ts). Todo
+   va dentro de .informe-breve, para no tocar la página que lo recibe. Cada hoja es un contenedor: en pantalla crece
+   con el texto; las medidas van en cqi (centésimas del ancho de la hoja), también al imprimir en A4. En el móvil las
+   medidas pasan a píxeles. Diseño plano: sin sombras, halos ni animaciones. Las medidas que dependen de los datos
+   llegan como data-ancho y data-valor y la web las convierte en --ancho y --valor (scripts/informe.js): sin estilos
+   en línea. «Baja» se representa en naranja; el gráfico de columnas muestra la cifra en cada barra. Incrustado en el
+   recorrido, el informe baja un nivel sus encabezados (h1 → h2…): las clases de sus piezas conservan el aspecto en
+   ambos niveles. */
+
+.informe-breve {
+  --papel: #fdfcf8;
+  --laton: #9a7a43;
+  --tinta: #17212a;
+  --tenue: #4f5b66;
+  --linea: #d9dde0;
+  --marino: #10202d;
+  --sobre-marino-tenue: #c3d0da;
+  --azul-profundo: #184f95;
+  --azul: #2f74c8;
+  --azul-suave: #86b6ef;
+  --azul-claro: #e3edf7;
+  --azul-niebla: #f3f7fb;
+  --fuente-titulo: "Sora", "Space Grotesk", system-ui, sans-serif;
+  --fuente-texto: "Space Grotesk", system-ui, sans-serif;
+  --fuente-mono: "JetBrains Mono", ui-monospace, monospace;
+  --ancho-hoja: min(900px, 100%);
+  font-family: var(--fuente-texto);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Las hojas y los apartados de consulta son papel: claros y con su tinta en los dos temas. Lo demás (el cierre con sus
+   botones y avisos) se pinta sobre la página y sigue su tema, día o noche. */
+.informe-breve :is(.hoja, .ib-contexto) {
+  color-scheme: light;
+  color: var(--tinta);
+}
+
+.informe-breve * {
+  box-sizing: border-box;
+}
+
+.informe-breve .documento {
+  display: grid;
+  gap: 28px;
+  width: var(--ancho-hoja);
+  margin: 0 auto 56px;
+}
+
+.informe-breve .hoja {
+  position: relative;
+  width: 100%;
+  container-type: inline-size;
+  background: var(--papel);
+  border: 1px solid #d7dad6;
+  --t-xs: 1.42cqi;
+  --t-s: 1.75cqi;
+  --t-m: 2.05cqi;
+  --margen: 7cqi;
+}
+
+.informe-breve .solo-lectores {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.informe-breve .ib-marca {
+  display: inline-block;
+  font-family: var(--fuente-titulo);
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.2em;
+  margin-right: -0.2em;
+}
+
+.informe-breve .ib-marca-f {
+  position: relative;
+}
+
+.informe-breve .ib-marca-luz {
+  position: absolute;
+  top: -0.31em;
+  left: 0.035em;
+  width: 0.586em;
+  height: 0.276em;
+}
+
+.informe-breve .hoja-pie {
+  position: absolute;
+  left: var(--margen);
+  right: var(--margen);
+  bottom: 3cqi;
+  display: flex;
+  justify-content: space-between;
+  gap: 2cqi;
+  padding-top: 1.1cqi;
+  border-top: 1px solid var(--linea);
+  font-size: var(--t-xs);
+  color: var(--tenue);
+}
+
+.informe-breve .sello {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8cqi;
+  font-size: var(--t-xs);
+  color: var(--tenue);
+  line-height: 1.3;
+}
+
+.informe-breve .sello::before {
+  content: "";
+  flex: none;
+  width: 1.25cqi;
+  height: 1.25cqi;
+}
+
+.informe-breve .sello b {
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--tinta);
+}
+
+.informe-breve .sello[data-tipo="medido"]::before {
+  background: var(--azul-profundo);
+}
+
+.informe-breve .sello[data-tipo="encuesta"]::before {
+  border: 0.26cqi solid var(--azul-profundo);
+  background: linear-gradient(90deg, var(--azul-profundo) 50%, transparent 50%);
+}
+
+.informe-breve .sello[data-tipo="estimacion"]::before {
+  border: 0.26cqi dashed var(--azul-profundo);
+}
+
+.informe-breve .sello[data-tipo="estudio"]::before {
+  border: 0.26cqi solid #848b92;
+  border-radius: 50%;
+}
+
+.informe-breve .sello[data-tipo="norma"]::before {
+  background: var(--tinta);
+  clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+}
+
+/* La hoja no tiene alto fijo: crece con su texto en pantalla y en papel, donde sigue en la página siguiente. En
+   pantalla el pie va en el flujo, tras el cuerpo. */
+@media screen {
+  .informe-breve .ib-cuerpo {
+    flex: 0 0 auto;
+  }
+
+  .informe-breve .hoja-pie {
+    position: static;
+    margin: 3cqi var(--margen);
+  }
+
+  /* En una hoja estrecha el folio no se parte en dos líneas («1 /» y «2»): el texto del pie cede el sitio. */
+  .informe-breve .hoja-pie-folio {
+    white-space: nowrap;
+  }
+}
+
+@media screen and (max-width: 759px) {
+  .informe-breve {
+    --ancho-hoja: 100%;
+  }
+
+  .informe-breve .documento {
+    gap: 18px;
+  }
+
+  .informe-breve .hoja {
+    --margen: 18px;
+  }
+
+  .informe-breve .sello {
+    gap: 6px;
+  }
+
+  .informe-breve .sello::before {
+    width: 10px;
+    height: 10px;
+  }
+
+  .informe-breve .sello[data-tipo="encuesta"]::before,
+  .informe-breve .sello[data-tipo="estimacion"]::before,
+  .informe-breve .sello[data-tipo="estudio"]::before {
+    border-width: 2px;
+  }
+
+  .informe-breve .hoja-pie {
+    position: static;
+    margin: 24px var(--margen) 18px;
+    padding-top: 8px;
+  }
+}
+
+/* La página por defecto es la que usa WebKit, que no aplica las páginas con nombre; Chromium y Firefox imprimen el
+   informe y la hoja de ruta en las suyas. 4 mm arriba y abajo es lo que cabe sin recomponer las hojas. */
+@page {
+  size: A4 portrait;
+  margin: 4mm 0;
+}
+
+/* En papel el informe ocupa sus dos hojas, una por página. La hoja 1 imprime enteras las tareas que caben y una línea
+   dice cuántas son; las demás se quedan en el informe en pantalla (presentacion/informe-breve/tareas-en-papel.ts). El
+   folio lo numera el propio motor de impresión con la página real y el total real. */
+@page informe {
+  size: A4 portrait;
+  margin: 4mm 0 6mm;
+
+  @bottom-right {
+    content: counter(page) " / " counter(pages);
+    margin-right: 14.7mm;
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 8pt;
+    color: #5b6670;
+  }
+}
+
+@media print {
+  /* El informe conserva sus colores en papel aunque el navegador imprima sin gráficos de fondo (lo habitual en
+     Chrome): si no, quita el marino de la banda y deja su texto claro sobre blanco. Lo declara esta hoja porque el
+     ejemplo público y las páginas que incrustan el HTML de la API no cargan pantallas-e-impresion.css. */
+  .informe-breve,
+  .informe-breve * {
+    print-color-adjust: exact;
+  }
+
+  .informe-breve .documento {
+    display: block;
+    width: 210mm;
+    margin: 0;
+  }
+
+  .informe-breve .hoja {
+    page: informe;
+  }
+
+  /* En la página propia del informe, la raíz va también en su página: Firefox abre una página en blanco para el final
+     de los ascendientes con página «auto». */
+  html:has(> body > main.informe-breve) {
+    page: informe;
+  }
+
+  .informe-breve .hoja {
+    width: 210mm;
+    border: 0;
+    break-after: page;
+  }
+
+  /* El número de hoja de pantalla no coincide con la página impresa: en papel lo sustituye el folio de la página. */
+  .informe-breve .ib-folio-hoja,
+  .informe-breve .hoja-pie-folio {
+    display: none;
+  }
+
+  /* El gráfico de columnas escala su texto con el SVG: 194 unidades de alto en 15,8cqi de la hoja A4 (unos 0,485 pt
+     por unidad). En papel, sus cifras, años y rótulo suben a 14,5 unidades (unos 7 pt), por encima de la letra más
+     pequeña de la hoja aprobada (6,84 pt); en pantalla no cambian. */
+  .informe-breve .ib-columnas-v2 text {
+    font-size: 14.5px;
+  }
+
+  /* En papel la figura tiene alto fijo y el indicador se encoge por alto: sus 112 unidades miden unos 73,6 px (escala
+     0,657). Su escala, «de 100» (el último texto del SVG), sube de 11 a 14 unidades (unos 6,9 pt), por encima de la
+     letra más pequeña de la hoja aprobada (6,84 pt); en pantalla no cambia. */
+  .informe-breve .ib-indicador text:last-of-type {
+    font-size: 14px;
+  }
+}
+.informe-breve {
+  --favorable: #17805c;
+  --alerta: #c0392b;
+  --estable: #6b7680;
+  --laton-claro: #e8d5ae;
+}
+
+.informe-breve .hoja.ib {
+  display: flex;
+  flex-direction: column;
+  --ib-m: 5.2cqi;
+  --ib-h1: 3.9cqi;
+  --ib-cifra: 3.1cqi;
+  --ib-mono: 1.15cqi;
+  --ib-gap: 1.35cqi;
+  --ib-s: 1.55cqi;
+  --ib-bluf: 1.72cqi;
+  --ib-h3: 1.85cqi;
+  --ib-fig-num: 4.4cqi;
+  --ib-fig-h: 13.2cqi;
+}
+
+.informe-breve .ib-banda {
+  display: flex;
+  justify-content: space-between;
+  gap: 2cqi;
+  padding: 1.25cqi var(--ib-m);
+  background: var(--marino);
+  color: var(--sobre-marino-tenue);
+  font-family: var(--fuente-mono);
+  font-size: var(--ib-mono);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.informe-breve .ib-banda b {
+  color: var(--laton-claro);
+  font-weight: 500;
+}
+
+.informe-breve .ib-cuerpo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ib-gap);
+  padding: 0 var(--ib-m);
+}
+
+/* El cierre de la hoja (piezas.ts, cierre()): su último bloque, en un cuerpo propio, y el pie. Se compone como la hoja,
+   en columna; el último bloque se separa del anterior lo mismo que los demás bloques del cuerpo, y el relleno inferior
+   del cuerpo va aquí, entre el último bloque y el pie. */
+.informe-breve .ib-final {
+  display: flex;
+  flex-direction: column;
+}
+
+.informe-breve .ib-final > .ib-cuerpo {
+  padding-top: var(--ib-gap);
+  padding-bottom: 1cqi;
+}
+
+.informe-breve .ib-cabecera {
+  display: grid;
+  grid-template-columns: minmax(max-content, 1fr) minmax(0, auto);
+  align-items: end;
+  gap: 1.2cqi 4cqi;
+  padding: 2.4cqi 0 1.3cqi;
+  border-bottom: 0.3cqi solid var(--tinta);
+}
+
+.informe-breve .ib-cabecera-2 {
+  grid-template-columns: 1fr;
+  padding-top: 2cqi;
+}
+
+.informe-breve .ib-cabecera-2 :is(h1, h2) {
+  font-size: 3.6cqi;
+}
+
+.informe-breve .ib-antetitulo .ib-marca {
+  font-size: 1.75cqi;
+  color: var(--tinta);
+  letter-spacing: 0.2em;
+}
+
+.informe-breve .ib-antetitulo {
+  display: flex;
+  align-items: center;
+  gap: 1.6cqi;
+  font-family: var(--fuente-mono);
+  font-size: var(--ib-mono);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--laton);
+}
+
+.informe-breve .ib-titular :is(h1, h2) {
+  margin: 1cqi 0 0;
+  font-family: var(--fuente-titulo);
+  font-size: var(--ib-h1);
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+
+.informe-breve .ib-meta {
+  display: grid;
+  gap: 0.5cqi;
+  margin: 0;
+  font-size: var(--t-xs);
+}
+
+.informe-breve .ib-meta div {
+  display: grid;
+  grid-template-columns: 9cqi auto;
+  gap: 1cqi;
+}
+
+.informe-breve .ib-meta dt {
+  font-family: var(--fuente-mono);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--tenue);
+}
+
+.informe-breve .ib-meta dd {
+  margin: 0;
+  font-weight: 700;
+}
+
+.informe-breve .ib-meta small {
+  margin-left: 0.6cqi;
+  font-weight: 400;
+  color: var(--tenue);
+}
+
+.informe-breve .ib-seccion {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.4cqi 1.6cqi;
+  margin: 0 0 1.1cqi;
+  padding-bottom: 0.7cqi;
+  border-bottom: 1px solid var(--linea);
+  font-family: var(--fuente-mono);
+  font-size: var(--ib-mono);
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--tinta);
+}
+
+.informe-breve .ib-seccion small {
+  font-family: var(--fuente-texto);
+  font-size: var(--t-xs);
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--tenue);
+  font-weight: 400;
+}
+
+.informe-breve .ib-etiqueta {
+  font-family: var(--fuente-mono);
+  font-size: var(--ib-mono);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--laton);
+}
+
+.informe-breve .ib-bluf {
+  padding: 1.4cqi 2cqi 1.5cqi;
+  background: var(--azul-niebla);
+  border-left: 0.7cqi solid var(--laton);
+}
+
+.informe-breve .ib-bluf p {
+  margin: 0.5cqi 0 0;
+  font-family: var(--fuente-titulo);
+  font-size: var(--ib-bluf);
+  font-weight: 400;
+  line-height: 1.42;
+}
+
+.informe-breve .ib-juicios {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.4cqi;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.informe-breve .ib-juicio {
+  display: flex;
+  flex-direction: column;
+}
+
+.informe-breve .ib-juicio-cabeza {
+  display: grid;
+  grid-template-columns: 3.6cqi 1fr;
+  align-items: baseline;
+  min-height: 5.4cqi;
+}
+
+.informe-breve .ib-num {
+  font-family: var(--fuente-mono);
+  font-size: var(--t-m);
+  color: var(--laton);
+  line-height: 1.1;
+}
+
+.informe-breve .ib-juicio .ib-juicio-titulo {
+  margin: 0;
+  font-family: var(--fuente-titulo);
+  font-size: var(--ib-h3);
+  font-weight: 500;
+  line-height: 1.22;
+}
+
+.informe-breve .ib-juicio p {
+  margin: 0.8cqi 0 0;
+  font-size: var(--ib-s);
+  line-height: 1.42;
+}
+
+.informe-breve .ib-origen {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3cqi 1.3cqi;
+  margin-top: 0.7cqi;
+}
+
+.informe-breve .ib-figura {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  height: var(--ib-fig-h);
+  margin: 0.6cqi 0 0;
+  padding: 0.8cqi 0 0.7cqi;
+  border-top: 1px solid var(--linea);
+  border-bottom: 1px solid var(--linea);
+  text-align: center;
+}
+
+.informe-breve .ib-figura figcaption {
+  margin-top: 0.4cqi;
+  font-size: var(--t-xs);
+  line-height: 1.25;
+  color: var(--tenue);
+}
+
+.informe-breve .ib-indicador {
+  display: block;
+  width: 72%;
+}
+
+.informe-breve .ib-cifra-figura {
+  font-family: var(--fuente-titulo);
+  font-size: var(--ib-fig-num);
+  line-height: 1;
+}
+
+.informe-breve .ib-cifra-figura small {
+  margin-left: 0.5cqi;
+  font-family: var(--fuente-texto);
+  font-size: var(--t-xs);
+  color: var(--tenue);
+}
+
+.informe-breve .ib-medidor {
+  width: 100%;
+  padding-top: 1.2cqi;
+}
+
+.informe-breve .ib-medidor-pista {
+  display: block;
+  height: 2cqi;
+  background: var(--azul-claro);
+}
+
+.informe-breve .ib-medidor-relleno {
+  display: block;
+  height: 100%;
+  background: var(--azul-profundo);
+}
+
+.informe-breve .ib-medidor-escala {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.3cqi;
+  font-size: var(--t-xs);
+  color: var(--tenue);
+}
+
+.informe-breve .ib-conf {
+  display: block;
+  margin-top: 0.7cqi;
+  font-size: var(--t-xs);
+  line-height: 1.35;
+  color: var(--tenue);
+}
+
+.informe-breve .ib-conf b {
+  color: var(--tinta);
+}
+
+.informe-breve .ib-puntos {
+  display: inline-flex;
+  gap: 0.3cqi;
+  margin-right: 0.7cqi;
+  vertical-align: middle;
+}
+
+.informe-breve .ib-puntos i {
+  width: 1.05cqi;
+  height: 1.05cqi;
+  border-radius: 50%;
+  border: 0.2cqi solid var(--tinta);
+}
+
+.informe-breve .ib-puntos i[data-lleno] {
+  background: var(--tinta);
+}
+
+.informe-breve .ib-tareas-cabeza,
+.informe-breve .ib-tarea {
+  display: grid;
+  grid-template-columns: 36.5cqi 6cqi 1fr 3.4cqi;
+  gap: 1.2cqi;
+  align-items: center;
+}
+
+.informe-breve .ib-tareas-cabeza {
+  padding-bottom: 0.5cqi;
+  font-size: var(--t-xs);
+  color: var(--tenue);
+}
+
+.informe-breve .ib-tareas-cabeza .sello {
+  margin-left: 0.6cqi;
+}
+
+.informe-breve .ib-escala {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--fuente-mono);
+}
+
+.informe-breve .ib-tareas {
+  display: grid;
+  gap: 0.55cqi;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.informe-breve .ib-tarea-nombre,
+.informe-breve .ib-tarea-celda {
+  font-size: var(--ib-s);
+  line-height: 1.2;
+}
+
+.informe-breve .ib-tarea-tiempo {
+  font-size: var(--t-xs);
+  color: var(--tenue);
+}
+
+/* El sello de Faro y la marca «Incierta» siguen al nombre en su misma celda, con la letra de los sellos. Pueden
+   partirse entre una marca y otra: cada sello conserva su nombre entero (white-space del sello en la portada). */
+.informe-breve .ib-tarea-marcas {
+  font-size: var(--t-xs);
+  color: var(--tenue);
+}
+
+.informe-breve .ib-tarea-pista {
+  position: relative;
+  display: block;
+  height: 1.6cqi;
+  background: var(--azul-claro);
+}
+
+.informe-breve .ib-tarea-relleno {
+  display: block;
+  height: 100%;
+  background: var(--azul-profundo);
+}
+
+.informe-breve .ib-tarea-valor {
+  font-family: var(--fuente-titulo);
+  font-size: var(--ib-s);
+  text-align: right;
+}
+
+.informe-breve .ib-leyenda-tareas {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6cqi 1.2cqi;
+  margin: 1cqi 0 0;
+  font-size: var(--t-xs);
+  color: var(--tenue);
+}
+
+/* La línea que dice cuántas tareas caben en la hoja impresa, con la letra de la leyenda: solo sale en papel. */
+.informe-breve .ib-tareas-fuera {
+  display: none;
+  margin: 1cqi 0 0;
+  font-size: var(--t-xs);
+  line-height: 1.45;
+  color: var(--tenue);
+}
+
+.informe-breve .ib-leyenda-tareas i {
+  display: inline-block;
+  width: 2.4cqi;
+  height: 1.1cqi;
+}
+
+.informe-breve .ib-tuyo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 3cqi;
+}
+
+.informe-breve .ib-menos,
+.informe-breve .ib-no-hace {
+  display: grid;
+  gap: 0.55cqi;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.informe-breve .ib-menos li,
+.informe-breve .ib-no-hace li {
+  font-size: var(--t-xs);
+  line-height: 1.4;
+  color: var(--tenue);
+}
+
+.informe-breve .ib-no-hace li {
+  font-size: var(--ib-s);
+  color: var(--tinta);
+}
+
+.informe-breve .sello[data-tipo="tu"]::before {
+  border-radius: 50%;
+  background: var(--laton);
+}
+
+.informe-breve .sello[data-tipo="oficial"]::before {
+  background: var(--azul-profundo);
+}
+
+.informe-breve .sello[data-tipo="faro"]::before {
+  border: 0.26cqi dashed var(--azul-profundo);
+}
+
+.informe-breve .sello[data-tipo="ia"]::before {
+  background: var(--tinta);
+  clip-path: polygon(50% 0, 62% 38%, 100% 50%, 62% 62%, 50% 100%, 38% 62%, 0 50%, 38% 38%);
+}
+
+.informe-breve .ib-mercado {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.1cqi;
+}
+
+.informe-breve .ib-tarjeta {
+  display: flex;
+  flex-direction: column;
+  padding: 0.9cqi 0.95cqi 0.95cqi;
+  border: 1px solid var(--linea);
+  border-top: 0.6cqi solid var(--estable);
+}
+
+.informe-breve .ib-tarjeta[data-tono="alerta"] {
+  border-top-color: var(--alerta);
+}
+
+.informe-breve .ib-tarjeta[data-tono="favorable"] {
+  border-top-color: var(--favorable);
+}
+
+.informe-breve .ib-tarjeta-cabeza {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 1cqi;
+  row-gap: 0.2cqi;
+  align-items: center;
+}
+
+.informe-breve .ib-tarjeta .ib-tarjeta-titulo {
+  margin: 0;
+  font-size: var(--t-s);
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.informe-breve .ib-estado {
+  flex: none;
+  font-family: var(--fuente-mono);
+  font-size: var(--ib-mono);
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--tinta);
+}
+
+.informe-breve .ib-comarca-pista span {
+  display: block;
+  height: 100%;
+  background: var(--azul-profundo);
+}
+
+/* ---------- Medidas de los datos (data-ancho → --ancho, data-valor → --valor) ---------- */
+.informe-breve .ib-tarea-relleno,
+.informe-breve .ib-medidor-relleno,
+.informe-breve .ib-comarca-pista span,
+.informe-breve .ib-p2-relleno {
+  width: var(--ancho, 0%);
+}
+
+.informe-breve .ib-estado span {
+  color: var(--estable);
+}
+
+.informe-breve .ib-estado[data-tono="alerta"] span {
+  color: var(--alerta);
+}
+
+.informe-breve .ib-estado[data-tono="favorable"] span {
+  color: var(--favorable);
+}
+
+.informe-breve .ib-cifra {
+  margin-top: 0.7cqi;
+  font-family: var(--fuente-titulo);
+  font-size: var(--ib-cifra);
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+}
+
+.informe-breve .ib-cifra small {
+  margin-left: 0.5cqi;
+  font-family: var(--fuente-texto);
+  font-size: var(--t-xs);
+  color: var(--tenue);
+}
+
+/* La unidad larga de esta relación debe mantener su propio interlineado al partirse en la tarjeta. */
+.informe-breve :where(.ib-tarjeta[data-comparacion]) .ib-cifra small {
+  display: block;
+  margin: 0.25em 0 0;
+  line-height: 1.3;
+}
+
+.informe-breve .ib-tarjeta p {
+  flex: 1;
+  margin: 0.5cqi 0 0;
+  font-size: var(--t-xs);
+  line-height: 1.45;
+}
+
+.informe-breve .ib-leer {
+  padding: 1.1cqi 1.8cqi 1.2cqi;
+  background: var(--azul-niebla);
+}
+
+.informe-breve .ib-leer .ib-seccion {
+  border-bottom-color: var(--azul-claro);
+}
+
+.informe-breve .ib-leer-rejilla {
+  display: grid;
+  grid-template-columns: 1.25fr 1fr 1.25fr;
+  gap: 1.2cqi 2.6cqi;
+}
+
+.informe-breve .ib-sellos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3cqi 1.4cqi;
+}
+
+.informe-breve .ib-leer .ib-sellos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35cqi 1.3cqi;
+  margin-bottom: 0.5cqi;
+}
+
+.informe-breve .ib-confs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3cqi 1.4cqi;
+}
+
+.informe-breve .ib-leer .ib-conf {
+  display: inline-block;
+  margin: 0;
+}
+
+.informe-breve .ib-leer .ib-leyenda-titulo {
+  margin: 0 0 0.4cqi;
+  font-size: var(--t-xs);
+  font-weight: 700;
+  color: var(--tinta);
+}
+
+.informe-breve .ib-leer p {
+  margin: 0;
+  font-size: var(--t-xs);
+  line-height: 1.45;
+  color: var(--tenue);
+}
+
+.informe-breve .ib-leer p.ib-colores {
+  margin-top: 0.5cqi;
+}
+
+.informe-breve .ib-fuentes {
+  margin: 0;
+  font-size: var(--t-xs);
+  line-height: 1.45;
+  color: var(--tenue);
+}
+
+.informe-breve .ib-fuentes b {
+  margin-right: 0.6cqi;
+  font-family: var(--fuente-mono);
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--tinta);
+}
+
+@media screen and (max-width: 759px) {
+  .informe-breve .hoja.ib {
+    --ib-h1: 30px;
+    --ib-cifra: 28px;
+    --ib-gap: 20px;
+  }
+
+  .informe-breve .ib-final > .ib-cuerpo {
+    padding-bottom: 64px;
+  }
+
+  .informe-breve .ib-banda {
+    flex-direction: column;
+    gap: 4px;
+    padding: 10px var(--ib-m);
+  }
+
+  .informe-breve .ib-cabecera {
+    grid-template-columns: 1fr;
+    padding: 22px 0 14px;
+  }
+
+  .informe-breve .ib-titular .ib-marca {
+    font-size: 20px;
+  }
+
+  .informe-breve .ib-antetitulo {
+    margin-top: 16px;
+  }
+
+  .informe-breve .ib-meta div {
+    grid-template-columns: 92px auto;
+  }
+
+  .informe-breve .hoja.ib {
+    --ib-fig-num: 40px;
+    --ib-fig-h: auto;
+  }
+
+  .informe-breve .ib-juicios {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .informe-breve .ib-juicio-cabeza {
+    grid-template-columns: 34px 1fr;
+    min-height: 0;
+  }
+
+  .informe-breve .ib-figura {
+    padding: 14px 0 12px;
+  }
+
+  .informe-breve .ib-indicador {
+    width: 200px;
+  }
+
+  .informe-breve .ib-bluf {
+    padding: 14px 16px 16px;
+    border-left-width: 6px;
+  }
+
+  .informe-breve .ib-tarjeta {
+    padding: 12px 14px 14px;
+    border-top-width: 5px;
+  }
+
+  .informe-breve .ib-leer {
+    padding: 14px 16px 16px;
+  }
+
+  .informe-breve .ib-tareas-cabeza {
+    display: none;
+  }
+
+  .informe-breve .ib-tarea {
+    grid-template-columns: 1fr 36px;
+    gap: 4px 10px;
+  }
+
+  .informe-breve .ib-tarea-nombre,
+  .informe-breve .ib-tarea-celda {
+    grid-column: 1 / -1;
+  }
+
+  .informe-breve .ib-tarea-tiempo {
+    grid-column: 1 / -1;
+    order: 2;
+  }
+
+  .informe-breve .ib-tarea-pista {
+    height: 12px;
+  }
+
+  .informe-breve .ib-tuyo,
+  .informe-breve .ib-mercado,
+  .informe-breve .ib-leer-rejilla {
+    grid-template-columns: 1fr;
+  }
+
+  .informe-breve .ib-puntos i {
+    width: 8px;
+    height: 8px;
+    border-width: 1.5px;
+  }
+
+  .informe-breve .ib-medidor-pista {
+    height: 14px;
+  }
+
+  .informe-breve .sello[data-tipo="faro"]::before {
+    border-width: 2px;
+  }
+}
+
+.informe-breve .ib-dos {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 3cqi;
+}
+
+.informe-breve .ib-figura-ancha {
+  margin: 0;
+}
+
+.informe-breve .ib-texto {
+  margin: 0.6cqi 0 0;
+  font-size: var(--t-xs);
+  line-height: 1.45;
+}
+
+@media screen and (max-width: 759px) {
+  .informe-breve .ib-dos {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+.informe-breve .ib-comarcas {
+  display: grid;
+  gap: 0.55cqi;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.informe-breve .ib-comarca {
+  display: grid;
+  grid-template-columns: 17cqi 1fr 3cqi;
+  gap: 1cqi;
+  align-items: center;
+  font-size: var(--t-xs);
+}
+
+.informe-breve .ib-comarca b {
+  font-family: var(--fuente-titulo);
+  font-size: var(--ib-s);
+  font-weight: 400;
+  text-align: right;
+}
+
+.informe-breve .ib-comarca-pista {
+  display: block;
+  height: 1.5cqi;
+  background: var(--azul-niebla);
+}
+
+.informe-breve .ib-comarca[data-resto] .ib-comarca-pista span {
+  background: #9aa3ab;
+}
+
+@media screen and (max-width: 759px) {
+  .informe-breve .ib-comarca {
+    grid-template-columns: 130px 1fr 30px;
+    gap: 8px;
+  }
+
+  .informe-breve .ib-comarca-pista {
+    height: 10px;
+  }
+}
+
+.informe-breve .ib-reticula {
+  display: block;
+  align-self: stretch;
+  width: 100%;
+  margin-top: 1cqi;
+}
+
+.informe-breve .ib-icono {
+  grid-row: span 2;
+  width: 3cqi;
+  height: 3cqi;
+  color: var(--azul-profundo);
+}
+
+.informe-breve .ib-tarea-relleno {
+  border-radius: 0 0.35cqi 0.35cqi 0;
+}
+
+.informe-breve .ib-l-rampa {
+  background: linear-gradient(90deg, #86b6ef 0 33%, #2f74c8 33% 66%, #184f95 66%);
+}
+
+@media screen and (max-width: 759px) {
+  .informe-breve .ib-icono {
+    width: 26px;
+    height: 26px;
+  }
+}
+
+.informe-breve .ib-leer {
+  padding: 1cqi 1.6cqi 1.1cqi;
+}
+
+.informe-breve .ib-leer-rejilla {
+  grid-template-columns: 1.3fr 1.2fr 1fr;
+  gap: 0.8cqi 2.4cqi;
+}
+
+.informe-breve .ib-leer .ib-sellos {
+  gap: 0.25cqi 1.1cqi;
+  margin-bottom: 0;
+}
+
+.informe-breve .ib-confs {
+  gap: 0.25cqi 1.1cqi;
+}
+
+.informe-breve .ib-titular-bloque {
+  margin: 0 0 1.1cqi;
+  font-family: var(--fuente-titulo);
+  font-size: var(--ib-s);
+  font-weight: 500;
+}
+
+.informe-breve .ib-perfil2 {
+  display: grid;
+  gap: 1.15cqi;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.informe-breve .ib-p2 {
+  display: grid;
+  grid-template-columns: 17cqi 13cqi 1fr 19cqi;
+  gap: 1.6cqi;
+  align-items: center;
+  font-size: var(--t-xs);
+}
+
+.informe-breve .ib-p2-nombre {
+  color: var(--tinta);
+}
+
+.informe-breve .ib-p2-cifra {
+  color: var(--tenue);
+  white-space: nowrap;
+}
+
+.informe-breve .ib-p2-cifra b {
+  margin-right: 0.4cqi;
+  font-family: var(--fuente-titulo);
+  font-size: 1.85cqi;
+  font-weight: 500;
+  color: var(--tinta);
+}
+
+.informe-breve .ib-p2-barra {
+  position: relative;
+  display: block;
+  height: 1cqi;
+  background: var(--azul-claro);
+}
+
+.informe-breve .ib-p2-relleno {
+  display: block;
+  height: 100%;
+  background: var(--azul-profundo);
+}
+
+.informe-breve .ib-p2-media {
+  position: absolute;
+  top: -0.5cqi;
+  bottom: -0.5cqi;
+  width: 0.25cqi;
+  margin-left: -0.125cqi;
+  background: var(--tinta);
+}
+
+.informe-breve .ib-p2-media i {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: 0.15cqi;
+  font-size: 1.15cqi;
+  font-style: normal;
+  color: var(--tenue);
+  white-space: nowrap;
+}
+
+.informe-breve .ib-p2-frase {
+  font-weight: 700;
+  color: var(--tinta);
+}
+
+.informe-breve .ib-tabla {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--t-xs);
+  line-height: 1.35;
+}
+
+.informe-breve .ib-tabla th {
+  padding: 0 1cqi 0.35cqi 0;
+  border-bottom: 1px solid var(--tinta);
+  font-family: var(--fuente-mono);
+  font-size: var(--ib-mono);
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--tenue);
+  text-align: left;
+  white-space: nowrap;
+}
+
+.informe-breve .ib-tabla td {
+  padding: 0.5cqi 1cqi 0.5cqi 0;
+  border-bottom: 1px solid var(--linea);
+  vertical-align: top;
+}
+
+.informe-breve .ib-tabla td b {
+  font-family: var(--fuente-titulo);
+  font-size: var(--ib-s);
+  font-weight: 500;
+}
+
+.informe-breve .ib-tabla td small {
+  display: block;
+  color: var(--tenue);
+}
+
+.informe-breve .ib-tabla-tendencias td:last-child {
+  white-space: nowrap;
+}
+
+@media screen {
+  .informe-breve .ib-p2 {
+    grid-template-columns: minmax(0, 17cqi) minmax(0, 13cqi) minmax(0, 1fr) minmax(0, 19cqi);
+  }
+
+  .informe-breve .ib-p2-cifra {
+    white-space: normal;
+  }
+
+  /* La etiqueta se desplaza hacia dentro en los extremos de la barra. */
+  .informe-breve .ib-p2-media i {
+    transform: translateX(calc(var(--valor, 0) * -1%));
+  }
+
+  /* La hoja puede ser estrecha aunque la ventana sea ancha; con texto ampliado también necesita más espacio. */
+  @container (max-width: 50rem) {
+    .informe-breve .ib-p2 {
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 6px 10px;
+    }
+
+    .informe-breve .ib-p2-barra {
+      grid-column: 1 / -1;
+      height: 9px;
+      margin-top: 1.5em;
+    }
+
+    .informe-breve .ib-p2-media {
+      top: -4px;
+      bottom: -4px;
+      width: 2px;
+      margin-left: -1px;
+    }
+
+    .informe-breve .ib-p2-media i {
+      font-size: 0.92em;
+    }
+
+    .informe-breve .ib-p2-frase {
+      grid-column: 1 / -1;
+    }
+
+    .informe-breve .ib-p2-cifra b {
+      font-size: 1.5em;
+    }
+  }
+}
+
+.informe-breve .ib-tabla-tendencias td:first-child {
+  width: 38%;
+}
+
+.informe-breve .ib-tabla-tendencias td:nth-child(3) {
+  width: 27%;
+}
+
+.informe-breve .ib-tabla-tendencias td:nth-child(2) {
+  white-space: nowrap;
+}
+
+@media screen and (max-width: 759px) {
+  .informe-breve .ib-tabla-tendencias td:first-child {
+    width: auto;
+  }
+
+  .informe-breve .ib-tabla-tendencias td:nth-child(2) {
+    white-space: normal;
+  }
+}
+
+.informe-breve .ib-menos li b {
+  display: block;
+  font-size: var(--ib-s);
+  color: var(--tinta);
+}
+
+.informe-breve .ib-no-hace li b {
+  font-weight: 700;
+}
+
+.informe-breve .ib-confs-linea .ib-conf b {
+  font-weight: 700;
+}
+
+.informe-breve .ib-confs-linea .ib-conf b::first-letter {
+  text-transform: uppercase;
+}
+
+.informe-breve .ib-perfil2 {
+  gap: 0.9cqi;
+}
+
+.informe-breve .ib-titular-bloque {
+  margin-bottom: 0.9cqi;
+}
+
+.informe-breve .ib-tabla td {
+  padding-top: 0.32cqi;
+  padding-bottom: 0.32cqi;
+}
+
+.informe-breve .ib-leer-rejilla {
+  grid-template-columns: 1.2fr 1.05fr 1.35fr;
+}
+
+.informe-breve .ib-perfil2 {
+  margin-top: 1.4cqi;
+}
+
+.informe-breve .ib-tabla-tendencias {
+  table-layout: fixed;
+}
+
+.informe-breve .ib-tabla-tendencias th:nth-child(1) {
+  width: 36%;
+}
+
+.informe-breve .ib-tabla-tendencias th:nth-child(2) {
+  width: 24%;
+}
+
+.informe-breve .ib-tabla-tendencias th:nth-child(3) {
+  width: 26%;
+}
+
+.informe-breve .ib-tabla-tendencias th:nth-child(4) {
+  width: 14%;
+}
+
+.informe-breve .ib-tabla-tendencias td:first-child,
+.informe-breve .ib-tabla-tendencias td:nth-child(3) {
+  width: auto;
+}
+
+.informe-breve .ib-tabla-tendencias td:nth-child(2) {
+  white-space: normal;
+}
+
+@media screen and (max-width: 759px) {
+  .informe-breve .ib-tabla-tendencias {
+    table-layout: auto;
+  }
+}
+
+.informe-breve .ib-columnas-v2 {
+  display: block;
+  width: 100%;
+  max-height: 15.8cqi;
+}
+
+/* En pantalla el alto no baja del que tiene en la hoja de 1080 px: en una hoja más estrecha el gráfico no encoge sus
+   cifras por debajo de lo legible y lo limita su ancho. */
+@media screen {
+  .informe-breve .ib-columnas-v2 {
+    max-height: max(15.8cqi, 170px);
+  }
+}
+
+@media screen and (max-width: 759px) {
+  .informe-breve .ib-columnas-v2 {
+    max-height: none;
+  }
+}
+
+/* «Baja» en naranja: validado frente al verde de «Sube» y «Estable» con el validador de paletas (sin fallos). */
+.informe-breve {
+  --alerta: #d4770c;
+}
+
+/* Tantas columnas como tarjetas con datos (la de ofertas falta si no hay originales); en el móvil, una. */
+@media print, screen and (min-width: 760px) {
+  .informe-breve .ib-mercado[data-tarjetas="3"] {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .informe-breve .ib-mercado[data-tarjetas="2"] {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.informe-breve .ib-p2-media {
+  left: calc(var(--valor, 0) * 1%);
+}
+
+/* Rampa de azules de las tareas, con los umbrales de la OIT (0,4 y 0,6): más oscuro, más expuesta. */
+.informe-breve .ib-tarea-relleno[data-franja="alta"] {
+  background: var(--azul-profundo);
+}
+
+.informe-breve .ib-tarea-relleno[data-franja="media"] {
+  background: var(--azul);
+}
+
+.informe-breve .ib-tarea-relleno[data-franja="baja"] {
+  background: var(--azul-suave);
+}
+
+.informe-breve .ib-tarea-pista[data-sin-nota] {
+  background: none;
+}
+
+.informe-breve .ib-sin-nota {
+  font-size: var(--t-xs);
+  color: var(--tenue);
+}
+
+/* En el móvil, las dos columnas de «lo tuyo» van una debajo de otra, con aire entre ellas. */
+@media screen and (max-width: 759px) {
+  .informe-breve .ib-tuyo {
+    row-gap: 20px;
+  }
+}
+
+/* ---------- Botones del final, fuera de las hojas ---------- */
+.informe-breve .ib-cierre {
+  width: var(--ancho-hoja);
+  margin: 0 auto 32px;
+}
+
+@media print {
+  /* La página que recibe el informe puede dejar aire encima (el paso 4 del recorrido, 8 px): al imprimir se quita, y
+     el informe empieza en el margen superior de su página (@page informe). */
+  body :has(.informe-breve) {
+    margin-top: 0;
+    padding-top: 0;
+  }
+
+  .informe-breve .ib-cierre {
+    display: none;
+  }
+
+  /* Tras la última hoja no se fuerza otra página: lo que venga detrás continúa en la misma si cabe. */
+  .informe-breve .hoja:last-child {
+    break-after: auto;
+  }
+
+  .informe-breve .documento {
+    gap: 0;
+  }
+}
+
+/* ---------- Los sellos de la portada, que pesan más que las demás «b» del informe ---------- */
+.informe-breve .hoja.ib .sello {
+  gap: 0.55cqi;
+}
+
+.informe-breve .hoja.ib .sello b {
+  letter-spacing: 0.02em;
+  text-transform: none;
+  white-space: nowrap;
+}
+
+/* En papel el pie va al final del contenido y las frases pueden partirse dentro de la tabla.
+   Se compactan solo los espacios y los anchos: los tamaños de letra y todo el contenido se conservan. */
+@media print {
+  .informe-breve .hoja.ib {
+    --ib-gap: 0.5cqi;
+    --ib-m: 3.5cqi;
+  }
+
+  .informe-breve .ib-banda {
+    padding-block: 0.7cqi;
+  }
+
+  .informe-breve .ib-seccion {
+    margin-bottom: 0.7cqi;
+    padding-bottom: 0.4cqi;
+  }
+
+  .informe-breve .ib-cabecera {
+    padding-top: 1.6cqi;
+    padding-bottom: 0.9cqi;
+  }
+
+  .informe-breve .ib-cuerpo {
+    flex: 0 0 auto;
+  }
+
+  /* Firefox no respeta break-before: avoid en el pie: si la hoja no cabe en su página, deja en la siguiente el pie solo
+     o su aire. Por eso el último bloque del cuerpo y el pie van juntos en el cierre de la hoja, que no se parte: pasan
+     juntos a la página siguiente. El pie no lleva aire debajo; lo da el margen de la página. */
+  .informe-breve .ib-final {
+    margin-top: auto;
+    break-inside: avoid;
+  }
+
+  .informe-breve .hoja-pie {
+    position: static;
+    margin: 0 var(--margen);
+  }
+
+  .informe-breve .ib-tareas-cabeza,
+  .informe-breve .ib-tarea {
+    grid-template-columns: 36.5cqi 7.5cqi minmax(0, 1fr) 3.4cqi;
+  }
+
+  .informe-breve .ib-tarea-tiempo {
+    white-space: nowrap;
+  }
+
+  /* Una palabra más ancha que su columna se parte para no invadir las de al lado; así la cuenta las líneas el reparto
+     de tareas-en-papel.ts. */
+  .informe-breve .ib-tarea-nombre {
+    overflow-wrap: anywhere;
+  }
+
+  /* En papel, la hoja 1 imprime las tareas que caben enteras (tareas-en-papel.ts); las demás (y la cabecera y la
+     leyenda de las filas, si no cabe ninguna) se quedan en pantalla, y la línea de debajo lo dice. */
+  .informe-breve [data-solo-pantalla] {
+    display: none;
+  }
+
+  .informe-breve .ib-tareas-fuera {
+    display: block;
+  }
+
+  .informe-breve .ib-tarjeta p {
+    line-height: 1.2;
+  }
+
+  .informe-breve .ib-p2 {
+    grid-template-columns: 19cqi 15cqi minmax(0, 1fr) 24cqi;
+    gap: 1cqi;
+    line-height: 1.3;
+  }
+
+  .informe-breve .ib-texto,
+  .informe-breve .ib-fuentes,
+  .informe-breve .ib-leer p {
+    line-height: 1.3;
+  }
+
+  .informe-breve .ib-leer .ib-sellos {
+    column-gap: 0.6cqi;
+  }
+
+  /* La primera columna lleva el nombre del grupo de la persona, que puede ser largo: recibe la mayor parte. */
+  .informe-breve .ib-tabla-tendencias th:nth-child(1) {
+    width: 44%;
+  }
+
+  .informe-breve .ib-tabla-tendencias th:nth-child(3) {
+    width: 18%;
+  }
+
+  .informe-breve .ib-tabla-tendencias th:nth-child(4) {
+    width: 14%;
+  }
+
+  .informe-breve .ib-tabla-tendencias td:last-child {
+    white-space: normal;
+  }
+}
+
+/* Contexto consultable con el mismo desplegable del método, fuera de las hojas A4. */
+.informe-breve .ib-contexto {
+  width: var(--ancho-hoja);
+  margin: 0 auto 32px;
+  padding-inline: 16px;
+  --color-tinta: var(--tinta);
+  --color-tenue: var(--tenue);
+  --color-linea: var(--linea);
+  color: var(--tinta);
+  background: var(--papel);
+}
+
+.informe-breve .ib-contexto .contenido {
+  overflow-wrap: anywhere;
+}
+
+.informe-breve .ib-consulta-tareas .contenido {
+  overflow-x: auto;
+}
+
+@media print {
+  .informe-breve .ib-tarea,
+  .informe-breve .ib-tarjeta {
+    break-inside: avoid;
+  }
+}
+
+@media screen and (max-width: 759px) {
+  .informe-breve .ib-tabla th,
+  .informe-breve .ib-tabla-tendencias td:last-child {
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+}
+
+@media screen {
+  .informe-breve .ib-meta div {
+    grid-template-columns: max-content minmax(0, 1fr);
+  }
+
+  .informe-breve .ib-juicio-cabeza {
+    grid-template-columns: max-content minmax(0, 1fr);
+    gap: 0.5em;
+    flex-shrink: 0;
+  }
+
+  .informe-breve .ib-figura {
+    height: auto;
+    min-height: var(--ib-fig-h);
+    flex-shrink: 0;
+  }
+
+  .informe-breve .ib-p2-nombre {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+
+  .informe-breve .ib-tabla-tendencias th,
+  .informe-breve .ib-tabla-tendencias td:last-child {
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+
+  .informe-breve .ib-comarca {
+    grid-template-columns: minmax(0, 17cqi) minmax(0, 1fr) max(3cqi, 2.5em);
+  }
+}
+
+@media screen and (min-width: 760px) {
+  .informe-breve .ib-tareas-cabeza,
+  .informe-breve .ib-tarea {
+    font-size: var(--t-xs);
+    grid-template-columns: minmax(0, 36.5cqi) max(6cqi, 5em) minmax(0, 1fr) max(3.4cqi, 2.5em);
+  }
+}
+
+@media screen and (max-width: 759px) {
+  .informe-breve .ib-comarca {
+    grid-template-columns: minmax(0, 130px) minmax(0, 1fr) max(30px, 2.5em);
+  }
+}
+
+/* Página autónoma del breve: al imprimir, solo su documento; la marca del ejemplo vive en sus dos bandas. */
+@media print {
+  body:has(> main.informe-breve) {
+    margin: 0;
+    padding: 0;
+    background: white;
+  }
+
+  body:has(> main.informe-breve) > :not(main.informe-breve) {
+    display: none;
+  }
+}
+
+/* La serie anual se presenta en papel con la misma tabla de cifras que en el informe aprobado. */
+.informe-breve .ib-serie-papel {
+  display: none;
+}
+
+/* Los pies de la tabla impresa llevan la letra de los pies de su bloque. */
+.informe-breve .ib-serie-papel p {
+  font-size: var(--t-xs);
+  color: var(--tenue);
+}
+
+/* Los apartados de consulta (el detalle de las tareas y los contextos de los datos) son solo de pantalla: en papel no
+   salen, abiertos o cerrados, y no suman páginas. */
+@media print {
+  .informe-breve .ib-contexto,
+  .informe-breve .ib-figura-ancha {
+    display: none;
+  }
+
+  .informe-breve .ib-serie-papel {
+    display: block;
+  }
+}
+
+/* El mercado recupera espacio de separación, sin reducir letra ni recortar contenido. */
+@media print {
+  .informe-breve .hoja.ib:has(.ib-cabecera-2) {
+    --ib-gap: 0.2cqi;
+  }
+  .informe-breve .ib-cabecera-2 {
+    padding-block: 0.5cqi;
+  }
+  .informe-breve .hoja.ib:has(.ib-cabecera-2) .ib-seccion {
+    margin-bottom: 0.3cqi;
+    padding-bottom: 0.2cqi;
+  }
+  /* La tabla, el cierre y el pie de la segunda hoja ceden separación: una línea de holgura sin quitar contenido. */
+  .informe-breve .hoja.ib:has(.ib-cabecera-2) .ib-tabla {
+    line-height: 1.3;
+  }
+  .informe-breve .hoja.ib:has(.ib-cabecera-2) .ib-final > .ib-cuerpo {
+    padding-bottom: 0.3cqi;
+  }
+  .informe-breve .hoja.ib:has(.ib-cabecera-2) .hoja-pie {
+    padding-top: 0.6cqi;
+  }
+  /* El título de la ocupación se repite en el antetítulo y en el encabezado de la hoja: si es largo, se parte en
+     varias líneas con el interlineado de la letra pequeña, y el sello de su fuente se queda a su lado. */
+  .informe-breve .ib-cabecera-2 .ib-antetitulo > span:last-child {
+    line-height: 1.25;
+  }
+  .informe-breve .ib-seccion-ocupacion {
+    flex-wrap: nowrap;
+  }
+  .informe-breve .ib-seccion-ocupacion > span {
+    min-width: 0;
+    line-height: 1.25;
+  }
+  .informe-breve .ib-seccion-ocupacion > small {
+    flex: none;
+  }
+  .informe-breve .ib-tarjeta {
+    padding-block: 0.4cqi;
+  }
+  .informe-breve .ib-tabla td {
+    padding-block: 0.12cqi;
+  }
+  .informe-breve .ib-leer {
+    padding-block: 0.4cqi;
+  }
+}
+/* Presentación compartida del ejemplo y los informes del recorrido. */
+.informe-breve {
+  --ib-panel: #efebe4;
+  --ib-panel-suave: #f4f0e9;
+  --ib-raya: #d4cabb;
+  --ib-azul: #1e5b96;
+  --ib-pista: #dcd5c8;
+}
+
+.informe-breve .ib-cabecera-retrato {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: 0.75em;
+  border-bottom: 3px solid #8c7c63;
+}
+
+.informe-breve .ib-cabecera-retrato > .ib-marca {
+  margin-block-start: 0.45em;
+  white-space: nowrap;
+}
+
+.informe-breve .ib-ficha {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.4em 1em;
+  padding: 0.72em 0.92em;
+  border: 1px solid var(--ib-raya);
+  border-radius: 0.46em;
+  background: var(--ib-panel-suave);
+}
+
+.informe-breve .ib-ficha > div {
+  display: block;
+  min-width: 0;
+}
+.informe-breve .ib-ficha :is(dt, dd) {
+  display: inline;
+}
+.informe-breve .ib-ficha dt {
+  color: var(--tenue);
+}
+.informe-breve .ib-ficha dt::after {
+  content: ": ";
+}
+.informe-breve .ib-ficha dd {
+  font-weight: 600;
+  margin: 0;
+}
+
+.informe-breve .ib-cartas {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.7rem;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.informe-breve .ib-cartas[data-cartas="1"] {
+  grid-template-columns: minmax(0, 1fr);
+}
+.informe-breve .ib-cartas[data-cartas="2"] {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.informe-breve .ib-carta {
+  display: grid;
+  grid-template-rows: auto auto 1fr auto;
+  padding: 0.9rem 1.15rem 0.75rem;
+  border: 1px solid var(--ib-raya);
+  border-radius: 10px;
+  min-width: 0;
+  background: var(--ib-panel);
+  scroll-margin-top: 5rem;
+}
+
+.informe-breve .ib-carta > :is(h2, h3, h4) {
+  margin: 0;
+  padding: 0 0 0.45em;
+  color: inherit;
+  font: 500 clamp(1rem, 1.85cqi, 1.3rem) / 1.24 var(--fuente-titulo);
+  text-wrap: balance;
+}
+
+.informe-breve .ib-carta-figura {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 7.35rem;
+  padding: 0.45rem 0;
+  border-block: 1px solid var(--ib-raya);
+}
+
+.informe-breve .ib-carta-lectura {
+  padding: 0.6rem 0 0.45rem;
+  overflow-wrap: anywhere;
+  font-size: var(--ib-s);
+  line-height: 1.43;
+}
+
+.informe-breve .ib-fuente-breve {
+  display: block;
+  margin-top: auto;
+  padding-top: 0.45em;
+  border-top: 1px solid var(--ib-raya);
+  color: var(--tenue);
+  font-size: var(--t-xs);
+  line-height: 1.3;
+}
+
+/* El hueco del anillo (radio interior de 30 sobre 80) aloja la cifra y su rótulo: con 10rem de ancho y el rótulo en
+   0,875rem caben «de 12 tasques» y «de cada 100» en todas las pantallas. En papel manda su propia medida, en cqi. */
+.informe-breve .ib-anillo {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: min(100%, 10rem);
+  aspect-ratio: 1;
+  line-height: 1.12;
+  font-variant-numeric: tabular-nums;
+}
+.informe-breve .ib-anillo svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke: var(--ib-pista);
+  stroke-width: 8;
+}
+.informe-breve .ib-anillo .ib-anillo-valor {
+  stroke: var(--ib-azul);
+}
+.informe-breve .ib-anillo > :is(strong, span) {
+  position: relative;
+  z-index: 1;
+  max-width: 76%;
+  text-align: center;
+}
+.informe-breve .ib-anillo > strong {
+  font: 500 1.95rem / 1 var(--fuente-titulo);
+}
+.informe-breve .ib-anillo-unidad {
+  margin-top: 0.35em;
+  font-size: 0.875rem;
+  color: var(--tenue);
+}
+.informe-breve .ib-cartas-senales .ib-anillo > strong {
+  font-size: 1.32rem;
+}
+
+.informe-breve .ib-indicador-jornada {
+  width: min(100%, 9.5rem);
+  height: auto;
+}
+.informe-breve .ib-indicador-jornada text {
+  fill: currentColor;
+  font-family: var(--fuente-titulo);
+}
+.informe-breve .ib-indicador-jornada text:last-child {
+  fill: var(--tenue);
+  font-family: var(--fuente-texto);
+  font-size: var(--ib-jornada-unidad, 13px);
+}
+.informe-breve .ib-niveles-grupo {
+  width: 100%;
+  text-align: center;
+}
+.informe-breve .ib-nivel-rotulo {
+  font: 500 1.12em / 1.2 var(--fuente-titulo);
+}
+.informe-breve .ib-niveles-luces {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.35em;
+  margin: 0.85em 0 0.65em;
+}
+.informe-breve .ib-nivel-luz {
+  display: grid;
+  place-items: center;
+  flex: 0 1 1.9em;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: #cbd5c8;
+  color: #4e5148;
+}
+.informe-breve .ib-nivel-luz:nth-child(2) {
+  background: #d6dac9;
+}
+.informe-breve .ib-nivel-luz:nth-child(3) {
+  background: #ded5c2;
+}
+.informe-breve .ib-nivel-luz:nth-child(4) {
+  background: #e5d6c7;
+}
+.informe-breve .ib-nivel-luz:nth-child(5) {
+  background: #e8cbd0;
+}
+.informe-breve .ib-nivel-luz[data-activo] {
+  color: white;
+  background: #9f3045;
+  outline: 2px solid #9f3045;
+  outline-offset: 2px;
+}
+.informe-breve .ib-carta-eje {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.45em;
+  width: 100%;
+  font-size: var(--t-xs);
+  color: var(--tenue);
+}
+
+.informe-breve :is(.ib-barras-compactas, .ib-meses, .ib-sectores-leyenda) {
+  width: 100%;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.informe-breve .ib-barras-compactas {
+  display: grid;
+  gap: 0.55em;
+}
+.informe-breve .ib-barras-compactas li > div {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 0.6em;
+  font-size: var(--ib-s);
+  line-height: 1.27;
+}
+.informe-breve .ib-barra-cifra {
+  flex: none;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+}
+.informe-breve .ib-carta-pista {
+  display: block;
+  margin: 0.26em 0 0.07em;
+  background: var(--ib-pista);
+}
+.informe-breve .ib-barra-tramo {
+  display: block;
+  height: 100%;
+  width: var(--ancho, 0%);
+  background: var(--ib-azul);
+}
+.informe-breve .ib-tipos-contrato,
+.informe-breve .ib-carta .ib-medidor {
+  width: 100%;
+}
+.informe-breve .ib-tipos-contrato li + li .ib-barra-tramo {
+  background: #a59a84;
+}
+.informe-breve .ib-carta-figura > .ib-carta-eje,
+.informe-breve .ib-tipos-contrato > .ib-carta-eje {
+  margin-top: 0.35em;
+}
+
+.informe-breve .ib-meses {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 0.18em;
+  height: 7.55rem;
+  padding-bottom: 0.2em;
+}
+.informe-breve .ib-meses li {
+  min-width: 0;
+  min-height: 0;
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) auto;
+  justify-items: center;
+}
+.informe-breve .ib-mes-columna {
+  width: 72%;
+  display: flex;
+  align-items: flex-end;
+}
+.informe-breve .ib-mes-barra {
+  height: var(--ancho, 0%);
+  width: 100%;
+  background: #6685a4;
+  border-radius: 0.13em 0.13em 0 0;
+}
+.informe-breve .ib-mes-barra[data-maximo] {
+  background: #174c7e;
+}
+.informe-breve .ib-mes-nombre {
+  display: block;
+  margin: 0.4em 0;
+  font-size: var(--t-xs);
+}
+.informe-breve .ib-sectores-pastel {
+  display: block;
+  width: min(100%, 11.45rem);
+  height: auto;
+}
+.informe-breve .ib-sectores-pastel text {
+  font:
+    700 var(--ib-rotulo-sector, 11.5px) system-ui,
+    sans-serif;
+  font-variant-numeric: tabular-nums;
+  dominant-baseline: central;
+}
+.informe-breve .ib-sector-ambito {
+  margin: 0 0 0.45em;
+  color: var(--tenue);
+  font-size: var(--t-xs);
+}
+.informe-breve .ib-sectores-leyenda {
+  display: grid;
+  gap: 0.35em;
+}
+.informe-breve .ib-sectores-leyenda li {
+  display: grid;
+  grid-template-columns: 0.7em minmax(0, 1fr);
+  gap: 0.45em;
+  align-items: start;
+}
+.informe-breve .ib-color-sector {
+  width: 0.65em;
+  height: 0.65em;
+  margin-top: 0.3em;
+  background: #245889;
+}
+.informe-breve .ib-color-sector[data-sector="1"] {
+  background: #788c68;
+}
+.informe-breve .ib-color-sector[data-sector="2"] {
+  background: #b07d58;
+}
+.informe-breve .ib-color-sector[data-sector="3"] {
+  background: #b7aea0;
+}
+
+.informe-breve :is(.ib-contratos-territorio, .ib-perfil-retrato) {
+  background: var(--ib-panel-suave);
+  border: 1px solid var(--ib-raya);
+  border-radius: 10px;
+  padding: 1.15rem;
+}
+.informe-breve .ib-perfil-retrato .ib-p2 {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 8.8rem) minmax(0, 2fr);
+  gap: 0.55em 1em;
+  padding-block: 0.43em;
+  align-items: center;
+}
+.informe-breve .ib-perfil-retrato .ib-p2-cifra {
+  white-space: nowrap;
+}
+.informe-breve .ib-perfil-retrato .ib-p2-barra {
+  margin: 0;
+  grid-column: auto;
+}
+.informe-breve .ib-perfil-retrato .ib-origen {
+  margin-top: 0.55em;
+}
+.informe-breve .ib-comarca[data-resto] .ib-comarca-pista span {
+  background: var(--ib-azul);
+}
+
+.informe-breve
+  :is(
+    .ib-tarea-pista,
+    .ib-tarea-relleno,
+    .ib-medidor-pista,
+    .ib-medidor-relleno,
+    .ib-comarca-pista,
+    .ib-comarca-pista > span,
+    .ib-p2-barra,
+    .ib-p2-relleno,
+    .ib-carta-pista,
+    .ib-barra-tramo
+  ) {
+  border-radius: 999px;
+}
+.informe-breve :is(.ib-tarea-pista, .ib-medidor-pista, .ib-comarca-pista, .ib-p2-barra, .ib-carta-pista) {
+  height: 0.62rem;
+}
+.informe-breve :is(.ib-tarea-pista, .ib-medidor-pista, .ib-comarca-pista, .ib-p2-barra) {
+  background: var(--ib-pista);
+}
+.informe-breve :is(.ib-comarca-pista > span, .ib-medidor-relleno, .ib-p2-relleno) {
+  background: var(--ib-azul);
+}
+.informe-breve .ib-tarea-relleno[data-franja="baja"] {
+  background: #427956;
+}
+.informe-breve .ib-tarea-relleno[data-franja="media"] {
+  background: #a37117;
+}
+.informe-breve .ib-tarea-relleno[data-franja="alta"] {
+  background: #9e4154;
+}
+.informe-breve .ib-subtitulo-tareas {
+  margin: 0.2em 0 0.6em;
+  color: var(--tenue);
+  font-size: var(--ib-s);
+}
+.informe-breve .ib-bloque-tareas > .ib-seccion {
+  margin: 0;
+  border: 0;
+  text-transform: none;
+  letter-spacing: normal;
+  font: 550 clamp(1.1rem, 2.35cqi, 1.5rem) / 1.23 var(--fuente-titulo);
+}
+.informe-breve .ib-tarea-nivel {
+  font: 400 var(--t-xs) / 1.2 var(--fuente-texto);
+  color: var(--tenue);
+  text-align: end;
+}
+
+.informe-breve .ib-mercado .ib-tarjeta {
+  background: var(--ib-panel);
+}
+.informe-breve .ib-mercado .ib-tarjeta-cabeza {
+  display: grid;
+  grid-template-columns: 1.25em minmax(0, 1fr) auto;
+  grid-template-rows: auto;
+  align-items: start;
+  gap: 0.4em;
+}
+.informe-breve .ib-mercado .ib-tarjeta-cabeza > * {
+  grid-row: 1;
+}
+.informe-breve .ib-mercado .ib-estado {
+  grid-column: 3;
+  margin: 0;
+  justify-self: end;
+  white-space: nowrap;
+}
+.informe-breve .ib-mercado .ib-icono {
+  width: 1.1em;
+  height: 1.1em;
+}
+.informe-breve .ib-mercado .ib-cifra {
+  margin-block: 0.2em;
+}
+.informe-breve .ib-mercado .ib-tarjeta-titulo {
+  min-width: 0;
+  overflow-wrap: normal;
+  font-weight: 500;
+}
+.informe-breve .ib-mercado .ib-tarjeta[data-tono="favorable"] {
+  border-top-color: #25885b;
+}
+.informe-breve .ib-mercado .ib-tarjeta:is([data-tono="alerta"], [data-estimacion]) {
+  border-top-color: #a97920;
+}
+.informe-breve .ib-mercado .ib-estado[data-tono="favorable"] {
+  color: #176a49;
+  border-color: #25885b;
+  background: #e4f4eb;
+}
+.informe-breve .ib-mercado :is(.ib-estado[data-tono="alerta"], [data-estimacion] .ib-estado) {
+  color: #644514;
+  border-color: #a97920;
+  background: #fff1d4;
+}
+
+@media screen {
+  .informe-breve .ib-cartas {
+    display: grid;
+  }
+  /* En pantalla la hoja mide 1080 px como máximo y nunca más que su contenedor: en una ventana más estrecha se adapta
+     a su ancho, sin desplazamiento lateral. Esta regla va después de la del móvil, así que también lo cumple allí. */
+  .informe-breve {
+    --ancho-hoja: min(1080px, 100%);
+    --papel: #fdfcf8;
+    --tinta: #292722;
+    --tenue: #625c53;
+    --linea: #d6cfc2;
+    --azul-niebla: var(--ib-panel-suave);
+    --azul-claro: var(--ib-pista);
+    --azul-profundo: var(--ib-azul);
+  }
+  /* La escala de letra sigue al ancho de la hoja, con un suelo legible: en una hoja estrecha (móvil o tableta) el
+     cuerpo no baja de 14 px. En la hoja de 1080 px cada medida en cqi ya supera su suelo y no cambia. */
+  .informe-breve .hoja.ib {
+    --t-xs: max(14px, 1.42cqi);
+    --t-s: max(15px, 1.75cqi);
+    --t-m: max(17px, 2.05cqi);
+    --ib-mono: max(11px, 1.15cqi);
+    --ib-s: max(15px, 1.55cqi);
+    --ib-bluf: max(17px, 1.72cqi);
+    --ib-h3: max(18px, 1.85cqi);
+    --ib-m: clamp(24px, 3.4cqi, 38px);
+    border-color: #d8d0c3;
+    box-shadow: 0 14px 40px rgb(43 37 28 / 9%);
+  }
+  .informe-breve .ib-banda {
+    display: none;
+  }
+  .informe-breve .ib-bluf {
+    background: var(--ib-panel-suave);
+    border-left-color: #9a7a43;
+  }
+  .informe-breve .ib-contratos-territorio .ib-comarca {
+    grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr) 2.8em;
+  }
+  .informe-breve .ib-mercado .ib-estado {
+    font-size: 0.68rem;
+    padding: 0.3em 0.51em;
+  }
+  .informe-breve .ib-cartas-mercado .ib-carta-figura {
+    min-height: 9.5rem;
+  }
+  .informe-breve .ib-cartas-senales .ib-carta {
+    background: var(--ib-panel-suave);
+  }
+  .informe-breve .ib-mes-nombre {
+    transform: rotate(-55deg);
+  }
+  .informe-breve .ib-tarea-nombre {
+    overflow-wrap: anywhere;
+  }
+  .informe-breve .ib-tarea-tiempo,
+  .informe-breve .ib-leyenda-tareas,
+  .informe-breve .ib-tareas-cabeza > :not(.ib-escala),
+  .informe-breve .ib-final .ib-tuyo,
+  .informe-breve .ib-final .ib-fuentes {
+    display: none;
+  }
+  .informe-breve .ib-tareas-cabeza,
+  .informe-breve .ib-tarea {
+    grid-template-columns: minmax(0, 40%) minmax(0, 1fr) 2.45em 3.75em;
+  }
+  .informe-breve .ib-tareas-cabeza > .ib-escala {
+    grid-column: 2;
+  }
+}
+
+@media screen and (min-width: 760px) {
+  .informe-breve .ib-cartas > .ib-carta {
+    grid-template-rows: subgrid;
+    grid-row: span 4;
+    row-gap: 0;
+  }
+}
+@media screen and (min-width: 1100px) {
+  .informe-breve .ib-mercado[data-tarjetas="4"] {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 10px;
+  }
+}
+@media screen and (min-width: 760px) and (max-width: 1099px) {
+  .informe-breve .ib-mercado[data-tarjetas="4"] {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media screen and (max-width: 759px) {
+  .informe-breve .hoja.ib {
+    --ib-m: clamp(14px, 4cqi, 28px);
+  }
+  .informe-breve .ib-cartas,
+  .informe-breve .ib-cartas[data-cartas] {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .informe-breve .ib-ficha > div:first-child {
+    flex-basis: 100%;
+  }
+  .informe-breve .ib-tareas-cabeza,
+  .informe-breve .ib-tarea {
+    grid-template-columns: minmax(0, 1fr) 2em 3.75em;
+  }
+  .informe-breve .ib-tareas-cabeza > .ib-escala {
+    grid-column: 1;
+  }
+  .informe-breve .ib-tarea > .ib-tarea-celda {
+    grid-column: 1 / -1;
+  }
+  .informe-breve .ib-tarea-pista {
+    grid-column: 1;
+  }
+  .informe-breve .ib-tarea-valor {
+    grid-column: 2;
+  }
+  .informe-breve .ib-perfil-retrato .ib-p2 {
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+  .informe-breve .ib-perfil-retrato .ib-p2-barra {
+    grid-area: 2 / 1 / 3 / -1;
+  }
+  .informe-breve .ib-niveles-grupo {
+    max-width: 15rem;
+  }
+}
+
+@media print {
+  .informe-breve .ib-cartas:not([data-solo-pantalla]) {
+    display: grid;
+  }
+  .informe-breve .hoja.ib {
+    --ib-m: 7mm;
+    --ib-gap: 0.7cqi;
+  }
+  .informe-breve .ib-cabecera-retrato {
+    border-bottom-width: 1.5pt;
+  }
+  .informe-breve .ib-ficha {
+    padding: 0.65cqi 0.9cqi;
+    gap: 0.35cqi 0.8cqi;
+  }
+  .informe-breve .ib-cartas {
+    gap: 0.8cqi;
+  }
+  .informe-breve .ib-cartas-mercado[data-cartas="3"] {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1.6fr);
+  }
+  .informe-breve .ib-carta {
+    padding: 1cqi 1.2cqi;
+    border-radius: 1cqi;
+    break-inside: avoid;
+  }
+  .informe-breve .ib-carta > :is(h2, h3, h4) {
+    font-size: 1.85cqi;
+  }
+  .informe-breve .ib-carta-figura {
+    padding: 0.5cqi 0;
+    min-height: 9.8cqi;
+  }
+  .informe-breve .ib-carta-lectura {
+    padding: 0.65cqi 0 0.45cqi;
+    font-size: 1.5cqi;
+    line-height: 1.3;
+  }
+  .informe-breve .ib-fuente-breve,
+  .informe-breve .ib-carta-eje {
+    font-size: 1.35cqi;
+  }
+  .informe-breve .ib-anillo {
+    width: min(100%, 9.5cqi);
+  }
+  .informe-breve .ib-anillo > strong {
+    font-size: 2.55cqi;
+  }
+  .informe-breve .ib-anillo-unidad {
+    font-size: 1.35cqi;
+  }
+  .informe-breve .ib-indicador-jornada {
+    --ib-jornada-unidad: 18.5px;
+    width: min(100%, 13.5cqi);
+  }
+  .informe-breve .ib-niveles-luces {
+    margin-block: 0.65cqi;
+  }
+  .informe-breve .ib-nivel-luz {
+    flex-basis: 2.5cqi;
+  }
+  .informe-breve .ib-barras-compactas {
+    gap: 0.25cqi;
+  }
+  .informe-breve .ib-barras-compactas li > div {
+    font-size: 1.43cqi;
+  }
+  .informe-breve .ib-carta .ib-cifra-figura {
+    font-size: 3.1cqi;
+  }
+  .informe-breve .ib-meses {
+    height: 10.3cqi;
+  }
+  .informe-breve .ib-mes-nombre {
+    font-size: 1.15cqi;
+    letter-spacing: -0.025em;
+  }
+  .informe-breve #sectores-recepcion {
+    grid-template-columns: 11cqi minmax(0, 1fr);
+    grid-template-rows: auto 1fr auto;
+    column-gap: 0.9cqi;
+  }
+  .informe-breve #sectores-recepcion > :is(h3, .ib-fuente-breve) {
+    grid-column: 1 / -1;
+  }
+  .informe-breve #sectores-recepcion .ib-carta-lectura {
+    border-top: 1px solid var(--ib-raya);
+  }
+  .informe-breve .ib-sectores-pastel {
+    --ib-rotulo-sector: 23px;
+    width: 100%;
+  }
+  .informe-breve .ib-sectores-leyenda {
+    gap: 0.18cqi;
+  }
+  .informe-breve :is(.ib-contratos-territorio, .ib-perfil-retrato) {
+    padding: 0.85cqi;
+    border-radius: 1cqi;
+  }
+  .informe-breve .ib-perfil-retrato .ib-p2 {
+    padding-block: 0.2cqi;
+    gap: 0.45cqi;
+    grid-template-columns: 23cqi 14cqi minmax(0, 1fr);
+  }
+  .informe-breve .ib-perfil-retrato .ib-origen {
+    margin-top: 0.35cqi;
+  }
+  .informe-breve .ib-bloque-tareas > .ib-seccion {
+    font-size: 2.4cqi;
+  }
+  .informe-breve .ib-subtitulo-tareas {
+    font-size: 1.65cqi;
+    margin-block: 0.15cqi;
+  }
+  .informe-breve :is(.ib-tarea-pista, .ib-medidor-pista, .ib-comarca-pista, .ib-p2-barra, .ib-carta-pista) {
+    height: 0.95cqi;
+  }
+  .informe-breve .ib-tareas-cabeza,
+  .informe-breve .ib-tarea {
+    grid-template-columns: 36.5cqi 7.5cqi minmax(0, 1fr) 3.4cqi 5.6cqi;
+  }
+  .informe-breve .ib-mercado .ib-tarjeta-cabeza {
+    grid-template-columns: 1.7cqi minmax(0, 1fr) auto;
+    min-height: 3.6cqi;
+  }
+  .informe-breve .ib-mercado .ib-estado {
+    grid-column: 3;
+    font-size: 1.15cqi;
+  }
+  .informe-breve .ib-mercado .ib-tarjeta-titulo {
+    font-size: 1.65cqi;
+  }
+}

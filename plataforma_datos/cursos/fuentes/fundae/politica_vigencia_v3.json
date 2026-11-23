@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "id": "faro:vigencia:fundae",
+  "version": "3",
+  "fuente_id": "fundae",
+  "responsable": "Equipo Faro",
+  "naturaleza": "politica-interna-operativa",
+  "criterios": {
+    "ttl_ficha_segundos": 86400,
+    "ttl_catalogo_segundos": 86400,
+    "requiere_catalogo": false,
+    "zona_fechas_dia": "Europe/Madrid",
+    "inicio_dia_inclusivo": true,
+    "fin_dia_inclusivo": true,
+    "plazo_tecnico": "revision_interna"
+  },
+  "justificacion": "La edición de la oferta subvencionada se identifica con la difusión y el centro que publica FUNDAE. El trámite permite solicitar la preinscripción con cuenta dentro de los días civiles publicados en España. Se comprueba cada fecha de la difusión en sus fichas. El plazo técnico de 24 horas sirve para revisar la fuente.",
+  "revision_equipo_faro": {
+    "estado": "criterio-propuesto-sin-activacion",
+    "fecha": null,
+    "alcance": "Preinscripción de ediciones de teleformación del catálogo 3. La disponibilidad del trámite permite solicitar plaza. La admisión personal y el acceso al aula dependen del centro."
+  }
+}

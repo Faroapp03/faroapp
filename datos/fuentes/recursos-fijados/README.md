@@ -1,0 +1,9 @@
+# Recursos históricos fijados
+
+`captura.zip` conserva las tres entradas históricas admitidas, separadas de las salidas publicadas; solo los dos índices de vectores se publican como recursos fijados. `registro.json` fija sus huellas individuales. No se han creado desde las salidas para justificar su propio origen: se importaron de la captura histórica conservada del paquete y se cotejaron byte a byte con el paquete vigente. La extracción no requiere red ni modelos.
+
+Los dos índices de vectores se generaron el 27/09/2026 con text-embedding-3-small, 512 dimensiones, a partir de nombres oficiales SEPE/ESCO y tareas oficiales de la OIT, respectivamente. Se localizaron los productores históricos vectorizar-formacion.ts y vectorizar-tareas.ts: solicitaban embeddings al servicio configurado y cuantizaban sus respuestas. No se conserva aquí evidencia suficiente de las respuestas originales del proveedor para reconstruir esos bytes desde los textos. La captura permite reproducir la distribución exacta, no volver a generar los embeddings. Las condiciones y fuentes constan en datos/README.md.
+
+La comprobación histórica de enlaces del 06/10/2026 se conserva en la captura como registro: programas SEPE, webs del Consorci y oferta SOC. No se dispone de todas las respuestas HTTP originales y ya no se publica como recurso fijado. Los enlaces los comprueba en cada ciclo la fuente `enlaces` (plataforma_datos/cursos/fuentes/enlaces), que guarda por enlace el código HTTP, la fecha y el destino final, y arranca de lo que esta captura daba por enlazado y por oculto.
+
+El exportador verifica el registro, la captura y las huellas de las entradas antes de publicar sus mismos bytes. Una nueva captura requiere admisión explícita y evidencia de su productor; no se acepta cambiar solo la huella del paquete.

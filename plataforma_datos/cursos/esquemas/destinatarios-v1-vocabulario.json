@@ -1,0 +1,485 @@
+{
+  "version": "destinatarios-1.0.0",
+  "campo": "Curso.destinatario.categorias",
+  "politica": "cerrado; ampliación sólo mediante revisión y cambio de versión",
+  "semantica": "Etiquetas de investigación recibidas. No acredita público expresamente publicado ni exclusividad. Conservar literal, fundamento, revisión y evidencia originales.",
+  "ausencia": "no_consta se conserva en original y traza; no es una población. Su salida es una lista vacía.",
+  "valores": [
+    {
+      "codigo": "agentes_sociales",
+      "etiqueta": "agentes sociales",
+      "naturaleza": "especifica",
+      "estatus": "clasificacion_de_origen_conservada",
+      "definicion": "Conserva exactamente el alcance de la categoría de origen y su fundamento. Sin expansión jerárquica ni equivalencia profesional implícita."
+    },
+    {
+      "codigo": "creadores_contenido",
+      "etiqueta": "creadores contenido",
+      "naturaleza": "especifica",
+      "estatus": "clasificacion_de_origen_conservada",
+      "definicion": "Conserva exactamente el alcance de la categoría de origen y su fundamento. Sin expansión jerárquica ni equivalencia profesional implícita."
+    },
+    {
+      "codigo": "directivos",
+      "etiqueta": "directivos",
+      "naturaleza": "especifica",
+      "estatus": "clasificacion_de_origen_conservada",
+      "definicion": "Conserva exactamente el alcance de la categoría de origen y su fundamento. Sin expansión jerárquica ni equivalencia profesional implícita."
+    },
+    {
+      "codigo": "docentes",
+      "etiqueta": "docentes",
+      "naturaleza": "especifica",
+      "estatus": "clasificacion_de_origen_conservada",
+      "definicion": "Conserva exactamente el alcance de la categoría de origen y su fundamento. Sin expansión jerárquica ni equivalencia profesional implícita."
+    },
+    {
+      "codigo": "docentes_y_formadores",
+      "etiqueta": "docentes y formadores",
+      "naturaleza": "compuesta_sin_descomponer",
+      "estatus": "clasificacion_de_origen_conservada",
+      "definicion": "Conserva exactamente el alcance de la categoría de origen y su fundamento. Sin expansión jerárquica ni equivalencia profesional implícita."
+    },
+    {
+      "codigo": "docentes_y_profesionales_de_cuidados_propuesta",
+      "etiqueta": "docentes y profesionales de cuidados propuesta",
+      "naturaleza": "compuesta_sin_descomponer",
+      "estatus": "propuesta_conservada",
+      "definicion": "Conserva exactamente el alcance de la categoría de origen y su fundamento. Sin expansión jerárquica ni equivalencia profesional implícita."
+    },
+    {
+      "codigo": "empleados_publicos",
+      "etiqueta": "empleados publicos",
+      "naturaleza": "especifica",
+      "estatus": "clasificacion_de_origen_conservada",
+      "definicion": "Conserva exactamente el alcance de la categoría de origen y su fundamento. Sin expansión jerárquica ni equivalencia profesional implícita."
+    },
+    {
+      "codigo": "empresas",
+      "etiqueta": "empresas",
+      "naturaleza": "especifica",
+      "estatus": "clasificacion_de_origen_conservada",
+      "definicion": "Conserva exactamente el alcance de la categoría de origen y su fundamento. Sin expansión jerárquica ni equivalencia profesional implícita."
+    },
+    {
+      "codigo": "entidades_y_asociaciones",
+      "etiqueta": "entidades y asociaciones",
+      "naturaleza": "compuesta_sin_descomponer",
+      "estatus": "clasificacion_de_origen_conservada",
+      "definicion": "Conserva exactamente el alcance de la categoría de origen y su fundamento. Sin expansión jerárquica ni equivalencia profesional implícita."
+    },
+    {
+      "codigo": "equipos_directivos_educacion",
+      "etiqueta": "equipos directivos educacion",
+      "naturaleza": "especifica",
+      "estatus": "clasificacion_de_origen_conservada",
+      "definicion": "Conserva exactamente el alcance de la categoría de origen y su fundamento. Sin expansión jerárquica ni equivalencia profesional implícita."
+    },
+    {
+      "codigo": "estudiantes",
+      "etiqueta": "estudiantes",
+      "naturaleza": "especifica",
+      "estatus": "clasificacion_de_origen_conservada",
+      "definicion": "Conserva exactamente el alcance de la categoría de origen y su fundamento. Sin expansión jerárquica ni equivalencia profesional implícita."
+    },
+    {
+      "codigo": "estudiantes_posgrado",
+      "etiqueta": "estudiantes posgrado",
+      "naturaleza": "especifica",
+      "estatus": "clasificacion_de_origen_conservada",
+      "definicion": "Conserva exactamente el alcance de la categoría de origen y su fundamento. Sin expansión jerárquica ni equivalencia profesional implícita."
+    },
+    {
+      "codigo": "estudiantes_uned",
+      "etiqueta": "estudiantes uned",
+      "naturaleza": "especifica",
+      "estatus": "clasificacion_de_origen_conservada",
+      "definicion": "Conserva exactamente el alcance de la categoría de origen y su fundamento. Sin expansión jerárquica ni equivalencia profesional implícita."
+    },
+    {
+      "codigo": "familiares_y_voluntariado",
+      "etiqueta": "familiares y voluntariado",
+      "naturaleza": "compuesta_sin_descomponer",
+      "estatus": "clasificacion_de_origen_conservada",
+      "definicion": "Conserva exactamente el alcance de la categoría de origen y su fundamento. Sin expansión jerárquica ni equivalencia profesional implícita."
+    },
+    {
+      "codigo": "familias",
+      "etiqueta": "familias",
+      "naturaleza": "especifica",
+      "estatus": "clasificacion_de_origen_conservada",
+      "definicion": "Conserva exactamente el alcance de la categoría de origen y su fundamento. Sin expansión jerárquica ni equivalencia profesional implícita."
+    },
+    {
+      "codigo": "formadores",
+      "etiqueta": "formadores",
+      "naturaleza": "especifica",
+      "estatus": "clasificacion_de_origen_conservada",
+      "definicion": "Conserva exactamente el alcance de la categoría de origen y su fundamento. Sin expansión jerárquica ni equivalencia profesional implícita."
+    },
+    {
+      "codigo": "fuerzas_seguridad_y_militares",
+      "etiqueta": "fuerzas seguridad y militares",
+      "naturaleza": "compuesta_sin_descomponer",
+      "estatus": "clasificacion_de_origen_conservada",
+      "definicion": "Conserva exactamente el alcance de la categoría de origen y su fundamento. Sin expansión jerárquica ni equivalencia profesional implícita."
+    },
+    {
+      "codigo": "hogares",
+      "etiqueta": "hogares",
+      "naturaleza": "especifica",
+      "estatus": "clasificacion_de_origen_conservada",
+      "definicion": "Conserva exactamente el alcance de la categoría de origen y su fundamento. Sin expansión jerárquica ni equivalencia profesional implícita."
+    },
+    {
+      "codigo": "madres_padres_y_tutores",
+      "etiqueta": "madres padres y tutores",
+      "naturaleza": "compuesta_sin_descomponer",
+      "estatus": "clasificacion_de_origen_conservada",
+      "definicion": "Conserva exactamente el alcance de la categoría de origen y su fundamento. Sin expansión jerárquica ni equivalencia profesional implícita."
+    },
+    {
+      "codigo": "mujeres",
+      "etiqueta": "mujeres",
+      "naturaleza": "especifica",
+      "estatus": "clasificacion_de_origen_conservada",
+      "definicion": "Conserva exactamente el alcance de la categoría de origen y su fundamento. Sin expansión jerárquica ni equivalencia profesional implícita."
+    },
+    {
+      "codigo": "mujeres_embarazadas_y_familias",
+      "etiqueta": "mujeres embarazadas y familias",
+      "naturaleza": "compuesta_sin_descomponer",
+      "estatus": "clasificacion_de_origen_conservada",
+      "definicion": "Conserva exactamente el alcance de la categoría de origen y su fundamento. Sin expansión jerárquica ni equivalencia profesional implícita."
+    },
+    {
+      "codigo": "organizaciones_sociales",
+      "etiqueta": "organizaciones sociales",
+      "naturaleza": "especifica",
+      "estatus": "clasificacion_de_origen_conservada",
+      "definicion": "Conserva exactamente el alcance de la categoría de origen y su fundamento. Sin expansión jerárquica ni equivalencia profesional implícita."
+    },
+    {
+      "codigo": "participacion_ciudadana",
+      "etiqueta": "participacion ciudadana",
+      "naturaleza": "especifica",
+      "estatus": "clasificacion_de_origen_conservada",
+      "definicion": "Conserva exactamente el alcance de la categoría de origen y su fundamento. Sin expansión jerárquica ni equivalencia profesional implícita."
+    },
+    {
+      "codigo": "personal_sanitario",
+      "etiqueta": "personal sanitario",
+      "naturaleza": "especifica",
+      "estatus": "clasificacion_de_origen_conservada",
+      "definicion": "Conserva exactamente el alcance de la categoría de origen y su fundamento. Sin expansión jerárquica ni equivalencia profesional implícita."
+    },
+    {
+      "codigo": "personas_adultas_responsables_de_imagen_de_menores",
+      "etiqueta": "personas adultas responsables de imagen de menores",
+      "naturaleza": "especifica",
+      "estatus": "clasificacion_de_origen_conservada",
+      "definicion": "Conserva exactamente el alcance de la categoría de origen y su fundamento. Sin expansión jerárquica ni equivalencia profesional implícita."
+    },
+    {
+      "codigo": "personas_autonomas",
+      "etiqueta": "personas autonomas",
+      "naturaleza": "especifica",
+      "estatus": "clasificacion_de_origen_conservada",
+      "definicion": "Conserva exactamente el alcance de la categoría de origen y su fundamento. Sin expansión jerárquica ni equivalencia profesional implícita."
+    },
+    {
+      "codigo": "personas_autonomas_con_negocio",
+      "etiqueta": "personas autonomas con negocio",
+      "naturaleza": "especifica",
+      "estatus": "clasificacion_de_origen_conservada",
+      "definicion": "Conserva exactamente el alcance de la categoría de origen y su fundamento. Sin expansión jerárquica ni equivalencia profesional implícita."
+    },
+    {
+      "codigo": "personas_autonomas_y_emprendedoras",
+      "etiqueta": "personas autonomas y emprendedoras",
+      "naturaleza": "compuesta_sin_descomponer",
+      "estatus": "clasificacion_de_origen_conservada",
+      "definicion": "Conserva exactamente el alcance de la categoría de origen y su fundamento. Sin expansión jerárquica ni equivalencia profesional implícita."
+    },
+    {
+      "codigo": "personas_autonomas_y_pymes",
+      "etiqueta": "personas autonomas y pymes",
+      "naturaleza": "compuesta_sin_descomponer",
+      "estatus": "clasificacion_de_origen_conservada",
+      "definicion": "Conserva exactamente el alcance de la categoría de origen y su fundamento. Sin expansión jerárquica ni equivalencia profesional implícita."
+    },
+    {
+      "codigo": "personas_con_discapacidad",
+      "etiqueta": "personas con discapacidad",
+      "naturaleza": "especifica",
+      "estatus": "clasificacion_de_origen_conservada",
+      "definicion": "Conserva exactamente el alcance de la categoría de origen y su fundamento. Sin expansión jerárquica ni equivalencia profesional implícita."
+    },
+    {
+      "codigo": "personas_desempleadas",
+      "etiqueta": "personas desempleadas",
+      "naturaleza": "especifica",
+      "estatus": "clasificacion_de_origen_conservada",
+      "definicion": "Conserva exactamente el alcance de la categoría de origen y su fundamento. Sin expansión jerárquica ni equivalencia profesional implícita."
+    },
+    {
+      "codigo": "personas_desempleadas_demandantes_de_empleo",
+      "etiqueta": "personas desempleadas demandantes de empleo",
+      "naturaleza": "especifica",
+      "estatus": "clasificacion_de_origen_conservada",
+      "definicion": "Conserva exactamente el alcance de la categoría de origen y su fundamento. Sin expansión jerárquica ni equivalencia profesional implícita."
+    },
+    {
+      "codigo": "personas_emprendedoras",
+      "etiqueta": "personas emprendedoras",
+      "naturaleza": "especifica",
+      "estatus": "clasificacion_de_origen_conservada",
+      "definicion": "Conserva exactamente el alcance de la categoría de origen y su fundamento. Sin expansión jerárquica ni equivalencia profesional implícita."
+    },
+    {
+      "codigo": "personas_en_busqueda_de_empleo",
+      "etiqueta": "personas en busqueda de empleo",
+      "naturaleza": "especifica",
+      "estatus": "clasificacion_de_origen_conservada",
+      "definicion": "Conserva exactamente el alcance de la categoría de origen y su fundamento. Sin expansión jerárquica ni equivalencia profesional implícita."
+    },
+    {
+      "codigo": "personas_en_formacion_para_el_empleo",
+      "etiqueta": "personas en formacion para el empleo",
+      "naturaleza": "especifica",
+      "estatus": "clasificacion_de_origen_conservada",
+      "definicion": "Conserva exactamente el alcance de la categoría de origen y su fundamento. Sin expansión jerárquica ni equivalencia profesional implícita."
+    },
+    {
+      "codigo": "personas_jovenes",
+      "etiqueta": "personas jovenes",
+      "naturaleza": "especifica",
+      "estatus": "clasificacion_de_origen_conservada",
+      "definicion": "Conserva exactamente el alcance de la categoría de origen y su fundamento. Sin expansión jerárquica ni equivalencia profesional implícita."
+    },
+    {
+      "codigo": "personas_jovenes_garantia_juvenil",
+      "etiqueta": "personas jovenes garantia juvenil",
+      "naturaleza": "especifica",
+      "estatus": "clasificacion_de_origen_conservada",
+      "definicion": "Conserva exactamente el alcance de la categoría de origen y su fundamento. Sin expansión jerárquica ni equivalencia profesional implícita."
+    },
+    {
+      "codigo": "personas_mayores",
+      "etiqueta": "personas mayores",
+      "naturaleza": "especifica",
+      "estatus": "clasificacion_de_origen_conservada",
+      "definicion": "Conserva exactamente el alcance de la categoría de origen y su fundamento. Sin expansión jerárquica ni equivalencia profesional implícita."
+    },
+    {
+      "codigo": "personas_que_trabajan_con_informacion",
+      "etiqueta": "personas que trabajan con informacion",
+      "naturaleza": "especifica",
+      "estatus": "clasificacion_de_origen_conservada",
+      "definicion": "Conserva exactamente el alcance de la categoría de origen y su fundamento. Sin expansión jerárquica ni equivalencia profesional implícita."
+    },
+    {
+      "codigo": "personas_trabajadoras",
+      "etiqueta": "personas trabajadoras",
+      "naturaleza": "especifica",
+      "estatus": "clasificacion_de_origen_conservada",
+      "definicion": "Conserva exactamente el alcance de la categoría de origen y su fundamento. Sin expansión jerárquica ni equivalencia profesional implícita."
+    },
+    {
+      "codigo": "personas_trabajadoras_en_formacion",
+      "etiqueta": "personas trabajadoras en formacion",
+      "naturaleza": "especifica",
+      "estatus": "clasificacion_de_origen_conservada",
+      "definicion": "Conserva exactamente el alcance de la categoría de origen y su fundamento. Sin expansión jerárquica ni equivalencia profesional implícita."
+    },
+    {
+      "codigo": "personas_trabajadoras_pymes",
+      "etiqueta": "personas trabajadoras pymes",
+      "naturaleza": "especifica",
+      "estatus": "clasificacion_de_origen_conservada",
+      "definicion": "Conserva exactamente el alcance de la categoría de origen y su fundamento. Sin expansión jerárquica ni equivalencia profesional implícita."
+    },
+    {
+      "codigo": "personas_trabajadoras_sectoriales",
+      "etiqueta": "personas trabajadoras sectoriales",
+      "naturaleza": "especifica",
+      "estatus": "clasificacion_de_origen_conservada",
+      "definicion": "Conserva exactamente el alcance de la categoría de origen y su fundamento. Sin expansión jerárquica ni equivalencia profesional implícita."
+    },
+    {
+      "codigo": "personas_usuarias_de_fotografia_digital",
+      "etiqueta": "personas usuarias de fotografia digital",
+      "naturaleza": "especifica",
+      "estatus": "clasificacion_de_origen_conservada",
+      "definicion": "Conserva exactamente el alcance de la categoría de origen y su fundamento. Sin expansión jerárquica ni equivalencia profesional implícita."
+    },
+    {
+      "codigo": "profesionales",
+      "etiqueta": "profesionales",
+      "naturaleza": "especifica",
+      "estatus": "clasificacion_de_origen_conservada",
+      "definicion": "Conserva exactamente el alcance de la categoría de origen y su fundamento. Sin expansión jerárquica ni equivalencia profesional implícita."
+    },
+    {
+      "codigo": "profesionales_apoyo_a_la_autonomia_y_accesibilidad",
+      "etiqueta": "profesionales apoyo a la autonomia y accesibilidad",
+      "naturaleza": "compuesta_sin_descomponer",
+      "estatus": "clasificacion_de_origen_conservada",
+      "definicion": "Conserva exactamente el alcance de la categoría de origen y su fundamento. Sin expansión jerárquica ni equivalencia profesional implícita."
+    },
+    {
+      "codigo": "profesionales_automatizacion",
+      "etiqueta": "profesionales automatizacion",
+      "naturaleza": "especifica",
+      "estatus": "clasificacion_de_origen_conservada",
+      "definicion": "Conserva exactamente el alcance de la categoría de origen y su fundamento. Sin expansión jerárquica ni equivalencia profesional implícita."
+    },
+    {
+      "codigo": "profesionales_ciencias_sociales",
+      "etiqueta": "profesionales ciencias sociales",
+      "naturaleza": "especifica",
+      "estatus": "clasificacion_de_origen_conservada",
+      "definicion": "Conserva exactamente el alcance de la categoría de origen y su fundamento. Sin expansión jerárquica ni equivalencia profesional implícita."
+    },
+    {
+      "codigo": "profesionales_comunicacion_diseno_y_marketing",
+      "etiqueta": "profesionales comunicacion diseno y marketing",
+      "naturaleza": "compuesta_sin_descomponer",
+      "estatus": "clasificacion_de_origen_conservada",
+      "definicion": "Conserva exactamente el alcance de la categoría de origen y su fundamento. Sin expansión jerárquica ni equivalencia profesional implícita."
+    },
+    {
+      "codigo": "profesionales_de_oficios_y_mantenimiento_propuesta",
+      "etiqueta": "profesionales de oficios y mantenimiento propuesta",
+      "naturaleza": "compuesta_sin_descomponer",
+      "estatus": "propuesta_conservada",
+      "definicion": "Conserva exactamente el alcance de la categoría de origen y su fundamento. Sin expansión jerárquica ni equivalencia profesional implícita."
+    },
+    {
+      "codigo": "profesionales_derecho",
+      "etiqueta": "profesionales derecho",
+      "naturaleza": "especifica",
+      "estatus": "clasificacion_de_origen_conservada",
+      "definicion": "Conserva exactamente el alcance de la categoría de origen y su fundamento. Sin expansión jerárquica ni equivalencia profesional implícita."
+    },
+    {
+      "codigo": "profesionales_educacion",
+      "etiqueta": "profesionales educacion",
+      "naturaleza": "especifica",
+      "estatus": "clasificacion_de_origen_conservada",
+      "definicion": "Conserva exactamente el alcance de la categoría de origen y su fundamento. Sin expansión jerárquica ni equivalencia profesional implícita."
+    },
+    {
+      "codigo": "profesionales_educacion_y_cuidados_propuesta",
+      "etiqueta": "profesionales educacion y cuidados propuesta",
+      "naturaleza": "compuesta_sin_descomponer",
+      "estatus": "propuesta_conservada",
+      "definicion": "Conserva exactamente el alcance de la categoría de origen y su fundamento. Sin expansión jerárquica ni equivalencia profesional implícita."
+    },
+    {
+      "codigo": "profesionales_humanidades_stem",
+      "etiqueta": "profesionales humanidades stem",
+      "naturaleza": "especifica",
+      "estatus": "clasificacion_de_origen_conservada",
+      "definicion": "Conserva exactamente el alcance de la categoría de origen y su fundamento. Sin expansión jerárquica ni equivalencia profesional implícita."
+    },
+    {
+      "codigo": "profesionales_industria_tic",
+      "etiqueta": "profesionales industria tic",
+      "naturaleza": "especifica",
+      "estatus": "clasificacion_de_origen_conservada",
+      "definicion": "Conserva exactamente el alcance de la categoría de origen y su fundamento. Sin expansión jerárquica ni equivalencia profesional implícita."
+    },
+    {
+      "codigo": "profesionales_intervencion_socioeducativa",
+      "etiqueta": "profesionales intervencion socioeducativa",
+      "naturaleza": "especifica",
+      "estatus": "clasificacion_de_origen_conservada",
+      "definicion": "Conserva exactamente el alcance de la categoría de origen y su fundamento. Sin expansión jerárquica ni equivalencia profesional implícita."
+    },
+    {
+      "codigo": "profesionales_psicologia",
+      "etiqueta": "profesionales psicologia",
+      "naturaleza": "especifica",
+      "estatus": "clasificacion_de_origen_conservada",
+      "definicion": "Conserva exactamente el alcance de la categoría de origen y su fundamento. Sin expansión jerárquica ni equivalencia profesional implícita."
+    },
+    {
+      "codigo": "profesionales_rrhh",
+      "etiqueta": "profesionales rrhh",
+      "naturaleza": "especifica",
+      "estatus": "clasificacion_de_origen_conservada",
+      "definicion": "Conserva exactamente el alcance de la categoría de origen y su fundamento. Sin expansión jerárquica ni equivalencia profesional implícita."
+    },
+    {
+      "codigo": "profesionales_sanidad",
+      "etiqueta": "profesionales sanidad",
+      "naturaleza": "especifica",
+      "estatus": "clasificacion_de_origen_conservada",
+      "definicion": "Conserva exactamente el alcance de la categoría de origen y su fundamento. Sin expansión jerárquica ni equivalencia profesional implícita."
+    },
+    {
+      "codigo": "profesionales_sanitarios_y_cuidados_propuesta",
+      "etiqueta": "profesionales sanitarios y cuidados propuesta",
+      "naturaleza": "compuesta_sin_descomponer",
+      "estatus": "propuesta_conservada",
+      "definicion": "Conserva exactamente el alcance de la categoría de origen y su fundamento. Sin expansión jerárquica ni equivalencia profesional implícita."
+    },
+    {
+      "codigo": "profesionales_sector_geografico",
+      "etiqueta": "profesionales sector geografico",
+      "naturaleza": "especifica",
+      "estatus": "clasificacion_de_origen_conservada",
+      "definicion": "Conserva exactamente el alcance de la categoría de origen y su fundamento. Sin expansión jerárquica ni equivalencia profesional implícita."
+    },
+    {
+      "codigo": "profesionales_tercer_sector",
+      "etiqueta": "profesionales tercer sector",
+      "naturaleza": "especifica",
+      "estatus": "clasificacion_de_origen_conservada",
+      "definicion": "Conserva exactamente el alcance de la categoría de origen y su fundamento. Sin expansión jerárquica ni equivalencia profesional implícita."
+    },
+    {
+      "codigo": "profesionales_tic",
+      "etiqueta": "profesionales tic",
+      "naturaleza": "especifica",
+      "estatus": "clasificacion_de_origen_conservada",
+      "definicion": "Conserva exactamente el alcance de la categoría de origen y su fundamento. Sin expansión jerárquica ni equivalencia profesional implícita."
+    },
+    {
+      "codigo": "profesionales_ventas_gestion",
+      "etiqueta": "profesionales ventas gestion",
+      "naturaleza": "compuesta_sin_descomponer",
+      "estatus": "clasificacion_de_origen_conservada",
+      "definicion": "Conserva exactamente el alcance de la categoría de origen y su fundamento. Sin expansión jerárquica ni equivalencia profesional implícita."
+    },
+    {
+      "codigo": "publico_general",
+      "etiqueta": "publico general",
+      "naturaleza": "especifica",
+      "estatus": "clasificacion_de_origen_conservada",
+      "definicion": "Conserva exactamente el alcance de la categoría de origen y su fundamento. Sin expansión jerárquica ni equivalencia profesional implícita."
+    },
+    {
+      "codigo": "responsables_y_coordinadores_de_equipos",
+      "etiqueta": "responsables y coordinadores de equipos",
+      "naturaleza": "compuesta_sin_descomponer",
+      "estatus": "clasificacion_de_origen_conservada",
+      "definicion": "Conserva exactamente el alcance de la categoría de origen y su fundamento. Sin expansión jerárquica ni equivalencia profesional implícita."
+    },
+    {
+      "codigo": "trabajadores_y_personas_autonomas",
+      "etiqueta": "trabajadores y personas autonomas",
+      "naturaleza": "compuesta_sin_descomponer",
+      "estatus": "clasificacion_de_origen_conservada",
+      "definicion": "Conserva exactamente el alcance de la categoría de origen y su fundamento. Sin expansión jerárquica ni equivalencia profesional implícita."
+    },
+    {
+      "codigo": "voluntariado",
+      "etiqueta": "voluntariado",
+      "naturaleza": "especifica",
+      "estatus": "clasificacion_de_origen_conservada",
+      "definicion": "Conserva exactamente el alcance de la categoría de origen y su fundamento. Sin expansión jerárquica ni equivalencia profesional implícita."
+    }
+  ]
+}

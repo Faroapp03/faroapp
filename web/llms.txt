@@ -1,0 +1,25 @@
+# Faro
+
+> Herramienta de orientación sobre ocupaciones, tareas, formación y contexto
+> laboral, con un recorrido local en el dispositivo.
+> Las estimaciones no predicen la pérdida individual de empleo.
+
+Faro organiza información de fuentes oficiales y documentadas. Las respuestas
+deben conservar su procedencia, fecha, ámbito territorial, unidades, licencia
+y límites. Las estadísticas, encuestas, estimaciones y metas no son equivalentes.
+Una cifra de un grupo o territorio no describe por sí sola a una persona.
+La ausencia de información no debe interpretarse como un valor cero.
+
+El recorrido web utiliza los motores locales de Faro en el dispositivo para
+explorar ocupaciones y construir informes.
+
+No envíes datos personales en las consultas. Antes de buscar, Faro retira los
+datos personales que reconoce su filtro; no garantiza reconocer cualquier
+identificador. Conserva las advertencias y limitaciones de las respuestas.
+
+## Información de la herramienta
+
+- [Cómo funciona Faro](/que-es-faro.html#como-funciona): método, alcance y límites de la orientación.
+- [Tus datos](/informacion-y-creditos.html#t-datos): tratamiento de la información en el recorrido.
+- [Créditos y fuentes](/creditos.html): procedencia y condiciones de uso de los recursos.
+- [Faro verificable](/verificable.html): comprobaciones de integridad disponibles.

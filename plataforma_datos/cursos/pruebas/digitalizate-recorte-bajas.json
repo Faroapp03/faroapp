@@ -1,0 +1,744 @@
+{
+  "empresas_baja": [
+    {
+      "idEmpresaDigitalizate": 45,
+      "idCatalogo": 1,
+      "nombre": "Adams",
+      "url": "https://www.adams.es/",
+      "descripcion": "<strong>Adams </strong>pone a tu disposici&oacute;n, a trav&eacute;s de nuestra pagina Web,&nbsp; cursos formativos en competencias digitales, a los cuales tendr&aacute;s acesso directo a traves de los siguientes enlaces.&nbsp;&nbsp;",
+      "marcaComercial": "Adams",
+      "idImagen": "c341795c-b1d2-48fa-a29e-ac2611f2d18b",
+      "extImagen": ".png",
+      "textoAltImagen": "Centro de Estudios Adams, Ediciones Valbuena ",
+      "rutaImagen": "https://gestorimagenes.fundae.es/CYP003/c341795c-b1d2-48fa-a29e-ac2611f2d18b.png",
+      "baja": true,
+      "numeroCursos": 0
+    },
+    {
+      "idEmpresaDigitalizate": 46,
+      "idCatalogo": 1,
+      "nombre": "Banco Sabadell, S.A.",
+      "url": "https://www.bancsabadell.com/cs/Satellite/SabAtl/Deposits-in-your-currency/1191359598240/es/",
+      "descripcion": "<strong>Banco de Sabadell</strong> pone a tu disposici&oacute;n, a trav&eacute;s de nuestra pagina Web,&nbsp; recursos formativos en competencias digitales, en formato pdf, a los cuales tendr&aacute;s acceso directo a trav&eacute;s de los siguientes enlaces.&nbsp;&nbsp;",
+      "marcaComercial": "B Sabadell",
+      "idImagen": "99a64adf-b7b0-4949-b959-e0eb49fb6961",
+      "extImagen": ".png",
+      "textoAltImagen": "Banco de Sabadell, S.A.",
+      "rutaImagen": "https://gestorimagenes.fundae.es/CYP003/99a64adf-b7b0-4949-b959-e0eb49fb6961.png",
+      "baja": true,
+      "numeroCursos": 0
+    },
+    {
+      "idEmpresaDigitalizate": 39,
+      "idCatalogo": 1,
+      "nombre": "Fundación Telefónica",
+      "url": "https://www.fundaciontelefonica.com/",
+      "descripcion": "<strong>Fundación Telefónica</strong> pone a tu disposición, a través de nuestra página Web, diferentes nanogrados que tienen como objetivo principal enseñar cómo aprovechar todo el potencial de la digitalización dentro del sector correspondiente y cursos en competencias digitales de su plataforma Conecta Empleo. Para acceder a los mismos debes darte de alta en \"Regístrate\" y una vez creado tu perfil de usuario, inscribirte en los cursos que sean de tu interés.",
+      "marcaComercial": "Fundación Telefónica",
+      "idImagen": "aee7c89a-6851-4568-a813-1d405cb2d26f",
+      "extImagen": ".png",
+      "textoAltImagen": "Fundación Telefónica",
+      "rutaImagen": "https://gestorimagenes.fundae.es/CYP003/aee7c89a-6851-4568-a813-1d405cb2d26f.png",
+      "baja": true,
+      "numeroCursos": 16
+    }
+  ],
+  "empresa_39": {
+    "respuesta": {
+      "idEmpresaDigitalizate": 39,
+      "nombre": "Fundación Telefónica",
+      "url": "https://www.fundaciontelefonica.com/",
+      "descripcion": "<strong>Fundación Telefónica</strong> pone a tu disposición, a través de nuestra página Web, diferentes nanogrados que tienen como objetivo principal enseñar cómo aprovechar todo el potencial de la digitalización dentro del sector correspondiente y cursos en competencias digitales de su plataforma Conecta Empleo. Para acceder a los mismos debes darte de alta en \"Regístrate\" y una vez creado tu perfil de usuario, inscribirte en los cursos que sean de tu interés.",
+      "idEmpresaDigitalizateImagen": "aee7c89a-6851-4568-a813-1d405cb2d26f",
+      "titulo": "Fundación Telefónica",
+      "extImagen": ".png",
+      "textoAltImagen": "Fundación Telefónica",
+      "rutaImagen": "https://gestorimagenes.fundae.es/CYP003/aee7c89a-6851-4568-a813-1d405cb2d26f.png",
+      "marcaComercial": "Fundación Telefónica",
+      "baja": false,
+      "listaCatalogosResponse": [],
+      "listaCatalogosEmpresaResponse": [],
+      "digitalizateCategoria": [
+        {
+          "idCategoria": 125,
+          "categoria": "Cursos",
+          "descripcion": null,
+          "numeroCursos": 2,
+          "orden": 1,
+          "baja": false,
+          "digitalizateRecursoFormativo": [
+            {
+              "idRecursoFormativo": 3026,
+              "denominacion": "Resiliencia empresarial: análisis de riesgos y continuidad en tiempos de crisis",
+              "edicion": null,
+              "descripcion": "En este curso alcanzarás objetivos que son esenciales para la supervivencia y el crecimiento sostenible de una empresa en un entorno cambiante y desafiante",
+              "urlCurso": "https://conectaempleo-formacion.fundaciontelefonica.com/web/gl-resiliencia-empresarial-analisis-de-riesgos-y-continuidad-en-tiempos-de-crisis-ft-ed-4?origen=174836",
+              "duracion": 30.0,
+              "rangoDuracion": 2,
+              "idModalidad": 2,
+              "modalidad": "Teleformación",
+              "idTipoRecurso": 1,
+              "tipoRecurso": "Curso",
+              "idNivelDigitalizacion": 1,
+              "nivelDigitalizacion": "Básico",
+              "idIdioma": 1,
+              "descripcionIdioma": "Español",
+              "idRecursoFormativoImagen": "3d6e84bd-7df2-49a6-b301-b3231463decd",
+              "descripcionCard": null,
+              "botonSolicitud": false,
+              "digital": false,
+              "fechaAlta": null,
+              "periodoInscripcionInicio": null,
+              "periodoInscripcionFin": null,
+              "extImagen": ".jpg",
+              "textoAltImagen": "Resiliencia empresarial: análisis de riesgos y continuidad en tiempos de crisis",
+              "rutaImagen": "https://gestorimagenes.fundae.es/CYP003/54e6bdf1-93a5-4a2b-b237-b9646471773a.jpg",
+              "idCategoriaDigitalizate": 125,
+              "baja": false,
+              "orden": 1,
+              "meGusta": false,
+              "catalogos": [
+                {
+                  "idCatalogo": 1,
+                  "descripcionCatalogo": "Digitalizate",
+                  "orden": 8,
+                  "idImagen": "4956cb65-e880-4c1e-8481-f0e1bb25b322",
+                  "extImagen": ".JPG",
+                  "tituloCard": "Digitalizate",
+                  "descripcionCard": "Digitalizate En este espacio encontrarás acceso a cursos gratuitos en competencias, incluyendo aquellas que te ayudarán al proceso de transformación digital, cedidos por grandes empresas gracias a convenios suscritos con Fundae y la colaboración del SEPE. Entra en cada una de ellas y descubre qué pueden ofrecerte para mejorar y actualizar tus conocimiento",
+                  "textoBoton": "Ver más",
+                  "urlCard": "/digitalizate/1",
+                  "visible": true,
+                  "color": "#44ab35",
+                  "baja": false
+                }
+              ],
+              "areasInteres": [
+                {
+                  "idAreaInteres": 32,
+                  "descripcionAreasInteres": "Habilidades personales",
+                  "orden": 32
+                }
+              ],
+              "etiquetas": [
+                {
+                  "idEtiqueta": 124,
+                  "descripcionEtiqueta": "Empresa",
+                  "orden": 196
+                },
+                {
+                  "idEtiqueta": 276,
+                  "descripcionEtiqueta": "Objetivo profesional",
+                  "orden": 418
+                },
+                {
+                  "idEtiqueta": 285,
+                  "descripcionEtiqueta": "Resiliencia",
+                  "orden": 513
+                }
+              ]
+            },
+            {
+              "idRecursoFormativo": 3027,
+              "denominacion": "Gobierno y gestión de la seguridad de la información",
+              "edicion": null,
+              "descripcion": "En este curso alcanzarás estos conocimientos que te ayudarán a llevar a cabo una buena gestión de la seguridad de la información",
+              "urlCurso": "https://conectaempleo-formacion.fundaciontelefonica.com/web/gl-gobierno-y-gestion-de-la-seguridad-de-la-informacion-ft-ed-4?origen=174692",
+              "duracion": 30.0,
+              "rangoDuracion": 2,
+              "idModalidad": 2,
+              "modalidad": "Teleformación",
+              "idTipoRecurso": 1,
+              "tipoRecurso": "Curso",
+              "idNivelDigitalizacion": 1,
+              "nivelDigitalizacion": "Básico",
+              "idIdioma": 1,
+              "descripcionIdioma": "Español",
+              "idRecursoFormativoImagen": "f9afa310-4fcf-49cd-b126-fc21e8347f63",
+              "descripcionCard": null,
+              "botonSolicitud": false,
+              "digital": false,
+              "fechaAlta": null,
+              "periodoInscripcionInicio": null,
+              "periodoInscripcionFin": null,
+              "extImagen": ".jpg",
+              "textoAltImagen": "Gobierno y gestión de la seguridad de la información",
+              "rutaImagen": "https://gestorimagenes.fundae.es/CYP003/74231533-2824-4e7c-b549-dd9ce39f4fab.jpg",
+              "idCategoriaDigitalizate": 125,
+              "baja": false,
+              "orden": 3,
+              "meGusta": false,
+              "catalogos": [
+                {
+                  "idCatalogo": 1,
+                  "descripcionCatalogo": "Digitalizate",
+                  "orden": 8,
+                  "idImagen": "4956cb65-e880-4c1e-8481-f0e1bb25b322",
+                  "extImagen": ".JPG",
+                  "tituloCard": "Digitalizate",
+                  "descripcionCard": "Digitalizate En este espacio encontrarás acceso a cursos gratuitos en competencias, incluyendo aquellas que te ayudarán al proceso de transformación digital, cedidos por grandes empresas gracias a convenios suscritos con Fundae y la colaboración del SEPE. Entra en cada una de ellas y descubre qué pueden ofrecerte para mejorar y actualizar tus conocimiento",
+                  "textoBoton": "Ver más",
+                  "urlCard": "/digitalizate/1",
+                  "visible": true,
+                  "color": "#44ab35",
+                  "baja": false
+                }
+              ],
+              "areasInteres": [
+                {
+                  "idAreaInteres": 32,
+                  "descripcionAreasInteres": "Habilidades personales",
+                  "orden": 32
+                }
+              ],
+              "etiquetas": [
+                {
+                  "idEtiqueta": 26,
+                  "descripcionEtiqueta": "Ciberseguridad",
+                  "orden": 94
+                },
+                {
+                  "idEtiqueta": 495,
+                  "descripcionEtiqueta": "Confidencialidad",
+                  "orden": 122
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "idCategoria": 119,
+          "categoria": "Nanogrado Construcción 4.0",
+          "descripcion": null,
+          "numeroCursos": 1,
+          "orden": 2,
+          "baja": false,
+          "digitalizateRecursoFormativo": [
+            {
+              "idRecursoFormativo": 2531,
+              "denominacion": "ITINERARIO DE LA CONSTRUCCIÓN EN EL NUEVO ENTORNO 4.0 ",
+              "edicion": null,
+              "descripcion": "Conceptos clave como qué son los sistemas informáticos y los de telecomunicaciones. Funcionamiento de algunas de las nuevas Tecnologías como el Blockchain, 5G, la Inteligencia Artificial y el uso de Drones y Robots.",
+              "urlCurso": "https://conectaempleo-formacion.fundaciontelefonica.com/fundae",
+              "duracion": 120.0,
+              "rangoDuracion": 3,
+              "idModalidad": 2,
+              "modalidad": "Teleformación",
+              "idTipoRecurso": 5,
+              "tipoRecurso": "Itinerario formativo",
+              "idNivelDigitalizacion": 1,
+              "nivelDigitalizacion": "Básico",
+              "idIdioma": 1,
+              "descripcionIdioma": "Español",
+              "idRecursoFormativoImagen": "71454885-e908-487a-850d-ac0e20f3b69e",
+              "descripcionCard": null,
+              "botonSolicitud": true,
+              "digital": false,
+              "fechaAlta": null,
+              "periodoInscripcionInicio": null,
+              "periodoInscripcionFin": null,
+              "extImagen": ".jpg",
+              "textoAltImagen": "ITINERARIO DE LA CONSTRUCCIÓN EN EL NUEVO ENTORNO 4.0 ",
+              "rutaImagen": "https://gestorimagenes.fundae.es/CYP003/71454885-e908-487a-850d-ac0e20f3b69e.jpg",
+              "idCategoriaDigitalizate": 119,
+              "baja": false,
+              "orden": 1,
+              "meGusta": false,
+              "catalogos": [
+                {
+                  "idCatalogo": 1,
+                  "descripcionCatalogo": "Digitalizate",
+                  "orden": 8,
+                  "idImagen": "4956cb65-e880-4c1e-8481-f0e1bb25b322",
+                  "extImagen": ".JPG",
+                  "tituloCard": "Digitalizate",
+                  "descripcionCard": "Digitalizate En este espacio encontrarás acceso a cursos gratuitos en competencias, incluyendo aquellas que te ayudarán al proceso de transformación digital, cedidos por grandes empresas gracias a convenios suscritos con Fundae y la colaboración del SEPE. Entra en cada una de ellas y descubre qué pueden ofrecerte para mejorar y actualizar tus conocimiento",
+                  "textoBoton": "Ver más",
+                  "urlCard": "/digitalizate/1",
+                  "visible": true,
+                  "color": "#44ab35",
+                  "baja": false
+                }
+              ],
+              "areasInteres": [
+                {
+                  "idAreaInteres": 16,
+                  "descripcionAreasInteres": "Construcción, Albañilería, Fontanería, Carpintería",
+                  "orden": 16
+                }
+              ],
+              "etiquetas": [
+                {
+                  "idEtiqueta": 118,
+                  "descripcionEtiqueta": "Construcción",
+                  "orden": 124
+                },
+                {
+                  "idEtiqueta": 134,
+                  "descripcionEtiqueta": "Metodología bim",
+                  "orden": 380
+                },
+                {
+                  "idEtiqueta": 390,
+                  "descripcionEtiqueta": "Modelo productivo",
+                  "orden": 398
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "filtros": {
+      "rangoDuraciones": [
+        {
+          "id": 1,
+          "name": "Menos de 10h",
+          "activo": false
+        },
+        {
+          "id": 2,
+          "name": "Entre 10h y 30h",
+          "activo": true
+        },
+        {
+          "id": 3,
+          "name": "Más de 30h",
+          "activo": true
+        },
+        {
+          "id": 4,
+          "name": "Todos",
+          "activo": true
+        }
+      ],
+      "duracion": [20, 25.0, 30.0, 40.0, 120.0, 130.0, 160.0, 170.0, 180.0, 181.0, 240],
+      "provincia": [],
+      "areasInteres": [
+        {
+          "id": 1,
+          "name": "Alimentación"
+        },
+        {
+          "id": 8,
+          "name": "Bases de datos / Blockchain"
+        },
+        {
+          "id": 60,
+          "name": "Ciberseguridad"
+        },
+        {
+          "id": 14,
+          "name": "Comercio. Marketing y Venta"
+        },
+        {
+          "id": 16,
+          "name": "Construcción, Albañilería, Fontanería, Carpintería"
+        },
+        {
+          "id": 20,
+          "name": "Desarrollo web / Diseño"
+        },
+        {
+          "id": 25,
+          "name": "Finanzas y Seguros"
+        },
+        {
+          "id": 31,
+          "name": "Habilidades directivas"
+        },
+        {
+          "id": 32,
+          "name": "Habilidades personales"
+        },
+        {
+          "id": 34,
+          "name": "Imagen corporativa, publicidad y posicionamiento web"
+        },
+        {
+          "id": 36,
+          "name": "Informática y aplicaciones móviles"
+        },
+        {
+          "id": 38,
+          "name": "Inteligencia Artificial"
+        },
+        {
+          "id": 45,
+          "name": "Ofimática"
+        },
+        {
+          "id": 46,
+          "name": "Ofimática / Competencias digitales"
+        },
+        {
+          "id": 52,
+          "name": "Seguridad Informática"
+        },
+        {
+          "id": 57,
+          "name": "Transporte y Conducción"
+        },
+        {
+          "id": 59,
+          "name": "Tratamiento de datos / Big Data"
+        }
+      ],
+      "idiomas": [
+        {
+          "id": 1,
+          "name": "Español"
+        }
+      ],
+      "tiposRecursos": [
+        {
+          "id": 1,
+          "name": "Curso"
+        },
+        {
+          "id": 5,
+          "name": "Itinerario formativo"
+        }
+      ],
+      "nivel": [
+        {
+          "id": 1,
+          "name": "Básico"
+        },
+        {
+          "id": 2,
+          "name": "Intermedio"
+        }
+      ],
+      "modalidad": [],
+      "competenciaDigital": [],
+      "nivelCompetenciaDigital": [],
+      "etiquetas": [
+        {
+          "id": 109,
+          "name": "Agricultura"
+        },
+        {
+          "id": 4,
+          "name": "Ajax"
+        },
+        {
+          "id": 7,
+          "name": "Análisis de datos"
+        },
+        {
+          "id": 229,
+          "name": "Análisis financiero"
+        },
+        {
+          "id": 8,
+          "name": "Analítica web"
+        },
+        {
+          "id": 14,
+          "name": "Aplicaciones"
+        },
+        {
+          "id": 154,
+          "name": "Aprendizaje"
+        },
+        {
+          "id": 151,
+          "name": "Básico"
+        },
+        {
+          "id": 23,
+          "name": "Big data"
+        },
+        {
+          "id": 25,
+          "name": "Blogs"
+        },
+        {
+          "id": 26,
+          "name": "Ciberseguridad"
+        },
+        {
+          "id": 29,
+          "name": "Cms"
+        },
+        {
+          "id": 114,
+          "name": "Competencias digitales"
+        },
+        {
+          "id": 223,
+          "name": "Competitividad"
+        },
+        {
+          "id": 169,
+          "name": "Comunicación"
+        },
+        {
+          "id": 495,
+          "name": "Confidencialidad"
+        },
+        {
+          "id": 118,
+          "name": "Construcción"
+        },
+        {
+          "id": 119,
+          "name": "Curriculum vitae"
+        },
+        {
+          "id": 37,
+          "name": "Desarrollo de aplicaciones"
+        },
+        {
+          "id": 120,
+          "name": "Design thinking"
+        },
+        {
+          "id": 41,
+          "name": "Diseño"
+        },
+        {
+          "id": 161,
+          "name": "Dispositivos iot"
+        },
+        {
+          "id": 43,
+          "name": "Dispositivos móviles"
+        },
+        {
+          "id": 123,
+          "name": "Emprendimiento"
+        },
+        {
+          "id": 124,
+          "name": "Empresa"
+        },
+        {
+          "id": 346,
+          "name": "Expectativas"
+        },
+        {
+          "id": 225,
+          "name": "Formación"
+        },
+        {
+          "id": 129,
+          "name": "Gestión de proyectos"
+        },
+        {
+          "id": 201,
+          "name": "Gestión financiera"
+        },
+        {
+          "id": 310,
+          "name": "Herramientas digitales"
+        },
+        {
+          "id": 193,
+          "name": "Hostelería"
+        },
+        {
+          "id": 131,
+          "name": "Identidad digital"
+        },
+        {
+          "id": 233,
+          "name": "Imagen digital"
+        },
+        {
+          "id": 231,
+          "name": "Innovación"
+        },
+        {
+          "id": 55,
+          "name": "Internet de las cosas"
+        },
+        {
+          "id": 56,
+          "name": "Java"
+        },
+        {
+          "id": 57,
+          "name": "Javascript"
+        },
+        {
+          "id": 59,
+          "name": "Lenguajes informáticos"
+        },
+        {
+          "id": 157,
+          "name": "Marketing"
+        },
+        {
+          "id": 62,
+          "name": "Marketing digital"
+        },
+        {
+          "id": 361,
+          "name": "Mensaje"
+        },
+        {
+          "id": 199,
+          "name": "Mercado"
+        },
+        {
+          "id": 270,
+          "name": "Mercado laboral"
+        },
+        {
+          "id": 134,
+          "name": "Metodología bim"
+        },
+        {
+          "id": 224,
+          "name": "Metodología lean"
+        },
+        {
+          "id": 135,
+          "name": "Metodologías ágiles"
+        },
+        {
+          "id": 390,
+          "name": "Modelo productivo"
+        },
+        {
+          "id": 211,
+          "name": "Movilidad"
+        },
+        {
+          "id": 226,
+          "name": "Negociación"
+        },
+        {
+          "id": 156,
+          "name": "Networking"
+        },
+        {
+          "id": 276,
+          "name": "Objetivo profesional"
+        },
+        {
+          "id": 70,
+          "name": "Ofimática"
+        },
+        {
+          "id": 71,
+          "name": "Páginas web"
+        },
+        {
+          "id": 77,
+          "name": "Posicionamiento en buscadores"
+        },
+        {
+          "id": 269,
+          "name": "Presentaciones"
+        },
+        {
+          "id": 79,
+          "name": "Programación"
+        },
+        {
+          "id": 80,
+          "name": "Programación orientada a objetos"
+        },
+        {
+          "id": 82,
+          "name": "Publicidad online"
+        },
+        {
+          "id": 159,
+          "name": "Puesto de trabajo"
+        },
+        {
+          "id": 496,
+          "name": "Redes empresariales"
+        },
+        {
+          "id": 89,
+          "name": "Redes sociales"
+        },
+        {
+          "id": 285,
+          "name": "Resiliencia"
+        },
+        {
+          "id": 142,
+          "name": "Resolución de problemas"
+        },
+        {
+          "id": 141,
+          "name": "Responsabilidad social"
+        },
+        {
+          "id": 91,
+          "name": "Seo"
+        },
+        {
+          "id": 329,
+          "name": "Sistemas de información"
+        },
+        {
+          "id": 97,
+          "name": "Smartphone"
+        },
+        {
+          "id": 209,
+          "name": "Técnicas de ventas"
+        },
+        {
+          "id": 391,
+          "name": "Telecomunicaciones"
+        },
+        {
+          "id": 160,
+          "name": "Telefonía móvil"
+        },
+        {
+          "id": 147,
+          "name": "Trabajo colaborativo"
+        },
+        {
+          "id": 148,
+          "name": "Transformación digital"
+        },
+        {
+          "id": 149,
+          "name": "Transportes"
+        },
+        {
+          "id": 174,
+          "name": "Turismo"
+        },
+        {
+          "id": 103,
+          "name": "Usabilidad"
+        },
+        {
+          "id": 105,
+          "name": "Videojuegos"
+        }
+      ],
+      "codigoPostal": [],
+      "poblacion": [],
+      "years": [],
+      "meses": [],
+      "finalizado": [],
+      "tipoEstado": [],
+      "empresas": [],
+      "categorias": [],
+      "colectivos": [],
+      "estructurasSectoriales": [],
+      "inscripcionesAbiertas": [],
+      "habilitantesCapacitadoras": []
+    }
+  },
+  "empresa_inexistente": {
+    "http": 404,
+    "cuerpo": {
+      "title": "AgoraException",
+      "status": 404,
+      "detail": "La empresa indicada ya no está disponible en este catálogo."
+    }
+  }
+}

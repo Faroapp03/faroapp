@@ -1,0 +1,229 @@
+{
+  "consulta": "2026-10-11",
+  "paquete": "country-flag-icons",
+  "version": "1.6.20",
+  "url": "https://registry.npmjs.org/country-flag-icons/-/country-flag-icons-1.6.20.tgz",
+  "pagina": "https://gitlab.com/catamphetamine/country-flag-icons",
+  "integridad": "sha512-py8JiEKzjhYw6HPJ0L7SxLgCYim36UPRTZX43/kqGueUCZLSvnrqAiwW8HtQibur7mdkFQUkjOgdK+o/9FBtaw==",
+  "licencia": "MIT",
+  "copyright": "Copyright (c) 2020 @catamphetamine <purecatamphetamine@gmail.com>",
+  "texto_de_la_licencia": "(The MIT License)\n\nCopyright (c) 2020 @catamphetamine <purecatamphetamine@gmail.com>\n\nPermission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n'Software'), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.\nIN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY\nCLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,\nTORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE\nSOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.",
+  "cambios": "Ninguno en las banderas: cada archivo es el original de 3x2/, con el nombre del código ISO 3166-1 alfa-3 del país en minúsculas. LICENSE es el texto original con fin de línea LF (el original usa CRLF), como pide .gitattributes.",
+  "archivos": {
+    "alb.svg": {
+      "original": "3x2/AL.svg",
+      "sha256": "a1d737c10dcd20d7cd4622e7916c42dd3eb48afbff0d84d01f258d824b4bf282",
+      "bytes": 815
+    },
+    "aus.svg": {
+      "original": "3x2/AU.svg",
+      "sha256": "9c5e500830538dfb8c7678a7a7fbf404b3ac33d0f876d0b46cf406fcf00e16dc",
+      "bytes": 1385
+    },
+    "aut.svg": {
+      "original": "3x2/AT.svg",
+      "sha256": "ddad7df9fb41ce3c498e8b4732dccb65a74635773bb3816e0212809b719ae3aa",
+      "bytes": 168
+    },
+    "bel.svg": {
+      "original": "3x2/BE.svg",
+      "sha256": "7448dd192fb3ba3b4450e40ef2e7be34003a4eeb1e2e1385ba7f76a8fd694979",
+      "bytes": 183
+    },
+    "bgr.svg": {
+      "original": "3x2/BG.svg",
+      "sha256": "f17c9928a7fc6e6de40779851f4eaad580dc82514759843411c971d7acdec237",
+      "bytes": 193
+    },
+    "bih.svg": {
+      "original": "3x2/BA.svg",
+      "sha256": "9df0e0dc06b5159829657244f04ea4e7fac1ca0cb770d4991879b42659221e5c",
+      "bytes": 998
+    },
+    "bra.svg": {
+      "original": "3x2/BR.svg",
+      "sha256": "0275675207e1cbe0942575bb368bd504397c4a9647c49fb83a3ebd1db0d8aac3",
+      "bytes": 513
+    },
+    "can.svg": {
+      "original": "3x2/CA.svg",
+      "sha256": "25a52bb1c21af6512855d7003f8cf6c3ca8c173a63b08ee554f139d8dbe45ac3",
+      "bytes": 340
+    },
+    "che.svg": {
+      "original": "3x2/CH.svg",
+      "sha256": "05fb7c7ef6e3d23012c8f6ac2169667b3f6157b458f6eeb6ad709e6ad29a5ff7",
+      "bytes": 185
+    },
+    "chl.svg": {
+      "original": "3x2/CL.svg",
+      "sha256": "21bf53165fb32e07ebf27c57728d9f081941769d540474fd005f4e411e23482e",
+      "bytes": 303
+    },
+    "col.svg": {
+      "original": "3x2/CO.svg",
+      "sha256": "5a6236b26196c406797c9484124b11a44fb18fbce9b6a03e81d487b86f43c9bf",
+      "bytes": 201
+    },
+    "cyp.svg": {
+      "original": "3x2/CY.svg",
+      "sha256": "723199ea03e712c1640240156cab15f2fcabc863724d18a1068000fba80cc8e5",
+      "bytes": 2069
+    },
+    "cze.svg": {
+      "original": "3x2/CZ.svg",
+      "sha256": "5fb746ddc8ceae35235b56c9b4bcdb421097a8ba0fc8be0c849a28b9956d8731",
+      "bytes": 207
+    },
+    "dnk.svg": {
+      "original": "3x2/DK.svg",
+      "sha256": "af43b421a9f432c57b005b10e9fb218a601029df69f1b1f92911a6299e10bf0e",
+      "bytes": 181
+    },
+    "est.svg": {
+      "original": "3x2/EE.svg",
+      "sha256": "0d5291e1a37a00e2b112232979f5bd2d3ae9802cb7235eb20b122bf62fb62f2b",
+      "bytes": 190
+    },
+    "fin.svg": {
+      "original": "3x2/FI.svg",
+      "sha256": "dc6946a5e69a787054bf10161f563d3139c3751e02d8cb1053d2d3eb6fda4972",
+      "bytes": 192
+    },
+    "gbr.svg": {
+      "original": "3x2/GB.svg",
+      "sha256": "4a2e2eddd77a6653cf94cf53fa9a84a673843680709e311d6a99091f24cae5ea",
+      "bytes": 820
+    },
+    "grc.svg": {
+      "original": "3x2/GR.svg",
+      "sha256": "dbf7afec68a1dfd6d62d6468b5b63b5d29f7e76f6003e648e1a739055232f48e",
+      "bytes": 319
+    },
+    "hrv.svg": {
+      "original": "3x2/HR.svg",
+      "sha256": "deb4a8c399a3ef7e7847058a987a923e4cfb8455440aba9a8e8366ec5e30e76a",
+      "bytes": 1129
+    },
+    "hun.svg": {
+      "original": "3x2/HU.svg",
+      "sha256": "01e5b9cb192e8d378a4ef76bc35f8a9a26338810e97111f1c4c2e17a83b43d35",
+      "bytes": 193
+    },
+    "irl.svg": {
+      "original": "3x2/IE.svg",
+      "sha256": "728c0de473a2e1d1b45d63d3c46831c1b450d7e1fd0c2d16a26fb032fb4aabf1",
+      "bytes": 195
+    },
+    "isl.svg": {
+      "original": "3x2/IS.svg",
+      "sha256": "76a8c0ad667d485eabd698acd3e4bfc677a867b5dac2ff1d24a1fc2a10621ddf",
+      "bytes": 301
+    },
+    "isr.svg": {
+      "original": "3x2/IL.svg",
+      "sha256": "e6edd720a2191bb62000f7353f50171a99bbc75af56c5840b6279d76f0048c28",
+      "bytes": 548
+    },
+    "kor.svg": {
+      "original": "3x2/KR.svg",
+      "sha256": "8e7ecfe2a9ac0ee23b1919ee9a460016dfed8f645e773fd339799d9196effb89",
+      "bytes": 783
+    },
+    "ltu.svg": {
+      "original": "3x2/LT.svg",
+      "sha256": "7e90ac74bdf842003eaec9f5ab78b0018dedd9ea97051c8dc6b6e275a58a2ac0",
+      "bytes": 196
+    },
+    "lux.svg": {
+      "original": "3x2/LU.svg",
+      "sha256": "261bfeb47b9c8d60d08cb1f20e0a15917dbb5df7902e4e2f85a9ab018b798cc1",
+      "bytes": 193
+    },
+    "lva.svg": {
+      "original": "3x2/LV.svg",
+      "sha256": "37d549c257dc3280eec6392637b95b2efc5deea13293d2c111a32b9a8919b46a",
+      "bytes": 189
+    },
+    "mkd.svg": {
+      "original": "3x2/MK.svg",
+      "sha256": "0beaf058570b60c3bbf62cf8af63e29cf4826d2485dbe7d7a561bd8645888aec",
+      "bytes": 499
+    },
+    "mlt.svg": {
+      "original": "3x2/MT.svg",
+      "sha256": "9849e5e7bf315dfc544dd245a0d7f109124982912aa2b8f01c699240f9f7ad49",
+      "bytes": 543
+    },
+    "mne.svg": {
+      "original": "3x2/ME.svg",
+      "sha256": "883c0088196d6b1ef5ec7c3a28620fbb46107f2f2d5de7b776afbbbbfcb0bc47",
+      "bytes": 2597
+    },
+    "nld.svg": {
+      "original": "3x2/NL.svg",
+      "sha256": "aaed4b6344297ba7b38b380e331a5a63f46ddeb123098b041f4e46a7b3169eda",
+      "bytes": 195
+    },
+    "nor.svg": {
+      "original": "3x2/NO.svg",
+      "sha256": "aa9bd3159ae3c81ee35a00e4362a24b21b0ef13ba5164e2598e1cdee8b06e9fc",
+      "bytes": 284
+    },
+    "pol.svg": {
+      "original": "3x2/PL.svg",
+      "sha256": "ddcd386c022570c8bb4f7a90674beb6ae780ce1a4bafe1bec0815201c0ebe421",
+      "bytes": 151
+    },
+    "prt.svg": {
+      "original": "3x2/PT.svg",
+      "sha256": "ed872d800177ced6fe9024486d56d0c3be6e5e38f1bdd0dbd0dfd74e1145f6b9",
+      "bytes": 357
+    },
+    "rou.svg": {
+      "original": "3x2/RO.svg",
+      "sha256": "8d838fa6efadf04ae3e4dc6ce1821224b000340c88f10b7d2e847a491ac1732c",
+      "bytes": 202
+    },
+    "srb.svg": {
+      "original": "3x2/RS.svg",
+      "sha256": "42dda0c9e6bdc228693ff74c7c612efeb0aa085e337d5ab7be14231f53306f73",
+      "bytes": 861
+    },
+    "svk.svg": {
+      "original": "3x2/SK.svg",
+      "sha256": "a2792d1460d34533d3a5ff6f5271278bd1379dfae6b87ec7d7520bc9f135ec3f",
+      "bytes": 1077
+    },
+    "svn.svg": {
+      "original": "3x2/SI.svg",
+      "sha256": "cfed3be19e2a4e9e6330c6750d717807a28ef86084d4eccadd08a050231ad8dd",
+      "bytes": 1556
+    },
+    "swe.svg": {
+      "original": "3x2/SE.svg",
+      "sha256": "a0d86110fe9562f094c05bbc80cdd03264822c019d3f30f00cbc866a9e8b75e4",
+      "bytes": 202
+    },
+    "tur.svg": {
+      "original": "3x2/TR.svg",
+      "sha256": "4b34984f72635bb435b56435f9f1c92244a0cb7522c248270e96476e32face98",
+      "bytes": 449
+    },
+    "ury.svg": {
+      "original": "3x2/UY.svg",
+      "sha256": "3f1c8c7e07581dbe3fca3a0c158513d8a45d523ce65c4a3ea2fb98d44c05162b",
+      "bytes": 729
+    },
+    "usa.svg": {
+      "original": "3x2/US.svg",
+      "sha256": "0368f33db1cc70ef5eee2a5de99571b65d394d8964f4824ce3919d45998775c0",
+      "bytes": 1352
+    },
+    "xkk.svg": {
+      "original": "3x2/XK.svg",
+      "sha256": "64cb2059fff629b31ad87fe16251c9813c6e504bf9d14ec213045d17b0d4eb10",
+      "bytes": 1058
+    }
+  }
+}

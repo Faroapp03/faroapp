@@ -1,0 +1,38 @@
+[
+  { "Id": 23086, "FK_Variable": 458, "Nombre": "Total", "Codigo": "" },
+  { "Id": 22324, "FK_Variable": 456, "Nombre": "Directores y gerentes", "Codigo": "1" },
+  { "Id": 22374, "FK_Variable": 456, "Nombre": "Técnicos y profesionales científicos e intelectuales", "Codigo": "2" },
+  { "Id": 22541, "FK_Variable": 456, "Nombre": "Técnicos; profesionales de apoyo", "Codigo": "3" },
+  {
+    "Id": 22672,
+    "FK_Variable": 456,
+    "Nombre": "Empleados contables, administrativos y otros empleados de oficina",
+    "Codigo": "4"
+  },
+  {
+    "Id": 22716,
+    "FK_Variable": 456,
+    "Nombre": "Trabajadores de los servicios de restauración, personales, protección y vendedores",
+    "Codigo": "5"
+  },
+  {
+    "Id": 22807,
+    "FK_Variable": 456,
+    "Nombre": "Trabajadores cualificados en el sector agrícola, ganadero, forestal y pesquero",
+    "Codigo": "6"
+  },
+  {
+    "Id": 22834,
+    "FK_Variable": 456,
+    "Nombre": "Artesanos y trabajadores cualificados de las industrias manufactureras y la construcción (excepto operadores de instalaciones y maquinaria)",
+    "Codigo": "7"
+  },
+  {
+    "Id": 22948,
+    "FK_Variable": 456,
+    "Nombre": "Operadores de instalaciones y maquinaria, y montadores",
+    "Codigo": "8"
+  },
+  { "Id": 23016, "FK_Variable": 456, "Nombre": "Ocupaciones elementales", "Codigo": "9" },
+  { "Id": 23077, "FK_Variable": 456, "Nombre": "Ocupaciones militares", "Codigo": "0" }
+]

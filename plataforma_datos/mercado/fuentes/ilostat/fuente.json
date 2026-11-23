@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "id": "ilostat",
+  "tema": "mercado",
+  "lector": "plataforma_datos.mercado.fuentes.ilostat.lector",
+  "casa_datos": "ilostat",
+  "nombre": "ILOSTAT: empleo por ocupación y país",
+  "institucion": "Organización Internacional del Trabajo (ILOSTAT)",
+  "significado": "Empleo medido por gran grupo ISCO-08 y sexo, en miles, del último año de encuesta de fuerza de trabajo de cada país; no estima exposición a IA ni usa empleo modelado.",
+  "alcance": [
+    "Indicador EMP_TEMP_SEX_OCU_NB_A desde 2016; selecciona fuentes BA y excluye XA, censos y otras encuestas de hogares.",
+    "Cada país conserva su propio periodo y marcas; porcentajes de empleo/mujeres son cálculos sobre los recuentos publicados.",
+    "Contrasta con Eurostat en el último año común, con cobertura suficiente; ausencia no se convierte en cero."
+  ],
+  "recursos": [
+    {
+      "id": "empleo",
+      "tipo": "url",
+      "ubicacion": "https://rplumber.ilo.org/data/indicator/?id=EMP_TEMP_SEX_OCU_NB_A&timefrom=2016&type=code&format=.csv",
+      "licencia": "Política de acceso abierto de la OIT (https://www.ilo.org/es/derechos-y-autorizaciones; su captura es un original de la fuente `oit`): desde el 3/5/2023, los materiales publicados o puestos a disposición por la OIT, bases de datos incluidas, se reutilizan con la licencia CC BY 4.0, citando a la OIT e indicando los cambios. Faro no traduce sus cifras: calcula porcentajes sobre ellas y lo dice.",
+      "descripcion": "CSV anual de empleo, sexo y ocupación con códigos y marcas oficiales."
+    }
+  ],
+  "canales": [
+    {
+      "id": "ilostat",
+      "tipo": "remoto",
+      "recursos": ["empleo"],
+      "autenticacion": "No se configura autenticación de cuenta en el lector.",
+      "limites": [
+        "Conserva unidad miles, años, sexo, fuente de encuesta y marcas; no mezcla un censo o una estimación modelada.",
+        "No se acredita un calendario de publicación común por país."
+      ],
+      "observaciones": "Consulta pública del indicador; la ejecución del robot requiere configuración aparte."
+    }
+  ],
+  "actualizacion": {
+    "politica": "mensual",
+    "red": true,
+    "frecuencia": "continua (cada país, cuando la OIT publica su encuesta)",
+    "renovar_dias": null,
+    "originales": "ilostat"
+  },
+  "conjuntos": [
+    {
+      "id": "ilostat",
+      "fuente": "ilostat",
+      "clase": "cambiante",
+      "alcance": "serie-abierta",
+      "operacion": "descargar",
+      "intervalo_dias": 30
+    }
+  ],
+  "dependencias": ["territorios", "mundo_eurostat"],
+  "contratos": ["lector.py:validar"],
+  "retirada": "Se mantienen los controles de admisión y reconstrucción del lector; un fallo de consulta o una lectura parcial no autoriza una retirada ni una cifra cero.",
+  "conservacion": "Las rutas, originales, procedencias y revisiones actuales en var/actualizacion se conservan; este descriptor no activa limpieza automática ni fija nuevos plazos de retención."
+}

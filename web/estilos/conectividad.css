@@ -1,0 +1,62 @@
+/* Estado confirmado: el color acompaña siempre a una palabra. Sin lectura no se dibuja una luz apagada. */
+.conectividad-servicios {
+  margin: 30px 0 24px;
+  padding: 0;
+  list-style: none;
+}
+.conectividad-servicios li {
+  display: grid;
+  grid-template-columns: 1rem minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 16px;
+  padding: 22px 0;
+  border-bottom: 1px solid var(--color-linea);
+}
+.conectividad-luz {
+  grid-column: 1;
+  width: 0.8rem;
+  height: 0.8rem;
+  border-radius: 50%;
+}
+.conectividad-activa {
+  background: var(--color-semaforo-bien);
+}
+.conectividad-inactiva {
+  background: var(--dato-gris);
+}
+.conectividad-nombre {
+  grid-column: 2;
+}
+.conectividad-valor {
+  grid-column: 3;
+  color: var(--color-tenue);
+}
+.conectividad-acciones {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+  margin: 20px 0;
+}
+.conectividad-direccion {
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  margin: 10px 0;
+  padding: 12px;
+  color: var(--color-tinta);
+  background: var(--color-panel);
+  border: 1px solid var(--color-linea);
+  border-radius: 6px;
+  font: 0.95rem / 1.6 var(--fuente-mono);
+}
+
+@media (max-width: 560px) {
+  .conectividad-servicios li {
+    grid-template-columns: 1rem minmax(0, 1fr);
+    gap: 10px 14px;
+  }
+  .conectividad-valor {
+    grid-column: 2;
+  }
+}

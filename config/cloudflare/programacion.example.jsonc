@@ -1,0 +1,6 @@
+{
+  "triggers": { "crons": ["15 4 * * *"] },
+  "vars": {
+    "FARO_ACTUALIZACION_PROGRAMADA": "{\"version\":1,\"habilitada\":true,\"cron\":\"15 4 * * *\"}"
+  }
+}

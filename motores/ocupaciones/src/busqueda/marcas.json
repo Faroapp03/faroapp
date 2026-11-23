@@ -1,0 +1,1095 @@
+{
+  "descripcion": "Plataformas y grandes empleadores con que la gente describe su trabajo («trabajo en Mercadona», «rider de Glovo», «Uber»). Cada uno se liga a su actividad pública (clase CNAE-2009) y a 1-3 ocupaciones ESCO típicas de esa actividad. Es una pista de sector y una probabilidad previa suave, nunca una respuesta: Amazon puede ser almacén o reparto. Lista escrita a partir de los mayores empleadores y plataformas de Cataluña y España, sin mirar el banco de evaluación. Se han dejado fuera las marcas cuyo nombre es una palabra muy corriente (Dia, Atento, Desigual, Rodilla, Avanza, Viena, RIU), porque ni detrás de una preposición se distinguen de ella. Incluye los cuerpos públicos de seguridad cuyo nombre se usa como oficio (Mossos d'Esquadra, Guardia Civil, Policía Nacional, Guàrdia Urbana, policía local; CNAE 8424): «mosso d'esquadra» es policía, no «mozo».",
+  "fuente": "Actividad pública declarada por la empresa (web corporativa); clase CNAE-2009 asignada por Faro según esa actividad, sin cotejo con la inscripción de la empresa en el Registro Mercantil.",
+  "actividades": {
+    "super": {
+      "sector": "comercio",
+      "cnae": "4711",
+      "actividad": "Comercio al por menor en establecimientos no especializados, con predominio de alimentación",
+      "ocupaciones": ["5230.1", "9334.1", "5223.4"]
+    },
+    "grandes_almacenes": {
+      "sector": "comercio",
+      "cnae": "4719",
+      "actividad": "Comercio al por menor en establecimientos no especializados (grandes almacenes)",
+      "ocupaciones": ["5223.4", "5230.1"]
+    },
+    "moda": {
+      "sector": "comercio",
+      "cnae": "4771",
+      "actividad": "Comercio al por menor de prendas de vestir",
+      "ocupaciones": ["5223.7.8", "5230.1"]
+    },
+    "deporte": {
+      "sector": "comercio",
+      "cnae": "4764",
+      "actividad": "Comercio al por menor de artículos deportivos",
+      "ocupaciones": ["5223.7.33", "5230.1"]
+    },
+    "muebles": {
+      "sector": "comercio",
+      "cnae": "4759",
+      "actividad": "Comercio al por menor de muebles y artículos de uso doméstico",
+      "ocupaciones": ["5223.7.20", "5230.1", "9334.1"]
+    },
+    "bricolaje": {
+      "sector": "comercio",
+      "cnae": "4752",
+      "actividad": "Comercio al por menor de ferretería, pintura y bricolaje",
+      "ocupaciones": ["5223.7.21", "5230.1"]
+    },
+    "electro": {
+      "sector": "comercio",
+      "cnae": "4743",
+      "actividad": "Comercio al por menor de equipos de informática, electrónica y electrodomésticos",
+      "ocupaciones": ["5223.7.9", "5230.1"]
+    },
+    "perfumeria": {
+      "sector": "comercio",
+      "cnae": "4775",
+      "actividad": "Comercio al por menor de productos cosméticos e higiénicos",
+      "ocupaciones": ["5223.7.12", "5230.1"]
+    },
+    "online": {
+      "sector": "logistica",
+      "cnae": "4791",
+      "actividad": "Comercio al por menor por internet, con almacenes y reparto propios",
+      "ocupaciones": ["9333.3", "8322.2", "9333.4"]
+    },
+    "plataforma_reparto": {
+      "sector": "logistica",
+      "cnae": "5320",
+      "actividad": "Otras actividades postales y de correos: reparto a domicilio por plataforma",
+      "ocupaciones": ["8321.1", "9331.1"]
+    },
+    "paqueteria": {
+      "sector": "logistica",
+      "cnae": "5320",
+      "actividad": "Otras actividades postales y de correos: paquetería y mensajería",
+      "ocupaciones": ["8322.2", "9333.4"]
+    },
+    "correos": {
+      "sector": "logistica",
+      "cnae": "5310",
+      "actividad": "Actividades postales sometidas a la obligación del servicio universal",
+      "ocupaciones": ["4412.2", "8322.2"]
+    },
+    "vtc": {
+      "sector": "transporte",
+      "cnae": "4932",
+      "actividad": "Transporte por taxi y vehículos de alquiler con conductor (plataforma)",
+      "ocupaciones": ["8322.6", "8322.7"]
+    },
+    "bus": {
+      "sector": "transporte",
+      "cnae": "4931",
+      "actividad": "Transporte terrestre urbano y suburbano de pasajeros",
+      "ocupaciones": ["8331.1", "8331.2"]
+    },
+    "tren": {
+      "sector": "transporte",
+      "cnae": "4910",
+      "actividad": "Transporte interurbano de pasajeros por ferrocarril",
+      "ocupaciones": ["8311.1", "5112.3.1"]
+    },
+    "aerolinea": {
+      "sector": "transporte",
+      "cnae": "5110",
+      "actividad": "Transporte aéreo de pasajeros",
+      "ocupaciones": ["5111.2.1", "3153.2.2.1"]
+    },
+    "aeropuerto": {
+      "sector": "transporte",
+      "cnae": "5223",
+      "actividad": "Actividades anexas al transporte aéreo (gestión aeroportuaria)",
+      "ocupaciones": ["4221.1", "3154.1"]
+    },
+    "comida_rapida": {
+      "sector": "hosteleria",
+      "cnae": "5610",
+      "actividad": "Restaurantes y puestos de comidas (restauración rápida)",
+      "ocupaciones": ["9411.2", "5246.2", "9412.1"]
+    },
+    "cafeteria": {
+      "sector": "hosteleria",
+      "cnae": "5630",
+      "actividad": "Establecimientos de bebidas (cafeterías y panaderías-cafetería)",
+      "ocupaciones": ["5132.1.1", "5131.2"]
+    },
+    "hotel": {
+      "sector": "hosteleria",
+      "cnae": "5510",
+      "actividad": "Hoteles y alojamientos similares",
+      "ocupaciones": ["9112.4", "4224.1", "5131.2"]
+    },
+    "banco": {
+      "sector": "financiero",
+      "cnae": "6419",
+      "actividad": "Otra intermediación monetaria (banca)",
+      "ocupaciones": ["4211.1", "3312.2"]
+    },
+    "seguros": {
+      "sector": "financiero",
+      "cnae": "6512",
+      "actividad": "Seguros distintos de los seguros de vida",
+      "ocupaciones": ["3321.3.1", "3321.1", "4222.1"]
+    },
+    "teleco": {
+      "sector": "telecomunicaciones",
+      "cnae": "6120",
+      "actividad": "Telecomunicaciones inalámbricas y por cable",
+      "ocupaciones": ["5223.7.34", "4222.1", "7422.8"]
+    },
+    "call_center": {
+      "sector": "telecomunicaciones",
+      "cnae": "8220",
+      "actividad": "Actividades de los centros de llamadas",
+      "ocupaciones": ["5244.1", "4222.1"]
+    },
+    "ett": {
+      "sector": "servicios",
+      "cnae": "7820",
+      "actividad": "Actividades de las empresas de trabajo temporal",
+      "ocupaciones": ["2423.6"]
+    },
+    "limpieza": {
+      "sector": "servicios",
+      "cnae": "8121",
+      "actividad": "Limpieza general de edificios (servicios a empresas e instituciones)",
+      "ocupaciones": ["9112.2"]
+    },
+    "seguridad": {
+      "sector": "servicios",
+      "cnae": "8010",
+      "actividad": "Actividades de seguridad privada",
+      "ocupaciones": ["5414.1"]
+    },
+    "policia": {
+      "sector": "publico",
+      "cnae": "8424",
+      "actividad": "Orden público y seguridad",
+      "ocupaciones": ["5412.1"]
+    },
+    "policia_local": {
+      "sector": "publico",
+      "cnae": "8424",
+      "actividad": "Orden público y seguridad (policía local)",
+      "ocupaciones": ["5412.1", "5419.2"]
+    },
+    "hospital": {
+      "sector": "sanitario",
+      "cnae": "8610",
+      "actividad": "Actividades hospitalarias",
+      "ocupaciones": ["5329.2", "5321.1.1"]
+    },
+    "residencia": {
+      "sector": "cuidados",
+      "cnae": "8731",
+      "actividad": "Asistencia en establecimientos residenciales para personas mayores",
+      "ocupaciones": ["3412.4.11", "5321.1.1"]
+    },
+    "automocion": {
+      "sector": "industrial",
+      "cnae": "2910",
+      "actividad": "Fabricación de vehículos de motor",
+      "ocupaciones": ["8211.5"]
+    },
+    "farma": {
+      "sector": "industrial",
+      "cnae": "2120",
+      "actividad": "Fabricación de especialidades farmacéuticas",
+      "ocupaciones": ["8183.1"]
+    },
+    "bebidas": {
+      "sector": "industrial",
+      "cnae": "1105",
+      "actividad": "Fabricación de cerveza y bebidas",
+      "ocupaciones": ["8183.1"]
+    },
+    "alimentacion": {
+      "sector": "industrial",
+      "cnae": "1089",
+      "actividad": "Fabricación de productos alimenticios",
+      "ocupaciones": ["8160.34", "8183.1"]
+    },
+    "energia": {
+      "sector": "servicios",
+      "cnae": "3514",
+      "actividad": "Comercio y distribución de energía eléctrica y gas",
+      "ocupaciones": ["4222.1", "7411.1"]
+    },
+    "gasolinera": {
+      "sector": "comercio",
+      "cnae": "4730",
+      "actividad": "Comercio al por menor de combustible para la automoción (estaciones de servicio)",
+      "ocupaciones": ["5245.1"]
+    }
+  },
+  "marcas": [
+    {
+      "nombre": "Mercadona",
+      "actividad": "super",
+      "formas": ["mercadona"]
+    },
+    {
+      "nombre": "Carrefour",
+      "actividad": "super",
+      "formas": ["carrefour"]
+    },
+    {
+      "nombre": "Lidl",
+      "actividad": "super",
+      "formas": ["lidl"]
+    },
+    {
+      "nombre": "Aldi",
+      "actividad": "super",
+      "formas": ["aldi"]
+    },
+    {
+      "nombre": "Eroski",
+      "actividad": "super",
+      "formas": ["eroski"]
+    },
+    {
+      "nombre": "Caprabo",
+      "actividad": "super",
+      "formas": ["caprabo"]
+    },
+    {
+      "nombre": "Bonpreu",
+      "actividad": "super",
+      "formas": ["bonpreu", "bon preu"]
+    },
+    {
+      "nombre": "Esclat",
+      "actividad": "super",
+      "formas": ["esclat"],
+      "conPreposicion": true
+    },
+    {
+      "nombre": "Condis",
+      "actividad": "super",
+      "formas": ["condis"]
+    },
+    {
+      "nombre": "Consum",
+      "actividad": "super",
+      "formas": ["consum"],
+      "conPreposicion": true
+    },
+    {
+      "nombre": "Alcampo",
+      "actividad": "super",
+      "formas": ["alcampo"]
+    },
+    {
+      "nombre": "Hipercor",
+      "actividad": "super",
+      "formas": ["hipercor"]
+    },
+    {
+      "nombre": "Ahorramas",
+      "actividad": "super",
+      "formas": ["ahorramas"]
+    },
+    {
+      "nombre": "Spar",
+      "actividad": "super",
+      "formas": ["spar"]
+    },
+    {
+      "nombre": "Covirán",
+      "actividad": "super",
+      "formas": ["coviran"]
+    },
+    {
+      "nombre": "bonÀrea",
+      "actividad": "super",
+      "formas": ["bonarea"]
+    },
+    {
+      "nombre": "Ametller Origen",
+      "actividad": "super",
+      "formas": ["ametller origen", "ametller"]
+    },
+    {
+      "nombre": "Veritas",
+      "actividad": "super",
+      "formas": ["veritas"]
+    },
+    {
+      "nombre": "Plusfresc",
+      "actividad": "super",
+      "formas": ["plusfresc", "plus fresc"]
+    },
+    {
+      "nombre": "Sorli",
+      "actividad": "super",
+      "formas": ["sorli"]
+    },
+    {
+      "nombre": "El Corte Inglés",
+      "actividad": "grandes_almacenes",
+      "formas": ["corte ingles"]
+    },
+    {
+      "nombre": "Zara",
+      "actividad": "moda",
+      "formas": ["zara"],
+      "conPreposicion": true
+    },
+    {
+      "nombre": "Inditex",
+      "actividad": "moda",
+      "formas": ["inditex"]
+    },
+    {
+      "nombre": "Mango",
+      "actividad": "moda",
+      "formas": ["mango"],
+      "conPreposicion": true
+    },
+    {
+      "nombre": "H&M",
+      "actividad": "moda",
+      "formas": ["h m", "hym", "h&m"],
+      "conPreposicion": true
+    },
+    {
+      "nombre": "Primark",
+      "actividad": "moda",
+      "formas": ["primark"]
+    },
+    {
+      "nombre": "Pull&Bear",
+      "actividad": "moda",
+      "formas": ["pull bear", "pull and bear"]
+    },
+    {
+      "nombre": "Bershka",
+      "actividad": "moda",
+      "formas": ["bershka"]
+    },
+    {
+      "nombre": "Stradivarius",
+      "actividad": "moda",
+      "formas": ["stradivarius"]
+    },
+    {
+      "nombre": "Massimo Dutti",
+      "actividad": "moda",
+      "formas": ["massimo dutti"]
+    },
+    {
+      "nombre": "Lefties",
+      "actividad": "moda",
+      "formas": ["lefties"]
+    },
+    {
+      "nombre": "Decathlon",
+      "actividad": "deporte",
+      "formas": ["decathlon"]
+    },
+    {
+      "nombre": "Ikea",
+      "actividad": "muebles",
+      "formas": ["ikea"]
+    },
+    {
+      "nombre": "Leroy Merlin",
+      "actividad": "bricolaje",
+      "formas": ["leroy merlin", "leroy"]
+    },
+    {
+      "nombre": "Bricomart",
+      "actividad": "bricolaje",
+      "formas": ["bricomart"]
+    },
+    {
+      "nombre": "Media Markt",
+      "actividad": "electro",
+      "formas": ["media markt", "mediamarkt"]
+    },
+    {
+      "nombre": "Fnac",
+      "actividad": "electro",
+      "formas": ["fnac"]
+    },
+    {
+      "nombre": "Primor",
+      "actividad": "perfumeria",
+      "formas": ["primor"]
+    },
+    {
+      "nombre": "Druni",
+      "actividad": "perfumeria",
+      "formas": ["druni"]
+    },
+    {
+      "nombre": "Sephora",
+      "actividad": "perfumeria",
+      "formas": ["sephora"]
+    },
+    {
+      "nombre": "Amazon",
+      "actividad": "online",
+      "formas": ["amazon"]
+    },
+    {
+      "nombre": "Glovo",
+      "actividad": "plataforma_reparto",
+      "formas": ["glovo"]
+    },
+    {
+      "nombre": "Deliveroo",
+      "actividad": "plataforma_reparto",
+      "formas": ["deliveroo"]
+    },
+    {
+      "nombre": "Just Eat",
+      "actividad": "plataforma_reparto",
+      "formas": ["just eat"]
+    },
+    {
+      "nombre": "Uber Eats",
+      "actividad": "plataforma_reparto",
+      "formas": ["uber eats"]
+    },
+    {
+      "nombre": "Stuart",
+      "actividad": "plataforma_reparto",
+      "formas": ["stuart"],
+      "conPreposicion": true
+    },
+    {
+      "nombre": "Seur",
+      "actividad": "paqueteria",
+      "formas": ["seur"]
+    },
+    {
+      "nombre": "MRW",
+      "actividad": "paqueteria",
+      "formas": ["mrw"]
+    },
+    {
+      "nombre": "GLS",
+      "actividad": "paqueteria",
+      "formas": ["gls"]
+    },
+    {
+      "nombre": "DHL",
+      "actividad": "paqueteria",
+      "formas": ["dhl"]
+    },
+    {
+      "nombre": "UPS",
+      "actividad": "paqueteria",
+      "formas": ["ups"],
+      "conPreposicion": true
+    },
+    {
+      "nombre": "FedEx",
+      "actividad": "paqueteria",
+      "formas": ["fedex"]
+    },
+    {
+      "nombre": "Nacex",
+      "actividad": "paqueteria",
+      "formas": ["nacex"]
+    },
+    {
+      "nombre": "CTT Express",
+      "actividad": "paqueteria",
+      "formas": ["ctt"]
+    },
+    {
+      "nombre": "Correos",
+      "actividad": "correos",
+      "formas": ["correos"],
+      "conPreposicion": true
+    },
+    {
+      "nombre": "Uber",
+      "actividad": "vtc",
+      "formas": ["uber"]
+    },
+    {
+      "nombre": "Cabify",
+      "actividad": "vtc",
+      "formas": ["cabify"]
+    },
+    {
+      "nombre": "Bolt",
+      "actividad": "vtc",
+      "formas": ["bolt"]
+    },
+    {
+      "nombre": "FreeNow",
+      "actividad": "vtc",
+      "formas": ["freenow", "free now"]
+    },
+    {
+      "nombre": "TMB",
+      "actividad": "bus",
+      "formas": ["tmb"]
+    },
+    {
+      "nombre": "Moventis",
+      "actividad": "bus",
+      "formas": ["moventis"]
+    },
+    {
+      "nombre": "Sagalés",
+      "actividad": "bus",
+      "formas": ["sagales"]
+    },
+    {
+      "nombre": "Alsa",
+      "actividad": "bus",
+      "formas": ["alsa"]
+    },
+    {
+      "nombre": "Renfe",
+      "actividad": "tren",
+      "formas": ["renfe"]
+    },
+    {
+      "nombre": "FGC",
+      "actividad": "tren",
+      "formas": ["fgc", "ferrocarrils de la generalitat"]
+    },
+    {
+      "nombre": "Rodalies",
+      "actividad": "tren",
+      "formas": ["rodalies"]
+    },
+    {
+      "nombre": "Ouigo",
+      "actividad": "tren",
+      "formas": ["ouigo"]
+    },
+    {
+      "nombre": "Iryo",
+      "actividad": "tren",
+      "formas": ["iryo"]
+    },
+    {
+      "nombre": "Vueling",
+      "actividad": "aerolinea",
+      "formas": ["vueling"]
+    },
+    {
+      "nombre": "Iberia",
+      "actividad": "aerolinea",
+      "formas": ["iberia"]
+    },
+    {
+      "nombre": "Ryanair",
+      "actividad": "aerolinea",
+      "formas": ["ryanair"]
+    },
+    {
+      "nombre": "Air Europa",
+      "actividad": "aerolinea",
+      "formas": ["air europa"]
+    },
+    {
+      "nombre": "Aena",
+      "actividad": "aeropuerto",
+      "formas": ["aena"]
+    },
+    {
+      "nombre": "McDonald's",
+      "actividad": "comida_rapida",
+      "formas": ["mcdonalds", "mc donalds", "mcdonald s", "mcdonald"]
+    },
+    {
+      "nombre": "Burger King",
+      "actividad": "comida_rapida",
+      "formas": ["burger king"]
+    },
+    {
+      "nombre": "Telepizza",
+      "actividad": "comida_rapida",
+      "formas": ["telepizza"]
+    },
+    {
+      "nombre": "Domino's Pizza",
+      "actividad": "comida_rapida",
+      "formas": ["dominos", "domino s pizza", "dominos pizza"]
+    },
+    {
+      "nombre": "KFC",
+      "actividad": "comida_rapida",
+      "formas": ["kfc"]
+    },
+    {
+      "nombre": "100 Montaditos",
+      "actividad": "comida_rapida",
+      "formas": ["100 montaditos", "montaditos"]
+    },
+    {
+      "nombre": "Foster's Hollywood",
+      "actividad": "comida_rapida",
+      "formas": ["fosters hollywood", "foster s hollywood"]
+    },
+    {
+      "nombre": "VIPS",
+      "actividad": "comida_rapida",
+      "formas": ["vips"]
+    },
+    {
+      "nombre": "Pans & Company",
+      "actividad": "comida_rapida",
+      "formas": ["pans company", "pans and company"]
+    },
+    {
+      "nombre": "Goiko",
+      "actividad": "comida_rapida",
+      "formas": ["goiko"]
+    },
+    {
+      "nombre": "La Tagliatella",
+      "actividad": "comida_rapida",
+      "formas": ["tagliatella"]
+    },
+    {
+      "nombre": "Starbucks",
+      "actividad": "cafeteria",
+      "formas": ["starbucks"]
+    },
+    {
+      "nombre": "Granier",
+      "actividad": "cafeteria",
+      "formas": ["granier"]
+    },
+    {
+      "nombre": "Fornet",
+      "actividad": "cafeteria",
+      "formas": ["fornet"]
+    },
+    {
+      "nombre": "NH Hotels",
+      "actividad": "hotel",
+      "formas": ["nh hotels", "hoteles nh", "hotel nh"]
+    },
+    {
+      "nombre": "Meliá",
+      "actividad": "hotel",
+      "formas": ["melia"]
+    },
+    {
+      "nombre": "Barceló",
+      "actividad": "hotel",
+      "formas": ["barcelo"],
+      "conPreposicion": true
+    },
+    {
+      "nombre": "H10",
+      "actividad": "hotel",
+      "formas": ["h10"]
+    },
+    {
+      "nombre": "Iberostar",
+      "actividad": "hotel",
+      "formas": ["iberostar"]
+    },
+    {
+      "nombre": "Catalonia Hotels",
+      "actividad": "hotel",
+      "formas": ["catalonia hotels", "hoteles catalonia"]
+    },
+    {
+      "nombre": "Hotusa",
+      "actividad": "hotel",
+      "formas": ["hotusa", "eurostars"]
+    },
+    {
+      "nombre": "CaixaBank",
+      "actividad": "banco",
+      "formas": ["caixabank"]
+    },
+    {
+      "nombre": "BBVA",
+      "actividad": "banco",
+      "formas": ["bbva"]
+    },
+    {
+      "nombre": "Banco Santander",
+      "actividad": "banco",
+      "formas": ["banco santander", "banc santander"],
+      "conPreposicion": true
+    },
+    {
+      "nombre": "Banco Sabadell",
+      "actividad": "banco",
+      "formas": ["banc sabadell", "banco sabadell"]
+    },
+    {
+      "nombre": "Bankinter",
+      "actividad": "banco",
+      "formas": ["bankinter"]
+    },
+    {
+      "nombre": "ING",
+      "actividad": "banco",
+      "formas": ["ing"],
+      "conPreposicion": true
+    },
+    {
+      "nombre": "Unicaja",
+      "actividad": "banco",
+      "formas": ["unicaja"]
+    },
+    {
+      "nombre": "Abanca",
+      "actividad": "banco",
+      "formas": ["abanca"]
+    },
+    {
+      "nombre": "Ibercaja",
+      "actividad": "banco",
+      "formas": ["ibercaja"]
+    },
+    {
+      "nombre": "Kutxabank",
+      "actividad": "banco",
+      "formas": ["kutxabank"]
+    },
+    {
+      "nombre": "Mapfre",
+      "actividad": "seguros",
+      "formas": ["mapfre"]
+    },
+    {
+      "nombre": "Allianz",
+      "actividad": "seguros",
+      "formas": ["allianz"]
+    },
+    {
+      "nombre": "AXA",
+      "actividad": "seguros",
+      "formas": ["axa"]
+    },
+    {
+      "nombre": "Zurich",
+      "actividad": "seguros",
+      "formas": ["zurich"],
+      "conPreposicion": true
+    },
+    {
+      "nombre": "Mutua Madrileña",
+      "actividad": "seguros",
+      "formas": ["mutua madrilena"]
+    },
+    {
+      "nombre": "Catalana Occidente",
+      "actividad": "seguros",
+      "formas": ["catalana occidente"]
+    },
+    {
+      "nombre": "Generali",
+      "actividad": "seguros",
+      "formas": ["generali"]
+    },
+    {
+      "nombre": "Línea Directa",
+      "actividad": "seguros",
+      "formas": ["linea directa"]
+    },
+    {
+      "nombre": "Santalucía",
+      "actividad": "seguros",
+      "formas": ["santalucia", "santa lucia"],
+      "conPreposicion": true
+    },
+    {
+      "nombre": "Movistar",
+      "actividad": "teleco",
+      "formas": ["movistar"]
+    },
+    {
+      "nombre": "Vodafone",
+      "actividad": "teleco",
+      "formas": ["vodafone"]
+    },
+    {
+      "nombre": "Orange",
+      "actividad": "teleco",
+      "formas": ["orange"]
+    },
+    {
+      "nombre": "MásMóvil",
+      "actividad": "teleco",
+      "formas": ["masmovil", "mas movil"]
+    },
+    {
+      "nombre": "Digi",
+      "actividad": "teleco",
+      "formas": ["digi"]
+    },
+    {
+      "nombre": "Konecta",
+      "actividad": "call_center",
+      "formas": ["konecta"]
+    },
+    {
+      "nombre": "Teleperformance",
+      "actividad": "call_center",
+      "formas": ["teleperformance"]
+    },
+    {
+      "nombre": "Transcom",
+      "actividad": "call_center",
+      "formas": ["transcom"]
+    },
+    {
+      "nombre": "Majorel",
+      "actividad": "call_center",
+      "formas": ["majorel"]
+    },
+    {
+      "nombre": "Adecco",
+      "actividad": "ett",
+      "formas": ["adecco"]
+    },
+    {
+      "nombre": "Randstad",
+      "actividad": "ett",
+      "formas": ["randstad"]
+    },
+    {
+      "nombre": "Manpower",
+      "actividad": "ett",
+      "formas": ["manpower"]
+    },
+    {
+      "nombre": "Eurofirms",
+      "actividad": "ett",
+      "formas": ["eurofirms"]
+    },
+    {
+      "nombre": "ISS",
+      "actividad": "limpieza",
+      "formas": ["iss"],
+      "conPreposicion": true
+    },
+    {
+      "nombre": "Clece",
+      "actividad": "limpieza",
+      "formas": ["clece"]
+    },
+    {
+      "nombre": "Ilunion",
+      "actividad": "limpieza",
+      "formas": ["ilunion"]
+    },
+    {
+      "nombre": "Eulen",
+      "actividad": "limpieza",
+      "formas": ["eulen"]
+    },
+    {
+      "nombre": "Optima Facility",
+      "actividad": "limpieza",
+      "formas": ["optima facility"]
+    },
+    {
+      "nombre": "Securitas",
+      "actividad": "seguridad",
+      "formas": ["securitas"]
+    },
+    {
+      "nombre": "Prosegur",
+      "actividad": "seguridad",
+      "formas": ["prosegur"]
+    },
+    {
+      "nombre": "Trablisa",
+      "actividad": "seguridad",
+      "formas": ["trablisa"]
+    },
+    {
+      "nombre": "Mossos d'Esquadra",
+      "actividad": "policia",
+      "formas": [
+        "mosso d'esquadra",
+        "mossa d'esquadra",
+        "mossos d'esquadra",
+        "mosses d'esquadra",
+        "mozo de escuadra",
+        "moza de escuadra"
+      ]
+    },
+    {
+      "nombre": "Guardia Civil",
+      "actividad": "policia",
+      "formas": ["guardia civil", "guàrdia civil"]
+    },
+    {
+      "nombre": "Policía Nacional",
+      "actividad": "policia",
+      "formas": ["policia nacional", "policía nacional", "policia nacional espanyola"]
+    },
+    {
+      "nombre": "Guàrdia Urbana",
+      "actividad": "policia_local",
+      "formas": ["guardia urbana", "guàrdia urbana"]
+    },
+    {
+      "nombre": "Policia Local",
+      "actividad": "policia_local",
+      "formas": ["policia local", "policía local", "policia municipal", "policía municipal"]
+    },
+    {
+      "nombre": "Quirónsalud",
+      "actividad": "hospital",
+      "formas": ["quironsalud", "quiron"]
+    },
+    {
+      "nombre": "Vithas",
+      "actividad": "hospital",
+      "formas": ["vithas"]
+    },
+    {
+      "nombre": "HM Hospitales",
+      "actividad": "hospital",
+      "formas": ["hm hospitales"]
+    },
+    {
+      "nombre": "Institut Català de la Salut",
+      "actividad": "hospital",
+      "formas": ["institut catala de la salut"]
+    },
+    {
+      "nombre": "Sanitas",
+      "actividad": "hospital",
+      "formas": ["sanitas"]
+    },
+    {
+      "nombre": "Asisa",
+      "actividad": "hospital",
+      "formas": ["asisa"]
+    },
+    {
+      "nombre": "DomusVi",
+      "actividad": "residencia",
+      "formas": ["domusvi", "domus vi"]
+    },
+    {
+      "nombre": "Orpea",
+      "actividad": "residencia",
+      "formas": ["orpea", "emeis"]
+    },
+    {
+      "nombre": "Amavir",
+      "actividad": "residencia",
+      "formas": ["amavir"]
+    },
+    {
+      "nombre": "Ballesol",
+      "actividad": "residencia",
+      "formas": ["ballesol"]
+    },
+    {
+      "nombre": "SEAT",
+      "actividad": "automocion",
+      "formas": ["seat", "cupra"],
+      "conPreposicion": true
+    },
+    {
+      "nombre": "Mercedes-Benz",
+      "actividad": "automocion",
+      "formas": ["mercedes benz"]
+    },
+    {
+      "nombre": "Ford",
+      "actividad": "automocion",
+      "formas": ["ford"],
+      "conPreposicion": true
+    },
+    {
+      "nombre": "Grifols",
+      "actividad": "farma",
+      "formas": ["grifols"]
+    },
+    {
+      "nombre": "Almirall",
+      "actividad": "farma",
+      "formas": ["almirall"]
+    },
+    {
+      "nombre": "Esteve",
+      "actividad": "farma",
+      "formas": ["esteve"],
+      "conPreposicion": true
+    },
+    {
+      "nombre": "Damm",
+      "actividad": "bebidas",
+      "formas": ["damm", "estrella damm"]
+    },
+    {
+      "nombre": "Mahou",
+      "actividad": "bebidas",
+      "formas": ["mahou"]
+    },
+    {
+      "nombre": "Bimbo",
+      "actividad": "alimentacion",
+      "formas": ["bimbo"]
+    },
+    {
+      "nombre": "Danone",
+      "actividad": "alimentacion",
+      "formas": ["danone"]
+    },
+    {
+      "nombre": "Nestlé",
+      "actividad": "alimentacion",
+      "formas": ["nestle"]
+    },
+    {
+      "nombre": "Casa Tarradellas",
+      "actividad": "alimentacion",
+      "formas": ["tarradellas"]
+    },
+    {
+      "nombre": "Endesa",
+      "actividad": "energia",
+      "formas": ["endesa"]
+    },
+    {
+      "nombre": "Iberdrola",
+      "actividad": "energia",
+      "formas": ["iberdrola"]
+    },
+    {
+      "nombre": "Naturgy",
+      "actividad": "energia",
+      "formas": ["naturgy"]
+    },
+    {
+      "nombre": "Repsol",
+      "actividad": "gasolinera",
+      "formas": ["repsol"]
+    },
+    {
+      "nombre": "Cepsa / Moeve",
+      "actividad": "gasolinera",
+      "formas": ["cepsa", "moeve"]
+    },
+    {
+      "nombre": "BP",
+      "actividad": "gasolinera",
+      "formas": ["bp"],
+      "conPreposicion": true
+    },
+    {
+      "nombre": "Galp",
+      "actividad": "gasolinera",
+      "formas": ["galp"]
+    }
+  ]
+}

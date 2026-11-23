@@ -1,0 +1,66 @@
+# Observaciones técnicas de enlaces de Biblioteca
+
+Generado de `fuente.json`; editar el descriptor y regenerar.
+
+Accesibilidad e identidad de enlaces específicos mediante capturas; no modifica autoría, idioma, licencia ni revisión intelectual del catálogo.
+
+ID: `enlaces_lecturas` · tema: `biblioteca` · institución: no declarada.
+Lector estático: `plataforma_datos.biblioteca.fuentes.enlaces_lecturas.lector`. Casa de datos: `enlaces_lecturas`.
+
+## Alcance
+
+- Solo enlaces HTTPS declarados por las lecturas, con variantes por idioma. Locales o ausentes quedan fuera de consulta remota.
+- Un HTTP accesible, plantilla o título editorial no acredita identidad. La identidad se liga a evidencia explícitamente revisada de URL, destino y contenido; PDF requiere además huella de texto extraído con su método.
+- La vigencia técnica configurable es de siete días; no es vigencia intelectual. Capturas vencidas, login, portada genérica, cifrado, escaneado o límites quedan explícitos; fallos no retiran lecturas.
+- Recepción por objetivo: 8 MiB máximos en cable y contenido expandido durante lectura. Status 206 o cualquier Content-Range se registran como intento técnico incompleto antes de leer, nunca como pérdida de identidad. Status y cabeceras técnicas se conservan en recibos HTTP privados ligados por SHA a la captura; sin cookies ni credenciales. Capturas históricas conservan su contrato y no reciben códigos HTTP inventados.
+- Python 3.12 y pypdf==6.21.2 (BSD-3-Clause). PDF: CPU 5 s/plazo 10 s, entrada 8 MiB, 20 páginas, 1 millón de caracteres, 4 MiB por stream y salida 8 KiB. Linux impone RLIMIT_AS 512 MiB; macOS supervisa RSS 512 MiB del hijo propio con pausa 50 ms y ps con plazo 1 s: supervisión periódica, no techo estricto. RSS desconocido rechaza extracción. El texto extraído no acredita revisión visual.
+- La entrega técnica usa version 2: último intento, última confirmación y última evidencia concluyente conservan sus fechas reales. El orden de llegada no altera el orden de observación.
+- HTTP 404/410 describen ausencia en esa URL; no dan de baja la lectura editorial. Un fallo técnico posterior no revoca una confirmación ni borra evidencia contraria. La recuperación exige confirmación posterior.
+- El consumidor conserva los enlaces editoriales sin observación o con comprobación vencida, sin presentarlos como comprobados. Solo evidencia de ausencia HTTP, redirección genérica o destino inseguro desactiva el enlace. Falta de identidad revisada, acceso restringido o límites de extracción no acreditan una sustitución; conservan la última evidencia concluyente y no renuevan fechas. La ficha y su historial se conservan.
+
+## Recursos y condiciones de uso
+
+- `catalogo` (archivo): Lista editorial de IDs y enlaces; solo lectura.
+  Ubicación: plataforma_datos/biblioteca/fuentes/lecturas/catalogo.json. Licencia: Metadatos editoriales propios; condiciones por lectura.
+- `contrato` (archivo): Plazo técnico explícito, configurable; ningún hash remoto en git.
+  Ubicación: plataforma_datos/biblioteca/fuentes/enlaces_lecturas/contrato.json. Licencia: desconocida; no acreditada por este descriptor.
+- `observaciones` (archivo): Cuerpos y capturas inmutables por SHA; identidades.json: version 1, decisiones por id:campo con lista histórica de {url,url_final,cuerpo_sha256,revisado_utc,texto_sha256}. La lista acumula evidencias revisadas, nunca generadas de títulos. PDF exige texto_sha256 del método de extracción declarado.
+  Ubicación: var/actualizacion/originales/enlaces_lecturas. Licencia: Capturas privadas para verificación; no redistribuye documentos enlazados.
+
+La licencia del código está en `LICENSE`; no concede derechos sobre recursos externos.
+
+## Canales utilizados
+
+- `enlaces` (remoto): Conectada al registro, al planificador, a la cobertura de comprobaciones y al exportador común. La consulta remota y el consumidor público se verifican aparte; registrar y exportar no acreditan enlaces verificados.
+  Recursos: catalogo, contrato, observaciones. Autenticación: Ninguna. No cuentas, login, CAPTCHA ni bypass.
+  - Usa transporte y recepción comunes; serial y al menos 2 s por dominio incluidas redirecciones.
+  - No extrae nombres o títulos para inventar identidad; las identidades operativas no las genera el robot.
+  - La extracción textual de PDF no es OCR ni revisión visual.
+  - No afirma disponibilidad futura, actualidad intelectual ni que todo el catálogo esté verificado.
+  - PDF usa negociación de datos. HTML conserva navegación sin forzar idioma español sobre variantes del catálogo; la identidad procede siempre del perfil central. La negociación y HTTP200 no acreditan por sí solos identidad.
+
+## Operación actual
+
+Política: `mensual`. Consulta red: sí.
+Frecuencia declarada: Consulta técnica propuesta cada 7 días, independiente de edición editorial; no declara publicación mensual de sus fuentes. Aviso de renovación: 7 días.
+Originales: `enlaces_lecturas`.
+
+| Conjunto | Clase | Alcance | Operación | Intervalo de consulta (días UTC) |
+| --- | --- | --- | --- | --- |
+| enlaces_lecturas | cambiante | contenido-actual-acotado | descargar | 7 |
+
+El intervalo de consulta no es la frecuencia de publicación ni acredita una tarea instalada.
+Dependencias: lecturas.
+Contratos y controles: contrato.json:version y validez_dias, contrato.py:evaluar con captura UTC y evidencia específica, lector.py:preparar, validar, exportar; huellas de todas las entradas, pdf.py:pypdf==6.21.2 en subproceso acotado, http.py:control previo de parciales y evidencia HTTP técnica; no sustituye admisión ni identidad, Entrega observaciones-lecturas.json version 2: ultima_evidencia separada de ultimo_intento y ultima_confirmacion; lector y consumidor rechazan un contrato incompatible.
+
+Retirada: Solo revisión editorial modifica el catálogo. Fallos HTTP, TLS, red o falta de identidad no retiran lecturas; tampoco confirman cierres permanentes.
+
+Conservación: Historial operativo sin limpieza: cuerpos y capturas por huella, decisiones explícitas de identidad separadas, última confirmación conservada sin rejuvenecer y selección por captura efectiva. Exportación independiente observaciones-lecturas.json, nunca lecturas.json.
+
+## Reproducción
+
+```sh
+python -m plataforma_datos.biblioteca.fuentes.enlaces_lecturas.lector preparar
+python -m plataforma_datos.biblioteca.fuentes.enlaces_lecturas.lector validar
+python -m plataforma_datos.contratos.fuentes --fuente enlaces_lecturas --tema biblioteca --comprobar
+```

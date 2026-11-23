@@ -1,0 +1,132 @@
+/* Informe · Cómo lo sabemos y cierre: los desplegables del método del informe breve («Detalle de todas las tareas» y los
+   contextos de los datos) con sus tablas y listas, y los botones del final (imprimir o guardar en PDF, borrar y empezar
+   de nuevo). */
+
+.metodo {
+  border-top: 1px solid var(--color-linea);
+}
+
+.metodo > details {
+  border-bottom: 1px solid var(--color-linea);
+}
+
+.metodo summary {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  padding: 18px 0;
+  font-size: 1rem;
+  font-weight: 500;
+  list-style: none;
+  cursor: pointer;
+}
+
+.metodo summary::-webkit-details-marker {
+  display: none;
+}
+
+.metodo summary::after {
+  content: "+";
+  margin-left: auto;
+  color: var(--color-tenue);
+  font-family: var(--fuente-mono);
+}
+
+.metodo details[open] summary::after {
+  content: "−";
+}
+
+.metodo .contenido {
+  padding: 0 0 22px;
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+.contenido table {
+  width: 100%;
+  font-size: 0.82rem;
+  border-collapse: collapse;
+}
+
+.contenido th,
+.contenido td {
+  /* Se permite partir las palabras largas para reducir el ancho; las celdas numéricas conservan su línea. */
+  overflow-wrap: anywhere;
+  padding: 8px 10px 8px 0;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid var(--color-linea);
+}
+
+.contenido thead th {
+  color: var(--color-tenue);
+  font-size: var(--texto-minimo);
+  font-weight: 500;
+}
+
+/* La tarea encabeza su fila para quien recorre la tabla con un lector; a la vista es una celda más. */
+.contenido tbody th {
+  font-weight: inherit;
+}
+
+.contenido td.num {
+  font-family: var(--fuente-mono);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+/* Las listas de los contextos de los datos: el informe breve pinta cada .contenido dentro de un .metodo. */
+.metodo .contenido ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.metodo .contenido ul li {
+  margin-bottom: 6px;
+}
+
+/* Cierre: imprimir o guardar en PDF, compartir, escuchar, borrar y empezar de nuevo. */
+.cierre {
+  display: grid;
+  gap: 14px;
+  margin: 40px 0 0;
+}
+
+.acciones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.acciones button,
+.acciones a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 46px;
+  padding: 11px 20px;
+  font: inherit;
+  font-size: 0.88rem;
+  text-decoration: none;
+  border-radius: var(--radio);
+  cursor: pointer;
+}
+
+.acciones .principal {
+  color: var(--color-fondo);
+  background: var(--color-tinta);
+  border: 1px solid var(--color-tinta);
+}
+
+.acciones .secundaria {
+  color: var(--color-tinta);
+  background: transparent;
+  border: 1px solid var(--color-tenue);
+}
+
+.estado,
+.ayuda-de-accion {
+  min-height: 1.4em;
+  margin: 0;
+  color: var(--color-tenue);
+  font-size: 0.84rem;
+}

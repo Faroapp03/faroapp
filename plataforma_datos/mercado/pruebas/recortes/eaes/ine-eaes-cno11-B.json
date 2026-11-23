@@ -1,0 +1,23 @@
+[
+  {
+    "Id": 22376,
+    "FK_Variable": 456,
+    "Nombre": "Profesionales de la salud",
+    "Codigo": "21",
+    "FK_JerarquiaPadres": [22375]
+  },
+  {
+    "Id": 22398,
+    "FK_Variable": 456,
+    "Nombre": "Profesionales de la enseñanza infantil, primaria, secundaria y postsecundaria",
+    "Codigo": "22",
+    "FK_JerarquiaPadres": [22375]
+  },
+  {
+    "Id": 22410,
+    "FK_Variable": 456,
+    "Nombre": "Otros profesionales de la enseñanza",
+    "Codigo": "23",
+    "FK_JerarquiaPadres": [22375]
+  }
+]

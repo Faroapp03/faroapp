@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "id": "esco",
+  "tema": "ocupaciones",
+  "nombre": "Biblioteca ESCO en español",
+  "institucion": "Comisión Europea",
+  "lector": "plataforma_datos.ocupaciones.fuentes.esco.lector",
+  "casa_datos": "esco",
+  "significado": "Biblioteca ESCO española: captura oficial, preparación y validación.",
+  "alcance": [
+    "Captura completa de ocupaciones y capacidades/conocimientos de la API oficial (versión fija), preparada en JSON Lines y en una base SQLite con búsqueda de texto completo. Python estándar; sin modelos ni claves privadas. Las consultas a la base (buscar, ficha, relaciones) están en consultas.py."
+  ],
+  "recursos": [
+    {
+      "id": "api-search",
+      "tipo": "url",
+      "ubicacion": "https://ec.europa.eu/esco/api/search",
+      "licencia": "© Unión Europea. Reutilización autorizada según la Decisión 2011/833/UE de la Comisión y su aviso legal (https://commission.europa.eu/legal-notice_en), citando la fuente e indicando las modificaciones.",
+      "descripcion": "Búsqueda oficial de ocupaciones y competencias activas; versión solicitada v1.2.1 y lengua es. La respuesta no trae versión explícita."
+    },
+    {
+      "id": "captura-local",
+      "tipo": "archivo",
+      "ubicacion": "var/actualizacion/originales/esco/biblioteca-api.zip",
+      "licencia": "© Unión Europea. Reutilización autorizada según la Decisión 2011/833/UE de la Comisión y su aviso legal (https://commission.europa.eu/legal-notice_en), citando la fuente e indicando las modificaciones.",
+      "descripcion": "Captura conservada de las páginas API, comprobada contra procedencia y huellas."
+    }
+  ],
+  "canales": [
+    {
+      "id": "api-captura-manual",
+      "tipo": "remoto",
+      "recursos": ["api-search"],
+      "autenticacion": "No se configura una cuenta en el lector.",
+      "limites": [
+        "Página de 100 registros; máximo 3 hilos, 4 intentos y 90 segundos por petición según constantes del lector.",
+        "No se acredita una cuota publicada del servicio."
+      ],
+      "observaciones": "Capacidad de la orden individual descargar. La política operativa sigue fija/red=false: no se añade descarga programada ni se cambia versión."
+    },
+    {
+      "id": "captura-conservada",
+      "tipo": "local",
+      "recursos": ["captura-local"],
+      "autenticacion": "No aplicable a lectura local.",
+      "limites": [
+        "Huella ZIP y de páginas, totales, URI, relaciones directas/inversas, preparados y SQLite comprobados por el lector."
+      ],
+      "observaciones": "Preparación y validación local de la captura existente; no introduce modelos."
+    }
+  ],
+  "actualizacion": {
+    "politica": "fija",
+    "red": false,
+    "frecuencia": "por versión (v1.2.1)",
+    "renovar_dias": null,
+    "originales": "esco"
+  },
+  "conjuntos": [
+    {
+      "id": "esco",
+      "fuente": "esco",
+      "clase": "referencia-versionada",
+      "alcance": "copia-local",
+      "operacion": "revision",
+      "intervalo_dias": null
+    }
+  ],
+  "dependencias": [],
+  "contratos": ["lector.py:validar"],
+  "retirada": "Se conservan las guardas actuales; un fallo no acredita ausencia ni retira la última versión admitida.",
+  "conservacion": "Casas operativas y bytes del paquete conservados; no cambia modelos, motor, sello, datos ni criterios."
+}

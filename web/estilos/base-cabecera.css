@@ -1,0 +1,251 @@
+/* Cabecera, marca, botones de menú y tema, y selector de idioma. */
+
+/* Las columnas de los lados miden lo mismo mientras caben, para que la marca quede en el centro; en pantallas
+   estrechas, la de la derecha conserva el ancho de sus dos botones (idioma y tema). */
+.cabecera {
+  position: relative;
+  z-index: 20;
+  display: grid;
+  grid-template-columns: minmax(48px, 1fr) auto minmax(96px, 1fr);
+  align-items: center;
+  gap: 12px;
+  /* Menú, idioma y tema, cerca de los bordes de la ventana en cualquier ancho. */
+  padding: max(10px, env(safe-area-inset-top)) max(24px, env(safe-area-inset-right)) 10px
+    max(24px, env(safe-area-inset-left));
+  background: var(--color-fondo);
+  border-bottom: 1px solid var(--color-linea);
+}
+
+.marca {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  justify-self: center;
+  min-height: 60px;
+  padding: 5px 12px;
+  color: var(--color-tinta);
+  text-decoration: none;
+}
+
+.marca-nombre {
+  display: inline-block;
+  margin-right: -0.2em;
+  font-family: var(--fuente-marca);
+  font-size: 1.8125rem;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.2em;
+}
+
+/* La F de la marca lleva encima la luz del faro, un trazo corto. */
+.marca-inicial {
+  position: relative;
+  display: inline-block;
+}
+
+.marca-luz {
+  position: absolute;
+  left: 1px;
+  top: -9px;
+  width: 17px;
+  height: 8px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.4;
+  stroke-linecap: square;
+}
+
+.menu-boton,
+.tema-boton {
+  width: 48px;
+  height: 48px;
+  color: var(--color-tinta);
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 0;
+  cursor: pointer;
+}
+
+.menu-boton:hover,
+.tema-boton:hover {
+  background: var(--color-panel);
+}
+
+.menu-boton {
+  display: grid;
+  justify-self: start;
+  align-content: center;
+  gap: 6px;
+  padding: 15px 13px;
+}
+
+.menu-boton span {
+  display: block;
+  height: 1.5px;
+  background: currentColor;
+}
+
+/* En colores forzados el fondo se sustituye por el del sistema: las rayas toman el color del texto del sistema. */
+@media (forced-colors: active) {
+  .menu-boton span {
+    background: CanvasText;
+  }
+}
+
+.menu-boton[aria-expanded="true"] span:nth-child(1) {
+  transform: translateY(7.5px) rotate(45deg);
+}
+
+.menu-boton[aria-expanded="true"] span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-boton[aria-expanded="true"] span:nth-child(3) {
+  transform: translateY(-7.5px) rotate(-45deg);
+}
+
+.tema-boton {
+  display: grid;
+  place-items: center;
+}
+
+.tema-boton svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* El icono muestra el tema en uso. Sin JavaScript no hay data-tema (lo pone scripts/tema-inicial.js): los botones de
+   tema y de menú no podrían hacer nada y no se muestran. Sin menú lateral, la navegación por secciones sigue a la
+   vista. */
+:root:not([data-tema]) .tema-boton,
+:root:not([data-tema]) .menu-boton {
+  visibility: hidden;
+}
+
+:root[data-tema="oscuro"] .tema-boton .icono-sol,
+:root[data-tema="claro"] .tema-boton .icono-luna {
+  display: none;
+}
+
+.cabecera-herramientas {
+  display: flex;
+  justify-self: end;
+  align-items: center;
+}
+
+/* Selector de idioma: el botón enseña la bandera del idioma en uso (data-idioma, de scripts/idioma-inicial.js) y
+   abre la lista de idiomas, cada uno con su bandera y su nombre. Sin JavaScript no podría cambiar nada y no se ve. */
+.idioma {
+  position: relative;
+}
+
+:root:not([data-idioma]) .idioma {
+  visibility: hidden;
+}
+
+.idioma-boton {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  background: transparent;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+.idioma-boton:hover,
+.idioma-boton[aria-expanded="true"] {
+  background: var(--color-panel);
+}
+
+/* Las banderas son 3:2; un filete del color de las líneas las separa del fondo en los dos temas. */
+.idioma-bandera {
+  display: block;
+  flex: none;
+  width: 24px;
+  height: 16px;
+  box-shadow: 0 0 0 1px var(--color-linea);
+}
+
+:root[data-idioma="ca"] .idioma-boton .idioma-bandera-es,
+:root:not([data-idioma="ca"]) .idioma-boton .idioma-bandera-ca {
+  display: none;
+}
+
+.idioma-opciones {
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 0;
+  z-index: 30;
+  min-width: 190px;
+  padding: 6px;
+  background: var(--color-panel);
+  border: 1px solid var(--color-linea);
+  border-radius: 8px;
+  box-shadow: var(--sombra-idioma);
+}
+
+.idioma-opciones button {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  min-height: 44px;
+  padding: 8px 12px;
+  color: var(--color-tinta);
+  font: inherit;
+  font-size: 0.9375rem;
+  text-align: start;
+  background: none;
+  border: 0;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.idioma-opciones button:hover {
+  background: var(--color-fondo);
+}
+
+/* El foco va por dentro de la opción: por fuera taparía la opción vecina. */
+.idioma-opciones button:focus-visible {
+  outline-offset: -2px;
+}
+
+.idioma-opciones button[aria-checked="true"] {
+  font-weight: 600;
+}
+
+/* La marca del idioma en uso es un dibujo, no un carácter: aria-checked ya lo dice a los lectores de pantalla. */
+.idioma-opciones button[aria-checked="true"]::after {
+  content: "";
+  width: 6px;
+  height: 11px;
+  margin: -3px 4px 0 auto;
+  border: solid currentColor;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .menu-boton,
+  .tema-boton,
+  .idioma-boton {
+    transition: background-color 0.15s ease;
+  }
+
+  .idioma-opciones {
+    transition: opacity 0.12s ease;
+  }
+
+  @starting-style {
+    .idioma-opciones {
+      opacity: 0;
+    }
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "id": "version_certifi",
+  "tema": "comun",
+  "nombre": "Última versión publicada de certifi",
+  "institucion": "Python Package Index (PyPI)",
+  "lector": "plataforma_datos.comun.fuentes.version_certifi.lector",
+  "casa_datos": "version_certifi",
+  "significado": "La última versión publicada del almacén de certificados raíz certifi, frente a la fijada en plataforma_datos/comun/confianza_tls.py; no renueva nada.",
+  "alcance": [
+    "Lee info.version del índice JSON de PyPI del paquete certifi y la compara con CERTIFI_VERSION.",
+    "Si son distintas, el conjunto validado lleva un aviso con forma cerrada (clave, fijada, publicada, consultado y texto en castellano y catalán) para el panel.",
+    "Renovar la confianza TLS sigue siendo una decisión con revisión: cambia código, requisitos y lock. Solo está registrada como productor candidato (PRODUCTORES_CANDIDATOS en plataforma_datos/orquestacion/modulos.py)."
+  ],
+  "recursos": [
+    {
+      "id": "pypi-certifi",
+      "tipo": "url",
+      "ubicacion": "https://pypi.org/pypi/certifi/json",
+      "licencia": null,
+      "descripcion": "Índice JSON público de PyPI del paquete certifi; solo se lee el número de la última versión."
+    }
+  ],
+  "canales": [
+    {
+      "id": "pypi",
+      "tipo": "remoto",
+      "recursos": ["pypi-certifi"],
+      "autenticacion": "API pública sin cuenta ni clave configurada.",
+      "limites": [
+        "Transporte central con identidad genérica y la pausa común por dominio; una sola petición por consulta, JSON del mismo origen y un tope de 8 MB.",
+        "La cadencia de 30 días es una decisión operativa local, no la frecuencia de publicación de certifi."
+      ],
+      "observaciones": "No conectado ni activado: el aviso lo presenta el panel cuando se incorpore."
+    }
+  ],
+  "actualizacion": {
+    "politica": "mensual",
+    "red": true,
+    "frecuencia": "Consulta técnica local cada 30 días; no describe un calendario de publicaciones de certifi.",
+    "renovar_dias": 30,
+    "originales": "version_certifi"
+  },
+  "conjuntos": [
+    {
+      "id": "version_certifi",
+      "fuente": "version_certifi",
+      "clase": "cambiante",
+      "alcance": "descubre-edicion",
+      "operacion": "descargar",
+      "intervalo_dias": 30
+    }
+  ],
+  "dependencias": [],
+  "contratos": ["lector.py:ultima_publicada", "lector.py:aviso", "lector.py:validar"],
+  "retirada": "Un fallo de consulta o una respuesta que no es el índice no cambia lo validado ni el almacén fijado.",
+  "conservacion": "El índice capturado y su procedencia se conservan en var/actualizacion; este descriptor no activa limpieza automática."
+}

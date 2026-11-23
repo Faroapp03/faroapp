@@ -1,0 +1,906 @@
+{
+  "version": 2,
+  "descripcion": "Banco de 100 descripciones realistas para medir la búsqueda de ocupaciones del recorrido: cada caso vale un 1 %. Veinte, con el rasgo «ampliacion_sectores», cubren sectores poco representados (14 en catalán). Escritas a ciegas, sin mirar resultados de ningún buscador. «esperadas» son códigos ESCO del paquete de Faro (datos/esco.json, ESCO v1.2.1); el grupo CIUO-08 aceptable se deduce de ellos. Las tareas oficiales del recorrido son las del grupo CIUO-08, así que el acierto de grupo decide si las tareas propuestas son las correctas.",
+  "casos": [
+    {
+      "id": "ap01",
+      "grupo": "administracion_publica",
+      "idioma": "es",
+      "texto": "Soy técnico laboral en la Generalitat",
+      "esperadas": ["2423.4", "2422.12.10", "2422.1"],
+      "rasgos": ["caso_propio"],
+      "nota": "Técnico de la Administración en materia laboral: relaciones laborales (2423) o políticas de empleo/administración pública (2422). Nunca minas (3117)."
+    },
+    {
+      "id": "ap02",
+      "grupo": "administracion_publica",
+      "idioma": "es",
+      "texto": "técnico laboral",
+      "esperadas": ["2423.4", "2422.12.10"],
+      "rasgos": ["caso_propio", "corto"],
+      "nota": "Sin contexto, lo más cercano es relaciones laborales o políticas de empleo."
+    },
+    {
+      "id": "ap03",
+      "grupo": "administracion_publica",
+      "idioma": "es",
+      "texto": "Técnica de la administración pública",
+      "esperadas": ["2422.1", "2422.12"],
+      "rasgos": ["femenino"],
+      "nota": "ESCO 2422.1 'administrativo de la Administración pública' y 2422.12 'responsable de políticas' (CNO 2623 Especialistas de la Administración Pública)."
+    },
+    {
+      "id": "ap04",
+      "grupo": "administracion_publica",
+      "idioma": "es",
+      "texto": "auxiliar administrativo en el ayuntamiento",
+      "esperadas": ["2422.1", "4110.1", "3343.1"],
+      "rasgos": [],
+      "nota": "Auxiliar administrativo: empleado de oficina (4110) o administrativo (3343); 2422.1 si se lee como funcionario administrativo."
+    },
+    {
+      "id": "ap05",
+      "grupo": "administracion_publica",
+      "idioma": "es",
+      "texto": "soy administrativa del ayuntamiento de mi pueblo",
+      "esperadas": ["2422.1", "3343.1", "4110.1"],
+      "rasgos": ["femenino"],
+      "nota": "Administrativa de ayuntamiento."
+    },
+    {
+      "id": "ap06",
+      "grupo": "administracion_publica",
+      "idioma": "ca",
+      "texto": "Treballo d'administratiu a l'Ajuntament",
+      "esperadas": ["2422.1", "3343.1", "4110.1"],
+      "rasgos": ["catalan"],
+      "nota": "Administrativo de ayuntamiento, en catalán."
+    },
+    {
+      "id": "ap07",
+      "grupo": "administracion_publica",
+      "idioma": "es",
+      "texto": "soy tecnica de recursos humanos",
+      "esperadas": ["2423.3", "4416.1"],
+      "rasgos": ["sin_tildes", "femenino"],
+      "nota": "Técnica de RRHH: responsable de recursos humanos (2423) o ayudante de RRHH (4416)."
+    },
+    {
+      "id": "ap08",
+      "grupo": "administracion_publica",
+      "idioma": "es",
+      "texto": "funcionaria de la seguridad social, atiendo al publico y tramito prestaciones",
+      "esperadas": ["3353.2", "3353.2.1"],
+      "rasgos": ["frase_larga", "sin_tildes", "femenino"],
+      "nota": "Técnico en prestaciones sociales (3353)."
+    },
+    {
+      "id": "ap09",
+      "grupo": "administracion_publica",
+      "idioma": "es",
+      "texto": "trabajo en la oficina de empleo orientando a personas en paro",
+      "esperadas": ["2423.1", "2423.2", "3333.1"],
+      "rasgos": ["frase_larga"],
+      "nota": "Orientación laboral: asesor de orientación profesional / de empleo (2423) o agente de empleo (3333)."
+    },
+    {
+      "id": "ap10",
+      "grupo": "administracion_publica",
+      "idioma": "ca",
+      "texto": "Sóc tècnica de nòmines",
+      "esperadas": ["4313.1"],
+      "rasgos": ["catalan", "femenino"],
+      "nota": "Administrativa de nóminas (4313)."
+    },
+    {
+      "id": "of01",
+      "grupo": "oficina",
+      "idioma": "es",
+      "texto": "llevo la contabilidad de una gestoría pequeña",
+      "esperadas": ["3313.2", "4311.1", "3313.1", "2411.1"],
+      "rasgos": ["frase_larga"],
+      "nota": "Administrativa contable / empleada de contabilidad / contable."
+    },
+    {
+      "id": "of02",
+      "grupo": "oficina",
+      "idioma": "es",
+      "texto": "administrativo",
+      "esperadas": ["3343.1", "4110.1"],
+      "rasgos": ["corto"],
+      "nota": "Empleado administrativo (3343) u oficinista (4110)."
+    },
+    {
+      "id": "of03",
+      "grupo": "oficina",
+      "idioma": "es",
+      "texto": "secretaria de direccion",
+      "esperadas": ["3343.3", "4120.1"],
+      "rasgos": ["sin_tildes", "femenino"],
+      "nota": "Asistente de dirección (alt. 'secretaria de dirección')."
+    },
+    {
+      "id": "of04",
+      "grupo": "oficina",
+      "idioma": "es",
+      "texto": "recepcionista en una oficina",
+      "esperadas": ["4226.1"],
+      "rasgos": [],
+      "nota": "Recepcionista (4226)."
+    },
+    {
+      "id": "of05",
+      "grupo": "oficina",
+      "idioma": "es",
+      "texto": "hago las nominas y los seguros sociales en una asesoria",
+      "esperadas": ["4313.1"],
+      "rasgos": ["frase_larga", "sin_tildes"],
+      "nota": "Administrativo de nóminas."
+    },
+    {
+      "id": "of06",
+      "grupo": "oficina",
+      "idioma": "es",
+      "texto": "trabajo de administrativa contable",
+      "esperadas": ["3313.2"],
+      "rasgos": ["femenino"],
+      "nota": "Nombre exacto ESCO en femenino."
+    },
+    {
+      "id": "of07",
+      "grupo": "oficina",
+      "idioma": "ca",
+      "texto": "Faig de comptable en una empresa petita",
+      "esperadas": ["2411.1", "3313.2", "4311.1"],
+      "rasgos": ["catalan"],
+      "nota": "Contable."
+    },
+    {
+      "id": "of08",
+      "grupo": "oficina",
+      "idioma": "es",
+      "texto": "trabajo en una oficina, archivo papeles, contesto el telefono y paso facturas al ordenador",
+      "esperadas": ["4110.1", "3343.1", "4311.1"],
+      "rasgos": ["frase_larga", "sin_tildes"],
+      "nota": "Oficinista general descrito por tareas."
+    },
+    {
+      "id": "co01",
+      "grupo": "comercio",
+      "idioma": "es",
+      "texto": "cajera de supermercado",
+      "esperadas": ["5230.1"],
+      "rasgos": ["femenino"],
+      "nota": "Cajero/cajera (5230)."
+    },
+    {
+      "id": "co02",
+      "grupo": "comercio",
+      "idioma": "es",
+      "texto": "soy cajera en el mercadona",
+      "esperadas": ["5230.1"],
+      "rasgos": ["femenino"],
+      "nota": "Cajera con nombre de empresa."
+    },
+    {
+      "id": "co03",
+      "grupo": "comercio",
+      "idioma": "es",
+      "texto": "Dependienta en una tienda de ropa",
+      "esperadas": ["5223.7.8", "5223.6", "5223.4"],
+      "rasgos": ["femenino"],
+      "nota": "Vendedora especializada en ropa / asistente de tienda / vendedora (5223)."
+    },
+    {
+      "id": "co04",
+      "grupo": "comercio",
+      "idioma": "es",
+      "texto": "dependiente",
+      "esperadas": ["5223.6", "5223.4", "5223.7"],
+      "rasgos": ["corto"],
+      "nota": "En ESCO 'dependiente' no es nombre de 5223.6/5223.4; es la forma más común en España."
+    },
+    {
+      "id": "co05",
+      "grupo": "comercio",
+      "idioma": "es",
+      "texto": "reponedor en un super",
+      "esperadas": ["9334.1"],
+      "rasgos": [],
+      "nota": "Reponedor (9334)."
+    },
+    {
+      "id": "co06",
+      "grupo": "comercio",
+      "idioma": "es",
+      "texto": "vendo zapatos en una zapateria",
+      "esperadas": ["5223.7.31", "5223.4"],
+      "rasgos": ["sin_tildes"],
+      "nota": "Vendedor especializado en zapatería."
+    },
+    {
+      "id": "co07",
+      "grupo": "comercio",
+      "idioma": "ca",
+      "texto": "Sóc caixera d'un supermercat",
+      "esperadas": ["5230.1"],
+      "rasgos": ["catalan", "femenino"],
+      "nota": "Cajera, en catalán."
+    },
+    {
+      "id": "co08",
+      "grupo": "comercio",
+      "idioma": "es",
+      "texto": "trabajo en una panaderia despachando pan",
+      "esperadas": ["5223.7.4"],
+      "rasgos": ["sin_tildes"],
+      "nota": "Vendedora de panadería (dependiente de panadería)."
+    },
+    {
+      "id": "ho01",
+      "grupo": "hosteleria",
+      "idioma": "es",
+      "texto": "camarero",
+      "esperadas": ["5131.2", "5132.1"],
+      "rasgos": ["corto"],
+      "nota": "Camarero (5131) o barman/camarero de barra (5132)."
+    },
+    {
+      "id": "ho02",
+      "grupo": "hosteleria",
+      "idioma": "es",
+      "texto": "camarera de piso en un hotel",
+      "esperadas": ["9112.4"],
+      "rasgos": ["femenino"],
+      "nota": "Camarera de pisos (9112)."
+    },
+    {
+      "id": "ho03",
+      "grupo": "hosteleria",
+      "idioma": "es",
+      "texto": "cocinera en un restaurante",
+      "esperadas": ["5120.1", "3434.1"],
+      "rasgos": ["femenino"],
+      "nota": "Cocinera (5120) o chef (3434)."
+    },
+    {
+      "id": "ho04",
+      "grupo": "hosteleria",
+      "idioma": "es",
+      "texto": "ayudante de cosina",
+      "esperadas": ["9412.1", "9412.2"],
+      "rasgos": ["falta"],
+      "nota": "Ayudante de cocina con falta (cosina)."
+    },
+    {
+      "id": "ho05",
+      "grupo": "hosteleria",
+      "idioma": "ca",
+      "texto": "Treballo de cambrer en un bar",
+      "esperadas": ["5131.2", "5132.1"],
+      "rasgos": ["catalan"],
+      "nota": "Camarero, en catalán."
+    },
+    {
+      "id": "ho06",
+      "grupo": "hosteleria",
+      "idioma": "es",
+      "texto": "recepcionista de hotel",
+      "esperadas": ["4224.1"],
+      "rasgos": [],
+      "nota": "Recepcionista de alojamientos turísticos (4224)."
+    },
+    {
+      "id": "ho07",
+      "grupo": "hosteleria",
+      "idioma": "es",
+      "texto": "pongo cafes y sirvo mesas en un bar",
+      "esperadas": ["5131.2", "5132.1", "5132.1.1"],
+      "rasgos": ["frase_larga", "sin_tildes"],
+      "nota": "Camarero descrito por tareas, sin decir el oficio."
+    },
+    {
+      "id": "sa01",
+      "grupo": "sanidad",
+      "idioma": "es",
+      "texto": "enfermera",
+      "esperadas": ["2221.2", "5329.2", "2221.1", "2221.3"],
+      "rasgos": ["corto", "femenino"],
+      "nota": "En ESCO-es 'enfermero/enfermera' está en 5329; la enfermera titulada española es 2221. Se aceptan las dos."
+    },
+    {
+      "id": "sa02",
+      "grupo": "sanidad",
+      "idioma": "es",
+      "texto": "soy enfermera en el hospital de bellvitge",
+      "esperadas": ["2221.2", "5329.2", "2221.1", "2221.3"],
+      "rasgos": ["femenino"],
+      "nota": "Enfermera con lugar de trabajo."
+    },
+    {
+      "id": "sa03",
+      "grupo": "sanidad",
+      "idioma": "es",
+      "texto": "auxiliar de enfermeria",
+      "esperadas": ["5321.1.1", "5329.3", "3256.1"],
+      "rasgos": ["sin_tildes"],
+      "nota": "Auxiliar de enfermería / TCAE."
+    },
+    {
+      "id": "sa04",
+      "grupo": "sanidad",
+      "idioma": "es",
+      "texto": "TCAE en una residencia",
+      "esperadas": ["5329.3", "5321.1.1"],
+      "rasgos": ["sigla"],
+      "nota": "Sigla de técnico en cuidados auxiliares de enfermería; ESCO no la recoge."
+    },
+    {
+      "id": "sa05",
+      "grupo": "sanidad",
+      "idioma": "ca",
+      "texto": "Sóc infermera a l'hospital",
+      "esperadas": ["2221.2", "5329.2", "2221.1", "2221.3"],
+      "rasgos": ["catalan", "femenino"],
+      "nota": "Enfermera, en catalán."
+    },
+    {
+      "id": "sa06",
+      "grupo": "sanidad",
+      "idioma": "es",
+      "texto": "celador en un hospital",
+      "esperadas": ["5329.1"],
+      "rasgos": [],
+      "nota": "Celador sanitario."
+    },
+    {
+      "id": "sa07",
+      "grupo": "sanidad",
+      "idioma": "es",
+      "texto": "medico de familia en un CAP",
+      "esperadas": ["2211.1"],
+      "rasgos": ["sin_tildes"],
+      "nota": "Médico generalista (2211)."
+    },
+    {
+      "id": "sa08",
+      "grupo": "sanidad",
+      "idioma": "es",
+      "texto": "auxiliar de farmacia",
+      "esperadas": ["3213.1"],
+      "rasgos": [],
+      "nota": "Técnico auxiliar de farmacia."
+    },
+    {
+      "id": "ed01",
+      "grupo": "educacion",
+      "idioma": "es",
+      "texto": "maestra de primaria",
+      "esperadas": ["2341.1"],
+      "rasgos": ["femenino"],
+      "nota": "Maestra de educación primaria."
+    },
+    {
+      "id": "ed02",
+      "grupo": "educacion",
+      "idioma": "es",
+      "texto": "profesor de instituto",
+      "esperadas": ["2330.1"],
+      "rasgos": [],
+      "nota": "Profesor de educación secundaria."
+    },
+    {
+      "id": "ed03",
+      "grupo": "educacion",
+      "idioma": "es",
+      "texto": "educadora infantil en una guarderia",
+      "esperadas": ["2342.1", "5312.1", "5311.1"],
+      "rasgos": ["femenino", "sin_tildes"],
+      "nota": "Educación infantil: maestra (2342), auxiliar (5312) o cuidadora infantil (5311)."
+    },
+    {
+      "id": "ed04",
+      "grupo": "educacion",
+      "idioma": "ca",
+      "texto": "Sóc mestra d'escola",
+      "esperadas": ["2341.1", "2342.1"],
+      "rasgos": ["catalan", "femenino"],
+      "nota": "Maestra, en catalán."
+    },
+    {
+      "id": "ed05",
+      "grupo": "educacion",
+      "idioma": "es",
+      "texto": "monitora de tiempo libre",
+      "esperadas": ["3423.1"],
+      "rasgos": ["femenino"],
+      "nota": "Monitor de ocio y tiempo libre."
+    },
+    {
+      "id": "lo01",
+      "grupo": "logistica",
+      "idioma": "es",
+      "texto": "mozo de almacen",
+      "esperadas": ["9333.8", "9333.4", "9333.3"],
+      "rasgos": ["sin_tildes"],
+      "nota": "Mozo de almacén (9333)."
+    },
+    {
+      "id": "lo02",
+      "grupo": "logistica",
+      "idioma": "es",
+      "texto": "trabajo de carretillero en un almacen",
+      "esperadas": ["8344.1"],
+      "rasgos": ["sin_tildes"],
+      "nota": "Operador de carretilla elevadora; 'carretillero' no está en ESCO-es."
+    },
+    {
+      "id": "lo03",
+      "grupo": "logistica",
+      "idioma": "es",
+      "texto": "repartidor de paquetes con furgoneta",
+      "esperadas": ["8322.2"],
+      "rasgos": [],
+      "nota": "Conductor de vehículo de reparto (alt. 'conductor repartidor')."
+    },
+    {
+      "id": "lo04",
+      "grupo": "logistica",
+      "idioma": "es",
+      "texto": "camionero",
+      "esperadas": ["8332.2", "8332.7", "8332.4"],
+      "rasgos": ["corto"],
+      "nota": "Conductor de camión (8332)."
+    },
+    {
+      "id": "lo05",
+      "grupo": "logistica",
+      "idioma": "ca",
+      "texto": "Treballo de mosso de magatzem",
+      "esperadas": ["9333.8", "9333.4", "9333.3"],
+      "rasgos": ["catalan"],
+      "nota": "Mozo de almacén, en catalán."
+    },
+    {
+      "id": "lo06",
+      "grupo": "logistica",
+      "idioma": "es",
+      "texto": "preparo pedidos en un almacen de logistica",
+      "esperadas": ["9333.3", "9333.8", "9333.8.1", "9333.4"],
+      "rasgos": ["frase_larga", "sin_tildes"],
+      "nota": "Operario de logística de almacén / preparador de pedidos."
+    },
+    {
+      "id": "cn01",
+      "grupo": "construccion",
+      "idioma": "es",
+      "texto": "albañil",
+      "esperadas": ["7112.1"],
+      "rasgos": ["corto"],
+      "nota": "Albañil."
+    },
+    {
+      "id": "cn02",
+      "grupo": "construccion",
+      "idioma": "es",
+      "texto": "peon de obra",
+      "esperadas": ["9313.1"],
+      "rasgos": ["sin_tildes"],
+      "nota": "Obrero de la construcción (9313)."
+    },
+    {
+      "id": "cn03",
+      "grupo": "construccion",
+      "idioma": "es",
+      "texto": "electrisista",
+      "esperadas": ["7411.1", "7411.1.1", "7411.1.1.1"],
+      "rasgos": ["falta", "corto"],
+      "nota": "Electricista con falta."
+    },
+    {
+      "id": "cn04",
+      "grupo": "construccion",
+      "idioma": "es",
+      "texto": "fontanero",
+      "esperadas": ["7126.8"],
+      "rasgos": ["corto"],
+      "nota": "Fontanero."
+    },
+    {
+      "id": "li01",
+      "grupo": "limpieza",
+      "idioma": "es",
+      "texto": "limpiadora de oficinas",
+      "esperadas": ["9112.2"],
+      "rasgos": ["femenino"],
+      "nota": "Operaria de limpieza de edificios (alt. limpiadora de edificios)."
+    },
+    {
+      "id": "li02",
+      "grupo": "limpieza",
+      "idioma": "es",
+      "texto": "limpio casas particulares",
+      "esperadas": ["9111.1"],
+      "rasgos": ["frase_larga"],
+      "nota": "Limpiadora doméstica."
+    },
+    {
+      "id": "li03",
+      "grupo": "limpieza",
+      "idioma": "ca",
+      "texto": "Faig neteja d'oficines",
+      "esperadas": ["9112.2"],
+      "rasgos": ["catalan"],
+      "nota": "Limpieza de oficinas, en catalán."
+    },
+    {
+      "id": "li04",
+      "grupo": "limpieza",
+      "idioma": "es",
+      "texto": "trabajo en la limpieza de un hospital",
+      "esperadas": ["9112.2"],
+      "rasgos": [],
+      "nota": "Limpieza de edificios."
+    },
+    {
+      "id": "cu01",
+      "grupo": "cuidados",
+      "idioma": "es",
+      "texto": "cuido a personas mayores en su casa",
+      "esperadas": ["5322.1", "3412.4.2"],
+      "rasgos": ["frase_larga"],
+      "nota": "Atención sociosanitaria en domicilio (5322)."
+    },
+    {
+      "id": "cu02",
+      "grupo": "cuidados",
+      "idioma": "es",
+      "texto": "gerocultora en una residencia",
+      "esperadas": ["3412.4.11", "5321.1"],
+      "rasgos": ["femenino"],
+      "nota": "ESCO pone 'gerocultor' como alternativo de 3412.4.11; en España es 5321 (CNO 5612)."
+    },
+    {
+      "id": "cu03",
+      "grupo": "cuidados",
+      "idioma": "es",
+      "texto": "auxiliar de ayuda a domicilio",
+      "esperadas": ["5322.1"],
+      "rasgos": [],
+      "nota": "SAD: técnico de atención sociosanitaria en el domicilio."
+    },
+    {
+      "id": "cu04",
+      "grupo": "cuidados",
+      "idioma": "es",
+      "texto": "hago de canguro, cuido niños por las tardes",
+      "esperadas": ["5311.1", "5311.1.2", "5311.1.4"],
+      "rasgos": ["frase_larga"],
+      "nota": "Cuidadora infantil por horas / niñera."
+    },
+    {
+      "id": "ba01",
+      "grupo": "banca",
+      "idioma": "es",
+      "texto": "trabajo en un banco atendiendo en ventanilla",
+      "esperadas": ["4211.1"],
+      "rasgos": ["frase_larga"],
+      "nota": "Empleado bancario (4211)."
+    },
+    {
+      "id": "ba02",
+      "grupo": "banca",
+      "idioma": "es",
+      "texto": "gestora comercial en una oficina bancaria",
+      "esperadas": ["4211.1", "3312.2"],
+      "rasgos": ["femenino"],
+      "nota": "Empleada de banca / asesora financiera."
+    },
+    {
+      "id": "ba03",
+      "grupo": "banca",
+      "idioma": "ca",
+      "texto": "Sóc empleada de banca",
+      "esperadas": ["4211.1"],
+      "rasgos": ["catalan", "femenino"],
+      "nota": "Empleada de banca, en catalán."
+    },
+    {
+      "id": "at01",
+      "grupo": "atencion_cliente",
+      "idioma": "es",
+      "texto": "teleoperadora",
+      "esperadas": ["5244.1", "4222.1"],
+      "rasgos": ["corto", "femenino"],
+      "nota": "Teleoperadora."
+    },
+    {
+      "id": "at02",
+      "grupo": "atencion_cliente",
+      "idioma": "es",
+      "texto": "atiendo llamadas de clientes en un call center",
+      "esperadas": ["4222.1", "5244.1", "4225.1"],
+      "rasgos": ["frase_larga"],
+      "nota": "Agente de centro de atención al cliente."
+    },
+    {
+      "id": "at03",
+      "grupo": "atencion_cliente",
+      "idioma": "es",
+      "texto": "trabajo en atencion al cliente de una compañia de seguros",
+      "esperadas": ["4222.1", "4225.1"],
+      "rasgos": ["frase_larga", "sin_tildes"],
+      "nota": "Atención al cliente."
+    },
+    {
+      "id": "in01",
+      "grupo": "informatica",
+      "idioma": "es",
+      "texto": "programador",
+      "esperadas": ["2512.4", "2514.2", "2511.15"],
+      "rasgos": ["corto"],
+      "nota": "Desarrollador de software / aplicaciones."
+    },
+    {
+      "id": "in02",
+      "grupo": "informatica",
+      "idioma": "es",
+      "texto": "tecnico informatico de soporte",
+      "esperadas": ["3512.1", "3512.4"],
+      "rasgos": ["sin_tildes"],
+      "nota": "Técnico de soporte informático (alt. de 3512.1)."
+    },
+    {
+      "id": "in03",
+      "grupo": "informatica",
+      "idioma": "es",
+      "texto": "desarrolladora web",
+      "esperadas": ["2513.5"],
+      "rasgos": ["femenino"],
+      "nota": "Desarrolladora web."
+    },
+    {
+      "id": "in04",
+      "grupo": "informatica",
+      "idioma": "es",
+      "texto": "soy informatico en una empresa, arreglo ordenadores y la red",
+      "esperadas": ["3512.1", "3512.4", "3513.1"],
+      "rasgos": ["frase_larga", "sin_tildes"],
+      "nota": "Técnico de TIC / soporte / redes."
+    },
+    {
+      "id": "ot01",
+      "grupo": "oficios",
+      "idioma": "es",
+      "texto": "peluquera",
+      "esperadas": ["5141.1"],
+      "rasgos": ["corto", "femenino"],
+      "nota": "Peluquera."
+    },
+    {
+      "id": "ot02",
+      "grupo": "oficios",
+      "idioma": "es",
+      "texto": "mecanico de coches en un taller",
+      "esperadas": ["7231.10", "7231.4"],
+      "rasgos": ["sin_tildes"],
+      "nota": "Mecánico de vehículos."
+    },
+    {
+      "id": "ot03",
+      "grupo": "oficios",
+      "idioma": "es",
+      "texto": "carpintero",
+      "esperadas": ["7115.1"],
+      "rasgos": ["corto"],
+      "nota": "Carpintero."
+    },
+    {
+      "id": "ot04",
+      "grupo": "oficios",
+      "idioma": "ca",
+      "texto": "Sóc perruquera",
+      "esperadas": ["5141.1"],
+      "rasgos": ["catalan", "femenino"],
+      "nota": "Peluquera, en catalán."
+    },
+    {
+      "id": "ot05",
+      "grupo": "oficios",
+      "idioma": "es",
+      "texto": "soldador",
+      "esperadas": ["7212.3"],
+      "rasgos": ["corto"],
+      "nota": "Soldador."
+    },
+    {
+      "id": "ot06",
+      "grupo": "oficios",
+      "idioma": "es",
+      "texto": "vigilante de seguridad en un centro comercial",
+      "esperadas": ["5414.1", "3411.8.1"],
+      "rasgos": [],
+      "nota": "Vigilante de seguridad (5414); ESCO tiene 'vigilante de seguridad en centros comerciales' en 3411."
+    },
+    {
+      "id": "fb01",
+      "grupo": "industria_fabricacion",
+      "idioma": "ca",
+      "texto": "treballo a la cadena de muntatge de la seat a martorell",
+      "esperadas": ["8211.5", "8211.5.3", "8211.5.1", "8211.2"],
+      "rasgos": ["catalan", "frase_larga", "ampliacion_sectores"],
+      "nota": "Montador de vehículos de motor en cadena (8211); 8211.2 lleva el alternativo «operador de cadena de montaje». Que diga SEAT no la convierte en mecánica (7231) ni en vendedora de coches (5223)."
+    },
+    {
+      "id": "fb02",
+      "grupo": "industria_fabricacion",
+      "idioma": "es",
+      "texto": "operaria de maquina de inyecion de plastico",
+      "esperadas": ["8142.7", "8142.1"],
+      "rasgos": ["femenino", "sin_tildes", "falta", "ampliacion_sectores"],
+      "nota": "Operadora de máquinas de moldear plástico por inyección (8142); 8142.1 tiene el alternativo «operaria de máquinas para la fabricación de plásticos». Falta: «inyecion»."
+    },
+    {
+      "id": "fb03",
+      "grupo": "industria_fabricacion",
+      "idioma": "ca",
+      "texto": "soc el de manteniment de la fabrica, arreglo les maquines quan s'espatllen",
+      "esperadas": ["7233.7", "7412.3"],
+      "rasgos": ["catalan", "sin_tildes", "frase_larga", "ampliacion_sectores"],
+      "nota": "Mecánico de maquinaria industrial (7233) o mecánico electricista/electromecánico (7412). No es el mantenedor de edificios (9622), ni soporte informático (3512), ni el ingeniero de mantenimiento (2144)."
+    },
+    {
+      "id": "ag01",
+      "grupo": "agricultura",
+      "idioma": "ca",
+      "texto": "trevallo al camp collint fruita a lleida",
+      "esperadas": ["9211.1"],
+      "rasgos": ["catalan", "falta", "ampliacion_sectores"],
+      "nota": "Recolector de frutas y verduras / jornalero (9211). Falta: «trevallo». No es agricultora titular de la explotación (6111) ni vendedora de fruta (5223.7)."
+    },
+    {
+      "id": "ag02",
+      "grupo": "agricultura",
+      "idioma": "es",
+      "texto": "tractorista",
+      "esperadas": ["8341.2"],
+      "rasgos": ["corto", "ampliacion_sectores"],
+      "nota": "Operador de maquinaria agrícola (8341). «Tractorista» no está en ESCO-es. No es conductor de camión (8332) ni mecánico de maquinaria agrícola (7233.8)."
+    },
+    {
+      "id": "tr01",
+      "grupo": "transporte_carretera",
+      "idioma": "ca",
+      "texto": "xofer de bus a TMB",
+      "esperadas": ["8331.1"],
+      "rasgos": ["catalan", "corto", "sigla", "ampliacion_sectores"],
+      "nota": "Conductor de autobús (8331). TMB: Transports Metropolitans de Barcelona. No es taxista ni conductor de turismo (8322), ni camionero (8332)."
+    },
+    {
+      "id": "sg01",
+      "grupo": "seguridad",
+      "idioma": "ca",
+      "texto": "Sóc mosso d'esquadra",
+      "esperadas": ["5412.1"],
+      "rasgos": ["catalan", "ampliacion_sectores"],
+      "nota": "Policía autonómica de Cataluña: agente de policía (5412). Trampa: «mosso» no es mozo de almacén (9333, como lo05), ni policía municipal (5419.2), ni vigilante privado (5414)."
+    },
+    {
+      "id": "sg02",
+      "grupo": "seguridad",
+      "idioma": "ca",
+      "texto": "a l'estiu faig de socorrista a la platja de Castelldefels",
+      "esperadas": ["5419.7"],
+      "rasgos": ["catalan", "frase_larga", "ampliacion_sectores"],
+      "nota": "Socorrista (5419). No es instructor de socorrismo (3422.2) ni monitor de tiempo libre (3423)."
+    },
+    {
+      "id": "cm01",
+      "grupo": "comunicacion_periodismo",
+      "idioma": "ca",
+      "texto": "Sóc redactora en un diari comarcal",
+      "esperadas": ["2642.1.13", "2642.1"],
+      "rasgos": ["catalan", "femenino", "ampliacion_sectores"],
+      "nota": "Redactora de periódico / periodista (2642). No es redactora técnica (2641.4.4) ni de anuncios publicitarios (2431.1)."
+    },
+    {
+      "id": "ju01",
+      "grupo": "juridico",
+      "idioma": "ca",
+      "texto": "advocada laboralista, porto acomiadaments i reclamacions de quantitat",
+      "esperadas": ["2611.1"],
+      "rasgos": ["catalan", "femenino", "frase_larga", "ampliacion_sectores"],
+      "nota": "Abogada (2611). Trampa: «laboralista» no la hace técnica de relaciones laborales (2423) ni graduada social de RRHH."
+    },
+    {
+      "id": "ju02",
+      "grupo": "juridico",
+      "idioma": "es",
+      "texto": "soy oficial en una notaria, preparo escrituras",
+      "esperadas": ["3411.2", "3342.2"],
+      "rasgos": ["sin_tildes", "frase_larga", "ampliacion_sectores"],
+      "nota": "Empleado de notaría (3411.2, alternativo «empleada de notaría») o administrativo jurídico (3342). Trampa: sin tilde, «notaria» es el título femenino de notario (2619.10), que NO debe salir; tampoco «oficial» militar (0110)."
+    },
+    {
+      "id": "ig01",
+      "grupo": "ingenieria_arquitectura",
+      "idioma": "ca",
+      "texto": "enginyer de camins, faig projectes de carreteres i ponts",
+      "esperadas": ["2142.1", "2142.1.2"],
+      "rasgos": ["catalan", "frase_larga", "ampliacion_sectores"],
+      "nota": "Ingeniero de caminos, canales y puertos = ingeniero civil (2142). No es peón de mantenimiento de carreteras (9312.1.3) ni técnico de mantenimiento de carreteras (3112.1.11)."
+    },
+    {
+      "id": "ig02",
+      "grupo": "ingenieria_arquitectura",
+      "idioma": "es",
+      "texto": "aparejadora",
+      "esperadas": ["3112.10", "2149.14"],
+      "rasgos": ["corto", "femenino", "ampliacion_sectores"],
+      "nota": "Arquitecta técnica: ESCO pone «aparejador» como alternativo de topógrafo (3112.10) y de ingeniero de control de costes (2149.14); se aceptan las dos. No es arquitecta superior (2161) ni albañil (7112)."
+    },
+    {
+      "id": "pe01",
+      "grupo": "peluqueria_estetica",
+      "idioma": "ca",
+      "texto": "faig d'esteticista: depilacions, manicura i tractaments facials",
+      "esperadas": ["5142.1", "5142.3", "5142.6"],
+      "rasgos": ["catalan", "frase_larga", "ampliacion_sectores"],
+      "nota": "Esteticista (5142); depilación y manicura son ocupaciones del mismo grupo. No es peluquera (5141)."
+    },
+    {
+      "id": "ss01",
+      "grupo": "servicios_sociales",
+      "idioma": "ca",
+      "texto": "treballadora social als serveis socials de l'ajuntament, porto families i dependencia",
+      "esperadas": ["2635.3", "2635.3.6", "2635.3.13", "3412.4"],
+      "rasgos": ["catalan", "femenino", "frase_larga", "sin_tildes", "ampliacion_sectores"],
+      "nota": "Trabajadora social (2635; en España es grado universitario). ESCO repite «trabajador social» en 3412.4, que también se acepta. Trampa: «ajuntament» no la hace administrativa ni técnica de la Administración (2422, 3343, 4110)."
+    },
+    {
+      "id": "ss02",
+      "grupo": "servicios_sociales",
+      "idioma": "es",
+      "texto": "educadora social en un CRAE",
+      "esperadas": ["2635.2", "3412.4.13", "3412.4.10"],
+      "rasgos": ["femenino", "sigla", "ampliacion_sectores"],
+      "nota": "CRAE: centro residencial de acción educativa (menores tutelados, Cataluña). Educadora social = pedagoga social (2635.2) o cuidadora en centro de menores / residencia infantil (3412). No es maestra (2341/2342) ni educadora infantil (5311)."
+    },
+    {
+      "id": "dp01",
+      "grupo": "deporte",
+      "idioma": "ca",
+      "texto": "monitor de gimnas, faig classes de spinning i sala",
+      "esperadas": ["3423.2", "3423.2.2"],
+      "rasgos": ["catalan", "sin_tildes", "frase_larga", "ampliacion_sectores"],
+      "nota": "Monitor de fitness / entrenador personal (3423). No es profesor de educación física de instituto (2330) ni entrenador de un deporte de competición (3422)."
+    },
+    {
+      "id": "iv01",
+      "grupo": "investigacion",
+      "idioma": "ca",
+      "texto": "investigadora postdoc en biologia molecular a la UAB",
+      "esperadas": ["2131.4.8", "2131.4"],
+      "rasgos": ["catalan", "femenino", "sigla", "ampliacion_sectores"],
+      "nota": "Bióloga molecular (2131.4.8, alternativo de genetista) o bióloga (2131). No es auxiliar de investigación (2310.1.41), ni investigadora criminal (3355), ni de ciencias sociales (2632)."
+    },
+    {
+      "id": "ba04",
+      "grupo": "banca",
+      "idioma": "ca",
+      "texto": "faig de caixer al banc",
+      "esperadas": ["4211.1"],
+      "rasgos": ["catalan", "corto", "ampliacion_sectores"],
+      "nota": "Empleado de banca (4211.1, alternativo «cajero de banca»). Trampa: no es cajero de supermercado (5230.1, como co07)."
+    },
+    {
+      "id": "at04",
+      "grupo": "atencion_cliente",
+      "idioma": "es",
+      "texto": "hago encuestas y ventas por telefono desde casa",
+      "esperadas": ["5244.1", "4227.2", "4227.1"],
+      "rasgos": ["sin_tildes", "frase_larga", "ampliacion_sectores"],
+      "nota": "Ambiguo legítimo: teleoperadora de venta (5244) o encuestadora (4227). No es agente de atención al cliente de llamadas entrantes (4222) ni vendedora a domicilio (5243)."
+    }
+  ]
+}

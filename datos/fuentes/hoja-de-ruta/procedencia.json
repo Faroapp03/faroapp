@@ -1,0 +1,57 @@
+{
+ "fecha": "2026-10-21T15:01:23+02:00",
+ "agente_http": "DataReader",
+ "pausa_segundos": 3.2,
+ "dominios": [
+  "conforcat.gencat.cat",
+  "fundae.es",
+  "sede.sepe.gob.es",
+  "www.fundae.es"
+ ],
+ "fuentes": {
+  "SEPE": "https://sede.sepe.gob.es/es/portaltrabaja/resources/pdf/especialidades/<CODIGO>.pdf (solo codigos con formato AAAA0000)",
+  "Consorci": "contingut_del_curs de jdcj-za6r y 7vig-4syr (Socrata, 2026-10-11), casado por codicurs/codi_curs == codigo",
+  "FUNDAE": "campo programa de datos/fundae.json"
+ },
+ "extractor": null,
+ "recuentos": {
+  "codigos": 442,
+  "con_temario": 415,
+  "por_fuente": {
+   "SEPE": 62,
+   "Consorci": 337,
+   "FUNDAE": 16
+  },
+  "no_encontrados": 27,
+  "pendientes_o_con_error_de_red": 0
+ },
+ "no_encontrados": [
+  "AGAJ0006",
+  "ELEE0019",
+  "FMEC01",
+  "FMEH0013",
+  "FMEM17",
+  "IFCD0153",
+  "IFCD100",
+  "IFCD45",
+  "IFCD48",
+  "IFCD62",
+  "IFCD63",
+  "IFCD65",
+  "IFCD66",
+  "IFCD67",
+  "IFCT0101",
+  "IFCT0234",
+  "IFCT110",
+  "IFCT122",
+  "IFCT123",
+  "IFCT124",
+  "IFCT125",
+  "IMSV0053",
+  "IMSV12",
+  "IMSV41",
+  "SSCB02",
+  "SSCI0015",
+  "TMVI25"
+ ]
+}

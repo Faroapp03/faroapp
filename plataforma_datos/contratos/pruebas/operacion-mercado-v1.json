@@ -1,0 +1,275 @@
+{
+  "cataluna": {
+    "actualizacion": {
+      "politica": "mensual",
+      "red": true,
+      "frecuencia": "trimestral (Observatori del Treball); Censo 2021 fijo",
+      "renovar_dias": null,
+      "originales": "cataluna"
+    },
+    "conjuntos": [
+      {
+        "id": "cataluna",
+        "fuente": "cataluna",
+        "clase": "cambiante",
+        "alcance": "catalogo-actual",
+        "operacion": "descargar",
+        "intervalo_dias": 30
+      }
+    ],
+    "dependencias": ["clasificaciones", "cambra"],
+    "casa_datos": "cataluna"
+  },
+  "ocupados": {
+    "actualizacion": {
+      "politica": "mensual",
+      "red": true,
+      "frecuencia": "anual (Idescat e INE)",
+      "renovar_dias": null,
+      "originales": "ocupados"
+    },
+    "conjuntos": [
+      {
+        "id": "ocupados",
+        "fuente": "ocupados",
+        "clase": "cambiante",
+        "alcance": "serie-abierta",
+        "operacion": "descargar",
+        "intervalo_dias": 30
+      }
+    ],
+    "dependencias": ["clasificaciones", "cambra", "cataluna"],
+    "casa_datos": "ocupados"
+  },
+  "censo": {
+    "actualizacion": {
+      "politica": "fija",
+      "red": false,
+      "frecuencia": "decenal (Censo 2021)",
+      "renovar_dias": null,
+      "originales": "censo"
+    },
+    "conjuntos": [
+      {
+        "id": "censo",
+        "fuente": "censo",
+        "clase": "historica",
+        "alcance": "copia-local",
+        "operacion": "integridad",
+        "intervalo_dias": null
+      }
+    ],
+    "dependencias": ["clasificaciones", "cataluna", "ocupados"],
+    "casa_datos": "censo"
+  },
+  "salarios": {
+    "actualizacion": {
+      "politica": "edición",
+      "red": true,
+      "frecuencia": "cuatrienal (EES del INE)",
+      "renovar_dias": null,
+      "originales": "salarios"
+    },
+    "conjuntos": [
+      {
+        "id": "salarios",
+        "fuente": "salarios",
+        "clase": "cambiante",
+        "alcance": "descubre-edicion",
+        "operacion": "descargar",
+        "intervalo_dias": 30
+      }
+    ],
+    "dependencias": ["clasificaciones"],
+    "casa_datos": "salarios"
+  },
+  "sectores": {
+    "actualizacion": {
+      "politica": "fija",
+      "red": false,
+      "frecuencia": "decenal (Censo 2021)",
+      "renovar_dias": null,
+      "originales": "sectores"
+    },
+    "conjuntos": [
+      {
+        "id": "sectores",
+        "fuente": "sectores",
+        "clase": "historica",
+        "alcance": "copia-local",
+        "operacion": "integridad",
+        "intervalo_dias": null
+      }
+    ],
+    "dependencias": ["clasificaciones", "cataluna"],
+    "casa_datos": "sectores"
+  },
+  "empresas": {
+    "actualizacion": {
+      "politica": "mensual",
+      "red": true,
+      "frecuencia": "anual (ETICCE del INE y Eurostat)",
+      "renovar_dias": null,
+      "originales": "empresas"
+    },
+    "conjuntos": [
+      {
+        "id": "empresas",
+        "fuente": "empresas",
+        "clase": "cambiante",
+        "alcance": "descubre-edicion",
+        "operacion": "descargar",
+        "intervalo_dias": 30
+      }
+    ],
+    "dependencias": ["sectores"],
+    "casa_datos": "empresas"
+  },
+  "observatori": {
+    "actualizacion": {
+      "politica": "mensual",
+      "red": true,
+      "frecuencia": "trimestral (Observatori del Treball)",
+      "renovar_dias": null,
+      "originales": "observatori"
+    },
+    "conjuntos": [
+      {
+        "id": "observatori",
+        "fuente": "observatori",
+        "clase": "cambiante",
+        "alcance": "catalogo-actual",
+        "operacion": "descargar",
+        "intervalo_dias": 30
+      }
+    ],
+    "dependencias": ["clasificaciones", "cataluna"],
+    "casa_datos": "observatori"
+  },
+  "necesidades": {
+    "actualizacion": {
+      "politica": "manual",
+      "red": false,
+      "frecuencia": "anual (informe del SEPE)",
+      "renovar_dias": 365,
+      "originales": "sepe-necesidades"
+    },
+    "conjuntos": [
+      {
+        "id": "necesidades",
+        "fuente": "necesidades",
+        "clase": "manual",
+        "alcance": "copia-local",
+        "operacion": "revision",
+        "intervalo_dias": null
+      }
+    ],
+    "dependencias": ["clasificaciones"],
+    "casa_datos": "sepe-necesidades"
+  },
+  "perfiles": {
+    "actualizacion": {
+      "politica": "manual",
+      "red": false,
+      "frecuencia": "continua (perfiles del SEPE)",
+      "renovar_dias": 180,
+      "originales": "perfiles"
+    },
+    "conjuntos": [
+      {
+        "id": "perfiles",
+        "fuente": "perfiles",
+        "clase": "manual",
+        "alcance": "copia-local",
+        "operacion": "revision",
+        "intervalo_dias": null
+      }
+    ],
+    "dependencias": ["esco", "clasificaciones", "cataluna", "formacion", "agencia", "acreditacion"],
+    "casa_datos": "perfiles"
+  },
+  "ilostat": {
+    "actualizacion": {
+      "politica": "mensual",
+      "red": true,
+      "frecuencia": "continua (cada país, cuando la OIT publica su encuesta)",
+      "renovar_dias": null,
+      "originales": "ilostat"
+    },
+    "conjuntos": [
+      {
+        "id": "ilostat",
+        "fuente": "ilostat",
+        "clase": "cambiante",
+        "alcance": "serie-abierta",
+        "operacion": "descargar",
+        "intervalo_dias": 30
+      }
+    ],
+    "dependencias": ["territorios", "mundo_eurostat"],
+    "casa_datos": "ilostat"
+  },
+  "epa": {
+    "actualizacion": {
+      "politica": "mensual",
+      "red": true,
+      "frecuencia": "trimestral (INE)",
+      "renovar_dias": null,
+      "originales": "epa"
+    },
+    "conjuntos": [
+      {
+        "id": "epa",
+        "fuente": "epa",
+        "clase": "cambiante",
+        "alcance": "serie-abierta",
+        "operacion": "descargar",
+        "intervalo_dias": 30
+      }
+    ],
+    "dependencias": [],
+    "casa_datos": "epa"
+  },
+  "eaes": {
+    "actualizacion": {
+      "politica": "mensual",
+      "red": true,
+      "frecuencia": "anual (INE)",
+      "renovar_dias": null,
+      "originales": "eaes"
+    },
+    "conjuntos": [
+      {
+        "id": "eaes",
+        "fuente": "eaes",
+        "clase": "cambiante",
+        "alcance": "serie-abierta",
+        "operacion": "descargar",
+        "intervalo_dias": 30
+      }
+    ],
+    "dependencias": [],
+    "casa_datos": "eaes"
+  },
+  "ofertas": {
+    "actualizacion": {
+      "politica": "mensual",
+      "red": true,
+      "frecuencia": "mensual (Observatori del Treball)",
+      "renovar_dias": null,
+      "originales": "ofertas"
+    },
+    "conjuntos": [
+      {
+        "id": "ofertas",
+        "fuente": "ofertas",
+        "clase": "cambiante",
+        "alcance": "serie-abierta",
+        "operacion": "descargar",
+        "intervalo_dias": 7
+      }
+    ],
+    "dependencias": [],
+    "casa_datos": "ofertas"
+  }
+}

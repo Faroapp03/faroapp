@@ -1,0 +1,4719 @@
+{
+  "fuentes": {
+    "censo": "Elaboración propia con datos extraídos del sitio web del INE: www.ine.es (Censo de Población 2021, ocupados de 16 y más años; consulta del 27/09/2026). CC BY 4.0.",
+    "observatori": "Font: Observatori del Treball i Model Productiu, Generalitat de Catalunya. Treball per ocupacions: dades a setembre de 2026."
+  },
+  "periodo_contratacion": "12 meses a septiembre de 2026",
+  "min_variacion": 100,
+  "variacion_conjunto_ocupaciones": 6.3,
+  "ocupados_cno3": {
+    "111": {
+      "ocupados": 2562,
+      "pct_mujeres": 45.8,
+      "pct_menores_30": 4.3,
+      "pct_55_o_mas": 49.6
+    },
+    "112": {
+      "ocupados": 7365,
+      "pct_mujeres": 19.9,
+      "pct_menores_30": 0.5,
+      "pct_55_o_mas": 54.1
+    },
+    "121": {
+      "ocupados": 30228,
+      "pct_mujeres": 35.6,
+      "pct_menores_30": 3.9,
+      "pct_55_o_mas": 35.5
+    },
+    "122": {
+      "ocupados": 22473,
+      "pct_mujeres": 35.8,
+      "pct_menores_30": 11.9,
+      "pct_55_o_mas": 18.5
+    },
+    "131": {
+      "ocupados": 23634,
+      "pct_mujeres": 19.9,
+      "pct_menores_30": 2.4,
+      "pct_55_o_mas": 41.7
+    },
+    "132": {
+      "ocupados": 9135,
+      "pct_mujeres": 40.6,
+      "pct_menores_30": 3.5,
+      "pct_55_o_mas": 37.9
+    },
+    "141": {
+      "ocupados": 351,
+      "pct_mujeres": 45.3,
+      "pct_menores_30": 6.0,
+      "pct_55_o_mas": 26.7
+    },
+    "142": {
+      "ocupados": 375,
+      "pct_mujeres": 48.0,
+      "pct_menores_30": 11.0,
+      "pct_55_o_mas": 20.5
+    },
+    "143": {
+      "ocupados": 22737,
+      "pct_mujeres": 35.2,
+      "pct_menores_30": 6.8,
+      "pct_55_o_mas": 40.7
+    },
+    "150": {
+      "ocupados": 20760,
+      "pct_mujeres": 39.2,
+      "pct_menores_30": 3.6,
+      "pct_55_o_mas": 39.6
+    },
+    "211": {
+      "ocupados": 32370,
+      "pct_mujeres": 62.8,
+      "pct_menores_30": 13.2,
+      "pct_55_o_mas": 22.7
+    },
+    "212": {
+      "ocupados": 47790,
+      "pct_mujeres": 86.0,
+      "pct_menores_30": 18.6,
+      "pct_55_o_mas": 17.7
+    },
+    "213": {
+      "ocupados": 4200,
+      "pct_mujeres": 63.1,
+      "pct_menores_30": 16.5,
+      "pct_55_o_mas": 18.8
+    },
+    "214": {
+      "ocupados": 10515,
+      "pct_mujeres": 75.4,
+      "pct_menores_30": 12.8,
+      "pct_55_o_mas": 22.4
+    },
+    "215": {
+      "ocupados": 25509,
+      "pct_mujeres": 69.0,
+      "pct_menores_30": 17.3,
+      "pct_55_o_mas": 15.6
+    },
+    "221": {
+      "ocupados": 25674,
+      "pct_mujeres": 46.0,
+      "pct_menores_30": 8.7,
+      "pct_55_o_mas": 29.4
+    },
+    "222": {
+      "ocupados": 7863,
+      "pct_mujeres": 54.1,
+      "pct_menores_30": 9.5,
+      "pct_55_o_mas": 22.7
+    },
+    "223": {
+      "ocupados": 35724,
+      "pct_mujeres": 63.6,
+      "pct_menores_30": 6.0,
+      "pct_55_o_mas": 28.8
+    },
+    "224": {
+      "ocupados": 46668,
+      "pct_mujeres": 83.3,
+      "pct_menores_30": 8.7,
+      "pct_55_o_mas": 22.5
+    },
+    "225": {
+      "ocupados": 20661,
+      "pct_mujeres": 90.4,
+      "pct_menores_30": 18.0,
+      "pct_55_o_mas": 16.1
+    },
+    "231": {
+      "ocupados": 6384,
+      "pct_mujeres": 80.1,
+      "pct_menores_30": 14.9,
+      "pct_55_o_mas": 18.4
+    },
+    "232": {
+      "ocupados": 36273,
+      "pct_mujeres": 64.4,
+      "pct_menores_30": 20.1,
+      "pct_55_o_mas": 15.0
+    },
+    "241": {
+      "ocupados": 4860,
+      "pct_mujeres": 49.9,
+      "pct_menores_30": 17.7,
+      "pct_55_o_mas": 10.1
+    },
+    "242": {
+      "ocupados": 5307,
+      "pct_mujeres": 55.9,
+      "pct_menores_30": 17.0,
+      "pct_55_o_mas": 8.9
+    },
+    "243": {
+      "ocupados": 24885,
+      "pct_mujeres": 26.2,
+      "pct_menores_30": 17.6,
+      "pct_55_o_mas": 6.6
+    },
+    "244": {
+      "ocupados": 5538,
+      "pct_mujeres": 15.0,
+      "pct_menores_30": 13.7,
+      "pct_55_o_mas": 10.9
+    },
+    "245": {
+      "ocupados": 8811,
+      "pct_mujeres": 35.0,
+      "pct_menores_30": 7.7,
+      "pct_55_o_mas": 22.7
+    },
+    "246": {
+      "ocupados": 10581,
+      "pct_mujeres": 21.8,
+      "pct_menores_30": 11.3,
+      "pct_55_o_mas": 9.3
+    },
+    "247": {
+      "ocupados": 3468,
+      "pct_mujeres": 13.7,
+      "pct_menores_30": 7.4,
+      "pct_55_o_mas": 15.1
+    },
+    "248": {
+      "ocupados": 15543,
+      "pct_mujeres": 43.6,
+      "pct_menores_30": 15.1,
+      "pct_55_o_mas": 13.3
+    },
+    "251": {
+      "ocupados": 19452,
+      "pct_mujeres": 56.2,
+      "pct_menores_30": 12.6,
+      "pct_55_o_mas": 21.9
+    },
+    "259": {
+      "ocupados": 8250,
+      "pct_mujeres": 55.4,
+      "pct_menores_30": 11.9,
+      "pct_55_o_mas": 29.0
+    },
+    "261": {
+      "ocupados": 19800,
+      "pct_mujeres": 55.3,
+      "pct_menores_30": 21.5,
+      "pct_55_o_mas": 5.9
+    },
+    "262": {
+      "ocupados": 26277,
+      "pct_mujeres": 55.4,
+      "pct_menores_30": 14.0,
+      "pct_55_o_mas": 23.6
+    },
+    "263": {
+      "ocupados": 3366,
+      "pct_mujeres": 63.7,
+      "pct_menores_30": 7.9,
+      "pct_55_o_mas": 13.4
+    },
+    "264": {
+      "ocupados": 4290,
+      "pct_mujeres": 36.7,
+      "pct_menores_30": 12.6,
+      "pct_55_o_mas": 12.4
+    },
+    "265": {
+      "ocupados": 13035,
+      "pct_mujeres": 55.3,
+      "pct_menores_30": 23.7,
+      "pct_55_o_mas": 6.6
+    },
+    "271": {
+      "ocupados": 30963,
+      "pct_mujeres": 22.7,
+      "pct_menores_30": 17.9,
+      "pct_55_o_mas": 6.7
+    },
+    "272": {
+      "ocupados": 9582,
+      "pct_mujeres": 26.6,
+      "pct_menores_30": 17.0,
+      "pct_55_o_mas": 10.8
+    },
+    "281": {
+      "ocupados": 3255,
+      "pct_mujeres": 48.9,
+      "pct_menores_30": 10.8,
+      "pct_55_o_mas": 18.0
+    },
+    "282": {
+      "ocupados": 33693,
+      "pct_mujeres": 79.1,
+      "pct_menores_30": 17.8,
+      "pct_55_o_mas": 13.3
+    },
+    "283": {
+      "ocupados": 213,
+      "pct_mujeres": 5.6,
+      "pct_menores_30": 2.7,
+      "pct_55_o_mas": 52.1
+    },
+    "291": {
+      "ocupados": 2961,
+      "pct_mujeres": 73.2,
+      "pct_menores_30": 17.5,
+      "pct_55_o_mas": 21.1
+    },
+    "292": {
+      "ocupados": 12183,
+      "pct_mujeres": 58.7,
+      "pct_menores_30": 18.3,
+      "pct_55_o_mas": 13.3
+    },
+    "293": {
+      "ocupados": 21534,
+      "pct_mujeres": 40.6,
+      "pct_menores_30": 14.2,
+      "pct_55_o_mas": 16.9
+    },
+    "311": {
+      "ocupados": 12216,
+      "pct_mujeres": 37.0,
+      "pct_menores_30": 14.1,
+      "pct_55_o_mas": 12.1
+    },
+    "312": {
+      "ocupados": 30333,
+      "pct_mujeres": 23.8,
+      "pct_menores_30": 15.3,
+      "pct_55_o_mas": 11.0
+    },
+    "313": {
+      "ocupados": 11511,
+      "pct_mujeres": 20.3,
+      "pct_menores_30": 7.4,
+      "pct_55_o_mas": 18.7
+    },
+    "314": {
+      "ocupados": 1338,
+      "pct_mujeres": 43.9,
+      "pct_menores_30": 12.6,
+      "pct_55_o_mas": 20.7
+    },
+    "315": {
+      "ocupados": 3177,
+      "pct_mujeres": 13.0,
+      "pct_menores_30": 9.1,
+      "pct_55_o_mas": 14.5
+    },
+    "316": {
+      "ocupados": 5019,
+      "pct_mujeres": 42.1,
+      "pct_menores_30": 14.3,
+      "pct_55_o_mas": 12.8
+    },
+    "320": {
+      "ocupados": 14175,
+      "pct_mujeres": 11.6,
+      "pct_menores_30": 5.0,
+      "pct_55_o_mas": 24.5
+    },
+    "331": {
+      "ocupados": 7782,
+      "pct_mujeres": 67.6,
+      "pct_menores_30": 24.2,
+      "pct_55_o_mas": 9.8
+    },
+    "332": {
+      "ocupados": 13992,
+      "pct_mujeres": 68.7,
+      "pct_menores_30": 16.7,
+      "pct_55_o_mas": 13.6
+    },
+    "333": {
+      "ocupados": 603,
+      "pct_mujeres": 71.6,
+      "pct_menores_30": 6.0,
+      "pct_55_o_mas": 22.9
+    },
+    "340": {
+      "ocupados": 4170,
+      "pct_mujeres": 55.0,
+      "pct_menores_30": 4.8,
+      "pct_55_o_mas": 27.6
+    },
+    "351": {
+      "ocupados": 75111,
+      "pct_mujeres": 33.8,
+      "pct_menores_30": 9.4,
+      "pct_55_o_mas": 20.6
+    },
+    "352": {
+      "ocupados": 15714,
+      "pct_mujeres": 50.7,
+      "pct_menores_30": 10.7,
+      "pct_55_o_mas": 22.0
+    },
+    "353": {
+      "ocupados": 14274,
+      "pct_mujeres": 50.1,
+      "pct_menores_30": 11.3,
+      "pct_55_o_mas": 24.7
+    },
+    "361": {
+      "ocupados": 64776,
+      "pct_mujeres": 69.8,
+      "pct_menores_30": 8.1,
+      "pct_55_o_mas": 23.5
+    },
+    "362": {
+      "ocupados": 1785,
+      "pct_mujeres": 70.4,
+      "pct_menores_30": 5.9,
+      "pct_55_o_mas": 24.5
+    },
+    "363": {
+      "ocupados": 795,
+      "pct_mujeres": 9.4,
+      "pct_menores_30": 0.4,
+      "pct_55_o_mas": 55.8
+    },
+    "371": {
+      "ocupados": 20625,
+      "pct_mujeres": 54.1,
+      "pct_menores_30": 15.8,
+      "pct_55_o_mas": 19.3
+    },
+    "372": {
+      "ocupados": 49278,
+      "pct_mujeres": 57.2,
+      "pct_menores_30": 37.4,
+      "pct_55_o_mas": 9.2
+    },
+    "373": {
+      "ocupados": 8379,
+      "pct_mujeres": 45.0,
+      "pct_menores_30": 13.6,
+      "pct_55_o_mas": 14.9
+    },
+    "381": {
+      "ocupados": 18966,
+      "pct_mujeres": 20.9,
+      "pct_menores_30": 24.6,
+      "pct_55_o_mas": 6.0
+    },
+    "382": {
+      "ocupados": 17880,
+      "pct_mujeres": 17.4,
+      "pct_menores_30": 24.1,
+      "pct_55_o_mas": 5.8
+    },
+    "383": {
+      "ocupados": 6153,
+      "pct_mujeres": 25.5,
+      "pct_menores_30": 20.2,
+      "pct_55_o_mas": 8.7
+    },
+    "411": {
+      "ocupados": 41271,
+      "pct_mujeres": 60.8,
+      "pct_menores_30": 10.0,
+      "pct_55_o_mas": 15.6
+    },
+    "412": {
+      "ocupados": 34290,
+      "pct_mujeres": 38.3,
+      "pct_menores_30": 16.2,
+      "pct_55_o_mas": 13.6
+    },
+    "421": {
+      "ocupados": 1350,
+      "pct_mujeres": 69.8,
+      "pct_menores_30": 4.2,
+      "pct_55_o_mas": 22.7
+    },
+    "422": {
+      "ocupados": 11436,
+      "pct_mujeres": 46.7,
+      "pct_menores_30": 15.8,
+      "pct_55_o_mas": 26.9
+    },
+    "430": {
+      "ocupados": 122052,
+      "pct_mujeres": 72.3,
+      "pct_menores_30": 9.1,
+      "pct_55_o_mas": 15.4
+    },
+    "441": {
+      "ocupados": 16791,
+      "pct_mujeres": 70.7,
+      "pct_menores_30": 18.9,
+      "pct_55_o_mas": 13.8
+    },
+    "442": {
+      "ocupados": 32373,
+      "pct_mujeres": 66.3,
+      "pct_menores_30": 26.3,
+      "pct_55_o_mas": 8.6
+    },
+    "443": {
+      "ocupados": 1239,
+      "pct_mujeres": 65.4,
+      "pct_menores_30": 14.8,
+      "pct_55_o_mas": 20.6
+    },
+    "444": {
+      "ocupados": 4245,
+      "pct_mujeres": 59.3,
+      "pct_menores_30": 14.5,
+      "pct_55_o_mas": 16.4
+    },
+    "450": {
+      "ocupados": 101262,
+      "pct_mujeres": 75.0,
+      "pct_menores_30": 17.8,
+      "pct_55_o_mas": 15.6
+    },
+    "500": {
+      "ocupados": 45519,
+      "pct_mujeres": 44.4,
+      "pct_menores_30": 9.2,
+      "pct_55_o_mas": 23.8
+    },
+    "511": {
+      "ocupados": 24792,
+      "pct_mujeres": 43.1,
+      "pct_menores_30": 14.8,
+      "pct_55_o_mas": 21.1
+    },
+    "512": {
+      "ocupados": 79380,
+      "pct_mujeres": 51.6,
+      "pct_menores_30": 32.1,
+      "pct_55_o_mas": 8.8
+    },
+    "521": {
+      "ocupados": 7296,
+      "pct_mujeres": 42.4,
+      "pct_menores_30": 8.9,
+      "pct_55_o_mas": 16.1
+    },
+    "522": {
+      "ocupados": 167268,
+      "pct_mujeres": 69.0,
+      "pct_menores_30": 26.5,
+      "pct_55_o_mas": 12.1
+    },
+    "530": {
+      "ocupados": 52692,
+      "pct_mujeres": 52.6,
+      "pct_menores_30": 6.5,
+      "pct_55_o_mas": 31.0
+    },
+    "541": {
+      "ocupados": 6096,
+      "pct_mujeres": 46.1,
+      "pct_menores_30": 11.1,
+      "pct_55_o_mas": 26.6
+    },
+    "542": {
+      "ocupados": 3864,
+      "pct_mujeres": 61.7,
+      "pct_menores_30": 26.9,
+      "pct_55_o_mas": 8.0
+    },
+    "543": {
+      "ocupados": 4215,
+      "pct_mujeres": 57.7,
+      "pct_menores_30": 16.9,
+      "pct_55_o_mas": 18.1
+    },
+    "549": {
+      "ocupados": 15792,
+      "pct_mujeres": 53.4,
+      "pct_menores_30": 25.9,
+      "pct_55_o_mas": 11.6
+    },
+    "550": {
+      "ocupados": 21030,
+      "pct_mujeres": 77.6,
+      "pct_menores_30": 34.2,
+      "pct_55_o_mas": 8.2
+    },
+    "561": {
+      "ocupados": 44094,
+      "pct_mujeres": 86.4,
+      "pct_menores_30": 24.7,
+      "pct_55_o_mas": 20.0
+    },
+    "562": {
+      "ocupados": 28290,
+      "pct_mujeres": 76.9,
+      "pct_menores_30": 26.4,
+      "pct_55_o_mas": 17.8
+    },
+    "571": {
+      "ocupados": 12393,
+      "pct_mujeres": 77.2,
+      "pct_menores_30": 8.7,
+      "pct_55_o_mas": 30.2
+    },
+    "572": {
+      "ocupados": 9123,
+      "pct_mujeres": 83.0,
+      "pct_menores_30": 30.4,
+      "pct_55_o_mas": 17.2
+    },
+    "581": {
+      "ocupados": 39639,
+      "pct_mujeres": 79.0,
+      "pct_menores_30": 15.5,
+      "pct_55_o_mas": 15.1
+    },
+    "582": {
+      "ocupados": 5544,
+      "pct_mujeres": 62.0,
+      "pct_menores_30": 25.7,
+      "pct_55_o_mas": 11.0
+    },
+    "583": {
+      "ocupados": 18771,
+      "pct_mujeres": 30.8,
+      "pct_menores_30": 7.8,
+      "pct_55_o_mas": 37.2
+    },
+    "584": {
+      "ocupados": 216,
+      "pct_mujeres": 54.2,
+      "pct_menores_30": 7.1,
+      "pct_55_o_mas": 37.1
+    },
+    "589": {
+      "ocupados": 9273,
+      "pct_mujeres": 51.4,
+      "pct_menores_30": 18.2,
+      "pct_55_o_mas": 16.1
+    },
+    "611": {
+      "ocupados": 9018,
+      "pct_mujeres": 25.9,
+      "pct_menores_30": 8.5,
+      "pct_55_o_mas": 37.0
+    },
+    "612": {
+      "ocupados": 9894,
+      "pct_mujeres": 16.3,
+      "pct_menores_30": 7.9,
+      "pct_55_o_mas": 26.6
+    },
+    "620": {
+      "ocupados": 6315,
+      "pct_mujeres": 23.3,
+      "pct_menores_30": 9.1,
+      "pct_55_o_mas": 33.8
+    },
+    "630": {
+      "ocupados": 2145,
+      "pct_mujeres": 26.0,
+      "pct_menores_30": 9.0,
+      "pct_55_o_mas": 36.2
+    },
+    "641": {
+      "ocupados": 1281,
+      "pct_mujeres": 8.2,
+      "pct_menores_30": 8.6,
+      "pct_55_o_mas": 13.6
+    },
+    "642": {
+      "ocupados": 1647,
+      "pct_mujeres": 6.6,
+      "pct_menores_30": 5.3,
+      "pct_55_o_mas": 24.7
+    },
+    "643": {
+      "ocupados": 12,
+      "pct_mujeres": 25.0,
+      "pct_menores_30": 0.0,
+      "pct_55_o_mas": 100.0
+    },
+    "711": {
+      "ocupados": 3024,
+      "pct_mujeres": 4.3,
+      "pct_menores_30": 4.4,
+      "pct_55_o_mas": 20.8
+    },
+    "712": {
+      "ocupados": 49056,
+      "pct_mujeres": 6.1,
+      "pct_menores_30": 6.4,
+      "pct_55_o_mas": 20.5
+    },
+    "713": {
+      "ocupados": 17493,
+      "pct_mujeres": 7.7,
+      "pct_menores_30": 7.9,
+      "pct_55_o_mas": 21.3
+    },
+    "719": {
+      "ocupados": 10896,
+      "pct_mujeres": 4.5,
+      "pct_menores_30": 7.9,
+      "pct_55_o_mas": 17.8
+    },
+    "721": {
+      "ocupados": 1770,
+      "pct_mujeres": 5.3,
+      "pct_menores_30": 3.4,
+      "pct_55_o_mas": 23.5
+    },
+    "722": {
+      "ocupados": 9033,
+      "pct_mujeres": 9.2,
+      "pct_menores_30": 8.5,
+      "pct_55_o_mas": 18.4
+    },
+    "723": {
+      "ocupados": 10224,
+      "pct_mujeres": 5.0,
+      "pct_menores_30": 5.8,
+      "pct_55_o_mas": 24.2
+    },
+    "724": {
+      "ocupados": 1812,
+      "pct_mujeres": 7.3,
+      "pct_menores_30": 5.5,
+      "pct_55_o_mas": 23.1
+    },
+    "725": {
+      "ocupados": 3957,
+      "pct_mujeres": 2.6,
+      "pct_menores_30": 10.1,
+      "pct_55_o_mas": 18.7
+    },
+    "729": {
+      "ocupados": 3774,
+      "pct_mujeres": 12.8,
+      "pct_menores_30": 9.3,
+      "pct_55_o_mas": 17.7
+    },
+    "731": {
+      "ocupados": 21819,
+      "pct_mujeres": 8.0,
+      "pct_menores_30": 12.8,
+      "pct_55_o_mas": 15.1
+    },
+    "732": {
+      "ocupados": 17394,
+      "pct_mujeres": 10.7,
+      "pct_menores_30": 11.4,
+      "pct_55_o_mas": 15.7
+    },
+    "740": {
+      "ocupados": 47913,
+      "pct_mujeres": 7.4,
+      "pct_menores_30": 13.6,
+      "pct_55_o_mas": 19.7
+    },
+    "751": {
+      "ocupados": 29568,
+      "pct_mujeres": 8.1,
+      "pct_menores_30": 9.2,
+      "pct_55_o_mas": 19.3
+    },
+    "752": {
+      "ocupados": 12390,
+      "pct_mujeres": 5.4,
+      "pct_menores_30": 9.6,
+      "pct_55_o_mas": 19.0
+    },
+    "753": {
+      "ocupados": 10416,
+      "pct_mujeres": 11.1,
+      "pct_menores_30": 8.6,
+      "pct_55_o_mas": 30.4
+    },
+    "761": {
+      "ocupados": 4467,
+      "pct_mujeres": 33.6,
+      "pct_menores_30": 5.4,
+      "pct_55_o_mas": 31.1
+    },
+    "762": {
+      "ocupados": 10956,
+      "pct_mujeres": 28.1,
+      "pct_menores_30": 10.1,
+      "pct_55_o_mas": 19.9
+    },
+    "770": {
+      "ocupados": 32382,
+      "pct_mujeres": 35.3,
+      "pct_menores_30": 19.3,
+      "pct_55_o_mas": 14.4
+    },
+    "781": {
+      "ocupados": 1671,
+      "pct_mujeres": 8.8,
+      "pct_menores_30": 9.0,
+      "pct_55_o_mas": 24.5
+    },
+    "782": {
+      "ocupados": 1848,
+      "pct_mujeres": 11.5,
+      "pct_menores_30": 8.4,
+      "pct_55_o_mas": 25.9
+    },
+    "783": {
+      "ocupados": 8034,
+      "pct_mujeres": 63.1,
+      "pct_menores_30": 6.6,
+      "pct_55_o_mas": 32.1
+    },
+    "789": {
+      "ocupados": 12549,
+      "pct_mujeres": 13.3,
+      "pct_menores_30": 13.7,
+      "pct_55_o_mas": 14.7
+    },
+    "811": {
+      "ocupados": 5475,
+      "pct_mujeres": 20.3,
+      "pct_menores_30": 3.5,
+      "pct_55_o_mas": 24.5
+    },
+    "812": {
+      "ocupados": 5829,
+      "pct_mujeres": 18.1,
+      "pct_menores_30": 10.3,
+      "pct_55_o_mas": 17.2
+    },
+    "813": {
+      "ocupados": 13167,
+      "pct_mujeres": 26.2,
+      "pct_menores_30": 12.6,
+      "pct_55_o_mas": 9.9
+    },
+    "814": {
+      "ocupados": 13701,
+      "pct_mujeres": 27.3,
+      "pct_menores_30": 11.6,
+      "pct_55_o_mas": 15.5
+    },
+    "815": {
+      "ocupados": 8622,
+      "pct_mujeres": 56.3,
+      "pct_menores_30": 9.2,
+      "pct_55_o_mas": 23.3
+    },
+    "816": {
+      "ocupados": 5502,
+      "pct_mujeres": 36.8,
+      "pct_menores_30": 16.9,
+      "pct_55_o_mas": 13.2
+    },
+    "817": {
+      "ocupados": 2115,
+      "pct_mujeres": 56.3,
+      "pct_menores_30": 9.1,
+      "pct_55_o_mas": 26.8
+    },
+    "819": {
+      "ocupados": 7629,
+      "pct_mujeres": 19.6,
+      "pct_menores_30": 12.1,
+      "pct_55_o_mas": 14.6
+    },
+    "820": {
+      "ocupados": 12453,
+      "pct_mujeres": 22.6,
+      "pct_menores_30": 12.2,
+      "pct_55_o_mas": 16.2
+    },
+    "831": {
+      "ocupados": 825,
+      "pct_mujeres": 11.3,
+      "pct_menores_30": 9.9,
+      "pct_55_o_mas": 38.7
+    },
+    "832": {
+      "ocupados": 1599,
+      "pct_mujeres": 5.1,
+      "pct_menores_30": 13.6,
+      "pct_55_o_mas": 20.7
+    },
+    "833": {
+      "ocupados": 13734,
+      "pct_mujeres": 6.7,
+      "pct_menores_30": 8.4,
+      "pct_55_o_mas": 23.5
+    },
+    "834": {
+      "ocupados": 519,
+      "pct_mujeres": 6.4,
+      "pct_menores_30": 14.4,
+      "pct_55_o_mas": 14.4
+    },
+    "841": {
+      "ocupados": 38535,
+      "pct_mujeres": 7.9,
+      "pct_menores_30": 10.8,
+      "pct_55_o_mas": 23.9
+    },
+    "842": {
+      "ocupados": 10005,
+      "pct_mujeres": 10.4,
+      "pct_menores_30": 2.2,
+      "pct_55_o_mas": 24.6
+    },
+    "843": {
+      "ocupados": 58599,
+      "pct_mujeres": 6.2,
+      "pct_menores_30": 5.3,
+      "pct_55_o_mas": 25.3
+    },
+    "844": {
+      "ocupados": 3534,
+      "pct_mujeres": 10.0,
+      "pct_menores_30": 46.0,
+      "pct_55_o_mas": 9.2
+    },
+    "910": {
+      "ocupados": 51894,
+      "pct_mujeres": 94.0,
+      "pct_menores_30": 4.7,
+      "pct_55_o_mas": 34.4
+    },
+    "921": {
+      "ocupados": 106950,
+      "pct_mujeres": 78.8,
+      "pct_menores_30": 7.4,
+      "pct_55_o_mas": 28.5
+    },
+    "922": {
+      "ocupados": 14421,
+      "pct_mujeres": 63.2,
+      "pct_menores_30": 10.9,
+      "pct_55_o_mas": 25.5
+    },
+    "931": {
+      "ocupados": 15261,
+      "pct_mujeres": 46.2,
+      "pct_menores_30": 25.1,
+      "pct_55_o_mas": 11.9
+    },
+    "932": {
+      "ocupados": 3021,
+      "pct_mujeres": 54.5,
+      "pct_menores_30": 66.2,
+      "pct_55_o_mas": 5.4
+    },
+    "941": {
+      "ocupados": 90,
+      "pct_mujeres": 33.3,
+      "pct_menores_30": 7.1,
+      "pct_55_o_mas": 32.1
+    },
+    "942": {
+      "ocupados": 924,
+      "pct_mujeres": 21.8,
+      "pct_menores_30": 29.7,
+      "pct_55_o_mas": 10.5
+    },
+    "943": {
+      "ocupados": 10848,
+      "pct_mujeres": 20.4,
+      "pct_menores_30": 28.0,
+      "pct_55_o_mas": 14.6
+    },
+    "944": {
+      "ocupados": 9306,
+      "pct_mujeres": 22.0,
+      "pct_menores_30": 8.3,
+      "pct_55_o_mas": 23.3
+    },
+    "949": {
+      "ocupados": 10128,
+      "pct_mujeres": 32.9,
+      "pct_menores_30": 32.5,
+      "pct_55_o_mas": 11.1
+    },
+    "951": {
+      "ocupados": 17577,
+      "pct_mujeres": 12.3,
+      "pct_menores_30": 17.7,
+      "pct_55_o_mas": 12.2
+    },
+    "952": {
+      "ocupados": 2667,
+      "pct_mujeres": 14.5,
+      "pct_menores_30": 21.7,
+      "pct_55_o_mas": 12.4
+    },
+    "953": {
+      "ocupados": 3372,
+      "pct_mujeres": 13.7,
+      "pct_menores_30": 17.6,
+      "pct_55_o_mas": 10.5
+    },
+    "954": {
+      "ocupados": 1950,
+      "pct_mujeres": 6.5,
+      "pct_menores_30": 13.4,
+      "pct_55_o_mas": 10.6
+    },
+    "960": {
+      "ocupados": 17820,
+      "pct_mujeres": 2.1,
+      "pct_menores_30": 10.4,
+      "pct_55_o_mas": 15.5
+    },
+    "970": {
+      "ocupados": 83280,
+      "pct_mujeres": 33.9,
+      "pct_menores_30": 14.4,
+      "pct_55_o_mas": 12.0
+    },
+    "981": {
+      "ocupados": 51843,
+      "pct_mujeres": 18.9,
+      "pct_menores_30": 23.4,
+      "pct_55_o_mas": 8.5
+    },
+    "982": {
+      "ocupados": 9009,
+      "pct_mujeres": 31.8,
+      "pct_menores_30": 38.5,
+      "pct_55_o_mas": 5.1
+    }
+  },
+  "ocupados_cno2": {
+    "11": {
+      "ocupados": 9930,
+      "pct_mujeres": 26.6,
+      "pct_menores_30": 1.5,
+      "pct_55_o_mas": 53.0
+    },
+    "12": {
+      "ocupados": 52701,
+      "pct_mujeres": 35.7,
+      "pct_menores_30": 7.3,
+      "pct_55_o_mas": 28.3
+    },
+    "13": {
+      "ocupados": 32766,
+      "pct_mujeres": 25.7,
+      "pct_menores_30": 2.7,
+      "pct_55_o_mas": 40.7
+    },
+    "14": {
+      "ocupados": 23463,
+      "pct_mujeres": 35.5,
+      "pct_menores_30": 6.8,
+      "pct_55_o_mas": 40.1
+    },
+    "15": {
+      "ocupados": 20763,
+      "pct_mujeres": 39.2,
+      "pct_menores_30": 3.6,
+      "pct_55_o_mas": 39.6
+    },
+    "21": {
+      "ocupados": 120381,
+      "pct_mujeres": 74.4,
+      "pct_menores_30": 16.3,
+      "pct_55_o_mas": 19.0
+    },
+    "22": {
+      "ocupados": 136593,
+      "pct_mujeres": 70.6,
+      "pct_menores_30": 9.4,
+      "pct_55_o_mas": 24.5
+    },
+    "23": {
+      "ocupados": 42663,
+      "pct_mujeres": 66.8,
+      "pct_menores_30": 19.4,
+      "pct_55_o_mas": 15.5
+    },
+    "24": {
+      "ocupados": 78993,
+      "pct_mujeres": 32.2,
+      "pct_menores_30": 14.4,
+      "pct_55_o_mas": 11.1
+    },
+    "25": {
+      "ocupados": 27702,
+      "pct_mujeres": 55.9,
+      "pct_menores_30": 12.4,
+      "pct_55_o_mas": 24.0
+    },
+    "26": {
+      "ocupados": 66765,
+      "pct_mujeres": 54.6,
+      "pct_menores_30": 17.7,
+      "pct_55_o_mas": 13.8
+    },
+    "27": {
+      "ocupados": 40548,
+      "pct_mujeres": 23.6,
+      "pct_menores_30": 17.7,
+      "pct_55_o_mas": 7.7
+    },
+    "28": {
+      "ocupados": 37164,
+      "pct_mujeres": 76.0,
+      "pct_menores_30": 17.1,
+      "pct_55_o_mas": 13.9
+    },
+    "29": {
+      "ocupados": 36678,
+      "pct_mujeres": 49.2,
+      "pct_menores_30": 15.8,
+      "pct_55_o_mas": 16.1
+    },
+    "31": {
+      "ocupados": 63588,
+      "pct_mujeres": 27.0,
+      "pct_menores_30": 13.2,
+      "pct_55_o_mas": 13.1
+    },
+    "32": {
+      "ocupados": 14175,
+      "pct_mujeres": 11.6,
+      "pct_menores_30": 5.0,
+      "pct_55_o_mas": 24.4
+    },
+    "33": {
+      "ocupados": 22374,
+      "pct_mujeres": 68.4,
+      "pct_menores_30": 19.0,
+      "pct_55_o_mas": 12.6
+    },
+    "34": {
+      "ocupados": 4173,
+      "pct_mujeres": 55.1,
+      "pct_menores_30": 4.9,
+      "pct_55_o_mas": 27.7
+    },
+    "35": {
+      "ocupados": 105099,
+      "pct_mujeres": 38.5,
+      "pct_menores_30": 9.9,
+      "pct_55_o_mas": 21.4
+    },
+    "36": {
+      "ocupados": 67353,
+      "pct_mujeres": 69.1,
+      "pct_menores_30": 7.9,
+      "pct_55_o_mas": 23.9
+    },
+    "37": {
+      "ocupados": 78279,
+      "pct_mujeres": 55.1,
+      "pct_menores_30": 29.2,
+      "pct_55_o_mas": 12.4
+    },
+    "38": {
+      "ocupados": 42999,
+      "pct_mujeres": 20.1,
+      "pct_menores_30": 23.8,
+      "pct_55_o_mas": 6.3
+    },
+    "41": {
+      "ocupados": 75558,
+      "pct_mujeres": 50.6,
+      "pct_menores_30": 12.8,
+      "pct_55_o_mas": 14.7
+    },
+    "42": {
+      "ocupados": 12786,
+      "pct_mujeres": 49.1,
+      "pct_menores_30": 14.6,
+      "pct_55_o_mas": 26.5
+    },
+    "43": {
+      "ocupados": 122055,
+      "pct_mujeres": 72.3,
+      "pct_menores_30": 9.1,
+      "pct_55_o_mas": 15.4
+    },
+    "44": {
+      "ocupados": 54648,
+      "pct_mujeres": 67.1,
+      "pct_menores_30": 22.8,
+      "pct_55_o_mas": 11.1
+    },
+    "45": {
+      "ocupados": 101262,
+      "pct_mujeres": 75.0,
+      "pct_menores_30": 17.8,
+      "pct_55_o_mas": 15.5
+    },
+    "50": {
+      "ocupados": 45519,
+      "pct_mujeres": 44.4,
+      "pct_menores_30": 9.2,
+      "pct_55_o_mas": 23.8
+    },
+    "51": {
+      "ocupados": 104175,
+      "pct_mujeres": 49.6,
+      "pct_menores_30": 28.0,
+      "pct_55_o_mas": 11.7
+    },
+    "52": {
+      "ocupados": 174561,
+      "pct_mujeres": 67.9,
+      "pct_menores_30": 25.7,
+      "pct_55_o_mas": 12.2
+    },
+    "53": {
+      "ocupados": 52686,
+      "pct_mujeres": 52.6,
+      "pct_menores_30": 6.5,
+      "pct_55_o_mas": 31.0
+    },
+    "54": {
+      "ocupados": 29961,
+      "pct_mujeres": 53.6,
+      "pct_menores_30": 21.7,
+      "pct_55_o_mas": 15.2
+    },
+    "55": {
+      "ocupados": 21033,
+      "pct_mujeres": 77.6,
+      "pct_menores_30": 34.2,
+      "pct_55_o_mas": 8.2
+    },
+    "56": {
+      "ocupados": 72381,
+      "pct_mujeres": 82.7,
+      "pct_menores_30": 25.4,
+      "pct_55_o_mas": 19.1
+    },
+    "57": {
+      "ocupados": 21516,
+      "pct_mujeres": 79.7,
+      "pct_menores_30": 17.9,
+      "pct_55_o_mas": 24.7
+    },
+    "58": {
+      "ocupados": 73434,
+      "pct_mujeres": 61.9,
+      "pct_menores_30": 14.6,
+      "pct_55_o_mas": 20.6
+    },
+    "59": {
+      "ocupados": 37923,
+      "pct_mujeres": 16.2,
+      "pct_menores_30": 11.0,
+      "pct_55_o_mas": 22.3
+    },
+    "61": {
+      "ocupados": 18915,
+      "pct_mujeres": 20.9,
+      "pct_menores_30": 8.2,
+      "pct_55_o_mas": 31.5
+    },
+    "62": {
+      "ocupados": 6315,
+      "pct_mujeres": 23.3,
+      "pct_menores_30": 9.1,
+      "pct_55_o_mas": 33.8
+    },
+    "63": {
+      "ocupados": 2145,
+      "pct_mujeres": 26.0,
+      "pct_menores_30": 8.8,
+      "pct_55_o_mas": 36.4
+    },
+    "64": {
+      "ocupados": 2940,
+      "pct_mujeres": 7.3,
+      "pct_menores_30": 6.7,
+      "pct_55_o_mas": 20.1
+    },
+    "71": {
+      "ocupados": 80472,
+      "pct_mujeres": 6.1,
+      "pct_menores_30": 6.9,
+      "pct_55_o_mas": 20.3
+    },
+    "72": {
+      "ocupados": 30567,
+      "pct_mujeres": 7.0,
+      "pct_menores_30": 7.4,
+      "pct_55_o_mas": 20.9
+    },
+    "73": {
+      "ocupados": 39213,
+      "pct_mujeres": 9.2,
+      "pct_menores_30": 12.2,
+      "pct_55_o_mas": 15.4
+    },
+    "74": {
+      "ocupados": 47913,
+      "pct_mujeres": 7.4,
+      "pct_menores_30": 13.6,
+      "pct_55_o_mas": 19.7
+    },
+    "75": {
+      "ocupados": 52374,
+      "pct_mujeres": 8.1,
+      "pct_menores_30": 9.2,
+      "pct_55_o_mas": 21.5
+    },
+    "76": {
+      "ocupados": 15420,
+      "pct_mujeres": 29.7,
+      "pct_menores_30": 8.7,
+      "pct_55_o_mas": 23.1
+    },
+    "77": {
+      "ocupados": 32388,
+      "pct_mujeres": 35.3,
+      "pct_menores_30": 19.3,
+      "pct_55_o_mas": 14.5
+    },
+    "78": {
+      "ocupados": 24102,
+      "pct_mujeres": 29.5,
+      "pct_menores_30": 10.6,
+      "pct_55_o_mas": 22.0
+    },
+    "81": {
+      "ocupados": 62043,
+      "pct_mujeres": 30.5,
+      "pct_menores_30": 11.1,
+      "pct_55_o_mas": 16.4
+    },
+    "82": {
+      "ocupados": 12453,
+      "pct_mujeres": 22.6,
+      "pct_menores_30": 12.2,
+      "pct_55_o_mas": 16.2
+    },
+    "83": {
+      "ocupados": 16674,
+      "pct_mujeres": 6.8,
+      "pct_menores_30": 9.2,
+      "pct_55_o_mas": 23.7
+    },
+    "84": {
+      "ocupados": 110673,
+      "pct_mujeres": 7.3,
+      "pct_menores_30": 8.2,
+      "pct_55_o_mas": 24.2
+    },
+    "91": {
+      "ocupados": 51894,
+      "pct_mujeres": 94.0,
+      "pct_menores_30": 4.7,
+      "pct_55_o_mas": 34.4
+    },
+    "92": {
+      "ocupados": 121371,
+      "pct_mujeres": 77.0,
+      "pct_menores_30": 7.8,
+      "pct_55_o_mas": 28.1
+    },
+    "93": {
+      "ocupados": 18282,
+      "pct_mujeres": 47.6,
+      "pct_menores_30": 31.9,
+      "pct_55_o_mas": 10.8
+    },
+    "94": {
+      "ocupados": 31293,
+      "pct_mujeres": 25.0,
+      "pct_menores_30": 23.6,
+      "pct_55_o_mas": 16.0
+    },
+    "95": {
+      "ocupados": 25569,
+      "pct_mujeres": 12.2,
+      "pct_menores_30": 17.8,
+      "pct_55_o_mas": 11.9
+    },
+    "96": {
+      "ocupados": 17820,
+      "pct_mujeres": 2.1,
+      "pct_menores_30": 10.4,
+      "pct_55_o_mas": 15.5
+    },
+    "97": {
+      "ocupados": 83277,
+      "pct_mujeres": 33.9,
+      "pct_menores_30": 14.4,
+      "pct_55_o_mas": 12.0
+    },
+    "98": {
+      "ocupados": 60855,
+      "pct_mujeres": 20.8,
+      "pct_menores_30": 25.6,
+      "pct_55_o_mas": 8.0
+    }
+  },
+  "contratacion_cno4": {
+    "1113": {
+      "personas_contratadas": 86,
+      "personas_contratadas_anterior": 76,
+      "variacion_pct": null,
+      "pct_indefinidos": 81.1,
+      "pct_mujeres_contratos": 62.2
+    },
+    "1120": {
+      "personas_contratadas": 561,
+      "personas_contratadas_anterior": 521,
+      "variacion_pct": 7.7,
+      "pct_indefinidos": 80.9,
+      "pct_mujeres_contratos": 27.8
+    },
+    "1211": {
+      "personas_contratadas": 929,
+      "personas_contratadas_anterior": 867,
+      "variacion_pct": 7.2,
+      "pct_indefinidos": 94.1,
+      "pct_mujeres_contratos": 35.0
+    },
+    "1212": {
+      "personas_contratadas": 532,
+      "personas_contratadas_anterior": 510,
+      "variacion_pct": 4.3,
+      "pct_indefinidos": 89.4,
+      "pct_mujeres_contratos": 70.0
+    },
+    "1219": {
+      "personas_contratadas": 1293,
+      "personas_contratadas_anterior": 1150,
+      "variacion_pct": 12.4,
+      "pct_indefinidos": 90.3,
+      "pct_mujeres_contratos": 44.9
+    },
+    "1221": {
+      "personas_contratadas": 2588,
+      "personas_contratadas_anterior": 2443,
+      "variacion_pct": 5.9,
+      "pct_indefinidos": 94.5,
+      "pct_mujeres_contratos": 35.2
+    },
+    "1222": {
+      "personas_contratadas": 387,
+      "personas_contratadas_anterior": 382,
+      "variacion_pct": 1.3,
+      "pct_indefinidos": 90.4,
+      "pct_mujeres_contratos": 62.8
+    },
+    "1223": {
+      "personas_contratadas": 508,
+      "personas_contratadas_anterior": 468,
+      "variacion_pct": 8.5,
+      "pct_indefinidos": 93.3,
+      "pct_mujeres_contratos": 40.4
+    },
+    "1311": {
+      "personas_contratadas": 24,
+      "personas_contratadas_anterior": 32,
+      "variacion_pct": null,
+      "pct_indefinidos": 87.5,
+      "pct_mujeres_contratos": 16.7
+    },
+    "1312": {
+      "personas_contratadas": 8,
+      "personas_contratadas_anterior": 6,
+      "variacion_pct": null,
+      "pct_indefinidos": 100.0,
+      "pct_mujeres_contratos": 25.0
+    },
+    "1313": {
+      "personas_contratadas": 355,
+      "personas_contratadas_anterior": 278,
+      "variacion_pct": 27.7,
+      "pct_indefinidos": 94.0,
+      "pct_mujeres_contratos": 16.4
+    },
+    "1314": {
+      "personas_contratadas": 3,
+      "personas_contratadas_anterior": 1,
+      "variacion_pct": null,
+      "pct_indefinidos": 100.0,
+      "pct_mujeres_contratos": 0.0
+    },
+    "1315": {
+      "personas_contratadas": 314,
+      "personas_contratadas_anterior": 253,
+      "variacion_pct": 24.1,
+      "pct_indefinidos": 90.5,
+      "pct_mujeres_contratos": 28.5
+    },
+    "1316": {
+      "personas_contratadas": 81,
+      "personas_contratadas_anterior": 68,
+      "variacion_pct": null,
+      "pct_indefinidos": 96.3,
+      "pct_mujeres_contratos": 11.0
+    },
+    "1321": {
+      "personas_contratadas": 523,
+      "personas_contratadas_anterior": 561,
+      "variacion_pct": -6.8,
+      "pct_indefinidos": 94.2,
+      "pct_mujeres_contratos": 25.5
+    },
+    "1322": {
+      "personas_contratadas": 11,
+      "personas_contratadas_anterior": 18,
+      "variacion_pct": null,
+      "pct_indefinidos": 81.8,
+      "pct_mujeres_contratos": 63.6
+    },
+    "1323": {
+      "personas_contratadas": 186,
+      "personas_contratadas_anterior": 144,
+      "variacion_pct": 29.2,
+      "pct_indefinidos": 81.5,
+      "pct_mujeres_contratos": 69.5
+    },
+    "1324": {
+      "personas_contratadas": 90,
+      "personas_contratadas_anterior": 94,
+      "variacion_pct": null,
+      "pct_indefinidos": 68.3,
+      "pct_mujeres_contratos": 74.0
+    },
+    "1325": {
+      "personas_contratadas": 61,
+      "personas_contratadas_anterior": 65,
+      "variacion_pct": null,
+      "pct_indefinidos": 73.1,
+      "pct_mujeres_contratos": 59.7
+    },
+    "1326": {
+      "personas_contratadas": 93,
+      "personas_contratadas_anterior": 111,
+      "variacion_pct": null,
+      "pct_indefinidos": 58.7,
+      "pct_mujeres_contratos": 77.1
+    },
+    "1327": {
+      "personas_contratadas": 26,
+      "personas_contratadas_anterior": 73,
+      "variacion_pct": null,
+      "pct_indefinidos": 96.2,
+      "pct_mujeres_contratos": 26.9
+    },
+    "1329": {
+      "personas_contratadas": 553,
+      "personas_contratadas_anterior": 511,
+      "variacion_pct": 8.2,
+      "pct_indefinidos": 90.3,
+      "pct_mujeres_contratos": 37.1
+    },
+    "1411": {
+      "personas_contratadas": 226,
+      "personas_contratadas_anterior": 257,
+      "variacion_pct": -12.1,
+      "pct_indefinidos": 93.5,
+      "pct_mujeres_contratos": 44.3
+    },
+    "1419": {
+      "personas_contratadas": 89,
+      "personas_contratadas_anterior": 94,
+      "variacion_pct": null,
+      "pct_indefinidos": 95.7,
+      "pct_mujeres_contratos": 45.2
+    },
+    "1421": {
+      "personas_contratadas": 484,
+      "personas_contratadas_anterior": 466,
+      "variacion_pct": 3.9,
+      "pct_indefinidos": 89.8,
+      "pct_mujeres_contratos": 30.2
+    },
+    "1422": {
+      "personas_contratadas": 143,
+      "personas_contratadas_anterior": 126,
+      "variacion_pct": 13.5,
+      "pct_indefinidos": 92.9,
+      "pct_mujeres_contratos": 32.9
+    },
+    "1429": {
+      "personas_contratadas": 80,
+      "personas_contratadas_anterior": 89,
+      "variacion_pct": null,
+      "pct_indefinidos": 86.2,
+      "pct_mujeres_contratos": 48.8
+    },
+    "1431": {
+      "personas_contratadas": 113,
+      "personas_contratadas_anterior": 100,
+      "variacion_pct": 13.0,
+      "pct_indefinidos": 95.7,
+      "pct_mujeres_contratos": 33.3
+    },
+    "1432": {
+      "personas_contratadas": 207,
+      "personas_contratadas_anterior": 173,
+      "variacion_pct": 19.7,
+      "pct_indefinidos": 94.8,
+      "pct_mujeres_contratos": 44.8
+    },
+    "1501": {
+      "personas_contratadas": 335,
+      "personas_contratadas_anterior": 295,
+      "variacion_pct": 13.6,
+      "pct_indefinidos": 79.2,
+      "pct_mujeres_contratos": 42.9
+    },
+    "1509": {
+      "personas_contratadas": 258,
+      "personas_contratadas_anterior": 314,
+      "variacion_pct": -17.8,
+      "pct_indefinidos": 87.0,
+      "pct_mujeres_contratos": 39.6
+    },
+    "2111": {
+      "personas_contratadas": 2192,
+      "personas_contratadas_anterior": 2149,
+      "variacion_pct": 2.0,
+      "pct_indefinidos": 18.9,
+      "pct_mujeres_contratos": 57.4
+    },
+    "2112": {
+      "personas_contratadas": 6381,
+      "personas_contratadas_anterior": 5934,
+      "variacion_pct": 7.5,
+      "pct_indefinidos": 16.6,
+      "pct_mujeres_contratos": 57.4
+    },
+    "2121": {
+      "personas_contratadas": 10083,
+      "personas_contratadas_anterior": 9129,
+      "variacion_pct": 10.5,
+      "pct_indefinidos": 8.8,
+      "pct_mujeres_contratos": 76.9
+    },
+    "2122": {
+      "personas_contratadas": 2654,
+      "personas_contratadas_anterior": 2617,
+      "variacion_pct": 1.4,
+      "pct_indefinidos": 10.5,
+      "pct_mujeres_contratos": 79.9
+    },
+    "2123": {
+      "personas_contratadas": 484,
+      "personas_contratadas_anterior": 428,
+      "variacion_pct": 13.1,
+      "pct_indefinidos": 3.7,
+      "pct_mujeres_contratos": 86.5
+    },
+    "2130": {
+      "personas_contratadas": 787,
+      "personas_contratadas_anterior": 699,
+      "variacion_pct": 12.6,
+      "pct_indefinidos": 72.0,
+      "pct_mujeres_contratos": 75.5
+    },
+    "2140": {
+      "personas_contratadas": 1313,
+      "personas_contratadas_anterior": 1320,
+      "variacion_pct": -0.5,
+      "pct_indefinidos": 66.2,
+      "pct_mujeres_contratos": 76.6
+    },
+    "2151": {
+      "personas_contratadas": 485,
+      "personas_contratadas_anterior": 509,
+      "variacion_pct": -4.7,
+      "pct_indefinidos": 63.2,
+      "pct_mujeres_contratos": 77.3
+    },
+    "2152": {
+      "personas_contratadas": 2387,
+      "personas_contratadas_anterior": 2191,
+      "variacion_pct": 8.9,
+      "pct_indefinidos": 20.2,
+      "pct_mujeres_contratos": 56.9
+    },
+    "2153": {
+      "personas_contratadas": 401,
+      "personas_contratadas_anterior": 396,
+      "variacion_pct": 1.3,
+      "pct_indefinidos": 18.2,
+      "pct_mujeres_contratos": 80.1
+    },
+    "2154": {
+      "personas_contratadas": 287,
+      "personas_contratadas_anterior": 318,
+      "variacion_pct": -9.7,
+      "pct_indefinidos": 32.8,
+      "pct_mujeres_contratos": 94.3
+    },
+    "2155": {
+      "personas_contratadas": 337,
+      "personas_contratadas_anterior": 358,
+      "variacion_pct": -5.9,
+      "pct_indefinidos": 64.2,
+      "pct_mujeres_contratos": 74.9
+    },
+    "2156": {
+      "personas_contratadas": 543,
+      "personas_contratadas_anterior": 526,
+      "variacion_pct": 3.2,
+      "pct_indefinidos": 30.1,
+      "pct_mujeres_contratos": 88.1
+    },
+    "2157": {
+      "personas_contratadas": 36,
+      "personas_contratadas_anterior": 37,
+      "variacion_pct": null,
+      "pct_indefinidos": 50.0,
+      "pct_mujeres_contratos": 81.7
+    },
+    "2158": {
+      "personas_contratadas": 426,
+      "personas_contratadas_anterior": 387,
+      "variacion_pct": 10.1,
+      "pct_indefinidos": 54.7,
+      "pct_mujeres_contratos": 51.8
+    },
+    "2159": {
+      "personas_contratadas": 1319,
+      "personas_contratadas_anterior": 1423,
+      "variacion_pct": -7.3,
+      "pct_indefinidos": 56.0,
+      "pct_mujeres_contratos": 76.8
+    },
+    "2210": {
+      "personas_contratadas": 10513,
+      "personas_contratadas_anterior": 13721,
+      "variacion_pct": -23.4,
+      "pct_indefinidos": 30.0,
+      "pct_mujeres_contratos": 50.0
+    },
+    "2220": {
+      "personas_contratadas": 1437,
+      "personas_contratadas_anterior": 1450,
+      "variacion_pct": -0.9,
+      "pct_indefinidos": 44.2,
+      "pct_mujeres_contratos": 48.5
+    },
+    "2230": {
+      "personas_contratadas": 2727,
+      "personas_contratadas_anterior": 2713,
+      "variacion_pct": 0.5,
+      "pct_indefinidos": 31.5,
+      "pct_mujeres_contratos": 54.0
+    },
+    "2240": {
+      "personas_contratadas": 3213,
+      "personas_contratadas_anterior": 2738,
+      "variacion_pct": 17.3,
+      "pct_indefinidos": 26.7,
+      "pct_mujeres_contratos": 77.8
+    },
+    "2251": {
+      "personas_contratadas": 1498,
+      "personas_contratadas_anterior": 1418,
+      "variacion_pct": 5.6,
+      "pct_indefinidos": 22.2,
+      "pct_mujeres_contratos": 93.7
+    },
+    "2252": {
+      "personas_contratadas": 3705,
+      "personas_contratadas_anterior": 3824,
+      "variacion_pct": -3.1,
+      "pct_indefinidos": 14.4,
+      "pct_mujeres_contratos": 91.1
+    },
+    "2311": {
+      "personas_contratadas": 536,
+      "personas_contratadas_anterior": 629,
+      "variacion_pct": -14.8,
+      "pct_indefinidos": 26.0,
+      "pct_mujeres_contratos": 82.4
+    },
+    "2312": {
+      "personas_contratadas": 2510,
+      "personas_contratadas_anterior": 2195,
+      "variacion_pct": 14.4,
+      "pct_indefinidos": 11.9,
+      "pct_mujeres_contratos": 81.3
+    },
+    "2321": {
+      "personas_contratadas": 764,
+      "personas_contratadas_anterior": 1006,
+      "variacion_pct": -24.1,
+      "pct_indefinidos": 71.4,
+      "pct_mujeres_contratos": 73.3
+    },
+    "2322": {
+      "personas_contratadas": 3612,
+      "personas_contratadas_anterior": 4076,
+      "variacion_pct": -11.4,
+      "pct_indefinidos": 77.2,
+      "pct_mujeres_contratos": 77.8
+    },
+    "2323": {
+      "personas_contratadas": 2138,
+      "personas_contratadas_anterior": 2392,
+      "variacion_pct": -10.6,
+      "pct_indefinidos": 43.1,
+      "pct_mujeres_contratos": 52.8
+    },
+    "2324": {
+      "personas_contratadas": 402,
+      "personas_contratadas_anterior": 548,
+      "variacion_pct": -26.6,
+      "pct_indefinidos": 61.9,
+      "pct_mujeres_contratos": 65.3
+    },
+    "2325": {
+      "personas_contratadas": 154,
+      "personas_contratadas_anterior": 216,
+      "variacion_pct": -28.7,
+      "pct_indefinidos": 74.9,
+      "pct_mujeres_contratos": 49.7
+    },
+    "2326": {
+      "personas_contratadas": 574,
+      "personas_contratadas_anterior": 579,
+      "variacion_pct": -0.9,
+      "pct_indefinidos": 41.5,
+      "pct_mujeres_contratos": 60.3
+    },
+    "2329": {
+      "personas_contratadas": 5152,
+      "personas_contratadas_anterior": 5649,
+      "variacion_pct": -8.8,
+      "pct_indefinidos": 46.0,
+      "pct_mujeres_contratos": 54.9
+    },
+    "2411": {
+      "personas_contratadas": 456,
+      "personas_contratadas_anterior": 418,
+      "variacion_pct": 9.1,
+      "pct_indefinidos": 51.0,
+      "pct_mujeres_contratos": 36.5
+    },
+    "2412": {
+      "personas_contratadas": 20,
+      "personas_contratadas_anterior": 25,
+      "variacion_pct": null,
+      "pct_indefinidos": 24.2,
+      "pct_mujeres_contratos": 21.2
+    },
+    "2413": {
+      "personas_contratadas": 608,
+      "personas_contratadas_anterior": 678,
+      "variacion_pct": -10.3,
+      "pct_indefinidos": 64.3,
+      "pct_mujeres_contratos": 58.3
+    },
+    "2414": {
+      "personas_contratadas": 142,
+      "personas_contratadas_anterior": 137,
+      "variacion_pct": 3.6,
+      "pct_indefinidos": 56.5,
+      "pct_mujeres_contratos": 45.3
+    },
+    "2415": {
+      "personas_contratadas": 58,
+      "personas_contratadas_anterior": 79,
+      "variacion_pct": null,
+      "pct_indefinidos": 74.6,
+      "pct_mujeres_contratos": 35.6
+    },
+    "2416": {
+      "personas_contratadas": 50,
+      "personas_contratadas_anterior": 69,
+      "variacion_pct": null,
+      "pct_indefinidos": 73.7,
+      "pct_mujeres_contratos": 26.3
+    },
+    "2421": {
+      "personas_contratadas": 1739,
+      "personas_contratadas_anterior": 1955,
+      "variacion_pct": -11.0,
+      "pct_indefinidos": 62.0,
+      "pct_mujeres_contratos": 66.1
+    },
+    "2422": {
+      "personas_contratadas": 89,
+      "personas_contratadas_anterior": 76,
+      "variacion_pct": null,
+      "pct_indefinidos": 78.0,
+      "pct_mujeres_contratos": 37.4
+    },
+    "2423": {
+      "personas_contratadas": 8,
+      "personas_contratadas_anterior": 10,
+      "variacion_pct": null,
+      "pct_indefinidos": 50.0,
+      "pct_mujeres_contratos": 40.0
+    },
+    "2424": {
+      "personas_contratadas": 116,
+      "personas_contratadas_anterior": 147,
+      "variacion_pct": -21.1,
+      "pct_indefinidos": 79.5,
+      "pct_mujeres_contratos": 37.0
+    },
+    "2425": {
+      "personas_contratadas": 42,
+      "personas_contratadas_anterior": 41,
+      "variacion_pct": null,
+      "pct_indefinidos": 63.0,
+      "pct_mujeres_contratos": 47.8
+    },
+    "2426": {
+      "personas_contratadas": 424,
+      "personas_contratadas_anterior": 258,
+      "variacion_pct": 64.3,
+      "pct_indefinidos": 76.3,
+      "pct_mujeres_contratos": 54.2
+    },
+    "2427": {
+      "personas_contratadas": 18,
+      "personas_contratadas_anterior": 19,
+      "variacion_pct": null,
+      "pct_indefinidos": 90.0,
+      "pct_mujeres_contratos": 45.0
+    },
+    "2431": {
+      "personas_contratadas": 1811,
+      "personas_contratadas_anterior": 1757,
+      "variacion_pct": 3.1,
+      "pct_indefinidos": 87.0,
+      "pct_mujeres_contratos": 24.6
+    },
+    "2432": {
+      "personas_contratadas": 536,
+      "personas_contratadas_anterior": 534,
+      "variacion_pct": 0.4,
+      "pct_indefinidos": 85.8,
+      "pct_mujeres_contratos": 28.3
+    },
+    "2433": {
+      "personas_contratadas": 627,
+      "personas_contratadas_anterior": 585,
+      "variacion_pct": 7.2,
+      "pct_indefinidos": 87.1,
+      "pct_mujeres_contratos": 14.2
+    },
+    "2434": {
+      "personas_contratadas": 81,
+      "personas_contratadas_anterior": 117,
+      "variacion_pct": null,
+      "pct_indefinidos": 79.5,
+      "pct_mujeres_contratos": 20.5
+    },
+    "2435": {
+      "personas_contratadas": 234,
+      "personas_contratadas_anterior": 301,
+      "variacion_pct": -22.3,
+      "pct_indefinidos": 81.6,
+      "pct_mujeres_contratos": 35.2
+    },
+    "2436": {
+      "personas_contratadas": 35,
+      "personas_contratadas_anterior": 39,
+      "variacion_pct": null,
+      "pct_indefinidos": 88.6,
+      "pct_mujeres_contratos": 20.0
+    },
+    "2437": {
+      "personas_contratadas": 96,
+      "personas_contratadas_anterior": 108,
+      "variacion_pct": null,
+      "pct_indefinidos": 72.7,
+      "pct_mujeres_contratos": 45.5
+    },
+    "2439": {
+      "personas_contratadas": 2957,
+      "personas_contratadas_anterior": 3183,
+      "variacion_pct": -7.1,
+      "pct_indefinidos": 88.3,
+      "pct_mujeres_contratos": 28.5
+    },
+    "2441": {
+      "personas_contratadas": 241,
+      "personas_contratadas_anterior": 242,
+      "variacion_pct": -0.4,
+      "pct_indefinidos": 87.2,
+      "pct_mujeres_contratos": 18.8
+    },
+    "2442": {
+      "personas_contratadas": 485,
+      "personas_contratadas_anterior": 509,
+      "variacion_pct": -4.7,
+      "pct_indefinidos": 82.9,
+      "pct_mujeres_contratos": 15.0
+    },
+    "2443": {
+      "personas_contratadas": 427,
+      "personas_contratadas_anterior": 410,
+      "variacion_pct": 4.1,
+      "pct_indefinidos": 89.6,
+      "pct_mujeres_contratos": 20.8
+    },
+    "2451": {
+      "personas_contratadas": 958,
+      "personas_contratadas_anterior": 902,
+      "variacion_pct": 6.2,
+      "pct_indefinidos": 82.9,
+      "pct_mujeres_contratos": 52.0
+    },
+    "2452": {
+      "personas_contratadas": 28,
+      "personas_contratadas_anterior": 30,
+      "variacion_pct": null,
+      "pct_indefinidos": 58.6,
+      "pct_mujeres_contratos": 69.0
+    },
+    "2453": {
+      "personas_contratadas": 7,
+      "personas_contratadas_anterior": 11,
+      "variacion_pct": null,
+      "pct_indefinidos": 100.0,
+      "pct_mujeres_contratos": 37.5
+    },
+    "2454": {
+      "personas_contratadas": 13,
+      "personas_contratadas_anterior": 19,
+      "variacion_pct": null,
+      "pct_indefinidos": 64.3,
+      "pct_mujeres_contratos": 50.0
+    },
+    "2461": {
+      "personas_contratadas": 759,
+      "personas_contratadas_anterior": 714,
+      "variacion_pct": 6.3,
+      "pct_indefinidos": 85.6,
+      "pct_mujeres_contratos": 24.3
+    },
+    "2462": {
+      "personas_contratadas": 120,
+      "personas_contratadas_anterior": 133,
+      "variacion_pct": -9.8,
+      "pct_indefinidos": 70.6,
+      "pct_mujeres_contratos": 41.3
+    },
+    "2463": {
+      "personas_contratadas": 239,
+      "personas_contratadas_anterior": 219,
+      "variacion_pct": 9.1,
+      "pct_indefinidos": 90.5,
+      "pct_mujeres_contratos": 12.9
+    },
+    "2464": {
+      "personas_contratadas": 30,
+      "personas_contratadas_anterior": 34,
+      "variacion_pct": null,
+      "pct_indefinidos": 71.0,
+      "pct_mujeres_contratos": 19.4
+    },
+    "2465": {
+      "personas_contratadas": 66,
+      "personas_contratadas_anterior": 82,
+      "variacion_pct": null,
+      "pct_indefinidos": 82.9,
+      "pct_mujeres_contratos": 57.1
+    },
+    "2466": {
+      "personas_contratadas": 17,
+      "personas_contratadas_anterior": 24,
+      "variacion_pct": null,
+      "pct_indefinidos": 82.4,
+      "pct_mujeres_contratos": 5.9
+    },
+    "2469": {
+      "personas_contratadas": 971,
+      "personas_contratadas_anterior": 949,
+      "variacion_pct": 2.3,
+      "pct_indefinidos": 85.6,
+      "pct_mujeres_contratos": 27.8
+    },
+    "2471": {
+      "personas_contratadas": 162,
+      "personas_contratadas_anterior": 148,
+      "variacion_pct": 9.5,
+      "pct_indefinidos": 84.7,
+      "pct_mujeres_contratos": 21.2
+    },
+    "2472": {
+      "personas_contratadas": 147,
+      "personas_contratadas_anterior": 117,
+      "variacion_pct": 25.6,
+      "pct_indefinidos": 84.9,
+      "pct_mujeres_contratos": 20.4
+    },
+    "2473": {
+      "personas_contratadas": 173,
+      "personas_contratadas_anterior": 185,
+      "variacion_pct": -6.5,
+      "pct_indefinidos": 86.5,
+      "pct_mujeres_contratos": 18.0
+    },
+    "2481": {
+      "personas_contratadas": 781,
+      "personas_contratadas_anterior": 801,
+      "variacion_pct": -2.5,
+      "pct_indefinidos": 85.5,
+      "pct_mujeres_contratos": 43.8
+    },
+    "2482": {
+      "personas_contratadas": 645,
+      "personas_contratadas_anterior": 509,
+      "variacion_pct": 26.7,
+      "pct_indefinidos": 77.3,
+      "pct_mujeres_contratos": 72.0
+    },
+    "2483": {
+      "personas_contratadas": 56,
+      "personas_contratadas_anterior": 46,
+      "variacion_pct": null,
+      "pct_indefinidos": 91.5,
+      "pct_mujeres_contratos": 22.0
+    },
+    "2484": {
+      "personas_contratadas": 1360,
+      "personas_contratadas_anterior": 1423,
+      "variacion_pct": -4.4,
+      "pct_indefinidos": 68.8,
+      "pct_mujeres_contratos": 55.0
+    },
+    "2511": {
+      "personas_contratadas": 1419,
+      "personas_contratadas_anterior": 1483,
+      "variacion_pct": -4.3,
+      "pct_indefinidos": 81.8,
+      "pct_mujeres_contratos": 62.0
+    },
+    "2599": {
+      "personas_contratadas": 413,
+      "personas_contratadas_anterior": 413,
+      "variacion_pct": 0,
+      "pct_indefinidos": 27.1,
+      "pct_mujeres_contratos": 45.1
+    },
+    "2611": {
+      "personas_contratadas": 1473,
+      "personas_contratadas_anterior": 1556,
+      "variacion_pct": -5.3,
+      "pct_indefinidos": 87.3,
+      "pct_mujeres_contratos": 52.7
+    },
+    "2612": {
+      "personas_contratadas": 216,
+      "personas_contratadas_anterior": 203,
+      "variacion_pct": 6.4,
+      "pct_indefinidos": 92.3,
+      "pct_mujeres_contratos": 35.3
+    },
+    "2613": {
+      "personas_contratadas": 761,
+      "personas_contratadas_anterior": 737,
+      "variacion_pct": 3.3,
+      "pct_indefinidos": 86.8,
+      "pct_mujeres_contratos": 41.6
+    },
+    "2621": {
+      "personas_contratadas": 3343,
+      "personas_contratadas_anterior": 3446,
+      "variacion_pct": -3.0,
+      "pct_indefinidos": 89.7,
+      "pct_mujeres_contratos": 46.7
+    },
+    "2622": {
+      "personas_contratadas": 653,
+      "personas_contratadas_anterior": 644,
+      "variacion_pct": 1.4,
+      "pct_indefinidos": 75.3,
+      "pct_mujeres_contratos": 47.7
+    },
+    "2623": {
+      "personas_contratadas": 692,
+      "personas_contratadas_anterior": 846,
+      "variacion_pct": -18.2,
+      "pct_indefinidos": 44.0,
+      "pct_mujeres_contratos": 61.4
+    },
+    "2624": {
+      "personas_contratadas": 1319,
+      "personas_contratadas_anterior": 1277,
+      "variacion_pct": 3.3,
+      "pct_indefinidos": 71.5,
+      "pct_mujeres_contratos": 74.1
+    },
+    "2625": {
+      "personas_contratadas": 298,
+      "personas_contratadas_anterior": 370,
+      "variacion_pct": -19.5,
+      "pct_indefinidos": 56.5,
+      "pct_mujeres_contratos": 60.5
+    },
+    "2630": {
+      "personas_contratadas": 428,
+      "personas_contratadas_anterior": 468,
+      "variacion_pct": -8.5,
+      "pct_indefinidos": 49.3,
+      "pct_mujeres_contratos": 68.6
+    },
+    "2640": {
+      "personas_contratadas": 1401,
+      "personas_contratadas_anterior": 1240,
+      "variacion_pct": 13.0,
+      "pct_indefinidos": 68.5,
+      "pct_mujeres_contratos": 52.2
+    },
+    "2651": {
+      "personas_contratadas": 5212,
+      "personas_contratadas_anterior": 5017,
+      "variacion_pct": 3.9,
+      "pct_indefinidos": 79.2,
+      "pct_mujeres_contratos": 63.3
+    },
+    "2652": {
+      "personas_contratadas": 521,
+      "personas_contratadas_anterior": 478,
+      "variacion_pct": 9.0,
+      "pct_indefinidos": 77.7,
+      "pct_mujeres_contratos": 60.1
+    },
+    "2653": {
+      "personas_contratadas": 1088,
+      "personas_contratadas_anterior": 804,
+      "variacion_pct": 35.3,
+      "pct_indefinidos": 90.0,
+      "pct_mujeres_contratos": 44.0
+    },
+    "2711": {
+      "personas_contratadas": 2906,
+      "personas_contratadas_anterior": 2790,
+      "variacion_pct": 4.2,
+      "pct_indefinidos": 88.7,
+      "pct_mujeres_contratos": 28.0
+    },
+    "2712": {
+      "personas_contratadas": 2129,
+      "personas_contratadas_anterior": 1645,
+      "variacion_pct": 29.4,
+      "pct_indefinidos": 95.2,
+      "pct_mujeres_contratos": 22.1
+    },
+    "2713": {
+      "personas_contratadas": 3813,
+      "personas_contratadas_anterior": 3903,
+      "variacion_pct": -2.3,
+      "pct_indefinidos": 93.9,
+      "pct_mujeres_contratos": 27.9
+    },
+    "2719": {
+      "personas_contratadas": 815,
+      "personas_contratadas_anterior": 884,
+      "variacion_pct": -7.8,
+      "pct_indefinidos": 94.2,
+      "pct_mujeres_contratos": 31.0
+    },
+    "2721": {
+      "personas_contratadas": 362,
+      "personas_contratadas_anterior": 362,
+      "variacion_pct": 0,
+      "pct_indefinidos": 85.4,
+      "pct_mujeres_contratos": 33.0
+    },
+    "2722": {
+      "personas_contratadas": 667,
+      "personas_contratadas_anterior": 666,
+      "variacion_pct": 0.2,
+      "pct_indefinidos": 81.7,
+      "pct_mujeres_contratos": 26.2
+    },
+    "2723": {
+      "personas_contratadas": 383,
+      "personas_contratadas_anterior": 434,
+      "variacion_pct": -11.8,
+      "pct_indefinidos": 90.6,
+      "pct_mujeres_contratos": 22.8
+    },
+    "2729": {
+      "personas_contratadas": 1889,
+      "personas_contratadas_anterior": 1794,
+      "variacion_pct": 5.3,
+      "pct_indefinidos": 86.2,
+      "pct_mujeres_contratos": 31.5
+    },
+    "2810": {
+      "personas_contratadas": 197,
+      "personas_contratadas_anterior": 223,
+      "variacion_pct": -11.7,
+      "pct_indefinidos": 74.8,
+      "pct_mujeres_contratos": 50.5
+    },
+    "2821": {
+      "personas_contratadas": 281,
+      "personas_contratadas_anterior": 342,
+      "variacion_pct": -17.8,
+      "pct_indefinidos": 51.2,
+      "pct_mujeres_contratos": 45.0
+    },
+    "2822": {
+      "personas_contratadas": 67,
+      "personas_contratadas_anterior": 62,
+      "variacion_pct": null,
+      "pct_indefinidos": 52.1,
+      "pct_mujeres_contratos": 47.9
+    },
+    "2823": {
+      "personas_contratadas": 2079,
+      "personas_contratadas_anterior": 2013,
+      "variacion_pct": 3.3,
+      "pct_indefinidos": 45.5,
+      "pct_mujeres_contratos": 83.7
+    },
+    "2824": {
+      "personas_contratadas": 8122,
+      "personas_contratadas_anterior": 8603,
+      "variacion_pct": -5.6,
+      "pct_indefinidos": 19.6,
+      "pct_mujeres_contratos": 78.8
+    },
+    "2825": {
+      "personas_contratadas": 86,
+      "personas_contratadas_anterior": 83,
+      "variacion_pct": null,
+      "pct_indefinidos": 41.7,
+      "pct_mujeres_contratos": 88.5
+    },
+    "2830": {
+      "personas_contratadas": 32,
+      "personas_contratadas_anterior": 27,
+      "variacion_pct": null,
+      "pct_indefinidos": 100.0,
+      "pct_mujeres_contratos": 3.0
+    },
+    "2911": {
+      "personas_contratadas": 517,
+      "personas_contratadas_anterior": 602,
+      "variacion_pct": -14.1,
+      "pct_indefinidos": 46.9,
+      "pct_mujeres_contratos": 69.8
+    },
+    "2912": {
+      "personas_contratadas": 216,
+      "personas_contratadas_anterior": 245,
+      "variacion_pct": -11.8,
+      "pct_indefinidos": 29.8,
+      "pct_mujeres_contratos": 72.1
+    },
+    "2921": {
+      "personas_contratadas": 131,
+      "personas_contratadas_anterior": 117,
+      "variacion_pct": 12.0,
+      "pct_indefinidos": 21.5,
+      "pct_mujeres_contratos": 53.2
+    },
+    "2922": {
+      "personas_contratadas": 1243,
+      "personas_contratadas_anterior": 1584,
+      "variacion_pct": -21.5,
+      "pct_indefinidos": 12.9,
+      "pct_mujeres_contratos": 39.1
+    },
+    "2923": {
+      "personas_contratadas": 733,
+      "personas_contratadas_anterior": 878,
+      "variacion_pct": -16.5,
+      "pct_indefinidos": 59.2,
+      "pct_mujeres_contratos": 68.1
+    },
+    "2931": {
+      "personas_contratadas": 1238,
+      "personas_contratadas_anterior": 1427,
+      "variacion_pct": -13.2,
+      "pct_indefinidos": 2.0,
+      "pct_mujeres_contratos": 48.5
+    },
+    "2932": {
+      "personas_contratadas": 2579,
+      "personas_contratadas_anterior": 2825,
+      "variacion_pct": -8.7,
+      "pct_indefinidos": 3.0,
+      "pct_mujeres_contratos": 37.3
+    },
+    "2933": {
+      "personas_contratadas": 1065,
+      "personas_contratadas_anterior": 1154,
+      "variacion_pct": -7.7,
+      "pct_indefinidos": 7.9,
+      "pct_mujeres_contratos": 56.2
+    },
+    "2934": {
+      "personas_contratadas": 1293,
+      "personas_contratadas_anterior": 1550,
+      "variacion_pct": -16.6,
+      "pct_indefinidos": 2.4,
+      "pct_mujeres_contratos": 49.3
+    },
+    "2935": {
+      "personas_contratadas": 10114,
+      "personas_contratadas_anterior": 8129,
+      "variacion_pct": 24.4,
+      "pct_indefinidos": 0.2,
+      "pct_mujeres_contratos": 48.8
+    },
+    "2936": {
+      "personas_contratadas": 691,
+      "personas_contratadas_anterior": 620,
+      "variacion_pct": 11.5,
+      "pct_indefinidos": 1.0,
+      "pct_mujeres_contratos": 42.9
+    },
+    "2937": {
+      "personas_contratadas": 2,
+      "personas_contratadas_anterior": 6,
+      "variacion_pct": null,
+      "pct_indefinidos": null,
+      "pct_mujeres_contratos": 0.0
+    },
+    "2939": {
+      "personas_contratadas": 10617,
+      "personas_contratadas_anterior": 10474,
+      "variacion_pct": 1.4,
+      "pct_indefinidos": 0.4,
+      "pct_mujeres_contratos": 31.8
+    },
+    "3110": {
+      "personas_contratadas": 1939,
+      "personas_contratadas_anterior": 2006,
+      "variacion_pct": -3.3,
+      "pct_indefinidos": 79.5,
+      "pct_mujeres_contratos": 38.3
+    },
+    "3121": {
+      "personas_contratadas": 486,
+      "personas_contratadas_anterior": 553,
+      "variacion_pct": -12.1,
+      "pct_indefinidos": 74.2,
+      "pct_mujeres_contratos": 53.3
+    },
+    "3122": {
+      "personas_contratadas": 1266,
+      "personas_contratadas_anterior": 1476,
+      "variacion_pct": -14.2,
+      "pct_indefinidos": 71.1,
+      "pct_mujeres_contratos": 23.1
+    },
+    "3123": {
+      "personas_contratadas": 2296,
+      "personas_contratadas_anterior": 2278,
+      "variacion_pct": 0.8,
+      "pct_indefinidos": 52.2,
+      "pct_mujeres_contratos": 7.6
+    },
+    "3124": {
+      "personas_contratadas": 859,
+      "personas_contratadas_anterior": 879,
+      "variacion_pct": -2.3,
+      "pct_indefinidos": 44.6,
+      "pct_mujeres_contratos": 11.3
+    },
+    "3125": {
+      "personas_contratadas": 173,
+      "personas_contratadas_anterior": 154,
+      "variacion_pct": 12.3,
+      "pct_indefinidos": 79.6,
+      "pct_mujeres_contratos": 15.7
+    },
+    "3126": {
+      "personas_contratadas": 1821,
+      "personas_contratadas_anterior": 1644,
+      "variacion_pct": 10.8,
+      "pct_indefinidos": 66.2,
+      "pct_mujeres_contratos": 5.8
+    },
+    "3127": {
+      "personas_contratadas": 2413,
+      "personas_contratadas_anterior": 2422,
+      "variacion_pct": -0.4,
+      "pct_indefinidos": 46.7,
+      "pct_mujeres_contratos": 59.4
+    },
+    "3128": {
+      "personas_contratadas": 616,
+      "personas_contratadas_anterior": 471,
+      "variacion_pct": 30.8,
+      "pct_indefinidos": 27.5,
+      "pct_mujeres_contratos": 9.5
+    },
+    "3129": {
+      "personas_contratadas": 1768,
+      "personas_contratadas_anterior": 1623,
+      "variacion_pct": 8.9,
+      "pct_indefinidos": 74.3,
+      "pct_mujeres_contratos": 40.3
+    },
+    "3131": {
+      "personas_contratadas": 393,
+      "personas_contratadas_anterior": 365,
+      "variacion_pct": 7.7,
+      "pct_indefinidos": 24.6,
+      "pct_mujeres_contratos": 25.5
+    },
+    "3132": {
+      "personas_contratadas": 741,
+      "personas_contratadas_anterior": 767,
+      "variacion_pct": -3.4,
+      "pct_indefinidos": 48.7,
+      "pct_mujeres_contratos": 17.9
+    },
+    "3133": {
+      "personas_contratadas": 116,
+      "personas_contratadas_anterior": 95,
+      "variacion_pct": null,
+      "pct_indefinidos": 64.5,
+      "pct_mujeres_contratos": 36.4
+    },
+    "3134": {
+      "personas_contratadas": 45,
+      "personas_contratadas_anterior": 54,
+      "variacion_pct": null,
+      "pct_indefinidos": 50.9,
+      "pct_mujeres_contratos": 16.4
+    },
+    "3135": {
+      "personas_contratadas": 328,
+      "personas_contratadas_anterior": 291,
+      "variacion_pct": 12.7,
+      "pct_indefinidos": 68.8,
+      "pct_mujeres_contratos": 27.4
+    },
+    "3139": {
+      "personas_contratadas": 2183,
+      "personas_contratadas_anterior": 2328,
+      "variacion_pct": -6.2,
+      "pct_indefinidos": 40.0,
+      "pct_mujeres_contratos": 36.2
+    },
+    "3141": {
+      "personas_contratadas": 328,
+      "personas_contratadas_anterior": 375,
+      "variacion_pct": -12.5,
+      "pct_indefinidos": 71.7,
+      "pct_mujeres_contratos": 66.7
+    },
+    "3142": {
+      "personas_contratadas": 144,
+      "personas_contratadas_anterior": 132,
+      "variacion_pct": 9.1,
+      "pct_indefinidos": 71.0,
+      "pct_mujeres_contratos": 40.1
+    },
+    "3143": {
+      "personas_contratadas": 105,
+      "personas_contratadas_anterior": 140,
+      "variacion_pct": -25.0,
+      "pct_indefinidos": 57.8,
+      "pct_mujeres_contratos": 33.6
+    },
+    "3151": {
+      "personas_contratadas": 1267,
+      "personas_contratadas_anterior": 1222,
+      "variacion_pct": 3.7,
+      "pct_indefinidos": 13.9,
+      "pct_mujeres_contratos": 30.1
+    },
+    "3152": {
+      "personas_contratadas": 190,
+      "personas_contratadas_anterior": 193,
+      "variacion_pct": -1.6,
+      "pct_indefinidos": 56.6,
+      "pct_mujeres_contratos": 8.7
+    },
+    "3153": {
+      "personas_contratadas": 223,
+      "personas_contratadas_anterior": 485,
+      "variacion_pct": -54.0,
+      "pct_indefinidos": 89.2,
+      "pct_mujeres_contratos": 7.5
+    },
+    "3154": {
+      "personas_contratadas": 105,
+      "personas_contratadas_anterior": 83,
+      "variacion_pct": null,
+      "pct_indefinidos": 29.2,
+      "pct_mujeres_contratos": 43.1
+    },
+    "3155": {
+      "personas_contratadas": 93,
+      "personas_contratadas_anterior": 103,
+      "variacion_pct": null,
+      "pct_indefinidos": 75.5,
+      "pct_mujeres_contratos": 16.3
+    },
+    "3160": {
+      "personas_contratadas": 2237,
+      "personas_contratadas_anterior": 2042,
+      "variacion_pct": 9.5,
+      "pct_indefinidos": 67.3,
+      "pct_mujeres_contratos": 45.6
+    },
+    "3201": {
+      "personas_contratadas": 7,
+      "personas_contratadas_anterior": 13,
+      "variacion_pct": null,
+      "pct_indefinidos": 37.5,
+      "pct_mujeres_contratos": 25.0
+    },
+    "3202": {
+      "personas_contratadas": 1442,
+      "personas_contratadas_anterior": 1394,
+      "variacion_pct": 3.4,
+      "pct_indefinidos": 89.8,
+      "pct_mujeres_contratos": 11.1
+    },
+    "3203": {
+      "personas_contratadas": 255,
+      "personas_contratadas_anterior": 261,
+      "variacion_pct": -2.3,
+      "pct_indefinidos": 88.3,
+      "pct_mujeres_contratos": 41.3
+    },
+    "3204": {
+      "personas_contratadas": 647,
+      "personas_contratadas_anterior": 804,
+      "variacion_pct": -19.5,
+      "pct_indefinidos": 91.2,
+      "pct_mujeres_contratos": 46.9
+    },
+    "3205": {
+      "personas_contratadas": 55,
+      "personas_contratadas_anterior": 73,
+      "variacion_pct": null,
+      "pct_indefinidos": 80.7,
+      "pct_mujeres_contratos": 12.3
+    },
+    "3206": {
+      "personas_contratadas": 47,
+      "personas_contratadas_anterior": 62,
+      "variacion_pct": null,
+      "pct_indefinidos": 87.5,
+      "pct_mujeres_contratos": 10.4
+    },
+    "3207": {
+      "personas_contratadas": 134,
+      "personas_contratadas_anterior": 222,
+      "variacion_pct": -39.6,
+      "pct_indefinidos": 61.5,
+      "pct_mujeres_contratos": 25.9
+    },
+    "3209": {
+      "personas_contratadas": 869,
+      "personas_contratadas_anterior": 758,
+      "variacion_pct": 14.6,
+      "pct_indefinidos": 77.4,
+      "pct_mujeres_contratos": 20.4
+    },
+    "3311": {
+      "personas_contratadas": 80,
+      "personas_contratadas_anterior": 92,
+      "variacion_pct": null,
+      "pct_indefinidos": 2.8,
+      "pct_mujeres_contratos": 62.5
+    },
+    "3312": {
+      "personas_contratadas": 1066,
+      "personas_contratadas_anterior": 978,
+      "variacion_pct": 9.0,
+      "pct_indefinidos": 6.1,
+      "pct_mujeres_contratos": 62.7
+    },
+    "3313": {
+      "personas_contratadas": 168,
+      "personas_contratadas_anterior": 178,
+      "variacion_pct": -5.6,
+      "pct_indefinidos": 6.1,
+      "pct_mujeres_contratos": 76.5
+    },
+    "3314": {
+      "personas_contratadas": 1706,
+      "personas_contratadas_anterior": 1571,
+      "variacion_pct": 8.6,
+      "pct_indefinidos": 13.9,
+      "pct_mujeres_contratos": 72.9
+    },
+    "3315": {
+      "personas_contratadas": 27,
+      "personas_contratadas_anterior": 38,
+      "variacion_pct": null,
+      "pct_indefinidos": 81.5,
+      "pct_mujeres_contratos": 48.1
+    },
+    "3316": {
+      "personas_contratadas": 264,
+      "personas_contratadas_anterior": 246,
+      "variacion_pct": 7.3,
+      "pct_indefinidos": 81.2,
+      "pct_mujeres_contratos": 57.8
+    },
+    "3317": {
+      "personas_contratadas": 118,
+      "personas_contratadas_anterior": 112,
+      "variacion_pct": 5.4,
+      "pct_indefinidos": 73.8,
+      "pct_mujeres_contratos": 67.4
+    },
+    "3321": {
+      "personas_contratadas": 1128,
+      "personas_contratadas_anterior": 1060,
+      "variacion_pct": 6.4,
+      "pct_indefinidos": 61.2,
+      "pct_mujeres_contratos": 85.3
+    },
+    "3322": {
+      "personas_contratadas": 78,
+      "personas_contratadas_anterior": 89,
+      "variacion_pct": null,
+      "pct_indefinidos": 49.0,
+      "pct_mujeres_contratos": 78.4
+    },
+    "3323": {
+      "personas_contratadas": 51,
+      "personas_contratadas_anterior": 30,
+      "variacion_pct": null,
+      "pct_indefinidos": 21.0,
+      "pct_mujeres_contratos": 71.3
+    },
+    "3324": {
+      "personas_contratadas": 30,
+      "personas_contratadas_anterior": 50,
+      "variacion_pct": null,
+      "pct_indefinidos": 51.4,
+      "pct_mujeres_contratos": 70.3
+    },
+    "3325": {
+      "personas_contratadas": 238,
+      "personas_contratadas_anterior": 273,
+      "variacion_pct": -12.8,
+      "pct_indefinidos": 52.8,
+      "pct_mujeres_contratos": 64.8
+    },
+    "3326": {
+      "personas_contratadas": 1325,
+      "personas_contratadas_anterior": 1318,
+      "variacion_pct": 0.5,
+      "pct_indefinidos": 68.2,
+      "pct_mujeres_contratos": 42.6
+    },
+    "3327": {
+      "personas_contratadas": 823,
+      "personas_contratadas_anterior": 728,
+      "variacion_pct": 13.0,
+      "pct_indefinidos": 62.6,
+      "pct_mujeres_contratos": 84.7
+    },
+    "3329": {
+      "personas_contratadas": 2161,
+      "personas_contratadas_anterior": 2084,
+      "variacion_pct": 3.7,
+      "pct_indefinidos": 11.6,
+      "pct_mujeres_contratos": 76.0
+    },
+    "3331": {
+      "personas_contratadas": 56,
+      "personas_contratadas_anterior": 36,
+      "variacion_pct": null,
+      "pct_indefinidos": 93.1,
+      "pct_mujeres_contratos": 81.0
+    },
+    "3339": {
+      "personas_contratadas": 225,
+      "personas_contratadas_anterior": 226,
+      "variacion_pct": -0.4,
+      "pct_indefinidos": 31.1,
+      "pct_mujeres_contratos": 79.7
+    },
+    "3401": {
+      "personas_contratadas": 87,
+      "personas_contratadas_anterior": 88,
+      "variacion_pct": null,
+      "pct_indefinidos": 92.0,
+      "pct_mujeres_contratos": 43.2
+    },
+    "3402": {
+      "personas_contratadas": 155,
+      "personas_contratadas_anterior": 165,
+      "variacion_pct": -6.1,
+      "pct_indefinidos": 98.1,
+      "pct_mujeres_contratos": 41.2
+    },
+    "3403": {
+      "personas_contratadas": 42,
+      "personas_contratadas_anterior": 45,
+      "variacion_pct": null,
+      "pct_indefinidos": 37.0,
+      "pct_mujeres_contratos": 58.7
+    },
+    "3404": {
+      "personas_contratadas": 180,
+      "personas_contratadas_anterior": 158,
+      "variacion_pct": 13.9,
+      "pct_indefinidos": 50.8,
+      "pct_mujeres_contratos": 51.3
+    },
+    "3405": {
+      "personas_contratadas": 67,
+      "personas_contratadas_anterior": 33,
+      "variacion_pct": null,
+      "pct_indefinidos": 94.0,
+      "pct_mujeres_contratos": 9.0
+    },
+    "3510": {
+      "personas_contratadas": 16413,
+      "personas_contratadas_anterior": 16009,
+      "variacion_pct": 2.5,
+      "pct_indefinidos": 81.9,
+      "pct_mujeres_contratos": 40.2
+    },
+    "3521": {
+      "personas_contratadas": 331,
+      "personas_contratadas_anterior": 355,
+      "variacion_pct": -6.8,
+      "pct_indefinidos": 73.7,
+      "pct_mujeres_contratos": 62.1
+    },
+    "3522": {
+      "personas_contratadas": 1235,
+      "personas_contratadas_anterior": 971,
+      "variacion_pct": 27.2,
+      "pct_indefinidos": 68.0,
+      "pct_mujeres_contratos": 47.6
+    },
+    "3523": {
+      "personas_contratadas": 40,
+      "personas_contratadas_anterior": 19,
+      "variacion_pct": null,
+      "pct_indefinidos": 46.6,
+      "pct_mujeres_contratos": 17.8
+    },
+    "3531": {
+      "personas_contratadas": 35,
+      "personas_contratadas_anterior": 32,
+      "variacion_pct": null,
+      "pct_indefinidos": 91.9,
+      "pct_mujeres_contratos": 48.6
+    },
+    "3532": {
+      "personas_contratadas": 784,
+      "personas_contratadas_anterior": 668,
+      "variacion_pct": 17.4,
+      "pct_indefinidos": 39.4,
+      "pct_mujeres_contratos": 63.7
+    },
+    "3533": {
+      "personas_contratadas": 168,
+      "personas_contratadas_anterior": 253,
+      "variacion_pct": -33.6,
+      "pct_indefinidos": 75.9,
+      "pct_mujeres_contratos": 71.8
+    },
+    "3534": {
+      "personas_contratadas": 1238,
+      "personas_contratadas_anterior": 1112,
+      "variacion_pct": 11.3,
+      "pct_indefinidos": 97.0,
+      "pct_mujeres_contratos": 34.7
+    },
+    "3535": {
+      "personas_contratadas": 106,
+      "personas_contratadas_anterior": 107,
+      "variacion_pct": -0.9,
+      "pct_indefinidos": 84.0,
+      "pct_mujeres_contratos": 52.8
+    },
+    "3539": {
+      "personas_contratadas": 103,
+      "personas_contratadas_anterior": 107,
+      "variacion_pct": -3.7,
+      "pct_indefinidos": 80.9,
+      "pct_mujeres_contratos": 30.0
+    },
+    "3611": {
+      "personas_contratadas": 73,
+      "personas_contratadas_anterior": 85,
+      "variacion_pct": null,
+      "pct_indefinidos": 69.7,
+      "pct_mujeres_contratos": 63.2
+    },
+    "3612": {
+      "personas_contratadas": 286,
+      "personas_contratadas_anterior": 322,
+      "variacion_pct": -11.2,
+      "pct_indefinidos": 75.9,
+      "pct_mujeres_contratos": 74.6
+    },
+    "3613": {
+      "personas_contratadas": 7174,
+      "personas_contratadas_anterior": 7595,
+      "variacion_pct": -5.5,
+      "pct_indefinidos": 36.1,
+      "pct_mujeres_contratos": 64.1
+    },
+    "3614": {
+      "personas_contratadas": 97,
+      "personas_contratadas_anterior": 130,
+      "variacion_pct": null,
+      "pct_indefinidos": 35.6,
+      "pct_mujeres_contratos": 81.6
+    },
+    "3621": {
+      "personas_contratadas": 87,
+      "personas_contratadas_anterior": 20,
+      "variacion_pct": null,
+      "pct_indefinidos": 92.0,
+      "pct_mujeres_contratos": 64.8
+    },
+    "3622": {
+      "personas_contratadas": 170,
+      "personas_contratadas_anterior": 187,
+      "variacion_pct": -9.1,
+      "pct_indefinidos": 21.0,
+      "pct_mujeres_contratos": 81.0
+    },
+    "3623": {
+      "personas_contratadas": 24,
+      "personas_contratadas_anterior": 9,
+      "variacion_pct": null,
+      "pct_indefinidos": 37.5,
+      "pct_mujeres_contratos": 70.8
+    },
+    "3629": {
+      "personas_contratadas": 931,
+      "personas_contratadas_anterior": 1070,
+      "variacion_pct": -13.0,
+      "pct_indefinidos": 50.8,
+      "pct_mujeres_contratos": 54.4
+    },
+    "3711": {
+      "personas_contratadas": 383,
+      "personas_contratadas_anterior": 469,
+      "variacion_pct": -18.3,
+      "pct_indefinidos": 73.4,
+      "pct_mujeres_contratos": 74.4
+    },
+    "3712": {
+      "personas_contratadas": 7,
+      "personas_contratadas_anterior": 12,
+      "variacion_pct": null,
+      "pct_indefinidos": 42.9,
+      "pct_mujeres_contratos": 57.1
+    },
+    "3713": {
+      "personas_contratadas": 5191,
+      "personas_contratadas_anterior": 5271,
+      "variacion_pct": -1.5,
+      "pct_indefinidos": 14.6,
+      "pct_mujeres_contratos": 76.6
+    },
+    "3714": {
+      "personas_contratadas": 137,
+      "personas_contratadas_anterior": 152,
+      "variacion_pct": -9.9,
+      "pct_indefinidos": 16.0,
+      "pct_mujeres_contratos": 87.8
+    },
+    "3715": {
+      "personas_contratadas": 3755,
+      "personas_contratadas_anterior": 3799,
+      "variacion_pct": -1.2,
+      "pct_indefinidos": 45.8,
+      "pct_mujeres_contratos": 69.6
+    },
+    "3716": {
+      "personas_contratadas": 27,
+      "personas_contratadas_anterior": 29,
+      "variacion_pct": null,
+      "pct_indefinidos": 66.7,
+      "pct_mujeres_contratos": 53.3
+    },
+    "3721": {
+      "personas_contratadas": 1777,
+      "personas_contratadas_anterior": 1343,
+      "variacion_pct": 32.3,
+      "pct_indefinidos": 7.9,
+      "pct_mujeres_contratos": 28.8
+    },
+    "3722": {
+      "personas_contratadas": 3025,
+      "personas_contratadas_anterior": 2176,
+      "variacion_pct": 39.0,
+      "pct_indefinidos": 45.8,
+      "pct_mujeres_contratos": 26.2
+    },
+    "3723": {
+      "personas_contratadas": 6336,
+      "personas_contratadas_anterior": 5938,
+      "variacion_pct": 6.7,
+      "pct_indefinidos": 59.4,
+      "pct_mujeres_contratos": 40.3
+    },
+    "3724": {
+      "personas_contratadas": 46705,
+      "personas_contratadas_anterior": 44346,
+      "variacion_pct": 5.3,
+      "pct_indefinidos": 50.1,
+      "pct_mujeres_contratos": 68.9
+    },
+    "3731": {
+      "personas_contratadas": 347,
+      "personas_contratadas_anterior": 366,
+      "variacion_pct": -5.2,
+      "pct_indefinidos": 31.4,
+      "pct_mujeres_contratos": 42.4
+    },
+    "3732": {
+      "personas_contratadas": 625,
+      "personas_contratadas_anterior": 636,
+      "variacion_pct": -1.7,
+      "pct_indefinidos": 55.3,
+      "pct_mujeres_contratos": 72.5
+    },
+    "3733": {
+      "personas_contratadas": 116,
+      "personas_contratadas_anterior": 141,
+      "variacion_pct": -17.7,
+      "pct_indefinidos": 70.2,
+      "pct_mujeres_contratos": 36.9
+    },
+    "3734": {
+      "personas_contratadas": 596,
+      "personas_contratadas_anterior": 600,
+      "variacion_pct": -0.7,
+      "pct_indefinidos": 72.5,
+      "pct_mujeres_contratos": 18.7
+    },
+    "3739": {
+      "personas_contratadas": 8878,
+      "personas_contratadas_anterior": 9434,
+      "variacion_pct": -5.9,
+      "pct_indefinidos": 4.7,
+      "pct_mujeres_contratos": 25.3
+    },
+    "3811": {
+      "personas_contratadas": 3988,
+      "personas_contratadas_anterior": 4119,
+      "variacion_pct": -3.2,
+      "pct_indefinidos": 79.5,
+      "pct_mujeres_contratos": 19.1
+    },
+    "3812": {
+      "personas_contratadas": 1989,
+      "personas_contratadas_anterior": 1723,
+      "variacion_pct": 15.4,
+      "pct_indefinidos": 84.3,
+      "pct_mujeres_contratos": 28.7
+    },
+    "3813": {
+      "personas_contratadas": 442,
+      "personas_contratadas_anterior": 518,
+      "variacion_pct": -14.7,
+      "pct_indefinidos": 86.5,
+      "pct_mujeres_contratos": 27.9
+    },
+    "3814": {
+      "personas_contratadas": 338,
+      "personas_contratadas_anterior": 436,
+      "variacion_pct": -22.5,
+      "pct_indefinidos": 85.3,
+      "pct_mujeres_contratos": 45.2
+    },
+    "3820": {
+      "personas_contratadas": 3935,
+      "personas_contratadas_anterior": 4431,
+      "variacion_pct": -11.2,
+      "pct_indefinidos": 90.0,
+      "pct_mujeres_contratos": 19.9
+    },
+    "3831": {
+      "personas_contratadas": 8889,
+      "personas_contratadas_anterior": 7359,
+      "variacion_pct": 20.8,
+      "pct_indefinidos": 4.4,
+      "pct_mujeres_contratos": 34.9
+    },
+    "3832": {
+      "personas_contratadas": 149,
+      "personas_contratadas_anterior": 175,
+      "variacion_pct": -14.9,
+      "pct_indefinidos": 21.4,
+      "pct_mujeres_contratos": 38.5
+    },
+    "3833": {
+      "personas_contratadas": 466,
+      "personas_contratadas_anterior": 515,
+      "variacion_pct": -9.5,
+      "pct_indefinidos": 74.5,
+      "pct_mujeres_contratos": 23.4
+    },
+    "4111": {
+      "personas_contratadas": 4078,
+      "personas_contratadas_anterior": 4164,
+      "variacion_pct": -2.1,
+      "pct_indefinidos": 82.3,
+      "pct_mujeres_contratos": 63.0
+    },
+    "4112": {
+      "personas_contratadas": 1485,
+      "personas_contratadas_anterior": 1410,
+      "variacion_pct": 5.3,
+      "pct_indefinidos": 76.7,
+      "pct_mujeres_contratos": 74.6
+    },
+    "4113": {
+      "personas_contratadas": 3532,
+      "personas_contratadas_anterior": 3967,
+      "variacion_pct": -11.0,
+      "pct_indefinidos": 69.6,
+      "pct_mujeres_contratos": 47.7
+    },
+    "4121": {
+      "personas_contratadas": 3956,
+      "personas_contratadas_anterior": 3194,
+      "variacion_pct": 23.9,
+      "pct_indefinidos": 46.8,
+      "pct_mujeres_contratos": 35.3
+    },
+    "4122": {
+      "personas_contratadas": 3514,
+      "personas_contratadas_anterior": 3924,
+      "variacion_pct": -10.4,
+      "pct_indefinidos": 46.2,
+      "pct_mujeres_contratos": 56.0
+    },
+    "4123": {
+      "personas_contratadas": 6826,
+      "personas_contratadas_anterior": 9585,
+      "variacion_pct": -28.8,
+      "pct_indefinidos": 41.0,
+      "pct_mujeres_contratos": 33.2
+    },
+    "4210": {
+      "personas_contratadas": 341,
+      "personas_contratadas_anterior": 352,
+      "variacion_pct": -3.1,
+      "pct_indefinidos": 14.2,
+      "pct_mujeres_contratos": 65.4
+    },
+    "4221": {
+      "personas_contratadas": 2974,
+      "personas_contratadas_anterior": 3709,
+      "variacion_pct": -19.8,
+      "pct_indefinidos": 1.1,
+      "pct_mujeres_contratos": 43.0
+    },
+    "4222": {
+      "personas_contratadas": 41,
+      "personas_contratadas_anterior": 31,
+      "variacion_pct": null,
+      "pct_indefinidos": 63.6,
+      "pct_mujeres_contratos": 50.0
+    },
+    "4223": {
+      "personas_contratadas": 879,
+      "personas_contratadas_anterior": 786,
+      "variacion_pct": 11.8,
+      "pct_indefinidos": 49.9,
+      "pct_mujeres_contratos": 50.8
+    },
+    "4301": {
+      "personas_contratadas": 2684,
+      "personas_contratadas_anterior": 2580,
+      "variacion_pct": 4.0,
+      "pct_indefinidos": 45.9,
+      "pct_mujeres_contratos": 58.0
+    },
+    "4309": {
+      "personas_contratadas": 30630,
+      "personas_contratadas_anterior": 31059,
+      "variacion_pct": -1.4,
+      "pct_indefinidos": 60.4,
+      "pct_mujeres_contratos": 64.7
+    },
+    "4411": {
+      "personas_contratadas": 7104,
+      "personas_contratadas_anterior": 4538,
+      "variacion_pct": 56.5,
+      "pct_indefinidos": 33.0,
+      "pct_mujeres_contratos": 58.5
+    },
+    "4412": {
+      "personas_contratadas": 7119,
+      "personas_contratadas_anterior": 7101,
+      "variacion_pct": 0.3,
+      "pct_indefinidos": 50.9,
+      "pct_mujeres_contratos": 73.8
+    },
+    "4421": {
+      "personas_contratadas": 1723,
+      "personas_contratadas_anterior": 1539,
+      "variacion_pct": 12.0,
+      "pct_indefinidos": 87.0,
+      "pct_mujeres_contratos": 63.9
+    },
+    "4422": {
+      "personas_contratadas": 5875,
+      "personas_contratadas_anterior": 5498,
+      "variacion_pct": 6.9,
+      "pct_indefinidos": 68.3,
+      "pct_mujeres_contratos": 56.0
+    },
+    "4423": {
+      "personas_contratadas": 1426,
+      "personas_contratadas_anterior": 1553,
+      "variacion_pct": -8.2,
+      "pct_indefinidos": 34.8,
+      "pct_mujeres_contratos": 70.8
+    },
+    "4424": {
+      "personas_contratadas": 8909,
+      "personas_contratadas_anterior": 10437,
+      "variacion_pct": -14.6,
+      "pct_indefinidos": 57.3,
+      "pct_mujeres_contratos": 58.2
+    },
+    "4430": {
+      "personas_contratadas": 1261,
+      "personas_contratadas_anterior": 1396,
+      "variacion_pct": -9.7,
+      "pct_indefinidos": 40.2,
+      "pct_mujeres_contratos": 52.9
+    },
+    "4441": {
+      "personas_contratadas": 1095,
+      "personas_contratadas_anterior": 987,
+      "variacion_pct": 10.9,
+      "pct_indefinidos": 1.3,
+      "pct_mujeres_contratos": 48.7
+    },
+    "4442": {
+      "personas_contratadas": 757,
+      "personas_contratadas_anterior": 753,
+      "variacion_pct": 0.5,
+      "pct_indefinidos": 37.3,
+      "pct_mujeres_contratos": 48.0
+    },
+    "4443": {
+      "personas_contratadas": 1298,
+      "personas_contratadas_anterior": 1338,
+      "variacion_pct": -3.0,
+      "pct_indefinidos": 52.9,
+      "pct_mujeres_contratos": 58.4
+    },
+    "4444": {
+      "personas_contratadas": 4,
+      "personas_contratadas_anterior": 5,
+      "variacion_pct": null,
+      "pct_indefinidos": 75.0,
+      "pct_mujeres_contratos": 50.0
+    },
+    "4445": {
+      "personas_contratadas": 77,
+      "personas_contratadas_anterior": 51,
+      "variacion_pct": null,
+      "pct_indefinidos": 76.2,
+      "pct_mujeres_contratos": 51.2
+    },
+    "4446": {
+      "personas_contratadas": 5,
+      "personas_contratadas_anterior": 9,
+      "variacion_pct": null,
+      "pct_indefinidos": 83.3,
+      "pct_mujeres_contratos": 50.0
+    },
+    "4500": {
+      "personas_contratadas": 56803,
+      "personas_contratadas_anterior": 55929,
+      "variacion_pct": 1.6,
+      "pct_indefinidos": 57.5,
+      "pct_mujeres_contratos": 70.3
+    },
+    "5110": {
+      "personas_contratadas": 28346,
+      "personas_contratadas_anterior": 27469,
+      "variacion_pct": 3.2,
+      "pct_indefinidos": 65.0,
+      "pct_mujeres_contratos": 34.7
+    },
+    "5120": {
+      "personas_contratadas": 115988,
+      "personas_contratadas_anterior": 110306,
+      "variacion_pct": 5.2,
+      "pct_indefinidos": 64.6,
+      "pct_mujeres_contratos": 50.3
+    },
+    "5210": {
+      "personas_contratadas": 2897,
+      "personas_contratadas_anterior": 2684,
+      "variacion_pct": 7.9,
+      "pct_indefinidos": 83.7,
+      "pct_mujeres_contratos": 48.1
+    },
+    "5220": {
+      "personas_contratadas": 114365,
+      "personas_contratadas_anterior": 107012,
+      "variacion_pct": 6.9,
+      "pct_indefinidos": 59.5,
+      "pct_mujeres_contratos": 66.6
+    },
+    "5411": {
+      "personas_contratadas": 553,
+      "personas_contratadas_anterior": 469,
+      "variacion_pct": 17.9,
+      "pct_indefinidos": 51.9,
+      "pct_mujeres_contratos": 61.5
+    },
+    "5412": {
+      "personas_contratadas": 973,
+      "personas_contratadas_anterior": 861,
+      "variacion_pct": 13.0,
+      "pct_indefinidos": 43.0,
+      "pct_mujeres_contratos": 49.4
+    },
+    "5420": {
+      "personas_contratadas": 2566,
+      "personas_contratadas_anterior": 2839,
+      "variacion_pct": -9.6,
+      "pct_indefinidos": 57.1,
+      "pct_mujeres_contratos": 57.8
+    },
+    "5430": {
+      "personas_contratadas": 2733,
+      "personas_contratadas_anterior": 2703,
+      "variacion_pct": 1.1,
+      "pct_indefinidos": 30.8,
+      "pct_mujeres_contratos": 59.4
+    },
+    "5491": {
+      "personas_contratadas": 224,
+      "personas_contratadas_anterior": 299,
+      "variacion_pct": -25.1,
+      "pct_indefinidos": 66.2,
+      "pct_mujeres_contratos": 24.6
+    },
+    "5492": {
+      "personas_contratadas": 6566,
+      "personas_contratadas_anterior": 7478,
+      "variacion_pct": -12.2,
+      "pct_indefinidos": 58.3,
+      "pct_mujeres_contratos": 65.5
+    },
+    "5493": {
+      "personas_contratadas": 905,
+      "personas_contratadas_anterior": 1266,
+      "variacion_pct": -28.5,
+      "pct_indefinidos": 25.7,
+      "pct_mujeres_contratos": 57.4
+    },
+    "5499": {
+      "personas_contratadas": 6098,
+      "personas_contratadas_anterior": 5768,
+      "variacion_pct": 5.7,
+      "pct_indefinidos": 77.9,
+      "pct_mujeres_contratos": 54.6
+    },
+    "5500": {
+      "personas_contratadas": 15812,
+      "personas_contratadas_anterior": 14913,
+      "variacion_pct": 6.0,
+      "pct_indefinidos": 48.6,
+      "pct_mujeres_contratos": 67.0
+    },
+    "5611": {
+      "personas_contratadas": 21235,
+      "personas_contratadas_anterior": 19890,
+      "variacion_pct": 6.8,
+      "pct_indefinidos": 8.1,
+      "pct_mujeres_contratos": 83.6
+    },
+    "5612": {
+      "personas_contratadas": 2055,
+      "personas_contratadas_anterior": 2226,
+      "variacion_pct": -7.7,
+      "pct_indefinidos": 28.4,
+      "pct_mujeres_contratos": 87.9
+    },
+    "5621": {
+      "personas_contratadas": 3845,
+      "personas_contratadas_anterior": 3555,
+      "variacion_pct": 8.2,
+      "pct_indefinidos": 48.8,
+      "pct_mujeres_contratos": 76.2
+    },
+    "5622": {
+      "personas_contratadas": 1986,
+      "personas_contratadas_anterior": 1183,
+      "variacion_pct": 67.9,
+      "pct_indefinidos": 27.0,
+      "pct_mujeres_contratos": 42.8
+    },
+    "5629": {
+      "personas_contratadas": 16267,
+      "personas_contratadas_anterior": 15348,
+      "variacion_pct": 6.0,
+      "pct_indefinidos": 14.4,
+      "pct_mujeres_contratos": 69.6
+    },
+    "5710": {
+      "personas_contratadas": 7330,
+      "personas_contratadas_anterior": 6856,
+      "variacion_pct": 6.9,
+      "pct_indefinidos": 32.8,
+      "pct_mujeres_contratos": 93.5
+    },
+    "5721": {
+      "personas_contratadas": 11855,
+      "personas_contratadas_anterior": 11563,
+      "variacion_pct": 2.5,
+      "pct_indefinidos": 18.9,
+      "pct_mujeres_contratos": 81.2
+    },
+    "5722": {
+      "personas_contratadas": 12,
+      "personas_contratadas_anterior": 15,
+      "variacion_pct": null,
+      "pct_indefinidos": 30.8,
+      "pct_mujeres_contratos": 76.9
+    },
+    "5811": {
+      "personas_contratadas": 5133,
+      "personas_contratadas_anterior": 4384,
+      "variacion_pct": 17.1,
+      "pct_indefinidos": 81.4,
+      "pct_mujeres_contratos": 50.1
+    },
+    "5812": {
+      "personas_contratadas": 6269,
+      "personas_contratadas_anterior": 5742,
+      "variacion_pct": 9.2,
+      "pct_indefinidos": 75.0,
+      "pct_mujeres_contratos": 86.1
+    },
+    "5821": {
+      "personas_contratadas": 1384,
+      "personas_contratadas_anterior": 1483,
+      "variacion_pct": -6.7,
+      "pct_indefinidos": 28.3,
+      "pct_mujeres_contratos": 70.7
+    },
+    "5822": {
+      "personas_contratadas": 127,
+      "personas_contratadas_anterior": 160,
+      "variacion_pct": -20.6,
+      "pct_indefinidos": 10.5,
+      "pct_mujeres_contratos": 41.4
+    },
+    "5823": {
+      "personas_contratadas": 448,
+      "personas_contratadas_anterior": 547,
+      "variacion_pct": -18.1,
+      "pct_indefinidos": 65.4,
+      "pct_mujeres_contratos": 60.4
+    },
+    "5824": {
+      "personas_contratadas": 5759,
+      "personas_contratadas_anterior": 6349,
+      "variacion_pct": -9.3,
+      "pct_indefinidos": 50.4,
+      "pct_mujeres_contratos": 65.1
+    },
+    "5825": {
+      "personas_contratadas": 629,
+      "personas_contratadas_anterior": 618,
+      "variacion_pct": 1.8,
+      "pct_indefinidos": 31.2,
+      "pct_mujeres_contratos": 46.9
+    },
+    "5831": {
+      "personas_contratadas": 2648,
+      "personas_contratadas_anterior": 2730,
+      "variacion_pct": -3.0,
+      "pct_indefinidos": 64.3,
+      "pct_mujeres_contratos": 29.6
+    },
+    "5832": {
+      "personas_contratadas": 25,
+      "personas_contratadas_anterior": 17,
+      "variacion_pct": null,
+      "pct_indefinidos": 82.1,
+      "pct_mujeres_contratos": 75.0
+    },
+    "5833": {
+      "personas_contratadas": 10190,
+      "personas_contratadas_anterior": 9832,
+      "variacion_pct": 3.6,
+      "pct_indefinidos": 31.1,
+      "pct_mujeres_contratos": 34.4
+    },
+    "5891": {
+      "personas_contratadas": 604,
+      "personas_contratadas_anterior": 629,
+      "variacion_pct": -4.0,
+      "pct_indefinidos": 37.4,
+      "pct_mujeres_contratos": 79.3
+    },
+    "5892": {
+      "personas_contratadas": 329,
+      "personas_contratadas_anterior": 303,
+      "variacion_pct": 8.6,
+      "pct_indefinidos": 33.8,
+      "pct_mujeres_contratos": 51.2
+    },
+    "5893": {
+      "personas_contratadas": 537,
+      "personas_contratadas_anterior": 499,
+      "variacion_pct": 7.6,
+      "pct_indefinidos": 49.3,
+      "pct_mujeres_contratos": 62.3
+    },
+    "5894": {
+      "personas_contratadas": 306,
+      "personas_contratadas_anterior": 294,
+      "variacion_pct": 4.1,
+      "pct_indefinidos": 83.1,
+      "pct_mujeres_contratos": 33.5
+    },
+    "5895": {
+      "personas_contratadas": 4,
+      "personas_contratadas_anterior": null,
+      "variacion_pct": null,
+      "pct_indefinidos": 100.0,
+      "pct_mujeres_contratos": 75.0
+    },
+    "5899": {
+      "personas_contratadas": 4353,
+      "personas_contratadas_anterior": 4413,
+      "variacion_pct": -1.4,
+      "pct_indefinidos": 39.6,
+      "pct_mujeres_contratos": 52.6
+    },
+    "5931": {
+      "personas_contratadas": 105,
+      "personas_contratadas_anterior": 109,
+      "variacion_pct": -3.7,
+      "pct_indefinidos": 36.3,
+      "pct_mujeres_contratos": 17.9
+    },
+    "5941": {
+      "personas_contratadas": 6654,
+      "personas_contratadas_anterior": 5991,
+      "variacion_pct": 11.1,
+      "pct_indefinidos": 60.1,
+      "pct_mujeres_contratos": 23.3
+    },
+    "5942": {
+      "personas_contratadas": 8771,
+      "personas_contratadas_anterior": 8687,
+      "variacion_pct": 1.0,
+      "pct_indefinidos": 48.7,
+      "pct_mujeres_contratos": 21.4
+    },
+    "5992": {
+      "personas_contratadas": 3136,
+      "personas_contratadas_anterior": 2954,
+      "variacion_pct": 6.2,
+      "pct_indefinidos": 69.0,
+      "pct_mujeres_contratos": 22.4
+    },
+    "5993": {
+      "personas_contratadas": 76,
+      "personas_contratadas_anterior": 142,
+      "variacion_pct": null,
+      "pct_indefinidos": 57.0,
+      "pct_mujeres_contratos": 26.6
+    },
+    "5999": {
+      "personas_contratadas": 3034,
+      "personas_contratadas_anterior": 3038,
+      "variacion_pct": -0.1,
+      "pct_indefinidos": 72.6,
+      "pct_mujeres_contratos": 21.2
+    },
+    "6110": {
+      "personas_contratadas": 1450,
+      "personas_contratadas_anterior": 1662,
+      "variacion_pct": -12.8,
+      "pct_indefinidos": 56.5,
+      "pct_mujeres_contratos": 10.6
+    },
+    "6120": {
+      "personas_contratadas": 2936,
+      "personas_contratadas_anterior": 2504,
+      "variacion_pct": 17.3,
+      "pct_indefinidos": 55.3,
+      "pct_mujeres_contratos": 31.5
+    },
+    "6201": {
+      "personas_contratadas": 95,
+      "personas_contratadas_anterior": 75,
+      "variacion_pct": null,
+      "pct_indefinidos": 90.9,
+      "pct_mujeres_contratos": 13.1
+    },
+    "6202": {
+      "personas_contratadas": 46,
+      "personas_contratadas_anterior": 34,
+      "variacion_pct": null,
+      "pct_indefinidos": 66.0,
+      "pct_mujeres_contratos": 31.9
+    },
+    "6203": {
+      "personas_contratadas": 260,
+      "personas_contratadas_anterior": 241,
+      "variacion_pct": 7.9,
+      "pct_indefinidos": 74.7,
+      "pct_mujeres_contratos": 17.1
+    },
+    "6204": {
+      "personas_contratadas": 5,
+      "personas_contratadas_anterior": 3,
+      "variacion_pct": null,
+      "pct_indefinidos": 50.0,
+      "pct_mujeres_contratos": 33.3
+    },
+    "6205": {
+      "personas_contratadas": 147,
+      "personas_contratadas_anterior": 195,
+      "variacion_pct": -24.6,
+      "pct_indefinidos": 66.5,
+      "pct_mujeres_contratos": 19.4
+    },
+    "6209": {
+      "personas_contratadas": 122,
+      "personas_contratadas_anterior": 120,
+      "variacion_pct": 1.7,
+      "pct_indefinidos": 79.8,
+      "pct_mujeres_contratos": 19.4
+    },
+    "6300": {
+      "personas_contratadas": 156,
+      "personas_contratadas_anterior": 137,
+      "variacion_pct": 13.9,
+      "pct_indefinidos": 75.6,
+      "pct_mujeres_contratos": 26.2
+    },
+    "6410": {
+      "personas_contratadas": 1456,
+      "personas_contratadas_anterior": 1180,
+      "variacion_pct": 23.4,
+      "pct_indefinidos": 69.2,
+      "pct_mujeres_contratos": 9.6
+    },
+    "6421": {
+      "personas_contratadas": 47,
+      "personas_contratadas_anterior": 43,
+      "variacion_pct": null,
+      "pct_indefinidos": 79.6,
+      "pct_mujeres_contratos": 20.4
+    },
+    "6422": {
+      "personas_contratadas": 409,
+      "personas_contratadas_anterior": 417,
+      "variacion_pct": -1.9,
+      "pct_indefinidos": 82.8,
+      "pct_mujeres_contratos": 2.0
+    },
+    "6423": {
+      "personas_contratadas": 37,
+      "personas_contratadas_anterior": 37,
+      "variacion_pct": null,
+      "pct_indefinidos": 33.3,
+      "pct_mujeres_contratos": 10.1
+    },
+    "6430": {
+      "personas_contratadas": 34,
+      "personas_contratadas_anterior": 10,
+      "variacion_pct": null,
+      "pct_indefinidos": 17.1,
+      "pct_mujeres_contratos": 5.7
+    },
+    "7111": {
+      "personas_contratadas": 1483,
+      "personas_contratadas_anterior": 1530,
+      "variacion_pct": -3.1,
+      "pct_indefinidos": 88.7,
+      "pct_mujeres_contratos": 0.5
+    },
+    "7112": {
+      "personas_contratadas": 114,
+      "personas_contratadas_anterior": 153,
+      "variacion_pct": -25.5,
+      "pct_indefinidos": 89.2,
+      "pct_mujeres_contratos": 0.0
+    },
+    "7121": {
+      "personas_contratadas": 17265,
+      "personas_contratadas_anterior": 14889,
+      "variacion_pct": 16.0,
+      "pct_indefinidos": 85.6,
+      "pct_mujeres_contratos": 1.7
+    },
+    "7122": {
+      "personas_contratadas": 50,
+      "personas_contratadas_anterior": 57,
+      "variacion_pct": null,
+      "pct_indefinidos": 57.7,
+      "pct_mujeres_contratos": 1.9
+    },
+    "7131": {
+      "personas_contratadas": 1332,
+      "personas_contratadas_anterior": 1121,
+      "variacion_pct": 18.8,
+      "pct_indefinidos": 65.8,
+      "pct_mujeres_contratos": 8.2
+    },
+    "7132": {
+      "personas_contratadas": 1545,
+      "personas_contratadas_anterior": 1427,
+      "variacion_pct": 8.3,
+      "pct_indefinidos": 73.3,
+      "pct_mujeres_contratos": 2.2
+    },
+    "7191": {
+      "personas_contratadas": 3758,
+      "personas_contratadas_anterior": 3284,
+      "variacion_pct": 14.4,
+      "pct_indefinidos": 53.3,
+      "pct_mujeres_contratos": 7.2
+    },
+    "7192": {
+      "personas_contratadas": 43,
+      "personas_contratadas_anterior": 38,
+      "variacion_pct": null,
+      "pct_indefinidos": 69.6,
+      "pct_mujeres_contratos": 6.5
+    },
+    "7193": {
+      "personas_contratadas": 42,
+      "personas_contratadas_anterior": 29,
+      "variacion_pct": null,
+      "pct_indefinidos": 66.7,
+      "pct_mujeres_contratos": 0.0
+    },
+    "7199": {
+      "personas_contratadas": 6584,
+      "personas_contratadas_anterior": 6027,
+      "variacion_pct": 9.2,
+      "pct_indefinidos": 83.5,
+      "pct_mujeres_contratos": 2.8
+    },
+    "7211": {
+      "personas_contratadas": 118,
+      "personas_contratadas_anterior": 133,
+      "variacion_pct": -11.3,
+      "pct_indefinidos": 97.6,
+      "pct_mujeres_contratos": 1.6
+    },
+    "7212": {
+      "personas_contratadas": 329,
+      "personas_contratadas_anterior": 296,
+      "variacion_pct": 11.1,
+      "pct_indefinidos": 92.6,
+      "pct_mujeres_contratos": 3.1
+    },
+    "7221": {
+      "personas_contratadas": 785,
+      "personas_contratadas_anterior": 709,
+      "variacion_pct": 10.7,
+      "pct_indefinidos": 83.2,
+      "pct_mujeres_contratos": 1.1
+    },
+    "7222": {
+      "personas_contratadas": 179,
+      "personas_contratadas_anterior": 173,
+      "variacion_pct": 3.5,
+      "pct_indefinidos": 78.6,
+      "pct_mujeres_contratos": 6.6
+    },
+    "7223": {
+      "personas_contratadas": 74,
+      "personas_contratadas_anterior": 81,
+      "variacion_pct": null,
+      "pct_indefinidos": 71.8,
+      "pct_mujeres_contratos": 1.2
+    },
+    "7231": {
+      "personas_contratadas": 1348,
+      "personas_contratadas_anterior": 1180,
+      "variacion_pct": 14.2,
+      "pct_indefinidos": 72.9,
+      "pct_mujeres_contratos": 4.4
+    },
+    "7232": {
+      "personas_contratadas": 512,
+      "personas_contratadas_anterior": 423,
+      "variacion_pct": 21.0,
+      "pct_indefinidos": 56.3,
+      "pct_mujeres_contratos": 12.4
+    },
+    "7240": {
+      "personas_contratadas": 214,
+      "personas_contratadas_anterior": 152,
+      "variacion_pct": 40.8,
+      "pct_indefinidos": 62.9,
+      "pct_mujeres_contratos": 1.9
+    },
+    "7250": {
+      "personas_contratadas": 1642,
+      "personas_contratadas_anterior": 1507,
+      "variacion_pct": 9.0,
+      "pct_indefinidos": 74.9,
+      "pct_mujeres_contratos": 1.8
+    },
+    "7291": {
+      "personas_contratadas": 154,
+      "personas_contratadas_anterior": 126,
+      "variacion_pct": 22.2,
+      "pct_indefinidos": 54.3,
+      "pct_mujeres_contratos": 4.3
+    },
+    "7292": {
+      "personas_contratadas": 380,
+      "personas_contratadas_anterior": 310,
+      "variacion_pct": 22.6,
+      "pct_indefinidos": 81.8,
+      "pct_mujeres_contratos": 1.2
+    },
+    "7293": {
+      "personas_contratadas": 153,
+      "personas_contratadas_anterior": 126,
+      "variacion_pct": 21.4,
+      "pct_indefinidos": 75.9,
+      "pct_mujeres_contratos": 7.4
+    },
+    "7294": {
+      "personas_contratadas": 278,
+      "personas_contratadas_anterior": 285,
+      "variacion_pct": -2.5,
+      "pct_indefinidos": 79.6,
+      "pct_mujeres_contratos": 1.3
+    },
+    "7295": {
+      "personas_contratadas": 221,
+      "personas_contratadas_anterior": 268,
+      "variacion_pct": -17.5,
+      "pct_indefinidos": 59.5,
+      "pct_mujeres_contratos": 59.1
+    },
+    "7311": {
+      "personas_contratadas": 85,
+      "personas_contratadas_anterior": 76,
+      "variacion_pct": null,
+      "pct_indefinidos": 54.9,
+      "pct_mujeres_contratos": 47.3
+    },
+    "7312": {
+      "personas_contratadas": 2287,
+      "personas_contratadas_anterior": 2186,
+      "variacion_pct": 4.6,
+      "pct_indefinidos": 53.8,
+      "pct_mujeres_contratos": 4.2
+    },
+    "7313": {
+      "personas_contratadas": 748,
+      "personas_contratadas_anterior": 698,
+      "variacion_pct": 7.2,
+      "pct_indefinidos": 63.9,
+      "pct_mujeres_contratos": 3.6
+    },
+    "7314": {
+      "personas_contratadas": 3496,
+      "personas_contratadas_anterior": 3268,
+      "variacion_pct": 7.0,
+      "pct_indefinidos": 55.8,
+      "pct_mujeres_contratos": 2.6
+    },
+    "7315": {
+      "personas_contratadas": 272,
+      "personas_contratadas_anterior": 233,
+      "variacion_pct": 16.7,
+      "pct_indefinidos": 55.0,
+      "pct_mujeres_contratos": 10.0
+    },
+    "7321": {
+      "personas_contratadas": 252,
+      "personas_contratadas_anterior": 262,
+      "variacion_pct": -3.8,
+      "pct_indefinidos": 73.8,
+      "pct_mujeres_contratos": 3.4
+    },
+    "7322": {
+      "personas_contratadas": 1428,
+      "personas_contratadas_anterior": 880,
+      "variacion_pct": 62.3,
+      "pct_indefinidos": 67.1,
+      "pct_mujeres_contratos": 19.3
+    },
+    "7323": {
+      "personas_contratadas": 1958,
+      "personas_contratadas_anterior": 1878,
+      "variacion_pct": 4.3,
+      "pct_indefinidos": 43.5,
+      "pct_mujeres_contratos": 9.5
+    },
+    "7324": {
+      "personas_contratadas": 79,
+      "personas_contratadas_anterior": 64,
+      "variacion_pct": null,
+      "pct_indefinidos": 74.4,
+      "pct_mujeres_contratos": 8.1
+    },
+    "7401": {
+      "personas_contratadas": 6108,
+      "personas_contratadas_anterior": 5457,
+      "variacion_pct": 11.9,
+      "pct_indefinidos": 75.7,
+      "pct_mujeres_contratos": 2.8
+    },
+    "7402": {
+      "personas_contratadas": 99,
+      "personas_contratadas_anterior": 69,
+      "variacion_pct": null,
+      "pct_indefinidos": 63.5,
+      "pct_mujeres_contratos": 7.0
+    },
+    "7403": {
+      "personas_contratadas": 2946,
+      "personas_contratadas_anterior": 2737,
+      "variacion_pct": 7.6,
+      "pct_indefinidos": 69.4,
+      "pct_mujeres_contratos": 2.1
+    },
+    "7404": {
+      "personas_contratadas": 348,
+      "personas_contratadas_anterior": 445,
+      "variacion_pct": -21.8,
+      "pct_indefinidos": 62.0,
+      "pct_mujeres_contratos": 4.6
+    },
+    "7405": {
+      "personas_contratadas": 194,
+      "personas_contratadas_anterior": 225,
+      "variacion_pct": -13.8,
+      "pct_indefinidos": 69.9,
+      "pct_mujeres_contratos": 9.7
+    },
+    "7510": {
+      "personas_contratadas": 6962,
+      "personas_contratadas_anterior": 5746,
+      "variacion_pct": 21.2,
+      "pct_indefinidos": 87.2,
+      "pct_mujeres_contratos": 1.6
+    },
+    "7521": {
+      "personas_contratadas": 1840,
+      "personas_contratadas_anterior": 1785,
+      "variacion_pct": 3.1,
+      "pct_indefinidos": 62.3,
+      "pct_mujeres_contratos": 5.0
+    },
+    "7522": {
+      "personas_contratadas": 1204,
+      "personas_contratadas_anterior": 1167,
+      "variacion_pct": 3.2,
+      "pct_indefinidos": 80.9,
+      "pct_mujeres_contratos": 2.3
+    },
+    "7531": {
+      "personas_contratadas": 1095,
+      "personas_contratadas_anterior": 1074,
+      "variacion_pct": 2.0,
+      "pct_indefinidos": 66.2,
+      "pct_mujeres_contratos": 6.9
+    },
+    "7532": {
+      "personas_contratadas": 49,
+      "personas_contratadas_anterior": 50,
+      "variacion_pct": null,
+      "pct_indefinidos": 45.8,
+      "pct_mujeres_contratos": 0.0
+    },
+    "7533": {
+      "personas_contratadas": 787,
+      "personas_contratadas_anterior": 998,
+      "variacion_pct": -21.1,
+      "pct_indefinidos": 78.1,
+      "pct_mujeres_contratos": 2.4
+    },
+    "7611": {
+      "personas_contratadas": 105,
+      "personas_contratadas_anterior": 106,
+      "variacion_pct": -0.9,
+      "pct_indefinidos": 69.0,
+      "pct_mujeres_contratos": 21.2
+    },
+    "7612": {
+      "personas_contratadas": 27,
+      "personas_contratadas_anterior": 10,
+      "variacion_pct": null,
+      "pct_indefinidos": 20.0,
+      "pct_mujeres_contratos": 33.3
+    },
+    "7613": {
+      "personas_contratadas": 29,
+      "personas_contratadas_anterior": 39,
+      "variacion_pct": null,
+      "pct_indefinidos": 80.6,
+      "pct_mujeres_contratos": 48.4
+    },
+    "7614": {
+      "personas_contratadas": 67,
+      "personas_contratadas_anterior": 71,
+      "variacion_pct": null,
+      "pct_indefinidos": 76.7,
+      "pct_mujeres_contratos": 26.0
+    },
+    "7615": {
+      "personas_contratadas": 167,
+      "personas_contratadas_anterior": 152,
+      "variacion_pct": 9.9,
+      "pct_indefinidos": 28.7,
+      "pct_mujeres_contratos": 33.6
+    },
+    "7616": {
+      "personas_contratadas": 102,
+      "personas_contratadas_anterior": 119,
+      "variacion_pct": -14.3,
+      "pct_indefinidos": 66.2,
+      "pct_mujeres_contratos": 16.2
+    },
+    "7617": {
+      "personas_contratadas": 83,
+      "personas_contratadas_anterior": 58,
+      "variacion_pct": null,
+      "pct_indefinidos": 57.3,
+      "pct_mujeres_contratos": 18.0
+    },
+    "7618": {
+      "personas_contratadas": 98,
+      "personas_contratadas_anterior": 101,
+      "variacion_pct": null,
+      "pct_indefinidos": 81.6,
+      "pct_mujeres_contratos": 54.4
+    },
+    "7619": {
+      "personas_contratadas": 98,
+      "personas_contratadas_anterior": 94,
+      "variacion_pct": null,
+      "pct_indefinidos": 44.9,
+      "pct_mujeres_contratos": 26.0
+    },
+    "7621": {
+      "personas_contratadas": 288,
+      "personas_contratadas_anterior": 240,
+      "variacion_pct": 20.0,
+      "pct_indefinidos": 77.5,
+      "pct_mujeres_contratos": 30.8
+    },
+    "7622": {
+      "personas_contratadas": 1014,
+      "personas_contratadas_anterior": 1080,
+      "variacion_pct": -6.1,
+      "pct_indefinidos": 60.7,
+      "pct_mujeres_contratos": 29.7
+    },
+    "7623": {
+      "personas_contratadas": 207,
+      "personas_contratadas_anterior": 239,
+      "variacion_pct": -13.4,
+      "pct_indefinidos": 65.1,
+      "pct_mujeres_contratos": 24.0
+    },
+    "7701": {
+      "personas_contratadas": 8413,
+      "personas_contratadas_anterior": 8065,
+      "variacion_pct": 4.3,
+      "pct_indefinidos": 36.3,
+      "pct_mujeres_contratos": 28.4
+    },
+    "7702": {
+      "personas_contratadas": 548,
+      "personas_contratadas_anterior": 531,
+      "variacion_pct": 3.2,
+      "pct_indefinidos": 59.7,
+      "pct_mujeres_contratos": 40.3
+    },
+    "7703": {
+      "personas_contratadas": 4140,
+      "personas_contratadas_anterior": 3838,
+      "variacion_pct": 7.9,
+      "pct_indefinidos": 70.3,
+      "pct_mujeres_contratos": 46.3
+    },
+    "7704": {
+      "personas_contratadas": 740,
+      "personas_contratadas_anterior": 592,
+      "variacion_pct": 25.0,
+      "pct_indefinidos": 41.6,
+      "pct_mujeres_contratos": 51.0
+    },
+    "7705": {
+      "personas_contratadas": 1955,
+      "personas_contratadas_anterior": 2243,
+      "variacion_pct": -12.8,
+      "pct_indefinidos": 60.4,
+      "pct_mujeres_contratos": 66.4
+    },
+    "7706": {
+      "personas_contratadas": 71,
+      "personas_contratadas_anterior": 74,
+      "variacion_pct": null,
+      "pct_indefinidos": 38.7,
+      "pct_mujeres_contratos": 31.1
+    },
+    "7707": {
+      "personas_contratadas": 412,
+      "personas_contratadas_anterior": 395,
+      "variacion_pct": 4.3,
+      "pct_indefinidos": 56.8,
+      "pct_mujeres_contratos": 17.5
+    },
+    "7708": {
+      "personas_contratadas": 1,
+      "personas_contratadas_anterior": 1,
+      "variacion_pct": null,
+      "pct_indefinidos": 100.0,
+      "pct_mujeres_contratos": 0.0
+    },
+    "7709": {
+      "personas_contratadas": 130,
+      "personas_contratadas_anterior": 181,
+      "variacion_pct": -28.2,
+      "pct_indefinidos": 61.3,
+      "pct_mujeres_contratos": 45.3
+    },
+    "7811": {
+      "personas_contratadas": 853,
+      "personas_contratadas_anterior": 732,
+      "variacion_pct": 16.5,
+      "pct_indefinidos": 70.0,
+      "pct_mujeres_contratos": 7.2
+    },
+    "7812": {
+      "personas_contratadas": 197,
+      "personas_contratadas_anterior": 192,
+      "variacion_pct": 2.6,
+      "pct_indefinidos": 58.5,
+      "pct_mujeres_contratos": 6.6
+    },
+    "7820": {
+      "personas_contratadas": 512,
+      "personas_contratadas_anterior": 456,
+      "variacion_pct": 12.3,
+      "pct_indefinidos": 62.2,
+      "pct_mujeres_contratos": 9.6
+    },
+    "7831": {
+      "personas_contratadas": 372,
+      "personas_contratadas_anterior": 319,
+      "variacion_pct": 16.6,
+      "pct_indefinidos": 25.6,
+      "pct_mujeres_contratos": 79.3
+    },
+    "7832": {
+      "personas_contratadas": 269,
+      "personas_contratadas_anterior": 254,
+      "variacion_pct": 5.9,
+      "pct_indefinidos": 40.2,
+      "pct_mujeres_contratos": 76.5
+    },
+    "7833": {
+      "personas_contratadas": 75,
+      "personas_contratadas_anterior": 81,
+      "variacion_pct": null,
+      "pct_indefinidos": 57.5,
+      "pct_mujeres_contratos": 52.5
+    },
+    "7834": {
+      "personas_contratadas": 470,
+      "personas_contratadas_anterior": 452,
+      "variacion_pct": 4.0,
+      "pct_indefinidos": 74.5,
+      "pct_mujeres_contratos": 74.3
+    },
+    "7835": {
+      "personas_contratadas": 208,
+      "personas_contratadas_anterior": 202,
+      "variacion_pct": 3.0,
+      "pct_indefinidos": 57.5,
+      "pct_mujeres_contratos": 14.2
+    },
+    "7836": {
+      "personas_contratadas": 84,
+      "personas_contratadas_anterior": 96,
+      "variacion_pct": null,
+      "pct_indefinidos": 55.7,
+      "pct_mujeres_contratos": 11.3
+    },
+    "7837": {
+      "personas_contratadas": 39,
+      "personas_contratadas_anterior": 40,
+      "variacion_pct": null,
+      "pct_indefinidos": 64.6,
+      "pct_mujeres_contratos": 29.2
+    },
+    "7891": {
+      "personas_contratadas": 246,
+      "personas_contratadas_anterior": 194,
+      "variacion_pct": 26.8,
+      "pct_indefinidos": 32.1,
+      "pct_mujeres_contratos": 7.8
+    },
+    "7892": {
+      "personas_contratadas": null,
+      "personas_contratadas_anterior": null,
+      "variacion_pct": null,
+      "pct_indefinidos": null,
+      "pct_mujeres_contratos": 0.0
+    },
+    "7893": {
+      "personas_contratadas": 28,
+      "personas_contratadas_anterior": 35,
+      "variacion_pct": null,
+      "pct_indefinidos": 78.6,
+      "pct_mujeres_contratos": 21.4
+    },
+    "7894": {
+      "personas_contratadas": 240,
+      "personas_contratadas_anterior": 228,
+      "variacion_pct": 5.3,
+      "pct_indefinidos": 70.3,
+      "pct_mujeres_contratos": 15.8
+    },
+    "7899": {
+      "personas_contratadas": 18462,
+      "personas_contratadas_anterior": 16781,
+      "variacion_pct": 10.0,
+      "pct_indefinidos": 45.5,
+      "pct_mujeres_contratos": 21.1
+    },
+    "8111": {
+      "personas_contratadas": 90,
+      "personas_contratadas_anterior": 90,
+      "variacion_pct": null,
+      "pct_indefinidos": 48.1,
+      "pct_mujeres_contratos": 9.4
+    },
+    "8112": {
+      "personas_contratadas": 84,
+      "personas_contratadas_anterior": 73,
+      "variacion_pct": null,
+      "pct_indefinidos": 55.4,
+      "pct_mujeres_contratos": 7.6
+    },
+    "8113": {
+      "personas_contratadas": 60,
+      "personas_contratadas_anterior": 78,
+      "variacion_pct": null,
+      "pct_indefinidos": 78.1,
+      "pct_mujeres_contratos": 6.2
+    },
+    "8114": {
+      "personas_contratadas": 517,
+      "personas_contratadas_anterior": 510,
+      "variacion_pct": 1.4,
+      "pct_indefinidos": 69.1,
+      "pct_mujeres_contratos": 12.0
+    },
+    "8121": {
+      "personas_contratadas": 7835,
+      "personas_contratadas_anterior": 6309,
+      "variacion_pct": 24.2,
+      "pct_indefinidos": 5.6,
+      "pct_mujeres_contratos": 33.5
+    },
+    "8122": {
+      "personas_contratadas": 311,
+      "personas_contratadas_anterior": 377,
+      "variacion_pct": -17.5,
+      "pct_indefinidos": 53.0,
+      "pct_mujeres_contratos": 17.6
+    },
+    "8131": {
+      "personas_contratadas": 2682,
+      "personas_contratadas_anterior": 2798,
+      "variacion_pct": -4.1,
+      "pct_indefinidos": 34.3,
+      "pct_mujeres_contratos": 23.5
+    },
+    "8132": {
+      "personas_contratadas": 1531,
+      "personas_contratadas_anterior": 1658,
+      "variacion_pct": -7.7,
+      "pct_indefinidos": 23.7,
+      "pct_mujeres_contratos": 60.6
+    },
+    "8133": {
+      "personas_contratadas": 73,
+      "personas_contratadas_anterior": 66,
+      "variacion_pct": null,
+      "pct_indefinidos": 45.5,
+      "pct_mujeres_contratos": 46.6
+    },
+    "8141": {
+      "personas_contratadas": 205,
+      "personas_contratadas_anterior": 163,
+      "variacion_pct": 25.8,
+      "pct_indefinidos": 51.3,
+      "pct_mujeres_contratos": 34.2
+    },
+    "8142": {
+      "personas_contratadas": 1510,
+      "personas_contratadas_anterior": 1474,
+      "variacion_pct": 2.4,
+      "pct_indefinidos": 39.5,
+      "pct_mujeres_contratos": 32.8
+    },
+    "8143": {
+      "personas_contratadas": 2006,
+      "personas_contratadas_anterior": 1740,
+      "variacion_pct": 15.3,
+      "pct_indefinidos": 32.1,
+      "pct_mujeres_contratos": 25.7
+    },
+    "8144": {
+      "personas_contratadas": 300,
+      "personas_contratadas_anterior": 201,
+      "variacion_pct": 49.3,
+      "pct_indefinidos": 47.1,
+      "pct_mujeres_contratos": 3.8
+    },
+    "8145": {
+      "personas_contratadas": 104,
+      "personas_contratadas_anterior": 119,
+      "variacion_pct": -12.6,
+      "pct_indefinidos": 42.3,
+      "pct_mujeres_contratos": 10.1
+    },
+    "8151": {
+      "personas_contratadas": 285,
+      "personas_contratadas_anterior": 315,
+      "variacion_pct": -9.5,
+      "pct_indefinidos": 50.4,
+      "pct_mujeres_contratos": 48.5
+    },
+    "8152": {
+      "personas_contratadas": 225,
+      "personas_contratadas_anterior": 289,
+      "variacion_pct": -22.1,
+      "pct_indefinidos": 70.5,
+      "pct_mujeres_contratos": 42.9
+    },
+    "8153": {
+      "personas_contratadas": 631,
+      "personas_contratadas_anterior": 484,
+      "variacion_pct": 30.4,
+      "pct_indefinidos": 82.0,
+      "pct_mujeres_contratos": 65.1
+    },
+    "8154": {
+      "personas_contratadas": 388,
+      "personas_contratadas_anterior": 400,
+      "variacion_pct": -3.0,
+      "pct_indefinidos": 53.3,
+      "pct_mujeres_contratos": 49.9
+    },
+    "8155": {
+      "personas_contratadas": 42,
+      "personas_contratadas_anterior": 36,
+      "variacion_pct": null,
+      "pct_indefinidos": 46.7,
+      "pct_mujeres_contratos": 13.3
+    },
+    "8156": {
+      "personas_contratadas": 26,
+      "personas_contratadas_anterior": 22,
+      "variacion_pct": null,
+      "pct_indefinidos": 45.2,
+      "pct_mujeres_contratos": 64.5
+    },
+    "8159": {
+      "personas_contratadas": 721,
+      "personas_contratadas_anterior": 663,
+      "variacion_pct": 8.7,
+      "pct_indefinidos": 47.2,
+      "pct_mujeres_contratos": 43.3
+    },
+    "8160": {
+      "personas_contratadas": 3486,
+      "personas_contratadas_anterior": 3905,
+      "variacion_pct": -10.7,
+      "pct_indefinidos": 50.2,
+      "pct_mujeres_contratos": 41.1
+    },
+    "8170": {
+      "personas_contratadas": 1918,
+      "personas_contratadas_anterior": 1916,
+      "variacion_pct": 0.1,
+      "pct_indefinidos": 48.4,
+      "pct_mujeres_contratos": 46.4
+    },
+    "8191": {
+      "personas_contratadas": 219,
+      "personas_contratadas_anterior": 172,
+      "variacion_pct": 27.3,
+      "pct_indefinidos": 23.6,
+      "pct_mujeres_contratos": 16.3
+    },
+    "8192": {
+      "personas_contratadas": 84,
+      "personas_contratadas_anterior": 84,
+      "variacion_pct": null,
+      "pct_indefinidos": 59.0,
+      "pct_mujeres_contratos": 2.0
+    },
+    "8193": {
+      "personas_contratadas": 3958,
+      "personas_contratadas_anterior": 3103,
+      "variacion_pct": 27.6,
+      "pct_indefinidos": 23.5,
+      "pct_mujeres_contratos": 49.9
+    },
+    "8199": {
+      "personas_contratadas": 3725,
+      "personas_contratadas_anterior": 3539,
+      "variacion_pct": 5.3,
+      "pct_indefinidos": 64.6,
+      "pct_mujeres_contratos": 12.1
+    },
+    "8201": {
+      "personas_contratadas": 756,
+      "personas_contratadas_anterior": 716,
+      "variacion_pct": 5.6,
+      "pct_indefinidos": 29.3,
+      "pct_mujeres_contratos": 22.0
+    },
+    "8202": {
+      "personas_contratadas": 903,
+      "personas_contratadas_anterior": 798,
+      "variacion_pct": 13.2,
+      "pct_indefinidos": 32.1,
+      "pct_mujeres_contratos": 17.5
+    },
+    "8209": {
+      "personas_contratadas": 3815,
+      "personas_contratadas_anterior": 3503,
+      "variacion_pct": 8.9,
+      "pct_indefinidos": 27.0,
+      "pct_mujeres_contratos": 15.6
+    },
+    "8311": {
+      "personas_contratadas": 800,
+      "personas_contratadas_anterior": 435,
+      "variacion_pct": 83.9,
+      "pct_indefinidos": 94.5,
+      "pct_mujeres_contratos": 13.7
+    },
+    "8312": {
+      "personas_contratadas": 44,
+      "personas_contratadas_anterior": 26,
+      "variacion_pct": null,
+      "pct_indefinidos": 28.6,
+      "pct_mujeres_contratos": 22.4
+    },
+    "8321": {
+      "personas_contratadas": 1393,
+      "personas_contratadas_anterior": 1282,
+      "variacion_pct": 8.7,
+      "pct_indefinidos": 67.3,
+      "pct_mujeres_contratos": 2.8
+    },
+    "8322": {
+      "personas_contratadas": 57,
+      "personas_contratadas_anterior": 55,
+      "variacion_pct": null,
+      "pct_indefinidos": 80.0,
+      "pct_mujeres_contratos": 3.3
+    },
+    "8331": {
+      "personas_contratadas": 1191,
+      "personas_contratadas_anterior": 1271,
+      "variacion_pct": -6.3,
+      "pct_indefinidos": 83.5,
+      "pct_mujeres_contratos": 10.4
+    },
+    "8332": {
+      "personas_contratadas": 811,
+      "personas_contratadas_anterior": 757,
+      "variacion_pct": 7.1,
+      "pct_indefinidos": 62.7,
+      "pct_mujeres_contratos": 4.0
+    },
+    "8333": {
+      "personas_contratadas": 9211,
+      "personas_contratadas_anterior": 8529,
+      "variacion_pct": 8.0,
+      "pct_indefinidos": 19.4,
+      "pct_mujeres_contratos": 8.2
+    },
+    "8340": {
+      "personas_contratadas": 797,
+      "personas_contratadas_anterior": 803,
+      "variacion_pct": -0.7,
+      "pct_indefinidos": 48.0,
+      "pct_mujeres_contratos": 18.6
+    },
+    "8412": {
+      "personas_contratadas": 23668,
+      "personas_contratadas_anterior": 21840,
+      "variacion_pct": 8.4,
+      "pct_indefinidos": 72.0,
+      "pct_mujeres_contratos": 7.1
+    },
+    "8420": {
+      "personas_contratadas": 4384,
+      "personas_contratadas_anterior": 4582,
+      "variacion_pct": -4.3,
+      "pct_indefinidos": 38.2,
+      "pct_mujeres_contratos": 19.2
+    },
+    "8432": {
+      "personas_contratadas": 16013,
+      "personas_contratadas_anterior": 15735,
+      "variacion_pct": 1.8,
+      "pct_indefinidos": 79.0,
+      "pct_mujeres_contratos": 3.2
+    },
+    "8440": {
+      "personas_contratadas": 7181,
+      "personas_contratadas_anterior": 6056,
+      "variacion_pct": 18.6,
+      "pct_indefinidos": 88.8,
+      "pct_mujeres_contratos": 16.2
+    },
+    "9100": {
+      "personas_contratadas": 31510,
+      "personas_contratadas_anterior": 18919,
+      "variacion_pct": 66.6,
+      "pct_indefinidos": 88.1,
+      "pct_mujeres_contratos": 93.3
+    },
+    "9210": {
+      "personas_contratadas": 82605,
+      "personas_contratadas_anterior": 79704,
+      "variacion_pct": 3.6,
+      "pct_indefinidos": 27.7,
+      "pct_mujeres_contratos": 78.1
+    },
+    "9221": {
+      "personas_contratadas": 1734,
+      "personas_contratadas_anterior": 1603,
+      "variacion_pct": 8.2,
+      "pct_indefinidos": 42.7,
+      "pct_mujeres_contratos": 62.5
+    },
+    "9222": {
+      "personas_contratadas": 1529,
+      "personas_contratadas_anterior": 1333,
+      "variacion_pct": 14.7,
+      "pct_indefinidos": 59.7,
+      "pct_mujeres_contratos": 13.8
+    },
+    "9223": {
+      "personas_contratadas": 94,
+      "personas_contratadas_anterior": 117,
+      "variacion_pct": null,
+      "pct_indefinidos": 51.5,
+      "pct_mujeres_contratos": 37.9
+    },
+    "9229": {
+      "personas_contratadas": 18527,
+      "personas_contratadas_anterior": 16225,
+      "variacion_pct": 14.2,
+      "pct_indefinidos": 44.0,
+      "pct_mujeres_contratos": 62.8
+    },
+    "9310": {
+      "personas_contratadas": 34564,
+      "personas_contratadas_anterior": 31173,
+      "variacion_pct": 10.9,
+      "pct_indefinidos": 63.8,
+      "pct_mujeres_contratos": 43.3
+    },
+    "9320": {
+      "personas_contratadas": 5962,
+      "personas_contratadas_anterior": 5497,
+      "variacion_pct": 8.5,
+      "pct_indefinidos": 93.4,
+      "pct_mujeres_contratos": 49.1
+    },
+    "9410": {
+      "personas_contratadas": 267,
+      "personas_contratadas_anterior": 198,
+      "variacion_pct": 34.8,
+      "pct_indefinidos": 14.1,
+      "pct_mujeres_contratos": 43.2
+    },
+    "9420": {
+      "personas_contratadas": 1173,
+      "personas_contratadas_anterior": 1489,
+      "variacion_pct": -21.2,
+      "pct_indefinidos": 69.2,
+      "pct_mujeres_contratos": 27.4
+    },
+    "9431": {
+      "personas_contratadas": 2094,
+      "personas_contratadas_anterior": 2313,
+      "variacion_pct": -9.5,
+      "pct_indefinidos": 32.2,
+      "pct_mujeres_contratos": 34.6
+    },
+    "9432": {
+      "personas_contratadas": 7317,
+      "personas_contratadas_anterior": 6228,
+      "variacion_pct": 17.5,
+      "pct_indefinidos": 26.7,
+      "pct_mujeres_contratos": 15.3
+    },
+    "9433": {
+      "personas_contratadas": 9843,
+      "personas_contratadas_anterior": 8639,
+      "variacion_pct": 13.9,
+      "pct_indefinidos": 82.4,
+      "pct_mujeres_contratos": 9.8
+    },
+    "9434": {
+      "personas_contratadas": 242,
+      "personas_contratadas_anterior": 233,
+      "variacion_pct": 3.9,
+      "pct_indefinidos": 73.0,
+      "pct_mujeres_contratos": 16.0
+    },
+    "9441": {
+      "personas_contratadas": 3130,
+      "personas_contratadas_anterior": 2738,
+      "variacion_pct": 14.3,
+      "pct_indefinidos": 7.8,
+      "pct_mujeres_contratos": 20.5
+    },
+    "9442": {
+      "personas_contratadas": 1516,
+      "personas_contratadas_anterior": 1649,
+      "variacion_pct": -8.1,
+      "pct_indefinidos": 27.0,
+      "pct_mujeres_contratos": 30.5
+    },
+    "9443": {
+      "personas_contratadas": 5864,
+      "personas_contratadas_anterior": 5388,
+      "variacion_pct": 8.8,
+      "pct_indefinidos": 6.0,
+      "pct_mujeres_contratos": 26.3
+    },
+    "9490": {
+      "personas_contratadas": 14675,
+      "personas_contratadas_anterior": 13289,
+      "variacion_pct": 10.4,
+      "pct_indefinidos": 61.5,
+      "pct_mujeres_contratos": 35.1
+    },
+    "9511": {
+      "personas_contratadas": 21086,
+      "personas_contratadas_anterior": 20122,
+      "variacion_pct": 4.8,
+      "pct_indefinidos": 70.0,
+      "pct_mujeres_contratos": 11.1
+    },
+    "9512": {
+      "personas_contratadas": 10161,
+      "personas_contratadas_anterior": 8432,
+      "variacion_pct": 20.5,
+      "pct_indefinidos": 49.7,
+      "pct_mujeres_contratos": 13.4
+    },
+    "9520": {
+      "personas_contratadas": 1929,
+      "personas_contratadas_anterior": 1598,
+      "variacion_pct": 20.7,
+      "pct_indefinidos": 68.2,
+      "pct_mujeres_contratos": 15.1
+    },
+    "9530": {
+      "personas_contratadas": 8618,
+      "personas_contratadas_anterior": 8391,
+      "variacion_pct": 2.7,
+      "pct_indefinidos": 41.5,
+      "pct_mujeres_contratos": 12.0
+    },
+    "9541": {
+      "personas_contratadas": 44,
+      "personas_contratadas_anterior": 54,
+      "variacion_pct": null,
+      "pct_indefinidos": 66.0,
+      "pct_mujeres_contratos": 0.0
+    },
+    "9542": {
+      "personas_contratadas": 171,
+      "personas_contratadas_anterior": 169,
+      "variacion_pct": 1.2,
+      "pct_indefinidos": 75.7,
+      "pct_mujeres_contratos": 10.1
+    },
+    "9543": {
+      "personas_contratadas": 1320,
+      "personas_contratadas_anterior": 951,
+      "variacion_pct": 38.8,
+      "pct_indefinidos": 79.4,
+      "pct_mujeres_contratos": 4.1
+    },
+    "9601": {
+      "personas_contratadas": 4904,
+      "personas_contratadas_anterior": 4238,
+      "variacion_pct": 15.7,
+      "pct_indefinidos": 66.3,
+      "pct_mujeres_contratos": 4.7
+    },
+    "9602": {
+      "personas_contratadas": 34305,
+      "personas_contratadas_anterior": 23833,
+      "variacion_pct": 43.9,
+      "pct_indefinidos": 86.0,
+      "pct_mujeres_contratos": 1.4
+    },
+    "9603": {
+      "personas_contratadas": 166,
+      "personas_contratadas_anterior": 175,
+      "variacion_pct": -5.1,
+      "pct_indefinidos": 56.7,
+      "pct_mujeres_contratos": 5.6
+    },
+    "9700": {
+      "personas_contratadas": 127178,
+      "personas_contratadas_anterior": 117643,
+      "variacion_pct": 8.1,
+      "pct_indefinidos": 24.2,
+      "pct_mujeres_contratos": 34.6
+    },
+    "9811": {
+      "personas_contratadas": 45460,
+      "personas_contratadas_anterior": 39483,
+      "variacion_pct": 15.1,
+      "pct_indefinidos": 35.3,
+      "pct_mujeres_contratos": 22.7
+    },
+    "9812": {
+      "personas_contratadas": 84,
+      "personas_contratadas_anterior": 101,
+      "variacion_pct": null,
+      "pct_indefinidos": 73.6,
+      "pct_mujeres_contratos": 18.7
+    },
+    "9820": {
+      "personas_contratadas": 13183,
+      "personas_contratadas_anterior": 12309,
+      "variacion_pct": 7.1,
+      "pct_indefinidos": 49.1,
+      "pct_mujeres_contratos": 34.0
+    }
+  }
+}

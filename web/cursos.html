@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta
+      name="description"
+      content="Cursos gratuitos para mejorar en tu trabajo, con enlace a la ficha oficial."
+      data-texto-content="catalogo.descripcion"
+    />
+    <meta name="theme-color" content="#f4f3f0" />
+    <meta name="apple-mobile-web-app-title" content="Faro" />
+    <!-- En iPhone y iPad instalada: barra de estado opaca y negra, como el modo noche con el que abre Faro (el
+         sistema no admite una por tema; donde lo admite, el color lo pone el theme-color de arriba). -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <title data-texto="catalogo.pagina-titulo">Cursos · Faro</title>
+    <link rel="icon" href="imagenes/identidad/faro-editorial-icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="imagenes/identidad/icon-180.png" />
+    <link rel="manifest" href="manifest.webmanifest" crossorigin="use-credentials" />
+
+    <script src="scripts/tema-inicial.js"></script>
+    <script src="scripts/idioma-inicial.js" data-filtro-idioma="idioma-curso"></script>
+    <link rel="stylesheet" href="estilos/tipografias.css" />
+    <link rel="stylesheet" href="estilos/tokens.css" />
+    <link rel="stylesheet" href="estilos/base.css" />
+    <link rel="stylesheet" href="estilos/contenidos.css" />
+    <link rel="stylesheet" href="estilos/lecturas.css" />
+    <link rel="stylesheet" href="estilos/catalogo-cursos.css" />
+    <script type="module" src="scripts/catalogo-cursos/pagina.js"></script>
+    <!-- Los textos se escriben en cuanto se ejecuta sitio.js: sus diccionarios se piden a la vez que él. -->
+  </head>
+  <body>
+    <a class="salto" href="#contenido" data-texto="comun.saltar">Saltar al contenido</a>
+    <header class="cabecera">
+      <button
+        class="menu-boton"
+        type="button"
+        aria-label="Abrir menú"
+        data-texto-aria-label="comun.menu.abrir"
+        aria-expanded="false"
+        aria-controls="menu"
+      >
+        <span></span><span></span><span></span>
+      </button>
+      <a class="marca" href="inicio.html">
+        <span class="solo-lectores" data-texto="comun.marca.inicio">Faro, inicio</span>
+        <span class="marca-nombre" aria-hidden="true"
+          ><span class="marca-inicial"
+            >F<svg class="marca-luz" viewBox="0 0 18 8" focusable="false" aria-hidden="true"
+              ><path d="M1 4h16" /></svg
+            ></span
+          >ARO</span
+        >
+      </a>
+      <div class="cabecera-herramientas">
+        <div class="idioma" data-selector-idioma>
+          <button
+            class="idioma-boton"
+            type="button"
+            id="idioma-boton"
+            aria-label="Idioma: Castellano"
+            data-texto-aria-label="comun.idioma.boton"
+            aria-haspopup="menu"
+            aria-expanded="false"
+            aria-controls="idioma-opciones"
+          >
+            <img
+              class="idioma-bandera idioma-bandera-es"
+              src="imagenes/identidad/bandera-espana.svg"
+              alt=""
+              width="24"
+              height="16"
+            />
+            <img
+              class="idioma-bandera idioma-bandera-ca"
+              src="imagenes/identidad/bandera-catalunya.svg"
+              alt=""
+              width="24"
+              height="16"
+            />
+          </button>
+          <div class="idioma-opciones" id="idioma-opciones" role="menu" aria-labelledby="idioma-boton" hidden>
+            <button type="button" role="menuitemradio" aria-checked="true" data-cambiar-idioma="es" lang="es"
+              ><img class="idioma-bandera" src="imagenes/identidad/bandera-espana.svg" alt="" width="24" height="16" />
+              <span>Castellano</span></button
+            >
+            <button type="button" role="menuitemradio" aria-checked="false" data-cambiar-idioma="ca" lang="ca"
+              ><img
+                class="idioma-bandera"
+                src="imagenes/identidad/bandera-catalunya.svg"
+                alt=""
+                width="24"
+                height="16"
+              /><span>Català</span></button
+            >
+          </div>
+        </div>
+        <button
+          class="tema-boton"
+          type="button"
+          aria-label="Cambiar a modo día"
+          title="Modo día / noche"
+          data-texto-title="comun.tema.titulo"
+        >
+          <svg class="icono-sol" viewBox="0 0 24 24" aria-hidden="true" focusable="false"
+            ><circle cx="12" cy="12" r="4.5" />
+            <path
+              d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"
+            /></svg
+          >
+          <svg class="icono-luna" viewBox="0 0 24 24" aria-hidden="true" focusable="false"
+            ><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z" /></svg
+          >
+        </button>
+      </div>
+    </header>
+    <div class="menu-velo" id="menu-velo" hidden></div>
+    <nav id="menu" class="menu" hidden aria-label="Menú principal" data-texto-aria-label="comun.menu.nombre">
+      <ul class="menu-lista">
+        <li
+          ><a href="inicio.html"><span class="menu-destino" data-texto="comun.seccion.inicio">Inicio</span></a></li
+        >
+        <li
+          ><a href="entender-ia.html"
+            ><span class="menu-destino" data-texto="comun.seccion.ia">Qué es la IA</span></a
+          ></li
+        >
+        <li
+          ><a href="que-es-faro.html"><span class="menu-destino">Faro</span></a></li
+        >
+        <li
+          ><a href="recorrido.html"><span class="menu-destino" data-texto="comun.seccion.empezar">Empezar</span></a></li
+        >
+        <li
+          ><a href="biblioteca.html"
+            ><span class="menu-destino" data-texto="comun.seccion.biblioteca">Biblioteca</span></a
+          ></li
+        >
+        <li
+          ><a href="cursos.html" aria-current="page"
+            ><span class="menu-destino" data-texto="comun.seccion.cursos">Cursos</span></a
+          ></li
+        >
+        <li
+          ><a href="datos-globales.html"
+            ><span class="menu-destino" data-texto="comun.seccion.datos-globales">Datos globales</span></a
+          ></li
+        >
+        <li data-pasar-entrada hidden
+          ><button type="button" class="menu-pasar" data-pasar-dispositivo
+            ><span class="menu-destino" data-texto="comun.menu.pasar">Pasar a otro dispositivo</span></button
+          ></li
+        >
+      </ul>
+    </nav>
+    <main id="contenido" class="pagina lecturas cursos">
+      <header class="lecturas-cabecera">
+        <p class="antetitulo" data-texto="catalogo.antetitulo">Formación gratuita</p>
+        <h1 data-texto="catalogo.titulo">Cursos</h1>
+        <p class="entradilla" data-texto="catalogo.entradilla"
+          >Cursos gratuitos para mejorar en tu trabajo, de organismos públicos y entidades formativas. Te inscribes en
+          la web de cada curso.</p
+        >
+        <p class="cursos-actualizado" data-actualizado hidden
+          ><span class="cursos-punto" aria-hidden="true"></span><span data-fecha></span></p
+        >
+      </header>
+      <form
+        class="cursos-herramientas"
+        aria-label="Filtrar y buscar cursos"
+        data-texto-aria-label="catalogo.filtros"
+        data-filtros
+        hidden
+      >
+        <p class="lecturas-filtros-rotulo" aria-hidden="true" data-texto="catalogo.filtrar">Filtrar por</p>
+        <div class="cursos-filtros-fila" data-grupos></div>
+        <div class="cursos-campo">
+          <svg class="cursos-lupa" viewBox="0 0 24 24" aria-hidden="true" focusable="false"
+            ><circle cx="10.5" cy="10.5" r="6.5" /><path d="m16 16 5 5" /></svg
+          >
+          <label class="solo-lectores" for="cursos-consulta" data-texto="catalogo.busqueda">Buscar por palabra</label>
+          <input
+            id="cursos-consulta"
+            name="q"
+            type="search"
+            placeholder="Buscar por palabra"
+            data-texto-placeholder="catalogo.busqueda"
+            autocomplete="off"
+            spellcheck="false"
+            enterkeyhint="search"
+            aria-describedby="cursos-consulta-ayuda"
+            data-consulta
+          />
+          <span class="solo-lectores" id="cursos-consulta-ayuda" data-texto="catalogo.ayuda-busqueda"
+            >Nombre, entidad o tema</span
+          >
+          <button
+            type="button"
+            class="cursos-limpiar"
+            aria-label="Borrar la búsqueda"
+            data-texto-aria-label="catalogo.borrar"
+            data-limpiar
+            hidden
+            ><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"
+              ><path d="m7 7 10 10M17 7 7 17" /></svg
+            ></button
+          >
+        </div>
+      </form>
+      <section class="lecturas-bloque cursos-bloque" aria-labelledby="cursos-resultados">
+        <div class="cursos-resultados">
+          <h2 id="cursos-resultados" class="cursos-recuento" data-recuento data-texto="catalogo.titulo">Cursos</h2>
+          <button type="button" class="lecturas-filtros-quitar" data-quitar hidden data-texto="catalogo.quitar"
+            >Quitar filtros</button
+          >
+          <div class="cursos-orden" data-orden hidden></div>
+        </div>
+        <p role="status" aria-live="polite" data-cuenta data-texto="catalogo.cargando"
+          >Cargando el catálogo de Cursos…</p
+        >
+        <div class="cursos-progreso" data-progreso aria-hidden="true"></div>
+        <noscript
+          ><p class="cursos-vacio" data-texto="catalogo.sin-js">Activa JavaScript para ver los cursos.</p></noscript
+        >
+        <ul class="lecturas-fichas cursos-fichas" data-lista></ul>
+        <div class="cursos-vacio" data-vacio hidden>
+          <p><strong data-texto="catalogo.vacio">No hay cursos con estos filtros.</strong></p>
+          <p data-texto="catalogo.vacio-ayuda">Prueba a quitar algún filtro o a buscar otra palabra.</p>
+          <button type="button" class="cursos-boton" data-quitar-vacio data-texto="catalogo.quitar"
+            >Quitar filtros</button
+          >
+        </div>
+        <div class="cursos-mas" data-mas hidden><button type="button" class="cursos-boton" data-ver-mas></button></div>
+        <p class="lecturas-aviso" data-texto="catalogo.nota"
+          >Consulta la ficha oficial para confirmar plazas y requisitos antes de inscribirte. Sin conexión, cada curso
+          se sigue mostrando hasta la fecha límite que publicó su proveedor; al volver a conectarte verás el catálogo
+          más reciente.</p
+        >
+      </section>
+    </main>
+
+    <footer class="pie">
+      <div class="pie-fila"
+        ><nav aria-label="Información y ayuda" data-texto-aria-label="comun.pie.nombre"
+          ><a href="creditos.html" data-texto="comun.pie.creditos">Créditos</a
+          ><a href="informacion-y-creditos.html#t-datos" data-texto="comun.pie.datos">Tus datos</a
+          ><a href="accesibilidad.html" data-texto="comun.pie.accesibilidad">Accesibilidad</a
+          ><a href="verificable.html" data-texto="comun.pie.verificable">Faro verificable</a
+          ><a class="pie-doctor" href="doctor.html" data-texto="comun.pie.doctor">Comprobar Faro</a
+          ><a class="pie-instalar" href="instalar.html" data-texto="comun.pie.instalar">Instalar Faro</a></nav
+        ><p class="pie-derechos" data-texto="comun.pie.derechos">© 2026 Equipo Faro</p></div
+      >
+    </footer>
+    <template data-listado-cursos></template>
+  </body>
+</html>

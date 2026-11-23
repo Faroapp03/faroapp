@@ -1,0 +1,89 @@
+{
+  "origen": "Capturas completas del INE, copiadas byte a byte; la fecha de captura es la cabecera Date de la respuesta. Los PDF no conservan su cabecera: llevan el día de captura.",
+  "archivos": [
+    {
+      "archivo": "76444.csv",
+      "edicion": "2025",
+      "url": "https://www.ine.es/jaxi/files/tpx/es/csv_bdsc/76444.csv",
+      "capturado_utc": "2026-11-15T00:37:21Z",
+      "sha256": "aa95f8970e905a6fe8789496f50652ab1ac95853325cd277d330e3a195b31953"
+    },
+    {
+      "archivo": "76849.csv",
+      "edicion": "2025",
+      "url": "https://www.ine.es/jaxi/files/tpx/es/csv_bdsc/76849.csv",
+      "capturado_utc": "2026-11-15T00:37:25Z",
+      "sha256": "d25ee248f0e4227778a81b792e6e47a3b4e4251ad9112910b095b14a1c2a9fb7"
+    },
+    {
+      "archivo": "82804.csv",
+      "edicion": "2026",
+      "url": "https://www.ine.es/jaxi/files/tpx/es/csv_bdsc/82804.csv",
+      "capturado_utc": "2026-11-15T00:37:14Z",
+      "sha256": "b5fcee53e5c0c204f4c68666c45cd4f2bc5f69a8396ca41ea2343336669b458c"
+    },
+    {
+      "archivo": "82907.csv",
+      "edicion": "2026",
+      "url": "https://www.ine.es/jaxi/files/tpx/es/csv_bdsc/82907.csv",
+      "capturado_utc": "2026-11-15T00:37:17Z",
+      "sha256": "e656b804dbdb992941d0c078d54e83e8496d052dfcb042ef5a075c00d5e72185"
+    },
+    {
+      "archivo": "../ine-tich-2026-operacion.html",
+      "edicion": "2026",
+      "url": "https://www.ine.es/dyngs/INEbase/es/operacion.htm?c=Estadistica_C&cid=1254736176741&menu=resultados&idp=1254735976608",
+      "capturado_utc": "2026-11-15T00:36:01Z",
+      "sha256": "750b2245e2c3c5462c188ac6fd30f7316821ef17b1cfe855b8fff3ec5dcba21d"
+    },
+    {
+      "archivo": "../ine-tich-2026-indice-personas.html",
+      "edicion": "2026",
+      "url": "https://www.ine.es/dynt3/inebase/index.htm?padre=14075&capsel=14079",
+      "capturado_utc": "2026-11-15T00:36:28Z",
+      "sha256": "fbe09ae4b55354240e92b11e577a753575981fb1dc56a019c0fddec8b52cab93"
+    },
+    {
+      "archivo": "../ine-tich-2026-indice-ia-generativa.html",
+      "edicion": "2026",
+      "url": "https://www.ine.es/dynt3/inebase/index.htm?padre=14075&capsel=14104",
+      "capturado_utc": "2026-11-15T00:36:51Z",
+      "sha256": "158481231baebed733f3a1393189930b1fd8923cf8dc89ab7ef8d3356f666933"
+    },
+    {
+      "archivo": "../ine-tich-2026-indice-errores.html",
+      "edicion": "2026",
+      "url": "https://www.ine.es/dynt3/inebase/index.htm?padre=14074&capsel=14103",
+      "capturado_utc": "2026-11-15T00:36:31Z",
+      "sha256": "dfc9fc72d9608d2cbd52f9bbcef13494d4b87dd6905087b356b8f3e29c1b82f4"
+    },
+    {
+      "archivo": "metodologia-2026.pdf",
+      "edicion": "2026",
+      "url": "https://www.ine.es/metodologia/t25/t25304506626.pdf",
+      "sha256": "0d90a3e3ef9cfcd29bd3a0982bd17ad707e1fdd57ea046b008a279adb610ede2",
+      "capturado_utc": "2026-11-15"
+    },
+    {
+      "archivo": "cuestionario-2026.pdf",
+      "edicion": "2026",
+      "url": "https://www.ine.es/metodologia/t25/t25p450_tich_cues_26.pdf",
+      "sha256": "2172bcb98f59fb8b6b3e5867fecfbfa53f234318a3d86f7359fa2ff4a11d8290",
+      "capturado_utc": "2026-11-15"
+    },
+    {
+      "archivo": "cuestionario-2025.pdf",
+      "edicion": "2025",
+      "url": "https://www.ine.es/metodologia/t25/t25p450_tich_cues_25.pdf",
+      "sha256": "f05b29e1e4d917d6fe201f11246b452c82d9132d9d81ca894fe7bd97a43948ae",
+      "capturado_utc": "2026-11-15"
+    },
+    {
+      "archivo": "../ine-tich-2026-metodologia.html",
+      "edicion": "2026",
+      "url": "https://www.ine.es/dyngs/INEbase/es/operacion.htm?c=Estadistica_C&cid=1254736176741&menu=metodologia&idp=1254735576692",
+      "capturado_utc": "2026-11-15T00:40:11Z",
+      "sha256": "0b16cf207c52ca0871cb51758ea5f2ac189a80e1a889d7919a369569a18072ab"
+    }
+  ]
+}

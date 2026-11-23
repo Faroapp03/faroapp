@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "id": "citilab",
+  "tema": "cursos",
+  "lector": "plataforma_datos.cursos.fuentes.citilab.lector",
+  "casa_datos": "citilab",
+  "nombre": "Formación de Citilab",
+  "institucion": "Citilab (Fundació pel Foment de la Societat del Coneixement)",
+  "significado": "Hechos de fichas de formación en catalán dirigidas a público adulto, con enlace; sin descripciones, imágenes ni logos.",
+  "alcance": [
+    "id, modified, link y vocabularios; totales HTTP WP; procedencia de cada cuerpo",
+    "Hechos de ficha, desconocidos conservados; no comprueba plazas/inscripción"
+  ],
+  "recursos": [
+    {
+      "id": "formacio",
+      "tipo": "url",
+      "ubicacion": "https://www.citilab.eu/wp-json/wp/v2/formacio",
+      "licencia": "Condiciones de citilab.eu declaradas en lector.py: uso informativo y de servicio con atribución; se exportan solo hechos.",
+      "descripcion": "Colección de fichas, por páginas; campos y tamaño de página fijados por el lector."
+    },
+    {
+      "id": "public",
+      "tipo": "url",
+      "ubicacion": "https://www.citilab.eu/wp-json/wp/v2/public",
+      "licencia": "Condiciones de citilab.eu declaradas en lector.py: uso informativo y de servicio con atribución; se exportan solo hechos.",
+      "descripcion": "Vocabulario de destinatarios."
+    },
+    {
+      "id": "tipus-formacio",
+      "tipo": "url",
+      "ubicacion": "https://www.citilab.eu/wp-json/wp/v2/tipus-formacio",
+      "licencia": "Condiciones de citilab.eu declaradas en lector.py: uso informativo y de servicio con atribución; se exportan solo hechos.",
+      "descripcion": "Vocabulario de tipos de formación."
+    }
+  ],
+  "canales": [
+    {
+      "id": "citilab",
+      "tipo": "remoto",
+      "recursos": ["formacio", "public", "tipus-formacio"],
+      "autenticacion": "Ninguna configurada",
+      "limites": [
+        "per_page=100 y paginación con page=N hasta x-wp-totalpages; cada página con el tamaño que le toca y totales WP estables; la copia cuadra con x-wp-total; sin cuota acreditada"
+      ],
+      "observaciones": "formacio, public, tipus-formacio; tres colecciones"
+    }
+  ],
+  "actualizacion": {
+    "politica": "diaria",
+    "red": true,
+    "frecuencia": "Consulta diaria de la API pública de citilab.eu; el panel avisa de revisar la copia con el mismo plazo que la aplicación.",
+    "renovar_dias": 30,
+    "originales": "citilab"
+  },
+  "conjuntos": [
+    {
+      "id": "citilab",
+      "fuente": "citilab",
+      "clase": "cambiante",
+      "alcance": "catalogo-actual",
+      "operacion": "descargar",
+      "intervalo_dias": 1
+    }
+  ],
+  "dependencias": [],
+  "contratos": ["lector.py:validar"],
+  "retirada": "Se mantienen los controles de admisión y reconstrucción del lector actual; no se declara una conciliación genérica de entidades ni se interpreta un fallo como baja.",
+  "conservacion": "Se conservan las rutas, originales, procedencias y revisiones actuales en var/actualizacion; este descriptor no habilita limpieza automática ni fija nuevos plazos de retención."
+}

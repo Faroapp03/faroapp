@@ -1,0 +1,241 @@
+{
+  "formacion": {
+    "actualizacion": {
+      "politica": "mensual",
+      "red": true,
+      "frecuencia": "oferta SOC diaria; catálogos por edición",
+      "renovar_dias": 90,
+      "originales": "formacion"
+    },
+    "conjuntos": [
+      {
+        "id": "soc-oferta",
+        "fuente": "formacion",
+        "clase": "cambiante",
+        "alcance": "catalogo-actual",
+        "operacion": "descargar",
+        "intervalo_dias": 1
+      },
+      {
+        "id": "formacion-catalogos",
+        "fuente": "formacion",
+        "clase": "manual",
+        "alcance": "copia-local",
+        "operacion": "revision",
+        "intervalo_dias": null
+      }
+    ],
+    "dependencias": ["esco"],
+    "casa_datos": "formacion"
+  },
+  "consorci": {
+    "actualizacion": {
+      "politica": "diaria",
+      "red": true,
+      "frecuencia": "Consulta diaria de Dades Obertes de Catalunya; el panel avisa de revisar la copia con el mismo plazo que la aplicación.",
+      "renovar_dias": 30,
+      "originales": "consorci"
+    },
+    "conjuntos": [
+      {
+        "id": "consorci",
+        "fuente": "consorci",
+        "clase": "cambiante",
+        "alcance": "catalogo-actual",
+        "operacion": "descargar",
+        "intervalo_dias": 1
+      }
+    ],
+    "dependencias": ["formacion"],
+    "casa_datos": "consorci"
+  },
+  "agencia": {
+    "actualizacion": {
+      "politica": "manual",
+      "red": false,
+      "frecuencia": "cuando la Agència publica una oferta nueva",
+      "renovar_dias": 180,
+      "originales": "agencia"
+    },
+    "conjuntos": [
+      {
+        "id": "agencia",
+        "fuente": "agencia",
+        "clase": "manual",
+        "alcance": "copia-local",
+        "operacion": "revision",
+        "intervalo_dias": null
+      }
+    ],
+    "dependencias": [],
+    "casa_datos": "agencia"
+  },
+  "acreditacion": {
+    "actualizacion": {
+      "politica": "mensual",
+      "red": true,
+      "frecuencia": "cuando el BOE consolida un real decreto",
+      "renovar_dias": null,
+      "originales": "acreditacion"
+    },
+    "conjuntos": [
+      {
+        "id": "acreditacion",
+        "fuente": "acreditacion",
+        "clase": "cambiante",
+        "alcance": "contenido-actual-acotado",
+        "operacion": "descargar",
+        "intervalo_dias": 7
+      }
+    ],
+    "dependencias": ["esco", "clasificaciones", "cataluna", "formacion", "agencia"],
+    "casa_datos": "acreditacion"
+  },
+  "citilab": {
+    "actualizacion": {
+      "politica": "diaria",
+      "red": true,
+      "frecuencia": "Consulta diaria de la API pública de citilab.eu; el panel avisa de revisar la copia con el mismo plazo que la aplicación.",
+      "renovar_dias": 30,
+      "originales": "citilab"
+    },
+    "conjuntos": [
+      {
+        "id": "citilab",
+        "fuente": "citilab",
+        "clase": "cambiante",
+        "alcance": "catalogo-actual",
+        "operacion": "descargar",
+        "intervalo_dias": 1
+      }
+    ],
+    "dependencias": [],
+    "casa_datos": "citilab"
+  },
+  "abierta": {
+    "actualizacion": {
+      "politica": "redactada",
+      "red": false,
+      "frecuencia": "revisión de Equipo Faro",
+      "renovar_dias": null,
+      "originales": null
+    },
+    "conjuntos": [
+      {
+        "id": "abierta",
+        "fuente": "abierta",
+        "clase": "editorial",
+        "alcance": "copia-local",
+        "operacion": "revision",
+        "intervalo_dias": null
+      }
+    ],
+    "dependencias": [],
+    "casa_datos": "abierta"
+  },
+  "certificados2016": {
+    "actualizacion": {
+      "politica": "manual",
+      "red": false,
+      "frecuencia": "cerrada (informe de 2016)",
+      "renovar_dias": null,
+      "originales": "certificados2016"
+    },
+    "conjuntos": [
+      {
+        "id": "certificados2016",
+        "fuente": "certificados2016",
+        "clase": "historica",
+        "alcance": "copia-local",
+        "operacion": "integridad",
+        "intervalo_dias": null
+      }
+    ],
+    "dependencias": ["esco", "clasificaciones", "cataluna", "formacion", "agencia", "acreditacion", "perfiles"],
+    "casa_datos": "certificados2016"
+  },
+  "actic": {
+    "actualizacion": {
+      "politica": "mensual",
+      "red": true,
+      "frecuencia": "cuando la Generalitat cambia una orden o el portal",
+      "renovar_dias": null,
+      "originales": "actic"
+    },
+    "conjuntos": [
+      {
+        "id": "actic",
+        "fuente": "actic",
+        "clase": "cambiante",
+        "alcance": "contenido-actual-acotado",
+        "operacion": "descargar",
+        "intervalo_dias": 7
+      }
+    ],
+    "dependencias": [],
+    "casa_datos": "actic"
+  },
+  "barcelonactiva": {
+    "actualizacion": {
+      "politica": "diaria",
+      "red": true,
+      "frecuencia": "Censo Cibernàrium y censo del ámbito de IA diarios; el catálogo ocupacional conserva su fecha propia.",
+      "renovar_dias": 1,
+      "originales": "barcelonactiva"
+    },
+    "conjuntos": [
+      {
+        "id": "barcelonactiva",
+        "fuente": "barcelonactiva",
+        "clase": "cambiante",
+        "alcance": "contenido-actual-acotado",
+        "operacion": "descargar",
+        "intervalo_dias": 1
+      }
+    ],
+    "dependencias": ["catalan"],
+    "casa_datos": "barcelonactiva"
+  },
+  "fundae": {
+    "actualizacion": {
+      "politica": "diaria",
+      "red": true,
+      "frecuencia": "Consulta diaria de índices públicos y de las fichas de difusiones de las especialidades acotadas; entidad y colectivos, solo de ediciones nuevas o cambiadas.",
+      "renovar_dias": 1,
+      "originales": "fundae"
+    },
+    "conjuntos": [
+      {
+        "id": "fundae",
+        "fuente": "fundae",
+        "clase": "cambiante",
+        "alcance": "contenido-actual-acotado",
+        "operacion": "descargar",
+        "intervalo_dias": 1
+      }
+    ],
+    "dependencias": [],
+    "casa_datos": "fundae"
+  },
+  "memoria": {
+    "actualizacion": {
+      "politica": "manual",
+      "red": false,
+      "frecuencia": "anual (memoria de la Agència FP.CAT)",
+      "renovar_dias": 365,
+      "originales": "memoria-fpcat"
+    },
+    "conjuntos": [
+      {
+        "id": "memoria",
+        "fuente": "memoria",
+        "clase": "manual",
+        "alcance": "copia-local",
+        "operacion": "revision",
+        "intervalo_dias": null
+      }
+    ],
+    "dependencias": [],
+    "casa_datos": "memoria-fpcat"
+  }
+}

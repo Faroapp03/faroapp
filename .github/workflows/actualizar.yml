@@ -1,0 +1,406 @@
+name: Actualizar datos
+run-name: ${{ (inputs.ensayo == 'preparar' || inputs.ensayo == 'simular') && format('Ensayo aislado · {0}', inputs.ensayo) || 'Actualizar datos' }}
+
+on:
+  workflow_dispatch:
+    inputs:
+      ensayo:
+        description: Producción con reserva o ensayo aislado con lectura de la base vigente
+        type: choice
+        default: ninguno
+        options:
+          - ninguno
+          - preparar
+          - simular
+      solicitud_id:
+        description: Identificador de la reserva administrativa (solo producción)
+        required: false
+        type: string
+      revision_reserva:
+        description: Revisión de la reserva administrativa (solo producción)
+        required: false
+        type: string
+      accion:
+        description: Operación reservada por el servidor o pedida a demanda
+        required: true
+        type: choice
+        options:
+          - actualizar-datos
+          - reintentar-pendientes
+          - comprobar-programada
+          - actualizar-cursos
+          - comprobar-vencidas
+      a_demanda:
+        description: El propio run pide su reserva al servidor (sin solicitud_id ni revision_reserva y sin ensayo)
+        type: boolean
+        default: false
+      revisar_paquete_pendiente:
+        description: Revalidar el paquete si quedó un recibo sin intención de publicación
+        type: boolean
+        default: false
+
+permissions: {}
+
+# Los runs a demanda y los ensayos comparten un grupo para no solaparse entre sí. Los que despacha el servidor van cada
+# uno en el suyo, así que nunca esperan ni se cancelan: su exclusión la decide el servidor con la reserva.
+concurrency:
+  group: ${{ (inputs.a_demanda || inputs.ensayo == 'preparar' || inputs.ensayo == 'simular') && 'faro-actualizar-manual' || format('faro-actualizar-{0}', github.run_id) }}
+  cancel-in-progress: false
+
+env:
+  # Tope del job del candidato: lo que el supervisor necesita para el último ciclo completo medido, con su margen, más
+  # la preparación del job. La prueba de contrato del presupuesto lo deriva del plazo del motor y de él saca el límite
+  # del servidor; de él sale aquí el plazo del supervisor.
+  FARO_TOPE_CANDIDATO_MINUTOS: &tope_candidato 325
+  # Instala los tres motores en el ciclo («si» o «no»); con «no» el supervisor recupera sus 15 minutos.
+  FARO_NAVEGADORES_EN_EL_CICLO: si
+
+jobs:
+  candidato:
+    if: ${{ github.run_attempt == '1' || inputs.ensayo == 'preparar' || inputs.ensayo == 'simular' }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: *tope_candidato
+    # La reserva pedida a demanda pasa a la activación igual que la que crea el servidor llega por las entradas.
+    outputs:
+      solicitud_id: ${{ steps.reserva.outputs.solicitud_id }}
+      revision_reserva: ${{ steps.reserva.outputs.revision_reserva }}
+      # Cómo terminó el ciclo (validado, sin-pendientes o rechazado); vacío si no consta o no es de esa lista.
+      resultado_ciclo: ${{ steps.ciclo.outputs.resultado_ciclo }}
+    permissions: &permisos
+      contents: read
+      id-token: write
+    defaults: &shell_segura
+      run:
+        shell: bash --noprofile --norc -euo pipefail {0}
+    steps:
+      # GitHub cobra cada job por minutos completos: el último paso los anuncia a partir de esta hora.
+      # Un run a demanda pide él mismo su reserva, así que no admite una del servidor ni un ensayo: se detiene aquí.
+      - &inicio
+        name: Anotar el inicio del job
+        timeout-minutes: 1
+        env:
+          ENTRADA_A_DEMANDA: ${{ inputs.a_demanda }}
+          ENTRADA_ENSAYO: ${{ inputs.ensayo }}
+          ENTRADA_SOLICITUD_ID: ${{ inputs.solicitud_id }}
+          ENTRADA_REVISION_RESERVA: ${{ inputs.revision_reserva }}
+          ACTIONS_ID_TOKEN_REQUEST_URL: ''
+          ACTIONS_ID_TOKEN_REQUEST_TOKEN: ''
+        run: |
+          date +%s > "$RUNNER_TEMP/inicio-del-job"
+          if [[ "$ENTRADA_A_DEMANDA" == true ]]; then
+            if [[ -n "$ENTRADA_SOLICITUD_ID$ENTRADA_REVISION_RESERVA" || ( -n "$ENTRADA_ENSAYO" && "$ENTRADA_ENSAYO" != ninguno ) ]]; then
+              echo '::error title=Faro · entradas::Un run a demanda pide él mismo su reserva: lánzalo sin solicitud_id ni revision_reserva y con el ensayo «ninguno».'
+              exit 1
+            fi
+          fi
+
+      # Git recibe la credencial solo por entorno; no se conserva en el checkout.
+      # Es un único commit con un árbol de unos 120 MB: se descarga en segundos.
+      - &checkout
+        name: Recuperar el commit del evento
+        timeout-minutes: 2
+        env:
+          TOKEN_LECTURA: ${{ github.token }}
+          ENSAYO_FUERA_DE_RAMA: ${{ (inputs.ensayo == 'preparar' || inputs.ensayo == 'simular') && github.ref != format('refs/heads/{0}', github.event.repository.default_branch) }}
+          ACTIONS_ID_TOKEN_REQUEST_URL: ''
+          ACTIONS_ID_TOKEN_REQUEST_TOKEN: ''
+          GIT_HTTP_USER_AGENT: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36'
+          GIT_CONFIG_NOSYSTEM: '1'
+          GIT_CONFIG_GLOBAL: /dev/null
+          GIT_TERMINAL_PROMPT: '0'
+        run: |
+          umask 077
+          [[ "$ENSAYO_FUERA_DE_RAMA" != true ]]
+          [[ "$GITHUB_SERVER_URL" == https://github.com ]]
+          [[ "$GITHUB_SHA" =~ ^[0-9a-f]{40}$ ]]
+          [[ "$GITHUB_REPOSITORY" =~ ^[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+$ ]]
+          [[ -z "$(find "$GITHUB_WORKSPACE" -mindepth 1 -maxdepth 1 -print -quit)" ]]
+          git init --template= "$GITHUB_WORKSPACE"
+          git -C "$GITHUB_WORKSPACE" config core.hooksPath /dev/null
+          git -C "$GITHUB_WORKSPACE" config http.followRedirects false
+          export GIT_CONFIG_COUNT=4
+          export GIT_CONFIG_KEY_0=http.https://github.com/.extraheader
+          export GIT_CONFIG_VALUE_0="Authorization: Basic $(printf 'x-access-token:%s' "$TOKEN_LECTURA" | base64 -w 0)"
+          export GIT_CONFIG_KEY_1=http.https://github.com/.extraheader
+          export GIT_CONFIG_VALUE_1='sec-ch-ua: "Not:A-Brand";v="8", "Chromium";v="156", "Google Chrome";v="156"'
+          export GIT_CONFIG_KEY_2=http.https://github.com/.extraheader
+          export GIT_CONFIG_VALUE_2='sec-ch-ua-mobile: ?0'
+          export GIT_CONFIG_KEY_3=http.https://github.com/.extraheader
+          export GIT_CONFIG_VALUE_3='sec-ch-ua-platform: "Windows"'
+          git -C "$GITHUB_WORKSPACE" fetch --depth=1 --no-tags --no-recurse-submodules \
+            "https://github.com/$GITHUB_REPOSITORY.git" "$GITHUB_SHA"
+          unset TOKEN_LECTURA GIT_CONFIG_COUNT GIT_CONFIG_KEY_0 GIT_CONFIG_VALUE_0 GIT_CONFIG_KEY_1 GIT_CONFIG_VALUE_1 GIT_CONFIG_KEY_2 GIT_CONFIG_VALUE_2 GIT_CONFIG_KEY_3 GIT_CONFIG_VALUE_3
+          git -C "$GITHUB_WORKSPACE" checkout --detach "$GITHUB_SHA"
+          [[ "$(git -C "$GITHUB_WORKSPACE" rev-parse HEAD)" == "$GITHUB_SHA" ]]
+
+      # Antes de preparar nada: si el servidor no concede la reserva, el run termina aquí sin gastar más minutos.
+      # Además de este paso, solo el ensayo, la construcción y la activación reciben la identidad OIDC.
+      - name: Pedir la reserva a demanda
+        id: reserva
+        if: ${{ inputs.a_demanda }}
+        timeout-minutes: 1
+        env:
+          FARO_ACCION: ${{ inputs.accion }}
+          FARO_ACTUALIZACION_ORIGEN: ${{ vars.FARO_ACTUALIZACION_ORIGEN }}
+        run: /usr/bin/python3 -I plataforma_datos/orquestacion/reserva_a_demanda.py
+
+      - &herramientas
+        name: Preparar herramientas y dependencias
+        id: herramientas
+        timeout-minutes: 20
+        env:
+          ACTIONS_ID_TOKEN_REQUEST_URL: ''
+          ACTIONS_ID_TOKEN_REQUEST_TOKEN: ''
+        run: |
+          bash herramientas/mantenimiento/preparar-runner.sh
+          # Del tope del candidato se reservan 1 minuto para anotar el inicio, 2 para Git, 15 para los navegadores si
+          # se instalan, 1 para anunciar los minutos y 6 para el propio runner y la salida.
+          # Con 325 y el bootstrap completo quedan 280 minutos (295 sin navegadores); una caché caliente devuelve hasta 15.
+          # Un run a demanda toma de esos 6 minutos, como mucho, el que tiene para pedir su reserva.
+          if [[ ! "$FARO_NAVEGADORES_EN_EL_CICLO" =~ ^(si|no)$ ]]; then
+            echo 'FARO_NAVEGADORES_EN_EL_CICLO solo admite «si» o «no».' >&2
+            exit 1
+          fi
+          navegadores=0
+          if [[ "$FARO_NAVEGADORES_EN_EL_CICLO" == si ]]; then navegadores=15; fi
+          base=$((FARO_TOPE_CANDIDATO_MINUTOS - 1 - 2 - navegadores - 1 - 6))
+          disponibles=$((base - (SECONDS + 59) / 60))
+          printf 'minutos_supervisor=%d\n' "$((disponibles < base - 5 ? disponibles : base - 5))" >> "$GITHUB_OUTPUT"
+
+      - name: Preparar los tres motores
+        if: ${{ env.FARO_NAVEGADORES_EN_EL_CICLO == 'si' }}
+        timeout-minutes: 15
+        env:
+          ACTIONS_ID_TOKEN_REQUEST_URL: ''
+          ACTIONS_ID_TOKEN_REQUEST_TOKEN: ''
+        run: bash herramientas/mantenimiento/preparar-navegadores.sh
+
+      # Los inputs son datos del entorno, nunca parte de la orden interpretada.
+      - name: Ensayar con la base de producción en una copia aislada
+        if: ${{ (inputs.ensayo == 'preparar' || inputs.ensayo == 'simular') && github.ref_name == github.event.repository.default_branch }}
+        timeout-minutes: ${{ fromJSON(steps.herramientas.outputs.minutos_supervisor) }}
+        env:
+          MODO_ENSAYO: ${{ inputs.ensayo }}
+          ACCION_ENSAYO: ${{ inputs.accion }}
+          FARO_ACTUALIZACION_ORIGEN: ${{ vars.FARO_ACTUALIZACION_ORIGEN }}
+          FARO_CLOUDFLARE_VARIANTE: ${{ vars.FARO_CLOUDFLARE_VARIANTE }}
+          FARO_ALMACEN_S3: ${{ secrets.FARO_ALMACEN_S3 }}
+          FARO_ALMACEN_ACCESS_KEY_ID: ${{ secrets.FARO_ALMACEN_ACCESS_KEY_ID }}
+          FARO_ALMACEN_SECRET_ACCESS_KEY: ${{ secrets.FARO_ALMACEN_SECRET_ACCESS_KEY }}
+        run: |
+          umask 077
+          .venv/bin/python -m plataforma_datos.orquestacion.ensayo_en_runner "$MODO_ENSAYO" --accion "$ACCION_ENSAYO"
+
+      - name: Construir y conservar el candidato
+        id: ciclo
+        if: ${{ inputs.ensayo == 'ninguno' || inputs.ensayo == '' }}
+        timeout-minutes: ${{ fromJSON(steps.herramientas.outputs.minutos_supervisor) }}
+        env:
+          FARO_SOLICITUD_ID: ${{ inputs.a_demanda && steps.reserva.outputs.solicitud_id || inputs.solicitud_id }}
+          FARO_REVISION_RESERVA: ${{ inputs.a_demanda && steps.reserva.outputs.revision_reserva || inputs.revision_reserva }}
+          FARO_ACCION: ${{ inputs.accion }}
+          FARO_REVISAR_PAQUETE_PENDIENTE: ${{ inputs.revisar_paquete_pendiente && vars.FARO_ACTIVACION_AUTOMATICA == 'si' && 'si' || 'no' }}
+          FARO_ACTUALIZACION_ORIGEN: ${{ vars.FARO_ACTUALIZACION_ORIGEN }}
+          FARO_CLOUDFLARE_VARIANTE: ${{ vars.FARO_CLOUDFLARE_VARIANTE }}
+          FARO_ALMACEN_S3: ${{ secrets.FARO_ALMACEN_S3 }}
+          FARO_ALMACEN_ACCESS_KEY_ID: ${{ secrets.FARO_ALMACEN_ACCESS_KEY_ID }}
+          FARO_ALMACEN_SECRET_ACCESS_KEY: ${{ secrets.FARO_ALMACEN_SECRET_ACCESS_KEY }}
+        run: |
+          umask 077
+          mkdir "$RUNNER_TEMP/trabajos"
+          .venv/bin/python -m plataforma_datos.orquestacion.ejecutar_mantenimiento ejecutar \
+            "$GITHUB_WORKSPACE" "$RUNNER_TEMP/trabajos" --registro "$RUNNER_TEMP/trabajos/candidato.jsonl" |
+            tee "$RUNNER_TEMP/trabajos/resumen.json"
+          # El resumen que imprime el supervisor dice cómo terminó el ciclo; solo se publica un valor de la lista cerrada.
+          resultado=$(jq -r '.resultado | strings' "$RUNNER_TEMP/trabajos/resumen.json") || resultado=''
+          if [[ "$resultado" =~ ^(validado|sin-pendientes|rechazado)$ ]]; then
+            printf 'resultado_ciclo=%s\n' "$resultado" >> "$GITHUB_OUTPUT"
+          fi
+
+      # También tras un fallo o una cancelación: los minutos gastados quedan en el resumen de la ejecución.
+      - &minutos
+        name: Anunciar los minutos del job
+        if: ${{ always() }}
+        timeout-minutes: 1
+        env:
+          ACTIONS_ID_TOKEN_REQUEST_URL: ''
+          ACTIONS_ID_TOKEN_REQUEST_TOKEN: ''
+        run: |
+          segundos=$(($(date +%s) - $(cat "$RUNNER_TEMP/inicio-del-job")))
+          printf '::notice title=Minutos del job::El job %s ha durado %d minutos.\n' "$GITHUB_JOB" "$(((segundos + 59) / 60))"
+
+  activacion:
+    needs: candidato
+    # Al repetir solo los jobs fallidos GitHub también puede conservar el éxito anterior del candidato.
+    if: >-
+      ${{ !cancelled() && (inputs.ensayo == 'ninguno' || inputs.ensayo == '') && vars.FARO_ACTIVACION_AUTOMATICA == 'si' &&
+      (needs.candidato.result == 'success' || (github.run_attempt != '1' && needs.candidato.result == 'skipped')) }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    permissions: *permisos
+    defaults: *shell_segura
+    steps:
+      - *inicio
+      - *checkout
+      - *herramientas
+      # El supervisor recupera el candidato de R2. Solo este paso recibe las credenciales de despliegue.
+      - name: Activar o recuperar el candidato conservado
+        timeout-minutes: 20
+        env:
+          # Un run a demanda toma la reserva de las salidas del candidato; si faltan, la consulta abajo.
+          FARO_A_DEMANDA: ${{ inputs.a_demanda }}
+          FARO_SOLICITUD_ID: ${{ inputs.a_demanda && needs.candidato.outputs.solicitud_id || inputs.solicitud_id }}
+          FARO_REVISION_RESERVA: ${{ inputs.a_demanda && needs.candidato.outputs.revision_reserva || inputs.revision_reserva }}
+          FARO_ACCION: ${{ inputs.accion }}
+          FARO_ACTUALIZACION_ORIGEN: ${{ vars.FARO_ACTUALIZACION_ORIGEN }}
+          FARO_ORIGEN_PUBLICO: ${{ vars.FARO_ORIGEN_PUBLICO }}
+          FARO_CLOUDFLARE_VARIANTE: ${{ vars.FARO_CLOUDFLARE_VARIANTE }}
+          FARO_ALMACEN_S3: ${{ secrets.FARO_ALMACEN_S3 }}
+          FARO_ALMACEN_ACCESS_KEY_ID: ${{ secrets.FARO_ALMACEN_ACCESS_KEY_ID }}
+          FARO_ALMACEN_SECRET_ACCESS_KEY: ${{ secrets.FARO_ALMACEN_SECRET_ACCESS_KEY }}
+          FARO_CLOUDFLARE_CONFIGURACION_JSON: ${{ secrets.FARO_CLOUDFLARE_CONFIGURACION_JSON }}
+          FARO_CLOUDFLARE_CURSOS_CONFIGURACION_JSON: ${{ secrets.FARO_CLOUDFLARE_CURSOS_CONFIGURACION_JSON }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          umask 077
+          .venv/bin/python - <<'PY'
+          import os
+          import subprocess
+          import sys
+          import tempfile
+          from pathlib import Path
+
+          from plataforma_datos.orquestacion.reserva_a_demanda import ReservaNoConcedida, reserva_del_run
+
+          # En un intento posterior las salidas del candidato pueden faltar: el servidor da la reserva de este run.
+          if os.environ["FARO_A_DEMANDA"] == "true" and not os.environ["FARO_SOLICITUD_ID"]:
+              try:
+                  os.environ["FARO_SOLICITUD_ID"], os.environ["FARO_REVISION_RESERVA"] = reserva_del_run(os.environ)
+              except ReservaNoConcedida as error:
+                  print(f"::error title=Faro · reserva::{error}")
+                  sys.exit(1)
+          trabajos = Path(os.environ["RUNNER_TEMP"]) / "trabajos"
+          trabajos.mkdir(exist_ok=True)
+          comando = "activar" if os.environ["GITHUB_RUN_ATTEMPT"] == "1" else "recuperar"
+          with tempfile.TemporaryDirectory(prefix="activacion-", dir=os.environ["RUNNER_TEMP"]) as temporal:
+              configuracion = Path(temporal) / "cloudflare.json"
+              with configuracion.open("x", encoding="utf-8") as archivo:
+                  archivo.write(os.environ.pop("FARO_CLOUDFLARE_CONFIGURACION_JSON"))
+              # La activación publica también el Worker de Cursos, con su propia configuración.
+              cursos = Path(temporal) / "cloudflare-cursos.json"
+              with cursos.open("x", encoding="utf-8") as archivo:
+                  archivo.write(os.environ.pop("FARO_CLOUDFLARE_CURSOS_CONFIGURACION_JSON"))
+              resultado = subprocess.run([
+                  sys.executable, "-m", "plataforma_datos.orquestacion.ejecutar_mantenimiento", comando,
+                  os.environ["GITHUB_WORKSPACE"], str(trabajos),
+                  "--configuracion-cloudflare", str(configuracion),
+                  "--configuracion-cloudflare-cursos", str(cursos),
+                  "--origen-publico", os.environ["FARO_ORIGEN_PUBLICO"],
+                  "--registro", str(trabajos / "activacion.jsonl"),
+              ], check=False)
+          sys.exit(resultado.returncode)
+          PY
+
+      - *minutos
+
+  # Avisa al responsable por el correo de su cuenta de GitHub: abre una incidencia cuando un ciclo falla o termina
+  # rechazado, sin publicar datos nuevos, y la cierra cuando uno posterior termina bien. No recibe secretos ni identidad OIDC, no recupera el código y su único permiso
+  # es escribir incidencias. Los ensayos no abren ni cierran nada. Su propio fallo no cambia el resultado del ciclo.
+  # La incidencia es pública: solo lleva la fecha, qué pasó y el enlace a la ejecución, donde el diario dice el motivo.
+  aviso:
+    needs: [candidato, activacion]
+    if: ${{ always() && (inputs.ensayo == 'ninguno' || inputs.ensayo == '') }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 2
+    continue-on-error: true
+    permissions:
+      issues: write
+    defaults: *shell_segura
+    steps:
+      - name: Abrir, comentar o cerrar la incidencia del ciclo
+        id: incidencia
+        timeout-minutes: 1
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          RESULTADO_CANDIDATO: ${{ needs.candidato.result }}
+          RESULTADO_ACTIVACION: ${{ needs.activacion.result }}
+          RESULTADO_CICLO: ${{ needs.candidato.outputs.resultado_ciclo }}
+          ENTRADA_A_DEMANDA: ${{ inputs.a_demanda }}
+        run: |
+          etiqueta=actualizacion-fallida
+          fecha=$(date -u +%F)
+          momento=$(date -u '+%F a las %H:%M UTC')
+          [[ "$GITHUB_SERVER_URL" == https://github.com ]]
+          [[ "$GITHUB_REPOSITORY" =~ ^[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+$ ]]
+          [[ "$GITHUB_RUN_ID" =~ ^[0-9]+$ ]]
+          [[ "$GITHUB_RUN_ATTEMPT" =~ ^[0-9]+$ ]]
+          enlace="$GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"
+
+          fallado() { [[ "$1" == failure || "$1" == cancelled ]]; }
+
+          # El servidor puede negar la reserva de un run a demanda con un motivo conocido: el run termina en ese paso y
+          # no es un fallo. Si GitHub no responde o el aviso no aparece, se trata como un fallo y se avisa.
+          reserva_negada_con_motivo() {
+            [[ "$ENTRADA_A_DEMANDA" == true ]] || return 1
+            local trabajo avisos
+            trabajo=$(gh api "repos/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID/attempts/$GITHUB_RUN_ATTEMPT/jobs" \
+              --jq '.jobs[] | select(.name == "candidato") | .id') || return 1
+            [[ "$trabajo" =~ ^[0-9]+$ ]] || return 1
+            avisos=$(gh api "repos/$GITHUB_REPOSITORY/check-runs/$trabajo/annotations" \
+              --jq '.[] | select(.title == "Faro · reserva") | .message') || return 1
+            grep -Eq '^rechazada motivo=[a-z_]+$' <<<"$avisos"
+          }
+
+          # Los nombres salen de una tabla fija, nunca de datos del run.
+          trabajos=()
+          if fallado "$RESULTADO_CANDIDATO"; then trabajos+=('«candidato»'); fi
+          if fallado "$RESULTADO_ACTIVACION"; then trabajos+=('«activación»'); fi
+
+          abierta=$(gh issue list --label "$etiqueta" --state open --limit 1 --json number --jq '.[0].number // empty')
+          [[ "$abierta" =~ ^[0-9]*$ ]]
+
+          # Con título se abre una incidencia o se comenta en la abierta; sin él, solo se cierra o no se hace nada.
+          titulo=''
+          if ((${#trabajos[@]} > 0)); then
+            if fallado "$RESULTADO_CANDIDATO" && ! fallado "$RESULTADO_ACTIVACION" && reserva_negada_con_motivo; then
+              echo 'El servidor no concedió la reserva de este run: no es un fallo y no se avisa.' >> "$GITHUB_STEP_SUMMARY"
+              exit 0
+            fi
+            if ((${#trabajos[@]} == 1)); then
+              quien="Ha fallado el trabajo ${trabajos[0]}."
+            else
+              quien="Han fallado los trabajos ${trabajos[0]} y ${trabajos[1]}."
+            fi
+            titulo="La actualización de datos ha fallado ($fecha)"
+            nuevo=$(printf 'El ciclo de actualización del %s no ha terminado bien.\n\n%s\n\nEjecución: %s\n\nEsta incidencia se cierra sola cuando un ciclo posterior termina bien.' "$momento" "$quien" "$enlace")
+            repetido=$(printf 'El ciclo del %s ha vuelto a fallar.\n\n%s\n\nEjecución: %s' "$momento" "$quien" "$enlace")
+          elif [[ "$RESULTADO_CICLO" == rechazado ]]; then
+            titulo="La actualización de datos terminó sin publicar datos nuevos ($fecha)"
+            nuevo=$(printf 'La actualización del %s terminó sin publicar datos nuevos.\n\nEl motivo consta en el diario de la ejecución: %s\n\nEsta incidencia se cierra sola cuando un ciclo posterior termina bien.' "$momento" "$enlace")
+            repetido=$(printf 'La actualización del %s ha vuelto a terminar sin publicar datos nuevos.\n\nEl motivo consta en el diario de la ejecución: %s' "$momento" "$enlace")
+          elif [[ "$RESULTADO_CICLO" == validado || "$RESULTADO_CICLO" == sin-pendientes ]]; then
+            if [[ -n "$abierta" ]]; then
+              gh issue close "$abierta" --comment "El ciclo del $fecha terminó bien."
+              echo "Se ha cerrado la incidencia #$abierta porque el ciclo terminó bien." >> "$GITHUB_STEP_SUMMARY"
+            fi
+          else
+            echo 'No consta cómo terminó el ciclo: no se abre ni se cierra ninguna incidencia.' >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+          if [[ -n "$titulo" && -z "$abierta" ]]; then
+            gh label create "$etiqueta" --force --color B60205 --description 'La actualización de datos necesita atención'
+            gh issue create --label "$etiqueta" --title "$titulo" --body "$nuevo"
+            echo 'Se ha abierto una incidencia por el ciclo.' >> "$GITHUB_STEP_SUMMARY"
+          elif [[ -n "$titulo" ]]; then
+            gh issue comment "$abierta" --body "$repetido"
+            echo "Se ha añadido un comentario a la incidencia #$abierta." >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+      - name: Anotar en el resumen que el aviso ha fallado
+        if: ${{ steps.incidencia.outcome == 'failure' }}
+        timeout-minutes: 1
+        run: |
+          echo 'No se ha podido abrir, actualizar ni cerrar la incidencia del ciclo. El resultado de la actualización no cambia.' >> "$GITHUB_STEP_SUMMARY"

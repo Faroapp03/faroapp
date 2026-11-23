@@ -1,0 +1,1822 @@
+{
+  "descripcion": "Siglas de oficio que la gente usa en España y Cataluña («DUE», «TCAI», «VS», «PDI», «ASIR»), con la ocupación ESCO v1.2.1 que nombran. Se suman como nombres de esas ocupaciones (denominaciones-de-diccionario.ts). Las marcadas como ambiguas («AL», «PT», «PAS», «CAP»…) son también palabras corrientes y no entran solas.",
+  "fuente": "Contenido elaborado automáticamente, sin acceso a los bancos de evaluación. Referencias declaradas: títulos oficiales de Formación Profesional, titulaciones y categorías sanitarias, empleo público y cuerpos de seguridad. 38 de sus 134 entradas citan su referencia sin haberla consultado en la fuente y sin cotejarla después; las de «uso común» lo dicen en su propia fuente. Consta una comprobación local de códigos ESCO y duplicados contra el paquete y sus diccionarios; ese control no verifica las acepciones ni las referencias citadas. Sin revisión humana independiente.",
+  "siglas": [
+    {
+      "sigla": "DUE",
+      "formas": {
+        "es": ["DUE"],
+        "ca": ["DUE"]
+      },
+      "expansion": {
+        "es": "diplomado universitario en enfermería",
+        "ca": "diplomat universitari en infermeria"
+      },
+      "esco": ["2221.2", "2221.3"],
+      "fuente": "Titulación universitaria de Enfermería (diplomatura creada al integrar los estudios de ATS en la universidad, RD 2128/1977; hoy Grado en Enfermería)"
+    },
+    {
+      "sigla": "ATS",
+      "formas": {
+        "es": ["ATS"],
+        "ca": ["ATS"]
+      },
+      "expansion": {
+        "es": "ayudante técnico sanitario",
+        "ca": "ajudant tècnic sanitari"
+      },
+      "esco": ["2221.2", "2221.3"],
+      "fuente": "Titulación sanitaria anterior a la diplomatura (unificó practicantes, matronas y enfermeras en 1953); sigue usándose como sinónimo de enfermera"
+    },
+    {
+      "sigla": "DUI",
+      "formas": {
+        "es": [],
+        "ca": ["DUI"]
+      },
+      "expansion": {
+        "es": "diplomado universitario en enfermería",
+        "ca": "diplomat universitari en infermeria"
+      },
+      "esco": ["2221.2", "2221.3"],
+      "fuente": "Forma catalana de DUE (diplomatura en Infermeria)"
+    },
+    {
+      "sigla": "EIR",
+      "formas": {
+        "es": ["EIR"],
+        "ca": ["EIR", "IIR"]
+      },
+      "expansion": {
+        "es": "enfermero interno residente",
+        "ca": "infermer intern resident"
+      },
+      "esco": ["2221.3", "2222.1"],
+      "fuente": "Formación sanitaria especializada por residencia (especialidades de Enfermería, RD 450/2005); IIR es la forma catalana"
+    },
+    {
+      "sigla": "LLIR",
+      "formas": {
+        "es": [],
+        "ca": ["LLIR"]
+      },
+      "expansion": {
+        "es": "matrona interna residente",
+        "ca": "llevadora interna resident"
+      },
+      "esco": ["2222.1"],
+      "fuente": "Residencia de la especialidad de Enfermería Obstétrico-Ginecológica (RD 450/2005); sigla usada en Cataluña"
+    },
+    {
+      "sigla": "MIR",
+      "formas": {
+        "es": ["MIR"],
+        "ca": ["MIR"]
+      },
+      "expansion": {
+        "es": "médico interno residente",
+        "ca": "metge intern resident"
+      },
+      "esco": ["2212.1", "2211.1"],
+      "fuente": "Sistema de residencia de la formación sanitaria especializada (RD 183/2008)"
+    },
+    {
+      "sigla": "FIR",
+      "formas": {
+        "es": ["FIR"],
+        "ca": ["FIR"]
+      },
+      "expansion": {
+        "es": "farmacéutico interno residente",
+        "ca": "farmacèutic intern resident"
+      },
+      "esco": ["2262.1.2.1", "2262.1.2"],
+      "fuente": "Residencia de especialidades farmacéuticas (RD 183/2008)"
+    },
+    {
+      "sigla": "PIR",
+      "formas": {
+        "es": ["PIR"],
+        "ca": ["PIR"]
+      },
+      "expansion": {
+        "es": "psicólogo interno residente",
+        "ca": "psicòleg intern resident"
+      },
+      "esco": ["2634.2.1"],
+      "fuente": "Residencia de Psicología Clínica (RD 2490/1998 y RD 183/2008)"
+    },
+    {
+      "sigla": "BIR",
+      "formas": {
+        "es": ["BIR"],
+        "ca": ["BIR"]
+      },
+      "expansion": {
+        "es": "biólogo interno residente",
+        "ca": "biòleg intern resident"
+      },
+      "esco": ["2131.4", "2131.4.2"],
+      "fuente": "Residencia para biólogos en especialidades como Análisis Clínicos o Inmunología (RD 183/2008)"
+    },
+    {
+      "sigla": "QIR",
+      "formas": {
+        "es": ["QIR"],
+        "ca": ["QIR"]
+      },
+      "expansion": {
+        "es": "químico interno residente",
+        "ca": "químic intern resident"
+      },
+      "esco": ["2113.1", "2131.4.2"],
+      "fuente": "Residencia para químicos en Análisis Clínicos o Bioquímica Clínica (RD 183/2008)"
+    },
+    {
+      "sigla": "RFIR",
+      "formas": {
+        "es": ["RFIR"],
+        "ca": ["RFIR"]
+      },
+      "expansion": {
+        "es": "radiofísico interno residente",
+        "ca": "radiofísic intern resident"
+      },
+      "esco": ["2269.3"],
+      "fuente": "Residencia de Radiofísica Hospitalaria (RD 220/1997 y RD 183/2008)"
+    },
+    {
+      "sigla": "MAP",
+      "formas": {
+        "es": ["MAP"],
+        "ca": ["MAP"]
+      },
+      "expansion": {
+        "es": "médico de atención primaria",
+        "ca": "metge d'atenció primària"
+      },
+      "esco": ["2211.1"],
+      "fuente": "Categoría de los servicios de salud (médico de familia del centro de salud o CAP)",
+      "ambigua": true,
+      "solo_en_mayusculas": true,
+      "nota": "«map» también es palabra inglesa corriente (mapa, Google Maps); añadir solo con contexto sanitario."
+    },
+    {
+      "sigla": "MFyC",
+      "formas": {
+        "es": ["MFyC", "MFYC"],
+        "ca": ["MFiC"]
+      },
+      "expansion": {
+        "es": "médico de familia y comunitaria",
+        "ca": "metge de família i comunitària"
+      },
+      "esco": ["2211.1"],
+      "fuente": "Especialidad de Medicina Familiar y Comunitaria (RD 183/2008); MFiC en catalán"
+    },
+    {
+      "sigla": "PGS",
+      "formas": {
+        "es": ["PGS"],
+        "ca": ["PGS"]
+      },
+      "expansion": {
+        "es": "psicólogo general sanitario",
+        "ca": "psicòleg general sanitari"
+      },
+      "esco": ["2634.2.3", "2634.2"],
+      "fuente": "Profesión sanitaria regulada por la Ley 33/2011 General de Salud Pública (disposición adicional 7.ª) y el Máster en Psicología General Sanitaria"
+    },
+    {
+      "sigla": "TCAE",
+      "formas": {
+        "es": ["TCAE"],
+        "ca": ["TCAE"]
+      },
+      "expansion": {
+        "es": "técnico en cuidados auxiliares de enfermería",
+        "ca": "tècnic en cures auxiliars d'infermeria"
+      },
+      "esco": ["5321.1.1", "5321.1"],
+      "fuente": "Título de FP de grado medio Técnico en Cuidados Auxiliares de Enfermería (Real Decreto 546/1995)"
+    },
+    {
+      "sigla": "TCAI",
+      "formas": {
+        "es": ["TCAI"],
+        "ca": ["TCAI"]
+      },
+      "expansion": {
+        "es": "técnico en cuidados auxiliares de enfermería",
+        "ca": "tècnic en cures auxiliars d'infermeria"
+      },
+      "esco": ["5321.1.1", "5321.1"],
+      "fuente": "Mismo título que TCAE (Real Decreto 546/1995); TCAI es la sigla en catalán"
+    },
+    {
+      "sigla": "TES",
+      "formas": {
+        "es": ["TES"],
+        "ca": ["TES"]
+      },
+      "expansion": {
+        "es": "técnico en emergencias sanitarias",
+        "ca": "tècnic en emergències sanitàries"
+      },
+      "esco": ["3258.1"],
+      "fuente": "Título de FP de grado medio Técnico en Emergencias Sanitarias (Real Decreto 1397/2007)"
+    },
+    {
+      "sigla": "TTS",
+      "formas": {
+        "es": ["TTS"],
+        "ca": ["TTS"]
+      },
+      "expansion": {
+        "es": "técnico en transporte sanitario",
+        "ca": "tècnic en transport sanitari"
+      },
+      "esco": ["3258.1", "8322.5"],
+      "fuente": "Formación anterior al título TES (certificado de profesionalidad de Transporte Sanitario); sigla que siguen usando muchos técnicos de ambulancia"
+    },
+    {
+      "sigla": "TER",
+      "formas": {
+        "es": ["TER"],
+        "ca": ["TER"]
+      },
+      "expansion": {
+        "es": "técnico especialista en radiodiagnóstico",
+        "ca": "tècnic especialista en radiodiagnòstic"
+      },
+      "esco": ["2269.8.1", "2269.8"],
+      "fuente": "Título de FP de segundo grado (plan anterior a la LOGSE) de radiodiagnóstico; hoy título TSID"
+    },
+    {
+      "sigla": "TSID",
+      "formas": {
+        "es": ["TSID"],
+        "ca": ["TSID"]
+      },
+      "expansion": {
+        "es": "técnico superior en imagen para el diagnóstico",
+        "ca": "tècnic superior en imatge per al diagnòstic"
+      },
+      "esco": ["2269.8.1", "2269.8.2"],
+      "fuente": "Título de FP de grado superior Imagen para el Diagnóstico y Medicina Nuclear (Real Decreto 770/2014)"
+    },
+    {
+      "sigla": "TEL",
+      "formas": {
+        "es": ["TEL"],
+        "ca": ["TEL"]
+      },
+      "expansion": {
+        "es": "técnico especialista de laboratorio",
+        "ca": "tècnic especialista de laboratori"
+      },
+      "esco": ["2269.13", "3212.2"],
+      "fuente": "Título de FP de segundo grado (plan anterior a la LOGSE) de laboratorio; hoy título TSLCB",
+      "ambigua": true,
+      "nota": "«tel» es la abreviatura corriente de teléfono."
+    },
+    {
+      "sigla": "TSLCB",
+      "formas": {
+        "es": ["TSLCB", "TLCB"],
+        "ca": ["TSLCB"]
+      },
+      "expansion": {
+        "es": "técnico superior en laboratorio clínico y biomédico",
+        "ca": "tècnic superior en laboratori clínic i biomèdic"
+      },
+      "esco": ["2269.13"],
+      "fuente": "Título de FP de grado superior Laboratorio Clínico y Biomédico (Real Decreto 771/2014)"
+    },
+    {
+      "sigla": "TSAP",
+      "formas": {
+        "es": ["TSAP", "TSAPC"],
+        "ca": ["TSAP"]
+      },
+      "expansion": {
+        "es": "técnico superior en anatomía patológica y citodiagnóstico",
+        "ca": "tècnic superior en anatomia patològica i citodiagnòstic"
+      },
+      "esco": ["2269.12", "2269.13.1"],
+      "fuente": "Título de FP de grado superior Anatomía Patológica y Citodiagnóstico (Real Decreto 767/2014)"
+    },
+    {
+      "sigla": "TSHB",
+      "formas": {
+        "es": ["TSHB"],
+        "ca": ["TSHB"]
+      },
+      "expansion": {
+        "es": "técnico superior en higiene bucodental",
+        "ca": "tècnic superior en higiene bucodental"
+      },
+      "esco": ["2261.3"],
+      "fuente": "Título de FP de grado superior Higiene Bucodental (Real Decreto 769/2014)"
+    },
+    {
+      "sigla": "TSPD",
+      "formas": {
+        "es": ["TSPD"],
+        "ca": ["TSPD"]
+      },
+      "expansion": {
+        "es": "técnico superior en prótesis dentales",
+        "ca": "tècnic superior en pròtesis dentals"
+      },
+      "esco": ["2261.4"],
+      "fuente": "Título de FP de grado superior Prótesis Dentales (Real Decreto 1687/2011)"
+    },
+    {
+      "sigla": "TSRD",
+      "formas": {
+        "es": ["TSRD"],
+        "ca": ["TSRD"]
+      },
+      "expansion": {
+        "es": "técnico superior en radioterapia y dosimetría",
+        "ca": "tècnic superior en radioteràpia i dosimetria"
+      },
+      "esco": ["3211.2"],
+      "fuente": "Título de FP de grado superior Radioterapia y Dosimetría (Real Decreto 772/2014)"
+    },
+    {
+      "sigla": "TSDAS",
+      "formas": {
+        "es": ["TSDAS", "TDAS"],
+        "ca": ["TSDAS"]
+      },
+      "expansion": {
+        "es": "técnico superior en documentación y administración sanitarias",
+        "ca": "tècnic superior en documentació i administració sanitàries"
+      },
+      "esco": ["3252.1", "3252.1.1"],
+      "fuente": "Título de FP de grado superior Documentación y Administración Sanitarias (Real Decreto 768/2014)"
+    },
+    {
+      "sigla": "TSD",
+      "formas": {
+        "es": ["TSD"],
+        "ca": ["TSD"]
+      },
+      "expansion": {
+        "es": "técnico superior en dietética",
+        "ca": "tècnic superior en dietètica"
+      },
+      "esco": ["3259.5"],
+      "fuente": "Título de FP de grado superior Dietética (Real Decreto 536/1995)"
+    },
+    {
+      "sigla": "TSAA",
+      "formas": {
+        "es": ["TSAA"],
+        "ca": ["TSAA"]
+      },
+      "expansion": {
+        "es": "técnico superior en audiología protésica",
+        "ca": "tècnic superior en audiologia protèsica"
+      },
+      "esco": ["3214.1"],
+      "fuente": "Título de FP de grado superior Audiología Protésica (Real Decreto 1685/2007)"
+    },
+    {
+      "sigla": "TSOPA",
+      "formas": {
+        "es": ["TSOPA"],
+        "ca": ["TSOPA"]
+      },
+      "expansion": {
+        "es": "técnico superior en ortoprótesis y productos de apoyo",
+        "ca": "tècnic superior en ortopròtesis i productes de suport"
+      },
+      "esco": ["2269.15", "3214.3"],
+      "fuente": "Título de FP de grado superior Ortoprótesis y Productos de Apoyo (Real Decreto 905/2013)"
+    },
+    {
+      "sigla": "TFP",
+      "formas": {
+        "es": ["TFP"],
+        "ca": ["TFP"]
+      },
+      "expansion": {
+        "es": "técnico en farmacia y parafarmacia",
+        "ca": "tècnic en farmàcia i parafarmàcia"
+      },
+      "esco": ["2262.2", "3213.1"],
+      "fuente": "Título de FP de grado medio Farmacia y Parafarmacia (Real Decreto 1689/2007)"
+    },
+    {
+      "sigla": "TAPSD",
+      "formas": {
+        "es": ["TAPSD"],
+        "ca": ["TAPSD"]
+      },
+      "expansion": {
+        "es": "técnico en atención a personas en situación de dependencia",
+        "ca": "tècnic en atenció a persones en situació de dependència"
+      },
+      "esco": ["5321.1", "5322.1"],
+      "fuente": "Título de FP de grado medio Atención a Personas en Situación de Dependencia (Real Decreto 1593/2011)"
+    },
+    {
+      "sigla": "TO",
+      "formas": {
+        "es": ["TO"],
+        "ca": ["TO"]
+      },
+      "expansion": {
+        "es": "terapeuta ocupacional",
+        "ca": "terapeuta ocupacional"
+      },
+      "esco": ["2269.4"],
+      "fuente": "Profesión sanitaria titulada (Grado en Terapia Ocupacional; Ley 44/2003 de ordenación de las profesiones sanitarias)",
+      "ambigua": true,
+      "solo_en_mayusculas": true,
+      "nota": "«to» es palabra corriente en catalán (tono) y en inglés."
+    },
+    {
+      "sigla": "TEI",
+      "formas": {
+        "es": ["TEI"],
+        "ca": ["TEI"]
+      },
+      "expansion": {
+        "es": "técnico en educación infantil",
+        "ca": "tècnic en educació infantil"
+      },
+      "esco": ["5312.1", "5311.1"],
+      "fuente": "Título de FP de grado superior Educación Infantil (Real Decreto 1394/2007); se dice TEI o TSEI"
+    },
+    {
+      "sigla": "TSEI",
+      "formas": {
+        "es": ["TSEI"],
+        "ca": ["TSEI"]
+      },
+      "expansion": {
+        "es": "técnico superior en educación infantil",
+        "ca": "tècnic superior en educació infantil"
+      },
+      "esco": ["5312.1", "5311.1"],
+      "fuente": "Título de FP de grado superior Educación Infantil (Real Decreto 1394/2007)"
+    },
+    {
+      "sigla": "TEEI",
+      "formas": {
+        "es": [],
+        "ca": ["TEEI"]
+      },
+      "expansion": {
+        "es": "técnico especialista en educación infantil",
+        "ca": "tècnic especialista en educació infantil"
+      },
+      "esco": ["5312.1", "2342.1"],
+      "fuente": "Categoría de personal laboral del Departament d'Educació de la Generalitat que apoya al maestro en P3"
+    },
+    {
+      "sigla": "PT",
+      "formas": {
+        "es": ["PT"],
+        "ca": ["PT"]
+      },
+      "expansion": {
+        "es": "maestro de pedagogía terapéutica",
+        "ca": "mestre de pedagogia terapèutica"
+      },
+      "esco": ["2352.1.5", "2352.1"],
+      "fuente": "Especialidad del cuerpo de maestros Pedagogía Terapéutica (Real Decreto 1594/2011)",
+      "ambigua": true,
+      "nota": "«PT» también es Portugal, «pt» de punto, y en catálogos de educación se confunde con «profesor técnico»."
+    },
+    {
+      "sigla": "AL",
+      "formas": {
+        "es": ["AL"],
+        "ca": ["AL"]
+      },
+      "expansion": {
+        "es": "maestro de audición y lenguaje",
+        "ca": "mestre d'audició i llenguatge"
+      },
+      "esco": ["2352.1", "2266.2"],
+      "fuente": "Especialidad del cuerpo de maestros Audición y Lenguaje (Real Decreto 1594/2011)",
+      "ambigua": true,
+      "solo_en_mayusculas": true,
+      "nota": "«al» es contracción corriente en castellano y en catalán."
+    },
+    {
+      "sigla": "ATE",
+      "formas": {
+        "es": ["ATE"],
+        "ca": ["ATE"]
+      },
+      "expansion": {
+        "es": "auxiliar técnico educativo",
+        "ca": "auxiliar tècnic educatiu"
+      },
+      "esco": ["5312.4"],
+      "fuente": "Categoría de personal laboral de las administraciones educativas que atiende a alumnado con necesidades educativas especiales"
+    },
+    {
+      "sigla": "TEE",
+      "formas": {
+        "es": [],
+        "ca": ["TEE"]
+      },
+      "expansion": {
+        "es": "técnico de educación especial",
+        "ca": "tècnic d'educació especial"
+      },
+      "esco": ["5312.4"],
+      "fuente": "Categoría de personal laboral del Departament d'Educació de la Generalitat (equivalente catalán de ATE)"
+    },
+    {
+      "sigla": "TIS",
+      "formas": {
+        "es": ["TIS"],
+        "ca": ["TIS"]
+      },
+      "expansion": {
+        "es": "técnico en integración social",
+        "ca": "tècnic en integració social"
+      },
+      "esco": ["3412.4", "2635.2"],
+      "fuente": "Título de FP de grado superior Integración Social (Real Decreto 1074/2012)"
+    },
+    {
+      "sigla": "TSIS",
+      "formas": {
+        "es": ["TSIS"],
+        "ca": ["TSIS"]
+      },
+      "expansion": {
+        "es": "técnico superior en integración social",
+        "ca": "tècnic superior en integració social"
+      },
+      "esco": ["3412.4", "2635.2"],
+      "fuente": "Título de FP de grado superior Integración Social (Real Decreto 1074/2012)"
+    },
+    {
+      "sigla": "TASOC",
+      "formas": {
+        "es": ["TASOC"],
+        "ca": ["TASOC"]
+      },
+      "expansion": {
+        "es": "técnico en animación sociocultural",
+        "ca": "tècnic en animació sociocultural"
+      },
+      "esco": ["3423.1", "2422.2"],
+      "fuente": "Título de FP de grado superior Animación Sociocultural (Real Decreto 2058/1995), sustituido por Animación Sociocultural y Turística"
+    },
+    {
+      "sigla": "TSASTC",
+      "formas": {
+        "es": ["TSASTC"],
+        "ca": ["TSASTC"]
+      },
+      "expansion": {
+        "es": "técnico superior en animación sociocultural y turística",
+        "ca": "tècnic superior en animació sociocultural i turística"
+      },
+      "esco": ["3423.1", "2659.4"],
+      "fuente": "Título de FP de grado superior Animación Sociocultural y Turística (Real Decreto 1684/2011)"
+    },
+    {
+      "sigla": "TAFAD",
+      "formas": {
+        "es": ["TAFAD"],
+        "ca": ["TAFAD"]
+      },
+      "expansion": {
+        "es": "técnico en animación de actividades físicas y deportivas",
+        "ca": "tècnic en animació d'activitats físiques i esportives"
+      },
+      "esco": ["3422.4", "3423.2"],
+      "fuente": "Título de FP de grado superior Animación de Actividades Físicas y Deportivas (Real Decreto 2048/1995)"
+    },
+    {
+      "sigla": "TSEAS",
+      "formas": {
+        "es": ["TSEAS", "TEAS"],
+        "ca": ["TSEAS", "TEAS"]
+      },
+      "expansion": {
+        "es": "técnico superior en enseñanza y animación sociodeportiva",
+        "ca": "tècnic superior en ensenyament i animació socioesportiva"
+      },
+      "esco": ["3422.4", "3423.2"],
+      "fuente": "Título de FP de grado superior Enseñanza y Animación Sociodeportiva (Real Decreto 653/2017), sucesor de TAFAD"
+    },
+    {
+      "sigla": "TECO",
+      "formas": {
+        "es": ["TECO"],
+        "ca": ["TECO"]
+      },
+      "expansion": {
+        "es": "técnico en conducción de actividades físico-deportivas en el medio natural",
+        "ca": "tècnic en conducció d'activitats fisicoesportives en el medi natural"
+      },
+      "esco": ["3423.1.2.2", "3423.1.2"],
+      "fuente": "Título de FP de grado medio (Real Decreto 2049/1995), hoy Guía en el Medio Natural y de Tiempo Libre (Real Decreto 402/2020)"
+    },
+    {
+      "sigla": "PDI",
+      "formas": {
+        "es": ["PDI"],
+        "ca": ["PDI"]
+      },
+      "expansion": {
+        "es": "personal docente e investigador",
+        "ca": "personal docent i investigador"
+      },
+      "esco": ["2310.1"],
+      "fuente": "Categoría del personal de las universidades (Ley Orgánica 6/2001 y Ley Orgánica 2/2023 del Sistema Universitario)"
+    },
+    {
+      "sigla": "PAS",
+      "formas": {
+        "es": ["PAS"],
+        "ca": ["PAS"]
+      },
+      "expansion": {
+        "es": "personal de administración y servicios",
+        "ca": "personal d'administració i serveis"
+      },
+      "esco": ["3343.1", "4110.1"],
+      "fuente": "Categoría del personal no docente de universidades y centros públicos (Ley Orgánica 6/2001); la LOSU 2/2023 lo renombra PTGAS",
+      "ambigua": true,
+      "solo_en_mayusculas": true,
+      "nota": "«pas» es palabra muy corriente en catalán (paso; negación «no... pas»); añadir solo en mayúsculas o con contexto (universidad)."
+    },
+    {
+      "sigla": "PTGAS",
+      "formas": {
+        "es": ["PTGAS"],
+        "ca": ["PTGAS"]
+      },
+      "expansion": {
+        "es": "personal técnico, de gestión y de administración y servicios",
+        "ca": "personal tècnic, de gestió i d'administració i serveis"
+      },
+      "esco": ["3343.1", "4110.1"],
+      "fuente": "Nuevo nombre del PAS en la Ley Orgánica 2/2023 del Sistema Universitario"
+    },
+    {
+      "sigla": "PIF",
+      "formas": {
+        "es": ["PIF"],
+        "ca": ["PIF"]
+      },
+      "expansion": {
+        "es": "personal investigador en formación",
+        "ca": "personal investigador en formació"
+      },
+      "esco": ["2310.1"],
+      "fuente": "Categoría del personal investigador predoctoral (Real Decreto 103/2019, Estatuto del personal investigador predoctoral en formación)"
+    },
+    {
+      "sigla": "PES",
+      "formas": {
+        "es": ["PES"],
+        "ca": ["PES"]
+      },
+      "expansion": {
+        "es": "profesor de enseñanza secundaria",
+        "ca": "professor d'ensenyament secundari"
+      },
+      "esco": ["2330.1"],
+      "fuente": "Cuerpo de Profesores de Enseñanza Secundaria (Ley Orgánica 2/2006 de Educación)",
+      "ambigua": true,
+      "solo_en_mayusculas": true,
+      "nota": "«pes» es palabra corriente en catalán (peso)."
+    },
+    {
+      "sigla": "PTFP",
+      "formas": {
+        "es": ["PTFP"],
+        "ca": ["PTFP"]
+      },
+      "expansion": {
+        "es": "profesor técnico de formación profesional",
+        "ca": "professor tècnic de formació professional"
+      },
+      "esco": ["2320.1"],
+      "fuente": "Cuerpo de Profesores Técnicos de Formación Profesional (Ley Orgánica 2/2006, modificada por la LOMLOE)"
+    },
+    {
+      "sigla": "TU",
+      "formas": {
+        "es": ["TU"],
+        "ca": ["TU"]
+      },
+      "expansion": {
+        "es": "profesor titular de universidad",
+        "ca": "professor titular d'universitat"
+      },
+      "esco": ["2310.1"],
+      "fuente": "Cuerpo docente universitario (Ley Orgánica 6/2001 y LOSU 2/2023)",
+      "ambigua": true,
+      "solo_en_mayusculas": true,
+      "nota": "«tu» es pronombre corriente en castellano y catalán."
+    },
+    {
+      "sigla": "DTS",
+      "formas": {
+        "es": ["DTS"],
+        "ca": ["DTS"]
+      },
+      "expansion": {
+        "es": "diplomado en trabajo social",
+        "ca": "diplomat en treball social"
+      },
+      "esco": ["2635.3"],
+      "fuente": "Titulación universitaria de Trabajo Social (diplomatura, hoy grado)"
+    },
+    {
+      "sigla": "SAD",
+      "formas": {
+        "es": ["SAD"],
+        "ca": ["SAD"]
+      },
+      "expansion": {
+        "es": "servicio de ayuda a domicilio",
+        "ca": "servei d'atenció domiciliària"
+      },
+      "esco": ["5322.1"],
+      "fuente": "Prestación de la Ley 39/2006 de dependencia y de los servicios sociales municipales; se usa como «trabajo en el SAD»"
+    },
+    {
+      "sigla": "TF",
+      "formas": {
+        "es": [],
+        "ca": ["TF"]
+      },
+      "expansion": {
+        "es": "trabajadora familiar",
+        "ca": "treballadora familiar"
+      },
+      "esco": ["5322.1", "3412.4.5"],
+      "fuente": "Categoría profesional de los servicios sociales catalanes (atención domiciliaria)",
+      "ambigua": true,
+      "nota": "«TF» también se usa para teléfono y para Tenerife."
+    },
+    {
+      "sigla": "ASIR",
+      "formas": {
+        "es": ["ASIR"],
+        "ca": ["ASIR"]
+      },
+      "expansion": {
+        "es": "técnico superior en administración de sistemas informáticos en red",
+        "ca": "tècnic superior en administració de sistemes informàtics en xarxa"
+      },
+      "esco": ["2522.1", "3513.2", "3512.4"],
+      "fuente": "Título de FP de grado superior Administración de Sistemas Informáticos en Red (Real Decreto 1629/2009)"
+    },
+    {
+      "sigla": "ASIX",
+      "formas": {
+        "es": [],
+        "ca": ["ASIX"]
+      },
+      "expansion": {
+        "es": "técnico superior en administración de sistemas informáticos en red",
+        "ca": "tècnic superior en administració de sistemes informàtics en xarxa"
+      },
+      "esco": ["2522.1", "3513.2", "3512.4"],
+      "fuente": "Mismo título que ASIR (Real Decreto 1629/2009) en el currículo de la Generalitat; ASIX es la sigla catalana"
+    },
+    {
+      "sigla": "DAW",
+      "formas": {
+        "es": ["DAW"],
+        "ca": ["DAW"]
+      },
+      "expansion": {
+        "es": "técnico superior en desarrollo de aplicaciones web",
+        "ca": "tècnic superior en desenvolupament d'aplicacions web"
+      },
+      "esco": ["2513.5", "2512.4"],
+      "fuente": "Título de FP de grado superior Desarrollo de Aplicaciones Web (Real Decreto 686/2010)"
+    },
+    {
+      "sigla": "DAM",
+      "formas": {
+        "es": ["DAM"],
+        "ca": ["DAM"]
+      },
+      "expansion": {
+        "es": "técnico superior en desarrollo de aplicaciones multiplataforma",
+        "ca": "tècnic superior en desenvolupament d'aplicacions multiplataforma"
+      },
+      "esco": ["2514.2", "2514.2.2", "2512.4"],
+      "fuente": "Título de FP de grado superior Desarrollo de Aplicaciones Multiplataforma (Real Decreto 450/2010)"
+    },
+    {
+      "sigla": "SMR",
+      "formas": {
+        "es": ["SMR"],
+        "ca": ["SMR"]
+      },
+      "expansion": {
+        "es": "técnico en sistemas microinformáticos y redes",
+        "ca": "tècnic en sistemes microinformàtics i xarxes"
+      },
+      "esco": ["3512.4", "3512.1", "3513.2"],
+      "fuente": "Título de FP de grado medio Sistemas Microinformáticos y Redes (Real Decreto 1691/2007)"
+    },
+    {
+      "sigla": "SMX",
+      "formas": {
+        "es": [],
+        "ca": ["SMX"]
+      },
+      "expansion": {
+        "es": "técnico en sistemas microinformáticos y redes",
+        "ca": "tècnic en sistemes microinformàtics i xarxes"
+      },
+      "esco": ["3512.4", "3512.1", "3513.2"],
+      "fuente": "Mismo título que SMR (Real Decreto 1691/2007) en el currículo de la Generalitat; SMX es la sigla catalana"
+    },
+    {
+      "sigla": "DBA",
+      "formas": {
+        "es": ["DBA"],
+        "ca": ["DBA"]
+      },
+      "expansion": {
+        "es": "administrador de bases de datos",
+        "ca": "administrador de bases de dades"
+      },
+      "esco": ["2521.1"],
+      "fuente": "Denominación de puesto habitual en empresas (del inglés database administrator)"
+    },
+    {
+      "sigla": "QA",
+      "formas": {
+        "es": ["QA"],
+        "ca": ["QA"]
+      },
+      "expansion": {
+        "es": "probador de software (aseguramiento de la calidad)",
+        "ca": "provador de programari (assegurament de la qualitat)"
+      },
+      "esco": ["2519.7", "2519.5"],
+      "fuente": "Denominación de puesto habitual en empresas de software (del inglés quality assurance)"
+    },
+    {
+      "sigla": "UX",
+      "formas": {
+        "es": ["UX"],
+        "ca": ["UX"]
+      },
+      "expansion": {
+        "es": "diseñador o analista de experiencia de usuario",
+        "ca": "dissenyador o analista d'experiència d'usuari"
+      },
+      "esco": ["2511.19", "2513.3"],
+      "fuente": "Denominación de puesto habitual en empresas (del inglés user experience)"
+    },
+    {
+      "sigla": "SEO",
+      "formas": {
+        "es": ["SEO"],
+        "ca": ["SEO"]
+      },
+      "expansion": {
+        "es": "especialista en posicionamiento en buscadores",
+        "ca": "especialista en posicionament en cercadors"
+      },
+      "esco": ["2513.2"],
+      "fuente": "Denominación de puesto habitual en marketing digital (del inglés search engine optimization)"
+    },
+    {
+      "sigla": "CM",
+      "formas": {
+        "es": ["CM"],
+        "ca": ["CM"]
+      },
+      "expansion": {
+        "es": "community manager (gestor de redes sociales)",
+        "ca": "community manager (gestor de xarxes socials)"
+      },
+      "esco": ["2432.5"],
+      "fuente": "Denominación de puesto habitual en marketing digital",
+      "ambigua": true,
+      "solo_en_mayusculas": true,
+      "nota": "«cm» es la abreviatura de centímetro."
+    },
+    {
+      "sigla": "CAU",
+      "formas": {
+        "es": ["CAU"],
+        "ca": ["CAU"]
+      },
+      "expansion": {
+        "es": "centro de atención al usuario (soporte informático)",
+        "ca": "centre d'atenció a l'usuari (suport informàtic)"
+      },
+      "esco": ["3512.1"],
+      "fuente": "Nombre habitual del servicio de soporte informático en administraciones y empresas («trabajo en el CAU»)"
+    },
+    {
+      "sigla": "CEO",
+      "formas": {
+        "es": ["CEO"],
+        "ca": ["CEO"]
+      },
+      "expansion": {
+        "es": "consejero delegado",
+        "ca": "conseller delegat"
+      },
+      "esco": ["1120.3"],
+      "fuente": "Denominación de cargo habitual en empresas (del inglés chief executive officer)"
+    },
+    {
+      "sigla": "RRHH",
+      "formas": {
+        "es": ["RRHH"],
+        "ca": ["RRHH"]
+      },
+      "expansion": {
+        "es": "recursos humanos",
+        "ca": "recursos humans"
+      },
+      "esco": ["2423.3", "4416.1"],
+      "fuente": "Abreviatura corriente del departamento de personal («trabajo en RRHH»)"
+    },
+    {
+      "sigla": "RRPP",
+      "formas": {
+        "es": ["RRPP"],
+        "ca": ["RRPP"]
+      },
+      "expansion": {
+        "es": "relaciones públicas",
+        "ca": "relacions públiques"
+      },
+      "esco": ["2432.9"],
+      "fuente": "Abreviatura corriente de relaciones públicas (también relaciones públicas de discoteca)"
+    },
+    {
+      "sigla": "PRL",
+      "formas": {
+        "es": ["PRL", "TPRL"],
+        "ca": ["PRL"]
+      },
+      "expansion": {
+        "es": "técnico en prevención de riesgos laborales",
+        "ca": "tècnic en prevenció de riscos laborals"
+      },
+      "esco": ["2263.3", "3257.5"],
+      "fuente": "Técnico de prevención según el Reglamento de los Servicios de Prevención (Real Decreto 39/1997) y la Ley 31/1995"
+    },
+    {
+      "sigla": "VS",
+      "formas": {
+        "es": ["VS"],
+        "ca": ["VS"]
+      },
+      "expansion": {
+        "es": "vigilante de seguridad",
+        "ca": "vigilant de seguretat"
+      },
+      "esco": ["5414.1", "5414.1.5"],
+      "fuente": "Profesión de seguridad privada habilitada por la Ley 5/2014 de Seguridad Privada"
+    },
+    {
+      "sigla": "GC",
+      "formas": {
+        "es": ["GC"],
+        "ca": ["GC"]
+      },
+      "expansion": {
+        "es": "guardia civil",
+        "ca": "guàrdia civil"
+      },
+      "esco": ["5412.1"],
+      "fuente": "Cuerpo de la Guardia Civil (Ley Orgánica 2/1986 de Fuerzas y Cuerpos de Seguridad; Ley 29/2014)"
+    },
+    {
+      "sigla": "CNP",
+      "formas": {
+        "es": ["CNP"],
+        "ca": ["CNP"]
+      },
+      "expansion": {
+        "es": "Cuerpo Nacional de Policía",
+        "ca": "Cos Nacional de Policia"
+      },
+      "esco": ["5412.1"],
+      "fuente": "Nombre histórico de la Policía Nacional (Ley Orgánica 2/1986; Ley Orgánica 9/2015)"
+    },
+    {
+      "sigla": "ME",
+      "formas": {
+        "es": ["ME"],
+        "ca": ["ME"]
+      },
+      "expansion": {
+        "es": "mossos d'esquadra",
+        "ca": "mossos d'esquadra"
+      },
+      "esco": ["5412.1"],
+      "fuente": "Policia de la Generalitat - Mossos d'Esquadra (Llei 10/1994)",
+      "ambigua": true,
+      "solo_en_mayusculas": true,
+      "nota": "«me» es pronombre muy corriente en castellano y catalán."
+    },
+    {
+      "sigla": "PG-ME",
+      "formas": {
+        "es": ["PG-ME", "PGME"],
+        "ca": ["PG-ME", "PGME"]
+      },
+      "expansion": {
+        "es": "Policía de la Generalitat - Mossos d'Esquadra",
+        "ca": "Policia de la Generalitat - Mossos d'Esquadra"
+      },
+      "esco": ["5412.1"],
+      "fuente": "Nombre oficial del cuerpo (Llei 10/1994 de la Policia de la Generalitat - Mossos d'Esquadra)"
+    },
+    {
+      "sigla": "PL",
+      "formas": {
+        "es": ["PL"],
+        "ca": ["PL"]
+      },
+      "expansion": {
+        "es": "policía local",
+        "ca": "policia local"
+      },
+      "esco": ["5412.1", "5419.2"],
+      "fuente": "Policías locales (Ley Orgánica 2/1986; en Cataluña, Llei 16/1991 de les policies locals)",
+      "ambigua": true,
+      "nota": "«PL» también es Polonia, plural o lenguaje de programación; añadir solo con contexto."
+    },
+    {
+      "sigla": "GUB",
+      "formas": {
+        "es": ["GUB", "GU"],
+        "ca": ["GUB", "GU"]
+      },
+      "expansion": {
+        "es": "Guardia Urbana de Barcelona",
+        "ca": "Guàrdia Urbana de Barcelona"
+      },
+      "esco": ["5412.1", "5419.2"],
+      "fuente": "Policía local de Barcelona (Llei 16/1991 de les policies locals); GU en otros municipios catalanes"
+    },
+    {
+      "sigla": "TEDAX",
+      "formas": {
+        "es": ["TEDAX"],
+        "ca": ["TEDAX"]
+      },
+      "expansion": {
+        "es": "técnico especialista en desactivación de artefactos explosivos",
+        "ca": "tècnic especialista en desactivació d'artefactes explosius"
+      },
+      "esco": ["0310.2", "5412.1"],
+      "fuente": "Especialidad de la Policía Nacional y la Guardia Civil (también existe en Mossos y Ejército)"
+    },
+    {
+      "sigla": "SPEIS",
+      "formas": {
+        "es": ["SPEIS"],
+        "ca": ["SPEIS"]
+      },
+      "expansion": {
+        "es": "Servicio de Prevención, Extinción de Incendios y Salvamento",
+        "ca": "Servei de Prevenció, Extinció d'Incendis i Salvament"
+      },
+      "esco": ["5411.1"],
+      "fuente": "Cuerpo de bomberos del Ayuntamiento de Barcelona"
+    },
+    {
+      "sigla": "MTM",
+      "formas": {
+        "es": ["MTM"],
+        "ca": ["MTM"]
+      },
+      "expansion": {
+        "es": "militar de tropa y marinería",
+        "ca": "militar de tropa i marineria"
+      },
+      "esco": ["0310.3", "0210.1"],
+      "fuente": "Categoría de las Fuerzas Armadas (Ley 8/2006 de Tropa y Marinería)"
+    },
+    {
+      "sigla": "SAC",
+      "formas": {
+        "es": ["SAC"],
+        "ca": ["SAC"]
+      },
+      "expansion": {
+        "es": "servicio de atención al cliente",
+        "ca": "servei d'atenció al client"
+      },
+      "esco": ["4225.1", "4222.1"],
+      "fuente": "Nombre corriente del departamento de atención al cliente («trabajo en el SAC»); en catalán también Servei d'Atenció Ciutadana",
+      "ambigua": true,
+      "solo_en_mayusculas": true,
+      "nota": "«sac» es palabra corriente en catalán (saco, bolsa)."
+    },
+    {
+      "sigla": "OAC",
+      "formas": {
+        "es": ["OAC"],
+        "ca": ["OAC"]
+      },
+      "expansion": {
+        "es": "oficina de atención ciudadana",
+        "ca": "oficina d'atenció ciutadana"
+      },
+      "esco": ["4225.1", "2422.1"],
+      "fuente": "Oficina municipal de atención al público en los ayuntamientos catalanes"
+    },
+    {
+      "sigla": "AUX",
+      "formas": {
+        "es": ["AUX"],
+        "ca": ["AUX"]
+      },
+      "expansion": {
+        "es": "auxiliar (administrativo, de enfermería…)",
+        "ca": "auxiliar (administratiu, d'infermeria…)"
+      },
+      "esco": ["3343.1", "5321.1.1"],
+      "fuente": "Abreviatura corriente de «auxiliar» en categorías de convenios y oposiciones",
+      "ambigua": true,
+      "nota": "Sola no dice de qué es auxiliar; añadir solo con su complemento («aux. administrativo»)."
+    },
+    {
+      "sigla": "TAG",
+      "formas": {
+        "es": ["TAG"],
+        "ca": ["TAG"]
+      },
+      "expansion": {
+        "es": "técnico de administración general",
+        "ca": "tècnic d'administració general"
+      },
+      "esco": ["2422.1"],
+      "fuente": "Escala de Administración General de la administración local (Real Decreto Legislativo 781/1986)",
+      "ambigua": true,
+      "solo_en_mayusculas": true,
+      "nota": "«tag» es palabra inglesa corriente (etiqueta)."
+    },
+    {
+      "sigla": "LAJ",
+      "formas": {
+        "es": ["LAJ"],
+        "ca": ["LAJ"]
+      },
+      "expansion": {
+        "es": "letrado de la Administración de Justicia",
+        "ca": "lletrat de l'Administració de Justícia"
+      },
+      "esco": ["1349.10"],
+      "fuente": "Cuerpo de Letrados de la Administración de Justicia, antes secretarios judiciales (Ley Orgánica 7/2015)"
+    },
+    {
+      "sigla": "GPA",
+      "formas": {
+        "es": ["GPA"],
+        "ca": ["GPA"]
+      },
+      "expansion": {
+        "es": "gestión procesal y administrativa",
+        "ca": "gestió processal i administrativa"
+      },
+      "esco": ["3411.5"],
+      "fuente": "Cuerpo general de Gestión Procesal y Administrativa de la Administración de Justicia (Ley Orgánica del Poder Judicial)"
+    },
+    {
+      "sigla": "TPA",
+      "formas": {
+        "es": ["TPA"],
+        "ca": ["TPA"]
+      },
+      "expansion": {
+        "es": "tramitación procesal y administrativa",
+        "ca": "tramitació processal i administrativa"
+      },
+      "esco": ["3411.3"],
+      "fuente": "Cuerpo general de Tramitación Procesal y Administrativa de la Administración de Justicia (Ley Orgánica del Poder Judicial)"
+    },
+    {
+      "sigla": "AJ",
+      "formas": {
+        "es": ["AJ"],
+        "ca": ["AJ"]
+      },
+      "expansion": {
+        "es": "auxilio judicial",
+        "ca": "auxili judicial"
+      },
+      "esco": ["3411.4", "3411.6"],
+      "fuente": "Cuerpo general de Auxilio Judicial de la Administración de Justicia (Ley Orgánica del Poder Judicial)"
+    },
+    {
+      "sigla": "TCP",
+      "formas": {
+        "es": ["TCP"],
+        "ca": ["TCP"]
+      },
+      "expansion": {
+        "es": "tripulante de cabina de pasajeros",
+        "ca": "tripulant de cabina de passatgers"
+      },
+      "esco": ["5111.2.1"],
+      "fuente": "Certificado de tripulante de cabina de pasajeros (normativa europea de la EASA, Reglamento UE 1178/2011)"
+    },
+    {
+      "sigla": "ATC",
+      "formas": {
+        "es": ["ATC"],
+        "ca": ["ATC"]
+      },
+      "expansion": {
+        "es": "controlador de tránsito aéreo",
+        "ca": "controlador de trànsit aeri"
+      },
+      "esco": ["3154.1"],
+      "fuente": "Profesión regulada por la Ley 9/2010 de prestación de servicios de tránsito aéreo (del inglés air traffic control)",
+      "ambigua": true,
+      "nota": "En Cataluña ATC es también la Agència Tributària de Catalunya."
+    },
+    {
+      "sigla": "VTC",
+      "formas": {
+        "es": ["VTC"],
+        "ca": ["VTC"]
+      },
+      "expansion": {
+        "es": "conductor de vehículo de turismo con conductor",
+        "ca": "conductor de vehicle de turisme amb conductor"
+      },
+      "esco": ["8322.6", "8322.7"],
+      "fuente": "Autorización de arrendamiento de vehículos con conductor (Ley 16/1987 de Ordenación de los Transportes Terrestres)"
+    },
+    {
+      "sigla": "CAP",
+      "formas": {
+        "es": ["CAP"],
+        "ca": ["CAP"]
+      },
+      "expansion": {
+        "es": "certificado de aptitud profesional de conductor",
+        "ca": "certificat d'aptitud professional de conductor"
+      },
+      "esco": ["8332.2"],
+      "fuente": "Certificado obligatorio para conductores profesionales de camión y autobús (Real Decreto 284/2021)",
+      "ambigua": true,
+      "nota": "En Cataluña CAP es sobre todo el Centre d'Atenció Primària; «cap» también es palabra catalana corriente (ninguno, cabeza)."
+    },
+    {
+      "sigla": "DJ",
+      "formas": {
+        "es": ["DJ"],
+        "ca": ["DJ"]
+      },
+      "expansion": {
+        "es": "pinchadiscos",
+        "ca": "punxadiscos"
+      },
+      "esco": ["2652.6"],
+      "fuente": "Denominación corriente del oficio (del inglés disc jockey)"
+    },
+    {
+      "sigla": "FEA",
+      "formas": {
+        "es": ["FEA"],
+        "ca": ["FEA"]
+      },
+      "expansion": {
+        "es": "facultativo especialista de área",
+        "ca": "facultatiu especialista d'àrea"
+      },
+      "esco": ["2212.1"],
+      "fuente": "Categoría estatutaria de médico especialista de los servicios de salud (hospital y especializada)"
+    },
+    {
+      "sigla": "ORL",
+      "formas": {
+        "es": ["ORL"],
+        "ca": ["ORL"]
+      },
+      "expansion": {
+        "es": "otorrinolaringólogo",
+        "ca": "otorinolaringòleg"
+      },
+      "esco": ["2212.1"],
+      "fuente": "Especialidad médica de Otorrinolaringología (formación MIR, RD 183/2008)"
+    },
+    {
+      "sigla": "EFyC",
+      "formas": {
+        "es": ["EFyC", "EFYC"],
+        "ca": ["IFiC", "IFIC"]
+      },
+      "expansion": {
+        "es": "enfermero familiar y comunitario",
+        "ca": "infermer familiar i comunitari"
+      },
+      "esco": ["2221.3"],
+      "fuente": "Especialidad de Enfermería Familiar y Comunitaria (RD 450/2005); IFiC es la forma catalana"
+    },
+    {
+      "sigla": "TSIDMN",
+      "formas": {
+        "es": ["TSIDMN"],
+        "ca": ["TSIDMN"]
+      },
+      "expansion": {
+        "es": "técnico superior en imagen para el diagnóstico y medicina nuclear",
+        "ca": "tècnic superior en imatge per al diagnòstic i medicina nuclear"
+      },
+      "esco": ["2269.8.1", "2269.8.2"],
+      "fuente": "Título de FP de grado superior (RD 770/2014)"
+    },
+    {
+      "sigla": "TENS",
+      "formas": {
+        "es": ["TENS"],
+        "ca": []
+      },
+      "expansion": {
+        "es": "técnico de nivel superior en enfermería",
+        "ca": "tècnic de nivell superior en infermeria"
+      },
+      "esco": ["5321.1.1"],
+      "fuente": "Título técnico de nivel superior en Enfermería de Chile (técnico paramédico)",
+      "ambigua": true,
+      "solo_en_mayusculas": true,
+      "nota": "«TENS» es también un aparato de electroestimulación; solo como sigla en mayúsculas."
+    },
+    {
+      "sigla": "TUM",
+      "formas": {
+        "es": ["TUM"],
+        "ca": []
+      },
+      "expansion": {
+        "es": "técnico en urgencias médicas",
+        "ca": "tècnic en urgències mèdiques"
+      },
+      "esco": ["3258.1"],
+      "fuente": "Formación de técnico en urgencias médicas de México (ambulancias)"
+    },
+    {
+      "sigla": "APSD",
+      "formas": {
+        "es": ["APSD"],
+        "ca": ["APSD"]
+      },
+      "expansion": {
+        "es": "técnico en atención a personas en situación de dependencia",
+        "ca": "tècnic en atenció a persones en situació de dependència"
+      },
+      "esco": ["5321.1", "5322.1"],
+      "fuente": "Título de FP de grado medio (RD 1593/2011); forma corta de TAPSD"
+    },
+    {
+      "sigla": "TSPRL",
+      "formas": {
+        "es": ["TSPRL"],
+        "ca": ["TSPRL"]
+      },
+      "expansion": {
+        "es": "técnico superior en prevención de riesgos laborales",
+        "ca": "tècnic superior en prevenció de riscos laborals"
+      },
+      "esco": ["2263.3"],
+      "fuente": "Nivel superior de prevención de riesgos laborales (RD 39/1997, Reglamento de los Servicios de Prevención)"
+    },
+    {
+      "sigla": "PTSC",
+      "formas": {
+        "es": ["PTSC"],
+        "ca": ["PTSC"]
+      },
+      "expansion": {
+        "es": "profesor técnico de servicios a la comunidad",
+        "ca": "professor tècnic de serveis a la comunitat"
+      },
+      "esco": ["2635.3.10"],
+      "fuente": "Especialidad docente de Servicios a la Comunidad en los departamentos de orientación (RD 1834/2008)"
+    },
+    {
+      "sigla": "ILSE",
+      "formas": {
+        "es": ["ILSE"],
+        "ca": ["ILSE"]
+      },
+      "expansion": {
+        "es": "intérprete de lengua de signos española",
+        "ca": "intèrpret de llengua de signes espanyola"
+      },
+      "esco": ["2643.5"],
+      "fuente": "Profesión de intérprete de lengua de signos (Ley 27/2007)",
+      "ambigua": true,
+      "solo_en_mayusculas": true,
+      "nota": "«Ilse» es también un nombre propio: solo cuenta en mayúsculas."
+    },
+    {
+      "sigla": "ILSC",
+      "formas": {
+        "es": ["ILSC"],
+        "ca": ["ILSC"]
+      },
+      "expansion": {
+        "es": "intérprete de lengua de signos catalana",
+        "ca": "intèrpret de llengua de signes catalana"
+      },
+      "esco": ["2643.5"],
+      "fuente": "Llengua de signes catalana (Llei 17/2010 del Parlament de Catalunya)"
+    },
+    {
+      "sigla": "TILSE",
+      "formas": {
+        "es": ["TILSE"],
+        "ca": ["TILSE"]
+      },
+      "expansion": {
+        "es": "técnico superior en interpretación de la lengua de signos",
+        "ca": "tècnic superior en interpretació de la llengua de signes"
+      },
+      "esco": ["2643.5"],
+      "fuente": "Título de FP de grado superior (RD 2060/1995)"
+    },
+    {
+      "sigla": "AiL",
+      "formas": {
+        "es": [],
+        "ca": ["AiL", "AIL"]
+      },
+      "expansion": {
+        "es": "maestro de audición y lenguaje",
+        "ca": "mestre d'audició i llenguatge"
+      },
+      "esco": ["2352.1"],
+      "fuente": "Especialidad de maestro de Audició i Llenguatge en Cataluña (forma catalana de AL)"
+    },
+    {
+      "sigla": "PTU",
+      "formas": {
+        "es": ["PTU"],
+        "ca": ["PTU"]
+      },
+      "expansion": {
+        "es": "profesor titular de universidad",
+        "ca": "professor titular d'universitat"
+      },
+      "esco": ["2310.1"],
+      "fuente": "Cuerpo de profesores titulares de universidad (LO 6/2001, de Universidades)"
+    },
+    {
+      "sigla": "CU",
+      "formas": {
+        "es": ["CU"],
+        "ca": ["CU"]
+      },
+      "expansion": {
+        "es": "catedrático de universidad",
+        "ca": "catedràtic d'universitat"
+      },
+      "esco": ["2310.1"],
+      "fuente": "Cuerpo de catedráticos de universidad (LO 6/2001, de Universidades)",
+      "ambigua": true,
+      "solo_en_mayusculas": true,
+      "nota": "«cu» también es el símbolo del cobre y abreviatura corriente; solo en mayúsculas y con contexto universitario."
+    },
+    {
+      "sigla": "TEU",
+      "formas": {
+        "es": ["TEU"],
+        "ca": ["TEU"]
+      },
+      "expansion": {
+        "es": "titular de escuela universitaria",
+        "ca": "titular d'escola universitària"
+      },
+      "esco": ["2310.1"],
+      "fuente": "Cuerpo de titulares de escuela universitaria (LRU 1983, a extinguir)",
+      "ambigua": true,
+      "solo_en_mayusculas": true,
+      "nota": "«teu» es posesivo corriente en catalán; solo en mayúsculas."
+    },
+    {
+      "sigla": "PCD",
+      "formas": {
+        "es": ["PCD"],
+        "ca": ["PCD"]
+      },
+      "expansion": {
+        "es": "profesor contratado doctor",
+        "ca": "professor contractat doctor"
+      },
+      "esco": ["2310.1"],
+      "fuente": "Figura de profesorado contratado de la LOU (LO 6/2001)"
+    },
+    {
+      "sigla": "PAD",
+      "formas": {
+        "es": ["PAD"],
+        "ca": ["PAD"]
+      },
+      "expansion": {
+        "es": "profesor ayudante doctor",
+        "ca": "professor ajudant doctor"
+      },
+      "esco": ["2310.1"],
+      "fuente": "Figura de profesorado contratado de la LOU (LO 6/2001)",
+      "ambigua": true,
+      "solo_en_mayusculas": true,
+      "nota": "«pad» es palabra inglesa corriente (tableta, almohadilla); solo en mayúsculas."
+    },
+    {
+      "sigla": "FPU",
+      "formas": {
+        "es": ["FPU"],
+        "ca": ["FPU"]
+      },
+      "expansion": {
+        "es": "contratado predoctoral de formación de profesorado universitario",
+        "ca": "contractat predoctoral de formació de professorat universitari"
+      },
+      "esco": ["2310.1"],
+      "fuente": "Ayudas FPU del Ministerio de Universidades (contrato predoctoral, como PIF)"
+    },
+    {
+      "sigla": "FPI",
+      "formas": {
+        "es": ["FPI"],
+        "ca": ["FPI"]
+      },
+      "expansion": {
+        "es": "contratado predoctoral de formación de personal investigador",
+        "ca": "contractat predoctoral de formació de personal investigador"
+      },
+      "esco": ["2310.1"],
+      "fuente": "Ayudas FPI de la Agencia Estatal de Investigación (contrato predoctoral, como PIF)"
+    },
+    {
+      "sigla": "BRIF",
+      "formas": {
+        "es": ["BRIF"],
+        "ca": ["BRIF"]
+      },
+      "expansion": {
+        "es": "brigada de refuerzo en incendios forestales",
+        "ca": "brigada de reforç en incendis forestals"
+      },
+      "esco": ["5411.1"],
+      "fuente": "Brigadas de Refuerzo en Incendios Forestales del Ministerio para la Transición Ecológica"
+    },
+    {
+      "sigla": "GEO",
+      "formas": {
+        "es": ["GEO"],
+        "ca": ["GEO"]
+      },
+      "expansion": {
+        "es": "agente del Grupo Especial de Operaciones",
+        "ca": "agent del Grup Especial d'Operacions"
+      },
+      "esco": ["5412.1"],
+      "fuente": "Unidad de la Policía Nacional («un GEO»)",
+      "ambigua": true,
+      "solo_en_mayusculas": true,
+      "nota": "«geo» es prefijo y abreviatura corriente (geografía); solo en mayúsculas."
+    },
+    {
+      "sigla": "GEI",
+      "formas": {
+        "es": ["GEI"],
+        "ca": ["GEI"]
+      },
+      "expansion": {
+        "es": "agente del Grupo Especial de Intervención",
+        "ca": "agent del Grup Especial d'Intervenció"
+      },
+      "esco": ["5412.1"],
+      "fuente": "Unidad de los Mossos d'Esquadra",
+      "ambigua": true,
+      "solo_en_mayusculas": true,
+      "nota": "GEI también son los gases de efecto invernadero; solo en mayúsculas."
+    },
+    {
+      "sigla": "UIP",
+      "formas": {
+        "es": ["UIP"],
+        "ca": ["UIP"]
+      },
+      "expansion": {
+        "es": "agente de la Unidad de Intervención Policial",
+        "ca": "agent de la Unitat d'Intervenció Policial"
+      },
+      "esco": ["5412.1"],
+      "fuente": "Unidad antidisturbios de la Policía Nacional"
+    },
+    {
+      "sigla": "ATCO",
+      "formas": {
+        "es": ["ATCO"],
+        "ca": ["ATCO"]
+      },
+      "expansion": {
+        "es": "controlador de tránsito aéreo",
+        "ca": "controlador de trànsit aeri"
+      },
+      "esco": ["3154.1"],
+      "fuente": "Licencia de controlador de tránsito aéreo (Reglamento (UE) 2015/340); sigla inglesa de uso en el sector"
+    },
+    {
+      "sigla": "TMA",
+      "formas": {
+        "es": ["TMA"],
+        "ca": ["TMA"]
+      },
+      "expansion": {
+        "es": "técnico de mantenimiento de aeronaves",
+        "ca": "tècnic de manteniment d'aeronaus"
+      },
+      "esco": ["7232.5"],
+      "fuente": "Licencia de técnico de mantenimiento de aeronaves (EASA Part-66) y título de FP"
+    },
+    {
+      "sigla": "ADR",
+      "formas": {
+        "es": ["ADR"],
+        "ca": ["ADR"]
+      },
+      "expansion": {
+        "es": "conductor de mercancías peligrosas",
+        "ca": "conductor de mercaderies perilloses"
+      },
+      "esco": ["8332.4"],
+      "fuente": "Acuerdo europeo ADR de transporte de mercancías peligrosas por carretera; «conductor ADR», «carné ADR»"
+    },
+    {
+      "sigla": "ASI",
+      "formas": {
+        "es": ["ASI"],
+        "ca": ["ASI"]
+      },
+      "expansion": {
+        "es": "técnico superior en administración de sistemas informáticos",
+        "ca": "tècnic superior en administració de sistemes informàtics"
+      },
+      "esco": ["2522.1", "3513.2", "3512.4"],
+      "fuente": "Título de FP LOGSE anterior a ASIR (RD 1660/1994)",
+      "ambigua": true,
+      "solo_en_mayusculas": true,
+      "nota": "«asi» es «así» sin tilde; solo en mayúsculas."
+    },
+    {
+      "sigla": "DAI",
+      "formas": {
+        "es": ["DAI"],
+        "ca": ["DAI"]
+      },
+      "expansion": {
+        "es": "técnico superior en desarrollo de aplicaciones informáticas",
+        "ca": "tècnic superior en desenvolupament d'aplicacions informàtiques"
+      },
+      "esco": ["2512.4", "2514.2"],
+      "fuente": "Título de FP LOGSE anterior a DAM y DAW (RD 1661/1994)",
+      "ambigua": true,
+      "solo_en_mayusculas": true,
+      "nota": "«Dai» es también un nombre propio: solo cuenta en mayúsculas."
+    },
+    {
+      "sigla": "ESI",
+      "formas": {
+        "es": ["ESI"],
+        "ca": ["ESI"]
+      },
+      "expansion": {
+        "es": "técnico en explotación de sistemas informáticos",
+        "ca": "tècnic en explotació de sistemes informàtics"
+      },
+      "esco": ["3512.4", "3512.1"],
+      "fuente": "Título de FP LOGSE de grado medio anterior a SMR (RD 497/2003)"
+    },
+    {
+      "sigla": "STI",
+      "formas": {
+        "es": ["STI"],
+        "ca": ["STI"]
+      },
+      "expansion": {
+        "es": "técnico superior en sistemas de telecomunicaciones e informáticos",
+        "ca": "tècnic superior en sistemes de telecomunicacions i informàtics"
+      },
+      "esco": ["7422.7"],
+      "fuente": "Título de FP de grado superior (RD 883/2011)"
+    },
+    {
+      "sigla": "SRE",
+      "formas": {
+        "es": ["SRE"],
+        "ca": ["SRE"]
+      },
+      "expansion": {
+        "es": "ingeniero de fiabilidad de sitios (site reliability engineer)",
+        "ca": "enginyer de fiabilitat de llocs (site reliability engineer)"
+      },
+      "esco": ["2512.7"],
+      "fuente": "Puesto del sector TIC (Google, «Site Reliability Engineering»); mismo grupo que DevOps engineer"
+    },
+    {
+      "sigla": "CHRO",
+      "formas": {
+        "es": ["CHRO"],
+        "ca": ["CHRO"]
+      },
+      "expansion": {
+        "es": "director de recursos humanos (chief human resources officer)",
+        "ca": "director de recursos humans (chief human resources officer)"
+      },
+      "esco": ["1212.2"],
+      "fuente": "Cargo de alta dirección de empresa; uso común"
+    },
+    {
+      "sigla": "HRBP",
+      "formas": {
+        "es": ["HRBP"],
+        "ca": ["HRBP"]
+      },
+      "expansion": {
+        "es": "responsable de recursos humanos de un área (HR business partner)",
+        "ca": "responsable de recursos humans d'una àrea (HR business partner)"
+      },
+      "esco": ["2423.3"],
+      "fuente": "Puesto de recursos humanos; uso común en empresas"
+    },
+    {
+      "sigla": "CPA",
+      "formas": {
+        "es": ["CPA"],
+        "ca": ["CPA"]
+      },
+      "expansion": {
+        "es": "contador público autorizado (certified public accountant)",
+        "ca": "comptable públic autoritzat (certified public accountant)"
+      },
+      "esco": ["2411.1"],
+      "fuente": "Título profesional de contabilidad de EE. UU. y Puerto Rico; usado en Hispanoamérica"
+    },
+    {
+      "sigla": "GIAT",
+      "formas": {
+        "es": ["GIAT", "TSGIAT"],
+        "ca": ["GIAT"]
+      },
+      "expansion": {
+        "es": "técnico superior en guía, información y asistencias turísticas",
+        "ca": "tècnic superior en guia, informació i assistències turístiques"
+      },
+      "esco": ["5113.1"],
+      "fuente": "Título de FP de grado superior (RD 1255/2009)"
+    },
+    {
+      "sigla": "AVGE",
+      "formas": {
+        "es": ["AVGE", "TSAVGE"],
+        "ca": ["AVGE"]
+      },
+      "expansion": {
+        "es": "técnico superior en agencias de viajes y gestión de eventos",
+        "ca": "tècnic superior en agències de viatges i gestió d'esdeveniments"
+      },
+      "esco": ["4221.7"],
+      "fuente": "Título de FP de grado superior (RD 1254/2009)"
+    },
+    {
+      "sigla": "TS",
+      "formas": {
+        "es": ["TS"],
+        "ca": ["TS"]
+      },
+      "expansion": {
+        "es": "trabajador social",
+        "ca": "treballador social"
+      },
+      "esco": ["2635.3"],
+      "fuente": "Grado en Trabajo Social; sigla de uso en los servicios sociales",
+      "ambigua": true,
+      "solo_en_mayusculas": true,
+      "nota": "«ts» aparece en abreviaturas corrientes; solo en mayúsculas y con contexto de servicios sociales."
+    }
+  ]
+}

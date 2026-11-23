@@ -1,0 +1,79 @@
+{
+  "schema_version": 1,
+  "id": "oit",
+  "tema": "ocupaciones",
+  "nombre": "Tareas oficiales y exposición ocupacional a IA generativa",
+  "institucion": "Organización Internacional del Trabajo; material complementario del autor",
+  "lector": "plataforma_datos.ocupaciones.fuentes.oit.lector",
+  "casa_datos": "oit",
+  "significado": "OIT: tareas oficiales ISCO-08 y exposición a la IA generativa (Working Paper 140, 2025).",
+  "alcance": [
+    "Descarga desde las direcciones oficiales, prepara, cruza y valida. Python estándar; sin IA.",
+    "Niveles de fuente: oficial publicado por la OIT (documento CC BY 4.0 y clasificación ISCO-08). complementaria material complementario que la OIT pone a disposición desde el documento oficial (nota de la figura 16): notas por tarea en el repositorio del autor principal. La política de acceso abierto de la OIT (desde el 3 de mayo de 2023) permite reutilizarlo sin permiso citando a la OIT.",
+    "La tabla A1 fija la nota ocupacional; las notas por tarea son complementarias. Exposición por tareas y margen entre modelos publicados no equivalen a probabilidad individual de reemplazo, uso observado o calidad. No se ejecutan esos modelos.",
+    "Las condiciones de reutilización de cada archivo se trasladan literalmente del catálogo existente; no se realiza una nueva verificación jurídica o de red."
+  ],
+  "recursos": [
+    {
+      "id": "recurso-01",
+      "tipo": "url",
+      "ubicacion": "https://webapps.ilo.org/static/english/intserv/working-papers/wp140/index.html",
+      "licencia": "CC BY 4.0, declarada en la página 2 del documento. Exige cita y aviso de adaptación o traducción.",
+      "descripcion": "ILO Working Paper 140, versión HTML oficial (contiene la tabla A1 por ocupación)"
+    },
+    {
+      "id": "recurso-02",
+      "tipo": "url",
+      "ubicacion": "https://www.ilo.org/ilostat-files/ISCO/newdocs-08-2021/ISCO-08/ISCO-08%20EN%20Structure%20and%20definitions.xlsx",
+      "licencia": "Clasificación oficial de la OIT anterior a 2023: se usa como clasificación de referencia, citando la fuente.",
+      "descripcion": "ISCO-08: estructura y definiciones oficiales en inglés, con la lista «Tasks include» de cada grupo"
+    },
+    {
+      "id": "recurso-03",
+      "tipo": "url",
+      "ubicacion": "https://raw.githubusercontent.com/pgmyrek/2025_GenAI_scores_ISCO08/main/Final_Scores_ISCO08_Gmyrek_et_al_2025.xlsx",
+      "licencia": "Material complementario del WP140. El documento oficial (CC BY 4.0) remite a él: «task-level scores within the overall hierarchy of ISCO-08 are available here: https://pgmyrek.github.io/2025_GenAI_scores_ISCO08/». La política de acceso abierto de la OIT (desde el 3/5/2023) cubre «todos los materiales publicados o puestos a disposición por la OIT… hasta bases de datos», citando a la OIT. Comprobado el 27/09/2026: el repositorio del autor sigue sin archivo de licencia ni README. Se recomienda una confirmación escrita de cortesía a la OIT; no es obligatoria.",
+      "descripcion": "Notas por tarea 2025 (Final_Scores_ISCO08_Gmyrek_et_al_2025.xlsx), enlazadas desde la figura 16 del documento oficial"
+    },
+    {
+      "id": "recurso-04",
+      "tipo": "url",
+      "ubicacion": "https://www.ilo.org/es/derechos-y-autorizaciones",
+      "licencia": "Página informativa oficial; se conserva como evidencia de las condiciones de reutilización.",
+      "descripcion": "OIT · Derechos y autorizaciones: política de acceso abierto (evidencia de las condiciones de reutilización)"
+    }
+  ],
+  "canales": [
+    {
+      "id": "originales",
+      "tipo": "remoto",
+      "recursos": ["recurso-01", "recurso-02", "recurso-03", "recurso-04"],
+      "autenticacion": "No se configura una cuenta en el lector.",
+      "limites": [
+        "Se conserva el transporte común y sus controles de procedencia; no se declara una cuota publicada de la fuente."
+      ],
+      "observaciones": "Descarga de la edición conocida, sin activar aceptación automática de cambios. No acredita vigencia posterior de clasificaciones ni nuevas ediciones descubiertas."
+    }
+  ],
+  "actualizacion": {
+    "politica": "edición",
+    "red": true,
+    "frecuencia": "sin calendario (estudio de exposición)",
+    "renovar_dias": null,
+    "originales": "oit"
+  },
+  "conjuntos": [
+    {
+      "id": "oit",
+      "fuente": "oit",
+      "clase": "cambiante",
+      "alcance": "edicion-conocida",
+      "operacion": "descargar",
+      "intervalo_dias": 30
+    }
+  ],
+  "dependencias": [],
+  "contratos": ["lector.py:validar"],
+  "retirada": "Se conservan las guardas actuales; un fallo no acredita ausencia ni retira la última versión admitida.",
+  "conservacion": "Casas operativas y bytes del paquete conservados; no cambia modelos, motor, sello, datos ni criterios."
+}

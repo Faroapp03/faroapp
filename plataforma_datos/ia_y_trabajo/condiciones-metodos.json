@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "anthropic": {
+    "recurso": "https://huggingface.co/datasets/Anthropic/EconomicIndex/blob/main/labor_market_impacts/job_exposure.csv",
+    "licencia_datos": "CC-BY (versión no especificada por la fuente)",
+    "licencia_codigo": "MIT",
+    "declaracion": "https://huggingface.co/datasets/Anthropic/EconomicIndex/blob/main/README.md#license",
+    "sha256_documento": "7f3a9c7c8fb2c04c55794810671926466698f171294cd2641075eb7bc403a9f0",
+    "comprobado_el": "2026-10-23T11:31:02.784409+00:00",
+    "criterio": "La sección License distingue los datos CC-BY del código MIT. La etiqueta MIT de la cabecera no se aplica a los datos."
+  }
+}

@@ -1,0 +1,125 @@
+/* Controles de formación integrados en la conversación, sin ventanas flotantes. */
+.rc-texto:has(.rc-plan-fecha) {
+  width: min(100%, 420px);
+  max-width: 100%;
+  box-sizing: border-box;
+}
+.rc-plan-fecha {
+  margin-top: 16px;
+}
+.rc-calendario {
+  min-width: 0;
+  padding: 16px;
+  border: 1px solid var(--rc-linea);
+  border-radius: 16px;
+  background: var(--rc-fondo);
+}
+.rc-calendario-cabecera {
+  display: grid;
+  grid-template-columns: 44px 1fr 44px;
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 18px;
+}
+.rc-calendario .rc-calendario-mes {
+  margin: 0;
+  text-align: center;
+  font: inherit;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-transform: none;
+}
+.rc-calendario-semana,
+.rc-calendario-dias {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 4px;
+  text-align: center;
+}
+.rc-calendario-semana {
+  margin-bottom: 8px;
+  color: var(--rc-tenue);
+  font-size: 0.8rem;
+}
+.rc-calendario button,
+.rc-cuerpo .rc-plan-paginas button {
+  display: grid;
+  place-items: center;
+  min-width: 0;
+  min-height: 44px;
+  margin: 0;
+  padding: 0;
+  color: var(--rc-tinta);
+  font: inherit;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  cursor: pointer;
+  text-decoration: none;
+}
+.rc-calendario .rc-calendario-nav {
+  font-size: 1.6rem;
+}
+.rc-calendario-dia {
+  aspect-ratio: 1;
+}
+.rc-calendario button:hover,
+.rc-cuerpo .rc-plan-paginas button:hover {
+  background: var(--rc-linea);
+}
+.rc-calendario button[aria-pressed="true"],
+.rc-cuerpo .rc-plan-paginas button[aria-current="page"] {
+  color: var(--rc-superficie);
+  background: var(--rc-acento);
+}
+.rc-calendario button:focus-visible,
+.rc-cuerpo .rc-plan-paginas button:focus-visible {
+  outline: 2px solid var(--rc-acento);
+  outline-offset: 2px;
+}
+.rc-calendario .rc-calendario-seleccion {
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px solid var(--rc-linea);
+  font-size: 0.85rem;
+}
+
+.rc-plan-paginas {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.rc-cuerpo .rc-plan-paginas button {
+  min-width: 44px;
+  min-height: 44px;
+  color: var(--rc-tinta);
+  background: var(--rc-fondo);
+  border: 1px solid var(--rc-linea);
+  border-radius: 50%;
+  font: inherit;
+  cursor: pointer;
+}
+.rc-cuerpo .rc-plan-paginas button:focus-visible {
+  outline: 2px solid var(--rc-acento);
+  outline-offset: 2px;
+}
+.rc-cuerpo .rc-plan-paginas button:disabled {
+  opacity: 0.55;
+  cursor: default;
+}
+
+.rc-hoja-curso[hidden] {
+  display: none;
+}
+
+.rc-plan-paginas .rc-plan-seleccion {
+  flex-basis: 100%;
+  min-width: 0;
+  overflow-wrap: anywhere;
+  text-align: center;
+}
+.rc-plan-paginas .rc-plan-seleccion[hidden] {
+  display: none;
+}

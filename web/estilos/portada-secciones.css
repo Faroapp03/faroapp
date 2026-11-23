@@ -1,0 +1,123 @@
+/* Accesos a las secciones (inicio.html). */
+.explorar {
+  max-width: var(--ancho-sitio);
+  margin-inline: auto;
+}
+
+.explorar {
+  padding: 66px 32px 72px;
+  scroll-margin-top: 30px;
+}
+
+.explorar-cabecera {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 24px;
+  margin-bottom: 26px;
+}
+
+.explorar-cabecera h2 {
+  margin: 0;
+  font-size: clamp(1.65rem, 2.6vw, 2.4rem);
+  font-weight: 500;
+  line-height: 1.18;
+  letter-spacing: -0.04em;
+}
+
+/* Las tres historias: una tarjeta con fotografía por sección */
+.historias {
+  display: grid;
+  grid-template-columns: 1.22fr 1fr 1fr;
+  gap: 16px;
+}
+
+.historia {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 395px;
+  padding: 25px;
+  overflow: hidden;
+  color: var(--blanco);
+  text-decoration: none;
+  background: var(--foto-tarjeta);
+}
+
+.historia > img {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.historia::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: var(--degradado-tarjeta);
+}
+
+.historia-ia img {
+  object-position: 58% center;
+}
+
+.historia-faro img {
+  object-position: 50% 58%;
+}
+
+.historia-proceso img {
+  object-position: 56% 40%;
+}
+
+.historia-numero {
+  display: flex;
+  align-items: center;
+  min-height: 32px;
+}
+
+.historia-numero > span:first-child {
+  font: var(--texto-minimo) var(--fuente-mono);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.historia-texto {
+  padding-top: 95px;
+}
+
+.historia-texto h3 {
+  margin: 0 0 11px;
+  font-size: clamp(1.4rem, 2.1vw, 2rem);
+  font-weight: 500;
+  line-height: 1.12;
+  letter-spacing: -0.035em;
+}
+
+.historia-texto p {
+  max-width: 29ch;
+  min-height: 4.9em;
+  margin: 0;
+  color: var(--foto-texto);
+  font-size: 0.84rem;
+  line-height: 1.65;
+}
+
+.historia-accion {
+  display: block;
+  margin-top: 22px;
+  padding-top: 16px;
+  font-size: var(--texto-minimo);
+  border-top: 1px solid var(--foto-linea);
+}
+
+.historia:hover .historia-accion {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  border-color: var(--blanco);
+}

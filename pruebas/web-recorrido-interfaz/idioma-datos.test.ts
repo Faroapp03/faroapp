@@ -1,0 +1,32 @@
+import assert from 'node:assert/strict';
+import { test } from 'node:test';
+import { cargarDiccionario } from '../../web/idiomas/cargar.js';
+import { navegador } from '../web-controles/ayudas.js';
+import { entorno, nodo } from './dom.ts';
+
+test('marca de traducción responde al idioma actual y al borrado sin pedir datos si no hay pendientes', async (t) => {
+  entorno(t);
+  const marca = nodo('p', 'marca-traduccion');
+  navegador(t, { fetch: () => assert.fail('sin pendientes no consulta') });
+  const datos = await import('../../web/scripts/recorrido/datos-traducidos.js');
+  const adapter = await import('../../web/scripts/recorrido/idioma-de-los-datos.js');
+  const { cambiarIdioma } = await import('../../web/scripts/idioma.js');
+  datos.olvidarTraducciones();
+  t.after(datos.olvidarTraducciones);
+  await cargarDiccionario('es');
+  await cargarDiccionario('ca');
+  await adapter.completarDatosEnIdioma();
+  assert.equal(marca.hidden, true);
+  datos.apuntarTraducciones([{ castellano: 'Recepcionista', traduccion: 'Recepcionista', origen: '' }], 'ca');
+  adapter.iniciarIdiomaDeLosDatos();
+  await cambiarIdioma('ca');
+  await adapter.completarDatosEnIdioma();
+  assert.equal(marca.hidden, false);
+  await cambiarIdioma('es');
+  await adapter.completarDatosEnIdioma();
+  assert.equal(marca.hidden, true);
+  datos.olvidarTraducciones();
+  await cambiarIdioma('ca');
+  await adapter.completarDatosEnIdioma();
+  assert.equal(marca.hidden, true);
+});

@@ -1,0 +1,147 @@
+{
+  "derechos": {
+    "actualizacion": {
+      "politica": "mensual",
+      "red": true,
+      "frecuencia": "cuando el BOE consolida la norma",
+      "renovar_dias": null,
+      "originales": "derechos"
+    },
+    "conjuntos": [
+      {
+        "id": "derechos",
+        "fuente": "derechos",
+        "clase": "cambiante",
+        "alcance": "contenido-actual-acotado",
+        "operacion": "descargar",
+        "intervalo_dias": 7
+      }
+    ],
+    "dependencias": [],
+    "casa_datos": "derechos"
+  },
+  "idescat": {
+    "actualizacion": {
+      "politica": "edición",
+      "red": true,
+      "frecuencia": "con cada revisión de la clasificación",
+      "renovar_dias": null,
+      "originales": "idescat"
+    },
+    "conjuntos": [
+      {
+        "id": "idescat",
+        "fuente": "idescat",
+        "clase": "referencia-versionada",
+        "alcance": "edicion-conocida",
+        "operacion": "descargar",
+        "intervalo_dias": 30
+      }
+    ],
+    "dependencias": ["clasificaciones"],
+    "casa_datos": "idescat"
+  },
+  "catalan": {
+    "actualizacion": {
+      "politica": "redactada",
+      "red": false,
+      "frecuencia": "traducción de Faro con IA, revisada aparte; aquí solo se valida",
+      "renovar_dias": null,
+      "originales": null
+    },
+    "conjuntos": [
+      {
+        "id": "catalan",
+        "fuente": "catalan",
+        "clase": "editorial",
+        "alcance": "copia-local",
+        "operacion": "revision",
+        "intervalo_dias": null
+      }
+    ],
+    "dependencias": ["esco", "oit", "clasificaciones", "textos", "idescat"],
+    "casa_datos": "catalan"
+  },
+  "nombres": {
+    "actualizacion": {
+      "politica": "edición",
+      "red": true,
+      "frecuencia": "anual (padrón del INE)",
+      "renovar_dias": null,
+      "originales": "nombres"
+    },
+    "conjuntos": [
+      {
+        "id": "nombres",
+        "fuente": "nombres",
+        "clase": "cambiante",
+        "alcance": "descubre-edicion",
+        "operacion": "descargar",
+        "intervalo_dias": 30
+      }
+    ],
+    "dependencias": ["esco", "oit", "cataluna", "formacion", "textos", "idescat", "catalan"],
+    "casa_datos": "nombres"
+  },
+  "territorios": {
+    "actualizacion": {
+      "politica": "fija",
+      "red": true,
+      "frecuencia": "por versión (Unicode CLDR 48)",
+      "renovar_dias": null,
+      "originales": "territorios"
+    },
+    "conjuntos": [
+      {
+        "id": "territorios",
+        "fuente": "territorios",
+        "clase": "referencia-versionada",
+        "alcance": "edicion-conocida",
+        "operacion": "descargar",
+        "intervalo_dias": 30
+      }
+    ],
+    "dependencias": [],
+    "casa_datos": "territorios"
+  },
+  "datos_globales": {
+    "actualizacion": {
+      "politica": "fija",
+      "red": false,
+      "frecuencia": "la de sus fuentes (se compone, no se descarga)",
+      "renovar_dias": null,
+      "originales": null
+    },
+    "conjuntos": [
+      {
+        "id": "datos_globales",
+        "fuente": "datos_globales",
+        "clase": "derivada",
+        "alcance": "entradas-admitidas",
+        "operacion": "recomponer",
+        "intervalo_dias": null
+      }
+    ],
+    "dependencias": [
+      "clasificaciones",
+      "idescat",
+      "empresas",
+      "territorios",
+      "mundo_eurostat",
+      "ilostat",
+      "tic_llars",
+      "clima_empresarial",
+      "ue_eurostat",
+      "decada_digital",
+      "eurobarometro",
+      "ceo_panel",
+      "ia_nacional_isl",
+      "ia_nacional_gbr",
+      "ia_nacional_bra",
+      "ia_nacional_che",
+      "ia_nacional_isr",
+      "ia_nacional_kor"
+    ],
+    "casa_datos": "datos-globales"
+  }
+}

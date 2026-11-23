@@ -1,0 +1,44 @@
+{
+  "consulta": "2026-10-11",
+  "originales": {
+    "textura": {
+      "archivo": "world.topo.bathy.200407.3x5400x2700.jpg",
+      "url": "https://eoimages.gsfc.nasa.gov/images/imagerecords/73000/73751/world.topo.bathy.200407.3x5400x2700.jpg",
+      "pagina": "https://science.nasa.gov/earth/earth-observatory/blue-marble-next-generation/base-topography-bathymetry/",
+      "autoria": "NASA Earth Observatory, Blue Marble: Next Generation (julio de 2004, con relieve y fondo marino)",
+      "licencia": "NASA Images and Media Usage Guidelines: «NASA content – images, audio, video, and media files used in the rendition of 3-dimensional models, such as texture maps and polygon data in any format – generally are not subject to copyright in the United States.» Se reconoce a la NASA como fuente, sin sugerir su respaldo.",
+      "sha256": "4f4240673a3a1b173d61b92ca4b07bac5fd17059ea5f725ba6da5a9c5386b7ba"
+    },
+    "paises": {
+      "archivo": "ne_110m_admin_0_countries.geojson",
+      "url": "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/v5.1.2/geojson/ne_110m_admin_0_countries.geojson",
+      "pagina": "https://www.naturalearthdata.com/downloads/110m-cultural-vectors/110m-admin-0-countries/",
+      "autoria": "Natural Earth 5.1.2, Admin 0 – Countries, 1:110 m",
+      "licencia": "Natural Earth, Terms of Use: «All versions of Natural Earth raster + vector map data found on this website are in the public domain.» Fronteras de facto; el mapa no toma posición sobre las fronteras en disputa.",
+      "sha256": "6866c877d39cba9c357620878839b336d569f8c662d3cfab4cb1dbe2d39c977f"
+    },
+    "regiones": {
+      "archivo": "ne_10m_admin_1_states_provinces.geojson",
+      "url": "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/v5.1.2/geojson/ne_10m_admin_1_states_provinces.geojson",
+      "pagina": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-admin-1-states-provinces/",
+      "autoria": "Natural Earth 5.1.2, Admin 1 – States, Provinces, 1:10 m (solo las cuatro provincias de Cataluña)",
+      "licencia": "Natural Earth, Terms of Use: «All versions of Natural Earth raster + vector map data found on this website are in the public domain.» Fronteras de facto; el mapa no toma posición sobre las fronteras en disputa.",
+      "sha256": "22d0e3ad85eb3e27f17cabf8ba2d50e554fbc27a87796ff891d958185da62fb5"
+    }
+  },
+  "resultados": {
+    "tierra.jpg": {
+      "sha256": "0fbb6fc23bf465994a58502f2dae5e14319ccb03acceb75a1e3edb28b94fc33a",
+      "bytes": 219304,
+      "de": ["textura"],
+      "como": "ffmpeg -v error -y -i <originales>/world.topo.bathy.200407.3x5400x2700.jpg -vf scale=2048:1024:flags=lanczos -q:v 4 -map_metadata -1 -fflags +bitexact -flags:v +bitexact web/recursos/globo/tierra.jpg",
+      "con": "ffmpeg version n9.0.2 Copyright (c) 2000-2026 the FFmpeg developers"
+    },
+    "fronteras.json": {
+      "sha256": "7b6df9ac91ad0820553346c432b91972d642eee304b53475fafeb77e1b26483a",
+      "bytes": 124888,
+      "de": ["paises", "regiones"],
+      "como": "node herramientas/web/traer-globo.ts --originales <originales>"
+    }
+  }
+}

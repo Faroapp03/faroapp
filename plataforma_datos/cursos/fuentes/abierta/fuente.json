@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "id": "abierta",
+  "tema": "cursos",
+  "lector": "plataforma_datos.cursos.fuentes.abierta.lector",
+  "casa_datos": "abierta",
+  "nombre": "Formación abierta editorial",
+  "institucion": null,
+  "significado": "Fichas multifuente redactadas por Equipo Faro según criterio v1.1; no es una institución externa ni una API propia.",
+  "alcance": [
+    "Requisitos con evidencia/notas, plataforma/condiciones/fecha de comprobación y SHA del documento",
+    "No comprueba plazas ni inscripciones"
+  ],
+  "recursos": [
+    {
+      "id": "fichas",
+      "tipo": "archivo",
+      "ubicacion": "var/actualizacion/preparados/abierta/fichas.json",
+      "licencia": null,
+      "descripcion": "Hechos y evidencias de los requisitos R1–R10; condiciones particulares por plataforma."
+    },
+    {
+      "id": "criterio",
+      "tipo": "archivo",
+      "ubicacion": "docs/criterio-formacion-abierta.md",
+      "licencia": null,
+      "descripcion": "Criterio editorial aplicado por el lector; no concede permisos sobre las plataformas externas."
+    }
+  ],
+  "canales": [
+    {
+      "id": "abierta",
+      "tipo": "editorial",
+      "recursos": ["fichas", "criterio"],
+      "autenticacion": "No configurada; depende de plataforma, desconocido sin comprobación individual",
+      "limites": [
+        "Criterio v1.1 R1–R10, solo hechos/enlaces, revisión mensual: a los 90 días solo aviso (desde 30 antes), sin retirar fichas; una ficha sale al llegar su fin publicado, curso ya iniciado al comprobarlo, sin límite de antigüedad; FARO_HOY para reproducir"
+      ],
+      "observaciones": "No hay descarga automática en el lector."
+    }
+  ],
+  "actualizacion": {
+    "politica": "redactada",
+    "red": false,
+    "frecuencia": "revisión de Equipo Faro",
+    "renovar_dias": null,
+    "originales": null
+  },
+  "conjuntos": [
+    {
+      "id": "abierta",
+      "fuente": "abierta",
+      "clase": "editorial",
+      "alcance": "copia-local",
+      "operacion": "revision",
+      "intervalo_dias": null
+    }
+  ],
+  "dependencias": [],
+  "contratos": ["lector.py:validar"],
+  "retirada": "Se mantienen los controles de admisión y reconstrucción del lector actual; no se declara una conciliación genérica de entidades ni se interpreta un fallo como baja.",
+  "conservacion": "Se conservan las rutas, originales, procedencias y revisiones actuales en var/actualizacion; este descriptor no habilita limpieza automática ni fija nuevos plazos de retención."
+}

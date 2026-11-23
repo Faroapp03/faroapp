@@ -1,0 +1,110 @@
+[
+  { "Id": 21181, "FK_Variable": 458, "Nombre": "Todas las ocupaciones", "Codigo": "" },
+  { "Id": 22325, "FK_Variable": 456, "Nombre": "Directores y gerentes", "Codigo": "A", "FK_JerarquiaPadres": [22324] },
+  {
+    "Id": 22375,
+    "FK_Variable": 456,
+    "Nombre": "Técnicos y profesionales científicos e intelectuales de la salud y la enseñanza",
+    "Codigo": "B",
+    "FK_JerarquiaPadres": [22374]
+  },
+  {
+    "Id": 22422,
+    "FK_Variable": 456,
+    "Nombre": "Otros técnicos y profesionales científicos e intelectuales",
+    "Codigo": "C",
+    "FK_JerarquiaPadres": [22374]
+  },
+  {
+    "Id": 22542,
+    "FK_Variable": 456,
+    "Nombre": "Técnicos; profesionales de apoyo",
+    "Codigo": "D",
+    "FK_JerarquiaPadres": [22541]
+  },
+  {
+    "Id": 22673,
+    "FK_Variable": 456,
+    "Nombre": "Empleados de oficina que no atienden al público",
+    "Codigo": "E",
+    "FK_JerarquiaPadres": [22672]
+  },
+  {
+    "Id": 22694,
+    "FK_Variable": 456,
+    "Nombre": "Empleados de oficina que atienden al público",
+    "Codigo": "F",
+    "FK_JerarquiaPadres": [22672]
+  },
+  {
+    "Id": 22717,
+    "FK_Variable": 456,
+    "Nombre": "Trabajadores de los servicios de restauración y comercio",
+    "Codigo": "G",
+    "FK_JerarquiaPadres": [22716]
+  },
+  {
+    "Id": 22750,
+    "FK_Variable": 456,
+    "Nombre": "Trabajadores de los servicios de salud y el cuidado de personas",
+    "Codigo": "H",
+    "FK_JerarquiaPadres": [22716]
+  },
+  {
+    "Id": 22788,
+    "FK_Variable": 456,
+    "Nombre": "Trabajadores de los servicios de protección y seguridad",
+    "Codigo": "I",
+    "FK_JerarquiaPadres": [22716]
+  },
+  {
+    "Id": 22808,
+    "FK_Variable": 456,
+    "Nombre": "Trabajadores cualificados en el sector agrícola, ganadero, forestal y pesquero",
+    "Codigo": "J",
+    "FK_JerarquiaPadres": [22807]
+  },
+  {
+    "Id": 22835,
+    "FK_Variable": 456,
+    "Nombre": "Trabajadores cualificados de la construcción, excepto operadores de máquinas",
+    "Codigo": "K",
+    "FK_JerarquiaPadres": [22834]
+  },
+  {
+    "Id": 22872,
+    "FK_Variable": 456,
+    "Nombre": "Trabajadores cualificados de las industrias manufactureras, excepto operadores de instalaciones y máquinas",
+    "Codigo": "L",
+    "FK_JerarquiaPadres": [22834]
+  },
+  {
+    "Id": 22949,
+    "FK_Variable": 456,
+    "Nombre": "Operadores de instalaciones y maquinaria fijas, y montadores",
+    "Codigo": "M",
+    "FK_JerarquiaPadres": [22948]
+  },
+  {
+    "Id": 22991,
+    "FK_Variable": 456,
+    "Nombre": "Conductores y operadores de maquinaria móvil",
+    "Codigo": "N",
+    "FK_JerarquiaPadres": [22948]
+  },
+  {
+    "Id": 23017,
+    "FK_Variable": 456,
+    "Nombre": "Trabajadores no cualificados en servicios (excepto transportes)",
+    "Codigo": "O",
+    "FK_JerarquiaPadres": [23016]
+  },
+  {
+    "Id": 23050,
+    "FK_Variable": 456,
+    "Nombre": "Peones de la agricultura, pesca, construcción, industrias manufactureras y transportes",
+    "Codigo": "P",
+    "FK_JerarquiaPadres": [23016]
+  },
+  { "Id": 23078, "FK_Variable": 456, "Nombre": "Ocupaciones militares", "Codigo": "Q", "FK_JerarquiaPadres": [23077] }
+]

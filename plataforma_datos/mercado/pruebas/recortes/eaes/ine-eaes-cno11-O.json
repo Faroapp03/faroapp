@@ -1,0 +1,24 @@
+[
+  { "Id": 23018, "FK_Variable": 456, "Nombre": "Empleados domésticos", "Codigo": "91", "FK_JerarquiaPadres": [23017] },
+  {
+    "Id": 23021,
+    "FK_Variable": 456,
+    "Nombre": "Otro personal de limpieza",
+    "Codigo": "92",
+    "FK_JerarquiaPadres": [23017]
+  },
+  {
+    "Id": 23029,
+    "FK_Variable": 456,
+    "Nombre": "Ayudantes de preparación de alimentos",
+    "Codigo": "93",
+    "FK_JerarquiaPadres": [23017]
+  },
+  {
+    "Id": 23034,
+    "FK_Variable": 456,
+    "Nombre": "Recogedores de residuos urbanos, vendedores callejeros y otras ocupaciones elementales en servicios",
+    "Codigo": "94",
+    "FK_JerarquiaPadres": [23017]
+  }
+]

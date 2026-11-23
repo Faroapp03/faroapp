@@ -1,0 +1,1247 @@
+/* Estructura de centro de administración del Panel de Control: barra de la aplicación fija, navegación lateral por
+   grupos, apartados con migas, título, frase y órdenes, y una rejilla de 12 columnas con paneles iguales. Usa las
+   variables de tokens.css, así que el modo día y el modo noche salen de las mismas reglas.
+   Nada se mueve en bucle: solo hay transiciones de una vez, y con movimiento reducido ninguna. */
+
+.panel-cuerpo {
+  --panel-barra-alto: 48px;
+  --panel-barra-fondo: #0f1720;
+  --panel-barra-tinta: #e9edf1;
+  --panel-lateral: 240px;
+  --panel-lateral-plegada: 52px;
+  --panel-bien: var(--color-semaforo-bien);
+  --panel-atencion: var(--color-semaforo-atencion);
+  --panel-fallo: var(--color-semaforo-fallo, var(--color-fallo));
+  --panel-curso: var(--color-acento);
+  --panel-nada: var(--color-tenue);
+  --panel-seleccion: color-mix(in srgb, var(--color-acento) 10%, transparent);
+  background: var(--color-fondo);
+}
+
+/* 1 · Barra de la aplicación: la misma en todo el panel. */
+.panel-app {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  height: var(--panel-barra-alto);
+  padding: 0 14px 0 6px;
+  color: var(--panel-barra-tinta);
+  background: var(--panel-barra-fondo);
+}
+.panel-app-menu {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border: 0;
+  border-radius: 6px;
+  color: inherit;
+  background: transparent;
+}
+.panel-cuerpo:has(#armazon-panel[hidden]) .panel-app-menu {
+  visibility: hidden;
+}
+.panel-app-menu:hover,
+.panel-app .tema-boton:hover {
+  background: rgb(255 255 255 / 8%);
+}
+.panel-app-nombre {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  color: inherit;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.panel-app-nombre strong {
+  font-family: var(--fuente-marca);
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.24em;
+}
+.panel-app-nombre span {
+  opacity: 0.8;
+}
+.panel-app-buscar {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  gap: 8px;
+  max-width: 520px;
+  height: 32px;
+  margin: 0 auto;
+  padding: 0 10px;
+  border: 1px solid rgb(255 255 255 / 14%);
+  border-radius: 6px;
+  background: rgb(255 255 255 / 9%);
+}
+.panel-app-buscar:focus-within {
+  border-color: rgb(255 255 255 / 40%);
+}
+.panel-app-buscar input {
+  flex: 1;
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  color: var(--panel-barra-tinta);
+  background: transparent;
+  font: inherit;
+}
+.panel-app-buscar input::placeholder {
+  color: rgb(233 237 241 / 60%);
+}
+.panel-app-buscar input::-webkit-search-cancel-button {
+  display: none;
+}
+.panel-app-buscar kbd {
+  padding: 1px 6px;
+  border: 1px solid rgb(255 255 255 / 22%);
+  border-radius: 4px;
+  font: 11px var(--fuente-mono);
+  opacity: 0.8;
+}
+.panel-cuerpo:has(#armazon-panel[hidden]) .panel-app-buscar {
+  visibility: hidden;
+}
+/* La sesión y su banda no forman caja propia: sus piezas se ordenan en la barra como en el resto del panel. */
+.panel-app-sesion,
+.sesion-unica-banda {
+  display: contents;
+}
+.sesion-unica-cuenta {
+  order: 1;
+}
+.panel-app .cabecera-herramientas {
+  color: inherit;
+}
+.panel-app .tema-boton,
+.panel-app .idioma-boton {
+  color: inherit;
+}
+
+/* La sesión única en la barra: una pastilla verde con su id y desde qué hora, y la inicial de quien la tiene. La banda
+   trae la tinta general de su estructura mínima; la pastilla toma la tinta clara de la barra oscura para leerse. */
+.panel-app .sesion-unica-banda-texto {
+  display: flex;
+  color: var(--panel-barra-tinta);
+  font-size: 13px;
+  align-items: center;
+  gap: 6px;
+  height: 32px;
+  margin: 0;
+  padding: 0 10px;
+  border: 1px solid rgb(127 209 166 / 35%);
+  border-radius: 6px;
+  background: rgb(31 122 77 / 22%);
+  white-space: nowrap;
+}
+.sesion-unica-punto {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #7fd1a6;
+}
+.sesion-unica-id,
+.sesion-unica-lectura dd,
+.panel-tabla-cuando,
+.panel-actividad-hora,
+.sesion-unica-celda-fecha,
+.sesion-unica-celda-entrada,
+.sesion-unica-celda-sesion {
+  font-family: var(--fuente-mono);
+  font-feature-settings: "zero" 1;
+}
+.sesion-unica-id {
+  white-space: nowrap;
+}
+.sesion-unica-cuenta {
+  position: relative;
+}
+.panel-app .sesion-unica-avatar {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  color: #fff;
+  background: #2f6fb3;
+  font-size: 12px;
+  font-weight: 700;
+}
+.sesion-unica-menu {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  display: grid;
+  gap: 10px;
+  min-width: 240px;
+  padding: 12px 14px;
+  border: 1px solid var(--color-linea);
+  border-radius: 8px;
+  color: var(--color-tinta);
+  background: var(--color-panel);
+  box-shadow: 0 6px 24px rgb(0 0 0 / 18%);
+}
+.sesion-unica-menu[hidden] {
+  display: none;
+}
+.sesion-unica-banda-usuario {
+  margin: 0;
+  color: var(--color-tenue);
+  font-size: 13px;
+  overflow-wrap: anywhere;
+}
+.panel-app .sesion-unica-menu .sesion-unica-cerrar {
+  border-color: var(--color-linea);
+}
+.panel-app :is(.sesion-unica-cerrar, .sesion-unica-seguir) {
+  min-height: 32px;
+  padding: 0 12px;
+  border: 1px solid rgb(255 255 255 / 28%);
+  border-radius: 6px;
+  color: inherit;
+  background: transparent;
+  font-weight: 600;
+}
+.sesion-unica-aviso-cierre {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: max-content;
+  max-width: min(520px, 90vw);
+  padding: 12px 14px;
+  border: 1px solid var(--panel-atencion);
+  border-left-width: 4px;
+  border-radius: 8px;
+  color: var(--color-tinta);
+  background: var(--color-panel);
+  box-shadow: 0 6px 24px rgb(0 0 0 / 18%);
+}
+.sesion-unica-aviso-texto {
+  margin: 0;
+}
+.panel-app .sesion-unica-aviso-cierre .sesion-unica-seguir {
+  border-color: var(--color-acento);
+  color: var(--color-sobre-marca, #fff);
+  background: var(--color-acento);
+}
+
+/* Línea de estado de la sesión, bajo la barra; vacía no ocupa sitio. */
+.panel-estado-sesion {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 16px;
+  padding: 0 28px;
+}
+.panel-estado-sesion p {
+  margin: 10px 0 0;
+  color: var(--color-tenue);
+}
+.panel-estado-sesion p:empty {
+  display: none;
+}
+
+/* 2 · Armazón: navegación lateral y contenido. */
+.panel-administracion.panel-principal {
+  max-width: none;
+  padding: 0;
+}
+.panel-armazon {
+  display: grid;
+  grid-template-columns: var(--panel-lateral) minmax(0, 1fr);
+  min-height: calc(100vh - var(--panel-barra-alto));
+}
+.panel-armazon[hidden] {
+  display: none;
+}
+.panel-armazon[data-navegacion="plegada"] {
+  grid-template-columns: var(--panel-lateral-plegada) minmax(0, 1fr);
+}
+.panel-lateral {
+  position: sticky;
+  top: var(--panel-barra-alto);
+  height: calc(100vh - var(--panel-barra-alto));
+  padding: 8px 0;
+  overflow: auto;
+  border-right: 1px solid var(--color-linea);
+  background: var(--color-panel);
+}
+.panel-nav,
+.panel-nav-sub {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.panel-administracion .panel-nav-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  min-height: 36px;
+  padding: 0 16px;
+  border: 0;
+  border-radius: 0;
+  color: var(--color-tinta);
+  background: transparent;
+  font: inherit;
+  text-align: left;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.panel-administracion .panel-nav-item:hover {
+  background: var(--panel-seleccion);
+}
+.panel-nav-item[aria-current="page"] {
+  font-weight: 600;
+  background: var(--panel-seleccion);
+}
+.panel-nav-item[aria-current="page"]::before {
+  position: absolute;
+  top: 8px;
+  bottom: 8px;
+  left: 0;
+  width: 3px;
+  border-radius: 0 2px 2px 0;
+  background: var(--color-acento);
+  content: "";
+}
+.panel-nav-sub .panel-nav-item {
+  padding-left: 44px;
+  color: var(--color-tenue);
+}
+.panel-nav-sub .panel-nav-item[aria-current="page"] {
+  color: var(--color-tinta);
+}
+.panel-nav-flecha {
+  margin-left: auto;
+  transition: transform 0.15s ease-out;
+}
+.panel-nav-grupo[aria-expanded="true"] .panel-nav-flecha {
+  transform: rotate(90deg);
+}
+.panel-nav-separador {
+  height: 1px;
+  margin: 8px 16px;
+  background: var(--color-linea);
+}
+/* Plegada: solo los iconos; el nombre sigue ahí para los lectores de pantalla, aunque no se vea. */
+.panel-armazon[data-navegacion="plegada"] .panel-nav-item > span {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+.panel-armazon[data-navegacion="plegada"] :is(.panel-nav-sub, .panel-nav-flecha) {
+  display: none;
+}
+.panel-armazon[data-navegacion="plegada"] .panel-nav-item {
+  justify-content: center;
+  padding: 0;
+}
+
+/* Iconos: SVG en línea que toman el color del texto; los símbolos se declaran una vez y no ocupan sitio. */
+.panel-icono {
+  flex: none;
+  width: 16px;
+  height: 16px;
+}
+.panel-simbolos {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+/* 3 · Apartado: migas, título, frase, barra de órdenes y rejilla de 12 columnas. */
+.panel-contenido {
+  min-width: 0;
+  padding: 16px 28px 48px;
+}
+.panel-migas {
+  margin: 0 0 6px;
+  color: var(--color-tenue);
+  font-size: 13px;
+}
+.panel-migas a {
+  color: var(--color-acento);
+  text-decoration: none;
+}
+.panel-administracion .panel-apartado-titulo {
+  margin: 0 0 4px;
+  font-family: var(--fuente-marca);
+  font-size: 24px;
+  font-weight: 500;
+}
+/* Al llegar a un apartado por su enlace, su comienzo queda bajo la barra fija y no tapado por ella. */
+.panel-administracion .panel-apartado,
+.panel-administracion .panel-apartado-titulo {
+  scroll-margin-top: calc(var(--panel-barra-alto) + 16px);
+}
+.panel-apartado-titulo:focus {
+  outline: none;
+}
+.panel-frase {
+  margin: 0 0 14px;
+  color: var(--color-tenue);
+}
+.panel-ordenes {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  margin: 0 0 18px;
+  padding: 4px;
+  border-bottom: 1px solid var(--color-linea);
+}
+.panel-administracion .panel-orden {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 32px;
+  padding: 0 10px;
+  border: 0;
+  border-radius: 4px;
+  color: var(--color-tinta);
+  background: transparent;
+}
+.panel-administracion .panel-orden:hover:enabled {
+  background: var(--panel-seleccion);
+}
+.panel-ordenes-nota {
+  margin: 0 0 0 auto;
+  color: var(--color-tenue);
+  font-size: 12.5px;
+}
+.panel-rejilla {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 16px;
+  align-items: start;
+}
+.panel-rejilla > * {
+  grid-column: span 12;
+  min-width: 0;
+}
+.panel-rejilla > .panel-c8 {
+  grid-column: span 8;
+}
+.panel-rejilla > .panel-c4 {
+  grid-column: span 4;
+}
+.panel-columna {
+  display: grid;
+  gap: 16px;
+}
+
+/* Paneles: todos iguales, con cabecera, contenido y pie. */
+.panel-administracion .panel-apartado .tarjeta {
+  margin: 0;
+  padding: 16px;
+  border-radius: 8px;
+}
+.tarjeta-cabecera {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 46px;
+  margin: -16px -16px 0;
+  padding: 0 16px;
+  border-bottom: 1px solid var(--color-linea);
+}
+.panel-administracion .tarjeta-cabecera h3 {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 600;
+}
+.tarjeta-cabecera a {
+  color: var(--color-acento);
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+}
+.tarjeta-pie {
+  margin: 12px -16px -16px;
+  padding: 10px 16px;
+  border-top: 1px solid var(--color-linea);
+  color: var(--color-tenue);
+  font-size: 12.5px;
+}
+
+/* Indicadores: cuatro de la misma altura. */
+.panel-indicadores {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+.panel-kpi {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  height: 100%;
+  padding: 14px 16px 16px;
+  border: 1px solid var(--color-linea);
+  border-radius: 8px;
+  background: var(--color-panel);
+}
+.panel-kpi--atencion {
+  border-left: 4px solid var(--panel-atencion);
+}
+.panel-kpi--fallo {
+  border-left: 4px solid var(--panel-fallo);
+}
+.panel-administracion .panel-kpi-rotulo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  color: var(--color-tenue);
+  font-size: 13px;
+  font-weight: 400;
+}
+.panel-kpi-cifra {
+  margin: 0;
+  font-family: var(--fuente-marca);
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 1.1;
+}
+/* Una cifra que es una frase larga («Sin datos suficientes») cabe en una línea; ocupa la misma altura que una cifra. */
+.panel-administracion .panel-kpi-cifra--texto {
+  font-size: 20px;
+  line-height: calc(28px * 1.1);
+}
+.panel-kpi-pie {
+  margin: auto 0 0;
+  color: var(--color-tenue);
+  font-size: 12.5px;
+}
+
+/* Estado: icono y palabra, nunca solo color. */
+.panel-estado {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.panel-estado--bien {
+  color: var(--panel-bien);
+}
+.panel-estado--curso {
+  color: var(--panel-curso);
+}
+.panel-estado--atencion {
+  color: var(--panel-atencion);
+}
+.panel-estado--fallo {
+  color: var(--panel-fallo);
+}
+.panel-estado--nada {
+  color: var(--panel-nada);
+}
+
+/* Tabla de estado del servicio y registro del panel: listas de detalle. */
+.panel-administracion :is(.panel-tabla, .sesion-unica-registro-tabla, .administradores-tabla) {
+  width: 100%;
+  margin: 0;
+  border-collapse: collapse;
+}
+.panel-administracion :is(.panel-tabla, .sesion-unica-registro-tabla, .administradores-tabla) th {
+  height: 36px;
+  padding: 0 16px;
+  border-bottom: 1px solid var(--color-linea);
+  color: var(--color-tenue);
+  font-size: 12.5px;
+  font-weight: 600;
+  text-align: left;
+  white-space: nowrap;
+}
+.panel-administracion :is(.panel-tabla, .sesion-unica-registro-tabla, .administradores-tabla) td,
+.panel-administracion .panel-tabla tbody th {
+  height: 44px;
+  padding: 0 16px;
+  border-bottom: 1px solid var(--color-linea);
+  vertical-align: middle;
+}
+.panel-administracion .panel-tabla tbody th {
+  color: var(--color-tinta);
+  font-size: inherit;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.panel-tabla-area .panel-icono {
+  margin-right: 10px;
+  color: var(--color-tenue);
+  vertical-align: -3px;
+}
+.panel-administracion .panel-tabla tbody tr:last-child :is(td, th),
+.panel-administracion :is(.sesion-unica-registro-tabla, .administradores-tabla) tbody tr:last-child td {
+  border-bottom: 0;
+}
+.panel-administracion .panel-tabla .panel-tabla-fila--atencion th {
+  box-shadow: inset 3px 0 0 var(--panel-atencion);
+}
+.panel-administracion .panel-tabla .panel-tabla-fila--fallo th {
+  box-shadow: inset 3px 0 0 var(--panel-fallo);
+}
+.panel-tabla-detalle,
+.panel-tabla-cuando,
+.sesion-unica-celda-fecha {
+  color: var(--color-tenue);
+}
+.panel-tabla-cuando,
+.panel-tabla-celda-ir {
+  width: 1%;
+  white-space: nowrap;
+}
+.panel-tabla-celda-ir {
+  width: 32px;
+}
+.panel-tabla-ir {
+  display: inline-grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 4px;
+  color: var(--color-tenue);
+}
+.panel-tabla-ir:hover {
+  color: var(--color-tinta);
+  background: var(--panel-seleccion);
+}
+.sesion-unica-fila-atenuada {
+  color: var(--color-tenue);
+}
+
+/* Lo que requiere atención y la actividad reciente. */
+.panel-lista {
+  margin: 0 -16px -16px;
+  padding: 0;
+  list-style: none;
+}
+.panel-lista-elemento {
+  display: grid;
+  gap: 4px;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--color-linea);
+}
+.panel-lista-elemento:last-child {
+  border-bottom: 0;
+}
+.panel-lista-por,
+.panel-lista-vacia {
+  margin: 0;
+  color: var(--color-tenue);
+  font-size: 13px;
+}
+.panel-lista-vacia {
+  padding: 12px 16px;
+}
+.panel-contador {
+  color: var(--panel-atencion);
+  font-size: 13px;
+  font-weight: 600;
+}
+.panel-atencion {
+  grid-template-columns: auto minmax(0, 1fr);
+  column-gap: 12px;
+}
+.panel-atencion > .panel-estado {
+  align-self: start;
+  padding-top: 2px;
+}
+.panel-lista-que {
+  margin: 0;
+  font-weight: 600;
+}
+.panel-atencion > :is(.panel-lista-por, .panel-lista-acciones) {
+  grid-column: 2;
+}
+.panel-lista-acciones {
+  display: flex;
+  gap: 8px;
+  margin: 6px 0 0;
+}
+.panel-boton {
+  display: inline-flex;
+  align-items: center;
+  height: 30px;
+  padding: 0 12px;
+  border: 1px solid var(--color-linea);
+  border-radius: 4px;
+  color: var(--color-tinta);
+  background: var(--color-panel);
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+}
+.panel-boton--principal {
+  border-color: var(--color-acento);
+  color: var(--color-sobre-marca);
+  background: var(--color-acento);
+}
+.panel-actividad {
+  grid-template-columns: 52px minmax(0, 1fr);
+  column-gap: 12px;
+}
+.panel-actividad-hora {
+  color: var(--color-tenue);
+}
+.panel-actividad-que {
+  margin: 0;
+}
+.panel-actividad--atenuada {
+  color: var(--color-tenue);
+}
+
+/* Bienvenida, dirección «Consola»: a la izquierda qué pasa y qué puedes hacer; a la derecha, tu entrada. */
+.panel-bienvenida {
+  max-width: 1040px;
+  margin: 32px auto;
+  padding: 0 24px;
+}
+.panel-bienvenida[hidden] {
+  display: none;
+}
+.sesion-unica-bienvenida {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  overflow: hidden;
+  border: 1px solid var(--color-linea);
+  border-radius: 10px;
+  background: var(--color-panel);
+}
+.sesion-unica-principal {
+  padding: 36px 36px 32px;
+}
+.sesion-unica-verificada {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  padding: 4px 10px;
+  border-radius: 999px;
+  color: var(--panel-bien);
+  background: color-mix(in srgb, var(--panel-bien) 12%, transparent);
+  font-size: 12.5px;
+  font-weight: 600;
+}
+.sesion-unica-verificada::before {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: currentColor;
+  content: "";
+}
+.panel-administracion .sesion-unica-titulo {
+  margin: 18px 0 10px;
+  font-family: var(--fuente-marca);
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+.sesion-unica-titulo:focus {
+  outline: none;
+}
+.sesion-unica-explicacion {
+  max-width: 46ch;
+  margin: 0 0 26px;
+  color: var(--color-tenue);
+}
+.sesion-unica-ocupada,
+.sesion-unica-aviso {
+  margin: 0 0 16px;
+  padding: 12px 14px;
+  border-left: 4px solid var(--panel-atencion);
+  border-radius: 6px;
+  background: var(--color-aviso-fondo, var(--panel-seleccion));
+}
+.sesion-unica-entrada {
+  padding: 28px 30px;
+  border-left: 1px solid var(--color-linea);
+  background: linear-gradient(180deg, var(--color-panel), var(--color-fondo));
+}
+.sesion-unica-rotulo {
+  margin: 0;
+  color: var(--color-tenue);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.sesion-unica-lectura {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 10px 18px;
+  margin: 16px 0 0;
+  font-size: 13.5px;
+}
+.sesion-unica-lectura dt {
+  padding-top: 2px;
+  color: var(--color-tenue);
+  font-family: var(--fuente-mono);
+  font-size: 11.5px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.sesion-unica-lectura dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+/* Apertura: un anillo que se completa y una marca que se dibuja, una sola vez y en menos de un segundo y medio. */
+.sesion-unica-abierta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 70px 20px;
+  border: 1px solid var(--color-linea);
+  border-radius: 10px;
+  background: var(--color-panel);
+  text-align: center;
+}
+.sesion-unica-marca {
+  position: relative;
+  width: 72px;
+  height: 72px;
+}
+.sesion-unica-anillo {
+  position: absolute;
+  inset: 0;
+  border: 3px solid var(--panel-bien);
+  border-radius: 50%;
+}
+.sesion-unica-check {
+  position: absolute;
+  top: 18px;
+  left: 26px;
+  width: 16px;
+  height: 28px;
+  border-right: 3.5px solid var(--panel-bien);
+  border-bottom: 3.5px solid var(--panel-bien);
+  transform: rotate(45deg);
+}
+.sesion-unica-transicion .sesion-unica-anillo {
+  animation: panel-anillo 0.8s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+.sesion-unica-transicion .sesion-unica-check {
+  animation: panel-marca 0.35s ease-out 0.75s both;
+}
+.sesion-unica-abierta-texto {
+  margin: 0;
+  font-family: var(--fuente-marca);
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+.sesion-unica-abierta-id {
+  margin: 0;
+  color: var(--color-tenue);
+}
+@keyframes panel-anillo {
+  from {
+    clip-path: polygon(50% 50%, 50% 0, 50% 0);
+  }
+  to {
+    clip-path: polygon(50% 50%, 50% 0, 100% 0, 100% 100%, 0 100%, 0 0, 50% 0);
+  }
+}
+@keyframes panel-marca {
+  from {
+    opacity: 0;
+    transform: rotate(45deg) scale(0.6);
+  }
+  to {
+    opacity: 1;
+    transform: rotate(45deg) scale(1);
+  }
+}
+
+/* Encuesta: el estado de la ronda se lee como la bienvenida (rótulo y valor); las rondas, como cualquier tabla del
+   panel, y la ronda nueva, como un formulario corto bajo su línea. */
+#vista-encuesta-visibilidad {
+  padding: 16px;
+  border: 1px solid var(--color-linea);
+  border-radius: 8px;
+  background: var(--color-panel);
+}
+#vista-encuesta-visibilidad > h3 {
+  margin: 18px 0 0;
+  font-size: 15px;
+  font-weight: 600;
+}
+#vista-encuesta-visibilidad > h3:first-child {
+  margin-top: 0;
+}
+.encuesta-ronda-estado {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 10px 18px;
+  margin: 12px 0 0;
+  font-size: 13.5px;
+}
+.encuesta-ronda-estado dt {
+  padding-top: 2px;
+  color: var(--color-tenue);
+  font-family: var(--fuente-mono);
+  font-size: 11.5px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.encuesta-ronda-estado dd {
+  margin: 0;
+  font-variant-numeric: tabular-nums;
+  overflow-wrap: anywhere;
+}
+#encuesta .encuesta-rondas {
+  margin: 16px 0 0;
+}
+#encuesta .encuesta-rondas > p {
+  margin: 0 0 12px;
+  color: var(--color-tenue);
+  font-size: 13.5px;
+}
+#encuesta .encuesta-rondas table {
+  width: 100%;
+  margin: 0;
+  border-collapse: collapse;
+  font-size: 13.5px;
+}
+#encuesta .encuesta-rondas caption {
+  padding: 0 0 8px;
+  font-weight: 600;
+  text-align: left;
+}
+#encuesta .encuesta-rondas th {
+  height: 36px;
+  padding: 0 12px;
+  border-bottom: 1px solid var(--color-linea);
+  color: var(--color-tenue);
+  font-size: 12.5px;
+  font-weight: 600;
+  text-align: left;
+  white-space: nowrap;
+}
+#encuesta .encuesta-rondas td,
+#encuesta .encuesta-rondas tbody th {
+  height: 44px;
+  padding: 0 12px;
+  border-bottom: 1px solid var(--color-linea);
+  color: var(--color-tinta);
+  font-variant-numeric: tabular-nums;
+  vertical-align: middle;
+}
+#encuesta .encuesta-rondas tbody tr:last-child :is(td, th) {
+  border-bottom: 0;
+}
+#encuesta .encuesta-ronda-nueva {
+  display: grid;
+  gap: 8px;
+  max-width: 480px;
+  margin: 16px 0 0;
+  padding: 16px 0 0;
+  border-top: 1px solid var(--color-linea);
+}
+#encuesta .encuesta-ronda-nueva h3 {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 600;
+}
+#encuesta .encuesta-ronda-nueva label {
+  color: var(--color-tenue);
+  font-size: 13px;
+  font-weight: 600;
+}
+#encuesta .encuesta-ronda-nueva .ayuda {
+  margin: 0;
+  color: var(--color-tenue);
+  font-size: 12.5px;
+}
+#encuesta .encuesta-ronda-nueva button {
+  justify-self: start;
+}
+
+/* Fuentes con una actualización sin terminar: los datos son de la anterior y se dice antes de la tabla. */
+.panel-datos-anteriores {
+  margin: 0 0 12px;
+  padding: 10px 12px;
+  border-left: 3px solid var(--panel-atencion);
+  border-radius: 4px;
+  background: color-mix(in srgb, var(--panel-atencion) 8%, transparent);
+  color: var(--color-tinta);
+  font-size: 13.5px;
+}
+
+/* 8 · Todos los paneles de un apartado con su cabecera de 46 px: el primer título de la tarjeta hace de cabecera. */
+.panel-administracion .panel-apartado .tarjeta > :is(h3, h4):first-child {
+  display: flex;
+  align-items: center;
+  min-height: 46px;
+  margin: -16px -16px 16px;
+  padding: 0 16px;
+  border-bottom: 1px solid var(--color-linea);
+  font-size: 15px;
+  font-weight: 600;
+}
+
+/* Administradores: la tabla a la izquierda (8 columnas) y «Añadir administrador» a la derecha (4 columnas). La vista
+   pinta sus piezas una tras otra; la rejilla las reparte en los dos paneles sin tocar su orden. */
+.panel-administradores {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: 16px;
+  align-items: start;
+}
+.panel-administradores #vista-administradores {
+  display: contents;
+}
+.panel-administradores > .tarjeta-cabecera,
+#vista-administradores > * {
+  grid-column: 1 / span 8;
+  margin: 0;
+  border-inline: 1px solid var(--color-linea);
+  background: var(--color-panel);
+}
+.panel-administradores > .tarjeta-cabecera {
+  border-top: 1px solid var(--color-linea);
+  border-radius: 8px 8px 0 0;
+}
+#vista-administradores > :last-child:not(.administradores-alta) {
+  border-bottom: 1px solid var(--color-linea);
+  border-radius: 0 0 8px 8px;
+}
+#vista-administradores > .administradores-pie {
+  padding: 10px 16px;
+  border-block: 1px solid var(--color-linea);
+  border-radius: 0 0 8px 8px;
+  color: var(--color-tenue);
+  font-size: 12.5px;
+}
+/* El título y la explicación de la vista ya los dicen el título y la frase del apartado. */
+#vista-administradores :is(.administradores-titulo, .administradores-explicacion) {
+  display: none;
+}
+.administradores-resumen,
+.administradores-aviso,
+.administradores-mensaje:not(:empty) {
+  margin: 0;
+  padding: 10px 16px;
+  color: var(--color-tenue);
+  font-size: 13px;
+}
+.administradores-aviso {
+  border-left: 3px solid var(--panel-atencion);
+}
+.administradores-mensaje {
+  margin: 0;
+}
+.administradores-mensaje[data-resultado="bien"] {
+  color: var(--panel-bien);
+}
+.administradores-mensaje[data-resultado="atencion"] {
+  color: var(--panel-atencion);
+}
+.administradores-celda-usuario {
+  font-weight: 600;
+  white-space: nowrap;
+}
+.administradores-propio {
+  color: var(--color-tenue);
+  font-family: var(--fuente-mono);
+  font-weight: 400;
+}
+.administradores-celda-anadido,
+.administradores-celda-entrada {
+  color: var(--color-tenue);
+}
+.administradores-celda-accion {
+  width: 1%;
+  white-space: nowrap;
+}
+.panel-administracion :is(.administradores-retirar, .administradores-reintentar, .administradores-alta-enviar) {
+  min-height: 30px;
+  padding: 0 12px;
+  border: 1px solid var(--color-linea);
+  border-radius: 4px;
+  color: var(--color-tinta);
+  background: var(--color-panel);
+  font-size: 13px;
+}
+.panel-administracion .administradores-alta-enviar {
+  justify-self: start;
+  border-color: var(--color-acento);
+  color: var(--color-sobre-marca);
+  background: var(--color-acento);
+}
+#vista-administradores > .administradores-alta {
+  grid-row: 1 / span 6;
+  grid-column: 9 / span 4;
+  display: grid;
+  gap: 12px;
+  padding: 0 16px 16px;
+  border: 1px solid var(--color-linea);
+  border-radius: 8px;
+}
+.panel-administracion .administradores-alta-titulo {
+  display: flex;
+  align-items: center;
+  min-height: 46px;
+  margin: 0 -16px;
+  padding: 0 16px;
+  border-bottom: 1px solid var(--color-linea);
+  font-size: 15px;
+  font-weight: 600;
+}
+.administradores-alta-etiqueta {
+  display: grid;
+  gap: 6px;
+  font-weight: 600;
+}
+.administradores-alta-correo {
+  height: 34px;
+  padding: 0 10px;
+  border: 1px solid var(--color-linea);
+  border-radius: 4px;
+  color: var(--color-tinta);
+  background: var(--color-panel);
+  font-weight: 400;
+}
+.administradores-alta-ayuda {
+  margin: 0;
+  color: var(--color-tenue);
+  font-size: 13px;
+}
+/* Estado de cada administrador con icono y palabra. El icono se dibuja aquí, sin imágenes: círculo con marca
+   (activo), círculo con reloj (pendiente) y triángulo (retirada pendiente). */
+.administradores-estado {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.administradores-estado-activo {
+  color: var(--panel-bien);
+}
+.administradores-estado-pendiente {
+  color: var(--panel-curso);
+}
+.administradores-estado-retirada-pendiente {
+  color: var(--panel-atencion);
+}
+.administradores-icono {
+  position: relative;
+  flex: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: currentColor;
+}
+.administradores-icono::after {
+  position: absolute;
+  box-sizing: border-box;
+  content: "";
+}
+.administradores-icono-activo::after {
+  top: 3px;
+  left: 4.5px;
+  width: 4.5px;
+  height: 7px;
+  border-right: 1.7px solid #fff;
+  border-bottom: 1.7px solid #fff;
+  transform: rotate(45deg);
+}
+.administradores-icono-pendiente::after {
+  top: 3px;
+  left: 6px;
+  width: 3.5px;
+  height: 4.5px;
+  border-left: 1.7px solid #fff;
+  border-bottom: 1.7px solid #fff;
+}
+.administradores-icono-retirada-pendiente {
+  border-radius: 0;
+  clip-path: polygon(50% 0, 100% 100%, 0 100%);
+}
+.administradores-icono-retirada-pendiente::after {
+  top: 5px;
+  left: 6.1px;
+  width: 1.8px;
+  height: 5px;
+  background: #fff;
+}
+
+/* Pantallas medianas: los indicadores en dos filas y la tabla a todo el ancho. */
+@media (max-width: 1100px) {
+  .panel-indicadores {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .panel-rejilla > :is(.panel-c8, .panel-c4),
+  .panel-administradores > .tarjeta-cabecera,
+  #vista-administradores > *,
+  #vista-administradores > .administradores-alta {
+    grid-column: 1 / -1;
+  }
+  #vista-administradores > .administradores-alta {
+    grid-row: auto;
+    margin-top: 16px;
+  }
+}
+
+/* Móvil: la lateral pasa a menú sobre el contenido y la bienvenida a una columna. */
+@media (max-width: 760px) {
+  .panel-armazon,
+  .panel-armazon[data-navegacion="plegada"] {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .panel-lateral {
+    position: fixed;
+    inset: var(--panel-barra-alto) auto 0 0;
+    z-index: 15;
+    width: min(300px, 86vw);
+    height: auto;
+    box-shadow: 0 8px 32px rgb(0 0 0 / 24%);
+  }
+  .panel-armazon[data-navegacion="plegada"] .panel-lateral {
+    display: none;
+  }
+  .panel-contenido {
+    padding: 12px 16px 40px;
+  }
+  .panel-indicadores,
+  .sesion-unica-bienvenida {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .sesion-unica-entrada {
+    border-top: 1px solid var(--color-linea);
+    border-left: 0;
+  }
+  .panel-app-buscar,
+  .sesion-unica-desde,
+  .panel-app-nombre span {
+    display: none;
+  }
+  .panel-tabla-detalle {
+    display: none;
+  }
+}
+
+/* Movimiento reducido: ninguna transición ni animación; la marca aparece ya completa. */
+@media (prefers-reduced-motion: reduce) {
+  .panel-nav-flecha {
+    transition: none;
+  }
+  .sesion-unica-transicion :is(.sesion-unica-anillo, .sesion-unica-check) {
+    animation: none;
+  }
+}

@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta
+      name="description"
+      content="Qué pasa con lo que escribes en Faro y cómo borrarlo."
+      data-texto-content="informacion-y-creditos.descripcion"
+    />
+    <meta name="theme-color" content="#f4f3f0" />
+    <meta name="apple-mobile-web-app-title" content="Faro" />
+    <!-- En iPhone y iPad instalada: barra de estado opaca y negra, como el modo noche con el que abre Faro (el
+         sistema no admite una por tema; donde lo admite, el color lo pone el theme-color de arriba). -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <title data-texto="informacion-y-creditos.titulo">Tus datos · Faro</title>
+    <link rel="icon" href="imagenes/identidad/faro-editorial-icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="imagenes/identidad/icon-180.png" />
+    <link rel="manifest" href="manifest.webmanifest" crossorigin="use-credentials" />
+    <script src="scripts/tema-inicial.js"></script>
+    <script src="scripts/idioma-inicial.js"></script>
+    <link rel="stylesheet" href="estilos/tipografias.css" />
+    <link rel="stylesheet" href="estilos/tokens.css" />
+    <link rel="stylesheet" href="estilos/base.css" />
+    <link rel="stylesheet" href="estilos/contenidos.css" />
+    <script type="module" src="scripts/sitio.js"></script>
+    <!-- Los textos se escriben en cuanto se ejecuta sitio.js: sus diccionarios se piden a la vez que él. -->
+    <link rel="modulepreload" href="idiomas/cargar.js" />
+    <link rel="modulepreload" href="scripts/idioma.js" />
+    <link rel="modulepreload" href="scripts/textos.js" />
+    <link rel="modulepreload" href="scripts/version.js" />
+    <script type="module" src="scripts/borrar-datos.js"></script>
+  </head>
+  <body>
+    <a class="salto" href="#contenido" data-texto="comun.saltar">Saltar al contenido</a>
+    <header class="cabecera">
+      <button
+        class="menu-boton"
+        type="button"
+        aria-label="Abrir menú"
+        data-texto-aria-label="comun.menu.abrir"
+        aria-expanded="false"
+        aria-controls="menu"
+      >
+        <span></span><span></span><span></span>
+      </button>
+      <a class="marca" href="inicio.html">
+        <span class="solo-lectores" data-texto="comun.marca.inicio">Faro, inicio</span>
+        <span class="marca-nombre" aria-hidden="true"
+          ><span class="marca-inicial"
+            >F<svg class="marca-luz" viewBox="0 0 18 8" focusable="false" aria-hidden="true"
+              ><path d="M1 4h16" /></svg
+            ></span
+          >ARO</span
+        >
+      </a>
+      <div class="cabecera-herramientas">
+        <div class="idioma" data-selector-idioma>
+          <button
+            class="idioma-boton"
+            type="button"
+            id="idioma-boton"
+            aria-label="Idioma: Castellano"
+            data-texto-aria-label="comun.idioma.boton"
+            aria-haspopup="menu"
+            aria-expanded="false"
+            aria-controls="idioma-opciones"
+          >
+            <img
+              class="idioma-bandera idioma-bandera-es"
+              src="imagenes/identidad/bandera-espana.svg"
+              alt=""
+              width="24"
+              height="16"
+            />
+            <img
+              class="idioma-bandera idioma-bandera-ca"
+              src="imagenes/identidad/bandera-catalunya.svg"
+              alt=""
+              width="24"
+              height="16"
+            />
+          </button>
+          <div class="idioma-opciones" id="idioma-opciones" role="menu" aria-labelledby="idioma-boton" hidden>
+            <button type="button" role="menuitemradio" aria-checked="true" data-cambiar-idioma="es" lang="es"
+              ><img class="idioma-bandera" src="imagenes/identidad/bandera-espana.svg" alt="" width="24" height="16" />
+              <span>Castellano</span></button
+            >
+            <button type="button" role="menuitemradio" aria-checked="false" data-cambiar-idioma="ca" lang="ca"
+              ><img
+                class="idioma-bandera"
+                src="imagenes/identidad/bandera-catalunya.svg"
+                alt=""
+                width="24"
+                height="16"
+              /><span>Català</span></button
+            >
+          </div>
+        </div>
+        <button
+          class="tema-boton"
+          type="button"
+          aria-label="Cambiar a modo día"
+          title="Modo día / noche"
+          data-texto-title="comun.tema.titulo"
+        >
+          <svg class="icono-sol" viewBox="0 0 24 24" aria-hidden="true" focusable="false"
+            ><circle cx="12" cy="12" r="4.5" />
+            <path
+              d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"
+            /></svg
+          >
+          <svg class="icono-luna" viewBox="0 0 24 24" aria-hidden="true" focusable="false"
+            ><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z" /></svg
+          >
+        </button>
+      </div>
+    </header>
+    <div class="menu-velo" id="menu-velo" hidden></div>
+    <nav id="menu" class="menu" hidden aria-label="Menú principal" data-texto-aria-label="comun.menu.nombre">
+      <ul class="menu-lista">
+        <li
+          ><a href="inicio.html"><span class="menu-destino" data-texto="comun.seccion.inicio">Inicio</span></a></li
+        >
+        <li
+          ><a href="entender-ia.html"
+            ><span class="menu-destino" data-texto="comun.seccion.ia">Qué es la IA</span></a
+          ></li
+        >
+        <li
+          ><a href="que-es-faro.html"><span class="menu-destino">Faro</span></a></li
+        >
+        <li
+          ><a href="recorrido.html"><span class="menu-destino" data-texto="comun.seccion.empezar">Empezar</span></a></li
+        >
+        <li
+          ><a href="biblioteca.html"
+            ><span class="menu-destino" data-texto="comun.seccion.biblioteca">Biblioteca</span></a
+          ></li
+        >
+        <li
+          ><a href="cursos.html"><span class="menu-destino" data-texto="comun.seccion.cursos">Cursos</span></a></li
+        >
+        <li
+          ><a href="datos-globales.html"
+            ><span class="menu-destino" data-texto="comun.seccion.datos-globales">Datos globales</span></a
+          ></li
+        >
+        <li data-pasar-entrada hidden
+          ><button type="button" class="menu-pasar" data-pasar-dispositivo
+            ><span class="menu-destino" data-texto="comun.menu.pasar">Pasar a otro dispositivo</span></button
+          ></li
+        >
+      </ul>
+    </nav>
+    <main id="contenido" class="pagina">
+      <header class="seccion-cabecera seccion-cabecera--sin-foto"
+        ><p class="antetitulo" data-texto="informacion-y-creditos.rotulo">Privacidad</p>
+        <h1 data-texto="informacion-y-creditos.titulo-principal">Tus datos</h1>
+        <p class="entradilla" data-texto="informacion-y-creditos.intro"
+          >Qué pasa con lo que escribes en Faro y cómo borrarlo. De dónde salen los datos y con qué licencia, en
+          <a href="creditos.html" data-texto="comun.pie.creditos">Créditos</a>.</p
+        ></header
+      >
+
+      <section class="bloque" aria-labelledby="t-datos">
+        <h2 id="t-datos" data-texto="informacion-y-creditos.datos.titulo">Lo que pasa con lo que escribes</h2>
+        <ul class="lista">
+          <li data-texto="informacion-y-creditos.datos.1"
+            >Para hacer el recorrido y consultar los cursos no necesitas una cuenta.</li
+          >
+          <li data-texto="informacion-y-creditos.datos.2"
+            >El recorrido se conserva en la página abierta y desaparece al cerrarla o al empezar de nuevo. El navegador
+            guarda las preferencias de tema e idioma, una clave aleatoria local para reconocer los cálculos del
+            dispositivo y copias de páginas y datos públicos para usarlos sin conexión.</li
+          >
+          <li data-texto="informacion-y-creditos.datos.local"
+            >Faro procesa lo que escribes en este dispositivo. El filtro quita los datos personales que reconoce. Puede
+            no reconocerlos todos: no escribas tu nombre, el de tu empresa, datos de salud ni datos de otras
+            personas.</li
+          >
+          <li data-texto="informacion-y-creditos.datos.5"
+            >Faro no guarda tu informe ni lo comparte con empresas ni con servicios públicos: lo ves tú y, si quieres,
+            lo guardas en PDF.</li
+          >
+          <li data-texto="informacion-y-creditos.datos.avisos"
+            >Para detectar fallos de carga y de seguridad, Faro recibe avisos técnicos del navegador. Conserva el tipo,
+            un código de una lista limitada, el origen de la web y la hora aproximada; no conserva la ruta, el texto del
+            recorrido ni el contenido libre del aviso.</li
+          >
+          <li data-texto="informacion-y-creditos.datos.encuesta"
+            >Si participas en el piloto de Faro, puede que te den un enlace de invitación para responder una encuesta
+            breve al terminar el recorrido. La encuesta es anónima: el código del enlace no lleva tu nombre, no se
+            guarda con tus respuestas y deja de servir en cuanto lo usas. Faro solo guarda cuántas personas han elegido
+            cada respuesta.</li
+          >
+          <li data-texto="informacion-y-creditos.datos.invitacion"
+            >Si llegas con una invitación del piloto, su código se guarda solo en esta pestaña hasta que respondes la
+            encuesta o cierras la pestaña, y «Borrar todo» también lo borra. El enlace sigue en tu correo y en el
+            historial del navegador, y si el navegador recupera la pestaña cerrada, el código vuelve con ella.</li
+          >
+        </ul>
+        <div class="borrar">
+          <button
+            type="button"
+            class="boton boton-secundario"
+            id="borrar-todo"
+            data-texto="informacion-y-creditos.borrar.boton"
+            >Borrar todo</button
+          >
+          <p class="nota" data-texto="informacion-y-creditos.borrar.nota"
+            >Borra tus datos y ajustes de este dispositivo. Después, la página vuelve al inicio.</p
+          >
+        </div>
+      </section>
+      <section class="bloque" aria-labelledby="t-alojamiento"
+        ><h2 id="t-alojamiento" data-texto="informacion-y-creditos.alojamiento.titulo">Cuando te conectas a la web</h2
+        ><p data-texto="informacion-y-creditos.alojamiento.texto"
+          >El servicio de alojamiento recibe la dirección IP y datos técnicos de la conexión necesarios para entregar
+          las páginas y proteger el servicio. En las instalaciones alojadas en Cloudflare, ese tratamiento se describe
+          en su
+          <a
+            href="https://www.cloudflare.com/privacypolicy/"
+            target="_blank"
+            rel="noopener noreferrer"
+            data-texto="informacion-y-creditos.alojamiento.enlace"
+            >política de privacidad</a
+          >. El texto del recorrido se procesa en el dispositivo y no se envía al alojamiento.</p
+        ></section
+      >
+      <section class="bloque" aria-labelledby="t-servicios"
+        ><h2 id="t-servicios" data-texto="informacion-y-creditos.servicios.titulo"
+          >Conexiones de instituciones y asistentes</h2
+        ><p data-texto="informacion-y-creditos.servicios.texto"
+          >Cuando se habilita la conectividad, Faro registra las consultas institucionales: fecha, institución,
+          operación y resultado. Las consultas de asistentes y agentes se cuentan por día y operación; el nombre del
+          asistente es declarado, no una identidad verificada. Este registro no guarda los argumentos, las cabeceras ni
+          las direcciones IP y conserva hasta 10.000 filas durante un máximo de 30 días.</p
+        ><p data-texto="informacion-y-creditos.servicios.acceso"
+          >Para gestionar el acceso institucional, el panel conserva el nombre de la entidad, su correo de contacto si
+          se facilita, el estado de su acceso y las huellas de las credenciales. Las invitaciones caducan a los siete
+          días. Las claves secretas se muestran una sola vez y no se guardan en claro.</p
+        ></section
+      >
+      <section class="bloque" aria-labelledby="t-derechos"
+        ><h2 id="t-derechos" data-texto="informacion-y-creditos.derechos.titulo">Control y derechos</h2
+        ><p data-texto="informacion-y-creditos.derechos.texto"
+          >El botón «Borrar todo» elimina los datos que Faro guarda en este navegador; no elimina los PDF que hayas
+          guardado ni los registros del alojamiento. Puedes dirigirte a la entidad responsable para ejercer los derechos
+          de acceso, rectificación, supresión, oposición, limitación y portabilidad cuando correspondan, y reclamar ante
+          la autoridad de protección de datos competente. Consulta la
+          <a
+            href="https://www.aepd.es/derechos-y-deberes/ejerce-tus-derechos"
+            target="_blank"
+            rel="noopener noreferrer"
+            data-texto="informacion-y-creditos.derechos.enlace"
+            >información de la AEPD sobre estos derechos</a
+          >.</p
+        ></section
+      >
+      <section class="bloque" aria-labelledby="t-contacto-publicacion">
+        <h2 id="t-contacto-publicacion" data-texto="contacto.titulo">Contacto de publicación</h2>
+        <p data-contacto-solo="responsable" hidden data-texto="contacto.responsable"
+          >Responsable: <span data-contacto-responsable></span></p
+        >
+        <p data-contacto-solo="correo" hidden data-texto="contacto.correo"
+          >Correo de contacto: <span data-contacto-correo></span></p
+        >
+        <p data-contacto-sin-correo data-texto="contacto.no-disponible">No hay un correo de contacto disponible.</p>
+      </section>
+    </main>
+
+    <footer class="pie">
+      <div class="pie-fila"
+        ><nav aria-label="Información y ayuda" data-texto-aria-label="comun.pie.nombre"
+          ><a href="creditos.html" data-texto="comun.pie.creditos">Créditos</a
+          ><a href="informacion-y-creditos.html#t-datos" data-texto="comun.pie.datos">Tus datos</a
+          ><a href="accesibilidad.html" data-texto="comun.pie.accesibilidad">Accesibilidad</a
+          ><a href="verificable.html" data-texto="comun.pie.verificable">Faro verificable</a
+          ><a class="pie-doctor" href="doctor.html" data-texto="comun.pie.doctor">Comprobar Faro</a
+          ><a class="pie-instalar" href="instalar.html" data-texto="comun.pie.instalar">Instalar Faro</a></nav
+        ><p class="pie-derechos" data-texto="comun.pie.derechos">© 2026 Equipo Faro</p></div
+      >
+    </footer>
+  </body>
+</html>

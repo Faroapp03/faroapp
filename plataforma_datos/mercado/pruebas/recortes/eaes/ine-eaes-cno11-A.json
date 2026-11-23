@@ -1,0 +1,37 @@
+[
+  {
+    "Id": 22326,
+    "FK_Variable": 456,
+    "Nombre": "Miembros del poder ejecutivo y de los cuerpos legislativos; directivos de la Administración Pública y organizaciones de interés social; directores ejecutivos",
+    "Codigo": "11",
+    "FK_JerarquiaPadres": [22325]
+  },
+  {
+    "Id": 22333,
+    "FK_Variable": 456,
+    "Nombre": "Directores de departamentos administrativos y comerciales",
+    "Codigo": "12",
+    "FK_JerarquiaPadres": [22325]
+  },
+  {
+    "Id": 22342,
+    "FK_Variable": 456,
+    "Nombre": "Directores de producción y operaciones",
+    "Codigo": "13",
+    "FK_JerarquiaPadres": [22325]
+  },
+  {
+    "Id": 22359,
+    "FK_Variable": 456,
+    "Nombre": "Directores y gerentes de empresas de alojamiento, restauración y comercio",
+    "Codigo": "14",
+    "FK_JerarquiaPadres": [22325]
+  },
+  {
+    "Id": 22370,
+    "FK_Variable": 456,
+    "Nombre": "Directores y gerentes de otras empresas de servicios no clasificados bajo otros epígrafes",
+    "Codigo": "15",
+    "FK_JerarquiaPadres": [22325]
+  }
+]

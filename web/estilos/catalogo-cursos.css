@@ -1,0 +1,402 @@
+/* «Cursos»: reutiliza las piezas de la Biblioteca (lecturas.css) y añade la zona de filtros y búsqueda, la línea de
+   resultados, las etiquetas de condiciones, la franja de seis datos y «Ver más». Todo cabe en el ancho de las fichas
+   (900 px) y se alinea con sus dos bordes; los filetes, como en el resto de la web, van a todo el ancho. Plano, sin sombras, halos ni animaciones: solo cambia el color al pasar y al
+   enfocar. Colores de los tokens, así que el modo oscuro es el del resto de la web. */
+
+/* Sin palabras sueltas al final de la entradilla. */
+.cursos .entradilla {
+  text-wrap: pretty;
+}
+
+/* Fecha de esta entrega del catálogo, neutra: no acredita la salud de sus fuentes. */
+.cursos-actualizado {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  margin: 16px 0 0;
+  color: var(--color-tenue);
+  font-size: 0.9rem;
+}
+
+.cursos-punto {
+  width: 8px;
+  height: 8px;
+  background: var(--color-tenue);
+  border-radius: 50%;
+}
+
+/* Filtros y búsqueda: el rótulo, los cuatro desplegables en una fila de columnas iguales y, debajo, el campo de
+   búsqueda a todo el ancho, con la misma altura que los desplegables. */
+/* El filete inferior ocupa todo el ancho, como el de la cabecera; el contenido, el de las fichas. */
+.cursos-herramientas {
+  display: grid;
+  gap: 10px;
+  padding: 28px 0 26px;
+  border-bottom: 1px solid var(--color-linea);
+}
+
+.cursos-filtros-fila,
+.cursos-campo {
+  max-width: 900px;
+}
+
+.cursos-herramientas .lecturas-filtros-rotulo {
+  margin: 0 0 2px;
+}
+
+.cursos-filtros-fila {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.cursos-filtros-fila .lecturas-desplegable-boton {
+  width: 100%;
+}
+
+.cursos-filtros-fila .lecturas-desplegable-texto {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.cursos-campo {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  min-height: var(--alto-control);
+  padding: 0 4px 0 14px;
+  background: var(--color-panel);
+  border: 1px solid var(--color-linea);
+  border-radius: 10px;
+}
+
+.cursos-campo:hover {
+  border-color: var(--color-tenue);
+}
+
+.cursos-campo:focus-within {
+  border-color: var(--color-tinta);
+  outline: 2px solid var(--color-acento);
+  outline-offset: 2px;
+}
+
+.cursos-lupa {
+  flex: none;
+  width: 18px;
+  height: 18px;
+  color: var(--color-tenue);
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+}
+
+.cursos-campo input {
+  flex: 1;
+  width: 100%;
+  min-width: 0;
+  min-height: calc(var(--alto-control) - 2px);
+  padding: 0;
+  color: var(--color-tinta);
+  font: 0.9375rem var(--fuente-texto);
+  background: transparent;
+  border: 0;
+  outline: none;
+}
+
+.cursos-campo input::placeholder {
+  color: var(--color-tenue);
+  opacity: 1;
+}
+
+.cursos-campo input::-webkit-search-cancel-button {
+  display: none;
+}
+
+.cursos-limpiar {
+  display: inline-grid;
+  flex: none;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  color: var(--color-tenue);
+  cursor: pointer;
+  background: none;
+  border: 0;
+  border-radius: 7px;
+}
+
+.cursos-limpiar:hover,
+.cursos-limpiar:focus-visible {
+  color: var(--color-tinta);
+  background: color-mix(in srgb, var(--color-acento) 8%, var(--color-panel));
+}
+
+.cursos-limpiar svg {
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+}
+
+/* Línea de resultados: cuántos cursos hay, «Quitar filtros» si se filtra y, a la derecha, «Ordenar · …». */
+.cursos-resultados {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+  align-items: center;
+  max-width: 900px;
+  margin: 0 0 18px;
+}
+
+.lecturas-bloque .cursos-recuento {
+  margin: 0;
+  font-size: 1.125rem;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+}
+
+.cursos-resultados .lecturas-filtros-quitar {
+  margin: 0;
+}
+
+.cursos-orden {
+  margin-left: auto;
+}
+
+.cursos-orden .lecturas-desplegable-panel {
+  right: 0;
+  left: auto;
+}
+
+/* El panel del último desplegable se abre hacia la izquierda, para no salirse del ancho de las fichas. */
+.cursos-filtros-fila .lecturas-desplegable:last-child .lecturas-desplegable-panel {
+  right: 0;
+  left: auto;
+}
+
+/* Resaltado de las palabras buscadas en el título. */
+.cursos-ficha mark {
+  color: inherit;
+  background: color-mix(in srgb, var(--color-acento) 22%, transparent);
+  border-radius: 2px;
+}
+
+/* Condiciones: «Gratuito», el certificado y, si la hay, la marca del producto que enseña. */
+.cursos-etiquetas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: -2px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cursos-etiqueta {
+  padding: 3px 9px;
+  color: var(--color-tinta);
+  font-size: 0.8125rem;
+  line-height: 1.4;
+  border: 1px solid var(--color-linea);
+  border-radius: 4px;
+}
+
+/* Verde oscuro sobre un fondo suave del mismo color: legible de un vistazo (contraste de 6,3:1 o más en los dos modos),
+   sin ser chillón. */
+.cursos-etiqueta--gratis {
+  color: light-dark(#1e5e3a, #9be3b8);
+  font-weight: 500;
+  background: light-dark(#e4f1e8, #173022);
+  border-color: light-dark(#7fb795, #3f7a57);
+}
+
+/* Franja de datos: seis, en dos filas de tres separadas por filetes. */
+.cursos-vistazo {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.lecturas-vistazo.cursos-vistazo > div + div {
+  padding-left: 20px;
+  border-left: 1px solid var(--color-linea);
+}
+
+.lecturas-vistazo.cursos-vistazo > div:nth-child(3n + 1) {
+  padding-left: 28px;
+  border-left: 0;
+}
+
+.lecturas-vistazo.cursos-vistazo > div:nth-child(n + 4) {
+  border-top: 1px solid var(--color-linea);
+}
+
+.cursos-vistazo dd.cursos-no-indicado,
+.cursos-vistazo .cursos-no-indicado {
+  color: var(--color-tenue);
+  font-weight: 400;
+}
+
+.cursos-vacio {
+  max-width: 900px;
+  padding: 28px;
+  background: var(--color-panel);
+  border: 1px solid var(--color-linea);
+  border-radius: 4px;
+}
+
+.cursos-vacio p {
+  margin: 0 0 8px;
+}
+
+.cursos-mas {
+  max-width: 900px;
+  padding: 24px 0 8px;
+  text-align: center;
+}
+
+.cursos-boton {
+  min-height: var(--alto-control);
+  padding: 0 18px;
+  color: var(--color-tinta);
+  font: inherit;
+  font-size: 0.9375rem;
+  cursor: pointer;
+  background: var(--color-panel);
+  border: 1px solid var(--color-linea);
+  border-radius: 10px;
+}
+
+.cursos-boton:hover,
+.cursos-boton:focus-visible {
+  background: color-mix(in srgb, var(--color-acento) 8%, var(--color-panel));
+  border-color: var(--color-tinta);
+}
+
+.cursos-vacio .cursos-boton {
+  margin-top: 8px;
+}
+
+@media (max-width: 760px) {
+  .cursos-filtros-fila {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .cursos-filtros-fila .lecturas-desplegable:nth-child(2n) .lecturas-desplegable-panel {
+    right: 0;
+    left: auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .cursos-vistazo {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .lecturas-vistazo.cursos-vistazo > div,
+  .lecturas-vistazo.cursos-vistazo > div:nth-child(3n + 1) {
+    padding-left: 20px;
+    border-left: 1px solid var(--color-linea);
+  }
+
+  .lecturas-vistazo.cursos-vistazo > div:nth-child(2n + 1) {
+    padding-left: 20px;
+    border-left: 0;
+  }
+
+  .lecturas-vistazo.cursos-vistazo > div:nth-child(n + 3) {
+    border-top: 1px solid var(--color-linea);
+  }
+}
+
+@media (forced-colors: active) {
+  .cursos-punto {
+    forced-color-adjust: none;
+    background: CanvasText;
+  }
+}
+
+/* El estado cerrado y los controles que aún no pueden usarse no se muestran. */
+.cursos [hidden] {
+  display: none;
+}
+@media (max-width: 600px) {
+  .cursos-filtros-fila .lecturas-desplegable {
+    position: relative;
+  }
+  .cursos-filtros-fila .lecturas-desplegable-panel {
+    top: calc(100% + 6px);
+    right: auto;
+    left: 0;
+    min-width: max(100%, 15rem);
+    margin-top: 0;
+  }
+  .cursos-campo {
+    min-height: 52px;
+  }
+  .cursos-campo input {
+    min-height: 50px;
+  }
+  .cursos-orden {
+    position: relative;
+  }
+  .cursos-orden .lecturas-desplegable-panel {
+    top: calc(100% + 6px);
+    right: 0;
+    left: auto;
+    min-width: 15rem;
+    margin-top: 0;
+  }
+  .cursos-filtros-fila .lecturas-desplegable:nth-child(2n) .lecturas-desplegable-panel {
+    right: 0;
+    left: auto;
+  }
+}
+@media print {
+  .cursos-herramientas,
+  .cursos-resultados button,
+  .cursos-orden,
+  .cursos-mas {
+    display: none;
+  }
+}
+
+/* Indica que el listado está llegando; el navegador no conoce aún un porcentaje real. La barra se llena una sola vez
+   y se queda quieta antes del final: sigue diciendo «cargando» sin moverse, porque nada se mueve en bucle. */
+.cursos-progreso {
+  height: 0.25rem;
+  max-width: 18rem;
+  overflow: hidden;
+  border-radius: 1rem;
+  background: var(--color-linea);
+}
+.cursos-progreso::before {
+  content: "";
+  display: block;
+  height: 100%;
+  width: 85%;
+  transform-origin: left;
+  background: var(--color-semaforo-bien);
+  animation: llenar-cursos 4s ease-out 1 both;
+}
+@keyframes llenar-cursos {
+  from {
+    transform: scaleX(0);
+  }
+}
+/* Con movimiento reducido, la barra aparece ya en su punto de reposo, sin relleno. */
+@media (prefers-reduced-motion: reduce) {
+  .cursos-progreso::before {
+    animation: none;
+  }
+}
+@media (scripting: none) {
+  [data-cuenta],
+  .cursos-progreso {
+    display: none;
+  }
+}

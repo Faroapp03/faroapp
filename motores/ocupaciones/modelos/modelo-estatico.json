@@ -1,0 +1,34 @@
+{
+  "diseno": "logit+clf@faro-v1-estatico-256-int8",
+  "vectores": ["faro-v1-estatico-256-int8"],
+  "fecha": "2026-10-19T20:47:25.821Z",
+  "lambda": 0.1,
+  "entrenado": "fuera de este repositorio: 2112 textos de desarrollo, λ y temperatura con 3 pliegues internos por familias",
+  "pesos": {
+    "lex": 0.16221033499234444,
+    "sinLex": -1.4724004718458483,
+    "lexExacto": 1.5345961524106833,
+    "lexCa": 0.07320850517332743,
+    "lexCorto": 0.014334898734904124,
+    "lexGen": -0.10483357873354822,
+    "vec": 0.25927199620149094,
+    "sinVec": 0.6562281731909074,
+    "vecCa": -0.029256428570522363,
+    "vecCorto": -0.18465789864889937,
+    "vecGen": -0.028630817199125396,
+    "sector": 1.0815904203837152,
+    "pr": 1.7980391377681308,
+    "clfG": 0.8991261568987661,
+    "sinClfG": 0.2847174504512518,
+    "clfGCa": 0.3498340286375612
+  },
+  "fondo": -3.9220235267931667,
+  "temperatura": 1,
+  "ocupacion": {
+    "lex": 0.5,
+    "vec": 1
+  },
+  "opciones": {},
+  "umbral": 0.9974961172580981,
+  "acuerdo": true
+}

@@ -1,0 +1,70 @@
+{
+  "descripcion": "Caso piloto ficticio: recepcionista de un centro médico. Las tareas y los tiempos son inventados; los datos de las fuentes son reales.",
+  "catalan": {
+    "tareas": {
+      "t1": "Concertar cites per als pacients",
+      "t2": "Atendre trucades per informar o donar cites",
+      "t3": "Rebre i donar la benvinguda als pacients",
+      "t4": "Indicar a cada pacient on ha d’anar",
+      "t5": "Preparar les factures de les consultes privades",
+      "t6": "Calmar pacients nerviosos o enfadats"
+    },
+    "frases": {
+      "Muy poco: la tarea se basa en la empatía.": "Molt poc: la tasca es basa en l’empatia.",
+      "Escuchar, tranquilizar y adaptarte a cada situación.": "Escoltar, tranquil·litzar i adaptar-te a cada situació."
+    }
+  },
+  "entrada": {
+    "ocupacionEsco": "4226.1.1",
+    "fecha": "2026-09-27",
+    "tareas": [
+      {
+        "id": "t1",
+        "texto": "Concertar citas para pacientes",
+        "tiempo": "mucho",
+        "referencia": { "tareaOit": "4226-2", "relacion": "propia" }
+      },
+      {
+        "id": "t2",
+        "texto": "Atender llamadas para informar o dar citas",
+        "tiempo": "mucho",
+        "referencia": { "tareaOit": "4226-3", "relacion": "propia" }
+      },
+      {
+        "id": "t3",
+        "texto": "Recibir y dar la bienvenida a los pacientes",
+        "tiempo": "mucho",
+        "referencia": { "tareaOit": "4226-1", "relacion": "propia" }
+      },
+      {
+        "id": "t4",
+        "texto": "Indicar a cada paciente adónde debe ir",
+        "tiempo": "algo",
+        "referencia": { "tareaOit": "4226-4", "relacion": "propia" }
+      },
+      {
+        "id": "t5",
+        "texto": "Preparar las facturas de las consultas privadas",
+        "tiempo": "poco",
+        "referencia": { "tareaOit": "4311-4", "relacion": "equivalente" }
+      },
+      {
+        "id": "t6",
+        "texto": "Calmar a pacientes nerviosos o enfadados",
+        "tiempo": "algo",
+        "estimacion": {
+          "valor": 0.25,
+          "margen": [0.15, 0.35],
+          "origen": "ejemplo",
+          "referenciaCercana": "4226-1",
+          "iaPodria": "Muy poco: la tarea se basa en la empatía.",
+          "loTuyo": "Escuchar, tranquilizar y adaptarte a cada situación.",
+          "competencias": [
+            "http://data.europa.eu/esco/skill/f8e5f1fd-82ee-45c0-b179-399d8e9a22aa",
+            "http://data.europa.eu/esco/skill/49e1eb78-e6b1-4116-8e9f-f23316ee503e"
+          ]
+        }
+      }
+    ]
+  }
+}

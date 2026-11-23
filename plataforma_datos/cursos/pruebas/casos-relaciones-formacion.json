@@ -1,0 +1,142 @@
+[
+  {
+    "id": "exacta-codigo-completo",
+    "relacion": "exacta",
+    "cosispe": "31431012",
+    "ocupacion_sepe": "31431012",
+    "esperado": true
+  },
+  {
+    "id": "exacta-mismo-grupo",
+    "relacion": "exacta",
+    "cosispe": "31431012",
+    "ocupacion_sepe": "31431099",
+    "esperado": true
+  },
+  {
+    "id": "exacta-grupo-publicado",
+    "relacion": "exacta",
+    "cosispe": "3143",
+    "ocupacion_sepe": "31431012",
+    "esperado": true
+  },
+  {
+    "id": "exacta-grupo-exacto",
+    "relacion": "exacta",
+    "cosispe": "3143",
+    "ocupacion_sepe": "3143",
+    "esperado": true
+  },
+  {
+    "id": "exacta-otro-grupo",
+    "relacion": "exacta",
+    "cosispe": "31431012",
+    "ocupacion_sepe": "31531012",
+    "esperado": false
+  },
+  {
+    "id": "cercana-codigo-completo",
+    "relacion": "cercana",
+    "cosispe": "31431012",
+    "ocupacion_sepe": "31431012",
+    "esperado": true
+  },
+  {
+    "id": "cercana-mismo-grupo",
+    "relacion": "cercana",
+    "cosispe": "31431012",
+    "ocupacion_sepe": "31431099",
+    "esperado": true
+  },
+  {
+    "id": "cercana-grupo-publicado",
+    "relacion": "cercana",
+    "cosispe": "3143",
+    "ocupacion_sepe": "31431012",
+    "esperado": true
+  },
+  {
+    "id": "cercana-grupo-exacto",
+    "relacion": "cercana",
+    "cosispe": "3143",
+    "ocupacion_sepe": "3143",
+    "esperado": true
+  },
+  {
+    "id": "cercana-otro-grupo",
+    "relacion": "cercana",
+    "cosispe": "31431012",
+    "ocupacion_sepe": "31531012",
+    "esperado": false
+  },
+  {
+    "id": "amplia-codigo-completo",
+    "relacion": "amplia",
+    "cosispe": "31431012",
+    "ocupacion_sepe": "31431012",
+    "esperado": true
+  },
+  {
+    "id": "amplia-mismo-grupo",
+    "relacion": "amplia",
+    "cosispe": "31431012",
+    "ocupacion_sepe": "31431099",
+    "esperado": true
+  },
+  {
+    "id": "amplia-grupo-publicado",
+    "relacion": "amplia",
+    "cosispe": "3143",
+    "ocupacion_sepe": "31431012",
+    "esperado": true
+  },
+  {
+    "id": "amplia-grupo-exacto",
+    "relacion": "amplia",
+    "cosispe": "3143",
+    "ocupacion_sepe": "3143",
+    "esperado": true
+  },
+  {
+    "id": "amplia-otro-grupo",
+    "relacion": "amplia",
+    "cosispe": "31431012",
+    "ocupacion_sepe": "31531012",
+    "esperado": false
+  },
+  {
+    "id": "estrecha-codigo-completo",
+    "relacion": "estrecha",
+    "cosispe": "31431012",
+    "ocupacion_sepe": "31431012",
+    "esperado": true
+  },
+  {
+    "id": "estrecha-mismo-grupo",
+    "relacion": "estrecha",
+    "cosispe": "31431012",
+    "ocupacion_sepe": "31431099",
+    "esperado": false
+  },
+  {
+    "id": "estrecha-grupo-publicado",
+    "relacion": "estrecha",
+    "cosispe": "3143",
+    "ocupacion_sepe": "31431012",
+    "esperado": false
+  },
+  {
+    "id": "estrecha-grupo-exacto",
+    "relacion": "estrecha",
+    "cosispe": "3143",
+    "ocupacion_sepe": "3143",
+    "esperado": true
+  },
+  {
+    "id": "estrecha-otro-grupo",
+    "relacion": "estrecha",
+    "cosispe": "31431012",
+    "ocupacion_sepe": "31531012",
+    "esperado": false
+  }
+]

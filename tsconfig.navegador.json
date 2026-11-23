@@ -1,0 +1,33 @@
+{
+  // El motor que corre en el dispositivo (src/plataforma/navegador/motor.ts y todo lo que importa): npm run tipos
+  // comprueba aquí sus tipos sin los de Node (si una pieza del motor usara algo de Node, fallaría), y sus «files» son
+  // las entradas que empaqueta empaquetarMotor (herramientas/web/empaquetado/construccion.ts). No emite nada.
+  "compilerOptions": {
+    "target": "es2022",
+    "lib": ["es2024", "dom", "dom.iterable"],
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "types": [],
+    "rootDir": ".",
+    "allowImportingTsExtensions": true,
+    "rewriteRelativeImportExtensions": true,
+    "allowJs": true,
+    "checkJs": true,
+    "erasableSyntaxOnly": true,
+    "verbatimModuleSyntax": true,
+    "resolveJsonModule": true,
+    "strict": true,
+    "skipLibCheck": false,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitOverride": true,
+    "noImplicitReturns": true,
+    "exactOptionalPropertyTypes": true,
+    "noUncheckedIndexedAccess": true,
+    "noEmitOnError": true,
+    "removeComments": true,
+    "sourceMap": false
+  },
+  "files": ["src/plataforma/navegador/motor.ts", "src/plataforma/navegador/trabajador-de-cursos.ts"]
+}

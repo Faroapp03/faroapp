@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "id": "faro:vigencia:fundae",
+  "version": "2",
+  "fuente_id": "fundae",
+  "responsable": "Equipo Faro",
+  "naturaleza": "politica-interna-operativa",
+  "criterios": {
+    "ttl_ficha_segundos": 86400,
+    "ttl_catalogo_segundos": 86400,
+    "requiere_catalogo": false,
+    "zona_fechas_dia": null,
+    "inicio_dia_inclusivo": null,
+    "fin_dia_inclusivo": null,
+    "plazo_tecnico": "revision_interna"
+  },
+  "justificacion": "La presencia en el índice de un agregador no es una ficha disponible ni prueba gratuidad o admisión. Sin comprobación propia de ficha, el evaluador mantiene sin-confirmar. El plazo técnico de 24 horas marca la próxima revisión interna de Faro y solo avisa en el panel: no retira la oferta, no cambia sus datos y no es un plazo del proveedor. Tampoco es una fecha comercial, garantía o cadencia declarada por FUNDAE. No se deduce el huso ni la inclusividad de fechas de preinscripción.",
+  "revision_equipo_faro": {
+    "estado": "criterio-propuesto-sin-activacion",
+    "fecha": null,
+    "alcance": "Índices publicados de los catálogos 1/3; no convierte variantes o anuncios en ediciones ni sustituye fuentes directas."
+  }
+}

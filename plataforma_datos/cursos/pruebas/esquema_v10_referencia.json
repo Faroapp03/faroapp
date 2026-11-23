@@ -1,0 +1,217 @@
+[
+  ["index", "anuncio_proveedor", "CREATE INDEX anuncio_proveedor ON anuncios(proveedor_id)"],
+  ["index", "anuncio_variante", "CREATE INDEX anuncio_variante ON anuncios(variante_id)"],
+  ["index", "canal_entidad", "CREATE INDEX canal_entidad ON canales_temporales(entidad,entidad_id,canal,id)"],
+  ["index", "etiqueta_actual", "CREATE UNIQUE INDEX etiqueta_actual ON etiquetas(programa_id,codigo) WHERE vigente=1"],
+  [
+    "index",
+    "evidencia_anuncio",
+    "CREATE UNIQUE INDEX evidencia_anuncio ON vinculos_evidencia_oferta(evidencia_id,anuncio_id) WHERE anuncio_id IS NOT NULL"
+  ],
+  [
+    "index",
+    "evidencia_centro",
+    "CREATE UNIQUE INDEX evidencia_centro ON vinculos_evidencia_oferta(evidencia_id,centro_id) WHERE centro_id IS NOT NULL"
+  ],
+  [
+    "index",
+    "evidencia_edicion",
+    "CREATE UNIQUE INDEX evidencia_edicion ON vinculos_evidencia(evidencia_id,edicion_id) WHERE edicion_id IS NOT NULL"
+  ],
+  [
+    "index",
+    "evidencia_programa",
+    "CREATE UNIQUE INDEX evidencia_programa ON vinculos_evidencia(evidencia_id,programa_id) WHERE programa_id IS NOT NULL"
+  ],
+  [
+    "index",
+    "evidencia_variante",
+    "CREATE UNIQUE INDEX evidencia_variante ON vinculos_evidencia_oferta(evidencia_id,variante_id) WHERE variante_id IS NOT NULL"
+  ],
+  ["index", "programa_proveedor", "CREATE UNIQUE INDEX programa_proveedor ON programas(id,proveedor_id)"],
+  ["index", "variante_programa", "CREATE INDEX variante_programa ON variantes(programa_id)"],
+  [
+    "index",
+    "vigencia_edicion_corte",
+    "CREATE INDEX vigencia_edicion_corte ON evaluaciones_vigencia(edicion_id,corte_us DESC)"
+  ],
+  [
+    "index",
+    "vigencia_unidad_corte",
+    "CREATE INDEX vigencia_unidad_corte ON evaluaciones_vigencia(unidad_clave,corte_us DESC)"
+  ],
+  [
+    "table",
+    "anuncios",
+    "CREATE TABLE anuncios (\n id TEXT PRIMARY KEY, variante_id TEXT NOT NULL REFERENCES variantes(id),\n proveedor_id TEXT NOT NULL REFERENCES proveedores(id), centro_id TEXT,\n datos TEXT NOT NULL CHECK(json_valid(datos)), huella TEXT NOT NULL CHECK(length(huella)=64),\n FOREIGN KEY(centro_id,proveedor_id) REFERENCES centros(id,proveedor_id) DEFERRABLE INITIALLY DEFERRED)"
+  ],
+  [
+    "table",
+    "cambios_decision_vigencia",
+    "CREATE TABLE cambios_decision_vigencia (\n id INTEGER PRIMARY KEY, edicion_id TEXT REFERENCES ediciones(id),\n anterior_id INTEGER REFERENCES evaluaciones_vigencia(id),\n evaluacion_id INTEGER NOT NULL UNIQUE REFERENCES evaluaciones_vigencia(id),\n unidad_clave TEXT NOT NULL REFERENCES unidades_vigencia(clave),\n CHECK((edicion_id IS NULL AND json_extract(unidad_clave,'$[0]')='recurso')\n OR (edicion_id IS NOT NULL AND unidad_clave=json_array('edicion',edicion_id))))"
+  ],
+  [
+    "table",
+    "canales_temporales",
+    "CREATE TABLE canales_temporales (\n id INTEGER PRIMARY KEY, entidad TEXT NOT NULL, entidad_id TEXT NOT NULL, canal TEXT NOT NULL,\n ejecucion_id INTEGER REFERENCES ejecuciones(id), instantanea_id INTEGER REFERENCES instantaneas(id),\n huella_negocio TEXT NOT NULL CHECK(length(huella_negocio)=64))"
+  ],
+  [
+    "table",
+    "centros",
+    "CREATE TABLE centros (\n id TEXT PRIMARY KEY, proveedor_id TEXT NOT NULL REFERENCES proveedores(id), nombre TEXT NOT NULL,\n datos TEXT NOT NULL CHECK(json_valid(datos)), huella TEXT NOT NULL CHECK(length(huella)=64),\n UNIQUE(id,proveedor_id))"
+  ],
+  [
+    "table",
+    "conflictos_aprendizaje",
+    "CREATE TABLE conflictos_aprendizaje (\n id INTEGER PRIMARY KEY, programa_id TEXT NOT NULL REFERENCES programas(id), afirmacion_id TEXT NOT NULL,\n ejecucion_id INTEGER NOT NULL REFERENCES ejecuciones(id),\n decision_conservada TEXT NOT NULL CHECK(json_valid(decision_conservada)),\n entrada TEXT NOT NULL CHECK(json_valid(entrada)),\n registro_decision TEXT NOT NULL CHECK(json_valid(registro_decision)),\n registro_entrada TEXT NOT NULL CHECK(json_valid(registro_entrada)),\n huella_decision TEXT NOT NULL CHECK(length(huella_decision)=64),\n huella_entrada TEXT NOT NULL CHECK(length(huella_entrada)=64),\n UNIQUE(programa_id,afirmacion_id,huella_decision,huella_entrada))"
+  ],
+  [
+    "table",
+    "conflictos_etiquetas",
+    "CREATE TABLE conflictos_etiquetas (\n id INTEGER PRIMARY KEY, programa_id TEXT NOT NULL REFERENCES programas(id), codigo TEXT NOT NULL,\n ejecucion_id INTEGER NOT NULL REFERENCES ejecuciones(id),\n decision_conservada TEXT NOT NULL CHECK(json_valid(decision_conservada)),\n entrada TEXT NOT NULL CHECK(json_valid(entrada)),\n huella_decision TEXT NOT NULL CHECK(length(huella_decision)=64),\n huella_entrada TEXT NOT NULL CHECK(length(huella_entrada)=64),\n UNIQUE(programa_id,codigo,huella_decision,huella_entrada))"
+  ],
+  [
+    "table",
+    "contenidos_vigencia",
+    "CREATE TABLE contenidos_vigencia (\n id INTEGER PRIMARY KEY,\n sha256 TEXT NOT NULL UNIQUE CHECK(length(sha256)=64),\n contenido TEXT NOT NULL CHECK(json_valid(contenido)))"
+  ],
+  [
+    "table",
+    "ediciones",
+    "CREATE TABLE ediciones (\n id TEXT PRIMARY KEY, programa_id TEXT NOT NULL REFERENCES programas(id),\n datos TEXT NOT NULL CHECK(json_valid(datos)), huella TEXT NOT NULL CHECK(length(huella)=64))"
+  ],
+  [
+    "table",
+    "ejecuciones",
+    "CREATE TABLE ejecuciones (\n id INTEGER PRIMARY KEY, observado_utc TEXT NOT NULL, importado_utc TEXT NOT NULL,\n fuente_lote TEXT NOT NULL, huella_lote TEXT NOT NULL CHECK(length(huella_lote)=64))"
+  ],
+  [
+    "table",
+    "etiquetas",
+    "CREATE TABLE etiquetas (\n id INTEGER PRIMARY KEY, programa_id TEXT NOT NULL REFERENCES programas(id), codigo TEXT NOT NULL,\n estado TEXT NOT NULL CHECK(estado IN ('propuesta','sustentada')),\n metodo TEXT NOT NULL, evidencia TEXT NOT NULL CHECK(json_valid(evidencia)),\n revision TEXT NOT NULL CHECK(revision IN ('vigente','requiere_revision')),\n vigente INTEGER NOT NULL CHECK(vigente IN (0,1)),\n ejecucion_id INTEGER NOT NULL REFERENCES ejecuciones(id))"
+  ],
+  [
+    "table",
+    "evaluaciones_vigencia",
+    "CREATE TABLE evaluaciones_vigencia (\n id INTEGER PRIMARY KEY, edicion_id TEXT REFERENCES ediciones(id),\n corte_us INTEGER NOT NULL, registrado_utc TEXT NOT NULL,\n huella_edicion TEXT, huella_entradas TEXT NOT NULL, huella_evaluador TEXT NOT NULL,\n huella_resultado TEXT NOT NULL, huella_registro TEXT NOT NULL,\n contenido TEXT NOT NULL CHECK(json_valid(contenido)),\n revision_observaciones_id INTEGER REFERENCES revisiones_observaciones_vigencia(id), huella_fisica TEXT,\n unidad_clave TEXT NOT NULL REFERENCES unidades_vigencia(clave), huella_unidad TEXT NOT NULL,\n UNIQUE(unidad_clave,corte_us),\n CHECK((edicion_id IS NULL AND huella_edicion IS NULL AND json_extract(unidad_clave,'$[0]')='recurso')\n OR (edicion_id IS NOT NULL AND unidad_clave=json_array('edicion',edicion_id)\n AND huella_edicion IS NOT NULL AND huella_edicion=huella_unidad)))"
+  ],
+  [
+    "table",
+    "evidencias",
+    "CREATE TABLE evidencias (\n id INTEGER PRIMARY KEY, url TEXT NOT NULL, capturado_utc TEXT NOT NULL,\n sha256 TEXT NOT NULL CHECK(length(sha256)=64), archivo TEXT,\n clave TEXT NOT NULL UNIQUE CHECK(length(clave)=64))"
+  ],
+  [
+    "table",
+    "historial_pertenencia",
+    "CREATE TABLE historial_pertenencia (\n id INTEGER PRIMARY KEY, instantanea_id INTEGER NOT NULL REFERENCES instantaneas(id),\n proveedor_id TEXT NOT NULL, ambito TEXT NOT NULL, programa_id TEXT NOT NULL,\n cambio TEXT NOT NULL CHECK(cambio IN ('alta','retirada','reactivacion')),\n FOREIGN KEY(proveedor_id,ambito,programa_id) REFERENCES pertenencia_catalogo(proveedor_id,ambito,programa_id))"
+  ],
+  [
+    "table",
+    "instantaneas",
+    "CREATE TABLE instantaneas (\n id INTEGER PRIMARY KEY, proveedor_id TEXT NOT NULL REFERENCES proveedores(id), ambito TEXT NOT NULL,\n observado_utc TEXT NOT NULL, total_publicado INTEGER NOT NULL CHECK(total_publicado>=0))"
+  ],
+  [
+    "table",
+    "observaciones",
+    "CREATE TABLE observaciones (\n id INTEGER PRIMARY KEY, ejecucion_id INTEGER NOT NULL REFERENCES ejecuciones(id),\n proveedor_id TEXT REFERENCES proveedores(id), programa_id TEXT REFERENCES programas(id),\n edicion_id TEXT REFERENCES ediciones(id),\n CHECK((proveedor_id IS NOT NULL)+(programa_id IS NOT NULL)+(edicion_id IS NOT NULL)=1))"
+  ],
+  [
+    "table",
+    "observaciones_evidencia",
+    "CREATE TABLE observaciones_evidencia (\n ejecucion_id INTEGER NOT NULL REFERENCES ejecuciones(id),\n vinculo_id INTEGER NOT NULL REFERENCES vinculos_evidencia(id),\n PRIMARY KEY(ejecucion_id,vinculo_id))"
+  ],
+  [
+    "table",
+    "observaciones_evidencia_oferta",
+    "CREATE TABLE observaciones_evidencia_oferta (\n ejecucion_id INTEGER NOT NULL REFERENCES ejecuciones(id),\n vinculo_id INTEGER NOT NULL REFERENCES vinculos_evidencia_oferta(id),\n PRIMARY KEY(ejecucion_id,vinculo_id))"
+  ],
+  [
+    "table",
+    "observaciones_oferta",
+    "CREATE TABLE observaciones_oferta (\n id INTEGER PRIMARY KEY, ejecucion_id INTEGER NOT NULL REFERENCES ejecuciones(id),\n variante_id TEXT REFERENCES variantes(id), centro_id TEXT REFERENCES centros(id),\n anuncio_id TEXT REFERENCES anuncios(id),\n CHECK((variante_id IS NOT NULL)+(centro_id IS NOT NULL)+(anuncio_id IS NOT NULL)=1))"
+  ],
+  [
+    "table",
+    "observaciones_vigencia",
+    "CREATE TABLE observaciones_vigencia (\n edicion_id TEXT REFERENCES ediciones(id), observacion_id TEXT NOT NULL,\n hasta_us INTEGER NOT NULL, registrado_utc TEXT NOT NULL, huella TEXT NOT NULL,\n contenido TEXT NOT NULL CHECK(json_valid(contenido)), huella_fisica TEXT NOT NULL,\n unidad_clave TEXT NOT NULL REFERENCES unidades_vigencia(clave),\n PRIMARY KEY(unidad_clave,observacion_id),\n CHECK((edicion_id IS NULL AND json_extract(unidad_clave,'$[0]')='recurso')\n OR (edicion_id IS NOT NULL AND unidad_clave=json_array('edicion',edicion_id))))"
+  ],
+  [
+    "table",
+    "pertenencia_catalogo",
+    "CREATE TABLE pertenencia_catalogo (\n proveedor_id TEXT NOT NULL, ambito TEXT NOT NULL, programa_id TEXT NOT NULL,\n activo INTEGER NOT NULL CHECK(activo IN (0,1)), ultima_observacion TEXT NOT NULL,\n PRIMARY KEY(proveedor_id,ambito,programa_id),\n FOREIGN KEY(programa_id,proveedor_id) REFERENCES programas(id,proveedor_id))"
+  ],
+  [
+    "table",
+    "procedencias_aprendizaje",
+    "CREATE TABLE procedencias_aprendizaje (\n programa_id TEXT NOT NULL REFERENCES programas(id) DEFERRABLE INITIALLY DEFERRED,\n afirmacion_id TEXT NOT NULL, huella_afirmacion TEXT NOT NULL CHECK(length(huella_afirmacion)=64),\n registro TEXT CHECK(registro IS NULL OR json_valid(registro)),\n PRIMARY KEY(programa_id,afirmacion_id))"
+  ],
+  [
+    "table",
+    "programas",
+    "CREATE TABLE programas (\n id TEXT PRIMARY KEY, proveedor_id TEXT NOT NULL REFERENCES proveedores(id),\n titulo TEXT NOT NULL, url TEXT NOT NULL, tipo_unidad TEXT NOT NULL,\n datos TEXT NOT NULL CHECK(json_valid(datos)), huella TEXT NOT NULL CHECK(length(huella)=64))"
+  ],
+  [
+    "table",
+    "programas_fts",
+    "CREATE VIRTUAL TABLE programas_fts USING fts5(id UNINDEXED,titulo,datos, tokenize='unicode61 remove_diacritics 2')"
+  ],
+  ["table", "programas_fts_config", "CREATE TABLE 'programas_fts_config'(k PRIMARY KEY, v) WITHOUT ROWID"],
+  ["table", "programas_fts_content", "CREATE TABLE 'programas_fts_content'(id INTEGER PRIMARY KEY, c0, c1, c2)"],
+  ["table", "programas_fts_data", "CREATE TABLE 'programas_fts_data'(id INTEGER PRIMARY KEY, block BLOB)"],
+  ["table", "programas_fts_docsize", "CREATE TABLE 'programas_fts_docsize'(id INTEGER PRIMARY KEY, sz BLOB)"],
+  [
+    "table",
+    "programas_fts_idx",
+    "CREATE TABLE 'programas_fts_idx'(segid, term, pgno, PRIMARY KEY(segid, term)) WITHOUT ROWID"
+  ],
+  [
+    "table",
+    "proveedores",
+    "CREATE TABLE proveedores (\n id TEXT PRIMARY KEY, nombre TEXT NOT NULL, territorio TEXT, naturaleza TEXT,\n huella TEXT NOT NULL CHECK(length(huella)=64))"
+  ],
+  [
+    "table",
+    "pruebas_temporales",
+    "CREATE TABLE pruebas_temporales (\n canal_id INTEGER NOT NULL REFERENCES canales_temporales(id),\n evidencia_id INTEGER NOT NULL REFERENCES evidencias(id), PRIMARY KEY(canal_id,evidencia_id))"
+  ],
+  [
+    "table",
+    "revisiones_legado",
+    "CREATE TABLE revisiones_legado (\n id INTEGER PRIMARY KEY,\n clave TEXT NOT NULL UNIQUE CHECK(length(clave)=64),\n aplicado_utc TEXT NOT NULL,\n contenido TEXT NOT NULL CHECK(json_valid(contenido)),\n huella_contenido TEXT NOT NULL CHECK(length(huella_contenido)=64))"
+  ],
+  [
+    "table",
+    "revisiones_observaciones_vigencia",
+    "CREATE TABLE revisiones_observaciones_vigencia (\n id INTEGER PRIMARY KEY, edicion_id TEXT REFERENCES ediciones(id),\n base_id INTEGER REFERENCES revisiones_observaciones_vigencia(id),\n modo TEXT NOT NULL CHECK(modo IN ('anexar','orden')), ids TEXT NOT NULL CHECK(json_valid(ids)),\n total INTEGER NOT NULL, huella_ids TEXT NOT NULL, huella_revision TEXT NOT NULL,\n unidad_clave TEXT NOT NULL REFERENCES unidades_vigencia(clave), UNIQUE(unidad_clave,huella_ids),\n CHECK((edicion_id IS NULL AND json_extract(unidad_clave,'$[0]')='recurso')\n OR (edicion_id IS NOT NULL AND unidad_clave=json_array('edicion',edicion_id))))"
+  ],
+  [
+    "table",
+    "unidades_vigencia",
+    "CREATE TABLE unidades_vigencia (\n clave TEXT PRIMARY KEY NOT NULL, tipo TEXT NOT NULL CHECK(tipo IN ('edicion','recurso')),\n entidad_id TEXT NOT NULL CHECK(length(entidad_id)>0),\n edicion_id TEXT REFERENCES ediciones(id), programa_id TEXT REFERENCES programas(id),\n UNIQUE(tipo,entidad_id), UNIQUE(clave,edicion_id),\n CHECK(clave=json_array(tipo,entidad_id)),\n CHECK((tipo='edicion' AND edicion_id=entidad_id AND edicion_id IS NOT NULL AND programa_id IS NULL)\n OR (tipo='recurso' AND programa_id=entidad_id AND programa_id IS NOT NULL AND edicion_id IS NULL)))"
+  ],
+  [
+    "table",
+    "variantes",
+    "CREATE TABLE variantes (\n id TEXT PRIMARY KEY, programa_id TEXT NOT NULL REFERENCES programas(id),\n datos TEXT NOT NULL CHECK(json_valid(datos)), huella TEXT NOT NULL CHECK(length(huella)=64))"
+  ],
+  [
+    "table",
+    "versiones",
+    "CREATE TABLE versiones (\n id INTEGER PRIMARY KEY, entidad TEXT NOT NULL CHECK(entidad IN ('proveedor','programa','edicion','etiqueta')),\n entidad_id TEXT NOT NULL, ejecucion_id INTEGER NOT NULL REFERENCES ejecuciones(id),\n antes TEXT CHECK(antes IS NULL OR json_valid(antes)), despues TEXT NOT NULL CHECK(json_valid(despues)),\n huella_antes TEXT CHECK(huella_antes IS NULL OR length(huella_antes)=64),\n huella_despues TEXT NOT NULL CHECK(length(huella_despues)=64))"
+  ],
+  [
+    "table",
+    "versiones_oferta",
+    "CREATE TABLE versiones_oferta (\n id INTEGER PRIMARY KEY, entidad TEXT NOT NULL CHECK(entidad IN ('variante','centro','anuncio')),\n entidad_id TEXT NOT NULL, ejecucion_id INTEGER NOT NULL REFERENCES ejecuciones(id),\n antes TEXT CHECK(antes IS NULL OR json_valid(antes)), despues TEXT NOT NULL CHECK(json_valid(despues)),\n huella_antes TEXT CHECK(huella_antes IS NULL OR length(huella_antes)=64),\n huella_despues TEXT NOT NULL CHECK(length(huella_despues)=64))"
+  ],
+  [
+    "table",
+    "vinculos_evidencia",
+    "CREATE TABLE vinculos_evidencia (\n id INTEGER PRIMARY KEY, evidencia_id INTEGER NOT NULL REFERENCES evidencias(id),\n programa_id TEXT REFERENCES programas(id), edicion_id TEXT REFERENCES ediciones(id),\n CHECK((programa_id IS NOT NULL)+(edicion_id IS NOT NULL)=1))"
+  ],
+  [
+    "table",
+    "vinculos_evidencia_oferta",
+    "CREATE TABLE vinculos_evidencia_oferta (\n id INTEGER PRIMARY KEY, evidencia_id INTEGER NOT NULL REFERENCES evidencias(id),\n variante_id TEXT REFERENCES variantes(id), centro_id TEXT REFERENCES centros(id),\n anuncio_id TEXT REFERENCES anuncios(id),\n CHECK((variante_id IS NOT NULL)+(centro_id IS NOT NULL)+(anuncio_id IS NOT NULL)=1))"
+  ]
+]

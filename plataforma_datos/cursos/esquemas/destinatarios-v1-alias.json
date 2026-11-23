@@ -1,0 +1,50 @@
+{
+  "version": "destinatarios-1.0.0",
+  "comparacion": "exacta sensible a caracteres; sin coincidencias aproximadas",
+  "regla_identidad": "identidad-v1",
+  "regla_desconocida": "pendiente-vocabulario-v1",
+  "reglas": [
+    {
+      "id": "trabajadores-generales-v1",
+      "origen": "trabajadores_general",
+      "destino": "personas_trabajadoras",
+      "justificacion": "Sinónimo editorial aprobado; las especialidades y el literal original se conservan sin cambios."
+    },
+    {
+      "id": "trabajadores-generales-v1",
+      "origen": "personas_trabajadoras_en_general",
+      "destino": "personas_trabajadoras",
+      "justificacion": "Sinónimo editorial aprobado; las especialidades y el literal original se conservan sin cambios."
+    },
+    {
+      "id": "trabajadores-generales-v1",
+      "origen": "trabajadores",
+      "destino": "personas_trabajadoras",
+      "justificacion": "Sinónimo editorial aprobado; las especialidades y el literal original se conservan sin cambios."
+    },
+    {
+      "id": "empleo-publico-v1",
+      "origen": "personal_publico",
+      "destino": "empleados_publicos",
+      "justificacion": "Sinónimo editorial aprobado; las especialidades y el literal original se conservan sin cambios."
+    },
+    {
+      "id": "familias-v1",
+      "origen": "familiares",
+      "destino": "familias",
+      "justificacion": "Sinónimo editorial aprobado; las especialidades y el literal original se conservan sin cambios."
+    },
+    {
+      "id": "autonomos-v1",
+      "origen": "autonomos",
+      "destino": "personas_autonomas",
+      "justificacion": "Sinónimo editorial aprobado; las especialidades y el literal original se conservan sin cambios."
+    },
+    {
+      "id": "ausencia-explicita-v1",
+      "origen": "no_consta",
+      "destino": null,
+      "justificacion": "Marcador de ausencia; no describe una población."
+    }
+  ]
+}

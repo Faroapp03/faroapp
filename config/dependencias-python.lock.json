@@ -1,0 +1,136 @@
+{
+  "version": 1,
+  "python": "3.12",
+  "requisitos": {
+    "requirements.txt": "7b02904f6d2a65f0839c2674e95a868c2a777b13af06a88eefe29dda36df69a8",
+    "requirements-dev.txt": "77aa97448bd97b587f6e863b3e7c30644c140a590b05a814794759679eacd3fc"
+  },
+  "comunes": [
+    {
+      "nombre": "boto3",
+      "version": "1.43.114",
+      "archivo": "boto3-1.43.114-py3-none-any.whl",
+      "url": "https://files.pythonhosted.org/packages/c8/f8/0799a101e6f65c8b687f50c218654cef1e44658e946c7d33d362e2572621/boto3-1.43.114-py3-none-any.whl",
+      "sha256": "d9cac2eb921ce674970cef1c9ad750f85ee3a846aedcf188d18368fb9eb6da23",
+      "bytes": 140043
+    },
+    {
+      "nombre": "botocore",
+      "version": "1.43.114",
+      "archivo": "botocore-1.43.114-py3-none-any.whl",
+      "url": "https://files.pythonhosted.org/packages/9a/41/7c6fa7ac5fcfd5ea3c6f32aab001942da32b184a210f39042778cb1ad8ed/botocore-1.43.114-py3-none-any.whl",
+      "sha256": "d1c441a22e93e158de5b1e026205f5d6d67a4545d10540c5090c62dccb3a9eca",
+      "bytes": 16067885
+    },
+    {
+      "nombre": "jmespath",
+      "version": "1.1.0",
+      "archivo": "jmespath-1.1.0-py3-none-any.whl",
+      "url": "https://files.pythonhosted.org/packages/14/2f/967ba146e6d58cf6a652da73885f52fc68001525b4197effc174321d70b4/jmespath-1.1.0-py3-none-any.whl",
+      "sha256": "a5663118de4908c91729bea0acadca56526eb2698e83de10cd116ae0f4e97c64",
+      "bytes": 20419
+    },
+    {
+      "nombre": "python-dateutil",
+      "version": "2.9.0.post0",
+      "archivo": "python_dateutil-2.9.0.post0-py2.py3-none-any.whl",
+      "url": "https://files.pythonhosted.org/packages/ec/57/56b9bcc3c9c6a792fcbaf139543cee77261f3651ca9da0c93f5c1221264b/python_dateutil-2.9.0.post0-py2.py3-none-any.whl",
+      "sha256": "a8b2bc7bffae282281c8140a97d3aa9c14da0b136dfe83f850eea9a5f7470427",
+      "bytes": 229892
+    },
+    {
+      "nombre": "s3transfer",
+      "version": "0.19.0",
+      "archivo": "s3transfer-0.19.0-py3-none-any.whl",
+      "url": "https://files.pythonhosted.org/packages/46/5f/4c174edad94f82de888ac00a5ddd8d07b35609b6c94f0bdf4d74af57703e/s3transfer-0.19.0-py3-none-any.whl",
+      "sha256": "777cc2415536f1debadb5c2ef7779275d0fc0fe0e042411cdd6caebeb2685262",
+      "bytes": 90101
+    },
+    {
+      "nombre": "six",
+      "version": "1.17.0",
+      "archivo": "six-1.17.0-py2.py3-none-any.whl",
+      "url": "https://files.pythonhosted.org/packages/b7/ce/149a00dd41f10bc29e5921b496af8b574d8413afcd5e30dfa0ed46c2cc5e/six-1.17.0-py2.py3-none-any.whl",
+      "sha256": "4721f391ed90541fddacab5acf947aa0d3dc7d27b2e1e8eda2be8970586c3274",
+      "bytes": 11050
+    },
+    {
+      "nombre": "urllib3",
+      "version": "2.8.0",
+      "archivo": "urllib3-2.8.0-py3-none-any.whl",
+      "url": "https://files.pythonhosted.org/packages/92/9d/c4e665119135114480843e7ab388fa94d8480650450e6f8e26b70d323a4c/urllib3-2.8.0-py3-none-any.whl",
+      "sha256": "0cf3cae568d36aa9576b28dfb35f11328f1cb974ca7647d9475ebb86c75ac6e3",
+      "bytes": 135717
+    },
+    {
+      "nombre": "sortedcontainers",
+      "version": "2.4.0",
+      "archivo": "sortedcontainers-2.4.0-py2.py3-none-any.whl",
+      "url": "https://files.pythonhosted.org/packages/32/46/9cb0e58b2deb7f82b84065f37f3bffeb12413f947f9388e4cac22c4621ce/sortedcontainers-2.4.0-py2.py3-none-any.whl",
+      "sha256": "a163dcaede0f1c021485e957a39245190e74249897e2ae4b2aa38595db237ee0",
+      "bytes": 29575
+    },
+    {
+      "nombre": "pypdf",
+      "version": "6.21.2",
+      "archivo": "pypdf-6.21.2-py3-none-any.whl",
+      "url": "https://files.pythonhosted.org/packages/1b/4d/c9d2d67f204eff463237a1a8f5e25a6923b7b1043982b91fcaf104c8ef60/pypdf-6.21.2-py3-none-any.whl",
+      "sha256": "1d44d1a3a200f25062adff0085b02040e4646431ac2ccac22e42679e91466084",
+      "bytes": 407766
+    },
+    {
+      "nombre": "certifi",
+      "version": "2026.10.23",
+      "archivo": "certifi-2026.10.23-py3-none-any.whl",
+      "url": "https://files.pythonhosted.org/packages/32/d1/a3652fe2c19134d0d15922177821d863cbd7e842d53a21bbe7e8e3a1b5ac/certifi-2026.10.23-py3-none-any.whl",
+      "sha256": "e9b54de76e530bb6cf0ccd036787103acb58fd42ba930ea8bf948ddbaa2f61d1",
+      "bytes": 135082
+    },
+    {
+      "nombre": "pip",
+      "version": "26.2.2",
+      "archivo": "pip-26.2.2-py3-none-any.whl",
+      "url": "https://files.pythonhosted.org/packages/3f/06/3e4420302363fbb71be3c7f35ce042f54bfca330e3e66b3a2e3c4cca579f/pip-26.2.2-py3-none-any.whl",
+      "sha256": "fd7f4dfa8190e014013b9f08f3e973f4e4c26ffd179a204895533a7254813a70",
+      "bytes": 1819850
+    }
+  ],
+  "plataformas": {
+    "linux-x86_64": [
+      {
+        "nombre": "ruff",
+        "version": "0.16.9",
+        "archivo": "ruff-0.16.9-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "url": "https://files.pythonhosted.org/packages/bc/b8/9c543074918061abbefc3bd139bee22de35abedb00dde0f2d27288838962/ruff-0.16.9-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "sha256": "a21713e629d3e5bdb2f5c2def1cc7f04f47fa8e1a7eb0571b4a28e1da64bc728",
+        "bytes": 10406494
+      },
+      {
+        "nombre": "hypothesis",
+        "version": "6.168.5",
+        "archivo": "hypothesis-6.168.5-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "url": "https://files.pythonhosted.org/packages/f7/4d/3bf0a7806b3fa12ed076f2daeb3db0e6f9738994e879432ffd8dbcffd634/hypothesis-6.168.5-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "sha256": "97ac1d516a42a3b1f13b36a1aa6a5f842e43d67e69d4dc664a9645b28de411ef",
+        "bytes": 1156695
+      }
+    ],
+    "darwin-arm64": [
+      {
+        "nombre": "ruff",
+        "version": "0.16.9",
+        "archivo": "ruff-0.16.9-py3-none-macosx_11_0_arm64.whl",
+        "url": "https://files.pythonhosted.org/packages/b6/63/09659283f92f02dff45809da194a70da2f688d87c55d8875c4fae3536072/ruff-0.16.9-py3-none-macosx_11_0_arm64.whl",
+        "sha256": "1632eb1d6197f33bd00b1acbc5b71009e89a8895c158e2d2b03a834fac964ab6",
+        "bytes": 9892940
+      },
+      {
+        "nombre": "hypothesis",
+        "version": "6.168.5",
+        "archivo": "hypothesis-6.168.5-cp312-cp312-macosx_11_0_arm64.whl",
+        "url": "https://files.pythonhosted.org/packages/f4/91/55de4e2a12fe98ebd5bc8f35e59870c897ab360cbfe5aa63862cdbef56ad/hypothesis-6.168.5-cp312-cp312-macosx_11_0_arm64.whl",
+        "sha256": "81ceb49b0dc3a4b6126cd0d3bf2b634af4e91513c8f1e2daee16041414ed8e3d",
+        "bytes": 784788
+      }
+    ]
+  }
+}

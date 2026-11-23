@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "id": "memoria",
+  "tema": "cursos",
+  "lector": "plataforma_datos.cursos.fuentes.memoria.lector",
+  "casa_datos": "memoria-fpcat",
+  "nombre": "Memòria del Sistema FPCAT 2025",
+  "institucion": "Agència FP.CAT",
+  "significado": "Tres cifras de escala del procedimiento ordinario de acreditación en Cataluña, periodo 2022–2025; no son un plazo individual ni oferta disponible.",
+  "alcance": [
+    "URL, cita, SHA y captura; periodo 2022–2025",
+    "Contexto de escala/espera de acreditación, no disponibilidad de una solicitud/curso"
+  ],
+  "recursos": [
+    {
+      "id": "memoria",
+      "tipo": "url",
+      "ubicacion": "https://fp.gencat.cat/content/dam/agenciafpcat/01_sistemafpcat/memories-sistema-fpcat/Memoria-AFPCAT-2025.pdf",
+      "licencia": "Llicència oberta d'ús d'informació – Catalunya, declarada por el lector; conservar atribución.",
+      "descripcion": "PDF conservado manualmente; lectura de tres rótulos y cifras de la página 9."
+    }
+  ],
+  "canales": [
+    {
+      "id": "memoria",
+      "tipo": "local",
+      "recursos": ["memoria"],
+      "autenticacion": "No aplicable al lector local",
+      "limites": [
+        "FP.CAT robots impide lectura automática según evidencia declarada; página 9 y tres rótulos/valores exactos; no API acreditada"
+      ],
+      "observaciones": "No hay descarga automática en el lector."
+    }
+  ],
+  "actualizacion": {
+    "politica": "manual",
+    "red": false,
+    "frecuencia": "anual (memoria de la Agència FP.CAT)",
+    "renovar_dias": 365,
+    "originales": "memoria-fpcat"
+  },
+  "conjuntos": [
+    {
+      "id": "memoria",
+      "fuente": "memoria",
+      "clase": "manual",
+      "alcance": "copia-local",
+      "operacion": "revision",
+      "intervalo_dias": null
+    }
+  ],
+  "dependencias": [],
+  "contratos": ["lector.py:validar"],
+  "retirada": "Se mantienen los controles de admisión y reconstrucción del lector actual; no se declara una conciliación genérica de entidades ni se interpreta un fallo como baja.",
+  "conservacion": "Se conservan las rutas, originales, procedencias y revisiones actuales en var/actualizacion; este descriptor no habilita limpieza automática ni fija nuevos plazos de retención."
+}

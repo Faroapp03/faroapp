@@ -1,0 +1,118 @@
+{
+  "schema_version": 1,
+  "id": "derechos",
+  "tema": "derechos",
+  "nombre": "Derechos laborales ante formación y tecnología",
+  "institucion": "BOE; Consell de Relacions Laborals",
+  "lector": "plataforma_datos.derechos.fuentes.derechos.lector",
+  "casa_datos": "derechos",
+  "significado": "Derechos de quien trabaja, de formación y ante la tecnología: las citas literales que el informe muestra a todas.",
+  "alcance": [
+    "El informe recuerda, igual para todas, tres derechos que convierten una formación «de pago» en tiempo de trabajo o en tiempo de la empresa: el Estatuto de los Trabajadores, art. 23.1.d (la formación para adaptarse a los cambios del puesto corre a cargo de la empresa y es tiempo de trabajo) y art. 23.3 (veinte horas anuales retribuidas), y el permiso individual de formación del Real Decreto 694/2017, art. 29 (formación oficial, con un máximo de 200 horas financiadas por permiso; y cómo se pide). Se citan literalmente, del BOE, con su enlace, sin prometer nada.",
+    "El segundo grupo, «Tus derechos ante la IA y la tecnología en el trabajo», sale de tecnologia.py: citas del Estatuto (art. 64.4.d) y de la LOPDGDD (arts. 87 a 90) del texto consolidado del BOE, los pasajes del documento del Consell de Relacions Laborals (2025) en que se apoya el resumen que hace Faro de sus recomendaciones y las nueve cláusulas sectoriales de su anexo, que van solo en los datos.",
+    "`descargar` lee los dos artículos vigentes de la API de datos abiertos del BOE y las páginas de los demás originales (los textos consolidados, el PDF del CRL y los dos convenios del BOE), una petición cada uno, con una pausa entre ellas; la extracción de texto del PDF no se descarga: se conserva con su huella y la del PDF del que sale. `preparar` comprueba que cada fragmento citado está, letra a letra, en la versión vigente de su artículo, y lo guarda con su enlace y su fecha; `validar` lo vuelve a comprobar con la huella de cada original. Las pruebas del motor exigen que el informe cite estos mismos fragmentos. Python estándar."
+  ],
+  "recursos": [
+    {
+      "id": "recurso-01",
+      "tipo": "url",
+      "ubicacion": "https://www.boe.es/datosabiertos/api/legislacion-consolidada/id/BOE-A-2015-11430/texto/bloque/a23",
+      "licencia": "Aviso legal del BOE: reutilización de sus contenidos citando la fuente (Ley 37/2007); las disposiciones legales no son objeto de propiedad intelectual (Real Decreto Legislativo 1/1996, art. 13).",
+      "descripcion": "Estatuto de los Trabajadores, artículo 23, todas sus versiones (API de datos abiertos del BOE)"
+    },
+    {
+      "id": "recurso-02",
+      "tipo": "url",
+      "ubicacion": "https://www.boe.es/datosabiertos/api/legislacion-consolidada/id/BOE-A-2017-7769/texto/bloque/a2-11",
+      "licencia": "Aviso legal del BOE: reutilización de sus contenidos citando la fuente (Ley 37/2007); las disposiciones legales no son objeto de propiedad intelectual (Real Decreto Legislativo 1/1996, art. 13).",
+      "descripcion": "Real Decreto 694/2017, artículo 29, todas sus versiones (API de datos abiertos del BOE)"
+    },
+    {
+      "id": "recurso-03",
+      "tipo": "url",
+      "ubicacion": "https://www.boe.es/buscar/act.php?id=BOE-A-2015-11430",
+      "licencia": "Aviso legal del BOE: reutilización de sus contenidos citando la fuente (Ley 37/2007); las disposiciones legales no son objeto de propiedad intelectual (Real Decreto Legislativo 1/1996, art. 13).",
+      "descripcion": "Estatuto de los Trabajadores, texto consolidado (BOE)"
+    },
+    {
+      "id": "recurso-04",
+      "tipo": "url",
+      "ubicacion": "https://www.boe.es/buscar/act.php?id=BOE-A-2018-16673",
+      "licencia": "Aviso legal del BOE: reutilización de sus contenidos citando la fuente (Ley 37/2007); las disposiciones legales no son objeto de propiedad intelectual (Real Decreto Legislativo 1/1996, art. 13).",
+      "descripcion": "Ley Orgánica 3/2018 (LOPDGDD), texto consolidado (BOE)"
+    },
+    {
+      "id": "recurso-05",
+      "tipo": "url",
+      "ubicacion": "https://treball.gencat.cat/web/.content/13_-_consell_relacions_laborals/documents/04_-_recursos/publicacions/Negociacio-collectiva/Recomanacions-IA/Recomendaciones-Digitalitzacion-IA-Cast-Acc-DEF.pdf",
+      "licencia": "Generalitat de Catalunya: Llicència oberta d'ús d'informació – Catalunya. El documento declara además «Los contenidos de esta obra están sujetos a una licencia de Reconocimiento - No comercial - Sin obras derivadas 3.0 de Creative Commons» (p. 3): Faro solo resume con sus palabras, cita pasajes breves y enlaza el original.",
+      "descripcion": "CRL: Recomendaciones a la negociación colectiva para la implementación de la digitalización y la IA (2025)"
+    },
+    {
+      "id": "recurso-06",
+      "tipo": "archivo",
+      "ubicacion": "var/actualizacion/originales/derechos/crl-recomendaciones-ia-paginas-2026-10-07.json",
+      "licencia": "Generalitat de Catalunya: Llicència oberta d'ús d'informació – Catalunya. El documento declara además «Los contenidos de esta obra están sujetos a una licencia de Reconocimiento - No comercial - Sin obras derivadas 3.0 de Creative Commons» (p. 3): Faro solo resume con sus palabras, cita pasajes breves y enlaza el original.",
+      "descripcion": "Texto por páginas del PDF del CRL, extraído en la captura del 07/10/2026"
+    },
+    {
+      "id": "recurso-07",
+      "tipo": "url",
+      "ubicacion": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2025-3083",
+      "licencia": "Aviso legal del BOE: reutilización de sus contenidos citando la fuente (Ley 37/2007); las disposiciones legales no son objeto de propiedad intelectual (Real Decreto Legislativo 1/1996, art. 13).",
+      "descripcion": "XXI Convenio colectivo general de la industria química (BOE)"
+    },
+    {
+      "id": "recurso-08",
+      "tipo": "url",
+      "ubicacion": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2025-47",
+      "licencia": "Aviso legal del BOE: reutilización de sus contenidos citando la fuente (Ley 37/2007); las disposiciones legales no son objeto de propiedad intelectual (Real Decreto Legislativo 1/1996, art. 13).",
+      "descripcion": "XXV Convenio colectivo del sector de la banca (BOE)"
+    }
+  ],
+  "canales": [
+    {
+      "id": "consulta",
+      "tipo": "remoto",
+      "recursos": ["recurso-01", "recurso-02", "recurso-03", "recurso-04", "recurso-05", "recurso-07", "recurso-08"],
+      "autenticacion": "No se configura autenticación de cuenta en este lector.",
+      "limites": [
+        "Rigen los controles y límites del lector; no se acredita una cuota remota nueva.",
+        "Sin consulta de red nueva en esta preparación; URL conservada no acredita disponibilidad actual."
+      ],
+      "observaciones": "API XML de bloques vigentes BOE y páginas/PDF oficiales; la extracción de texto del CRL no se descarga ni se genera aquí."
+    },
+    {
+      "id": "extraccion-conservada",
+      "tipo": "local",
+      "recursos": ["recurso-06"],
+      "autenticacion": "No aplicable al procesamiento local.",
+      "limites": [
+        "La extracción de texto por páginas debe estar vinculada por SHA al PDF conservado.",
+        "El lector no genera esta extracción; un cambio de PDF exige aportar su extracción comprobada."
+      ],
+      "observaciones": "Texto extraído conservado del PDF CRL, procesado con comprobación de procedencia; no una descarga ni otro productor."
+    }
+  ],
+  "actualizacion": {
+    "politica": "mensual",
+    "red": true,
+    "frecuencia": "cuando el BOE consolida la norma",
+    "renovar_dias": null,
+    "originales": "derechos"
+  },
+  "conjuntos": [
+    {
+      "id": "derechos",
+      "fuente": "derechos",
+      "clase": "cambiante",
+      "alcance": "contenido-actual-acotado",
+      "operacion": "descargar",
+      "intervalo_dias": 7
+    }
+  ],
+  "dependencias": [],
+  "contratos": ["lector.py:validar"],
+  "retirada": "No se retira contenido por fallo de consulta o ausencia de un original; se conservan las guardas de admisión existentes.",
+  "conservacion": "Casas y bytes operativos en var/actualizacion conservados. Este descriptor no rejuvenece fechas, no genera traducciones, no limpia originales ni cambia la política de admisión."
+}

@@ -1,0 +1,636 @@
+/* El panel usa la misma tipografía, foco y paleta que las páginas de Faro. */
+.panel-administracion {
+  max-width: 1128px;
+  padding: 38px 24px 24px;
+  margin: auto;
+}
+.panel-administracion h1 {
+  font-size: clamp(1.75rem, 4vw, 2.4rem);
+  line-height: 1.2;
+  margin: 8px 0 16px;
+}
+.panel-administracion h2 {
+  font-size: 1.2rem;
+  margin: 0 0 12px;
+}
+.panel-administracion h3 {
+  font-size: 1.1rem;
+  margin: 0 0 16px;
+}
+.panel-administracion h4 {
+  font-size: 1rem;
+  margin: 0 0 12px;
+}
+.panel-administracion .tarjeta {
+  padding: 24px;
+  border: 1px solid var(--color-linea);
+  background: var(--color-panel);
+  border-radius: 12px;
+  margin-bottom: 30px;
+}
+.panel-administracion .acciones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.panel-administracion :is(button, select, input) {
+  font: inherit;
+}
+.panel-administracion :is(button, select) {
+  min-height: 44px;
+  border-radius: 6px;
+  border: 1px solid var(--color-tinta);
+}
+.panel-administracion button {
+  padding: 9px 18px;
+  background: var(--color-tinta);
+  color: var(--color-fondo);
+  cursor: pointer;
+  font-weight: 600;
+}
+.panel-administracion button:hover:enabled {
+  text-decoration: underline;
+}
+.panel-administracion button:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+.panel-administracion button.secundario {
+  color: var(--color-tinta);
+  background: transparent;
+}
+.panel-administracion .cabecera-controles {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+}
+.panel-administracion #revision,
+.panel-administracion .ayuda,
+.panel-administracion .guardar span,
+.panel-reserva {
+  font-size: 0.9rem;
+  color: var(--color-tenue);
+}
+.panel-administracion fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  min-width: 0;
+}
+.panel-administracion legend {
+  position: absolute;
+  clip-path: inset(50%);
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.panel-administracion .rejilla {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+.panel-administracion select {
+  width: 100%;
+  color: var(--color-tinta);
+  background: var(--color-fondo);
+  padding: 10px;
+  margin-top: 8px;
+}
+.panel-administracion .interruptor {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 52px;
+  border-top: 1px solid var(--color-linea);
+  cursor: pointer;
+}
+.panel-administracion .interruptor input {
+  appearance: none;
+  width: 44px;
+  height: 26px;
+  flex-shrink: 0;
+  border-radius: 20px;
+  border: 2px solid var(--interruptor-apagado);
+  background: var(--interruptor-apagado);
+  position: relative;
+  cursor: pointer;
+}
+.panel-administracion .interruptor input::before {
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  top: 2px;
+  left: 2px;
+  border-radius: 50%;
+  background: var(--interruptor-pulgar);
+}
+.panel-administracion .interruptor input:checked {
+  background: var(--interruptor-encendido);
+  border-color: var(--interruptor-encendido);
+}
+.panel-administracion .interruptor input:checked::before {
+  background: var(--interruptor-pulgar);
+  left: 20px;
+}
+.panel-administracion .interruptor input:focus-visible {
+  outline: 3px solid var(--color-tinta);
+  outline-offset: 3px;
+}
+.panel-administracion .interruptor input:disabled {
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+.panel-administracion .guardar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+  padding: 24px 0;
+}
+.panel-reserva {
+  border-top: 1px solid var(--color-linea);
+  margin-top: 24px;
+  padding-top: 20px;
+}
+.panel-administracion .tabla-datos {
+  overflow-x: auto;
+}
+.panel-administracion table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+.panel-administracion :is(th, td) {
+  text-align: left;
+  padding: 12px;
+  border-bottom: 1px solid var(--color-linea);
+}
+.panel-administracion caption {
+  text-align: left;
+  padding: 12px 0;
+  font-weight: 600;
+}
+.salud-global,
+.salud-tema,
+.salud-fuente,
+.salud-aviso {
+  border: 1px solid var(--color-linea);
+  padding: 16px;
+  border-radius: 8px;
+}
+.salud-global,
+.salud-aviso {
+  margin-block: 12px;
+}
+.salud-temas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr));
+  gap: 12px;
+  margin-block: 16px;
+}
+:is(.salud-global, .salud-tema, .salud-fuente, .salud-aviso) h4 {
+  margin-top: 0;
+}
+.salud-fuentes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+  gap: 16px;
+}
+.salud-fuente {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  background: var(--color-fondo);
+}
+.salud-indicador {
+  font-weight: 700;
+}
+.salud-verde {
+  color: var(--color-semaforo-bien);
+}
+.salud-ambar {
+  color: var(--color-semaforo-atencion);
+}
+.salud-rojo {
+  color: var(--color-semaforo-fallo);
+}
+.salud-neutro {
+  color: var(--color-tenue);
+}
+.salud-accion,
+.salud-fuente-detalle {
+  border-top: 1px solid var(--color-linea);
+  padding-top: 12px;
+}
+.salud-filtros {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
+  gap: 8px;
+  margin-block: 20px;
+}
+.salud-detalle {
+  margin-top: 24px;
+}
+.salud-fuente-detalle {
+  margin-top: 12px;
+}
+.salud-fuente-detalle summary {
+  cursor: pointer;
+  font-weight: 600;
+}
+@media (max-width: 700px) {
+  .panel-administracion .rejilla {
+    grid-template-columns: 1fr;
+  }
+  .panel-administracion {
+    padding: 24px 16px;
+  }
+  .panel-administracion .tarjeta {
+    padding: 20px;
+  }
+}
+@media (forced-colors: active) {
+  .panel-administracion .interruptor input {
+    appearance: auto;
+    width: 24px;
+    height: 24px;
+  }
+  .panel-administracion .interruptor input::before {
+    display: none;
+  }
+}
+
+/* Fichas institucionales: los identificadores son opacos y el enlace solo vive en el campo de entrega. */
+.institucion-entrada {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 44px;
+  margin: 8px 0 18px;
+  padding: 10px 12px;
+  color: var(--color-tinta);
+  background: var(--color-fondo);
+  border: 1px solid var(--color-tenue);
+  border-radius: 6px;
+}
+#instituciones-formulario,
+#institucion-entrega,
+.institucion {
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid var(--color-linea);
+}
+.institucion,
+.institucion-clave {
+  overflow-wrap: anywhere;
+}
+.institucion-clave {
+  margin: 18px 0;
+  padding: 14px;
+  background: var(--color-fondo);
+  border: 1px solid var(--color-linea);
+  border-radius: 6px;
+}
+
+/* Estado, cifras y siguiente paso primero; referencias de conexión bajo demanda. */
+.panel-administracion .institucion-humana {
+  padding: 20px;
+  border: 1px solid var(--color-linea);
+  border-radius: 12px;
+  margin-top: 16px;
+  min-width: 0;
+}
+.panel-humano-cabecera {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+}
+.panel-administracion .panel-humano-cabecera h3 {
+  margin: 0;
+}
+.panel-humano-estado {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 0.85rem;
+  font-weight: 650;
+  line-height: 1.4;
+  border-radius: 20px;
+  border: 1px solid var(--color-linea);
+  padding: 5px 10px;
+  color: var(--color-tinta);
+  background: var(--color-fondo);
+}
+.panel-humano-estado::before {
+  content: "";
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: currentColor;
+  flex-shrink: 0;
+}
+.panel-humano-bien::before {
+  background: var(--color-semaforo-bien);
+}
+.panel-humano-pendiente::before {
+  background: var(--color-semaforo-atencion);
+}
+.panel-humano-neutro::before {
+  background: var(--color-tenue);
+}
+.panel-humano-cifras {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px 40px;
+  margin: 18px 0 10px;
+}
+.panel-humano-cifras dt,
+.panel-humano-fecha {
+  font-size: 0.85rem;
+  color: var(--color-tenue);
+}
+.panel-humano-cifras dd {
+  margin: 3px 0 0;
+  font-size: 1.6rem;
+  font-weight: 650;
+  line-height: 1.2;
+}
+.panel-humano-siguiente {
+  margin: 12px 0;
+}
+.panel-humano-detalles {
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px solid var(--color-linea);
+}
+.panel-humano-detalles summary {
+  cursor: pointer;
+  width: fit-content;
+  max-width: 100%;
+  padding: 8px 0;
+  font-size: 0.85rem;
+  color: var(--color-tenue);
+}
+.panel-humano-detalles code {
+  display: block;
+  margin-top: 5px;
+}
+.panel-humano-detalles :is(code, p) {
+  overflow-wrap: anywhere;
+}
+#accesos-lista {
+  display: grid;
+  gap: 24px;
+  margin-block: 20px 24px;
+  min-width: 0;
+}
+.panel-humano-canal {
+  border: 1px solid var(--color-linea);
+  border-radius: 14px;
+  padding: 22px;
+  background: var(--color-fondo);
+  min-width: 0;
+}
+.panel-humano-canal-cabecera {
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--color-linea);
+  margin-bottom: 8px;
+}
+.panel-administracion .panel-humano-canal-cabecera h3 {
+  font-size: 1.15rem;
+  margin: 0 0 8px;
+}
+.panel-humano-canal-ayuda {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--color-tenue);
+}
+.panel-humano-canal :is(th, td) {
+  vertical-align: top;
+  overflow-wrap: anywhere;
+}
+.panel-administracion .panel-humano-canal th {
+  font-weight: 700;
+  color: var(--color-tinta);
+  background: color-mix(in srgb, var(--color-tinta) 5%, var(--color-fondo));
+  border-bottom: 2px solid var(--color-linea);
+}
+.panel-humano-consulta {
+  overflow-wrap: anywhere;
+}
+.panel-humano-resultado-ayuda {
+  margin: 6px 0 0;
+  font-size: 0.8rem;
+  color: var(--color-tenue);
+  max-width: 30ch;
+}
+@media (width <= 600px) {
+  .panel-administracion .institucion-humana {
+    padding: 16px;
+  }
+  .panel-humano-cabecera {
+    align-items: flex-start;
+  }
+  .institucion-humana .acciones {
+    gap: 8px;
+  }
+  #accesos-lista {
+    gap: 18px;
+  }
+  .panel-humano-canal {
+    padding: 16px;
+  }
+  .panel-humano-canal :is(table, tbody, tr) {
+    display: block;
+    width: 100%;
+  }
+  .panel-humano-canal thead {
+    position: absolute;
+    clip-path: inset(50%);
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+  }
+  .panel-humano-canal tbody tr {
+    padding: 12px 0;
+    border-bottom: 1px solid var(--color-linea);
+  }
+  .panel-humano-canal tbody tr:last-child {
+    border-bottom: 0;
+  }
+  .panel-administracion .panel-humano-canal td {
+    display: grid;
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+    gap: 12px;
+    padding: 6px 0;
+    border-bottom: 0;
+    min-width: 0;
+  }
+  .panel-humano-canal td::before {
+    content: attr(data-rotulo);
+    font-weight: 700;
+    color: var(--color-tinta);
+  }
+  .panel-humano-canal td > * {
+    min-width: 0;
+  }
+}
+
+/* Los estados mantienen el texto y el alcance del registro real. */
+:is(#estado-activacion, #estado-trabajos) {
+  margin-top: 20px;
+  padding: 22px 24px;
+  border: 1px solid var(--color-linea);
+  border-radius: 12px;
+  background: var(--color-panel);
+}
+
+/* Conexiones independientes: una tarjeta por servicio. */
+.panel-administracion .conexiones-rejilla {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+.panel-administracion .conexiones-rejilla .tarjeta {
+  margin-bottom: 0;
+}
+@media (width <= 760px) {
+  .panel-administracion .conexiones-rejilla {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Estado de los datos por tema: la forma y el texto dicen el estado; el color solo lo acompaña. */
+.panel-servicio-filas {
+  display: grid;
+  gap: 0;
+}
+.panel-servicio-fila {
+  padding: 18px 0;
+  border-top: 1px solid var(--color-linea);
+}
+.panel-servicio-fila h4 {
+  margin: 0 0 6px;
+}
+.panel-servicio-indicador {
+  margin: 0 0 10px;
+  font-weight: 700;
+}
+.panel-servicio--verde .panel-servicio-indicador {
+  color: var(--color-semaforo-bien);
+}
+.panel-servicio--ambar .panel-servicio-indicador {
+  color: var(--color-semaforo-atencion);
+}
+.panel-servicio--rojo .panel-servicio-indicador {
+  color: var(--color-semaforo-fallo);
+}
+.panel-servicio--neutro .panel-servicio-indicador {
+  color: var(--color-tenue);
+}
+.panel-servicio-fila dl {
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr);
+  gap: 4px 16px;
+  margin: 0 0 10px;
+}
+.panel-servicio-fila dt {
+  color: var(--color-tenue);
+}
+.panel-servicio-fila dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+.panel-servicio-causa,
+.panel-servicio-accion {
+  max-width: 68ch;
+  margin: 0 0 6px;
+}
+.panel-servicio-accion {
+  font-weight: 600;
+}
+.panel-revisiones ul {
+  margin: 0;
+  padding-left: 1.2em;
+}
+.panel-revision-estado {
+  font-weight: 700;
+}
+@media (width <= 560px) {
+  .panel-servicio-fila dl {
+    grid-template-columns: 1fr;
+  }
+  .panel-servicio-fila dd {
+    margin-bottom: 6px;
+  }
+}
+
+/* Sesión única: estructura mínima; el diseño definitivo se aplica aparte sobre estas mismas clases. */
+.sesion-unica-banda {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background: var(--color-panel);
+  border-bottom: 1px solid var(--color-linea);
+  color: var(--color-tinta);
+}
+.sesion-unica-datos {
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr);
+  gap: 2px 12px;
+}
+.sesion-unica-dato {
+  color: var(--color-tenue);
+}
+/* Los correos largos parten línea dentro de su caja o de su celda, nunca la desbordan. */
+.sesion-unica-correo,
+.sesion-unica-valor,
+.sesion-unica-ocupada {
+  overflow-wrap: anywhere;
+  min-width: 0;
+}
+.sesion-unica-registro-tabla {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+.sesion-unica-celda {
+  border-bottom: 1px solid var(--color-linea);
+  text-align: left;
+  vertical-align: top;
+}
+.sesion-unica-aviso-cierre,
+.sesion-unica-aviso {
+  color: var(--color-tinta);
+}
+/* Marca de apertura: un círculo que se completa una sola vez, en menos de un segundo. */
+.sesion-unica-marca {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  margin-right: 0.4em;
+  border: 2px solid var(--color-acento);
+  border-radius: 50%;
+  vertical-align: -0.15em;
+}
+.sesion-unica-transicion {
+  animation: sesion-unica-completar 600ms ease-out 1 both;
+}
+@keyframes sesion-unica-completar {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .sesion-unica-transicion {
+    animation: none;
+  }
+}

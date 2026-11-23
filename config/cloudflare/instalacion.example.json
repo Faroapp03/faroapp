@@ -1,0 +1,9 @@
+{
+  "version": 1,
+  "entorno": "ensayo",
+  "tipo": "nueva",
+  "worker": "faro-ensayo",
+  "cursos": "faro-ensayo-cursos",
+  "origen": "https://faro-ensayo.<subdominio-de-la-cuenta>.workers.dev",
+  "migraciones_aplicadas": []
+}

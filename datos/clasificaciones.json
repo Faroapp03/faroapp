@@ -1,0 +1,7445 @@
+{
+  "fuente": "Fuente: INE, Clasificación Nacional de Ocupaciones 2011 y su correspondencia con la CIUO-08 (www.ine.es); OIT, CIUO-08.",
+  "cno11": {
+    "1": {
+      "titulo": "Directores y gerentes",
+      "nivel": "1",
+      "padre": ""
+    },
+    "A": {
+      "titulo": "Directores y gerentes",
+      "nivel": "GP",
+      "padre": "1"
+    },
+    "11": {
+      "titulo": "Miembros del poder ejecutivo y de los cuerpos legislativos; directivos de la Administración Pública y organizaciones de interés social; directores ejecutivos",
+      "nivel": "2",
+      "padre": "1"
+    },
+    "111": {
+      "titulo": "Miembros del poder ejecutivo y de los cuerpos legislativos; directivos de la Administración Pública y organizaciones de interés social",
+      "nivel": "3",
+      "padre": "11"
+    },
+    "1111": {
+      "titulo": "Miembros del poder ejecutivo (nacional, autonómico y local) y del poder legislativo",
+      "nivel": "4",
+      "padre": "111"
+    },
+    "1112": {
+      "titulo": "Personal directivo de la Administración Pública",
+      "nivel": "4",
+      "padre": "111"
+    },
+    "1113": {
+      "titulo": "Directores de organizaciones de interés social",
+      "nivel": "4",
+      "padre": "111"
+    },
+    "112": {
+      "titulo": "Directores generales y presidentes ejecutivos",
+      "nivel": "3",
+      "padre": "11"
+    },
+    "1120": {
+      "titulo": "Directores generales y presidentes ejecutivos",
+      "nivel": "4",
+      "padre": "112"
+    },
+    "12": {
+      "titulo": "Directores de departamentos administrativos y comerciales",
+      "nivel": "2",
+      "padre": "1"
+    },
+    "121": {
+      "titulo": "Directores de departamentos administrativos",
+      "nivel": "3",
+      "padre": "12"
+    },
+    "1211": {
+      "titulo": "Directores financieros",
+      "nivel": "4",
+      "padre": "121"
+    },
+    "1212": {
+      "titulo": "Directores de recursos humanos",
+      "nivel": "4",
+      "padre": "121"
+    },
+    "1219": {
+      "titulo": "Directores de políticas y planificación y de otros departamentos administrativos no clasificados bajo otros epígrafes",
+      "nivel": "4",
+      "padre": "121"
+    },
+    "122": {
+      "titulo": "Directores comerciales, de publicidad, relaciones públicas y de investigación y desarrollo",
+      "nivel": "3",
+      "padre": "12"
+    },
+    "1221": {
+      "titulo": "Directores comerciales y de ventas",
+      "nivel": "4",
+      "padre": "122"
+    },
+    "1222": {
+      "titulo": "Directores de publicidad y relaciones públicas",
+      "nivel": "4",
+      "padre": "122"
+    },
+    "1223": {
+      "titulo": "Directores de investigación y desarrollo",
+      "nivel": "4",
+      "padre": "122"
+    },
+    "13": {
+      "titulo": "Directores de producción y operaciones",
+      "nivel": "2",
+      "padre": "1"
+    },
+    "131": {
+      "titulo": "Directores de producción de explotaciones agropecuarias, forestales y pesqueras, y de industrias manufactureras, de minería, construcción y distribución",
+      "nivel": "3",
+      "padre": "13"
+    },
+    "1311": {
+      "titulo": "Directores de producción de explotaciones agropecuarias y forestales",
+      "nivel": "4",
+      "padre": "131"
+    },
+    "1312": {
+      "titulo": "Directores de producción de explotaciones pesqueras y acuícolas",
+      "nivel": "4",
+      "padre": "131"
+    },
+    "1313": {
+      "titulo": "Directores de industrias manufactureras",
+      "nivel": "4",
+      "padre": "131"
+    },
+    "1314": {
+      "titulo": "Directores de explotaciones mineras",
+      "nivel": "4",
+      "padre": "131"
+    },
+    "1315": {
+      "titulo": "Directores de empresas de abastecimiento, transporte, distribución y afines",
+      "nivel": "4",
+      "padre": "131"
+    },
+    "1316": {
+      "titulo": "Directores de empresas de construcción",
+      "nivel": "4",
+      "padre": "131"
+    },
+    "132": {
+      "titulo": "Directores de servicios de tecnologías de la información y las comunicaciones (TIC) y de empresas de servicios profesionales",
+      "nivel": "3",
+      "padre": "13"
+    },
+    "1321": {
+      "titulo": "Directores de servicios de tecnologías de la información y las comunicaciones (TIC)",
+      "nivel": "4",
+      "padre": "132"
+    },
+    "1322": {
+      "titulo": "Directores de servicios sociales para niños",
+      "nivel": "4",
+      "padre": "132"
+    },
+    "1323": {
+      "titulo": "Directores-gerentes de centros sanitarios",
+      "nivel": "4",
+      "padre": "132"
+    },
+    "1324": {
+      "titulo": "Directores de servicios sociales para personas mayores",
+      "nivel": "4",
+      "padre": "132"
+    },
+    "1325": {
+      "titulo": "Directores de otros servicios sociales",
+      "nivel": "4",
+      "padre": "132"
+    },
+    "1326": {
+      "titulo": "Directores de servicios de educación",
+      "nivel": "4",
+      "padre": "132"
+    },
+    "1327": {
+      "titulo": "Directores de sucursales de bancos, de servicios financieros y de seguros",
+      "nivel": "4",
+      "padre": "132"
+    },
+    "1329": {
+      "titulo": "Directores de otras empresas de servicios profesionales no clasificados bajo otros epígrafes",
+      "nivel": "4",
+      "padre": "132"
+    },
+    "14": {
+      "titulo": "Directores y gerentes de empresas de alojamiento, restauración y comercio",
+      "nivel": "2",
+      "padre": "1"
+    },
+    "141": {
+      "titulo": "Directores y gerentes de empresas de alojamiento",
+      "nivel": "3",
+      "padre": "14"
+    },
+    "1411": {
+      "titulo": "Directores y gerentes de hoteles",
+      "nivel": "4",
+      "padre": "141"
+    },
+    "1419": {
+      "titulo": "Directores y gerentes de otras empresas de servicios de alojamiento",
+      "nivel": "4",
+      "padre": "141"
+    },
+    "142": {
+      "titulo": "Directores y gerentes de empresas de restauración",
+      "nivel": "3",
+      "padre": "14"
+    },
+    "1421": {
+      "titulo": "Directores y gerentes de restaurantes",
+      "nivel": "4",
+      "padre": "142"
+    },
+    "1422": {
+      "titulo": "Directores y gerentes de bares, cafeterías y similares",
+      "nivel": "4",
+      "padre": "142"
+    },
+    "1429": {
+      "titulo": "Directores y gerentes de empresas de catering y otras empresas de restauración",
+      "nivel": "4",
+      "padre": "142"
+    },
+    "143": {
+      "titulo": "Directores y gerentes de empresas de comercio al por mayor y al por menor",
+      "nivel": "3",
+      "padre": "14"
+    },
+    "1431": {
+      "titulo": "Directores y gerentes de empresas de comercio al por mayor",
+      "nivel": "4",
+      "padre": "143"
+    },
+    "1432": {
+      "titulo": "Directores y gerentes de empresas de comercio al por menor",
+      "nivel": "4",
+      "padre": "143"
+    },
+    "15": {
+      "titulo": "Directores y gerentes de otras empresas de servicios no clasificados bajo otros epígrafes",
+      "nivel": "2",
+      "padre": "1"
+    },
+    "150": {
+      "titulo": "Directores y gerentes de otras empresas de servicios no clasificados bajo otros epígrafes",
+      "nivel": "3",
+      "padre": "15"
+    },
+    "1501": {
+      "titulo": "Directores y gerentes de empresas de actividades recreativas, culturales y deportivas",
+      "nivel": "4",
+      "padre": "150"
+    },
+    "1509": {
+      "titulo": "Directores y gerentes de empresas de gestión de residuos y de otras empresas de servicios no clasificados bajo otros epígrafes",
+      "nivel": "4",
+      "padre": "150"
+    },
+    "2": {
+      "titulo": "Técnicos y profesionales científicos e intelectuales",
+      "nivel": "1",
+      "padre": ""
+    },
+    "B": {
+      "titulo": "Técnicos y profesionales científicos e intelectuales de la salud y la enseñanza",
+      "nivel": "GP",
+      "padre": "2"
+    },
+    "21": {
+      "titulo": "Profesionales de la salud",
+      "nivel": "2",
+      "padre": "2"
+    },
+    "211": {
+      "titulo": "Médicos",
+      "nivel": "3",
+      "padre": "21"
+    },
+    "2111": {
+      "titulo": "Médicos de familia",
+      "nivel": "4",
+      "padre": "211"
+    },
+    "2112": {
+      "titulo": "Otros médicos especialistas",
+      "nivel": "4",
+      "padre": "211"
+    },
+    "212": {
+      "titulo": "Profesionales de enfermería y partería",
+      "nivel": "3",
+      "padre": "21"
+    },
+    "2121": {
+      "titulo": "Enfermeros no especializados",
+      "nivel": "4",
+      "padre": "212"
+    },
+    "2122": {
+      "titulo": "Enfermeros especializados (excepto matronos)",
+      "nivel": "4",
+      "padre": "212"
+    },
+    "2123": {
+      "titulo": "Matronos",
+      "nivel": "4",
+      "padre": "212"
+    },
+    "213": {
+      "titulo": "Veterinarios",
+      "nivel": "3",
+      "padre": "21"
+    },
+    "2130": {
+      "titulo": "Veterinarios",
+      "nivel": "4",
+      "padre": "213"
+    },
+    "214": {
+      "titulo": "Farmacéuticos",
+      "nivel": "3",
+      "padre": "21"
+    },
+    "2140": {
+      "titulo": "Farmacéuticos",
+      "nivel": "4",
+      "padre": "214"
+    },
+    "215": {
+      "titulo": "Otros profesionales de la salud",
+      "nivel": "3",
+      "padre": "21"
+    },
+    "2151": {
+      "titulo": "Odontólogos y estomatólogos",
+      "nivel": "4",
+      "padre": "215"
+    },
+    "2152": {
+      "titulo": "Fisioterapeutas",
+      "nivel": "4",
+      "padre": "215"
+    },
+    "2153": {
+      "titulo": "Dietistas y nutricionistas",
+      "nivel": "4",
+      "padre": "215"
+    },
+    "2154": {
+      "titulo": "Logopedas",
+      "nivel": "4",
+      "padre": "215"
+    },
+    "2155": {
+      "titulo": "Ópticos-optometristas",
+      "nivel": "4",
+      "padre": "215"
+    },
+    "2156": {
+      "titulo": "Terapeutas ocupacionales",
+      "nivel": "4",
+      "padre": "215"
+    },
+    "2157": {
+      "titulo": "Podólogos",
+      "nivel": "4",
+      "padre": "215"
+    },
+    "2158": {
+      "titulo": "Profesionales de la salud y la higiene laboral y ambiental",
+      "nivel": "4",
+      "padre": "215"
+    },
+    "2159": {
+      "titulo": "Profesionales de la salud no clasificados bajo otros epígrafes",
+      "nivel": "4",
+      "padre": "215"
+    },
+    "22": {
+      "titulo": "Profesionales de la enseñanza infantil, primaria, secundaria y postsecundaria",
+      "nivel": "2",
+      "padre": "2"
+    },
+    "221": {
+      "titulo": "Profesores de universidades y otra enseñanza superior (excepto formación profesional)",
+      "nivel": "3",
+      "padre": "22"
+    },
+    "2210": {
+      "titulo": "Profesores de universidades y otra enseñanza superior (excepto formación profesional)",
+      "nivel": "4",
+      "padre": "221"
+    },
+    "222": {
+      "titulo": "Profesores de formación profesional (materias específicas)",
+      "nivel": "3",
+      "padre": "22"
+    },
+    "2220": {
+      "titulo": "Profesores de formación profesional (materias específicas)",
+      "nivel": "4",
+      "padre": "222"
+    },
+    "223": {
+      "titulo": "Profesores de enseñanza secundaria (excepto materias específicas de formación profesional)",
+      "nivel": "3",
+      "padre": "22"
+    },
+    "2230": {
+      "titulo": "Profesores de enseñanza secundaria (excepto materias específicas de formación profesional)",
+      "nivel": "4",
+      "padre": "223"
+    },
+    "224": {
+      "titulo": "Profesores de enseñanza primaria",
+      "nivel": "3",
+      "padre": "22"
+    },
+    "2240": {
+      "titulo": "Profesores de enseñanza primaria",
+      "nivel": "4",
+      "padre": "224"
+    },
+    "225": {
+      "titulo": "Maestros y educadores de enseñanza infantil",
+      "nivel": "3",
+      "padre": "22"
+    },
+    "2251": {
+      "titulo": "Maestros de educación infantil",
+      "nivel": "4",
+      "padre": "225"
+    },
+    "2252": {
+      "titulo": "Técnicos en educación infantil",
+      "nivel": "4",
+      "padre": "225"
+    },
+    "23": {
+      "titulo": "Otros profesionales de la enseñanza",
+      "nivel": "2",
+      "padre": "2"
+    },
+    "231": {
+      "titulo": "Profesores y técnicos de educación especial",
+      "nivel": "3",
+      "padre": "23"
+    },
+    "2311": {
+      "titulo": "Profesores de educación especial",
+      "nivel": "4",
+      "padre": "231"
+    },
+    "2312": {
+      "titulo": "Técnicos educadores de educación especial",
+      "nivel": "4",
+      "padre": "231"
+    },
+    "232": {
+      "titulo": "Otros profesores y profesionales de la enseñanza",
+      "nivel": "3",
+      "padre": "23"
+    },
+    "2321": {
+      "titulo": "Especialistas en métodos didácticos y pedagógicos",
+      "nivel": "4",
+      "padre": "232"
+    },
+    "2322": {
+      "titulo": "Profesores de enseñanza no reglada de idiomas",
+      "nivel": "4",
+      "padre": "232"
+    },
+    "2323": {
+      "titulo": "Profesores de enseñanza no reglada de música y danza",
+      "nivel": "4",
+      "padre": "232"
+    },
+    "2324": {
+      "titulo": "Profesores de enseñanza no reglada de artes",
+      "nivel": "4",
+      "padre": "232"
+    },
+    "2325": {
+      "titulo": "Instructores en tecnologías de la información en enseñanza no reglada",
+      "nivel": "4",
+      "padre": "232"
+    },
+    "2326": {
+      "titulo": "Profesionales de la educación ambiental",
+      "nivel": "4",
+      "padre": "232"
+    },
+    "2329": {
+      "titulo": "Profesores y profesionales de la enseñanza no clasificados bajo otros epígrafes",
+      "nivel": "4",
+      "padre": "232"
+    },
+    "C": {
+      "titulo": "Otros técnicos y profesionales científicos e intelectuales",
+      "nivel": "GP",
+      "padre": "2"
+    },
+    "24": {
+      "titulo": "Profesionales de la ciencias físicas, químicas, matemáticas y de las ingenierías",
+      "nivel": "2",
+      "padre": "2"
+    },
+    "241": {
+      "titulo": "Físicos, químicos, matemáticos y afines",
+      "nivel": "3",
+      "padre": "24"
+    },
+    "2411": {
+      "titulo": "Físicos y astrónomos",
+      "nivel": "4",
+      "padre": "241"
+    },
+    "2412": {
+      "titulo": "Meteorólogos",
+      "nivel": "4",
+      "padre": "241"
+    },
+    "2413": {
+      "titulo": "Químicos",
+      "nivel": "4",
+      "padre": "241"
+    },
+    "2414": {
+      "titulo": "Geólogos y geofísicos",
+      "nivel": "4",
+      "padre": "241"
+    },
+    "2415": {
+      "titulo": "Matemáticos y actuarios",
+      "nivel": "4",
+      "padre": "241"
+    },
+    "2416": {
+      "titulo": "Estadísticos",
+      "nivel": "4",
+      "padre": "241"
+    },
+    "242": {
+      "titulo": "Profesionales en ciencias naturales",
+      "nivel": "3",
+      "padre": "24"
+    },
+    "2421": {
+      "titulo": "Biólogos, botánicos, zoólogos y afines",
+      "nivel": "4",
+      "padre": "242"
+    },
+    "2422": {
+      "titulo": "Ingenieros agrónomos",
+      "nivel": "4",
+      "padre": "242"
+    },
+    "2423": {
+      "titulo": "Ingenieros de montes",
+      "nivel": "4",
+      "padre": "242"
+    },
+    "2424": {
+      "titulo": "Ingenieros técnicos agrícolas",
+      "nivel": "4",
+      "padre": "242"
+    },
+    "2425": {
+      "titulo": "Ingenieros técnicos forestales y del medio natural",
+      "nivel": "4",
+      "padre": "242"
+    },
+    "2426": {
+      "titulo": "Profesionales de la protección ambiental",
+      "nivel": "4",
+      "padre": "242"
+    },
+    "2427": {
+      "titulo": "Enólogos",
+      "nivel": "4",
+      "padre": "242"
+    },
+    "243": {
+      "titulo": "Ingenieros (excepto ingenieros agrónomos, de montes, eléctricos, electrónicos y TIC)",
+      "nivel": "3",
+      "padre": "24"
+    },
+    "2431": {
+      "titulo": "Ingenieros industriales y de producción",
+      "nivel": "4",
+      "padre": "243"
+    },
+    "2432": {
+      "titulo": "Ingenieros en construcción y obra civil",
+      "nivel": "4",
+      "padre": "243"
+    },
+    "2433": {
+      "titulo": "Ingenieros mecánicos",
+      "nivel": "4",
+      "padre": "243"
+    },
+    "2434": {
+      "titulo": "Ingenieros aeronáuticos",
+      "nivel": "4",
+      "padre": "243"
+    },
+    "2435": {
+      "titulo": "Ingenieros químicos",
+      "nivel": "4",
+      "padre": "243"
+    },
+    "2436": {
+      "titulo": "Ingenieros de minas, metalúrgicos y afines",
+      "nivel": "4",
+      "padre": "243"
+    },
+    "2437": {
+      "titulo": "Ingenieros ambientales",
+      "nivel": "4",
+      "padre": "243"
+    },
+    "2439": {
+      "titulo": "Ingenieros no clasificados bajo otros epígrafes",
+      "nivel": "4",
+      "padre": "243"
+    },
+    "244": {
+      "titulo": "Ingenieros eléctricos, electrónicos y de telecomunicaciones",
+      "nivel": "3",
+      "padre": "24"
+    },
+    "2441": {
+      "titulo": "Ingenieros en electricidad",
+      "nivel": "4",
+      "padre": "244"
+    },
+    "2442": {
+      "titulo": "Ingenieros electrónicos",
+      "nivel": "4",
+      "padre": "244"
+    },
+    "2443": {
+      "titulo": "Ingenieros en telecomunicaciones",
+      "nivel": "4",
+      "padre": "244"
+    },
+    "245": {
+      "titulo": "Arquitectos, urbanistas e ingenieros geógrafos",
+      "nivel": "3",
+      "padre": "24"
+    },
+    "2451": {
+      "titulo": "Arquitectos (excepto arquitectos paisajistas y urbanistas)",
+      "nivel": "4",
+      "padre": "245"
+    },
+    "2452": {
+      "titulo": "Arquitectos paisajistas",
+      "nivel": "4",
+      "padre": "245"
+    },
+    "2453": {
+      "titulo": "Urbanistas e ingenieros de tráfico",
+      "nivel": "4",
+      "padre": "245"
+    },
+    "2454": {
+      "titulo": "Ingenieros geógrafos y cartógrafos",
+      "nivel": "4",
+      "padre": "245"
+    },
+    "246": {
+      "titulo": "Ingenieros técnicos (excepto agrícolas, forestales, eléctricos, electrónicos y TIC)",
+      "nivel": "3",
+      "padre": "24"
+    },
+    "2461": {
+      "titulo": "Ingenieros técnicos industriales y de producción",
+      "nivel": "4",
+      "padre": "246"
+    },
+    "2462": {
+      "titulo": "Ingenieros técnicos de obras públicas",
+      "nivel": "4",
+      "padre": "246"
+    },
+    "2463": {
+      "titulo": "Ingenieros técnicos mecánicos",
+      "nivel": "4",
+      "padre": "246"
+    },
+    "2464": {
+      "titulo": "Ingenieros técnicos aeronáuticos",
+      "nivel": "4",
+      "padre": "246"
+    },
+    "2465": {
+      "titulo": "Ingenieros técnicos químicos",
+      "nivel": "4",
+      "padre": "246"
+    },
+    "2466": {
+      "titulo": "Ingenieros técnicos de minas, metalúrgicos y afines",
+      "nivel": "4",
+      "padre": "246"
+    },
+    "2469": {
+      "titulo": "Ingenieros técnicos no clasificados bajo otros epígrafes",
+      "nivel": "4",
+      "padre": "246"
+    },
+    "247": {
+      "titulo": "Ingenieros técnicos en electricidad, electrónica y telecomunicaciones",
+      "nivel": "3",
+      "padre": "24"
+    },
+    "2471": {
+      "titulo": "Ingenieros técnicos en electricidad",
+      "nivel": "4",
+      "padre": "247"
+    },
+    "2472": {
+      "titulo": "Ingenieros técnicos en electrónica",
+      "nivel": "4",
+      "padre": "247"
+    },
+    "2473": {
+      "titulo": "Ingenieros técnicos en telecomunicaciones",
+      "nivel": "4",
+      "padre": "247"
+    },
+    "248": {
+      "titulo": "Arquitectos técnicos, topógrafos y diseñadores",
+      "nivel": "3",
+      "padre": "24"
+    },
+    "2481": {
+      "titulo": "Arquitectos técnicos y técnicos urbanistas",
+      "nivel": "4",
+      "padre": "248"
+    },
+    "2482": {
+      "titulo": "Diseñadores de productos y de prendas",
+      "nivel": "4",
+      "padre": "248"
+    },
+    "2483": {
+      "titulo": "Ingenieros técnicos en topografía",
+      "nivel": "4",
+      "padre": "248"
+    },
+    "2484": {
+      "titulo": "Diseñadores gráficos y multimedia",
+      "nivel": "4",
+      "padre": "248"
+    },
+    "25": {
+      "titulo": "Profesionales en derecho",
+      "nivel": "2",
+      "padre": "2"
+    },
+    "251": {
+      "titulo": "Jueces, magistrados, abogados y fiscales",
+      "nivel": "3",
+      "padre": "25"
+    },
+    "2511": {
+      "titulo": "Abogados",
+      "nivel": "4",
+      "padre": "251"
+    },
+    "2512": {
+      "titulo": "Fiscales",
+      "nivel": "4",
+      "padre": "251"
+    },
+    "2513": {
+      "titulo": "Jueces y magistrados",
+      "nivel": "4",
+      "padre": "251"
+    },
+    "259": {
+      "titulo": "Otros profesionales del derecho",
+      "nivel": "3",
+      "padre": "25"
+    },
+    "2591": {
+      "titulo": "Notarios y registradores",
+      "nivel": "4",
+      "padre": "259"
+    },
+    "2592": {
+      "titulo": "Procuradores",
+      "nivel": "4",
+      "padre": "259"
+    },
+    "2599": {
+      "titulo": "Profesionales del derecho no clasificados bajo otros epígrafes",
+      "nivel": "4",
+      "padre": "259"
+    },
+    "26": {
+      "titulo": "Especialistas en organización de la Administración Pública y de las empresas y en la comercialización",
+      "nivel": "2",
+      "padre": "2"
+    },
+    "261": {
+      "titulo": "Especialistas en finanzas",
+      "nivel": "3",
+      "padre": "26"
+    },
+    "2611": {
+      "titulo": "Especialistas en contabilidad",
+      "nivel": "4",
+      "padre": "261"
+    },
+    "2612": {
+      "titulo": "Asesores financieros y en inversiones",
+      "nivel": "4",
+      "padre": "261"
+    },
+    "2613": {
+      "titulo": "Analistas financieros",
+      "nivel": "4",
+      "padre": "261"
+    },
+    "262": {
+      "titulo": "Especialistas en organización y administración",
+      "nivel": "3",
+      "padre": "26"
+    },
+    "2621": {
+      "titulo": "Analistas de gestión y organización",
+      "nivel": "4",
+      "padre": "262"
+    },
+    "2622": {
+      "titulo": "Especialistas en administración de política de empresas",
+      "nivel": "4",
+      "padre": "262"
+    },
+    "2623": {
+      "titulo": "Especialistas de la Administración Pública",
+      "nivel": "4",
+      "padre": "262"
+    },
+    "2624": {
+      "titulo": "Especialistas en políticas y servicios de personal y afines",
+      "nivel": "4",
+      "padre": "262"
+    },
+    "2625": {
+      "titulo": "Especialistas en formación de personal",
+      "nivel": "4",
+      "padre": "262"
+    },
+    "263": {
+      "titulo": "Técnicos de empresas y actividades turísticas",
+      "nivel": "3",
+      "padre": "26"
+    },
+    "2630": {
+      "titulo": "Técnicos de empresas y actividades turísticas",
+      "nivel": "4",
+      "padre": "263"
+    },
+    "264": {
+      "titulo": "Profesionales de ventas técnicas y médicas (excepto las TIC)",
+      "nivel": "3",
+      "padre": "26"
+    },
+    "2640": {
+      "titulo": "Profesionales de ventas técnicas y médicas (excepto las TIC)",
+      "nivel": "4",
+      "padre": "264"
+    },
+    "265": {
+      "titulo": "Otros profesionales de las ventas, la comercialización, la publicidad y las relaciones públicas",
+      "nivel": "3",
+      "padre": "26"
+    },
+    "2651": {
+      "titulo": "Profesionales de la publicidad y la comercialización",
+      "nivel": "4",
+      "padre": "265"
+    },
+    "2652": {
+      "titulo": "Profesionales de relaciones públicas",
+      "nivel": "4",
+      "padre": "265"
+    },
+    "2653": {
+      "titulo": "Profesionales de la venta de tecnologías de la información y las comunicaciones",
+      "nivel": "4",
+      "padre": "265"
+    },
+    "27": {
+      "titulo": "Profesionales de las tecnologías de la información",
+      "nivel": "2",
+      "padre": "2"
+    },
+    "271": {
+      "titulo": "Analistas y diseñadores de software y multimedia",
+      "nivel": "3",
+      "padre": "27"
+    },
+    "2711": {
+      "titulo": "Analistas de sistemas",
+      "nivel": "4",
+      "padre": "271"
+    },
+    "2712": {
+      "titulo": "Analistas y diseñadores de software",
+      "nivel": "4",
+      "padre": "271"
+    },
+    "2713": {
+      "titulo": "Analistas, programadores y diseñadores Web y multimedia",
+      "nivel": "4",
+      "padre": "271"
+    },
+    "2719": {
+      "titulo": "Analistas y diseñadores de software y multimedia no clasificados bajo otros epígrafes",
+      "nivel": "4",
+      "padre": "271"
+    },
+    "272": {
+      "titulo": "Especialistas en bases de datos y en redes informáticas",
+      "nivel": "3",
+      "padre": "27"
+    },
+    "2721": {
+      "titulo": "Diseñadores y administradores de bases de datos",
+      "nivel": "4",
+      "padre": "272"
+    },
+    "2722": {
+      "titulo": "Administradores de sistemas y redes",
+      "nivel": "4",
+      "padre": "272"
+    },
+    "2723": {
+      "titulo": "Analistas de redes informáticas",
+      "nivel": "4",
+      "padre": "272"
+    },
+    "2729": {
+      "titulo": "Especialistas en bases de datos y en redes informáticas no clasificados bajo otros epígrafes",
+      "nivel": "4",
+      "padre": "272"
+    },
+    "28": {
+      "titulo": "Profesionales en ciencias sociales",
+      "nivel": "2",
+      "padre": "2"
+    },
+    "281": {
+      "titulo": "Economistas",
+      "nivel": "3",
+      "padre": "28"
+    },
+    "2810": {
+      "titulo": "Economistas",
+      "nivel": "4",
+      "padre": "281"
+    },
+    "282": {
+      "titulo": "Sociólogos, historiadores, psicólogos y otros profesionales en ciencias sociales",
+      "nivel": "3",
+      "padre": "28"
+    },
+    "2821": {
+      "titulo": "Sociólogos, geógrafos, antropólogos, arqueólogos y afines",
+      "nivel": "4",
+      "padre": "282"
+    },
+    "2822": {
+      "titulo": "Filósofos, historiadores y profesionales en ciencias políticas",
+      "nivel": "4",
+      "padre": "282"
+    },
+    "2823": {
+      "titulo": "Psicólogos",
+      "nivel": "4",
+      "padre": "282"
+    },
+    "2824": {
+      "titulo": "Profesionales del trabajo y la educación social",
+      "nivel": "4",
+      "padre": "282"
+    },
+    "2825": {
+      "titulo": "Agentes de igualdad de oportunidades entre mujeres y hombres",
+      "nivel": "4",
+      "padre": "282"
+    },
+    "283": {
+      "titulo": "Sacerdotes de las distintas religiones",
+      "nivel": "3",
+      "padre": "28"
+    },
+    "2830": {
+      "titulo": "Sacerdotes de las distintas religiones",
+      "nivel": "4",
+      "padre": "283"
+    },
+    "29": {
+      "titulo": "Profesionales de la cultura y el espectáculo",
+      "nivel": "2",
+      "padre": "2"
+    },
+    "291": {
+      "titulo": "Archivistas, bibliotecarios, conservadores y afines",
+      "nivel": "3",
+      "padre": "29"
+    },
+    "2911": {
+      "titulo": "Archivistas y conservadores de museos",
+      "nivel": "4",
+      "padre": "291"
+    },
+    "2912": {
+      "titulo": "Bibliotecarios, documentalistas y afines",
+      "nivel": "4",
+      "padre": "291"
+    },
+    "292": {
+      "titulo": "Escritores, periodistas y lingüistas",
+      "nivel": "3",
+      "padre": "29"
+    },
+    "2921": {
+      "titulo": "Escritores",
+      "nivel": "4",
+      "padre": "292"
+    },
+    "2922": {
+      "titulo": "Periodistas",
+      "nivel": "4",
+      "padre": "292"
+    },
+    "2923": {
+      "titulo": "Filólogos, intérpretes y traductores",
+      "nivel": "4",
+      "padre": "292"
+    },
+    "293": {
+      "titulo": "Artistas creativos e interpretativos",
+      "nivel": "3",
+      "padre": "29"
+    },
+    "2931": {
+      "titulo": "Artistas de artes plásticas y visuales",
+      "nivel": "4",
+      "padre": "293"
+    },
+    "2932": {
+      "titulo": "Compositores, músicos y cantantes",
+      "nivel": "4",
+      "padre": "293"
+    },
+    "2933": {
+      "titulo": "Coreógrafos y bailarines",
+      "nivel": "4",
+      "padre": "293"
+    },
+    "2934": {
+      "titulo": "Directores de cine, de teatro y afines",
+      "nivel": "4",
+      "padre": "293"
+    },
+    "2935": {
+      "titulo": "Actores",
+      "nivel": "4",
+      "padre": "293"
+    },
+    "2936": {
+      "titulo": "Locutores de radio, televisión y otros presentadores",
+      "nivel": "4",
+      "padre": "293"
+    },
+    "2937": {
+      "titulo": "Profesionales de espectáculos taurinos",
+      "nivel": "4",
+      "padre": "293"
+    },
+    "2939": {
+      "titulo": "Artistas creativos e interpretativos no clasificados bajo otros epígrafes",
+      "nivel": "4",
+      "padre": "293"
+    },
+    "3": {
+      "titulo": "Técnicos; profesionales de apoyo",
+      "nivel": "1",
+      "padre": ""
+    },
+    "D": {
+      "titulo": "Técnicos; profesionales de apoyo",
+      "nivel": "GP",
+      "padre": "3"
+    },
+    "31": {
+      "titulo": "Técnicos de las ciencias y de las ingenierías",
+      "nivel": "2",
+      "padre": "3"
+    },
+    "311": {
+      "titulo": "Delineantes y dibujantes técnicos",
+      "nivel": "3",
+      "padre": "31"
+    },
+    "3110": {
+      "titulo": "Delineantes y dibujantes técnicos",
+      "nivel": "4",
+      "padre": "311"
+    },
+    "312": {
+      "titulo": "Técnicos de las ciencias físicas, químicas, medioambientales y de las ingenierías",
+      "nivel": "3",
+      "padre": "31"
+    },
+    "3121": {
+      "titulo": "Técnicos en ciencias físicas y químicas",
+      "nivel": "4",
+      "padre": "312"
+    },
+    "3122": {
+      "titulo": "Técnicos en construcción",
+      "nivel": "4",
+      "padre": "312"
+    },
+    "3123": {
+      "titulo": "Técnicos en electricidad",
+      "nivel": "4",
+      "padre": "312"
+    },
+    "3124": {
+      "titulo": "Técnicos en electrónica (excepto electromedicina)",
+      "nivel": "4",
+      "padre": "312"
+    },
+    "3125": {
+      "titulo": "Técnicos en electrónica, especialidad en electromedicina",
+      "nivel": "4",
+      "padre": "312"
+    },
+    "3126": {
+      "titulo": "Técnicos en mecánica",
+      "nivel": "4",
+      "padre": "312"
+    },
+    "3127": {
+      "titulo": "Técnicos y analistas de laboratorio en química industrial",
+      "nivel": "4",
+      "padre": "312"
+    },
+    "3128": {
+      "titulo": "Técnicos en metalurgia y minas",
+      "nivel": "4",
+      "padre": "312"
+    },
+    "3129": {
+      "titulo": "Otros técnicos de las ciencias físicas, químicas, medioambientales y de las ingenierías",
+      "nivel": "4",
+      "padre": "312"
+    },
+    "313": {
+      "titulo": "Técnicos en control de procesos",
+      "nivel": "3",
+      "padre": "31"
+    },
+    "3131": {
+      "titulo": "Técnicos en instalaciones de producción de energía",
+      "nivel": "4",
+      "padre": "313"
+    },
+    "3132": {
+      "titulo": "Técnicos en instalaciones de tratamiento de residuos, de aguas y otros operadores en plantas similares",
+      "nivel": "4",
+      "padre": "313"
+    },
+    "3133": {
+      "titulo": "Técnicos en control de instalaciones de procesamiento de productos químicos",
+      "nivel": "4",
+      "padre": "313"
+    },
+    "3134": {
+      "titulo": "Técnicos de refinerías de petróleo y gas natural",
+      "nivel": "4",
+      "padre": "313"
+    },
+    "3135": {
+      "titulo": "Técnicos en control de procesos de producción de metales",
+      "nivel": "4",
+      "padre": "313"
+    },
+    "3139": {
+      "titulo": "Técnicos en control de procesos no clasificados bajo otros epígrafes",
+      "nivel": "4",
+      "padre": "313"
+    },
+    "314": {
+      "titulo": "Técnicos de las ciencias naturales y profesionales auxiliares afines",
+      "nivel": "3",
+      "padre": "31"
+    },
+    "3141": {
+      "titulo": "Técnicos en ciencias biológicas (excepto en áreas sanitarias)",
+      "nivel": "4",
+      "padre": "314"
+    },
+    "3142": {
+      "titulo": "Técnicos agropecuarios",
+      "nivel": "4",
+      "padre": "314"
+    },
+    "3143": {
+      "titulo": "Técnicos forestales y del medio natural",
+      "nivel": "4",
+      "padre": "314"
+    },
+    "315": {
+      "titulo": "Profesionales en navegación marítima y aeronáutica",
+      "nivel": "3",
+      "padre": "31"
+    },
+    "3151": {
+      "titulo": "Jefes y oficiales de máquinas",
+      "nivel": "4",
+      "padre": "315"
+    },
+    "3152": {
+      "titulo": "Capitanes y oficiales de puente",
+      "nivel": "4",
+      "padre": "315"
+    },
+    "3153": {
+      "titulo": "Pilotos de aviación y profesionales afines",
+      "nivel": "4",
+      "padre": "315"
+    },
+    "3154": {
+      "titulo": "Controladores de tráfico aéreo",
+      "nivel": "4",
+      "padre": "315"
+    },
+    "3155": {
+      "titulo": "Técnicos en seguridad aeronáutica",
+      "nivel": "4",
+      "padre": "315"
+    },
+    "316": {
+      "titulo": "Técnicos de control de calidad de las ciencias físicas, químicas y de las ingenierías",
+      "nivel": "3",
+      "padre": "31"
+    },
+    "3160": {
+      "titulo": "Técnicos de control de calidad de las ciencias físicas, químicas y de las ingenierías",
+      "nivel": "4",
+      "padre": "316"
+    },
+    "32": {
+      "titulo": "Supervisores en ingeniería de minas, de industrias manufactureras y de la construcción",
+      "nivel": "2",
+      "padre": "3"
+    },
+    "320": {
+      "titulo": "Supervisores en ingeniería de minas, de industrias manufactureras y de la construcción",
+      "nivel": "3",
+      "padre": "32"
+    },
+    "3201": {
+      "titulo": "Supervisores en ingeniería de minas",
+      "nivel": "4",
+      "padre": "320"
+    },
+    "3202": {
+      "titulo": "Supervisores de la construcción",
+      "nivel": "4",
+      "padre": "320"
+    },
+    "3203": {
+      "titulo": "Supervisores de industrias alimenticias y del tabaco",
+      "nivel": "4",
+      "padre": "320"
+    },
+    "3204": {
+      "titulo": "Supervisores de industrias química y farmacéutica",
+      "nivel": "4",
+      "padre": "320"
+    },
+    "3205": {
+      "titulo": "Supervisores de industrias de transformación de plásticos, caucho y resinas naturales",
+      "nivel": "4",
+      "padre": "320"
+    },
+    "3206": {
+      "titulo": "Supervisores de industrias de la madera y pastero papeleras",
+      "nivel": "4",
+      "padre": "320"
+    },
+    "3207": {
+      "titulo": "Supervisores de la producción en industrias de artes gráficas y en la fabricación de productos de papel",
+      "nivel": "4",
+      "padre": "320"
+    },
+    "3209": {
+      "titulo": "Supervisores de otras industrias manufactureras",
+      "nivel": "4",
+      "padre": "320"
+    },
+    "33": {
+      "titulo": "Técnicos sanitarios y profesionales de las terapias alternativas",
+      "nivel": "2",
+      "padre": "3"
+    },
+    "331": {
+      "titulo": "Técnicos sanitarios de laboratorio, pruebas diagnósticas y prótesis",
+      "nivel": "3",
+      "padre": "33"
+    },
+    "3311": {
+      "titulo": "Técnicos en radioterapia",
+      "nivel": "4",
+      "padre": "331"
+    },
+    "3312": {
+      "titulo": "Técnicos en imagen para el diagnóstico",
+      "nivel": "4",
+      "padre": "331"
+    },
+    "3313": {
+      "titulo": "Técnicos en anatomía patológica y citología",
+      "nivel": "4",
+      "padre": "331"
+    },
+    "3314": {
+      "titulo": "Técnicos en laboratorio de diagnóstico clínico",
+      "nivel": "4",
+      "padre": "331"
+    },
+    "3315": {
+      "titulo": "Técnicos en ortoprótesis",
+      "nivel": "4",
+      "padre": "331"
+    },
+    "3316": {
+      "titulo": "Técnicos en prótesis dentales",
+      "nivel": "4",
+      "padre": "331"
+    },
+    "3317": {
+      "titulo": "Técnicos en audioprótesis",
+      "nivel": "4",
+      "padre": "331"
+    },
+    "332": {
+      "titulo": "Otros técnicos sanitarios",
+      "nivel": "3",
+      "padre": "33"
+    },
+    "3321": {
+      "titulo": "Técnicos superiores en higiene bucodental",
+      "nivel": "4",
+      "padre": "332"
+    },
+    "3322": {
+      "titulo": "Técnicos superiores en documentación sanitaria",
+      "nivel": "4",
+      "padre": "332"
+    },
+    "3323": {
+      "titulo": "Técnicos superiores en dietética",
+      "nivel": "4",
+      "padre": "332"
+    },
+    "3324": {
+      "titulo": "Técnicos en optometría",
+      "nivel": "4",
+      "padre": "332"
+    },
+    "3325": {
+      "titulo": "Ayudantes fisioterapeutas",
+      "nivel": "4",
+      "padre": "332"
+    },
+    "3326": {
+      "titulo": "Técnicos en prevención de riesgos laborales y salud ambiental",
+      "nivel": "4",
+      "padre": "332"
+    },
+    "3327": {
+      "titulo": "Ayudantes de veterinaria",
+      "nivel": "4",
+      "padre": "332"
+    },
+    "3329": {
+      "titulo": "Técnicos de la sanidad no clasificados bajo otros epígrafes",
+      "nivel": "4",
+      "padre": "332"
+    },
+    "333": {
+      "titulo": "Profesionales de las terapias alternativas",
+      "nivel": "3",
+      "padre": "33"
+    },
+    "3331": {
+      "titulo": "Profesionales de la acupuntura, la naturopatía, la homeopatía, la medicina tradicional china y la ayurveda",
+      "nivel": "4",
+      "padre": "333"
+    },
+    "3339": {
+      "titulo": "Otros profesionales de las terapias alternativas",
+      "nivel": "4",
+      "padre": "333"
+    },
+    "34": {
+      "titulo": "Profesionales de apoyo en finanzas y matemáticas",
+      "nivel": "2",
+      "padre": "3"
+    },
+    "340": {
+      "titulo": "Profesionales de apoyo en finanzas y matemáticas",
+      "nivel": "3",
+      "padre": "34"
+    },
+    "3401": {
+      "titulo": "Profesionales de apoyo e intermediarios de cambio, bolsa y finanzas",
+      "nivel": "4",
+      "padre": "340"
+    },
+    "3402": {
+      "titulo": "Comerciales de préstamos y créditos",
+      "nivel": "4",
+      "padre": "340"
+    },
+    "3403": {
+      "titulo": "Tenedores de libros",
+      "nivel": "4",
+      "padre": "340"
+    },
+    "3404": {
+      "titulo": "Profesionales de apoyo en servicios estadísticos, matemáticos y afines",
+      "nivel": "4",
+      "padre": "340"
+    },
+    "3405": {
+      "titulo": "Tasadores",
+      "nivel": "4",
+      "padre": "340"
+    },
+    "35": {
+      "titulo": "Representantes, agentes comerciales y afines",
+      "nivel": "2",
+      "padre": "3"
+    },
+    "351": {
+      "titulo": "Agentes y representantes comerciales",
+      "nivel": "3",
+      "padre": "35"
+    },
+    "3510": {
+      "titulo": "Agentes y representantes comerciales",
+      "nivel": "4",
+      "padre": "351"
+    },
+    "352": {
+      "titulo": "Otros agentes comerciales",
+      "nivel": "3",
+      "padre": "35"
+    },
+    "3521": {
+      "titulo": "Mediadores y agentes de seguros",
+      "nivel": "4",
+      "padre": "352"
+    },
+    "3522": {
+      "titulo": "Agentes de compras",
+      "nivel": "4",
+      "padre": "352"
+    },
+    "3523": {
+      "titulo": "Consignatarios",
+      "nivel": "4",
+      "padre": "352"
+    },
+    "353": {
+      "titulo": "Agentes inmobiliarios y otros agentes",
+      "nivel": "3",
+      "padre": "35"
+    },
+    "3531": {
+      "titulo": "Representantes de aduanas",
+      "nivel": "4",
+      "padre": "353"
+    },
+    "3532": {
+      "titulo": "Organizadores de conferencias y eventos",
+      "nivel": "4",
+      "padre": "353"
+    },
+    "3533": {
+      "titulo": "Agentes o intermediarios en la contratación de la mano de obra (excepto representantes de espectáculos)",
+      "nivel": "4",
+      "padre": "353"
+    },
+    "3534": {
+      "titulo": "Agentes y administradores de la propiedad inmobiliaria",
+      "nivel": "4",
+      "padre": "353"
+    },
+    "3535": {
+      "titulo": "Portavoces y agentes de relaciones públicas",
+      "nivel": "4",
+      "padre": "353"
+    },
+    "3539": {
+      "titulo": "Representantes artísticos y deportivos y otros agentes de servicios comerciales no clasificados bajo otros epígrafes",
+      "nivel": "4",
+      "padre": "353"
+    },
+    "36": {
+      "titulo": "Profesionales de apoyo a la gestión administrativa; técnicos de las fuerzas y cuerpos de seguridad",
+      "nivel": "2",
+      "padre": "3"
+    },
+    "361": {
+      "titulo": "Asistentes administrativos y especializados",
+      "nivel": "3",
+      "padre": "36"
+    },
+    "3611": {
+      "titulo": "Supervisores de secretaría",
+      "nivel": "4",
+      "padre": "361"
+    },
+    "3612": {
+      "titulo": "Asistentes jurídico-legales",
+      "nivel": "4",
+      "padre": "361"
+    },
+    "3613": {
+      "titulo": "Asistentes de dirección y administrativos",
+      "nivel": "4",
+      "padre": "361"
+    },
+    "3614": {
+      "titulo": "Secretarios de centros médicos o clínicas",
+      "nivel": "4",
+      "padre": "361"
+    },
+    "362": {
+      "titulo": "Agentes de aduanas, tributos y afines que trabajan en tareas propias de la Administración Pública",
+      "nivel": "3",
+      "padre": "36"
+    },
+    "3621": {
+      "titulo": "Profesionales de apoyo de la Administración Pública de tributos",
+      "nivel": "4",
+      "padre": "362"
+    },
+    "3622": {
+      "titulo": "Profesionales de apoyo de la Administración Pública de servicios sociales",
+      "nivel": "4",
+      "padre": "362"
+    },
+    "3623": {
+      "titulo": "Profesionales de apoyo de la Administración Pública de servicios de expedición de licencias",
+      "nivel": "4",
+      "padre": "362"
+    },
+    "3629": {
+      "titulo": "Otros profesionales de apoyo de la Administración Pública para tareas de inspección y control y tareas similares",
+      "nivel": "4",
+      "padre": "362"
+    },
+    "363": {
+      "titulo": "Técnicos de las fuerzas y cuerpos de seguridad",
+      "nivel": "3",
+      "padre": "36"
+    },
+    "3631": {
+      "titulo": "Técnicos de la policía nacional, autonómica y local",
+      "nivel": "4",
+      "padre": "363"
+    },
+    "3632": {
+      "titulo": "Suboficiales de la guardia civil",
+      "nivel": "4",
+      "padre": "363"
+    },
+    "37": {
+      "titulo": "Profesionales de apoyo de servicios jurídicos, sociales, culturales, deportivos y afines",
+      "nivel": "2",
+      "padre": "3"
+    },
+    "371": {
+      "titulo": "Profesionales de apoyo de servicios jurídicos y sociales",
+      "nivel": "3",
+      "padre": "37"
+    },
+    "3711": {
+      "titulo": "Profesionales de apoyo de servicios jurídicos y servicios similares",
+      "nivel": "4",
+      "padre": "371"
+    },
+    "3712": {
+      "titulo": "Detectives privados",
+      "nivel": "4",
+      "padre": "371"
+    },
+    "3713": {
+      "titulo": "Profesionales de apoyo al trabajo y a la educación social",
+      "nivel": "4",
+      "padre": "371"
+    },
+    "3714": {
+      "titulo": "Promotores de igualdad de oportunidades entre mujeres y hombres",
+      "nivel": "4",
+      "padre": "371"
+    },
+    "3715": {
+      "titulo": "Animadores comunitarios",
+      "nivel": "4",
+      "padre": "371"
+    },
+    "3716": {
+      "titulo": "Auxiliares laicos de las religiones",
+      "nivel": "4",
+      "padre": "371"
+    },
+    "372": {
+      "titulo": "Deportistas, entrenadores, instructores de actividades deportivas; monitores de actividades recreativas",
+      "nivel": "3",
+      "padre": "37"
+    },
+    "3721": {
+      "titulo": "Atletas y deportistas",
+      "nivel": "4",
+      "padre": "372"
+    },
+    "3722": {
+      "titulo": "Entrenadores y árbitros de actividades deportivas",
+      "nivel": "4",
+      "padre": "372"
+    },
+    "3723": {
+      "titulo": "Instructores de actividades deportivas",
+      "nivel": "4",
+      "padre": "372"
+    },
+    "3724": {
+      "titulo": "Monitores de actividades recreativas y de entretenimiento",
+      "nivel": "4",
+      "padre": "372"
+    },
+    "373": {
+      "titulo": "Técnicos y profesionales de apoyo de actividades culturales, artísticas y culinarias",
+      "nivel": "3",
+      "padre": "37"
+    },
+    "3731": {
+      "titulo": "Fotógrafos",
+      "nivel": "4",
+      "padre": "373"
+    },
+    "3732": {
+      "titulo": "Diseñadores y decoradores de interior",
+      "nivel": "4",
+      "padre": "373"
+    },
+    "3733": {
+      "titulo": "Técnicos en galerías de arte, museos y bibliotecas",
+      "nivel": "4",
+      "padre": "373"
+    },
+    "3734": {
+      "titulo": "Chefs",
+      "nivel": "4",
+      "padre": "373"
+    },
+    "3739": {
+      "titulo": "Otros técnicos y profesionales de apoyo de actividades culturales y artísticas",
+      "nivel": "4",
+      "padre": "373"
+    },
+    "38": {
+      "titulo": "Técnicos de las tecnologías de la información y las comunicaciones (TIC)",
+      "nivel": "2",
+      "padre": "3"
+    },
+    "381": {
+      "titulo": "Técnicos en operaciones de tecnologías de la información y asistencia al usuario",
+      "nivel": "3",
+      "padre": "38"
+    },
+    "3811": {
+      "titulo": "Técnicos en operaciones de sistemas informáticos",
+      "nivel": "4",
+      "padre": "381"
+    },
+    "3812": {
+      "titulo": "Técnicos en asistencia al usuario de tecnologías de la información",
+      "nivel": "4",
+      "padre": "381"
+    },
+    "3813": {
+      "titulo": "Técnicos en redes",
+      "nivel": "4",
+      "padre": "381"
+    },
+    "3814": {
+      "titulo": "Técnicos de la Web",
+      "nivel": "4",
+      "padre": "381"
+    },
+    "382": {
+      "titulo": "Programadores informáticos",
+      "nivel": "3",
+      "padre": "38"
+    },
+    "3820": {
+      "titulo": "Programadores informáticos",
+      "nivel": "4",
+      "padre": "382"
+    },
+    "383": {
+      "titulo": "Técnicos en grabación audiovisual, radiodifusión y telecomunicaciones",
+      "nivel": "3",
+      "padre": "38"
+    },
+    "3831": {
+      "titulo": "Técnicos de grabación audiovisual",
+      "nivel": "4",
+      "padre": "383"
+    },
+    "3832": {
+      "titulo": "Técnicos de radiodifusión",
+      "nivel": "4",
+      "padre": "383"
+    },
+    "3833": {
+      "titulo": "Técnicos de ingeniería de las telecomunicaciones",
+      "nivel": "4",
+      "padre": "383"
+    },
+    "4": {
+      "titulo": "Empleados contables, administrativos y otros empleados de oficina",
+      "nivel": "1",
+      "padre": ""
+    },
+    "E": {
+      "titulo": "Empleados de oficina que no atienden al público",
+      "nivel": "GP",
+      "padre": "4"
+    },
+    "41": {
+      "titulo": "Empleados en servicios contables, financieros, y de servicios de apoyo a la producción y al transporte",
+      "nivel": "2",
+      "padre": "4"
+    },
+    "411": {
+      "titulo": "Empleados contables y financieros",
+      "nivel": "3",
+      "padre": "41"
+    },
+    "4111": {
+      "titulo": "Empleados de contabilidad",
+      "nivel": "4",
+      "padre": "411"
+    },
+    "4112": {
+      "titulo": "Empleados de control de personal y nóminas",
+      "nivel": "4",
+      "padre": "411"
+    },
+    "4113": {
+      "titulo": "Empleados de oficina de servicios estadísticos, financieros y bancarios",
+      "nivel": "4",
+      "padre": "411"
+    },
+    "412": {
+      "titulo": "Empleados de registro de materiales, de servicios de apoyo a la producción y al transporte",
+      "nivel": "3",
+      "padre": "41"
+    },
+    "4121": {
+      "titulo": "Empleados de control de abastecimientos e inventario",
+      "nivel": "4",
+      "padre": "412"
+    },
+    "4122": {
+      "titulo": "Empleados de oficina de servicios de apoyo a la producción",
+      "nivel": "4",
+      "padre": "412"
+    },
+    "4123": {
+      "titulo": "Empleados de logística y transporte de pasajeros y mercancías",
+      "nivel": "4",
+      "padre": "412"
+    },
+    "42": {
+      "titulo": "Empleados de bibliotecas, servicios de correos y afines",
+      "nivel": "2",
+      "padre": "4"
+    },
+    "421": {
+      "titulo": "Empleados de bibliotecas y archivos",
+      "nivel": "3",
+      "padre": "42"
+    },
+    "4210": {
+      "titulo": "Empleados de bibliotecas y archivos",
+      "nivel": "4",
+      "padre": "421"
+    },
+    "422": {
+      "titulo": "Empleados de servicios de correos, codificadores, correctores y servicios de personal",
+      "nivel": "3",
+      "padre": "42"
+    },
+    "4221": {
+      "titulo": "Empleados de servicios de correos (excepto empleados de mostrador)",
+      "nivel": "4",
+      "padre": "422"
+    },
+    "4222": {
+      "titulo": "Codificadores y correctores de imprenta",
+      "nivel": "4",
+      "padre": "422"
+    },
+    "4223": {
+      "titulo": "Empleados de servicio de personal",
+      "nivel": "4",
+      "padre": "422"
+    },
+    "43": {
+      "titulo": "Otros empleados administrativos sin tareas de atención al público",
+      "nivel": "2",
+      "padre": "4"
+    },
+    "430": {
+      "titulo": "Otros empleados administrativos sin tareas de atención al público",
+      "nivel": "3",
+      "padre": "43"
+    },
+    "4301": {
+      "titulo": "Grabadores de datos",
+      "nivel": "4",
+      "padre": "430"
+    },
+    "4309": {
+      "titulo": "Empleados administrativos sin tareas de atención al público no clasificados bajo otros epígrafes",
+      "nivel": "4",
+      "padre": "430"
+    },
+    "F": {
+      "titulo": "Empleados de oficina que atienden al público",
+      "nivel": "GP",
+      "padre": "4"
+    },
+    "44": {
+      "titulo": "Empleados de agencias de viajes, recepcionistas y telefonistas; empleados de ventanilla y afines (excepto taquilleros)",
+      "nivel": "2",
+      "padre": "4"
+    },
+    "441": {
+      "titulo": "Empleados de información y recepcionistas (excepto de hoteles)",
+      "nivel": "3",
+      "padre": "44"
+    },
+    "4411": {
+      "titulo": "Empleados de información al usuario",
+      "nivel": "4",
+      "padre": "441"
+    },
+    "4412": {
+      "titulo": "Recepcionistas (excepto de hoteles)",
+      "nivel": "4",
+      "padre": "441"
+    },
+    "442": {
+      "titulo": "Empleados de agencias de viajes, recepcionistas de hoteles y telefonistas",
+      "nivel": "3",
+      "padre": "44"
+    },
+    "4421": {
+      "titulo": "Empleados de agencias de viajes",
+      "nivel": "4",
+      "padre": "442"
+    },
+    "4422": {
+      "titulo": "Recepcionistas de hoteles",
+      "nivel": "4",
+      "padre": "442"
+    },
+    "4423": {
+      "titulo": "Telefonistas",
+      "nivel": "4",
+      "padre": "442"
+    },
+    "4424": {
+      "titulo": "Teleoperadores",
+      "nivel": "4",
+      "padre": "442"
+    },
+    "443": {
+      "titulo": "Agentes de encuestas",
+      "nivel": "3",
+      "padre": "44"
+    },
+    "4430": {
+      "titulo": "Agentes de encuestas",
+      "nivel": "4",
+      "padre": "443"
+    },
+    "444": {
+      "titulo": "Empleados de ventanilla y afines (excepto taquilleros)",
+      "nivel": "3",
+      "padre": "44"
+    },
+    "4441": {
+      "titulo": "Cajeros de bancos y afines",
+      "nivel": "4",
+      "padre": "444"
+    },
+    "4442": {
+      "titulo": "Empleados de venta de apuestas",
+      "nivel": "4",
+      "padre": "444"
+    },
+    "4443": {
+      "titulo": "Empleados de sala de juegos y afines",
+      "nivel": "4",
+      "padre": "444"
+    },
+    "4444": {
+      "titulo": "Empleados de casas de empeño y de préstamos",
+      "nivel": "4",
+      "padre": "444"
+    },
+    "4445": {
+      "titulo": "Cobradores de facturas, deudas y empleados afines",
+      "nivel": "4",
+      "padre": "444"
+    },
+    "4446": {
+      "titulo": "Empleados de mostrador de correos",
+      "nivel": "4",
+      "padre": "444"
+    },
+    "45": {
+      "titulo": "Empleados administrativos con tareas de atención al público no clasificados bajo otros epígrafes",
+      "nivel": "2",
+      "padre": "4"
+    },
+    "450": {
+      "titulo": "Empleados administrativos con tareas de atención al público no clasificados bajo otros epígrafes",
+      "nivel": "3",
+      "padre": "45"
+    },
+    "4500": {
+      "titulo": "Empleados administrativos con tareas de atención al público no clasificados bajo otros epígrafes",
+      "nivel": "4",
+      "padre": "450"
+    },
+    "5": {
+      "titulo": "Trabajadores de los servicios de restauración, personales, protección y vendedores",
+      "nivel": "1",
+      "padre": ""
+    },
+    "G": {
+      "titulo": "Trabajadores de los servicios de restauración y comercio",
+      "nivel": "GP",
+      "padre": "5"
+    },
+    "50": {
+      "titulo": "Camareros y cocineros propietarios",
+      "nivel": "2",
+      "padre": "5"
+    },
+    "500": {
+      "titulo": "Camareros y cocineros propietarios",
+      "nivel": "3",
+      "padre": "50"
+    },
+    "5000": {
+      "titulo": "Camareros y cocineros propietarios",
+      "nivel": "4",
+      "padre": "500"
+    },
+    "51": {
+      "titulo": "Trabajadores asalariados de los servicios de restauración",
+      "nivel": "2",
+      "padre": "5"
+    },
+    "511": {
+      "titulo": "Cocineros asalariados",
+      "nivel": "3",
+      "padre": "51"
+    },
+    "5110": {
+      "titulo": "Cocineros asalariados",
+      "nivel": "4",
+      "padre": "511"
+    },
+    "512": {
+      "titulo": "Camareros asalariados",
+      "nivel": "3",
+      "padre": "51"
+    },
+    "5120": {
+      "titulo": "Camareros asalariados",
+      "nivel": "4",
+      "padre": "512"
+    },
+    "52": {
+      "titulo": "Dependientes en tiendas y almacenes",
+      "nivel": "2",
+      "padre": "5"
+    },
+    "521": {
+      "titulo": "Jefes de sección de tiendas y almacenes",
+      "nivel": "3",
+      "padre": "52"
+    },
+    "5210": {
+      "titulo": "Jefes de sección de tiendas y almacenes",
+      "nivel": "4",
+      "padre": "521"
+    },
+    "522": {
+      "titulo": "Vendedores en tiendas y almacenes",
+      "nivel": "3",
+      "padre": "52"
+    },
+    "5220": {
+      "titulo": "Vendedores en tiendas y almacenes",
+      "nivel": "4",
+      "padre": "522"
+    },
+    "53": {
+      "titulo": "Comerciantes propietarios de tiendas",
+      "nivel": "2",
+      "padre": "5"
+    },
+    "530": {
+      "titulo": "Comerciantes propietarios de tiendas",
+      "nivel": "3",
+      "padre": "53"
+    },
+    "5300": {
+      "titulo": "Comerciantes propietarios de tiendas",
+      "nivel": "4",
+      "padre": "530"
+    },
+    "54": {
+      "titulo": "Vendedores (excepto en tiendas y almacenes)",
+      "nivel": "2",
+      "padre": "5"
+    },
+    "541": {
+      "titulo": "Vendedores en quioscos o en mercadillos",
+      "nivel": "3",
+      "padre": "54"
+    },
+    "5411": {
+      "titulo": "Vendedores en quioscos",
+      "nivel": "4",
+      "padre": "541"
+    },
+    "5412": {
+      "titulo": "Vendedores en mercados ocasionales y mercadillos",
+      "nivel": "4",
+      "padre": "541"
+    },
+    "542": {
+      "titulo": "Operadores de telemarketing",
+      "nivel": "3",
+      "padre": "54"
+    },
+    "5420": {
+      "titulo": "Operadores de telemarketing",
+      "nivel": "4",
+      "padre": "542"
+    },
+    "543": {
+      "titulo": "Expendedores de gasolineras",
+      "nivel": "3",
+      "padre": "54"
+    },
+    "5430": {
+      "titulo": "Expendedores de gasolineras",
+      "nivel": "4",
+      "padre": "543"
+    },
+    "549": {
+      "titulo": "Otros vendedores",
+      "nivel": "3",
+      "padre": "54"
+    },
+    "5491": {
+      "titulo": "Vendedores a domicilio",
+      "nivel": "4",
+      "padre": "549"
+    },
+    "5492": {
+      "titulo": "Promotores de venta",
+      "nivel": "4",
+      "padre": "549"
+    },
+    "5493": {
+      "titulo": "Modelos de moda, arte y publicidad",
+      "nivel": "4",
+      "padre": "549"
+    },
+    "5499": {
+      "titulo": "Vendedores no clasificados bajo otros epígrafes",
+      "nivel": "4",
+      "padre": "549"
+    },
+    "55": {
+      "titulo": "Cajeros y taquilleros (excepto bancos)",
+      "nivel": "2",
+      "padre": "5"
+    },
+    "550": {
+      "titulo": "Cajeros y taquilleros (excepto bancos)",
+      "nivel": "3",
+      "padre": "55"
+    },
+    "5500": {
+      "titulo": "Cajeros y taquilleros (excepto bancos)",
+      "nivel": "4",
+      "padre": "550"
+    },
+    "H": {
+      "titulo": "Trabajadores de los servicios de salud y el cuidado de personas",
+      "nivel": "GP",
+      "padre": "5"
+    },
+    "56": {
+      "titulo": "Trabajadores de los cuidados a las personas en servicios de salud",
+      "nivel": "2",
+      "padre": "5"
+    },
+    "561": {
+      "titulo": "Auxiliares de enfermería",
+      "nivel": "3",
+      "padre": "56"
+    },
+    "5611": {
+      "titulo": "Auxiliares de enfermería hospitalaria",
+      "nivel": "4",
+      "padre": "561"
+    },
+    "5612": {
+      "titulo": "Auxiliares de enfermería de atención primaria",
+      "nivel": "4",
+      "padre": "561"
+    },
+    "562": {
+      "titulo": "Técnicos auxiliares de farmacia y emergencias sanitarias y otros trabajadores de los cuidados a las personas en servicios de salud",
+      "nivel": "3",
+      "padre": "56"
+    },
+    "5621": {
+      "titulo": "Técnicos auxiliares de farmacia",
+      "nivel": "4",
+      "padre": "562"
+    },
+    "5622": {
+      "titulo": "Técnicos de emergencias sanitarias",
+      "nivel": "4",
+      "padre": "562"
+    },
+    "5629": {
+      "titulo": "Trabajadores de los cuidados a las personas en servicios de salud no clasificados bajo otros epígrafes",
+      "nivel": "4",
+      "padre": "562"
+    },
+    "57": {
+      "titulo": "Otros trabajadores de los cuidados a las personas",
+      "nivel": "2",
+      "padre": "5"
+    },
+    "571": {
+      "titulo": "Trabajadores de los cuidados personales a domicilio (excepto cuidadores de niños)",
+      "nivel": "3",
+      "padre": "57"
+    },
+    "5710": {
+      "titulo": "Trabajadores de los cuidados personales a domicilio",
+      "nivel": "4",
+      "padre": "571"
+    },
+    "572": {
+      "titulo": "Cuidadores de niños",
+      "nivel": "3",
+      "padre": "57"
+    },
+    "5721": {
+      "titulo": "Cuidadores de niños en guarderías y centros educativos",
+      "nivel": "4",
+      "padre": "572"
+    },
+    "5722": {
+      "titulo": "Cuidadores de niños en domicilios",
+      "nivel": "4",
+      "padre": "572"
+    },
+    "58": {
+      "titulo": "Trabajadores de los servicios personales",
+      "nivel": "2",
+      "padre": "5"
+    },
+    "581": {
+      "titulo": "Peluqueros y especialistas en tratamientos de estética, bienestar y afines",
+      "nivel": "3",
+      "padre": "58"
+    },
+    "5811": {
+      "titulo": "Peluqueros",
+      "nivel": "4",
+      "padre": "581"
+    },
+    "5812": {
+      "titulo": "Especialistas en tratamientos de estética, bienestar y afines",
+      "nivel": "4",
+      "padre": "581"
+    },
+    "582": {
+      "titulo": "Trabajadores que atienden a viajeros, guías turísticos y afines",
+      "nivel": "3",
+      "padre": "58"
+    },
+    "5821": {
+      "titulo": "Auxiliares de vuelo y camareros de avión, barco y tren",
+      "nivel": "4",
+      "padre": "582"
+    },
+    "5822": {
+      "titulo": "Revisores y cobradores de transporte terrestre",
+      "nivel": "4",
+      "padre": "582"
+    },
+    "5823": {
+      "titulo": "Acompañantes turísticos",
+      "nivel": "4",
+      "padre": "582"
+    },
+    "5824": {
+      "titulo": "Azafatos de tierra",
+      "nivel": "4",
+      "padre": "582"
+    },
+    "5825": {
+      "titulo": "Guías de turismo",
+      "nivel": "4",
+      "padre": "582"
+    },
+    "583": {
+      "titulo": "Supervisores de mantenimiento y limpieza de edificios, conserjes y mayordomos domésticos",
+      "nivel": "3",
+      "padre": "58"
+    },
+    "5831": {
+      "titulo": "Supervisores de mantenimiento y limpieza en oficinas, hoteles y otros establecimientos",
+      "nivel": "4",
+      "padre": "583"
+    },
+    "5832": {
+      "titulo": "Mayordomos del servicio doméstico",
+      "nivel": "4",
+      "padre": "583"
+    },
+    "5833": {
+      "titulo": "Conserjes de edificios",
+      "nivel": "4",
+      "padre": "583"
+    },
+    "584": {
+      "titulo": "Trabajadores propietarios de pequeños alojamientos",
+      "nivel": "3",
+      "padre": "58"
+    },
+    "5840": {
+      "titulo": "Trabajadores propietarios de pequeños alojamientos",
+      "nivel": "4",
+      "padre": "584"
+    },
+    "589": {
+      "titulo": "Otros trabajadores de servicios personales",
+      "nivel": "3",
+      "padre": "58"
+    },
+    "5891": {
+      "titulo": "Asistentes personales o personas de compañía",
+      "nivel": "4",
+      "padre": "589"
+    },
+    "5892": {
+      "titulo": "Empleados de pompas fúnebres y embalsamadores",
+      "nivel": "4",
+      "padre": "589"
+    },
+    "5893": {
+      "titulo": "Cuidadores de animales y adiestradores",
+      "nivel": "4",
+      "padre": "589"
+    },
+    "5894": {
+      "titulo": "Instructores de autoescuela",
+      "nivel": "4",
+      "padre": "589"
+    },
+    "5895": {
+      "titulo": "Astrólogos, adivinadores y afines",
+      "nivel": "4",
+      "padre": "589"
+    },
+    "5899": {
+      "titulo": "Trabajadores de servicios personales no clasificados bajo otros epígrafes",
+      "nivel": "4",
+      "padre": "589"
+    },
+    "I": {
+      "titulo": "Trabajadores de los servicios de protección y seguridad",
+      "nivel": "GP",
+      "padre": "5"
+    },
+    "59": {
+      "titulo": "Trabajadores de los servicios de protección y seguridad",
+      "nivel": "2",
+      "padre": "5"
+    },
+    "591": {
+      "titulo": "Guardias civiles",
+      "nivel": "3",
+      "padre": "59"
+    },
+    "5910": {
+      "titulo": "Guardias civiles",
+      "nivel": "4",
+      "padre": "591"
+    },
+    "592": {
+      "titulo": "Policías",
+      "nivel": "3",
+      "padre": "59"
+    },
+    "5921": {
+      "titulo": "Policías nacionales",
+      "nivel": "4",
+      "padre": "592"
+    },
+    "5922": {
+      "titulo": "Policías autonómicos",
+      "nivel": "4",
+      "padre": "592"
+    },
+    "5923": {
+      "titulo": "Policías locales",
+      "nivel": "4",
+      "padre": "592"
+    },
+    "593": {
+      "titulo": "Bomberos",
+      "nivel": "3",
+      "padre": "59"
+    },
+    "5931": {
+      "titulo": "Bomberos (excepto forestales)",
+      "nivel": "4",
+      "padre": "593"
+    },
+    "5932": {
+      "titulo": "Bomberos forestales",
+      "nivel": "4",
+      "padre": "593"
+    },
+    "594": {
+      "titulo": "Personal de seguridad privado",
+      "nivel": "3",
+      "padre": "59"
+    },
+    "5941": {
+      "titulo": "Vigilantes de seguridad y similares habilitados para ir armados",
+      "nivel": "4",
+      "padre": "594"
+    },
+    "5942": {
+      "titulo": "Auxiliares de vigilante de seguridad y similares no habilitados para ir armados",
+      "nivel": "4",
+      "padre": "594"
+    },
+    "599": {
+      "titulo": "Otros trabajadores de los servicios de protección y seguridad",
+      "nivel": "3",
+      "padre": "59"
+    },
+    "5991": {
+      "titulo": "Vigilantes de prisiones",
+      "nivel": "4",
+      "padre": "599"
+    },
+    "5992": {
+      "titulo": "Bañistas-socorristas",
+      "nivel": "4",
+      "padre": "599"
+    },
+    "5993": {
+      "titulo": "Agentes forestales y medioambientales",
+      "nivel": "4",
+      "padre": "599"
+    },
+    "5999": {
+      "titulo": "Trabajadores de los servicios de protección y seguridad no clasificados bajo otros epígrafes",
+      "nivel": "4",
+      "padre": "599"
+    },
+    "6": {
+      "titulo": "Trabajadores cualificados en el sector agrícola, ganadero, forestal y pesquero",
+      "nivel": "1",
+      "padre": ""
+    },
+    "J": {
+      "titulo": "Trabajadores cualificados en el sector agrícola, ganadero, forestal y pesquero",
+      "nivel": "GP",
+      "padre": "6"
+    },
+    "61": {
+      "titulo": "Trabajadores cualificados en actividades agrícolas",
+      "nivel": "2",
+      "padre": "6"
+    },
+    "611": {
+      "titulo": "Trabajadores cualificados en actividades agrícolas (excepto en huertas, invernaderos, viveros y jardines)",
+      "nivel": "3",
+      "padre": "61"
+    },
+    "6110": {
+      "titulo": "Trabajadores cualificados en actividades agrícolas (excepto en huertas, invernaderos, viveros y jardines)",
+      "nivel": "4",
+      "padre": "611"
+    },
+    "612": {
+      "titulo": "Trabajadores cualificados en huertas, invernaderos, viveros y jardines",
+      "nivel": "3",
+      "padre": "61"
+    },
+    "6120": {
+      "titulo": "Trabajadores cualificados en huertas, invernaderos, viveros y jardines",
+      "nivel": "4",
+      "padre": "612"
+    },
+    "62": {
+      "titulo": "Trabajadores cualificados en actividades ganaderas, (incluidas avícolas, apícolas y similares)",
+      "nivel": "2",
+      "padre": "6"
+    },
+    "620": {
+      "titulo": "Trabajadores cualificados en actividades ganaderas (incluidas avícolas, apícolas y similares)",
+      "nivel": "3",
+      "padre": "62"
+    },
+    "6201": {
+      "titulo": "Trabajadores cualificados en actividades ganaderas de vacuno",
+      "nivel": "4",
+      "padre": "620"
+    },
+    "6202": {
+      "titulo": "Trabajadores cualificados en actividades ganaderas de ovino y caprino",
+      "nivel": "4",
+      "padre": "620"
+    },
+    "6203": {
+      "titulo": "Trabajadores cualificados en actividades ganaderas de porcino",
+      "nivel": "4",
+      "padre": "620"
+    },
+    "6204": {
+      "titulo": "Trabajadores cualificados en apicultura y sericicultura",
+      "nivel": "4",
+      "padre": "620"
+    },
+    "6205": {
+      "titulo": "Trabajadores cualificados en la avicultura y la cunicultura",
+      "nivel": "4",
+      "padre": "620"
+    },
+    "6209": {
+      "titulo": "Trabajadores cualificados en actividades ganaderas no clasificados bajo otros epígrafes",
+      "nivel": "4",
+      "padre": "620"
+    },
+    "63": {
+      "titulo": "Trabajadores cualificados en actividades agropecuarias mixtas",
+      "nivel": "2",
+      "padre": "6"
+    },
+    "630": {
+      "titulo": "Trabajadores cualificados en actividades agropecuarias mixtas",
+      "nivel": "3",
+      "padre": "63"
+    },
+    "6300": {
+      "titulo": "Trabajadores cualificados en actividades agropecuarias mixtas",
+      "nivel": "4",
+      "padre": "630"
+    },
+    "64": {
+      "titulo": "Trabajadores cualificados en actividades forestales, pesqueras y cinegéticas",
+      "nivel": "2",
+      "padre": "6"
+    },
+    "641": {
+      "titulo": "Trabajadores cualificados en actividades forestales y del medio natural",
+      "nivel": "3",
+      "padre": "64"
+    },
+    "6410": {
+      "titulo": "Trabajadores cualificados en actividades forestales y del medio natural",
+      "nivel": "4",
+      "padre": "641"
+    },
+    "642": {
+      "titulo": "Trabajadores cualificados en actividades pesqueras y acuicultura",
+      "nivel": "3",
+      "padre": "64"
+    },
+    "6421": {
+      "titulo": "Trabajadores cualificados en la acuicultura",
+      "nivel": "4",
+      "padre": "642"
+    },
+    "6422": {
+      "titulo": "Pescadores de aguas costeras y aguas dulces",
+      "nivel": "4",
+      "padre": "642"
+    },
+    "6423": {
+      "titulo": "Pescadores de altura",
+      "nivel": "4",
+      "padre": "642"
+    },
+    "643": {
+      "titulo": "Trabajadores cualificados en actividades cinegéticas",
+      "nivel": "3",
+      "padre": "64"
+    },
+    "6430": {
+      "titulo": "Trabajadores cualificados en actividades cinegéticas",
+      "nivel": "4",
+      "padre": "643"
+    },
+    "7": {
+      "titulo": "Artesanos y trabajadores cualificados de las industrias manufactureras y la construcción (excepto operadores de instalaciones y maquinaria)",
+      "nivel": "1",
+      "padre": ""
+    },
+    "K": {
+      "titulo": "Trabajadores cualificados de la construcción, excepto operadores de máquinas",
+      "nivel": "GP",
+      "padre": "7"
+    },
+    "71": {
+      "titulo": "Trabajadores en obras estructurales de construcción y afines",
+      "nivel": "2",
+      "padre": "7"
+    },
+    "711": {
+      "titulo": "Trabajadores en hormigón, encofradores, ferrallistas y afines",
+      "nivel": "3",
+      "padre": "71"
+    },
+    "7111": {
+      "titulo": "Encofradores y operarios de puesta en obra de hormigón",
+      "nivel": "4",
+      "padre": "711"
+    },
+    "7112": {
+      "titulo": "Montadores de prefabricados estructurales (sólo hormigón)",
+      "nivel": "4",
+      "padre": "711"
+    },
+    "712": {
+      "titulo": "Albañiles, canteros, tronzadores, labrantes y grabadores de piedras",
+      "nivel": "3",
+      "padre": "71"
+    },
+    "7121": {
+      "titulo": "Albañiles",
+      "nivel": "4",
+      "padre": "712"
+    },
+    "7122": {
+      "titulo": "Canteros, tronzadores, labrantes y grabadores de piedras",
+      "nivel": "4",
+      "padre": "712"
+    },
+    "713": {
+      "titulo": "Carpinteros (excepto ebanistas y montadores de estructuras metálicas)",
+      "nivel": "3",
+      "padre": "71"
+    },
+    "7131": {
+      "titulo": "Carpinteros (excepto ebanistas)",
+      "nivel": "4",
+      "padre": "713"
+    },
+    "7132": {
+      "titulo": "Instaladores de cerramientos metálicos y carpinteros metálicos (excepto montadores de estructuras metálicas)",
+      "nivel": "4",
+      "padre": "713"
+    },
+    "719": {
+      "titulo": "Otros trabajadores de las obras estructurales de construcción",
+      "nivel": "3",
+      "padre": "71"
+    },
+    "7191": {
+      "titulo": "Mantenedores de edificios",
+      "nivel": "4",
+      "padre": "719"
+    },
+    "7192": {
+      "titulo": "Instaladores de fachadas técnicas",
+      "nivel": "4",
+      "padre": "719"
+    },
+    "7193": {
+      "titulo": "Instaladores de sistemas de impermeabilización en edificios",
+      "nivel": "4",
+      "padre": "719"
+    },
+    "7199": {
+      "titulo": "Otros trabajadores de las obras estructurales de construcción no clasificados bajo otros epígrafes",
+      "nivel": "4",
+      "padre": "719"
+    },
+    "72": {
+      "titulo": "Trabajadores de acabado de construcciones e instalaciones (excepto electricistas), pintores y afines",
+      "nivel": "2",
+      "padre": "7"
+    },
+    "721": {
+      "titulo": "Escayolistas y aplicadores de revestimientos de pasta y mortero",
+      "nivel": "3",
+      "padre": "72"
+    },
+    "7211": {
+      "titulo": "Escayolistas",
+      "nivel": "4",
+      "padre": "721"
+    },
+    "7212": {
+      "titulo": "Aplicadores de revestimientos de pasta y mortero",
+      "nivel": "4",
+      "padre": "721"
+    },
+    "722": {
+      "titulo": "Fontaneros e instaladores de tuberías",
+      "nivel": "3",
+      "padre": "72"
+    },
+    "7221": {
+      "titulo": "Fontaneros",
+      "nivel": "4",
+      "padre": "722"
+    },
+    "7222": {
+      "titulo": "Montadores-instaladores de gas en edificios",
+      "nivel": "4",
+      "padre": "722"
+    },
+    "7223": {
+      "titulo": "Instaladores de conductos en obra pública",
+      "nivel": "4",
+      "padre": "722"
+    },
+    "723": {
+      "titulo": "Pintores, empapeladores y afines",
+      "nivel": "3",
+      "padre": "72"
+    },
+    "7231": {
+      "titulo": "Pintores y empapeladores",
+      "nivel": "4",
+      "padre": "723"
+    },
+    "7232": {
+      "titulo": "Pintores en las industrias manufactureras",
+      "nivel": "4",
+      "padre": "723"
+    },
+    "724": {
+      "titulo": "Soladores, colocadores de parquet y afines",
+      "nivel": "3",
+      "padre": "72"
+    },
+    "7240": {
+      "titulo": "Soladores, colocadores de parquet y afines",
+      "nivel": "4",
+      "padre": "724"
+    },
+    "725": {
+      "titulo": "Mecánicos-instaladores de refrigeración y climatización",
+      "nivel": "3",
+      "padre": "72"
+    },
+    "7250": {
+      "titulo": "Mecánicos-instaladores de refrigeración y climatización",
+      "nivel": "4",
+      "padre": "725"
+    },
+    "729": {
+      "titulo": "Otros trabajadores de acabado en la construcción, instalaciones (excepto electricistas) y afines",
+      "nivel": "3",
+      "padre": "72"
+    },
+    "7291": {
+      "titulo": "Montadores de cubiertas",
+      "nivel": "4",
+      "padre": "729"
+    },
+    "7292": {
+      "titulo": "Instaladores de material aislante térmico y de insonorización",
+      "nivel": "4",
+      "padre": "729"
+    },
+    "7293": {
+      "titulo": "Cristaleros",
+      "nivel": "4",
+      "padre": "729"
+    },
+    "7294": {
+      "titulo": "Montadores-instaladores de placas de energía solar",
+      "nivel": "4",
+      "padre": "729"
+    },
+    "7295": {
+      "titulo": "Personal de limpieza de fachadas de edificios y chimeneas",
+      "nivel": "4",
+      "padre": "729"
+    },
+    "L": {
+      "titulo": "Trabajadores cualificados de las industrias manufactureras, excepto operadores de instalaciones y máquinas",
+      "nivel": "GP",
+      "padre": "7"
+    },
+    "73": {
+      "titulo": "Soldadores, chapistas, montadores de estructuras metálicas, herreros, elaboradores de herramientas y afines",
+      "nivel": "2",
+      "padre": "7"
+    },
+    "731": {
+      "titulo": "Moldeadores, soldadores, chapistas, montadores de estructuras metálicas y trabajadores afines",
+      "nivel": "3",
+      "padre": "73"
+    },
+    "7311": {
+      "titulo": "Moldeadores y macheros",
+      "nivel": "4",
+      "padre": "731"
+    },
+    "7312": {
+      "titulo": "Soldadores y oxicortadores",
+      "nivel": "4",
+      "padre": "731"
+    },
+    "7313": {
+      "titulo": "Chapistas y caldereros",
+      "nivel": "4",
+      "padre": "731"
+    },
+    "7314": {
+      "titulo": "Montadores de estructuras metálicas",
+      "nivel": "4",
+      "padre": "731"
+    },
+    "7315": {
+      "titulo": "Montadores de estructuras cableadas y empalmadores de cables",
+      "nivel": "4",
+      "padre": "731"
+    },
+    "732": {
+      "titulo": "Herreros y trabajadores de la fabricación de herramientas y afines",
+      "nivel": "3",
+      "padre": "73"
+    },
+    "7321": {
+      "titulo": "Herreros y forjadores",
+      "nivel": "4",
+      "padre": "732"
+    },
+    "7322": {
+      "titulo": "Trabajadores de la fabricación de herramientas, mecánico-ajustadores, modelistas, matriceros y afines",
+      "nivel": "4",
+      "padre": "732"
+    },
+    "7323": {
+      "titulo": "Ajustadores y operadores de máquinas-herramienta",
+      "nivel": "4",
+      "padre": "732"
+    },
+    "7324": {
+      "titulo": "Pulidores de metales y afiladores de herramientas",
+      "nivel": "4",
+      "padre": "732"
+    },
+    "74": {
+      "titulo": "Mecánicos y ajustadores de maquinaria",
+      "nivel": "2",
+      "padre": "7"
+    },
+    "740": {
+      "titulo": "Mecánicos y ajustadores de maquinaria",
+      "nivel": "3",
+      "padre": "74"
+    },
+    "7401": {
+      "titulo": "Mecánicos y ajustadores de vehículos de motor",
+      "nivel": "4",
+      "padre": "740"
+    },
+    "7402": {
+      "titulo": "Mecánicos y ajustadores de motores de avión",
+      "nivel": "4",
+      "padre": "740"
+    },
+    "7403": {
+      "titulo": "Mecánicos y ajustadores de maquinaria agrícola e industrial",
+      "nivel": "4",
+      "padre": "740"
+    },
+    "7404": {
+      "titulo": "Mecánicos y ajustadores de maquinaria naval y ferroviaria",
+      "nivel": "4",
+      "padre": "740"
+    },
+    "7405": {
+      "titulo": "Reparadores de bicicletas y afines",
+      "nivel": "4",
+      "padre": "740"
+    },
+    "75": {
+      "titulo": "Trabajadores especializados en electricidad y electrotecnología",
+      "nivel": "2",
+      "padre": "7"
+    },
+    "751": {
+      "titulo": "Electricistas de la construcción y afines",
+      "nivel": "3",
+      "padre": "75"
+    },
+    "7510": {
+      "titulo": "Electricistas de la construcción y afines",
+      "nivel": "4",
+      "padre": "751"
+    },
+    "752": {
+      "titulo": "Otros instaladores y reparadores de equipos eléctricos",
+      "nivel": "3",
+      "padre": "75"
+    },
+    "7521": {
+      "titulo": "Mecánicos y reparadores de equipos eléctricos",
+      "nivel": "4",
+      "padre": "752"
+    },
+    "7522": {
+      "titulo": "Instaladores y reparadores de líneas eléctricas",
+      "nivel": "4",
+      "padre": "752"
+    },
+    "753": {
+      "titulo": "Instaladores y reparadores de equipos electrónicos y de telecomunicaciones",
+      "nivel": "3",
+      "padre": "75"
+    },
+    "7531": {
+      "titulo": "Mecánicos y reparadores de equipos electrónicos",
+      "nivel": "4",
+      "padre": "753"
+    },
+    "7532": {
+      "titulo": "Instaladores y reparadores en electromedicina",
+      "nivel": "4",
+      "padre": "753"
+    },
+    "7533": {
+      "titulo": "Instaladores y reparadores en tecnologías de la información y las comunicaciones",
+      "nivel": "4",
+      "padre": "753"
+    },
+    "76": {
+      "titulo": "Mecánicos de precisión en metales, ceramistas, vidrieros, artesanos y trabajadores de artes gráficas",
+      "nivel": "2",
+      "padre": "7"
+    },
+    "761": {
+      "titulo": "Mecánicos de precisión en metales, ceramistas, vidrieros y artesanos",
+      "nivel": "3",
+      "padre": "76"
+    },
+    "7611": {
+      "titulo": "Relojeros y mecánicos de instrumentos de precisión",
+      "nivel": "4",
+      "padre": "761"
+    },
+    "7612": {
+      "titulo": "Lutieres y similares; afinadores de instrumentos musicales",
+      "nivel": "4",
+      "padre": "761"
+    },
+    "7613": {
+      "titulo": "Joyeros, orfebres y plateros",
+      "nivel": "4",
+      "padre": "761"
+    },
+    "7614": {
+      "titulo": "Trabajadores de la cerámica, alfareros y afines",
+      "nivel": "4",
+      "padre": "761"
+    },
+    "7615": {
+      "titulo": "Sopladores, modeladores, laminadores, cortadores y pulidores de vidrio",
+      "nivel": "4",
+      "padre": "761"
+    },
+    "7616": {
+      "titulo": "Rotulistas, grabadores de vidrio, pintores decorativos de artículos diversos",
+      "nivel": "4",
+      "padre": "761"
+    },
+    "7617": {
+      "titulo": "Artesanos en madera y materiales similares; cesteros, bruceros y trabajadores afines",
+      "nivel": "4",
+      "padre": "761"
+    },
+    "7618": {
+      "titulo": "Artesanos en tejidos, cueros y materiales similares, preparadores de fibra y tejedores con telares artesanos o de tejidos de punto y afines",
+      "nivel": "4",
+      "padre": "761"
+    },
+    "7619": {
+      "titulo": "Artesanos no clasificados bajo otros epígrafes",
+      "nivel": "4",
+      "padre": "761"
+    },
+    "762": {
+      "titulo": "Oficiales y operarios de las artes gráficas",
+      "nivel": "3",
+      "padre": "76"
+    },
+    "7621": {
+      "titulo": "Trabajadores de procesos de preimpresión",
+      "nivel": "4",
+      "padre": "762"
+    },
+    "7622": {
+      "titulo": "Trabajadores de procesos de impresión",
+      "nivel": "4",
+      "padre": "762"
+    },
+    "7623": {
+      "titulo": "Trabajadores de procesos de encuadernación",
+      "nivel": "4",
+      "padre": "762"
+    },
+    "77": {
+      "titulo": "Trabajadores de la industria de la alimentación, bebidas y tabaco",
+      "nivel": "2",
+      "padre": "7"
+    },
+    "770": {
+      "titulo": "Trabajadores de la industria de la alimentación, bebidas y tabaco",
+      "nivel": "3",
+      "padre": "77"
+    },
+    "7701": {
+      "titulo": "Matarifes y trabajadores de las industrias cárnicas",
+      "nivel": "4",
+      "padre": "770"
+    },
+    "7702": {
+      "titulo": "Trabajadores de las industrias del pescado",
+      "nivel": "4",
+      "padre": "770"
+    },
+    "7703": {
+      "titulo": "Panaderos, pasteleros y confiteros",
+      "nivel": "4",
+      "padre": "770"
+    },
+    "7704": {
+      "titulo": "Trabajadores del tratamiento de la leche y elaboración de productos lácteos (incluidos helados)",
+      "nivel": "4",
+      "padre": "770"
+    },
+    "7705": {
+      "titulo": "Trabajadores conserveros de frutas y hortalizas y trabajadores de la elaboración de bebidas no alcohólicas",
+      "nivel": "4",
+      "padre": "770"
+    },
+    "7706": {
+      "titulo": "Trabajadores de la elaboración de bebidas alcohólicas distintas del vino",
+      "nivel": "4",
+      "padre": "770"
+    },
+    "7707": {
+      "titulo": "Trabajadores de la elaboración del vino",
+      "nivel": "4",
+      "padre": "770"
+    },
+    "7708": {
+      "titulo": "Preparadores y elaboradores del tabaco y sus productos",
+      "nivel": "4",
+      "padre": "770"
+    },
+    "7709": {
+      "titulo": "Catadores y clasificadores de alimentos y bebidas",
+      "nivel": "4",
+      "padre": "770"
+    },
+    "78": {
+      "titulo": "Trabajadores de la madera, textil, confección, piel, cuero, calzado y otros operarios en oficios",
+      "nivel": "2",
+      "padre": "7"
+    },
+    "781": {
+      "titulo": "Trabajadores que tratan la madera y afines",
+      "nivel": "3",
+      "padre": "78"
+    },
+    "7811": {
+      "titulo": "Trabajadores del tratamiento de la madera",
+      "nivel": "4",
+      "padre": "781"
+    },
+    "7812": {
+      "titulo": "Ajustadores y operadores de máquinas para trabajar la madera",
+      "nivel": "4",
+      "padre": "781"
+    },
+    "782": {
+      "titulo": "Ebanistas y trabajadores afines",
+      "nivel": "3",
+      "padre": "78"
+    },
+    "7820": {
+      "titulo": "Ebanistas y trabajadores afines",
+      "nivel": "4",
+      "padre": "782"
+    },
+    "783": {
+      "titulo": "Trabajadores del textil, confección, piel, cuero y calzado",
+      "nivel": "3",
+      "padre": "78"
+    },
+    "7831": {
+      "titulo": "Sastres, modistos, peleteros y sombrereros",
+      "nivel": "4",
+      "padre": "783"
+    },
+    "7832": {
+      "titulo": "Patronistas para productos en textil y piel",
+      "nivel": "4",
+      "padre": "783"
+    },
+    "7833": {
+      "titulo": "Cortadores de tejidos, cuero, piel y otros materiales",
+      "nivel": "4",
+      "padre": "783"
+    },
+    "7834": {
+      "titulo": "Costureros a mano, bordadores y afines",
+      "nivel": "4",
+      "padre": "783"
+    },
+    "7835": {
+      "titulo": "Tapiceros, colchoneros y afines",
+      "nivel": "4",
+      "padre": "783"
+    },
+    "7836": {
+      "titulo": "Curtidores y preparadores de pieles",
+      "nivel": "4",
+      "padre": "783"
+    },
+    "7837": {
+      "titulo": "Zapateros y afines",
+      "nivel": "4",
+      "padre": "783"
+    },
+    "789": {
+      "titulo": "Pegadores, buceadores, probadores de productos y otros operarios y artesanos diversos",
+      "nivel": "3",
+      "padre": "78"
+    },
+    "7891": {
+      "titulo": "Buceadores",
+      "nivel": "4",
+      "padre": "789"
+    },
+    "7892": {
+      "titulo": "Pegadores",
+      "nivel": "4",
+      "padre": "789"
+    },
+    "7893": {
+      "titulo": "Clasificadores y probadores de productos (excepto alimentos, bebidas y tabaco)",
+      "nivel": "4",
+      "padre": "789"
+    },
+    "7894": {
+      "titulo": "Fumigadores y otros controladores de plagas y malas hierbas",
+      "nivel": "4",
+      "padre": "789"
+    },
+    "7899": {
+      "titulo": "Oficiales, operarios y artesanos de otros oficios no clasificados bajo otros epígrafes",
+      "nivel": "4",
+      "padre": "789"
+    },
+    "8": {
+      "titulo": "Operadores de instalaciones y maquinaria, y montadores",
+      "nivel": "1",
+      "padre": ""
+    },
+    "M": {
+      "titulo": "Operadores de instalaciones y maquinaria fijas, y montadores",
+      "nivel": "GP",
+      "padre": "8"
+    },
+    "81": {
+      "titulo": "Operadores de instalaciones y maquinaria fijas",
+      "nivel": "2",
+      "padre": "8"
+    },
+    "811": {
+      "titulo": "Operadores en instalaciones de la extracción y explotación de minerales",
+      "nivel": "3",
+      "padre": "81"
+    },
+    "8111": {
+      "titulo": "Mineros y otros operadores en instalaciones mineras",
+      "nivel": "4",
+      "padre": "811"
+    },
+    "8112": {
+      "titulo": "Operadores en instalaciones para la preparación de minerales y rocas",
+      "nivel": "4",
+      "padre": "811"
+    },
+    "8113": {
+      "titulo": "Sondistas y trabajadores afines",
+      "nivel": "4",
+      "padre": "811"
+    },
+    "8114": {
+      "titulo": "Operadores de maquinaria para fabricar productos derivados de minerales no metálicos",
+      "nivel": "4",
+      "padre": "811"
+    },
+    "812": {
+      "titulo": "Operadores en instalaciones para el tratamiento de metales",
+      "nivel": "3",
+      "padre": "81"
+    },
+    "8121": {
+      "titulo": "Operadores en instalaciones para la obtención y transformación de metales",
+      "nivel": "4",
+      "padre": "812"
+    },
+    "8122": {
+      "titulo": "Operadores de máquinas pulidoras, galvanizadoras y recubridoras de metales",
+      "nivel": "4",
+      "padre": "812"
+    },
+    "813": {
+      "titulo": "Operadores de instalaciones y máquinas de productos químicos, farmacéuticos y materiales fotosensibles",
+      "nivel": "3",
+      "padre": "81"
+    },
+    "8131": {
+      "titulo": "Operadores en plantas industriales químicas",
+      "nivel": "4",
+      "padre": "813"
+    },
+    "8132": {
+      "titulo": "Operadores de máquinas para fabricar productos farmacéuticos, cosméticos y afines",
+      "nivel": "4",
+      "padre": "813"
+    },
+    "8133": {
+      "titulo": "Operadores de laboratorios fotográficos y afines",
+      "nivel": "4",
+      "padre": "813"
+    },
+    "814": {
+      "titulo": "Operadores en instalaciones para el tratamiento y transformación de la madera, la fabricación de papel, productos de papel y caucho o materias plásticas",
+      "nivel": "3",
+      "padre": "81"
+    },
+    "8141": {
+      "titulo": "Operadores de máquinas para fabricar productos de caucho y derivados de resinas naturales",
+      "nivel": "4",
+      "padre": "814"
+    },
+    "8142": {
+      "titulo": "Operadores de máquinas para fabricar productos de material plástico",
+      "nivel": "4",
+      "padre": "814"
+    },
+    "8143": {
+      "titulo": "Operadores de máquinas para fabricar productos de papel y cartón",
+      "nivel": "4",
+      "padre": "814"
+    },
+    "8144": {
+      "titulo": "Operadores de serrerías, de máquinas de fabricación de tableros y de instalaciones afines para el tratamiento de la madera y el corcho",
+      "nivel": "4",
+      "padre": "814"
+    },
+    "8145": {
+      "titulo": "Operadores en instalaciones para la preparación de pasta de papel y fabricación de papel",
+      "nivel": "4",
+      "padre": "814"
+    },
+    "815": {
+      "titulo": "Operadores de máquinas para fabricar productos textiles y artículos de piel y de cuero",
+      "nivel": "3",
+      "padre": "81"
+    },
+    "8151": {
+      "titulo": "Operadores de máquinas para preparar fibras, hilar y devanar",
+      "nivel": "4",
+      "padre": "815"
+    },
+    "8152": {
+      "titulo": "Operadores de telares y otras máquinas tejedoras",
+      "nivel": "4",
+      "padre": "815"
+    },
+    "8153": {
+      "titulo": "Operadores de máquinas de coser y bordar",
+      "nivel": "4",
+      "padre": "815"
+    },
+    "8154": {
+      "titulo": "Operadores de máquinas de blanquear, teñir, estampar y acabar textiles",
+      "nivel": "4",
+      "padre": "815"
+    },
+    "8155": {
+      "titulo": "Operadores de máquinas para tratar pieles y cuero",
+      "nivel": "4",
+      "padre": "815"
+    },
+    "8156": {
+      "titulo": "Operadores de máquinas para la fabricación del calzado, marroquinería y guantería de piel",
+      "nivel": "4",
+      "padre": "815"
+    },
+    "8159": {
+      "titulo": "Operadores de máquinas para fabricar productos textiles no clasificados bajo otros epígrafes",
+      "nivel": "4",
+      "padre": "815"
+    },
+    "816": {
+      "titulo": "Operadores de máquinas para elaborar productos alimenticios, bebidas y tabaco",
+      "nivel": "3",
+      "padre": "81"
+    },
+    "8160": {
+      "titulo": "Operadores de máquinas para elaborar productos alimenticios, bebidas y tabaco",
+      "nivel": "4",
+      "padre": "816"
+    },
+    "817": {
+      "titulo": "Operadores de máquinas de lavandería y tintorería",
+      "nivel": "3",
+      "padre": "81"
+    },
+    "8170": {
+      "titulo": "Operadores de máquinas de lavandería y tintorería",
+      "nivel": "4",
+      "padre": "817"
+    },
+    "819": {
+      "titulo": "Otros operadores de instalaciones y maquinaria fijas",
+      "nivel": "3",
+      "padre": "81"
+    },
+    "8191": {
+      "titulo": "Operadores de hornos e instalaciones de vidriería y cerámica",
+      "nivel": "4",
+      "padre": "819"
+    },
+    "8192": {
+      "titulo": "Operadores de calderas y máquinas de vapor",
+      "nivel": "4",
+      "padre": "819"
+    },
+    "8193": {
+      "titulo": "Operadores de máquinas de embalaje, embotellamiento y etiquetado",
+      "nivel": "4",
+      "padre": "819"
+    },
+    "8199": {
+      "titulo": "Operadores de instalaciones y maquinaria fijas no clasificados bajo otros epígrafes",
+      "nivel": "4",
+      "padre": "819"
+    },
+    "82": {
+      "titulo": "Montadores y ensambladores en fábricas",
+      "nivel": "2",
+      "padre": "8"
+    },
+    "820": {
+      "titulo": "Montadores y ensambladores en fábricas",
+      "nivel": "3",
+      "padre": "82"
+    },
+    "8201": {
+      "titulo": "Ensambladores de maquinaria mecánica",
+      "nivel": "4",
+      "padre": "820"
+    },
+    "8202": {
+      "titulo": "Ensambladores de equipos eléctricos y electrónicos",
+      "nivel": "4",
+      "padre": "820"
+    },
+    "8209": {
+      "titulo": "Montadores y ensambladores no clasificados en otros epígrafes",
+      "nivel": "4",
+      "padre": "820"
+    },
+    "N": {
+      "titulo": "Conductores y operadores de maquinaria móvil",
+      "nivel": "GP",
+      "padre": "8"
+    },
+    "83": {
+      "titulo": "Maquinistas de locomotoras, operadores de maquinaria agrícola y de equipos pesados móviles, y marineros",
+      "nivel": "2",
+      "padre": "8"
+    },
+    "831": {
+      "titulo": "Maquinistas de locomotoras y afines",
+      "nivel": "3",
+      "padre": "83"
+    },
+    "8311": {
+      "titulo": "Maquinistas de locomotoras",
+      "nivel": "4",
+      "padre": "831"
+    },
+    "8312": {
+      "titulo": "Agentes de maniobras ferroviarias",
+      "nivel": "4",
+      "padre": "831"
+    },
+    "832": {
+      "titulo": "Operadores de maquinaria agrícola y forestal móvil",
+      "nivel": "3",
+      "padre": "83"
+    },
+    "8321": {
+      "titulo": "Operadores de maquinaria agrícola móvil",
+      "nivel": "4",
+      "padre": "832"
+    },
+    "8322": {
+      "titulo": "Operadores de maquinaria forestal móvil",
+      "nivel": "4",
+      "padre": "832"
+    },
+    "833": {
+      "titulo": "Operadores de otras máquinas móviles",
+      "nivel": "3",
+      "padre": "83"
+    },
+    "8331": {
+      "titulo": "Operadores de maquinaria de movimientos de tierras y equipos similares",
+      "nivel": "4",
+      "padre": "833"
+    },
+    "8332": {
+      "titulo": "Operadores de grúas, montacargas y de maquinaria similar de movimiento de materiales",
+      "nivel": "4",
+      "padre": "833"
+    },
+    "8333": {
+      "titulo": "Operadores de carretillas elevadoras",
+      "nivel": "4",
+      "padre": "833"
+    },
+    "834": {
+      "titulo": "Marineros de puente, marineros de máquinas y afines",
+      "nivel": "3",
+      "padre": "83"
+    },
+    "8340": {
+      "titulo": "Marineros de puente, marineros de máquinas y afines",
+      "nivel": "4",
+      "padre": "834"
+    },
+    "84": {
+      "titulo": "Conductores de vehículos para el transporte urbano o por carretera",
+      "nivel": "2",
+      "padre": "8"
+    },
+    "841": {
+      "titulo": "Conductores de automóviles, taxis y furgonetas",
+      "nivel": "3",
+      "padre": "84"
+    },
+    "8411": {
+      "titulo": "Conductores propietarios de automóviles, taxis y furgonetas",
+      "nivel": "4",
+      "padre": "841"
+    },
+    "8412": {
+      "titulo": "Conductores asalariados de automóviles, taxis y furgonetas",
+      "nivel": "4",
+      "padre": "841"
+    },
+    "842": {
+      "titulo": "Conductores de autobuses y tranvías",
+      "nivel": "3",
+      "padre": "84"
+    },
+    "8420": {
+      "titulo": "Conductores de autobuses y tranvías",
+      "nivel": "4",
+      "padre": "842"
+    },
+    "843": {
+      "titulo": "Conductores de camiones",
+      "nivel": "3",
+      "padre": "84"
+    },
+    "8431": {
+      "titulo": "Conductores propietarios de camiones",
+      "nivel": "4",
+      "padre": "843"
+    },
+    "8432": {
+      "titulo": "Conductores asalariados de camiones",
+      "nivel": "4",
+      "padre": "843"
+    },
+    "844": {
+      "titulo": "Conductores de motocicletas y ciclomotores",
+      "nivel": "3",
+      "padre": "84"
+    },
+    "8440": {
+      "titulo": "Conductores de motocicletas y ciclomotores",
+      "nivel": "4",
+      "padre": "844"
+    },
+    "9": {
+      "titulo": "Ocupaciones elementales",
+      "nivel": "1",
+      "padre": ""
+    },
+    "O": {
+      "titulo": "Trabajadores no cualificados en servicios (excepto transportes)",
+      "nivel": "GP",
+      "padre": "9"
+    },
+    "91": {
+      "titulo": "Empleados domésticos",
+      "nivel": "2",
+      "padre": "9"
+    },
+    "910": {
+      "titulo": "Empleados domésticos",
+      "nivel": "3",
+      "padre": "91"
+    },
+    "9100": {
+      "titulo": "Empleados domésticos",
+      "nivel": "4",
+      "padre": "910"
+    },
+    "92": {
+      "titulo": "Otro personal de limpieza",
+      "nivel": "2",
+      "padre": "9"
+    },
+    "921": {
+      "titulo": "Personal de limpieza de oficinas, hoteles y otros establecimientos similares",
+      "nivel": "3",
+      "padre": "92"
+    },
+    "9210": {
+      "titulo": "Personal de limpieza de oficinas, hoteles y otros establecimientos similares",
+      "nivel": "4",
+      "padre": "921"
+    },
+    "922": {
+      "titulo": "Limpiadores de vehículos, ventanas y personal de limpieza a mano",
+      "nivel": "3",
+      "padre": "92"
+    },
+    "9221": {
+      "titulo": "Limpiadores en seco a mano y afines",
+      "nivel": "4",
+      "padre": "922"
+    },
+    "9222": {
+      "titulo": "Limpiadores de vehículos",
+      "nivel": "4",
+      "padre": "922"
+    },
+    "9223": {
+      "titulo": "Limpiadores de ventanas",
+      "nivel": "4",
+      "padre": "922"
+    },
+    "9229": {
+      "titulo": "Otro personal de limpieza",
+      "nivel": "4",
+      "padre": "922"
+    },
+    "93": {
+      "titulo": "Ayudantes de preparación de alimentos",
+      "nivel": "2",
+      "padre": "9"
+    },
+    "931": {
+      "titulo": "Ayudantes de cocina",
+      "nivel": "3",
+      "padre": "93"
+    },
+    "9310": {
+      "titulo": "Ayudantes de cocina",
+      "nivel": "4",
+      "padre": "931"
+    },
+    "932": {
+      "titulo": "Preparadores de comidas rápidas",
+      "nivel": "3",
+      "padre": "93"
+    },
+    "9320": {
+      "titulo": "Preparadores de comidas rápidas",
+      "nivel": "4",
+      "padre": "932"
+    },
+    "94": {
+      "titulo": "Recogedores de residuos urbanos, vendedores callejeros y otras ocupaciones elementales en servicios",
+      "nivel": "2",
+      "padre": "9"
+    },
+    "941": {
+      "titulo": "Vendedores callejeros",
+      "nivel": "3",
+      "padre": "94"
+    },
+    "9410": {
+      "titulo": "Vendedores callejeros",
+      "nivel": "4",
+      "padre": "941"
+    },
+    "942": {
+      "titulo": "Repartidores de publicidad, limpiabotas y otros trabajadores de oficios callejeros",
+      "nivel": "3",
+      "padre": "94"
+    },
+    "9420": {
+      "titulo": "Repartidores de publicidad, limpiabotas y otros trabajadores de oficios callejeros",
+      "nivel": "4",
+      "padre": "942"
+    },
+    "943": {
+      "titulo": "Ordenanzas, mozos de equipaje, repartidores a pie y afines",
+      "nivel": "3",
+      "padre": "94"
+    },
+    "9431": {
+      "titulo": "Ordenanzas",
+      "nivel": "4",
+      "padre": "943"
+    },
+    "9432": {
+      "titulo": "Mozos de equipaje y afines",
+      "nivel": "4",
+      "padre": "943"
+    },
+    "9433": {
+      "titulo": "Repartidores, recadistas y mensajeros a pie",
+      "nivel": "4",
+      "padre": "943"
+    },
+    "9434": {
+      "titulo": "Lectores de contadores y recaudadores de máquinas recreativas y expendedoras",
+      "nivel": "4",
+      "padre": "943"
+    },
+    "944": {
+      "titulo": "Recogedores de residuos, clasificadores de desechos, barrenderos y afines",
+      "nivel": "3",
+      "padre": "94"
+    },
+    "9441": {
+      "titulo": "Recogedores de residuos",
+      "nivel": "4",
+      "padre": "944"
+    },
+    "9442": {
+      "titulo": "Clasificadores de desechos, operarios de punto limpio y recogedores de chatarra",
+      "nivel": "4",
+      "padre": "944"
+    },
+    "9443": {
+      "titulo": "Barrenderos y afines",
+      "nivel": "4",
+      "padre": "944"
+    },
+    "949": {
+      "titulo": "Otras ocupaciones elementales",
+      "nivel": "3",
+      "padre": "94"
+    },
+    "9490": {
+      "titulo": "Otras ocupaciones elementales",
+      "nivel": "4",
+      "padre": "949"
+    },
+    "P": {
+      "titulo": "Peones de la agricultura, pesca, construcción, industrias manufactureras y transportes",
+      "nivel": "GP",
+      "padre": "9"
+    },
+    "95": {
+      "titulo": "Peones agrarios, forestales y de la pesca",
+      "nivel": "2",
+      "padre": "9"
+    },
+    "951": {
+      "titulo": "Peones agrícolas",
+      "nivel": "3",
+      "padre": "95"
+    },
+    "9511": {
+      "titulo": "Peones agrícolas (excepto en huertas, invernaderos, viveros y jardines)",
+      "nivel": "4",
+      "padre": "951"
+    },
+    "9512": {
+      "titulo": "Peones agrícolas en huertas, invernaderos, viveros y jardines",
+      "nivel": "4",
+      "padre": "951"
+    },
+    "952": {
+      "titulo": "Peones ganaderos",
+      "nivel": "3",
+      "padre": "95"
+    },
+    "9520": {
+      "titulo": "Peones ganaderos",
+      "nivel": "4",
+      "padre": "952"
+    },
+    "953": {
+      "titulo": "Peones agropecuarios",
+      "nivel": "3",
+      "padre": "95"
+    },
+    "9530": {
+      "titulo": "Peones agropecuarios",
+      "nivel": "4",
+      "padre": "953"
+    },
+    "954": {
+      "titulo": "Peones de la pesca, la acuicultura, forestales y de la caza",
+      "nivel": "3",
+      "padre": "95"
+    },
+    "9541": {
+      "titulo": "Peones de la pesca",
+      "nivel": "4",
+      "padre": "954"
+    },
+    "9542": {
+      "titulo": "Peones de la acuicultura",
+      "nivel": "4",
+      "padre": "954"
+    },
+    "9543": {
+      "titulo": "Peones forestales y de la caza",
+      "nivel": "4",
+      "padre": "954"
+    },
+    "96": {
+      "titulo": "Peones de la construcción y de la minería",
+      "nivel": "2",
+      "padre": "9"
+    },
+    "960": {
+      "titulo": "Peones de la construcción y de la minería",
+      "nivel": "3",
+      "padre": "96"
+    },
+    "9601": {
+      "titulo": "Peones de obras públicas",
+      "nivel": "4",
+      "padre": "960"
+    },
+    "9602": {
+      "titulo": "Peones de la construcción de edificios",
+      "nivel": "4",
+      "padre": "960"
+    },
+    "9603": {
+      "titulo": "Peones de la minería, canteras y otras industrias extractivas",
+      "nivel": "4",
+      "padre": "960"
+    },
+    "97": {
+      "titulo": "Peones de las industrias manufactureras",
+      "nivel": "2",
+      "padre": "9"
+    },
+    "970": {
+      "titulo": "Peones de las industrias manufactureras",
+      "nivel": "3",
+      "padre": "97"
+    },
+    "9700": {
+      "titulo": "Peones de las industrias manufactureras",
+      "nivel": "4",
+      "padre": "970"
+    },
+    "98": {
+      "titulo": "Peones del transporte, descargadores y reponedores",
+      "nivel": "2",
+      "padre": "9"
+    },
+    "981": {
+      "titulo": "Peones del transporte, descargadores y afines",
+      "nivel": "3",
+      "padre": "98"
+    },
+    "9811": {
+      "titulo": "Peones del transporte de mercancías y descargadores",
+      "nivel": "4",
+      "padre": "981"
+    },
+    "9812": {
+      "titulo": "Conductores de vehículos de tracción animal para el transporte de personas y similares",
+      "nivel": "4",
+      "padre": "981"
+    },
+    "982": {
+      "titulo": "Reponedores",
+      "nivel": "3",
+      "padre": "98"
+    },
+    "9820": {
+      "titulo": "Reponedores",
+      "nivel": "4",
+      "padre": "982"
+    },
+    "0": {
+      "titulo": "Ocupaciones militares",
+      "nivel": "1",
+      "padre": ""
+    },
+    "Q": {
+      "titulo": "Ocupaciones militares",
+      "nivel": "GP",
+      "padre": "0"
+    },
+    "00": {
+      "titulo": "Ocupaciones militares",
+      "nivel": "2",
+      "padre": "0"
+    },
+    "001": {
+      "titulo": "Oficiales y suboficiales de las fuerzas armadas",
+      "nivel": "3",
+      "padre": "00"
+    },
+    "0011": {
+      "titulo": "Oficiales de las fuerzas armadas",
+      "nivel": "4",
+      "padre": "001"
+    },
+    "0012": {
+      "titulo": "Suboficiales de las fuerzas armadas",
+      "nivel": "4",
+      "padre": "001"
+    },
+    "002": {
+      "titulo": "Tropa y marinería de las fuerzas armadas",
+      "nivel": "3",
+      "padre": "00"
+    },
+    "0020": {
+      "titulo": "Tropa y marinería de las fuerzas armadas",
+      "nivel": "4",
+      "padre": "002"
+    }
+  },
+  "isco08_es": {
+    "1": "Directores y gerentes",
+    "11": "Directores ejecutivos, personal directivo de la administración pública y miembros del poder ejecutivo y de los cuerpos legislativos",
+    "111": "Miembros del poder ejecutivo y de los cuerpos legislativos",
+    "1111": "Miembros del poder legislativo",
+    "1112": "Personal directivo de la administración pública",
+    "1113": "Jefes de pequeñas poblaciones",
+    "1114": "Dirigentes de organizaciones que presentan un interés especial",
+    "112": "Directores generales y gerentes generales",
+    "1120": "Directores generales y gerentes generales",
+    "12": "Directores administradores y comerciales",
+    "121": "Directores de administración y servicios",
+    "1211": "Directores financieros",
+    "1212": "Directores de recursos humanos",
+    "1213": "Directores de políticas y planificación",
+    "1219": "Directores de administración y servicios no clasificados bajo otros epígrafes",
+    "122": "Directores de ventas, comercialización y desarrollo",
+    "1221": "Directores de ventas y comercialización",
+    "1222": "Directores de publicidad y relaciones públicas",
+    "1223": "Directores de investigación y desarrollo",
+    "13": "Directores y gerentes de producción y operaciones",
+    "131": "Directores de producción agropecuaria, silvicultura y pesca",
+    "1311": "Directores de producción agropecuaria y silvicultura",
+    "1312": "Directores de producción de piscicultura y pesca",
+    "132": "Directores de industrias manufactureras, de minería, construcción y distribución",
+    "1321": "Directores de industrias manufactureras",
+    "1322": "Directores de explotaciones de minería",
+    "1323": "Directores de empresas de construcción",
+    "1324": "Directores de empresas de abastecimiento, distribución y afines",
+    "133": "Directores de servicios de tecnología de la información y las comunicaciones",
+    "1330": "Directores de servicios de tecnología de la información y las comunicaciones",
+    "134": "Directores y gerentes de servicios profesionales",
+    "1341": "Directores de servicios de cuidados infantiles",
+    "1342": "Directores de servicios de salud",
+    "1343": "Directores de servicios de cuidado de las personas de edad",
+    "1344": "Directores de servicios de bienestar social",
+    "1345": "Directores de servicios de educación",
+    "1346": "Gerentes de sucursales de bancos, de servicios financieros y de seguros",
+    "1349": "Directores y gerentes de servicios profesionales no clasificados bajo otros epígrafes",
+    "14": "Gerentes de hoteles, restaurantes, comercios y otros servicios",
+    "141": "Gerentes de hoteles y restaurantes",
+    "1411": "Gerentes de hoteles",
+    "1412": "Gerentes de restaurantes",
+    "142": "Gerentes de comercios al por mayor y al por menor",
+    "1420": "Gerentes de comercios al por mayor y al por menor",
+    "143": "Otros gerentes de servicios",
+    "1431": "Gerentes de centros deportivos, de esparcimiento y culturales",
+    "1439": "Gerentes de servicios no clasificados bajo otros epígrafes",
+    "2": "Profesionales científicos e intelectuales",
+    "21": "Profesionales de las ciencias y de la ingeniería",
+    "211": "Físicos, químicos y afines",
+    "2111": "Físicos y astrónomos",
+    "2112": "Meteorólogos",
+    "2113": "Químicos",
+    "2114": "Geólogos y geofísicos",
+    "212": "Matemáticos, actuarios y estadísticos",
+    "2120": "Matemáticos, actuarios y estadísticos",
+    "213": "Profesionales en ciencias biológicas",
+    "2131": "Biólogos, botánicos, zoólogos y afines",
+    "2132": "Agrónomos y afines",
+    "2133": "Profesionales de la protección medioambiental",
+    "214": "Ingenieros (excluyendo electrotecnólogos)",
+    "2141": "Ingenieros industriales y de producción",
+    "2142": "Ingenieros civiles",
+    "2143": "Ingenieros medioambientales",
+    "2144": "Ingenieros mecánicos",
+    "2145": "Ingenieros químicos",
+    "2146": "Ingenieros de minas, metalúrgicos y afines",
+    "2149": "Ingenieros no clasificados bajo otros epígrafes",
+    "215": "Ingenieros en electrotecnología",
+    "2151": "Ingenieros electricistas",
+    "2152": "Ingenieros electrónicos",
+    "2153": "Ingenieros en telecomunicaciones",
+    "216": "Arquitectos, urbanistas, agrimensores y diseñadores",
+    "2161": "Arquitectos",
+    "2162": "Arquitectos paisajistas",
+    "2163": "Diseñadores de productos y de prendas",
+    "2164": "Urbanistas e ingenieros de tránsito",
+    "2165": "Cartógrafos y agrimensores",
+    "2166": "Diseñadores gráficos y multimedia",
+    "22": "Profesionales de la salud",
+    "221": "Médicos",
+    "2211": "Médicos generales",
+    "2212": "Médicos especialistas",
+    "222": "Profesionales de enfermería y partería",
+    "2221": "Profesionales de enfermería",
+    "2222": "Profesionales de partería",
+    "223": "Profesionales de medicina tradicional y alternativa",
+    "2230": "Profesionales de medicina tradicional y alternativa",
+    "224": "Practicantes paramédicos",
+    "2240": "Practicantes paramédicos",
+    "225": "Veterinarios",
+    "2250": "Veterinarios",
+    "226": "Otros profesionales de la salud",
+    "2261": "Dentistas",
+    "2262": "Farmacéuticos",
+    "2263": "Profesionales de la salud y la higiene laboral y ambiental",
+    "2264": "Fisioterapeutas",
+    "2265": "Dietistas y nutricionistas",
+    "2266": "Audiólogos y logopedas",
+    "2267": "Optometristas",
+    "2269": "Profesionales de la salud no clasificados bajo otros epígrafes",
+    "23": "Profesionales de la enseñanza",
+    "231": "Profesores de universidades y de la enseñanza superior",
+    "2310": "Profesores de universidades y de la enseñanza superior",
+    "232": "Profesores de formación profesional",
+    "2320": "Profesores de formación profesional",
+    "233": "Profesores de enseñanza secundaria",
+    "2330": "Profesores de enseñanza secundaria",
+    "234": "Maestros de enseñanza primaria y maestros preescolares",
+    "2341": "Maestros de enseñanza primaria",
+    "2342": "Maestros preescolares",
+    "235": "Otros profesionales de la enseñanza",
+    "2351": "Especialistas en métodos pedagógicos",
+    "2352": "Educadores para necesidades especiales",
+    "2353": "Otros profesores de idiomas",
+    "2354": "Otros profesores de música",
+    "2355": "Otros profesores de artes",
+    "2356": "Instructores en tecnología de la información",
+    "2359": "Profesionales de la enseñanza no clasificados bajo otros epígrafes",
+    "24": "Especialistas en organización de la administración publica y de empresas",
+    "241": "Especialistas en finanzas",
+    "2411": "Contables",
+    "2412": "Asesores financieros y en inversiones",
+    "2413": "Analistas financieros",
+    "242": "Especialistas en organización de administración",
+    "2421": "Analistas de gestión y organización",
+    "2422": "Especialistas en políticas de administración",
+    "2423": "Especialistas en políticas y servicios de personal y afines",
+    "2424": "Especialistas en formación del personal",
+    "243": "Profesionales de las ventas, la comercialización y las relaciones públicas",
+    "2431": "Profesionales de la publicidad y la comercialización",
+    "2432": "Profesionales de relaciones públicas",
+    "2433": "Profesionales de ventas técnicas y médicas (excluyendo la TIC)",
+    "2434": "Profesionales de ventas de tecnología de la información y las comunicaciones",
+    "25": "Profesionales de tecnología de la información y las comunicaciones",
+    "251": "Desarrolladores y analistas de software y multimedia",
+    "2511": "Analistas de sistemas",
+    "2512": "Desarrolladores de software",
+    "2513": "Desarrolladores Web y multimedia",
+    "2514": "Programadores de aplicaciones",
+    "2519": "Desarrolladores y analistas de software y multimedia y analistas no clasificados bajo otros epígrafes",
+    "252": "Especialistas en bases de datos y en redes de computadores",
+    "2521": "Diseñadores y administradores de bases de datos",
+    "2522": "Administradores de sistemas",
+    "2523": "Profesionales en redes de computadores",
+    "2529": "Especialistas en bases de datos y en redes de computadores no clasificados bajo otros epígrafes",
+    "26": "Profesionales en derecho, en ciencias sociales y culturales",
+    "261": "Profesionales en derecho",
+    "2611": "Abogados",
+    "2612": "Jueces",
+    "2619": "Profesionales en derecho no clasificados bajo otros epígrafes",
+    "262": "Archivistas, bibliotecarios, curadores y afines",
+    "2621": "Archivistas y curadores de museos",
+    "2622": "Bibliotecarios, documentalistas y afines",
+    "263": "Especialistas en ciencias sociales y teología",
+    "2631": "Economistas",
+    "2632": "Sociólogos, antropólogos y afines",
+    "2633": "Filósofos, historiadores y especialistas en ciencias políticas",
+    "2634": "Psicólogos",
+    "2635": "Profesionales del trabajo social",
+    "2636": "Profesionales religiosos",
+    "264": "Autores, periodistas y lingüistas",
+    "2641": "Autores y otros escritores",
+    "2642": "Periodistas",
+    "2643": "Traductores, intérpretes y lingüistas",
+    "265": "Artistas creativos e interpretativos",
+    "2651": "Artistas de artes plásticas",
+    "2652": "Músicos, cantantes y compositores",
+    "2653": "Bailarines y coreógrafos",
+    "2654": "Directores de cine, de teatro y afines",
+    "2655": "Actores",
+    "2656": "Locutores de radio, televisión y otros medios de comunicación",
+    "2659": "Artistas creativos e interpretativos no clasificados bajo otros epígrafes",
+    "3": "Técnicos y profesionales de nivel medio",
+    "31": "Profesionales de las ciencias y la ingeniería de nivel medio",
+    "311": "Técnicos en ciencias físicas y en ingeniería",
+    "3111": "Técnicos en ciencias físicas y químicas",
+    "3112": "Técnicos en ingeniería civil",
+    "3113": "Electrotécnicos",
+    "3114": "Técnicos en electrónica",
+    "3115": "Técnicos en ingeniería mecánica",
+    "3116": "Técnicos en química industrial",
+    "3117": "Técnicos en ingeniería de minas y metalurgia",
+    "3118": "Delineantes y dibujantes técnicos",
+    "3119": "Técnicos en ciencias físicas y en ingeniería no clasificados bajo otros epígrafes",
+    "312": "Supervisores en ingeniería de minas, de industrias manufactureras y de la construcción",
+    "3121": "Supervisores en ingeniería de minas",
+    "3122": "Supervisores de industrias manufactureras",
+    "3123": "Supervisores de la construcción",
+    "313": "Técnicos en control de procesos",
+    "3131": "Operadores de instalaciones de producción de energía",
+    "3132": "Operadores de incineradores, instalaciones de tratamiento de agua y afines",
+    "3133": "Controladores de instalaciones de procesamiento de productos químicos",
+    "3134": "Operadores de instalaciones de refinación de petróleo y gas natural",
+    "3135": "Controladores de procesos de producción de metales",
+    "3139": "Técnicos en control de procesos no clasificados bajo otros epígrafes",
+    "314": "Técnicos y profesionales de nivel medio en ciencias biológicas y afines",
+    "3141": "Técnicos en ciencias biológicas (excluyendo la medicina)",
+    "3142": "Técnicos agropecuarios",
+    "3143": "Técnicos forestales",
+    "315": "Técnicos y controladores en navegación marítima y aeronáutica",
+    "3151": "Oficiales maquinistas en navegación",
+    "3152": "Capitanes, oficiales de cubierta y prácticos",
+    "3153": "Pilotos de aviación y afines",
+    "3154": "Controladores de tráfico aéreo",
+    "3155": "Técnicos en seguridad aeronáutica",
+    "32": "Profesionales de nivel medio de la salud",
+    "321": "Técnicos médicos y farmacéuticos",
+    "3211": "Técnicos en aparatos de diagnóstico y tratamiento médico",
+    "3212": "Técnicos de laboratorios médicos",
+    "3213": "Técnicos y asistentes farmacéuticos",
+    "3214": "Técnicos de prótesis médicas y dentales",
+    "322": "Profesionales de nivel medio de enfermería y partería",
+    "3221": "Profesionales de nivel medio de enfermería",
+    "3222": "Profesionales de nivel medio de partería",
+    "323": "Profesionales de nivel medio de medicina tradicional y alternativa",
+    "3230": "Profesionales de nivel medio de medicina tradicional y alternativa",
+    "324": "Técnicos y asistentes veterinarios",
+    "3240": "Técnicos y asistentes veterinarios",
+    "325": "Otros profesionales de nivel medio de la salud",
+    "3251": "Dentistas auxiliares y ayudantes de odontología",
+    "3252": "Técnicos en documentación sanitaria",
+    "3253": "Trabajadores comunitarios de la salud",
+    "3254": "Técnicos en optometría y ópticos",
+    "3255": "Técnicos y asistentes fisioterapeutas",
+    "3256": "Practicantes y asistentes médicos",
+    "3257": "Inspectores de la salud laboral, medioambiental y afines",
+    "3258": "Ayudantes de ambulancias",
+    "3259": "Profesionales de la salud de nivel medio no clasificados bajo otros epígrafes",
+    "33": "Profesionales de nivel medio en operaciones financieras y administrativas",
+    "331": "Profesionales de nivel medio en finanzas y matemáticas",
+    "3311": "Agentes de bolsa, cambio y otros servicios financieros",
+    "3312": "Oficiales de préstamos y créditos",
+    "3313": "Tenedores de libros",
+    "3314": "Profesionales de nivel medio de servicios estadísticos, matemáticos y afines",
+    "3315": "Tasadores",
+    "332": "Agentes comerciales y corredores",
+    "3321": "Agentes de seguros",
+    "3322": "Representantes comerciales",
+    "3323": "Agentes de compras",
+    "3324": "Agentes de compras y consignatarios",
+    "333": "Agentes de servicios comerciales",
+    "3331": "Declarantes o gestores de aduana",
+    "3332": "Organizadores de conferencias y eventos",
+    "3333": "Agentes de empleo y contratistas de mano de obra",
+    "3334": "Agentes inmobiliarios",
+    "3339": "Agentes de servicios comerciales no clasificados bajo otros epígrafes",
+    "334": "Secretarios administrativos y especializados",
+    "3341": "Supervisores de secretaría",
+    "3342": "Secretarios jurídicos",
+    "3343": "Secretarios administrativos y ejecutivos",
+    "3344": "Secretarios médicos",
+    "335": "Agentes de la administración pública para la aplicación de la ley y afines",
+    "3351": "Agentes de aduana e inspectores de fronteras",
+    "3352": "Agentes de administración tributaria",
+    "3353": "Agentes de servicios de seguridad social",
+    "3354": "Agentes de servicios de expedición de licencias y permisos",
+    "3355": "Inspectores de policía y detectives",
+    "3359": "Agentes de la administración pública para la aplicacion de la ley y afines no clasificados bajo otros epígrafes",
+    "34": "Profesionales de nivel medio de servicios jurídicos, sociales, culturales y afines",
+    "341": "Profesionales de nivel medio, de servicios jurídicos, sociales y religiosos",
+    "3411": "Profesionales de nivel medio del derecho y servicios legales y afines",
+    "3412": "Trabajadores y asistentes sociales de nivel medio",
+    "3413": "Auxiliares laicos de las religiones",
+    "342": "Entrenadores de deportes y aptitud física",
+    "3421": "Atletas y deportistas",
+    "3422": "Entrenadores, instructores y árbitros de actividades deportivas",
+    "3423": "Instructores de educación física y actividades recreativas",
+    "343": "Profesionales de nivel medio en actividades culturales, artísticas y culinarias",
+    "3431": "Fotógrafos",
+    "3432": "Diseñadores y decoradores de interior",
+    "3433": "Técnicos en galerías de arte, museos y bibliotecas",
+    "3434": "Chefs",
+    "3435": "Otros profesionales de nivel medio en actividades culturales y artísticas",
+    "35": "Técnicos de la tecnología de la información y las comunicaciones",
+    "351": "Técnicos en operaciones de tecnología de la información y las comunicaciones y asistencia al usuario",
+    "3511": "Técnicos en operaciones de tecnología de la información y las comunicaciones",
+    "3512": "Técnicos en asistencia al usuario de tecnología de la información y las comunicaciones",
+    "3513": "Técnicos en redes y sistemas de computadores",
+    "3514": "Técnicos de la Web",
+    "352": "Técnicos en telecomunicaciones y radiodifusión",
+    "3521": "Técnicos de radiodifusión y grabación audio visual",
+    "3522": "Técnicos de ingeniería de las telecomunicaciones",
+    "4": "Personal de apoyo administrativo",
+    "41": "Oficinistas",
+    "411": "Oficinistas generales",
+    "4110": "Oficinistas generales",
+    "412": "Secretarios (general)",
+    "4120": "Secretarios (general)",
+    "413": "Operadores de máquinas de oficina",
+    "4131": "Operadores de máquinas de procesamiento de texto y mecanógrafos",
+    "4132": "Grabadores de datos",
+    "42": "Empleados en trato directo con el público",
+    "421": "Pagadores y cobradores de ventanilla y afines",
+    "4211": "Cajeros de bancos y afines",
+    "4212": "Receptores de apuestas y afines",
+    "4213": "Prestamistas",
+    "4214": "Cobradores y afines",
+    "422": "Empleados de servicios de información al cliente",
+    "4221": "Empleados de agencias de viajes",
+    "4222": "Empleados de centros de llamadas",
+    "4223": "Telefonistas",
+    "4224": "Recepcionistas de hoteles",
+    "4225": "Empleados de ventanillas de informaciones",
+    "4226": "Recepcionistas (general)",
+    "4227": "Entrevistadores de encuestas y de investigaciones de mercados",
+    "4229": "Empleados de servicios de información al cliente no clasificados bajo otros epígrafes",
+    "43": "Empleados contables y encargados del registro de materiales",
+    "431": "Auxiliares contables y financieros",
+    "4311": "Empleados de contabilidad y cálculo de costos",
+    "4312": "Empleados de servicios estadísticos, financieros y de seguros",
+    "4313": "Empleados encargados de las nóminas",
+    "432": "Empleados encargados del registro de materiales y de transportes",
+    "4321": "Empleados de control de abastecimientos e inventario",
+    "4322": "Empleados de servicios de apoyo a la producción",
+    "4323": "Empleados de servicios de transporte",
+    "44": "Otro personal de apoyo administrativo",
+    "441": "Otro personal de apoyo administrativo",
+    "4411": "Empleados de bibliotecas",
+    "4412": "Empleados de servicios de correos",
+    "4413": "Codificadores de datos, correctores de pruebas de imprenta y afines",
+    "4414": "Escribientes públicos y afines",
+    "4415": "Empleados de archivos",
+    "4416": "Empleados del servicio de personal",
+    "4419": "Personal de apoyo administrativo no clasificado bajo otros epígrafes",
+    "5": "Trabajadores de los servicios y vendedores de comercios y mercados",
+    "51": "Trabajadores de los servicios personales",
+    "511": "Personal al servicio directo de los pasajeros",
+    "5111": "Auxiliares de servicio de abordo",
+    "5112": "Revisores y cobradores de los transportes públicos",
+    "5113": "Guías de turismo",
+    "512": "Cocineros",
+    "5120": "Cocineros",
+    "513": "Camareros",
+    "5131": "Camareros de mesas",
+    "5132": "Camareros de barra",
+    "514": "Peluqueros, especialistas en tratamientos de belleza y afines",
+    "5141": "Peluqueros",
+    "5142": "Especialistas en tratamientos de belleza y afines",
+    "515": "Supervisores de mantenimiento y limpieza de edificios",
+    "5151": "Supervisores de mantenimiento y limpieza en oficinas, hoteles y otros establecimientos",
+    "5152": "Ecónomos y mayordomos domésticos",
+    "5153": "Conserjes",
+    "516": "Otros trabajadores de servicios personales",
+    "5161": "Astrólogos, adivinadores y afines",
+    "5162": "Acompañantes y ayudantes de cámara",
+    "5163": "Personal de pompas fúnebres y embalsamadores",
+    "5164": "Cuidadores de animales",
+    "5165": "Instructores de autoescuela",
+    "5169": "Trabajadores de servicios personales no clasificados bajo otros epígrafes",
+    "52": "Vendedores",
+    "521": "Vendedores callejeros y de puestos de mercado",
+    "5211": "Vendedores de quioscos y de puestos de mercado",
+    "5212": "Vendedores ambulantes de productos comestibles",
+    "522": "Comerciantes y vendedores de tiendas y almacenes",
+    "5221": "Comerciantes de tiendas",
+    "5222": "Supervisores de tiendas y almacenes",
+    "5223": "Asistentes de venta de tiendas y almacenes",
+    "523": "Cajeros y expendedores de billetes",
+    "5230": "Cajeros y expendedores de billetes",
+    "524": "Otros vendedores",
+    "5241": "Modelos de moda, arte y publicidad",
+    "5242": "Demostradores de tiendas",
+    "5243": "Vendedores puerta a puerta",
+    "5244": "Vendedores por teléfono",
+    "5245": "Expendedores de gasolineras",
+    "5246": "Vendedores de comidas al mostrador",
+    "5249": "Vendedores no clasificados bajo otros epígrafes",
+    "53": "Trabajadores de los cuidados personales",
+    "531": "Cuidadores de niños y auxiliares de maestros",
+    "5311": "Cuidadores de niños",
+    "5312": "Auxiliares de maestros",
+    "532": "Trabajadores de los cuidados personales en servicios de salud",
+    "5321": "Trabajadores de los cuidados personales en instituciones",
+    "5322": "Trabajadores de los cuidados personales a domicilio",
+    "5329": "Trabajadores de los cuidados personales en servicios de salud no clasificados bajo otros epígrafes",
+    "54": "Personal de los servicios de protección",
+    "541": "Personal de los servicios de protección",
+    "5411": "Bomberos",
+    "5412": "Policías",
+    "5413": "Guardianes de prisión",
+    "5414": "Guardias de protección",
+    "5419": "Personal de los servicios de protección no clasificados bajo otros epígrafes",
+    "6": "Agricultores y trabajadores calificados agropecuarios, forestales y pesqueros",
+    "61": "Agricultores y trabajadores calificados de explotaciones agropecuarias con destino al mercado",
+    "611": "Agricultores y trabajadores calificados de jardines y de cultivos para el mercado",
+    "6111": "Agricultores y trabajadores calificados de cultivos extensivos",
+    "6112": "Agricultores y trabajadores calificados de plantaciones de árboles y arbustos",
+    "6113": "Agricultores y trabajadores calificados de huertas, invernaderos, viveros y jardines",
+    "6114": "Agricultores y trabajadores calificados de cultivos mixtos",
+    "612": "Criadores y trabajadores pecuarios calificados de la cría de animales para el mercado y afines",
+    "6121": "Criadores de ganado",
+    "6122": "Avicultores y trabajadores calificados de la avicultura",
+    "6123": "Apicultores y sericultores y trabajadores calificados de la apicultura y la sericultura",
+    "6129": "Criadores y trabajadores pecuarios calificados de la cría de animales no clasificados bajo otros epígrafes",
+    "613": "Productores y trabajadores calificados de explotaciones agropecuarias mixtas cuya producción se destina al mercado",
+    "6130": "Productores y trabajadores calificados de explotaciones agropecuarias mixtas cuya producción se destina al mercado",
+    "62": "Trabajadores forestales calificados, pescadores y cazadores",
+    "621": "Trabajadores forestales calificados y afines",
+    "6210": "Trabajadores forestales calificados y afines",
+    "622": "Pescadores, cazadores y tramperos",
+    "6221": "Trabajadores de explotaciones de acuicultura",
+    "6222": "Pescadores de agua dulce y en aguas costeras",
+    "6223": "Pescadores de alta mar",
+    "6224": "Cazadores y tramperos",
+    "63": "Trabajadores agropecuarios, pescadores, cazadores y recolectores de subsistencia",
+    "631": "Trabajadores agrícolas de subsistencia",
+    "6310": "Trabajadores agrícolas de subsistencia",
+    "632": "Trabajadores pecuarios de subsistencia",
+    "6320": "Trabajadores pecuarios de subsistencia",
+    "633": "Trabajadores agropecuarios de subsistencia",
+    "6330": "Trabajadores agropecuarios de subsistencia",
+    "634": "Pescadores, cazadores, tramperos y recolectores de subsistencia",
+    "6340": "Pescadores, cazadores, tramperos y recolectores de subsistencia",
+    "7": "Oficiales, operarios y artesanos de artes mecánicas y de otros oficios",
+    "71": "Oficiales y operarios de la construcción excluyendo electricistas",
+    "711": "Oficiales y operarios de la construcción (obra gruesa) y afines",
+    "7111": "Constructores de casas",
+    "7112": "Albañiles",
+    "7113": "Mamposteros, tronzadores, labrantes y grabadores de piedra",
+    "7114": "Operarios en cemento armado, enfoscadores y afines",
+    "7115": "Carpinteros de armar y de obra blanca",
+    "7119": "Oficiales y operarios de la construcción (obra gruesa) y afines no clasificados bajo otros epígrafes",
+    "712": "Oficiales y operarios de la construcción (trabajos de acabado) y afines",
+    "7121": "Techadores",
+    "7122": "Parqueteros y colocadores de suelos",
+    "7123": "Revocadores",
+    "7124": "Instaladores de material aislante y de insonorización",
+    "7125": "Cristaleros",
+    "7126": "Fontaneros e instaladores de tuberías",
+    "7127": "Mecánicos-montadores de instalaciones de refrigeración y climatización",
+    "713": "Pintores, limpiadores de fachadas y afines",
+    "7131": "Pintores y empapeladores",
+    "7132": "Barnizadores y afines",
+    "7133": "Limpiadores de fachadas y deshollinadores",
+    "72": "Oficiales y operarios de la metalurgia, la construcción mecánica y afines",
+    "721": "Moldeadores, soldadores, chapistas, caldereros, montadores de estructuras metálicas y afines",
+    "7211": "Moldeadores y macheros",
+    "7212": "Soldadores y oxicortadores",
+    "7213": "Chapistas y caldereros",
+    "7214": "Montadores de estructuras metálicas",
+    "7215": "Aparejadores y empalmadores de cables",
+    "722": "Herreros, herramentistas y afines",
+    "7221": "Herreros y forjadores",
+    "7222": "Herramentistas y afines",
+    "7223": "Reguladores y operadores de máquinas herramientas",
+    "7224": "Pulidores de metales y afiladores de herramientas",
+    "723": "Mecánicos y reparadores de máquinas",
+    "7231": "Mecánicos y reparadores de vehículos de motor",
+    "7232": "Mecánicos y reparadores de motores de avión",
+    "7233": "Mecánicos y reparadores de máquinas agrícolas e industriales",
+    "7234": "Reparadores de bicicletas y afines",
+    "73": "Artesanos y operarios de las artes gráficas",
+    "731": "Artesanos",
+    "7311": "Mecánicos y reparadores de instrumentos de precisión",
+    "7312": "Fabricantes y afinadores de instrumentos musicales",
+    "7313": "Joyeros, orfebres y plateros",
+    "7314": "Alfareros y afines (barro, arcilla y abrasivos)",
+    "7315": "Sopladores, modeladores, laminadores, cortadores y pulidores de vidrio",
+    "7316": "Redactores de carteles, pintores decorativos y grabadores",
+    "7317": "Artesanos en madera, cestería y materiales similares",
+    "7318": "Artesanos de los tejidos, el cuero y materiales similares",
+    "7319": "Artesanos no clasificados bajo otros epígrafes",
+    "732": "Oficiales y operarios de las artes gráficas",
+    "7321": "Cajistas, tipógrafos y afines",
+    "7322": "Impresores",
+    "7323": "Encuadernadores y afines",
+    "74": "Trabajadores especializados en electricidad y la elecrotecnología",
+    "741": "Instaladores y reparadores de equipos eléctricos",
+    "7411": "Electricistas de obras y afines",
+    "7412": "Mecánicos y ajustadores electricistas",
+    "7413": "Instaladores y reparadores de líneas eléctricas",
+    "742": "Instaladores y reparadores de equipos electrónicos y de telecomunicaciones",
+    "7421": "Mecánicos y reparadores en electrónica",
+    "7422": "Instaladores y reparadores en tecnología de la información y las comunicaciones",
+    "75": "Operarios y oficiales de procesamiento de alimentos, de la confección, ebanistas, otros artesanos y afines",
+    "751": "Oficiales y operarios de procesamiento de alimentos y afines",
+    "7511": "Carniceros, pescaderos y afines",
+    "7512": "Panaderos, pasteleros y confiteros",
+    "7513": "Operarios de la elaboración de productos lácteos",
+    "7514": "Operarios de la conservación de frutas, legumbres, verduras y afines",
+    "7515": "Catadores y clasificadores de alimentos y bebidas",
+    "7516": "Preparadores y elaboradores de tabaco y sus productos",
+    "752": "Oficiales y operarios del tratamiento de la madera, ebanistas y afines",
+    "7521": "Operarios del tratamiento de la madera",
+    "7522": "Ebanistas y afines",
+    "7523": "Reguladores y operadores de máquinas de labrar madera",
+    "753": "Oficiales y operarios de la confección y afines",
+    "7531": "Sastres, modistos, peleteros y sombrereros",
+    "7532": "Patronistas y cortadores de tela y afines",
+    "7533": "Costureros, bordadores y afines",
+    "7534": "Tapiceros, colchoneros y afines",
+    "7535": "Apelambradores, pellejeros y curtidores",
+    "7536": "Zapateros y afines",
+    "754": "Otros oficiales, operarios y artesanos de artes mecánicas y de otros oficios",
+    "7541": "Buzos",
+    "7542": "Dinamiteros y pegadores",
+    "7543": "Clasificadores y probadores de productos (excluyendo alimentos y bebidas)",
+    "7544": "Fumigadores y otros controladores de plagas y malas hierbas",
+    "7549": "Oficiales, operarios y artesanos de artes mecánicas y de otros oficios no clasificados bajo otros epígrafes",
+    "8": "Operadores de instalaciones y máquinas y ensambladores",
+    "81": "Operadores de instalaciones fijas y máquinas",
+    "811": "Operadores de instalaciones mineras y de extracción y procesamiento de minerales",
+    "8111": "Mineros y operadores de instalaciones mineras",
+    "8112": "Operadores de instalaciones de procesamiento de minerales y rocas",
+    "8113": "Perforadores y sondistas de pozos y afines",
+    "8114": "Operadores de máquinas para fabricar cemento y otros productos minerales",
+    "812": "Operadores de instalaciones de procesamiento y recubridoras de metales",
+    "8121": "Operadores de instalaciones de procesamiento de metales",
+    "8122": "Operadores de máquinas pulidoras, galvanizadoras y recubridoras de metales",
+    "813": "Operadores de instalaciones y máquinas de productos químicos y fotográficos",
+    "8131": "Operadores de plantas y máquinas de productos químicos",
+    "8132": "Operadores de máquinas para fabricar productos fotográficos",
+    "814": "Operadores de máquinas para fabricar productos de caucho, de papel y de material plástico",
+    "8141": "Operadores de máquinas para fabricar productos de caucho",
+    "8142": "Operadores de máquinas para fabricar productos de material plástico",
+    "8143": "Operadores de máquinas para fabricar productos de papel",
+    "815": "Operadores de máquinas para fabricar productos textiles y artículos de piel y cuero",
+    "8151": "Operadores de máquinas de preparación de fibras, hilado y devanado",
+    "8152": "Operadores de telares y otras máquinas tejedoras",
+    "8153": "Operadores de máquinas de coser",
+    "8154": "Operadores de máquinas de blanqueamiento, teñido y limpieza de tejidos",
+    "8155": "Operadores de máquinas de tratamiento de pieles y cueros",
+    "8156": "Operadores de máquinas para la fabricación de calzado y afines",
+    "8157": "Operadores de máquinas lavarropas",
+    "8159": "Operadores de máquinas para fabricar productos textiles y artículos de piel y cuero no clasificados bajo otros epígrafes",
+    "816": "Operadores de máquinas para elaborar alimentos y productos afines",
+    "8160": "Operadores de máquinas para elaborar alimentos y productos afines",
+    "817": "Operadores de instalaciones para la preparación de papel y de procesamiento de la madera",
+    "8171": "Operadores de instalaciones para la preparación de pasta para papel y papel",
+    "8172": "Operadores de instalaciones de procesamiento de la madera",
+    "818": "Otros operadores de máquinas y de instalaciones fijas",
+    "8181": "Operadores de instalaciones de vidriería y cerámica",
+    "8182": "Operadores de máquinas de vapor y calderas",
+    "8183": "Operadores de máquinas de embalaje, embotellamiento y etiquetado",
+    "8189": "Operadores de máquinas y de instalaciones fijas no clasificados bajo otros epígrafes",
+    "82": "Ensambladores",
+    "821": "Ensambladores",
+    "8211": "Ensambladores de maquinaria mecánica",
+    "8212": "Ensambladores de equipos eléctricos y electrónicos",
+    "8219": "Ensambladores no clasificados bajo otros epígrafes",
+    "83": "Conductores de vehículos y operadores de equipos pesados móviles",
+    "831": "Maquinistas de locomotoras y afines",
+    "8311": "Maquinistas de locomotoras",
+    "8312": "Guardafrenos, guardagujas y agentes de maniobras",
+    "832": "Conductores de automóviles, camionetas y motocicletas",
+    "8321": "Conductores de motocicletas",
+    "8322": "Conductores de automóviles, taxis y camionetas",
+    "833": "Conductores de camiones pesados y autobuses",
+    "8331": "Conductores de autobuses y tranvías",
+    "8332": "Conductores de camiones pesados",
+    "834": "Operadores de equipos pesados móviles",
+    "8341": "Operadores de maquinaria agrícola y forestal móvil",
+    "8342": "Operadores de máquinas de movimiento de tierras y afines",
+    "8343": "Operadores de grúas, aparatos elevadores y afines",
+    "8344": "Operadores de autoelevadoras",
+    "835": "Marineros de cubierta y afines",
+    "8350": "Marineros de cubierta y afines",
+    "9": "Ocupaciones elementales",
+    "91": "Limpiadores y asistentes",
+    "911": "Limpiadores y asistentes domésticos de hoteles y oficinas",
+    "9111": "Limpiadores y asistentes domésticos",
+    "9112": "Limpiadores y asistentes de oficinas, hoteles y otros establecimientos",
+    "912": "Limpiadores de vehículos, ventanas, ropa y otra limpieza a mano",
+    "9121": "Lavanderos y planchadores manuales",
+    "9122": "Lavadores de vehículos",
+    "9123": "Lavadores de ventanas",
+    "9129": "Otro personal de limpieza",
+    "92": "Peones agropecuarios, pesqueros y forestales",
+    "921": "Peones agropecuarios, pesqueros y forestales",
+    "9211": "Peones de explotaciones agrícolas",
+    "9212": "Peones de explotaciones ganaderas",
+    "9213": "Peones de explotaciones de cultivos mixtos y ganaderos",
+    "9214": "Peones de jardinería y horticultura",
+    "9215": "Peones forestales",
+    "9216": "Peones de pesca y acuicultura",
+    "93": "Peones de la minería, la construcción, la industria manufacturera y el transporte",
+    "931": "Peones de la minería y la construcción",
+    "9311": "Peones de minas y canteras",
+    "9312": "Peones de obras públicas y mantenimiento",
+    "9313": "Peones de la construcción de edificios",
+    "932": "Peones de la industria manufacturera",
+    "9321": "Empacadores manuales",
+    "9329": "Peones de la industria manufacturera no clasificados bajo otros epígrafes",
+    "933": "Peones del transporte y almacenamiento",
+    "9331": "Conductores de vehículos accionados a pedal o a brazo",
+    "9332": "Conductores de vehículos y máquinas de tracción animal",
+    "9333": "Peones de carga",
+    "9334": "Reponedores de estanterías",
+    "94": "Ayudantes de preparación de alimentos",
+    "941": "Ayudantes de preparación de alimentos",
+    "9411": "Cocineros de comidas rápidas",
+    "9412": "Ayudantes de cocina",
+    "95": "Vendedores ambulantes de servicios y afines",
+    "951": "Trabajadores ambulantes de servicios y afines",
+    "9510": "Trabajadores ambulantes de servicios y afines",
+    "952": "Vendedores ambulantes (excluyendo de comida)",
+    "9520": "Vendedores ambulantes (excluyendo de comida)",
+    "96": "Recolectores de desechos y otras ocupaciones elementales",
+    "961": "Recolectores de desechos",
+    "9611": "Recolectores de basura y material reciclable",
+    "9612": "Clasificadores de desechos",
+    "9613": "Barrenderos y afines",
+    "962": "Otras ocupaciones elementales",
+    "9621": "Mensajeros, mandaderos, maleteros y repartidores",
+    "9622": "Personas que realizan trabajos varios",
+    "9623": "Recolectores de dinero en aparatos de venta automática y lectores de medidores",
+    "9624": "Acarreadores de agua y recolectores de leña",
+    "9629": "Ocupaciones elementales no clasificadas bajo otros epígrafes",
+    "0": "Ocupaciones militares",
+    "01": "Oficiales de las fuerzas armadas",
+    "011": "Oficiales de las fuerzas armadas",
+    "0110": "Oficiales de las fuerzas armadas",
+    "02": "Suboficiales de las fuerzas armadas",
+    "021": "Suboficiales de las fuerzas armadas",
+    "0210": "Suboficiales de las fuerzas armadas",
+    "03": "Otros miembros de las fuerzas armadas",
+    "031": "Otros miembros de las fuerzas armadas",
+    "0310": "Otros miembros de las fuerzas armadas"
+  },
+  "isco08_a_cno11": {
+    "0110": [
+      {
+        "cno11": "0011",
+        "tipo": "1:1"
+      }
+    ],
+    "0210": [
+      {
+        "cno11": "0012",
+        "tipo": "1:1"
+      }
+    ],
+    "0310": [
+      {
+        "cno11": "0020",
+        "tipo": "1:1"
+      }
+    ],
+    "1111": [
+      {
+        "cno11": "1111",
+        "tipo": "1:1"
+      }
+    ],
+    "1112": [
+      {
+        "cno11": "1112",
+        "tipo": "1:1"
+      }
+    ],
+    "1114": [
+      {
+        "cno11": "1113",
+        "tipo": "1:1"
+      }
+    ],
+    "1120": [
+      {
+        "cno11": "1120",
+        "tipo": "1:1"
+      }
+    ],
+    "1211": [
+      {
+        "cno11": "1211",
+        "tipo": "1:1"
+      }
+    ],
+    "1212": [
+      {
+        "cno11": "1212",
+        "tipo": "1:1"
+      }
+    ],
+    "1213": [
+      {
+        "cno11": "1219",
+        "tipo": "n:1"
+      }
+    ],
+    "1219": [
+      {
+        "cno11": "1219",
+        "tipo": "n:1"
+      }
+    ],
+    "1221": [
+      {
+        "cno11": "1221",
+        "tipo": "1:1"
+      }
+    ],
+    "1222": [
+      {
+        "cno11": "1222",
+        "tipo": "1:1"
+      }
+    ],
+    "1223": [
+      {
+        "cno11": "1223",
+        "tipo": "1:1"
+      }
+    ],
+    "1311": [
+      {
+        "cno11": "1311",
+        "tipo": "1:1"
+      }
+    ],
+    "1312": [
+      {
+        "cno11": "1312",
+        "tipo": "1:1"
+      }
+    ],
+    "1321": [
+      {
+        "cno11": "1313",
+        "tipo": "1:1"
+      }
+    ],
+    "1322": [
+      {
+        "cno11": "1314",
+        "tipo": "1:1"
+      }
+    ],
+    "1323": [
+      {
+        "cno11": "1316",
+        "tipo": "1:1"
+      }
+    ],
+    "1324": [
+      {
+        "cno11": "1315",
+        "tipo": "1:1"
+      }
+    ],
+    "1330": [
+      {
+        "cno11": "1321",
+        "tipo": "1:1"
+      }
+    ],
+    "1341": [
+      {
+        "cno11": "1322",
+        "tipo": "1:1"
+      }
+    ],
+    "1342": [
+      {
+        "cno11": "1323",
+        "tipo": "1:1"
+      }
+    ],
+    "1343": [
+      {
+        "cno11": "1324",
+        "tipo": "1:1"
+      }
+    ],
+    "1344": [
+      {
+        "cno11": "1325",
+        "tipo": "1:1"
+      }
+    ],
+    "1345": [
+      {
+        "cno11": "1326",
+        "tipo": "1:1"
+      }
+    ],
+    "1346": [
+      {
+        "cno11": "1327",
+        "tipo": "1:1"
+      }
+    ],
+    "1349": [
+      {
+        "cno11": "1329",
+        "tipo": "1:1"
+      }
+    ],
+    "1411": [
+      {
+        "cno11": "1411",
+        "tipo": "1:n"
+      },
+      {
+        "cno11": "1419",
+        "tipo": "1:n"
+      }
+    ],
+    "1412": [
+      {
+        "cno11": "1421",
+        "tipo": "1:n"
+      },
+      {
+        "cno11": "1422",
+        "tipo": "1:n"
+      },
+      {
+        "cno11": "1429",
+        "tipo": "1:n"
+      }
+    ],
+    "1420": [
+      {
+        "cno11": "1431",
+        "tipo": "1:n"
+      },
+      {
+        "cno11": "1432",
+        "tipo": "1:n"
+      }
+    ],
+    "1431": [
+      {
+        "cno11": "1501",
+        "tipo": "1:1"
+      }
+    ],
+    "1439": [
+      {
+        "cno11": "1509",
+        "tipo": "1:1"
+      }
+    ],
+    "2111": [
+      {
+        "cno11": "2411",
+        "tipo": "1:1"
+      }
+    ],
+    "2112": [
+      {
+        "cno11": "2412",
+        "tipo": "1:1"
+      }
+    ],
+    "2113": [
+      {
+        "cno11": "2413",
+        "tipo": "1:1"
+      }
+    ],
+    "2114": [
+      {
+        "cno11": "2414",
+        "tipo": "1:1"
+      }
+    ],
+    "2120": [
+      {
+        "cno11": "2415",
+        "tipo": "1:n"
+      },
+      {
+        "cno11": "2416",
+        "tipo": "1:n"
+      }
+    ],
+    "2131": [
+      {
+        "cno11": "2421",
+        "tipo": "1:1"
+      }
+    ],
+    "2132": [
+      {
+        "cno11": "2422",
+        "tipo": "1:n"
+      },
+      {
+        "cno11": "2423",
+        "tipo": "1:n"
+      },
+      {
+        "cno11": "2424",
+        "tipo": "1:n"
+      },
+      {
+        "cno11": "2425",
+        "tipo": "1:n"
+      },
+      {
+        "cno11": "2427",
+        "tipo": "1:n"
+      }
+    ],
+    "2133": [
+      {
+        "cno11": "2426",
+        "tipo": "1:1"
+      }
+    ],
+    "2141": [
+      {
+        "cno11": "2431",
+        "tipo": "1:n"
+      },
+      {
+        "cno11": "2461",
+        "tipo": "1:n"
+      }
+    ],
+    "2142": [
+      {
+        "cno11": "2432",
+        "tipo": "1:n"
+      },
+      {
+        "cno11": "2462",
+        "tipo": "1:n"
+      }
+    ],
+    "2143": [
+      {
+        "cno11": "2437",
+        "tipo": "1:1"
+      }
+    ],
+    "2144": [
+      {
+        "cno11": "2433",
+        "tipo": "1:n"
+      },
+      {
+        "cno11": "2434",
+        "tipo": "1:n"
+      },
+      {
+        "cno11": "2463",
+        "tipo": "1:n"
+      },
+      {
+        "cno11": "2464",
+        "tipo": "1:n"
+      }
+    ],
+    "2145": [
+      {
+        "cno11": "2435",
+        "tipo": "1:n"
+      },
+      {
+        "cno11": "2465",
+        "tipo": "1:n"
+      }
+    ],
+    "2146": [
+      {
+        "cno11": "2436",
+        "tipo": "1:n"
+      },
+      {
+        "cno11": "2466",
+        "tipo": "1:n"
+      }
+    ],
+    "2149": [
+      {
+        "cno11": "2439",
+        "tipo": "1:n"
+      },
+      {
+        "cno11": "2469",
+        "tipo": "1:n"
+      }
+    ],
+    "2151": [
+      {
+        "cno11": "2441",
+        "tipo": "1:n"
+      },
+      {
+        "cno11": "2471",
+        "tipo": "1:n"
+      }
+    ],
+    "2152": [
+      {
+        "cno11": "2442",
+        "tipo": "1:n"
+      },
+      {
+        "cno11": "2472",
+        "tipo": "1:n"
+      }
+    ],
+    "2153": [
+      {
+        "cno11": "2443",
+        "tipo": "1:n"
+      },
+      {
+        "cno11": "2473",
+        "tipo": "1:n"
+      }
+    ],
+    "2161": [
+      {
+        "cno11": "2451",
+        "tipo": "1:n"
+      },
+      {
+        "cno11": "2481",
+        "tipo": "n:m"
+      }
+    ],
+    "2162": [
+      {
+        "cno11": "2452",
+        "tipo": "1:1"
+      }
+    ],
+    "2163": [
+      {
+        "cno11": "2482",
+        "tipo": "1:1"
+      }
+    ],
+    "2164": [
+      {
+        "cno11": "2453",
+        "tipo": "1:n"
+      },
+      {
+        "cno11": "2481",
+        "tipo": "n:m"
+      }
+    ],
+    "2165": [
+      {
+        "cno11": "2454",
+        "tipo": "1:n"
+      },
+      {
+        "cno11": "2483",
+        "tipo": "1:n"
+      }
+    ],
+    "2166": [
+      {
+        "cno11": "2484",
+        "tipo": "1:1"
+      }
+    ],
+    "2211": [
+      {
+        "cno11": "2111",
+        "tipo": "1:1"
+      }
+    ],
+    "2212": [
+      {
+        "cno11": "2112",
+        "tipo": "1:1"
+      }
+    ],
+    "2221": [
+      {
+        "cno11": "2121",
+        "tipo": "1:n"
+      },
+      {
+        "cno11": "2122",
+        "tipo": "1:n"
+      }
+    ],
+    "2222": [
+      {
+        "cno11": "2123",
+        "tipo": "1:1"
+      }
+    ],
+    "2230": [
+      {
+        "cno11": "3331",
+        "tipo": "n:1"
+      }
+    ],
+    "2250": [
+      {
+        "cno11": "2130",
+        "tipo": "1:1"
+      }
+    ],
+    "2261": [
+      {
+        "cno11": "2151",
+        "tipo": "1:1"
+      }
+    ],
+    "2262": [
+      {
+        "cno11": "2140",
+        "tipo": "1:1"
+      }
+    ],
+    "2263": [
+      {
+        "cno11": "2158",
+        "tipo": "1:1"
+      }
+    ],
+    "2264": [
+      {
+        "cno11": "2152",
+        "tipo": "1:1"
+      }
+    ],
+    "2265": [
+      {
+        "cno11": "2153",
+        "tipo": "1:1"
+      }
+    ],
+    "2266": [
+      {
+        "cno11": "2154",
+        "tipo": "1:1"
+      }
+    ],
+    "2267": [
+      {
+        "cno11": "2155",
+        "tipo": "1:1"
+      }
+    ],
+    "2269": [
+      {
+        "cno11": "2156",
+        "tipo": "1:n"
+      },
+      {
+        "cno11": "2157",
+        "tipo": "1:n"
+      },
+      {
+        "cno11": "2159",
+        "tipo": "n:m"
+      }
+    ],
+    "2310": [
+      {
+        "cno11": "2210",
+        "tipo": "1:1"
+      }
+    ],
+    "2320": [
+      {
+        "cno11": "2220",
+        "tipo": "1:1"
+      }
+    ],
+    "2330": [
+      {
+        "cno11": "2230",
+        "tipo": "1:1"
+      }
+    ],
+    "2341": [
+      {
+        "cno11": "2240",
+        "tipo": "1:1"
+      }
+    ],
+    "2342": [
+      {
+        "cno11": "2251",
+        "tipo": "1:n"
+      },
+      {
+        "cno11": "2252",
+        "tipo": "1:n"
+      }
+    ],
+    "2351": [
+      {
+        "cno11": "2321",
+        "tipo": "1:1"
+      }
+    ],
+    "2352": [
+      {
+        "cno11": "2311",
+        "tipo": "1:n"
+      },
+      {
+        "cno11": "2312",
+        "tipo": "1:n"
+      }
+    ],
+    "2353": [
+      {
+        "cno11": "2322",
+        "tipo": "1:1"
+      }
+    ],
+    "2354": [
+      {
+        "cno11": "2323",
+        "tipo": "n:1"
+      }
+    ],
+    "2355": [
+      {
+        "cno11": "2323",
+        "tipo": "n:m"
+      },
+      {
+        "cno11": "2324",
+        "tipo": "1:n"
+      }
+    ],
+    "2356": [
+      {
+        "cno11": "2325",
+        "tipo": "1:1"
+      }
+    ],
+    "2359": [
+      {
+        "cno11": "2326",
+        "tipo": "1:n"
+      },
+      {
+        "cno11": "2329",
+        "tipo": "1:n"
+      }
+    ],
+    "2411": [
+      {
+        "cno11": "2611",
+        "tipo": "1:1"
+      }
+    ],
+    "2412": [
+      {
+        "cno11": "2612",
+        "tipo": "1:1"
+      }
+    ],
+    "2413": [
+      {
+        "cno11": "2613",
+        "tipo": "1:1"
+      }
+    ],
+    "2421": [
+      {
+        "cno11": "2621",
+        "tipo": "1:1"
+      }
+    ],
+    "2422": [
+      {
+        "cno11": "2622",
+        "tipo": "1:n"
+      },
+      {
+        "cno11": "2623",
+        "tipo": "1:n"
+      },
+      {
+        "cno11": "2630",
+        "tipo": "1:n"
+      }
+    ],
+    "2423": [
+      {
+        "cno11": "2624",
+        "tipo": "1:1"
+      }
+    ],
+    "2424": [
+      {
+        "cno11": "2625",
+        "tipo": "1:1"
+      }
+    ],
+    "2431": [
+      {
+        "cno11": "2651",
+        "tipo": "1:1"
+      }
+    ],
+    "2432": [
+      {
+        "cno11": "2652",
+        "tipo": "1:1"
+      }
+    ],
+    "2433": [
+      {
+        "cno11": "2640",
+        "tipo": "1:1"
+      }
+    ],
+    "2434": [
+      {
+        "cno11": "2653",
+        "tipo": "1:1"
+      }
+    ],
+    "2511": [
+      {
+        "cno11": "2711",
+        "tipo": "1:1"
+      }
+    ],
+    "2512": [
+      {
+        "cno11": "2712",
+        "tipo": "n:1"
+      }
+    ],
+    "2513": [
+      {
+        "cno11": "2713",
+        "tipo": "1:1"
+      }
+    ],
+    "2514": [
+      {
+        "cno11": "2712",
+        "tipo": "n:1"
+      }
+    ],
+    "2519": [
+      {
+        "cno11": "2719",
+        "tipo": "1:1"
+      }
+    ],
+    "2521": [
+      {
+        "cno11": "2721",
+        "tipo": "1:1"
+      }
+    ],
+    "2522": [
+      {
+        "cno11": "2722",
+        "tipo": "1:1"
+      }
+    ],
+    "2523": [
+      {
+        "cno11": "2723",
+        "tipo": "1:1"
+      }
+    ],
+    "2529": [
+      {
+        "cno11": "2729",
+        "tipo": "1:1"
+      }
+    ],
+    "2611": [
+      {
+        "cno11": "2511",
+        "tipo": "1:n"
+      },
+      {
+        "cno11": "2512",
+        "tipo": "1:n"
+      }
+    ],
+    "2612": [
+      {
+        "cno11": "2513",
+        "tipo": "1:1"
+      }
+    ],
+    "2619": [
+      {
+        "cno11": "2591",
+        "tipo": "1:n"
+      },
+      {
+        "cno11": "2592",
+        "tipo": "1:n"
+      },
+      {
+        "cno11": "2599",
+        "tipo": "1:n"
+      }
+    ],
+    "2621": [
+      {
+        "cno11": "2911",
+        "tipo": "1:1"
+      }
+    ],
+    "2622": [
+      {
+        "cno11": "2912",
+        "tipo": "1:1"
+      }
+    ],
+    "2631": [
+      {
+        "cno11": "2810",
+        "tipo": "1:1"
+      }
+    ],
+    "2632": [
+      {
+        "cno11": "2821",
+        "tipo": "1:1"
+      }
+    ],
+    "2633": [
+      {
+        "cno11": "2822",
+        "tipo": "1:1"
+      }
+    ],
+    "2634": [
+      {
+        "cno11": "2159",
+        "tipo": "n:m"
+      },
+      {
+        "cno11": "2823",
+        "tipo": "1:n"
+      }
+    ],
+    "2635": [
+      {
+        "cno11": "2824",
+        "tipo": "1:n"
+      },
+      {
+        "cno11": "2825",
+        "tipo": "1:n"
+      }
+    ],
+    "2636": [
+      {
+        "cno11": "2830",
+        "tipo": "1:1"
+      }
+    ],
+    "2641": [
+      {
+        "cno11": "2921",
+        "tipo": "1:1"
+      }
+    ],
+    "2642": [
+      {
+        "cno11": "2922",
+        "tipo": "1:1"
+      }
+    ],
+    "2643": [
+      {
+        "cno11": "2923",
+        "tipo": "1:1"
+      }
+    ],
+    "2651": [
+      {
+        "cno11": "2931",
+        "tipo": "1:1"
+      }
+    ],
+    "2652": [
+      {
+        "cno11": "2932",
+        "tipo": "1:1"
+      }
+    ],
+    "2653": [
+      {
+        "cno11": "2933",
+        "tipo": "1:1"
+      }
+    ],
+    "2654": [
+      {
+        "cno11": "2934",
+        "tipo": "1:1"
+      }
+    ],
+    "2655": [
+      {
+        "cno11": "2935",
+        "tipo": "1:1"
+      }
+    ],
+    "2656": [
+      {
+        "cno11": "2936",
+        "tipo": "1:1"
+      }
+    ],
+    "2659": [
+      {
+        "cno11": "2937",
+        "tipo": "1:n"
+      },
+      {
+        "cno11": "2939",
+        "tipo": "1:n"
+      }
+    ],
+    "3111": [
+      {
+        "cno11": "3121",
+        "tipo": "1:n"
+      },
+      {
+        "cno11": "3160",
+        "tipo": "n:m"
+      }
+    ],
+    "3112": [
+      {
+        "cno11": "3122",
+        "tipo": "1:n"
+      },
+      {
+        "cno11": "3160",
+        "tipo": "n:m"
+      }
+    ],
+    "3113": [
+      {
+        "cno11": "3123",
+        "tipo": "1:n"
+      },
+      {
+        "cno11": "3160",
+        "tipo": "n:m"
+      }
+    ],
+    "3114": [
+      {
+        "cno11": "3124",
+        "tipo": "1:n"
+      },
+      {
+        "cno11": "3125",
+        "tipo": "1:n"
+      },
+      {
+        "cno11": "3160",
+        "tipo": "n:m"
+      }
+    ],
+    "3115": [
+      {
+        "cno11": "3126",
+        "tipo": "1:n"
+      },
+      {
+        "cno11": "3160",
+        "tipo": "n:m"
+      }
+    ],
+    "3116": [
+      {
+        "cno11": "3127",
+        "tipo": "1:n"
+      },
+      {
+        "cno11": "3160",
+        "tipo": "n:m"
+      }
+    ],
+    "3117": [
+      {
+        "cno11": "3128",
+        "tipo": "1:n"
+      },
+      {
+        "cno11": "3160",
+        "tipo": "n:m"
+      }
+    ],
+    "3118": [
+      {
+        "cno11": "3110",
+        "tipo": "1:1"
+      }
+    ],
+    "3119": [
+      {
+        "cno11": "3129",
+        "tipo": "1:n"
+      },
+      {
+        "cno11": "3160",
+        "tipo": "n:m"
+      }
+    ],
+    "3121": [
+      {
+        "cno11": "3201",
+        "tipo": "1:1"
+      }
+    ],
+    "3122": [
+      {
+        "cno11": "3203",
+        "tipo": "1:n"
+      },
+      {
+        "cno11": "3204",
+        "tipo": "1:n"
+      },
+      {
+        "cno11": "3205",
+        "tipo": "1:n"
+      },
+      {
+        "cno11": "3206",
+        "tipo": "1:n"
+      },
+      {
+        "cno11": "3207",
+        "tipo": "1:n"
+      },
+      {
+        "cno11": "3209",
+        "tipo": "1:n"
+      }
+    ],
+    "3123": [
+      {
+        "cno11": "3202",
+        "tipo": "1:1"
+      }
+    ],
+    "3131": [
+      {
+        "cno11": "3131",
+        "tipo": "1:1"
+      }
+    ],
+    "3132": [
+      {
+        "cno11": "3132",
+        "tipo": "1:1"
+      }
+    ],
+    "3133": [
+      {
+        "cno11": "3133",
+        "tipo": "1:1"
+      }
+    ],
+    "3134": [
+      {
+        "cno11": "3134",
+        "tipo": "1:1"
+      }
+    ],
+    "3135": [
+      {
+        "cno11": "3135",
+        "tipo": "1:1"
+      }
+    ],
+    "3139": [
+      {
+        "cno11": "3139",
+        "tipo": "1:1"
+      }
+    ],
+    "3141": [
+      {
+        "cno11": "3141",
+        "tipo": "1:1"
+      }
+    ],
+    "3142": [
+      {
+        "cno11": "3142",
+        "tipo": "1:1"
+      }
+    ],
+    "3143": [
+      {
+        "cno11": "3143",
+        "tipo": "1:1"
+      }
+    ],
+    "3151": [
+      {
+        "cno11": "3151",
+        "tipo": "1:1"
+      }
+    ],
+    "3152": [
+      {
+        "cno11": "3152",
+        "tipo": "1:1"
+      }
+    ],
+    "3153": [
+      {
+        "cno11": "3153",
+        "tipo": "1:1"
+      }
+    ],
+    "3154": [
+      {
+        "cno11": "3154",
+        "tipo": "1:1"
+      }
+    ],
+    "3155": [
+      {
+        "cno11": "3155",
+        "tipo": "1:1"
+      }
+    ],
+    "3211": [
+      {
+        "cno11": "3311",
+        "tipo": "1:n"
+      },
+      {
+        "cno11": "3312",
+        "tipo": "1:n"
+      }
+    ],
+    "3212": [
+      {
+        "cno11": "3313",
+        "tipo": "1:n"
+      },
+      {
+        "cno11": "3314",
+        "tipo": "1:n"
+      }
+    ],
+    "3213": [
+      {
+        "cno11": "5621",
+        "tipo": "1:1"
+      }
+    ],
+    "3214": [
+      {
+        "cno11": "3315",
+        "tipo": "1:n"
+      },
+      {
+        "cno11": "3316",
+        "tipo": "1:n"
+      },
+      {
+        "cno11": "3317",
+        "tipo": "1:n"
+      }
+    ],
+    "3230": [
+      {
+        "cno11": "3331",
+        "tipo": "n:m"
+      },
+      {
+        "cno11": "3339",
+        "tipo": "1:n"
+      }
+    ],
+    "3240": [
+      {
+        "cno11": "3327",
+        "tipo": "1:1"
+      }
+    ],
+    "3251": [
+      {
+        "cno11": "3321",
+        "tipo": "1:1"
+      }
+    ],
+    "3252": [
+      {
+        "cno11": "3322",
+        "tipo": "1:1"
+      }
+    ],
+    "3254": [
+      {
+        "cno11": "3324",
+        "tipo": "1:1"
+      }
+    ],
+    "3255": [
+      {
+        "cno11": "3325",
+        "tipo": "1:1"
+      }
+    ],
+    "3257": [
+      {
+        "cno11": "3326",
+        "tipo": "1:1"
+      }
+    ],
+    "3258": [
+      {
+        "cno11": "5622",
+        "tipo": "1:1"
+      }
+    ],
+    "3259": [
+      {
+        "cno11": "3323",
+        "tipo": "1:n"
+      },
+      {
+        "cno11": "3329",
+        "tipo": "1:n"
+      }
+    ],
+    "3311": [
+      {
+        "cno11": "3401",
+        "tipo": "1:1"
+      }
+    ],
+    "3312": [
+      {
+        "cno11": "3402",
+        "tipo": "1:1"
+      }
+    ],
+    "3313": [
+      {
+        "cno11": "3403",
+        "tipo": "1:1"
+      }
+    ],
+    "3314": [
+      {
+        "cno11": "3404",
+        "tipo": "1:1"
+      }
+    ],
+    "3315": [
+      {
+        "cno11": "3405",
+        "tipo": "1:1"
+      }
+    ],
+    "3321": [
+      {
+        "cno11": "3521",
+        "tipo": "1:1"
+      }
+    ],
+    "3322": [
+      {
+        "cno11": "3510",
+        "tipo": "1:1"
+      }
+    ],
+    "3323": [
+      {
+        "cno11": "3522",
+        "tipo": "1:1"
+      }
+    ],
+    "3324": [
+      {
+        "cno11": "3523",
+        "tipo": "1:1"
+      }
+    ],
+    "3331": [
+      {
+        "cno11": "3531",
+        "tipo": "1:1"
+      }
+    ],
+    "3332": [
+      {
+        "cno11": "3532",
+        "tipo": "1:1"
+      }
+    ],
+    "3333": [
+      {
+        "cno11": "3533",
+        "tipo": "1:1"
+      }
+    ],
+    "3334": [
+      {
+        "cno11": "3534",
+        "tipo": "1:1"
+      }
+    ],
+    "3339": [
+      {
+        "cno11": "3535",
+        "tipo": "1:n"
+      },
+      {
+        "cno11": "3539",
+        "tipo": "1:n"
+      }
+    ],
+    "3341": [
+      {
+        "cno11": "3611",
+        "tipo": "1:1"
+      }
+    ],
+    "3342": [
+      {
+        "cno11": "3612",
+        "tipo": "1:1"
+      }
+    ],
+    "3343": [
+      {
+        "cno11": "3613",
+        "tipo": "1:1"
+      }
+    ],
+    "3344": [
+      {
+        "cno11": "3614",
+        "tipo": "1:1"
+      }
+    ],
+    "3351": [
+      {
+        "cno11": "5910",
+        "tipo": "n:m"
+      },
+      {
+        "cno11": "5921",
+        "tipo": "n:m"
+      }
+    ],
+    "3352": [
+      {
+        "cno11": "3621",
+        "tipo": "1:1"
+      }
+    ],
+    "3353": [
+      {
+        "cno11": "3622",
+        "tipo": "1:1"
+      }
+    ],
+    "3354": [
+      {
+        "cno11": "3623",
+        "tipo": "1:1"
+      }
+    ],
+    "3355": [
+      {
+        "cno11": "3631",
+        "tipo": "1:n"
+      },
+      {
+        "cno11": "3632",
+        "tipo": "1:n"
+      }
+    ],
+    "3359": [
+      {
+        "cno11": "3629",
+        "tipo": "1:1"
+      }
+    ],
+    "3411": [
+      {
+        "cno11": "3711",
+        "tipo": "1:n"
+      },
+      {
+        "cno11": "3712",
+        "tipo": "1:n"
+      }
+    ],
+    "3412": [
+      {
+        "cno11": "3713",
+        "tipo": "1:n"
+      },
+      {
+        "cno11": "3714",
+        "tipo": "1:n"
+      },
+      {
+        "cno11": "3715",
+        "tipo": "1:n"
+      }
+    ],
+    "3413": [
+      {
+        "cno11": "3716",
+        "tipo": "1:1"
+      }
+    ],
+    "3421": [
+      {
+        "cno11": "3721",
+        "tipo": "1:1"
+      }
+    ],
+    "3422": [
+      {
+        "cno11": "3722",
+        "tipo": "1:1"
+      }
+    ],
+    "3423": [
+      {
+        "cno11": "3723",
+        "tipo": "1:n"
+      },
+      {
+        "cno11": "3724",
+        "tipo": "1:n"
+      }
+    ],
+    "3431": [
+      {
+        "cno11": "3731",
+        "tipo": "1:1"
+      }
+    ],
+    "3432": [
+      {
+        "cno11": "3732",
+        "tipo": "1:1"
+      }
+    ],
+    "3433": [
+      {
+        "cno11": "3733",
+        "tipo": "1:1"
+      }
+    ],
+    "3434": [
+      {
+        "cno11": "3734",
+        "tipo": "1:1"
+      }
+    ],
+    "3435": [
+      {
+        "cno11": "3739",
+        "tipo": "1:1"
+      }
+    ],
+    "3511": [
+      {
+        "cno11": "3811",
+        "tipo": "1:1"
+      }
+    ],
+    "3512": [
+      {
+        "cno11": "3812",
+        "tipo": "1:n"
+      },
+      {
+        "cno11": "3820",
+        "tipo": "1:n"
+      }
+    ],
+    "3513": [
+      {
+        "cno11": "3813",
+        "tipo": "1:1"
+      }
+    ],
+    "3514": [
+      {
+        "cno11": "3814",
+        "tipo": "1:1"
+      }
+    ],
+    "3521": [
+      {
+        "cno11": "3831",
+        "tipo": "1:n"
+      },
+      {
+        "cno11": "3832",
+        "tipo": "1:n"
+      }
+    ],
+    "3522": [
+      {
+        "cno11": "3833",
+        "tipo": "1:1"
+      }
+    ],
+    "4110": [
+      {
+        "cno11": "4309",
+        "tipo": "n:1"
+      }
+    ],
+    "4120": [
+      {
+        "cno11": "4309",
+        "tipo": "n:1"
+      }
+    ],
+    "4131": [
+      {
+        "cno11": "4301",
+        "tipo": "n:1"
+      }
+    ],
+    "4132": [
+      {
+        "cno11": "4301",
+        "tipo": "n:1"
+      }
+    ],
+    "4211": [
+      {
+        "cno11": "4441",
+        "tipo": "1:n"
+      },
+      {
+        "cno11": "4446",
+        "tipo": "1:n"
+      }
+    ],
+    "4212": [
+      {
+        "cno11": "4442",
+        "tipo": "1:n"
+      },
+      {
+        "cno11": "4443",
+        "tipo": "1:n"
+      }
+    ],
+    "4213": [
+      {
+        "cno11": "4444",
+        "tipo": "1:1"
+      }
+    ],
+    "4214": [
+      {
+        "cno11": "4445",
+        "tipo": "1:1"
+      }
+    ],
+    "4221": [
+      {
+        "cno11": "4421",
+        "tipo": "1:1"
+      }
+    ],
+    "4222": [
+      {
+        "cno11": "4424",
+        "tipo": "1:1"
+      }
+    ],
+    "4223": [
+      {
+        "cno11": "4423",
+        "tipo": "1:1"
+      }
+    ],
+    "4224": [
+      {
+        "cno11": "4422",
+        "tipo": "1:1"
+      }
+    ],
+    "4225": [
+      {
+        "cno11": "4411",
+        "tipo": "1:1"
+      }
+    ],
+    "4226": [
+      {
+        "cno11": "4412",
+        "tipo": "1:1"
+      }
+    ],
+    "4227": [
+      {
+        "cno11": "4430",
+        "tipo": "1:1"
+      }
+    ],
+    "4229": [
+      {
+        "cno11": "4500",
+        "tipo": "1:1"
+      }
+    ],
+    "4311": [
+      {
+        "cno11": "4111",
+        "tipo": "1:1"
+      }
+    ],
+    "4312": [
+      {
+        "cno11": "4113",
+        "tipo": "1:1"
+      }
+    ],
+    "4313": [
+      {
+        "cno11": "4112",
+        "tipo": "1:1"
+      }
+    ],
+    "4321": [
+      {
+        "cno11": "4121",
+        "tipo": "1:1"
+      }
+    ],
+    "4322": [
+      {
+        "cno11": "4122",
+        "tipo": "1:1"
+      }
+    ],
+    "4323": [
+      {
+        "cno11": "4123",
+        "tipo": "1:1"
+      }
+    ],
+    "4411": [
+      {
+        "cno11": "4210",
+        "tipo": "n:1"
+      }
+    ],
+    "4412": [
+      {
+        "cno11": "4221",
+        "tipo": "1:1"
+      }
+    ],
+    "4413": [
+      {
+        "cno11": "4222",
+        "tipo": "1:1"
+      }
+    ],
+    "4415": [
+      {
+        "cno11": "4210",
+        "tipo": "n:1"
+      }
+    ],
+    "4416": [
+      {
+        "cno11": "4223",
+        "tipo": "1:1"
+      }
+    ],
+    "4419": [
+      {
+        "cno11": "4309",
+        "tipo": "n:1"
+      }
+    ],
+    "5111": [
+      {
+        "cno11": "5821",
+        "tipo": "1:1"
+      }
+    ],
+    "5112": [
+      {
+        "cno11": "5822",
+        "tipo": "1:1"
+      }
+    ],
+    "5113": [
+      {
+        "cno11": "5823",
+        "tipo": "1:n"
+      },
+      {
+        "cno11": "5824",
+        "tipo": "1:n"
+      },
+      {
+        "cno11": "5825",
+        "tipo": "1:n"
+      }
+    ],
+    "5120": [
+      {
+        "cno11": "5000",
+        "tipo": "n:m"
+      },
+      {
+        "cno11": "5110",
+        "tipo": "1:n"
+      }
+    ],
+    "5131": [
+      {
+        "cno11": "5000",
+        "tipo": "n:m"
+      },
+      {
+        "cno11": "5120",
+        "tipo": "n:m"
+      }
+    ],
+    "5132": [
+      {
+        "cno11": "5000",
+        "tipo": "n:m"
+      },
+      {
+        "cno11": "5120",
+        "tipo": "n:m"
+      }
+    ],
+    "5141": [
+      {
+        "cno11": "5811",
+        "tipo": "1:1"
+      }
+    ],
+    "5142": [
+      {
+        "cno11": "5812",
+        "tipo": "1:1"
+      }
+    ],
+    "5151": [
+      {
+        "cno11": "5831",
+        "tipo": "1:1"
+      }
+    ],
+    "5152": [
+      {
+        "cno11": "5832",
+        "tipo": "1:n"
+      },
+      {
+        "cno11": "5840",
+        "tipo": "1:n"
+      }
+    ],
+    "5153": [
+      {
+        "cno11": "5833",
+        "tipo": "1:1"
+      }
+    ],
+    "5161": [
+      {
+        "cno11": "5895",
+        "tipo": "1:1"
+      }
+    ],
+    "5162": [
+      {
+        "cno11": "5891",
+        "tipo": "1:1"
+      }
+    ],
+    "5163": [
+      {
+        "cno11": "5892",
+        "tipo": "1:1"
+      }
+    ],
+    "5164": [
+      {
+        "cno11": "5893",
+        "tipo": "1:1"
+      }
+    ],
+    "5165": [
+      {
+        "cno11": "5894",
+        "tipo": "1:1"
+      }
+    ],
+    "5169": [
+      {
+        "cno11": "5899",
+        "tipo": "1:1"
+      }
+    ],
+    "5211": [
+      {
+        "cno11": "5411",
+        "tipo": "1:n"
+      },
+      {
+        "cno11": "5412",
+        "tipo": "1:n"
+      }
+    ],
+    "5212": [
+      {
+        "cno11": "5000",
+        "tipo": "n:m"
+      },
+      {
+        "cno11": "5120",
+        "tipo": "n:m"
+      }
+    ],
+    "5221": [
+      {
+        "cno11": "5300",
+        "tipo": "1:1"
+      }
+    ],
+    "5222": [
+      {
+        "cno11": "5210",
+        "tipo": "1:1"
+      }
+    ],
+    "5223": [
+      {
+        "cno11": "5220",
+        "tipo": "1:1"
+      }
+    ],
+    "5230": [
+      {
+        "cno11": "5500",
+        "tipo": "1:1"
+      }
+    ],
+    "5241": [
+      {
+        "cno11": "5493",
+        "tipo": "1:1"
+      }
+    ],
+    "5242": [
+      {
+        "cno11": "5492",
+        "tipo": "1:1"
+      }
+    ],
+    "5243": [
+      {
+        "cno11": "5491",
+        "tipo": "1:1"
+      }
+    ],
+    "5244": [
+      {
+        "cno11": "5420",
+        "tipo": "1:1"
+      }
+    ],
+    "5245": [
+      {
+        "cno11": "5430",
+        "tipo": "1:1"
+      }
+    ],
+    "5246": [
+      {
+        "cno11": "5000",
+        "tipo": "n:m"
+      },
+      {
+        "cno11": "5120",
+        "tipo": "n:m"
+      }
+    ],
+    "5249": [
+      {
+        "cno11": "5499",
+        "tipo": "1:1"
+      }
+    ],
+    "5311": [
+      {
+        "cno11": "5721",
+        "tipo": "n:m"
+      },
+      {
+        "cno11": "5722",
+        "tipo": "1:n"
+      }
+    ],
+    "5312": [
+      {
+        "cno11": "5721",
+        "tipo": "n:1"
+      }
+    ],
+    "5321": [
+      {
+        "cno11": "5611",
+        "tipo": "1:n"
+      },
+      {
+        "cno11": "5612",
+        "tipo": "1:n"
+      }
+    ],
+    "5322": [
+      {
+        "cno11": "5710",
+        "tipo": "1:1"
+      }
+    ],
+    "5329": [
+      {
+        "cno11": "5629",
+        "tipo": "1:1"
+      }
+    ],
+    "5411": [
+      {
+        "cno11": "5931",
+        "tipo": "1:n"
+      },
+      {
+        "cno11": "5932",
+        "tipo": "1:n"
+      }
+    ],
+    "5412": [
+      {
+        "cno11": "5910",
+        "tipo": "n:m"
+      },
+      {
+        "cno11": "5921",
+        "tipo": "n:m"
+      },
+      {
+        "cno11": "5922",
+        "tipo": "1:n"
+      },
+      {
+        "cno11": "5923",
+        "tipo": "1:n"
+      }
+    ],
+    "5413": [
+      {
+        "cno11": "5991",
+        "tipo": "1:1"
+      }
+    ],
+    "5414": [
+      {
+        "cno11": "5941",
+        "tipo": "1:n"
+      },
+      {
+        "cno11": "5942",
+        "tipo": "1:n"
+      }
+    ],
+    "5419": [
+      {
+        "cno11": "5992",
+        "tipo": "1:n"
+      },
+      {
+        "cno11": "5993",
+        "tipo": "1:n"
+      },
+      {
+        "cno11": "5999",
+        "tipo": "1:n"
+      }
+    ],
+    "6111": [
+      {
+        "cno11": "6110",
+        "tipo": "n:1"
+      }
+    ],
+    "6112": [
+      {
+        "cno11": "6110",
+        "tipo": "n:1"
+      }
+    ],
+    "6113": [
+      {
+        "cno11": "6120",
+        "tipo": "1:1"
+      }
+    ],
+    "6114": [
+      {
+        "cno11": "6110",
+        "tipo": "n:1"
+      }
+    ],
+    "6121": [
+      {
+        "cno11": "6201",
+        "tipo": "1:n"
+      },
+      {
+        "cno11": "6202",
+        "tipo": "1:n"
+      },
+      {
+        "cno11": "6203",
+        "tipo": "1:n"
+      },
+      {
+        "cno11": "6209",
+        "tipo": "n:m"
+      }
+    ],
+    "6122": [
+      {
+        "cno11": "6205",
+        "tipo": "n:1"
+      }
+    ],
+    "6123": [
+      {
+        "cno11": "6204",
+        "tipo": "1:1"
+      }
+    ],
+    "6129": [
+      {
+        "cno11": "6205",
+        "tipo": "n:m"
+      },
+      {
+        "cno11": "6209",
+        "tipo": "n:m"
+      }
+    ],
+    "6130": [
+      {
+        "cno11": "6300",
+        "tipo": "1:1"
+      }
+    ],
+    "6210": [
+      {
+        "cno11": "6410",
+        "tipo": "1:1"
+      }
+    ],
+    "6221": [
+      {
+        "cno11": "6421",
+        "tipo": "1:1"
+      }
+    ],
+    "6222": [
+      {
+        "cno11": "6422",
+        "tipo": "1:1"
+      }
+    ],
+    "6223": [
+      {
+        "cno11": "6423",
+        "tipo": "1:1"
+      }
+    ],
+    "6224": [
+      {
+        "cno11": "6430",
+        "tipo": "1:1"
+      }
+    ],
+    "7111": [
+      {
+        "cno11": "7121",
+        "tipo": "n:1"
+      }
+    ],
+    "7112": [
+      {
+        "cno11": "7121",
+        "tipo": "n:1"
+      }
+    ],
+    "7113": [
+      {
+        "cno11": "7122",
+        "tipo": "1:1"
+      }
+    ],
+    "7114": [
+      {
+        "cno11": "7111",
+        "tipo": "1:n"
+      },
+      {
+        "cno11": "7112",
+        "tipo": "1:n"
+      }
+    ],
+    "7115": [
+      {
+        "cno11": "7131",
+        "tipo": "1:n"
+      },
+      {
+        "cno11": "7132",
+        "tipo": "1:n"
+      }
+    ],
+    "7119": [
+      {
+        "cno11": "7191",
+        "tipo": "1:n"
+      },
+      {
+        "cno11": "7192",
+        "tipo": "1:n"
+      },
+      {
+        "cno11": "7193",
+        "tipo": "1:n"
+      },
+      {
+        "cno11": "7199",
+        "tipo": "1:n"
+      }
+    ],
+    "7121": [
+      {
+        "cno11": "7291",
+        "tipo": "1:1"
+      }
+    ],
+    "7122": [
+      {
+        "cno11": "7240",
+        "tipo": "1:1"
+      }
+    ],
+    "7123": [
+      {
+        "cno11": "7211",
+        "tipo": "1:n"
+      },
+      {
+        "cno11": "7212",
+        "tipo": "1:n"
+      }
+    ],
+    "7124": [
+      {
+        "cno11": "7292",
+        "tipo": "1:1"
+      }
+    ],
+    "7125": [
+      {
+        "cno11": "7293",
+        "tipo": "1:1"
+      }
+    ],
+    "7126": [
+      {
+        "cno11": "7221",
+        "tipo": "1:n"
+      },
+      {
+        "cno11": "7222",
+        "tipo": "1:n"
+      },
+      {
+        "cno11": "7223",
+        "tipo": "1:n"
+      },
+      {
+        "cno11": "7294",
+        "tipo": "1:n"
+      }
+    ],
+    "7127": [
+      {
+        "cno11": "7250",
+        "tipo": "1:1"
+      }
+    ],
+    "7131": [
+      {
+        "cno11": "7231",
+        "tipo": "n:m"
+      },
+      {
+        "cno11": "7232",
+        "tipo": "n:m"
+      }
+    ],
+    "7132": [
+      {
+        "cno11": "7231",
+        "tipo": "n:m"
+      },
+      {
+        "cno11": "7232",
+        "tipo": "n:m"
+      }
+    ],
+    "7133": [
+      {
+        "cno11": "7295",
+        "tipo": "1:1"
+      }
+    ],
+    "7211": [
+      {
+        "cno11": "7311",
+        "tipo": "1:1"
+      }
+    ],
+    "7212": [
+      {
+        "cno11": "7312",
+        "tipo": "1:1"
+      }
+    ],
+    "7213": [
+      {
+        "cno11": "7313",
+        "tipo": "1:1"
+      }
+    ],
+    "7214": [
+      {
+        "cno11": "7314",
+        "tipo": "1:1"
+      }
+    ],
+    "7215": [
+      {
+        "cno11": "7315",
+        "tipo": "1:1"
+      }
+    ],
+    "7221": [
+      {
+        "cno11": "7321",
+        "tipo": "1:1"
+      }
+    ],
+    "7222": [
+      {
+        "cno11": "7322",
+        "tipo": "1:1"
+      }
+    ],
+    "7223": [
+      {
+        "cno11": "7323",
+        "tipo": "1:1"
+      }
+    ],
+    "7224": [
+      {
+        "cno11": "7324",
+        "tipo": "1:1"
+      }
+    ],
+    "7231": [
+      {
+        "cno11": "7401",
+        "tipo": "1:1"
+      }
+    ],
+    "7232": [
+      {
+        "cno11": "7402",
+        "tipo": "1:1"
+      }
+    ],
+    "7233": [
+      {
+        "cno11": "7403",
+        "tipo": "1:n"
+      },
+      {
+        "cno11": "7404",
+        "tipo": "1:n"
+      }
+    ],
+    "7234": [
+      {
+        "cno11": "7405",
+        "tipo": "1:1"
+      }
+    ],
+    "7311": [
+      {
+        "cno11": "7611",
+        "tipo": "1:1"
+      }
+    ],
+    "7312": [
+      {
+        "cno11": "7612",
+        "tipo": "1:1"
+      }
+    ],
+    "7313": [
+      {
+        "cno11": "7613",
+        "tipo": "1:1"
+      }
+    ],
+    "7314": [
+      {
+        "cno11": "7614",
+        "tipo": "1:1"
+      }
+    ],
+    "7315": [
+      {
+        "cno11": "7615",
+        "tipo": "1:1"
+      }
+    ],
+    "7316": [
+      {
+        "cno11": "7616",
+        "tipo": "1:1"
+      }
+    ],
+    "7317": [
+      {
+        "cno11": "7617",
+        "tipo": "1:1"
+      }
+    ],
+    "7318": [
+      {
+        "cno11": "7618",
+        "tipo": "1:1"
+      }
+    ],
+    "7319": [
+      {
+        "cno11": "7619",
+        "tipo": "1:1"
+      }
+    ],
+    "7321": [
+      {
+        "cno11": "7621",
+        "tipo": "1:1"
+      }
+    ],
+    "7322": [
+      {
+        "cno11": "7622",
+        "tipo": "1:1"
+      }
+    ],
+    "7323": [
+      {
+        "cno11": "7623",
+        "tipo": "1:1"
+      }
+    ],
+    "7411": [
+      {
+        "cno11": "7510",
+        "tipo": "1:1"
+      }
+    ],
+    "7412": [
+      {
+        "cno11": "7521",
+        "tipo": "1:1"
+      }
+    ],
+    "7413": [
+      {
+        "cno11": "7522",
+        "tipo": "1:1"
+      }
+    ],
+    "7421": [
+      {
+        "cno11": "7531",
+        "tipo": "1:n"
+      },
+      {
+        "cno11": "7532",
+        "tipo": "1:n"
+      }
+    ],
+    "7422": [
+      {
+        "cno11": "7533",
+        "tipo": "1:1"
+      }
+    ],
+    "7511": [
+      {
+        "cno11": "7701",
+        "tipo": "1:n"
+      },
+      {
+        "cno11": "7702",
+        "tipo": "1:n"
+      }
+    ],
+    "7512": [
+      {
+        "cno11": "7703",
+        "tipo": "1:1"
+      }
+    ],
+    "7513": [
+      {
+        "cno11": "7704",
+        "tipo": "1:1"
+      }
+    ],
+    "7514": [
+      {
+        "cno11": "7705",
+        "tipo": "1:n"
+      },
+      {
+        "cno11": "7706",
+        "tipo": "1:n"
+      },
+      {
+        "cno11": "7707",
+        "tipo": "1:n"
+      }
+    ],
+    "7515": [
+      {
+        "cno11": "7709",
+        "tipo": "1:1"
+      }
+    ],
+    "7516": [
+      {
+        "cno11": "7708",
+        "tipo": "1:1"
+      }
+    ],
+    "7521": [
+      {
+        "cno11": "7811",
+        "tipo": "1:1"
+      }
+    ],
+    "7522": [
+      {
+        "cno11": "7820",
+        "tipo": "1:1"
+      }
+    ],
+    "7523": [
+      {
+        "cno11": "7812",
+        "tipo": "1:1"
+      }
+    ],
+    "7531": [
+      {
+        "cno11": "7831",
+        "tipo": "1:1"
+      }
+    ],
+    "7532": [
+      {
+        "cno11": "7832",
+        "tipo": "1:n"
+      },
+      {
+        "cno11": "7833",
+        "tipo": "1:n"
+      }
+    ],
+    "7533": [
+      {
+        "cno11": "7834",
+        "tipo": "1:1"
+      }
+    ],
+    "7534": [
+      {
+        "cno11": "7835",
+        "tipo": "1:1"
+      }
+    ],
+    "7535": [
+      {
+        "cno11": "7836",
+        "tipo": "1:1"
+      }
+    ],
+    "7536": [
+      {
+        "cno11": "7837",
+        "tipo": "1:1"
+      }
+    ],
+    "7541": [
+      {
+        "cno11": "7891",
+        "tipo": "1:1"
+      }
+    ],
+    "7542": [
+      {
+        "cno11": "7892",
+        "tipo": "1:1"
+      }
+    ],
+    "7543": [
+      {
+        "cno11": "7893",
+        "tipo": "1:1"
+      }
+    ],
+    "7544": [
+      {
+        "cno11": "7894",
+        "tipo": "1:1"
+      }
+    ],
+    "7549": [
+      {
+        "cno11": "7899",
+        "tipo": "1:1"
+      }
+    ],
+    "8111": [
+      {
+        "cno11": "8111",
+        "tipo": "1:1"
+      }
+    ],
+    "8112": [
+      {
+        "cno11": "8112",
+        "tipo": "1:1"
+      }
+    ],
+    "8113": [
+      {
+        "cno11": "8113",
+        "tipo": "1:1"
+      }
+    ],
+    "8114": [
+      {
+        "cno11": "8114",
+        "tipo": "1:1"
+      }
+    ],
+    "8121": [
+      {
+        "cno11": "8121",
+        "tipo": "1:1"
+      }
+    ],
+    "8122": [
+      {
+        "cno11": "8122",
+        "tipo": "1:1"
+      }
+    ],
+    "8131": [
+      {
+        "cno11": "8131",
+        "tipo": "1:n"
+      },
+      {
+        "cno11": "8132",
+        "tipo": "1:n"
+      }
+    ],
+    "8132": [
+      {
+        "cno11": "8133",
+        "tipo": "1:1"
+      }
+    ],
+    "8141": [
+      {
+        "cno11": "8141",
+        "tipo": "1:1"
+      }
+    ],
+    "8142": [
+      {
+        "cno11": "8142",
+        "tipo": "1:1"
+      }
+    ],
+    "8143": [
+      {
+        "cno11": "8143",
+        "tipo": "1:1"
+      }
+    ],
+    "8151": [
+      {
+        "cno11": "8151",
+        "tipo": "1:1"
+      }
+    ],
+    "8152": [
+      {
+        "cno11": "8152",
+        "tipo": "1:1"
+      }
+    ],
+    "8153": [
+      {
+        "cno11": "8153",
+        "tipo": "1:1"
+      }
+    ],
+    "8154": [
+      {
+        "cno11": "8154",
+        "tipo": "1:1"
+      }
+    ],
+    "8155": [
+      {
+        "cno11": "8155",
+        "tipo": "1:1"
+      }
+    ],
+    "8156": [
+      {
+        "cno11": "8156",
+        "tipo": "1:1"
+      }
+    ],
+    "8157": [
+      {
+        "cno11": "8170",
+        "tipo": "1:1"
+      }
+    ],
+    "8159": [
+      {
+        "cno11": "8159",
+        "tipo": "1:1"
+      }
+    ],
+    "8160": [
+      {
+        "cno11": "8160",
+        "tipo": "1:1"
+      }
+    ],
+    "8171": [
+      {
+        "cno11": "8145",
+        "tipo": "1:1"
+      }
+    ],
+    "8172": [
+      {
+        "cno11": "8144",
+        "tipo": "1:1"
+      }
+    ],
+    "8181": [
+      {
+        "cno11": "8191",
+        "tipo": "1:1"
+      }
+    ],
+    "8182": [
+      {
+        "cno11": "8192",
+        "tipo": "1:1"
+      }
+    ],
+    "8183": [
+      {
+        "cno11": "8193",
+        "tipo": "1:1"
+      }
+    ],
+    "8189": [
+      {
+        "cno11": "8199",
+        "tipo": "1:1"
+      }
+    ],
+    "8211": [
+      {
+        "cno11": "8201",
+        "tipo": "1:1"
+      }
+    ],
+    "8212": [
+      {
+        "cno11": "8202",
+        "tipo": "1:1"
+      }
+    ],
+    "8219": [
+      {
+        "cno11": "8209",
+        "tipo": "1:1"
+      }
+    ],
+    "8311": [
+      {
+        "cno11": "8311",
+        "tipo": "1:1"
+      }
+    ],
+    "8312": [
+      {
+        "cno11": "8312",
+        "tipo": "1:1"
+      }
+    ],
+    "8321": [
+      {
+        "cno11": "8440",
+        "tipo": "1:1"
+      }
+    ],
+    "8322": [
+      {
+        "cno11": "8411",
+        "tipo": "1:n"
+      },
+      {
+        "cno11": "8412",
+        "tipo": "1:n"
+      }
+    ],
+    "8331": [
+      {
+        "cno11": "8420",
+        "tipo": "1:1"
+      }
+    ],
+    "8332": [
+      {
+        "cno11": "8431",
+        "tipo": "1:n"
+      },
+      {
+        "cno11": "8432",
+        "tipo": "1:n"
+      }
+    ],
+    "8341": [
+      {
+        "cno11": "8321",
+        "tipo": "1:n"
+      },
+      {
+        "cno11": "8322",
+        "tipo": "1:n"
+      }
+    ],
+    "8342": [
+      {
+        "cno11": "8331",
+        "tipo": "1:1"
+      }
+    ],
+    "8343": [
+      {
+        "cno11": "8332",
+        "tipo": "1:1"
+      }
+    ],
+    "8344": [
+      {
+        "cno11": "8333",
+        "tipo": "1:1"
+      }
+    ],
+    "8350": [
+      {
+        "cno11": "8340",
+        "tipo": "1:1"
+      }
+    ],
+    "9111": [
+      {
+        "cno11": "9100",
+        "tipo": "1:1"
+      }
+    ],
+    "9112": [
+      {
+        "cno11": "9210",
+        "tipo": "1:1"
+      }
+    ],
+    "9121": [
+      {
+        "cno11": "9221",
+        "tipo": "1:1"
+      }
+    ],
+    "9122": [
+      {
+        "cno11": "9222",
+        "tipo": "1:1"
+      }
+    ],
+    "9123": [
+      {
+        "cno11": "9223",
+        "tipo": "1:1"
+      }
+    ],
+    "9129": [
+      {
+        "cno11": "9229",
+        "tipo": "1:1"
+      }
+    ],
+    "9211": [
+      {
+        "cno11": "9511",
+        "tipo": "1:1"
+      }
+    ],
+    "9212": [
+      {
+        "cno11": "9520",
+        "tipo": "1:1"
+      }
+    ],
+    "9213": [
+      {
+        "cno11": "9530",
+        "tipo": "1:1"
+      }
+    ],
+    "9214": [
+      {
+        "cno11": "9512",
+        "tipo": "1:1"
+      }
+    ],
+    "9215": [
+      {
+        "cno11": "9543",
+        "tipo": "1:1"
+      }
+    ],
+    "9216": [
+      {
+        "cno11": "9541",
+        "tipo": "1:n"
+      },
+      {
+        "cno11": "9542",
+        "tipo": "1:n"
+      }
+    ],
+    "9311": [
+      {
+        "cno11": "9603",
+        "tipo": "1:1"
+      }
+    ],
+    "9312": [
+      {
+        "cno11": "9601",
+        "tipo": "1:1"
+      }
+    ],
+    "9313": [
+      {
+        "cno11": "9602",
+        "tipo": "1:1"
+      }
+    ],
+    "9321": [
+      {
+        "cno11": "9700",
+        "tipo": "n:1"
+      }
+    ],
+    "9329": [
+      {
+        "cno11": "9700",
+        "tipo": "n:1"
+      }
+    ],
+    "9331": [
+      {
+        "cno11": "9811",
+        "tipo": "n:m"
+      },
+      {
+        "cno11": "9812",
+        "tipo": "n:m"
+      }
+    ],
+    "9332": [
+      {
+        "cno11": "9811",
+        "tipo": "n:m"
+      },
+      {
+        "cno11": "9812",
+        "tipo": "n:m"
+      }
+    ],
+    "9333": [
+      {
+        "cno11": "9811",
+        "tipo": "n:1"
+      }
+    ],
+    "9334": [
+      {
+        "cno11": "9820",
+        "tipo": "1:1"
+      }
+    ],
+    "9411": [
+      {
+        "cno11": "9320",
+        "tipo": "1:1"
+      }
+    ],
+    "9412": [
+      {
+        "cno11": "9310",
+        "tipo": "1:1"
+      }
+    ],
+    "9510": [
+      {
+        "cno11": "9420",
+        "tipo": "1:1"
+      }
+    ],
+    "9520": [
+      {
+        "cno11": "9410",
+        "tipo": "1:1"
+      }
+    ],
+    "9611": [
+      {
+        "cno11": "9441",
+        "tipo": "1:1"
+      }
+    ],
+    "9612": [
+      {
+        "cno11": "9442",
+        "tipo": "1:1"
+      }
+    ],
+    "9613": [
+      {
+        "cno11": "9443",
+        "tipo": "1:1"
+      }
+    ],
+    "9621": [
+      {
+        "cno11": "9431",
+        "tipo": "1:n"
+      },
+      {
+        "cno11": "9432",
+        "tipo": "1:n"
+      },
+      {
+        "cno11": "9433",
+        "tipo": "1:n"
+      }
+    ],
+    "9622": [
+      {
+        "cno11": "9490",
+        "tipo": "n:1"
+      }
+    ],
+    "9623": [
+      {
+        "cno11": "9434",
+        "tipo": "1:1"
+      }
+    ],
+    "9629": [
+      {
+        "cno11": "9490",
+        "tipo": "n:1"
+      }
+    ]
+  }
+}

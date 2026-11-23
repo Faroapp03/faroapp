@@ -1,0 +1,250 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Admisión cotidiana de un catálogo SQLite congelado V10",
+  "description": "Identifica integridad y procedencia local. No acredita disponibilidad, licencia, consulta remota o publicación. Las claves de código se contrastan con el inventario efectivo de la implementación.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "tipo",
+    "estado",
+    "version_sqlite",
+    "alcance",
+    "publicacion_confirmada",
+    "controles",
+    "snapshot",
+    "procedencia",
+    "codigo_sha256",
+    "cobertura"
+  ],
+  "properties": {
+    "schema_version": {
+      "enum": [1, 2]
+    },
+    "tipo": {
+      "const": "catalogo-sqlite"
+    },
+    "estado": {
+      "const": "Admitido"
+    },
+    "version_sqlite": {
+      "const": 10
+    },
+    "alcance": {
+      "const": "integridad_procedencia_catalogo_no_oferta_no_publicacion"
+    },
+    "publicacion_confirmada": {
+      "type": "null"
+    },
+    "controles": {
+      "type": "array",
+      "prefixItems": [
+        {
+          "const": {
+            "control": "Snapshot cerrado V10 e íntegro",
+            "resultado": "correcto"
+          }
+        },
+        {
+          "const": {
+            "control": "Entidades, versiones y referencias coherentes",
+            "resultado": "correcto"
+          }
+        },
+        {
+          "const": {
+            "control": "Índice FTS concordante",
+            "resultado": "correcto"
+          }
+        },
+        {
+          "const": {
+            "control": "Historia y unidades auditadas por el registro V10",
+            "resultado": "correcto"
+          }
+        },
+        {
+          "const": {
+            "control": "Procedencia, bytes y código conservados durante la admisión",
+            "resultado": "correcto"
+          }
+        }
+      ],
+      "minItems": 5,
+      "maxItems": 5
+    },
+    "snapshot": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["sha256", "bytes"],
+      "properties": {
+        "sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "bytes": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    },
+    "procedencia": {
+      "type": "object",
+      "minProperties": 1,
+      "maxProperties": 256,
+      "propertyNames": {
+        "pattern": "^[a-z0-9][a-z0-9_-]{0,79}$"
+      },
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["sha256", "bytes"],
+        "properties": {
+          "sha256": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          },
+          "bytes": {
+            "type": "integer",
+            "minimum": 0
+          }
+        }
+      }
+    },
+    "codigo_sha256": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": {
+        "type": "string",
+        "pattern": "^[0-9a-f]{64}$"
+      }
+    },
+    "cobertura": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "proveedores",
+        "programas",
+        "ediciones",
+        "variantes",
+        "centros",
+        "anuncios",
+        "evidencias",
+        "ejecuciones",
+        "evaluaciones_vigencia",
+        "cambios_decision_vigencia"
+      ],
+      "properties": {
+        "proveedores": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 1000000
+        },
+        "programas": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 1000000
+        },
+        "ediciones": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 1000000
+        },
+        "variantes": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 1000000
+        },
+        "centros": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 1000000
+        },
+        "anuncios": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 1000000
+        },
+        "evidencias": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 1000000
+        },
+        "ejecuciones": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 1000000
+        },
+        "evaluaciones_vigencia": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 1000000
+        },
+        "cambios_decision_vigencia": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 1000000
+        }
+      }
+    },
+    "indices_evidencias": {
+      "type": "object",
+      "minProperties": 1,
+      "maxProperties": 256,
+      "propertyNames": {
+        "pattern": "^[a-z0-9][a-z0-9_-]{0,79}$"
+      },
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["indice", "archivos", "bytes_archivos"],
+        "properties": {
+          "indice": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["sha256", "bytes"],
+            "properties": {
+              "sha256": {
+                "type": "string",
+                "pattern": "^[0-9a-f]{64}$"
+              },
+              "bytes": {
+                "type": "integer",
+                "minimum": 0
+              }
+            }
+          },
+          "archivos": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 100000
+          },
+          "bytes_archivos": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 268435456
+          }
+        }
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "schema_version": {
+            "const": 2
+          }
+        }
+      },
+      "then": {
+        "required": ["indices_evidencias"]
+      },
+      "else": {
+        "not": {
+          "required": ["indices_evidencias"]
+        }
+      }
+    }
+  ]
+}

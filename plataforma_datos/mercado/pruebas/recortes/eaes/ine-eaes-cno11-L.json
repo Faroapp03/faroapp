@@ -1,0 +1,44 @@
+[
+  {
+    "Id": 22873,
+    "FK_Variable": 456,
+    "Nombre": "Soldadores, chapistas, montadores de estructuras metálicas, herreros, elaboradores de herramientas y afines",
+    "Codigo": "73",
+    "FK_JerarquiaPadres": [22872]
+  },
+  {
+    "Id": 22885,
+    "FK_Variable": 456,
+    "Nombre": "Mecánicos y ajustadores de maquinaria",
+    "Codigo": "74",
+    "FK_JerarquiaPadres": [22872]
+  },
+  {
+    "Id": 22892,
+    "FK_Variable": 456,
+    "Nombre": "Trabajadores especializados en electricidad y electrotecnología",
+    "Codigo": "75",
+    "FK_JerarquiaPadres": [22872]
+  },
+  {
+    "Id": 22902,
+    "FK_Variable": 456,
+    "Nombre": "Mecánicos de precisión en metales, ceramistas, vidrieros, artesanos y trabajadores de artes gráficas",
+    "Codigo": "76",
+    "FK_JerarquiaPadres": [22872]
+  },
+  {
+    "Id": 22917,
+    "FK_Variable": 456,
+    "Nombre": "Trabajadores de la industria de la alimentación, bebidas y tabaco",
+    "Codigo": "77",
+    "FK_JerarquiaPadres": [22872]
+  },
+  {
+    "Id": 22928,
+    "FK_Variable": 456,
+    "Nombre": "Trabajadores de la madera, textil, confección, piel, cuero, calzado y otros operarios en oficios",
+    "Codigo": "78",
+    "FK_JerarquiaPadres": [22872]
+  }
+]

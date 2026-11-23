@@ -1,0 +1,95 @@
+{
+  "schema_version": 1,
+  "id": "tich",
+  "tema": "ia_y_trabajo",
+  "nombre": "INE: Encuesta sobre equipamiento y uso de TIC en los hogares",
+  "institucion": "Instituto Nacional de Estadística (INE)",
+  "lector": "plataforma_datos.ia_y_trabajo.fuentes.tich.lector",
+  "casa_datos": "tich",
+  "significado": "Uso declarado de la IA generativa en el trabajo por grupo de ocupación: microdatos de la TIC-H 2025 del INE.",
+  "alcance": [
+    "La Encuesta sobre Equipamiento y Uso de TIC en los Hogares (TIC-H) 2025 preguntó por primera vez si la persona había usado alguna herramienta de IA generativa en los tres meses anteriores y para qué. El INE publica el uso por trabajo solo en tres grupos (ocupaciones manuales, no manuales y TIC, tabla 76444); sus microdatos públicos traen la ocupación a 2 cifras de la ISCO-08 (`OCUPACION`), con la que aquí se calcula para cada grupo:",
+    "- el porcentaje ponderado (factor `FACTOR_P`) de personas ocupadas que usaron IA generativa por motivos de trabajo; - su intervalo del 95 %: el de Korn–Graubard (proporcion_de_encuesta), Clopper–Pearson con el tamaño efectivo de Kish, n_ef = (Σw)² / Σw², ajustado por los grados de libertad del diseño (secciones menos estratos). Recoge la pérdida de precisión de los pesos, no la de los conglomerados: el contraste con los errores que publica el INE la mide.",
+    "Solo se da un grupo con 100 personas encuestadas o más (`MIN_MUESTRA`) y que pase la regla de publicación de proporciones del NCHS (proporcion_de_encuesta.regla_nchs); si no, su gran grupo, si pasa. Cataluña se da aparte en lo que su muestra permite (manuales, no manuales y grandes grupos de 100 o más). Cada grupo lleva su clase, manual o no manual (`clase_por_isco2`): con ella el informe da, de quienes no la usan, cuántos no saben cómo, con la cifra de Cataluña del Idescat (`tic_llars`), que exportar_paquete añade al paquete. La clase es un hecho de cada edición (clases_de_ocupacion.py): un grupo tiene la clase que reúne al menos el 95 % de sus entrevistas en esa edición; si ninguna llega, no tiene clase: el dato lo declara (`grupos_sin_clase`), el panel cuenta cuántos hay y el informe no da para él esa línea. El informe de validación guarda el reparto en entrevistas de cada grupo con las dos clases.",
+    "El paso desde la CNO-11 sale de la correspondencia oficial del INE que Faro ya tiene (clasificaciones), pero la TIC-H no llega a la ISCO-08 por ese camino: el entrevistador anota la ocupación directamente a 2 cifras con la lista del anexo II de la metodología (pregunta 73a). Donde los dos caminos llevan a las mismas personas a grupos distintos, el paso no usa el grupo de 2 cifras: los grandes grupos 1 y 4 se dan enteros, y el 25 y el 35 forman un bloque (`GRANDES_GRUPOS_ENTEROS`, `BLOQUES`).",
+    "Controles con alarma: los microdatos reproducen las cifras publicadas de la tabla de uso (población y uso por trabajo de cada grupo); y la regla de los bloques se comprueba sola con la EPA en la ISCO-08 a 2 cifras (Eurostat `lfsa_egai2d`): con otro año de la TIC-H, un grupo que la entrevista reparta de otra forma que la correspondencia se da en su gran grupo (ver «Reparto con la EPA»). Solo la edición nueva, antes de incorporarse, lee sus PDF de metodología y cuestionario, con la biblioteca `pypdf` (documentos_de_la_edicion.py).",
+    "Ediciones: el catálogo de INEbase dice qué edición hay. Si anuncia resultados de un año posterior al calculado, la consulta termina bien, conserva y publica la edición calculada y registra lo observado en la procedencia y en el dato (`edicion_nueva`): «pendiente-de-incorporar» si el último ZIP de microdatos es del mismo año que esos resultados, y «publicada-sin-microdatos» si no. Lleva la huella del catálogo consultado y la primera fecha en que se vio ese año en ese estado, que no cambia aunque cambien los bytes del catálogo; si el catálogo vuelve a la edición calculada, la observación se retira. No es un fallo de consulta: no suma para los reintentos ni pone el módulo en rojo; el panel la recibe en la fila de la fuente (`edicionNueva`) y el informe la dice con el día de Barcelona en que se observó, si no es posterior a la fecha del informe. La validación exige su forma (año de cuatro cifras, instante ISO, huella de 64 hexadecimales) y que case con la edición y la huella del catálogo de la procedencia. Un catálogo con un año anterior al calculado, o con microdatos de un año sin sus resultados, detiene la consulta. El dato declara los años que mide (`anios_medidos`, en orden, sin repetir y terminando en el calculado), de los que el informe deriva cómo ha ido la cifra. Con la edición nueva pendiente de incorporar, la consulta localiza por su título, desde el catálogo, la tabla de uso y la de errores de ese año y la dirección de su metodología y de su cuestionario, con una sola coincidencia en cada paso (navegacion.py), y las deja en la procedencia con la dirección y la huella de cada página recorrida (`tablas_edicion_nueva`); si un paso no se puede dar (sin coincidencia o con varias, de otro año, fuera de INEbase, redirigido, sin UTF-8 o por la red), queda su motivo cerrado y su detalle (`tablas_edicion_nueva_detenida`) y la fuente conserva la edición calculada. La edición admitida, con sus tablas, el año de la EPA con que se contrasta, sus secciones censales en muestra y la huella de su metodología y de su cuestionario, sale del estado de la edición (`validados/tich/edicion.json`, edicion.py), que solo escribe la validación al admitir el conjunto, entero o nada; sin estado, es la primera (2025). Los originales de cada edición viven en `originales/tich/<año>/` con su procedencia, y la de la operación los registra con esa ruta; un original suelto en `originales/tich/` pasa a la carpeta de su año con su huella comprobada, en una consulta; los sueltos solo se retiran en una consulta posterior, en la que no se ha migrado nada, y si la última validación admitida leyó la procedencia que apunta a las copias (`originales_validados` de su informe). Un suelto se retira solo si tanto él como su copia conservan la huella registrada, y lo retirado queda en `sueltos-retirados.json`. El dato publicado guarda la huella del catálogo de la primera observación de ese año y estado, para no cambiar con cada consulta; la de cada consulta queda en la procedencia y en el panel.",
+    "Observaciones defectuosas: una observación anterior mal formada no bloquea la consulta; se descarta con su motivo (`edicion_nueva_descartada` en la procedencia y un control de la validación) y la edición nueva se observa de nuevo con la fecha de esa consulta. Si el panel no puede verificar la procedencia, la fila de la fuente queda sin `edicionNueva` y con su aviso (`avisoEdicion`), y el resto del panel sigue.",
+    "Tablas publicadas y motivo de no uso: la tabla de errores se lee en sus dos formas conocidas, la de 2025 (cuatro columnas, comunidades con código) y la de 2026 (tres columnas, «Total nacional» como una fila más y comunidades sin código), reconocidas por su cabecera; otra forma detiene la lectura (tablas_publicadas.py). Para Cataluña se calcula además, por clase manual o no manual, el porcentaje de quienes no usaron la IA generativa que no sabían cómo usarla (motivos_no_uso.py), la base de la tabla 3.4.2 del Idescat. Es un cálculo de contraste para `tic_llars`, no una cifra publicada: se estima con dos entrevistas o más (lo que necesita el intervalo) y va al preparado y al informe de validación (`contraste_no_sabe_como`, con la descripción de `IAG_NO3` en el diseño de registro), nunca al paquete. `IAG_NO3` no es obligatoria: si la edición no la trae, el cálculo queda sin clases y `tic_llars` se valida sin contraste del motivo; `tich` no falla. Enunciado y muestra: la preparación de la edición admitida comprueba en su diseño de registro, que llega con los microdatos, que `IAG` e `IAG_TRAB` conservan cada parte de la pregunta (pregunta, periodo, opción de uso por trabajo y códigos); una parte distinta detiene la preparación y dice cuál. Sus PDF no se vuelven a leer: las secciones censales en muestra (2.500 en España y 216 en Cataluña en 2025) y la huella de su metodología y de su cuestionario están en el estado de la edición, y dan los grados de libertad. La edición nueva sí los lee, y compara su cuestionario por partes, antes de incorporarse (candidata.py).",
+    "Universo: todas las estimaciones por grupo se calculan con las personas ocupadas de 16 a 74 años, el universo de la encuesta y de sus tablas; con él, la población de cada grupo que publica el INE coincide con la de la tabla, con una persona de margen por el redondeo; una fila sin edad detiene la lectura. La tabla de uso trae celdas que el INE no publica («..»): no tienen cifra, y solo detiene la lectura que falte la de un grupo que se contrasta.",
+    "Reparto con la EPA: un grupo que se daría a 2 cifras y cuya cuota dentro de su gran grupo no está entre la mitad y el doble de la de la EPA del año de la edición o, mientras Eurostat no la publique, de la del año que declara el estado de la edición (`epa_anio`, también en el dato; epa_por_anio.py: cada consulta pide el año de la edición y, cuando llega, se usa y la validación lo registra en el estado), o que no tiene cuota en ella, se da en su gran grupo, y el dato lo dice con su motivo (`grupos_en_su_gran_grupo`; el panel cuenta cuántos). El gran grupo que los recibe tiene que tener cifra y cumplir la misma regla en el total de ocupados; si no, la validación se detiene, para que un error sistemático no quede oculto bajo muchas bajadas (reparto_con_la_epa.py).",
+    "Incorporación de la edición nueva: con la edición nueva pendiente de incorporar y navegada entera, la consulta baja a `originales/tich/<año>/`, con su procedencia, sus microdatos, sus dos tablas, su EPA (la de su año si Eurostat la publica; si no, la del año declarado, copiada de la admitida, sin pedirla dos veces) y su metodología y su cuestionario; es la candidata (`candidata` en la procedencia de la operación; candidata.py). Un fallo al bajarla no tumba la consulta: la deja detenida con motivo «tablas» (`candidata_detenida`), con las peticiones hechas hasta el fallo. Cada consulta vuelve a pedir todos sus originales y acepta los bytes nuevos con su huella nueva, porque la candidata no es lo publicado: si el INE corrige un original en la misma dirección, el intento siguiente lo ve. La cobertura de la consulta cuenta sus peticiones. La preparación la calcula con los mismos pasos que la admitida, en `preparados/tich/candidata/` y con las huellas de los originales de que sale, y además lee sus documentos: las secciones en muestra de su metodología y el enunciado de su cuestionario, por partes. La validación la contrasta con los mismos controles. Si los pasa todos, se publica la suya, con la serie de años que mide; el estado de la edición pasa a ella, con sus secciones y la huella de sus dos documentos, y la procedencia de la operación registra sus originales y retira la observación de la edición nueva. Esa consulta pidió también los originales de la edición anterior, los índices navegados y los dos PDF: la procedencia los conserva tal como estaban registrados en `consulta_de_la_incorporacion` (`anterior`, `indices` y `documentos`) y la cobertura de ese día cuenta exactamente esas peticiones, más el catálogo y el sondeo de la EPA; la consulta del día siguiente escribe la procedencia normal, sin ese bloque. Si no, se publica la admitida, y el informe de validación (`candidata_detenida`) y el panel dicen que la nueva está «detenida-por-controles», con un motivo de lista cerrada: «enunciado-distinto» (con las partes que cambian), «tablas» (tablas, documentos u originales no localizados o no descargados) o «controles» (otro control que no pasa, nombrado en el detalle). Nada se decide por fecha ni por plazo: solo por lo observado y validado. El panel exige además que el año del estado de la edición sea el del conjunto validado, y la exportación, que sea el del paquete; si no, el panel lo avisa («edicion-no-coincide») y la exportación se detiene.",
+    "Enunciado retocado: un cambio del enunciado nunca se da por bueno solo; deja la candidata en «enunciado-distinto» y el panel dice qué parte cambió. Para admitir un retoque que no cambia lo que se pregunta (una coma, un ejemplo más en la lista), se añade a `VARIANTES_ACEPTADAS` (documentos_de_la_edicion.py), para ese año y esa parte, el fragmento del cuestionario que sustituye al de la serie, con su evidencia en el comentario de la entrada: la dirección y la huella del cuestionario del INE, y la página y el texto donde se lee; se añade una prueba con ese cuestionario y la preparación siguiente lo compara con él. Un retoque de la descripción de `IAG` o `IAG_TRAB` en el diseño de registro se admite igual, en `VARIANTES_DEL_DISENO`, por año, variable y parte, con su evidencia (el diseño de registro del INE, con la huella de sus microdatos); los códigos no admiten variantes."
+  ],
+  "recursos": [
+    {
+      "id": "recurso-01",
+      "tipo": "url",
+      "ubicacion": "https://www.ine.es/ftp/microdatos/tich/datos_2025.zip",
+      "licencia": "Creative Commons Reconocimiento 4.0 (CC BY 4.0), según el aviso legal del INE (https://www.ine.es/dyngs/AYU/index.htm?cid=125): citar la fuente («Elaboración propia con datos extraídos del sitio web del INE: www.ine.es»), mencionar la fecha de la última actualización y no sugerir que el INE participa, patrocina o apoya la reutilización.",
+      "descripcion": "INE, TIC-H 2025: microdatos (fichero del cuestionario y de miembros)"
+    },
+    {
+      "id": "recurso-02",
+      "tipo": "url",
+      "ubicacion": "https://www.ine.es/jaxi/files/tpx/es/csv_bdsc/76444.csv",
+      "licencia": "Creative Commons Reconocimiento 4.0 (CC BY 4.0), según el aviso legal del INE (https://www.ine.es/dyngs/AYU/index.htm?cid=125): citar la fuente («Elaboración propia con datos extraídos del sitio web del INE: www.ine.es»), mencionar la fecha de la última actualización y no sugerir que el INE participa, patrocina o apoya la reutilización.",
+      "descripcion": "INE, TIC-H 2025, tabla 76444: uso de IA generativa por características socioeconómicas"
+    },
+    {
+      "id": "recurso-03",
+      "tipo": "url",
+      "ubicacion": "https://www.ine.es/jaxi/files/tpx/es/csv_bdsc/76849.csv",
+      "licencia": "Creative Commons Reconocimiento 4.0 (CC BY 4.0), según el aviso legal del INE (https://www.ine.es/dyngs/AYU/index.htm?cid=125): citar la fuente («Elaboración propia con datos extraídos del sitio web del INE: www.ine.es»), mencionar la fecha de la última actualización y no sugerir que el INE participa, patrocina o apoya la reutilización.",
+      "descripcion": "INE, TIC-H 2025, tabla 76849: errores estándar relativos de la utilización de TIC y del teletrabajo de las personas de 16 a 74 años, por comunidad autónoma; contraste del intervalo, no se publica"
+    },
+    {
+      "id": "recurso-04",
+      "tipo": "url",
+      "ubicacion": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/lfsa_egai2d?format=JSON&lang=EN&geo=ES&time=2025&age=Y15-74&sex=T&unit=THS_PER",
+      "licencia": "Aviso de copyright de Eurostat (https://ec.europa.eu/eurostat/help/copyright-notice, consultado el 06/10/2026), que aplica la Decisión 2011/833/UE de la Comisión: reutilización autorizada, también comercial, citando la fuente; una versión filtrada se cita con el enlace del conjunto y la fecha de consulta.",
+      "descripcion": "Eurostat, EPA 2025 (lfsa_egai2d): personas ocupadas de 15 a 74 años en España por grupo ISCO-08 de 2 cifras, en miles; control del paso desde la CNO-11, no se publica"
+    },
+    {
+      "id": "recurso-05",
+      "tipo": "url",
+      "ubicacion": "https://www.ine.es/dyngs/INEbase/es/operacion.htm?c=Estadistica_C&cid=1254736176741&menu=resultados&idp=1254735976608",
+      "licencia": "Creative Commons Reconocimiento 4.0 (CC BY 4.0), según el aviso legal del INE (https://www.ine.es/dyngs/AYU/index.htm?cid=125): citar la fuente («Elaboración propia con datos extraídos del sitio web del INE: www.ine.es»), mencionar la fecha de la última actualización y no sugerir que el INE participa, patrocina o apoya la reutilización.",
+      "descripcion": "INEbase: catálogo de resultados y microdatos de la operación TIC-H"
+    }
+  ],
+  "canales": [
+    {
+      "id": "consulta",
+      "tipo": "remoto",
+      "recursos": ["recurso-01", "recurso-02", "recurso-03", "recurso-04", "recurso-05"],
+      "autenticacion": "El lector no configura credenciales de autenticación para estos recursos públicos; no acredita acceso a otros servicios.",
+      "limites": [
+        "Cuotas y límites oficiales de servicio no acreditados por este descriptor; rigen los límites de transporte y validación del lector.",
+        "Este descriptor no acredita la disponibilidad remota actual; una URL conservada no acredita consulta satisfactoria ni una tarea instalada."
+      ],
+      "observaciones": "Descubre la edición en INEbase y lee microdatos y tablas de la edición revisada, con contraste Eurostat. La selección de edición y su semántica se validan; no es una API general de ofertas o personas."
+    }
+  ],
+  "actualizacion": {
+    "politica": "edición",
+    "red": true,
+    "frecuencia": "anual (TIC-H del INE)",
+    "renovar_dias": null,
+    "originales": "tich"
+  },
+  "conjuntos": [
+    {
+      "id": "tich",
+      "fuente": "tich",
+      "clase": "cambiante",
+      "alcance": "descubre-edicion",
+      "operacion": "descargar",
+      "intervalo_dias": 30
+    }
+  ],
+  "dependencias": ["clasificaciones"],
+  "contratos": ["lector.py:preparar", "lector.py:validar", "plataforma_datos/orquestacion/admision.py:exigir_admitido"],
+  "retirada": "Se conserva la admisión del conjunto y sus guardas actuales. Un fallo o una ausencia de captura no se convierte en retirada de entidades ni en disponibilidad confirmada.",
+  "conservacion": "Originales, procedencias, preparados y validaciones conservan sus casas actuales en var/actualizacion. Esta ficha no habilita limpieza automática ni cambia fechas históricas, periodos, licencias o retención."
+}

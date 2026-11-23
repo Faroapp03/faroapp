@@ -1,0 +1,3708 @@
+{
+  "descripcion": "Americanismos y anglicismos de oficio: nombres que la gente usa para decir su trabajo y que el buscador no reconocía («plomero», «mesero», «carabinero»; «flight attendant», «line cook», «nail artist»). Mismo formato y criterios que vocabulario-calle.json: un solo grupo CIUO-08 por nombre, código ESCO existente en datos/esco.json, la ocupación general salvo que el nombre especifique, sin palabras ofensivas y sin repetir títulos o alternativos de ESCO ni nombres del diccionario, las siglas o el vocabulario de la calle. Primero los americanismos (solo castellano) y después los anglicismos (castellano y, repetidos, catalán). Fuera: los ambiguos, los de varios grupos, los ofensivos y los que ya estaban.",
+  "fuente": "Contenido elaborado automáticamente, sin acceso a los bancos de evaluación. Referencias declaradas: DLE, Diccionario de americanismos de la ASALE, Fundéu y títulos ingleses de ESCO y CIUO-08. 524 de sus 524 entradas citan su referencia sin haberla consultado en la fuente y sin cotejarla después; las de «uso común» lo dicen en su propia fuente. Consta una comprobación local de códigos ESCO y duplicados contra el paquete y sus diccionarios; ese control no verifica las acepciones ni las referencias citadas. Sin revisión humana independiente.",
+  "nombres": [
+    {
+      "nombre": "plomero",
+      "idioma": "es",
+      "esco": ["7126.8"],
+      "fuente": "DLE, «plomero, ra»: m. y f. Am. fontanero"
+    },
+    {
+      "nombre": "plomera",
+      "idioma": "es",
+      "esco": ["7126.8"],
+      "fuente": "DLE, «plomero, ra»: m. y f. Am. fontanero"
+    },
+    {
+      "nombre": "gasfíter",
+      "idioma": "es",
+      "esco": ["7126.8"],
+      "fuente": "DLE, «gásfiter» o «gasfíter»: com. Chile, Ec. y Perú. fontanero"
+    },
+    {
+      "nombre": "gasfitero",
+      "idioma": "es",
+      "esco": ["7126.8"],
+      "fuente": "DLE, «gasfitero, ra»: m. y f. Ec. y Perú. fontanero"
+    },
+    {
+      "nombre": "gasfitera",
+      "idioma": "es",
+      "esco": ["7126.8"],
+      "fuente": "DLE, «gasfitero, ra»: m. y f. Ec. y Perú. fontanero"
+    },
+    {
+      "nombre": "mesero",
+      "idioma": "es",
+      "esco": ["5131.2"],
+      "fuente": "DLE, «mesero, ra»: m. y f. Col., Ec., Guat., Méx. y otros países de Am. camarero (persona que sirve en un restaurante)"
+    },
+    {
+      "nombre": "mesera",
+      "idioma": "es",
+      "esco": ["5131.2"],
+      "fuente": "DLE, «mesero, ra»: m. y f. Col., Ec., Guat., Méx. y otros países de Am. camarero (persona que sirve en un restaurante)"
+    },
+    {
+      "nombre": "garzón",
+      "idioma": "es",
+      "esco": ["5131.2"],
+      "fuente": "DLE, «garzón, na»: m. y f. Chile. camarero (persona que sirve en un restaurante)"
+    },
+    {
+      "nombre": "garzona",
+      "idioma": "es",
+      "esco": ["5131.2"],
+      "fuente": "DLE, «garzón, na»: m. y f. Chile. camarero (persona que sirve en un restaurante)"
+    },
+    {
+      "nombre": "salonero",
+      "idioma": "es",
+      "esco": ["5131.2"],
+      "fuente": "Diccionario de americanismos (ASALE), «salonero, ra»: C. Rica y Ven. camarero de restaurante"
+    },
+    {
+      "nombre": "salonera",
+      "idioma": "es",
+      "esco": ["5131.2"],
+      "fuente": "Diccionario de americanismos (ASALE), «salonero, ra»: C. Rica y Ven. camarero de restaurante"
+    },
+    {
+      "nombre": "recamarera",
+      "idioma": "es",
+      "esco": ["9112.4"],
+      "fuente": "Diccionario de americanismos (ASALE), «recamarero, ra»: Méx. persona que limpia y arregla las habitaciones de un hotel"
+    },
+    {
+      "nombre": "recamarero",
+      "idioma": "es",
+      "esco": ["9112.4"],
+      "fuente": "Diccionario de americanismos (ASALE), «recamarero, ra»: Méx. persona que limpia y arregla las habitaciones de un hotel"
+    },
+    {
+      "nombre": "aeromozo",
+      "idioma": "es",
+      "esco": ["5111.2"],
+      "fuente": "DLE, «aeromozo, za»: m. y f. Am. auxiliar de vuelo"
+    },
+    {
+      "nombre": "aeromoza",
+      "idioma": "es",
+      "esco": ["5111.2"],
+      "fuente": "DLE, «aeromozo, za»: m. y f. Am. auxiliar de vuelo"
+    },
+    {
+      "nombre": "colectivero",
+      "idioma": "es",
+      "esco": ["8331.1"],
+      "fuente": "DLE, «colectivero, ra»: m. y f. Arg. y Par. conductor de colectivo (autobús)"
+    },
+    {
+      "nombre": "colectivera",
+      "idioma": "es",
+      "esco": ["8331.1"],
+      "fuente": "DLE, «colectivero, ra»: m. y f. Arg. y Par. conductor de colectivo (autobús)"
+    },
+    {
+      "nombre": "micrero",
+      "idioma": "es",
+      "esco": ["8331.1"],
+      "fuente": "DLE, «micrero, ra»: m. y f. Chile. conductor de micro (autobús)"
+    },
+    {
+      "nombre": "micrera",
+      "idioma": "es",
+      "esco": ["8331.1"],
+      "fuente": "DLE, «micrero, ra»: m. y f. Chile. conductor de micro (autobús)"
+    },
+    {
+      "nombre": "chofer de colectivo",
+      "idioma": "es",
+      "esco": ["8331.1"],
+      "fuente": "DLE, «chofer»: grafía usual en América de «chófer»; con «de autobús», «de colectivo» o «de micro» nombra un solo oficio"
+    },
+    {
+      "nombre": "chofer de micro",
+      "idioma": "es",
+      "esco": ["8331.1"],
+      "fuente": "DLE, «chofer»: grafía usual en América de «chófer»; con «de autobús», «de colectivo» o «de micro» nombra un solo oficio"
+    },
+    {
+      "nombre": "chofer de autobús",
+      "idioma": "es",
+      "esco": ["8331.1"],
+      "fuente": "DLE, «chofer»: grafía usual en América de «chófer»; con «de autobús», «de colectivo» o «de micro» nombra un solo oficio"
+    },
+    {
+      "nombre": "chofer de taxi",
+      "idioma": "es",
+      "esco": ["8322.7"],
+      "fuente": "DLE, «chofer»: grafía usual en América de «chófer»; con «de taxi» nombra un solo oficio"
+    },
+    {
+      "nombre": "chofer de camión",
+      "idioma": "es",
+      "esco": ["8332.2"],
+      "fuente": "DLE, «chofer»: grafía usual en América de «chófer»; con «de camión» nombra un solo oficio"
+    },
+    {
+      "nombre": "trailero",
+      "idioma": "es",
+      "esco": ["8332.2"],
+      "fuente": "Diccionario de americanismos (ASALE), «trailero, ra»: Méx. conductor de tráiler (camión articulado)"
+    },
+    {
+      "nombre": "trailera",
+      "idioma": "es",
+      "esco": ["8332.2"],
+      "fuente": "Diccionario de americanismos (ASALE), «trailero, ra»: Méx. conductor de tráiler (camión articulado)"
+    },
+    {
+      "nombre": "ruletero",
+      "idioma": "es",
+      "esco": ["8322.7"],
+      "fuente": "DLE, «ruletero, ra»: m. y f. Hond. y Méx. taxista"
+    },
+    {
+      "nombre": "ruletera",
+      "idioma": "es",
+      "esco": ["8322.7"],
+      "fuente": "DLE, «ruletero, ra»: m. y f. Hond. y Méx. taxista"
+    },
+    {
+      "nombre": "tachero",
+      "idioma": "es",
+      "esco": ["8322.7"],
+      "fuente": "DLE, «tachero, ra»: m. y f. Arg. y Ur. coloq. taxista (de «tacho», taxímetro)"
+    },
+    {
+      "nombre": "tachera",
+      "idioma": "es",
+      "esco": ["8322.7"],
+      "fuente": "DLE, «tachero, ra»: m. y f. Arg. y Ur. coloq. taxista (de «tacho», taxímetro)"
+    },
+    {
+      "nombre": "remisero",
+      "idioma": "es",
+      "esco": ["8322.6", "8322.7"],
+      "fuente": "DLE, «remisero, ra»: m. y f. Arg. conductor de un remís (coche de alquiler con conductor); mismo criterio que «conductor de VTC»"
+    },
+    {
+      "nombre": "remisera",
+      "idioma": "es",
+      "esco": ["8322.6", "8322.7"],
+      "fuente": "DLE, «remisero, ra»: m. y f. Arg. conductor de un remís (coche de alquiler con conductor); mismo criterio que «conductor de VTC»"
+    },
+    {
+      "nombre": "motoboy",
+      "idioma": "es",
+      "esco": ["8321.1"],
+      "fuente": "Diccionario de americanismos (ASALE), «motoboy»: Arg. y Ur. repartidor o mensajero en moto"
+    },
+    {
+      "nombre": "mandadero",
+      "idioma": "es",
+      "esco": ["9331.1"],
+      "fuente": "DLE, «mandadero, ra»: m. y f. Am. recadero; mismo destino que «recadero» en el vocabulario de la calle"
+    },
+    {
+      "nombre": "mandadera",
+      "idioma": "es",
+      "esco": ["9331.1"],
+      "fuente": "DLE, «mandadero, ra»: m. y f. Am. recadero; mismo destino que «recadero» en el vocabulario de la calle"
+    },
+    {
+      "nombre": "montacarguista",
+      "idioma": "es",
+      "esco": ["8344.1"],
+      "fuente": "Diccionario de americanismos (ASALE), «montacarguista»: Méx. persona que maneja un montacargas (carretilla elevadora)"
+    },
+    {
+      "nombre": "despachador de gasolina",
+      "idioma": "es",
+      "esco": ["5245.1"],
+      "fuente": "Diccionario de americanismos (ASALE), «despachador, ra»: Méx. persona que atiende en una gasolinera"
+    },
+    {
+      "nombre": "despachadora de gasolina",
+      "idioma": "es",
+      "esco": ["5245.1"],
+      "fuente": "Diccionario de americanismos (ASALE), «despachador, ra»: Méx. persona que atiende en una gasolinera"
+    },
+    {
+      "nombre": "llantero",
+      "idioma": "es",
+      "esco": ["7231.7"],
+      "fuente": "Diccionario de americanismos (ASALE), «llantero, ra»: Méx., Col. persona que repara o monta llantas (neumáticos)"
+    },
+    {
+      "nombre": "talachero",
+      "idioma": "es",
+      "esco": ["7231.7"],
+      "fuente": "Diccionario de americanismos (ASALE), «talachero, ra»: Méx. persona que repara neumáticos (en una «talachera»)"
+    },
+    {
+      "nombre": "desabollador",
+      "idioma": "es",
+      "esco": ["7231.2"],
+      "fuente": "Diccionario de americanismos (ASALE), «desabollador, ra»: Chile. persona que repara abolladuras de carrocerías"
+    },
+    {
+      "nombre": "desabolladora",
+      "idioma": "es",
+      "esco": ["7231.2"],
+      "fuente": "Diccionario de americanismos (ASALE), «desabollador, ra»: Chile. persona que repara abolladuras de carrocerías"
+    },
+    {
+      "nombre": "mecánico automotriz",
+      "idioma": "es",
+      "esco": ["7231.10"],
+      "fuente": "DLE, «automotriz»: Am. relativo a los automóviles; «mecánico automotriz»: uso general en América"
+    },
+    {
+      "nombre": "mecánica automotriz",
+      "idioma": "es",
+      "esco": ["7231.10"],
+      "fuente": "DLE, «automotriz»: Am. relativo a los automóviles; «mecánico automotriz»: uso general en América"
+    },
+    {
+      "nombre": "fierrero",
+      "idioma": "es",
+      "esco": ["7214.3"],
+      "fuente": "Diccionario de americanismos (ASALE), «fierrero, ra»: Perú, Méx. obrero que arma el hierro (ferralla) en la construcción"
+    },
+    {
+      "nombre": "carabinero",
+      "idioma": "es",
+      "esco": ["5412.1"],
+      "fuente": "DLE, «carabinero, ra»: m. y f. Chile. agente de policía (cuerpo de Carabineros)"
+    },
+    {
+      "nombre": "carabinera",
+      "idioma": "es",
+      "esco": ["5412.1"],
+      "fuente": "DLE, «carabinero, ra»: m. y f. Chile. agente de policía (cuerpo de Carabineros)"
+    },
+    {
+      "nombre": "vigilador",
+      "idioma": "es",
+      "esco": ["5414.1"],
+      "fuente": "Diccionario de americanismos (ASALE), «vigilador, ra»: Arg. vigilante de seguridad privada"
+    },
+    {
+      "nombre": "vigiladora",
+      "idioma": "es",
+      "esco": ["5414.1"],
+      "fuente": "Diccionario de americanismos (ASALE), «vigilador, ra»: Arg. vigilante de seguridad privada"
+    },
+    {
+      "nombre": "guachimán",
+      "idioma": "es",
+      "esco": ["5414.1"],
+      "fuente": "DLE, «guachimán»: m. Am. Cen., Chile y Perú. vigilante, guarda (del inglés «watchman»)"
+    },
+    {
+      "nombre": "wachimán",
+      "idioma": "es",
+      "esco": ["5414.1"],
+      "fuente": "DLE, «guachimán»: m. Am. Cen., Chile y Perú. vigilante, guarda (del inglés «watchman»)"
+    },
+    {
+      "nombre": "guardavidas",
+      "idioma": "es",
+      "esco": ["5419.7"],
+      "fuente": "DLE, «guardavidas»: com. Arg. y Ur. socorrista"
+    },
+    {
+      "nombre": "trabajadora del hogar",
+      "idioma": "es",
+      "esco": ["5152.2"],
+      "fuente": "Uso legal en México (Ley Federal del Trabajo, «personas trabajadoras del hogar») y otros países de América: empleado del hogar"
+    },
+    {
+      "nombre": "trabajador del hogar",
+      "idioma": "es",
+      "esco": ["5152.2"],
+      "fuente": "Uso legal en México (Ley Federal del Trabajo, «personas trabajadoras del hogar») y otros países de América: empleado del hogar"
+    },
+    {
+      "nombre": "trabajadora de casa particular",
+      "idioma": "es",
+      "esco": ["5152.2"],
+      "fuente": "Uso legal en Chile (Código del Trabajo, «trabajadores de casa particular»): empleada del hogar"
+    },
+    {
+      "nombre": "asesora del hogar",
+      "idioma": "es",
+      "esco": ["5152.2"],
+      "fuente": "Diccionario de americanismos (ASALE), «asesora del hogar»: Chile. empleada del hogar"
+    },
+    {
+      "nombre": "pedicurista",
+      "idioma": "es",
+      "esco": ["5142.8"],
+      "fuente": "Diccionario de americanismos (ASALE), «pedicurista»: Méx., Col. pedicuro"
+    },
+    {
+      "nombre": "químico farmacéutico",
+      "idioma": "es",
+      "esco": ["2262.1"],
+      "fuente": "Título profesional en Chile, Perú y Colombia equivalente al farmacéutico de España"
+    },
+    {
+      "nombre": "química farmacéutica",
+      "idioma": "es",
+      "esco": ["2262.1"],
+      "fuente": "Título profesional en Chile, Perú y Colombia equivalente al farmacéutico de España"
+    },
+    {
+      "nombre": "obstetriz",
+      "idioma": "es",
+      "esco": ["2222.1"],
+      "fuente": "DLE, «obstetriz»: f. Perú, Arg. matrona (profesional que asiste partos)"
+    },
+    {
+      "nombre": "parvularia",
+      "idioma": "es",
+      "esco": ["2342.1"],
+      "fuente": "DLE, «parvulario, ria»: m. y f. Chile. educador de párvulos; título de educación infantil en Chile"
+    },
+    {
+      "nombre": "educadora de párvulos",
+      "idioma": "es",
+      "esco": ["2342.1"],
+      "fuente": "DLE, «parvulario, ria»: m. y f. Chile. educador de párvulos; título de educación infantil en Chile"
+    },
+    {
+      "nombre": "educador de párvulos",
+      "idioma": "es",
+      "esco": ["2342.1"],
+      "fuente": "DLE, «parvulario, ria»: m. y f. Chile. educador de párvulos; título de educación infantil en Chile"
+    },
+    {
+      "nombre": "maestra jardinera",
+      "idioma": "es",
+      "esco": ["2342.1"],
+      "fuente": "Diccionario de americanismos (ASALE), «maestra jardinera»: Arg. maestra de jardín de infantes (educación infantil)"
+    },
+    {
+      "nombre": "escribano",
+      "idioma": "es",
+      "esco": ["2619.10"],
+      "fuente": "DLE, «escribano, na»: m. y f. Arg., Par. y Ur. notario"
+    },
+    {
+      "nombre": "escribana",
+      "idioma": "es",
+      "esco": ["2619.10"],
+      "fuente": "DLE, «escribano, na»: m. y f. Arg., Par. y Ur. notario"
+    },
+    {
+      "nombre": "contador público",
+      "idioma": "es",
+      "esco": ["2411.1"],
+      "fuente": "DLE, «contador, ra»: m. y f. Am. contable; «contador público»: título profesional en América"
+    },
+    {
+      "nombre": "contadora pública",
+      "idioma": "es",
+      "esco": ["2411.1"],
+      "fuente": "DLE, «contador, ra»: m. y f. Am. contable; «contador público»: título profesional en América"
+    },
+    {
+      "nombre": "corredor de propiedades",
+      "idioma": "es",
+      "esco": ["3334.3"],
+      "fuente": "Uso general en Chile: agente inmobiliario (DLE, «corredor, ra»: persona que interviene en compras y ventas)"
+    },
+    {
+      "nombre": "corredora de propiedades",
+      "idioma": "es",
+      "esco": ["3334.3"],
+      "fuente": "Uso general en Chile: agente inmobiliario (DLE, «corredor, ra»: persona que interviene en compras y ventas)"
+    },
+    {
+      "nombre": "agente de bienes raíces",
+      "idioma": "es",
+      "esco": ["3334.3"],
+      "fuente": "DLE, «bienes raíces»: Am. bienes inmuebles; «agente de bienes raíces»: uso general en México"
+    },
+    {
+      "nombre": "agente aduanal",
+      "idioma": "es",
+      "esco": ["3331.1"],
+      "fuente": "DLE, «aduanal»: adj. Am. aduanero; «agente aduanal»: figura legal en México"
+    },
+    {
+      "nombre": "martillero",
+      "idioma": "es",
+      "esco": ["3339.2"],
+      "fuente": "DLE, «martillero, ra»: m. y f. Arg., Chile y Perú. subastador"
+    },
+    {
+      "nombre": "martillera",
+      "idioma": "es",
+      "esco": ["3339.2"],
+      "fuente": "DLE, «martillero, ra»: m. y f. Arg., Chile y Perú. subastador"
+    },
+    {
+      "nombre": "tianguista",
+      "idioma": "es",
+      "esco": ["5211.1"],
+      "fuente": "DLE, «tianguista»: com. Méx. persona que vende en un tianguis (mercado al aire libre)"
+    },
+    {
+      "nombre": "abarrotero",
+      "idioma": "es",
+      "esco": ["5221.1"],
+      "fuente": "DLE, «abarrotero, ra»: m. y f. Am. persona que tiene una tienda de abarrotes"
+    },
+    {
+      "nombre": "abarrotera",
+      "idioma": "es",
+      "esco": ["5221.1"],
+      "fuente": "DLE, «abarrotero, ra»: m. y f. Am. persona que tiene una tienda de abarrotes"
+    },
+    {
+      "nombre": "lustrabotas",
+      "idioma": "es",
+      "esco": ["7536.2.8"],
+      "fuente": "DLE, «lustrabotas»: com. Am. Mer. limpiabotas; ESCO tiene «limpiabotas» como alternativo de 7536.2.8"
+    },
+    {
+      "nombre": "embolador",
+      "idioma": "es",
+      "esco": ["7536.2.8"],
+      "fuente": "DLE, «embolador, ra»: m. y f. Col. limpiabotas; ESCO tiene «limpiabotas» como alternativo de 7536.2.8"
+    },
+    {
+      "nombre": "emboladora",
+      "idioma": "es",
+      "esco": ["7536.2.8"],
+      "fuente": "DLE, «embolador, ra»: m. y f. Col. limpiabotas; ESCO tiene «limpiabotas» como alternativo de 7536.2.8"
+    },
+    {
+      "nombre": "cartonero",
+      "idioma": "es",
+      "esco": ["9612.1"],
+      "fuente": "DLE, «cartonero, ra»: m. y f. Arg. y Ur. persona que recoge cartones y otros residuos para venderlos; mismo destino que «trapero»"
+    },
+    {
+      "nombre": "cartonera",
+      "idioma": "es",
+      "esco": ["9612.1"],
+      "fuente": "DLE, «cartonero, ra»: m. y f. Arg. y Ur. persona que recoge cartones y otros residuos para venderlos; mismo destino que «trapero»"
+    },
+    {
+      "nombre": "pepenador",
+      "idioma": "es",
+      "esco": ["9612.1"],
+      "fuente": "DLE, «pepenador, ra»: m. y f. Méx. persona que recoge desechos aprovechables en los basureros"
+    },
+    {
+      "nombre": "pepenadora",
+      "idioma": "es",
+      "esco": ["9612.1"],
+      "fuente": "DLE, «pepenador, ra»: m. y f. Méx. persona que recoge desechos aprovechables en los basureros"
+    },
+    {
+      "nombre": "paramédico",
+      "idioma": "es",
+      "esco": ["3258.1"],
+      "fuente": "Uso general en América (DLE, «paramédico, ca»: adj. que ayuda al médico); ESCO tiene «técnico en emergencias sanitarias» en 3258.1"
+    },
+    {
+      "nombre": "paramédica",
+      "idioma": "es",
+      "esco": ["3258.1"],
+      "fuente": "Uso general en América (DLE, «paramédico, ca»: adj. que ayuda al médico); ESCO tiene «técnico en emergencias sanitarias» en 3258.1"
+    },
+    {
+      "nombre": "lavaloza",
+      "idioma": "es",
+      "esco": ["9412.2"],
+      "fuente": "Diccionario de americanismos (ASALE), «lavaloza»: Chile. persona que friega los platos en un restaurante"
+    },
+    {
+      "nombre": "flight attendant",
+      "idioma": "es",
+      "esco": ["5111.2"],
+      "fuente": "Título inglés de ESCO para 5111 («flight attendant»); Fundéu recomienda «auxiliar de vuelo»"
+    },
+    {
+      "nombre": "flight attendant",
+      "idioma": "ca",
+      "esco": ["5111.2"],
+      "fuente": "Título inglés de ESCO para 5111 («flight attendant»); Fundéu recomienda «auxiliar de vuelo»; també en català"
+    },
+    {
+      "nombre": "cabin crew",
+      "idioma": "es",
+      "esco": ["5111.2"],
+      "fuente": "Inglés del sector aéreo («tripulante de cabina»); Fundéu recomienda «tripulación de cabina»"
+    },
+    {
+      "nombre": "cabin crew",
+      "idioma": "ca",
+      "esco": ["5111.2"],
+      "fuente": "Inglés del sector aéreo («tripulante de cabina»); Fundéu recomienda «tripulación de cabina»; també en català"
+    },
+    {
+      "nombre": "steward",
+      "idioma": "es",
+      "esco": ["5111.2"],
+      "fuente": "CIUO-08 en inglés, 5111 «Travel attendants and travel stewards»; Fundéu: mejor «auxiliar de vuelo»"
+    },
+    {
+      "nombre": "steward",
+      "idioma": "ca",
+      "esco": ["5111.2"],
+      "fuente": "CIUO-08 en inglés, 5111 «Travel attendants and travel stewards»; Fundéu: mejor «auxiliar de vuelo»; també en català"
+    },
+    {
+      "nombre": "stewardess",
+      "idioma": "es",
+      "esco": ["5111.2"],
+      "fuente": "CIUO-08 en inglés, 5111 «Travel attendants and travel stewards»; Fundéu: mejor «auxiliar de vuelo»"
+    },
+    {
+      "nombre": "stewardess",
+      "idioma": "ca",
+      "esco": ["5111.2"],
+      "fuente": "CIUO-08 en inglés, 5111 «Travel attendants and travel stewards»; Fundéu: mejor «auxiliar de vuelo»; també en català"
+    },
+    {
+      "nombre": "purser",
+      "idioma": "es",
+      "esco": ["5111.1"],
+      "fuente": "ESCO en inglés, «purser» (sobrecargo)"
+    },
+    {
+      "nombre": "purser",
+      "idioma": "ca",
+      "esco": ["5111.1"],
+      "fuente": "ESCO en inglés, «purser» (sobrecargo); també en català"
+    },
+    {
+      "nombre": "customer service",
+      "idioma": "es",
+      "esco": ["4225.1"],
+      "fuente": "ESCO en inglés, «customer service representative»; Fundéu recomienda «atención al cliente»"
+    },
+    {
+      "nombre": "customer service",
+      "idioma": "ca",
+      "esco": ["4225.1"],
+      "fuente": "ESCO en inglés, «customer service representative»; Fundéu recomienda «atención al cliente»; també en català"
+    },
+    {
+      "nombre": "telemarketer",
+      "idioma": "es",
+      "esco": ["5244.1"],
+      "fuente": "ESCO en inglés, «telemarketer» (teleoperador)"
+    },
+    {
+      "nombre": "telemarketer",
+      "idioma": "ca",
+      "esco": ["5244.1"],
+      "fuente": "ESCO en inglés, «telemarketer» (teleoperador); també en català"
+    },
+    {
+      "nombre": "IT support",
+      "idioma": "es",
+      "esco": ["3512.1"],
+      "fuente": "ESCO en inglés, «ICT help desk agent» («IT support»); uso común en empresas"
+    },
+    {
+      "nombre": "IT support",
+      "idioma": "ca",
+      "esco": ["3512.1"],
+      "fuente": "ESCO en inglés, «ICT help desk agent» («IT support»); uso común en empresas; també en català"
+    },
+    {
+      "nombre": "line cook",
+      "idioma": "es",
+      "esco": ["5120.1"],
+      "fuente": "Inglés de hostelería («cocinero de partida»); CIUO-08 5120 «Cooks»"
+    },
+    {
+      "nombre": "line cook",
+      "idioma": "ca",
+      "esco": ["5120.1"],
+      "fuente": "Inglés de hostelería («cocinero de partida»); CIUO-08 5120 «Cooks»; també en català"
+    },
+    {
+      "nombre": "head chef",
+      "idioma": "es",
+      "esco": ["3434.1.1"],
+      "fuente": "ESCO en inglés, «head chef» (jefe de cocina)"
+    },
+    {
+      "nombre": "head chef",
+      "idioma": "ca",
+      "esco": ["3434.1.1"],
+      "fuente": "ESCO en inglés, «head chef» (jefe de cocina); també en català"
+    },
+    {
+      "nombre": "sous chef",
+      "idioma": "es",
+      "esco": ["3434.1"],
+      "fuente": "Uso común en hostelería (del francés, «segundo de cocina»); CIUO-08 3434 «Chefs»"
+    },
+    {
+      "nombre": "sous chef",
+      "idioma": "ca",
+      "esco": ["3434.1"],
+      "fuente": "Uso común en hostelería (del francés, «segundo de cocina»); CIUO-08 3434 «Chefs»; també en català"
+    },
+    {
+      "nombre": "chef de partie",
+      "idioma": "es",
+      "esco": ["3434.1"],
+      "fuente": "Uso común en hostelería (del francés); ESCO tiene «jefe de partida» como alternativo de «chef»"
+    },
+    {
+      "nombre": "chef de partie",
+      "idioma": "ca",
+      "esco": ["3434.1"],
+      "fuente": "Uso común en hostelería (del francés); ESCO tiene «jefe de partida» como alternativo de «chef»; també en català"
+    },
+    {
+      "nombre": "pastry chef",
+      "idioma": "es",
+      "esco": ["3434.1.2"],
+      "fuente": "ESCO en inglés, «pastry chef» (repostero jefe)"
+    },
+    {
+      "nombre": "pastry chef",
+      "idioma": "ca",
+      "esco": ["3434.1.2"],
+      "fuente": "ESCO en inglés, «pastry chef» (repostero jefe); també en català"
+    },
+    {
+      "nombre": "kitchen porter",
+      "idioma": "es",
+      "esco": ["9412.2"],
+      "fuente": "Inglés de hostelería, «kitchen porter» (friegaplatos); CIUO-08 9412 «Kitchen helpers»"
+    },
+    {
+      "nombre": "kitchen porter",
+      "idioma": "ca",
+      "esco": ["9412.2"],
+      "fuente": "Inglés de hostelería, «kitchen porter» (friegaplatos); CIUO-08 9412 «Kitchen helpers»; també en català"
+    },
+    {
+      "nombre": "commis de cocina",
+      "idioma": "es",
+      "esco": ["9412.1"],
+      "fuente": "Uso común en hostelería (del francés «commis»), ayudante de cocina"
+    },
+    {
+      "nombre": "waiter",
+      "idioma": "es",
+      "esco": ["5131.2"],
+      "fuente": "ESCO en inglés, «waiter/waitress» (camarero)"
+    },
+    {
+      "nombre": "waiter",
+      "idioma": "ca",
+      "esco": ["5131.2"],
+      "fuente": "ESCO en inglés, «waiter/waitress» (camarero); també en català"
+    },
+    {
+      "nombre": "waitress",
+      "idioma": "es",
+      "esco": ["5131.2"],
+      "fuente": "ESCO en inglés, «waiter/waitress» (camarero)"
+    },
+    {
+      "nombre": "waitress",
+      "idioma": "ca",
+      "esco": ["5131.2"],
+      "fuente": "ESCO en inglés, «waiter/waitress» (camarero); també en català"
+    },
+    {
+      "nombre": "bellboy",
+      "idioma": "es",
+      "esco": ["9621.1"],
+      "fuente": "Inglés de hostelería, «bellboy» (botones); ESCO tiene «botones» en 9621.1"
+    },
+    {
+      "nombre": "bellboy",
+      "idioma": "ca",
+      "esco": ["9621.1"],
+      "fuente": "Inglés de hostelería, «bellboy» (botones); ESCO tiene «botones» en 9621.1; també en català"
+    },
+    {
+      "nombre": "concierge",
+      "idioma": "es",
+      "esco": ["4229.2"],
+      "fuente": "ESCO en inglés, «hotel concierge» (conserje de hotel)"
+    },
+    {
+      "nombre": "concierge",
+      "idioma": "ca",
+      "esco": ["4229.2"],
+      "fuente": "ESCO en inglés, «hotel concierge» (conserje de hotel); també en català"
+    },
+    {
+      "nombre": "night auditor",
+      "idioma": "es",
+      "esco": ["4224.2"],
+      "fuente": "ESCO en inglés, «night auditor» (auditor nocturno de hotel)"
+    },
+    {
+      "nombre": "night auditor",
+      "idioma": "ca",
+      "esco": ["4224.2"],
+      "fuente": "ESCO en inglés, «night auditor» (auditor nocturno de hotel); també en català"
+    },
+    {
+      "nombre": "sommelier",
+      "idioma": "es",
+      "esco": ["5131.2.2"],
+      "fuente": "Galicismo de uso común; Fundéu recomienda «sumiller»"
+    },
+    {
+      "nombre": "sommelier",
+      "idioma": "ca",
+      "esco": ["5131.2.2"],
+      "fuente": "Galicismo de uso común; Fundéu recomienda «sumiller»; també en català"
+    },
+    {
+      "nombre": "croupier",
+      "idioma": "es",
+      "esco": ["4212.5"],
+      "fuente": "Galicismo; Fundéu recomienda «crupier»; ESCO tiene «crupier» en 4212.5"
+    },
+    {
+      "nombre": "croupier",
+      "idioma": "ca",
+      "esco": ["4212.5"],
+      "fuente": "Galicismo; Fundéu recomienda «crupier»; ESCO tiene «crupier» en 4212.5; també en català"
+    },
+    {
+      "nombre": "nail artist",
+      "idioma": "es",
+      "esco": ["5142.6"],
+      "fuente": "Inglés del sector de la estética; ESCO en inglés, «manicurist»; en castellano «manicura», «técnica de uñas»"
+    },
+    {
+      "nombre": "nail artist",
+      "idioma": "ca",
+      "esco": ["5142.6"],
+      "fuente": "Inglés del sector de la estética; ESCO en inglés, «manicurist»; en castellano «manicura», «técnica de uñas»; també en català"
+    },
+    {
+      "nombre": "nail technician",
+      "idioma": "es",
+      "esco": ["5142.6"],
+      "fuente": "Inglés del sector de la estética; ESCO en inglés, «manicurist»; en castellano «manicura», «técnica de uñas»"
+    },
+    {
+      "nombre": "nail technician",
+      "idioma": "ca",
+      "esco": ["5142.6"],
+      "fuente": "Inglés del sector de la estética; ESCO en inglés, «manicurist»; en castellano «manicura», «técnica de uñas»; també en català"
+    },
+    {
+      "nombre": "makeup artist",
+      "idioma": "es",
+      "esco": ["5142.5"],
+      "fuente": "ESCO en inglés, «make-up artist» (maquillador)"
+    },
+    {
+      "nombre": "makeup artist",
+      "idioma": "ca",
+      "esco": ["5142.5"],
+      "fuente": "ESCO en inglés, «make-up artist» (maquillador); també en català"
+    },
+    {
+      "nombre": "make-up artist",
+      "idioma": "es",
+      "esco": ["5142.5"],
+      "fuente": "ESCO en inglés, «make-up artist» (maquillador)"
+    },
+    {
+      "nombre": "make-up artist",
+      "idioma": "ca",
+      "esco": ["5142.5"],
+      "fuente": "ESCO en inglés, «make-up artist» (maquillador); també en català"
+    },
+    {
+      "nombre": "hair stylist",
+      "idioma": "es",
+      "esco": ["5141.1"],
+      "fuente": "ESCO en inglés, «hairdresser» / «hair stylist» (peluquero)"
+    },
+    {
+      "nombre": "hair stylist",
+      "idioma": "ca",
+      "esco": ["5141.1"],
+      "fuente": "ESCO en inglés, «hairdresser» / «hair stylist» (peluquero); també en català"
+    },
+    {
+      "nombre": "barber",
+      "idioma": "es",
+      "esco": ["5141.1.1"],
+      "fuente": "ESCO en inglés, «barber» (barbero); uso común en barberías"
+    },
+    {
+      "nombre": "barber",
+      "idioma": "ca",
+      "esco": ["5141.1.1"],
+      "fuente": "ESCO en inglés, «barber» (barbero); uso común en barberías; també en català"
+    },
+    {
+      "nombre": "tattoo artist",
+      "idioma": "es",
+      "esco": ["3435.5"],
+      "fuente": "ESCO en inglés, «body artist» (alternativo «tattoo artist», tatuador)"
+    },
+    {
+      "nombre": "tattoo artist",
+      "idioma": "ca",
+      "esco": ["3435.5"],
+      "fuente": "ESCO en inglés, «body artist» (alternativo «tattoo artist», tatuador); també en català"
+    },
+    {
+      "nombre": "groomer",
+      "idioma": "es",
+      "esco": ["5164.1.1"],
+      "fuente": "ESCO en inglés, «animal groomer» (peluquero de animales)"
+    },
+    {
+      "nombre": "groomer",
+      "idioma": "ca",
+      "esco": ["5164.1.1"],
+      "fuente": "ESCO en inglés, «animal groomer» (peluquero de animales); també en català"
+    },
+    {
+      "nombre": "dog groomer",
+      "idioma": "es",
+      "esco": ["5164.1.1"],
+      "fuente": "ESCO en inglés, «animal groomer» (peluquero de animales)"
+    },
+    {
+      "nombre": "dog groomer",
+      "idioma": "ca",
+      "esco": ["5164.1.1"],
+      "fuente": "ESCO en inglés, «animal groomer» (peluquero de animales); també en català"
+    },
+    {
+      "nombre": "pet sitter",
+      "idioma": "es",
+      "esco": ["5164.9"],
+      "fuente": "ESCO en inglés, «pet sitter» (cuidador de mascotas; incluye el paseo de perros)"
+    },
+    {
+      "nombre": "pet sitter",
+      "idioma": "ca",
+      "esco": ["5164.9"],
+      "fuente": "ESCO en inglés, «pet sitter» (cuidador de mascotas; incluye el paseo de perros); també en català"
+    },
+    {
+      "nombre": "dog walker",
+      "idioma": "es",
+      "esco": ["5164.9"],
+      "fuente": "ESCO en inglés, «pet sitter» (cuidador de mascotas; incluye el paseo de perros)"
+    },
+    {
+      "nombre": "dog walker",
+      "idioma": "ca",
+      "esco": ["5164.9"],
+      "fuente": "ESCO en inglés, «pet sitter» (cuidador de mascotas; incluye el paseo de perros); també en català"
+    },
+    {
+      "nombre": "nanny",
+      "idioma": "es",
+      "esco": ["5311.1.4"],
+      "fuente": "ESCO en inglés, «nanny» (niñero); Fundéu recomienda «niñera» o «canguro» para «babysitter»"
+    },
+    {
+      "nombre": "nanny",
+      "idioma": "ca",
+      "esco": ["5311.1.4"],
+      "fuente": "ESCO en inglés, «nanny» (niñero); Fundéu recomienda «niñera» o «canguro» para «babysitter»; també en català"
+    },
+    {
+      "nombre": "babysitter",
+      "idioma": "es",
+      "esco": ["5311.1.4"],
+      "fuente": "ESCO en inglés, «nanny» (niñero); Fundéu recomienda «niñera» o «canguro» para «babysitter»"
+    },
+    {
+      "nombre": "babysitter",
+      "idioma": "ca",
+      "esco": ["5311.1.4"],
+      "fuente": "ESCO en inglés, «nanny» (niñero); Fundéu recomienda «niñera» o «canguro» para «babysitter»; també en català"
+    },
+    {
+      "nombre": "packer",
+      "idioma": "es",
+      "esco": ["9321.2"],
+      "fuente": "Inglés de logística, «packer» (empaquetador); ESCO 9321.2 «hand packer»"
+    },
+    {
+      "nombre": "packer",
+      "idioma": "ca",
+      "esco": ["9321.2"],
+      "fuente": "Inglés de logística, «packer» (empaquetador); ESCO 9321.2 «hand packer»; també en català"
+    },
+    {
+      "nombre": "sales assistant",
+      "idioma": "es",
+      "esco": ["5223.4"],
+      "fuente": "ESCO en inglés, «sales assistant» / «shop assistant» (dependiente)"
+    },
+    {
+      "nombre": "sales assistant",
+      "idioma": "ca",
+      "esco": ["5223.4"],
+      "fuente": "ESCO en inglés, «sales assistant» / «shop assistant» (dependiente); també en català"
+    },
+    {
+      "nombre": "shop assistant",
+      "idioma": "es",
+      "esco": ["5223.4"],
+      "fuente": "ESCO en inglés, «sales assistant» / «shop assistant» (dependiente)"
+    },
+    {
+      "nombre": "shop assistant",
+      "idioma": "ca",
+      "esco": ["5223.4"],
+      "fuente": "ESCO en inglés, «sales assistant» / «shop assistant» (dependiente); també en català"
+    },
+    {
+      "nombre": "copywriter",
+      "idioma": "es",
+      "esco": ["2431.1"],
+      "fuente": "ESCO en inglés, «copywriter» (redactor de anuncios publicitarios); Fundéu recomienda «redactor publicitario»"
+    },
+    {
+      "nombre": "copywriter",
+      "idioma": "ca",
+      "esco": ["2431.1"],
+      "fuente": "ESCO en inglés, «copywriter» (redactor de anuncios publicitarios); Fundéu recomienda «redactor publicitario»; també en català"
+    },
+    {
+      "nombre": "social media manager",
+      "idioma": "es",
+      "esco": ["2432.5"],
+      "fuente": "ESCO en inglés, «social media manager» (gestor de la información para las redes sociales)"
+    },
+    {
+      "nombre": "social media manager",
+      "idioma": "ca",
+      "esco": ["2432.5"],
+      "fuente": "ESCO en inglés, «social media manager» (gestor de la información para las redes sociales); també en català"
+    },
+    {
+      "nombre": "SEO specialist",
+      "idioma": "es",
+      "esco": ["2513.2"],
+      "fuente": "ESCO en inglés, «search engine optimisation expert» (especialista en optimización de motores de búsqueda)"
+    },
+    {
+      "nombre": "SEO specialist",
+      "idioma": "ca",
+      "esco": ["2513.2"],
+      "fuente": "ESCO en inglés, «search engine optimisation expert» (especialista en optimización de motores de búsqueda); també en català"
+    },
+    {
+      "nombre": "content manager",
+      "idioma": "es",
+      "esco": ["2513.4"],
+      "fuente": "ESCO en inglés, «web content manager» (responsable de contenidos web)"
+    },
+    {
+      "nombre": "content manager",
+      "idioma": "ca",
+      "esco": ["2513.4"],
+      "fuente": "ESCO en inglés, «web content manager» (responsable de contenidos web); també en català"
+    },
+    {
+      "nombre": "marketing manager",
+      "idioma": "es",
+      "esco": ["1221.3"],
+      "fuente": "ESCO en inglés, «marketing manager» (director de marketing); «CMO»: chief marketing officer"
+    },
+    {
+      "nombre": "marketing manager",
+      "idioma": "ca",
+      "esco": ["1221.3"],
+      "fuente": "ESCO en inglés, «marketing manager» (director de marketing); «CMO»: chief marketing officer; també en català"
+    },
+    {
+      "nombre": "CMO",
+      "idioma": "es",
+      "esco": ["1221.3"],
+      "fuente": "ESCO en inglés, «marketing manager» (director de marketing); «CMO»: chief marketing officer"
+    },
+    {
+      "nombre": "CMO",
+      "idioma": "ca",
+      "esco": ["1221.3"],
+      "fuente": "ESCO en inglés, «marketing manager» (director de marketing); «CMO»: chief marketing officer; també en català"
+    },
+    {
+      "nombre": "sales manager",
+      "idioma": "es",
+      "esco": ["1221.3.2.1"],
+      "fuente": "ESCO en inglés, «sales manager» (director de ventas)"
+    },
+    {
+      "nombre": "sales manager",
+      "idioma": "ca",
+      "esco": ["1221.3.2.1"],
+      "fuente": "ESCO en inglés, «sales manager» (director de ventas); també en català"
+    },
+    {
+      "nombre": "sales representative",
+      "idioma": "es",
+      "esco": ["3322.1"],
+      "fuente": "ESCO en inglés, «commercial sales representative» (representante comercial)"
+    },
+    {
+      "nombre": "sales representative",
+      "idioma": "ca",
+      "esco": ["3322.1"],
+      "fuente": "ESCO en inglés, «commercial sales representative» (representante comercial); també en català"
+    },
+    {
+      "nombre": "sales rep",
+      "idioma": "es",
+      "esco": ["3322.1"],
+      "fuente": "ESCO en inglés, «commercial sales representative» (representante comercial)"
+    },
+    {
+      "nombre": "sales rep",
+      "idioma": "ca",
+      "esco": ["3322.1"],
+      "fuente": "ESCO en inglés, «commercial sales representative» (representante comercial); també en català"
+    },
+    {
+      "nombre": "project manager",
+      "idioma": "es",
+      "esco": ["1219.6"],
+      "fuente": "ESCO en inglés, «project manager» (gestor de proyectos)"
+    },
+    {
+      "nombre": "project manager",
+      "idioma": "ca",
+      "esco": ["1219.6"],
+      "fuente": "ESCO en inglés, «project manager» (gestor de proyectos); també en català"
+    },
+    {
+      "nombre": "business analyst",
+      "idioma": "es",
+      "esco": ["2421.1"],
+      "fuente": "ESCO en inglés, «business analyst» (analista de negocios)"
+    },
+    {
+      "nombre": "business analyst",
+      "idioma": "ca",
+      "esco": ["2421.1"],
+      "fuente": "ESCO en inglés, «business analyst» (analista de negocios); també en català"
+    },
+    {
+      "nombre": "data analyst",
+      "idioma": "es",
+      "esco": ["2511.3"],
+      "fuente": "ESCO en inglés, «data analyst» (analista de datos)"
+    },
+    {
+      "nombre": "data analyst",
+      "idioma": "ca",
+      "esco": ["2511.3"],
+      "fuente": "ESCO en inglés, «data analyst» (analista de datos); també en català"
+    },
+    {
+      "nombre": "data engineer",
+      "idioma": "es",
+      "esco": ["2511.20"],
+      "fuente": "ESCO en inglés, «data engineer» (ingeniero de datos)"
+    },
+    {
+      "nombre": "data engineer",
+      "idioma": "ca",
+      "esco": ["2511.20"],
+      "fuente": "ESCO en inglés, «data engineer» (ingeniero de datos); també en català"
+    },
+    {
+      "nombre": "AI engineer",
+      "idioma": "es",
+      "esco": ["2511.11"],
+      "fuente": "ESCO en inglés, «artificial intelligence engineer» (ingeniero de inteligencia artificial)"
+    },
+    {
+      "nombre": "AI engineer",
+      "idioma": "ca",
+      "esco": ["2511.11"],
+      "fuente": "ESCO en inglés, «artificial intelligence engineer» (ingeniero de inteligencia artificial); també en català"
+    },
+    {
+      "nombre": "machine learning engineer",
+      "idioma": "es",
+      "esco": ["2511.11"],
+      "fuente": "ESCO en inglés, «artificial intelligence engineer» (ingeniero de inteligencia artificial)"
+    },
+    {
+      "nombre": "machine learning engineer",
+      "idioma": "ca",
+      "esco": ["2511.11"],
+      "fuente": "ESCO en inglés, «artificial intelligence engineer» (ingeniero de inteligencia artificial); també en català"
+    },
+    {
+      "nombre": "software developer",
+      "idioma": "es",
+      "esco": ["2512.4"],
+      "fuente": "ESCO en inglés, «software developer» (desarrollador de software)"
+    },
+    {
+      "nombre": "software developer",
+      "idioma": "ca",
+      "esco": ["2512.4"],
+      "fuente": "ESCO en inglés, «software developer» (desarrollador de software); també en català"
+    },
+    {
+      "nombre": "software engineer",
+      "idioma": "es",
+      "esco": ["2512.4"],
+      "fuente": "ESCO en inglés, «software developer» (desarrollador de software)"
+    },
+    {
+      "nombre": "software engineer",
+      "idioma": "ca",
+      "esco": ["2512.4"],
+      "fuente": "ESCO en inglés, «software developer» (desarrollador de software); també en català"
+    },
+    {
+      "nombre": "web developer",
+      "idioma": "es",
+      "esco": ["2513.5"],
+      "fuente": "ESCO en inglés, «web developer» (desarrollador web)"
+    },
+    {
+      "nombre": "web developer",
+      "idioma": "ca",
+      "esco": ["2513.5"],
+      "fuente": "ESCO en inglés, «web developer» (desarrollador web); també en català"
+    },
+    {
+      "nombre": "mobile developer",
+      "idioma": "es",
+      "esco": ["2514.2.2"],
+      "fuente": "ESCO en inglés, «mobile application developer» (desarrollador de aplicaciones móviles)"
+    },
+    {
+      "nombre": "mobile developer",
+      "idioma": "ca",
+      "esco": ["2514.2.2"],
+      "fuente": "ESCO en inglés, «mobile application developer» (desarrollador de aplicaciones móviles); també en català"
+    },
+    {
+      "nombre": "Android developer",
+      "idioma": "es",
+      "esco": ["2514.2.2"],
+      "fuente": "ESCO en inglés, «mobile application developer» (desarrollador de aplicaciones móviles)"
+    },
+    {
+      "nombre": "Android developer",
+      "idioma": "ca",
+      "esco": ["2514.2.2"],
+      "fuente": "ESCO en inglés, «mobile application developer» (desarrollador de aplicaciones móviles); també en català"
+    },
+    {
+      "nombre": "iOS developer",
+      "idioma": "es",
+      "esco": ["2514.2.2"],
+      "fuente": "ESCO en inglés, «mobile application developer» (desarrollador de aplicaciones móviles)"
+    },
+    {
+      "nombre": "iOS developer",
+      "idioma": "ca",
+      "esco": ["2514.2.2"],
+      "fuente": "ESCO en inglés, «mobile application developer» (desarrollador de aplicaciones móviles); també en català"
+    },
+    {
+      "nombre": "game developer",
+      "idioma": "es",
+      "esco": ["2513.1"],
+      "fuente": "ESCO en inglés, «digital games developer» (desarrollador de videojuegos)"
+    },
+    {
+      "nombre": "game developer",
+      "idioma": "ca",
+      "esco": ["2513.1"],
+      "fuente": "ESCO en inglés, «digital games developer» (desarrollador de videojuegos); també en català"
+    },
+    {
+      "nombre": "DevOps engineer",
+      "idioma": "es",
+      "esco": ["2512.7"],
+      "fuente": "ESCO en inglés, «cloud DevOps engineer»; ESCO ya tiene «devops» como alternativo de 2512.7"
+    },
+    {
+      "nombre": "DevOps engineer",
+      "idioma": "ca",
+      "esco": ["2512.7"],
+      "fuente": "ESCO en inglés, «cloud DevOps engineer»; ESCO ya tiene «devops» como alternativo de 2512.7; també en català"
+    },
+    {
+      "nombre": "cloud engineer",
+      "idioma": "es",
+      "esco": ["2512.1"],
+      "fuente": "ESCO en inglés, «cloud engineer» (ingeniero de sistemas en la nube)"
+    },
+    {
+      "nombre": "cloud engineer",
+      "idioma": "ca",
+      "esco": ["2512.1"],
+      "fuente": "ESCO en inglés, «cloud engineer» (ingeniero de sistemas en la nube); també en català"
+    },
+    {
+      "nombre": "QA tester",
+      "idioma": "es",
+      "esco": ["2519.7"],
+      "fuente": "ESCO en inglés, «software tester» (probador de software)"
+    },
+    {
+      "nombre": "QA tester",
+      "idioma": "ca",
+      "esco": ["2519.7"],
+      "fuente": "ESCO en inglés, «software tester» (probador de software); també en català"
+    },
+    {
+      "nombre": "QA engineer",
+      "idioma": "es",
+      "esco": ["2519.7"],
+      "fuente": "ESCO en inglés, «software tester» (probador de software)"
+    },
+    {
+      "nombre": "QA engineer",
+      "idioma": "ca",
+      "esco": ["2519.7"],
+      "fuente": "ESCO en inglés, «software tester» (probador de software); també en català"
+    },
+    {
+      "nombre": "software tester",
+      "idioma": "es",
+      "esco": ["2519.7"],
+      "fuente": "ESCO en inglés, «software tester» (probador de software)"
+    },
+    {
+      "nombre": "software tester",
+      "idioma": "ca",
+      "esco": ["2519.7"],
+      "fuente": "ESCO en inglés, «software tester» (probador de software); també en català"
+    },
+    {
+      "nombre": "graphic designer",
+      "idioma": "es",
+      "esco": ["2166.9"],
+      "fuente": "ESCO en inglés, «graphic designer» (diseñador gráfico)"
+    },
+    {
+      "nombre": "graphic designer",
+      "idioma": "ca",
+      "esco": ["2166.9"],
+      "fuente": "ESCO en inglés, «graphic designer» (diseñador gráfico); també en català"
+    },
+    {
+      "nombre": "web designer",
+      "idioma": "es",
+      "esco": ["2166.15"],
+      "fuente": "ESCO en inglés, «web designer» (diseñador web)"
+    },
+    {
+      "nombre": "web designer",
+      "idioma": "ca",
+      "esco": ["2166.15"],
+      "fuente": "ESCO en inglés, «web designer» (diseñador web); també en català"
+    },
+    {
+      "nombre": "game designer",
+      "idioma": "es",
+      "esco": ["2166.6"],
+      "fuente": "ESCO en inglés, «digital games designer» (diseñador de juegos digitales)"
+    },
+    {
+      "nombre": "game designer",
+      "idioma": "ca",
+      "esco": ["2166.6"],
+      "fuente": "ESCO en inglés, «digital games designer» (diseñador de juegos digitales); també en català"
+    },
+    {
+      "nombre": "motion designer",
+      "idioma": "es",
+      "esco": ["2166.12"],
+      "fuente": "Inglés del sector audiovisual («motion graphics designer»); ESCO 2166.12 «diseñador gráfico y de vídeo»"
+    },
+    {
+      "nombre": "motion designer",
+      "idioma": "ca",
+      "esco": ["2166.12"],
+      "fuente": "Inglés del sector audiovisual («motion graphics designer»); ESCO 2166.12 «diseñador gráfico y de vídeo»; també en català"
+    },
+    {
+      "nombre": "CFO",
+      "idioma": "es",
+      "esco": ["1211.1"],
+      "fuente": "«chief financial officer»; ESCO en inglés, «financial manager» (director financiero)"
+    },
+    {
+      "nombre": "CFO",
+      "idioma": "ca",
+      "esco": ["1211.1"],
+      "fuente": "«chief financial officer»; ESCO en inglés, «financial manager» (director financiero); també en català"
+    },
+    {
+      "nombre": "COO",
+      "idioma": "es",
+      "esco": ["1120.4"],
+      "fuente": "«chief operating officer»; ESCO en inglés, «chief operating officer» (director de operaciones, 1120)"
+    },
+    {
+      "nombre": "COO",
+      "idioma": "ca",
+      "esco": ["1120.4"],
+      "fuente": "«chief operating officer»; ESCO en inglés, «chief operating officer» (director de operaciones, 1120); també en català"
+    },
+    {
+      "nombre": "DPO",
+      "idioma": "es",
+      "esco": ["2619.4"],
+      "fuente": "ESCO en inglés, «data protection officer» (responsable de la protección de datos); RGPD: «delegado de protección de datos»"
+    },
+    {
+      "nombre": "DPO",
+      "idioma": "ca",
+      "esco": ["2619.4"],
+      "fuente": "ESCO en inglés, «data protection officer» (responsable de la protección de datos); RGPD: «delegado de protección de datos»; també en català"
+    },
+    {
+      "nombre": "data protection officer",
+      "idioma": "es",
+      "esco": ["2619.4"],
+      "fuente": "ESCO en inglés, «data protection officer» (responsable de la protección de datos); RGPD: «delegado de protección de datos»"
+    },
+    {
+      "nombre": "data protection officer",
+      "idioma": "ca",
+      "esco": ["2619.4"],
+      "fuente": "ESCO en inglés, «data protection officer» (responsable de la protección de datos); RGPD: «delegado de protección de datos»; també en català"
+    },
+    {
+      "nombre": "paralegal",
+      "idioma": "es",
+      "esco": ["3411.7"],
+      "fuente": "ESCO en inglés, «paralegal» (asistente jurídico)"
+    },
+    {
+      "nombre": "paralegal",
+      "idioma": "ca",
+      "esco": ["3411.7"],
+      "fuente": "ESCO en inglés, «paralegal» (asistente jurídico); també en català"
+    },
+    {
+      "nombre": "event planner",
+      "idioma": "es",
+      "esco": ["3332.2"],
+      "fuente": "ESCO en inglés, «conference and event planner» (organizador de conferencias y eventos)"
+    },
+    {
+      "nombre": "event planner",
+      "idioma": "ca",
+      "esco": ["3332.2"],
+      "fuente": "ESCO en inglés, «conference and event planner» (organizador de conferencias y eventos); també en català"
+    },
+    {
+      "nombre": "wedding planner",
+      "idioma": "es",
+      "esco": ["3332.2.2"],
+      "fuente": "ESCO en inglés, «wedding planner» (organizador de bodas); Fundéu recomienda «organizador de bodas»"
+    },
+    {
+      "nombre": "wedding planner",
+      "idioma": "ca",
+      "esco": ["3332.2.2"],
+      "fuente": "ESCO en inglés, «wedding planner» (organizador de bodas); Fundéu recomienda «organizador de bodas»; també en català"
+    },
+    {
+      "nombre": "tour leader",
+      "idioma": "es",
+      "esco": ["5113.1"],
+      "fuente": "Inglés del sector turístico (acompañante de grupos); CIUO-08 5113 «Travel guides»"
+    },
+    {
+      "nombre": "tour leader",
+      "idioma": "ca",
+      "esco": ["5113.1"],
+      "fuente": "Inglés del sector turístico (acompañante de grupos); CIUO-08 5113 «Travel guides»; també en català"
+    },
+    {
+      "nombre": "executive assistant",
+      "idioma": "es",
+      "esco": ["3343.3"],
+      "fuente": "ESCO en inglés, «executive assistant» (asistente de dirección)"
+    },
+    {
+      "nombre": "executive assistant",
+      "idioma": "ca",
+      "esco": ["3343.3"],
+      "fuente": "ESCO en inglés, «executive assistant» (asistente de dirección); també en català"
+    },
+    {
+      "nombre": "data entry",
+      "idioma": "es",
+      "esco": ["4132.1"],
+      "fuente": "ESCO en inglés, «data entry clerk» (grabador de datos); uso común «trabajo de data entry»"
+    },
+    {
+      "nombre": "data entry",
+      "idioma": "ca",
+      "esco": ["4132.1"],
+      "fuente": "ESCO en inglés, «data entry clerk» (grabador de datos); uso común «trabajo de data entry»; també en català"
+    },
+    {
+      "nombre": "procurement manager",
+      "idioma": "es",
+      "esco": ["1324.8.2"],
+      "fuente": "ESCO en inglés, «purchasing manager» / «procurement manager» (director de compras)"
+    },
+    {
+      "nombre": "procurement manager",
+      "idioma": "ca",
+      "esco": ["1324.8.2"],
+      "fuente": "ESCO en inglés, «purchasing manager» / «procurement manager» (director de compras); també en català"
+    },
+    {
+      "nombre": "supply chain manager",
+      "idioma": "es",
+      "esco": ["1324.8"],
+      "fuente": "ESCO en inglés, «supply chain manager» (director de la cadena de suministro)"
+    },
+    {
+      "nombre": "supply chain manager",
+      "idioma": "ca",
+      "esco": ["1324.8"],
+      "fuente": "ESCO en inglés, «supply chain manager» (director de la cadena de suministro); també en català"
+    },
+    {
+      "nombre": "fitness instructor",
+      "idioma": "es",
+      "esco": ["3423.2"],
+      "fuente": "ESCO en inglés, «fitness instructor» (monitor de fitness)"
+    },
+    {
+      "nombre": "fitness instructor",
+      "idioma": "ca",
+      "esco": ["3423.2"],
+      "fuente": "ESCO en inglés, «fitness instructor» (monitor de fitness); també en català"
+    },
+    {
+      "nombre": "fonoaudiólogo",
+      "idioma": "es",
+      "esco": ["2266.2"],
+      "fuente": "Diccionario de americanismos (ASALE), «fonoaudiólogo, ga»: Ar., Ch., Co., Ur.: logopeda"
+    },
+    {
+      "nombre": "fonoaudióloga",
+      "idioma": "es",
+      "esco": ["2266.2"],
+      "fuente": "Diccionario de americanismos (ASALE), «fonoaudiólogo, ga»: Ar., Ch., Co., Ur.: logopeda"
+    },
+    {
+      "nombre": "licenciado en enfermería",
+      "idioma": "es",
+      "esco": ["2221.2"],
+      "fuente": "Título universitario de enfermería en México, Perú y otros países"
+    },
+    {
+      "nombre": "licenciada en enfermería",
+      "idioma": "es",
+      "esco": ["2221.2"],
+      "fuente": "Título universitario de enfermería en México, Perú y otros países"
+    },
+    {
+      "nombre": "enfermera auxiliar",
+      "idioma": "es",
+      "esco": ["5321.1.1"],
+      "fuente": "Uso común en México y Centroamérica: auxiliar de enfermería"
+    },
+    {
+      "nombre": "enfermero auxiliar",
+      "idioma": "es",
+      "esco": ["5321.1.1"],
+      "fuente": "Uso común en México y Centroamérica: auxiliar de enfermería"
+    },
+    {
+      "nombre": "técnico en enfermería",
+      "idioma": "es",
+      "esco": ["5321.1.1"],
+      "fuente": "Título técnico de Chile y Perú (técnico de nivel superior en enfermería)"
+    },
+    {
+      "nombre": "técnica en enfermería",
+      "idioma": "es",
+      "esco": ["5321.1.1"],
+      "fuente": "Título técnico de Chile y Perú (técnico de nivel superior en enfermería)"
+    },
+    {
+      "nombre": "asistente de párvulos",
+      "idioma": "es",
+      "esco": ["5312.1"],
+      "fuente": "Uso común en Chile: asistente de la educadora de párvulos"
+    },
+    {
+      "nombre": "auxiliar de párvulos",
+      "idioma": "es",
+      "esco": ["5312.1"],
+      "fuente": "Uso común en Chile: asistente de la educadora de párvulos"
+    },
+    {
+      "nombre": "profesor de educación básica",
+      "idioma": "es",
+      "esco": ["2341.1"],
+      "fuente": "Título de pedagogía en educación básica de Chile: maestro de primaria"
+    },
+    {
+      "nombre": "profesora de educación básica",
+      "idioma": "es",
+      "esco": ["2341.1"],
+      "fuente": "Título de pedagogía en educación básica de Chile: maestro de primaria"
+    },
+    {
+      "nombre": "contador auditor",
+      "idioma": "es",
+      "esco": ["2411.1"],
+      "fuente": "Título universitario de Chile: contable"
+    },
+    {
+      "nombre": "contadora auditora",
+      "idioma": "es",
+      "esco": ["2411.1"],
+      "fuente": "Título universitario de Chile: contable"
+    },
+    {
+      "nombre": "secretaria ejecutiva",
+      "idioma": "es",
+      "esco": ["3343.3"],
+      "fuente": "Uso común en Hispanoamérica: secretaria de dirección"
+    },
+    {
+      "nombre": "secretario ejecutivo",
+      "idioma": "es",
+      "esco": ["3343.3"],
+      "fuente": "Uso común en Hispanoamérica: secretaria de dirección"
+    },
+    {
+      "nombre": "empacador",
+      "idioma": "es",
+      "esco": ["9321.2"],
+      "fuente": "DLE, «empacador, ra»: persona que empaca (Am.)"
+    },
+    {
+      "nombre": "empacadora",
+      "idioma": "es",
+      "esco": ["9321.2"],
+      "fuente": "DLE, «empacador, ra»: persona que empaca (Am.)"
+    },
+    {
+      "nombre": "parqueador",
+      "idioma": "es",
+      "esco": ["8322.4"],
+      "fuente": "Diccionario de americanismos (ASALE), «parqueador, ra»: Co.: aparcacoches"
+    },
+    {
+      "nombre": "parqueadora",
+      "idioma": "es",
+      "esco": ["8322.4"],
+      "fuente": "Diccionario de americanismos (ASALE), «parqueador, ra»: Co.: aparcacoches"
+    },
+    {
+      "nombre": "mototaxista",
+      "idioma": "es",
+      "esco": ["8321.1"],
+      "fuente": "Diccionario de americanismos (ASALE), «mototaxista»: conductor de mototaxi (Pe., Co., Ho., Ni.)"
+    },
+    {
+      "nombre": "boletero",
+      "idioma": "es",
+      "esco": ["5230.3"],
+      "fuente": "Diccionario de americanismos (ASALE), «boletero, ra»: Ar., Ur., Py.: taquillero"
+    },
+    {
+      "nombre": "boletera",
+      "idioma": "es",
+      "esco": ["5230.3"],
+      "fuente": "Diccionario de americanismos (ASALE), «boletero, ra»: Ar., Ur., Py.: taquillero"
+    },
+    {
+      "nombre": "nochero",
+      "idioma": "es",
+      "esco": ["5414.1"],
+      "fuente": "Diccionario de americanismos (ASALE), «nochero, ra»: Ar., Ur., Co.: vigilante nocturno"
+    },
+    {
+      "nombre": "nochera",
+      "idioma": "es",
+      "esco": ["5414.1"],
+      "fuente": "Diccionario de americanismos (ASALE), «nochero, ra»: Ar., Ur., Co.: vigilante nocturno"
+    },
+    {
+      "nombre": "guardia de seguridad",
+      "idioma": "es",
+      "esco": ["5414.1"],
+      "fuente": "Uso común en Hispanoamérica: vigilante de seguridad"
+    },
+    {
+      "nombre": "chofer de bus",
+      "idioma": "es",
+      "esco": ["8331.1"],
+      "fuente": "Uso común en Hispanoamérica («bus»: autobús)"
+    },
+    {
+      "nombre": "conductor de bus",
+      "idioma": "es",
+      "esco": ["8331.1"],
+      "fuente": "Uso común en Hispanoamérica («bus»: autobús)"
+    },
+    {
+      "nombre": "técnico en computación",
+      "idioma": "es",
+      "esco": ["3512.4"],
+      "fuente": "Uso común en México y Centroamérica: técnico informático"
+    },
+    {
+      "nombre": "técnica en computación",
+      "idioma": "es",
+      "esco": ["3512.4"],
+      "fuente": "Uso común en México y Centroamérica: técnico informático"
+    },
+    {
+      "nombre": "site reliability engineer",
+      "idioma": "es",
+      "esco": ["2512.7"],
+      "fuente": "Título de puesto TIC; mismo grupo que «DevOps engineer»"
+    },
+    {
+      "nombre": "site reliability engineer",
+      "idioma": "ca",
+      "esco": ["2512.7"],
+      "fuente": "Título de puesto TIC; mismo grupo que «DevOps engineer»"
+    },
+    {
+      "nombre": "pentester",
+      "idioma": "es",
+      "esco": ["2529.4"],
+      "fuente": "Título inglés de ESCO «ethical hacker» y uso común en ciberseguridad"
+    },
+    {
+      "nombre": "pentester",
+      "idioma": "ca",
+      "esco": ["2529.4"],
+      "fuente": "Título inglés de ESCO «ethical hacker» y uso común en ciberseguridad"
+    },
+    {
+      "nombre": "penetration tester",
+      "idioma": "es",
+      "esco": ["2529.4"],
+      "fuente": "Título inglés de ESCO «ethical hacker» y uso común en ciberseguridad"
+    },
+    {
+      "nombre": "penetration tester",
+      "idioma": "ca",
+      "esco": ["2529.4"],
+      "fuente": "Título inglés de ESCO «ethical hacker» y uso común en ciberseguridad"
+    },
+    {
+      "nombre": "ethical hacker",
+      "idioma": "es",
+      "esco": ["2529.4"],
+      "fuente": "Título inglés de ESCO «ethical hacker» y uso común en ciberseguridad"
+    },
+    {
+      "nombre": "ethical hacker",
+      "idioma": "ca",
+      "esco": ["2529.4"],
+      "fuente": "Título inglés de ESCO «ethical hacker» y uso común en ciberseguridad"
+    },
+    {
+      "nombre": "cybersecurity analyst",
+      "idioma": "es",
+      "esco": ["2529.4"],
+      "fuente": "Uso común en ciberseguridad (ESCO: especialista en ciberseguridad)"
+    },
+    {
+      "nombre": "cybersecurity analyst",
+      "idioma": "ca",
+      "esco": ["2529.4"],
+      "fuente": "Uso común en ciberseguridad (ESCO: especialista en ciberseguridad)"
+    },
+    {
+      "nombre": "security analyst",
+      "idioma": "es",
+      "esco": ["2529.4"],
+      "fuente": "Uso común en ciberseguridad (ESCO: especialista en ciberseguridad)"
+    },
+    {
+      "nombre": "security analyst",
+      "idioma": "ca",
+      "esco": ["2529.4"],
+      "fuente": "Uso común en ciberseguridad (ESCO: especialista en ciberseguridad)"
+    },
+    {
+      "nombre": "network engineer",
+      "idioma": "es",
+      "esco": ["2523.3"],
+      "fuente": "Título inglés de ESCO «ICT network engineer»"
+    },
+    {
+      "nombre": "network engineer",
+      "idioma": "ca",
+      "esco": ["2523.3"],
+      "fuente": "Título inglés de ESCO «ICT network engineer»"
+    },
+    {
+      "nombre": "network administrator",
+      "idioma": "es",
+      "esco": ["2522.1.1"],
+      "fuente": "Título inglés de ESCO «ICT network administrator»"
+    },
+    {
+      "nombre": "network administrator",
+      "idioma": "ca",
+      "esco": ["2522.1.1"],
+      "fuente": "Título inglés de ESCO «ICT network administrator»"
+    },
+    {
+      "nombre": "system administrator",
+      "idioma": "es",
+      "esco": ["2522.1"],
+      "fuente": "Título inglés de ESCO «ICT system administrator»"
+    },
+    {
+      "nombre": "system administrator",
+      "idioma": "ca",
+      "esco": ["2522.1"],
+      "fuente": "Título inglés de ESCO «ICT system administrator»"
+    },
+    {
+      "nombre": "systems administrator",
+      "idioma": "es",
+      "esco": ["2522.1"],
+      "fuente": "Título inglés de ESCO «ICT system administrator»"
+    },
+    {
+      "nombre": "systems administrator",
+      "idioma": "ca",
+      "esco": ["2522.1"],
+      "fuente": "Título inglés de ESCO «ICT system administrator»"
+    },
+    {
+      "nombre": "database administrator",
+      "idioma": "es",
+      "esco": ["2521.1"],
+      "fuente": "Título inglés de ESCO «database administrator»"
+    },
+    {
+      "nombre": "database administrator",
+      "idioma": "ca",
+      "esco": ["2521.1"],
+      "fuente": "Título inglés de ESCO «database administrator»"
+    },
+    {
+      "nombre": "software architect",
+      "idioma": "es",
+      "esco": ["2512.3"],
+      "fuente": "Título inglés de ESCO «software architect»"
+    },
+    {
+      "nombre": "software architect",
+      "idioma": "ca",
+      "esco": ["2512.3"],
+      "fuente": "Título inglés de ESCO «software architect»"
+    },
+    {
+      "nombre": "cloud architect",
+      "idioma": "es",
+      "esco": ["2512.6"],
+      "fuente": "Título inglés de ESCO «cloud architect»"
+    },
+    {
+      "nombre": "cloud architect",
+      "idioma": "ca",
+      "esco": ["2512.6"],
+      "fuente": "Título inglés de ESCO «cloud architect»"
+    },
+    {
+      "nombre": "technical writer",
+      "idioma": "es",
+      "esco": ["2641.4.4"],
+      "fuente": "Título inglés de ESCO «technical communicator» (alternativo «technical writer»)"
+    },
+    {
+      "nombre": "technical writer",
+      "idioma": "ca",
+      "esco": ["2641.4.4"],
+      "fuente": "Título inglés de ESCO «technical communicator» (alternativo «technical writer»)"
+    },
+    {
+      "nombre": "game tester",
+      "idioma": "es",
+      "esco": ["2519.7.1"],
+      "fuente": "Título inglés de ESCO «video game tester»"
+    },
+    {
+      "nombre": "game tester",
+      "idioma": "ca",
+      "esco": ["2519.7.1"],
+      "fuente": "Título inglés de ESCO «video game tester»"
+    },
+    {
+      "nombre": "video game tester",
+      "idioma": "es",
+      "esco": ["2519.7.1"],
+      "fuente": "Título inglés de ESCO «video game tester»"
+    },
+    {
+      "nombre": "video game tester",
+      "idioma": "ca",
+      "esco": ["2519.7.1"],
+      "fuente": "Título inglés de ESCO «video game tester»"
+    },
+    {
+      "nombre": "3D animator",
+      "idioma": "es",
+      "esco": ["2166.3.1"],
+      "fuente": "Título inglés de ESCO «3D animator»"
+    },
+    {
+      "nombre": "3D animator",
+      "idioma": "ca",
+      "esco": ["2166.3.1"],
+      "fuente": "Título inglés de ESCO «3D animator»"
+    },
+    {
+      "nombre": "video editor",
+      "idioma": "es",
+      "esco": ["2654.5"],
+      "fuente": "Título inglés de ESCO «film and video editor»"
+    },
+    {
+      "nombre": "video editor",
+      "idioma": "ca",
+      "esco": ["2654.5"],
+      "fuente": "Título inglés de ESCO «film and video editor»"
+    },
+    {
+      "nombre": "sound engineer",
+      "idioma": "es",
+      "esco": ["3435.3"],
+      "fuente": "Uso común en espectáculos y grabación (ESCO: técnico de sonido)"
+    },
+    {
+      "nombre": "sound engineer",
+      "idioma": "ca",
+      "esco": ["3435.3"],
+      "fuente": "Uso común en espectáculos y grabación (ESCO: técnico de sonido)"
+    },
+    {
+      "nombre": "service desk",
+      "idioma": "es",
+      "esco": ["3512.1"],
+      "fuente": "Título inglés de ESCO «ICT help desk agent»; uso común en soporte"
+    },
+    {
+      "nombre": "service desk",
+      "idioma": "ca",
+      "esco": ["3512.1"],
+      "fuente": "Título inglés de ESCO «ICT help desk agent»; uso común en soporte"
+    },
+    {
+      "nombre": "desktop support",
+      "idioma": "es",
+      "esco": ["3512.1"],
+      "fuente": "Título inglés de ESCO «ICT help desk agent»; uso común en soporte"
+    },
+    {
+      "nombre": "desktop support",
+      "idioma": "ca",
+      "esco": ["3512.1"],
+      "fuente": "Título inglés de ESCO «ICT help desk agent»; uso común en soporte"
+    },
+    {
+      "nombre": "IT technician",
+      "idioma": "es",
+      "esco": ["3512.4"],
+      "fuente": "Título inglés de ESCO «ICT technician»"
+    },
+    {
+      "nombre": "IT technician",
+      "idioma": "ca",
+      "esco": ["3512.4"],
+      "fuente": "Título inglés de ESCO «ICT technician»"
+    },
+    {
+      "nombre": "digital marketing specialist",
+      "idioma": "es",
+      "esco": ["2431.10.4"],
+      "fuente": "Título inglés de ESCO «online marketer»; uso común en marketing digital"
+    },
+    {
+      "nombre": "digital marketing specialist",
+      "idioma": "ca",
+      "esco": ["2431.10.4"],
+      "fuente": "Título inglés de ESCO «online marketer»; uso común en marketing digital"
+    },
+    {
+      "nombre": "online marketing specialist",
+      "idioma": "es",
+      "esco": ["2431.10.4"],
+      "fuente": "Título inglés de ESCO «online marketer»; uso común en marketing digital"
+    },
+    {
+      "nombre": "online marketing specialist",
+      "idioma": "ca",
+      "esco": ["2431.10.4"],
+      "fuente": "Título inglés de ESCO «online marketer»; uso común en marketing digital"
+    },
+    {
+      "nombre": "SEM specialist",
+      "idioma": "es",
+      "esco": ["2431.10.4"],
+      "fuente": "Título inglés de ESCO «online marketer»; uso común en marketing digital"
+    },
+    {
+      "nombre": "SEM specialist",
+      "idioma": "ca",
+      "esco": ["2431.10.4"],
+      "fuente": "Título inglés de ESCO «online marketer»; uso común en marketing digital"
+    },
+    {
+      "nombre": "digital marketing manager",
+      "idioma": "es",
+      "esco": ["1221.5"],
+      "fuente": "Título inglés de ESCO «digital marketing manager»"
+    },
+    {
+      "nombre": "digital marketing manager",
+      "idioma": "ca",
+      "esco": ["1221.5"],
+      "fuente": "Título inglés de ESCO «digital marketing manager»"
+    },
+    {
+      "nombre": "managing director",
+      "idioma": "es",
+      "esco": ["1120.3"],
+      "fuente": "Uso común en empresa: director general (ESCO «chief executive officer»)"
+    },
+    {
+      "nombre": "managing director",
+      "idioma": "ca",
+      "esco": ["1120.3"],
+      "fuente": "Uso común en empresa: director general (ESCO «chief executive officer»)"
+    },
+    {
+      "nombre": "management consultant",
+      "idioma": "es",
+      "esco": ["2421.1"],
+      "fuente": "Título inglés de ESCO «business analyst» (alternativo «management consultant»)"
+    },
+    {
+      "nombre": "management consultant",
+      "idioma": "ca",
+      "esco": ["2421.1"],
+      "fuente": "Título inglés de ESCO «business analyst» (alternativo «management consultant»)"
+    },
+    {
+      "nombre": "HR business partner",
+      "idioma": "es",
+      "esco": ["2423.3"],
+      "fuente": "Uso común en recursos humanos (ESCO «human resources officer»)"
+    },
+    {
+      "nombre": "HR business partner",
+      "idioma": "ca",
+      "esco": ["2423.3"],
+      "fuente": "Uso común en recursos humanos (ESCO «human resources officer»)"
+    },
+    {
+      "nombre": "HR generalist",
+      "idioma": "es",
+      "esco": ["2423.3"],
+      "fuente": "Uso común en recursos humanos (ESCO «human resources officer»)"
+    },
+    {
+      "nombre": "HR generalist",
+      "idioma": "ca",
+      "esco": ["2423.3"],
+      "fuente": "Uso común en recursos humanos (ESCO «human resources officer»)"
+    },
+    {
+      "nombre": "HR assistant",
+      "idioma": "es",
+      "esco": ["4416.1"],
+      "fuente": "Título inglés de ESCO «human resources assistant»"
+    },
+    {
+      "nombre": "HR assistant",
+      "idioma": "ca",
+      "esco": ["4416.1"],
+      "fuente": "Título inglés de ESCO «human resources assistant»"
+    },
+    {
+      "nombre": "talent acquisition specialist",
+      "idioma": "es",
+      "esco": ["1212.5"],
+      "fuente": "Título inglés de ESCO «talent acquisition manager»"
+    },
+    {
+      "nombre": "talent acquisition specialist",
+      "idioma": "ca",
+      "esco": ["1212.5"],
+      "fuente": "Título inglés de ESCO «talent acquisition manager»"
+    },
+    {
+      "nombre": "talent acquisition manager",
+      "idioma": "es",
+      "esco": ["1212.5"],
+      "fuente": "Título inglés de ESCO «talent acquisition manager»"
+    },
+    {
+      "nombre": "talent acquisition manager",
+      "idioma": "ca",
+      "esco": ["1212.5"],
+      "fuente": "Título inglés de ESCO «talent acquisition manager»"
+    },
+    {
+      "nombre": "payroll specialist",
+      "idioma": "es",
+      "esco": ["4313.1"],
+      "fuente": "Título inglés de ESCO «payroll clerk»; uso común"
+    },
+    {
+      "nombre": "payroll specialist",
+      "idioma": "ca",
+      "esco": ["4313.1"],
+      "fuente": "Título inglés de ESCO «payroll clerk»; uso común"
+    },
+    {
+      "nombre": "payroll administrator",
+      "idioma": "es",
+      "esco": ["4313.1"],
+      "fuente": "Título inglés de ESCO «payroll clerk»; uso común"
+    },
+    {
+      "nombre": "payroll administrator",
+      "idioma": "ca",
+      "esco": ["4313.1"],
+      "fuente": "Título inglés de ESCO «payroll clerk»; uso común"
+    },
+    {
+      "nombre": "accountant",
+      "idioma": "es",
+      "esco": ["2411.1"],
+      "fuente": "Título inglés de ESCO «accountant»"
+    },
+    {
+      "nombre": "accountant",
+      "idioma": "ca",
+      "esco": ["2411.1"],
+      "fuente": "Título inglés de ESCO «accountant»"
+    },
+    {
+      "nombre": "bookkeeper",
+      "idioma": "es",
+      "esco": ["4311.1"],
+      "fuente": "Título inglés de ESCO «bookkeeper»"
+    },
+    {
+      "nombre": "bookkeeper",
+      "idioma": "ca",
+      "esco": ["4311.1"],
+      "fuente": "Título inglés de ESCO «bookkeeper»"
+    },
+    {
+      "nombre": "tax advisor",
+      "idioma": "es",
+      "esco": ["2411.1.12"],
+      "fuente": "Título inglés de ESCO «tax advisor»"
+    },
+    {
+      "nombre": "tax advisor",
+      "idioma": "ca",
+      "esco": ["2411.1.12"],
+      "fuente": "Título inglés de ESCO «tax advisor»"
+    },
+    {
+      "nombre": "tax consultant",
+      "idioma": "es",
+      "esco": ["2411.1.12"],
+      "fuente": "Título inglés de ESCO «tax advisor»"
+    },
+    {
+      "nombre": "tax consultant",
+      "idioma": "ca",
+      "esco": ["2411.1.12"],
+      "fuente": "Título inglés de ESCO «tax advisor»"
+    },
+    {
+      "nombre": "credit analyst",
+      "idioma": "es",
+      "esco": ["3312.2.1"],
+      "fuente": "Título inglés de ESCO «credit analyst»"
+    },
+    {
+      "nombre": "credit analyst",
+      "idioma": "ca",
+      "esco": ["3312.2.1"],
+      "fuente": "Título inglés de ESCO «credit analyst»"
+    },
+    {
+      "nombre": "insurance broker",
+      "idioma": "es",
+      "esco": ["3321.1"],
+      "fuente": "Título inglés de ESCO «insurance broker»"
+    },
+    {
+      "nombre": "insurance broker",
+      "idioma": "ca",
+      "esco": ["3321.1"],
+      "fuente": "Título inglés de ESCO «insurance broker»"
+    },
+    {
+      "nombre": "real estate agent",
+      "idioma": "es",
+      "esco": ["3334.3"],
+      "fuente": "Título inglés de ESCO «real estate agent»"
+    },
+    {
+      "nombre": "real estate agent",
+      "idioma": "ca",
+      "esco": ["3334.3"],
+      "fuente": "Título inglés de ESCO «real estate agent»"
+    },
+    {
+      "nombre": "realtor",
+      "idioma": "es",
+      "esco": ["3334.3"],
+      "fuente": "Título inglés de ESCO «real estate agent»"
+    },
+    {
+      "nombre": "realtor",
+      "idioma": "ca",
+      "esco": ["3334.3"],
+      "fuente": "Título inglés de ESCO «real estate agent»"
+    },
+    {
+      "nombre": "property manager",
+      "idioma": "es",
+      "esco": ["3334.1"],
+      "fuente": "Título inglés de ESCO «property manager» (administrador de fincas)"
+    },
+    {
+      "nombre": "property manager",
+      "idioma": "ca",
+      "esco": ["3334.1"],
+      "fuente": "Título inglés de ESCO «property manager» (administrador de fincas)"
+    },
+    {
+      "nombre": "legal counsel",
+      "idioma": "es",
+      "esco": ["2611.1.1"],
+      "fuente": "Uso común en empresa (ESCO «corporate lawyer»)"
+    },
+    {
+      "nombre": "legal counsel",
+      "idioma": "ca",
+      "esco": ["2611.1.1"],
+      "fuente": "Uso común en empresa (ESCO «corporate lawyer»)"
+    },
+    {
+      "nombre": "in-house lawyer",
+      "idioma": "es",
+      "esco": ["2611.1.1"],
+      "fuente": "Uso común en empresa (ESCO «corporate lawyer»)"
+    },
+    {
+      "nombre": "in-house lawyer",
+      "idioma": "ca",
+      "esco": ["2611.1.1"],
+      "fuente": "Uso común en empresa (ESCO «corporate lawyer»)"
+    },
+    {
+      "nombre": "lawyer",
+      "idioma": "es",
+      "esco": ["2611.1"],
+      "fuente": "Título inglés de ESCO «lawyer»"
+    },
+    {
+      "nombre": "lawyer",
+      "idioma": "ca",
+      "esco": ["2611.1"],
+      "fuente": "Título inglés de ESCO «lawyer»"
+    },
+    {
+      "nombre": "administrative assistant",
+      "idioma": "es",
+      "esco": ["4110.1"],
+      "fuente": "Uso común (ESCO «office clerk»)"
+    },
+    {
+      "nombre": "administrative assistant",
+      "idioma": "ca",
+      "esco": ["4110.1"],
+      "fuente": "Uso común (ESCO «office clerk»)"
+    },
+    {
+      "nombre": "secretary",
+      "idioma": "es",
+      "esco": ["4120.1"],
+      "fuente": "Título inglés de ESCO «secretary»"
+    },
+    {
+      "nombre": "secretary",
+      "idioma": "ca",
+      "esco": ["4120.1"],
+      "fuente": "Título inglés de ESCO «secretary»"
+    },
+    {
+      "nombre": "receptionist",
+      "idioma": "es",
+      "esco": ["4226.1"],
+      "fuente": "Título inglés de ESCO «receptionist»"
+    },
+    {
+      "nombre": "receptionist",
+      "idioma": "ca",
+      "esco": ["4226.1"],
+      "fuente": "Título inglés de ESCO «receptionist»"
+    },
+    {
+      "nombre": "call center agent",
+      "idioma": "es",
+      "esco": ["4222.1"],
+      "fuente": "Título inglés de ESCO «contact centre information clerk»; uso común"
+    },
+    {
+      "nombre": "call center agent",
+      "idioma": "ca",
+      "esco": ["4222.1"],
+      "fuente": "Título inglés de ESCO «contact centre information clerk»; uso común"
+    },
+    {
+      "nombre": "call centre agent",
+      "idioma": "es",
+      "esco": ["4222.1"],
+      "fuente": "Título inglés de ESCO «contact centre information clerk»; uso común"
+    },
+    {
+      "nombre": "call centre agent",
+      "idioma": "ca",
+      "esco": ["4222.1"],
+      "fuente": "Título inglés de ESCO «contact centre information clerk»; uso común"
+    },
+    {
+      "nombre": "customer support",
+      "idioma": "es",
+      "esco": ["4225.1"],
+      "fuente": "Uso común, como «customer service»"
+    },
+    {
+      "nombre": "customer support",
+      "idioma": "ca",
+      "esco": ["4225.1"],
+      "fuente": "Uso común, como «customer service»"
+    },
+    {
+      "nombre": "customer care",
+      "idioma": "es",
+      "esco": ["4225.1"],
+      "fuente": "Uso común, como «customer service»"
+    },
+    {
+      "nombre": "customer care",
+      "idioma": "ca",
+      "esco": ["4225.1"],
+      "fuente": "Uso común, como «customer service»"
+    },
+    {
+      "nombre": "telesales",
+      "idioma": "es",
+      "esco": ["5244.1"],
+      "fuente": "Uso común: televenta (ESCO «telemarketer»)"
+    },
+    {
+      "nombre": "telesales",
+      "idioma": "ca",
+      "esco": ["5244.1"],
+      "fuente": "Uso común: televenta (ESCO «telemarketer»)"
+    },
+    {
+      "nombre": "restaurant manager",
+      "idioma": "es",
+      "esco": ["1412.1"],
+      "fuente": "Título inglés de ESCO «restaurant manager»"
+    },
+    {
+      "nombre": "restaurant manager",
+      "idioma": "ca",
+      "esco": ["1412.1"],
+      "fuente": "Título inglés de ESCO «restaurant manager»"
+    },
+    {
+      "nombre": "hotel manager",
+      "idioma": "es",
+      "esco": ["1411.1"],
+      "fuente": "Uso común (ESCO «accommodation manager»)"
+    },
+    {
+      "nombre": "hotel manager",
+      "idioma": "ca",
+      "esco": ["1411.1"],
+      "fuente": "Uso común (ESCO «accommodation manager»)"
+    },
+    {
+      "nombre": "hotel receptionist",
+      "idioma": "es",
+      "esco": ["4224.1"],
+      "fuente": "Título inglés de ESCO «hotel receptionist»; uso común en hoteles"
+    },
+    {
+      "nombre": "hotel receptionist",
+      "idioma": "ca",
+      "esco": ["4224.1"],
+      "fuente": "Título inglés de ESCO «hotel receptionist»; uso común en hoteles"
+    },
+    {
+      "nombre": "front desk agent",
+      "idioma": "es",
+      "esco": ["4224.1"],
+      "fuente": "Título inglés de ESCO «hotel receptionist»; uso común en hoteles"
+    },
+    {
+      "nombre": "front desk agent",
+      "idioma": "ca",
+      "esco": ["4224.1"],
+      "fuente": "Título inglés de ESCO «hotel receptionist»; uso común en hoteles"
+    },
+    {
+      "nombre": "front office agent",
+      "idioma": "es",
+      "esco": ["4224.1"],
+      "fuente": "Título inglés de ESCO «hotel receptionist»; uso común en hoteles"
+    },
+    {
+      "nombre": "front office agent",
+      "idioma": "ca",
+      "esco": ["4224.1"],
+      "fuente": "Título inglés de ESCO «hotel receptionist»; uso común en hoteles"
+    },
+    {
+      "nombre": "room attendant",
+      "idioma": "es",
+      "esco": ["9112.4"],
+      "fuente": "Título inglés de ESCO «chambermaid»; uso común en hoteles"
+    },
+    {
+      "nombre": "room attendant",
+      "idioma": "ca",
+      "esco": ["9112.4"],
+      "fuente": "Título inglés de ESCO «chambermaid»; uso común en hoteles"
+    },
+    {
+      "nombre": "chambermaid",
+      "idioma": "es",
+      "esco": ["9112.4"],
+      "fuente": "Título inglés de ESCO «chambermaid»; uso común en hoteles"
+    },
+    {
+      "nombre": "chambermaid",
+      "idioma": "ca",
+      "esco": ["9112.4"],
+      "fuente": "Título inglés de ESCO «chambermaid»; uso común en hoteles"
+    },
+    {
+      "nombre": "executive housekeeper",
+      "idioma": "es",
+      "esco": ["5151.1"],
+      "fuente": "Uso común en hoteles: gobernanta"
+    },
+    {
+      "nombre": "executive housekeeper",
+      "idioma": "ca",
+      "esco": ["5151.1"],
+      "fuente": "Uso común en hoteles: gobernanta"
+    },
+    {
+      "nombre": "head housekeeper",
+      "idioma": "es",
+      "esco": ["5151.1"],
+      "fuente": "Uso común en hoteles: gobernanta"
+    },
+    {
+      "nombre": "head housekeeper",
+      "idioma": "ca",
+      "esco": ["5151.1"],
+      "fuente": "Uso común en hoteles: gobernanta"
+    },
+    {
+      "nombre": "mixologist",
+      "idioma": "es",
+      "esco": ["5132.1.2"],
+      "fuente": "Uso común en coctelería (ESCO «mixologist»)"
+    },
+    {
+      "nombre": "mixologist",
+      "idioma": "ca",
+      "esco": ["5132.1.2"],
+      "fuente": "Uso común en coctelería (ESCO «mixologist»)"
+    },
+    {
+      "nombre": "tour guide",
+      "idioma": "es",
+      "esco": ["5113.1"],
+      "fuente": "Título inglés de ESCO «tour guide»"
+    },
+    {
+      "nombre": "tour guide",
+      "idioma": "ca",
+      "esco": ["5113.1"],
+      "fuente": "Título inglés de ESCO «tour guide»"
+    },
+    {
+      "nombre": "travel agent",
+      "idioma": "es",
+      "esco": ["4221.7"],
+      "fuente": "Título inglés de ESCO «travel agent»"
+    },
+    {
+      "nombre": "travel agent",
+      "idioma": "ca",
+      "esco": ["4221.7"],
+      "fuente": "Título inglés de ESCO «travel agent»"
+    },
+    {
+      "nombre": "check-in agent",
+      "idioma": "es",
+      "esco": ["4221.1"],
+      "fuente": "Uso común en aeropuertos: azafata de tierra"
+    },
+    {
+      "nombre": "check-in agent",
+      "idioma": "ca",
+      "esco": ["4221.1"],
+      "fuente": "Uso común en aeropuertos: azafata de tierra"
+    },
+    {
+      "nombre": "lifeguard",
+      "idioma": "es",
+      "esco": ["5419.7"],
+      "fuente": "Título inglés de ESCO «lifeguard»"
+    },
+    {
+      "nombre": "lifeguard",
+      "idioma": "ca",
+      "esco": ["5419.7"],
+      "fuente": "Título inglés de ESCO «lifeguard»"
+    },
+    {
+      "nombre": "cook",
+      "idioma": "es",
+      "esco": ["5120.1"],
+      "fuente": "Título inglés de ESCO «cook»"
+    },
+    {
+      "nombre": "cook",
+      "idioma": "ca",
+      "esco": ["5120.1"],
+      "fuente": "Título inglés de ESCO «cook»"
+    },
+    {
+      "nombre": "dishwasher",
+      "idioma": "es",
+      "esco": ["9412.2"],
+      "fuente": "Uso común en cocinas: friegaplatos (ESCO «kitchen porter»)"
+    },
+    {
+      "nombre": "dishwasher",
+      "idioma": "ca",
+      "esco": ["9412.2"],
+      "fuente": "Uso común en cocinas: friegaplatos (ESCO «kitchen porter»)"
+    },
+    {
+      "nombre": "baker",
+      "idioma": "es",
+      "esco": ["7512.1"],
+      "fuente": "Título inglés de ESCO «baker»"
+    },
+    {
+      "nombre": "baker",
+      "idioma": "ca",
+      "esco": ["7512.1"],
+      "fuente": "Título inglés de ESCO «baker»"
+    },
+    {
+      "nombre": "butcher",
+      "idioma": "es",
+      "esco": ["7511.1"],
+      "fuente": "Título inglés de ESCO «butcher»"
+    },
+    {
+      "nombre": "butcher",
+      "idioma": "ca",
+      "esco": ["7511.1"],
+      "fuente": "Título inglés de ESCO «butcher»"
+    },
+    {
+      "nombre": "cashier",
+      "idioma": "es",
+      "esco": ["5230.1"],
+      "fuente": "Título inglés de ESCO «cashier»"
+    },
+    {
+      "nombre": "cashier",
+      "idioma": "ca",
+      "esco": ["5230.1"],
+      "fuente": "Título inglés de ESCO «cashier»"
+    },
+    {
+      "nombre": "valet parking",
+      "idioma": "es",
+      "esco": ["8322.4"],
+      "fuente": "Uso común: aparcacoches"
+    },
+    {
+      "nombre": "valet parking",
+      "idioma": "ca",
+      "esco": ["8322.4"],
+      "fuente": "Uso común: aparcacoches"
+    },
+    {
+      "nombre": "forklift driver",
+      "idioma": "es",
+      "esco": ["8344.1"],
+      "fuente": "Título inglés de ESCO «forklift operator»"
+    },
+    {
+      "nombre": "forklift driver",
+      "idioma": "ca",
+      "esco": ["8344.1"],
+      "fuente": "Título inglés de ESCO «forklift operator»"
+    },
+    {
+      "nombre": "forklift operator",
+      "idioma": "es",
+      "esco": ["8344.1"],
+      "fuente": "Título inglés de ESCO «forklift operator»"
+    },
+    {
+      "nombre": "forklift operator",
+      "idioma": "ca",
+      "esco": ["8344.1"],
+      "fuente": "Título inglés de ESCO «forklift operator»"
+    },
+    {
+      "nombre": "warehouse worker",
+      "idioma": "es",
+      "esco": ["9333.8"],
+      "fuente": "Título inglés de ESCO «warehouse worker»"
+    },
+    {
+      "nombre": "warehouse worker",
+      "idioma": "ca",
+      "esco": ["9333.8"],
+      "fuente": "Título inglés de ESCO «warehouse worker»"
+    },
+    {
+      "nombre": "warehouse operative",
+      "idioma": "es",
+      "esco": ["9333.8"],
+      "fuente": "Título inglés de ESCO «warehouse worker»"
+    },
+    {
+      "nombre": "warehouse operative",
+      "idioma": "ca",
+      "esco": ["9333.8"],
+      "fuente": "Título inglés de ESCO «warehouse worker»"
+    },
+    {
+      "nombre": "truck driver",
+      "idioma": "es",
+      "esco": ["8332.2"],
+      "fuente": "Uso común (ESCO «heavy truck driver»)"
+    },
+    {
+      "nombre": "truck driver",
+      "idioma": "ca",
+      "esco": ["8332.2"],
+      "fuente": "Uso común (ESCO «heavy truck driver»)"
+    },
+    {
+      "nombre": "lorry driver",
+      "idioma": "es",
+      "esco": ["8332.2"],
+      "fuente": "Uso común (ESCO «heavy truck driver»)"
+    },
+    {
+      "nombre": "lorry driver",
+      "idioma": "ca",
+      "esco": ["8332.2"],
+      "fuente": "Uso común (ESCO «heavy truck driver»)"
+    },
+    {
+      "nombre": "bus driver",
+      "idioma": "es",
+      "esco": ["8331.1"],
+      "fuente": "Título inglés de ESCO «bus driver»"
+    },
+    {
+      "nombre": "bus driver",
+      "idioma": "ca",
+      "esco": ["8331.1"],
+      "fuente": "Título inglés de ESCO «bus driver»"
+    },
+    {
+      "nombre": "taxi driver",
+      "idioma": "es",
+      "esco": ["8322.7"],
+      "fuente": "Título inglés de ESCO «taxi driver»"
+    },
+    {
+      "nombre": "taxi driver",
+      "idioma": "ca",
+      "esco": ["8322.7"],
+      "fuente": "Título inglés de ESCO «taxi driver»"
+    },
+    {
+      "nombre": "Uber driver",
+      "idioma": "es",
+      "esco": ["8322.6"],
+      "fuente": "Uso común: conductor de VTC"
+    },
+    {
+      "nombre": "Uber driver",
+      "idioma": "ca",
+      "esco": ["8322.6"],
+      "fuente": "Uso común: conductor de VTC"
+    },
+    {
+      "nombre": "beautician",
+      "idioma": "es",
+      "esco": ["5142.1"],
+      "fuente": "Título inglés de ESCO «beautician»"
+    },
+    {
+      "nombre": "beautician",
+      "idioma": "ca",
+      "esco": ["5142.1"],
+      "fuente": "Título inglés de ESCO «beautician»"
+    },
+    {
+      "nombre": "hairdresser",
+      "idioma": "es",
+      "esco": ["5141.1"],
+      "fuente": "Título inglés de ESCO «hairdresser»"
+    },
+    {
+      "nombre": "hairdresser",
+      "idioma": "ca",
+      "esco": ["5141.1"],
+      "fuente": "Título inglés de ESCO «hairdresser»"
+    },
+    {
+      "nombre": "lash artist",
+      "idioma": "es",
+      "esco": ["5142.1"],
+      "fuente": "Uso común en estética (extensiones de pestañas)"
+    },
+    {
+      "nombre": "lash artist",
+      "idioma": "ca",
+      "esco": ["5142.1"],
+      "fuente": "Uso común en estética (extensiones de pestañas)"
+    },
+    {
+      "nombre": "lash technician",
+      "idioma": "es",
+      "esco": ["5142.1"],
+      "fuente": "Uso común en estética (extensiones de pestañas)"
+    },
+    {
+      "nombre": "lash technician",
+      "idioma": "ca",
+      "esco": ["5142.1"],
+      "fuente": "Uso común en estética (extensiones de pestañas)"
+    },
+    {
+      "nombre": "piercer",
+      "idioma": "es",
+      "esco": ["3435.5"],
+      "fuente": "Uso común (ESCO «body artist»)"
+    },
+    {
+      "nombre": "piercer",
+      "idioma": "ca",
+      "esco": ["3435.5"],
+      "fuente": "Uso común (ESCO «body artist»)"
+    },
+    {
+      "nombre": "tattooist",
+      "idioma": "es",
+      "esco": ["3435.5"],
+      "fuente": "Uso común (ESCO «body artist»)"
+    },
+    {
+      "nombre": "tattooist",
+      "idioma": "ca",
+      "esco": ["3435.5"],
+      "fuente": "Uso común (ESCO «body artist»)"
+    },
+    {
+      "nombre": "beauty advisor",
+      "idioma": "es",
+      "esco": ["5223.7.12"],
+      "fuente": "Uso común en perfumerías (ESCO «cosmetics and perfume specialised seller»)"
+    },
+    {
+      "nombre": "beauty advisor",
+      "idioma": "ca",
+      "esco": ["5223.7.12"],
+      "fuente": "Uso común en perfumerías (ESCO «cosmetics and perfume specialised seller»)"
+    },
+    {
+      "nombre": "yoga teacher",
+      "idioma": "es",
+      "esco": ["3423.2"],
+      "fuente": "Uso común; la CIUO-08 3423 incluye a los instructores de yoga"
+    },
+    {
+      "nombre": "yoga teacher",
+      "idioma": "ca",
+      "esco": ["3423.2"],
+      "fuente": "Uso común; la CIUO-08 3423 incluye a los instructores de yoga"
+    },
+    {
+      "nombre": "yoga instructor",
+      "idioma": "es",
+      "esco": ["3423.2"],
+      "fuente": "Uso común; la CIUO-08 3423 incluye a los instructores de yoga"
+    },
+    {
+      "nombre": "yoga instructor",
+      "idioma": "ca",
+      "esco": ["3423.2"],
+      "fuente": "Uso común; la CIUO-08 3423 incluye a los instructores de yoga"
+    },
+    {
+      "nombre": "pilates instructor",
+      "idioma": "es",
+      "esco": ["3423.2.3"],
+      "fuente": "Título inglés de ESCO «pilates teacher»"
+    },
+    {
+      "nombre": "pilates instructor",
+      "idioma": "ca",
+      "esco": ["3423.2.3"],
+      "fuente": "Título inglés de ESCO «pilates teacher»"
+    },
+    {
+      "nombre": "surf instructor",
+      "idioma": "es",
+      "esco": ["3422.4"],
+      "fuente": "Uso común (ESCO «sports instructor»)"
+    },
+    {
+      "nombre": "surf instructor",
+      "idioma": "ca",
+      "esco": ["3422.4"],
+      "fuente": "Uso común (ESCO «sports instructor»)"
+    },
+    {
+      "nombre": "ski instructor",
+      "idioma": "es",
+      "esco": ["3422.4.4"],
+      "fuente": "Título inglés de ESCO «ski instructor»"
+    },
+    {
+      "nombre": "ski instructor",
+      "idioma": "ca",
+      "esco": ["3422.4.4"],
+      "fuente": "Título inglés de ESCO «ski instructor»"
+    },
+    {
+      "nombre": "swimming instructor",
+      "idioma": "es",
+      "esco": ["3422.4.6"],
+      "fuente": "Título inglés de ESCO «swimming teacher»"
+    },
+    {
+      "nombre": "swimming instructor",
+      "idioma": "ca",
+      "esco": ["3422.4.6"],
+      "fuente": "Título inglés de ESCO «swimming teacher»"
+    },
+    {
+      "nombre": "tennis coach",
+      "idioma": "es",
+      "esco": ["3422.4.7"],
+      "fuente": "Título inglés de ESCO «tennis coach»"
+    },
+    {
+      "nombre": "tennis coach",
+      "idioma": "ca",
+      "esco": ["3422.4.7"],
+      "fuente": "Título inglés de ESCO «tennis coach»"
+    },
+    {
+      "nombre": "football coach",
+      "idioma": "es",
+      "esco": ["3422.3.1"],
+      "fuente": "Título inglés de ESCO «football coach»"
+    },
+    {
+      "nombre": "football coach",
+      "idioma": "ca",
+      "esco": ["3422.3.1"],
+      "fuente": "Título inglés de ESCO «football coach»"
+    },
+    {
+      "nombre": "plumber",
+      "idioma": "es",
+      "esco": ["7126.8"],
+      "fuente": "Título inglés de ESCO «plumber»"
+    },
+    {
+      "nombre": "plumber",
+      "idioma": "ca",
+      "esco": ["7126.8"],
+      "fuente": "Título inglés de ESCO «plumber»"
+    },
+    {
+      "nombre": "electrician",
+      "idioma": "es",
+      "esco": ["7411.1"],
+      "fuente": "Título inglés de ESCO «domestic electrician»; uso común"
+    },
+    {
+      "nombre": "electrician",
+      "idioma": "ca",
+      "esco": ["7411.1"],
+      "fuente": "Título inglés de ESCO «domestic electrician»; uso común"
+    },
+    {
+      "nombre": "carpenter",
+      "idioma": "es",
+      "esco": ["7115.1"],
+      "fuente": "Título inglés de ESCO «carpenter»"
+    },
+    {
+      "nombre": "carpenter",
+      "idioma": "ca",
+      "esco": ["7115.1"],
+      "fuente": "Título inglés de ESCO «carpenter»"
+    },
+    {
+      "nombre": "bricklayer",
+      "idioma": "es",
+      "esco": ["7112.1"],
+      "fuente": "Título inglés de ESCO «bricklayer»"
+    },
+    {
+      "nombre": "bricklayer",
+      "idioma": "ca",
+      "esco": ["7112.1"],
+      "fuente": "Título inglés de ESCO «bricklayer»"
+    },
+    {
+      "nombre": "house painter",
+      "idioma": "es",
+      "esco": ["7131.1"],
+      "fuente": "Uso común: pintor de paredes"
+    },
+    {
+      "nombre": "house painter",
+      "idioma": "ca",
+      "esco": ["7131.1"],
+      "fuente": "Uso común: pintor de paredes"
+    },
+    {
+      "nombre": "gardener",
+      "idioma": "es",
+      "esco": ["6113.1"],
+      "fuente": "Uso común; ESCO tiene «jardinero» como alternativo de 6113.1"
+    },
+    {
+      "nombre": "gardener",
+      "idioma": "ca",
+      "esco": ["6113.1"],
+      "fuente": "Uso común; ESCO tiene «jardinero» como alternativo de 6113.1"
+    },
+    {
+      "nombre": "car mechanic",
+      "idioma": "es",
+      "esco": ["7231.10"],
+      "fuente": "Uso común (ESCO «motor vehicle mechanic»)"
+    },
+    {
+      "nombre": "car mechanic",
+      "idioma": "ca",
+      "esco": ["7231.10"],
+      "fuente": "Uso común (ESCO «motor vehicle mechanic»)"
+    },
+    {
+      "nombre": "window cleaner",
+      "idioma": "es",
+      "esco": ["9123.1"],
+      "fuente": "Título inglés de ESCO «window cleaner»"
+    },
+    {
+      "nombre": "window cleaner",
+      "idioma": "ca",
+      "esco": ["9123.1"],
+      "fuente": "Título inglés de ESCO «window cleaner»"
+    },
+    {
+      "nombre": "security guard",
+      "idioma": "es",
+      "esco": ["5414.1"],
+      "fuente": "Título inglés de ESCO «security guard»"
+    },
+    {
+      "nombre": "security guard",
+      "idioma": "ca",
+      "esco": ["5414.1"],
+      "fuente": "Título inglés de ESCO «security guard»"
+    },
+    {
+      "nombre": "bouncer",
+      "idioma": "es",
+      "esco": ["5414.1.4"],
+      "fuente": "Uso común: portero de discoteca"
+    },
+    {
+      "nombre": "bouncer",
+      "idioma": "ca",
+      "esco": ["5414.1.4"],
+      "fuente": "Uso común: portero de discoteca"
+    },
+    {
+      "nombre": "construction worker",
+      "idioma": "es",
+      "esco": ["9313.1"],
+      "fuente": "Uso común (ESCO «building construction worker»)"
+    },
+    {
+      "nombre": "construction worker",
+      "idioma": "ca",
+      "esco": ["9313.1"],
+      "fuente": "Uso común (ESCO «building construction worker»)"
+    },
+    {
+      "nombre": "fruit picker",
+      "idioma": "es",
+      "esco": ["9211.1"],
+      "fuente": "Uso común (ESCO «fruit and vegetable picker»)"
+    },
+    {
+      "nombre": "fruit picker",
+      "idioma": "ca",
+      "esco": ["9211.1"],
+      "fuente": "Uso común (ESCO «fruit and vegetable picker»)"
+    },
+    {
+      "nombre": "farm worker",
+      "idioma": "es",
+      "esco": ["9213.1"],
+      "fuente": "Uso común (ESCO «agricultural worker»)"
+    },
+    {
+      "nombre": "farm worker",
+      "idioma": "ca",
+      "esco": ["9213.1"],
+      "fuente": "Uso común (ESCO «agricultural worker»)"
+    },
+    {
+      "nombre": "nurse",
+      "idioma": "es",
+      "esco": ["2221.2"],
+      "fuente": "Uso común (ESCO «general nurse»)"
+    },
+    {
+      "nombre": "nurse",
+      "idioma": "ca",
+      "esco": ["2221.2"],
+      "fuente": "Uso común (ESCO «general nurse»)"
+    },
+    {
+      "nombre": "nursing assistant",
+      "idioma": "es",
+      "esco": ["5321.1.1"],
+      "fuente": "Uso común: auxiliar de enfermería"
+    },
+    {
+      "nombre": "nursing assistant",
+      "idioma": "ca",
+      "esco": ["5321.1.1"],
+      "fuente": "Uso común: auxiliar de enfermería"
+    },
+    {
+      "nombre": "midwife",
+      "idioma": "es",
+      "esco": ["2222.1"],
+      "fuente": "Título inglés de ESCO «midwife»"
+    },
+    {
+      "nombre": "midwife",
+      "idioma": "ca",
+      "esco": ["2222.1"],
+      "fuente": "Título inglés de ESCO «midwife»"
+    },
+    {
+      "nombre": "paramedic",
+      "idioma": "es",
+      "esco": ["3258.1"],
+      "fuente": "Uso común en emergencias (ESCO «ambulance technician»)"
+    },
+    {
+      "nombre": "paramedic",
+      "idioma": "ca",
+      "esco": ["3258.1"],
+      "fuente": "Uso común en emergencias (ESCO «ambulance technician»)"
+    },
+    {
+      "nombre": "pharmacist",
+      "idioma": "es",
+      "esco": ["2262.1"],
+      "fuente": "Título inglés de ESCO «pharmacist»"
+    },
+    {
+      "nombre": "pharmacist",
+      "idioma": "ca",
+      "esco": ["2262.1"],
+      "fuente": "Título inglés de ESCO «pharmacist»"
+    },
+    {
+      "nombre": "physiotherapist",
+      "idioma": "es",
+      "esco": ["2264.2"],
+      "fuente": "Título inglés de ESCO «physiotherapist»"
+    },
+    {
+      "nombre": "physiotherapist",
+      "idioma": "ca",
+      "esco": ["2264.2"],
+      "fuente": "Título inglés de ESCO «physiotherapist»"
+    },
+    {
+      "nombre": "physical therapist",
+      "idioma": "es",
+      "esco": ["2264.2"],
+      "fuente": "Título inglés de ESCO «physiotherapist»"
+    },
+    {
+      "nombre": "physical therapist",
+      "idioma": "ca",
+      "esco": ["2264.2"],
+      "fuente": "Título inglés de ESCO «physiotherapist»"
+    },
+    {
+      "nombre": "dentist",
+      "idioma": "es",
+      "esco": ["2261.1"],
+      "fuente": "Uso común (ESCO «general dentist»)"
+    },
+    {
+      "nombre": "dentist",
+      "idioma": "ca",
+      "esco": ["2261.1"],
+      "fuente": "Uso común (ESCO «general dentist»)"
+    },
+    {
+      "nombre": "dental hygienist",
+      "idioma": "es",
+      "esco": ["2261.3"],
+      "fuente": "Título inglés de ESCO «dental hygienist»"
+    },
+    {
+      "nombre": "dental hygienist",
+      "idioma": "ca",
+      "esco": ["2261.3"],
+      "fuente": "Título inglés de ESCO «dental hygienist»"
+    },
+    {
+      "nombre": "kindergarten teacher",
+      "idioma": "es",
+      "esco": ["2342.1"],
+      "fuente": "Uso común (ESCO «early years teacher»)"
+    },
+    {
+      "nombre": "kindergarten teacher",
+      "idioma": "ca",
+      "esco": ["2342.1"],
+      "fuente": "Uso común (ESCO «early years teacher»)"
+    }
+  ],
+  "fuera": [
+    {
+      "nombre": "mozo",
+      "motivo": "ambigua: en España mozo de almacén (9333); en Argentina, camarero (5131). ESCO ya lo tiene como alternativo de camarero"
+    },
+    {
+      "nombre": "bodeguero",
+      "motivo": "ambigua: en España, dueño o trabajador de una bodega de vino (varios grupos); en Am., tendero o almacenero"
+    },
+    {
+      "nombre": "mucama",
+      "motivo": "dos grupos: criada de una casa (9111/5152) o camarera de hotel (9112)"
+    },
+    {
+      "nombre": "chofer",
+      "motivo": "varios grupos (taxi, autobús, camión, chófer privado), como «chófer» en el vocabulario de la calle; entran solo las formas con «de taxi», «de camión», etc."
+    },
+    {
+      "nombre": "mesonero",
+      "motivo": "ambigua: en España, dueño de un mesón (1412/5131); en Venezuela, camarero"
+    },
+    {
+      "nombre": "cantinero",
+      "motivo": "ambigua: en España, encargado o dueño de una cantina; en México, barman"
+    },
+    {
+      "nombre": "almacenero",
+      "motivo": "ambigua: en España, encargado de almacén (4321/9333); en Argentina, tendero de ultramarinos (5221)"
+    },
+    {
+      "nombre": "feriante",
+      "motivo": "ambigua: en España, feriante de atracciones; en Chile y Argentina, vendedor de mercadillo (5211)"
+    },
+    {
+      "nombre": "puestero",
+      "motivo": "ambigua: en Argentina, vendedor de puesto o peón de estancia"
+    },
+    {
+      "nombre": "chacarero",
+      "motivo": "dos grupos: agricultor (6111) o peón (9211)"
+    },
+    {
+      "nombre": "celador",
+      "motivo": "ambigua: en España, celador de hospital (5329); en Am., vigilante o guardián"
+    },
+    {
+      "nombre": "velador",
+      "motivo": "ambigua: en México, vigilante nocturno; en España, mesa pequeña o candelero"
+    },
+    {
+      "nombre": "patrullero",
+      "motivo": "ambigua: agente de policía en Am.; buque o coche patrulla en España"
+    },
+    {
+      "nombre": "gendarme",
+      "motivo": "dos grupos: en Argentina, Gendarmería (5412); en Chile, Gendarmería es la guardia de prisiones (5413)"
+    },
+    {
+      "nombre": "bombero (gasolinera)",
+      "motivo": "ambigua: en Venezuela y Colombia, empleado de gasolinera; en todas partes, bombero (5411)"
+    },
+    {
+      "nombre": "playero",
+      "motivo": "ambigua: empleado de gasolinera en Argentina; también «de playa»"
+    },
+    {
+      "nombre": "gomero",
+      "motivo": "ambigua: reparador de neumáticos en Argentina; también gentilicio de La Gomera"
+    },
+    {
+      "nombre": "vulcanizador",
+      "motivo": "ESCO tiene «vulcanizador de neumáticos» en fabricación (8141); en Am. es el que repara neumáticos (7231)"
+    },
+    {
+      "nombre": "hojalatero",
+      "motivo": "dos grupos: en México, chapista de coches (7231); en España, hojalatero artesano (7213)"
+    },
+    {
+      "nombre": "elevadorista",
+      "motivo": "ESCO no tiene ascensorista que maneje el ascensor; «ascensorista» es alternativo de un supervisor de instalaciones (3123)"
+    },
+    {
+      "nombre": "contador",
+      "motivo": "ambigua sola: aparato; como oficio, contable (2411) o administrativo contable (3313). Entra «contador público»"
+    },
+    {
+      "nombre": "kinesiólogo",
+      "motivo": "dos grupos: fisioterapeuta en Argentina y Chile (2264); en España, terapia alternativa (3230)"
+    },
+    {
+      "nombre": "obstetra",
+      "motivo": "ambigua: en España, médico especialista (2212); en Perú, matrona (2222). Entra «obstetriz»"
+    },
+    {
+      "nombre": "cosmetólogo",
+      "motivo": "ESCO ya lo tiene como alternativo de aromaterapeuta (2230.1); su femenino quedaría en otro grupo"
+    },
+    {
+      "nombre": "maestro jardinero",
+      "motivo": "ambigua: en Argentina, maestro de educación infantil; en España, categoría de jardinería (6113)"
+    },
+    {
+      "nombre": "parvulario",
+      "motivo": "en España, el centro (la escuela infantil), no la persona. Entra «parvularia»"
+    },
+    {
+      "nombre": "ingeniero en sistemas",
+      "motivo": "varios grupos (2511, 2512, 2523)"
+    },
+    {
+      "nombre": "edecán",
+      "motivo": "ambigua: en México, azafata de eventos; en España, ayudante de campo militar"
+    },
+    {
+      "nombre": "cadete",
+      "motivo": "ambigua: en Argentina, recadero; en España, alumno de academia militar o categoría deportiva"
+    },
+    {
+      "nombre": "canillita",
+      "motivo": "dos grupos: vendedor de periódicos en puesto (5211) o ambulante (9520)"
+    },
+    {
+      "nombre": "voceador",
+      "motivo": "dos grupos, como «canillita»"
+    },
+    {
+      "nombre": "maletero",
+      "motivo": "ambigua: persona que lleva maletas o el portaequipajes del coche"
+    },
+    {
+      "nombre": "bolero",
+      "motivo": "ambigua: limpiabotas en México; también baile, canción y chaquetilla"
+    },
+    {
+      "nombre": "lustrador",
+      "motivo": "ambigua: limpiabotas en Argentina; en España, el que lustra muebles (7522)"
+    },
+    {
+      "nombre": "cerillo",
+      "motivo": "ambigua: empaquetador de supermercado en México; también fósforo"
+    },
+    {
+      "nombre": "operador",
+      "motivo": "ambigua: en México, conductor; en general, varios grupos"
+    },
+    {
+      "nombre": "nana",
+      "motivo": "ambigua: niñera en México y Chile; abuela y canción de cuna en España"
+    },
+    {
+      "nombre": "muchacha",
+      "motivo": "ofensiva o despectiva para la empleada del hogar; además, palabra corriente"
+    },
+    {
+      "nombre": "paco",
+      "motivo": "ofensiva (Chile, policía)"
+    },
+    {
+      "nombre": "tombo",
+      "motivo": "ofensiva (Colombia y Perú, policía)"
+    },
+    {
+      "nombre": "milico",
+      "motivo": "ofensiva (militar o policía)"
+    },
+    {
+      "nombre": "cana",
+      "motivo": "ambigua y despectiva (policía en Argentina; cárcel; pelo blanco)"
+    },
+    {
+      "nombre": "au pair",
+      "motivo": "ya es título oficial de ESCO (5311.1.1)"
+    },
+    {
+      "nombre": "CEO",
+      "motivo": "ya está en el diccionario"
+    },
+    {
+      "nombre": "CTO",
+      "motivo": "ya es alternativo de ESCO (1330.3)"
+    },
+    {
+      "nombre": "CIO",
+      "motivo": "ya es alternativo de ESCO (1330.2)"
+    },
+    {
+      "nombre": "CISO",
+      "motivo": "ya es alternativo de ESCO (2529.1)"
+    },
+    {
+      "nombre": "runner",
+      "motivo": "ya está en el diccionario"
+    },
+    {
+      "nombre": "picker",
+      "motivo": "ya está en el diccionario"
+    },
+    {
+      "nombre": "store manager",
+      "motivo": "ya está en el diccionario"
+    },
+    {
+      "nombre": "recruiter",
+      "motivo": "ya está en el diccionario"
+    },
+    {
+      "nombre": "headhunter",
+      "motivo": "ya está en el diccionario"
+    },
+    {
+      "nombre": "personal trainer",
+      "motivo": "ya está en el diccionario"
+    },
+    {
+      "nombre": "bartender",
+      "motivo": "ya está en el diccionario"
+    },
+    {
+      "nombre": "rider",
+      "motivo": "ya está en el diccionario"
+    },
+    {
+      "nombre": "helpdesk",
+      "motivo": "ya está en el diccionario"
+    },
+    {
+      "nombre": "sysadmin",
+      "motivo": "ya está en el diccionario"
+    },
+    {
+      "nombre": "data scientist",
+      "motivo": "ya está en el diccionario"
+    },
+    {
+      "nombre": "DJ",
+      "motivo": "ya está en el diccionario"
+    },
+    {
+      "nombre": "community manager",
+      "motivo": "ya es alternativo de ESCO (2432.5)"
+    },
+    {
+      "nombre": "brand manager",
+      "motivo": "ya es alternativo de ESCO (2431.4)"
+    },
+    {
+      "nombre": "scrum master",
+      "motivo": "ya es alternativo de ESCO (1330.7)"
+    },
+    {
+      "nombre": "personal shopper",
+      "motivo": "ya es alternativo de ESCO (5223.3)"
+    },
+    {
+      "nombre": "visual merchandiser",
+      "motivo": "ya es título de ESCO (3432.6)"
+    },
+    {
+      "nombre": "valet",
+      "motivo": "ya es alternativo de ESCO (9112.4)"
+    },
+    {
+      "nombre": "coach",
+      "motivo": "ya es alternativo de ESCO (3412.3) y es ambiguo (deporte, empresa)"
+    },
+    {
+      "nombre": "front-end developer",
+      "motivo": "variante con guion de «frontend developer», que ya está en el diccionario; añadir solo si el buscador no normaliza el guion"
+    },
+    {
+      "nombre": "back-end developer",
+      "motivo": "variante con guion de «backend developer», que ya está en el diccionario; añadir solo si el buscador no normaliza el guion"
+    },
+    {
+      "nombre": "full stack developer",
+      "motivo": "dos grupos: desarrollador de software (2512) o web (2513)"
+    },
+    {
+      "nombre": "UX designer",
+      "motivo": "varios grupos: el diccionario ya lleva «diseñador UX» a 2513 y 2511"
+    },
+    {
+      "nombre": "UI designer",
+      "motivo": "dos grupos: desarrollador de interfaces (2512) o diseñador (2513/2166)"
+    },
+    {
+      "nombre": "product manager",
+      "motivo": "varios grupos: director de producto (1223), jefe de producto TIC (1330), marketing (2431)"
+    },
+    {
+      "nombre": "product owner",
+      "motivo": "sin ocupación ESCO propia; varios grupos posibles"
+    },
+    {
+      "nombre": "key account manager",
+      "motivo": "sin ocupación ESCO propia; puede ser 1221, 1420, 2433 o 3322"
+    },
+    {
+      "nombre": "account manager",
+      "motivo": "varios grupos: publicidad (2431), ventas (3322), banca (3312), TIC (2434)"
+    },
+    {
+      "nombre": "office manager",
+      "motivo": "varios grupos: supervisor de oficina (3341) o director de servicios administrativos (1211/1219)"
+    },
+    {
+      "nombre": "HR manager",
+      "motivo": "dos grupos: director de recursos humanos (1212) o responsable de recursos humanos (2423)"
+    },
+    {
+      "nombre": "PR manager",
+      "motivo": "dos grupos: director de relaciones públicas (1222) o encargado (2432)"
+    },
+    {
+      "nombre": "art director",
+      "motivo": "varios grupos: director artístico (2654) o creativo (2431)"
+    },
+    {
+      "nombre": "compliance officer",
+      "motivo": "sin ocupación ESCO general; varios grupos (1213, 2619, 2411)"
+    },
+    {
+      "nombre": "buyer",
+      "motivo": "varios grupos: comprador (3323) o director de compras (1324)"
+    },
+    {
+      "nombre": "trader",
+      "motivo": "dos grupos: operador de bolsa (3311) o analista de inversiones (2413)"
+    },
+    {
+      "nombre": "broker",
+      "motivo": "varios grupos (seguros, bolsa, inmobiliario)"
+    },
+    {
+      "nombre": "controller",
+      "motivo": "ambigua: controlador financiero, mando de videojuego, controlador aéreo"
+    },
+    {
+      "nombre": "merchandiser",
+      "motivo": "dos grupos: reponedor (9334) o técnico de presentación en punto de venta (3432)"
+    },
+    {
+      "nombre": "tester",
+      "motivo": "ambigua sola: probador de software (2519), de productos o de coches (7543). Entran «QA tester» y «software tester»"
+    },
+    {
+      "nombre": "copy",
+      "motivo": "ambigua sola (abreviatura de «copywriter», «copia»)"
+    },
+    {
+      "nombre": "influencer",
+      "motivo": "sin ocupación ESCO"
+    },
+    {
+      "nombre": "youtuber",
+      "motivo": "sin ocupación ESCO"
+    },
+    {
+      "nombre": "streamer",
+      "motivo": "sin ocupación ESCO"
+    },
+    {
+      "nombre": "cleaner",
+      "motivo": "varios grupos, como «limpiador» en el vocabulario de la calle"
+    },
+    {
+      "nombre": "handyman",
+      "motivo": "varios grupos (mantenimiento, albañilería, fontanería)"
+    },
+    {
+      "nombre": "team leader",
+      "motivo": "varios grupos: cualquier supervisor"
+    },
+    {
+      "nombre": "back office",
+      "motivo": "departamento, no oficio; varios grupos"
+    },
+    {
+      "nombre": "personal assistant",
+      "motivo": "dos grupos: asistente de dirección (3343) o asistente personal de cuidados (5322)"
+    },
+    {
+      "nombre": "hostess",
+      "motivo": "ambigua: azafata, recepcionista de restaurante y uso ofensivo"
+    },
+    {
+      "nombre": "housekeeping",
+      "motivo": "departamento: camarera de pisos (9112) o gobernanta (5151)"
+    },
+    {
+      "nombre": "security",
+      "motivo": "ambigua: vigilante (5414) o seguridad informática (2529)"
+    },
+    {
+      "nombre": "driver",
+      "motivo": "varios grupos de conductores"
+    },
+    {
+      "nombre": "delivery",
+      "motivo": "varios grupos de reparto (8321, 9331, 9621)"
+    },
+    {
+      "nombre": "solutions architect",
+      "motivo": "dos grupos: arquitecto de sistemas TIC (2511) o arquitecto de la nube (2512)"
+    },
+    {
+      "nombre": "3D artist",
+      "motivo": "varios grupos: animador (2166), modelador técnico (3118) o artista plástico (2651)"
+    },
+    {
+      "nombre": "e-commerce manager",
+      "motivo": "dos grupos: director de ventas en línea (1221) o especialista en comercio electrónico (2431)"
+    },
+    {
+      "nombre": "content creator",
+      "motivo": "sin ocupación ESCO propia, como «influencer»"
+    },
+    {
+      "nombre": "content writer",
+      "motivo": "sin ocupación ESCO propia; redactor publicitario (2431) o periodista (2642)"
+    },
+    {
+      "nombre": "proofreader",
+      "motivo": "dos grupos: corrector lingüístico (4413) o corrector editorial (2642)"
+    },
+    {
+      "nombre": "media buyer",
+      "motivo": "sin ocupación ESCO propia"
+    },
+    {
+      "nombre": "growth hacker",
+      "motivo": "sin ocupación ESCO propia; varios grupos de marketing"
+    },
+    {
+      "nombre": "brand ambassador",
+      "motivo": "varios grupos: promotor de ventas (5242), marketing (2431) o influencer"
+    },
+    {
+      "nombre": "customer success manager",
+      "motivo": "sin ocupación ESCO propia; ventas (3322) o atención al cliente (4222)"
+    },
+    {
+      "nombre": "courier",
+      "motivo": "varios grupos: mensajero en moto (8321), en bici (9331) o cartero (4412)"
+    },
+    {
+      "nombre": "delivery driver",
+      "motivo": "varios grupos de reparto (8321, 8322), como «delivery»"
+    },
+    {
+      "nombre": "dispatcher",
+      "motivo": "ambigua: operador de emergencias (4223), de taxis o de transporte (4323)"
+    },
+    {
+      "nombre": "fleet manager",
+      "motivo": "sin ocupación ESCO propia"
+    },
+    {
+      "nombre": "F&B manager",
+      "motivo": "sin ocupación ESCO propia: director de restauración de hotel (1411 o 1412)"
+    },
+    {
+      "nombre": "entertainer",
+      "motivo": "ambigua: animador turístico (2659), artista o presentador"
+    },
+    {
+      "nombre": "financial analyst",
+      "motivo": "varios grupos: ESCO lo tiene como alternativo en 2411, 3311 y 3312"
+    },
+    {
+      "nombre": "risk analyst",
+      "motivo": "varios grupos (seguros, banca, juego)"
+    },
+    {
+      "nombre": "massage therapist",
+      "motivo": "dos grupos: masajista (5142) o masajista terapéutico (3255)"
+    },
+    {
+      "nombre": "masseur",
+      "motivo": "dos grupos, como «massage therapist»"
+    },
+    {
+      "nombre": "caregiver",
+      "motivo": "dos grupos: cuidador en el domicilio (5322) o en institución (5321); además ESCO pone al gerocultor en 3412"
+    },
+    {
+      "nombre": "carer",
+      "motivo": "dos grupos, como «caregiver»"
+    },
+    {
+      "nombre": "teacher",
+      "motivo": "varios grupos (infantil, primaria, secundaria, academia)"
+    },
+    {
+      "nombre": "English teacher",
+      "motivo": "varios grupos: secundaria (2330) o academia de idiomas (2353)"
+    },
+    {
+      "nombre": "painter",
+      "motivo": "ambigua: pintor de paredes (7131) o artista (2651)"
+    },
+    {
+      "nombre": "mechanic",
+      "motivo": "varios grupos (vehículos, industria, aviación)"
+    },
+    {
+      "nombre": "farmer",
+      "motivo": "dos grupos: agricultor (6111) o ganadero (6121)"
+    },
+    {
+      "nombre": "labourer",
+      "motivo": "varios grupos de peones (9211, 9313, 9329)"
+    },
+    {
+      "nombre": "doorman",
+      "motivo": "dos grupos: portero de finca (5153) o de hotel (9621)"
+    },
+    {
+      "nombre": "porter",
+      "motivo": "ambigua: mozo de equipajes (9621), portero o camillero"
+    },
+    {
+      "nombre": "janitor",
+      "motivo": "dos grupos: conserje de edificio (5153) o limpiador (9112)"
+    },
+    {
+      "nombre": "general manager",
+      "motivo": "varios grupos de dirección"
+    },
+    {
+      "nombre": "SDR",
+      "motivo": "sin ocupación ESCO propia: prospección comercial (3322) o televenta (5244)"
+    },
+    {
+      "nombre": "maestro de obras",
+      "motivo": "dos grupos: ESCO lleva «encargado de obra» a 3123 y a 7111"
+    },
+    {
+      "nombre": "tecnólogo médico",
+      "motivo": "varios grupos: laboratorio (3212), imagen (3211) u óptica (3254) según la mención"
+    },
+    {
+      "nombre": "ingeniero comercial",
+      "motivo": "en Chile, título genérico de administración; varios grupos"
+    },
+    {
+      "nombre": "ingeniero en computación",
+      "motivo": "varios grupos (2511, 2512, 2523), como «ingeniero en sistemas»"
+    },
+    {
+      "nombre": "cuidacoches",
+      "motivo": "informal y sin ocupación clara (aparcacoches 8322 o vigilante)"
+    },
+    {
+      "nombre": "maquilero",
+      "motivo": "ambigua: trabajador de maquila de cualquier rama industrial"
+    }
+  ]
+}

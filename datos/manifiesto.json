@@ -1,0 +1,287 @@
+{
+  "esco.json": {
+    "origenes": {
+      "var/actualizacion/validados/esco/biblioteca-esco.sqlite": "61815e32c056176a29922c81865c95540751ddaba5c26798a3bce9a26a992546"
+    },
+    "sha256": "1847fb2f7bca798d0d8c78a82c3300e9db9863cf6358fd9c740fb8d16176d6d4"
+  },
+  "oit.json": {
+    "origenes": {
+      "var/actualizacion/validados/oit/oit.json": "5441d245f1d919bb35427db62157f8d2cbafd436c6ce88889cd6c1617a9b4451"
+    },
+    "sha256": "5441d245f1d919bb35427db62157f8d2cbafd436c6ce88889cd6c1617a9b4451"
+  },
+  "clasificaciones.json": {
+    "origenes": {
+      "var/actualizacion/validados/clasificaciones/clasificaciones.json": "d8634f843601de509d12a9166473b4ddd8b3682ba0125255312a4d5096a58e31"
+    },
+    "sha256": "d8634f843601de509d12a9166473b4ddd8b3682ba0125255312a4d5096a58e31"
+  },
+  "exposicion-cambra.json": {
+    "origenes": {
+      "var/actualizacion/validados/cambra/cambra.json": "fdea87b973f3d1f651191ee2eba01a524d082ad40910b61f2bbd428505f2d50e"
+    },
+    "sha256": "17bff0adc27853ebc36b16343c3ae5d4b2b2bb7ad869ed0fdeabb65f7d85a73e"
+  },
+  "textos.json": {
+    "origenes": {
+      "var/actualizacion/preparados/textos/tareas-piloto.json": "871d3d77f8f8aba2c7b8147ad70c2b8ec12451126000cbff2fb5acb4008bf43a",
+      "var/actualizacion/preparados/textos/tareas-generadas.jsonl": "10e5040e74e310efb551ed63d72dcd2e86efb8b313e921d3366dde92f7ce0ceb",
+      "var/actualizacion/preparados/textos/tareas-traducidas.jsonl": "0a53acea33dd8e2a35ea0f1b4ac37a66b6e0b9749b381346c2e8d5738f2ffc75"
+    },
+    "sha256": "c45556e3a8316778f262aec7433daf0d704c6b9093f969a1796ec278cfa42407"
+  },
+  "formacion.json": {
+    "origenes": {
+      "var/actualizacion/preparados/formacion/esco-cosispe.jsonl": "33fd2d049cd0d955c26093f473336aaf58f26797b8d4e408ea17af8a57594c0b",
+      "var/actualizacion/preparados/formacion/sepe-especialidades.jsonl": "49303224f950f4195c743f8d32af9df61cb21a04eb1908c98b92d7115780e790",
+      "var/actualizacion/preparados/formacion/soc-cursos.jsonl": "3d53499e9ac14ea4a0e21ee20617067f86de5d0083d4ead9f32beec69a47aadd"
+    },
+    "sha256": "3cb696ed395bca0ea19f479dca076b3e5fa0d6af3440631e6b9935392898c231"
+  },
+  "correspondencia-eures.json": {
+    "origenes": {
+      "var/actualizacion/preparados/formacion/esco-cosispe.jsonl": "33fd2d049cd0d955c26093f473336aaf58f26797b8d4e408ea17af8a57594c0b"
+    },
+    "sha256": "e06dba1d0b6f1b479705cad85aa30a423a86387f8eff7723ec7a6f0762bb1f9d"
+  },
+  "consorci.json": {
+    "origenes": {
+      "var/actualizacion/validados/consorci/consorci.json": "e83bd7c348ef908225ba4bf117f4510a4e948b1017d79a067cf97f8c4a9e3e81"
+    },
+    "sha256": "e83bd7c348ef908225ba4bf117f4510a4e948b1017d79a067cf97f8c4a9e3e81"
+  },
+  "enlaces-comprobados.json": {
+    "origenes": {
+      "var/actualizacion/validados/enlaces/enlaces.json": "b9595f8aff2f169c4280f8a49257827c3ffefaa7698c25a0aa505b111bcea598"
+    },
+    "sha256": "b9595f8aff2f169c4280f8a49257827c3ffefaa7698c25a0aa505b111bcea598"
+  },
+  "acreditacion.json": {
+    "origenes": {
+      "var/actualizacion/validados/acreditacion/acreditacion.json": "0f34b54f6ca21ecaff544d9b4ff7aa79936446dbb44b27fe054a1fcc1945a185",
+      "var/actualizacion/validados/memoria-fpcat/memoria-fpcat.json": "b81f114098b4e4887aefd3d76b5da68f038fc9303d7bfc5052cfbab1766aa435"
+    },
+    "sha256": "8857a423746412bc675d536266d96e389ed9f3d980aabed355a20437835a7f3e"
+  },
+  "citilab.json": {
+    "origenes": {
+      "var/actualizacion/validados/citilab/citilab.json": "9c6526f614157fbe0ef2dc4771b0a620698c45c99e62c23a5cf1ea2a8e30b0e6"
+    },
+    "sha256": "9c6526f614157fbe0ef2dc4771b0a620698c45c99e62c23a5cf1ea2a8e30b0e6"
+  },
+  "derechos.json": {
+    "origenes": {
+      "var/actualizacion/validados/derechos/derechos.json": "fb535e85ced432c5fc540434ac1e21c117be34fbea7572f91ae7efbf8187b826"
+    },
+    "sha256": "4d57560f2ecb20ad219ba496b145c76a7696dde8aa4fa49ef2d197a71d3898af"
+  },
+  "formacion-abierta.json": {
+    "origenes": {
+      "var/actualizacion/validados/abierta/abierta.json": "8b0677c3d277eaf0c89eab8ccb4e1d3c5ec42cc952919256089855f8dd2a593c"
+    },
+    "sha256": "8b0677c3d277eaf0c89eab8ccb4e1d3c5ec42cc952919256089855f8dd2a593c"
+  },
+  "cataluna.json": {
+    "origenes": {
+      "var/actualizacion/validados/cataluna/cataluna.json": "dfc57924b6ad1dabd423505b559ca640e9f9055247822999c3344e46a270ac32"
+    },
+    "sha256": "dfc57924b6ad1dabd423505b559ca640e9f9055247822999c3344e46a270ac32"
+  },
+  "nombres.json": {
+    "origenes": {
+      "var/actualizacion/validados/nombres/nombres.json": "f79c3c7de97dda33d3826489d918ecc9d11e677a769714460581c430c80bfae7"
+    },
+    "sha256": "f79c3c7de97dda33d3826489d918ecc9d11e677a769714460581c430c80bfae7"
+  },
+  "ocupados.json": {
+    "origenes": {
+      "var/actualizacion/validados/ocupados/ocupados.json": "434f736dac8fcfc8af6434e6f2744350025535171cac5eaf71cebc019556a718"
+    },
+    "sha256": "434f736dac8fcfc8af6434e6f2744350025535171cac5eaf71cebc019556a718"
+  },
+  "censo.json": {
+    "origenes": {
+      "var/actualizacion/validados/censo/censo.json": "93242dd239294afb1f4f7452d59e33e9555d07f13052a6d0bac06d8447efcfae"
+    },
+    "sha256": "93242dd239294afb1f4f7452d59e33e9555d07f13052a6d0bac06d8447efcfae"
+  },
+  "tich.json": {
+    "origenes": {
+      "var/actualizacion/validados/tich/tich.json": "306651d724942eb5fd875a87883ab2e8eac3c5f6e9c45122d9320cef251b6768",
+      "var/actualizacion/validados/tic-llars/tic-llars.json": "58c2b1d4d19a29e536930c8dd96a56d8bb51c217b1ef59b0d978d25652f91045"
+    },
+    "sha256": "1db75c415a57dd68725f6679f09062f79f33130719a1f5e46b93edd62cc6c75d"
+  },
+  "salarios.json": {
+    "origenes": {
+      "var/actualizacion/validados/salarios/salarios.json": "66fc4a184b27b7c917c85c05630458938987a41a53a394d013cf0ddfab8b4eb6"
+    },
+    "sha256": "66fc4a184b27b7c917c85c05630458938987a41a53a394d013cf0ddfab8b4eb6"
+  },
+  "observatori.json": {
+    "origenes": {
+      "var/actualizacion/validados/observatori/observatori.json": "edb77d8d7cf67b9d39a1180b7390ba8ea9729ecc25a3c17f9339c69dbbf2e46e"
+    },
+    "sha256": "edb77d8d7cf67b9d39a1180b7390ba8ea9729ecc25a3c17f9339c69dbbf2e46e"
+  },
+  "sepe-necesidades.json": {
+    "origenes": {
+      "var/actualizacion/validados/sepe-necesidades/sepe-necesidades.json": "f0cab8912da993b1bc6bf44d9bfc7af21d76ddeae3ad355c54b1a04f2383e15a"
+    },
+    "sha256": "f0cab8912da993b1bc6bf44d9bfc7af21d76ddeae3ad355c54b1a04f2383e15a"
+  },
+  "perfiles-sepe.json": {
+    "origenes": {
+      "var/actualizacion/validados/perfiles/perfiles.json": "262832e986859a1bfad2ebad5de449e64988c6d3a900f881db1ad9bbe1056b5a"
+    },
+    "sha256": "262832e986859a1bfad2ebad5de449e64988c6d3a900f881db1ad9bbe1056b5a"
+  },
+  "certificados-sepe-2016.json": {
+    "origenes": {
+      "var/actualizacion/validados/certificados2016/certificados2016.json": "216f171d3b4225f5b047a3b85b6fa503e9b17411924e2952d1b97041124c64a1"
+    },
+    "sha256": "216f171d3b4225f5b047a3b85b6fa503e9b17411924e2952d1b97041124c64a1"
+  },
+  "actic.json": {
+    "origenes": {
+      "var/actualizacion/validados/actic/actic.json": "7c338f140754248e2314d6540e61c98c54966c9a002d78935bb2e045f484730e"
+    },
+    "sha256": "7c338f140754248e2314d6540e61c98c54966c9a002d78935bb2e045f484730e"
+  },
+  "barcelonactiva.json": {
+    "origenes": {
+      "var/actualizacion/validados/barcelonactiva/barcelonactiva.json": "619ea8d549dc035a67c4a3a294b36b7fd4da4ffe4434c3f31ec0656d156c260a"
+    },
+    "sha256": "619ea8d549dc035a67c4a3a294b36b7fd4da4ffe4434c3f31ec0656d156c260a"
+  },
+  "fundae.json": {
+    "origenes": {
+      "var/actualizacion/validados/fundae/fundae.json": "7a68cd6d15607a58ebe8ebcf83febc3562426e9bd081ecc098b928add34e1394"
+    },
+    "sha256": "7a68cd6d15607a58ebe8ebcf83febc3562426e9bd081ecc098b928add34e1394"
+  },
+  "mercado.json": {
+    "origenes": {
+      "var/actualizacion/validados/epa/epa.json": "a64b90823d9f2fa5568bf776ab19ab1b7cc542ac01da9433a03156312f882ea0",
+      "var/actualizacion/validados/eaes/eaes.json": "aaf5fa4c620415364afbe910050e542e4af4ae1cfbb53ed6ac5fb58d087605b6",
+      "var/actualizacion/validados/observatori/observatori.json": "edb77d8d7cf67b9d39a1180b7390ba8ea9729ecc25a3c17f9339c69dbbf2e46e",
+      "var/actualizacion/originales/cataluna/observatori-C_P2_MES_IND-2026-09.json": "91346272763973f4eb25e87a38e2b35f2a0feff206f09f645da2721d67905536",
+      "var/actualizacion/originales/observatori/observatori-C_P5_EVOL_2-2026-09.json": "6566837daef15453052761b5476612659594118bc07f905fb1fee6d056bc222e",
+      "var/actualizacion/originales/observatori/observatori-C_P8_IND_COMARQUES-2026-09.json": "a40f6f815f6336e29a3b7f045b1906c0895819cddde93cee1491765cfd277076",
+      "var/actualizacion/validados/ofertas/ofertas.json": "413258f2ff7828d75ce16d7b114a989a81adc926f3b6c30a3959bdfc0a2b7b87"
+    },
+    "sha256": "fed391f090b3ed82abd5f4da416d26b185ae79f09cadad4290e527e708ebcf15"
+  },
+  "empresas.json": {
+    "origenes": {
+      "var/actualizacion/validados/empresas/empresas.json": "e9019a82b63dcc2853f12bd429208f9ff130029ac2a5b6715ac52f107be5418b",
+      "var/actualizacion/validados/empresas/validacion.json": "d10a99c3c38c4b12673f28d14be8912a71df7a9f63093407fc6d9f96ad2ea3ee",
+      "var/actualizacion/originales/empresas/procedencia.json": "b0edc5edaf6a480f46a541f66cad1fa8778699da25285a256fc194bf411eb447",
+      "var/actualizacion/originales/empresas/ine-eticce-2026-comunidades.json": "07fbf14e612c25c5aa69cb461c41e4a4853e70ab4645e7dcf1ecc46276d6996c",
+      "var/actualizacion/originales/empresas/ine-eticce-2026-comunidades-notas.html": "2750f940a7a57878370f75ca78519deb14e7e8fdd0b50532bd1e315f2c47cb43"
+    },
+    "sha256": "72c9b02847ca40696de33ff667c6d39ab1223595cb2c5390cb4f41a4421143e7"
+  },
+  "sectores.json": {
+    "origenes": {
+      "var/actualizacion/validados/sectores/sectores.json": "9a544ce978817d710c52088493afd27794b2a4be12a94a0bf99ba7ed5f32d698",
+      "var/actualizacion/validados/sectores/validacion.json": "379c9db6c7d892a63b1595e6c638dbeea68452e31c31278baa91b1efd7afef1b"
+    },
+    "sha256": "c609f3e9f2f583776f0477a884fa940e40bc638ca1070cfe5a18d57fe212351a"
+  },
+  "metodos.json": {
+    "origenes": {
+      "var/actualizacion/originales/metodos/consenso-isco4.json": "97c80f93dd433d4e1f1ba2c05e785e2b3457f0b8f400b968354b6622493d7b31",
+      "plataforma_datos/ia_y_trabajo/condiciones-metodos.json": "28503d56dd1e2271ef4746f5a18b6dc1f901163182901fe92f5280505d4b555e"
+    },
+    "sha256": "71677d5a715de0d766034a4314f1f277ff18bfbcca2ffd29c58d01ad17752685"
+  },
+  "catalan.json": {
+    "origenes": {
+      "var/actualizacion/preparados/catalan/origen/grupos-01.json": "f9c4a1e388882b3ee87d938d5cc032738f0f24877e700e7d2ac6a39819a4ef6d",
+      "var/actualizacion/preparados/catalan/origen/grupos-muestra.json": "fd6a55cf3485e04699dd0536612df7fa0ece2280c15a8d46bdd11012f316f802",
+      "var/actualizacion/preparados/catalan/origen/ocupaciones-01.json": "c8603d57fd5246132be9a0849c3d9b2473bfd0d43da36b3e48bea0da03458106",
+      "var/actualizacion/preparados/catalan/origen/ocupaciones-02.json": "a48c1cbc8640b4fbbc16754fc8cc1aacf5a3b2bde0b5db2adac61e76d01b2694",
+      "var/actualizacion/preparados/catalan/origen/ocupaciones-03.json": "679b7d5225732782882f6bf263badb5ace1a0d129ce6a414064108ccc5968d34",
+      "var/actualizacion/preparados/catalan/origen/ocupaciones-04.json": "702e34669a9a97683d051a828acb2dcee53be0c709138e845af86b46c47f89d9",
+      "var/actualizacion/preparados/catalan/origen/ocupaciones-muestra.json": "ca622784b56879d47f1048396a0f3e98cf84e823c4ea3fadad5eb26a4bc95557",
+      "var/actualizacion/preparados/catalan/origen/tareas-01.json": "9a7cb438f30e83b116667a21db661cccfb51adfbe3012cd1a403f6ac41c58b5d",
+      "var/actualizacion/preparados/catalan/origen/tareas-02.json": "6e2d9bf33cebace8244138afe7f124acac6edd8f706cd065e2403fdff498fd7c",
+      "var/actualizacion/preparados/catalan/origen/tareas-03.json": "cf98e7962e043b8dd00d57c8dafe03e237780145ff1f1f9d4d6e3e2d793d9ccc",
+      "var/actualizacion/preparados/catalan/origen/tareas-04.json": "c9d887c975430b2b7aa733db5789abf3d2e188eff4dfeddfea7816f01a219138",
+      "var/actualizacion/preparados/catalan/origen/tareas-05.json": "ce6a8ec49dd06fc64c391608499bb46a54f85f426e8729c33dc985bdc9276087",
+      "var/actualizacion/preparados/catalan/origen/tareas-06.json": "41f5e8ba995073febe216962258b4584843525908fb496908e3890c0b8b2496f",
+      "var/actualizacion/preparados/catalan/origen/tareas-07.json": "35021a90a9ea5037149c96f1b043b1d58207cb8ae421888f39697514345b7937",
+      "var/actualizacion/preparados/catalan/origen/tareas-muestra.json": "51e30defcecbba1213aba066789765cc47608a74456de51001ceb7c069fb4e8c",
+      "var/actualizacion/preparados/catalan/traducciones/grupos-01.json": "828483f27738f240843440e652fe3e0385a1c4361921d14575af317472b32b57",
+      "var/actualizacion/preparados/catalan/traducciones/grupos-muestra.json": "6cb05e1b2fde3a2dd1e7741fd5b93405cfac32a9174a8c02230a65a0cecbd92b",
+      "var/actualizacion/preparados/catalan/traducciones/ocupaciones-01.json": "812be7d66824a74eadbe778dd0f29725411a39d40727a942c8de0dec0b5a2a42",
+      "var/actualizacion/preparados/catalan/traducciones/ocupaciones-02.json": "76740d0eb00663a53b132771b3af620ec6f18073ea2142934f7f276f4b8f1fe5",
+      "var/actualizacion/preparados/catalan/traducciones/ocupaciones-03.json": "2c70e2331ae9b74681fb55d455dac4c3473c0dbfa989c93b73a5a047e5d22f63",
+      "var/actualizacion/preparados/catalan/traducciones/ocupaciones-04.json": "b314d146f76e88adc5398a12c9e551771dd496f2fe61217a24988368700cf407",
+      "var/actualizacion/preparados/catalan/traducciones/ocupaciones-muestra.json": "51245284cefa03a27f9d527acd6ba1a32b2f2554c3875081458b2b9d3be3b1e5",
+      "var/actualizacion/preparados/catalan/traducciones/tareas-01.json": "164ad92d3c52353bbf571e3db4c30e51eddff645fac4e6b174b398b083b6d89d",
+      "var/actualizacion/preparados/catalan/traducciones/tareas-02.json": "684dd6e31f7de9a63a207b2549b68cdb53f2c52237f282f7fea466135eb994d8",
+      "var/actualizacion/preparados/catalan/traducciones/tareas-03.json": "0e404931a0e14eb6e2e9eecd4a239100198415d68d6846ecbe8f981b591d7830",
+      "var/actualizacion/preparados/catalan/traducciones/tareas-04.json": "c3220e68a57f2825b4b10727bd883d7c59edfe574f59a854f8d964017315ba55",
+      "var/actualizacion/preparados/catalan/traducciones/tareas-05.json": "7dd07a5f10eec1ab3a4e79e9110b6d244f573033d75d3bf3c0f63d194195744c",
+      "var/actualizacion/preparados/catalan/traducciones/tareas-06.json": "e99c6199ce90bbb6e65b40e473b028093185cd17cdc0701425af5ccc91050b3e",
+      "var/actualizacion/preparados/catalan/traducciones/tareas-07.json": "bee0b09ef10c16c5459f4efd661c04fa6137a435656bc4b33121cf4778e44904",
+      "var/actualizacion/preparados/catalan/traducciones/tareas-muestra.json": "ce033ed53ccd9b82d0fed254df75695664a96cdfbad68eb1860b1a60d1dff759",
+      "var/actualizacion/validados/idescat/idescat.json": "d1a7869a3c5b455f8e5b0f7bda30b52979ea87b04458bf49b8ba4556787da594"
+    },
+    "sha256": "f943ee30786b8b156a7ec63a9111f734f8595ee3226fcf6a09a88d53b4766d21"
+  },
+  "vectores-formacion.json": {
+    "origenes": {
+      "datos/fuentes/recursos-fijados/captura.zip": "f2eb6b78c64d58e6ae7a925b045523571e2c5d7242d13b6396110de1d8ea8bf2",
+      "datos/fuentes/recursos-fijados/registro.json": "7b16483e7a992362fbe96f3e05ff6330c7fed8d13e11d77787e125eaa6ff555f"
+    },
+    "sha256": "0a207eee38b8c7eaca36a8e88492ab3de081bf5fcd4a2d2ebb5ca2e52677371d"
+  },
+  "vectores-oit.json": {
+    "origenes": {
+      "datos/fuentes/recursos-fijados/captura.zip": "f2eb6b78c64d58e6ae7a925b045523571e2c5d7242d13b6396110de1d8ea8bf2",
+      "datos/fuentes/recursos-fijados/registro.json": "7b16483e7a992362fbe96f3e05ff6330c7fed8d13e11d77787e125eaa6ff555f"
+    },
+    "sha256": "061cb7b476616638ff7a3533cb8f07e630784e355107b1df93e0bc07317ddd23"
+  },
+  "vectores-movil.json": {
+    "origenes": {
+      "datos/vectores-movil/vocabulario.json": "a2640ed5345e5271040f6154a8cac8961181adb39469ecface0539bb6152ccdf",
+      "datos/vectores-movil/indices.json": "69f0a441961712e5e62b12270dc6813425ce475dad5eac9ff0d488aa52975da4",
+      "datos/vectores-movil/palabras.i8": "5ae5e19bd8fabd6fbee398324607434334e605036985dda3709a23cc3410ecfa",
+      "datos/vectores-movil/palabras.escala.f32": "cea1c30002343d716be0f8c31bdde41077d8803c144ab3ba09162e49f42cee94",
+      "datos/vectores-movil/palabras.peso.f32": "fed9d8f8fd3eb6783b06734533ab794ff584a25341fdbc4e334cab72bb4fecd0",
+      "datos/vectores-movil/ocup_es.i8": "d517f6a0e6ff5091060eacfad712564ed12d919ee589b162872cd7dc9ac3a4d3",
+      "datos/vectores-movil/ocup_es.escala.f32": "668c7da05c133ac311db9a0f6b9ef65e70c20ec3c419bdf977899531f8c85299",
+      "datos/vectores-movil/ocup_ca.i8": "a97858c2682986082892ad34e619c641f4513c13281186ea04cbce0213610e23",
+      "datos/vectores-movil/ocup_ca.escala.f32": "2bb5cc701f72a3499b56566f6ca7c6a45c81f75944d628eb9f913a61ade2a16a",
+      "datos/vectores-movil/alt_es.i8": "1facc8e0202c369b3517c85a2421185b10da62bd02e401f36b0c0ce55665554e",
+      "datos/vectores-movil/alt_es.escala.f32": "7fcdbfe0faded8bd0bdb3e5aaadb80e1a901f0ff56cfbcaf2f13623d764be655"
+    },
+    "sha256": "2e63546a290bcc2ae265b59e761557af6afe14ed2c5caa2abee577f0c1c878fb"
+  },
+  "clasificador-movil.json": {
+    "origenes": {
+      "datos/fuentes/clasificador/control.json": "edccb63459f1c722f657ac5afa8fd41f5b5947e1f374ae21b927c1957febda3c",
+      "datos/fuentes/clasificador/huellas.json": "fad616b1372be80283a8a81dc137e7ed4687c3bdb4de933436c268d0461db664"
+    },
+    "sha256": "eeb218a68425b797fd943ba2656abb4ee8e3b48d15420fa74546996b005d2e55"
+  },
+  "comarcas.json": {
+    "origenes": {
+      "datos/fuentes/hoja-de-ruta/municipis-idescat-2026-10-21.ssv": "25c1277a50d8d66a726c7707d9d65585c7d6d562149bc1a4eda24919dfb5f84e"
+    },
+    "sha256": "659e4d65d3795edac33323a24a192c774b00f1a4eccc29b052c2918a57f74ee9"
+  },
+  "temarios.json": {
+    "origenes": {
+      "datos/fuentes/hoja-de-ruta/extractos.json": "6d0c30dd87a8cfcdeeae78e0d92848807cd1d9c3ac443db3821a328cad08fdc6",
+      "datos/fuentes/hoja-de-ruta/textos.jsonl": "2357d636c6d278d0d9c9291db5ef08112df9bd16e8db98474aa42fbea73f34ab",
+      "datos/fuentes/hoja-de-ruta/procedencia.json": "13075929798143e3dc3234a209fc33559812760136471f5c1f2dbfa4ef2471f5"
+    },
+    "sha256": "5f4ed24a58c4b0697d64e3cb5ba723b5eaf2c8ded1f330ae380314e1893e1507"
+  }
+}

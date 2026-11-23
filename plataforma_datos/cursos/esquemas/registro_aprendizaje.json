@@ -1,0 +1,162 @@
+{
+  "id": "registro-compartido-formacion",
+  "version": "digcomp-3.0-captura-f282a4f76891",
+  "competencias": [
+    {
+      "marco": "DigComp",
+      "version": "3.0",
+      "codigo": "Competence/1.1",
+      "denominacion": "Browsing, searching and filtering information",
+      "fuente": "https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/DIGCOMP/DIGCOMP3.0/ (DigComp 3.0 Data Supplement, JSON-LD, sha256:f282a4f76891e1a0f5371cd2f2b13dd0ca3c36ead430980ca4114aa0dec84390); Competence/1.1"
+    },
+    {
+      "marco": "DigComp",
+      "version": "3.0",
+      "codigo": "Competence/1.2",
+      "denominacion": "Evaluating information",
+      "fuente": "https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/DIGCOMP/DIGCOMP3.0/ (DigComp 3.0 Data Supplement, JSON-LD, sha256:f282a4f76891e1a0f5371cd2f2b13dd0ca3c36ead430980ca4114aa0dec84390); Competence/1.2"
+    },
+    {
+      "marco": "DigComp",
+      "version": "3.0",
+      "codigo": "Competence/1.3",
+      "denominacion": "Managing information",
+      "fuente": "https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/DIGCOMP/DIGCOMP3.0/ (DigComp 3.0 Data Supplement, JSON-LD, sha256:f282a4f76891e1a0f5371cd2f2b13dd0ca3c36ead430980ca4114aa0dec84390); Competence/1.3"
+    },
+    {
+      "marco": "DigComp",
+      "version": "3.0",
+      "codigo": "Competence/2.1",
+      "denominacion": "Interacting through and with digital technologies",
+      "fuente": "https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/DIGCOMP/DIGCOMP3.0/ (DigComp 3.0 Data Supplement, JSON-LD, sha256:f282a4f76891e1a0f5371cd2f2b13dd0ca3c36ead430980ca4114aa0dec84390); Competence/2.1"
+    },
+    {
+      "marco": "DigComp",
+      "version": "3.0",
+      "codigo": "Competence/2.2",
+      "denominacion": "Sharing through digital technologies",
+      "fuente": "https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/DIGCOMP/DIGCOMP3.0/ (DigComp 3.0 Data Supplement, JSON-LD, sha256:f282a4f76891e1a0f5371cd2f2b13dd0ca3c36ead430980ca4114aa0dec84390); Competence/2.2"
+    },
+    {
+      "marco": "DigComp",
+      "version": "3.0",
+      "codigo": "Competence/2.3",
+      "denominacion": "Engaging in citizenship through digital technologies",
+      "fuente": "https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/DIGCOMP/DIGCOMP3.0/ (DigComp 3.0 Data Supplement, JSON-LD, sha256:f282a4f76891e1a0f5371cd2f2b13dd0ca3c36ead430980ca4114aa0dec84390); Competence/2.3"
+    },
+    {
+      "marco": "DigComp",
+      "version": "3.0",
+      "codigo": "Competence/2.4",
+      "denominacion": "Collaborating through digital technologies",
+      "fuente": "https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/DIGCOMP/DIGCOMP3.0/ (DigComp 3.0 Data Supplement, JSON-LD, sha256:f282a4f76891e1a0f5371cd2f2b13dd0ca3c36ead430980ca4114aa0dec84390); Competence/2.4"
+    },
+    {
+      "marco": "DigComp",
+      "version": "3.0",
+      "codigo": "Competence/2.5",
+      "denominacion": "Digital behaviour",
+      "fuente": "https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/DIGCOMP/DIGCOMP3.0/ (DigComp 3.0 Data Supplement, JSON-LD, sha256:f282a4f76891e1a0f5371cd2f2b13dd0ca3c36ead430980ca4114aa0dec84390); Competence/2.5"
+    },
+    {
+      "marco": "DigComp",
+      "version": "3.0",
+      "codigo": "Competence/2.6",
+      "denominacion": "Managing digital identity",
+      "fuente": "https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/DIGCOMP/DIGCOMP3.0/ (DigComp 3.0 Data Supplement, JSON-LD, sha256:f282a4f76891e1a0f5371cd2f2b13dd0ca3c36ead430980ca4114aa0dec84390); Competence/2.6"
+    },
+    {
+      "marco": "DigComp",
+      "version": "3.0",
+      "codigo": "Competence/3.1",
+      "denominacion": "Developing digital content",
+      "fuente": "https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/DIGCOMP/DIGCOMP3.0/ (DigComp 3.0 Data Supplement, JSON-LD, sha256:f282a4f76891e1a0f5371cd2f2b13dd0ca3c36ead430980ca4114aa0dec84390); Competence/3.1"
+    },
+    {
+      "marco": "DigComp",
+      "version": "3.0",
+      "codigo": "Competence/3.2",
+      "denominacion": "Integrating and re-elaborating digital content",
+      "fuente": "https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/DIGCOMP/DIGCOMP3.0/ (DigComp 3.0 Data Supplement, JSON-LD, sha256:f282a4f76891e1a0f5371cd2f2b13dd0ca3c36ead430980ca4114aa0dec84390); Competence/3.2"
+    },
+    {
+      "marco": "DigComp",
+      "version": "3.0",
+      "codigo": "Competence/3.3",
+      "denominacion": "Copyright and licences",
+      "fuente": "https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/DIGCOMP/DIGCOMP3.0/ (DigComp 3.0 Data Supplement, JSON-LD, sha256:f282a4f76891e1a0f5371cd2f2b13dd0ca3c36ead430980ca4114aa0dec84390); Competence/3.3"
+    },
+    {
+      "marco": "DigComp",
+      "version": "3.0",
+      "codigo": "Competence/3.4",
+      "denominacion": "Computational thinking and programming",
+      "fuente": "https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/DIGCOMP/DIGCOMP3.0/ (DigComp 3.0 Data Supplement, JSON-LD, sha256:f282a4f76891e1a0f5371cd2f2b13dd0ca3c36ead430980ca4114aa0dec84390); Competence/3.4"
+    },
+    {
+      "marco": "DigComp",
+      "version": "3.0",
+      "codigo": "Competence/4.1",
+      "denominacion": "Protecting devices",
+      "fuente": "https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/DIGCOMP/DIGCOMP3.0/ (DigComp 3.0 Data Supplement, JSON-LD, sha256:f282a4f76891e1a0f5371cd2f2b13dd0ca3c36ead430980ca4114aa0dec84390); Competence/4.1"
+    },
+    {
+      "marco": "DigComp",
+      "version": "3.0",
+      "codigo": "Competence/4.2",
+      "denominacion": "Protecting personal data and privacy",
+      "fuente": "https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/DIGCOMP/DIGCOMP3.0/ (DigComp 3.0 Data Supplement, JSON-LD, sha256:f282a4f76891e1a0f5371cd2f2b13dd0ca3c36ead430980ca4114aa0dec84390); Competence/4.2"
+    },
+    {
+      "marco": "DigComp",
+      "version": "3.0",
+      "codigo": "Competence/4.3",
+      "denominacion": "Supporting wellbeing",
+      "fuente": "https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/DIGCOMP/DIGCOMP3.0/ (DigComp 3.0 Data Supplement, JSON-LD, sha256:f282a4f76891e1a0f5371cd2f2b13dd0ca3c36ead430980ca4114aa0dec84390); Competence/4.3"
+    },
+    {
+      "marco": "DigComp",
+      "version": "3.0",
+      "codigo": "Competence/4.4",
+      "denominacion": "Environmental impacts of digital technologies",
+      "fuente": "https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/DIGCOMP/DIGCOMP3.0/ (DigComp 3.0 Data Supplement, JSON-LD, sha256:f282a4f76891e1a0f5371cd2f2b13dd0ca3c36ead430980ca4114aa0dec84390); Competence/4.4"
+    },
+    {
+      "marco": "DigComp",
+      "version": "3.0",
+      "codigo": "Competence/5.1",
+      "denominacion": "Identifying and solving technical problems",
+      "fuente": "https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/DIGCOMP/DIGCOMP3.0/ (DigComp 3.0 Data Supplement, JSON-LD, sha256:f282a4f76891e1a0f5371cd2f2b13dd0ca3c36ead430980ca4114aa0dec84390); Competence/5.1"
+    },
+    {
+      "marco": "DigComp",
+      "version": "3.0",
+      "codigo": "Competence/5.2",
+      "denominacion": "Identifying needs and digital technological responses",
+      "fuente": "https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/DIGCOMP/DIGCOMP3.0/ (DigComp 3.0 Data Supplement, JSON-LD, sha256:f282a4f76891e1a0f5371cd2f2b13dd0ca3c36ead430980ca4114aa0dec84390); Competence/5.2"
+    },
+    {
+      "marco": "DigComp",
+      "version": "3.0",
+      "codigo": "Competence/5.3",
+      "denominacion": "Identifying creative solutions using digital technologies",
+      "fuente": "https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/DIGCOMP/DIGCOMP3.0/ (DigComp 3.0 Data Supplement, JSON-LD, sha256:f282a4f76891e1a0f5371cd2f2b13dd0ca3c36ead430980ca4114aa0dec84390); Competence/5.3"
+    },
+    {
+      "marco": "DigComp",
+      "version": "3.0",
+      "codigo": "Competence/5.4",
+      "denominacion": "Identifying and addressing digital competence needs",
+      "fuente": "https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/DIGCOMP/DIGCOMP3.0/ (DigComp 3.0 Data Supplement, JSON-LD, sha256:f282a4f76891e1a0f5371cd2f2b13dd0ca3c36ead430980ca4114aa0dec84390); Competence/5.4"
+    }
+  ],
+  "escalas": [
+    {
+      "id": "digcomp-four-levels",
+      "version": "3.0",
+      "denominacion": "four_levels_name (etiquetas literales del suplemento DigComp 3.0)",
+      "fuente": "https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/DIGCOMP/DIGCOMP3.0/ (DigComp 3.0 Data Supplement, JSON-LD, sha256:f282a4f76891e1a0f5371cd2f2b13dd0ca3c36ead430980ca4114aa0dec84390)",
+      "valores": ["Basic", "Intermediate", "Advanced", "Highly advanced"]
+    }
+  ]
+}

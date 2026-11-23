@@ -1,0 +1,47 @@
+{
+  "version": 1,
+  "certifi": "2026.10.23",
+  "rueda": {
+    "archivo": "certifi-2026.10.23-py3-none-any.whl",
+    "url": "https://files.pythonhosted.org/packages/32/d1/a3652fe2c19134d0d15922177821d863cbd7e842d53a21bbe7e8e3a1b5ac/certifi-2026.10.23-py3-none-any.whl",
+    "sha256": "e9b54de76e530bb6cf0ccd036787103acb58fd42ba930ea8bf948ddbaa2f61d1",
+    "bytes": 135082,
+    "comprobado_utc": "2026-10-24T23:34:21.252536+00:00",
+    "referencia": "Metadatos oficiales PyPI consultados independientemente"
+  },
+  "ca": {
+    "archivo": "cacert.pem",
+    "ruta_en_rueda": "certifi/cacert.pem",
+    "bytes": 235863,
+    "sha256": "2ef52ad56b4803e264045c915e55c236cbfa045b84b81efefc218a19eb44bd2b"
+  },
+  "licencia": {
+    "archivo": "LICENSE",
+    "ruta_en_rueda": "certifi-2026.10.23.dist-info/licenses/LICENSE",
+    "spdx": "MPL-2.0",
+    "bytes": 989,
+    "sha256": "e93716da6b9c0d5a4a1df60fe695b370f0695603d21f6f83f053e42cfc10caf7"
+  },
+  "intermedios": [
+    {
+      "nombre": "AC RAIZ FNMT-RCM SERVIDORES SEGUROS G2R",
+      "archivo": "intermedios/ac-raiz-fnmt-servidores-seguros-g2r.pem",
+      "bytes": 1664,
+      "sha256": "327ec93955c9145261b087c6fc5eac8a71262bf2568e8d36f7c2fedbd1b1077a",
+      "emisor": "AC RAIZ FNMT-RCM",
+      "caduca": "2029-12-16",
+      "origen": "Enviado por agora.fundae.es en su cadena de certificados; su emisor se publica en http://www.cert.fnmt.es/certs/ACRAIZFNMT.crt",
+      "obtenido": "2026-11-15"
+    },
+    {
+      "nombre": "AC SERVIDORES SEGUROS TIPO2 G2R",
+      "archivo": "intermedios/ac-servidores-seguros-tipo2-g2r.pem",
+      "bytes": 1750,
+      "sha256": "b45ab8e079025df9783535a720862129c9b2d22672b9be8dfe7cd2eda33f62a3",
+      "emisor": "AC RAIZ FNMT-RCM SERVIDORES SEGUROS G2R",
+      "caduca": "2035-12-14",
+      "origen": "http://www.cert.fnmt.es/certs/ACSS2G2R.crt",
+      "obtenido": "2026-11-15"
+    }
+  ]
+}

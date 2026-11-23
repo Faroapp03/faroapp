@@ -1,0 +1,1114 @@
+/* Recorrido · Conversación: la cabecera con la pastilla del paso y la barra de avance, el fondo de lectura,
+   las burbujas de Faro y de la persona, los avisos y las respuestas
+   rápidas. Las tarjetas de cada paso y la barra de escritura tienen su propia hoja. Movimiento solo de una vez (la
+   entrada de cada mensaje, el tramo de avance) y nada con prefers-reduced-motion. */
+
+.rc {
+  grid-column: 2;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 0;
+  /* El margen lateral centra una columna de lectura; la barra de desplazamiento queda en el borde del panel. */
+  --rc-margen: max(32px, calc((100% - var(--ancho-conversacion)) / 2));
+  /* La sangría de un turno, con la que se alinean las respuestas rápidas y las tarjetas de cada paso (tarjetas.css).
+     Las burbujas no llevan monograma: Faro está en la cabecera, y la sangría es cero. */
+  --rc-avatar: 0px;
+  --rc-hueco-turno: 0px;
+  --rc-sangria-turno: calc(var(--rc-avatar) + var(--rc-hueco-turno));
+}
+
+/* El hilo comparte el papel del recorrido; el informe conserva su propia composición. */
+.rc-cuerpo:not(.rc-cuerpo[data-paso="4"]:not([data-informe="oculto"])) .rc {
+  background: var(--rc-papel);
+}
+
+/* La cabecera marina. Sobre el marino, los colores de la conversación se aclaran: los iconos,
+   la pastilla del paso y el foco los toman de aquí. */
+.rc-chat-cabecera {
+  --rc-tinta: var(--rc-sobre-marino);
+  --rc-tenue: var(--rc-sobre-marino-tenue);
+  --rc-linea: rgb(255 255 255 / 18%);
+  --rc-linea-campo: rgb(255 255 255 / 40%);
+  --rc-lateral: rgb(255 255 255 / 8%);
+  --rc-acento: var(--rc-avance);
+  --color-tinta: var(--rc-sobre-marino);
+  --color-linea: rgb(255 255 255 / 40%);
+  --color-acento: var(--rc-avance);
+  --color-panel: var(--rc-marino);
+  --foco: 2px solid var(--rc-avance);
+  position: relative;
+  display: flex;
+  flex: none;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  min-height: 68px;
+  padding: 12px 24px 8px;
+  color: var(--rc-sobre-marino);
+  background: var(--rc-marino);
+}
+
+.rc-chat-identidad,
+.rc-chat-herramientas {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+/* Los botones no encogen; el lema puede ceder y partirse en líneas. */
+.rc-chat-herramientas {
+  flex: none;
+}
+
+.rc-icono {
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  color: var(--rc-tenue);
+  background: none;
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.rc-icono:hover {
+  color: var(--rc-tinta);
+  background: var(--rc-lateral);
+}
+
+.rc-icono svg {
+  width: 20px;
+  height: 20px;
+  stroke-width: 1.4;
+}
+
+/* La vuelta al inicio y «Nueva conversación» solo hacen falta en los móviles, sin guía ni cabecera común. */
+.rc-volver,
+.rc-nueva-corta {
+  display: none;
+}
+
+/* El monograma de Faro: su inicial con la raya de luz encima, como en la marca. */
+.rc-monograma {
+  position: relative;
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  color: var(--rc-tinta);
+  font-family: var(--fuente-marca);
+  font-size: 1.25rem;
+  line-height: 1;
+  background: var(--rc-superficie);
+  border: 1px solid var(--rc-linea);
+  border-radius: 9px;
+}
+
+.rc-monograma::before {
+  content: "";
+  position: absolute;
+  top: 18%;
+  left: calc(50% - 0.3em);
+  width: 0.4em;
+  height: 1px;
+  background: var(--rc-acento);
+}
+
+/* En la cabecera, Faro es el icono de la aplicación, tal cual: tamaño fijo, nunca se encoge ni se deforma. */
+.rc-chat-cabecera .rc-monograma {
+  width: 42px;
+  height: 42px;
+  color: transparent;
+  background: var(--rc-marino) url("../../imagenes/identidad/icon-192.png") center / 100% 100% no-repeat;
+  border: 0;
+  border-radius: 11px;
+}
+
+.rc-chat-cabecera .rc-monograma::before {
+  content: none;
+}
+
+.rc-identidad-textos {
+  min-width: 0;
+}
+
+.rc-identidad-nombre {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin: 0;
+  font-size: 1.0625rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.rc-marca-ia {
+  padding: 0 4px;
+  color: var(--rc-tenue);
+  font-family: var(--fuente-mono);
+  font-size: var(--texto-minimo);
+  font-weight: 400;
+  line-height: 1.4;
+  border: 1px solid var(--rc-linea);
+  border-radius: 3px;
+}
+
+.rc-identidad-lema {
+  margin: 2px 0 0;
+  color: var(--rc-tenue);
+  font-size: var(--texto-minimo);
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+
+/* La pastilla del paso: el nombre del paso (en pantallas anchas) y «Paso N de 4». Abre el recorrido en un diálogo. */
+.rc-ver-recorrido {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 6px 14px;
+  color: var(--rc-tenue);
+  font: inherit;
+  font-size: 0.8125rem;
+  white-space: nowrap;
+  background: transparent;
+  border: 1px solid var(--rc-linea);
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.rc-ver-recorrido:hover {
+  color: var(--rc-tinta);
+  background: var(--rc-lateral);
+}
+
+.rc-paso-contador {
+  color: var(--rc-tinta);
+  font-weight: 600;
+}
+
+.rc-ver-recorrido svg {
+  width: 12px;
+  height: 12px;
+  stroke-width: 1.4;
+}
+
+/* El avance: cuatro tramos bajo la cabecera, llenos hasta el paso en curso (<body data-paso>, que pone guia.js desde
+   navegacion.js). Decorativo (aria-hidden): el paso lo dice la pastilla. Cada tramo se llena una sola vez. */
+.rc-avance {
+  display: grid;
+  flex: none;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4px;
+  padding: 0 24px 10px;
+  background: var(--rc-marino);
+}
+
+.rc-avance span {
+  position: relative;
+  height: 3px;
+  overflow: hidden;
+  background: #c7cbcb;
+  border-radius: 2px;
+}
+
+.rc-avance span::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #2e7d4f;
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+.rc-cuerpo[data-paso="1"] .rc-avance span:first-child::after,
+.rc-cuerpo[data-paso="2"] .rc-avance span:nth-child(-n + 2)::after,
+.rc-cuerpo[data-paso="3"] .rc-avance span:nth-child(-n + 3)::after,
+.rc-cuerpo[data-paso="4"] .rc-avance span::after {
+  transform: none;
+}
+
+@media (forced-colors: active) {
+  .rc-avance span {
+    background: GrayText;
+  }
+  .rc-avance span::after {
+    background: Highlight;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .rc-avance span::after {
+    transition: transform 450ms ease;
+  }
+}
+
+.rc-sin-js {
+  margin: 0 var(--rc-margen) 16px;
+  padding: 14px 16px;
+  font-size: 0.9375rem;
+  line-height: 1.55;
+  background: var(--rc-superficie);
+  border: 1px solid var(--rc-linea);
+  border-radius: 12px;
+}
+
+.rc-sin-js a {
+  color: inherit;
+}
+
+/* La conversación se desplaza por dentro; lo que se enfoca o se enseña queda con un margen arriba y abajo. Es la
+   referencia de lo que se coloca dentro con position: absolute (los textos para lectores de pantalla, los radios del
+   tiempo): así se desplaza con ella y nunca alarga la página. */
+.rc-conversacion {
+  position: relative;
+  flex: 1 1 auto;
+  min-height: 0;
+  padding: 28px var(--rc-margen) 32px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scroll-padding: 24px;
+  /* El pulgar es un control: --rc-linea-campo da 3:1 frente al fondo (--rc-linea es solo separación). */
+  scrollbar-color: var(--rc-linea-campo) transparent;
+  scrollbar-width: thin;
+}
+
+/* Enfocada con el teclado para desplazarla, su recuadro va por dentro: por fuera lo recortaría el panel. */
+.rc-conversacion:focus-visible {
+  outline-offset: -2px;
+}
+
+/* Turnos: burbujas, las de Faro a la izquierda y las de la persona a la derecha */
+.rc-log {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.rc-mensaje {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--rc-hueco-turno);
+}
+
+.rc-turno {
+  flex: 1;
+  min-width: 0;
+}
+
+.rc-mensaje[data-autor="persona"] {
+  justify-content: flex-end;
+}
+
+.rc-mensaje[data-autor="persona"] .rc-turno {
+  flex: 0 1 auto;
+  max-width: min(82%, 560px);
+}
+
+/* El monograma y la línea de autor de cada turno son solo visuales (aria-hidden): en las burbujas sobran, porque el
+   lado y el color dicen quién habla. La bienvenida enseña la del saludo (bienvenida.css). */
+.rc-avatar.rc-monograma {
+  display: none;
+}
+
+.rc-autor {
+  display: none;
+  margin: 0 0 6px;
+  color: var(--rc-tinta);
+  font-size: var(--texto-minimo);
+  font-weight: 600;
+  line-height: 1.6;
+}
+
+.rc-mensaje[data-autor="persona"] .rc-autor {
+  color: var(--rc-tenue);
+}
+
+/* La burbuja: la de Faro, del color de la superficie y con la punta arriba a la izquierda en el primer mensaje de cada
+   turno; la de la persona, azul y con la punta a la derecha. */
+.rc-texto {
+  position: relative;
+  width: fit-content;
+  max-width: min(82%, 560px);
+  padding: 9px 12px 8px;
+  font-family: var(--fuente-texto);
+  font-size: 1rem;
+  line-height: 1.55;
+  overflow-wrap: anywhere;
+  background: var(--rc-superficie);
+  border-radius: 3px 12px 12px;
+}
+
+.rc-texto::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -7px;
+  width: 9px;
+  height: 11px;
+  background: inherit;
+  clip-path: polygon(100% 0, 0 0, 100% 100%);
+}
+
+.rc-texto p {
+  margin: 0;
+}
+
+.rc-texto p + p {
+  margin-top: 8px;
+}
+
+/* El saludo son dos frases que se leen como una: «Hola, soy Faro.» y «¿A qué te dedicas?». */
+.rc-mensaje[data-tipo="saludo"] .rc-texto p + p {
+  margin-top: 0;
+}
+
+.rc-texto a {
+  color: var(--rc-acento);
+  text-underline-offset: 3px;
+}
+
+.rc-mensaje[data-autor="persona"] .rc-texto {
+  max-width: none;
+  white-space: pre-wrap;
+  background: var(--rc-burbuja-mia);
+  border-radius: 12px 3px 12px 12px;
+}
+
+.rc-mensaje[data-autor="persona"] .rc-texto::before {
+  right: -7px;
+  left: auto;
+  clip-path: polygon(0 0, 100% 0, 0 100%);
+}
+
+/* Mensajes seguidos de Faro: un solo turno, y solo el primero lleva la punta. El margen negativo compensa el hueco de
+   12 px de .rc-log: deja 3 px entre burbujas del mismo turno. */
+.rc-mensaje[data-autor="faro"] + .rc-mensaje[data-autor="faro"] {
+  margin-top: -9px;
+}
+
+/* Cada mensaje entra una sola vez, con un fundido corto. */
+@media (prefers-reduced-motion: no-preference) {
+  .rc-cuerpo[data-conversacion] .rc-mensaje {
+    animation: rc-entra 200ms ease-out 1 both;
+  }
+}
+
+@keyframes rc-entra {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Avisos y fallos: una burbuja de Faro con su propio fondo */
+.rc-mensaje[data-tipo="nota"] .rc-texto,
+.rc-mensaje[data-tipo="error"] .rc-texto {
+  padding: 10px 14px;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+}
+
+.rc-mensaje[data-tipo="nota"] .rc-texto {
+  background: var(--rc-acento-fondo);
+}
+
+/* La barra del aviso «Faro se está preparando» (scripts/recorrido/preparacion.js): se llena con el avance real, que
+   pone en --avance (de 0 a 1), y solo entonces se mueve, sin bucles ni rayas; sin transición con movimiento reducido. */
+.rc-preparacion {
+  display: grid;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.rc-preparacion-linea {
+  margin: 0;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.rc-preparacion-barra {
+  block-size: 10px;
+  overflow: hidden;
+  border: 1px solid var(--rc-linea-campo);
+  border-radius: 999px;
+  background: var(--rc-superficie);
+}
+
+.rc-preparacion-relleno {
+  display: block;
+  block-size: 100%;
+  background: var(--rc-acento);
+  transform: scaleX(var(--avance, 0));
+  transform-origin: left center;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .rc-preparacion-relleno {
+    transition: transform 300ms ease-out;
+  }
+}
+
+@media (forced-colors: active) {
+  .rc-preparacion-relleno {
+    background: Highlight;
+  }
+}
+
+.rc-mensaje[data-tipo="error"] .rc-texto {
+  background: var(--color-error-fondo);
+  border-left: 3px solid var(--color-error-linea);
+  border-radius: 0 12px 12px 0;
+}
+
+.rc-mensaje[data-tipo="error"] .rc-texto::before {
+  content: none;
+}
+
+/* La espera es «escribiendo…»: tres puntos quietos y el texto de lo que hace Faro. Nada parpadea ni late. */
+.rc-mensaje[data-tipo="espera"] .rc-texto {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--rc-tenue);
+}
+
+.rc-escribiendo {
+  display: inline-flex;
+  flex: none;
+  gap: 4px;
+}
+
+.rc-escribiendo i {
+  width: 7px;
+  height: 7px;
+  background: var(--rc-linea-campo);
+  border-radius: 50%;
+}
+
+/* En los mensajes seguidos de Faro, solo el primero lleva la punta (los fallos ya van sin ella). */
+.rc-mensaje[data-autor="faro"] + .rc-mensaje[data-autor="faro"]:not([data-tipo="error"]) .rc-texto {
+  border-top-left-radius: 12px;
+}
+
+.rc-mensaje[data-autor="faro"] + .rc-mensaje[data-autor="faro"] .rc-texto::before {
+  content: none;
+}
+
+/* Respuestas rápidas, bajo el último mensaje de Faro: pastillas que se pintan de izquierda a derecha al pasar por
+   encima (la transición, en pantallas.css, solo sin prefers-reduced-motion). */
+.rc-sugerencias {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 10px 0 0 var(--rc-sangria-turno);
+}
+
+.rc-sugerencia {
+  min-height: 44px;
+  padding: 8px 16px;
+  color: var(--rc-acento);
+  font: inherit;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  background:
+    linear-gradient(var(--rc-acento-fondo), var(--rc-acento-fondo)) no-repeat left / 0% 100%,
+    var(--rc-superficie);
+  text-align: left;
+  border: 1px solid var(--rc-linea-campo);
+  /* Media altura mínima: en una línea es una pastilla; si el texto se parte, un rectángulo redondeado. */
+  border-radius: 22px;
+  cursor: pointer;
+}
+
+.rc-sugerencia:hover,
+.rc-sugerencia:focus-visible {
+  background-size: 100% 100%;
+  border-color: var(--rc-acento);
+}
+
+/* «No lo sé», «Ninguna, buscar en la clasificación» y «Volver»: no responden ni sí ni no, así que se distinguen de las
+   respuestas con el borde discontinuo y el texto tenue. */
+.rc-sugerencia-secundaria {
+  color: var(--rc-tenue);
+  font-weight: 400;
+  border-style: dashed;
+}
+
+/* «La más parecida», sobre el título de la ocupación propuesta, y su código oficial, en latón, el color de los códigos oficiales. */
+.rc-sugerida {
+  display: inline-block;
+  margin-left: 8px;
+  padding: 1px 7px;
+  color: var(--rc-sugerida-tinta);
+  font-family: var(--fuente-texto);
+  font-size: var(--texto-minimo);
+  font-weight: 500;
+  line-height: 1.6;
+  vertical-align: 3px;
+  background: var(--rc-sugerida-fondo);
+  border-radius: 4px;
+}
+
+.rc-codigo {
+  margin-right: 8px;
+  color: var(--rc-laton);
+  font-family: var(--fuente-mono);
+  font-size: var(--texto-minimo);
+  letter-spacing: 0.02em;
+}
+
+/* La propuesta de ocupación (ocupacion-local.js): la más parecida y las otras posibles son tarjetas iguales que se
+   eligen pulsándolas. Cada una es una casilla de radio escondida a la vista (la leen el teclado y el lector de
+   pantalla) dentro de su etiqueta; la elegida se pinta con el fondo del acento y su círculo lleva la marca. */
+.rc-eleccion {
+  min-width: 0;
+  margin: 12px 0 0;
+  padding: 0;
+  border: 0;
+}
+
+.rc-eleccion-opciones {
+  display: grid;
+  gap: 10px;
+}
+
+.rc-eleccion-opcion {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: start;
+  gap: 12px;
+  padding: 14px 16px;
+  color: var(--rc-tinta);
+  background: var(--rc-superficie);
+  border: 1px solid var(--rc-linea-campo);
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.rc-eleccion-opcion:hover {
+  border-color: var(--rc-acento);
+}
+
+.rc-eleccion-opcion:has(:checked) {
+  background: var(--rc-acento-fondo);
+  border-color: var(--rc-acento);
+  box-shadow: inset 0 0 0 1px var(--rc-acento);
+}
+
+.rc-eleccion-opcion:has(:focus-visible) {
+  outline: var(--foco);
+  outline-offset: 2px;
+}
+
+.rc-eleccion-casilla {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 1px;
+  margin: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.rc-eleccion-cuerpo {
+  display: grid;
+  justify-items: start;
+  gap: 4px;
+  min-width: 0;
+}
+
+.rc-eleccion-titulo {
+  font-family: var(--fuente-marca);
+  font-size: 1.125rem;
+  font-weight: 500;
+  line-height: 1.35;
+}
+
+.rc-eleccion-entero {
+  color: var(--rc-tenue);
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.rc-eleccion-entero:empty {
+  display: none;
+}
+
+/* El código ESCO y, debajo, el tipo de trabajo oficial, en segundo plano. */
+.rc-eleccion-detalle {
+  display: grid;
+  justify-items: start;
+  color: var(--rc-tenue);
+  font-size: var(--texto-minimo);
+  line-height: 1.5;
+}
+
+.rc-eleccion-opcion .rc-sugerida {
+  margin: 0 0 2px;
+  vertical-align: baseline;
+}
+
+/* El círculo de la derecha: vacío en las demás y lleno, con su marca, en la elegida. */
+.rc-eleccion-marca {
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  margin-top: 2px;
+  border: 2px solid var(--rc-linea-campo);
+  border-radius: 50%;
+}
+
+.rc-eleccion-opcion:has(:checked) .rc-eleccion-marca {
+  background: var(--rc-boton);
+  border-color: var(--rc-boton);
+}
+
+.rc-eleccion-opcion:has(:checked) .rc-eleccion-marca::before {
+  content: "✓";
+  color: var(--rc-sobre-boton);
+  font-size: 0.875rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+/* Respondida la propuesta, sus tarjetas quedan en la conversación sin poder pulsarse; la elegida, marcada. */
+.rc-eleccion-opcion:has(:disabled) {
+  cursor: default;
+}
+
+.rc-eleccion-opcion:has(:disabled):not(:has(:checked)) {
+  color: var(--rc-tenue);
+  background: transparent;
+  border-color: var(--rc-linea);
+}
+
+/* «Continuar», la acción principal; debajo, las salidas, que se leen como enlaces. */
+.rc-eleccion-acciones {
+  margin: 14px 0 0;
+}
+
+.rc-eleccion-acciones .rc-boton-principal {
+  min-width: 180px;
+}
+
+.rc-eleccion-otras {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0 20px;
+  margin: 6px 0 0;
+}
+
+.rc-eleccion-enlace {
+  min-height: 44px;
+  padding: 8px 0;
+  color: var(--rc-acento);
+  font: inherit;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  text-align: left;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+.rc-eleccion-enlace:hover {
+  text-decoration-thickness: 2px;
+}
+
+/* «Ninguna es la mía» abre y cierra sus salidas: la flecha mira abajo cerrada y arriba abierta. */
+.rc-eleccion-enlace[aria-expanded]::after {
+  content: "";
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  margin-left: 9px;
+  border-right: 2px solid currentcolor;
+  border-bottom: 2px solid currentcolor;
+  transform: translateY(-3px) rotate(45deg);
+}
+
+.rc-eleccion-enlace[aria-expanded="true"]::after {
+  transform: translateY(1px) rotate(-135deg);
+}
+
+.rc-eleccion-ninguna {
+  flex-basis: 100%;
+  margin: 2px 0 0;
+  padding: 12px 14px 14px;
+  background: var(--rc-superficie);
+  border: 1px solid var(--rc-linea);
+  border-radius: 12px;
+}
+
+.rc-texto .rc-eleccion-pregunta {
+  margin: 0 0 10px;
+}
+
+.rc-eleccion-salidas {
+  display: grid;
+  gap: 8px;
+}
+
+.rc-eleccion-salida {
+  min-height: 44px;
+  padding: 10px 16px;
+  color: var(--rc-tinta);
+  font: inherit;
+  font-size: 0.9375rem;
+  text-align: left;
+  background: var(--rc-superficie);
+  border: 1px solid var(--rc-linea-campo);
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.rc-eleccion-salida:hover {
+  background: var(--rc-acento-fondo);
+  border-color: var(--rc-acento);
+}
+
+.rc-eleccion-enlace:focus-visible,
+.rc-eleccion-salida:focus-visible,
+.rc-eleccion-acciones .rc-boton-principal:focus-visible {
+  outline: var(--foco);
+  outline-offset: 2px;
+}
+
+.rc-eleccion-bloque button:disabled {
+  cursor: default;
+  opacity: 0.55;
+}
+
+.rc-eleccion-bloque .rc-eleccion-enlace:disabled {
+  text-decoration-thickness: 1px;
+}
+
+/* En el móvil, «Continuar» ocupa todo el ancho: se alcanza con el pulgar y no se confunde con las salidas. */
+@media (max-width: 760px) {
+  .rc-eleccion-acciones .rc-boton-principal {
+    width: 100%;
+  }
+}
+
+/* Al elegir, la tarjeta cambia de color de una vez, sin movimiento; sin transición si se pide menos movimiento. */
+@media (prefers-reduced-motion: no-preference) {
+  .rc-eleccion-opcion,
+  .rc-eleccion-marca {
+    transition:
+      background-color 0.15s ease,
+      border-color 0.15s ease,
+      box-shadow 0.15s ease;
+  }
+}
+
+/* El pensamiento de Faro (conversacion.js, empezarAPensar y crearPensamientoEnCurso), como un modelo de razonamiento
+   sobrio: «Pensando…» y sus pasos cortos. El paso en curso tiene más contraste y una línea fina que se llena una sola
+   vez mientras se espera y luego se queda quieta; el hecho queda con su ✓. Al terminar se recoge en «Cómo lo he
+   pensado» (grid-template-rows y opacidad, los tiempos y la curva del pliegue de la maqueta del recorrido vivo: 650 ms
+   y 450 ms) y se vuelve a abrir con su botón. Plano: sin bucles, brillos, pulsos, giros, halos ni sombras; con
+   prefers-reduced-motion, sin transiciones. */
+.rc-pensamiento {
+  margin: 0 0 10px;
+  padding: 0 0 8px;
+  border-bottom: 1px solid var(--rc-linea);
+}
+
+/* Mientras piensa, o si es todo el mensaje, sin raya debajo. */
+.rc-pensamiento:not([data-estado="hecho"]),
+.rc-texto > .rc-pensamiento:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom-color: transparent;
+}
+
+.rc-pensamiento-cabeza {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 32px;
+  padding: 2px 4px 2px 0;
+  color: var(--rc-tenue);
+  font: inherit;
+  font-size: 0.875rem;
+  font-weight: 500;
+  background: none;
+  border: 0;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.rc-pensamiento[data-estado="pensando"] .rc-pensamiento-cabeza {
+  color: var(--rc-tinta);
+  font-weight: 600;
+}
+
+.rc-pensamiento-cabeza:hover .rc-pensamiento-titulo {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.rc-pensamiento-cabeza:focus-visible {
+  outline: var(--foco);
+  outline-offset: 2px;
+}
+
+/* La flecha: un ángulo de borde que apunta abajo desplegado y a la derecha plegado; cambia sin girar. */
+.rc-pensamiento-flecha {
+  width: 7px;
+  height: 7px;
+  margin: 0 3px;
+  border-right: 2px solid currentcolor;
+  border-bottom: 2px solid currentcolor;
+  transform: rotate(45deg);
+}
+
+.rc-pensamiento[data-plegado] .rc-pensamiento-flecha {
+  transform: rotate(-45deg);
+}
+
+/* El cuerpo se pliega a 0 de alto y se funde; plegado, queda fuera de la vista y de los lectores (visibility). */
+.rc-pensamiento-cuerpo {
+  display: grid;
+  grid-template-rows: 1fr;
+  opacity: 1;
+}
+
+.rc-pensamiento-cuerpo > div {
+  min-height: 0;
+  overflow: hidden;
+}
+
+.rc-pensamiento[data-plegado] .rc-pensamiento-cuerpo {
+  grid-template-rows: 0fr;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.rc-pensamiento-pasos {
+  margin: 6px 0 2px 6px;
+  padding: 0 0 0 14px;
+  list-style: none;
+  border-left: 2px solid var(--rc-acento-fondo);
+}
+
+.rc-pensamiento-pasos li {
+  display: grid;
+  grid-template-columns: 16px minmax(0, 1fr);
+  gap: 10px;
+  padding: 4px 0;
+}
+
+/* La marca: un círculo plano, claro mientras el paso está en curso y relleno con ✓ al terminar. */
+.rc-pensamiento-marca {
+  display: grid;
+  place-items: center;
+  width: 16px;
+  height: 16px;
+  margin-top: 3px;
+  color: var(--rc-sobre-boton);
+  font-size: 10px;
+  line-height: 1;
+  background: var(--rc-acento-fondo);
+  border-radius: 50%;
+}
+
+.rc-pensamiento-pasos li[data-estado="hecho"] .rc-pensamiento-marca {
+  color: var(--color-sobre-marca);
+  background: var(--color-acierto);
+}
+
+.rc-pensamiento-linea-del-paso {
+  display: grid;
+  gap: 4px;
+  min-width: 0;
+}
+
+.rc-pensamiento-texto {
+  color: var(--rc-tenue);
+  font-size: 0.9375rem;
+  line-height: 1.45;
+}
+
+.rc-pensamiento-pasos li[data-estado="en-curso"] .rc-pensamiento-texto {
+  color: var(--rc-tinta);
+  font-weight: 500;
+}
+
+/* La línea de progreso del paso en curso: fina, se llena una vez (conversacion.js) y desaparece al terminar el paso. */
+.rc-pensamiento-progreso {
+  display: block;
+  block-size: 2px;
+  background: var(--color-acierto);
+  border-radius: 1px;
+  transform: scaleX(0);
+  transform-origin: left center;
+}
+
+.rc-pensamiento-pasos li[data-estado="hecho"] .rc-pensamiento-progreso {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  /* Sin la línea que se llena: el paso en curso se distingue por su contraste. */
+  .rc-pensamiento-progreso {
+    display: none;
+  }
+}
+
+/* Primero piensa, después responde: mientras el pensamiento no ha terminado de recogerse, lo que va detrás en su
+   mensaje, los mensajes siguientes de Faro, las respuestas rápidas y las tarjetas esperan escondidos, y luego entran
+   con su fundido. Lo que dice la persona nunca se esconde. El pensamiento que empieza dentro del mensaje de espera no
+   esconde las respuestas rápidas ni las tarjetas: siguen como antes de pedir, con su foco, hasta que llega la
+   respuesta. */
+.rc-texto:has(> .rc-pensamiento:not([data-estado="hecho"])) > :not(.rc-pensamiento, .solo-lectores),
+.rc-log > .rc-mensaje:has(.rc-pensamiento:not([data-estado="hecho"])) ~ .rc-mensaje[data-autor="faro"],
+.rc-cuerpo:has(.rc-mensaje:not([data-tipo="espera"]) .rc-pensamiento:not([data-estado="hecho"]))
+  :is(#sugerencias, .rc-tarjeta) {
+  display: none;
+}
+
+/* Mientras piensa, la barra de escritura lo dice (compositor.js), también en pantallas estrechas, donde la línea de las
+   teclas no se ve. */
+.rc-compositor[data-pensando="true"] .rc-teclas {
+  display: inline;
+  color: var(--rc-tinta);
+  font-weight: 500;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .rc-pensamiento-cuerpo {
+    transition:
+      grid-template-rows 650ms cubic-bezier(0.4, 0, 0.2, 1),
+      opacity 450ms ease,
+      visibility 0s;
+  }
+
+  .rc-pensamiento[data-plegado] .rc-pensamiento-cuerpo {
+    transition:
+      grid-template-rows 650ms cubic-bezier(0.4, 0, 0.2, 1),
+      opacity 450ms ease,
+      visibility 0s linear 650ms;
+  }
+
+  /* Cada paso entra con un fundido corto, sin desplazarse; su marca y su texto cambian en 200 ms. */
+  .rc-pensamiento-pasos li {
+    animation: rc-funde 250ms ease-out 1 both;
+  }
+
+  .rc-pensamiento-marca,
+  .rc-pensamiento-texto {
+    transition:
+      background-color 200ms ease,
+      color 200ms ease;
+  }
+
+  /* Lo que esperaba al pensamiento entra con el fundido de los mensajes. */
+  .rc-texto:has(> .rc-pensamiento) > :not(.rc-pensamiento, .solo-lectores),
+  .rc-tarjeta,
+  #sugerencias {
+    animation: rc-entra 200ms ease-out 1 both;
+  }
+
+  /* Los paneles de la barra de escritura (privacidad, ayudas) y la guía lateral se abren con un fundido corto. */
+  .rc-panel,
+  #rc-guia {
+    animation: rc-funde 200ms ease-out 1 both;
+  }
+}
+
+@keyframes rc-funde {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* El principio de la conversación: el aviso de que Faro es una IA y el separador «Hoy», centrados. En la bienvenida
+   no se ven: ya lo dicen la barra de escritura y su línea de privacidad. */
+.rc-aviso-inicio,
+.rc-fecha {
+  width: fit-content;
+  margin: 0 auto 14px;
+  text-align: center;
+}
+
+.rc-aviso-inicio {
+  max-width: min(92%, 520px);
+  padding: 7px 14px;
+  color: var(--rc-aviso-tinta);
+  font-size: var(--texto-minimo);
+  line-height: 1.5;
+  background: var(--rc-aviso-fondo);
+  border-radius: 9px;
+}
+
+.rc-fecha {
+  padding: 3px 12px;
+  color: var(--rc-tenue);
+  font-size: var(--texto-minimo);
+  background: var(--rc-superficie);
+  border-radius: 8px;
+}
+
+.rc-cuerpo:not([data-conversacion]) .rc-aviso-inicio,
+.rc-cuerpo:not([data-conversacion]) .rc-fecha {
+  display: none;
+}
+
+/* El hilo y la guía comparten el papel del recorrido. */
+.rc-guia {
+  background: var(--rc-papel);
+  border-right-color: var(--rc-linea);
+}
+
+.rc-chat-cabecera,
+.rc-sugerencias {
+  font-family: var(--fuente-texto);
+}
+
+.rc-pasos [aria-current="step"] .rc-paso-textos strong {
+  color: var(--rc-acento);
+  font-weight: 600;
+}
+
+.rc-pasos [data-hecho] .rc-paso-numero {
+  background: var(--rc-acento-fondo);
+}
+
+.rc-cuerpo[data-conversacion] .rc-mensaje[data-autor="faro"] .rc-texto:not(:has(.rc-pensamiento)) {
+  border-left: 2px solid var(--rc-acento-fondo);
+}
+
+/* Las respuestas disponibles se distinguen sin señalar una opción predeterminada. */
+.rc-sugerencia:not([aria-disabled="true"]):not(.rc-sugerencia-secundaria) {
+  background: var(--rc-acento-fondo);
+  border-color: var(--rc-acento);
+}
+
+.rc-sugerencia:not([aria-disabled="true"]):hover,
+.rc-sugerencia:not([aria-disabled="true"]):focus-visible {
+  color: var(--rc-sobre-boton);
+  background: var(--rc-boton);
+}

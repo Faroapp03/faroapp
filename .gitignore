@@ -1,0 +1,43 @@
+node_modules
+.venv
+__pycache__/
+.ruff_cache/
+.DS_Store
+.dev.vars*
+!.dev.vars.example
+.env*
+!.env.example
+# Perfiles locales de conexión y registro local del consumo: privados de cada instalación. La orquestación tampoco
+# los copia al área de actualización ni los admite en un código candidato (plataforma_datos/orquestacion).
+config/conexiones/perfiles/
+registro/
+# Estado operativo privado, entradas de mantenimiento y registros.
+var/
+dist/
+dist.grafo-emitido.json
+.dist.etapa-*/
+.dist.promocion/
+.web-local/
+.web-local.etapa-*/
+# La tabla del ODEE y la Cambra: su permiso cubre mostrar el nivel agregado, no repartirla. Cada instalación la recibe
+# aparte y la comprueba con la huella de datos/manifiesto.json (datos/README.md).
+datos/cambra.json
+# Estado local de Wrangler, claves, certificados y credenciales de cada instalación.
+.wrangler/
+*.pem
+*.key
+credenciales*.json
+.npmrc
+# Configuración local de Cloudflare: la copia de cada plantilla .example y los archivos que Wrangler descubriría solo
+# en la raíz (config/cloudflare/README.md).
+/wrangler.json
+/wrangler.jsonc
+/wrangler.toml
+config/cloudflare/instalacion.json
+config/cloudflare/programacion.jsonc
+config/cloudflare/wrangler.jsonc
+config/cloudflare/wrangler.cursos.jsonc
+config/cloudflare/wrangler.unificado.jsonc
+# Certificados públicos que el árbol necesita: la confianza TLS de las fuentes y el par sintético de las pruebas.
+!plataforma_datos/comun/confianza_tls/**/*.pem
+!pruebas/navegadores/tls-*.pem

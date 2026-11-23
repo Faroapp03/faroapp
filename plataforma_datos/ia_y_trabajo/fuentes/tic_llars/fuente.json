@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "id": "tic_llars",
+  "tema": "ia_y_trabajo",
+  "nombre": "Idescat: IA generativa en Cataluña, TIC de los hogares",
+  "institucion": "Idescat, a partir de la encuesta TIC-H del INE",
+  "lector": "plataforma_datos.ia_y_trabajo.fuentes.tic_llars.lector",
+  "casa_datos": "tic-llars",
+  "significado": "El uso de la IA generativa en Cataluña: Idescat, Enquesta TIC a les llars 2025 (tablas 3.4.1 y 3.4.2).",
+  "alcance": [
+    "El Idescat tabula para Cataluña la TIC-H del INE, que es la encuesta europea del uso de las TIC en los hogares: sus cifras se comparan con las de Eurostat en la misma base, las personas de 16 a 74 años que usaron internet en los tres meses anteriores (`isoc_ai_iaiu`, unidad `PC_IND_IU3`), nunca con las de toda la población (`PC_IND`). Se guardan, literales: el uso de alguna herramienta de IA generativa y el uso para el trabajo, en total y por sexo (3.4.1), y, entre quienes no la usan, quienes no saben cómo (3.4.2); y, de la segunda tabla de cada página, lo mismo por ocupación principal. La metodología de la encuesta define «treballador manual» como los grandes grupos 6 a 9 de la CNO-94 y «no manual» como los grupos 0 y 1 a 5: la misma división que los grupos ISCO 6–9 y 0–5 de Eurostat, así que el uso para trabajar de unos y otros es la cifra de Cataluña de esos indicadores en su base de usuarios de internet, y se contrasta con el cálculo de Faro con los microdatos de la TIC-H (`tich`). «Treballador TIC» es una lista propia de grupos primarios de la CNO-94, no la de Eurostat: va en su propio indicador, solo de Cataluña, como quienes no saben usarla por ocupación. Esa misma división hace que el motivo «no sabe cómo» de manuales y no manuales sea la línea del informe para la clase de la ocupación de la persona (`motivos_no_uso`, que exportar_paquete añade a tich.json con su procedencia): la validación comprueba que la clase de cada grupo ISCO-08 de 2 cifras en `tich` es la del Idescat. Las tablas no se publican en `f=ssv`: se leen de su HTML, y cada cifra se busca por el texto de su fila y de su columna. Python estándar.",
+    "El conjunto validado declara si se contrastó con el cálculo de Faro (`contraste_con_la_tich`: «misma-edicion») o si se validó sin contraste por ser otra edición de la TIC-H («edicion-distinta»); en ese caso el panel lo avisa en la fila de la fuente (`avisoEdicion`: «sin-contraste-con-la-tich»).",
+    "Con la misma edición de la TIC-H, «no sabía cómo» de cada clase debe caer dentro del intervalo del 95 % del cálculo de Faro con los microdatos (`contraste_no_sabe_como` de la validación de `tich`, con dos entrevistas o más): el Idescat explota los mismos microdatos públicos del INE y su factor, y con los de 2025 el cálculo da las mismas cifras (45,8 % y 33,5 %, con 120 y 234 entrevistas). La descripción de `IAG_NO3` en el diseño de registro tiene que decir, tras los dos puntos y sin contar mayúsculas, espacios, forma Unicode ni puntuación final, «no sabía cómo utilizarlas»; si no, el contraste se detiene. Sin cálculo, o sin nadie en la base, no hay contraste: el conjunto lo declara (`contraste_con_la_tich`: «motivo-sin-calculo») y el panel lo avisa, sin detener la fuente. La prueba de lectura usa las dos páginas reales de 2025 conservadas en las pruebas, con su huella."
+  ],
+  "recursos": [
+    {
+      "id": "recurso-01",
+      "tipo": "url",
+      "ubicacion": "https://www.idescat.cat/pub/?id=ticll25&n=3.4.1&lang=es",
+      "licencia": "Aviso legal del Idescat (https://www.idescat.cat/institut/web/?lang=es) y condiciones de uso de sus API (https://www.idescat.cat/dev/api/?lang=es): reutilización permitida citando la fuente («Fuente: elaboración propia a partir de datos del Idescat») con la fecha de la última actualización, enlazando con idescat.cat, sin modificar los datos al presentarlos y sin sugerir que el Idescat apoya el uso.",
+      "descripcion": "Idescat, Enquesta sobre equipament i ús de TIC a les llars 2025, taula 3.4.1 (IA generativa)"
+    },
+    {
+      "id": "recurso-02",
+      "tipo": "url",
+      "ubicacion": "https://www.idescat.cat/pub/?id=ticll25&n=3.4.2&lang=es",
+      "licencia": "Aviso legal del Idescat (https://www.idescat.cat/institut/web/?lang=es) y condiciones de uso de sus API (https://www.idescat.cat/dev/api/?lang=es): reutilización permitida citando la fuente («Fuente: elaboración propia a partir de datos del Idescat») con la fecha de la última actualización, enlazando con idescat.cat, sin modificar los datos al presentarlos y sin sugerir que el Idescat apoya el uso.",
+      "descripcion": "Idescat, Enquesta sobre equipament i ús de TIC a les llars 2025, taula 3.4.2 (IA generativa)"
+    },
+    {
+      "id": "recurso-03",
+      "tipo": "url",
+      "ubicacion": "https://www.idescat.cat/estad/ticl?lang=es",
+      "licencia": "Aviso legal del Idescat (https://www.idescat.cat/institut/web/?lang=es) y condiciones de uso de sus API (https://www.idescat.cat/dev/api/?lang=es): reutilización permitida citando la fuente («Fuente: elaboración propia a partir de datos del Idescat») con la fecha de la última actualización, enlazando con idescat.cat, sin modificar los datos al presentarlos y sin sugerir que el Idescat apoya el uso.",
+      "descripcion": "Idescat, Encuesta sobre equipamiento y uso de TIC en los hogares, años disponibles"
+    }
+  ],
+  "canales": [
+    {
+      "id": "consulta",
+      "tipo": "remoto",
+      "recursos": ["recurso-01", "recurso-02", "recurso-03"],
+      "autenticacion": "El lector no configura credenciales de autenticación para estos recursos públicos; no acredita acceso a otros servicios.",
+      "limites": [
+        "Cuotas y límites oficiales de servicio no acreditados por este descriptor; rigen los límites de transporte y validación del lector.",
+        "Este descriptor no acredita la disponibilidad remota actual; una URL conservada no acredita consulta satisfactoria ni una tarea instalada."
+      ],
+      "observaciones": "Tablas HTML oficiales del Idescat, con descubrimiento de edición y lectura de celdas y notas concretas; no se declara una API distinta de la realmente usada."
+    }
+  ],
+  "actualizacion": {
+    "politica": "edición",
+    "red": true,
+    "frecuencia": "anual (Idescat, a partir de la TIC-H del INE)",
+    "renovar_dias": null,
+    "originales": "tic-llars"
+  },
+  "conjuntos": [
+    {
+      "id": "tic_llars",
+      "fuente": "tic_llars",
+      "clase": "cambiante",
+      "alcance": "descubre-edicion",
+      "operacion": "descargar",
+      "intervalo_dias": 30
+    }
+  ],
+  "dependencias": ["tich"],
+  "contratos": ["lector.py:preparar", "lector.py:validar", "plataforma_datos/orquestacion/admision.py:exigir_admitido"],
+  "retirada": "Se conserva la admisión del conjunto y sus guardas actuales. Un fallo o una ausencia de captura no se convierte en retirada de entidades ni en disponibilidad confirmada.",
+  "conservacion": "Originales, procedencias, preparados y validaciones conservan sus casas actuales en var/actualizacion. Esta ficha no habilita limpieza automática ni cambia fechas históricas, periodos, licencias o retención."
+}

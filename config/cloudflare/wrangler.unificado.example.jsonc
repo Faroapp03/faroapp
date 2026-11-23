@@ -1,0 +1,23 @@
+{
+  "name": "faro",
+  "main": "../../src/plataforma/cloudflare/worker-oficial.ts",
+  "compatibility_date": "2026-10-01",
+  "compatibility_flags": ["global_fetch_strictly_public"],
+  "workers_dev": false,
+  "preview_urls": false,
+  "version_metadata": { "binding": "CF_VERSION_METADATA" },
+  "assets": {
+    "directory": "../../web",
+    "binding": "ASSETS",
+    "run_worker_first": true,
+    "html_handling": "none",
+    "not_found_handling": "none"
+  },
+  "rules": [{ "type": "Data", "globs": ["**/datos/*.json"], "fallthrough": true }],
+  "durable_objects": {
+    "bindings": [{ "name": "REGISTRO_SOCIOS", "class_name": "AccesoPublicoDurable" }]
+  },
+  "migrations": [{ "tag": "faro-inicial-v1", "new_sqlite_classes": ["AccesoPublicoDurable"] }],
+  "services": [{ "binding": "CURSOS", "service": "faro-cursos" }],
+  "send_email": [{ "name": "AVISOS_CORREO" }]
+}

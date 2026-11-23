@@ -1,0 +1,163 @@
+/* Recorrido · Bienvenida: antes del primer mensaje, el saludo de Faro como título y la barra justo debajo, en el
+   centro. */
+
+.rc-cuerpo:not([data-conversacion]) .rc-conversacion {
+  flex: 0 1 auto;
+  margin-top: auto;
+  padding-top: 24px;
+  padding-bottom: 0;
+}
+
+.rc-cuerpo:not([data-conversacion]) .rc-compositor {
+  margin-bottom: auto;
+  padding-top: 24px;
+  padding-bottom: 32px;
+  background: transparent;
+  border-top: 0;
+}
+
+/* «No hace falta que pongas tu nombre…» es de los lectores de pantalla (`.solo-lectores`, en la descripción de la
+   barra), salvo antes del primer mensaje, cuando la persona va a contar su trabajo: entonces se ve, en su propia línea
+   bajo el aviso y «Privacidad». Después ya lo ha leído, y no le quita alto a la conversación. */
+.rc-cuerpo:not([data-conversacion]) .rc-sin-nombres {
+  position: static;
+  flex-basis: 100%;
+  order: 1;
+  width: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  clip-path: none;
+  white-space: normal;
+}
+
+.rc-cuerpo:not([data-conversacion]) .rc-log {
+  gap: 20px;
+}
+
+.rc-cuerpo:not([data-conversacion]) .rc-mensaje {
+  display: block;
+  margin-top: 0;
+}
+
+.rc-cuerpo:not([data-conversacion]) .rc-avatar,
+.rc-cuerpo:not([data-conversacion]) .rc-mensaje:not([data-tipo="saludo"]) .rc-autor {
+  display: none;
+}
+
+/* Tras borrar, el aviso de Faro («He borrado…») queda encima del saludo, separado de él. */
+.rc-cuerpo:not([data-conversacion]) .rc-mensaje[data-tipo="saludo"] {
+  margin-top: 8px;
+}
+
+/* La línea de autor del saludo hace de rótulo: «— FARO». */
+.rc-cuerpo:not([data-conversacion]) .rc-mensaje[data-tipo="saludo"] .rc-autor {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 14px;
+  color: var(--rc-laton);
+  font-family: var(--fuente-mono);
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.rc-cuerpo:not([data-conversacion]) .rc-mensaje[data-tipo="saludo"] .rc-autor::before {
+  content: "";
+  width: 22px;
+  height: 1px;
+  background: var(--rc-acento);
+}
+
+/* El saludo es el título de la bienvenida, no una burbuja. */
+.rc-cuerpo:not([data-conversacion]) .rc-mensaje[data-tipo="saludo"] .rc-texto {
+  width: auto;
+  max-width: none;
+  padding: 0;
+  background: none;
+  border-radius: 0;
+  font-family: var(--fuente-marca);
+  font-size: clamp(1.75rem, 2.7vw, 2.375rem);
+  font-weight: 400;
+  line-height: 1.22;
+  letter-spacing: -0.04em;
+  text-wrap: balance;
+}
+
+.rc-cuerpo:not([data-conversacion]) .rc-mensaje[data-tipo="saludo"] .rc-texto::before {
+  content: none;
+}
+
+.rc-cuerpo:not([data-conversacion]) .rc-mensaje[data-tipo="saludo"] .rc-texto p + p {
+  margin-top: 0;
+  color: var(--rc-acento);
+}
+
+/* Opciones compactas sobre papel: el borde y el chevrón indican que se puede continuar. */
+.rc-cuerpo:not([data-conversacion]) .rc-sugerencias {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.rc-cuerpo:not([data-conversacion]) .rc-sugerencias > .rc-sugerencia {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 44px;
+  max-width: 100%;
+  padding: 9px 15px;
+  color: var(--rc-acento);
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.4;
+  background: var(--rc-papel);
+  border: 1px solid var(--rc-linea-campo);
+  border-radius: 999px;
+}
+
+.rc-cuerpo:not([data-conversacion]) .rc-sugerencias > .rc-sugerencia::after {
+  content: "";
+  flex: none;
+  width: 6px;
+  height: 6px;
+  border: solid currentColor;
+  border-width: 0 1px 1px 0;
+  transform: rotate(-45deg);
+}
+
+.rc-cuerpo:not([data-conversacion]) .rc-sugerencias > .rc-sugerencia:hover,
+.rc-cuerpo:not([data-conversacion]) .rc-sugerencias > .rc-sugerencia:focus-visible {
+  color: var(--rc-acento);
+  background: var(--rc-acento-fondo);
+  border-color: var(--rc-acento);
+}
+
+.rc-cuerpo:not([data-conversacion]) .rc-sugerencias > .rc-sugerencia:focus-visible {
+  outline: 2px solid var(--rc-acento);
+  outline-offset: 3px;
+}
+
+.rc-cuerpo:not([data-conversacion]) .rc-compositor {
+  padding-top: 22px;
+}
+
+@media (max-width: 580px) {
+  .rc-cuerpo:not([data-conversacion]) .rc-conversacion {
+    margin-top: 0;
+    padding-top: 24px;
+  }
+
+  .rc-cuerpo:not([data-conversacion]) .rc-sugerencias {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 9px;
+  }
+
+  .rc-cuerpo:not([data-conversacion]) .rc-texto {
+    max-width: 100%;
+  }
+}

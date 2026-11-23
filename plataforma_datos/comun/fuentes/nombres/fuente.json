@@ -1,0 +1,99 @@
+{
+  "schema_version": 1,
+  "id": "nombres",
+  "tema": "comun",
+  "nombre": "Nombres y apellidos frecuentes de residentes en España",
+  "institucion": "Instituto Nacional de Estadística",
+  "lector": "plataforma_datos.comun.fuentes.nombres.lector",
+  "casa_datos": "nombres",
+  "significado": "Nombres de pila y apellidos de las personas residentes en España (INE): la lista oficial de nombres propios.",
+  "alcance": [
+    "Estadística del INE «Apellidos y nombres más frecuentes», a partir del Censo de población anual a 1 de enero de 2025 (publicada el 23/04/2026): todos los nombres de pila y todos los primeros apellidos que llevan 20 personas o más, de cualquier nacionalidad, y los más frecuentes de las nacionalidades con más presencia, con los que se contrasta la lista general. El motor la usa para reconocer un nombre propio sin adivinarlo: la limpieza de datos personales quita el que sigue a una presentación aunque esté en minúsculas («soy laura pérez») y el buscador de ocupaciones no lo toma por una palabra de oficio («Soy Pastora, cajera»). Se exportan también los nombres que son a la vez la primera palabra de una ocupación ESCO (pastor, pastora…), para que ninguna de las dos piezas se coma un oficio, y lo que no es un nombre aunque se escriba con mayúscula tras «soy»: los oficios y las palabras corrientes de los textos oficiales en castellano y en catalán. Con ello la limpieza quita también un nombre que la lista no tiene («Hola, soy Nkechi»).",
+    "Descarga, prepara y valida. Python estándar. Depende de las validaciones de ESCO, de los textos de las tareas, de la traducción al catalán, de los datos de Cataluña, del Idescat y de la formación: si cambia alguna, se vuelve a validar."
+  ],
+  "recursos": [
+    {
+      "id": "recurso-01",
+      "tipo": "url",
+      "ubicacion": "https://www.ine.es/daco/daco42/nombyapel/nombres_por_edad_media.xlsx",
+      "licencia": "Creative Commons Reconocimiento 4.0 (CC BY 4.0), según el aviso legal del INE (https://www.ine.es/dyngs/AYU/index.htm?cid=125): citar la fuente («Elaboración propia con datos extraídos del sitio web del INE: www.ine.es»), mencionar la fecha de la última actualización y no sugerir que el INE participa en la reutilización.",
+      "descripcion": "INE · Todos los nombres con frecuencia igual o mayor a 20"
+    },
+    {
+      "id": "recurso-02",
+      "tipo": "url",
+      "ubicacion": "https://www.ine.es/daco/daco42/nombyapel/nombres_por_nacionalidades.xlsx",
+      "licencia": "Creative Commons Reconocimiento 4.0 (CC BY 4.0), según el aviso legal del INE (https://www.ine.es/dyngs/AYU/index.htm?cid=125): citar la fuente («Elaboración propia con datos extraídos del sitio web del INE: www.ine.es»), mencionar la fecha de la última actualización y no sugerir que el INE participa en la reutilización.",
+      "descripcion": "INE · Los 10 nombres más frecuentes de las nacionalidades más representativas"
+    },
+    {
+      "id": "recurso-03",
+      "tipo": "url",
+      "ubicacion": "https://www.ine.es/daco/daco42/nombyapel/apellidos_frecuencia.xls",
+      "licencia": "Creative Commons Reconocimiento 4.0 (CC BY 4.0), según el aviso legal del INE (https://www.ine.es/dyngs/AYU/index.htm?cid=125): citar la fuente («Elaboración propia con datos extraídos del sitio web del INE: www.ine.es»), mencionar la fecha de la última actualización y no sugerir que el INE participa en la reutilización.",
+      "descripcion": "INE · Apellidos con frecuencia igual o mayor a 20"
+    },
+    {
+      "id": "recurso-04",
+      "tipo": "url",
+      "ubicacion": "https://www.ine.es/daco/daco42/nombyapel/apellidos_por_nacionalidad.xls",
+      "licencia": "Creative Commons Reconocimiento 4.0 (CC BY 4.0), según el aviso legal del INE (https://www.ine.es/dyngs/AYU/index.htm?cid=125): citar la fuente («Elaboración propia con datos extraídos del sitio web del INE: www.ine.es»), mencionar la fecha de la última actualización y no sugerir que el INE participa en la reutilización.",
+      "descripcion": "INE · Los 20 apellidos más frecuentes de las nacionalidades más representativas"
+    },
+    {
+      "id": "recurso-05",
+      "tipo": "url",
+      "ubicacion": "https://www.ine.es/daco/daco42/nombyapel/nota_nombres.pdf",
+      "licencia": "Creative Commons Reconocimiento 4.0 (CC BY 4.0), según el aviso legal del INE (https://www.ine.es/dyngs/AYU/index.htm?cid=125): citar la fuente («Elaboración propia con datos extraídos del sitio web del INE: www.ine.es»), mencionar la fecha de la última actualización y no sugerir que el INE participa en la reutilización.",
+      "descripcion": "INE · Nombres: descripción metodológica"
+    },
+    {
+      "id": "recurso-06",
+      "tipo": "url",
+      "ubicacion": "https://www.ine.es/daco/daco42/nombyapel/nota_apellidos.pdf",
+      "licencia": "Creative Commons Reconocimiento 4.0 (CC BY 4.0), según el aviso legal del INE (https://www.ine.es/dyngs/AYU/index.htm?cid=125): citar la fuente («Elaboración propia con datos extraídos del sitio web del INE: www.ine.es»), mencionar la fecha de la última actualización y no sugerir que el INE participa en la reutilización.",
+      "descripcion": "INE · Apellidos: descripción metodológica"
+    },
+    {
+      "id": "recurso-07",
+      "tipo": "url",
+      "ubicacion": "https://www.ine.es/dyngs/INEbase/operacion.htm?c=Estadistica_C&cid=1254736177009&menu=resultados&idp=1254735572981",
+      "licencia": "Creative Commons Reconocimiento 4.0 (CC BY 4.0), según el aviso legal del INE (https://www.ine.es/dyngs/AYU/index.htm?cid=125): citar la fuente («Elaboración propia con datos extraídos del sitio web del INE: www.ine.es»), mencionar la fecha de la última actualización y no sugerir que el INE participa en la reutilización.",
+      "descripcion": "INEbase · edición de nombres y apellidos de residentes"
+    }
+  ],
+  "canales": [
+    {
+      "id": "consulta",
+      "tipo": "remoto",
+      "recursos": ["recurso-01", "recurso-02", "recurso-03", "recurso-04", "recurso-05", "recurso-06", "recurso-07"],
+      "autenticacion": "No se configura autenticación de cuenta en este lector.",
+      "limites": [
+        "Rigen los controles y límites del lector; no se acredita una cuota remota nueva.",
+        "Sin consulta de red nueva en esta preparación; URL conservada no acredita disponibilidad actual."
+      ],
+      "observaciones": "Catálogo INEbase y libros de nombres/apellidos de residentes; se verifica edición, fechas y seis enlaces, sin confundir residentes con recién nacidos."
+    }
+  ],
+  "actualizacion": {
+    "politica": "edición",
+    "red": true,
+    "frecuencia": "anual (padrón del INE)",
+    "renovar_dias": null,
+    "originales": "nombres"
+  },
+  "conjuntos": [
+    {
+      "id": "nombres",
+      "fuente": "nombres",
+      "clase": "cambiante",
+      "alcance": "descubre-edicion",
+      "operacion": "descargar",
+      "intervalo_dias": 30
+    }
+  ],
+  "dependencias": ["esco", "oit", "cataluna", "formacion", "textos", "idescat", "catalan"],
+  "contratos": ["lector.py:validar"],
+  "retirada": "No se retira contenido por fallo de consulta o ausencia de un original; se conservan las guardas de admisión existentes.",
+  "conservacion": "Casas y bytes operativos en var/actualizacion conservados. Este descriptor no rejuvenece fechas, no genera traducciones, no limpia originales ni cambia la política de admisión."
+}

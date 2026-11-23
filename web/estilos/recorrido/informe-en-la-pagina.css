@@ -1,0 +1,144 @@
+/* Recorrido · Paso 4: el informe se lee como una página, bajo la conversación y a todo el ancho. Lo que viste el
+   informe por dentro está en estilos/informe/. Mientras un agente lo prepara (data-informe="oculto" en <body>), la
+   guía y la pastilla ya dicen «Paso 4», pero la página sigue siendo la del chat: la vista del informe solo la abre
+   «Leer» (scripts/recorrido/paso-informe.js y documento-informe.js). */
+
+/* Lo que se enseña al desplazarse la página (el mensaje de Faro que presenta el informe) no queda pegado arriba. */
+html:has(.rc-cuerpo[data-paso="4"]:not([data-informe="oculto"])) {
+  scroll-padding-top: 16px;
+}
+
+.rc-cuerpo[data-paso="4"]:not([data-informe="oculto"]) {
+  height: auto;
+  min-height: 100dvh;
+  overflow: visible;
+}
+
+.rc-cuerpo[data-paso="4"]:not([data-informe="oculto"]) .rc-espacio {
+  display: block;
+}
+
+.rc-cuerpo[data-paso="4"]:not([data-informe="oculto"]) .rc-guia,
+.rc-cuerpo[data-paso="4"]:not([data-informe="oculto"]) .rc-alternar-guia {
+  display: none;
+}
+
+.rc-cuerpo[data-paso="4"]:not([data-informe="oculto"]) .rc-conversacion {
+  flex: none;
+  overflow: visible;
+}
+
+/* El informe conserva su propia tipografía: la letra del sistema es solo para la conversación. */
+.rc-informe {
+  padding: 8px 0 0;
+  font-family: var(--fuente-texto);
+  border-top: 1px solid var(--rc-linea);
+}
+
+/* La nota del idioma del informe, sobre él: solo se ve cuando el informe quedó en otro idioma que la página. Lleva la
+   misma sangría que el informe (--sangria-informe, tokens.css). */
+.rc-nota-informe {
+  margin: 0;
+  padding: 8px var(--sangria-informe) 0;
+}
+
+/* #titulo es el id que le pone el motor al título del informe (src/presentacion/informe-breve/hoja-ia.ts): este
+   selector depende de ese contrato entre capas. */
+/* El título del informe recibe el foco al pintarse (para que se lea a continuación), pero no es un control: sin
+   recuadro de foco. */
+.rc-informe #titulo:focus {
+  outline: none;
+}
+
+/* El informe, como un documento dentro de la conversación (scripts/recorrido/documento-informe.js): su título, sus
+   hojas en miniatura y las acciones para leerlo en esta página o guardarlo en PDF. */
+.rc-texto:has(> .rc-documento) {
+  width: min(82%, 460px);
+}
+
+.rc-documento {
+  display: grid;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.rc-doc-cabeza {
+  display: grid;
+  grid-template-columns: 40px minmax(0, 1fr);
+  align-items: center;
+  gap: 12px;
+  padding: 10px;
+  background: var(--rc-acento-fondo);
+  border-radius: 8px;
+}
+
+.rc-doc-icono {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 48px;
+  color: var(--rc-sobre-boton);
+  font-family: var(--fuente-mono);
+  font-size: 0.6875rem;
+  background: var(--rc-boton);
+  border-radius: 4px;
+}
+
+.rc-doc-cabeza strong {
+  display: block;
+  font-size: 0.9375rem;
+  font-weight: 600;
+}
+
+.rc-doc-cabeza strong + span {
+  color: var(--rc-tenue);
+  font-size: 0.8125rem;
+}
+
+.rc-doc-vista {
+  display: grid;
+  grid-auto-columns: minmax(0, 1fr);
+  grid-auto-flow: column;
+  gap: 8px;
+}
+
+.rc-doc-hoja {
+  display: grid;
+  align-content: start;
+  gap: 4px;
+  height: 96px;
+  padding: 8px;
+  background: var(--rc-fondo);
+  border: 1px solid var(--rc-linea);
+  border-radius: 4px;
+}
+
+.rc-doc-hoja i {
+  display: block;
+  height: 4px;
+  background: var(--rc-acento-fondo);
+  border-radius: 2px;
+}
+
+.rc-doc-hoja i:first-child {
+  height: 7px;
+  margin-bottom: 3px;
+  background: var(--rc-acento);
+}
+
+.rc-doc-hoja i:nth-child(3) {
+  width: 64%;
+  background: var(--rc-acento);
+}
+
+.rc-doc-acciones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.rc-doc-acciones a {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+}

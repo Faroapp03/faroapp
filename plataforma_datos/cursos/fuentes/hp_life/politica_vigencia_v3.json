@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "id": "faro:vigencia:hp_life",
+  "version": "3",
+  "fuente_id": "hp_life",
+  "responsable": "Equipo Faro",
+  "naturaleza": "politica-interna-operativa",
+  "criterios": {
+    "ttl_ficha_segundos": 86400,
+    "ttl_catalogo_segundos": null,
+    "requiere_catalogo": false,
+    "zona_fechas_dia": null,
+    "inicio_dia_inclusivo": null,
+    "fin_dia_inclusivo": null,
+    "plazo_tecnico": "revision_interna",
+    "regla_disponibilidad": "retirada-por-catalogo-completo-1"
+  },
+  "justificacion": "El plazo técnico de 24 horas marca la próxima revisión interna de Faro y solo avisa en el panel: no retira la oferta, no cambia sus datos y no es un plazo del proveedor. No es garantía de HP ni cadencia del descriptor. No acredita plaza o elegibilidad individual. Un curso se retira solo cuando la lectura completa del listado público del proveedor deja de incluirlo y su ficha lo corrobora (no existe o no responde con una ficha), con el servidor respondiendo bien en la misma consulta; esa observación afirma la retirada y una ficha íntegra posterior la contradice. Un fallo registra el intento sin renovar ni retirar la última comprobación válida. Las políticas anteriores se mantienen inmutables para su propia semántica.",
+  "revision_equipo_faro": {
+    "estado": "criterio-aprobado-sin-activacion",
+    "fecha": null,
+    "alcance": "Política de recursos HP LIFE sin edición con retirada por la lectura completa del listado público; identidad, condición de acceso y captura real se contrastan por separado."
+  }
+}

@@ -1,0 +1,30 @@
+[
+  {
+    "Id": 23051,
+    "FK_Variable": 456,
+    "Nombre": "Peones agrarios, forestales y de la pesca",
+    "Codigo": "95",
+    "FK_JerarquiaPadres": [23050]
+  },
+  {
+    "Id": 23063,
+    "FK_Variable": 456,
+    "Nombre": "Peones de la construcción y de la minería",
+    "Codigo": "96",
+    "FK_JerarquiaPadres": [23050]
+  },
+  {
+    "Id": 23068,
+    "FK_Variable": 456,
+    "Nombre": "Peones de las industrias manufactureras",
+    "Codigo": "97",
+    "FK_JerarquiaPadres": [23050]
+  },
+  {
+    "Id": 23071,
+    "FK_Variable": 456,
+    "Nombre": "Peones del transporte, descargadores y reponedores",
+    "Codigo": "98",
+    "FK_JerarquiaPadres": [23050]
+  }
+]

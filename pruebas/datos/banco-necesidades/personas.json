@@ -1,0 +1,880 @@
+{
+  "version": 1,
+  "fechaDelCatalogo": "2026-10-21",
+  "base": "edef33e45deb755fd618a33a72440ed217bc4750",
+  "estado": "contrato e integridad; sin medición del selector ni etiquetas nuevas de utilidad",
+  "pares": [
+    {
+      "id": "n01",
+      "dimension": "nivel-ia",
+      "personas": ["n01a", "n01b"],
+      "campoVariable": "necesidad.nivelIAActual",
+      "anclajes": ["oficina-ia"]
+    },
+    {
+      "id": "n02",
+      "dimension": "dominio-tarea",
+      "personas": ["n02a", "n02b"],
+      "campoVariable": "necesidad.tareas.0.dominio",
+      "anclajes": ["oficina-cuesta"]
+    },
+    {
+      "id": "n03",
+      "dimension": "tarea-objetivo",
+      "personas": ["n03a", "n03b"],
+      "campoVariable": "necesidad.tareaObjetivo",
+      "anclajes": ["cocina-cuesta"]
+    },
+    {
+      "id": "n04",
+      "dimension": "objetivo",
+      "personas": ["n04a", "n04b"],
+      "campoVariable": "necesidad.objetivo",
+      "anclajes": ["cocina-ia"]
+    },
+    {
+      "id": "n05",
+      "dimension": "empleo",
+      "personas": ["n05a", "n05b"],
+      "campoVariable": "acceso.situacionLaboral",
+      "anclajes": ["enfermeria-paro"]
+    },
+    {
+      "id": "n06",
+      "dimension": "modalidad",
+      "personas": ["n06a", "n06b"],
+      "campoVariable": "acceso.modalidad",
+      "anclajes": ["electricidad-cuesta"]
+    },
+    {
+      "id": "n07",
+      "dimension": "territorio",
+      "personas": ["n07a", "n07b"],
+      "campoVariable": "acceso.territorio",
+      "anclajes": ["c022-p2", "c022-p3"]
+    },
+    {
+      "id": "n08",
+      "dimension": "horas",
+      "personas": ["n08a", "n08b"],
+      "campoVariable": "acceso.horasPorSemana",
+      "anclajes": ["c018-p1", "c018-p4"]
+    },
+    {
+      "id": "n09",
+      "dimension": "nivel-ia-desconocido",
+      "personas": ["n09a", "n09b"],
+      "campoVariable": "necesidad.nivelIAActual",
+      "anclajes": ["electricidad-ia"]
+    },
+    {
+      "id": "n10",
+      "dimension": "empleo-desconocido",
+      "personas": ["n10a", "n10b"],
+      "campoVariable": "acceso.situacionLaboral",
+      "anclajes": ["oficina-paro"]
+    }
+  ],
+  "personas": [
+    {
+      "id": "n01a",
+      "par": "n01",
+      "variante": "a",
+      "entrada": {
+        "ocupacion": {
+          "esco": "4110.1",
+          "isco08": "4110"
+        },
+        "necesidad": {
+          "objetivo": "ia",
+          "nivelIAActual": "inicial",
+          "nivelIADeseado": null,
+          "tareas": [
+            {
+              "id": "4110-4",
+              "dominio": "domino",
+              "descripcion": "Los redacta bien, pero cada semana repite los mismos informes y cartas y le quitan horas."
+            },
+            {
+              "id": "4110-6",
+              "dominio": "domino",
+              "descripcion": "Contesta cada día decenas de correos casi iguales y quiere hacerlo más rápido."
+            }
+          ],
+          "tareaObjetivo": "4110-4"
+        },
+        "acceso": {
+          "situacionLaboral": "trabaja",
+          "sector": null,
+          "modalidad": "en-linea",
+          "territorio": {
+            "comarca": "Vallès Occidental",
+            "provincia": null
+          },
+          "horasPorSemana": 3
+        }
+      },
+      "expectativas": ["nivel-ia", "sin-cuotas", "incertidumbre-explicita", "cambio-explicable"],
+      "etiquetasUtilidad": []
+    },
+    {
+      "id": "n01b",
+      "par": "n01",
+      "variante": "b",
+      "entrada": {
+        "ocupacion": {
+          "esco": "4110.1",
+          "isco08": "4110"
+        },
+        "necesidad": {
+          "objetivo": "ia",
+          "nivelIAActual": "avanzado",
+          "nivelIADeseado": null,
+          "tareas": [
+            {
+              "id": "4110-4",
+              "dominio": "domino",
+              "descripcion": "Los redacta bien, pero cada semana repite los mismos informes y cartas y le quitan horas."
+            },
+            {
+              "id": "4110-6",
+              "dominio": "domino",
+              "descripcion": "Contesta cada día decenas de correos casi iguales y quiere hacerlo más rápido."
+            }
+          ],
+          "tareaObjetivo": "4110-4"
+        },
+        "acceso": {
+          "situacionLaboral": "trabaja",
+          "sector": null,
+          "modalidad": "en-linea",
+          "territorio": {
+            "comarca": "Vallès Occidental",
+            "provincia": null
+          },
+          "horasPorSemana": 3
+        }
+      },
+      "expectativas": ["nivel-ia", "sin-cuotas", "incertidumbre-explicita", "cambio-explicable"],
+      "etiquetasUtilidad": []
+    },
+    {
+      "id": "n02a",
+      "par": "n02",
+      "variante": "a",
+      "entrada": {
+        "ocupacion": {
+          "esco": "4110.1",
+          "isco08": "4110"
+        },
+        "necesidad": {
+          "objetivo": "mejorar",
+          "nivelIAActual": null,
+          "nivelIADeseado": "inicial",
+          "tareas": [
+            {
+              "id": "4110-7",
+              "dominio": "cuesta",
+              "descripcion": "Facturación e IVA con hoja de cálculo."
+            },
+            {
+              "id": "4110-1",
+              "dominio": "domino",
+              "descripcion": "Nada en especial: archiva y registra sin problemas."
+            }
+          ],
+          "tareaObjetivo": "4110-7"
+        },
+        "acceso": {
+          "situacionLaboral": "trabaja",
+          "sector": null,
+          "modalidad": "igual",
+          "territorio": {
+            "comarca": "Barcelonès",
+            "provincia": null
+          },
+          "horasPorSemana": 4
+        }
+      },
+      "expectativas": ["dominio-tarea", "sin-cuotas", "incertidumbre-explicita", "cambio-explicable"],
+      "etiquetasUtilidad": []
+    },
+    {
+      "id": "n02b",
+      "par": "n02",
+      "variante": "b",
+      "entrada": {
+        "ocupacion": {
+          "esco": "4110.1",
+          "isco08": "4110"
+        },
+        "necesidad": {
+          "objetivo": "mejorar",
+          "nivelIAActual": null,
+          "nivelIADeseado": "inicial",
+          "tareas": [
+            {
+              "id": "4110-7",
+              "dominio": "domino",
+              "descripcion": "Facturación e IVA con hoja de cálculo."
+            },
+            {
+              "id": "4110-1",
+              "dominio": "domino",
+              "descripcion": "Nada en especial: archiva y registra sin problemas."
+            }
+          ],
+          "tareaObjetivo": "4110-7"
+        },
+        "acceso": {
+          "situacionLaboral": "trabaja",
+          "sector": null,
+          "modalidad": "igual",
+          "territorio": {
+            "comarca": "Barcelonès",
+            "provincia": null
+          },
+          "horasPorSemana": 4
+        }
+      },
+      "expectativas": ["dominio-tarea", "sin-cuotas", "incertidumbre-explicita", "cambio-explicable"],
+      "etiquetasUtilidad": []
+    },
+    {
+      "id": "n03a",
+      "par": "n03",
+      "variante": "a",
+      "entrada": {
+        "ocupacion": {
+          "esco": "5120.1",
+          "isco08": "5120"
+        },
+        "necesidad": {
+          "objetivo": "mejorar",
+          "nivelIAActual": null,
+          "nivelIADeseado": "avanzado",
+          "tareas": [
+            {
+              "id": "5120-2",
+              "dominio": "cuesta",
+              "descripcion": "Acaba de ascender a jefe de partida y no sabe repartir el trabajo ni corregir a los ayudantes sin conflictos."
+            },
+            {
+              "id": "5120-6",
+              "dominio": "domino",
+              "descripcion": "La higiene la tiene al día con su carné de manipulador."
+            }
+          ],
+          "tareaObjetivo": "5120-2"
+        },
+        "acceso": {
+          "situacionLaboral": "trabaja",
+          "sector": null,
+          "modalidad": "presencial",
+          "territorio": {
+            "comarca": "Barcelonès",
+            "provincia": null
+          },
+          "horasPorSemana": 4
+        }
+      },
+      "expectativas": ["tarea-objetivo", "sin-cuotas", "incertidumbre-explicita", "cambio-explicable"],
+      "etiquetasUtilidad": []
+    },
+    {
+      "id": "n03b",
+      "par": "n03",
+      "variante": "b",
+      "entrada": {
+        "ocupacion": {
+          "esco": "5120.1",
+          "isco08": "5120"
+        },
+        "necesidad": {
+          "objetivo": "mejorar",
+          "nivelIAActual": null,
+          "nivelIADeseado": "avanzado",
+          "tareas": [
+            {
+              "id": "5120-2",
+              "dominio": "cuesta",
+              "descripcion": "Acaba de ascender a jefe de partida y no sabe repartir el trabajo ni corregir a los ayudantes sin conflictos."
+            },
+            {
+              "id": "5120-6",
+              "dominio": "domino",
+              "descripcion": "La higiene la tiene al día con su carné de manipulador."
+            }
+          ],
+          "tareaObjetivo": "5120-6"
+        },
+        "acceso": {
+          "situacionLaboral": "trabaja",
+          "sector": null,
+          "modalidad": "presencial",
+          "territorio": {
+            "comarca": "Barcelonès",
+            "provincia": null
+          },
+          "horasPorSemana": 4
+        }
+      },
+      "expectativas": ["tarea-objetivo", "sin-cuotas", "incertidumbre-explicita", "cambio-explicable"],
+      "etiquetasUtilidad": []
+    },
+    {
+      "id": "n04a",
+      "par": "n04",
+      "variante": "a",
+      "entrada": {
+        "ocupacion": {
+          "esco": "5120.1",
+          "isco08": "5120"
+        },
+        "necesidad": {
+          "objetivo": "ia",
+          "nivelIAActual": null,
+          "nivelIADeseado": "medio",
+          "tareas": [
+            {
+              "id": "5120-1",
+              "dominio": "domino",
+              "descripcion": "Planifica los menús semanales y los escandallos a mano y le llevan horas cada domingo."
+            },
+            {
+              "id": "5120-3",
+              "dominio": "domino",
+              "descripcion": "Lleva los registros de control sanitario en papel y quiere pasarlos a algo más rápido."
+            }
+          ],
+          "tareaObjetivo": "5120-1"
+        },
+        "acceso": {
+          "situacionLaboral": "trabaja",
+          "sector": null,
+          "modalidad": "en-linea",
+          "territorio": {
+            "comarca": "Gironès",
+            "provincia": null
+          },
+          "horasPorSemana": 2
+        }
+      },
+      "expectativas": ["objetivo", "sin-cuotas", "incertidumbre-explicita", "cambio-explicable"],
+      "etiquetasUtilidad": []
+    },
+    {
+      "id": "n04b",
+      "par": "n04",
+      "variante": "b",
+      "entrada": {
+        "ocupacion": {
+          "esco": "5120.1",
+          "isco08": "5120"
+        },
+        "necesidad": {
+          "objetivo": "mejorar",
+          "nivelIAActual": null,
+          "nivelIADeseado": "medio",
+          "tareas": [
+            {
+              "id": "5120-1",
+              "dominio": "domino",
+              "descripcion": "Planifica los menús semanales y los escandallos a mano y le llevan horas cada domingo."
+            },
+            {
+              "id": "5120-3",
+              "dominio": "domino",
+              "descripcion": "Lleva los registros de control sanitario en papel y quiere pasarlos a algo más rápido."
+            }
+          ],
+          "tareaObjetivo": "5120-1"
+        },
+        "acceso": {
+          "situacionLaboral": "trabaja",
+          "sector": null,
+          "modalidad": "en-linea",
+          "territorio": {
+            "comarca": "Gironès",
+            "provincia": null
+          },
+          "horasPorSemana": 2
+        }
+      },
+      "expectativas": ["objetivo", "sin-cuotas", "incertidumbre-explicita", "cambio-explicable"],
+      "etiquetasUtilidad": []
+    },
+    {
+      "id": "n05a",
+      "par": "n05",
+      "variante": "a",
+      "entrada": {
+        "ocupacion": {
+          "esco": "2221.2",
+          "isco08": "2221"
+        },
+        "necesidad": {
+          "objetivo": "mejorar",
+          "nivelIAActual": null,
+          "nivelIADeseado": "inicial",
+          "tareas": [
+            {
+              "id": "2221-4",
+              "dominio": "cuesta",
+              "descripcion": "Tras cinco años cuidando a su madre, los protocolos de medicación y los programas de prescripción han cambiado."
+            },
+            {
+              "id": "2221-5",
+              "dominio": "cuesta",
+              "descripcion": "Quiere ponerse al día en curas y apósitos actuales antes de volver a una planta."
+            }
+          ],
+          "tareaObjetivo": "2221-4"
+        },
+        "acceso": {
+          "situacionLaboral": "paro",
+          "sector": null,
+          "modalidad": "igual",
+          "territorio": {
+            "comarca": "Vallès Oriental",
+            "provincia": null
+          },
+          "horasPorSemana": 10
+        }
+      },
+      "expectativas": ["empleo", "sin-cuotas", "incertidumbre-explicita", "cambio-explicable"],
+      "etiquetasUtilidad": []
+    },
+    {
+      "id": "n05b",
+      "par": "n05",
+      "variante": "b",
+      "entrada": {
+        "ocupacion": {
+          "esco": "2221.2",
+          "isco08": "2221"
+        },
+        "necesidad": {
+          "objetivo": "mejorar",
+          "nivelIAActual": null,
+          "nivelIADeseado": "inicial",
+          "tareas": [
+            {
+              "id": "2221-4",
+              "dominio": "cuesta",
+              "descripcion": "Tras cinco años cuidando a su madre, los protocolos de medicación y los programas de prescripción han cambiado."
+            },
+            {
+              "id": "2221-5",
+              "dominio": "cuesta",
+              "descripcion": "Quiere ponerse al día en curas y apósitos actuales antes de volver a una planta."
+            }
+          ],
+          "tareaObjetivo": "2221-4"
+        },
+        "acceso": {
+          "situacionLaboral": "trabaja",
+          "sector": null,
+          "modalidad": "igual",
+          "territorio": {
+            "comarca": "Vallès Oriental",
+            "provincia": null
+          },
+          "horasPorSemana": 10
+        }
+      },
+      "expectativas": ["empleo", "sin-cuotas", "incertidumbre-explicita", "cambio-explicable"],
+      "etiquetasUtilidad": []
+    },
+    {
+      "id": "n06a",
+      "par": "n06",
+      "variante": "a",
+      "entrada": {
+        "ocupacion": {
+          "esco": "7411.1",
+          "isco08": "7411"
+        },
+        "necesidad": {
+          "objetivo": "mejorar",
+          "nivelIAActual": null,
+          "nivelIADeseado": "medio",
+          "tareas": [
+            {
+              "id": "7411-7",
+              "dominio": "cuesta",
+              "descripcion": "Domina las viviendas, pero le cuestan los cuadros de las naves industriales que ahora le encargan."
+            },
+            {
+              "id": "7411-4",
+              "dominio": "cuesta",
+              "descripcion": "Duda con las mediciones de aislamiento y de tierra que exige la revisión."
+            }
+          ],
+          "tareaObjetivo": "7411-7"
+        },
+        "acceso": {
+          "situacionLaboral": "trabaja",
+          "sector": null,
+          "modalidad": "presencial",
+          "territorio": {
+            "comarca": "Vallès Occidental",
+            "provincia": null
+          },
+          "horasPorSemana": 5
+        }
+      },
+      "expectativas": ["modalidad", "sin-cuotas", "incertidumbre-explicita", "cambio-explicable"],
+      "etiquetasUtilidad": []
+    },
+    {
+      "id": "n06b",
+      "par": "n06",
+      "variante": "b",
+      "entrada": {
+        "ocupacion": {
+          "esco": "7411.1",
+          "isco08": "7411"
+        },
+        "necesidad": {
+          "objetivo": "mejorar",
+          "nivelIAActual": null,
+          "nivelIADeseado": "medio",
+          "tareas": [
+            {
+              "id": "7411-7",
+              "dominio": "cuesta",
+              "descripcion": "Domina las viviendas, pero le cuestan los cuadros de las naves industriales que ahora le encargan."
+            },
+            {
+              "id": "7411-4",
+              "dominio": "cuesta",
+              "descripcion": "Duda con las mediciones de aislamiento y de tierra que exige la revisión."
+            }
+          ],
+          "tareaObjetivo": "7411-7"
+        },
+        "acceso": {
+          "situacionLaboral": "trabaja",
+          "sector": null,
+          "modalidad": "en-linea",
+          "territorio": {
+            "comarca": "Vallès Occidental",
+            "provincia": null
+          },
+          "horasPorSemana": 5
+        }
+      },
+      "expectativas": ["modalidad", "sin-cuotas", "incertidumbre-explicita", "cambio-explicable"],
+      "etiquetasUtilidad": []
+    },
+    {
+      "id": "n07a",
+      "par": "n07",
+      "variante": "a",
+      "entrada": {
+        "ocupacion": {
+          "esco": "2267.2",
+          "isco08": "2267"
+        },
+        "necesidad": {
+          "objetivo": "mejorar",
+          "nivelIAActual": null,
+          "nivelIADeseado": null,
+          "tareas": [
+            {
+              "id": "2267-2",
+              "dominio": null,
+              "descripcion": null
+            }
+          ],
+          "tareaObjetivo": "2267-2"
+        },
+        "acceso": {
+          "situacionLaboral": "trabaja",
+          "sector": "OTRO",
+          "modalidad": "igual",
+          "territorio": {
+            "comarca": "Tarragonès",
+            "provincia": "43"
+          },
+          "horasPorSemana": 5
+        }
+      },
+      "expectativas": ["territorio", "sin-cuotas", "incertidumbre-explicita", "cambio-explicable"],
+      "etiquetasUtilidad": []
+    },
+    {
+      "id": "n07b",
+      "par": "n07",
+      "variante": "b",
+      "entrada": {
+        "ocupacion": {
+          "esco": "2267.2",
+          "isco08": "2267"
+        },
+        "necesidad": {
+          "objetivo": "mejorar",
+          "nivelIAActual": null,
+          "nivelIADeseado": null,
+          "tareas": [
+            {
+              "id": "2267-2",
+              "dominio": null,
+              "descripcion": null
+            }
+          ],
+          "tareaObjetivo": "2267-2"
+        },
+        "acceso": {
+          "situacionLaboral": "trabaja",
+          "sector": "OTRO",
+          "modalidad": "igual",
+          "territorio": {
+            "comarca": "Gironès",
+            "provincia": "17"
+          },
+          "horasPorSemana": 5
+        }
+      },
+      "expectativas": ["territorio", "sin-cuotas", "incertidumbre-explicita", "cambio-explicable"],
+      "etiquetasUtilidad": []
+    },
+    {
+      "id": "n08a",
+      "par": "n08",
+      "variante": "a",
+      "entrada": {
+        "ocupacion": {
+          "esco": "2512.2",
+          "isco08": "2512"
+        },
+        "necesidad": {
+          "objetivo": "mejorar",
+          "nivelIAActual": null,
+          "nivelIADeseado": null,
+          "tareas": [
+            {
+              "id": "2512-4",
+              "dominio": null,
+              "descripcion": null
+            }
+          ],
+          "tareaObjetivo": "2512-4"
+        },
+        "acceso": {
+          "situacionLaboral": "trabaja",
+          "sector": "OTRO",
+          "modalidad": "igual",
+          "territorio": {
+            "comarca": "Barcelonès",
+            "provincia": "08"
+          },
+          "horasPorSemana": 2
+        }
+      },
+      "expectativas": ["horas", "sin-cuotas", "incertidumbre-explicita", "cambio-explicable"],
+      "etiquetasUtilidad": []
+    },
+    {
+      "id": "n08b",
+      "par": "n08",
+      "variante": "b",
+      "entrada": {
+        "ocupacion": {
+          "esco": "2512.2",
+          "isco08": "2512"
+        },
+        "necesidad": {
+          "objetivo": "mejorar",
+          "nivelIAActual": null,
+          "nivelIADeseado": null,
+          "tareas": [
+            {
+              "id": "2512-4",
+              "dominio": null,
+              "descripcion": null
+            }
+          ],
+          "tareaObjetivo": "2512-4"
+        },
+        "acceso": {
+          "situacionLaboral": "trabaja",
+          "sector": "OTRO",
+          "modalidad": "igual",
+          "territorio": {
+            "comarca": "Barcelonès",
+            "provincia": "08"
+          },
+          "horasPorSemana": 5
+        }
+      },
+      "expectativas": ["horas", "sin-cuotas", "incertidumbre-explicita", "cambio-explicable"],
+      "etiquetasUtilidad": []
+    },
+    {
+      "id": "n09a",
+      "par": "n09",
+      "variante": "a",
+      "entrada": {
+        "ocupacion": {
+          "esco": "7411.1",
+          "isco08": "7411"
+        },
+        "necesidad": {
+          "objetivo": "ia",
+          "nivelIAActual": "avanzado",
+          "nivelIADeseado": null,
+          "tareas": [
+            {
+              "id": "7411-3",
+              "dominio": "domino",
+              "descripcion": "Es autónomo y hace presupuestos y memorias técnicas de noche."
+            },
+            {
+              "id": "7411-2",
+              "dominio": "domino",
+              "descripcion": "Lo domina; pierde tiempo pasando a limpio esquemas y listas de material."
+            }
+          ],
+          "tareaObjetivo": "7411-3"
+        },
+        "acceso": {
+          "situacionLaboral": "autonomo",
+          "sector": null,
+          "modalidad": "en-linea",
+          "territorio": {
+            "comarca": "Garrotxa",
+            "provincia": null
+          },
+          "horasPorSemana": 3
+        }
+      },
+      "expectativas": ["nivel-ia-desconocido", "sin-cuotas", "incertidumbre-explicita", "cambio-explicable"],
+      "etiquetasUtilidad": []
+    },
+    {
+      "id": "n09b",
+      "par": "n09",
+      "variante": "b",
+      "entrada": {
+        "ocupacion": {
+          "esco": "7411.1",
+          "isco08": "7411"
+        },
+        "necesidad": {
+          "objetivo": "ia",
+          "nivelIAActual": null,
+          "nivelIADeseado": null,
+          "tareas": [
+            {
+              "id": "7411-3",
+              "dominio": "domino",
+              "descripcion": "Es autónomo y hace presupuestos y memorias técnicas de noche."
+            },
+            {
+              "id": "7411-2",
+              "dominio": "domino",
+              "descripcion": "Lo domina; pierde tiempo pasando a limpio esquemas y listas de material."
+            }
+          ],
+          "tareaObjetivo": "7411-3"
+        },
+        "acceso": {
+          "situacionLaboral": "autonomo",
+          "sector": null,
+          "modalidad": "en-linea",
+          "territorio": {
+            "comarca": "Garrotxa",
+            "provincia": null
+          },
+          "horasPorSemana": 3
+        }
+      },
+      "expectativas": ["nivel-ia-desconocido", "sin-cuotas", "incertidumbre-explicita", "cambio-explicable"],
+      "etiquetasUtilidad": []
+    },
+    {
+      "id": "n10a",
+      "par": "n10",
+      "variante": "a",
+      "entrada": {
+        "ocupacion": {
+          "esco": "4110.1",
+          "isco08": "4110"
+        },
+        "necesidad": {
+          "objetivo": "mejorar",
+          "nivelIAActual": null,
+          "nivelIADeseado": "inicial",
+          "tareas": [
+            {
+              "id": "4110-8",
+              "dominio": "cuesta",
+              "descripcion": "Herramientas de oficina en la nube y transcripción de textos."
+            },
+            {
+              "id": "4110-6",
+              "dominio": "domino",
+              "descripcion": "Correo y agendas compartidas."
+            }
+          ],
+          "tareaObjetivo": "4110-8"
+        },
+        "acceso": {
+          "situacionLaboral": "paro",
+          "sector": null,
+          "modalidad": "presencial",
+          "territorio": {
+            "comarca": "Baix Llobregat",
+            "provincia": null
+          },
+          "horasPorSemana": 15
+        }
+      },
+      "expectativas": ["empleo-desconocido", "sin-cuotas", "incertidumbre-explicita", "cambio-explicable"],
+      "etiquetasUtilidad": []
+    },
+    {
+      "id": "n10b",
+      "par": "n10",
+      "variante": "b",
+      "entrada": {
+        "ocupacion": {
+          "esco": "4110.1",
+          "isco08": "4110"
+        },
+        "necesidad": {
+          "objetivo": "mejorar",
+          "nivelIAActual": null,
+          "nivelIADeseado": "inicial",
+          "tareas": [
+            {
+              "id": "4110-8",
+              "dominio": "cuesta",
+              "descripcion": "Herramientas de oficina en la nube y transcripción de textos."
+            },
+            {
+              "id": "4110-6",
+              "dominio": "domino",
+              "descripcion": "Correo y agendas compartidas."
+            }
+          ],
+          "tareaObjetivo": "4110-8"
+        },
+        "acceso": {
+          "situacionLaboral": null,
+          "sector": null,
+          "modalidad": "presencial",
+          "territorio": {
+            "comarca": "Baix Llobregat",
+            "provincia": null
+          },
+          "horasPorSemana": 15
+        }
+      },
+      "expectativas": ["empleo-desconocido", "sin-cuotas", "incertidumbre-explicita", "cambio-explicable"],
+      "etiquetasUtilidad": []
+    }
+  ]
+}

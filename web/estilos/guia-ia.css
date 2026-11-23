@@ -1,0 +1,337 @@
+/* Guía «Qué es la IA» (entender-ia.html): lo poco que añade a contenidos.css y etapas.css. Párrafos, la definición
+   destacada solo con una raya, el glosario por temas y el desafío. Todos los colores salen de tokens.css. Sin sombras,
+   sin halos y sin movimiento propio: solo cambios de color breves al pasar o enfocar, que prefers-reduced-motion
+   quita (base-adaptaciones.css). */
+
+/* Subtítulos dentro de cada parte */
+.guia-ia .bloque h3 {
+  margin: 34px 0 10px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: -0.015em;
+}
+
+/* La definición: una frase destacada, con una raya y letra mayor */
+.guia-ia .bloque p.definicion {
+  margin: 4px 0 22px;
+  padding: 2px 0 2px 20px;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  border-left: 3px solid var(--color-acento);
+}
+
+/* Las precauciones: una lista breve, sin recuadro */
+.guia-ia .lista-precauciones li {
+  margin-bottom: 10px;
+}
+
+/* ---------- Glosario ---------- */
+
+.guia-ia .glosario {
+  margin: 0 0 8px;
+}
+
+.guia-ia .glosario .glosario-entrada {
+  padding: 14px 0;
+  border-bottom: 1px solid var(--color-linea);
+  scroll-margin-top: 24px;
+}
+
+.guia-ia .glosario dt {
+  font-size: 1.02rem;
+}
+
+.guia-ia .glosario dd p {
+  margin: 4px 0 0;
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+.guia-ia .glosario dd .glosario-ejemplo {
+  color: var(--color-tenue);
+}
+
+.guia-ia .glosario dd .glosario-explicado {
+  color: var(--color-tenue);
+  font-size: 0.875rem;
+}
+
+/* El término al que lleva un enlace: su nombre, subrayado, sin color nuevo ni movimiento */
+.guia-ia .glosario-entrada:target dt {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+
+@media (width >= 900px) {
+  .guia-ia .glosario {
+    columns: 2;
+    column-gap: 48px;
+  }
+
+  .guia-ia .glosario .glosario-entrada {
+    break-inside: avoid;
+  }
+}
+
+/* ---------- Desafío ---------- */
+
+.desafio-juego {
+  margin-top: 22px;
+}
+
+/* Las referencias, fuera de las partes: un poco de aire tras la tarjeta «Siguiente». */
+.guia-ia > .referencias {
+  margin-top: 56px;
+}
+
+.desafio-progreso {
+  margin: 0 0 10px;
+  color: var(--color-tenue);
+  font-family: var(--fuente-mono);
+  font-size: var(--texto-minimo);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.desafio-pregunta {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.desafio-pregunta legend {
+  width: 100%;
+  padding: 0;
+}
+
+.guia-ia .bloque .desafio-enunciado {
+  margin: 0 0 14px;
+  font-size: 1.15rem;
+  line-height: 1.5;
+}
+
+.desafio-enunciado:focus {
+  outline: none;
+}
+
+.desafio-opciones {
+  display: grid;
+  gap: 8px;
+  margin: 0 0 16px;
+}
+
+.desafio-opcion {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  min-height: 48px;
+  padding: 11px 16px;
+  color: var(--color-tinta);
+  font: inherit;
+  font-size: 0.97rem;
+  line-height: 1.45;
+  text-align: left;
+  background: var(--color-panel);
+  border: 1px solid var(--color-linea);
+  border-radius: var(--radio);
+  cursor: pointer;
+  transition:
+    border-color 0.15s,
+    background-color 0.15s;
+}
+
+.desafio-opcion:hover:not([aria-disabled="true"]) {
+  border-color: var(--color-tinta);
+}
+
+.desafio-opcion:focus-visible {
+  outline: 2px solid var(--color-tinta);
+  outline-offset: 2px;
+}
+
+.desafio-opcion[aria-disabled="true"] {
+  cursor: default;
+}
+
+/* Correcta en verde e incorrecta en rojo: fondo suave, borde de 2 px (el relleno baja 1 px para no mover nada) y una
+   marca llena con su signo. La tinta del texto no cambia. */
+.desafio-opcion.es-correcta,
+.desafio-opcion.es-incorrecta {
+  padding: 10px 15px;
+  border-width: 2px;
+}
+
+.desafio-opcion.es-correcta {
+  background: var(--color-acierto-fondo);
+  border-color: var(--color-acierto);
+}
+
+.desafio-opcion.es-incorrecta {
+  background: var(--color-fallo-fondo);
+  border-color: var(--color-fallo);
+}
+
+.desafio-marca {
+  display: inline-flex;
+  flex: none;
+  justify-content: center;
+  align-items: center;
+  width: 26px;
+  height: 26px;
+  color: var(--color-sobre-marca);
+  font-weight: 700;
+  line-height: 1;
+  border-radius: var(--radio);
+}
+
+.es-correcta .desafio-marca {
+  background: var(--color-acierto);
+}
+
+.es-incorrecta .desafio-marca {
+  background: var(--color-fallo);
+}
+
+.guia-ia .bloque .desafio-explicacion p {
+  margin: 0 0 18px;
+  padding: 2px 0 2px 16px;
+  font-size: 0.97rem;
+  line-height: 1.7;
+  border-left: 3px solid var(--color-tenue);
+}
+
+.guia-ia .bloque .desafio-explicacion p.es-correcta {
+  border-left-color: var(--color-acierto);
+}
+
+.guia-ia .bloque .desafio-explicacion p.es-incorrecta {
+  border-left-color: var(--color-fallo);
+}
+
+.boton-accion {
+  min-height: 48px;
+  padding: 11px 22px;
+  color: var(--color-fondo);
+  font: inherit;
+  font-size: 0.95rem;
+  font-weight: 500;
+  background: var(--color-tinta);
+  border: 1px solid var(--color-tinta);
+  border-radius: var(--radio);
+  cursor: pointer;
+}
+
+.boton-accion:focus-visible {
+  outline: 2px solid var(--color-tinta);
+  outline-offset: 3px;
+}
+
+.desafio-resultado:focus {
+  outline: none;
+}
+
+.guia-ia .bloque .desafio-resultado-titulo {
+  margin: 0 0 4px;
+  color: var(--color-tenue);
+  font-family: var(--fuente-mono);
+  font-size: var(--texto-minimo);
+  font-weight: 400;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.guia-ia .bloque p.desafio-cifra {
+  margin: 0 0 12px;
+  font-size: 1.9rem;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+.guia-ia .desafio-repaso {
+  margin: 0 0 22px;
+  padding-left: 20px;
+}
+
+.guia-ia .desafio-repaso li {
+  margin-bottom: 6px;
+  line-height: 1.7;
+}
+
+/* Sin JavaScript: el desafío como lista, con la respuesta en un desplegable */
+.desafio-lista {
+  margin: 8px 0 0;
+  padding-left: 22px;
+}
+
+.guia-ia .desafio-lista > li {
+  margin-bottom: 22px;
+  line-height: 1.7;
+}
+
+.guia-ia .bloque .desafio-lista p {
+  margin: 0 0 6px;
+  font-weight: 500;
+}
+
+.desafio-lista ol {
+  margin: 0 0 8px;
+  padding-left: 22px;
+}
+
+.desafio-lista summary {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+
+.desafio-lista details strong {
+  font-weight: 500;
+}
+
+/* Referencias: las direcciones largas se parten donde haga falta */
+.guia-ia .referencias a {
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 700px) {
+  .guia-ia .bloque p.definicion {
+    padding-left: 16px;
+    font-size: 1.08rem;
+  }
+
+  .guia-ia .bloque .desafio-enunciado {
+    font-size: 1.05rem;
+  }
+
+  .desafio-opcion {
+    font-size: 0.94rem;
+  }
+}
+
+/* Con colores forzados, la opción correcta e incorrecta conservan su borde y su signo; la marca, el color del sistema. */
+@media (forced-colors: active) {
+  .desafio-marca {
+    forced-color-adjust: none;
+    color: Canvas;
+    background: CanvasText;
+  }
+}
+
+/* Al imprimir sale la lista de situaciones con sus respuestas, no el juego. */
+@media print {
+  .desafio-juego {
+    display: none;
+  }
+
+  .desafio-lista[hidden] {
+    display: block;
+  }
+}

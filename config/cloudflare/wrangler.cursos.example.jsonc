@@ -1,0 +1,9 @@
+{
+  "name": "faro-cursos",
+  "main": "../../src/plataforma/cloudflare/worker-cursos.ts",
+  "compatibility_date": "2026-10-01",
+  "compatibility_flags": ["global_fetch_strictly_public"],
+  "workers_dev": false,
+  "preview_urls": false,
+  "rules": [{ "type": "Data", "globs": ["**/datos/*.json"], "fallthrough": true }]
+}

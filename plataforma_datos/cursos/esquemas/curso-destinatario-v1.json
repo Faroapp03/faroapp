@@ -1,0 +1,282 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Fragmento Curso: destinatario destinatarios-1.0.0",
+  "description": "Aplicar a Curso o edicion.datos; extensión aditiva. No sustituye contrato de lote ni convierte destinatario en requisito de acceso. El validador estricto adicional rechaza pendiente_vocabulario.",
+  "type": "object",
+  "additionalProperties": true,
+  "properties": {
+    "destinatario": {
+      "type": ["object", "null"],
+      "additionalProperties": true,
+      "required": ["categorias", "normalizacion_categorias"],
+      "properties": {
+        "categorias": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "enum": [
+              "agentes_sociales",
+              "creadores_contenido",
+              "directivos",
+              "docentes",
+              "docentes_y_formadores",
+              "docentes_y_profesionales_de_cuidados_propuesta",
+              "empleados_publicos",
+              "empresas",
+              "entidades_y_asociaciones",
+              "equipos_directivos_educacion",
+              "estudiantes",
+              "estudiantes_posgrado",
+              "estudiantes_uned",
+              "familiares_y_voluntariado",
+              "familias",
+              "formadores",
+              "fuerzas_seguridad_y_militares",
+              "hogares",
+              "madres_padres_y_tutores",
+              "mujeres",
+              "mujeres_embarazadas_y_familias",
+              "organizaciones_sociales",
+              "participacion_ciudadana",
+              "personal_sanitario",
+              "personas_adultas_responsables_de_imagen_de_menores",
+              "personas_autonomas",
+              "personas_autonomas_con_negocio",
+              "personas_autonomas_y_emprendedoras",
+              "personas_autonomas_y_pymes",
+              "personas_con_discapacidad",
+              "personas_desempleadas",
+              "personas_desempleadas_demandantes_de_empleo",
+              "personas_emprendedoras",
+              "personas_en_busqueda_de_empleo",
+              "personas_en_formacion_para_el_empleo",
+              "personas_jovenes",
+              "personas_jovenes_garantia_juvenil",
+              "personas_mayores",
+              "personas_que_trabajan_con_informacion",
+              "personas_trabajadoras",
+              "personas_trabajadoras_en_formacion",
+              "personas_trabajadoras_pymes",
+              "personas_trabajadoras_sectoriales",
+              "personas_usuarias_de_fotografia_digital",
+              "profesionales",
+              "profesionales_apoyo_a_la_autonomia_y_accesibilidad",
+              "profesionales_automatizacion",
+              "profesionales_ciencias_sociales",
+              "profesionales_comunicacion_diseno_y_marketing",
+              "profesionales_de_oficios_y_mantenimiento_propuesta",
+              "profesionales_derecho",
+              "profesionales_educacion",
+              "profesionales_educacion_y_cuidados_propuesta",
+              "profesionales_humanidades_stem",
+              "profesionales_industria_tic",
+              "profesionales_intervencion_socioeducativa",
+              "profesionales_psicologia",
+              "profesionales_rrhh",
+              "profesionales_sanidad",
+              "profesionales_sanitarios_y_cuidados_propuesta",
+              "profesionales_sector_geografico",
+              "profesionales_tercer_sector",
+              "profesionales_tic",
+              "profesionales_ventas_gestion",
+              "publico_general",
+              "responsables_y_coordinadores_de_equipos",
+              "trabajadores_y_personas_autonomas",
+              "voluntariado"
+            ]
+          }
+        },
+        "texto_literal": {
+          "type": ["string", "null"]
+        },
+        "normalizacion_categorias": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["version", "metodo", "campo_origen", "original", "estado", "desconocidas", "reglas"],
+          "properties": {
+            "version": {
+              "const": "destinatarios-1.0.0"
+            },
+            "metodo": {
+              "const": "alias-exacto-sin-inferencia-v1"
+            },
+            "campo_origen": {
+              "const": "/destinatario/categorias"
+            },
+            "original": {
+              "type": "object",
+              "description": "Copia íntegra previa, incluidas categorias_origen preexistentes, evidencia y literal."
+            },
+            "estado": {
+              "enum": ["normalizado", "no_indicado", "pendiente_vocabulario"]
+            },
+            "desconocidas": {
+              "type": "array",
+              "uniqueItems": true,
+              "items": {
+                "type": "string"
+              }
+            },
+            "reglas": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": ["indice", "origen", "destino", "regla", "duplicado_salida"],
+                "properties": {
+                  "indice": {
+                    "type": "integer",
+                    "minimum": 0
+                  },
+                  "origen": {
+                    "type": "string"
+                  },
+                  "destino": {
+                    "anyOf": [
+                      {
+                        "type": "string",
+                        "enum": [
+                          "agentes_sociales",
+                          "creadores_contenido",
+                          "directivos",
+                          "docentes",
+                          "docentes_y_formadores",
+                          "docentes_y_profesionales_de_cuidados_propuesta",
+                          "empleados_publicos",
+                          "empresas",
+                          "entidades_y_asociaciones",
+                          "equipos_directivos_educacion",
+                          "estudiantes",
+                          "estudiantes_posgrado",
+                          "estudiantes_uned",
+                          "familiares_y_voluntariado",
+                          "familias",
+                          "formadores",
+                          "fuerzas_seguridad_y_militares",
+                          "hogares",
+                          "madres_padres_y_tutores",
+                          "mujeres",
+                          "mujeres_embarazadas_y_familias",
+                          "organizaciones_sociales",
+                          "participacion_ciudadana",
+                          "personal_sanitario",
+                          "personas_adultas_responsables_de_imagen_de_menores",
+                          "personas_autonomas",
+                          "personas_autonomas_con_negocio",
+                          "personas_autonomas_y_emprendedoras",
+                          "personas_autonomas_y_pymes",
+                          "personas_con_discapacidad",
+                          "personas_desempleadas",
+                          "personas_desempleadas_demandantes_de_empleo",
+                          "personas_emprendedoras",
+                          "personas_en_busqueda_de_empleo",
+                          "personas_en_formacion_para_el_empleo",
+                          "personas_jovenes",
+                          "personas_jovenes_garantia_juvenil",
+                          "personas_mayores",
+                          "personas_que_trabajan_con_informacion",
+                          "personas_trabajadoras",
+                          "personas_trabajadoras_en_formacion",
+                          "personas_trabajadoras_pymes",
+                          "personas_trabajadoras_sectoriales",
+                          "personas_usuarias_de_fotografia_digital",
+                          "profesionales",
+                          "profesionales_apoyo_a_la_autonomia_y_accesibilidad",
+                          "profesionales_automatizacion",
+                          "profesionales_ciencias_sociales",
+                          "profesionales_comunicacion_diseno_y_marketing",
+                          "profesionales_de_oficios_y_mantenimiento_propuesta",
+                          "profesionales_derecho",
+                          "profesionales_educacion",
+                          "profesionales_educacion_y_cuidados_propuesta",
+                          "profesionales_humanidades_stem",
+                          "profesionales_industria_tic",
+                          "profesionales_intervencion_socioeducativa",
+                          "profesionales_psicologia",
+                          "profesionales_rrhh",
+                          "profesionales_sanidad",
+                          "profesionales_sanitarios_y_cuidados_propuesta",
+                          "profesionales_sector_geografico",
+                          "profesionales_tercer_sector",
+                          "profesionales_tic",
+                          "profesionales_ventas_gestion",
+                          "publico_general",
+                          "responsables_y_coordinadores_de_equipos",
+                          "trabajadores_y_personas_autonomas",
+                          "voluntariado"
+                        ]
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "regla": {
+                    "type": "string",
+                    "enum": [
+                      "identidad-v1",
+                      "trabajadores-generales-v1",
+                      "empleo-publico-v1",
+                      "familias-v1",
+                      "autonomos-v1",
+                      "ausencia-explicita-v1",
+                      "pendiente-vocabulario-v1"
+                    ]
+                  },
+                  "duplicado_salida": {
+                    "type": "boolean"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "type": "object",
+            "properties": {
+              "normalizacion_categorias": {
+                "properties": {
+                  "estado": {
+                    "const": "no_indicado"
+                  }
+                }
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "categorias": {
+                "maxItems": 0
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "type": "object",
+            "properties": {
+              "normalizacion_categorias": {
+                "properties": {
+                  "estado": {
+                    "const": "normalizado"
+                  }
+                }
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "categorias": {
+                "minItems": 1
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

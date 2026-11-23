@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta
+      name="description"
+      content="Comprobar Faro: comprueba en unos segundos si Faro funciona bien en este dispositivo y qué hacer si algo falla."
+      data-texto-content="doctor.descripcion"
+    />
+    <meta name="theme-color" content="#f4f3f0" />
+    <meta name="apple-mobile-web-app-title" content="Faro" />
+    <!-- En iPhone y iPad instalada: barra de estado opaca y negra, como el modo noche con el que abre Faro (el
+         sistema no admite una por tema; donde lo admite, el color lo pone el theme-color de arriba). -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <title data-texto="doctor.titulo">Comprobación · Faro</title>
+    <link rel="icon" href="imagenes/identidad/faro-editorial-icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="imagenes/identidad/icon-180.png" />
+    <link rel="manifest" href="manifest.webmanifest" crossorigin="use-credentials" />
+    <script src="scripts/tema-inicial.js"></script>
+    <script src="scripts/idioma-inicial.js"></script>
+    <link rel="stylesheet" href="estilos/tipografias.css" />
+    <link rel="stylesheet" href="estilos/tokens.css" />
+    <link rel="stylesheet" href="estilos/base.css" />
+    <link rel="stylesheet" href="estilos/contenidos.css" />
+    <link rel="stylesheet" href="estilos/doctor.css" />
+    <script type="module" src="scripts/doctor.js"></script>
+    <!-- Los textos se escriben en cuanto se ejecuta sitio.js: sus diccionarios se piden a la vez que él. -->
+    <link rel="modulepreload" href="idiomas/cargar.js" />
+    <link rel="modulepreload" href="scripts/idioma.js" />
+    <link rel="modulepreload" href="scripts/textos.js" />
+    <link rel="modulepreload" href="scripts/version.js" />
+    <link rel="modulepreload" href="scripts/sitio.js" />
+    <link rel="modulepreload" href="scripts/doctor/comprobaciones.js" />
+  </head>
+  <body>
+    <a class="salto" href="#contenido" data-texto="comun.saltar">Saltar al contenido</a>
+    <header class="cabecera">
+      <button
+        class="menu-boton"
+        type="button"
+        aria-label="Abrir menú"
+        data-texto-aria-label="comun.menu.abrir"
+        aria-expanded="false"
+        aria-controls="menu"
+      >
+        <span></span><span></span><span></span>
+      </button>
+      <a class="marca" href="inicio.html">
+        <span class="solo-lectores" data-texto="comun.marca.inicio">Faro, inicio</span>
+        <span class="marca-nombre" aria-hidden="true"
+          ><span class="marca-inicial"
+            >F<svg class="marca-luz" viewBox="0 0 18 8" focusable="false" aria-hidden="true"
+              ><path d="M1 4h16" /></svg
+            ></span
+          >ARO</span
+        >
+      </a>
+      <div class="cabecera-herramientas">
+        <div class="idioma" data-selector-idioma>
+          <button
+            class="idioma-boton"
+            type="button"
+            id="idioma-boton"
+            aria-label="Idioma: Castellano"
+            data-texto-aria-label="comun.idioma.boton"
+            aria-haspopup="menu"
+            aria-expanded="false"
+            aria-controls="idioma-opciones"
+          >
+            <img
+              class="idioma-bandera idioma-bandera-es"
+              src="imagenes/identidad/bandera-espana.svg"
+              alt=""
+              width="24"
+              height="16"
+            />
+            <img
+              class="idioma-bandera idioma-bandera-ca"
+              src="imagenes/identidad/bandera-catalunya.svg"
+              alt=""
+              width="24"
+              height="16"
+            />
+          </button>
+          <div class="idioma-opciones" id="idioma-opciones" role="menu" aria-labelledby="idioma-boton" hidden>
+            <button type="button" role="menuitemradio" aria-checked="true" data-cambiar-idioma="es" lang="es"
+              ><img class="idioma-bandera" src="imagenes/identidad/bandera-espana.svg" alt="" width="24" height="16" />
+              <span>Castellano</span></button
+            >
+            <button type="button" role="menuitemradio" aria-checked="false" data-cambiar-idioma="ca" lang="ca"
+              ><img
+                class="idioma-bandera"
+                src="imagenes/identidad/bandera-catalunya.svg"
+                alt=""
+                width="24"
+                height="16"
+              /><span>Català</span></button
+            >
+          </div>
+        </div>
+        <button
+          class="tema-boton"
+          type="button"
+          aria-label="Cambiar a modo día"
+          title="Modo día / noche"
+          data-texto-title="comun.tema.titulo"
+        >
+          <svg class="icono-sol" viewBox="0 0 24 24" aria-hidden="true" focusable="false"
+            ><circle cx="12" cy="12" r="4.5" />
+            <path
+              d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"
+            /></svg
+          >
+          <svg class="icono-luna" viewBox="0 0 24 24" aria-hidden="true" focusable="false"
+            ><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z" /></svg
+          >
+        </button>
+      </div>
+    </header>
+    <div class="menu-velo" id="menu-velo" hidden></div>
+    <nav id="menu" class="menu" hidden aria-label="Menú principal" data-texto-aria-label="comun.menu.nombre">
+      <ul class="menu-lista">
+        <li
+          ><a href="inicio.html"><span class="menu-destino" data-texto="comun.seccion.inicio">Inicio</span></a></li
+        >
+        <li
+          ><a href="entender-ia.html"
+            ><span class="menu-destino" data-texto="comun.seccion.ia">Qué es la IA</span></a
+          ></li
+        >
+        <li
+          ><a href="que-es-faro.html"><span class="menu-destino">Faro</span></a></li
+        >
+        <li
+          ><a href="recorrido.html"><span class="menu-destino" data-texto="comun.seccion.empezar">Empezar</span></a></li
+        >
+        <li
+          ><a href="biblioteca.html"
+            ><span class="menu-destino" data-texto="comun.seccion.biblioteca">Biblioteca</span></a
+          ></li
+        >
+        <li
+          ><a href="cursos.html"><span class="menu-destino" data-texto="comun.seccion.cursos">Cursos</span></a></li
+        >
+        <li
+          ><a href="datos-globales.html"
+            ><span class="menu-destino" data-texto="comun.seccion.datos-globales">Datos globales</span></a
+          ></li
+        >
+        <li data-pasar-entrada hidden
+          ><button type="button" class="menu-pasar" data-pasar-dispositivo
+            ><span class="menu-destino" data-texto="comun.menu.pasar">Pasar a otro dispositivo</span></button
+          ></li
+        >
+      </ul>
+    </nav>
+    <main id="contenido" class="pagina doctor">
+      <p class="antetitulo" data-texto="doctor.rotulo">Comprobar Faro</p>
+      <h1 data-texto="doctor.titulo-principal">Comprobar Faro en este dispositivo</h1>
+      <p class="entradilla" data-texto="doctor.entradilla"
+        >En unos segundos, Faro mira tu navegador, la conexión, el servidor, su inteligencia artificial y la copia
+        guardada para usarlo sin conexión, y te dice qué hacer en cada caso.</p
+      >
+      <section class="doctor-privacidad" aria-labelledby="t-doctor-privacidad">
+        <h2 id="t-doctor-privacidad" data-texto="doctor.privacidad.titulo">Lo que se mira y lo que no</h2>
+        <p data-texto="doctor.privacidad.texto"
+          >Solo se mira cómo funciona Faro. Nada tuyo: ni lo que has contado, ni tus tareas, ni tu informe, ni tu
+          ocupación. Más abajo ves el informe entero tal como saldrá, y nada sale de este dispositivo si tú no lo
+          descargas o lo envías.</p
+        >
+        <p data-texto="doctor.verificable"
+          >Para comprobar que el motor y los datos que descarga Faro son los que se publicaron, abre
+          <a href="verificable.html" data-texto="verificable.rotulo">Faro verificable</a>.</p
+        >
+      </section>
+      <div class="doctor-comprobar">
+        <button class="boton boton-secundario" type="button" id="doctor-repetir" data-texto="doctor.repetir"
+          >Volver a comprobar</button
+        >
+        <p class="doctor-estado" id="doctor-estado" role="status"></p>
+      </div>
+      <section class="doctor-resultado" id="doctor-resultado" aria-labelledby="t-doctor-resultado" hidden>
+        <h2 id="t-doctor-resultado" data-texto="doctor.resultado.titulo">Resultado</h2>
+        <dl class="doctor-datos">
+          <div
+            ><dt data-texto="doctor.fecha">Fecha:</dt><dd id="doctor-fecha"></dd></div
+          >
+          <div
+            ><dt data-texto="doctor.version">Versión de Faro:</dt><dd id="doctor-version"></dd></div
+          >
+          <div
+            ><dt data-texto="doctor.navegador">Navegador:</dt><dd id="doctor-navegador"></dd></div
+          >
+        </dl>
+        <ul class="doctor-lista" id="doctor-lista"></ul>
+        <h2 class="doctor-solo-pantalla" data-texto="doctor.informe.titulo">Lo que lleva el informe</h2>
+        <p class="doctor-solo-pantalla" data-texto="doctor.informe.texto"
+          >Este es el informe entero. Es lo único que lleva el PDF y, si lo envías, el correo.</p
+        >
+        <pre class="doctor-texto doctor-solo-pantalla" id="doctor-texto"></pre>
+        <div class="doctor-acciones doctor-solo-pantalla">
+          <button class="boton" type="button" id="doctor-pdf" data-texto="doctor.pdf">Descargar informe (PDF)</button>
+          <a
+            class="boton boton-secundario"
+            id="doctor-correo"
+            href="#doctor-resultado"
+            hidden
+            data-texto="doctor.correo"
+            >Enviar por correo</a
+          >
+        </div>
+        <p class="nota doctor-solo-pantalla" data-texto="doctor.pdf.ayuda"
+          >En la ventana que se abre, elige «Guardar como PDF».</p
+        >
+        <p class="nota doctor-solo-pantalla" data-contacto-solo="correo" hidden data-texto="contacto.correo"
+          >Correo de contacto: <span data-contacto-correo></span></p
+        >
+        <p class="nota doctor-solo-pantalla" id="doctor-correo-ayuda" hidden data-texto="doctor.correo.ayuda"
+          >Se abre tu programa de correo con el resumen escrito; adjunta el PDF antes de enviarlo.</p
+        >
+      </section>
+    </main>
+
+    <footer class="pie">
+      <div class="pie-fila"
+        ><nav aria-label="Información y ayuda" data-texto-aria-label="comun.pie.nombre"
+          ><a href="creditos.html" data-texto="comun.pie.creditos">Créditos</a
+          ><a href="informacion-y-creditos.html#t-datos" data-texto="comun.pie.datos">Tus datos</a
+          ><a href="accesibilidad.html" data-texto="comun.pie.accesibilidad">Accesibilidad</a
+          ><a href="verificable.html" data-texto="comun.pie.verificable">Faro verificable</a
+          ><a class="pie-doctor" href="doctor.html" aria-current="page" data-texto="comun.pie.doctor">Comprobar Faro</a
+          ><a class="pie-instalar" href="instalar.html" data-texto="comun.pie.instalar">Instalar Faro</a></nav
+        ><p class="pie-derechos" data-texto="comun.pie.derechos">© 2026 Equipo Faro</p></div
+      >
+    </footer>
+  </body>
+</html>

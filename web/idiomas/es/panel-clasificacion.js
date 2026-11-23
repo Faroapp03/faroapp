@@ -1,0 +1,30 @@
+/** Diagnóstico de la revisión editorial de la publicación construida. */
+export const TEXTOS_CLASIFICACION = {
+  'panel.clasificacion.titulo': 'Revisión editorial de Cursos',
+  'panel.clasificacion.intro':
+    'Consulta la revisión de materia y nivel de la publicación construida. Estas incidencias no son retenciones de las fuentes.',
+  'panel.clasificacion.consultar': 'Consultar revisión editorial',
+  'panel.clasificacion.anterior': 'Página anterior',
+  'panel.clasificacion.siguiente': 'Página siguiente',
+  'panel.clasificacion.no-disponible': 'La revisión editorial de esta publicación no está disponible.',
+  'panel.clasificacion.total':
+    'Ofertas en la publicación: {total}. Materia acreditada: {aplicadas}. Materia pendiente: {pendientes}.',
+  'panel.clasificacion.catalogo': 'SHA-256 del catálogo',
+  'panel.clasificacion.revision': 'Revisión del catálogo',
+  'panel.clasificacion.editorial': 'SHA-256 de la revisión editorial',
+  'panel.clasificacion.materias': 'SHA-256 de la revisión de materias',
+  'panel.clasificacion.nivel': 'Nivel',
+  'panel.clasificacion.niveles-pendientes': 'Ofertas con nivel pendiente: {cantidad}.',
+  'panel.clasificacion.pagina': 'Página {actual} de {total}',
+  'panel.clasificacion.motivo.aplicada': 'Revisión aplicada',
+  'panel.clasificacion.motivo.programa-sin-revision': 'Programa sin revisión',
+  'panel.clasificacion.motivo.titulo-distinto': 'Título distinto',
+  'panel.clasificacion.motivo.proveedor-distinto': 'Proveedor distinto',
+  'panel.clasificacion.motivo.unidad-sin-revision': 'Unidad sin revisión',
+  'panel.clasificacion.motivo.firma-distinta': 'Firma editorial distinta',
+  'panel.clasificacion.motivo.evidencia-nivel-ausente': 'Falta la evidencia de nivel',
+  'panel.clasificacion.motivo.nivel-por-confirmar': 'Nivel por confirmar',
+  'panel.clasificacion.motivo.contenido-distinto': 'El contenido revisado ha cambiado',
+  'panel.clasificacion.motivo.materia-sin-evidencia': 'Materia sin evidencia',
+  'panel.clasificacion.motivo.identidad-materia-distinta': 'La evidencia corresponde a otra identidad',
+};

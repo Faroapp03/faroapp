@@ -1,0 +1,175 @@
+{
+  "CHL": {
+    "anio": 2022,
+    "fuente": "Ministerio de Desarrollo Social y Familia, Encuesta Casen 2022 (base del 18/03/2024)",
+    "clasificacion": "`oficio4_08`, CIUO-08 a 4 dígitos con grupos propios en algunos subgrupos",
+    "correspondencia": "identidad de código en los subgrupos con los mismos grupos primarios que ISCO-08; en los demás, cotas sobre los grupos ISCO-08 del subgrupo",
+    "poblacion": "personas ocupadas (`activ` = 1), factor de expansión regional `expr`",
+    "error_de_muestreo": "linealización de Taylor del cociente con `varstrat` y `varunit` (con reposición en la UPM; los estratos con una sola UPM no aportan varianza)",
+    "ocupados_publicados": [9190261, 1],
+    "subgrupos_no_comparables": ["21", "22", "32", "34", "36"],
+    "codigos_fuera_de_la_estructura": [],
+    "alguna": {
+      "valor": null,
+      "cota_minima": 27.026,
+      "cota_maxima": 34.783,
+      "error_tipico": 0.243,
+      "desde_95": 26.55,
+      "hasta_95": 35.259
+    },
+    "alta": {
+      "valor": null,
+      "cota_minima": 2.485,
+      "cota_maxima": 3.254,
+      "error_tipico": 0.089,
+      "desde_95": 2.311,
+      "hasta_95": 3.428
+    },
+    "empleo": 9190261,
+    "empleo_dentro": 9163769,
+    "parte_fuera": 0.00288,
+    "parte_codigo_invalido": 0.0,
+    "parte_sin_correspondencia": 0.10955,
+    "muestra": {
+      "personas": 85418,
+      "celdas": 436,
+      "celdas_de_menos_de_30": 142,
+      "personas_en_celdas_de_menos_de_30": 1753,
+      "regla_nchs_n_30": true,
+      "estratos": 755,
+      "conglomerados": 12062,
+      "estratos_con_una_sola_upm": 0
+    }
+  },
+  "COL": {
+    "anio": 2024,
+    "fuente": "DANE, Gran Encuesta Integrada de Hogares (GEIH) 2024, 12 meses",
+    "clasificacion": "`OFICIO_C8`, CIUO-08 A.C. (adaptación oficial del DANE) a 4 dígitos",
+    "correspondencia": "identidad de código salvo en los subgrupos 73, 83 y 96 (grupos propios de la CIUO-08 A.C.), acotados sobre los grupos ISCO-08 del subgrupo",
+    "poblacion": "personas ocupadas (archivo «Ocupados»), `FEX_C18`/12 en cada mes",
+    "error_de_muestreo": "APROXIMADO: linealización de Taylor con departamento × clase como estratos y la vivienda de cada mes como conglomerado; los microdatos públicos no traen estrato ni UPM, así que no recoge el conglomerado de segmentos y lo infravalora",
+    "ocupados_publicados": [23036000, 1000],
+    "subgrupos_no_comparables": ["73", "83", "96"],
+    "codigos_fuera_de_la_estructura": ["0000", "0612", "5629"],
+    "alguna": {
+      "valor": null,
+      "cota_minima": 24.895,
+      "cota_maxima": 34.058,
+      "error_tipico": 0.135,
+      "desde_95": 24.631,
+      "hasta_95": 34.322
+    },
+    "alta": {
+      "valor": 2.966,
+      "cota_minima": 2.966,
+      "cota_maxima": 2.966,
+      "error_tipico": 0.052,
+      "desde_95": 2.864,
+      "hasta_95": 3.069
+    },
+    "empleo": 23036043,
+    "empleo_dentro": 23013288,
+    "parte_fuera": 0.00099,
+    "parte_codigo_invalido": 2.7e-5,
+    "parte_sin_correspondencia": 0.09162,
+    "muestra": {
+      "personas": 353267,
+      "celdas": 443,
+      "celdas_de_menos_de_30": 77,
+      "personas_en_celdas_de_menos_de_30": 1026,
+      "regla_nchs_n_30": true,
+      "estratos": 57,
+      "conglomerados": 231979,
+      "estratos_con_una_sola_upm": 0
+    }
+  },
+  "URY": {
+    "anio": 2023,
+    "fuente": "INE, Encuesta Continua de Hogares (ECH) 2023, 12 meses",
+    "clasificacion": "`f71_2`, código de 4 cifras de la CIUO-08 (estructura de grupos primarios de la CIUO-08, nota explicativa CIUO_08 del INE)",
+    "correspondencia": "identidad de código en todos los subgrupos",
+    "poblacion": "personas ocupadas (`POBPCOAC` = 2), ponderador mensual `W`/12 en cada mes",
+    "error_de_muestreo": "APROXIMADO: linealización de Taylor con `ESTRED13` como estratos y el hogar (`ID`, el mismo en los meses del panel) como conglomerado; los microdatos públicos no traen UPM, así que no recoge el conglomerado de la UPM y lo infravalora",
+    "ocupados_publicados": [1697542, 100],
+    "ocupados_publicados_por_mes": [
+      1677100, 1678500, 1672300, 1678900, 1686700, 1700600, 1712700, 1703200, 1712300, 1713600, 1710800, 1723800
+    ],
+    "ocupados_por_mes": [
+      1677286, 1678670, 1672337, 1678909, 1686530, 1700619, 1712732, 1703330, 1712261, 1713566, 1710824, 1723815
+    ],
+    "subgrupos_no_comparables": [],
+    "codigos_fuera_de_la_estructura": ["2324"],
+    "alguna": {
+      "valor": 29.957,
+      "cota_minima": 29.957,
+      "cota_maxima": 29.957,
+      "error_tipico": 0.308,
+      "desde_95": 29.354,
+      "hasta_95": 30.56
+    },
+    "alta": {
+      "valor": 9.49,
+      "cota_minima": 9.49,
+      "cota_maxima": 9.49,
+      "error_tipico": 0.193,
+      "desde_95": 9.113,
+      "hasta_95": 9.867
+    },
+    "empleo": 1697573,
+    "empleo_dentro": 1686671,
+    "parte_fuera": 0.00642,
+    "parte_codigo_invalido": 8e-6,
+    "parte_sin_correspondencia": 0.0,
+    "muestra": {
+      "personas": 128968,
+      "celdas": 408,
+      "celdas_de_menos_de_30": 103,
+      "personas_en_celdas_de_menos_de_30": 1412,
+      "regla_nchs_n_30": true,
+      "estratos": 12,
+      "conglomerados": 31287,
+      "estratos_con_una_sola_upm": 0
+    }
+  },
+  "BRA": {
+    "anio": 2026,
+    "trimestre": 2,
+    "fuente": "IBGE, PNAD Contínua trimestral, 2.º trimestre de 2026 (publicado el 2026-08-14)",
+    "clasificacion": "`V4010`, COD (Classificação de Ocupações para Pesquisas Domiciliares) a 4 dígitos",
+    "correspondencia": "identidad de código en los subgrupos con los mismos grupos primarios que ISCO-08 en la estructura oficial de la COD; en los demás, cotas sobre los grupos ISCO-08 del subgrupo; 04 y 05 (militares de la policía y bomberos militares), cotas sobre 5411 y 5412",
+    "poblacion": "personas ocupadas (`VD4002` = 1), peso calibrado `V1028` (media del trimestre)",
+    "error_de_muestreo": "200 pesos replicados bootstrap del IBGE (V1028001–V1028200): Σ (θ_r − θ)² / (R − 1)",
+    "ocupados_publicados": [103057000, 1000],
+    "subgrupos_no_comparables": ["03", "04", "05", "51", "61", "62", "63"],
+    "codigos_fuera_de_la_estructura": [],
+    "alguna": {
+      "valor": 29.225,
+      "cota_minima": 29.225,
+      "cota_maxima": 29.225,
+      "error_tipico": 0.167,
+      "desde_95": 28.898,
+      "hasta_95": 29.551
+    },
+    "alta": {
+      "valor": 4.983,
+      "cota_minima": 4.983,
+      "cota_maxima": 4.983,
+      "error_tipico": 0.074,
+      "desde_95": 4.837,
+      "hasta_95": 5.128
+    },
+    "empleo": 103057248,
+    "empleo_dentro": 102714771,
+    "parte_fuera": 0.00332,
+    "parte_codigo_invalido": 0.0,
+    "parte_sin_correspondencia": 0.11533,
+    "muestra": {
+      "personas": 235360,
+      "celdas": 429,
+      "celdas_de_menos_de_30": 84,
+      "personas_en_celdas_de_menos_de_30": 1009,
+      "regla_nchs_n_30": true,
+      "replicas": 200
+    }
+  }
+}

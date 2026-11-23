@@ -1,0 +1,16 @@
+[
+  {
+    "Id": 22950,
+    "FK_Variable": 456,
+    "Nombre": "Operadores de instalaciones y maquinaria fijas",
+    "Codigo": "81",
+    "FK_JerarquiaPadres": [22949]
+  },
+  {
+    "Id": 22986,
+    "FK_Variable": 456,
+    "Nombre": "Montadores y ensambladores en fábricas",
+    "Codigo": "82",
+    "FK_JerarquiaPadres": [22949]
+  }
+]

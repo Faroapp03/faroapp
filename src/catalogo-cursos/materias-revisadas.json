@@ -1,0 +1,2931 @@
+{
+  "schemaVersion": 1,
+  "programas": [
+    {
+      "programaId": "cibernarium:1558811",
+      "titulo": "Python Nivell 1: Fonaments - Preparació per al certificat PCEP",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "cc59afa988aba5d28f2f2e230218fa5a6153b0b2e7e194317707a61801ab5e62",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=75&_cAct_INSTANCE_uhcx_end=90&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "13b5868b109c5e484460df040e0cc7ca730339d8b75460844ed2a0b5b43652c8",
+        "capturadoEl": "2026-11-15T13:04:53.222903Z",
+        "localizador": "activities[9].description"
+      },
+      "temas": ["datos"]
+    },
+    {
+      "programaId": "cibernarium:1592279",
+      "titulo": "Gmail: Avança en l'ús del teu correu electrònic",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "f224af2633beb19f49b54c8fd89fa62b3f2e2a7c735a175994a7df9ee9503430",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=90&_cAct_INSTANCE_uhcx_end=105&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "67368bc6c5e8299109cb7de5b971dca29dbccb5985f50d003dd33d23ad6c76e2",
+        "capturadoEl": "2026-11-15T13:04:59.793459Z",
+        "localizador": "activities[3].description"
+      },
+      "temas": ["ofimatica"]
+    },
+    {
+      "programaId": "cibernarium:1593890",
+      "titulo": "Google apps: treu partit a les eines pel dia a dia",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "19873d0dc2e34f67d01c5b9c48293db548f58eb10f2629f1ad4a6bab4514eec5",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=75&_cAct_INSTANCE_uhcx_end=90&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "13b5868b109c5e484460df040e0cc7ca730339d8b75460844ed2a0b5b43652c8",
+        "capturadoEl": "2026-11-15T13:04:53.222903Z",
+        "localizador": "activities[4].description"
+      },
+      "temas": ["digital", "ofimatica"]
+    },
+    {
+      "programaId": "cibernarium:1591995",
+      "titulo": "Edita els teus vídeos fàcilment amb el mòbil",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "8db76df3d414e8fde69f08dacdbd4f72f3accb4ef15ddfa9084e2b1a9087eb46",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=90&_cAct_INSTANCE_uhcx_end=105&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "67368bc6c5e8299109cb7de5b971dca29dbccb5985f50d003dd33d23ad6c76e2",
+        "capturadoEl": "2026-11-15T13:04:59.793459Z",
+        "localizador": "activities[6].description"
+      },
+      "temas": ["diseno"]
+    },
+    {
+      "programaId": "cibernarium:1593916",
+      "titulo": "Navega per internet amb seguretat",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "9c846b2046cc778a60723e4f37c26aac1cff5029b63bcdc1aaddd75ffb865897",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=45&_cAct_INSTANCE_uhcx_end=60&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "f165b30a318521bfeb3045e8e74f2e81cdb94fbcd8c085cac206245ae9981211",
+        "capturadoEl": "2026-11-15T13:04:43.077320Z",
+        "localizador": "activities[13].description"
+      },
+      "temas": ["digital", "seguridad"]
+    },
+    {
+      "programaId": "cibernarium:1593803",
+      "titulo": "Detecta notícies falses i desinformació online",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "85bc33428908022fcf4d56037e3d6b929664afc20410d8234ef517469d835446",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=60&_cAct_INSTANCE_uhcx_end=75&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "0a75e3e7ced139708aa2d5ff9039e579be0b2326980eefc110d51e45d17c94b8",
+        "capturadoEl": "2026-11-15T13:04:47.927273Z",
+        "localizador": "activities[14].description"
+      },
+      "temas": ["seguridad", "ciudadania"]
+    },
+    {
+      "programaId": "cibernarium:1592315",
+      "titulo": "Google Chrome: comença a navegar per la xarxa",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "03ce5d823a87cbc61cee88cfc006956454c82d893d4dcf3ed425729eea04bda8",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=105&_cAct_INSTANCE_uhcx_end=120&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "a3800c658a29f35c2b0702a6c445890ffd6421ef737ad9c9f4488c31664f515e",
+        "capturadoEl": "2026-11-15T13:05:05.133299Z",
+        "localizador": "activities[7].description"
+      },
+      "temas": ["digital"]
+    },
+    {
+      "programaId": "cibernarium:1592344",
+      "titulo": "Google i Bing: Cerca i filtra la informació a la xarxa",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "1ace5e25f613e0e51e2d29773733ebcc47e1ceab484e4812a6c03c1a7507afdc",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=120&_cAct_INSTANCE_uhcx_end=135&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "76a26b869f7c1f9090f9e1c7ae4c73aa50d8f2a8f345d64089c316aceea868ff",
+        "capturadoEl": "2026-11-15T13:05:09.784018Z",
+        "localizador": "activities[12].description"
+      },
+      "temas": ["digital"]
+    },
+    {
+      "programaId": "cibernarium:1592361",
+      "titulo": "Instagram: aprèn a compartir moments i històries fàcilment",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "8a1e210c60c0a86e04a28cbe6952b14c34ea1e3993c58a923e0ae9f13ed2df1a",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=120&_cAct_INSTANCE_uhcx_end=135&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "76a26b869f7c1f9090f9e1c7ae4c73aa50d8f2a8f345d64089c316aceea868ff",
+        "capturadoEl": "2026-11-15T13:05:09.784018Z",
+        "localizador": "activities[0].description"
+      },
+      "temas": ["comunicacion"]
+    },
+    {
+      "programaId": "cibernarium:1586812",
+      "titulo": "Allibera espai al teu mòbil",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "bb34ae82ac845683eaf8c4fa544a5e2826fb7788731d9734deb65997460e1c7f",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=75&_cAct_INSTANCE_uhcx_end=90&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "13b5868b109c5e484460df040e0cc7ca730339d8b75460844ed2a0b5b43652c8",
+        "capturadoEl": "2026-11-15T13:04:53.222903Z",
+        "localizador": "activities[5].description"
+      },
+      "temas": ["digital"]
+    },
+    {
+      "programaId": "cibernarium:1590269",
+      "titulo": "Apps ciutadanes: forma part del canvi",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "ebbc8ade8d29af9688301abee37ea2cffd7a12ba63ba6bacaf30b27a2a0272bf",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=30&_cAct_INSTANCE_uhcx_end=45&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "602e9ad993d4bda714e9ac16d44f9ee6e4daad0317acedfe98e3a32b4a1ed2a3",
+        "capturadoEl": "2026-11-15T13:04:35.519170Z",
+        "localizador": "activities[9].description"
+      },
+      "temas": ["digital", "ciudadania"]
+    },
+    {
+      "programaId": "cibernarium:1590279",
+      "titulo": "Aprèn a instal·lar i eliminar aplicacions mòbils",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "48ae6f2322fca56394a9431ef5039a1d28cada3543a80a3ee100cb49fc6f71de",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=60&_cAct_INSTANCE_uhcx_end=75&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "0a75e3e7ced139708aa2d5ff9039e579be0b2326980eefc110d51e45d17c94b8",
+        "capturadoEl": "2026-11-15T13:04:47.927273Z",
+        "localizador": "activities[12].description"
+      },
+      "temas": ["digital"]
+    },
+    {
+      "programaId": "cibernarium:1590949",
+      "titulo": "Biblio Digital: gaudeix de llibres i cinema",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "92b28b90fdcc08696b44db78d05b99113e538918536fa074c3a28b95a164d8c7",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=105&_cAct_INSTANCE_uhcx_end=120&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "a3800c658a29f35c2b0702a6c445890ffd6421ef737ad9c9f4488c31664f515e",
+        "capturadoEl": "2026-11-15T13:05:05.133299Z",
+        "localizador": "activities[13].description"
+      },
+      "temas": ["digital", "ciudadania"]
+    },
+    {
+      "programaId": "cibernarium:1591593",
+      "titulo": "Cultura Digital: ràdio, podcasts i tv online",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "96d4b224eab6447ece21f83bef176fd928dd75afd198a4261f6b14adc5e84fee",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=15&_cAct_INSTANCE_uhcx_end=30&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "3b3e66f7a18a85091aa92c705d631acff3bce9ee2e9ec9307c73845d44c6da4a",
+        "capturadoEl": "2026-11-15T13:04:30.404585Z",
+        "localizador": "activities[11].description"
+      },
+      "temas": ["digital", "ciudadania"]
+    },
+    {
+      "programaId": "cibernarium:1588825",
+      "titulo": "Descobreix el certificat actic",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "bb54357a5247418358b42de5459461371c93f8b35ee025bf64790138347c8d35",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=105&_cAct_INSTANCE_uhcx_end=120&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "a3800c658a29f35c2b0702a6c445890ffd6421ef737ad9c9f4488c31664f515e",
+        "capturadoEl": "2026-11-15T13:05:05.133299Z",
+        "localizador": "activities[2].description"
+      },
+      "temas": ["digital"]
+    },
+    {
+      "programaId": "cibernarium:1592897",
+      "titulo": "Gestions bancàries i compres en línia",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "a7e8bee0baf4852ad21e14d57dacab5120ceb81e37ee94cece0b2032e8c2affa",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=60&_cAct_INSTANCE_uhcx_end=75&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "0a75e3e7ced139708aa2d5ff9039e579be0b2326980eefc110d51e45d17c94b8",
+        "capturadoEl": "2026-11-15T13:04:47.927273Z",
+        "localizador": "activities[11].description"
+      },
+      "temas": ["digital", "ciudadania"]
+    },
+    {
+      "programaId": "cibernarium:1592352",
+      "titulo": "Google maps: planifica els teus trajectes",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "03bb1b34712604151f11abfef3948eb76d6fa2298c0b30a9f3d21d41a36c5d5f",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=90&_cAct_INSTANCE_uhcx_end=105&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "67368bc6c5e8299109cb7de5b971dca29dbccb5985f50d003dd33d23ad6c76e2",
+        "capturadoEl": "2026-11-15T13:04:59.793459Z",
+        "localizador": "activities[14].description"
+      },
+      "temas": ["digital", "ciudadania"]
+    },
+    {
+      "programaId": "cibernarium:1592388",
+      "titulo": "La Meva Salut: Aprèn a fer els tràmits online",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "4250a800396ff286631a40b40926678839524c9d498a6234d005979b1da90147",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=15&_cAct_INSTANCE_uhcx_end=30&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "3b3e66f7a18a85091aa92c705d631acff3bce9ee2e9ec9307c73845d44c6da4a",
+        "capturadoEl": "2026-11-15T13:04:30.404585Z",
+        "localizador": "activities[9].description"
+      },
+      "temas": ["digital", "ciudadania"]
+    },
+    {
+      "programaId": "cibernarium:1592392",
+      "titulo": "Millora els teus hàbits saludables amb apps",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "457978c48220e28c8a370719a852dacf61bb9adda5ef03b37e62c5746b83c7e2",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=15&_cAct_INSTANCE_uhcx_end=30&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "3b3e66f7a18a85091aa92c705d631acff3bce9ee2e9ec9307c73845d44c6da4a",
+        "capturadoEl": "2026-11-15T13:04:30.404585Z",
+        "localizador": "activities[10].description"
+      },
+      "temas": ["digital", "ciudadania"]
+    },
+    {
+      "programaId": "cibernarium:1592398",
+      "titulo": "T-mobilitat: coneix les funcions de l'App",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "a34021a83a48dc4254e3050d2335dcfc69ac355c3259b6479b4e60b4e2277fa0",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=135&_cAct_INSTANCE_uhcx_end=150&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "44714797f523d5014b21591757e6b8670a210331990f84d95c79675a52b1fbeb",
+        "capturadoEl": "2026-11-15T13:05:14.289785Z",
+        "localizador": "activities[14].description"
+      },
+      "temas": ["digital", "ciudadania"]
+    },
+    {
+      "programaId": "cibernarium:1593917",
+      "titulo": "Tràmits amb l'Administració i certificats digitals",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "ec6e6a5ff7f777fc1149202437b75c2ec9fb31e28b8226cd7ed6529a720ac420",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=45&_cAct_INSTANCE_uhcx_end=60&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "f165b30a318521bfeb3045e8e74f2e81cdb94fbcd8c085cac206245ae9981211",
+        "capturadoEl": "2026-11-15T13:04:43.077320Z",
+        "localizador": "activities[11].description"
+      },
+      "temas": ["digital", "ciudadania"]
+    },
+    {
+      "programaId": "cibernarium:1587934",
+      "titulo": "Blender Nivell 2: Producció 3D avançada (materials, simulacions i render)",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "d0797e4dc7534076b97075124bee90bf7c4b7c695b09eea498031ce9152b7fcc",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=120&_cAct_INSTANCE_uhcx_end=135&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "76a26b869f7c1f9090f9e1c7ae4c73aa50d8f2a8f345d64089c316aceea868ff",
+        "capturadoEl": "2026-11-15T13:05:09.784018Z",
+        "localizador": "activities[7].description"
+      },
+      "temas": ["diseno"]
+    },
+    {
+      "programaId": "cibernarium:1593282",
+      "titulo": "Aprèn a fer i editar fotos amb el mòbil",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "069a01fb3c88c333cde8d5e2f73ed9800dda10d9b54756e14ba834fdadbd6f22",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=45&_cAct_INSTANCE_uhcx_end=60&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "f165b30a318521bfeb3045e8e74f2e81cdb94fbcd8c085cac206245ae9981211",
+        "capturadoEl": "2026-11-15T13:04:43.077320Z",
+        "localizador": "activities[12].description"
+      },
+      "temas": ["diseno"]
+    },
+    {
+      "programaId": "cibernarium:1593806",
+      "titulo": "Excel: organitza el teu pressupost familiar",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "ab0e8340f7e1bad4553381d558d3dab722620542c0985565bfb40843a1fe4354",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=30&_cAct_INSTANCE_uhcx_end=45&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "602e9ad993d4bda714e9ac16d44f9ee6e4daad0317acedfe98e3a32b4a1ed2a3",
+        "capturadoEl": "2026-11-15T13:04:35.519170Z",
+        "localizador": "activities[11].description"
+      },
+      "temas": ["ofimatica"]
+    },
+    {
+      "programaId": "cibernarium:1592704",
+      "titulo": "Whatsapp i telegram: introducció a la missatgeria instantània",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "2bf942b55d30248fc8b931031369c4fe5021a0e75d2de778f9f59a19edcbf7ee",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=105&_cAct_INSTANCE_uhcx_end=120&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "a3800c658a29f35c2b0702a6c445890ffd6421ef737ad9c9f4488c31664f515e",
+        "capturadoEl": "2026-11-15T13:05:05.133299Z",
+        "localizador": "activities[6].description"
+      },
+      "temas": ["digital", "ciudadania"]
+    },
+    {
+      "programaId": "cibernarium:1578850",
+      "titulo": "Word: Escriu i dòna format als teus textos",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "334fb66edfe12937c4962806ec87cbba71357ab5f7bec9f6fcd1e5a238c2e046",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=60&_cAct_INSTANCE_uhcx_end=75&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "0a75e3e7ced139708aa2d5ff9039e579be0b2326980eefc110d51e45d17c94b8",
+        "capturadoEl": "2026-11-15T13:04:47.927273Z",
+        "localizador": "activities[10].description"
+      },
+      "temas": ["ofimatica"]
+    },
+    {
+      "programaId": "cibernarium:1590943",
+      "titulo": "Aprèn idiomes online",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "7070d331eb1e993350836b42649f75ffff3b539644d8539df5c90d4d8509887d",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=75&_cAct_INSTANCE_uhcx_end=90&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "13b5868b109c5e484460df040e0cc7ca730339d8b75460844ed2a0b5b43652c8",
+        "capturadoEl": "2026-11-15T13:04:53.222903Z",
+        "localizador": "activities[6].description"
+      },
+      "temas": ["digital", "educacion"]
+    },
+    {
+      "programaId": "cibernarium:1578972",
+      "titulo": "Com protegir la teva privacitat online",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "84959471fd99612a343e5310c4f151d1a92ec44db18abb162170c06468555730",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=30&_cAct_INSTANCE_uhcx_end=45&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "602e9ad993d4bda714e9ac16d44f9ee6e4daad0317acedfe98e3a32b4a1ed2a3",
+        "capturadoEl": "2026-11-15T13:04:35.519170Z",
+        "localizador": "activities[13].description"
+      },
+      "temas": ["seguridad"]
+    },
+    {
+      "programaId": "cibernarium:1591601",
+      "titulo": "Descobreix el teu mòbil o tauleta",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "3663036a9e51b92a372ecbf03a87f95e7abc31a14cddffc57c485b0514f1c4f0",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=135&_cAct_INSTANCE_uhcx_end=150&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "44714797f523d5014b21591757e6b8670a210331990f84d95c79675a52b1fbeb",
+        "capturadoEl": "2026-11-15T13:05:14.289785Z",
+        "localizador": "activities[6].description"
+      },
+      "temas": ["digital"]
+    },
+    {
+      "programaId": "cibernarium:1588857",
+      "titulo": "El teu nivell digital: quin és i com millorar-lo",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "43cf1ba5270e7e36d62295569e8a1adfeb207e1eed35ddd4daf4da81fbf3d632",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=90&_cAct_INSTANCE_uhcx_end=105&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "67368bc6c5e8299109cb7de5b971dca29dbccb5985f50d003dd33d23ad6c76e2",
+        "capturadoEl": "2026-11-15T13:04:59.793459Z",
+        "localizador": "activities[12].description"
+      },
+      "temas": ["digital"]
+    },
+    {
+      "programaId": "cibernarium:1592000",
+      "titulo": "Empremta digital: millora la teva imatge a internet",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "02f3c8cb68b8a56fd023cac822057253b4ecb1e5f077eac5fd441d7fbdd18c31",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=135&_cAct_INSTANCE_uhcx_end=150&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "44714797f523d5014b21591757e6b8670a210331990f84d95c79675a52b1fbeb",
+        "capturadoEl": "2026-11-15T13:05:14.289785Z",
+        "localizador": "activities[5].description"
+      },
+      "temas": ["digital", "comunicacion"]
+    },
+    {
+      "programaId": "cibernarium:1588858",
+      "titulo": "Fes més fàcil el teu dia a dia amb el mòbil",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "ce80176a14b18189966c0293b87596378c7f3a3812f93be3871ca59a5fbb42bc",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=120&_cAct_INSTANCE_uhcx_end=135&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "76a26b869f7c1f9090f9e1c7ae4c73aa50d8f2a8f345d64089c316aceea868ff",
+        "capturadoEl": "2026-11-15T13:05:09.784018Z",
+        "localizador": "activities[5].description"
+      },
+      "temas": ["digital", "ciudadania"]
+    },
+    {
+      "programaId": "cibernarium:1593776",
+      "titulo": "Gmail: configura el teu correu electrònic des de zero",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "6c7fb2be1346eceee98e0a81d78e82ddcf53ff07719328e6eb749d460a4c5b86",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=135&_cAct_INSTANCE_uhcx_end=150&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "44714797f523d5014b21591757e6b8670a210331990f84d95c79675a52b1fbeb",
+        "capturadoEl": "2026-11-15T13:05:14.289785Z",
+        "localizador": "activities[8].description"
+      },
+      "temas": ["digital", "ofimatica"]
+    },
+    {
+      "programaId": "cibernarium:1588894",
+      "titulo": "Intel·ligència artificial: aprèn a fer-la servir pas a pas (IA)",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "fde8b5b097c59cdefa6f3c4640f401581e995337932f1ba7a272f850496af17f",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=45&_cAct_INSTANCE_uhcx_end=60&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "f165b30a318521bfeb3045e8e74f2e81cdb94fbcd8c085cac206245ae9981211",
+        "capturadoEl": "2026-11-15T13:04:43.077320Z",
+        "localizador": "activities[14].description"
+      },
+      "temas": ["ia"]
+    },
+    {
+      "programaId": "cibernarium:1593277",
+      "titulo": "Trobar habitatge: Eines digital per millorar la cerca i gestió del teu lloguer o compra",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "cbbf362096dfb573a9bdeeb4052450702084d55fc4d912ea9586b130f68e1e14",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=120&_cAct_INSTANCE_uhcx_end=135&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "76a26b869f7c1f9090f9e1c7ae4c73aa50d8f2a8f345d64089c316aceea868ff",
+        "capturadoEl": "2026-11-15T13:05:09.784018Z",
+        "localizador": "activities[6].description"
+      },
+      "temas": ["digital", "ciudadania"]
+    },
+    {
+      "programaId": "cibernarium:1593187",
+      "titulo": "El núvol: gestió i ús de fitxers online",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "6a6ae33e7ff2e2891eb3179ee48d6d347c09066b5ca0f58e2d449227dcba94a4",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=135&_cAct_INSTANCE_uhcx_end=150&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "44714797f523d5014b21591757e6b8670a210331990f84d95c79675a52b1fbeb",
+        "capturadoEl": "2026-11-15T13:05:14.289785Z",
+        "localizador": "activities[1].description"
+      },
+      "temas": ["digital", "ofimatica"]
+    },
+    {
+      "programaId": "cibernarium:1593197",
+      "titulo": "Fulls de càlcul per principiants: creació i format",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "8c60954f58a4c0001bb6f1fa7f74aa32f982d07f9f29b7ee2be094e8a603fe39",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=15&_cAct_INSTANCE_uhcx_end=30&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "3b3e66f7a18a85091aa92c705d631acff3bce9ee2e9ec9307c73845d44c6da4a",
+        "capturadoEl": "2026-11-15T13:04:30.404585Z",
+        "localizador": "activities[14].description"
+      },
+      "temas": ["ofimatica"]
+    },
+    {
+      "programaId": "cibernarium:1593206",
+      "titulo": "Iniciació a la creació de documents de text",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "75e2a9424a3805cbec0c4c3329f0561516692a24c10cf04fdda196b5ae112434",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=45&_cAct_INSTANCE_uhcx_end=60&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "f165b30a318521bfeb3045e8e74f2e81cdb94fbcd8c085cac206245ae9981211",
+        "capturadoEl": "2026-11-15T13:04:43.077320Z",
+        "localizador": "activities[10].description"
+      },
+      "temas": ["ofimatica"]
+    },
+    {
+      "programaId": "cibernarium:1591591",
+      "titulo": "Configura i protegeix el teu mòbil o tauleta",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "22f5d1793b6090a2004a760a25c9f26e9ac72cd2785f1f49d81a5b6a44cebb95",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=165&_cAct_INSTANCE_uhcx_end=180&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "2334e6a8625d1bf0692f893a5d4583ea9327c24ca569471d0731c5a9dce88e9c",
+        "capturadoEl": "2026-11-15T13:05:24.274373Z",
+        "localizador": "activities[9].description"
+      },
+      "temas": ["digital", "seguridad"]
+    },
+    {
+      "programaId": "cibernarium:1586885",
+      "titulo": "Power BI Desktop: analitza i visualitza dades amb eficàcia",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "4fdb159ba1cc900082e8971c97b6e0a22f480e892791f51e857f51f603c60a34",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=90&_cAct_INSTANCE_uhcx_end=105&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "67368bc6c5e8299109cb7de5b971dca29dbccb5985f50d003dd33d23ad6c76e2",
+        "capturadoEl": "2026-11-15T13:04:59.793459Z",
+        "localizador": "activities[7].description"
+      },
+      "temas": ["datos"]
+    },
+    {
+      "programaId": "cibernarium:1597282",
+      "titulo": "ACTIC NIVELL 2: REPASSA LES COMPETÈNCIES TIC",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "54fa5125ea6eeb7eb6c45ab5deb644c0ae3dfbfb318699bf4b6174ab46f958e3",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=30&_cAct_INSTANCE_uhcx_end=45&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "602e9ad993d4bda714e9ac16d44f9ee6e4daad0317acedfe98e3a32b4a1ed2a3",
+        "capturadoEl": "2026-11-15T13:04:35.519170Z",
+        "localizador": "activities[6].description"
+      },
+      "temas": ["digital"]
+    },
+    {
+      "programaId": "cibernarium:1587735",
+      "titulo": "Les Stories, l'eina d'Instagram per construir comunitat",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "06595be3c9d5b2c670ac6eb9208eefd303c47e8f90159676c06f195e185bee30",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=90&_cAct_INSTANCE_uhcx_end=105&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "67368bc6c5e8299109cb7de5b971dca29dbccb5985f50d003dd33d23ad6c76e2",
+        "capturadoEl": "2026-11-15T13:04:59.793459Z",
+        "localizador": "activities[1].description"
+      },
+      "temas": ["comunicacion"]
+    },
+    {
+      "programaId": "cibernarium:1601188",
+      "titulo": "EstàsON. Desafiant la física (6 a 8 anys)",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "3486792f5ac5bf1d871690e4cfffb06dd460783a601f4081efd94df57bcddc38",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=0&_cAct_INSTANCE_uhcx_end=15&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "64494f5405261d0a6de327200503a0824246e91cc585218031b2790962dbdea5",
+        "capturadoEl": "2026-11-15T13:04:25.257961Z",
+        "localizador": "activities[10].description"
+      },
+      "temas": []
+    },
+    {
+      "programaId": "cibernarium:1601314",
+      "titulo": "EstàsON. Dins l'univers explorant estrelles i galàxies!  (9 a 12 anys)",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "4489b51729cff1bc611b5eec722b87c914c1d05b232e221a5995162d1f661cc3",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=15&_cAct_INSTANCE_uhcx_end=30&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "3b3e66f7a18a85091aa92c705d631acff3bce9ee2e9ec9307c73845d44c6da4a",
+        "capturadoEl": "2026-11-15T13:04:30.404585Z",
+        "localizador": "activities[12].description"
+      },
+      "temas": []
+    },
+    {
+      "programaId": "cibernarium:1613563",
+      "titulo": "Introducció a les eines digitals per a la recerca de feina",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "3c92293ddae97d09fd07fbbe63a248a868a344bd88e689604e06657b104afa48",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=75&_cAct_INSTANCE_uhcx_end=90&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "13b5868b109c5e484460df040e0cc7ca730339d8b75460844ed2a0b5b43652c8",
+        "capturadoEl": "2026-11-15T13:04:53.222903Z",
+        "localizador": "activities[10].description"
+      },
+      "temas": ["digital", "empleo", "ciudadania"]
+    },
+    {
+      "programaId": "cibernarium:1493309",
+      "titulo": "Com arribar als teus clients de forma segmentada amb LinkedIn Ads",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "0819717e054013f890a072e3fe4f1e1fd46ea86ff28979d1fb9fa9a82210e3cb",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=210&_cAct_INSTANCE_uhcx_end=225&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "0781c916c1b8caaf356df7fef78f26bcadd27006810ec07782e33932bba7313b",
+        "capturadoEl": "2026-11-15T13:05:36.597612Z",
+        "localizador": "/activities/13/description"
+      },
+      "temas": ["comunicacion"]
+    },
+    {
+      "programaId": "cibernarium:1493310",
+      "titulo": "Connecta el teu negoci de forma gratuïta amb Google My Business",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "764f58104ea8b8ad47e95af67686d224a675a4149fb1b974e50c03f8b21ca62b",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=210&_cAct_INSTANCE_uhcx_end=225&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "0781c916c1b8caaf356df7fef78f26bcadd27006810ec07782e33932bba7313b",
+        "capturadoEl": "2026-11-15T13:05:36.597612Z",
+        "localizador": "/activities/2/description"
+      },
+      "temas": ["empresa"]
+    },
+    {
+      "programaId": "cibernarium:1493313",
+      "titulo": "Aprèn a planificar eficaçment un projecte web",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "492c3b5b1f3aaeade3ffc52b013ddb13f989de5fb48004f2ecead6f81abd8c05",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=225&_cAct_INSTANCE_uhcx_end=240&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "e2ec26cc499b9c18ff71620cf491ace07fc8dec79e3d4b9baaaad96c72a198ea",
+        "capturadoEl": "2026-11-15T13:05:40.574240Z",
+        "localizador": "/activities/8/description"
+      },
+      "temas": ["web"]
+    },
+    {
+      "programaId": "cibernarium:1493314",
+      "titulo": "Com escriure i crear contingut per a la web",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "b754baccb8b99ae8c7367fbb16b13aef421428081d8dda1c5299e6d71a6e8d24",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=210&_cAct_INSTANCE_uhcx_end=225&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "0781c916c1b8caaf356df7fef78f26bcadd27006810ec07782e33932bba7313b",
+        "capturadoEl": "2026-11-15T13:05:36.597612Z",
+        "localizador": "/activities/6/description"
+      },
+      "temas": ["web"]
+    },
+    {
+      "programaId": "cibernarium:1493348",
+      "titulo": "PHP per a principiants: sintaxi, formularis i bases de dades",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "b99d0857a995ae233b6e8a73e2893bda30482bc8d1995e64bf58081ad38addf0",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=225&_cAct_INSTANCE_uhcx_end=240&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "e2ec26cc499b9c18ff71620cf491ace07fc8dec79e3d4b9baaaad96c72a198ea",
+        "capturadoEl": "2026-11-15T13:05:40.574240Z",
+        "localizador": "/activities/4/description"
+      },
+      "temas": ["datos"]
+    },
+    {
+      "programaId": "cibernarium:1493350",
+      "titulo": "Scrum, introducció al desenvolupament àgil de software",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "feba68d8a00c58c5324207eca39981d896184eb7cc2b694e40e49173ed90fa98",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=225&_cAct_INSTANCE_uhcx_end=240&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "e2ec26cc499b9c18ff71620cf491ace07fc8dec79e3d4b9baaaad96c72a198ea",
+        "capturadoEl": "2026-11-15T13:05:40.574240Z",
+        "localizador": "/activities/11/description"
+      },
+      "temas": ["empresa"]
+    },
+    {
+      "programaId": "cibernarium:1493355",
+      "titulo": "Modelat en 3D amb Google SketchUp",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "f5e966544d6a4954eba4129ac8ef0cceec5ca707ab66adfc6ba62465dca50f47",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=210&_cAct_INSTANCE_uhcx_end=225&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "0781c916c1b8caaf356df7fef78f26bcadd27006810ec07782e33932bba7313b",
+        "capturadoEl": "2026-11-15T13:05:36.597612Z",
+        "localizador": "/activities/14/description"
+      },
+      "temas": ["diseno"]
+    },
+    {
+      "programaId": "cibernarium:1493361",
+      "titulo": "Què cal tenir en compte per fer el web del teu negoci",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "f1e25fae8dab1dc4855bacd7923bec40879135dcdc3084b295e1c6a9b0a8cf6f",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=210&_cAct_INSTANCE_uhcx_end=225&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "0781c916c1b8caaf356df7fef78f26bcadd27006810ec07782e33932bba7313b",
+        "capturadoEl": "2026-11-15T13:05:36.597612Z",
+        "localizador": "/activities/7/description"
+      },
+      "temas": ["web"]
+    },
+    {
+      "programaId": "cibernarium:1493363",
+      "titulo": "Masterclass: Intel·ligència Artificial i Machine Learning",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "2543272188cea67932ddd7aecd2ba0e9370f9fe743f3d113303e1d4ae35d6e51",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=240&_cAct_INSTANCE_uhcx_end=255&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "a932199bb7d221bdb51ed0cb7f025c09c7e019c58ec71cc1050081db08dd8136",
+        "capturadoEl": "2026-11-15T13:05:44.947039Z",
+        "localizador": "/activities/10/description"
+      },
+      "temas": ["ia"]
+    },
+    {
+      "programaId": "cibernarium:1493366",
+      "titulo": "Masterclass: Seguretat a Wordpress",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "40fa274e5eecc732f0d272c68f534f4abbeaa7135c24010596cb7ac91b1462ee",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=195&_cAct_INSTANCE_uhcx_end=210&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "f91871a92173ac4cce3804950285efd75001bace25f2a899f2af031264d8eb7c",
+        "capturadoEl": "2026-11-15T13:05:32.683452Z",
+        "localizador": "/activities/14/description"
+      },
+      "temas": ["seguridad", "web"]
+    },
+    {
+      "programaId": "cibernarium:1493367",
+      "titulo": "Masterclass: SEO a WordPress",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "e8a72559eea946f644ef42eae3f0336881d9801e4ae849841cb82a7af74e3ebb",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=225&_cAct_INSTANCE_uhcx_end=240&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "e2ec26cc499b9c18ff71620cf491ace07fc8dec79e3d4b9baaaad96c72a198ea",
+        "capturadoEl": "2026-11-15T13:05:40.574240Z",
+        "localizador": "/activities/0/description"
+      },
+      "temas": ["comunicacion"]
+    },
+    {
+      "programaId": "cibernarium:1493368",
+      "titulo": "Masterclass: Detox de dades, recupera el control de la teva identitat digital",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "d6d214c5e5227bf4b979fce8374a00086a9b8d3c3b151367650c720a72596d98",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=195&_cAct_INSTANCE_uhcx_end=210&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "f91871a92173ac4cce3804950285efd75001bace25f2a899f2af031264d8eb7c",
+        "capturadoEl": "2026-11-15T13:05:32.683452Z",
+        "localizador": "/activities/6/description"
+      },
+      "temas": ["digital"]
+    },
+    {
+      "programaId": "cibernarium:1493428",
+      "titulo": "Masterclass: Del Like al Love, captiva i fidelitza la teva clientela",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "283487a58c6d4fa45f9b186ee024a679fb50b72ac8685964102042152c839c7b",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=195&_cAct_INSTANCE_uhcx_end=210&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "f91871a92173ac4cce3804950285efd75001bace25f2a899f2af031264d8eb7c",
+        "capturadoEl": "2026-11-15T13:05:32.683452Z",
+        "localizador": "/activities/2/description"
+      },
+      "temas": ["empresa", "comunicacion"]
+    },
+    {
+      "programaId": "cibernarium:1493429",
+      "titulo": "Masterclass: Neuromàrqueting, l'art d'influir",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "f0fe7907f8a6d6ac742687c8502902f28c28da215d773407e4d4d94ab271eb04",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=210&_cAct_INSTANCE_uhcx_end=225&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "0781c916c1b8caaf356df7fef78f26bcadd27006810ec07782e33932bba7313b",
+        "capturadoEl": "2026-11-15T13:05:36.597612Z",
+        "localizador": "/activities/0/description"
+      },
+      "temas": ["comunicacion"]
+    },
+    {
+      "programaId": "cibernarium:1493430",
+      "titulo": "Masterclass: Neuromàrqueting, l'art d'influir (aplicacions pràctiques)",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "f7b12d58e11ed94c85fae51398c17d16c3f9cbff11e6cad214f48b18757a148f",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=195&_cAct_INSTANCE_uhcx_end=210&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "f91871a92173ac4cce3804950285efd75001bace25f2a899f2af031264d8eb7c",
+        "capturadoEl": "2026-11-15T13:05:32.683452Z",
+        "localizador": "/activities/13/description"
+      },
+      "temas": ["comunicacion"]
+    },
+    {
+      "programaId": "cibernarium:1493432",
+      "titulo": "Masterclass: Com construir una marca en 6 passos amb Javier Velilla",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "00407d9e2176986a0323e2b54dfbef97db80721c14d4dca3ac17dadff96d1b03",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=195&_cAct_INSTANCE_uhcx_end=210&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "f91871a92173ac4cce3804950285efd75001bace25f2a899f2af031264d8eb7c",
+        "capturadoEl": "2026-11-15T13:05:32.683452Z",
+        "localizador": "/activities/7/description"
+      },
+      "temas": ["empresa", "comunicacion"]
+    },
+    {
+      "programaId": "cibernarium:1493433",
+      "titulo": "Atreu clientela amb Instagram i Instagram Stories",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "bf5ca0f6ff57139cb7e6b704bfd28be1fcde2577fdb115729bee8d71eb13a811",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=255&_cAct_INSTANCE_uhcx_end=270&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "da6f70d11a5bca0ea968e777bfb35051c3c17bd7a6b6e30905a2ffc4a606b7c3",
+        "capturadoEl": "2026-11-15T13:05:49.580127Z",
+        "localizador": "/activities/6/description"
+      },
+      "temas": ["comunicacion"]
+    },
+    {
+      "programaId": "cibernarium:1493436",
+      "titulo": "Wordpress.com: crea el teu web sense cost",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "5313834651a52e1430489c824626c6c2ff9e65957c56b11839a6d1187735865f",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=255&_cAct_INSTANCE_uhcx_end=270&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "da6f70d11a5bca0ea968e777bfb35051c3c17bd7a6b6e30905a2ffc4a606b7c3",
+        "capturadoEl": "2026-11-15T13:05:49.580127Z",
+        "localizador": "/activities/4/description"
+      },
+      "temas": ["web"]
+    },
+    {
+      "programaId": "cibernarium:1493442",
+      "titulo": "Wordpress.org: gestiona el teu web des d'un servidor local",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "3679d9f9fb15ff302f6dfc0af931814a5659e95c9099fc1f42ec33518fc66483",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=210&_cAct_INSTANCE_uhcx_end=225&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "0781c916c1b8caaf356df7fef78f26bcadd27006810ec07782e33932bba7313b",
+        "capturadoEl": "2026-11-15T13:05:36.597612Z",
+        "localizador": "/activities/3/description"
+      },
+      "temas": ["web"]
+    },
+    {
+      "programaId": "cibernarium:1493443",
+      "titulo": "Dissenya logos a partir de retícules",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "9fbe24a66f308f10f3f3fcf05e4e016f82e10dce1a45ac5695faffa22caf4d06",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=195&_cAct_INSTANCE_uhcx_end=210&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "f91871a92173ac4cce3804950285efd75001bace25f2a899f2af031264d8eb7c",
+        "capturadoEl": "2026-11-15T13:05:32.683452Z",
+        "localizador": "/activities/4/description"
+      },
+      "temas": ["diseno"]
+    },
+    {
+      "programaId": "cibernarium:1493444",
+      "titulo": "Adobe Photoshop (nivell bàsic)",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "3ba9bafad8505741e0c25a7d09a200cedcf491bfab31b0e8759838e21e15bfb7",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=240&_cAct_INSTANCE_uhcx_end=255&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "a932199bb7d221bdb51ed0cb7f025c09c7e019c58ec71cc1050081db08dd8136",
+        "capturadoEl": "2026-11-15T13:05:44.947039Z",
+        "localizador": "/activities/6/description"
+      },
+      "temas": ["diseno"]
+    },
+    {
+      "programaId": "cibernarium:1493447",
+      "titulo": "Utilitza storytelling a la teva estratègia de màrqueting",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "ebc82d72e68ff719fce394db1c9c84e0c19cecfbf0c483c8ec645cc7e9103e5c",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=240&_cAct_INSTANCE_uhcx_end=255&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "a932199bb7d221bdb51ed0cb7f025c09c7e019c58ec71cc1050081db08dd8136",
+        "capturadoEl": "2026-11-15T13:05:44.947039Z",
+        "localizador": "/activities/5/description"
+      },
+      "temas": ["comunicacion"]
+    },
+    {
+      "programaId": "cibernarium:1493448",
+      "titulo": "Ciberseguretat en l'àmbit laboral i empresarial",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "c60e91a4187f8b35064df36222a7e573f8284c417199bcf07cd9294f8735ec0a",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=255&_cAct_INSTANCE_uhcx_end=270&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "da6f70d11a5bca0ea968e777bfb35051c3c17bd7a6b6e30905a2ffc4a606b7c3",
+        "capturadoEl": "2026-11-15T13:05:49.580127Z",
+        "localizador": "/activities/2/description"
+      },
+      "temas": ["seguridad"]
+    },
+    {
+      "programaId": "cibernarium:1493450",
+      "titulo": "Moodle: dissenya i administra una plataforma de formació online",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "1d0a84b52095e808a917b93a31b2d05adc44ca0c7dd13c1df38298c61b907ac3",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=225&_cAct_INSTANCE_uhcx_end=240&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "e2ec26cc499b9c18ff71620cf491ace07fc8dec79e3d4b9baaaad96c72a198ea",
+        "capturadoEl": "2026-11-15T13:05:40.574240Z",
+        "localizador": "/activities/12/description"
+      },
+      "temas": ["educacion"]
+    },
+    {
+      "programaId": "cibernarium:1493455",
+      "titulo": "Instagram per a negocis turístics",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "d4fa67c21fda1fd1c5f59aef9e5888ff1e829a3cdf7a7a1024dbdc7bb5b57ab9",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=210&_cAct_INSTANCE_uhcx_end=225&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "0781c916c1b8caaf356df7fef78f26bcadd27006810ec07782e33932bba7313b",
+        "capturadoEl": "2026-11-15T13:05:36.597612Z",
+        "localizador": "/activities/5/description"
+      },
+      "temas": ["empresa", "comunicacion"]
+    },
+    {
+      "programaId": "cibernarium:1493456",
+      "titulo": "Comerç a través de les xarxes socials (social commerce)",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "65cb1d74dd257a40c741368491990b067f0ad89c54991139655a9d04ce722393",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=210&_cAct_INSTANCE_uhcx_end=225&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "0781c916c1b8caaf356df7fef78f26bcadd27006810ec07782e33932bba7313b",
+        "capturadoEl": "2026-11-15T13:05:36.597612Z",
+        "localizador": "/activities/12/description"
+      },
+      "temas": ["empresa", "comunicacion"]
+    },
+    {
+      "programaId": "cibernarium:1493458",
+      "titulo": "Sistemes d'informació geogràfica amb QGIS",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "d684bb631ac29b12c14941b15271f2da9bdae50ccf51818540fab5b0b5092b73",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=255&_cAct_INSTANCE_uhcx_end=270&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "da6f70d11a5bca0ea968e777bfb35051c3c17bd7a6b6e30905a2ffc4a606b7c3",
+        "capturadoEl": "2026-11-15T13:05:49.580127Z",
+        "localizador": "/activities/1/description"
+      },
+      "temas": ["datos"]
+    },
+    {
+      "programaId": "cibernarium:1493461",
+      "titulo": "Adobe Illustrator (nivell bàsic)",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "3f12bfa9e0fa5b648866ac68fb7e5ae6e8f9974a7754f7971ab663a69580905f",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=240&_cAct_INSTANCE_uhcx_end=255&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "a932199bb7d221bdb51ed0cb7f025c09c7e019c58ec71cc1050081db08dd8136",
+        "capturadoEl": "2026-11-15T13:05:44.947039Z",
+        "localizador": "/activities/9/description"
+      },
+      "temas": ["diseno"]
+    },
+    {
+      "programaId": "cibernarium:1493462",
+      "titulo": "Adobe Illustrator (nivell avançat)",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "bdc645fd91ef5173541949c24e7678b3ff5317a7ab45eeac0c4594c4fc9bf388",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=225&_cAct_INSTANCE_uhcx_end=240&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "e2ec26cc499b9c18ff71620cf491ace07fc8dec79e3d4b9baaaad96c72a198ea",
+        "capturadoEl": "2026-11-15T13:05:40.574240Z",
+        "localizador": "/activities/2/description"
+      },
+      "temas": ["diseno"]
+    },
+    {
+      "programaId": "cibernarium:1493464",
+      "titulo": "Adobe Indesign bàsic",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "a7f2a20eb2bd82fe8c5eac9c1e5beffaa436f59f36a8e38a5ff5e4970b2dbb05",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=225&_cAct_INSTANCE_uhcx_end=240&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "e2ec26cc499b9c18ff71620cf491ace07fc8dec79e3d4b9baaaad96c72a198ea",
+        "capturadoEl": "2026-11-15T13:05:40.574240Z",
+        "localizador": "/activities/10/description"
+      },
+      "temas": ["diseno"]
+    },
+    {
+      "programaId": "cibernarium:1493465",
+      "titulo": "Google Ads: crea campanyes de publicitat efectives",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "049d61f65034ba58744dc0198db7d573c5640108617fd8190cfa3d279638a6fb",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=225&_cAct_INSTANCE_uhcx_end=240&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "e2ec26cc499b9c18ff71620cf491ace07fc8dec79e3d4b9baaaad96c72a198ea",
+        "capturadoEl": "2026-11-15T13:05:40.574240Z",
+        "localizador": "/activities/14/description"
+      },
+      "temas": ["comunicacion"]
+    },
+    {
+      "programaId": "cibernarium:1493468",
+      "titulo": "Posicionament SEO: millora la presència del teu web als cercadors",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "f756b496dba18f1f2badea9fd6db6ee2ed0e806186143a0054e611867b2de19a",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=225&_cAct_INSTANCE_uhcx_end=240&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "e2ec26cc499b9c18ff71620cf491ace07fc8dec79e3d4b9baaaad96c72a198ea",
+        "capturadoEl": "2026-11-15T13:05:40.574240Z",
+        "localizador": "/activities/9/description"
+      },
+      "temas": ["comunicacion"]
+    },
+    {
+      "programaId": "cibernarium:1493469",
+      "titulo": "Crea campanyes amb inbound marketing o màrqueting d'entrada",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "2a59ccbbd92003814e0e2d4a62fa83b6b133666d046f2bc34c9623333a737802",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=240&_cAct_INSTANCE_uhcx_end=255&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "a932199bb7d221bdb51ed0cb7f025c09c7e019c58ec71cc1050081db08dd8136",
+        "capturadoEl": "2026-11-15T13:05:44.947039Z",
+        "localizador": "/activities/2/description"
+      },
+      "temas": ["comunicacion"]
+    },
+    {
+      "programaId": "cibernarium:1493470",
+      "titulo": "UX: dissenya amb l'experiència d'usuari",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "8a00c8a5afd5ee8a6ee999d98669cedb63710981a19cd33b53427311e917f700",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=225&_cAct_INSTANCE_uhcx_end=240&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "e2ec26cc499b9c18ff71620cf491ace07fc8dec79e3d4b9baaaad96c72a198ea",
+        "capturadoEl": "2026-11-15T13:05:40.574240Z",
+        "localizador": "/activities/7/description"
+      },
+      "temas": ["diseno"]
+    },
+    {
+      "programaId": "cibernarium:1493471",
+      "titulo": "Repositoris de codi: GIT i GITHUB",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "7c778c7f6d85f89f4817e88cb2204eb4f3e0e71e154b91b8042b36914613569f",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=240&_cAct_INSTANCE_uhcx_end=255&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "a932199bb7d221bdb51ed0cb7f025c09c7e019c58ec71cc1050081db08dd8136",
+        "capturadoEl": "2026-11-15T13:05:44.947039Z",
+        "localizador": "/activities/14/description"
+      },
+      "temas": ["datos"]
+    },
+    {
+      "programaId": "cibernarium:1493472",
+      "titulo": "Introducció a les metodologies makers",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "73d35d3c7779f111987d11410ca20df8757c31bbe18d993e35f2859443ecadfc",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=195&_cAct_INSTANCE_uhcx_end=210&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "f91871a92173ac4cce3804950285efd75001bace25f2a899f2af031264d8eb7c",
+        "capturadoEl": "2026-11-15T13:05:32.683452Z",
+        "localizador": "/activities/0/description"
+      },
+      "temas": ["educacion"]
+    },
+    {
+      "programaId": "cibernarium:1493475",
+      "titulo": "Bits de TIC - Logotips cal·ligràfics, una forma de transmetre una essència",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "cfdf5b7e9392255bd608d26a05992c5f7f2f79b2c2f1ea7e2264c90c5b820ba2",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=180&_cAct_INSTANCE_uhcx_end=195&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "06c2411efecb34b1b068756eab1e176ca4ba1f210826c3e74885dad8b3fe94bf",
+        "capturadoEl": "2026-11-15T13:05:28.674522Z",
+        "localizador": "/activities/11/description"
+      },
+      "temas": ["diseno"]
+    },
+    {
+      "programaId": "cibernarium:1493477",
+      "titulo": "Bits de TIC - Crea el teu podcast",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "e38c16cf4cac6809d0a907cfd537c33bd37998993db048dd6433b3b0c6253583",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=210&_cAct_INSTANCE_uhcx_end=225&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "0781c916c1b8caaf356df7fef78f26bcadd27006810ec07782e33932bba7313b",
+        "capturadoEl": "2026-11-15T13:05:36.597612Z",
+        "localizador": "/activities/11/description"
+      },
+      "temas": ["diseno"]
+    },
+    {
+      "programaId": "cibernarium:1493478",
+      "titulo": "Bits de TIC - Youtube com a eina de màrqueting",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "14228ab0e2a59928c3d9e16f332371a417bc2bb4002477d45d932a256b9ae3dd",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=210&_cAct_INSTANCE_uhcx_end=225&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "0781c916c1b8caaf356df7fef78f26bcadd27006810ec07782e33932bba7313b",
+        "capturadoEl": "2026-11-15T13:05:36.597612Z",
+        "localizador": "/activities/8/description"
+      },
+      "temas": ["comunicacion"]
+    },
+    {
+      "programaId": "cibernarium:1493482",
+      "titulo": "Bits de TIC - Retoc de color amb Davinci Resolve",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "3bcaded4d4e7d2a0147907a608977d58ff44baf5554f0bc05d3a6d913831df7d",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=195&_cAct_INSTANCE_uhcx_end=210&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "f91871a92173ac4cce3804950285efd75001bace25f2a899f2af031264d8eb7c",
+        "capturadoEl": "2026-11-15T13:05:32.683452Z",
+        "localizador": "/activities/8/description"
+      },
+      "temas": ["diseno"]
+    },
+    {
+      "programaId": "cibernarium:1493484",
+      "titulo": "ACTIC - Preparació per al certificat - curs online 1/6 - Fonaments TIC i gestió del Sistema Operatiu",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "8c6ea8f963cf526a04ce7a7cd6a6da88ccefebabe64b2c4b4299be16661e69ee",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=270&_cAct_INSTANCE_uhcx_end=285&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "013f62c7e59667ef9b3ac0a4ffedfb1e926d1d9ff61886f3875378b15db5ae63",
+        "capturadoEl": "2026-11-15T13:05:53.817868Z",
+        "localizador": "/activities/8/description"
+      },
+      "temas": ["digital"]
+    },
+    {
+      "programaId": "cibernarium:1493485",
+      "titulo": "ACTIC - Preparació per al certificat - curs online 2/6 - Internet i comunicació digital",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "cdc12043037179a12c3ff3409b61986ec01eac1f3571a15ae86a91c7ba0f2795",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=270&_cAct_INSTANCE_uhcx_end=285&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "013f62c7e59667ef9b3ac0a4ffedfb1e926d1d9ff61886f3875378b15db5ae63",
+        "capturadoEl": "2026-11-15T13:05:53.817868Z",
+        "localizador": "/activities/5/description"
+      },
+      "temas": ["digital"]
+    },
+    {
+      "programaId": "cibernarium:1493486",
+      "titulo": "ACTIC - Preparació per al certificat - Curs online 3/6 - Cultura, participació i civisme digital",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "e098696242392d16b73f0abe20026b777e19190eae3e7970746997c1789a9a14",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=270&_cAct_INSTANCE_uhcx_end=285&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "013f62c7e59667ef9b3ac0a4ffedfb1e926d1d9ff61886f3875378b15db5ae63",
+        "capturadoEl": "2026-11-15T13:05:53.817868Z",
+        "localizador": "/activities/3/description"
+      },
+      "temas": ["digital"]
+    },
+    {
+      "programaId": "cibernarium:1493489",
+      "titulo": "ACTIC - Preparació per al certificat - Curs online 4/6 - Tractament de la informació escrita",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "64bfc28cf971f7863ad007aa36bc2dad4c48e5d66207b472ff89e98c7d5fad6f",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=270&_cAct_INSTANCE_uhcx_end=285&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "013f62c7e59667ef9b3ac0a4ffedfb1e926d1d9ff61886f3875378b15db5ae63",
+        "capturadoEl": "2026-11-15T13:05:53.817868Z",
+        "localizador": "/activities/4/description"
+      },
+      "temas": ["digital", "ofimatica"]
+    },
+    {
+      "programaId": "cibernarium:1493490",
+      "titulo": "ACTIC - Preparació per al certificat - Curs online 5/6 -Tractament de la informació numèrica",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "52651f4ef39ae89790be86b4e9d84c40f87417d4fc47216d11898ad9420b0e43",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=270&_cAct_INSTANCE_uhcx_end=285&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "013f62c7e59667ef9b3ac0a4ffedfb1e926d1d9ff61886f3875378b15db5ae63",
+        "capturadoEl": "2026-11-15T13:05:53.817868Z",
+        "localizador": "/activities/1/description"
+      },
+      "temas": ["digital", "ofimatica"]
+    },
+    {
+      "programaId": "cibernarium:1493493",
+      "titulo": "ACTIC - Preparació per al certificat - Curs online 6/6 - Tractament de les dades i presentació de continguts",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "35401a97bcabe5439385b9c32d6745e9483cf149879d2b28311422938f5f064e",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=270&_cAct_INSTANCE_uhcx_end=285&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "013f62c7e59667ef9b3ac0a4ffedfb1e926d1d9ff61886f3875378b15db5ae63",
+        "capturadoEl": "2026-11-15T13:05:53.817868Z",
+        "localizador": "/activities/2/description"
+      },
+      "temas": ["digital", "ofimatica"]
+    },
+    {
+      "programaId": "cibernarium:1493495",
+      "titulo": "INTRODUCCIÓ A MYSQL I MARIADB: BASES DE DADES RELACIONALS AMB PHPMYADMIN",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "04ff4a2db6962126736319308f468f45bfa6eddb78ba654d605b378a195a0549",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=255&_cAct_INSTANCE_uhcx_end=270&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "da6f70d11a5bca0ea968e777bfb35051c3c17bd7a6b6e30905a2ffc4a606b7c3",
+        "capturadoEl": "2026-11-15T13:05:49.580127Z",
+        "localizador": "/activities/3/description"
+      },
+      "temas": ["datos"]
+    },
+    {
+      "programaId": "cibernarium:1493499",
+      "titulo": "Introducció a l'arquitectura SEO",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "b726748692ea349a653b6b9eea9605178e7ccce006b49371a0305b59df11ab97",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=225&_cAct_INSTANCE_uhcx_end=240&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "e2ec26cc499b9c18ff71620cf491ace07fc8dec79e3d4b9baaaad96c72a198ea",
+        "capturadoEl": "2026-11-15T13:05:40.574240Z",
+        "localizador": "/activities/1/description"
+      },
+      "temas": ["comunicacion"]
+    },
+    {
+      "programaId": "cibernarium:1493501",
+      "titulo": "Lògica de la programació - Versió autodidacta",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "a5e23de745b9903658d4a2d6646d840fdc7bf2e65b356871f179241a36bd0c86",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=240&_cAct_INSTANCE_uhcx_end=255&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "a932199bb7d221bdb51ed0cb7f025c09c7e019c58ec71cc1050081db08dd8136",
+        "capturadoEl": "2026-11-15T13:05:44.947039Z",
+        "localizador": "/activities/11/description"
+      },
+      "temas": ["datos"]
+    },
+    {
+      "programaId": "cibernarium:1493502",
+      "titulo": "Introducció a  la programació amb GO",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "1afcc0bac182f72d7381451f92a3d5665a029242e8d6c0a382f46189cfa538fa",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=210&_cAct_INSTANCE_uhcx_end=225&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "0781c916c1b8caaf356df7fef78f26bcadd27006810ec07782e33932bba7313b",
+        "capturadoEl": "2026-11-15T13:05:36.597612Z",
+        "localizador": "/activities/9/description"
+      },
+      "temas": ["datos"]
+    },
+    {
+      "programaId": "cibernarium:1493654",
+      "titulo": "Excel: Taules dinàmiques",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "17deee3123f1f7a576e4b8e3377727c844386f4692e63120a655a18ed69ae18d",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=270&_cAct_INSTANCE_uhcx_end=285&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "013f62c7e59667ef9b3ac0a4ffedfb1e926d1d9ff61886f3875378b15db5ae63",
+        "capturadoEl": "2026-11-15T13:05:53.817868Z",
+        "localizador": "/activities/7/description"
+      },
+      "temas": ["ofimatica"]
+    },
+    {
+      "programaId": "cibernarium:1493656",
+      "titulo": "Excel: Formats condicionals",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "4eddec88157d49f83703f34e7481adf19d81e15b2e4c4d4fd0cc28151dffc7d2",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=255&_cAct_INSTANCE_uhcx_end=270&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "da6f70d11a5bca0ea968e777bfb35051c3c17bd7a6b6e30905a2ffc4a606b7c3",
+        "capturadoEl": "2026-11-15T13:05:49.580127Z",
+        "localizador": "/activities/5/description"
+      },
+      "temas": ["ofimatica"]
+    },
+    {
+      "programaId": "cibernarium:1493661",
+      "titulo": "Power BI: Fes els teus primers informes",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "c4b989df24139a13ef06fa005721b5582555287c38de1749831134067ca64ef3",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=270&_cAct_INSTANCE_uhcx_end=285&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "013f62c7e59667ef9b3ac0a4ffedfb1e926d1d9ff61886f3875378b15db5ae63",
+        "capturadoEl": "2026-11-15T13:05:53.817868Z",
+        "localizador": "/activities/6/description"
+      },
+      "temas": ["datos"]
+    },
+    {
+      "programaId": "cibernarium:1493663",
+      "titulo": "Fem un reset? De les pantalles familiars a la independència del primer mòbil",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "256603b64f41bd2d377726b167a7a4c605d3cbeca50cd3b6014bf8bb0456f999",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=180&_cAct_INSTANCE_uhcx_end=195&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "06c2411efecb34b1b068756eab1e176ca4ba1f210826c3e74885dad8b3fe94bf",
+        "capturadoEl": "2026-11-15T13:05:28.674522Z",
+        "localizador": "/activities/8/description"
+      },
+      "temas": ["digital", "educacion"]
+    },
+    {
+      "programaId": "cibernarium:1493665",
+      "titulo": "Creativitat digital amb Canva: dissenya amb impacte",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "a9529b76e52545133eac85bcb8eeb0b4ecaa32f4e582b963afcb7713275842ec",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=255&_cAct_INSTANCE_uhcx_end=270&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "da6f70d11a5bca0ea968e777bfb35051c3c17bd7a6b6e30905a2ffc4a606b7c3",
+        "capturadoEl": "2026-11-15T13:05:49.580127Z",
+        "localizador": "/activities/10/description"
+      },
+      "temas": ["diseno"]
+    },
+    {
+      "programaId": "cibernarium:1493669",
+      "titulo": "Màrqueting digital amb Intel.ligència Artificial",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "d30f16ebf093ad30059ea7b169d95335f2038b863721262da0f9bfa1d01885a6",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=255&_cAct_INSTANCE_uhcx_end=270&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "da6f70d11a5bca0ea968e777bfb35051c3c17bd7a6b6e30905a2ffc4a606b7c3",
+        "capturadoEl": "2026-11-15T13:05:49.580127Z",
+        "localizador": "/activities/8/description"
+      },
+      "temas": ["ia", "comunicacion"]
+    },
+    {
+      "programaId": "cibernarium:1493671",
+      "titulo": "Analítica web amb Google analytics",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "f69eaa0bae267fe3eb48079bcd85088275013569f713dd06eda6647ff9125b2c",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=240&_cAct_INSTANCE_uhcx_end=255&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "a932199bb7d221bdb51ed0cb7f025c09c7e019c58ec71cc1050081db08dd8136",
+        "capturadoEl": "2026-11-15T13:05:44.947039Z",
+        "localizador": "/activities/3/description"
+      },
+      "temas": ["datos"]
+    },
+    {
+      "programaId": "cibernarium:1493672",
+      "titulo": "Disseny Web: Introducció a la Maquetació, CSS i HTML5",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "193771623fb4a4cc3d3e897c4a0bbaf18f181cc130de9b48909d27ff05efdcf5",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=225&_cAct_INSTANCE_uhcx_end=240&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "e2ec26cc499b9c18ff71620cf491ace07fc8dec79e3d4b9baaaad96c72a198ea",
+        "capturadoEl": "2026-11-15T13:05:40.574240Z",
+        "localizador": "/activities/6/description"
+      },
+      "temas": ["web"]
+    },
+    {
+      "programaId": "cibernarium:1493684",
+      "titulo": "Intel·ligència artificial per l'automatització de tasques i millorar la productivitat",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "538393995c373eb22d7d6f1ea0ce5235e7bdef0127ca4ca3c2e171401f2ea0e7",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=255&_cAct_INSTANCE_uhcx_end=270&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "da6f70d11a5bca0ea968e777bfb35051c3c17bd7a6b6e30905a2ffc4a606b7c3",
+        "capturadoEl": "2026-11-15T13:05:49.580127Z",
+        "localizador": "/activities/9/description"
+      },
+      "temas": ["ia"]
+    },
+    {
+      "programaId": "cibernarium:1493685",
+      "titulo": "Intel·ligència Artificial per a la presa de decisions i anàlisi de dades",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "c3fd3e8df0b4392a4d38d6757ce6a213f4d369a5a1efdf747546afec5e4ca45d",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=255&_cAct_INSTANCE_uhcx_end=270&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "da6f70d11a5bca0ea968e777bfb35051c3c17bd7a6b6e30905a2ffc4a606b7c3",
+        "capturadoEl": "2026-11-15T13:05:49.580127Z",
+        "localizador": "/activities/11/description"
+      },
+      "temas": ["ia", "datos"]
+    },
+    {
+      "programaId": "cibernarium:1493691",
+      "titulo": "Intel·ligència Artificial per a la creació de Xatbots amb ChatGPT i Dialogflow",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "b5fa32d671fbbfd7af9571092c31d65d91d321126de6ee001b2e94993e1f04ab",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=240&_cAct_INSTANCE_uhcx_end=255&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "a932199bb7d221bdb51ed0cb7f025c09c7e019c58ec71cc1050081db08dd8136",
+        "capturadoEl": "2026-11-15T13:05:44.947039Z",
+        "localizador": "/activities/7/description"
+      },
+      "temas": ["ia"]
+    },
+    {
+      "programaId": "cibernarium:1493700",
+      "titulo": "Masterclass: Què pot fer LinkedIn per als i les Silvers?",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "411b0f7038851c8d1fe960070a510576001fe7c1c5918db04e7e2587f9862f93",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=195&_cAct_INSTANCE_uhcx_end=210&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "f91871a92173ac4cce3804950285efd75001bace25f2a899f2af031264d8eb7c",
+        "capturadoEl": "2026-11-15T13:05:32.683452Z",
+        "localizador": "/activities/9/description"
+      },
+      "temas": ["comunicacion", "empleo"]
+    },
+    {
+      "programaId": "cibernarium:1493701",
+      "titulo": "Masterclass: Com la IA impulsa i millora la Creativitat",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "4f323aab5f6f28f726a3a8d78855d4b8ffdfc2f1f8c0b32ee5c5d43147885fc2",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=225&_cAct_INSTANCE_uhcx_end=240&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "e2ec26cc499b9c18ff71620cf491ace07fc8dec79e3d4b9baaaad96c72a198ea",
+        "capturadoEl": "2026-11-15T13:05:40.574240Z",
+        "localizador": "/activities/5/description"
+      },
+      "temas": ["ia"]
+    },
+    {
+      "programaId": "cibernarium:1493848",
+      "titulo": "Masterclass: Millora les habilitats digitals amb ChatGPT",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "ddba934f4df83671ace9ba758a7785ace8df7e980527cb6189fc178e978f3bd6",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=240&_cAct_INSTANCE_uhcx_end=255&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "a932199bb7d221bdb51ed0cb7f025c09c7e019c58ec71cc1050081db08dd8136",
+        "capturadoEl": "2026-11-15T13:05:44.947039Z",
+        "localizador": "/activities/4/description"
+      },
+      "temas": ["ia", "digital"]
+    },
+    {
+      "programaId": "cibernarium:1493852",
+      "titulo": "Masterclass: Les claus del branding en entorns digitals",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "d0954c0e6445c67e2372764cc1fafec6c6738a7ee22fff1933456a2b7c9c4440",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=210&_cAct_INSTANCE_uhcx_end=225&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "0781c916c1b8caaf356df7fef78f26bcadd27006810ec07782e33932bba7313b",
+        "capturadoEl": "2026-11-15T13:05:36.597612Z",
+        "localizador": "/activities/4/description"
+      },
+      "temas": ["empresa", "comunicacion"]
+    },
+    {
+      "programaId": "cibernarium:1493859",
+      "titulo": "Masterclass: La IA ens roba la feina?",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "191f3675b1562052dee6534a4ab2b438e2b40f89ebc0cd0cd3b3890e68424a9e",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=180&_cAct_INSTANCE_uhcx_end=195&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "06c2411efecb34b1b068756eab1e176ca4ba1f210826c3e74885dad8b3fe94bf",
+        "capturadoEl": "2026-11-15T13:05:28.674522Z",
+        "localizador": "/activities/12/description"
+      },
+      "temas": ["ia"]
+    },
+    {
+      "programaId": "cibernarium:1493862",
+      "titulo": "Masterclass: Com fer un pòdcast que funcioni amb Iban Martin de RomaAeterna",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "ad802aae3ecf76ab3a0f8e2f62d5a29e1abef8b3f87ce0e6f2b76b45b7b92512",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=195&_cAct_INSTANCE_uhcx_end=210&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "f91871a92173ac4cce3804950285efd75001bace25f2a899f2af031264d8eb7c",
+        "capturadoEl": "2026-11-15T13:05:32.683452Z",
+        "localizador": "/activities/1/description"
+      },
+      "temas": ["diseno"]
+    },
+    {
+      "programaId": "cibernarium:1493863",
+      "titulo": "Masterclass: Les Intel·ligències Artificials generatives",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "68f3099b2c50d7be0facc1e7857df316d2a42c8b986aedde9c70119b4848653b",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=210&_cAct_INSTANCE_uhcx_end=225&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "0781c916c1b8caaf356df7fef78f26bcadd27006810ec07782e33932bba7313b",
+        "capturadoEl": "2026-11-15T13:05:36.597612Z",
+        "localizador": "/activities/10/description"
+      },
+      "temas": ["ia"]
+    },
+    {
+      "programaId": "cibernarium:1493868",
+      "titulo": "Masterclass: Els perills de les xarxes i el control parental com a eina preventiva",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "0c5078449f71e893aecc93937b005e7ba6686ee8463d552b2441aad8ec2bb2d8",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=180&_cAct_INSTANCE_uhcx_end=195&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "06c2411efecb34b1b068756eab1e176ca4ba1f210826c3e74885dad8b3fe94bf",
+        "capturadoEl": "2026-11-15T13:05:28.674522Z",
+        "localizador": "/activities/7/description"
+      },
+      "temas": ["digital", "seguridad"]
+    },
+    {
+      "programaId": "cibernarium:1493869",
+      "titulo": "Masterclass: Eines de mercat per implantar IA generativa",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "3dfe1a9e7ad328d9c47e6fff206e23dfb7e273dd4a532b94f0bfb9f5f00c669e",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=195&_cAct_INSTANCE_uhcx_end=210&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "f91871a92173ac4cce3804950285efd75001bace25f2a899f2af031264d8eb7c",
+        "capturadoEl": "2026-11-15T13:05:32.683452Z",
+        "localizador": "/activities/10/description"
+      },
+      "temas": ["ia"]
+    },
+    {
+      "programaId": "cibernarium:1493870",
+      "titulo": "Masterclass -  La IA generativa aplicada a la indústria",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "56611e02aa5b4ceefba086d12b410a4cc6522bdd75fe70a894bbac6a640313cb",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=195&_cAct_INSTANCE_uhcx_end=210&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "f91871a92173ac4cce3804950285efd75001bace25f2a899f2af031264d8eb7c",
+        "capturadoEl": "2026-11-15T13:05:32.683452Z",
+        "localizador": "/activities/11/description"
+      },
+      "temas": ["ia"]
+    },
+    {
+      "programaId": "cibernarium:1493871",
+      "titulo": "Masterclass - Transforma la teva feina amb Microsoft Copilot (IA)",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "4c17c6e443963ac950254b8ae898d0fe77f08da19b2733f10fe06aad532e36d2",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=240&_cAct_INSTANCE_uhcx_end=255&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "a932199bb7d221bdb51ed0cb7f025c09c7e019c58ec71cc1050081db08dd8136",
+        "capturadoEl": "2026-11-15T13:05:44.947039Z",
+        "localizador": "/activities/13/description"
+      },
+      "temas": ["ia"]
+    },
+    {
+      "programaId": "cibernarium:1493873",
+      "titulo": "Masterclass: Superpoders digitals. Coneix i domina les eines d'IA per ser molt més eficient",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "d0d7d8563b6d72def2a742817450d062ac3d9cfcad30d545ff1cd4ee002d0fc7",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=225&_cAct_INSTANCE_uhcx_end=240&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "e2ec26cc499b9c18ff71620cf491ace07fc8dec79e3d4b9baaaad96c72a198ea",
+        "capturadoEl": "2026-11-15T13:05:40.574240Z",
+        "localizador": "/activities/13/description"
+      },
+      "temas": ["ia"]
+    },
+    {
+      "programaId": "cibernarium:1493876",
+      "titulo": "Masterclass: De BOOMERS a ALFAS: Com dirigir-se a cada generació en xarxes socials",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "2a12dc85fbee56430866e75d798347995452d71bbd06975824167cfb031f7519",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=195&_cAct_INSTANCE_uhcx_end=210&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "f91871a92173ac4cce3804950285efd75001bace25f2a899f2af031264d8eb7c",
+        "capturadoEl": "2026-11-15T13:05:32.683452Z",
+        "localizador": "/activities/5/description"
+      },
+      "temas": ["comunicacion"]
+    },
+    {
+      "programaId": "cibernarium:1493879",
+      "titulo": "Masterclass: IA Generativa en acció: Com aprofitar les millors eines d'IA amb Ana Galindo i Beatriz Martin",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "9551e2b33d1e3f6b47b8ca711fed7e33ef1600e9e17ebce9501e2b6d26893579",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=240&_cAct_INSTANCE_uhcx_end=255&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "a932199bb7d221bdb51ed0cb7f025c09c7e019c58ec71cc1050081db08dd8136",
+        "capturadoEl": "2026-11-15T13:05:44.947039Z",
+        "localizador": "/activities/1/description"
+      },
+      "temas": ["ia"]
+    },
+    {
+      "programaId": "cibernarium:1498462",
+      "titulo": "Masterclass:  Com fer un logo en 5 minuts",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "90ce0be5e89171087a77ba6798e0aadb28695aac52184c3966819529d3f2a400",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=195&_cAct_INSTANCE_uhcx_end=210&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "f91871a92173ac4cce3804950285efd75001bace25f2a899f2af031264d8eb7c",
+        "capturadoEl": "2026-11-15T13:05:32.683452Z",
+        "localizador": "/activities/12/description"
+      },
+      "temas": ["diseno"]
+    },
+    {
+      "programaId": "cibernarium:1504330",
+      "titulo": "Python: Introducció a la programació",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "aece5d17f56f21b31fae1f5122a2e9ed96a00bb6f9d82dc760dece31012ef262",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=255&_cAct_INSTANCE_uhcx_end=270&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "da6f70d11a5bca0ea968e777bfb35051c3c17bd7a6b6e30905a2ffc4a606b7c3",
+        "capturadoEl": "2026-11-15T13:05:49.580127Z",
+        "localizador": "/activities/14/description"
+      },
+      "temas": ["datos"]
+    },
+    {
+      "programaId": "cibernarium:1506871",
+      "titulo": "Introducció a Microsoft 365: Eines clau per a la productivitat i col·laboració",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "d18e7203b28c4c667588cd8211635b8d29832c43a300c50319f645c249dba118",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=240&_cAct_INSTANCE_uhcx_end=255&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "a932199bb7d221bdb51ed0cb7f025c09c7e019c58ec71cc1050081db08dd8136",
+        "capturadoEl": "2026-11-15T13:05:44.947039Z",
+        "localizador": "/activities/12/description"
+      },
+      "temas": ["ofimatica"]
+    },
+    {
+      "programaId": "cibernarium:1507961",
+      "titulo": "SHOTCUT: edició de vídeo amb suport d'Intel·ligència Artificial",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "b2fda1af08f5c69fbe029ec4e22b94850ced9c99bbc0db2f2de1374f39e2d883",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=270&_cAct_INSTANCE_uhcx_end=285&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "013f62c7e59667ef9b3ac0a4ffedfb1e926d1d9ff61886f3875378b15db5ae63",
+        "capturadoEl": "2026-11-15T13:05:53.817868Z",
+        "localizador": "/activities/10/description"
+      },
+      "temas": ["ia", "diseno"]
+    },
+    {
+      "programaId": "cibernarium:1510744",
+      "titulo": "Masterclass - Introducció a la IA Generativa",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "63448fa7914233e7dca9a665db92cd2fae1cd70d7decc9a412724936a97518ca",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=270&_cAct_INSTANCE_uhcx_end=285&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "013f62c7e59667ef9b3ac0a4ffedfb1e926d1d9ff61886f3875378b15db5ae63",
+        "capturadoEl": "2026-11-15T13:05:53.817868Z",
+        "localizador": "/activities/11/description"
+      },
+      "temas": ["ia"]
+    },
+    {
+      "programaId": "cibernarium:1511060",
+      "titulo": "FIGMA: Disseny d'interfícies UX",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "aac6872cb2dee0e4aa9eed4170ab627cd7ffae0bffbc53bff157c3e2892e9163",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=285&_cAct_INSTANCE_uhcx_end=300&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "f327b8f42c35b63e71e8a48b9b693f901130c8541a566108e55aa16752559160",
+        "capturadoEl": "2026-11-15T13:05:57.381507Z",
+        "localizador": "/activities/0/description"
+      },
+      "temas": ["diseno"]
+    },
+    {
+      "programaId": "cibernarium:1513063",
+      "titulo": "Masterclass - La intel·ligència artificial darrere dels cercadors: com funcionen realment i com aprofitar-ho",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "f5d5221eb325d52d1aa608ae54089eec1ef1166f6babcfc8f24721c5c9dd4e71",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=270&_cAct_INSTANCE_uhcx_end=285&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "013f62c7e59667ef9b3ac0a4ffedfb1e926d1d9ff61886f3875378b15db5ae63",
+        "capturadoEl": "2026-11-15T13:05:53.817868Z",
+        "localizador": "/activities/12/description"
+      },
+      "temas": ["ia"]
+    },
+    {
+      "programaId": "cibernarium:1513123",
+      "titulo": "Masterclass - Coneix la IA més actual i útil: Estalvia i optimitza el temps",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "9a68f478aa34ae8a98c7c50bc8aeeb3ba80a69f48e61ad6d08dcaa3cc4fd24c5",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=270&_cAct_INSTANCE_uhcx_end=285&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "013f62c7e59667ef9b3ac0a4ffedfb1e926d1d9ff61886f3875378b15db5ae63",
+        "capturadoEl": "2026-11-15T13:05:53.817868Z",
+        "localizador": "/activities/14/description"
+      },
+      "temas": ["ia"]
+    },
+    {
+      "programaId": "cibernarium:1513244",
+      "titulo": "Masterclass - Generació i edició de vídeo amb IA Generativa",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "6e77f51b1ba46e2e7a1a807331374dfb32b2c54db75c8e7dac677e667b4d9660",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=270&_cAct_INSTANCE_uhcx_end=285&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "013f62c7e59667ef9b3ac0a4ffedfb1e926d1d9ff61886f3875378b15db5ae63",
+        "capturadoEl": "2026-11-15T13:05:53.817868Z",
+        "localizador": "/activities/13/description"
+      },
+      "temas": ["ia", "diseno"]
+    },
+    {
+      "programaId": "cibernarium:1518817",
+      "titulo": "Masterclass - Intel·ligència Artificial (IA) amb Python i Hugging Face Transformers",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "eea77069680d9afa8d1d56f3a7a4f1ffcd0fb7dbf5e0993f877f102cdbbc0abb",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=285&_cAct_INSTANCE_uhcx_end=300&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "f327b8f42c35b63e71e8a48b9b693f901130c8541a566108e55aa16752559160",
+        "capturadoEl": "2026-11-15T13:05:57.381507Z",
+        "localizador": "/activities/1/description"
+      },
+      "temas": ["ia", "datos"]
+    },
+    {
+      "programaId": "cibernarium:1536590",
+      "titulo": "Masterclass - Violència de gènere digital: Identificar, Prevenir i Actuar davant els riscos online",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "83c13e981d369b5a86a6844580d319c2104e191cafdb7b6592f003c50e73d176",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=285&_cAct_INSTANCE_uhcx_end=300&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "f327b8f42c35b63e71e8a48b9b693f901130c8541a566108e55aa16752559160",
+        "capturadoEl": "2026-11-15T13:05:57.381507Z",
+        "localizador": "/activities/2/description"
+      },
+      "temas": ["seguridad", "ciudadania"]
+    },
+    {
+      "programaId": "cibernarium:1544844",
+      "titulo": "Masterclass: Converteix-te en Superhumà amb IA",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "3d1453ba198162f9cbd2308ba0bdcd64516334a2e1a8cb61934e90416248ba7e",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=285&_cAct_INSTANCE_uhcx_end=300&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "f327b8f42c35b63e71e8a48b9b693f901130c8541a566108e55aa16752559160",
+        "capturadoEl": "2026-11-15T13:05:57.381507Z",
+        "localizador": "/activities/3/description"
+      },
+      "temas": ["ia"]
+    },
+    {
+      "programaId": "cibernarium:1555223",
+      "titulo": "Masterclass: Crear amb IA: Disseny, escriptura i generació de continguts",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "8ff4d2aeb9e36ea745b6c0f1a45d9905ab2ba7f3140d0f2547062cace7de220f",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=285&_cAct_INSTANCE_uhcx_end=300&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "f327b8f42c35b63e71e8a48b9b693f901130c8541a566108e55aa16752559160",
+        "capturadoEl": "2026-11-15T13:05:57.381507Z",
+        "localizador": "/activities/4/description"
+      },
+      "temas": ["ia"]
+    },
+    {
+      "programaId": "cibernarium:1558810",
+      "titulo": "Python Nivell 2 Ciència de Dades: Anàlisi - Preparació per al Certificat PCED",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "3097e743c3eef044ac722ff6ad8130de019229475c794f6bdc8b8b2c59cb6bef",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=60&_cAct_INSTANCE_uhcx_end=75&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "0a75e3e7ced139708aa2d5ff9039e579be0b2326980eefc110d51e45d17c94b8",
+        "capturadoEl": "2026-11-15T13:04:47.927273Z",
+        "localizador": "/activities/13/description"
+      },
+      "temas": ["datos"]
+    },
+    {
+      "programaId": "cibernarium:1569209",
+      "titulo": "Masterclass: Treballar amb IA: Automatització i productivitat",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "85c7a489ca3e78faa1d514432382389f59a72db508201a22237430aeeb5980c2",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=285&_cAct_INSTANCE_uhcx_end=300&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "f327b8f42c35b63e71e8a48b9b693f901130c8541a566108e55aa16752559160",
+        "capturadoEl": "2026-11-15T13:05:57.381507Z",
+        "localizador": "/activities/5/description"
+      },
+      "temas": ["ia"]
+    },
+    {
+      "programaId": "cibernarium:1569553",
+      "titulo": "Masterclass: Crea-IA-tivitat 3.0. Descobreix les claus per treure'n partit a la IA",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "f57da898db69563750dd333b241629725484c9a8c87e9a68a881237c1fbf708f",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=285&_cAct_INSTANCE_uhcx_end=300&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "f327b8f42c35b63e71e8a48b9b693f901130c8541a566108e55aa16752559160",
+        "capturadoEl": "2026-11-15T13:05:57.381507Z",
+        "localizador": "/activities/7/description"
+      },
+      "temas": ["ia"]
+    },
+    {
+      "programaId": "cibernarium:1569561",
+      "titulo": "Masterclass: Coneix-te millor i crea la teva marca personal amb IA",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "18b26335bfbaef13ad038b7742543931c1240d3f3ff56430b137d832fc474c18",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=285&_cAct_INSTANCE_uhcx_end=300&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "f327b8f42c35b63e71e8a48b9b693f901130c8541a566108e55aa16752559160",
+        "capturadoEl": "2026-11-15T13:05:57.381507Z",
+        "localizador": "/activities/6/description"
+      },
+      "temas": ["ia", "comunicacion"]
+    },
+    {
+      "programaId": "cibernarium:1571670",
+      "titulo": "Introducció a Linux - Preparació per al certificat Linux Essentials LPI",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "4d49f3bcf76ed4949dfcbdf250e879c262cc1cf3f0e9a59e01766587d3845015",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=285&_cAct_INSTANCE_uhcx_end=300&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "f327b8f42c35b63e71e8a48b9b693f901130c8541a566108e55aa16752559160",
+        "capturadoEl": "2026-11-15T13:05:57.381507Z",
+        "localizador": "/activities/9/description"
+      },
+      "temas": ["sistemas"]
+    },
+    {
+      "programaId": "cibernarium:1572971",
+      "titulo": "Masterclass - L'algorisme ets tu. Com funciona internet des de dins",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "1a562034cc2eb739bc20a6766b4b66a27d3d23f2a7b35086c8a96c100c0a865b",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=285&_cAct_INSTANCE_uhcx_end=300&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "f327b8f42c35b63e71e8a48b9b693f901130c8541a566108e55aa16752559160",
+        "capturadoEl": "2026-11-15T13:05:57.381507Z",
+        "localizador": "/activities/8/description"
+      },
+      "temas": ["digital"]
+    },
+    {
+      "programaId": "cibernarium:1586895",
+      "titulo": "Dissenya el teu embut de conversió per incrementar les vendes",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "f21744e44c20ac106105cbcda7111f8a6ee32bd2542abd36015c9860cfe5ae42",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=30&_cAct_INSTANCE_uhcx_end=45&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "602e9ad993d4bda714e9ac16d44f9ee6e4daad0317acedfe98e3a32b4a1ed2a3",
+        "capturadoEl": "2026-11-15T13:04:35.519170Z",
+        "localizador": "/activities/8/description"
+      },
+      "temas": ["empresa", "comunicacion"]
+    },
+    {
+      "programaId": "cibernarium:1586968",
+      "titulo": "Branding IA. Desenvolupa el branding del teu negoci amb Intel·ligència artificial",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "a46a6d5f002b5179327818b9cca9b6ae2096bd94a702db9f1c39f9689acaf51f",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=15&_cAct_INSTANCE_uhcx_end=30&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "3b3e66f7a18a85091aa92c705d631acff3bce9ee2e9ec9307c73845d44c6da4a",
+        "capturadoEl": "2026-11-15T13:04:30.404585Z",
+        "localizador": "/activities/8/description"
+      },
+      "temas": ["ia", "empresa", "comunicacion"]
+    },
+    {
+      "programaId": "cibernarium:1592824",
+      "titulo": "Conèixer les videotrucades: eines i funcions",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "e3973cb2d2b1001a94bd40aa85a8a96023b6e4af8b360e6c8da51acf911439a1",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=105&_cAct_INSTANCE_uhcx_end=120&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "a3800c658a29f35c2b0702a6c445890ffd6421ef737ad9c9f4488c31664f515e",
+        "capturadoEl": "2026-11-15T13:05:05.133299Z",
+        "localizador": "/activities/0/description"
+      },
+      "temas": ["digital", "ciudadania"]
+    },
+    {
+      "programaId": "cibernarium:1593141",
+      "titulo": "Correu electrònic: ús i eines bàsiques",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "f9cc3d65ce6df4601ee6d062d7ab43b5b3ac747a30b4fa4dbdf623a8e83ff3df",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=105&_cAct_INSTANCE_uhcx_end=120&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "a3800c658a29f35c2b0702a6c445890ffd6421ef737ad9c9f4488c31664f515e",
+        "capturadoEl": "2026-11-15T13:05:05.133299Z",
+        "localizador": "/activities/1/description"
+      },
+      "temas": ["digital", "ofimatica"]
+    },
+    {
+      "programaId": "cibernarium:1593201",
+      "titulo": "Fulls de càlcul: treballa amb dades i gràfics",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "a3dc664928b52969648a3dbc1b8d7480e99141df90d7324bc761eefd02b2cc3f",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=120&_cAct_INSTANCE_uhcx_end=135&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "76a26b869f7c1f9090f9e1c7ae4c73aa50d8f2a8f345d64089c316aceea868ff",
+        "capturadoEl": "2026-11-15T13:05:09.784018Z",
+        "localizador": "/activities/2/description"
+      },
+      "temas": ["ofimatica"]
+    },
+    {
+      "programaId": "cibernarium:1593276",
+      "titulo": "Iniciació a la navegació per internet",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "11b8db9f25337e301ad1f424f8c2f8b8e94bda895276f6f011c847595e30d8ed",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=30&_cAct_INSTANCE_uhcx_end=45&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "602e9ad993d4bda714e9ac16d44f9ee6e4daad0317acedfe98e3a32b4a1ed2a3",
+        "capturadoEl": "2026-11-15T13:04:35.519170Z",
+        "localizador": "/activities/14/description"
+      },
+      "temas": ["digital"]
+    },
+    {
+      "programaId": "cibernarium:1595932",
+      "titulo": "Fotografia lifestyle: transmet emocions i narra amb imatges",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "70dee314e21a8e0fc6ae336892f1a366dad74941093b6be6b2c27379da0231e5",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=45&_cAct_INSTANCE_uhcx_end=60&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "f165b30a318521bfeb3045e8e74f2e81cdb94fbcd8c085cac206245ae9981211",
+        "capturadoEl": "2026-11-15T13:04:43.077320Z",
+        "localizador": "/activities/6/description"
+      },
+      "temas": ["diseno"]
+    },
+    {
+      "programaId": "cibernarium:1596946",
+      "titulo": "ACTIC NIVELL 1 - C4: SEGURETAT, BENESTAR I CIVISME",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "03e67127ca8437ee5b418b656cc59426462c910cb2ae237a5cf0445a57b7eb69",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=120&_cAct_INSTANCE_uhcx_end=135&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "76a26b869f7c1f9090f9e1c7ae4c73aa50d8f2a8f345d64089c316aceea868ff",
+        "capturadoEl": "2026-11-15T13:05:09.784018Z",
+        "localizador": "/activities/1/description"
+      },
+      "temas": ["digital", "seguridad"]
+    },
+    {
+      "programaId": "cibernarium:1598430",
+      "titulo": "Com explotar tot el potencial de LinkedIn",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "76850d1c3ef1838481af1626bd04936b3d76527104a3d7dac29ff0d2c002d828",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=90&_cAct_INSTANCE_uhcx_end=105&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "67368bc6c5e8299109cb7de5b971dca29dbccb5985f50d003dd33d23ad6c76e2",
+        "capturadoEl": "2026-11-15T13:04:59.793459Z",
+        "localizador": "/activities/5/description"
+      },
+      "temas": ["comunicacion", "empleo"]
+    },
+    {
+      "programaId": "cibernarium:1605177",
+      "titulo": "IT Talk - Ciberseguretat en l'era de la IA: deepfakes, vigilància i noves amenaces digitals",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "b799060629ee4968287bc5fcb46652e5e56e742536fc3106aabc8d8647fc40d6",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=45&_cAct_INSTANCE_uhcx_end=60&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "f165b30a318521bfeb3045e8e74f2e81cdb94fbcd8c085cac206245ae9981211",
+        "capturadoEl": "2026-11-15T13:04:43.077320Z",
+        "localizador": "/activities/3/description"
+      },
+      "temas": ["seguridad"]
+    },
+    {
+      "programaId": "cibernarium:1612854",
+      "titulo": "Masterclass: Pensament Augmentat: Com prendre millors decisions i resoldre problemes complexos amb IA",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "646e303e28bd7ff0628d37ef52317efb3213fec32fb4205a67618ef9a04a03ee",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=150&_cAct_INSTANCE_uhcx_end=165&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "63aa085013953bd7ea12d6ac6c6d4374707e7409eaddd888465862fe1884b0c4",
+        "capturadoEl": "2026-11-15T13:05:18.890369Z",
+        "localizador": "/activities/0/description"
+      },
+      "temas": ["ia"]
+    },
+    {
+      "programaId": "cibernarium:1612859",
+      "titulo": "Masterclass: Coneix-te millor i crea la teva marca personal amb IA",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "18b26335bfbaef13ad038b7742543931c1240d3f3ff56430b137d832fc474c18",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=165&_cAct_INSTANCE_uhcx_end=180&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "2334e6a8625d1bf0692f893a5d4583ea9327c24ca569471d0731c5a9dce88e9c",
+        "capturadoEl": "2026-11-15T13:05:24.274373Z",
+        "localizador": "/activities/3/description"
+      },
+      "temas": ["ia", "comunicacion"]
+    },
+    {
+      "programaId": "cibernarium:1493360",
+      "titulo": "WooCommerce: el plugin de WordPress per fer botigues online",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "6a0dff8b8b60221ae9d546367d6028e826e9ec40c23700da7a06faf940bfb082",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=225&_cAct_INSTANCE_uhcx_end=240&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "e2ec26cc499b9c18ff71620cf491ace07fc8dec79e3d4b9baaaad96c72a198ea",
+        "capturadoEl": "2026-11-15T13:05:40.574240Z",
+        "localizador": "/activities/3"
+      },
+      "temas": ["web"]
+    },
+    {
+      "programaId": "cibernarium:1493473",
+      "titulo": "Bits de TIC - Aplicacions del Blockchain més enllà del bitcoin",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "9e511a3f4a3dd526c2bfb3114e547c4ac320686cfef72fcc66083367ad08e6ed",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=195&_cAct_INSTANCE_uhcx_end=210&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "f91871a92173ac4cce3804950285efd75001bace25f2a899f2af031264d8eb7c",
+        "capturadoEl": "2026-11-15T13:05:32.683452Z",
+        "localizador": "/activities/3"
+      },
+      "temas": ["sistemas"]
+    },
+    {
+      "programaId": "cibernarium:1493657",
+      "titulo": "Excel: Power Query",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "617ad9e47eff19d457c751009713ba9ef311294e6804898ea4252bfc4d2a58b7",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=255&_cAct_INSTANCE_uhcx_end=270&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "da6f70d11a5bca0ea968e777bfb35051c3c17bd7a6b6e30905a2ffc4a606b7c3",
+        "capturadoEl": "2026-11-15T13:05:49.580127Z",
+        "localizador": "/activities/7"
+      },
+      "temas": ["ofimatica"]
+    },
+    {
+      "programaId": "cibernarium:1493658",
+      "titulo": "Excel: Power Pivot",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "11323d350fd35e53af7d5cb20b57b9883230a23c1e6dbd1577cd64f769cfe19b",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=255&_cAct_INSTANCE_uhcx_end=270&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "da6f70d11a5bca0ea968e777bfb35051c3c17bd7a6b6e30905a2ffc4a606b7c3",
+        "capturadoEl": "2026-11-15T13:05:49.580127Z",
+        "localizador": "/activities/0"
+      },
+      "temas": ["ofimatica"]
+    },
+    {
+      "programaId": "cibernarium:1493659",
+      "titulo": "Excel: Treballar amb taules de dades",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "863ff05239f438f43a7e4fa45099489e8254b95694b8c0239f3667c540aac283",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=255&_cAct_INSTANCE_uhcx_end=270&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "da6f70d11a5bca0ea968e777bfb35051c3c17bd7a6b6e30905a2ffc4a606b7c3",
+        "capturadoEl": "2026-11-15T13:05:49.580127Z",
+        "localizador": "/activities/13"
+      },
+      "temas": ["ofimatica"]
+    },
+    {
+      "programaId": "cibernarium:1493699",
+      "titulo": "Masterclass: Què és la Web 3.0?",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "6adeed7aa4629e20c9db69518329b6a36383718cf2864130d6972975b670078e",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=180&_cAct_INSTANCE_uhcx_end=195&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "06c2411efecb34b1b068756eab1e176ca4ba1f210826c3e74885dad8b3fe94bf",
+        "capturadoEl": "2026-11-15T13:05:28.674522Z",
+        "localizador": "/activities/9"
+      },
+      "temas": ["sistemas"]
+    },
+    {
+      "programaId": "cibernarium:1493856",
+      "titulo": "Masterclass: Introducció al metavers",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "2a220439d6db2f16929a51f9163d3d4e4832dd9c5768977c2dcb9fd44670911d",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=180&_cAct_INSTANCE_uhcx_end=195&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "06c2411efecb34b1b068756eab1e176ca4ba1f210826c3e74885dad8b3fe94bf",
+        "capturadoEl": "2026-11-15T13:05:28.674522Z",
+        "localizador": "/activities/6"
+      },
+      "temas": ["sistemas"]
+    },
+    {
+      "programaId": "cibernarium:1493864",
+      "titulo": "Masterclass: Com es crea un creador de continguts amb Carles Tamayo",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "9063f5a9eb2a89c405a7e29a6f6823a6ff77b47de4c784277c9baab7dc07e7e9",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=180&_cAct_INSTANCE_uhcx_end=195&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "06c2411efecb34b1b068756eab1e176ca4ba1f210826c3e74885dad8b3fe94bf",
+        "capturadoEl": "2026-11-15T13:05:28.674522Z",
+        "localizador": "/activities/14"
+      },
+      "temas": ["diseno"]
+    },
+    {
+      "programaId": "cibernarium:1590261",
+      "titulo": "Activa la teva ment jugant amb tecnologia",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "4a3c53d6815d14a3383a7516916d30aa7ac6e843e9e5744f5dfbbfc0e3d6172f",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=105&_cAct_INSTANCE_uhcx_end=120&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "a3800c658a29f35c2b0702a6c445890ffd6421ef737ad9c9f4488c31664f515e",
+        "capturadoEl": "2026-11-15T13:05:05.133299Z",
+        "localizador": "/activities/14"
+      },
+      "temas": ["digital"]
+    },
+    {
+      "programaId": "cibernarium:1558794",
+      "titulo": "Python Nivell 2 Programació: POO - Preparació per al Certificat PCAP",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "473a232572acd0b99ee1b77c9a68236fd219f5c156ad0b5cf63b1889e1e06be5",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=105&_cAct_INSTANCE_uhcx_end=120&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "4d4d03d748f17a1d17b7f26662bf374fa864b76d84b87f10acae21e68d14bd88",
+        "capturadoEl": "2026-11-18T18:14:11.329990Z",
+        "localizador": "/activities/1"
+      },
+      "temas": ["datos"]
+    },
+    {
+      "programaId": "cibernarium:1558791",
+      "titulo": "Python Nivell 3 Ciència de Dades: Anàlisi avançada amb SLQ - Preparació per al Certificat PCAD",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "de0c331a8fdd0a2f0256e9426db73978510060b1f6c93bcc531c8514a6960d3f",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=120&_cAct_INSTANCE_uhcx_end=135&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "cdd482fc7efd80aaace425e57c6a5d05bc6e0fb7a28d6aa6c611a256f47bafbb",
+        "capturadoEl": "2026-11-18T18:14:14.790093Z",
+        "localizador": "/activities/0"
+      },
+      "temas": ["datos", "ia"]
+    },
+    {
+      "programaId": "cibernarium:1563566",
+      "titulo": "Fes memes i imatges animades per Instagram, X, Facebook i Linkedin",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "d89af69035ae85bb0ac3825ede2e9e40fb9b06262dfaac0e0e490fc6d93073dd",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=30&_cAct_INSTANCE_uhcx_end=45&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "08aea6fc7ddb62a608dc5975399db3dc31d8c9730213e82460c5043c9855f724",
+        "capturadoEl": "2026-11-18T18:13:50.535285Z",
+        "localizador": "/activities/3"
+      },
+      "temas": ["diseno", "comunicacion"]
+    },
+    {
+      "programaId": "cibernarium:1583022",
+      "titulo": "Google analytics 4: Aprèn a analitzar la teva audiència i crea'n informes",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "7c56fc4fb3592338c8532859f7cc2acf74e781a06dd6b88845b79008c8804471",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=105&_cAct_INSTANCE_uhcx_end=120&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "4d4d03d748f17a1d17b7f26662bf374fa864b76d84b87f10acae21e68d14bd88",
+        "capturadoEl": "2026-11-18T18:14:11.329990Z",
+        "localizador": "/activities/10"
+      },
+      "temas": ["datos", "empresa"]
+    },
+    {
+      "programaId": "cibernarium:1588939",
+      "titulo": "QGIS Nivell 1: Fonaments dels sistemes d'informació geogràfica",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "51494118c2480f227e4a6719b6458e0381b1b3922e3be1d136bf9b4d3a0e3b0a",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=135&_cAct_INSTANCE_uhcx_end=150&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "c7900cf9fd7d1a6c8495fab5a76fb60ddb9b5bef584aa484bcf83ab3766544cc",
+        "capturadoEl": "2026-11-18T18:14:18.291646Z",
+        "localizador": "/activities/0"
+      },
+      "temas": ["datos"]
+    },
+    {
+      "programaId": "cibernarium:1586879",
+      "titulo": "Comerç electrònic simple i potent amb Shopify",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "92717263e85af17218f4feab85e8c8e4724ad0d57a5445ab8224b1b0a4dd98a8",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=135&_cAct_INSTANCE_uhcx_end=150&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "c7900cf9fd7d1a6c8495fab5a76fb60ddb9b5bef584aa484bcf83ab3766544cc",
+        "capturadoEl": "2026-11-18T18:14:18.291646Z",
+        "localizador": "/activities/12"
+      },
+      "temas": ["empresa", "web"]
+    },
+    {
+      "programaId": "cibernarium:1586958",
+      "titulo": "Coneix TikTok per connectar amb el públic més jove i descobreix noves tendències",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "8ba5d70c1b6f8c771806c6ed3e81aed193aaaac81afd5df647919615ac596653",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=75&_cAct_INSTANCE_uhcx_end=90&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "9763ae803a618a421681967f303fdff916752107cebb0172530dbb1558632cd8",
+        "capturadoEl": "2026-11-18T18:14:03.488094Z",
+        "localizador": "/activities/14"
+      },
+      "temas": ["comunicacion"]
+    },
+    {
+      "programaId": "cibernarium:1587037",
+      "titulo": "Microsoft 365: Automatitza amb Power Automate",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "635f4a31b53bf76a9cf717b1f4d4ba35ace6eba6f5a357897cf8921f3dd97169",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=30&_cAct_INSTANCE_uhcx_end=45&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "08aea6fc7ddb62a608dc5975399db3dc31d8c9730213e82460c5043c9855f724",
+        "capturadoEl": "2026-11-18T18:13:50.535285Z",
+        "localizador": "/activities/4"
+      },
+      "temas": ["ofimatica"]
+    },
+    {
+      "programaId": "cibernarium:1586890",
+      "titulo": "Productivitat amb Notion",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "aa16359ac32ad4e81bcaf54ec3579f19cdc9104484a18970a3fb73511968c3ff",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=60&_cAct_INSTANCE_uhcx_end=75&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "8be4b61c99c2459b005bee17955a561d40dbc0210d6f72394d33e2a2f8e620c1",
+        "capturadoEl": "2026-11-18T18:13:59.273947Z",
+        "localizador": "/activities/8"
+      },
+      "temas": ["ofimatica"]
+    },
+    {
+      "programaId": "cibernarium:1587910",
+      "titulo": "Canva en acció: Crea vídeos atractius sense complicacions",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "b08175b9b838a3517440fd527f7c9db5d68393dd7a5206888565a013c4f615be",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=60&_cAct_INSTANCE_uhcx_end=75&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "8be4b61c99c2459b005bee17955a561d40dbc0210d6f72394d33e2a2f8e620c1",
+        "capturadoEl": "2026-11-18T18:13:59.273947Z",
+        "localizador": "/activities/13"
+      },
+      "temas": ["diseno"]
+    },
+    {
+      "programaId": "cibernarium:1588133",
+      "titulo": "AWS Nivell 2: Crea solucions reals amb IA Generativa i Machine Learning",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "4c3c77beac18b59e9ee2c0f44e4b9e83f83e58b444335a66a41456456ec4b6eb",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=45&_cAct_INSTANCE_uhcx_end=60&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "c2f96d285033ea4beedf75e639bdde1c4eb8e5af7c0638d5ff61fe9745267315",
+        "capturadoEl": "2026-11-18T18:13:55.112916Z",
+        "localizador": "/activities/12"
+      },
+      "temas": ["ia", "sistemas"]
+    },
+    {
+      "programaId": "cibernarium:1583030",
+      "titulo": "GIT i GITHUB per a principiants",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "ab4021d17bd190433c77477c117240644acfc5bfde2de7f59363ab965b0b4b42",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=30&_cAct_INSTANCE_uhcx_end=45&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "08aea6fc7ddb62a608dc5975399db3dc31d8c9730213e82460c5043c9855f724",
+        "capturadoEl": "2026-11-18T18:13:50.535285Z",
+        "localizador": "/activities/13"
+      },
+      "temas": ["datos"]
+    },
+    {
+      "programaId": "cibernarium:1588201",
+      "titulo": "Reels d'Instagram: crea i comparteix els teus vídeos curts",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "c80288341195bfbdc9ba9c25fa54991d443c889ceeeafe7ffc9955351ece4194",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=120&_cAct_INSTANCE_uhcx_end=135&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "cdd482fc7efd80aaace425e57c6a5d05bc6e0fb7a28d6aa6c611a256f47bafbb",
+        "capturadoEl": "2026-11-18T18:14:14.790093Z",
+        "localizador": "/activities/4"
+      },
+      "temas": ["comunicacion"]
+    },
+    {
+      "programaId": "cibernarium:1588414",
+      "titulo": "Vibe coding avançat: Crea agents i skills amb cursor",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "e5b97af188e6cc8cc259be218a55a510bc0407591a858604731eca72294d9b5f",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=30&_cAct_INSTANCE_uhcx_end=45&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "08aea6fc7ddb62a608dc5975399db3dc31d8c9730213e82460c5043c9855f724",
+        "capturadoEl": "2026-11-18T18:13:50.535285Z",
+        "localizador": "/activities/12"
+      },
+      "temas": ["ia", "datos"]
+    },
+    {
+      "programaId": "cibernarium:1588421",
+      "titulo": "MySQL Nivell 2: SQL avançat - Preparació per al certificat 1Z0-909 MySQL 8.0 Database Developer d'Oracle",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "ff2fa0f000afb1702be00d1b1956a20c47c9d769af6ec4a93de7a445277f7ace",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=90&_cAct_INSTANCE_uhcx_end=105&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "ba9c9bc03623f3fac9aabe72ddee9eb08a0ed8e721e9ececeb9b69e59267b868",
+        "capturadoEl": "2026-11-18T18:14:07.379397Z",
+        "localizador": "/activities/1"
+      },
+      "temas": ["datos"]
+    },
+    {
+      "programaId": "cibernarium:1587783",
+      "titulo": "AWS Nivell 1: Cloud Computing per a principiants",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "b9be57edeaa5c5bfcdc0c7e4fbebde41ff5e2c395b10b9cc3c16e3284584393d",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=120&_cAct_INSTANCE_uhcx_end=135&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "cdd482fc7efd80aaace425e57c6a5d05bc6e0fb7a28d6aa6c611a256f47bafbb",
+        "capturadoEl": "2026-11-18T18:14:14.790093Z",
+        "localizador": "/activities/5"
+      },
+      "temas": ["sistemas"]
+    },
+    {
+      "programaId": "cibernarium:1600526",
+      "titulo": "WordPress i WooCommerce: crea i gestiona el teu comerç electrònic amb eines d'IA",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "7990a27dca40fc607acccee0391279ae8b7bfc09151304491935203268e0c7a5",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=75&_cAct_INSTANCE_uhcx_end=90&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "9763ae803a618a421681967f303fdff916752107cebb0172530dbb1558632cd8",
+        "capturadoEl": "2026-11-18T18:14:03.488094Z",
+        "localizador": "/activities/9"
+      },
+      "temas": ["web", "empresa", "ia"]
+    },
+    {
+      "programaId": "cibernarium:1592776",
+      "titulo": "Microsoft Access: Preparació i accés a la certificació oficial MO-500",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "dc52b02a94f0adf92c8a6d1bfbc98159389c84dc8e2100028655faf45a265d71",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=105&_cAct_INSTANCE_uhcx_end=120&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "4d4d03d748f17a1d17b7f26662bf374fa864b76d84b87f10acae21e68d14bd88",
+        "capturadoEl": "2026-11-18T18:14:11.329990Z",
+        "localizador": "/activities/3"
+      },
+      "temas": ["datos"]
+    },
+    {
+      "programaId": "cibernarium:1594211",
+      "titulo": "Màrqueting Meta: preparació i accés a la certificació M100-101: Meta Certified Digital Marketing Associate",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "82018f025e757f92cf09ae636a597d461200b0549e8f8d1db5be109900c029e1",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=105&_cAct_INSTANCE_uhcx_end=120&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "4d4d03d748f17a1d17b7f26662bf374fa864b76d84b87f10acae21e68d14bd88",
+        "capturadoEl": "2026-11-18T18:14:11.329990Z",
+        "localizador": "/activities/2"
+      },
+      "temas": ["empresa"]
+    },
+    {
+      "programaId": "cibernarium:1594606",
+      "titulo": "QFIELD: Captura i edita dades al camp des del mòbil sobre el teu projecte QGIS",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "ca746f4222b6ff8c3a1f46733e954cfd8f89a7c7a389afa9fe58973e9b74b233",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=30&_cAct_INSTANCE_uhcx_end=45&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "08aea6fc7ddb62a608dc5975399db3dc31d8c9730213e82460c5043c9855f724",
+        "capturadoEl": "2026-11-18T18:13:50.535285Z",
+        "localizador": "/activities/14"
+      },
+      "temas": ["datos"]
+    },
+    {
+      "programaId": "cibernarium:1588915",
+      "titulo": "Frontend per a principiants: maquetació i creació de pàgines web amb HTML, CSS i Bootstrap",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "78f24d08b547a1098c1b1d72da36d05c5b6b3c0d62651d2ff1760b96a0ad5304",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=105&_cAct_INSTANCE_uhcx_end=120&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "4d4d03d748f17a1d17b7f26662bf374fa864b76d84b87f10acae21e68d14bd88",
+        "capturadoEl": "2026-11-18T18:14:11.329990Z",
+        "localizador": "/activities/11"
+      },
+      "temas": ["web"]
+    },
+    {
+      "programaId": "cibernarium:1595980",
+      "titulo": "Wordpress intensiu 2: Perfecciona el teu web",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "78d9c68c6b8e2d2e358557bcc29add77bc57b7ff79e6c5a5bcc23ece7a3142ec",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=135&_cAct_INSTANCE_uhcx_end=150&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "c7900cf9fd7d1a6c8495fab5a76fb60ddb9b5bef584aa484bcf83ab3766544cc",
+        "capturadoEl": "2026-11-18T18:14:18.291646Z",
+        "localizador": "/activities/13"
+      },
+      "temas": ["web"]
+    },
+    {
+      "programaId": "cibernarium:1597292",
+      "titulo": "Dissenya els continguts de la teva Web amb Canva i la seva IA",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "409121dc446f131ea0ce203e6f36d417a6ef56cbeee52f1dc9151ee0083ed536",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=75&_cAct_INSTANCE_uhcx_end=90&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "9763ae803a618a421681967f303fdff916752107cebb0172530dbb1558632cd8",
+        "capturadoEl": "2026-11-18T18:14:03.488094Z",
+        "localizador": "/activities/6"
+      },
+      "temas": ["web", "diseno", "ia"]
+    },
+    {
+      "programaId": "cibernarium:1598431",
+      "titulo": "Tècniques i trucs per comunicar eficaçment a Instagram, Facebook i X (Twitter)",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "ae33ce22068b2b26be25471ae6adac64d3f8f76d946976c0e2f1954153649a3e",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=45&_cAct_INSTANCE_uhcx_end=60&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "c2f96d285033ea4beedf75e639bdde1c4eb8e5af7c0638d5ff61fe9745267315",
+        "capturadoEl": "2026-11-18T18:13:55.112916Z",
+        "localizador": "/activities/11"
+      },
+      "temas": ["comunicacion"]
+    },
+    {
+      "programaId": "cibernarium:1587837",
+      "titulo": "Algorismes. Entén les xarxes socials i aconsegueix-hi visibilitat",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "2653705f17b87ad878126adbb29c7c126dde0db923a8ff4950dce5c6112c9bc0",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=120&_cAct_INSTANCE_uhcx_end=135&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "cdd482fc7efd80aaace425e57c6a5d05bc6e0fb7a28d6aa6c611a256f47bafbb",
+        "capturadoEl": "2026-11-18T18:14:14.790093Z",
+        "localizador": "/activities/3"
+      },
+      "temas": ["comunicacion"]
+    },
+    {
+      "programaId": "cibernarium:1600627",
+      "titulo": "Excel: Automatitza processos amb  Macros VBA",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "670b02914bf826e166483f684c1f9fc3481aed82eec6a4f27d63a0067e2323dd",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=60&_cAct_INSTANCE_uhcx_end=75&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "8be4b61c99c2459b005bee17955a561d40dbc0210d6f72394d33e2a2f8e620c1",
+        "capturadoEl": "2026-11-18T18:13:59.273947Z",
+        "localizador": "/activities/0"
+      },
+      "temas": ["ofimatica"]
+    },
+    {
+      "programaId": "cibernarium:1587933",
+      "titulo": "GIT i GITHUB per a persones programadores - Preparació per al Certificat Oficial de Github Foundation",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "f834f71145dbf0a9d91f3ef63470752f89fdfb44e4742061ca80e4a10327c804",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=60&_cAct_INSTANCE_uhcx_end=75&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "8be4b61c99c2459b005bee17955a561d40dbc0210d6f72394d33e2a2f8e620c1",
+        "capturadoEl": "2026-11-18T18:13:59.273947Z",
+        "localizador": "/activities/1"
+      },
+      "temas": ["datos"]
+    },
+    {
+      "programaId": "cibernarium:1609336",
+      "titulo": "Frontend per a principiants: maquetació i creació de pàgines web amb HTML, CSS i Bootstrap (Edició a mida)",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "4d1f136207663be44ace8dceb0525760c6d37c5dbdf4591d6108628e237c92ea",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=165&_cAct_INSTANCE_uhcx_end=180&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "90a9326d1701fa9a29741e188ec865c3040e9de47a5a10ba768e47f4a4e03703",
+        "capturadoEl": "2026-10-25T12:37:16.812582Z",
+        "localizador": "/activities/0"
+      },
+      "temas": ["web"]
+    },
+    {
+      "programaId": "cibernarium:1587882",
+      "titulo": "Wireshark: Descobreix què passa dins de la xarxa",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "8001c05d873abc7d16123765dab40d33cbe6cec0b237dc50dd6716586cc1e24c",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=150&_cAct_INSTANCE_uhcx_end=165&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "47174e60ebd5a9fe62961efd0aa6e0694daf0890119d988c08aafed536751a48",
+        "capturadoEl": "2026-11-18T18:14:21.925998Z",
+        "localizador": "/activities/5"
+      },
+      "temas": ["sistemas", "seguridad"]
+    },
+    {
+      "programaId": "cibernarium:1598426",
+      "titulo": "Aprèn a fer una campanya de màrqueting digital",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "740ab22484c94eceb33321f70dcd4af87550a899576c7d7410a76b0a38760830",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=45&_cAct_INSTANCE_uhcx_end=60&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "c2f96d285033ea4beedf75e639bdde1c4eb8e5af7c0638d5ff61fe9745267315",
+        "capturadoEl": "2026-11-18T18:13:55.112916Z",
+        "localizador": "/activities/10"
+      },
+      "temas": ["empresa"]
+    },
+    {
+      "programaId": "cibernarium:1612852",
+      "titulo": "Copywriting: incorpora l'escriptura persuasiva per captar l'atenció a la teva clientela",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "d3a9ca7206530646eadfb3decf78de95a21702164900a02db8705fd8c31d1a0c",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=60&_cAct_INSTANCE_uhcx_end=75&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "8be4b61c99c2459b005bee17955a561d40dbc0210d6f72394d33e2a2f8e620c1",
+        "capturadoEl": "2026-11-18T18:13:59.273947Z",
+        "localizador": "/activities/10"
+      },
+      "temas": ["comunicacion", "empresa"]
+    },
+    {
+      "programaId": "cibernarium:1614555",
+      "titulo": "GO: Crea un web i servidor en 60KB",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "9b0cf4d253aa0f4745b6addce022f550af3019b9dfd0aff4951bf21c265d4faf",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=90&_cAct_INSTANCE_uhcx_end=105&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "ba9c9bc03623f3fac9aabe72ddee9eb08a0ed8e721e9ececeb9b69e59267b868",
+        "capturadoEl": "2026-11-18T18:14:07.379397Z",
+        "localizador": "/activities/13"
+      },
+      "temas": ["web", "datos"]
+    },
+    {
+      "programaId": "cibernarium:1614984",
+      "titulo": "Masterclass: Domina l'era dels agents: crea els teus propis agents amb Microsoft 365 Copilot",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "9ec3f5942c3b3f71021562fc22d066d538fbc55c726090a9ae410da2c605a2de",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=225&_cAct_INSTANCE_uhcx_end=240&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "5af009e7f985463660b77487ce8fe92af8cb9ec043753894ad2fd5e92c36c5ff",
+        "capturadoEl": "2026-11-18T18:14:38.722717Z",
+        "localizador": "/activities/9"
+      },
+      "temas": ["ia", "ofimatica"]
+    },
+    {
+      "programaId": "cibernarium:1616324",
+      "titulo": "Masterclass: Detox de dades, recupera el control de la teva identitat digital",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "98dce3bb7850e53491e7c26393feaff1f86113cdf09e96cf19b9a52030609476",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=135&_cAct_INSTANCE_uhcx_end=150&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "c7900cf9fd7d1a6c8495fab5a76fb60ddb9b5bef584aa484bcf83ab3766544cc",
+        "capturadoEl": "2026-11-18T18:14:18.291646Z",
+        "localizador": "/activities/1"
+      },
+      "temas": ["seguridad"]
+    },
+    {
+      "programaId": "cibernarium:1616959",
+      "titulo": "Upskilling Week - De màquines virtuals a serverless: Desplega la teva primera aplicació a Google Cloud",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "17944ae4c2529093a3a9d0ec556c0d2ab7cebc7905af790b47a17519dc6362eb",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=15&_cAct_INSTANCE_uhcx_end=30&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "dbcb998b2458b05590d5d747261257adbf37a370c9db25dbb6c088c98b2a3b72",
+        "capturadoEl": "2026-11-18T18:13:46.408214Z",
+        "localizador": "/activities/13"
+      },
+      "temas": ["sistemas"]
+    },
+    {
+      "programaId": "cibernarium:1616960",
+      "titulo": "Upskilling Week - Flutter en acció: d'una base de codi a 6 plataformes",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "e1ce1e4998cb9d497882bf387373c787bc805e7744ca28bbb77fe96a64e62da5",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=15&_cAct_INSTANCE_uhcx_end=30&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "dbcb998b2458b05590d5d747261257adbf37a370c9db25dbb6c088c98b2a3b72",
+        "capturadoEl": "2026-11-18T18:13:46.408214Z",
+        "localizador": "/activities/14"
+      },
+      "temas": ["datos"]
+    },
+    {
+      "programaId": "cibernarium:1616961",
+      "titulo": "Upskilling Week - Spatial Apps amb Android XR",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "ef0c93ac0d40fd17592fd536ad76e48025cdf70419db48a888a6479e9adcf1c6",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=30&_cAct_INSTANCE_uhcx_end=45&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "08aea6fc7ddb62a608dc5975399db3dc31d8c9730213e82460c5043c9855f724",
+        "capturadoEl": "2026-11-18T18:13:50.535285Z",
+        "localizador": "/activities/0"
+      },
+      "temas": ["datos"]
+    },
+    {
+      "programaId": "cibernarium:1616962",
+      "titulo": "Upskilling Week - De comunicar a ser recomanat: IA, contingut i visibilitat per a empreses",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "2f93030a80761258cef01e85bab73fe14bc57463470c118b4854130138207f6f",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=15&_cAct_INSTANCE_uhcx_end=30&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "dbcb998b2458b05590d5d747261257adbf37a370c9db25dbb6c088c98b2a3b72",
+        "capturadoEl": "2026-11-18T18:13:46.408214Z",
+        "localizador": "/activities/12"
+      },
+      "temas": ["ia", "comunicacion", "empresa"]
+    },
+    {
+      "programaId": "cibernarium:1616963",
+      "titulo": "Upskilling Week - Aprèn Rust des de zero",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "987cb6452c3d47f6b68c5b206db221005d61e730ec3af9edac3347827039f8c2",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=30&_cAct_INSTANCE_uhcx_end=45&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "08aea6fc7ddb62a608dc5975399db3dc31d8c9730213e82460c5043c9855f724",
+        "capturadoEl": "2026-11-18T18:13:50.535285Z",
+        "localizador": "/activities/2"
+      },
+      "temas": ["datos"]
+    },
+    {
+      "programaId": "cibernarium:1616964",
+      "titulo": "Upskilling Week - El teu equip ja fa servir IA. Qui decideix a què van les hores que estalvia?",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "b54f8ef4f038d2ac23ff4f58b6e55bf9f598555a1c5d32139ec538d1e96a30d3",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=30&_cAct_INSTANCE_uhcx_end=45&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "08aea6fc7ddb62a608dc5975399db3dc31d8c9730213e82460c5043c9855f724",
+        "capturadoEl": "2026-11-18T18:13:50.535285Z",
+        "localizador": "/activities/1"
+      },
+      "temas": ["ia", "empresa"]
+    },
+    {
+      "programaId": "cibernarium:1617852",
+      "titulo": "Masterclass: Revolució omnicanal: com dominar la cerca en l'era de la IA i dels nous motors",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "a7df9757983b608ce7960f72e283fc009accf7af25db361a99f1b09b643db16f",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=150&_cAct_INSTANCE_uhcx_end=165&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "47174e60ebd5a9fe62961efd0aa6e0694daf0890119d988c08aafed536751a48",
+        "capturadoEl": "2026-11-18T18:14:21.925998Z",
+        "localizador": "/activities/0"
+      },
+      "temas": ["ia", "comunicacion", "empresa"]
+    },
+    {
+      "programaId": "cibernarium:1619102",
+      "titulo": "JavaScript - estructures i programació orientada a objectes (Edició a Mida)",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "864c48e0547f64c76f2f86ea1281294917f6d010bdd944dd7db5ab632ed92611",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=120&_cAct_INSTANCE_uhcx_end=135&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "cdd482fc7efd80aaace425e57c6a5d05bc6e0fb7a28d6aa6c611a256f47bafbb",
+        "capturadoEl": "2026-11-18T18:14:14.790093Z",
+        "localizador": "/activities/8"
+      },
+      "temas": ["datos"]
+    },
+    {
+      "programaId": "cibernarium:1620597",
+      "titulo": "Windows: Descobreix el teu ordinador",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "d2900339911f67d6b1dbf0a6e2cae1a57b52dd75c83296165e0f96c1075b7da7",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=150&_cAct_INSTANCE_uhcx_end=165&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "47174e60ebd5a9fe62961efd0aa6e0694daf0890119d988c08aafed536751a48",
+        "capturadoEl": "2026-11-18T18:14:21.925998Z",
+        "localizador": "/activities/14"
+      },
+      "temas": ["digital"]
+    },
+    {
+      "programaId": "cibernarium:1621534",
+      "titulo": "Masterclass: Friends of Figma presenta Èxit sense complexos",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "05d9e241093df343a8b5177bd31907432f3a0238f416c045efbc2765ca6120a7",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=285&_cAct_INSTANCE_uhcx_end=300&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "5a7004b2f0dd4607d2581bd1adec115d404d44a20684807bdd84232c52c31d74",
+        "capturadoEl": "2026-11-18T18:14:51.744100Z",
+        "localizador": "/activities/3"
+      },
+      "temas": ["empleo", "comunicacion"]
+    },
+    {
+      "programaId": "cibernarium:1621581",
+      "titulo": "Capacitació tecnològica bàsica (EDICIÓ A MIDA)",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "0a9178b63b13b84d0730622e1d4f378957af7297dc3992b5f20f955dae473a6e",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=75&_cAct_INSTANCE_uhcx_end=90&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "9763ae803a618a421681967f303fdff916752107cebb0172530dbb1558632cd8",
+        "capturadoEl": "2026-11-18T18:14:03.488094Z",
+        "localizador": "/activities/7"
+      },
+      "temas": ["digital"]
+    },
+    {
+      "programaId": "cibernarium:1622250",
+      "titulo": "Masterclass: Més enllà de la pantalla: la IA i la realitat estesa com a noves eines per viure, aprendre i comunicar-nos",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "612aa69a201ac8885af3e557402ae246e20df43ff5e6803c3442761857d265b1",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=165&_cAct_INSTANCE_uhcx_end=180&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "22ec199823bcfbf330f1fee903febbc4100f95f7ac007edf04f2a77745e20ebe",
+        "capturadoEl": "2026-11-18T18:14:25.348674Z",
+        "localizador": "/activities/11"
+      },
+      "temas": ["ia"]
+    },
+    {
+      "programaId": "cibernarium:1622256",
+      "titulo": "ACTIC NIVELL 1 - C1: CERCA, GESTIÓ I ANÀLISI DE LA INFORMACIÓ",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "45d76b76dbb338173506e4ffab316c022aa58e1477a88b3316587703fcf44e43",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=165&_cAct_INSTANCE_uhcx_end=180&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "22ec199823bcfbf330f1fee903febbc4100f95f7ac007edf04f2a77745e20ebe",
+        "capturadoEl": "2026-11-18T18:14:25.348674Z",
+        "localizador": "/activities/8"
+      },
+      "temas": ["digital"]
+    },
+    {
+      "programaId": "cibernarium:1622257",
+      "titulo": "ACTIC NIVELL 1 - C2: COMUNICACIÓ I COL·LABORACIÓ",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "d7422dcfb94b340bc5f9c1000981105b3d1b1516a462e3a1fc991a6140a94775",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=165&_cAct_INSTANCE_uhcx_end=180&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "22ec199823bcfbf330f1fee903febbc4100f95f7ac007edf04f2a77745e20ebe",
+        "capturadoEl": "2026-11-18T18:14:25.348674Z",
+        "localizador": "/activities/10"
+      },
+      "temas": ["digital"]
+    },
+    {
+      "programaId": "cibernarium:1622262",
+      "titulo": "ACTIC NIVELL 1 - C5: AUTONOMIA I RESOLUCIÓ DE PROBLEMES",
+      "proveedorId": "cibernarium",
+      "contenido": {
+        "metodo": "cibernarium-descripcion-api-v1",
+        "sha256": "d1ede97771909eee1acc68ad03b09798016c9d2bc4ea2f7de1f5f8497670a9cd",
+        "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=165&_cAct_INSTANCE_uhcx_end=180&_cAct_INSTANCE_uhcx_typeView=list",
+        "sha256Captura": "22ec199823bcfbf330f1fee903febbc4100f95f7ac007edf04f2a77745e20ebe",
+        "capturadoEl": "2026-11-18T18:14:25.348674Z",
+        "localizador": "/activities/6"
+      },
+      "temas": ["digital"]
+    }
+  ]
+}

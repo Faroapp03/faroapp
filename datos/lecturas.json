@@ -1,0 +1,2764 @@
+{
+  "descripcion": "Lecturas de la página Biblioteca de Faro, repartidas por su tipo en tres segmentos: Guías, Informes y Notas. Cada lectura lleva su tipo, su nivel, su fuente, su fecha, la fecha de consulta, la licencia y qué abre su enlace; los resúmenes y el «por qué te puede interesar» están escritos por el Equipo Faro, sin copiar texto de los documentos. La web se genera con herramientas/web/lecturas.ts.",
+  "revisado": "2026-10-07",
+  "textos": {
+    "guias.titulo": {
+      "es": "Guías · Faro",
+      "ca": "Guies · Faro"
+    },
+    "guias.aviso": {
+      "es": "Selección del Equipo Faro, revisada el 7/10/2026. Ninguna de las entidades citadas ha revisado Faro ni lo respalda. Las guías dan información general: no son asesoramiento jurídico.",
+      "ca": "Selecció de l’Equip Faro, revisada el 7/10/2026. Cap de les entitats citades no ha revisat Faro ni l’avala. Les guies donen informació general: no són assessorament jurídic."
+    },
+    "guias.preparacion": {
+      "es": "En preparación",
+      "ca": "En preparació"
+    },
+    "biblioteca.titulo": {
+      "es": "Biblioteca · Faro",
+      "ca": "Biblioteca · Faro"
+    },
+    "biblioteca.antetitulo": {
+      "es": "Lecturas e informes",
+      "ca": "Lectures i informes"
+    },
+    "biblioteca.entradilla": {
+      "es": "Lecturas cortas e informes sobre la IA y el trabajo, de fuentes oficiales y de investigación.",
+      "ca": "Lectures breus i informes sobre la IA i la feina, de fonts oficials i de recerca."
+    },
+    "biblioteca.filtros": {
+      "es": "Filtrar la biblioteca",
+      "ca": "Filtra la biblioteca"
+    },
+    "biblioteca.segmentos": {
+      "es": "Apartados de la biblioteca",
+      "ca": "Apartats de la biblioteca"
+    },
+    "biblioteca.cuenta": {
+      "es": "Se muestran {vistas} de {total} lecturas.",
+      "ca": "Es mostren {vistas} de {total} lectures."
+    },
+    "biblioteca.tipos.nota": {
+      "es": "Notas",
+      "ca": "Notes"
+    },
+    "biblioteca.tipos.guia": {
+      "es": "Guías",
+      "ca": "Guies"
+    },
+    "biblioteca.tipos.informe": {
+      "es": "Informes",
+      "ca": "Informes"
+    },
+    "biblioteca.tipo.nota": {
+      "es": "Nota",
+      "ca": "Nota"
+    },
+    "biblioteca.tipo.informe": {
+      "es": "Informe",
+      "ca": "Informe"
+    },
+    "biblioteca.tipo.guia": {
+      "es": "Guía",
+      "ca": "Guia"
+    },
+    "biblioteca.aviso": {
+      "es": "Selección del Equipo Faro, revisada el 7/10/2026. Ninguna de estas entidades ha revisado Faro ni lo respalda. Los resúmenes son nuestros: ante cualquier duda, vale el documento original.",
+      "ca": "Selecció de l’Equip Faro, revisada el 7/10/2026. Cap d’aquestes entitats no ha revisat Faro ni l’avala. Els resums són nostres: davant de qualsevol dubte, val el document original."
+    },
+    "lecturas.nivel": {
+      "es": "Nivel",
+      "ca": "Nivell"
+    },
+    "lecturas.niveles.empezar": {
+      "es": "Inicial",
+      "ca": "Inicial"
+    },
+    "lecturas.niveles.profundizar": {
+      "es": "Intermedio",
+      "ca": "Intermedi"
+    },
+    "lecturas.niveles.investigacion": {
+      "es": "Avanzado",
+      "ca": "Avançat"
+    },
+    "lecturas.unos": {
+      "es": "unos",
+      "ca": "uns"
+    },
+    "lecturas.interes": {
+      "es": "Por qué te puede interesar.",
+      "ca": "Per què et pot interessar."
+    },
+    "comun.seccion.biblioteca": {
+      "es": "Biblioteca",
+      "ca": "Biblioteca"
+    },
+    "guias.descripcion": {
+      "es": "Guías de Faro: notas prácticas y guías oficiales para entender la IA en el trabajo, conocer tus derechos y formarte.",
+      "ca": "Guies de Faro: notes pràctiques i guies oficials per entendre la IA a la feina, conèixer els teus drets i formar-te."
+    },
+    "biblioteca.descripcion": {
+      "es": "Biblioteca de Faro: lecturas cortas e informes sobre la IA y el trabajo, cada uno con su fuente, su fecha y un resumen propio.",
+      "ca": "Biblioteca de Faro: lectures breus i informes sobre la IA i la feina, cadascun amb la seva font, la seva data i un resum propi."
+    },
+    "lecturas.min": {
+      "es": "minutos",
+      "ca": "minuts"
+    },
+    "lecturas.vistazo.lectura": {
+      "es": "Lectura",
+      "ca": "Lectura"
+    },
+    "lecturas.vistazo.abre": {
+      "es": "Se abre",
+      "ca": "S’obre"
+    },
+    "lecturas.en-otra-pestana": {
+      "es": "en otra pestaña",
+      "ca": "en una altra pestanya"
+    },
+    "lecturas.en-esta-pestana": {
+      "es": "en esta pestaña",
+      "ca": "en aquesta pestanya"
+    },
+    "lecturas.abre.pagina-faro": {
+      "es": "Página de Faro",
+      "ca": "Pàgina de Faro"
+    },
+    "lecturas.vistazo.idioma": {
+      "es": "Idioma",
+      "ca": "Idioma"
+    },
+    "lecturas.lengua.es": {
+      "es": "castellano",
+      "ca": "castellà"
+    },
+    "lecturas.lengua.ca": {
+      "es": "catalán",
+      "ca": "català"
+    },
+    "lecturas.lengua.en": {
+      "es": "inglés",
+      "ca": "anglès"
+    },
+    "lecturas.lengua.y": {
+      "es": "y",
+      "ca": "i"
+    },
+    "lecturas.formato.pdf": {
+      "es": "PDF",
+      "ca": "PDF"
+    },
+    "lecturas.formato.web": {
+      "es": "Página web",
+      "ca": "Pàgina web"
+    }
+  },
+  "temas": {
+    "derechos": {
+      "es": "Derechos y convenios",
+      "ca": "Drets i convenis"
+    },
+    "cataluna": {
+      "es": "La IA en Cataluña",
+      "ca": "La IA a Catalunya"
+    },
+    "empleo": {
+      "es": "IA y empleo",
+      "ca": "IA i ocupació"
+    },
+    "salud": {
+      "es": "Salud y condiciones de trabajo",
+      "ca": "Salut i condicions de treball"
+    },
+    "igualdad": {
+      "es": "Igualdad y sesgos",
+      "ca": "Igualtat i biaixos"
+    },
+    "aprender": {
+      "es": "Aprender a usar la IA",
+      "ca": "Aprendre a fer servir la IA"
+    }
+  },
+  "lecturas": [
+    {
+      "id": "que-es-la-ia-generativa",
+      "tipo": "guia",
+      "nivel": "empezar",
+      "tema": "aprender",
+      "fuente": "Equipo Faro",
+      "idiomas": [
+        "es",
+        "ca"
+      ],
+      "minutos": 8,
+      "enlace": "entender-ia.html",
+      "fecha": {
+        "iso": "2026-10-18",
+        "es": "Revisada el 18/10/2026",
+        "ca": "Revisada el 18/10/2026"
+      },
+      "consultado": "2026-10-18",
+      "licencia": "Equipo Faro · Todos los derechos reservados",
+      "formato": {
+        "es": "Página de Faro",
+        "ca": "Pàgina de Faro"
+      },
+      "es": {
+        "titulo": "Qué es la IA: la guía de Faro",
+        "resumen": "Qué es la inteligencia artificial, cómo aprende, cómo escribe un asistente, qué precauciones tomar y qué puede cambiar en tu trabajo. Con un glosario de 30 palabras y un desafío de 12 preguntas.",
+        "interes": "Es el punto de partida si nunca te han explicado cómo funciona la IA, y el desafío te dice qué conviene repasar."
+      },
+      "ca": {
+        "titulo": "Què és la IA: la guia de Faro",
+        "resumen": "Què és la intel·ligència artificial, com aprèn, com escriu un assistent, quines precaucions cal prendre i què pot canviar en la teva feina. Amb un glossari de 30 paraules i un desafiament de 12 preguntes.",
+        "interes": "És el punt de partida si mai no t’han explicat com funciona la IA, i el desafiament et diu què convé repassar."
+      }
+    },
+    {
+      "id": "usar-la-ia-en-el",
+      "tipo": "guia",
+      "subtipo": {
+        "es": "Decálogo",
+        "ca": "Decàleg"
+      },
+      "nivel": "empezar",
+      "tema": "aprender",
+      "fuente": "AEPD",
+      "idiomas": [
+        "es"
+      ],
+      "minutos": 6,
+      "enlace": "https://www.aepd.es/guias/recomendaciones-ia-aepd.pdf",
+      "fecha": {
+        "iso": "2026-01-27",
+        "es": "27/1/2026",
+        "ca": "27/1/2026"
+      },
+      "consultado": "2026-10-18",
+      "licencia": "Sin confirmar: solo se enlaza y se resume con palabras propias",
+      "formato": {
+        "es": "PDF · 8,1 MB",
+        "ca": "PDF · 8,1 MB"
+      },
+      "es": {
+        "titulo": "Cuidado con lo que le confías a la IA: diez consejos",
+        "resumen": "Diez consejos de la Agencia Española de Protección de Datos (AEPD) para usar la IA sin poner en riesgo tu privacidad: no subir datos personales ni información delicada, respetar los datos de otras personas, no incluir información confidencial del trabajo, revisar las condiciones del servicio y no creerse todo lo que responde.",
+        "interes": "Es una lista clara de lo que no conviene escribir en un chatbot, con un consejo propio para quien lo usa en el trabajo."
+      },
+      "ca": {
+        "titulo": "Compte amb el que confies a la IA: deu consells",
+        "resumen": "Deu consells de l’Agència Espanyola de Protecció de Dades (AEPD) per fer servir la IA sense posar en risc la teva privacitat: no pujar dades personals ni informació delicada, respectar les dades d’altres persones, no incloure informació confidencial de la feina, revisar les condicions del servei i no creure’s tot el que respon.",
+        "interes": "És una llista clara del que no convé escriure en un xatbot, amb un consell específic per a qui el fa servir a la feina."
+      }
+    },
+    {
+      "id": "introduccion-ia-lectura-facil-plena-inclusion",
+      "tipo": "guia",
+      "subtipo": {
+        "es": "Manual en lectura fácil",
+        "ca": "Manual en lectura fàcil"
+      },
+      "nivel": "empezar",
+      "tema": "aprender",
+      "fuente": "Plena inclusión Castilla y León",
+      "idiomas": [
+        "es"
+      ],
+      "minutos": 20,
+      "enlace": "https://plenainclusioncyl.org/wp-content/uploads/2026/07/Introduccion-a-la-Inteligencia-artificial-ManualLF.pdf",
+      "fecha": {
+        "iso": "2026-07-17",
+        "es": "17/7/2026",
+        "ca": "17/7/2026"
+      },
+      "consultado": "2026-10-18",
+      "licencia": "Sin confirmar: solo se enlaza y se resume con palabras propias",
+      "formato": {
+        "es": "PDF · 640 KB",
+        "ca": "PDF · 640 KB"
+      },
+      "es": {
+        "titulo": "Introducción a la inteligencia artificial, en lectura fácil",
+        "resumen": "Manual en lectura fácil, con frases cortas y palabras explicadas. Cuenta qué es la IA, para qué sirve, que también se equivoca, sus ventajas y desventajas, quién debe decidir y cómo pedirle cosas. Nombra programas comerciales como ejemplos.",
+        "interes": "Está en lectura fácil: frases cortas, palabras sencillas y definiciones al margen. Cuando habla de pérdida de empleo, ten en cuenta que los estudios miden tareas expuestas, no puestos que vayan a desaparecer."
+      },
+      "ca": {
+        "titulo": "Introducció a la intel·ligència artificial, en lectura fàcil",
+        "resumen": "Manual en lectura fàcil (en castellà), amb frases curtes i paraules explicades. Explica què és la IA, per a què serveix, que també s’equivoca, els avantatges i els inconvenients, qui ha de decidir i com demanar-li coses. Anomena programes comercials com a exemples.",
+        "interes": "Està en lectura fàcil: frases curtes, paraules senzilles i definicions al marge. Quan parla de pèrdua de feina, tingues en compte que els estudis mesuren tasques exposades, no llocs que hagin de desaparèixer."
+      }
+    },
+    {
+      "id": "detectar-y-reducir-alucinaciones-ia",
+      "tipo": "guia",
+      "subtipo": {
+        "es": "Página de consejos",
+        "ca": "Pàgina de consells"
+      },
+      "nivel": "empezar",
+      "tema": "aprender",
+      "fuente": "UPV/EHU",
+      "idiomas": [
+        "es"
+      ],
+      "minutos": 3,
+      "enlace": "https://www.ehu.eus/es/web/adimen-artifiziala/c%C3%B3mo-detectar-y-reducir-alucinaciones",
+      "fecha": {
+        "iso": null,
+        "es": "Sin fecha publicada · consultada el 18/10/2026",
+        "ca": "Sense data publicada · consultada el 18/10/2026"
+      },
+      "consultado": "2026-10-18",
+      "licencia": "Sin confirmar: solo se enlaza y se resume con palabras propias",
+      "formato": {
+        "es": "Página web",
+        "ca": "Pàgina web"
+      },
+      "es": {
+        "titulo": "Cómo detectar y reducir los errores inventados de la IA",
+        "resumen": "La Universidad del País Vasco (UPV/EHU) explica que la IA puede escribir con seguridad algo falso, lo que se llama «alucinación». Da señales para sospechar, como cifras muy precisas sin fuente o respuestas que cambian al repetir la pregunta, y siete hábitos, como pedirle que no invente y comprobar a mano lo importante.",
+        "interes": "Te ayuda a no fiarte de una respuesta solo porque suena convincente. Los ejemplos son de la universidad, pero sirven para cualquier trabajo."
+      },
+      "ca": {
+        "titulo": "Com detectar i reduir els errors inventats de la IA",
+        "resumen": "La Universitat del País Basc (UPV/EHU) explica que la IA pot escriure amb seguretat una cosa falsa, el que s’anomena «al·lucinació». Dona senyals per sospitar-ne, com xifres molt precises sense font o respostes que canvien quan repeteixes la pregunta, i set hàbits, com demanar-li que no s’inventi res i comprovar a mà el que és important. En castellà.",
+        "interes": "T’ajuda a no refiar-te d’una resposta només perquè sona convincent. Els exemples són de la universitat, però serveixen per a qualsevol feina."
+      }
+    },
+    {
+      "id": "xatejar-amb-la-ia-agencia-ciberseguretat",
+      "tipo": "guia",
+      "subtipo": {
+        "es": "Página de consejos",
+        "ca": "Pàgina de consells"
+      },
+      "nivel": "empezar",
+      "tema": "aprender",
+      "fuente": "Agència de Ciberseguretat de Catalunya",
+      "idiomas": [
+        "ca"
+      ],
+      "minutos": 3,
+      "enlace": "https://ciberseguretat.gencat.cat/ca/ciutadania/intelligencia-artificial/xatejar-amb-la-IA",
+      "fecha": {
+        "iso": null,
+        "es": "Sin fecha publicada · consultada el 18/10/2026",
+        "ca": "Sense data publicada · consultada el 18/10/2026"
+      },
+      "consultado": "2026-10-18",
+      "licencia": "Sin confirmar: solo se enlaza y se resume con palabras propias",
+      "formato": {
+        "es": "Página web",
+        "ca": "Pàgina web"
+      },
+      "es": {
+        "titulo": "Chatear con la IA: qué puede y qué no puede hacer",
+        "resumen": "Página de la Agència de Ciberseguretat de Catalunya: la IA genera respuestas, pero no entiende a las personas ni sustituye a un profesional. Avisa de que puede inventar datos con seguridad y dar consejos inadecuados, y aconseja contrastar siempre lo que dice y no tomar decisiones importantes solo con ella. Insiste en que no sirve como apoyo emocional y da el 061 como teléfono de ayuda.",
+        "interes": "Resume en pocos minutos los límites de un chatbot, también para decisiones de trabajo o de salud."
+      },
+      "ca": {
+        "titulo": "Xatejar amb la IA: què pot fer i què no",
+        "resumen": "Pàgina de l’Agència de Ciberseguretat de Catalunya: la IA genera respostes, però no entén les persones ni substitueix un professional. Avisa que pot inventar dades amb seguretat i donar consells inadequats, i aconsella contrastar sempre el que diu i no prendre decisions importants només amb ella. Insisteix que no serveix com a suport emocional i dona el 061 com a telèfon d’ajuda.",
+        "interes": "Resumeix en pocs minuts els límits d’un xatbot, també per a decisions de feina o de salut."
+      }
+    },
+    {
+      "id": "detectar-noticies-falses-agencia-ciberseguretat",
+      "tipo": "guia",
+      "subtipo": {
+        "es": "Página de consejos",
+        "ca": "Pàgina de consells"
+      },
+      "nivel": "empezar",
+      "tema": "aprender",
+      "fuente": "Agència de Ciberseguretat de Catalunya",
+      "idiomas": [
+        "es",
+        "ca"
+      ],
+      "minutos": 3,
+      "enlace": "https://ciberseguretat.gencat.cat/es/ciutadania/intelligencia-artificial/noticies-falses",
+      "enlace_ca": "https://ciberseguretat.gencat.cat/ca/ciutadania/intelligencia-artificial/noticies-falses",
+      "fecha": {
+        "iso": null,
+        "es": "Sin fecha publicada · consultada el 18/10/2026",
+        "ca": "Sense data publicada · consultada el 18/10/2026"
+      },
+      "consultado": "2026-10-18",
+      "licencia": "Sin confirmar: solo se enlaza y se resume con palabras propias",
+      "formato": {
+        "es": "Página web",
+        "ca": "Pàgina web"
+      },
+      "es": {
+        "titulo": "Cómo detectar una noticia falsa",
+        "resumen": "Página de la Agència de Ciberseguretat de Catalunya sobre la desinformación: por qué cuesta detectarla y cinco pasos para comprobar una noticia, como mirar la fuente, leer el texto entero, buscar otras fuentes y fijarse en imágenes que pueden estar manipuladas con IA. Cita extensiones comerciales del navegador como ejemplo.",
+        "interes": "Te da una rutina corta para comprobar una noticia antes de compartirla."
+      },
+      "ca": {
+        "titulo": "Com detectar una notícia falsa",
+        "resumen": "Pàgina de l’Agència de Ciberseguretat de Catalunya sobre la desinformació: per què costa detectar-la i cinc passos per comprovar una notícia, com mirar la font, llegir el text sencer, buscar altres fonts i fixar-se en imatges que poden estar manipulades amb IA. Cita extensions comercials del navegador com a exemple.",
+        "interes": "Et dona una rutina curta per comprovar una notícia abans de compartir-la."
+      }
+    },
+    {
+      "id": "estafes-amb-intelligencia-artificial-consells",
+      "tipo": "guia",
+      "subtipo": {
+        "es": "Página de consejos",
+        "ca": "Pàgina de consells"
+      },
+      "nivel": "empezar",
+      "tema": "aprender",
+      "fuente": "Agència de Ciberseguretat de Catalunya",
+      "idiomas": [
+        "es",
+        "ca"
+      ],
+      "minutos": 5,
+      "enlace": "https://ciberseguretat.gencat.cat/es/ciutadania/frau-i-suplantacio/estafes-amb-intelligencia-artificial",
+      "enlace_ca": "https://ciberseguretat.gencat.cat/ca/ciutadania/frau-suplantacio/estafes-amb-intelligencia-artificial",
+      "fecha": {
+        "iso": null,
+        "es": "Sin fecha publicada · consultada el 18/10/2026",
+        "ca": "Sense data publicada · consultada el 18/10/2026"
+      },
+      "consultado": "2026-10-18",
+      "licencia": "Sin confirmar: solo se enlaza y se resume con palabras propias",
+      "formato": {
+        "es": "Página web",
+        "ca": "Pàgina web"
+      },
+      "es": {
+        "titulo": "Estafas con inteligencia artificial: cómo evitarlas",
+        "resumen": "La Agència de Ciberseguretat de Catalunya explica cómo se usa la IA para estafar: voces y vídeos falsos, mensajes personalizados con datos de las redes sociales e identidades inventadas. Da consejos como desconfiar de las prisas, comprobarlo por otra vía con la persona implicada y no compartir datos biométricos.",
+        "interes": "Sirve para reconocer una llamada o un vídeo falso que pide dinero o datos, también si parece venir de alguien de tu empresa."
+      },
+      "ca": {
+        "titulo": "Estafes amb intel·ligència artificial: com evitar-les",
+        "resumen": "L’Agència de Ciberseguretat de Catalunya explica com es fa servir la IA per estafar: veus i vídeos falsos, missatges personalitzats amb dades de les xarxes socials i identitats inventades. Dona consells com desconfiar de les presses, comprovar-ho per una altra via amb la persona implicada i no compartir dades biomètriques.",
+        "interes": "Serveix per reconèixer una trucada o un vídeo fals que demana diners o dades, també si sembla que ve d’algú de la teva empresa."
+      }
+    },
+    {
+      "id": "detectar-sesgos-respuestas-ia-ehu",
+      "tipo": "guia",
+      "subtipo": {
+        "es": "Página de consejos",
+        "ca": "Pàgina de consells"
+      },
+      "nivel": "empezar",
+      "tema": "igualdad",
+      "fuente": "UPV/EHU",
+      "idiomas": [
+        "es"
+      ],
+      "minutos": 3,
+      "enlace": "https://www.ehu.eus/es/web/adimen-artifiziala/detecci%C3%B3n-de-sesgos",
+      "fecha": {
+        "iso": null,
+        "es": "Sin fecha publicada · consultada el 18/10/2026",
+        "ca": "Sense data publicada · consultada el 18/10/2026"
+      },
+      "consultado": "2026-10-18",
+      "licencia": "Sin confirmar: solo se enlaza y se resume con palabras propias",
+      "formato": {
+        "es": "Página web",
+        "ca": "Pàgina web"
+      },
+      "es": {
+        "titulo": "Cómo detectar sesgos en las respuestas de la IA",
+        "resumen": "Página de la UPV/EHU con estrategias sencillas para reconocer sesgos: fijarse en si los ejemplos repiten siempre el mismo perfil de género, edad o cultura, buscar estereotipos en los papeles profesionales, pedir la misma respuesta desde otras perspectivas y comparar varias respuestas.",
+        "interes": "Te da preguntas concretas para revisar una respuesta de la IA antes de usarla, por ejemplo en una oferta de empleo. No trata solo los sesgos de género."
+      },
+      "ca": {
+        "titulo": "Com detectar biaixos en les respostes de la IA",
+        "resumen": "Pàgina de la UPV/EHU amb estratègies senzilles per reconèixer biaixos: fixar-se si els exemples repeteixen sempre el mateix perfil de gènere, edat o cultura, buscar estereotips en els papers professionals, demanar la mateixa resposta des d’altres perspectives i comparar diverses respostes. En castellà.",
+        "interes": "Et dona preguntes concretes per revisar una resposta de la IA abans de fer-la servir, per exemple en una oferta de feina. No tracta només els biaixos de gènere."
+      }
+    },
+    {
+      "id": "derecho-revision-humana-decisiones-automatizadas",
+      "tipo": "nota",
+      "subtipo": {
+        "es": "Derechos",
+        "ca": "Drets"
+      },
+      "nivel": "profundizar",
+      "tema": "derechos",
+      "fuente": "AEPD",
+      "idiomas": [
+        "es"
+      ],
+      "minutos": 2,
+      "enlace": "https://www.aepd.es/derechos-y-deberes/conoce-tus-derechos/derecho-no-ser-objeto-de-decisiones-individuales",
+      "fecha": {
+        "iso": "2024-03-08",
+        "es": "Actualizada el 8/3/2024",
+        "ca": "Actualitzada el 8/3/2024"
+      },
+      "consultado": "2026-10-18",
+      "licencia": "Sin confirmar: solo se enlaza y se resume con palabras propias",
+      "formato": {
+        "es": "Página web con formulario",
+        "ca": "Pàgina web amb formulari"
+      },
+      "es": {
+        "titulo": "Tu derecho a que una persona revise una decisión automática",
+        "resumen": "Página de la AEPD sobre el derecho a no ser objeto de decisiones basadas solo en un tratamiento automático de tus datos, incluidos los perfiles, cuando te afectan de forma importante; cita como ejemplo el rendimiento en el trabajo. Explica las excepciones y enlaza un formulario para ejercerlo.",
+        "interes": "Te dice cuándo puedes pedir que intervenga una persona, dar tu punto de vista e impugnar la decisión. Es de 2024, anterior al Real Decreto 723/2026."
+      },
+      "ca": {
+        "titulo": "El teu dret que una persona revisi una decisió automàtica",
+        "resumen": "Pàgina de l’AEPD sobre el dret a no ser objecte de decisions basades només en un tractament automàtic de les teves dades, inclosos els perfils, quan t’afecten de manera important; cita com a exemple el rendiment a la feina. Explica les excepcions i enllaça un formulari per exercir-lo. En castellà.",
+        "interes": "Et diu quan pots demanar que intervingui una persona, donar el teu punt de vista i impugnar la decisió. És del 2024, anterior al Reial decret 723/2026."
+      }
+    },
+    {
+      "id": "consells-ciberseguretat-gent-gran",
+      "tipo": "guia",
+      "subtipo": {
+        "es": "Página de consejos",
+        "ca": "Pàgina de consells"
+      },
+      "nivel": "empezar",
+      "tema": "aprender",
+      "fuente": "Agència de Ciberseguretat de Catalunya",
+      "idiomas": [
+        "es",
+        "ca"
+      ],
+      "minutos": 5,
+      "enlace": "https://ciberseguretat.gencat.cat/es/ciutadania/consells-per-a-la-gent-gran",
+      "enlace_ca": "https://ciberseguretat.gencat.cat/ca/ciutadania/consells-per-a-la-gent-gran",
+      "fecha": {
+        "iso": null,
+        "es": "Sin fecha publicada · consultada el 18/10/2026",
+        "ca": "Sense data publicada · consultada el 18/10/2026"
+      },
+      "consultado": "2026-10-18",
+      "licencia": "Sin confirmar: solo se enlaza y se resume con palabras propias",
+      "formato": {
+        "es": "Página web con infografías",
+        "ca": "Pàgina web amb infografies"
+      },
+      "es": {
+        "titulo": "Consejos de seguridad digital para personas mayores",
+        "resumen": "Página de la Agència de Ciberseguretat de Catalunya con consejos para personas mayores: no dar datos personales por teléfono ni por internet, usar contraseñas fuertes, comprar con seguridad, configurar el móvil y detectar noticias falsas e imágenes creadas con IA. Incluye infografías y vídeos cortos. Nombra algunos servicios comerciales.",
+        "interes": "Es un buen punto de partida si te cuesta moverte por internet o si quieres ayudar a una persona mayor de tu entorno."
+      },
+      "ca": {
+        "titulo": "Consells de seguretat digital per a la gent gran",
+        "resumen": "Pàgina de l’Agència de Ciberseguretat de Catalunya amb consells per a la gent gran: no donar dades personals per telèfon ni per internet, fer servir contrasenyes fortes, comprar amb seguretat, configurar el mòbil i detectar notícies falses i imatges creades amb IA. Inclou infografies i vídeos curts. Anomena alguns serveis comercials.",
+        "interes": "És un bon punt de partida si et costa moure’t per internet o si vols ajudar una persona gran del teu entorn."
+      }
+    },
+    {
+      "id": "guia-practica-ejemplos-reglamento-ia-aesia",
+      "tipo": "guia",
+      "nivel": "investigacion",
+      "tema": "derechos",
+      "fuente": "AESIA",
+      "idiomas": [
+        "es"
+      ],
+      "minutos": 35,
+      "enlace": "https://aesia.digital.gob.es/storage/media/02-guia-practica-y-ejemplos-para-entender-el-reglamento-de-ia.pdf",
+      "fecha": {
+        "iso": "2026-07-17",
+        "es": "Versión del 17/7/2026",
+        "ca": "Versió del 17/7/2026"
+      },
+      "consultado": "2026-10-18",
+      "licencia": "CC BY 4.0 (Ministerio para la Transformación Digital y de la Función Pública)",
+      "formato": {
+        "es": "PDF · 1,2 MB",
+        "ca": "PDF · 1,2 MB"
+      },
+      "es": {
+        "titulo": "La ley europea de IA con ejemplos prácticos",
+        "resumen": "Guía de la Agencia Española de Supervisión de la Inteligencia Artificial (AESIA) para empresas que empiezan a conocer el Reglamento de IA. Explica sus obligaciones con ejemplos, como un sistema de identificación biométrica en el trabajo. Está actualizada tras el Ómnibus Digital y no es vinculante.",
+        "interes": "Los ejemplos acercan la ley a situaciones de trabajo reales. Complementa la introducción de la misma agencia."
+      },
+      "ca": {
+        "titulo": "La llei europea d’IA amb exemples pràctics",
+        "resumen": "Guia de l’Agència Espanyola de Supervisió de la Intel·ligència Artificial (AESIA) per a empreses que comencen a conèixer el Reglament d’IA. Explica les obligacions amb exemples, com un sistema d’identificació biomètrica a la feina. Està actualitzada després de l’Òmnibus Digital i no és vinculant. En castellà.",
+        "interes": "Els exemples acosten la llei a situacions de feina reals. Complementa la introducció de la mateixa agència."
+      }
+    },
+    {
+      "id": "informacion-algoritmica-en-el-trabajo",
+      "tipo": "guia",
+      "nivel": "profundizar",
+      "tema": "derechos",
+      "fuente": "Ministerio de Trabajo y Economía Social",
+      "idiomas": [
+        "es"
+      ],
+      "minutos": 40,
+      "enlace": "https://www.mites.gob.es/ficheros/ministerio/inicio_destacados/Guia_Algoritmos_ES.pdf",
+      "fecha": {
+        "iso": "2022-05",
+        "es": "Mayo de 2022",
+        "ca": "Maig de 2022"
+      },
+      "consultado": "2026-10-18",
+      "licencia": "Sin confirmar: solo se enlaza y se resume con palabras propias",
+      "formato": {
+        "es": "PDF · 1 MB",
+        "ca": "PDF · 1 MB"
+      },
+      "es": {
+        "titulo": "Información algorítmica en el trabajo: guía y herramienta",
+        "resumen": "Qué información sobre los algoritmos de la empresa puede pedir la representación de la plantilla, con una lista de preguntas para hacerlo. Es anterior a la ley europea de IA.",
+        "interes": "Te da preguntas concretas cuando un algoritmo influye en tus horarios, tu sueldo o tu evaluación."
+      },
+      "ca": {
+        "titulo": "Informació algorítmica a la feina: guia i eina",
+        "resumen": "Quina informació sobre els algorismes de l’empresa pot demanar la representació de la plantilla, amb una llista de preguntes per fer-ho. És anterior a la llei europea d’IA.",
+        "interes": "Et dona preguntes concretes quan un algorisme influeix en els teus horaris, el sou o l’avaluació."
+      }
+    },
+    {
+      "id": "intervencion-sindical-en-la-gestion",
+      "tipo": "guia",
+      "subtipo": {
+        "es": "Guía sindical",
+        "ca": "Guia sindical"
+      },
+      "nivel": "investigacion",
+      "tema": "derechos",
+      "fuente": "CCOO",
+      "idiomas": [
+        "es"
+      ],
+      "minutos": 150,
+      "enlace": "https://www.ccoo.es/5f0cc66aa2a1d10922836ff3038cf100000001.pdf",
+      "fecha": {
+        "iso": "2026-04",
+        "es": "Edición actualizada de abril de 2026",
+        "ca": "Edició actualitzada d’abril de 2026"
+      },
+      "consultado": "2026-10-18",
+      "licencia": "Sin confirmar: solo se enlaza y se resume con palabras propias",
+      "formato": {
+        "es": "PDF · 3,4 MB",
+        "ca": "PDF · 3,4 MB"
+      },
+      "es": {
+        "titulo": "Intervención sindical en la gestión algorítmica (edición de 2026)",
+        "resumen": "Guía de CCOO para la representación sindical: explica qué es la gestión algorítmica, cómo puede discriminar y qué dicen las normas europeas y españolas. Tiene una parte práctica con señales para saber si la empresa usa IA y modelos de escrito para pedirle información. Edición actualizada en abril de 2026.",
+        "interes": "Está escrita para quien representa a la plantilla: da señales y modelos de petición para cuando la empresa usa algoritmos. Es larga y jurídica."
+      },
+      "ca": {
+        "titulo": "Intervenció sindical en la gestió algorítmica (edició del 2026)",
+        "resumen": "Guia de CCOO per a la representació sindical: explica què és la gestió algorítmica, com pot discriminar i què diuen les normes europees i espanyoles. Té una part pràctica amb senyals per saber si l’empresa fa servir IA i models d’escrit per demanar-li informació. Edició actualitzada l’abril del 2026. En castellà.",
+        "interes": "Està escrita per a qui representa la plantilla: dona senyals i models de petició per quan l’empresa fa servir algorismes. És llarga i jurídica."
+      }
+    },
+    {
+      "id": "recomendaciones-sobre-la-ia-en",
+      "tipo": "guia",
+      "subtipo": {
+        "es": "Recomendaciones",
+        "ca": "Recomanacions"
+      },
+      "nivel": "investigacion",
+      "tema": "derechos",
+      "fuente": "Consell de Relacions Laborals de Catalunya",
+      "idiomas": [
+        "es",
+        "ca"
+      ],
+      "minutos": 90,
+      "enlace": "https://treball.gencat.cat/web/.content/13_-_consell_relacions_laborals/documents/04_-_recursos/publicacions/Negociacio-collectiva/Recomanacions-IA/Recomendaciones-Digitalitzacion-IA-Cast-Acc-DEF.pdf",
+      "enlace_ca": "https://treball.gencat.cat/web/.content/13_-_consell_relacions_laborals/documents/04_-_recursos/publicacions/Negociacio-collectiva/Recomanacions-IA/Recomanacions-Digitalitzacio-IA-Cat-v4.pdf",
+      "fecha": {
+        "iso": "2025-09",
+        "es": "Septiembre de 2025",
+        "ca": "Setembre de 2025"
+      },
+      "consultado": "2026-10-18",
+      "licencia": "Llicència oberta d'ús d'informació de Catalunya y CC BY-NC-ND 3.0",
+      "formato": {
+        "es": "PDF · 1,2 MB",
+        "ca": "PDF · 1,2 MB"
+      },
+      "es": {
+        "titulo": "Recomendaciones sobre la IA en la negociación colectiva",
+        "resumen": "Propone cómo tratar la digitalización y la IA en los convenios: información a la representación sin que tenga que pedirla, formación cuando llega una herramienta nueva y análisis del impacto de los algoritmos entre mujeres y hombres.",
+        "interes": "Explica en qué derechos ya reconocidos se apoya cada recomendación."
+      },
+      "ca": {
+        "titulo": "Recomanacions sobre la IA en la negociació col·lectiva",
+        "resumen": "Proposa com tractar la digitalització i la IA als convenis: informació a la representació sense que l’hagi de demanar, formació quan arriba una eina nova i anàlisi de l’impacte dels algorismes entre dones i homes.",
+        "interes": "Explica en quins drets ja reconeguts es basa cada recomanació."
+      }
+    },
+    {
+      "id": "riesgos-laborales-de-la-digitalizacion",
+      "tipo": "guia",
+      "subtipo": {
+        "es": "Guía sindical",
+        "ca": "Guia sindical"
+      },
+      "nivel": "profundizar",
+      "tema": "salud",
+      "fuente": "CCOO de Catalunya",
+      "idiomas": [
+        "ca"
+      ],
+      "minutos": 90,
+      "enlace": "https://www.ccoo.cat/wp-content/uploads/2024/07/guia-digitalitzacio_def_total3_maquet-1.pdf",
+      "fecha": {
+        "iso": "2024-03",
+        "es": "Marzo de 2024",
+        "ca": "Març de 2024"
+      },
+      "consultado": "2026-10-18",
+      "licencia": "Sin confirmar: solo se enlaza y se resume con palabras propias",
+      "formato": {
+        "es": "PDF · 1,6 MB",
+        "ca": "PDF · 1,6 MB"
+      },
+      "es": {
+        "titulo": "Riesgos laborales de la digitalización y negociación colectiva",
+        "resumen": "Guía de salud laboral de CCOO de Catalunya para delegadas y delegados de prevención: explica los riesgos de la digitalización, algoritmos incluidos, y da indicaciones para la acción sindical y la negociación, con perspectiva de género.",
+        "interes": "Está escrita para quien representa a la plantilla o negocia un convenio en Cataluña."
+      },
+      "ca": {
+        "titulo": "Riscos laborals de la digitalització i negociació col·lectiva",
+        "resumen": "Guia de salut laboral de CCOO de Catalunya per a delegades i delegats de prevenció: explica els riscos de la digitalització, algorismes inclosos, i dona indicacions per a l’acció sindical i la negociació, amb perspectiva de gènere.",
+        "interes": "Està escrita per a qui representa la plantilla o negocia un conveni a Catalunya."
+      }
+    },
+    {
+      "id": "ia-seleccion-personal-sesgos-genero",
+      "tipo": "guia",
+      "subtipo": {
+        "es": "Hoja de recomendaciones",
+        "ca": "Full de recomanacions"
+      },
+      "nivel": "profundizar",
+      "tema": "igualdad",
+      "fuente": "Fundación Mujeres",
+      "idiomas": [
+        "es"
+      ],
+      "minutos": 5,
+      "enlace": "https://observatorioigualdadyempleo.es/wp-content/uploads/2026/08/IA-y-seleccion-de-personal.pdf",
+      "fecha": {
+        "iso": "2026-09",
+        "es": "Septiembre de 2026",
+        "ca": "Setembre de 2026"
+      },
+      "consultado": "2026-10-18",
+      "licencia": "Sin confirmar: solo se enlaza y se resume con palabras propias",
+      "formato": {
+        "es": "PDF · 3,5 MB",
+        "ca": "PDF · 3,5 MB"
+      },
+      "es": {
+        "titulo": "IA y selección de personal: claves para evitar los sesgos de género",
+        "resumen": "Hoja de recomendaciones de la Fundación Mujeres para empresas que usan IA al seleccionar personal, en tres momentos: antes (elegir la herramienta, revisar los datos e informar a la representación legal y a las candidaturas), durante (mantener la supervisión humana) y después (comparar los resultados de mujeres y hombres y corregir las diferencias injustificadas).",
+        "interes": "Está escrita para empresas, pero sus claves te sirven para saber si un proceso de selección con IA tiene en cuenta la igualdad, tanto si buscas empleo como si representas a la plantilla."
+      },
+      "ca": {
+        "titulo": "IA i selecció de personal: claus per evitar els biaixos de gènere",
+        "resumen": "Full de recomanacions de la Fundación Mujeres per a empreses que fan servir IA per seleccionar personal, en tres moments: abans (triar l’eina, revisar les dades i informar la representació legal i les candidatures), durant (mantenir la supervisió humana) i després (comparar els resultats de dones i homes i corregir les diferències injustificades). En castellà.",
+        "interes": "Està escrita per a empreses, però les seves claus et serveixen per saber si un procés de selecció amb IA té en compte la igualtat, tant si busques feina com si representes la plantilla."
+      }
+    },
+    {
+      "id": "que-es-la-alfabetizacion-en",
+      "tipo": "nota",
+      "subtipo": {
+        "es": "Preguntas y respuestas",
+        "ca": "Preguntes i respostes"
+      },
+      "nivel": "investigacion",
+      "tema": "derechos",
+      "fuente": "Comisión Europea",
+      "idiomas": [
+        "es"
+      ],
+      "minutos": 35,
+      "enlace": "https://digital-strategy.ec.europa.eu/es/faqs/ai-literacy-questions-answers",
+      "fecha": {
+        "iso": "2026-07-27",
+        "es": "Actualizada el 27/7/2026",
+        "ca": "Actualitzada el 27/7/2026"
+      },
+      "consultado": "2026-10-18",
+      "licencia": "Sin confirmar: solo se enlaza y se resume con palabras propias",
+      "formato": {
+        "es": "Página web, traducción automática",
+        "ca": "Pàgina web, traducció automàtica"
+      },
+      "es": {
+        "titulo": "Qué es la alfabetización en IA, en preguntas y respuestas",
+        "resumen": "Preguntas y respuestas de la Comisión Europea sobre el artículo 4 del Reglamento de IA: a quién obliga, qué cambió con el Ómnibus Digital (ya no se exige un nivel «suficiente») y cómo pueden las organizaciones apoyar la formación de su personal. Es una traducción automática y su primer párrafo aún usa la redacción antigua.",
+        "interes": "Explica de dónde sale la obligación de formar en IA y qué se espera de empresas y administraciones. Es larga y está pensada para quien organiza esa formación."
+      },
+      "ca": {
+        "titulo": "Què és l’alfabetització en IA, en preguntes i respostes",
+        "resumen": "Preguntes i respostes de la Comissió Europea sobre l’article 4 del Reglament d’IA: a qui obliga, què va canviar amb l’Òmnibus Digital (ja no s’exigeix un nivell «suficient») i com poden les organitzacions donar suport a la formació del seu personal. És una traducció automàtica al castellà i el primer paràgraf encara fa servir la redacció antiga.",
+        "interes": "Explica d’on surt l’obligació de formar en IA i què s’espera d’empreses i administracions. És llarga i està pensada per a qui organitza aquesta formació."
+      }
+    },
+    {
+      "id": "supervision-humana-de-los-sistemas",
+      "tipo": "guia",
+      "nivel": "investigacion",
+      "tema": "derechos",
+      "fuente": "AESIA",
+      "idiomas": [
+        "es"
+      ],
+      "minutos": 55,
+      "enlace": "https://aesia.digital.gob.es/storage/media/06-guia-vigilancia-humana.pdf",
+      "fecha": {
+        "iso": "2026-07-17",
+        "es": "17/7/2026",
+        "ca": "17/7/2026"
+      },
+      "consultado": "2026-10-18",
+      "licencia": "CC BY 4.0 (Ministerio para la Transformación Digital y de la Función Pública)",
+      "formato": {
+        "es": "PDF · 1,1 MB",
+        "ca": "PDF · 1,1 MB"
+      },
+      "es": {
+        "titulo": "Supervisión humana de los sistemas de IA",
+        "resumen": "Cómo debe organizarse la revisión por personas de un sistema de IA para que sea real: quién revisa, con qué preparación y con qué poder para corregir. Está escrita para empresas que desarrollan sistemas de IA.",
+        "interes": "Muestra cómo se espera que una empresa que crea un sistema de IA organice la supervisión humana. Es técnica."
+      },
+      "ca": {
+        "titulo": "Supervisió humana dels sistemes d’IA",
+        "resumen": "Com s’ha d’organitzar la revisió per persones d’un sistema d’IA perquè sigui real: qui revisa, amb quina preparació i amb quin poder per corregir. Està escrita per a empreses que desenvolupen sistemes d’IA. En castellà.",
+        "interes": "Mostra com s’espera que una empresa que crea un sistema d’IA organitzi la supervisió humana. És tècnica."
+      }
+    },
+    {
+      "id": "transparencia-que-deben-explicarte-de",
+      "tipo": "guia",
+      "nivel": "investigacion",
+      "tema": "derechos",
+      "fuente": "AESIA",
+      "idiomas": [
+        "es"
+      ],
+      "minutos": 75,
+      "enlace": "https://aesia.digital.gob.es/storage/media/08-guia-transparencia.pdf",
+      "fecha": {
+        "iso": "2026-07-17",
+        "es": "17/7/2026",
+        "ca": "17/7/2026"
+      },
+      "consultado": "2026-10-18",
+      "licencia": "CC BY 4.0 (Ministerio para la Transformación Digital y de la Función Pública)",
+      "formato": {
+        "es": "PDF · 1,1 MB",
+        "ca": "PDF · 1,1 MB"
+      },
+      "es": {
+        "titulo": "Transparencia: qué debe explicar quien crea un sistema de IA",
+        "resumen": "Qué información necesita quien usa un sistema de IA para entender para qué sirve, sus límites y cómo leer sus resultados. Está escrita para empresas que desarrollan sistemas de IA.",
+        "interes": "Explica qué información debe dar quien crea un sistema a quien lo usa. Es técnica."
+      },
+      "ca": {
+        "titulo": "Transparència: què ha d’explicar qui crea un sistema d’IA",
+        "resumen": "Quina informació necessita qui fa servir un sistema d’IA per entendre per a què serveix, els seus límits i com llegir-ne els resultats. Està escrita per a empreses que desenvolupen sistemes d’IA. En castellà.",
+        "interes": "Explica quina informació ha de donar qui crea un sistema a qui el fa servir. És tècnica."
+      }
+    },
+    {
+      "id": "como-implanta-algoritmos-un-ayuntamiento",
+      "tipo": "guia",
+      "subtipo": {
+        "es": "Protocolo",
+        "ca": "Protocol"
+      },
+      "nivel": "investigacion",
+      "tema": "cataluna",
+      "fuente": "Ajuntament de Barcelona",
+      "idiomas": [
+        "ca"
+      ],
+      "minutos": 50,
+      "enlace": "https://ajuntament.barcelona.cat/digital/sites/default/files/2023-10/def_metodologia_sist_algoritmics_cat.pdf",
+      "fecha": {
+        "iso": "2022-10",
+        "es": "Octubre de 2022 (fecha del PDF)",
+        "ca": "Octubre de 2022 (data del PDF)"
+      },
+      "consultado": "2026-10-18",
+      "licencia": "Sin confirmar: solo se enlaza y se resume con palabras propias",
+      "formato": {
+        "es": "PDF · 630 KB",
+        "ca": "PDF · 630 KB"
+      },
+      "es": {
+        "titulo": "Cómo implanta algoritmos un ayuntamiento: método y protocolos",
+        "resumen": "Protocolo del Ayuntamiento de Barcelona que recorre, paso a paso, la vida de un sistema algorítmico municipal, de la idea a su retirada: evaluación de impacto, transparencia, contratación, calidad de los datos y supervisión. Es de 2022, anterior a la ley europea de IA.",
+        "interes": "Enseña qué garantías deberían acompañar el uso público de algoritmos."
+      },
+      "ca": {
+        "titulo": "Com implanta algorismes un ajuntament: mètode i protocols",
+        "resumen": "Protocol de l’Ajuntament de Barcelona que recorre, pas a pas, la vida d’un sistema algorítmic municipal, de la idea a la seva retirada: avaluació d’impacte, transparència, contractació, qualitat de les dades i supervisió. És del 2022, anterior a la llei europea d’IA.",
+        "interes": "Ensenya quines garanties haurien d’acompanyar l’ús públic d’algorismes."
+      }
+    },
+    {
+      "id": "bones-practiques-xatbot-ia-generativa-aoc",
+      "tipo": "guia",
+      "nivel": "investigacion",
+      "tema": "cataluna",
+      "fuente": "Consorci AOC",
+      "idiomas": [
+        "ca"
+      ],
+      "minutos": 30,
+      "enlace": "https://www.aoc.cat/guia-de-bones-practiques-ia/",
+      "fecha": {
+        "iso": "2025-03-03",
+        "es": "Presentada el 3/3/2025",
+        "ca": "Presentada el 3/3/2025"
+      },
+      "consultado": "2026-10-18",
+      "licencia": "Sin confirmar: solo se enlaza y se resume con palabras propias",
+      "formato": {
+        "es": "Página web",
+        "ca": "Pàgina web"
+      },
+      "es": {
+        "titulo": "Buenas prácticas para poner en marcha un chatbot con IA generativa",
+        "resumen": "Guía del Consorcio Administración Abierta de Cataluña (AOC) para administraciones que quieren un chatbot de atención: elegir la solución, cumplir los requisitos, diseñarlo, protegerlo, entrenarlo y evaluarlo. Se basa en la experiencia de la propia entidad.",
+        "interes": "Muestra qué controles debería tener un chatbot de atención a la ciudadanía. Está escrita para quien lo implanta y usa términos técnicos."
+      },
+      "ca": {
+        "titulo": "Bones pràctiques per posar en marxa un xatbot amb IA generativa",
+        "resumen": "Guia del Consorci Administració Oberta de Catalunya (AOC) per a administracions que volen un xatbot d’atenció: triar la solució, complir els requisits, dissenyar-lo, protegir-lo, entrenar-lo i avaluar-lo. Es basa en l’experiència de la mateixa entitat.",
+        "interes": "Mostra quins controls hauria de tenir un xatbot d’atenció a la ciutadania. Està escrita per a qui l’implanta i fa servir termes tècnics."
+      }
+    },
+    {
+      "id": "model-avaluacio-impacte-drets-fonamentals-apdcat",
+      "tipo": "guia",
+      "subtipo": {
+        "es": "Metodología",
+        "ca": "Metodologia"
+      },
+      "nivel": "investigacion",
+      "tema": "derechos",
+      "fuente": "APDCAT",
+      "idiomas": [
+        "ca"
+      ],
+      "minutos": 120,
+      "enlace": "https://www.apdcat.cat/content/dam/aem-apdcat/recursos/aplicacions/fria/FRIA_ca.pdf_.pdf",
+      "fecha": {
+        "iso": "2025-02",
+        "es": "Febrero de 2025",
+        "ca": "Febrer de 2025"
+      },
+      "consultado": "2026-10-18",
+      "licencia": "CC BY-NC-ND 4.0 (Autoritat Catalana de Protecció de Dades)",
+      "formato": {
+        "es": "PDF · 1,2 MB",
+        "ca": "PDF · 1,2 MB"
+      },
+      "es": {
+        "titulo": "Cómo evaluar el impacto de un sistema de IA en los derechos fundamentales",
+        "resumen": "Guía de la Autoridad Catalana de Protección de Datos (APDCAT) con un modelo para evaluar, antes de usar un sistema de IA, cómo puede afectar a los derechos de las personas: planificar, analizar los riesgos con unas tablas de probabilidad y gravedad y decidir medidas. Lo aplica a casos reales, entre ellos una herramienta de gestión de recursos humanos.",
+        "interes": "Muestra qué preguntas debería hacerse una organización antes de usar IA para decidir sobre personas, también sobre su plantilla. Está escrita para especialistas en protección de datos."
+      },
+      "ca": {
+        "titulo": "Com avaluar l’impacte d’un sistema d’IA en els drets fonamentals",
+        "resumen": "Guia de l’Autoritat Catalana de Protecció de Dades (APDCAT) amb un model per avaluar, abans de fer servir un sistema d’IA, com pot afectar els drets de les persones: planificar, analitzar els riscos amb unes taules de probabilitat i gravetat i decidir mesures. L’aplica a casos reals, entre els quals una eina de gestió de recursos humans.",
+        "interes": "Mostra quines preguntes s’hauria de fer una organització abans de fer servir IA per decidir sobre persones, també sobre la seva plantilla. Està escrita per a especialistes en protecció de dades."
+      }
+    },
+    {
+      "id": "que-es-un-deepfake",
+      "tipo": "nota",
+      "nivel": "empezar",
+      "tema": "aprender",
+      "fuente": "INCIBE",
+      "idiomas": [
+        "es"
+      ],
+      "minutos": 2,
+      "enlace": "https://www.incibe.es/exploradorincibe/deepfake",
+      "fecha": {
+        "iso": null,
+        "es": "Página que se actualiza · consultada el 18/10/2026",
+        "ca": "Pàgina que s’actualitza · consultada el 18/10/2026"
+      },
+      "consultado": "2026-10-18",
+      "licencia": "Sin confirmar: solo se enlaza y se resume con palabras propias",
+      "formato": {
+        "es": "Página web: ficha",
+        "ca": "Pàgina web: fitxa"
+      },
+      "es": {
+        "titulo": "Qué es un deepfake",
+        "resumen": "Ficha breve del Instituto Nacional de Ciberseguridad (INCIBE): define el deepfake como un vídeo manipulado con IA que cambia rostros o voces para hacer creer que alguien dijo o hizo algo que no ocurrió, y para qué se usa, como desinformar o desacreditar. Enlaza a otros recursos del INCIBE.",
+        "interes": "Es una definición clara en un minuto y te lleva a casos reales para aprender a dudar."
+      },
+      "ca": {
+        "titulo": "Què és un deepfake",
+        "resumen": "Fitxa breu de l’Institut Nacional de Ciberseguretat (INCIBE): defineix el deepfake com un vídeo manipulat amb IA que canvia cares o veus per fer creure que algú va dir o fer una cosa que no va passar, i per a què es fa servir, com desinformar o desacreditar. Enllaça a altres recursos de l’INCIBE. En castellà.",
+        "interes": "És una definició clara en un minut i et porta a casos reals per aprendre a dubtar."
+      }
+    },
+    {
+      "id": "chatbots-demasiada-confianza-cuando-se-equivocan",
+      "tipo": "nota",
+      "nivel": "empezar",
+      "tema": "aprender",
+      "fuente": "Agencia SINC",
+      "idiomas": [
+        "es"
+      ],
+      "minutos": 5,
+      "enlace": "https://www.agenciasinc.es/Noticias/Los-chatbots-de-IA-tienen-demasiada-autoconfianza-incluso-cuando-se-equivocan",
+      "fecha": {
+        "iso": "2025-07-23",
+        "es": "23/7/2025",
+        "ca": "23/7/2025"
+      },
+      "consultado": "2026-10-18",
+      "licencia": "Creative Commons 4.0 según la página (no indica la variante); solo se enlaza y se resume con palabras propias",
+      "formato": {
+        "es": "Página web: noticia",
+        "ca": "Pàgina web: notícia"
+      },
+      "es": {
+        "titulo": "Los chatbots se equivocan con demasiada seguridad",
+        "resumen": "Noticia sobre un estudio de la Universidad Carnegie Mellon (Estados Unidos) que comparó a personas y a cuatro modelos de lenguaje en tareas como preguntas de cultura general. Todos sobrestimaron sus aciertos, pero solo las personas corrigieron su confianza después de fallar.",
+        "interes": "Recuerda que una respuesta dicha con seguridad no es una respuesta comprobada. Son versiones de 2025: las cifras no valen para todas las herramientas actuales."
+      },
+      "ca": {
+        "titulo": "Els xatbots s’equivoquen amb massa seguretat",
+        "resumen": "Notícia sobre un estudi de la Universitat Carnegie Mellon (Estats Units) que va comparar persones i quatre models de llenguatge en tasques com preguntes de cultura general. Tots van sobreestimar els seus encerts, però només les persones van corregir la seva confiança després d’equivocar-se. En castellà.",
+        "interes": "Recorda que una resposta dita amb seguretat no és una resposta comprovada. Són versions del 2025: les xifres no valen per a totes les eines actuals."
+      }
+    },
+    {
+      "id": "ia-hospitales-limites-lectura-facil",
+      "tipo": "nota",
+      "nivel": "empezar",
+      "tema": "aprender",
+      "fuente": "Plena inclusión",
+      "idiomas": [
+        "es"
+      ],
+      "minutos": 3,
+      "enlace": "https://planetafacil.plenainclusion.org/la-inteligencia-artificial-ayuda-en-los-hospitales-pero-tiene-limites/",
+      "fecha": {
+        "iso": "2026-09-16",
+        "es": "16/9/2026",
+        "ca": "16/9/2026"
+      },
+      "consultado": "2026-10-18",
+      "licencia": "Sin confirmar: solo se enlaza y se resume con palabras propias",
+      "formato": {
+        "es": "Página web: noticia en lectura fácil",
+        "ca": "Pàgina web: notícia en lectura fàcil"
+      },
+      "es": {
+        "titulo": "La IA ayuda en los hospitales, pero tiene límites (lectura fácil)",
+        "resumen": "Noticia en lectura fácil de Planeta Fácil, de Plena inclusión, con glosario: algunos hospitales usan programas de IA para revisar pruebas o valorar riesgos antes de una operación, pero los médicos deben revisar siempre lo que dicen. Es un resumen de una noticia de La Vanguardia.",
+        "interes": "Es una lectura muy corta y sencilla sobre una idea clave: la IA ayuda, pero una persona tiene que revisar su trabajo."
+      },
+      "ca": {
+        "titulo": "La IA ajuda als hospitals, però té límits (lectura fàcil)",
+        "resumen": "Notícia en lectura fàcil de Planeta Fácil, de Plena inclusión, amb glossari (en castellà): alguns hospitals fan servir programes d’IA per revisar proves o valorar riscos abans d’una operació, però els metges han de revisar sempre el que diuen. És un resum d’una notícia de La Vanguardia.",
+        "interes": "És una lectura molt curta i senzilla sobre una idea clau: la IA ajuda, però una persona n’ha de revisar la feina."
+      }
+    },
+    {
+      "id": "ia-en-la-seleccion-de",
+      "tipo": "nota",
+      "nivel": "empezar",
+      "tema": "igualdad",
+      "fuente": "UOC",
+      "idiomas": [
+        "es",
+        "ca"
+      ],
+      "minutos": 7,
+      "enlace": "https://www.uoc.edu/es/news/2026/ia-seleccion-personal-discriminacion-genero",
+      "enlace_ca": "https://www.uoc.edu/ca/news/2026/ia-seleccio-personal-discriminacio-genere",
+      "fecha": {
+        "iso": "2026-03-03",
+        "es": "3/3/2026",
+        "ca": "3/3/2026"
+      },
+      "consultado": "2026-10-18",
+      "licencia": "Sin confirmar: solo se enlaza y se resume con palabras propias",
+      "formato": {
+        "es": "Página web: noticia",
+        "ca": "Pàgina web: notícia"
+      },
+      "es": {
+        "titulo": "IA en la selección de personal y discriminación de género",
+        "resumen": "Especialistas de la UOC explican cómo los datos y los criterios de un filtro automático pueden repetir desigualdades entre mujeres y hombres, y qué garantías proponen.",
+        "interes": "Ayuda a preguntar por los filtros automáticos que se usan al contratar o al promocionar."
+      },
+      "ca": {
+        "titulo": "IA en la selecció de personal i discriminació de gènere",
+        "resumen": "Especialistes de la UOC expliquen com les dades i els criteris d’un filtre automàtic poden repetir desigualtats entre dones i homes, i quines garanties proposen.",
+        "interes": "Ajuda a preguntar pels filtres automàtics que es fan servir per contractar o promocionar."
+      }
+    },
+    {
+      "id": "estereotipos-de-genero-en-los",
+      "tipo": "nota",
+      "nivel": "empezar",
+      "tema": "igualdad",
+      "fuente": "UNESCO",
+      "idiomas": [
+        "es"
+      ],
+      "minutos": 6,
+      "enlace": "https://www.unesco.org/es/articles/ia-generativa-un-estudio-de-la-unesco-revela-pruebas-alarmantes-de-estereotipos-de-genero-regresivos",
+      "fecha": {
+        "iso": "2024-03-07",
+        "es": "7/3/2024",
+        "ca": "7/3/2024"
+      },
+      "consultado": "2026-10-18",
+      "licencia": "Sin confirmar: solo se enlaza y se resume con palabras propias",
+      "formato": {
+        "es": "Página web: comunicado de prensa",
+        "ca": "Pàgina web: comunicat de premsa"
+      },
+      "es": {
+        "titulo": "Estereotipos de género en los modelos de lenguaje",
+        "resumen": "Comunicado de la UNESCO (7/3/2024) sobre su estudio de varios modelos de lenguaje: encontró que asociaban a las mujeres con palabras como «hogar» y «familia», y a los hombres con «negocios», «salario» o «carrera». El informe completo está en inglés.",
+        "interes": "Muestra que los modelos de lenguaje pueden repetir estereotipos de género en los textos que escriben. El estudio usó modelos anteriores a 2024; los actuales pueden comportarse de otra manera."
+      },
+      "ca": {
+        "titulo": "Estereotips de gènere en els models de llenguatge",
+        "resumen": "Comunicat de la UNESCO (7/3/2024) sobre el seu estudi de diversos models de llenguatge: va trobar que associaven les dones amb paraules com «llar» i «família», i els homes amb «negocis», «salari» o «carrera». En castellà; l’informe complet és en anglès.",
+        "interes": "Mostra que els models de llenguatge poden repetir estereotips de gènere en els textos que escriuen. L’estudi va fer servir models anteriors al 2024; els actuals es poden comportar d’una altra manera."
+      }
+    },
+    {
+      "id": "la-ia-discrimina-por-edad",
+      "tipo": "nota",
+      "nivel": "empezar",
+      "tema": "igualdad",
+      "fuente": "Agencia SINC",
+      "idiomas": [
+        "es"
+      ],
+      "minutos": 7,
+      "enlace": "https://www.agenciasinc.es/Noticias/La-IA-esquiva-el-sexismo-pero-aun-discrimina-por-edad",
+      "fecha": {
+        "iso": "2026-04-22",
+        "es": "22/4/2026",
+        "ca": "22/4/2026"
+      },
+      "consultado": "2026-10-18",
+      "licencia": "Creative Commons 4.0 según la página (no indica la variante); solo se enlaza y se resume con palabras propias",
+      "formato": {
+        "es": "Página web: noticia",
+        "ca": "Pàgina web: notícia"
+      },
+      "es": {
+        "titulo": "Los chatbots evitan más el sexismo que los prejuicios por edad",
+        "resumen": "Un estudio con participación de la Universitat Oberta de Catalunya (UOC) «entrevistó» a cinco chatbots con situaciones inventadas. Evitaban asignar papeles por género, pero no por edad: relacionaban a las personas mayores con ayuda y simplificación, y a las jóvenes con creatividad y aprendizaje.",
+        "interes": "Ayuda a detectar prejuicios sobre lo que puedes aprender o hacer según tu edad. Son cinco herramientas: no demuestra que la IA ya no tenga sesgos de género."
+      },
+      "ca": {
+        "titulo": "Els xatbots eviten més el sexisme que els prejudicis per edat",
+        "resumen": "Un estudi amb participació de la Universitat Oberta de Catalunya (UOC) va «entrevistar» cinc xatbots amb situacions inventades. Evitaven assignar papers per gènere, però no per edat: relacionaven la gent gran amb ajuda i simplificació, i la gent jove amb creativitat i aprenentatge. En castellà.",
+        "interes": "Ajuda a detectar prejudicis sobre el que pots aprendre o fer segons la teva edat. Són cinc eines: no demostra que la IA ja no tingui biaixos de gènere."
+      }
+    },
+    {
+      "id": "de-los-chatbots-a-las",
+      "tipo": "nota",
+      "nivel": "empezar",
+      "tema": "salud",
+      "fuente": "UOC",
+      "idiomas": [
+        "es",
+        "ca"
+      ],
+      "minutos": 6,
+      "enlace": "https://www.uoc.edu/es/news/2026/ia-en-la-seguridad-laboral",
+      "enlace_ca": "https://www.uoc.edu/ca/news/2026/ia-en-la-seguretat-laboral",
+      "fecha": {
+        "iso": "2026-03-10",
+        "es": "10/3/2026",
+        "ca": "10/3/2026"
+      },
+      "consultado": "2026-10-18",
+      "licencia": "Sin confirmar: solo se enlaza y se resume con palabras propias",
+      "formato": {
+        "es": "Página web: noticia",
+        "ca": "Pàgina web: notícia"
+      },
+      "es": {
+        "titulo": "De los chatbots a las cadenas de montaje: IA y seguridad laboral",
+        "resumen": "Resume una revisión de estudios sobre la IA en el trabajo: usos que previenen riesgos y problemas como la vigilancia, la opacidad o la falta de formación.",
+        "interes": "Ayuda a valorar una herramienta nueva por cómo cambia tus condiciones de trabajo."
+      },
+      "ca": {
+        "titulo": "Dels xatbots a les cadenes de muntatge: IA i seguretat laboral",
+        "resumen": "Resumeix una revisió d’estudis sobre la IA a la feina: usos que prevenen riscos i problemes com la vigilància, l’opacitat o la manca de formació.",
+        "interes": "Ajuda a valorar una eina nova per com canvia les teves condicions de treball."
+      }
+    },
+    {
+      "id": "tus-derechos-ante-la-ia",
+      "tipo": "nota",
+      "nivel": "investigacion",
+      "tema": "derechos",
+      "fuente": "AEPD",
+      "idiomas": [
+        "es"
+      ],
+      "minutos": 15,
+      "enlace": "https://www.aepd.es/guias/Nota-RD-723-2026-AI-00009-2026.pdf",
+      "fecha": {
+        "iso": "2026-10-07",
+        "es": "7/10/2026",
+        "ca": "7/10/2026"
+      },
+      "consultado": "2026-10-18",
+      "licencia": "Sin confirmar: solo se enlaza y se resume con palabras propias",
+      "formato": {
+        "es": "PDF · 330 KB",
+        "ca": "PDF · 330 KB"
+      },
+      "es": {
+        "titulo": "Algoritmos en el trabajo: transparencia y protección de datos",
+        "resumen": "Nota de la AEPD (7/10/2026) sobre el Real Decreto 723/2026: la empresa debe informar por escrito de que usa sistemas algorítmicos y, si deciden sobre condiciones de trabajo, de sus criterios y reglas. Explica también una advertencia de la AEPD sobre una herramienta de IA para puntuar candidaturas y lo relaciona con el Reglamento General de Protección de Datos (RGPD) y con los derechos de la representación legal.",
+        "interes": "Reúne en 8 páginas qué información te deben dar si un algoritmo decide sobre tu trabajo. Está escrita sobre todo para empresas y usa lenguaje jurídico."
+      },
+      "ca": {
+        "titulo": "Algorismes a la feina: transparència i protecció de dades",
+        "resumen": "Nota de l’AEPD (7/10/2026) sobre el Reial decret 723/2026: l’empresa ha d’informar per escrit que fa servir sistemes algorítmics i, si decideixen sobre condicions de treball, dels seus criteris i regles. Explica també una advertència de l’AEPD sobre una eina d’IA per puntuar candidatures i ho relaciona amb el Reglament general de protecció de dades (RGPD) i amb els drets de la representació legal. En castellà.",
+        "interes": "Aplega en 8 pàgines quina informació t’han de donar si un algorisme decideix sobre la teva feina. Està escrita sobretot per a empreses i fa servir llenguatge jurídic."
+      }
+    },
+    {
+      "id": "la-ley-europea-de-ia",
+      "tipo": "nota",
+      "nivel": "profundizar",
+      "tema": "derechos",
+      "fuente": "Comisión Europea",
+      "idiomas": [
+        "es"
+      ],
+      "minutos": 12,
+      "enlace": "https://digital-strategy.ec.europa.eu/es/policies/ai-talent-skills-and-literacy",
+      "fecha": {
+        "iso": "2026-10-13",
+        "es": "Actualizada el 13/10/2026",
+        "ca": "Actualitzada el 13/10/2026"
+      },
+      "consultado": "2026-10-18",
+      "licencia": "Sin confirmar: solo se enlaza y se resume con palabras propias",
+      "formato": {
+        "es": "Página web, traducción automática",
+        "ca": "Pàgina web, traducció automàtica"
+      },
+      "es": {
+        "titulo": "La ley europea de IA y la alfabetización (artículo 4)",
+        "resumen": "Página de la Comisión Europea sobre el artículo 4 del Reglamento de IA, cambiado por el Reglamento Ómnibus Digital: quienes ofrecen o usan sistemas de IA en una organización deben adoptar medidas para formar a su personal, sin que se exija un nivel concreto a ninguna persona. La página repasa también los planes europeos de formación y talento en IA. Es una traducción automática.",
+        "interes": "Aclara qué obliga la ley y a quién. Las autoridades nacionales vigilan su cumplimiento desde el 2/8/2026."
+      },
+      "ca": {
+        "titulo": "La llei europea d’IA i l’alfabetització (article 4)",
+        "resumen": "Pàgina de la Comissió Europea sobre l’article 4 del Reglament d’IA, modificat pel Reglament Òmnibus Digital: qui ofereix o fa servir sistemes d’IA en una organització ha d’adoptar mesures per formar el seu personal, sense que s’exigeixi un nivell concret a cap persona. La pàgina repassa també els plans europeus de formació i talent en IA. És una traducció automàtica al castellà.",
+        "interes": "Aclareix què obliga la llei i a qui. Les autoritats nacionals en vigilen el compliment des del 2/8/2026."
+      }
+    },
+    {
+      "id": "repensar-impacto-ia-futuro-trabajo",
+      "tipo": "nota",
+      "nivel": "profundizar",
+      "tema": "empleo",
+      "fuente": "OIT",
+      "idiomas": [
+        "es"
+      ],
+      "minutos": 9,
+      "enlace": "https://www.ilo.org/es/resource/articulo/repensando-el-impacto-de-la-ia-en-el-futuro-del-trabajo",
+      "fecha": {
+        "iso": "2025-11-27",
+        "es": "27/11/2025",
+        "ca": "27/11/2025"
+      },
+      "consultado": "2026-10-18",
+      "licencia": "Sin confirmar: solo se enlaza y se resume con palabras propias",
+      "formato": {
+        "es": "Página web: preguntas y respuestas",
+        "ca": "Pàgina web: preguntes i respostes"
+      },
+      "es": {
+        "titulo": "Más allá de cuántos empleos: la IA y la calidad del trabajo",
+        "resumen": "Preguntas y respuestas con un asesor de la Organización Internacional del Trabajo (OIT): el debate sobre la IA no debería fijarse solo en la pérdida de empleos, sino también en los salarios, las condiciones de trabajo y la desigualdad. Recuerda que las mujeres están más expuestas porque abundan en los trabajos administrativos y que aún no hay conclusiones definitivas.",
+        "interes": "Te ayuda a leer con calma los titulares sobre IA y empleo. Son opiniones de su autor, con una mirada mundial."
+      },
+      "ca": {
+        "titulo": "Més enllà de quantes feines: la IA i la qualitat del treball",
+        "resumen": "Preguntes i respostes amb un assessor de l’Organització Internacional del Treball (OIT): el debat sobre la IA no s’hauria de fixar només en la pèrdua de feines, sinó també en els salaris, les condicions de treball i la desigualtat. Recorda que les dones estan més exposades perquè abunden en les feines administratives i que encara no hi ha conclusions definitives. En castellà.",
+        "interes": "T’ajuda a llegir amb calma els titulars sobre IA i ocupació. Són opinions del seu autor, amb una mirada mundial."
+      }
+    },
+    {
+      "id": "gestionar-personas-con-ia-oit",
+      "tipo": "nota",
+      "nivel": "profundizar",
+      "tema": "empleo",
+      "fuente": "OIT",
+      "idiomas": [
+        "es"
+      ],
+      "minutos": 10,
+      "enlace": "https://www.ilo.org/es/resource/articulo/el-complejo-desafio-de-gestionar-personas-en-el-trabajo-es-la-ia-la",
+      "fecha": {
+        "iso": "2026-05-15",
+        "es": "15/5/2026",
+        "ca": "15/5/2026"
+      },
+      "consultado": "2026-10-18",
+      "licencia": "Sin confirmar: solo se enlaza y se resume con palabras propias",
+      "formato": {
+        "es": "Página web: artículo",
+        "ca": "Pàgina web: article"
+      },
+      "es": {
+        "titulo": "Gestionar personas con IA: ¿funciona de verdad?",
+        "resumen": "Artículo de una economista de la OIT sobre la IA en recursos humanos: contratación, salarios, horarios y evaluación del desempeño. Explica que un sistema funciona bien o mal según su objetivo, los datos con que aprende y cómo está programado, y da ejemplos de pruebas de selección que miden cosas dudosas.",
+        "interes": "Te ayuda a preguntar qué mide de verdad un filtro de candidaturas o una evaluación automática."
+      },
+      "ca": {
+        "titulo": "Gestionar persones amb IA: funciona de debò?",
+        "resumen": "Article d’una economista de l’OIT sobre la IA en recursos humans: contractació, sous, horaris i avaluació de l’acompliment. Explica que un sistema funciona bé o malament segons el seu objectiu, les dades amb què aprèn i com està programat, i dona exemples de proves de selecció que mesuren coses dubtoses. En castellà.",
+        "interes": "T’ajuda a preguntar què mesura de debò un filtre de candidatures o una avaluació automàtica."
+      }
+    },
+    {
+      "id": "anonimitzar-actes-amb-ia-aoc",
+      "tipo": "nota",
+      "nivel": "profundizar",
+      "tema": "empleo",
+      "fuente": "Consorci AOC",
+      "idiomas": [
+        "ca"
+      ],
+      "minutos": 4,
+      "enlace": "https://www.aoc.cat/blog/2026/anonimitzacio-actes-ple/",
+      "fecha": {
+        "iso": "2026-09-09",
+        "es": "9/9/2026",
+        "ca": "9/9/2026"
+      },
+      "consultado": "2026-10-18",
+      "licencia": "Sin confirmar: solo se enlaza y se resume con palabras propias",
+      "formato": {
+        "es": "Página web: blog",
+        "ca": "Pàgina web: blog"
+      },
+      "es": {
+        "titulo": "IA para ocultar datos personales en actas municipales, con revisión humana",
+        "resumen": "El Consorcio AOC explica una prueba de IA generativa que propone qué datos personales ocultar en las actas de los plenos municipales, teniendo en cuenta el contexto. Una persona revisa y corrige la propuesta antes de publicar. En 52 actas de 9 ayuntamientos, el 96 % de lo que marcó estaba bien marcado.",
+        "interes": "Muestra cómo puede cambiar una tarea administrativa real y por qué la última decisión sigue siendo de una persona. Es una prueba de la propia entidad, no una evaluación independiente."
+      },
+      "ca": {
+        "titulo": "IA per amagar dades personals a les actes municipals, amb revisió humana",
+        "resumen": "El Consorci AOC explica una prova d’IA generativa que proposa quines dades personals cal amagar a les actes dels plens municipals, tenint en compte el context. Una persona revisa i corregeix la proposta abans de publicar. En 52 actes de 9 ajuntaments, el 96 % del que va marcar estava ben marcat.",
+        "interes": "Mostra com pot canviar una tasca administrativa real i per què l’última decisió continua sent d’una persona. És una prova de la mateixa entitat, no una avaluació independent."
+      }
+    },
+    {
+      "id": "un-radar-para-anticipar-las",
+      "tipo": "nota",
+      "nivel": "profundizar",
+      "tema": "empleo",
+      "fuente": "UOC",
+      "idiomas": [
+        "es",
+        "ca"
+      ],
+      "minutos": 8,
+      "enlace": "https://www.uoc.edu/es/news/2026/la-uoc-activa-un-radar-per-anticipar-les-competencies-que-exigira-el-mercat-laboral",
+      "enlace_ca": "https://www.uoc.edu/ca/news/2026/la-uoc-activa-un-radar-per-anticipar-les-competencies-que-exigira-el-mercat-laboral",
+      "fecha": {
+        "iso": "2026-07-28",
+        "es": "28/7/2026",
+        "ca": "28/7/2026"
+      },
+      "consultado": "2026-10-18",
+      "licencia": "Sin confirmar: solo se enlaza y se resume con palabras propias",
+      "formato": {
+        "es": "Página web: noticia",
+        "ca": "Pàgina web: notícia"
+      },
+      "es": {
+        "titulo": "Un radar para anticipar las competencias que pedirá el empleo",
+        "resumen": "Cómo combina la UOC ofertas de empleo, clasificaciones de competencias y entrevistas, y por qué los anuncios no cuentan por sí solos toda la demanda.",
+        "interes": "Enseña a leer con prudencia los datos con que se habla de competencias del futuro."
+      },
+      "ca": {
+        "titulo": "Un radar per anticipar les competències que demanarà l’ocupació",
+        "resumen": "Com combina la UOC ofertes de feina, classificacions de competències i entrevistes, i per què els anuncis no expliquen per si sols tota la demanda.",
+        "interes": "Ensenya a llegir amb prudència les dades amb què es parla de competències del futur."
+      }
+    },
+    {
+      "id": "la-recomendacion-de-la-unesco",
+      "tipo": "nota",
+      "nivel": "profundizar",
+      "tema": "derechos",
+      "fuente": "UNESCO",
+      "idiomas": [
+        "es"
+      ],
+      "minutos": 2,
+      "enlace": "https://www.unesco.org/es/articles/recomendacion-sobre-la-etica-de-la-inteligencia-artificial",
+      "fecha": {
+        "iso": "2021-11",
+        "es": "Noviembre de 2021",
+        "ca": "Novembre de 2021"
+      },
+      "consultado": "2026-10-18",
+      "licencia": "Sin confirmar: solo se enlaza y se resume con palabras propias",
+      "formato": {
+        "es": "Página web",
+        "ca": "Pàgina web"
+      },
+      "es": {
+        "titulo": "La recomendación de la UNESCO sobre la ética de la IA",
+        "resumen": "Página breve de la UNESCO que presenta su Recomendación sobre la ética de la IA, el primer marco mundial sobre el tema, adoptado por sus 193 Estados miembros en noviembre de 2021. Enlaza al texto completo.",
+        "interes": "Es un punto de partida para conocer los principios éticos que se acordaron entre países. El texto completo es largo."
+      },
+      "ca": {
+        "titulo": "La recomanació de la UNESCO sobre l’ètica de la IA",
+        "resumen": "Pàgina breu de la UNESCO que presenta la seva Recomanació sobre l’ètica de la IA, el primer marc mundial sobre el tema, adoptat pels seus 193 estats membres el novembre del 2021. Enllaça al text complet. En castellà.",
+        "interes": "És un punt de partida per conèixer els principis ètics que es van acordar entre països. El text complet és llarg."
+      }
+    },
+    {
+      "id": "ideas-equivocadas-sobre-la-ia",
+      "tipo": "nota",
+      "nivel": "investigacion",
+      "tema": "derechos",
+      "fuente": "AEPD",
+      "idiomas": [
+        "es"
+      ],
+      "minutos": 6,
+      "enlace": "https://www.aepd.es/prensa-y-comunicacion/blog/abordando-conceptos-erroneos-de-la-inteligencia-artificial",
+      "fecha": {
+        "iso": "2025-03-11",
+        "es": "11/3/2025",
+        "ca": "11/3/2025"
+      },
+      "consultado": "2026-10-18",
+      "licencia": "Sin confirmar: solo se enlaza y se resume con palabras propias",
+      "formato": {
+        "es": "Página web: blog",
+        "ca": "Pàgina web: blog"
+      },
+      "es": {
+        "titulo": "Ideas equivocadas sobre la IA y los datos personales",
+        "resumen": "Entrada del blog de la AEPD (11/3/2025) que traduce siete aclaraciones del regulador británico de protección de datos sobre la IA generativa; por ejemplo, que tratar datos «sin querer» sigue siendo tratarlos. Va dirigida a quienes desarrollan estos sistemas.",
+        "interes": "Ayuda a entender cómo piensa un regulador de protección de datos sobre la IA generativa. No es una guía para quien la usa."
+      },
+      "ca": {
+        "titulo": "Idees equivocades sobre la IA i les dades personals",
+        "resumen": "Entrada del blog de l’AEPD (11/3/2025) que tradueix set aclariments del regulador britànic de protecció de dades sobre la IA generativa; per exemple, que tractar dades «sense voler» continua sent tractar-les. Va adreçada a qui desenvolupa aquests sistemes. En castellà.",
+        "interes": "Ajuda a entendre com pensa un regulador de protecció de dades sobre la IA generativa. No és una guia per a qui la fa servir."
+      }
+    },
+    {
+      "id": "transcripcion-voz-ia-responsabilidad-derechos",
+      "tipo": "nota",
+      "nivel": "investigacion",
+      "tema": "derechos",
+      "fuente": "AEPD",
+      "idiomas": [
+        "es"
+      ],
+      "minutos": 8,
+      "enlace": "https://www.aepd.es/prensa-y-comunicacion/blog/transcripcion-de-voz-con-ia-ii-responsabilidad-derechos-y-transparencia",
+      "fecha": {
+        "iso": "2026-04-20",
+        "es": "20/4/2026",
+        "ca": "20/4/2026"
+      },
+      "consultado": "2026-10-18",
+      "licencia": "Sin confirmar: solo se enlaza y se resume con palabras propias",
+      "formato": {
+        "es": "Página web: blog",
+        "ca": "Pàgina web: blog"
+      },
+      "es": {
+        "titulo": "Transcribir conversaciones con IA: responsabilidades y derechos",
+        "resumen": "Entrada del blog de la AEPD, segunda de una serie: cuando una organización usa IA para pasar conversaciones a texto, como actas o llamadas, es responsable de esos datos. Trata los errores de transcripción, la información a las personas y cómo atender sus derechos.",
+        "interes": "Es útil si en tu trabajo se graban reuniones o llamadas para transcribirlas con IA. Está escrita para organizaciones y usa lenguaje jurídico."
+      },
+      "ca": {
+        "titulo": "Transcriure converses amb IA: responsabilitats i drets",
+        "resumen": "Entrada del blog de l’AEPD, segona d’una sèrie: quan una organització fa servir IA per passar converses a text, com actes o trucades, és responsable d’aquestes dades. Tracta els errors de transcripció, la informació a les persones i com atendre els seus drets. En castellà.",
+        "interes": "És útil si a la teva feina es graven reunions o trucades per transcriure-les amb IA. Està escrita per a organitzacions i fa servir llenguatge jurídic."
+      }
+    },
+    {
+      "id": "modelos-lenguaje-confunden-creencias-hechos",
+      "tipo": "nota",
+      "nivel": "investigacion",
+      "tema": "aprender",
+      "fuente": "Agencia SINC",
+      "idiomas": [
+        "es"
+      ],
+      "minutos": 6,
+      "enlace": "https://www.agenciasinc.es/Noticias/Los-modelos-de-lenguaje-aun-confunden-las-creencias-con-los-hechos-incluso-los-mas-avanzados",
+      "fecha": {
+        "iso": "2025-11-04",
+        "es": "4/11/2025",
+        "ca": "4/11/2025"
+      },
+      "consultado": "2026-10-18",
+      "licencia": "Creative Commons 4.0 según la página (no indica la variante); solo se enlaza y se resume con palabras propias",
+      "formato": {
+        "es": "Página web: noticia",
+        "ca": "Pàgina web: notícia"
+      },
+      "es": {
+        "titulo": "Los modelos de lenguaje confunden lo que alguien cree con lo que es cierto",
+        "resumen": "Noticia sobre un estudio de la Universidad de Stanford con 24 modelos de lenguaje y 13.000 preguntas. Describe respuestas que aceptan una afirmación falsa de quien pregunta y sus riesgos en medicina, derecho o periodismo.",
+        "interes": "Explica con datos un límite poco conocido de la IA. Usa términos técnicos y nombra modelos concretos."
+      },
+      "ca": {
+        "titulo": "Els models de llenguatge confonen el que algú creu amb el que és cert",
+        "resumen": "Notícia sobre un estudi de la Universitat de Stanford amb 24 models de llenguatge i 13.000 preguntes. Descriu respostes que accepten una afirmació falsa de qui pregunta i els riscos en medicina, dret o periodisme. En castellà.",
+        "interes": "Explica amb dades un límit poc conegut de la IA. Fa servir termes tècnics i anomena models concrets."
+      }
+    },
+    {
+      "id": "ia-empleo-personas-con-discapacidad-oit",
+      "tipo": "nota",
+      "nivel": "profundizar",
+      "tema": "igualdad",
+      "fuente": "OIT",
+      "idiomas": [
+        "es"
+      ],
+      "minutos": 9,
+      "enlace": "https://www.ilo.org/es/resource/articulo/la-doble-cara-de-la-ia-una-nueva-frontera-para-el-empleo-de-las-personas",
+      "fecha": {
+        "iso": "2025-10-06",
+        "es": "6/10/2025",
+        "ca": "6/10/2025"
+      },
+      "consultado": "2026-10-18",
+      "licencia": "Sin confirmar: solo se enlaza y se resume con palabras propias",
+      "formato": {
+        "es": "Página web: artículo",
+        "ca": "Pàgina web: article"
+      },
+      "es": {
+        "titulo": "La doble cara de la IA para el empleo de las personas con discapacidad",
+        "resumen": "Artículo de la OIT: herramientas como pasar texto a voz o subtitular en tiempo real ayudan a muchas personas con discapacidad, pero los sistemas que filtran candidaturas pueden excluirlas, por ejemplo si penalizan rostros o formas de hablar «no estándar». Pide incluirlas en el diseño de las herramientas y una revisión humana real de las decisiones.",
+        "interes": "Muestra cuándo una herramienta es un apoyo y cuándo puede crear una barrera nueva. Se dirige sobre todo a quien desarrolla, compra o regula estas herramientas."
+      },
+      "ca": {
+        "titulo": "La doble cara de la IA per a l’ocupació de les persones amb discapacitat",
+        "resumen": "Article de l’OIT: eines com passar text a veu o subtitular en temps real ajuden moltes persones amb discapacitat, però els sistemes que filtren candidatures les poden excloure, per exemple si penalitzen cares o maneres de parlar «no estàndard». Demana incloure-les en el disseny de les eines i una revisió humana real de les decisions. En castellà.",
+        "interes": "Mostra quan una eina és un suport i quan pot crear una barrera nova. S’adreça sobretot a qui desenvolupa, compra o regula aquestes eines."
+      }
+    },
+    {
+      "id": "ia-necessita-bones-dades-aoc",
+      "tipo": "nota",
+      "nivel": "profundizar",
+      "tema": "cataluna",
+      "fuente": "Consorci AOC",
+      "idiomas": [
+        "ca"
+      ],
+      "minutos": 12,
+      "enlace": "https://www.aoc.cat/blog/2026/ia-bones-dades-bons-algoritmes/",
+      "fecha": {
+        "iso": "2026-09-07",
+        "es": "7/9/2026",
+        "ca": "7/9/2026"
+      },
+      "consultado": "2026-10-18",
+      "licencia": "Sin confirmar: solo se enlaza y se resume con palabras propias",
+      "formato": {
+        "es": "Página web: artículo",
+        "ca": "Pàgina web: article"
+      },
+      "es": {
+        "titulo": "La IA necesita buenos datos, no solo buenos algoritmos",
+        "resumen": "Artículo del Consorcio AOC para ayuntamientos: antes de usar IA hay que saber qué problema se quiere resolver y qué datos se tienen. Explica cómo unos datos incompletos o mal descritos llevan a resultados equivocados y por qué la supervisión humana es una garantía, no un trámite. En parte presenta iniciativas de la Diputació de Barcelona y del propio AOC.",
+        "interes": "Explica por qué ordenar y revisar registros forma parte de usar bien la IA en una oficina. Usa términos técnicos como «metadatos» o «datos maestros»."
+      },
+      "ca": {
+        "titulo": "La IA necessita bones dades, no només bons algorismes",
+        "resumen": "Article del Consorci AOC per a ajuntaments: abans de fer servir IA cal saber quin problema es vol resoldre i quines dades es tenen. Explica com unes dades incompletes o mal descrites porten a resultats equivocats i per què la supervisió humana és una garantia, no un tràmit. En part presenta iniciatives de la Diputació de Barcelona i del mateix AOC.",
+        "interes": "Explica per què ordenar i revisar registres forma part de fer servir bé la IA en una oficina. Fa servir termes tècnics com «metadades» o «dades mestres»."
+      }
+    },
+    {
+      "id": "ine-uso-tic-hogares-2025",
+      "tipo": "informe",
+      "nivel": "empezar",
+      "tema": "empleo",
+      "fuente": "INE",
+      "idiomas": [
+        "es"
+      ],
+      "minutos": 10,
+      "enlace": "https://ine.es/dyngs/Prensa/es/TICH2025.html",
+      "fecha": {
+        "iso": "2025-11-20",
+        "es": "20/11/2025",
+        "ca": "20/11/2025"
+      },
+      "consultado": "2026-10-18",
+      "licencia": "Sin confirmar: solo se enlaza y se resume con palabras propias",
+      "formato": {
+        "es": "Página web: principales resultados con tablas",
+        "ca": "Pàgina web: principals resultats amb taules"
+      },
+      "es": {
+        "titulo": "Cuánta gente usa la IA generativa en España (INE, 2025)",
+        "resumen": "Principales resultados de la encuesta del Instituto Nacional de Estadística (INE) de 2025, publicados en su sección de prensa: el 37,9 % de las personas de 16 a 74 años usó herramientas de IA generativa en los tres últimos meses; el 39,9 % de los hombres y el 35,9 % de las mujeres. También da el uso de internet y las habilidades digitales.",
+        "interes": "Es la cifra oficial más reciente de uso de la IA en España, con la diferencia entre mujeres y hombres. Mide si se usa, no cómo de bien."
+      },
+      "ca": {
+        "titulo": "Quanta gent fa servir la IA generativa a Espanya (INE, 2025)",
+        "resumen": "Principals resultats de l’enquesta de l’Institut Nacional d’Estadística (INE) del 2025, publicats a la seva secció de premsa: el 37,9 % de les persones de 16 a 74 anys va fer servir eines d’IA generativa en els tres últims mesos; el 39,9 % dels homes i el 35,9 % de les dones. També dona l’ús d’internet i les habilitats digitals. En castellà.",
+        "interes": "És la xifra oficial més recent d’ús de la IA a Espanya, amb la diferència entre dones i homes. Mesura si es fa servir, no com de bé."
+      }
+    },
+    {
+      "id": "ine-uso-ia-empresas-2025",
+      "tipo": "informe",
+      "nivel": "empezar",
+      "tema": "empleo",
+      "fuente": "INE",
+      "idiomas": [
+        "es"
+      ],
+      "minutos": 5,
+      "enlace": "https://ine.es/dyngs/Prensa/ETICCE20241T2025.htm",
+      "fecha": {
+        "iso": "2025-10-22",
+        "es": "22/10/2025",
+        "ca": "22/10/2025"
+      },
+      "consultado": "2026-10-18",
+      "licencia": "Sin confirmar: solo se enlaza y se resume con palabras propias",
+      "formato": {
+        "es": "Página web: principales resultados con tablas",
+        "ca": "Pàgina web: principals resultats amb taules"
+      },
+      "es": {
+        "titulo": "Cuántas empresas usan IA en España (INE, 2025)",
+        "resumen": "Principales resultados de la encuesta del INE a empresas, publicados en su sección de prensa: en el primer trimestre de 2025, el 21,1 % de las empresas de 10 o más personas empleadas usaba inteligencia artificial, 8,7 puntos más que un año antes. El sector servicios es el que más la usa. Madrid, Cataluña y el País Vasco tienen el mayor uso de tecnologías digitales.",
+        "interes": "Da una idea de cuántas empresas han empezado a usar IA. Habla de empresas, no de cuántas personas la usan en su puesto."
+      },
+      "ca": {
+        "titulo": "Quantes empreses fan servir IA a Espanya (INE, 2025)",
+        "resumen": "Principals resultats de l’enquesta de l’INE a empreses, publicats a la seva secció de premsa: el primer trimestre del 2025, el 21,1 % de les empreses de 10 o més persones ocupades feia servir intel·ligència artificial, 8,7 punts més que un any abans. El sector serveis és el que més la fa servir. Madrid, Catalunya i el País Basc tenen el major ús de tecnologies digitals. En castellà.",
+        "interes": "Dona una idea de quantes empreses han començat a fer servir IA. Parla d’empreses, no de quantes persones la fan servir al seu lloc de treball."
+      }
+    },
+    {
+      "id": "oit-uno-de-cada-cuatro-empleos",
+      "tipo": "nota",
+      "nivel": "empezar",
+      "tema": "empleo",
+      "fuente": "OIT",
+      "idiomas": [
+        "es"
+      ],
+      "minutos": 5,
+      "enlace": "https://www.ilo.org/es/resource/noticias/uno-de-cada-cuatro-empleos-en-riesgo-de-transformarse-por-la-ia-generativa",
+      "fecha": {
+        "iso": "2025-05-20",
+        "es": "20/5/2025",
+        "ca": "20/5/2025"
+      },
+      "consultado": "2026-10-18",
+      "licencia": "Sin confirmar: solo se enlaza y se resume con palabras propias",
+      "formato": {
+        "es": "Página web: nota de prensa",
+        "ca": "Pàgina web: nota de premsa"
+      },
+      "es": {
+        "titulo": "Uno de cada cuatro empleos, expuesto a la IA generativa (OIT, 2025)",
+        "resumen": "Nota de prensa de la OIT sobre su índice de 2025: el 25 % del empleo mundial está en ocupaciones potencialmente expuestas a la IA generativa (el 34 % en los países de ingresos altos). Los trabajos administrativos son los más expuestos, y las mujeres más que los hombres. La transformación es más probable que la sustitución.",
+        "interes": "Explica en pocos minutos qué significa «exposición» y por qué no equivale a perder el empleo."
+      },
+      "ca": {
+        "titulo": "Una de cada quatre feines, exposada a la IA generativa (OIT, 2025)",
+        "resumen": "Nota de premsa de l’OIT sobre el seu índex del 2025: el 25 % de l’ocupació mundial és en ocupacions potencialment exposades a la IA generativa (el 34 % als països d’ingressos alts). Les feines administratives són les més exposades, i les dones més que els homes. La transformació és més probable que la substitució. En castellà.",
+        "interes": "Explica en pocs minuts què vol dir «exposició» i per què no equival a perdre la feina."
+      }
+    },
+    {
+      "id": "brecha-digital-ia-resumen-ugt",
+      "tipo": "informe",
+      "nivel": "empezar",
+      "tema": "igualdad",
+      "fuente": "UGT",
+      "idiomas": [
+        "es"
+      ],
+      "minutos": 15,
+      "enlace": "https://www.ugt.es/sites/default/files/informes/RESUMEN_EJECUTIVO_INFORME_BRECHA_DIGITAL.pdf",
+      "fecha": {
+        "iso": "2026-09",
+        "es": "Septiembre de 2026",
+        "ca": "Setembre de 2026"
+      },
+      "consultado": "2026-10-18",
+      "licencia": "Sin confirmar: solo se enlaza y se resume con palabras propias",
+      "formato": {
+        "es": "PDF · 1,5 MB",
+        "ca": "PDF · 1,5 MB"
+      },
+      "es": {
+        "titulo": "Quién se queda fuera de la IA: resumen del informe de UGT",
+        "resumen": "Resumen ejecutivo del informe del Servicio de Estudios de UGT sobre brecha digital e IA. Con datos del INE, el 37,9 % de la población usa IA generativa y más de 23 millones de personas no la usan. Entre quienes no la usan, el 55,5 % son mujeres y la edad media es de 56 años; la diferencia por nivel de estudios supera los 50 puntos.",
+        "interes": "Muestra que la edad, los estudios y el género pesan en quién aprende a usar la IA. Es la entrada corta al informe completo del sindicato."
+      },
+      "ca": {
+        "titulo": "Qui es queda fora de la IA: resum de l’informe d’UGT",
+        "resumen": "Resum executiu de l’informe del Servei d’Estudis d’UGT sobre bretxa digital i IA. Amb dades de l’INE, el 37,9 % de la població fa servir IA generativa i més de 23 milions de persones no la fan servir. Entre qui no la fa servir, el 55,5 % són dones i l’edat mitjana és de 56 anys; la diferència per nivell d’estudis supera els 50 punts. En castellà.",
+        "interes": "Mostra que l’edat, els estudis i el gènere pesen en qui aprèn a fer servir la IA. És l’entrada curta a l’informe complet del sindicat."
+      }
+    },
+    {
+      "id": "eurobarometro-ia-lugar-de-trabajo",
+      "tipo": "nota",
+      "nivel": "empezar",
+      "tema": "empleo",
+      "fuente": "Comisión Europea",
+      "idiomas": [
+        "es"
+      ],
+      "minutos": 3,
+      "enlace": "https://digital-strategy.ec.europa.eu/es/news/commission-survey-shows-most-europeans-support-use-artificial-intelligence-workplace",
+      "fecha": {
+        "iso": "2025-02-13",
+        "es": "13/2/2025",
+        "ca": "13/2/2025"
+      },
+      "consultado": "2026-10-18",
+      "licencia": "Sin confirmar: solo se enlaza y se resume con palabras propias",
+      "formato": {
+        "es": "Página web: nota de prensa",
+        "ca": "Pàgina web: nota de premsa"
+      },
+      "es": {
+        "titulo": "Qué opina la gente en Europa de la IA en el trabajo (Eurobarómetro 2025)",
+        "resumen": "Nota de prensa de la Comisión Europea con los resultados de una encuesta Eurobarómetro de 2025: más del 60 % de las personas en Europa ve con buenos ojos los robots y la IA en el trabajo, y el 84 % cree que hace falta gestionarla con cuidado para proteger la privacidad y ser transparentes.",
+        "interes": "Muestra que mucha gente acepta la IA en el trabajo, pero pide reglas claras. Son opiniones, no datos sobre su uso real."
+      },
+      "ca": {
+        "titulo": "Què opina la gent a Europa de la IA a la feina (Eurobaròmetre 2025)",
+        "resumen": "Nota de premsa de la Comissió Europea amb els resultats d’una enquesta Eurobaròmetre del 2025: més del 60 % de les persones a Europa veu amb bons ulls els robots i la IA a la feina, i el 84 % creu que cal gestionar-la amb cura per protegir la privacitat i ser transparents. En castellà.",
+        "interes": "Mostra que molta gent accepta la IA a la feina, però demana regles clares. Són opinions, no dades sobre el seu ús real."
+      }
+    },
+    {
+      "id": "osh-pulse-2025-espana-ficha",
+      "tipo": "informe",
+      "nivel": "empezar",
+      "tema": "salud",
+      "fuente": "EU-OSHA",
+      "idiomas": [
+        "es"
+      ],
+      "minutos": 6,
+      "enlace": "https://healthy-workplaces.osha.europa.eu/sites/hwc/files/hwc/publication/OSH-pulse-2025-mental-health-digitalisation-work-ES_ES.pdf",
+      "fecha": {
+        "iso": "2025-09-23",
+        "es": "23/9/2025",
+        "ca": "23/9/2025"
+      },
+      "consultado": "2026-10-18",
+      "licencia": "Sin confirmar: solo se enlaza y se resume con palabras propias",
+      "formato": {
+        "es": "PDF · 210 KB · 2 páginas",
+        "ca": "PDF · 210 KB · 2 pàgines"
+      },
+      "es": {
+        "titulo": "Salud mental y tecnología en el trabajo en España (OSH Pulse 2025)",
+        "resumen": "Ficha de España de una encuesta de la Agencia Europea para la Seguridad y la Salud en el Trabajo (EU-OSHA) a 1.006 personas trabajadoras en 2025. Compara España con la Unión Europea en estrés y problemas de salud ligados al trabajo, en el uso de tecnologías digitales, incluidas las herramientas con IA, y en cómo afectan al ritmo y a la carga de trabajo.",
+        "interes": "Muestra con gráficos cómo se vive la tecnología en el trabajo, también el control automático de tareas y horarios. Hay que leer gráficos de barras."
+      },
+      "ca": {
+        "titulo": "Salut mental i tecnologia a la feina a Espanya (OSH Pulse 2025)",
+        "resumen": "Fitxa d’Espanya d’una enquesta de l’Agència Europea per a la Seguretat i la Salut en el Treball (EU-OSHA) a 1.006 persones treballadores el 2025. Compara Espanya amb la Unió Europea en estrès i problemes de salut lligats a la feina, en l’ús de tecnologies digitals, incloses les eines amb IA, i en com afecten el ritme i la càrrega de treball. En castellà.",
+        "interes": "Mostra amb gràfics com es viu la tecnologia a la feina, també el control automàtic de tasques i horaris. Cal llegir gràfics de barres."
+      }
+    },
+    {
+      "id": "tendencias-mercado-trabajo-sepe-2026",
+      "tipo": "informe",
+      "nivel": "profundizar",
+      "tema": "empleo",
+      "fuente": "SEPE",
+      "idiomas": [
+        "es"
+      ],
+      "minutos": 8,
+      "enlace": "https://www.sepe.es/HomeSepe/que-es-observatorio/publicaciones-observatorio/detalle-publicacion-observatorio~_publicaciones_publicaciones-observatorio_RESUMENES-EJECUTIVOS-2026_tendencias-2026~.html",
+      "fecha": {
+        "iso": "2026",
+        "es": "2026",
+        "ca": "2026"
+      },
+      "consultado": "2026-10-18",
+      "licencia": "Sin confirmar: solo se enlaza y se resume con palabras propias",
+      "formato": {
+        "es": "Página web: resumen ejecutivo",
+        "ca": "Pàgina web: resum executiu"
+      },
+      "es": {
+        "titulo": "Tendencias del mercado de trabajo en España 2026 (resumen)",
+        "resumen": "Resumen del Servicio Público de Empleo Estatal (SEPE) sobre la economía, los sectores, las ocupaciones con mejores perspectivas y las necesidades de formación. Tiene un apartado breve sobre la IA: dice que dos de cada diez empleos están «afectados» por esta tecnología y que se usa más en las actividades de tecnología y profesionales.",
+        "interes": "Sitúa la IA dentro del conjunto del empleo en España. El resumen no explica qué significa «afectados»: tómalo como una cifra orientativa."
+      },
+      "ca": {
+        "titulo": "Tendències del mercat de treball a Espanya 2026 (resum)",
+        "resumen": "Resum del Servei Públic d’Ocupació Estatal (SEPE) sobre l’economia, els sectors, les ocupacions amb millors perspectives i les necessitats de formació. Té un apartat breu sobre la IA: diu que dues de cada deu feines estan «afectades» per aquesta tecnologia i que es fa servir més en les activitats de tecnologia i professionals. En castellà.",
+        "interes": "Situa la IA dins del conjunt de l’ocupació a Espanya. El resum no explica què vol dir «afectades»: pren-la com una xifra orientativa."
+      }
+    },
+    {
+      "id": "impacte-ia-generativa-mercat-laboral-cambra",
+      "tipo": "informe",
+      "nivel": "profundizar",
+      "tema": "cataluna",
+      "fuente": "Cambra de Comerç de Barcelona",
+      "idiomas": [
+        "ca"
+      ],
+      "minutos": 60,
+      "enlace": "https://cambrabcn.org/wp-content/uploads/2026/05/Impacte-IA-mercat-laboral_Maig_2026-v2.pdf",
+      "fecha": {
+        "iso": "2026-05",
+        "es": "Mayo de 2026",
+        "ca": "Maig de 2026"
+      },
+      "consultado": "2026-10-18",
+      "licencia": "Sin confirmar: solo se enlaza y se resume con palabras propias",
+      "formato": {
+        "es": "PDF · 2,4 MB",
+        "ca": "PDF · 2,4 MB"
+      },
+      "es": {
+        "titulo": "El impacto de la IA generativa en el mercado laboral catalán, con perspectiva de género y edad",
+        "resumen": "Estudio del Observatorio Mujer, Empresa y Economía de la Cámara de Comercio de Barcelona. Mide, con datos del Censo y el método de la OIT, la exposición de 163 ocupaciones de Cataluña a la IA generativa. Las más expuestas se concentran en tareas administrativas y de gestión de la información, con mucha presencia de mujeres. Analiza también la contratación y los despidos colectivos entre 2023 y 2025.",
+        "interes": "Es el estudio que mejor describe las ocupaciones administrativas en Cataluña. Su indicador mide el potencial de transformación, no el riesgo de perder el empleo."
+      },
+      "ca": {
+        "titulo": "L’impacte de la IA generativa en el mercat laboral català, amb perspectiva de gènere i edat",
+        "resumen": "Estudi de l’Observatori Dona, Empresa i Economia de la Cambra de Comerç de Barcelona. Mesura, amb dades del Cens i el mètode de l’OIT, l’exposició de 163 ocupacions de Catalunya a la IA generativa. Les més exposades es concentren en tasques administratives i de gestió de la informació, amb molta presència de dones. Analitza també la contractació i els acomiadaments col·lectius entre el 2023 i el 2025.",
+        "interes": "És l’estudi que millor descriu les ocupacions administratives a Catalunya. El seu indicador mesura el potencial de transformació, no el risc de perdre la feina."
+      }
+    },
+    {
+      "id": "la-exposicion-a-la-ia-2",
+      "tipo": "informe",
+      "nivel": "profundizar",
+      "tema": "empleo",
+      "fuente": "Fedea y BBVA Research",
+      "idiomas": [
+        "es"
+      ],
+      "minutos": 15,
+      "enlace": "https://documentos.fedea.net/pubs/ap/2026/ap2026-22.pdf",
+      "fecha": {
+        "iso": "2026-09-17",
+        "es": "17/9/2026",
+        "ca": "17/9/2026"
+      },
+      "consultado": "2026-10-18",
+      "licencia": "Sin confirmar: solo se enlaza y se resume con palabras propias",
+      "formato": {
+        "es": "PDF · 318 KB",
+        "ca": "PDF · 318 KB"
+      },
+      "es": {
+        "titulo": "La exposición a la IA en las ocupaciones españolas",
+        "resumen": "Boletín trimestral de Fedea y BBVA Research (septiembre de 2026). La primera parte repasa el empleo y el paro; la segunda aplica el índice de la OIT a las ocupaciones españolas: algo más del 30 % del empleo está en el grupo más expuesto, y desde 2022 el empleo ha crecido en todos los grupos. Los propios autores avisan de que son datos descriptivos, que no prueban causas.",
+        "interes": "Aplica a España el método de la OIT con datos abiertos y en castellano."
+      },
+      "ca": {
+        "titulo": "L’exposició a la IA a les ocupacions espanyoles",
+        "resumen": "Butlletí trimestral de Fedea i BBVA Research (setembre del 2026). La primera part repassa l’ocupació i l’atur; la segona aplica l’índex de l’OIT a les ocupacions espanyoles: una mica més del 30 % de l’ocupació és al grup més exposat, i des del 2022 l’ocupació ha crescut en tots els grups. Els mateixos autors avisen que són dades descriptives, que no proven causes.",
+        "interes": "Aplica a Espanya el mètode de l’OIT amb dades obertes, en castellà."
+      }
+    },
+    {
+      "id": "ia-generativa-empleo-oit-2025",
+      "tipo": "informe",
+      "nivel": "profundizar",
+      "tema": "empleo",
+      "fuente": "OIT",
+      "idiomas": [
+        "es"
+      ],
+      "minutos": 20,
+      "enlace": "https://www.ilo.org/sites/default/files/2025-05/BRIEF_ESP_AI_and_Jobs_2025_19%20may.pdf",
+      "fecha": {
+        "iso": "2025-05",
+        "es": "Mayo de 2025",
+        "ca": "Maig de 2025"
+      },
+      "consultado": "2026-10-18",
+      "licencia": "Sin confirmar: solo se enlaza y se resume con palabras propias",
+      "formato": {
+        "es": "PDF · 1,1 MB",
+        "ca": "PDF · 1,1 MB"
+      },
+      "es": {
+        "titulo": "IA generativa y empleo: la actualización de 2025 de la OIT",
+        "resumen": "Nota de investigación de la OIT, en castellano, que resume la actualización de su índice de exposición a la IA generativa: una de cada cuatro personas ocupadas en el mundo tiene un empleo con algún grado de exposición, pero la mayoría de los puestos se transformarán más que desaparecer, porque siguen necesitando a personas. La exposición es mayor en el empleo de las mujeres.",
+        "interes": "Explica cómo se mide la exposición y sus límites: la propia OIT dice que busca la dirección del cambio, no cifras exactas."
+      },
+      "ca": {
+        "titulo": "IA generativa i ocupació: l’actualització del 2025 de l’OIT",
+        "resumen": "Nota de recerca de l’OIT, en castellà, que resumeix l’actualització del seu índex d’exposició a la IA generativa: una de cada quatre persones ocupades al món té una feina amb algun grau d’exposició, però la majoria dels llocs es transformaran més que no pas desapareixeran, perquè continuen necessitant persones. L’exposició és més gran en l’ocupació de les dones.",
+        "interes": "Explica com es mesura l’exposició i els seus límits: la mateixa OIT diu que busca la direcció del canvi, no xifres exactes."
+      }
+    },
+    {
+      "id": "dones-en-les-tic-2025",
+      "tipo": "informe",
+      "nivel": "profundizar",
+      "tema": "igualdad",
+      "fuente": "Institut Català de les Dones",
+      "idiomas": [
+        "ca"
+      ],
+      "minutos": 60,
+      "enlace": "https://dones.gencat.cat/ca/ambits-dactuacio/observatori-igualtat-genere/dossiers-estadistics-de-l-observatori-de-la-igualtat-de-genere/DonesalesTiC",
+      "fecha": {
+        "iso": "2026-02",
+        "es": "Febrero de 2026",
+        "ca": "Febrer de 2026"
+      },
+      "consultado": "2026-10-18",
+      "licencia": "CC BY-NC-SA 4.0 (Institut Català de les Dones)",
+      "formato": {
+        "es": "PDF · 2,7 MB",
+        "ca": "PDF · 2,7 MB"
+      },
+      "es": {
+        "titulo": "Mujeres en las TIC 2025: datos de Cataluña",
+        "resumen": "Dosier estadístico del Institut Català de les Dones sobre mujeres y tecnología en Cataluña: uso de internet, formación, empleo, investigación y ciberseguridad. En 2025 usó la IA generativa el 49 % de los hombres y el 42,9 % de las mujeres de 16 a 74 años; entre quienes no la usan, a ellas les preocupan más la privacidad y la seguridad.",
+        "interes": "Da los datos de Cataluña sobre la brecha de género en el uso de la IA. El apartado de IA está en las páginas 17 a 19."
+      },
+      "ca": {
+        "titulo": "Dones en les TIC 2025: dades de Catalunya",
+        "resumen": "Dossier estadístic de l’Institut Català de les Dones sobre dones i tecnologia a Catalunya: ús d’internet, formació, ocupació, recerca i ciberseguretat. El 2025 va fer servir la IA generativa el 49 % dels homes i el 42,9 % de les dones de 16 a 74 anys; entre qui no la fa servir, a elles els preocupen més la privadesa i la seguretat.",
+        "interes": "Dona les dades de Catalunya sobre la bretxa de gènere en l’ús de la IA. L’apartat d’IA és a les pàgines 17 a 19."
+      }
+    },
+    {
+      "id": "ia-brechas-genero-empleo-bie",
+      "tipo": "informe",
+      "nivel": "profundizar",
+      "tema": "igualdad",
+      "fuente": "Ministerio de Igualdad",
+      "idiomas": [
+        "es"
+      ],
+      "minutos": 35,
+      "enlace": "https://www.igualdadenlaempresa.es/actualidad/boletin/docs/BIE_Impacto_de_la_IA_en_las_brechas_de_genero_en_el_empleo.pdf",
+      "fecha": {
+        "iso": "2026-07",
+        "es": "Julio de 2026",
+        "ca": "Juliol de 2026"
+      },
+      "consultado": "2026-10-18",
+      "licencia": "Sin confirmar: solo se enlaza y se resume con palabras propias",
+      "formato": {
+        "es": "PDF · 13,6 MB",
+        "ca": "PDF · 13,6 MB"
+      },
+      "es": {
+        "titulo": "Cómo afecta la IA a las brechas de género en el empleo",
+        "resumen": "Boletín de Igualdad en el Empleo del Ministerio de Igualdad: revisa cómo la IA puede ampliar o reducir las desigualdades entre mujeres y hombres en el trabajo, por ejemplo en la selección y la evaluación. Repasa la normativa y recomienda evaluar el impacto de género antes de usar un sistema, auditar los algoritmos y formar en igualdad.",
+        "interes": "Recuerda que la representación legal de la plantilla tiene derecho a conocer los criterios de los algoritmos (artículo 64.4.d del Estatuto de los Trabajadores). Las recomendaciones se dirigen a empresas y administraciones."
+      },
+      "ca": {
+        "titulo": "Com afecta la IA les bretxes de gènere en l’ocupació",
+        "resumen": "Butlletí d’Igualtat en l’Ocupació del Ministeri d’Igualtat: revisa com la IA pot ampliar o reduir les desigualtats entre dones i homes a la feina, per exemple en la selecció i l’avaluació. Repassa la normativa i recomana avaluar l’impacte de gènere abans de fer servir un sistema, auditar els algorismes i formar en igualtat. En castellà.",
+        "interes": "Recorda que la representació legal de la plantilla té dret a conèixer els criteris dels algorismes (article 64.4.d de l’Estatut dels treballadors). Les recomanacions s’adrecen a empreses i administracions."
+      }
+    },
+    {
+      "id": "personas-mayores-y-exclusion-tecnologica",
+      "tipo": "informe",
+      "nivel": "profundizar",
+      "tema": "igualdad",
+      "fuente": "UGT",
+      "idiomas": [
+        "es"
+      ],
+      "minutos": 45,
+      "enlace": "https://www.ugt.es/sites/default/files/informes/Estudio_Mayores_y_Exclusion_Tecnologica.pdf",
+      "fecha": {
+        "iso": "2025-08",
+        "es": "Agosto de 2025",
+        "ca": "Agost de 2025"
+      },
+      "consultado": "2026-10-18",
+      "licencia": "Sin confirmar: solo se enlaza y se resume con palabras propias",
+      "formato": {
+        "es": "PDF · 1,3 MB",
+        "ca": "PDF · 1,3 MB"
+      },
+      "es": {
+        "titulo": "Personas mayores y exclusión tecnológica",
+        "resumen": "Estudio del Servicio de Estudios de UGT (agosto de 2025) que revisa con datos estadísticos las barreras digitales de las personas mayores en la administración electrónica, la salud, la banca y la información, y propone apoyos. Trata la tecnología digital en general; la IA aparece solo de pasada.",
+        "interes": "Recuerda que aprender tecnología necesita accesibilidad, acompañamiento y alternativas."
+      },
+      "ca": {
+        "titulo": "Persones grans i exclusió tecnològica",
+        "resumen": "Estudi del Servei d’Estudis d’UGT (agost del 2025) que revisa amb dades estadístiques les barreres digitals de les persones grans en l’administració electrònica, la salut, la banca i la informació, i proposa suports. Tracta la tecnologia digital en general; la IA hi apareix només de passada. En castellà.",
+        "interes": "Recorda que aprendre tecnologia necessita accessibilitat, acompanyament i alternatives."
+      }
+    },
+    {
+      "id": "registro-de-sistemas-de-ia",
+      "tipo": "informe",
+      "nivel": "profundizar",
+      "tema": "cataluna",
+      "fuente": "Generalitat de Catalunya",
+      "idiomas": [
+        "ca"
+      ],
+      "minutos": 10,
+      "enlace": "https://analisi.transparenciacatalunya.cat/Sector-P-blic/Registre-de-sistemes-d-intel-lig-ncia-artificial-i/2auv-ctwd",
+      "fecha": {
+        "iso": "2026-07-08",
+        "es": "Datos del 8/7/2026",
+        "ca": "Dades del 8/7/2026"
+      },
+      "consultado": "2026-10-18",
+      "licencia": "Sin confirmar: solo se enlaza y se resume con palabras propias",
+      "formato": {
+        "es": "Página web: conjunto de datos abiertos",
+        "ca": "Pàgina web: conjunt de dades obertes"
+      },
+      "es": {
+        "titulo": "Registro de sistemas de IA de la Generalitat",
+        "resumen": "Registro público de la Generalitat con 35 sistemas (31 de IA y 4 algoritmos), 33 en uso y 2 en desarrollo. Indica para cada uno su finalidad, el riesgo que declara y cuánto interviene una persona. Datos abiertos.",
+        "interes": "Muestra casos reales de IA en servicios públicos y cuánto sigue decidiendo una persona."
+      },
+      "ca": {
+        "titulo": "Registre de sistemes d’IA de la Generalitat",
+        "resumen": "Registre públic de la Generalitat amb 35 sistemes (31 d’IA i 4 algorismes), 33 en ús i 2 en desenvolupament. Indica per a cadascun la finalitat, el risc que declara i quant hi intervé una persona. Dades obertes.",
+        "interes": "Mostra casos reals d’IA en serveis públics i quant continua decidint una persona."
+      }
+    },
+    {
+      "id": "barometre-de-la-innovacio-a",
+      "tipo": "informe",
+      "nivel": "profundizar",
+      "tema": "cataluna",
+      "fuente": "ACCIÓ",
+      "idiomas": [
+        "ca"
+      ],
+      "minutos": 20,
+      "enlace": "https://www.accio.gencat.cat/web/.content/bancconeixement/documents/informes/2026/ACCIO-barometre-innovacio-catalunya-2026.pdf",
+      "fecha": {
+        "iso": "2026-08",
+        "es": "Agosto de 2026",
+        "ca": "Agost de 2026"
+      },
+      "consultado": "2026-10-18",
+      "licencia": "CC BY-NC-ND 4.0",
+      "formato": {
+        "es": "PDF · 53 MB",
+        "ca": "PDF · 53 MB"
+      },
+      "es": {
+        "titulo": "Baròmetre de la Innovació a Catalunya 2026",
+        "resumen": "Encuesta de ACCIÓ, la agencia de la Generalitat para la competitividad de la empresa, sobre innovación y transformación digital de las empresas catalanas. El 30,4 % de las empresas de más de nueve personas trabajadoras invirtió en IA en 2025, frente al 24,0 % en 2024.",
+        "interes": "Indica hacia dónde se mueven las empresas de tu entorno."
+      },
+      "ca": {
+        "titulo": "Baròmetre de la Innovació a Catalunya 2026",
+        "resumen": "Enquesta d’ACCIÓ, l’agència de la Generalitat per a la competitivitat de l’empresa, sobre innovació i transformació digital de les empreses catalanes. El 30,4 % de les empreses de més de nou persones treballadores va invertir en IA el 2025, davant del 24,0 % el 2024.",
+        "interes": "Indica cap on es mouen les empreses del teu entorn."
+      }
+    },
+    {
+      "id": "ia-mercado-trabajo-espana-funcas",
+      "tipo": "informe",
+      "nivel": "investigacion",
+      "tema": "empleo",
+      "fuente": "Funcas · Rodríguez-Fernández",
+      "idiomas": [
+        "es"
+      ],
+      "minutos": 40,
+      "enlace": "https://www.funcas.es/wp-content/uploads/2026/04/Inteligencia-artificial-y-mercado-de-trabajo-en-Espana.pdf",
+      "fecha": {
+        "iso": "2026-04",
+        "es": "Abril de 2026",
+        "ca": "Abril de 2026"
+      },
+      "consultado": "2026-10-18",
+      "licencia": "Sin confirmar: solo se enlaza y se resume con palabras propias",
+      "formato": {
+        "es": "PDF · 1,3 MB",
+        "ca": "PDF · 1,3 MB"
+      },
+      "es": {
+        "titulo": "IA y mercado de trabajo en España: exposición, empleo y empresas",
+        "resumen": "Documento de trabajo de Funcas, fundación de estudios económicos, que adapta un índice internacional de exposición a las ocupaciones españolas. Su modelo estima, a diez años, una destrucción bruta de 1,7 a 2,3 millones de empleos con una incertidumbre que el propio autor califica de «muy elevada», compensada en parte por nuevas ocupaciones y por la mejora de productividad de 2,8 a 3,5 millones de personas.",
+        "interes": "Es una estimación española reciente que explica sus supuestos y sus límites. No es una predicción sobre ningún empleo concreto: los parámetros son supuestos tomados de otros estudios."
+      },
+      "ca": {
+        "titulo": "IA i mercat de treball a Espanya: exposició, ocupació i empreses",
+        "resumen": "Document de treball de Funcas, fundació d’estudis econòmics, que adapta un índex internacional d’exposició a les ocupacions espanyoles. El seu model estima, a deu anys, una destrucció bruta d’1,7 a 2,3 milions de llocs de treball amb una incertesa que el mateix autor qualifica de «molt elevada», compensada en part per noves ocupacions i per la millora de productivitat d’entre 2,8 i 3,5 milions de persones. En castellà.",
+        "interes": "És una estimació espanyola recent que explica els seus supòsits i els seus límits. No és una predicció sobre cap feina concreta: els paràmetres són supòsits presos d’altres estudis."
+      }
+    },
+    {
+      "id": "adopcion-ia-empresas-espanolas-banco-espana",
+      "tipo": "informe",
+      "nivel": "investigacion",
+      "tema": "empleo",
+      "fuente": "Banco de España · Fernández Cerezo y otros",
+      "idiomas": [
+        "es"
+      ],
+      "minutos": 25,
+      "enlace": "https://www.bde.es/f/webbe/SES/Secciones/Publicaciones/InformesBoletinesRevistas/BoletinEconomico/25/T2/Fich/be2502-art06.pdf",
+      "fecha": {
+        "iso": "2025-05-07",
+        "es": "7/5/2025",
+        "ca": "7/5/2025"
+      },
+      "consultado": "2026-10-18",
+      "licencia": "Sin confirmar: solo se enlaza y se resume con palabras propias",
+      "formato": {
+        "es": "PDF · 520 KB",
+        "ca": "PDF · 520 KB"
+      },
+      "es": {
+        "titulo": "Cómo adoptan la IA las empresas españolas (Banco de España, 2025)",
+        "resumen": "Artículo del Boletín Económico del Banco de España basado en su encuesta a empresas: casi el 20 % usa sistemas de IA, la mayoría aún en pruebas. El principal obstáculo es la falta de personal cualificado, seguido de los costes y la falta de datos. El 80 % de las empresas cree que la IA no afectará a su empleo.",
+        "interes": "Da la visión de las empresas, útil para contrastarla con la de las personas trabajadoras. Usa vocabulario económico."
+      },
+      "ca": {
+        "titulo": "Com adopten la IA les empreses espanyoles (Banc d’Espanya, 2025)",
+        "resumen": "Article del Butlletí Econòmic del Banc d’Espanya basat en la seva enquesta a empreses: gairebé el 20 % fa servir sistemes d’IA, la majoria encara en proves. El principal obstacle és la manca de personal qualificat, seguit dels costos i la manca de dades. El 80 % de les empreses creu que la IA no afectarà la seva ocupació. En castellà.",
+        "interes": "Dona la visió de les empreses, útil per contrastar-la amb la de les persones treballadores. Fa servir vocabulari econòmic."
+      }
+    },
+    {
+      "id": "impacto-socioeconomico-laboral-cambio-tecnologico-ces",
+      "tipo": "informe",
+      "nivel": "investigacion",
+      "tema": "empleo",
+      "fuente": "Consejo Económico y Social",
+      "idiomas": [
+        "es"
+      ],
+      "minutos": 300,
+      "enlace": "https://www.ces.es/documents/10180/5327928/DOCUMENTO_02_2025_marcadores.pdf",
+      "fecha": {
+        "iso": "2025-09",
+        "es": "Septiembre de 2025",
+        "ca": "Setembre de 2025"
+      },
+      "consultado": "2026-10-18",
+      "licencia": "Sin confirmar: solo se enlaza y se resume con palabras propias",
+      "formato": {
+        "es": "PDF · 3 MB",
+        "ca": "PDF · 3 MB"
+      },
+      "es": {
+        "titulo": "El impacto económico, laboral y social de la IA (CES, 2025)",
+        "resumen": "Documento del Consejo Económico y Social (CES), órgano en el que participan sindicatos, organizaciones empresariales y otras entidades. Analiza los efectos de la IA en la economía, el empleo, el diálogo social y la negociación colectiva y la protección social, con un apartado sobre los sesgos de género.",
+        "interes": "Es un análisis largo y en castellano que reúne varios puntos de vista. Conviene leer solo los apartados que te interesen."
+      },
+      "ca": {
+        "titulo": "L’impacte econòmic, laboral i social de la IA (CES, 2025)",
+        "resumen": "Document del Consell Econòmic i Social d’Espanya (CES), òrgan en què participen sindicats, organitzacions empresarials i altres entitats. Analitza els efectes de la IA en l’economia, l’ocupació, el diàleg social i la negociació col·lectiva i la protecció social, amb un apartat sobre els biaixos de gènere. En castellà.",
+        "interes": "És una anàlisi llarga i en castellà que reuneix diversos punts de vista. Convé llegir només els apartats que t’interessin."
+      }
+    },
+    {
+      "id": "sesgos-genero-ia-perspectiva-interseccional",
+      "tipo": "informe",
+      "nivel": "investigacion",
+      "tema": "igualdad",
+      "fuente": "Instituto de las Mujeres · Jaume-Palasí",
+      "idiomas": [
+        "es"
+      ],
+      "minutos": 45,
+      "enlace": "https://servicios.mpr.es/VisorPublicaciones/visordocumentosicopo.aspx?NIPO=050230195&SUBNIPO=0001&IDPUBLICACION=005005023",
+      "fecha": {
+        "iso": "2023-03",
+        "es": "Marzo de 2023",
+        "ca": "Març de 2023"
+      },
+      "consultado": "2026-10-18",
+      "licencia": "Sin confirmar: solo se enlaza y se resume con palabras propias",
+      "formato": {
+        "es": "PDF · 390 KB",
+        "ca": "PDF · 390 KB"
+      },
+      "es": {
+        "titulo": "Sesgos de género en la IA, con perspectiva interseccional",
+        "resumen": "Informe del Instituto de las Mujeres que explica dónde nace la discriminación en los sistemas algorítmicos: en los datos, en los algoritmos o en los equipos que los hacen. Recorre su ciclo de vida, varios sectores de aplicación y la regulación, y propone recomendaciones. Es de 2023.",
+        "interes": "Es el informe oficial español de referencia sobre sesgos de género en la IA. Su lenguaje es denso y conceptual."
+      },
+      "ca": {
+        "titulo": "Biaixos de gènere en la IA, amb perspectiva interseccional",
+        "resumen": "Informe de l’Instituto de las Mujeres que explica on neix la discriminació en els sistemes algorítmics: en les dades, en els algorismes o en els equips que els fan. En recorre el cicle de vida, diversos sectors d’aplicació i la regulació, i proposa recomanacions. És del 2023. En castellà.",
+        "interes": "És l’informe oficial espanyol de referència sobre biaixos de gènere en la IA. El seu llenguatge és dens i conceptual."
+      }
+    },
+    {
+      "id": "indicadores-uso-ia-espana-ontsi-2026",
+      "tipo": "informe",
+      "nivel": "investigacion",
+      "tema": "empleo",
+      "fuente": "ONTSI",
+      "idiomas": [
+        "es"
+      ],
+      "minutos": 90,
+      "enlace": "https://administracionelectronica.gob.es/pae_Home/dam/jcr:16d7afe8-4d93-441a-a639-a90c7bca6f61/2026-indicadores-de-uso-de-inteligencia-articifial_1.pdf",
+      "fecha": {
+        "iso": "2026",
+        "es": "Edición de 2026 (datos de 2025)",
+        "ca": "Edició del 2026 (dades del 2025)"
+      },
+      "consultado": "2026-10-18",
+      "licencia": "Copia permitida citando la fuente, sin uso comercial y sin modificar, según el documento",
+      "formato": {
+        "es": "PDF · 6,4 MB",
+        "ca": "PDF · 6,4 MB"
+      },
+      "es": {
+        "titulo": "Indicadores de uso de la inteligencia artificial en España (2026)",
+        "resumen": "Informe del Observatorio Nacional de Tecnología y Sociedad (ONTSI) con datos de 2025: el 20,5 % de las empresas de 10 o más personas empleadas usa IA, por encima de la media de la Unión Europea y de la OCDE, y el 55,2 % de quienes usan internet ha usado IA generativa. Recoge también qué opina la ciudadanía de su impacto.",
+        "interes": "Reúne en un documento los datos oficiales sobre empresas y personas, con comparaciones internacionales. Tiene muchas tablas y gráficos; las páginas 4 y 5 resumen lo principal."
+      },
+      "ca": {
+        "titulo": "Indicadors d’ús de la intel·ligència artificial a Espanya (2026)",
+        "resumen": "Informe de l’Observatori Nacional de Tecnologia i Societat (ONTSI) amb dades del 2025: el 20,5 % de les empreses de 10 o més persones ocupades fa servir IA, per sobre de la mitjana de la Unió Europea i de l’OCDE, i el 55,2 % de qui fa servir internet ha fet servir IA generativa. Recull també què opina la ciutadania del seu impacte. En castellà.",
+        "interes": "Aplega en un document les dades oficials sobre empreses i persones, amb comparacions internacionals. Té moltes taules i gràfics; les pàgines 4 i 5 en resumeixen el principal."
+      }
+    },
+    {
+      "id": "la-estrategia-de-barcelona-para",
+      "tipo": "informe",
+      "nivel": "investigacion",
+      "tema": "cataluna",
+      "fuente": "Ajuntament de Barcelona",
+      "idiomas": [
+        "ca"
+      ],
+      "minutos": 70,
+      "enlace": "https://ajuntament.barcelona.cat/digital/sites/default/files/2023-11/Mesura-de-Govern-Intel-ligencia-artificial_cat-v2.47-ca-ES_.pdf",
+      "fecha": {
+        "iso": "2021-04",
+        "es": "Abril de 2021",
+        "ca": "Abril de 2021"
+      },
+      "consultado": "2026-10-18",
+      "licencia": "Sin confirmar: solo se enlaza y se resume con palabras propias",
+      "formato": {
+        "es": "PDF · 2,4 MB",
+        "ca": "PDF · 2,4 MB"
+      },
+      "es": {
+        "titulo": "La estrategia de Barcelona para una IA municipal ética",
+        "resumen": "Medida de gobierno del Ayuntamiento de Barcelona (abril de 2021) que fija cómo introducir algoritmos con garantías: derechos digitales, transparencia y participación. Incluye casos piloto y recomendaciones técnicas. Es anterior a la ley europea de IA y a la llegada de la IA generativa.",
+        "interes": "Explica qué puede exigir la ciudadanía a una institución que usa IA."
+      },
+      "ca": {
+        "titulo": "L’estratègia de Barcelona per a una IA municipal ètica",
+        "resumen": "Mesura de govern de l’Ajuntament de Barcelona (abril del 2021) que fixa com introduir algorismes amb garanties: drets digitals, transparència i participació. Inclou casos pilot i recomanacions tècniques. És anterior a la llei europea d’IA i a l’arribada de la IA generativa.",
+        "interes": "Explica què pot exigir la ciutadania a una institució que fa servir IA."
+      }
+    },
+    {
+      "id": "ia-gestion-trabajadores-salud-eu-osha",
+      "tipo": "informe",
+      "nivel": "investigacion",
+      "tema": "salud",
+      "fuente": "EU-OSHA",
+      "idiomas": [
+        "es"
+      ],
+      "minutos": 70,
+      "enlace": "https://healthy-workplaces.osha.europa.eu/sites/hwc/files/hwc/publication/artificial-intelligence-osh-summary_es.pdf",
+      "fecha": {
+        "iso": "2023",
+        "es": "2023",
+        "ca": "2023"
+      },
+      "consultado": "2026-10-18",
+      "licencia": "Reproducción autorizada citando la fuente, según el documento",
+      "formato": {
+        "es": "PDF · 530 KB",
+        "ca": "PDF · 530 KB"
+      },
+      "es": {
+        "titulo": "IA para gestionar personal: riesgos para la salud y la seguridad en el trabajo",
+        "resumen": "Resumen en castellano de un informe de la Agencia Europea para la Seguridad y la Salud en el Trabajo (EU-OSHA). Los sistemas de IA que asignan tareas, vigilan o evalúan al personal pueden ayudar a controlar peligros, pero traen riesgos, sobre todo psicosociales. Propone diseñarlos con las personas trabajadoras, con transparencia y para apoyarlas, no para sustituirlas.",
+        "interes": "Da argumentos para pedir participación y prevención cuando llega a tu trabajo un sistema que organiza o controla tus tareas. Son 24 páginas de lenguaje técnico."
+      },
+      "ca": {
+        "titulo": "IA per gestionar personal: riscos per a la salut i la seguretat a la feina",
+        "resumen": "Resum en castellà d’un informe de l’Agència Europea per a la Seguretat i la Salut en el Treball (EU-OSHA). Els sistemes d’IA que assignen tasques, vigilen o avaluen el personal poden ajudar a controlar perills, però porten riscos, sobretot psicosocials. Proposa dissenyar-los amb les persones treballadores, amb transparència i per donar-los suport, no per substituir-les.",
+        "interes": "Dona arguments per demanar participació i prevenció quan arriba a la teva feina un sistema que organitza o controla les teves tasques. Són 24 pàgines de llenguatge tècnic."
+      }
+    },
+    {
+      "id": "inteligencia-artificial-genero-trabajo-uclm",
+      "tipo": "informe",
+      "nivel": "investigacion",
+      "tema": "igualdad",
+      "fuente": "UCLM · Rodríguez Fernández",
+      "idiomas": [
+        "es"
+      ],
+      "minutos": 70,
+      "enlace": "https://www.derechosdigitales.gob.es/sites/default/files/2025-05/Inteligencia%20Artificial%20Genero%20y%20Trabajo.pdf",
+      "fecha": {
+        "iso": "2024",
+        "es": "2024 (revista Temas Laborales, n.º 171)",
+        "ca": "2024 (revista Temas Laborales, núm. 171)"
+      },
+      "consultado": "2026-10-18",
+      "licencia": "Sin confirmar: solo se enlaza y se resume con palabras propias",
+      "formato": {
+        "es": "PDF · 560 KB",
+        "ca": "PDF · 560 KB"
+      },
+      "es": {
+        "titulo": "Inteligencia artificial, género y trabajo",
+        "resumen": "Artículo jurídico de una catedrática de Derecho del Trabajo de la Universidad de Castilla-La Mancha (UCLM). Explica por qué los algoritmos pueden repetir la discriminación de las mujeres (datos desiguales y equipos sobre todo masculinos) y qué efectos tiene la gestión del trabajo con algoritmos: evaluaciones sesgadas, control estricto y más dificultad para conciliar.",
+        "interes": "Analiza con perspectiva de género lo que pasa cuando un algoritmo organiza o evalúa el trabajo. Es un texto académico y largo."
+      },
+      "ca": {
+        "titulo": "Intel·ligència artificial, gènere i treball",
+        "resumen": "Article jurídic d’una catedràtica de Dret del Treball de la Universitat de Castella-la Manxa (UCLM). Explica per què els algorismes poden repetir la discriminació de les dones (dades desiguals i equips sobretot masculins) i quins efectes té la gestió de la feina amb algorismes: avaluacions esbiaixades, control estricte i més dificultat per conciliar. En castellà.",
+        "interes": "Analitza amb perspectiva de gènere què passa quan un algorisme organitza o avalua la feina. És un text acadèmic i llarg."
+      }
+    },
+    {
+      "id": "estafas-fraudes-financieros-ia-autoridades-europeas",
+      "tipo": "guia",
+      "subtipo": {
+        "es": "Hoja de consejos",
+        "ca": "Full de consells"
+      },
+      "nivel": "empezar",
+      "tema": "aprender",
+      "fuente": "Autoridades Europeas de Supervisión",
+      "idiomas": [
+        "es"
+      ],
+      "minutos": 13,
+      "enlace": "https://www.cnmv.es/webservices/verdocumento/ver?t=%7B5e01413b-96fc-402b-a8cb-a66cd32b147d%7D",
+      "fecha": {
+        "iso": "2025",
+        "es": "2025",
+        "ca": "2025"
+      },
+      "consultado": "2026-10-18",
+      "licencia": "Reproducción autorizada citando la fuente (declarada en el documento)",
+      "formato": {
+        "es": "PDF · 1,7 MB",
+        "ca": "PDF · 1,7 MB"
+      },
+      "es": {
+        "titulo": "Estafas financieras con IA: señales de alerta y cómo protegerte",
+        "resumen": "Folleto de las tres autoridades financieras europeas (bancaria, de seguros y de valores), que publica en castellano la Comisión Nacional del Mercado de Valores (CNMV). Da una lista de señales de alerta, como voces o vídeos falsos y prisas por pagar, pasos para protegerte, como verificar por un canal conocido o acordar una palabra de seguridad en la familia, y qué hacer si ya te han estafado.",
+        "interes": "Es una lista práctica para reconocer un fraude hecho con IA, incluso si parece venir de tu banco o de alguien que conoces. Se centra en el dinero, no en el trabajo."
+      },
+      "ca": {
+        "titulo": "Estafes financeres amb IA: senyals d’alerta i com protegir-te",
+        "resumen": "Fullet de les tres autoritats financeres europees (bancària, d’assegurances i de valors), que publica en castellà la Comissió Nacional del Mercat de Valors (CNMV). Dona una llista de senyals d’alerta, com veus o vídeos falsos i presses per pagar, passos per protegir-te, com verificar per un canal conegut o acordar una paraula de seguretat a la família, i què fer si ja t’han estafat. En castellà.",
+        "interes": "És una llista pràctica per reconèixer un frau fet amb IA, fins i tot si sembla que ve del teu banc o d’algú que coneixes. Se centra en els diners, no en la feina."
+      }
+    },
+    {
+      "id": "guia-uso-seguro-ia-cyberzaintza",
+      "tipo": "guia",
+      "subtipo": {
+        "es": "Guía en cinco pasos",
+        "ca": "Guia en cinc passos"
+      },
+      "nivel": "profundizar",
+      "tema": "aprender",
+      "fuente": "Cyberzaintza, Gobierno Vasco",
+      "idiomas": [
+        "es"
+      ],
+      "minutos": 25,
+      "enlace": "https://ciberseguridad.euskadi.eus/contenidos/enlace/_cyb_guia_20260929/es_def/adjuntos/Guia-uso-seguro-IA.pdf",
+      "fecha": {
+        "iso": "2026-09",
+        "es": "Septiembre de 2026",
+        "ca": "Setembre de 2026"
+      },
+      "consultado": "2026-10-18",
+      "licencia": "Sin confirmar: solo se enlaza y se resume con palabras propias",
+      "formato": {
+        "es": "PDF · 0,8 MB",
+        "ca": "PDF · 0,8 MB"
+      },
+      "es": {
+        "titulo": "Usar la IA con seguridad: cinco pasos",
+        "resumen": "Guía del Centro Vasco de Ciberseguridad con cinco pasos para usar la IA de forma segura: regular su uso, inventariar los casos, analizar los riesgos, controlar el uso y evaluar los resultados. Avisa de riesgos como meter datos personales o confidenciales en herramientas no autorizadas, las respuestas inventadas y los sesgos. Declara que se escribió en parte con ayuda de IA y que la revisó el centro.",
+        "interes": "Sirve si en tu equipo hay que decidir cómo se usa la IA. Está pensada sobre todo para organizaciones, pero cada paso trae precauciones que también sirven a quien la usa a diario."
+      },
+      "ca": {
+        "titulo": "Fer servir la IA amb seguretat: cinc passos",
+        "resumen": "Guia del Centre Basc de Ciberseguretat amb cinc passos per fer servir la IA de manera segura: regular-ne l’ús, inventariar els casos, analitzar els riscos, controlar l’ús i avaluar els resultats. Avisa de riscos com posar dades personals o confidencials en eines no autoritzades, les respostes inventades i els biaixos. Declara que es va escriure en part amb ajuda d’IA i que el centre la va revisar. En castellà.",
+        "interes": "Serveix si al teu equip cal decidir com es fa servir la IA. Està pensada sobretot per a organitzacions, però cada pas porta precaucions que també serveixen a qui la fa servir cada dia."
+      }
+    },
+    {
+      "id": "ia-mujeres-en-cifras-inmujeres-2026",
+      "tipo": "informe",
+      "nivel": "empezar",
+      "tema": "igualdad",
+      "fuente": "Instituto de las Mujeres",
+      "idiomas": [
+        "es"
+      ],
+      "minutos": 4,
+      "enlace": "https://www.inmujeres.gob.es/MujerCifras/Infografia/Docs/202602_IA.pdf",
+      "fecha": {
+        "iso": "2026-02",
+        "es": "Febrero de 2026",
+        "ca": "Febrer de 2026"
+      },
+      "consultado": "2026-10-18",
+      "licencia": "Sin confirmar: solo se enlaza y se resume con palabras propias",
+      "formato": {
+        "es": "PDF · 300 KB · infografía de 1 página (imagen)",
+        "ca": "PDF · 300 KB · infografia d’1 pàgina (imatge)"
+      },
+      "es": {
+        "titulo": "Mujeres e inteligencia artificial, en cifras (2026)",
+        "resumen": "Infografía del Instituto de las Mujeres con datos de varias fuentes sobre la brecha de género en la IA. En 2023, el 42,1 % de la población en España había usado IA: el 38,6 % de las mujeres y el 45,9 % de los hombres. Las mujeres son el 19,5 % de las personas especialistas digitales y asocian más la IA con el desempleo (27,8 % frente a 19,0 %).",
+        "interes": "Reúne en una página cómo usan y ven la IA mujeres y hombres. Los datos son de fuentes y años distintos (de 2019 a 2023) y no coinciden con los del INE de 2025: no los mezcles. Es una imagen, y los lectores de pantalla no leen su texto."
+      },
+      "ca": {
+        "titulo": "Dones i intel·ligència artificial, en xifres (2026)",
+        "resumen": "Infografia de l’Instituto de las Mujeres amb dades de diverses fonts sobre la bretxa de gènere en la IA. El 2023, el 42,1 % de la població a Espanya havia fet servir IA: el 38,6 % de les dones i el 45,9 % dels homes. Les dones són el 19,5 % de les persones especialistes digitals i associen més la IA amb l’atur (27,8 % davant del 19,0 %). En castellà.",
+        "interes": "Reuneix en una pàgina com fan servir i veuen la IA dones i homes. Les dades són de fonts i anys diferents (del 2019 al 2023) i no coincideixen amb les de l’INE del 2025: no les barregis. És una imatge, i els lectors de pantalla no en llegeixen el text."
+      }
+    },
+    {
+      "id": "osh-pulse-2025-digitalizacion-infografia",
+      "tipo": "informe",
+      "nivel": "empezar",
+      "tema": "salud",
+      "fuente": "EU-OSHA",
+      "idiomas": [
+        "es"
+      ],
+      "minutos": 5,
+      "enlace": "https://healthy-workplaces.osha.europa.eu/sites/hwc/files/hwc/infographic/OSH-pulse-2025-digitalisation_infographic_ES.pdf",
+      "fecha": {
+        "iso": "2025-09",
+        "es": "Septiembre de 2025",
+        "ca": "Setembre de 2025"
+      },
+      "consultado": "2026-10-18",
+      "licencia": "Sin confirmar: solo se enlaza y se resume con palabras propias",
+      "formato": {
+        "es": "PDF · 2,6 MB · infografía de 2 páginas",
+        "ca": "PDF · 2,6 MB · infografia de 2 pàgines"
+      },
+      "es": {
+        "titulo": "Tecnología digital, algoritmos y salud en el trabajo en Europa (OSH Pulse 2025)",
+        "resumen": "Infografía de la Agencia Europea para la Seguridad y la Salud en el Trabajo (EU-OSHA) con su encuesta de 2025 a 25.688 personas trabajadoras de la Unión Europea. Muestra cuánta gente usa tecnologías digitales y programas o máquinas con IA, qué efectos dice notar (más ritmo, más carga, más aislamiento) y a cuántas personas un algoritmo les asigna tareas o turnos, las evalúa o las vigila.",
+        "interes": "Pone cifras europeas a la gestión del trabajo con algoritmos y a sus efectos en la salud. Son datos de toda la UE, no solo de España; la ficha de España de la misma encuesta está también en la Biblioteca. Hay que leer gráficos."
+      },
+      "ca": {
+        "titulo": "Tecnologia digital, algorismes i salut a la feina a Europa (OSH Pulse 2025)",
+        "resumen": "Infografia de l’Agència Europea per a la Seguretat i la Salut en el Treball (EU-OSHA) amb la seva enquesta del 2025 a 25.688 persones treballadores de la Unió Europea. Mostra quanta gent fa servir tecnologies digitals i programes o màquines amb IA, quins efectes diu notar (més ritme, més càrrega, més aïllament) i a quantes persones un algorisme els assigna tasques o torns, les avalua o les vigila. En castellà.",
+        "interes": "Posa xifres europees a la gestió de la feina amb algorismes i als seus efectes en la salut. Són dades de tota la UE, no només d’Espanya; la fitxa d’Espanya de la mateixa enquesta també és a la Biblioteca. Cal llegir gràfics."
+      }
+    },
+    {
+      "id": "impacte-ia-mercat-laboral-presentacio-cambra",
+      "tipo": "informe",
+      "nivel": "empezar",
+      "tema": "cataluna",
+      "fuente": "Cambra de Comerç de Barcelona",
+      "idiomas": [
+        "ca"
+      ],
+      "minutos": 15,
+      "enlace": "https://cambrabcn.org/wp-content/uploads/2026/05/Impacte-IA-mercat-laboral_Maig_2026-Presentacio.pdf",
+      "fecha": {
+        "iso": "2026-05-19",
+        "es": "19/5/2026",
+        "ca": "19/5/2026"
+      },
+      "consultado": "2026-10-18",
+      "licencia": "Sin confirmar: solo se enlaza y se resume con palabras propias",
+      "formato": {
+        "es": "PDF · 1,7 MB · presentación de 29 diapositivas",
+        "ca": "PDF · 1,7 MB · presentació de 29 diapositives"
+      },
+      "es": {
+        "titulo": "La IA generativa y el empleo en Cataluña, por género y edad: los resultados",
+        "resumen": "Presentación de los resultados del estudio de la Cámara de Comercio de Barcelona (mayo de 2026). Con datos del Censo de 2021-2022 y el método de la OIT, el 26 % de las personas ocupadas en Cataluña tiene una exposición media o alta a la IA generativa: el 30 % de las mujeres y el 23 % de los hombres. Las ocupaciones más expuestas son administrativas y de atención al público, con mucha presencia de mujeres.",
+        "interes": "Es la entrada corta al estudio, con frases breves y gráficos. La exposición mide cuánto pueden cambiar las tareas, no el riesgo de perder el empleo; los datos del Censo son anteriores a la llegada de la IA generativa."
+      },
+      "ca": {
+        "titulo": "La IA generativa i l’ocupació a Catalunya, per gènere i edat: els resultats",
+        "resumen": "Presentació dels resultats de l’estudi de la Cambra de Comerç de Barcelona (maig del 2026). Amb dades del Cens del 2021-2022 i el mètode de l’OIT, el 26 % de les persones ocupades a Catalunya té una exposició mitjana o alta a la IA generativa: el 30 % de les dones i el 23 % dels homes. Les ocupacions més exposades són administratives i d’atenció al públic, amb molta presència de dones.",
+        "interes": "És l’entrada curta a l’estudi, amb frases breus i gràfics. L’exposició mesura quant poden canviar les tasques, no el risc de perdre la feina; les dades del Cens són anteriors a l’arribada de la IA generativa."
+      }
+    },
+    {
+      "id": "brecha-digital-genero-ontsi-2026",
+      "tipo": "informe",
+      "nivel": "profundizar",
+      "tema": "igualdad",
+      "fuente": "ONTSI",
+      "idiomas": [
+        "es"
+      ],
+      "minutos": 70,
+      "enlace": "https://servicios.mpr.es/VisorPublicaciones/visordocumentosicopo.aspx?NIPO=230260042&SUBNIPO=&IDPUBLICACION=007823026",
+      "fecha": {
+        "iso": "2026-03-06",
+        "es": "6/3/2026",
+        "ca": "6/3/2026"
+      },
+      "consultado": "2026-10-18",
+      "licencia": "Sin confirmar: solo se enlaza y se resume con palabras propias",
+      "formato": {
+        "es": "PDF · 18 MB · 72 páginas",
+        "ca": "PDF · 18 MB · 72 pàgines"
+      },
+      "es": {
+        "titulo": "Brecha digital de género en España (ONTSI, edición 2026)",
+        "resumen": "Informe del Observatorio Nacional de Tecnología y Sociedad (ONTSI) que compara a mujeres y hombres en uso de internet, competencias digitales, estudios, empleo y seguridad, con datos de 2025. El 39,9 % de los hombres y el 35,9 % de las mujeres usaron IA generativa en los tres últimos meses, y ellas son más cautas ante sus riesgos. Las mujeres son el 19,6 % de las personas especialistas digitales.",
+        "interes": "Da los datos oficiales de la brecha digital por género y por edad: entre las personas de 75 años o más, las mujeres que nunca han usado internet son el 53 %. Es una brecha de uso, no de capacidad. Las páginas 2 y 3 resumen lo principal."
+      },
+      "ca": {
+        "titulo": "Bretxa digital de gènere a Espanya (ONTSI, edició 2026)",
+        "resumen": "Informe de l’Observatorio Nacional de Tecnología y Sociedad (ONTSI) que compara dones i homes en l’ús d’internet, les competències digitals, els estudis, l’ocupació i la seguretat, amb dades del 2025. El 39,9 % dels homes i el 35,9 % de les dones van fer servir IA generativa en els tres últims mesos, i elles són més prudents davant dels seus riscos. Les dones són el 19,6 % de les persones especialistes digitals. En castellà.",
+        "interes": "Dona les dades oficials de la bretxa digital per gènere i per edat: entre les persones de 75 anys o més, les dones que no han fet servir mai internet són el 53 %. És una bretxa d’ús, no de capacitat. Les pàgines 2 i 3 resumeixen el principal."
+      }
+    },
+    {
+      "id": "viejas-competencias-nuevas-tecnologias-oit",
+      "tipo": "nota",
+      "nivel": "investigacion",
+      "tema": "empleo",
+      "fuente": "OIT",
+      "idiomas": [
+        "es"
+      ],
+      "minutos": 10,
+      "enlace": "https://www.ilo.org/es/resource/articulo/viejas-competencias-para-nuevas-tecnologias",
+      "fecha": {
+        "iso": "2026-07-14",
+        "es": "14/7/2026",
+        "ca": "14/7/2026"
+      },
+      "consultado": "2026-10-18",
+      "licencia": "Sin confirmar: solo se enlaza y se resume con palabras propias",
+      "formato": {
+        "es": "Página web: artículo",
+        "ca": "Pàgina web: article"
+      },
+      "es": {
+        "titulo": "¿Sirven las competencias de siempre para trabajar con IA?",
+        "resumen": "Artículo de dos economistas de la Organización Internacional del Trabajo (OIT) basado en millones de ofertas de empleo publicadas en internet en siete países, ninguno europeo. Las empresas piden sobre todo competencias cognitivas y socioemocionales; los conocimientos especializados en IA suponen en torno al 1 % de lo que piden o menos.",
+        "interes": "Ayuda a no dar por hecho que hace falta ser especialista en IA para seguir trabajando. Los datos son de anuncios de otros países y no predicen lo que pasará en tu empleo."
+      },
+      "ca": {
+        "titulo": "Serveixen les competències de sempre per treballar amb IA?",
+        "resumen": "Article de dues economistes de l’Organització Internacional del Treball (OIT) basat en milions d’ofertes de feina publicades a internet en set països, cap d’europeu. Les empreses demanen sobretot competències cognitives i socioemocionals; els coneixements especialitzats en IA suposen al voltant de l’1 % del que demanen o menys. En castellà.",
+        "interes": "Ajuda a no donar per fet que cal ser especialista en IA per continuar treballant. Les dades són d’anuncis d’altres països i no prediuen què passarà a la teva feina."
+      }
+    },
+    {
+      "id": "ia-homogeniza-lenguaje-sinc",
+      "tipo": "nota",
+      "nivel": "investigacion",
+      "tema": "aprender",
+      "fuente": "Agencia SINC",
+      "idiomas": [
+        "es"
+      ],
+      "minutos": 4,
+      "enlace": "https://www.agenciasinc.es/Noticias/Las-herramientas-de-IA-para-generar-texto-homogenizan-el-lenguaje",
+      "fecha": {
+        "iso": "2026-08-24",
+        "es": "24/8/2026",
+        "ca": "24/8/2026"
+      },
+      "consultado": "2026-10-18",
+      "licencia": "Creative Commons 4.0 según la página (no indica la variante); solo se enlaza y se resume con palabras propias",
+      "formato": {
+        "es": "Página web: noticia",
+        "ca": "Pàgina web: notícia"
+      },
+      "es": {
+        "titulo": "Escribir con IA hace que los textos se parezcan más entre sí",
+        "resumen": "Noticia sobre un estudio de la Universidad del Sur de California (Estados Unidos): analizó más de 880.000 textos y pidió a tres modelos de lenguaje que reescribieran miles de ellos. Los textos reescritos conservaban casi siempre el significado, pero perdían diferencias de estilo entre personas.",
+        "interes": "Invita a revisar lo que la IA reescribe por ti, porque puede quitarle rasgos propios a tu texto. Los autores avisan de que esto puede afectar a las evaluaciones basadas en el lenguaje, también en la selección de personal. Usa términos técnicos."
+      },
+      "ca": {
+        "titulo": "Escriure amb IA fa que els textos s’assemblin més entre si",
+        "resumen": "Notícia sobre un estudi de la Universitat del Sud de Califòrnia (Estats Units): va analitzar més de 880.000 textos i va demanar a tres models de llenguatge que en reescrivissin milers. Els textos reescrits conservaven gairebé sempre el significat, però perdien diferències d’estil entre persones. En castellà.",
+        "interes": "Convida a revisar el que la IA reescriu per tu, perquè pot treure trets propis al teu text. Els autors avisen que això pot afectar les avaluacions basades en el llenguatge, també en la selecció de personal. Fa servir termes tècnics."
+      }
+    },
+    {
+      "id": "us-segur-ia-empresa-agencia-ciberseguretat",
+      "tipo": "guia",
+      "subtipo": {
+        "es": "Página de buenas prácticas",
+        "ca": "Pàgina de bones pràctiques"
+      },
+      "nivel": "profundizar",
+      "tema": "empleo",
+      "fuente": "Agència de Ciberseguretat de Catalunya",
+      "idiomas": [
+        "es",
+        "ca"
+      ],
+      "minutos": 4,
+      "enlace": "https://ciberseguretat.gencat.cat/es/empresa/bones-practiques/us-segur-de-la-ia",
+      "enlace_ca": "https://ciberseguretat.gencat.cat/ca/empresa/bones-practiques/us-segur-de-la-ia",
+      "fecha": {
+        "iso": null,
+        "es": "Sin fecha publicada · consultada el 18/10/2026",
+        "ca": "Sense data publicada · consultada el 18/10/2026"
+      },
+      "consultado": "2026-10-18",
+      "licencia": "Sin confirmar: solo se enlaza y se resume con palabras propias",
+      "formato": {
+        "es": "Página web",
+        "ca": "Pàgina web"
+      },
+      "es": {
+        "titulo": "Usar la IA en el trabajo sin poner en riesgo los datos de la empresa",
+        "resumen": "Página de la Agència de Ciberseguretat de Catalunya sobre la «IA en la sombra»: el uso de herramientas de IA en el trabajo sin permiso de la empresa. Con ejemplos de oficina, como redactar un informe o responder a clientes, explica los riesgos (fuga de datos, incumplir la protección de datos, daño a la reputación) y recomienda una política de uso, herramientas autorizadas y formación.",
+        "interes": "Te ayuda a saber qué no conviene meter en una IA en tu trabajo y qué puedes pedir a tu empresa: normas claras y formación. Algunas medidas son para el equipo informático."
+      },
+      "ca": {
+        "titulo": "Fer servir la IA a la feina sense posar en risc les dades de l’empresa",
+        "resumen": "Pàgina de l’Agència de Ciberseguretat de Catalunya sobre la «IA a l’ombra»: l’ús d’eines d’IA a la feina sense permís de l’empresa. Amb exemples d’oficina, com redactar un informe o respondre clients, explica els riscos (fuita de dades, incomplir la protecció de dades, dany a la reputació) i recomana una política d’ús, eines autoritzades i formació.",
+        "interes": "T’ajuda a saber què no convé posar en una IA a la feina i què pots demanar a la teva empresa: normes clares i formació. Algunes mesures són per a l’equip informàtic."
+      }
+    },
+    {
+      "id": "resumen-recomendaciones-ia-generativa-aepd",
+      "tipo": "guia",
+      "subtipo": {
+        "es": "Lista de comprobación",
+        "ca": "Llista de comprovació"
+      },
+      "nivel": "profundizar",
+      "tema": "derechos",
+      "fuente": "AEPD",
+      "idiomas": [
+        "es"
+      ],
+      "minutos": 7,
+      "enlace": "https://www.aepd.es/recurso-multimedia/resumen-basico-obligaciones-recomendaciones-iag-aepd",
+      "fecha": {
+        "iso": "2026-01",
+        "es": "Enero de 2026",
+        "ca": "Gener de 2026"
+      },
+      "consultado": "2026-10-18",
+      "licencia": "Sin confirmar: solo se enlaza y se resume con palabras propias",
+      "formato": {
+        "es": "PDF · 126 KB",
+        "ca": "PDF · 126 KB"
+      },
+      "es": {
+        "titulo": "Cómo debe organizarse el uso de la IA generativa en una administración: lista de la AEPD",
+        "resumen": "Resumen de 4 páginas de la Agencia Española de Protección de Datos (AEPD) con las obligaciones y recomendaciones que se pone a sí misma para usar IA generativa: gobierno, protección de datos, transparencia, seguridad, contratación y formación. Termina con lo que debe saber cada persona usuaria: usar solo herramientas autorizadas, revisar a mano los resultados, no introducir datos personales ni confidenciales y no usar textos generados en documentos oficiales sin revisión humana.",
+        "interes": "Es un modelo concreto de normas para usar la IA en una oficina pública. Está escrita para quien implanta la IA y usa términos técnicos, pero el último apartado vale para cualquier persona que la use en su trabajo."
+      },
+      "ca": {
+        "titulo": "Com s’ha d’organitzar l’ús de la IA generativa en una administració: llista de l’AEPD",
+        "resumen": "Resum de 4 pàgines de l’Agència Espanyola de Protecció de Dades (AEPD) amb les obligacions i recomanacions que es posa a si mateixa per fer servir IA generativa: govern, protecció de dades, transparència, seguretat, contractació i formació. Acaba amb el que ha de saber cada persona usuària: fer servir només eines autoritzades, revisar a mà els resultats, no introduir dades personals ni confidencials i no fer servir textos generats en documents oficials sense revisió humana. En castellà.",
+        "interes": "És un model concret de normes per fer servir la IA en una oficina pública. Està escrita per a qui implanta la IA i fa servir termes tècnics, però l’últim apartat val per a qualsevol persona que la faci servir a la feina."
+      }
+    },
+    {
+      "id": "dades-compartides-ia-agencia-ciberseguretat",
+      "tipo": "guia",
+      "subtipo": {
+        "es": "Página de consejos",
+        "ca": "Pàgina de consells"
+      },
+      "nivel": "empezar",
+      "tema": "aprender",
+      "fuente": "Agència de Ciberseguretat de Catalunya",
+      "idiomas": [
+        "es",
+        "ca"
+      ],
+      "minutos": 3,
+      "enlace": "https://ciberseguretat.gencat.cat/es/ciutadania/intelligencia-artificial/dades-compartides-intelligencia-artificial",
+      "enlace_ca": "https://ciberseguretat.gencat.cat/ca/ciutadania/intelligencia-artificial/dades-compartides-intelligencia-artificial",
+      "fecha": {
+        "iso": null,
+        "es": "Sin fecha publicada · consultada el 18/10/2026",
+        "ca": "Sense data publicada · consultada el 18/10/2026"
+      },
+      "consultado": "2026-10-18",
+      "licencia": "Sin confirmar: solo se enlaza y se resume con palabras propias",
+      "formato": {
+        "es": "Página web",
+        "ca": "Pàgina web"
+      },
+      "es": {
+        "titulo": "Qué datos guarda la IA y cómo protegerlos",
+        "resumen": "Página de la Agència de Ciberseguretat de Catalunya: explica qué datos recogen las aplicaciones de IA (personales, de ubicación, lo que escribes y subes, datos técnicos) y sus riesgos, como perfiles, filtraciones o suplantación. Termina con cuatro consejos: no compartir datos personales, valorar desactivar el historial, revisar lo que ya has compartido y controlar los permisos de las aplicaciones.",
+        "interes": "Te da cuatro gestos sencillos para proteger tus datos al usar un chatbot. Repite parte del decálogo de la AEPD, pero añade el control de permisos y del historial."
+      },
+      "ca": {
+        "titulo": "Quines dades guarda la IA i com protegir-les",
+        "resumen": "Pàgina de l’Agència de Ciberseguretat de Catalunya: explica quines dades recullen les aplicacions d’IA (personals, d’ubicació, el que escrius i puges, dades tècniques) i els seus riscos, com perfils, filtracions o suplantació. Acaba amb quatre consells: no compartir dades personals, valorar desactivar l’historial, revisar el que ja has compartit i controlar els permisos de les aplicacions.",
+        "interes": "Et dona quatre gestos senzills per protegir les teves dades quan fas servir un xatbot. Repeteix part del decàleg de l’AEPD, però hi afegeix el control de permisos i de l’historial."
+      }
+    }
+  ]
+}

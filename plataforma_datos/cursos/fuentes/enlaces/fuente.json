@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "id": "enlaces",
+  "tema": "cursos",
+  "lector": "plataforma_datos.cursos.fuentes.enlaces.lector",
+  "casa_datos": "enlaces",
+  "nombre": "Comprobación de enlaces de la formación",
+  "institucion": null,
+  "significado": "Observaciones propias de si responden las webs de las entidades del Consorci, las fichas del SOC y los programas en PDF del SEPE que Faro enseña; no acredita que un curso tenga plazas ni que una web siga activa mañana.",
+  "alcance": [
+    "Webs de las ediciones y las entidades del Consorci, ficha del SOC de cada curso de la oferta y PDF del programa de cada especialidad del catálogo del SEPE.",
+    "Los candidatos salen del conjunto validado del Consorci y de los cursos y las especialidades que compone el paquete de formación desde sus preparados, con la validación admitida de `formacion`; si falta esa validación o un preparado, la descarga falla y dice qué falta.",
+    "Por enlace se guardan el código HTTP, la fecha, el destino final tras las redirecciones (con aviso si es otro origen) y, en un programa, la huella del PDF.",
+    "Una web o un curso se oculta solo con un 404 o un 410 observados y vuelve a enseñarse con una observación posterior que responda; el PDF de un programa se enlaza mientras su última observación concluyente sea un PDF que responde.",
+    "Un fallo de red, un plazo agotado, un 5xx o cualquier otro código no oculta ni retira nada: se anota y se conserva lo observado antes. Ningún número de días o de fallos seguidos cambia lo que ve la persona."
+  ],
+  "recursos": [
+    {
+      "id": "programas-sepe",
+      "tipo": "url",
+      "ubicacion": "https://sede.sepe.gob.es/es/portaltrabaja/resources/pdf/especialidades/",
+      "licencia": "Se consulta la existencia del PDF; no se conserva ni se redistribuye.",
+      "descripcion": "Programa oficial de cada especialidad, con su código en el nombre del archivo."
+    },
+    {
+      "id": "webs-y-fichas",
+      "tipo": "url",
+      "ubicacion": "https://serveiocupacio.gencat.cat/",
+      "licencia": "Se consulta solo el código de respuesta; no se conserva el contenido.",
+      "descripcion": "Webs de las entidades del Consorci y fichas de los cursos del SOC."
+    },
+    {
+      "id": "observaciones",
+      "tipo": "archivo",
+      "ubicacion": "var/actualizacion/originales/enlaces",
+      "licencia": null,
+      "descripcion": "observaciones.json: por conjunto y dirección, la última observación, la última concluyente y los fallos seguidos."
+    }
+  ],
+  "canales": [
+    {
+      "id": "enlaces",
+      "tipo": "remoto",
+      "recursos": ["programas-sepe", "webs-y-fichas", "observaciones"],
+      "autenticacion": "Ninguna. No cuentas, login, CAPTCHA ni bypass.",
+      "limites": [
+        "Transporte común: identidad genérica, consultas en serie, al menos 2 s entre consultas al mismo dominio y 30 s de plazo por consulta.",
+        "Cada ciclo consulta una porción declarada en porcion_diaria.json: como mucho 600 enlaces y 10 minutos y, el domingo (fecha del ciclo), una pasada larga de como mucho 1200 enlaces y 40 minutos. Va ordenada por lo que ve la persona: primero lo expuesto nunca consultado y lo heredado oculto; después lo que falló por primera vez; después lo expuesto (el programa de cada especialidad que cita un curso publicado del SOC o una edición del Consorci, la web de cada edición y la de cada entidad que imparte alguna) que lleva más de 2 días sin comprobarse; después los programas que se enlazan sin un curso al lado (en las especialidades de una ocupación) y llevan más de 14 días; y luego el resto, del más antiguo al más reciente. Lo que no cabe espera al ciclo siguiente; si lo expuesto no cabe entero, la cobertura de la validación lo cuenta en expuestos_vencidos.",
+        "Las fichas de los cursos del SOC se piden en una muestra rotatoria de 10 por ciclo: la página responde lo mismo para cualquier código, así que su código solo dice si el sitio sigue en pie o ha cambiado de dirección; si un curso sigue en la oferta lo decide el censo del SOC.",
+        "Si en una porción se consultan al menos 20 enlaces que se enseñaban de un mismo dominio y el 50 % o más dan 404 o 410, es una señal del dominio: esos 404 se anotan sin concluir (anomalia-de-dominio), no cambian lo que se enseña y el ciclo anota el dominio en dominios_con_anomalia.",
+        "Una web o una ficha se leen hasta 256 KiB, y basta su código si el cuerpo pasa de ahí; un PDF se lee hasta 8 MiB y, si pasa, la consulta es inconcluyente.",
+        "Un dominio que responde tres veces seguidas 403 o 429 se salta el resto del ciclo; lo que no se consultó conserva su estado y el panel lo dice.",
+        "Un ciclo acredita su turno, no todos los enlaces: queda comprobado si su conjunto se validó en ese mismo ciclo, consultó los enlaces que le tocaban (todos, o hasta el tope, el plazo o el freno de un dominio), dejó una observación fechada en el ciclo por cada consulta y alguna fue concluyente (un 404, un 410 o una página que responde). Sin conjunto validado de ese ciclo, con observaciones que no son del ciclo o con todo cortes de red, errores 5xx o dominios que piden que se les deje en paz, no se acredita y el panel lo marca como incidencia."
+      ],
+      "observaciones": "Una redirección a otro origen se sigue y queda anotada en la observación; un 404 o un 410 tras ella no oculta el enlace. Es un módulo de apoyo del ciclo: si falla, el estado lo marca en rojo y el paquete se publica con el conjunto admitido más reciente de esta fuente si lo hay y, solo si no, con el archivo ya publicado."
+    }
+  ],
+  "actualizacion": {
+    "politica": "diaria",
+    "red": true,
+    "frecuencia": "Consulta diaria de una porción de 10 minutos y, el domingo, de 40: lo expuesto con curso, como mucho cada 2 días; lo enseñado sin curso, cada 14; el resto, en una vuelta de unos 38 días.",
+    "renovar_dias": 30,
+    "originales": "enlaces"
+  },
+  "conjuntos": [
+    {
+      "id": "enlaces",
+      "fuente": "enlaces",
+      "clase": "cambiante",
+      "alcance": "contenido-actual-acotado",
+      "operacion": "descargar",
+      "intervalo_dias": 1
+    }
+  ],
+  "dependencias": ["consorci", "formacion"],
+  "contratos": [
+    "lector.py:descargar, preparar y validar",
+    "porcion.py:topes de porcion_diaria.json, pasada larga semanal, orden de consulta por exposición, muestra de fichas y anomalía de dominio",
+    "observaciones.py:resultado de cada consulta y regla de lo que se oculta, según cursos/vigencia.py"
+  ],
+  "retirada": "Solo un 404 o un 410 observados ocultan una web o un curso, y vuelven a enseñarse con una observación posterior que responda. Un fallo de red, un plazo o un 5xx no retiran nada.",
+  "conservacion": "Las observaciones se conservan por enlace en var/actualizacion; un enlace que Faro deja de enseñar deja de guardarse. Este descriptor no habilita limpieza automática."
+}

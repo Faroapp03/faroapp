@@ -1,0 +1,1681 @@
+[
+  {
+    "texto": "camarera",
+    "expandida": false,
+    "candidatas": [
+      {
+        "esco": "5131.2",
+        "puntos": 130.8
+      },
+      {
+        "esco": "5132.1",
+        "puntos": 120.8
+      },
+      {
+        "esco": "9112.4",
+        "puntos": 98
+      },
+      {
+        "esco": "5131.2.1",
+        "puntos": 93.5
+      },
+      {
+        "esco": "5111.2.3",
+        "puntos": 81
+      },
+      {
+        "esco": "5111.2.2",
+        "puntos": 80.8
+      },
+      {
+        "esco": "5132.1.1",
+        "puntos": 76.3
+      },
+      {
+        "esco": "5131.2.2.3",
+        "puntos": 75.7
+      }
+    ]
+  },
+  {
+    "texto": "administrativa",
+    "expandida": false,
+    "candidatas": [
+      {
+        "esco": "4110.1",
+        "puntos": 130.1
+      },
+      {
+        "esco": "3343.1",
+        "puntos": 103.8
+      },
+      {
+        "esco": "3341.7",
+        "puntos": 103.8
+      },
+      {
+        "esco": "3344.1",
+        "puntos": 99.4
+      },
+      {
+        "esco": "3343.1.7",
+        "puntos": 96.7
+      },
+      {
+        "esco": "4312.2",
+        "puntos": 94
+      },
+      {
+        "esco": "3342.2",
+        "puntos": 92.5
+      },
+      {
+        "esco": "4313.1",
+        "puntos": 90.2
+      }
+    ]
+  },
+  {
+    "texto": "analista financiera",
+    "expandida": false,
+    "candidatas": [
+      {
+        "esco": "2411.1.6",
+        "puntos": 126.6
+      },
+      {
+        "esco": "2413.1",
+        "puntos": 126.6
+      },
+      {
+        "esco": "3312.2.1",
+        "puntos": 121.2
+      },
+      {
+        "esco": "3311.2.1",
+        "puntos": 111.2
+      },
+      {
+        "esco": "3311.3.2",
+        "puntos": 111.2
+      },
+      {
+        "esco": "2411.1.1",
+        "puntos": 85.3
+      },
+      {
+        "esco": "1211.1",
+        "puntos": 58
+      },
+      {
+        "esco": "4312.2",
+        "puntos": 52.7
+      }
+    ]
+  },
+  {
+    "texto": "limpio",
+    "expandida": false,
+    "candidatas": [
+      {
+        "esco": "9612.1",
+        "puntos": 76.6
+      },
+      {
+        "esco": "9112.6",
+        "puntos": 59.4
+      },
+      {
+        "esco": "8160.10",
+        "puntos": 51.4
+      },
+      {
+        "esco": "9112.2",
+        "puntos": 50.6
+      },
+      {
+        "esco": "9112.1",
+        "puntos": 50.2
+      },
+      {
+        "esco": "9112.5",
+        "puntos": 49.5
+      },
+      {
+        "esco": "9112.3",
+        "puntos": 49.5
+      },
+      {
+        "esco": "9129.4",
+        "puntos": 49.2
+      }
+    ]
+  },
+  {
+    "texto": "limpiador",
+    "expandida": false,
+    "candidatas": [
+      {
+        "esco": "7511.3",
+        "puntos": 92.6
+      },
+      {
+        "esco": "9112.2",
+        "puntos": 91.3
+      },
+      {
+        "esco": "9111.1",
+        "puntos": 91
+      },
+      {
+        "esco": "9112.1",
+        "puntos": 90
+      },
+      {
+        "esco": "8160.10",
+        "puntos": 85.4
+      },
+      {
+        "esco": "9122.1",
+        "puntos": 81.7
+      },
+      {
+        "esco": "9123.1",
+        "puntos": 79.6
+      },
+      {
+        "esco": "9129.3",
+        "puntos": 79.2
+      }
+    ]
+  },
+  {
+    "texto": "soldador",
+    "expandida": false,
+    "candidatas": [
+      {
+        "esco": "7212.3",
+        "puntos": 125.7
+      },
+      {
+        "esco": "7212.2",
+        "puntos": 125.7
+      },
+      {
+        "esco": "7212.3.3",
+        "puntos": 92
+      },
+      {
+        "esco": "8212.3.1",
+        "puntos": 75.6
+      },
+      {
+        "esco": "3123.1.23",
+        "puntos": 75.1
+      },
+      {
+        "esco": "7212.1",
+        "puntos": 74.4
+      },
+      {
+        "esco": "7212.3.4",
+        "puntos": 69.4
+      },
+      {
+        "esco": "7541.1",
+        "puntos": 66.2
+      }
+    ]
+  },
+  {
+    "texto": "soldadura",
+    "expandida": false,
+    "candidatas": [
+      {
+        "esco": "7212.3",
+        "puntos": 101.3
+      },
+      {
+        "esco": "7212.4",
+        "puntos": 101.3
+      },
+      {
+        "esco": "8212.5",
+        "puntos": 101
+      },
+      {
+        "esco": "2144.1.23",
+        "puntos": 100.6
+      },
+      {
+        "esco": "3115.1.24",
+        "puntos": 83.3
+      },
+      {
+        "esco": "7212.3.4",
+        "puntos": 80.4
+      },
+      {
+        "esco": "7212.3.2",
+        "puntos": 75.2
+      },
+      {
+        "esco": "7212.1",
+        "puntos": 75.1
+      }
+    ]
+  },
+  {
+    "texto": "jefe de cocina",
+    "expandida": false,
+    "candidatas": [
+      {
+        "esco": "3434.1.1",
+        "puntos": 118.6
+      },
+      {
+        "esco": "3434.1",
+        "puntos": 113.6
+      },
+      {
+        "esco": "3434.1.3",
+        "puntos": 80.6
+      },
+      {
+        "esco": "5120.1",
+        "puntos": 79.4
+      },
+      {
+        "esco": "9412.1",
+        "puntos": 75.3
+      },
+      {
+        "esco": "9412.2",
+        "puntos": 75.2
+      },
+      {
+        "esco": "5120.1.4",
+        "puntos": 71.2
+      },
+      {
+        "esco": "7115.4",
+        "puntos": 65
+      }
+    ]
+  },
+  {
+    "texto": "jefes de cocina",
+    "expandida": true,
+    "candidatas": [
+      {
+        "esco": "3434.1.1",
+        "puntos": 88.6
+      },
+      {
+        "esco": "3434.1",
+        "puntos": 83.6
+      },
+      {
+        "esco": "5120.1",
+        "puntos": 79.4
+      },
+      {
+        "esco": "9412.1",
+        "puntos": 75.3
+      },
+      {
+        "esco": "9412.2",
+        "puntos": 75.2
+      },
+      {
+        "esco": "3434.1.3",
+        "puntos": 72.9
+      },
+      {
+        "esco": "5120.1.4",
+        "puntos": 71.2
+      },
+      {
+        "esco": "7115.4",
+        "puntos": 65
+      }
+    ]
+  },
+  {
+    "texto": "jefa de cocina",
+    "expandida": false,
+    "candidatas": [
+      {
+        "esco": "3434.1.1",
+        "puntos": 118.6
+      },
+      {
+        "esco": "3434.1",
+        "puntos": 113.6
+      },
+      {
+        "esco": "3434.1.3",
+        "puntos": 80.6
+      },
+      {
+        "esco": "5120.1",
+        "puntos": 79.4
+      },
+      {
+        "esco": "9412.1",
+        "puntos": 75.3
+      },
+      {
+        "esco": "9412.2",
+        "puntos": 75.2
+      },
+      {
+        "esco": "5120.1.4",
+        "puntos": 71.2
+      },
+      {
+        "esco": "7115.4",
+        "puntos": 65
+      }
+    ]
+  },
+  {
+    "texto": "jefas de cocina",
+    "expandida": true,
+    "candidatas": [
+      {
+        "esco": "3434.1.1",
+        "puntos": 88.6
+      },
+      {
+        "esco": "3434.1",
+        "puntos": 83.6
+      },
+      {
+        "esco": "5120.1",
+        "puntos": 79.4
+      },
+      {
+        "esco": "9412.1",
+        "puntos": 75.3
+      },
+      {
+        "esco": "9412.2",
+        "puntos": 75.2
+      },
+      {
+        "esco": "3434.1.3",
+        "puntos": 72.9
+      },
+      {
+        "esco": "5120.1.4",
+        "puntos": 71.2
+      },
+      {
+        "esco": "7115.4",
+        "puntos": 65
+      }
+    ]
+  },
+  {
+    "texto": "jefe de obra",
+    "expandida": false,
+    "candidatas": [
+      {
+        "esco": "3123.1.1",
+        "puntos": 77.7
+      },
+      {
+        "esco": "3123.1.20",
+        "puntos": 77.7
+      },
+      {
+        "esco": "7111.1",
+        "puntos": 75
+      },
+      {
+        "esco": "3123.1",
+        "puntos": 72
+      },
+      {
+        "esco": "3123.1.2",
+        "puntos": 72
+      },
+      {
+        "esco": "1323.1",
+        "puntos": 69.1
+      },
+      {
+        "esco": "3123.1.5",
+        "puntos": 66.2
+      },
+      {
+        "esco": "3123.1.3",
+        "puntos": 64.9
+      }
+    ]
+  },
+  {
+    "texto": "jefes de obra",
+    "expandida": true,
+    "candidatas": [
+      {
+        "esco": "3123.1.1",
+        "puntos": 77.7
+      },
+      {
+        "esco": "3123.1.20",
+        "puntos": 77.7
+      },
+      {
+        "esco": "7111.1",
+        "puntos": 75
+      },
+      {
+        "esco": "3123.1",
+        "puntos": 72
+      },
+      {
+        "esco": "3123.1.2",
+        "puntos": 72
+      },
+      {
+        "esco": "1323.1",
+        "puntos": 69.1
+      },
+      {
+        "esco": "3123.1.5",
+        "puntos": 66.2
+      },
+      {
+        "esco": "3123.1.3",
+        "puntos": 64.9
+      }
+    ]
+  },
+  {
+    "texto": "guía turístico",
+    "expandida": false,
+    "candidatas": [
+      {
+        "esco": "4221.6",
+        "puntos": 122.1
+      },
+      {
+        "esco": "5113.1",
+        "puntos": 118.2
+      },
+      {
+        "esco": "3423.4",
+        "puntos": 51.4
+      },
+      {
+        "esco": "4221.5",
+        "puntos": 48.7
+      },
+      {
+        "esco": "1439.7",
+        "puntos": 48.2
+      },
+      {
+        "esco": "1221.6",
+        "puntos": 46.9
+      },
+      {
+        "esco": "5113.1.3",
+        "puntos": 45.6
+      },
+      {
+        "esco": "1213.2.3",
+        "puntos": 45.6
+      }
+    ]
+  },
+  {
+    "texto": "guías turísticos",
+    "expandida": true,
+    "candidatas": [
+      {
+        "esco": "4221.6",
+        "puntos": 92.1
+      },
+      {
+        "esco": "5113.1",
+        "puntos": 88.2
+      },
+      {
+        "esco": "3423.4",
+        "puntos": 51.4
+      },
+      {
+        "esco": "4221.5",
+        "puntos": 48.7
+      },
+      {
+        "esco": "1439.7",
+        "puntos": 48.2
+      },
+      {
+        "esco": "1221.6",
+        "puntos": 46.9
+      },
+      {
+        "esco": "5113.1.3",
+        "puntos": 45.6
+      },
+      {
+        "esco": "1213.2.3",
+        "puntos": 45.6
+      }
+    ]
+  },
+  {
+    "texto": "mozo de almacén",
+    "expandida": false,
+    "candidatas": [
+      {
+        "esco": "9333.8",
+        "puntos": 131.8
+      },
+      {
+        "esco": "9333.8.1",
+        "puntos": 79.7
+      },
+      {
+        "esco": "5131.2",
+        "puntos": 61.7
+      },
+      {
+        "esco": "9333.1",
+        "puntos": 60
+      },
+      {
+        "esco": "9112.4",
+        "puntos": 56.4
+      },
+      {
+        "esco": "5132.1",
+        "puntos": 53.9
+      },
+      {
+        "esco": "9621.2",
+        "puntos": 49.4
+      },
+      {
+        "esco": "9333.3",
+        "puntos": 49.1
+      }
+    ]
+  },
+  {
+    "texto": "mozos de almacén",
+    "expandida": false,
+    "candidatas": [
+      {
+        "esco": "9333.8",
+        "puntos": 99
+      },
+      {
+        "esco": "9333.8.1",
+        "puntos": 79.7
+      },
+      {
+        "esco": "5131.2",
+        "puntos": 61.7
+      },
+      {
+        "esco": "9333.1",
+        "puntos": 60
+      },
+      {
+        "esco": "9112.4",
+        "puntos": 56.4
+      },
+      {
+        "esco": "5132.1",
+        "puntos": 53.9
+      },
+      {
+        "esco": "9621.2",
+        "puntos": 49.4
+      },
+      {
+        "esco": "9333.3",
+        "puntos": 49.1
+      }
+    ]
+  },
+  {
+    "texto": "operador de maquinaria",
+    "expandida": false,
+    "candidatas": [
+      {
+        "esco": "7233.15",
+        "puntos": 87.2
+      },
+      {
+        "esco": "8341.2",
+        "puntos": 85.8
+      },
+      {
+        "esco": "8341.1",
+        "puntos": 84.4
+      },
+      {
+        "esco": "8156.2.6",
+        "puntos": 80.4
+      },
+      {
+        "esco": "8342.2",
+        "puntos": 79.4
+      },
+      {
+        "esco": "8111.4",
+        "puntos": 78.9
+      },
+      {
+        "esco": "8342.7",
+        "puntos": 78.6
+      },
+      {
+        "esco": "7523.3",
+        "puntos": 78.1
+      }
+    ]
+  },
+  {
+    "texto": "operador",
+    "expandida": false,
+    "candidatas": [
+      {
+        "esco": "5223.5",
+        "puntos": 95.1
+      },
+      {
+        "esco": "8332.3",
+        "puntos": 86.9
+      },
+      {
+        "esco": "4323.21",
+        "puntos": 85.2
+      },
+      {
+        "esco": "4323.8",
+        "puntos": 85
+      },
+      {
+        "esco": "7233.2",
+        "puntos": 84.8
+      },
+      {
+        "esco": "3122.4.8",
+        "puntos": 83.9
+      },
+      {
+        "esco": "3118.3.5",
+        "puntos": 83.7
+      },
+      {
+        "esco": "7223.13",
+        "puntos": 83.3
+      }
+    ]
+  },
+  {
+    "texto": "mecanico",
+    "expandida": false,
+    "candidatas": [
+      {
+        "esco": "3115.1",
+        "puntos": 99.6
+      },
+      {
+        "esco": "2144.1",
+        "puntos": 98.2
+      },
+      {
+        "esco": "7231.10",
+        "puntos": 94
+      },
+      {
+        "esco": "7233.10",
+        "puntos": 92.2
+      },
+      {
+        "esco": "7233.7",
+        "puntos": 90.8
+      },
+      {
+        "esco": "7234.1",
+        "puntos": 90
+      },
+      {
+        "esco": "7222.4",
+        "puntos": 88.6
+      },
+      {
+        "esco": "7233.15",
+        "puntos": 88.2
+      }
+    ]
+  },
+  {
+    "texto": "electromecanico",
+    "expandida": false,
+    "candidatas": [
+      {
+        "esco": "7412.3",
+        "puntos": 116.9
+      },
+      {
+        "esco": "3113.1.2",
+        "puntos": 101.7
+      },
+      {
+        "esco": "2151.1.3",
+        "puntos": 99.1
+      },
+      {
+        "esco": "8212.3.2",
+        "puntos": 90.1
+      },
+      {
+        "esco": "3118.3.7",
+        "puntos": 90
+      },
+      {
+        "esco": "3113.3",
+        "puntos": 80.6
+      },
+      {
+        "esco": "7233.11",
+        "puntos": 79.9
+      },
+      {
+        "esco": "7543.9.3",
+        "puntos": 62.5
+      }
+    ]
+  },
+  {
+    "texto": "arte",
+    "expandida": false,
+    "candidatas": [
+      {
+        "esco": "2654.6",
+        "puntos": 95.3
+      },
+      {
+        "esco": "2654.1",
+        "puntos": 88.2
+      },
+      {
+        "esco": "2330.1.1",
+        "puntos": 80.6
+      },
+      {
+        "esco": "2651.2",
+        "puntos": 75.7
+      },
+      {
+        "esco": "3433.1",
+        "puntos": 73.9
+      },
+      {
+        "esco": "3119.12",
+        "puntos": 73.5
+      },
+      {
+        "esco": "1349.8",
+        "puntos": 72.4
+      },
+      {
+        "esco": "2621.7",
+        "puntos": 72.1
+      }
+    ]
+  },
+  {
+    "texto": "partes",
+    "expandida": false,
+    "candidatas": [
+      {
+        "esco": "2222.1",
+        "puntos": 82.6
+      },
+      {
+        "esco": "8322.6",
+        "puntos": 64.4
+      },
+      {
+        "esco": "5120.1.2",
+        "puntos": 64
+      },
+      {
+        "esco": "3434.1",
+        "puntos": 63.2
+      },
+      {
+        "esco": "2359.14",
+        "puntos": 62.8
+      },
+      {
+        "esco": "1212.3",
+        "puntos": 62.6
+      },
+      {
+        "esco": "2432.7",
+        "puntos": 60.4
+      },
+      {
+        "esco": "2423.3",
+        "puntos": 59.1
+      }
+    ]
+  },
+  {
+    "texto": "abogado de empresa",
+    "expandida": false,
+    "candidatas": [
+      {
+        "esco": "2611.1.1",
+        "puntos": 127.8
+      },
+      {
+        "esco": "2611.1",
+        "puntos": 71.9
+      },
+      {
+        "esco": "2619.4",
+        "puntos": 55.5
+      },
+      {
+        "esco": "3339.3",
+        "puntos": 55.2
+      },
+      {
+        "esco": "2619.6",
+        "puntos": 54.4
+      },
+      {
+        "esco": "3342.2",
+        "puntos": 53.2
+      },
+      {
+        "esco": "3411.2",
+        "puntos": 51.7
+      }
+    ]
+  },
+  {
+    "texto": "enfermera",
+    "expandida": false,
+    "candidatas": [
+      {
+        "esco": "2221.2",
+        "puntos": 130.1
+      },
+      {
+        "esco": "2221.3",
+        "puntos": 104.6
+      },
+      {
+        "esco": "5321.1.1",
+        "puntos": 93.5
+      },
+      {
+        "esco": "2221.1",
+        "puntos": 91.5
+      },
+      {
+        "esco": "2222.1",
+        "puntos": 87.4
+      },
+      {
+        "esco": "1342.2",
+        "puntos": 84.9
+      },
+      {
+        "esco": "3240.2.4",
+        "puntos": 82.7
+      },
+      {
+        "esco": "3259.1",
+        "puntos": 81.3
+      }
+    ]
+  },
+  {
+    "texto": "xyz sin sentido",
+    "expandida": false,
+    "candidatas": []
+  },
+  {
+    "texto": "de la y",
+    "expandida": false,
+    "candidatas": []
+  },
+  {
+    "texto": "",
+    "expandida": false,
+    "candidatas": []
+  },
+  {
+    "texto": "María, cajera",
+    "expandida": false,
+    "candidatas": [
+      {
+        "esco": "5230.1",
+        "puntos": 99.7
+      },
+      {
+        "esco": "4212.3",
+        "puntos": 80.8
+      },
+      {
+        "esco": "7421.1",
+        "puntos": 72.2
+      },
+      {
+        "esco": "4211.1",
+        "puntos": 72
+      },
+      {
+        "esco": "4212.4.1",
+        "puntos": 66.9
+      }
+    ]
+  },
+  {
+    "texto": "Soy Pastora, cajera",
+    "expandida": false,
+    "candidatas": [
+      {
+        "esco": "5230.1",
+        "puntos": 99.7
+      },
+      {
+        "esco": "4212.3",
+        "puntos": 80.8
+      },
+      {
+        "esco": "7421.1",
+        "puntos": 72.2
+      },
+      {
+        "esco": "4211.1",
+        "puntos": 72
+      },
+      {
+        "esco": "4212.4.1",
+        "puntos": 66.9
+      }
+    ]
+  },
+  {
+    "texto": "Laura Pérez, administrativa",
+    "expandida": false,
+    "candidatas": [
+      {
+        "esco": "4110.1",
+        "puntos": 93.5
+      },
+      {
+        "esco": "3343.1",
+        "puntos": 87.8
+      },
+      {
+        "esco": "3341.7",
+        "puntos": 87.8
+      },
+      {
+        "esco": "3344.1",
+        "puntos": 84
+      },
+      {
+        "esco": "3343.1.7",
+        "puntos": 81.6
+      },
+      {
+        "esco": "4312.2",
+        "puntos": 79.2
+      },
+      {
+        "esco": "3342.2",
+        "puntos": 77.9
+      },
+      {
+        "esco": "4313.1",
+        "puntos": 75.8
+      }
+    ]
+  },
+  {
+    "texto": "Sóc infermera",
+    "expandida": false,
+    "candidatas": []
+  },
+  {
+    "texto": "Treballo de fuster",
+    "expandida": false,
+    "candidatas": []
+  },
+  {
+    "texto": "técnico de drenajes",
+    "expandida": false,
+    "candidatas": [
+      {
+        "esco": "7126.2",
+        "puntos": 127.5
+      },
+      {
+        "esco": "8111.1",
+        "puntos": 92.4
+      },
+      {
+        "esco": "2142.1.3",
+        "puntos": 68.1
+      },
+      {
+        "esco": "9312.1.1",
+        "puntos": 64.1
+      }
+    ]
+  },
+  {
+    "texto": "técnico de drenaje",
+    "expandida": false,
+    "candidatas": [
+      {
+        "esco": "8111.1",
+        "puntos": 122.4
+      },
+      {
+        "esco": "7126.2",
+        "puntos": 107.5
+      },
+      {
+        "esco": "2142.1.3",
+        "puntos": 68.1
+      },
+      {
+        "esco": "9312.1.1",
+        "puntos": 64.1
+      }
+    ]
+  },
+  {
+    "texto": "cajeros",
+    "expandida": false,
+    "candidatas": [
+      {
+        "esco": "5230.1",
+        "puntos": 99.7
+      },
+      {
+        "esco": "4212.3",
+        "puntos": 80.8
+      },
+      {
+        "esco": "7421.1",
+        "puntos": 78.1
+      },
+      {
+        "esco": "4211.1",
+        "puntos": 72
+      },
+      {
+        "esco": "4212.4.1",
+        "puntos": 66.9
+      }
+    ]
+  },
+  {
+    "texto": "cajero",
+    "expandida": false,
+    "candidatas": [
+      {
+        "esco": "5230.1",
+        "puntos": 129.7
+      },
+      {
+        "esco": "4212.3",
+        "puntos": 89.1
+      },
+      {
+        "esco": "4211.1",
+        "puntos": 80.5
+      },
+      {
+        "esco": "7421.1",
+        "puntos": 78.8
+      },
+      {
+        "esco": "4212.4.1",
+        "puntos": 74.7
+      }
+    ]
+  },
+  {
+    "texto": "María, cajera",
+    "expandida": false,
+    "candidatas": [
+      {
+        "esco": "5230.1",
+        "puntos": 99.7
+      },
+      {
+        "esco": "4212.3",
+        "puntos": 80.8
+      },
+      {
+        "esco": "7421.1",
+        "puntos": 72.2
+      },
+      {
+        "esco": "4211.1",
+        "puntos": 72
+      },
+      {
+        "esco": "4212.4.1",
+        "puntos": 66.9
+      }
+    ]
+  },
+  {
+    "texto": "Soy Pastora, cajera",
+    "expandida": false,
+    "candidatas": [
+      {
+        "esco": "5230.1",
+        "puntos": 99.7
+      },
+      {
+        "esco": "4212.3",
+        "puntos": 80.8
+      },
+      {
+        "esco": "7421.1",
+        "puntos": 72.2
+      },
+      {
+        "esco": "4211.1",
+        "puntos": 72
+      },
+      {
+        "esco": "4212.4.1",
+        "puntos": 66.9
+      }
+    ]
+  },
+  {
+    "texto": "Laura Pérez, administrativa",
+    "expandida": false,
+    "candidatas": [
+      {
+        "esco": "4110.1",
+        "puntos": 93.5
+      },
+      {
+        "esco": "3343.1",
+        "puntos": 87.8
+      },
+      {
+        "esco": "3341.7",
+        "puntos": 87.8
+      },
+      {
+        "esco": "3344.1",
+        "puntos": 84
+      },
+      {
+        "esco": "3343.1.7",
+        "puntos": 81.6
+      },
+      {
+        "esco": "4312.2",
+        "puntos": 79.2
+      },
+      {
+        "esco": "3342.2",
+        "puntos": 77.9
+      },
+      {
+        "esco": "4313.1",
+        "puntos": 75.8
+      }
+    ]
+  },
+  {
+    "texto": "Pau, camarero",
+    "expandida": false,
+    "candidatas": [
+      {
+        "esco": "5131.2",
+        "puntos": 100.8
+      },
+      {
+        "esco": "5132.1",
+        "puntos": 90.8
+      },
+      {
+        "esco": "9112.4",
+        "puntos": 90
+      },
+      {
+        "esco": "5131.2.1",
+        "puntos": 84.4
+      },
+      {
+        "esco": "5111.2.3",
+        "puntos": 72.5
+      },
+      {
+        "esco": "5111.2.2",
+        "puntos": 72.4
+      },
+      {
+        "esco": "5132.1.1",
+        "puntos": 69.3
+      },
+      {
+        "esco": "5131.2.2.3",
+        "puntos": 68.8
+      }
+    ]
+  },
+  {
+    "texto": "Nieves, guía turístico",
+    "expandida": false,
+    "candidatas": [
+      {
+        "esco": "4221.6",
+        "puntos": 92.1
+      },
+      {
+        "esco": "5113.1",
+        "puntos": 88.2
+      },
+      {
+        "esco": "3423.4",
+        "puntos": 51.4
+      },
+      {
+        "esco": "4221.5",
+        "puntos": 48.7
+      },
+      {
+        "esco": "1439.7",
+        "puntos": 48.2
+      },
+      {
+        "esco": "1221.6",
+        "puntos": 46.9
+      },
+      {
+        "esco": "5113.1.3",
+        "puntos": 45.6
+      },
+      {
+        "esco": "1213.2.3",
+        "puntos": 45.6
+      }
+    ]
+  },
+  {
+    "texto": "Soy Laura, guía turístico",
+    "expandida": false,
+    "candidatas": [
+      {
+        "esco": "4221.6",
+        "puntos": 92.1
+      },
+      {
+        "esco": "5113.1",
+        "puntos": 88.2
+      },
+      {
+        "esco": "3423.4",
+        "puntos": 51.4
+      },
+      {
+        "esco": "4221.5",
+        "puntos": 48.7
+      },
+      {
+        "esco": "1439.7",
+        "puntos": 48.2
+      },
+      {
+        "esco": "1221.6",
+        "puntos": 46.9
+      },
+      {
+        "esco": "5113.1.3",
+        "puntos": 45.6
+      },
+      {
+        "esco": "1213.2.3",
+        "puntos": 45.6
+      }
+    ]
+  },
+  {
+    "texto": "Soy Laura, guías turísticos",
+    "expandida": true,
+    "candidatas": [
+      {
+        "esco": "4221.6",
+        "puntos": 92.1
+      },
+      {
+        "esco": "5113.1",
+        "puntos": 88.2
+      },
+      {
+        "esco": "3423.4",
+        "puntos": 51.4
+      },
+      {
+        "esco": "4221.5",
+        "puntos": 48.7
+      },
+      {
+        "esco": "1439.7",
+        "puntos": 48.2
+      },
+      {
+        "esco": "1221.6",
+        "puntos": 46.9
+      },
+      {
+        "esco": "5113.1.3",
+        "puntos": 45.6
+      },
+      {
+        "esco": "1213.2.3",
+        "puntos": 45.6
+      }
+    ]
+  },
+  {
+    "texto": "María, jefes de cocina",
+    "expandida": true,
+    "candidatas": [
+      {
+        "esco": "3434.1.1",
+        "puntos": 81.5
+      },
+      {
+        "esco": "3434.1",
+        "puntos": 76.5
+      },
+      {
+        "esco": "3434.1.3",
+        "puntos": 68.9
+      },
+      {
+        "esco": "5120.1",
+        "puntos": 59.5
+      },
+      {
+        "esco": "9412.1",
+        "puntos": 56.4
+      },
+      {
+        "esco": "9412.2",
+        "puntos": 56.3
+      },
+      {
+        "esco": "5120.1.4",
+        "puntos": 55.1
+      },
+      {
+        "esco": "7115.4",
+        "puntos": 50.8
+      }
+    ]
+  },
+  {
+    "texto": "Pastora, mozos de almacén",
+    "expandida": false,
+    "candidatas": [
+      {
+        "esco": "9333.8",
+        "puntos": 99
+      },
+      {
+        "esco": "9333.8.1",
+        "puntos": 79.7
+      },
+      {
+        "esco": "5131.2",
+        "puntos": 61.7
+      },
+      {
+        "esco": "9333.1",
+        "puntos": 60
+      },
+      {
+        "esco": "9112.4",
+        "puntos": 56.4
+      },
+      {
+        "esco": "5132.1",
+        "puntos": 53.9
+      },
+      {
+        "esco": "9621.2",
+        "puntos": 49.4
+      },
+      {
+        "esco": "9333.3",
+        "puntos": 49.1
+      }
+    ]
+  },
+  {
+    "texto": "Laura Guías, cajera",
+    "expandida": true,
+    "candidatas": [
+      {
+        "esco": "5230.1",
+        "puntos": 58.5
+      },
+      {
+        "esco": "3423.4",
+        "puntos": 47.9
+      },
+      {
+        "esco": "4212.3",
+        "puntos": 45.4
+      },
+      {
+        "esco": "4221.6",
+        "puntos": 43.9
+      },
+      {
+        "esco": "4211.1",
+        "puntos": 42.7
+      },
+      {
+        "esco": "7421.1",
+        "puntos": 42.7
+      },
+      {
+        "esco": "5113.1",
+        "puntos": 42.3
+      },
+      {
+        "esco": "5113.1.3",
+        "puntos": 42.1
+      }
+    ]
+  },
+  {
+    "texto": "Laura Jefes, cajera",
+    "expandida": true,
+    "candidatas": [
+      {
+        "esco": "5230.1",
+        "puntos": 81.4
+      },
+      {
+        "esco": "4212.3",
+        "puntos": 64.4
+      },
+      {
+        "esco": "4211.1",
+        "puntos": 62.1
+      },
+      {
+        "esco": "4212.4.1",
+        "puntos": 57.9
+      },
+      {
+        "esco": "7421.1",
+        "puntos": 57.8
+      }
+    ]
+  },
+  {
+    "texto": "Laura Mozos, cajera",
+    "expandida": false,
+    "candidatas": [
+      {
+        "esco": "5230.1",
+        "puntos": 60.6
+      },
+      {
+        "esco": "5131.2",
+        "puntos": 53.3
+      },
+      {
+        "esco": "9333.4",
+        "puntos": 51.2
+      },
+      {
+        "esco": "9112.4",
+        "puntos": 49.6
+      },
+      {
+        "esco": "4212.3",
+        "puntos": 47.1
+      },
+      {
+        "esco": "5132.1",
+        "puntos": 47
+      },
+      {
+        "esco": "9333.1",
+        "puntos": 45.1
+      },
+      {
+        "esco": "4211.1",
+        "puntos": 44.4
+      }
+    ]
+  },
+  {
+    "texto": "Guías, cajera",
+    "expandida": true,
+    "candidatas": [
+      {
+        "esco": "5230.1",
+        "puntos": 60.2
+      },
+      {
+        "esco": "3423.4",
+        "puntos": 47.9
+      },
+      {
+        "esco": "4212.3",
+        "puntos": 47.1
+      },
+      {
+        "esco": "7421.1",
+        "puntos": 44.4
+      },
+      {
+        "esco": "4221.6",
+        "puntos": 43.9
+      },
+      {
+        "esco": "4211.1",
+        "puntos": 42.7
+      },
+      {
+        "esco": "5113.1",
+        "puntos": 42.3
+      },
+      {
+        "esco": "5113.1.3",
+        "puntos": 42.1
+      }
+    ]
+  },
+  {
+    "texto": "Jefes, cajera",
+    "expandida": true,
+    "candidatas": [
+      {
+        "esco": "5230.1",
+        "puntos": 83
+      },
+      {
+        "esco": "4212.3",
+        "puntos": 66.1
+      },
+      {
+        "esco": "4211.1",
+        "puntos": 62.1
+      },
+      {
+        "esco": "7421.1",
+        "puntos": 59.5
+      },
+      {
+        "esco": "4212.4.1",
+        "puntos": 57.9
+      }
+    ]
+  },
+  {
+    "texto": "Mozos, cajera",
+    "expandida": false,
+    "candidatas": [
+      {
+        "esco": "5230.1",
+        "puntos": 62.2
+      },
+      {
+        "esco": "5131.2",
+        "puntos": 53.3
+      },
+      {
+        "esco": "9333.4",
+        "puntos": 51.2
+      },
+      {
+        "esco": "9112.4",
+        "puntos": 49.6
+      },
+      {
+        "esco": "4212.3",
+        "puntos": 48.8
+      },
+      {
+        "esco": "5132.1",
+        "puntos": 47
+      },
+      {
+        "esco": "7421.1",
+        "puntos": 45.7
+      },
+      {
+        "esco": "9333.1",
+        "puntos": 45.1
+      }
+    ]
+  }
+]

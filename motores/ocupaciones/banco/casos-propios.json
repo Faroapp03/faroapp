@@ -1,0 +1,102 @@
+{
+  "version": 1,
+  "descripcion": "Casos de regresión sacados de pruebas manuales en la pantalla. Se miden aparte del banco de 100 y no pueden volver a fallar. Mismo formato que casos-100.json. Cuando el mismo texto aparece con varias verdades, solo se resuelve preguntando: la persona simulada responde desde su ocupación real.",
+  "casos": [
+    {
+      "id": "pr01",
+      "grupo": "recursos_humanos",
+      "idioma": "es",
+      "texto": "recursos humanos",
+      "esperadas": ["4313.1"],
+      "rasgos": ["corto", "area_sin_puesto", "prueba_manual"]
+    },
+    {
+      "id": "pr02",
+      "grupo": "recursos_humanos",
+      "idioma": "es",
+      "texto": "recursos humanos",
+      "esperadas": ["2423.6"],
+      "rasgos": ["corto", "area_sin_puesto", "prueba_manual"]
+    },
+    {
+      "id": "pr03",
+      "grupo": "informatica",
+      "idioma": "es",
+      "texto": "seo web",
+      "esperadas": ["2513.2"],
+      "rasgos": ["corto", "sigla", "prueba_manual"]
+    },
+    {
+      "id": "pr04",
+      "grupo": "educacion",
+      "idioma": "es",
+      "texto": "maestra",
+      "esperadas": ["2341.1"],
+      "rasgos": ["corto", "femenino", "prueba_manual"]
+    },
+    {
+      "id": "pr05",
+      "grupo": "educacion",
+      "idioma": "es",
+      "texto": "maestra",
+      "esperadas": ["2342.1"],
+      "rasgos": ["corto", "femenino", "prueba_manual"]
+    },
+    {
+      "id": "pr06",
+      "grupo": "educacion",
+      "idioma": "es",
+      "texto": "profesor",
+      "esperadas": ["2330.1"],
+      "rasgos": ["corto", "prueba_manual"]
+    },
+    {
+      "id": "pr07",
+      "grupo": "transporte",
+      "idioma": "es",
+      "texto": "uber",
+      "esperadas": ["8322.6", "8322.7"],
+      "rasgos": ["corto", "marca", "prueba_manual"]
+    },
+    {
+      "id": "pr08",
+      "grupo": "transporte",
+      "idioma": "es",
+      "texto": "cabify",
+      "esperadas": ["8322.6", "8322.7"],
+      "rasgos": ["corto", "marca", "prueba_manual"]
+    },
+    {
+      "id": "pr09",
+      "grupo": "hosteleria",
+      "idioma": "es",
+      "texto": "cocinero",
+      "esperadas": ["5120.1"],
+      "rasgos": ["corto", "prueba_manual"]
+    },
+    {
+      "id": "pr10",
+      "grupo": "seguridad",
+      "idioma": "es",
+      "texto": "policia",
+      "esperadas": ["5412.1"],
+      "rasgos": ["corto", "sin_tildes", "prueba_manual"]
+    },
+    {
+      "id": "pr11",
+      "grupo": "transporte",
+      "idioma": "es",
+      "texto": "chofer de bus",
+      "esperadas": ["8331.1"],
+      "rasgos": ["prueba_manual"]
+    },
+    {
+      "id": "pr12",
+      "grupo": "educacion",
+      "idioma": "es",
+      "texto": "docente",
+      "esperadas": ["2330.1", "2341.1", "2310.1", "2342.1"],
+      "rasgos": ["corto", "prueba_manual"]
+    }
+  ]
+}

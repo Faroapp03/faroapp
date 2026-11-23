@@ -1,0 +1,13 @@
+{
+  "AVISO_DATOS": "Faro ha quitado del texto procesado los datos personales que ha reconocido. Evita incluir datos personales.",
+  "AVISO_FUERA_DE_TEMA": "Solo puedo ayudarte con la descripción de tu trabajo. Cuéntame qué tareas haces.",
+  "AVISO_DATOS_CA": "Faro ha tret del text processat les dades personals que ha reconegut. Evita incloure dades personals.",
+  "AVISO_FUERA_DE_TEMA_CA": "Només et puc ajudar amb la descripció de la teva feina. Explica’m quines tasques fas.",
+  "AVISO_AYUDA": "Si estás pasando por un momento difícil, llama al 024, la línea de atención a la conducta suicida: es gratuita, confidencial y está disponible las 24 horas del día, los 365 días del año. En caso de emergencia vital inminente, llama al 112.",
+  "AVISO_AYUDA_CA": "Si estàs passant per un moment difícil, truca al 024, el telèfon d'atenció a la conducta suïcida: és gratuït, confidencial i està disponible les 24 hores del dia, els 365 dies de l'any. En cas d'emergència vital imminent, truca al 112.",
+  "PREGUNTA_ESTANDAR": "¿Qué tareas haces normalmente en tu trabajo?",
+  "AVISO_RELATO_LARGO": "Tu relato es muy largo: Faro ha leído los primeros 4.000 caracteres. Si falta alguna tarea, podrás añadirla en el siguiente paso.",
+  "AVISO_MAX_TAREAS": "Faro recoge como máximo 12 tareas de cada relato. Si falta alguna, podrás añadirla en el siguiente paso.",
+  "AVISO_BUSQUEDA_POR_PALABRAS": "Faro busca por palabras las ocupaciones que encajan con lo que cuentas, y tú eliges la tuya.",
+  "AVISO_BUSQUEDA_POR_PALABRAS_CA": "Faro cerca per paraules les ocupacions que encaixen amb el que expliques, i tu tries la teva."
+}

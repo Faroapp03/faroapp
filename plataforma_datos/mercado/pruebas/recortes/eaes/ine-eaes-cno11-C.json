@@ -1,0 +1,44 @@
+[
+  {
+    "Id": 22423,
+    "FK_Variable": 456,
+    "Nombre": "Profesionales de la ciencias físicas, químicas, matemáticas y de las ingenierías",
+    "Codigo": "24",
+    "FK_JerarquiaPadres": [22422]
+  },
+  {
+    "Id": 22474,
+    "FK_Variable": 456,
+    "Nombre": "Profesionales en derecho",
+    "Codigo": "25",
+    "FK_JerarquiaPadres": [22422]
+  },
+  {
+    "Id": 22483,
+    "FK_Variable": 456,
+    "Nombre": "Especialistas en organización de la Administración Pública y de las empresas y en la comercialización",
+    "Codigo": "26",
+    "FK_JerarquiaPadres": [22422]
+  },
+  {
+    "Id": 22502,
+    "FK_Variable": 456,
+    "Nombre": "Profesionales de las tecnologías de la información",
+    "Codigo": "27",
+    "FK_JerarquiaPadres": [22422]
+  },
+  {
+    "Id": 22513,
+    "FK_Variable": 456,
+    "Nombre": "Profesionales en ciencias sociales",
+    "Codigo": "28",
+    "FK_JerarquiaPadres": [22422]
+  },
+  {
+    "Id": 22524,
+    "FK_Variable": 456,
+    "Nombre": "Profesionales de la cultura y el espectáculo",
+    "Codigo": "29",
+    "FK_JerarquiaPadres": [22422]
+  }
+]

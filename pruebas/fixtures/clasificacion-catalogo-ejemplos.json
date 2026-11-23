@@ -1,0 +1,898 @@
+{
+  "$comment": "Ejemplos del contrato de la clasificación; los leen las pruebas de Python y de TypeScript.",
+  "captura_posterior_al_corte": "2026-11-19T00:00:00Z",
+  "validos": {
+    "fuente": {
+      "idioma": {
+        "valores": ["es"],
+        "estado": "fuente",
+        "alcance": "edicion",
+        "certeza": "alta",
+        "regla": null,
+        "evidencias": [
+          {
+            "url": "https://www.cibervoluntarios.org/api/public/activity_catalogs",
+            "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "capturado_utc": "2026-11-18T08:00:00Z",
+            "localizador": "/hydra:member/0/language"
+          }
+        ],
+        "motivo_por_confirmar": null
+      }
+    },
+    "orientacion-faro": {
+      "nivel": {
+        "valor": "intermedio",
+        "estado": "orientacion-faro",
+        "alcance": "programa",
+        "certeza": "media",
+        "regla": {
+          "id": "nivel-objetivos-fundae",
+          "version": 1,
+          "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+        },
+        "evidencias": [
+          {
+            "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?codigoTitulacion=IFCD0112",
+            "sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+            "capturado_utc": "2026-11-18T08:00:00Z",
+            "localizador": "/curso/objetivos"
+          }
+        ],
+        "motivo_por_confirmar": null
+      }
+    },
+    "por-confirmar": {
+      "materia": {
+        "valores": null,
+        "estado": "por-confirmar",
+        "alcance": null,
+        "certeza": null,
+        "regla": null,
+        "evidencias": [],
+        "motivo_por_confirmar": "sin_captura"
+      }
+    },
+    "completo": {
+      "idioma": {
+        "valores": ["ca", "es"],
+        "estado": "fuente",
+        "alcance": "norma-general",
+        "certeza": "alta",
+        "regla": null,
+        "evidencias": [
+          {
+            "url": "https://cibernarium.barcelonactiva.cat/ca/normesfaqs",
+            "sha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+            "capturado_utc": "2026-11-18T08:00:00Z",
+            "localizador": "#NU11"
+          }
+        ],
+        "motivo_por_confirmar": null
+      },
+      "materia": {
+        "valores": ["datos", "ia"],
+        "estado": "orientacion-faro",
+        "alcance": "actividad",
+        "certeza": "baja",
+        "regla": {
+          "id": "materia-titulo",
+          "version": 2,
+          "sha256": "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
+        },
+        "evidencias": [],
+        "motivo_por_confirmar": null
+      },
+      "nivel": {
+        "valor": null,
+        "estado": "por-confirmar",
+        "alcance": null,
+        "certeza": null,
+        "regla": null,
+        "evidencias": [
+          {
+            "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?codigoTitulacion=IFCD0112",
+            "sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+            "capturado_utc": "2026-11-18T08:00:00Z",
+            "localizador": "/curso/nivel"
+          },
+          {
+            "url": "https://cibernarium.barcelonactiva.cat/ca/normesfaqs",
+            "sha256": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+            "capturado_utc": "2026-11-18T08:00:00Z",
+            "localizador": "#nivell"
+          }
+        ],
+        "motivo_por_confirmar": "conflicto_evidencias"
+      }
+    }
+  },
+  "invalidos": [
+    {
+      "caso": "por-confirmar sin motivo",
+      "bloque": {
+        "materia": {
+          "valores": null,
+          "estado": "por-confirmar",
+          "alcance": null,
+          "certeza": null,
+          "regla": null,
+          "evidencias": [],
+          "motivo_por_confirmar": null
+        }
+      }
+    },
+    {
+      "caso": "valor de la fuente sin evidencia",
+      "bloque": {
+        "idioma": {
+          "valores": ["es"],
+          "estado": "fuente",
+          "alcance": "edicion",
+          "certeza": "alta",
+          "regla": null,
+          "evidencias": [],
+          "motivo_por_confirmar": null
+        }
+      }
+    },
+    {
+      "caso": "orientación de Faro sin regla",
+      "bloque": {
+        "nivel": {
+          "valor": "intermedio",
+          "estado": "orientacion-faro",
+          "alcance": "programa",
+          "certeza": "media",
+          "regla": null,
+          "evidencias": [
+            {
+              "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?codigoTitulacion=IFCD0112",
+              "sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+              "capturado_utc": "2026-11-18T08:00:00Z",
+              "localizador": "/curso/objetivos"
+            }
+          ],
+          "motivo_por_confirmar": null
+        }
+      }
+    },
+    {
+      "caso": "motivo con estado fuente",
+      "bloque": {
+        "idioma": {
+          "valores": ["es"],
+          "estado": "fuente",
+          "alcance": "edicion",
+          "certeza": "alta",
+          "regla": null,
+          "evidencias": [
+            {
+              "url": "https://www.cibervoluntarios.org/api/public/activity_catalogs",
+              "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+              "capturado_utc": "2026-11-18T08:00:00Z",
+              "localizador": "/hydra:member/0/language"
+            }
+          ],
+          "motivo_por_confirmar": "fuente_no_publica"
+        }
+      }
+    },
+    {
+      "caso": "motivo con estado orientación de Faro",
+      "bloque": {
+        "nivel": {
+          "valor": "intermedio",
+          "estado": "orientacion-faro",
+          "alcance": "programa",
+          "certeza": "media",
+          "regla": {
+            "id": "nivel-objetivos-fundae",
+            "version": 1,
+            "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+          },
+          "evidencias": [
+            {
+              "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?codigoTitulacion=IFCD0112",
+              "sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+              "capturado_utc": "2026-11-18T08:00:00Z",
+              "localizador": "/curso/objetivos"
+            }
+          ],
+          "motivo_por_confirmar": "sin_captura"
+        }
+      }
+    },
+    {
+      "caso": "idioma fuera de vocabulario",
+      "bloque": {
+        "idioma": {
+          "valores": ["fr"],
+          "estado": "fuente",
+          "alcance": "edicion",
+          "certeza": "alta",
+          "regla": null,
+          "evidencias": [
+            {
+              "url": "https://www.cibervoluntarios.org/api/public/activity_catalogs",
+              "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+              "capturado_utc": "2026-11-18T08:00:00Z",
+              "localizador": "/hydra:member/0/language"
+            }
+          ],
+          "motivo_por_confirmar": null
+        }
+      }
+    },
+    {
+      "caso": "nivel fuera de vocabulario",
+      "bloque": {
+        "nivel": {
+          "valor": "experto",
+          "estado": "orientacion-faro",
+          "alcance": "programa",
+          "certeza": "media",
+          "regla": {
+            "id": "nivel-objetivos-fundae",
+            "version": 1,
+            "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+          },
+          "evidencias": [
+            {
+              "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?codigoTitulacion=IFCD0112",
+              "sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+              "capturado_utc": "2026-11-18T08:00:00Z",
+              "localizador": "/curso/objetivos"
+            }
+          ],
+          "motivo_por_confirmar": null
+        }
+      }
+    },
+    {
+      "caso": "materia fuera de vocabulario",
+      "bloque": {
+        "idioma": {
+          "valores": ["ca", "es"],
+          "estado": "fuente",
+          "alcance": "norma-general",
+          "certeza": "alta",
+          "regla": null,
+          "evidencias": [
+            {
+              "url": "https://cibernarium.barcelonactiva.cat/ca/normesfaqs",
+              "sha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+              "capturado_utc": "2026-11-18T08:00:00Z",
+              "localizador": "#NU11"
+            }
+          ],
+          "motivo_por_confirmar": null
+        },
+        "materia": {
+          "valores": ["no-indicado"],
+          "estado": "orientacion-faro",
+          "alcance": "actividad",
+          "certeza": "baja",
+          "regla": {
+            "id": "materia-titulo",
+            "version": 2,
+            "sha256": "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
+          },
+          "evidencias": [],
+          "motivo_por_confirmar": null
+        },
+        "nivel": {
+          "valor": null,
+          "estado": "por-confirmar",
+          "alcance": null,
+          "certeza": null,
+          "regla": null,
+          "evidencias": [
+            {
+              "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?codigoTitulacion=IFCD0112",
+              "sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+              "capturado_utc": "2026-11-18T08:00:00Z",
+              "localizador": "/curso/nivel"
+            },
+            {
+              "url": "https://cibernarium.barcelonactiva.cat/ca/normesfaqs",
+              "sha256": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+              "capturado_utc": "2026-11-18T08:00:00Z",
+              "localizador": "#nivell"
+            }
+          ],
+          "motivo_por_confirmar": "conflicto_evidencias"
+        }
+      }
+    },
+    {
+      "caso": "estado desconocido",
+      "bloque": {
+        "idioma": {
+          "valores": ["es"],
+          "estado": "revisado",
+          "alcance": "edicion",
+          "certeza": "alta",
+          "regla": null,
+          "evidencias": [
+            {
+              "url": "https://www.cibervoluntarios.org/api/public/activity_catalogs",
+              "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+              "capturado_utc": "2026-11-18T08:00:00Z",
+              "localizador": "/hydra:member/0/language"
+            }
+          ],
+          "motivo_por_confirmar": null
+        }
+      }
+    },
+    {
+      "caso": "alcance desconocido",
+      "bloque": {
+        "idioma": {
+          "valores": ["es"],
+          "estado": "fuente",
+          "alcance": "unidad",
+          "certeza": "alta",
+          "regla": null,
+          "evidencias": [
+            {
+              "url": "https://www.cibervoluntarios.org/api/public/activity_catalogs",
+              "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+              "capturado_utc": "2026-11-18T08:00:00Z",
+              "localizador": "/hydra:member/0/language"
+            }
+          ],
+          "motivo_por_confirmar": null
+        }
+      }
+    },
+    {
+      "caso": "certeza desconocida",
+      "bloque": {
+        "idioma": {
+          "valores": ["es"],
+          "estado": "fuente",
+          "alcance": "edicion",
+          "certeza": "total",
+          "regla": null,
+          "evidencias": [
+            {
+              "url": "https://www.cibervoluntarios.org/api/public/activity_catalogs",
+              "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+              "capturado_utc": "2026-11-18T08:00:00Z",
+              "localizador": "/hydra:member/0/language"
+            }
+          ],
+          "motivo_por_confirmar": null
+        }
+      }
+    },
+    {
+      "caso": "motivo desconocido",
+      "bloque": {
+        "materia": {
+          "valores": null,
+          "estado": "por-confirmar",
+          "alcance": null,
+          "certeza": null,
+          "regla": null,
+          "evidencias": [],
+          "motivo_por_confirmar": "sin_datos"
+        }
+      }
+    },
+    {
+      "caso": "por-confirmar con valor",
+      "bloque": {
+        "materia": {
+          "valores": ["ia"],
+          "estado": "por-confirmar",
+          "alcance": null,
+          "certeza": null,
+          "regla": null,
+          "evidencias": [],
+          "motivo_por_confirmar": "sin_captura"
+        }
+      }
+    },
+    {
+      "caso": "por-confirmar con alcance",
+      "bloque": {
+        "materia": {
+          "valores": null,
+          "estado": "por-confirmar",
+          "alcance": "programa",
+          "certeza": null,
+          "regla": null,
+          "evidencias": [],
+          "motivo_por_confirmar": "sin_captura"
+        }
+      }
+    },
+    {
+      "caso": "fuente con regla de Faro",
+      "bloque": {
+        "idioma": {
+          "valores": ["es"],
+          "estado": "fuente",
+          "alcance": "edicion",
+          "certeza": "alta",
+          "regla": {
+            "id": "idioma-ficha",
+            "version": 1,
+            "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+          },
+          "evidencias": [
+            {
+              "url": "https://www.cibervoluntarios.org/api/public/activity_catalogs",
+              "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+              "capturado_utc": "2026-11-18T08:00:00Z",
+              "localizador": "/hydra:member/0/language"
+            }
+          ],
+          "motivo_por_confirmar": null
+        }
+      }
+    },
+    {
+      "caso": "sin captura con evidencias",
+      "bloque": {
+        "materia": {
+          "valores": null,
+          "estado": "por-confirmar",
+          "alcance": null,
+          "certeza": null,
+          "regla": null,
+          "evidencias": [
+            {
+              "url": "https://www.cibervoluntarios.org/api/public/activity_catalogs",
+              "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+              "capturado_utc": "2026-11-18T08:00:00Z",
+              "localizador": "/x"
+            }
+          ],
+          "motivo_por_confirmar": "sin_captura"
+        }
+      }
+    },
+    {
+      "caso": "fuente no publica sin evidencia",
+      "bloque": {
+        "materia": {
+          "valores": null,
+          "estado": "por-confirmar",
+          "alcance": null,
+          "certeza": null,
+          "regla": null,
+          "evidencias": [],
+          "motivo_por_confirmar": "fuente_no_publica"
+        }
+      }
+    },
+    {
+      "caso": "conflicto con una sola evidencia",
+      "bloque": {
+        "idioma": {
+          "valores": ["ca", "es"],
+          "estado": "fuente",
+          "alcance": "norma-general",
+          "certeza": "alta",
+          "regla": null,
+          "evidencias": [
+            {
+              "url": "https://cibernarium.barcelonactiva.cat/ca/normesfaqs",
+              "sha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+              "capturado_utc": "2026-11-18T08:00:00Z",
+              "localizador": "#NU11"
+            }
+          ],
+          "motivo_por_confirmar": null
+        },
+        "materia": {
+          "valores": ["datos", "ia"],
+          "estado": "orientacion-faro",
+          "alcance": "actividad",
+          "certeza": "baja",
+          "regla": {
+            "id": "materia-titulo",
+            "version": 2,
+            "sha256": "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
+          },
+          "evidencias": [],
+          "motivo_por_confirmar": null
+        },
+        "nivel": {
+          "valor": null,
+          "estado": "por-confirmar",
+          "alcance": null,
+          "certeza": null,
+          "regla": null,
+          "evidencias": [
+            {
+              "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?codigoTitulacion=IFCD0112",
+              "sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+              "capturado_utc": "2026-11-18T08:00:00Z",
+              "localizador": "/curso/nivel"
+            }
+          ],
+          "motivo_por_confirmar": "conflicto_evidencias"
+        }
+      }
+    },
+    {
+      "caso": "evidencias sin orden canónico",
+      "bloque": {
+        "idioma": {
+          "valores": ["ca", "es"],
+          "estado": "fuente",
+          "alcance": "norma-general",
+          "certeza": "alta",
+          "regla": null,
+          "evidencias": [
+            {
+              "url": "https://cibernarium.barcelonactiva.cat/ca/normesfaqs",
+              "sha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+              "capturado_utc": "2026-11-18T08:00:00Z",
+              "localizador": "#NU11"
+            }
+          ],
+          "motivo_por_confirmar": null
+        },
+        "materia": {
+          "valores": ["datos", "ia"],
+          "estado": "orientacion-faro",
+          "alcance": "actividad",
+          "certeza": "baja",
+          "regla": {
+            "id": "materia-titulo",
+            "version": 2,
+            "sha256": "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
+          },
+          "evidencias": [],
+          "motivo_por_confirmar": null
+        },
+        "nivel": {
+          "valor": null,
+          "estado": "por-confirmar",
+          "alcance": null,
+          "certeza": null,
+          "regla": null,
+          "evidencias": [
+            {
+              "url": "https://cibernarium.barcelonactiva.cat/ca/normesfaqs",
+              "sha256": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+              "capturado_utc": "2026-11-18T08:00:00Z",
+              "localizador": "#nivell"
+            },
+            {
+              "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?codigoTitulacion=IFCD0112",
+              "sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+              "capturado_utc": "2026-11-18T08:00:00Z",
+              "localizador": "/curso/nivel"
+            }
+          ],
+          "motivo_por_confirmar": "conflicto_evidencias"
+        }
+      }
+    },
+    {
+      "caso": "valores sin orden canónico",
+      "bloque": {
+        "idioma": {
+          "valores": ["es", "ca"],
+          "estado": "fuente",
+          "alcance": "norma-general",
+          "certeza": "alta",
+          "regla": null,
+          "evidencias": [
+            {
+              "url": "https://cibernarium.barcelonactiva.cat/ca/normesfaqs",
+              "sha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+              "capturado_utc": "2026-11-18T08:00:00Z",
+              "localizador": "#NU11"
+            }
+          ],
+          "motivo_por_confirmar": null
+        },
+        "materia": {
+          "valores": ["datos", "ia"],
+          "estado": "orientacion-faro",
+          "alcance": "actividad",
+          "certeza": "baja",
+          "regla": {
+            "id": "materia-titulo",
+            "version": 2,
+            "sha256": "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
+          },
+          "evidencias": [],
+          "motivo_por_confirmar": null
+        },
+        "nivel": {
+          "valor": null,
+          "estado": "por-confirmar",
+          "alcance": null,
+          "certeza": null,
+          "regla": null,
+          "evidencias": [
+            {
+              "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?codigoTitulacion=IFCD0112",
+              "sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+              "capturado_utc": "2026-11-18T08:00:00Z",
+              "localizador": "/curso/nivel"
+            },
+            {
+              "url": "https://cibernarium.barcelonactiva.cat/ca/normesfaqs",
+              "sha256": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+              "capturado_utc": "2026-11-18T08:00:00Z",
+              "localizador": "#nivell"
+            }
+          ],
+          "motivo_por_confirmar": "conflicto_evidencias"
+        }
+      }
+    },
+    {
+      "caso": "valores repetidos",
+      "bloque": {
+        "idioma": {
+          "valores": ["ca", "es"],
+          "estado": "fuente",
+          "alcance": "norma-general",
+          "certeza": "alta",
+          "regla": null,
+          "evidencias": [
+            {
+              "url": "https://cibernarium.barcelonactiva.cat/ca/normesfaqs",
+              "sha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+              "capturado_utc": "2026-11-18T08:00:00Z",
+              "localizador": "#NU11"
+            }
+          ],
+          "motivo_por_confirmar": null
+        },
+        "materia": {
+          "valores": ["ia", "ia"],
+          "estado": "orientacion-faro",
+          "alcance": "actividad",
+          "certeza": "baja",
+          "regla": {
+            "id": "materia-titulo",
+            "version": 2,
+            "sha256": "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
+          },
+          "evidencias": [],
+          "motivo_por_confirmar": null
+        },
+        "nivel": {
+          "valor": null,
+          "estado": "por-confirmar",
+          "alcance": null,
+          "certeza": null,
+          "regla": null,
+          "evidencias": [
+            {
+              "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?codigoTitulacion=IFCD0112",
+              "sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+              "capturado_utc": "2026-11-18T08:00:00Z",
+              "localizador": "/curso/nivel"
+            },
+            {
+              "url": "https://cibernarium.barcelonactiva.cat/ca/normesfaqs",
+              "sha256": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+              "capturado_utc": "2026-11-18T08:00:00Z",
+              "localizador": "#nivell"
+            }
+          ],
+          "motivo_por_confirmar": "conflicto_evidencias"
+        }
+      }
+    },
+    {
+      "caso": "lista de valores vacía",
+      "bloque": {
+        "idioma": {
+          "valores": [],
+          "estado": "fuente",
+          "alcance": "edicion",
+          "certeza": "alta",
+          "regla": null,
+          "evidencias": [
+            {
+              "url": "https://www.cibervoluntarios.org/api/public/activity_catalogs",
+              "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+              "capturado_utc": "2026-11-18T08:00:00Z",
+              "localizador": "/hydra:member/0/language"
+            }
+          ],
+          "motivo_por_confirmar": null
+        }
+      }
+    },
+    {
+      "caso": "nivel con varios valores",
+      "bloque": {
+        "nivel": {
+          "valor": ["inicial", "intermedio"],
+          "estado": "orientacion-faro",
+          "alcance": "programa",
+          "certeza": "media",
+          "regla": {
+            "id": "nivel-objetivos-fundae",
+            "version": 1,
+            "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+          },
+          "evidencias": [
+            {
+              "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?codigoTitulacion=IFCD0112",
+              "sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+              "capturado_utc": "2026-11-18T08:00:00Z",
+              "localizador": "/curso/objetivos"
+            }
+          ],
+          "motivo_por_confirmar": null
+        }
+      }
+    },
+    {
+      "caso": "regla con texto libre",
+      "bloque": {
+        "nivel": {
+          "valor": "intermedio",
+          "estado": "orientacion-faro",
+          "alcance": "programa",
+          "certeza": "media",
+          "regla": {
+            "id": "Nivel según el título",
+            "version": 1,
+            "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+          },
+          "evidencias": [
+            {
+              "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?codigoTitulacion=IFCD0112",
+              "sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+              "capturado_utc": "2026-11-18T08:00:00Z",
+              "localizador": "/curso/objetivos"
+            }
+          ],
+          "motivo_por_confirmar": null
+        }
+      }
+    },
+    {
+      "caso": "regla sin versión entera",
+      "bloque": {
+        "nivel": {
+          "valor": "intermedio",
+          "estado": "orientacion-faro",
+          "alcance": "programa",
+          "certeza": "media",
+          "regla": {
+            "id": "nivel-titulo",
+            "version": "1",
+            "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+          },
+          "evidencias": [
+            {
+              "url": "https://agora.fundae.es/Oferta/RecuperarDifusionesRFO?codigoTitulacion=IFCD0112",
+              "sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+              "capturado_utc": "2026-11-18T08:00:00Z",
+              "localizador": "/curso/objetivos"
+            }
+          ],
+          "motivo_por_confirmar": null
+        }
+      }
+    },
+    {
+      "caso": "evidencia sin huella",
+      "bloque": {
+        "idioma": {
+          "valores": ["es"],
+          "estado": "fuente",
+          "alcance": "edicion",
+          "certeza": "alta",
+          "regla": null,
+          "evidencias": [
+            {
+              "url": "https://www.cibervoluntarios.org/api/public/activity_catalogs",
+              "sha256": "abc",
+              "capturado_utc": "2026-11-18T08:00:00Z",
+              "localizador": "/x"
+            }
+          ],
+          "motivo_por_confirmar": null
+        }
+      }
+    },
+    {
+      "caso": "evidencia con URL privada",
+      "bloque": {
+        "idioma": {
+          "valores": ["es"],
+          "estado": "fuente",
+          "alcance": "edicion",
+          "certeza": "alta",
+          "regla": null,
+          "evidencias": [
+            {
+              "url": "http://127.0.0.1/ficha",
+              "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+              "capturado_utc": "2026-11-18T08:00:00Z",
+              "localizador": "/x"
+            }
+          ],
+          "motivo_por_confirmar": null
+        }
+      }
+    },
+    {
+      "caso": "evidencia con una IP pública literal",
+      "bloque": {
+        "idioma": {
+          "valores": ["es"],
+          "estado": "fuente",
+          "alcance": "edicion",
+          "certeza": "alta",
+          "regla": null,
+          "evidencias": [
+            {
+              "url": "https://8.8.8.8/ficha",
+              "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+              "capturado_utc": "2026-11-18T08:00:00Z",
+              "localizador": "/x"
+            }
+          ],
+          "motivo_por_confirmar": null
+        }
+      }
+    },
+    {
+      "caso": "texto libre en el dato",
+      "bloque": {
+        "idioma": {
+          "valores": ["es"],
+          "estado": "fuente",
+          "alcance": "edicion",
+          "certeza": "alta",
+          "regla": null,
+          "evidencias": [
+            {
+              "url": "https://www.cibervoluntarios.org/api/public/activity_catalogs",
+              "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+              "capturado_utc": "2026-11-18T08:00:00Z",
+              "localizador": "/hydra:member/0/language"
+            }
+          ],
+          "motivo_por_confirmar": null,
+          "explicacion": "Declarado en la ficha de la edición."
+        }
+      }
+    },
+    {
+      "caso": "bloque vacío",
+      "bloque": {}
+    },
+    {
+      "caso": "dato desconocido",
+      "bloque": {
+        "modalidad": {
+          "valores": ["es"],
+          "estado": "fuente",
+          "alcance": "edicion",
+          "certeza": "alta",
+          "regla": null,
+          "evidencias": [
+            {
+              "url": "https://www.cibervoluntarios.org/api/public/activity_catalogs",
+              "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+              "capturado_utc": "2026-11-18T08:00:00Z",
+              "localizador": "/hydra:member/0/language"
+            }
+          ],
+          "motivo_por_confirmar": null
+        }
+      }
+    }
+  ]
+}

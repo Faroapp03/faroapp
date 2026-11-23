@@ -1,0 +1,158 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Lectura del censo de una fuente (lectura-fuente, versión 1)",
+  "description": "Lo que trajo una lectura del censo de una fuente: si llegó completo, sus recuentos, la huella de sus identificadores, las entradas y salidas respecto a la lectura anterior, la forma de la captura y el estado que decidió una regla. Se guarda en var/actualizacion/validados/<fuente>/lecturas/<lectura_id>.json, en JSON canónico. lectura_id es la huella SHA-256 del JSON canónico de la lectura sin lectura_id, estado, motivos ni regla. Las reglas que atan el estado a lo observado (una lectura sana es completa y sin motivos, una anómala es completa y con motivos, una incompleta no es completa, valor_desconocido va con sus valores nuevos, la primera lectura lista todo su censo como entradas) se ejecutan en Python, en contrato_lectura.py.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "version",
+    "fuente",
+    "ambito",
+    "lectura_id",
+    "anterior",
+    "observado_utc",
+    "completa",
+    "motivo_incompleta",
+    "recuento_bruto",
+    "recuento_vigente",
+    "total_declarado",
+    "ids_sha256",
+    "entradas",
+    "salidas",
+    "huella_forma",
+    "estado",
+    "motivos",
+    "regla"
+  ],
+  "properties": {
+    "version": { "const": 1 },
+    "fuente": { "type": "string", "maxLength": 64, "pattern": "^[a-z0-9]+(?:[_-][a-z0-9]+)*$" },
+    "ambito": { "type": "string", "maxLength": 80, "pattern": "^[a-z0-9]+(?:[_:-][a-z0-9]+)*$" },
+    "lectura_id": { "$ref": "#/$defs/sha256" },
+    "anterior": { "oneOf": [{ "$ref": "#/$defs/sha256" }, { "type": "null" }] },
+    "observado_utc": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}Z$" },
+    "completa": { "type": "boolean" },
+    "motivo_incompleta": {
+      "oneOf": [{ "enum": ["sin_censo", "consulta_fallida", "limite_alcanzado"] }, { "type": "null" }]
+    },
+    "recuento_bruto": { "$ref": "#/$defs/recuento" },
+    "recuento_vigente": { "$ref": "#/$defs/recuento" },
+    "total_declarado": { "oneOf": [{ "$ref": "#/$defs/recuento" }, { "type": "null" }] },
+    "ids_sha256": { "$ref": "#/$defs/sha256" },
+    "entradas": {
+      "type": "array",
+      "maxItems": 50000,
+      "uniqueItems": true,
+      "items": { "$ref": "#/$defs/texto" }
+    },
+    "salidas": {
+      "type": "array",
+      "maxItems": 50000,
+      "uniqueItems": true,
+      "items": { "$ref": "#/$defs/salida" }
+    },
+    "huella_forma": { "$ref": "#/$defs/huella_forma" },
+    "estado": { "enum": ["sana", "anomala", "incompleta", "reconstruida"] },
+    "motivos": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "enum": ["forma_cambiada", "total_declarado_distinto", "valor_desconocido", "salidas_no_explicadas_en_bloque"]
+      }
+    },
+    "regla": { "$ref": "#/$defs/regla" },
+    "calibracion": {
+      "description": "Solo en lecturas completas calificadas por una regla que calibra el límite de salidas sin explicar.",
+      "$ref": "#/$defs/calibracion"
+    }
+  },
+  "$defs": {
+    "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "recuento": { "type": "integer", "minimum": 0 },
+    "texto": { "type": "string", "minLength": 1, "maxLength": 512, "pattern": "^[^\\u0000-\\u001f\\u007f]+$" },
+    "salida": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "explicada_por"],
+      "properties": {
+        "id": { "$ref": "#/$defs/texto" },
+        "explicada_por": { "oneOf": [{ "enum": ["fin_publicado", "fuente_declara_baja"] }, { "type": "null" }] }
+      }
+    },
+    "valor_nuevo": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["campo", "valor"],
+      "properties": {
+        "campo": { "$ref": "#/$defs/texto" },
+        "valor": { "$ref": "#/$defs/texto" }
+      }
+    },
+    "huella_forma": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["campos_sha256", "niveles", "valores_nuevos"],
+      "properties": {
+        "campos_sha256": { "$ref": "#/$defs/sha256" },
+        "niveles": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": { "enum": ["actividad", "edicion", "programa"] }
+        },
+        "valores_nuevos": {
+          "type": "array",
+          "maxItems": 200,
+          "uniqueItems": true,
+          "items": { "$ref": "#/$defs/valor_nuevo" }
+        }
+      }
+    },
+    "regla": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "version", "sha256"],
+      "properties": {
+        "id": { "type": "string", "maxLength": 80, "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+        "version": { "type": "integer", "minimum": 1 },
+        "sha256": { "$ref": "#/$defs/sha256" }
+      }
+    },
+    "estimacion": { "oneOf": [{ "type": "number", "minimum": 0 }, { "type": "null" }] },
+    "calibracion": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "limite",
+        "origen",
+        "sin_explicar",
+        "suelo",
+        "techo",
+        "lecturas_de_historia",
+        "confirmadas",
+        "desmentidas",
+        "exposicion_de_historia",
+        "exposicion",
+        "ritmo_por_curso_y_dia",
+        "dispersion",
+        "cota_por_curso_y_dia",
+        "esperadas_con_la_cota"
+      ],
+      "properties": {
+        "limite": { "$ref": "#/$defs/recuento" },
+        "origen": { "enum": ["suelo", "historia", "techo"] },
+        "sin_explicar": { "$ref": "#/$defs/recuento" },
+        "suelo": { "$ref": "#/$defs/recuento" },
+        "techo": { "$ref": "#/$defs/recuento" },
+        "lecturas_de_historia": { "$ref": "#/$defs/recuento" },
+        "confirmadas": { "$ref": "#/$defs/recuento" },
+        "desmentidas": { "$ref": "#/$defs/recuento" },
+        "exposicion_de_historia": { "$ref": "#/$defs/recuento" },
+        "exposicion": { "$ref": "#/$defs/recuento" },
+        "ritmo_por_curso_y_dia": { "$ref": "#/$defs/estimacion" },
+        "dispersion": { "$ref": "#/$defs/estimacion" },
+        "cota_por_curso_y_dia": { "$ref": "#/$defs/estimacion" },
+        "esperadas_con_la_cota": { "$ref": "#/$defs/estimacion" }
+      }
+    }
+  }
+}

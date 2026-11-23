@@ -1,0 +1,87 @@
+{
+  "clasificaciones": {
+    "isco08_es": {
+      "1": "Directores y gerentes",
+      "12": "Directores administradores y comerciales",
+      "2": "Profesionales científicos e intelectuales",
+      "23": "Profesionales de la enseñanza",
+      "234": "Maestros de enseñanza primaria y maestros preescolares",
+      "3": "Técnicos y profesionales de nivel medio",
+      "34": "Profesionales de nivel medio de servicios jurídicos, sociales, culturales y afines",
+      "4": "Personal de apoyo administrativo",
+      "5": "Trabajadores de los servicios y vendedores de comercios y mercados",
+      "6": "Agricultores y trabajadores calificados agropecuarios, forestales y pesqueros",
+      "7": "Oficiales, operarios y artesanos de artes mecánicas y de otros oficios",
+      "8": "Operadores de instalaciones y máquinas y ensambladores",
+      "9": "Ocupaciones elementales",
+      "0": "Ocupaciones militares",
+      "01": "Oficiales de las fuerzas armadas"
+    }
+  },
+  "idescat": {
+    "isco08_ca": {
+      "0": "Ocupacions militars",
+      "01": "Oficials de les forces armades",
+      "1": "Directors i gerents",
+      "12": "Directors de serveis administratius i comercials",
+      "2": "Professionals científics i intel·lectuals",
+      "23": "Professionals de l'ensenyament",
+      "234": "Mestres d'ensenyament primari i d'educació infantil",
+      "3": "Tècnics i professionals de nivell mitjà",
+      "34": "Professionals de nivell mitjà de serveis jurídics, socials, culturals i afins",
+      "4": "Personal de suport administratiu",
+      "5": "Treballadors dels serveis i venedors de comerços i mercats",
+      "6": "Agricultors i treballadors qualificats agropecuaris, forestals i pesquers",
+      "7": "Oficials, operaris i artesans d'arts mecàniques i d'altres oficis",
+      "8": "Operadors d'instal·lacions i de màquines i muntadors",
+      "9": "Treballadors no qualificats"
+    },
+    "cno11_ca": {
+      "0": "Ocupacions militars",
+      "1": "Directors i gerents",
+      "12": "Directors de departaments administratius i comercials",
+      "2": "Tècnics i professionals científics i intel·lectuals",
+      "23": "Altres professionals de l'ensenyament",
+      "3": "Tècnics i professionals de suport",
+      "34": "Professionals de suport en finances i matemàtiques",
+      "4": "Empleats comptables, administratius i altres empleats d'oficina",
+      "45": "Empleats administratius amb tasques d'atenció al públic n.c.a.a.",
+      "5": "Treballadors dels serveis de restauració, personals, protecció i venedors",
+      "56": "Treballadors que tenen cura de les persones en serveis de salut",
+      "6": "Treballadors qualificats en activitats agrícoles, ramaderes, forestals i pesqueres",
+      "7": "Artesans i treballadors qualificats de les indústries manufactureres i la construcció (excepte operadors d'instal·lacions i màquines)",
+      "78": "Treballadors de la fusta, tèxtil, confecció, pell, cuir, calçat i altres operaris en oficis",
+      "789": "Artillers metxers de mines, bussos, provadors de productes i altres operaris i artesans diversos",
+      "8": "Operadors d'instal·lacions i maquinària, i muntadors",
+      "9": "Ocupacions elementals"
+    }
+  },
+  "ceo-panel": {
+    "cita": "Centre d'Estudis d'Opinió (CEO), Enquesta longitudinal (Panel Ciutadà), 3a onada, 2025 (REO 1151): microdades anonimitzades, pregunta 26.",
+    "fuente": "Centre d'Estudis d'Opinió (CEO), Enquesta longitudinal (Panel Ciutadà), 3a onada, 2025 (REO 1151)",
+    "tabla": "Microdades anonimitzades, pregunta 26 (OPINIO_TECNOLOGIA_TREBALL_0_10, ponderada con PONDERA_ENLINIA)",
+    "licencia": "Llicència oberta d'ús d'informació – Catalunya (Dades obertes de la Generalitat): reutilización permitida citando al Centre d'Estudis d'Opinió como fuente y enlazando con la licencia.",
+    "url": "https://documents.dadesobertes.gencat.cat/ceo/docs/REO1151_microdades_anonimitzades.csv",
+    "ficha": "https://analisi.transparenciacatalunya.cat/resource/m5mb-xt5e.json?reo=1151",
+    "consultado": "2026-10-11",
+    "anio": 2025,
+    "pregunta": "26. Valori, en l'escala següents, la probabilitat que les persones siguin superades o substituïdes per màquines, programes informàtics o la intel·ligència artificial en la majoria de les feines.",
+    "respuesta": "De 7 a 10, en una escala de 0 («Gens probable») a 10 («Totalment probable»)",
+    "base": "Personas de 16 años o más residentes en Cataluña que respondieron en línea, ponderadas (base de 5.840; las omisiones, dentro)",
+    "campo": "09/10/2025 – 09/12/2025",
+    "cifra": 51.4
+  },
+  "empresas": {
+    "cataluna_por_seccion": {
+      "actividades": {
+        "C10-S951_X_K": {
+          "por_anio": {
+            "2025": {
+              "pct": 12.5
+            }
+          }
+        }
+      }
+    }
+  }
+}

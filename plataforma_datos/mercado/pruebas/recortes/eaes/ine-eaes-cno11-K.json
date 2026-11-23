@@ -1,0 +1,16 @@
+[
+  {
+    "Id": 22836,
+    "FK_Variable": 456,
+    "Nombre": "Trabajadores en obras estructurales de construcción y afines",
+    "Codigo": "71",
+    "FK_JerarquiaPadres": [22835]
+  },
+  {
+    "Id": 22851,
+    "FK_Variable": 456,
+    "Nombre": "Trabajadores de acabado de construcciones e instalaciones (excepto electricistas), pintores y afines",
+    "Codigo": "72",
+    "FK_JerarquiaPadres": [22835]
+  }
+]

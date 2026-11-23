@@ -1,0 +1,261 @@
+/* Página de Créditos. Solo añade piezas: los estilos de Faro se usan tal cual (tokens, base, contenidos).
+   Orden: categoría (h2) › organismo (h3) › colaboración (h4) › ficha. Cada ficha tiene la misma forma: obra y código a
+   la izquierda; uso, licencia, cita, fecha y fuente a la derecha, como lista de definiciones. Líneas finas, sin sombras,
+   sin transiciones ni animaciones. */
+
+/* Índice: las categorías con su número de créditos, en dos columnas simétricas en pantalla ancha. */
+.creditos-indice {
+  margin-top: 28px;
+}
+
+.creditos-indice-titulo {
+  margin: 0 0 8px;
+  color: var(--color-tenue);
+  font-size: var(--texto-minimo);
+  font-weight: 500;
+}
+
+.creditos-indice ol {
+  display: grid;
+  grid-template-rows: repeat(7, auto);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-auto-flow: column;
+  column-gap: 32px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.creditos-indice li {
+  border-top: 1px solid var(--color-linea);
+}
+
+.creditos .creditos-indice a {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 44px;
+  color: var(--color-tinta);
+  font-size: 0.92rem;
+  text-decoration: none;
+}
+
+/* Se subraya el nombre de la categoría; la cifra queda limpia. */
+.creditos .creditos-indice a > span:first-child {
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+
+.creditos-indice-cuenta {
+  color: var(--color-tenue);
+  font-family: var(--fuente-mono);
+  font-size: var(--texto-minimo);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Los fragmentos antiguos (#t-fuentes, #t-guia, #t-datos-globales) siguen llevando a su categoría nueva. */
+.creditos-ancla {
+  display: block;
+  scroll-margin-top: 28px;
+}
+
+.creditos .bloque > .credito-grupo {
+  max-width: none;
+}
+
+.credito-grupo > p {
+  max-width: var(--ancho-lectura);
+}
+
+.credito-grupo + p {
+  margin-top: 18px;
+}
+
+.credito-grupo h3 {
+  margin: 34px 0 10px;
+  font-size: 1.08rem;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.credito-subgrupo {
+  margin: 22px 0 8px;
+  color: var(--color-tenue);
+  font-size: 0.92rem;
+  font-weight: 500;
+}
+
+/* Condiciones comunes a todo un grupo (Eurostat, Idescat, Unsplash): se dicen una vez, encima de sus fichas. */
+.creditos .credito-condiciones {
+  max-width: var(--ancho-lectura);
+  margin: 0 0 14px;
+  padding-inline-start: 12px;
+  color: var(--color-tenue);
+  font-size: 0.88rem;
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+  border-inline-start: 2px solid var(--color-linea);
+}
+
+.credito-etiqueta {
+  display: block;
+  color: var(--color-tinta);
+  font-weight: 500;
+}
+
+/* Fichas */
+.credito-lista {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.credito {
+  display: grid;
+  grid-template-columns: minmax(0, 17rem) minmax(0, 1fr);
+  gap: 6px 32px;
+  padding: 16px 0;
+  border-top: 1px solid var(--color-linea);
+  scroll-margin-top: 28px;
+}
+
+.credito:last-child {
+  border-bottom: 1px solid var(--color-linea);
+}
+
+/* La ficha a la que lleva un enlace del informe (creditos.html#f-…) se marca con una línea fija, sin movimiento. */
+.credito:target {
+  padding-inline-start: 12px;
+  border-inline-start: 3px solid var(--color-acento);
+}
+
+.creditos .credito-obra {
+  margin: 0;
+  font-size: 0.98rem;
+  font-weight: 500;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.credito-codigo {
+  display: block;
+  margin-top: 4px;
+  color: var(--color-tenue);
+  font-family: var(--fuente-mono);
+  font-size: var(--texto-minimo);
+  font-weight: 400;
+}
+
+.credito-ficha {
+  display: grid;
+  gap: 6px;
+  margin: 0;
+}
+
+.credito-ficha > div {
+  display: grid;
+  grid-template-columns: 8.5rem minmax(0, 1fr);
+  gap: 16px;
+  align-items: baseline;
+}
+
+.credito-ficha dt {
+  color: var(--color-tenue);
+  font-size: var(--texto-minimo);
+  line-height: 1.9;
+}
+
+.credito-ficha dd {
+  max-width: var(--ancho-lectura);
+  margin: 0;
+  font-size: 0.92rem;
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+}
+
+.credito-dominio,
+.credito-licencias {
+  color: var(--color-tenue);
+  font-size: var(--texto-minimo);
+}
+
+/* La cita y los avisos literales que pide la OIT, plegados bajo su ficha. */
+.credito-detalle summary {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  color: var(--color-tinta);
+  cursor: pointer;
+}
+
+.credito-detalle .literal {
+  margin: 8px 0 0;
+  padding-inline-start: 12px;
+  color: var(--color-tenue);
+  font-size: 0.86rem;
+  border-inline-start: 2px solid var(--color-linea);
+}
+
+/* Fotografías: fichas con la miniatura, en rejilla. */
+.credito-fotos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 210px), 1fr));
+  gap: 28px;
+  margin: 8px 0 18px;
+  padding: 0;
+  list-style: none;
+}
+
+.credito-fotos .credito {
+  display: block;
+  padding: 0;
+  border: 0;
+}
+
+.credito-fotos img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  border-radius: var(--radio);
+}
+
+.credito-fotos .credito-obra {
+  margin-top: 10px;
+}
+
+.credito-fotos .credito-ficha > div {
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0;
+}
+
+.creditos-final .creditos-licencias a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}
+
+@media (max-width: 960px) {
+  .credito {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .creditos-indice ol {
+    grid-template-rows: none;
+    grid-template-columns: minmax(0, 1fr);
+    grid-auto-flow: row;
+  }
+
+  .credito-ficha {
+    gap: 10px;
+  }
+
+  .credito-ficha > div {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+  }
+}

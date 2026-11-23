@@ -1,0 +1,44 @@
+[
+  {
+    "Id": 22718,
+    "FK_Variable": 456,
+    "Nombre": "Camareros y cocineros propietarios",
+    "Codigo": "50",
+    "FK_JerarquiaPadres": [22717]
+  },
+  {
+    "Id": 22721,
+    "FK_Variable": 456,
+    "Nombre": "Trabajadores asalariados de los servicios de restauración",
+    "Codigo": "51",
+    "FK_JerarquiaPadres": [22717]
+  },
+  {
+    "Id": 22726,
+    "FK_Variable": 456,
+    "Nombre": "Dependientes en tiendas y almacenes",
+    "Codigo": "52",
+    "FK_JerarquiaPadres": [22717]
+  },
+  {
+    "Id": 22731,
+    "FK_Variable": 456,
+    "Nombre": "Comerciantes propietarios de tiendas",
+    "Codigo": "53",
+    "FK_JerarquiaPadres": [22717]
+  },
+  {
+    "Id": 22734,
+    "FK_Variable": 456,
+    "Nombre": "Vendedores (excepto en tiendas y almacenes)",
+    "Codigo": "54",
+    "FK_JerarquiaPadres": [22717]
+  },
+  {
+    "Id": 22747,
+    "FK_Variable": 456,
+    "Nombre": "Cajeros y taquilleros (excepto bancos)",
+    "Codigo": "55",
+    "FK_JerarquiaPadres": [22717]
+  }
+]

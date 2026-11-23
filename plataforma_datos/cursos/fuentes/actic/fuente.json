@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "id": "actic",
+  "tema": "cursos",
+  "lector": "plataforma_datos.cursos.fuentes.actic.lector",
+  "casa_datos": "actic",
+  "nombre": "Acreditación de competencias digitales ACTIC",
+  "institucion": "Generalitat de Catalunya",
+  "significado": "Modelo, normas, equivalencias y trámite de acreditación digital; no acredita el nivel de una persona ni reserva una plaza.",
+  "alcance": [
+    "Norma, DOGC, CVE, publicado, URL/SHA/captura; equivalencia por texto solo HTML",
+    "Modelo/trámite de acreditación digital; no nivel de persona ni plaza/reserva"
+  ],
+  "recursos": [
+    {
+      "id": "dogc",
+      "tipo": "familia",
+      "ubicacion": null,
+      "licencia": null,
+      "descripcion": "Tres PDF por ELI: órdenes EMT/47/2026, EMT/48/2026 y EMT/136/2026; direcciones explícitas en el lector."
+    },
+    {
+      "id": "portal",
+      "tipo": "familia",
+      "ubicacion": "https://actic.gencat.cat/",
+      "licencia": null,
+      "descripcion": "Dos páginas HTML explícitas del portal, con pasajes y equivalencias; no se descubre toda norma sucesora."
+    }
+  ],
+  "canales": [
+    {
+      "id": "actic",
+      "tipo": "remoto",
+      "recursos": ["dogc", "portal"],
+      "autenticacion": "Ninguna configurada",
+      "limites": [
+        "No descubrimiento de normas sucesoras; transcripción y pasajes literales, revisión editorial conserva vigencia de selección"
+      ],
+      "observaciones": "Cinco recursos explícitos"
+    }
+  ],
+  "actualizacion": {
+    "politica": "mensual",
+    "red": true,
+    "frecuencia": "cuando la Generalitat cambia una orden o el portal",
+    "renovar_dias": null,
+    "originales": "actic"
+  },
+  "conjuntos": [
+    {
+      "id": "actic",
+      "fuente": "actic",
+      "clase": "cambiante",
+      "alcance": "contenido-actual-acotado",
+      "operacion": "descargar",
+      "intervalo_dias": 7
+    }
+  ],
+  "dependencias": [],
+  "contratos": ["lector.py:validar"],
+  "retirada": "Se mantienen los controles de admisión y reconstrucción del lector actual; no se declara una conciliación genérica de entidades ni se interpreta un fallo como baja.",
+  "conservacion": "Se conservan las rutas, originales, procedencias y revisiones actuales en var/actualizacion; este descriptor no habilita limpieza automática ni fija nuevos plazos de retención."
+}

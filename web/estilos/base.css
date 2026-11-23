@@ -1,0 +1,10 @@
+/* Base común a todas las páginas: documento y foco, cabecera (con el selector de idioma), menú e instalación como
+   aplicación, navegación y pie, y adaptaciones (pantalla, impresión y movimiento reducido). Sin movimiento en bucle:
+   el menú y los diálogos aparecen sin animación; la lista de idiomas, con un fundido de una sola vez que
+   prefers-reduced-motion quita. */
+
+@import url("./base-documento.css");
+@import url("./base-cabecera.css");
+@import url("./base-menu-e-instalacion.css");
+@import url("./base-navegacion-y-pie.css");
+@import url("./base-adaptaciones.css");

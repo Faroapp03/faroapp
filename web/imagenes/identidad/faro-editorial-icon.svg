@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <title>Faro</title>
+  <rect width="64" height="64" rx="13" fill="#f4f3f0" />
+  <path d="M20 18h24v5H26v10h15v5H26v15h-6z" fill="#17212a" />
+  <path d="M20 10h24" fill="none" stroke="#17212a" stroke-width="2.5" />
+</svg>

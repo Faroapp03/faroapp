@@ -1,0 +1,7 @@
+{
+  "bancos": [
+    { "nombre": "banco-100", "archivo": "casos-100.json", "clave_de_ruido": "banco-100" },
+    { "nombre": "propios-12", "archivo": "casos-propios.json", "clave_de_ruido": "propios-12" },
+    { "nombre": "cobertura-2000", "archivo": "frases-2000.json", "clave_de_ruido": "cobertura-2000" }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "id": "faro:vigencia:hp_life",
+  "version": "1",
+  "fuente_id": "hp_life",
+  "responsable": "Equipo Faro",
+  "naturaleza": "politica-interna-operativa",
+  "criterios": {
+    "ttl_ficha_segundos": 86400,
+    "ttl_catalogo_segundos": null,
+    "requiere_catalogo": false,
+    "zona_fechas_dia": null,
+    "inicio_dia_inclusivo": null,
+    "fin_dia_inclusivo": null
+  },
+  "justificacion": "Plazo técnico de Faro de 24 horas para comprobar de nuevo la oferta del recurso. No es garantía de HP ni cadencia del descriptor. No acredita plaza o elegibilidad individual. Sin censo acreditado, no exige un índice ni interpreta ausencia como baja.",
+  "revision_equipo_faro": {
+    "estado": "criterio-aprobado-sin-activacion",
+    "fecha": null,
+    "alcance": "Política de recursos HP LIFE sin edición; identidad, condición de acceso y captura real se contrastan por separado."
+  }
+}

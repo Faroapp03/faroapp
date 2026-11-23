@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "id": "ia_nacional_kor",
+  "tema": "ia_y_trabajo",
+  "nombre": "Corea del Sur: uso de IA generativa por personas, medida nacional",
+  "institucion": "Ministerio de Ciencia y TIC (MSIT) y NIA",
+  "lector": "plataforma_datos.ia_y_trabajo.fuentes.ia_nacional_kor.lector",
+  "casa_datos": "ia-nacional-kor",
+  "significado": "Uso de la IA generativa por las personas de Corea del Sur (MSIT, encuesta de uso de internet): su propio módulo.",
+  "alcance": [
+    "El Ministerio de Ciencia y TIC de Corea (MSIT), con la agencia NIA, publica cada año la encuesta de uso de internet (estadística nacional aprobada). La edición de 2025 (comunicado del 31/03/2026) encuesta a 50 750 personas de 3 o más años de 22 671 hogares y da el porcentaje que ha usado alguna vez un servicio basado en IA generativa. Es una medida de personas, aparte de las de empresas, y no es la europea: cuenta el uso «alguna vez» (la europea, los tres últimos meses), empieza a los 3 años (la europea, a los 16) y el boletín no dice si la base es toda la población encuestada o quienes usan internet. Por eso va como medida nacional, con su definición y sin comparar. Se lee la fila «생성형 AI 기반 서비스 경험률» del cuadro de resultados principales, columna del último año.",
+    "El original es el boletín del comunicado (ODT), que el portal oficial korea.kr publica con la licencia KOGL tipo 1. Python estándar."
+  ],
+  "recursos": [
+    {
+      "id": "recurso-01",
+      "tipo": "url",
+      "ubicacion": "https://www.korea.kr/common/download.do?fileId=198408434&tblKey=GMN",
+      "licencia": "Korea Open Government License (공공누리), tipo 1, atribución (https://www.kogl.or.kr/info/licenseType1.do): uso libre, también comercial, con obras derivadas; se indica la fuente con su enlace y no se presenta como respaldado por el organismo. «본 저작물은 '과학기술정보통신부'에서 '2026년' 작성하여 공공누리 제1유형으로 개방한 '「2025 인터넷이용실태조사」 결과 발표(작성자: 과학기술정보통신부)'을 이용하였으며, 해당 저작물은 '대한민국 정책브리핑, https://www.korea.kr/briefing/pressReleaseView.do?newsId=156751949'에서 무료로 다운받으실 수 있습니다.»",
+      "descripcion": "Ministerio de Ciencia y TIC de Corea (MSIT), comunicado de la encuesta de uso de internet 2025, con el cuadro de resultados principales (ODT)"
+    }
+  ],
+  "canales": [
+    {
+      "id": "consulta",
+      "tipo": "remoto",
+      "recursos": ["recurso-01"],
+      "autenticacion": "El lector no configura credenciales de autenticación para estos recursos públicos; no acredita acceso a otros servicios.",
+      "limites": [
+        "Cuotas y límites oficiales de servicio no acreditados por este descriptor; rigen los límites de transporte y validación del lector.",
+        "Este descriptor no acredita la disponibilidad remota actual; una URL conservada no acredita consulta satisfactoria ni una tarea instalada.",
+        "La comprobación del recurso conocido no acredita una revisión general de ediciones o disposiciones posteriores.",
+        "Medida nacional con su universo, pregunta, periodo y licencia propios; el contrato la declara no comparable entre países ni con Eurostat."
+      ],
+      "observaciones": "ODT del comunicado oficial publicado en korea.kr, edición conocida. Se conservan universo y uso alguna vez; la base poblacional que el boletín no aclara sigue desconocida."
+    }
+  ],
+  "actualizacion": {
+    "politica": "edición",
+    "red": true,
+    "frecuencia": "anual (encuesta de uso de internet del MSIT y la NIA)",
+    "renovar_dias": null,
+    "originales": "ia-nacional-kor"
+  },
+  "conjuntos": [
+    {
+      "id": "ia_nacional_kor",
+      "fuente": "ia_nacional_kor",
+      "clase": "cambiante",
+      "alcance": "edicion-conocida",
+      "operacion": "descargar",
+      "intervalo_dias": 30
+    }
+  ],
+  "dependencias": [],
+  "contratos": ["lector.py:preparar", "lector.py:validar", "plataforma_datos/orquestacion/admision.py:exigir_admitido"],
+  "retirada": "Se conserva la admisión del conjunto y sus guardas actuales. Un fallo o una ausencia de captura no se convierte en retirada de entidades ni en disponibilidad confirmada.",
+  "conservacion": "Originales, procedencias, preparados y validaciones conservan sus casas actuales en var/actualizacion. Esta ficha no habilita limpieza automática ni cambia fechas históricas, periodos, licencias o retención."
+}

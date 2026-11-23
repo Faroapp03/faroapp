@@ -1,0 +1,17 @@
+{
+  "origen": "Copia de los originales de la instalación (var/actualizacion/originales/tic-llars/), los mismos bytes que se validaron; procedencia de esa instalación.",
+  "archivos": [
+    {
+      "archivo": "idescat-ticll25-3.4.1.html",
+      "url": "https://www.idescat.cat/pub/?id=ticll25&n=3.4.1&lang=es",
+      "sha256": "509b86f404dd0f76fc3d5dfeb2aba0a09706baee39482b94afdfc4a1475d1789",
+      "descargado_utc": "2026-10-11T03:34:07.994106+00:00"
+    },
+    {
+      "archivo": "idescat-ticll25-3.4.2.html",
+      "url": "https://www.idescat.cat/pub/?id=ticll25&n=3.4.2&lang=es",
+      "sha256": "bdb3f8dc9eaccdd38ec46c26ffded684796d63bd7889bb56f91bc0b9a196d2f9",
+      "descargado_utc": "2026-10-11T03:34:11.656456+00:00"
+    }
+  ]
+}

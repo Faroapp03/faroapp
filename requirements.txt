@@ -1,0 +1,14 @@
+# Almacenamiento privado S3/R2: SDK oficial y dependencias transitivas fijadas.
+boto3==1.43.114
+botocore==1.43.114
+jmespath==1.1.0
+python-dateutil==2.9.0.post0
+s3transfer==0.19.0
+six==1.17.0
+urllib3==2.8.0
+
+# Lectura textual acotada de PDF de Biblioteca; sin extras.
+pypdf==6.21.2
+
+# Confianza TLS explícita del mantenimiento; misma CA que la semilla de bootstrap.
+certifi==2026.10.23

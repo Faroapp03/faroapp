@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "id": "certificados2016",
+  "tema": "cursos",
+  "lector": "plataforma_datos.cursos.fuentes.certificados2016.lector",
+  "casa_datos": "certificados2016",
+  "nombre": "Relaciones históricas SEPE 2016",
+  "institucion": "SEPE · Observatorio de las Ocupaciones",
+  "significado": "Relaciones ocupación-certificado-unidad publicadas en anexos del informe de 2016; no son oferta formativa abierta.",
+  "alcance": [
+    "Archivo, SHA y método de extracción en procedencia; página/fila/ámbito por relación",
+    "Relación histórica ocupación-certificado, no oferta abierta"
+  ],
+  "recursos": [
+    {
+      "id": "informe",
+      "tipo": "familia",
+      "ubicacion": "var/actualizacion/originales/certificados2016/",
+      "licencia": null,
+      "descripcion": "PDF histórico y celdas JSONL registradas de anexos III/IV; la preparación no ejecuta el extractor histórico."
+    }
+  ],
+  "canales": [
+    {
+      "id": "certificados2016",
+      "tipo": "local",
+      "recursos": ["informe"],
+      "autenticacion": "No aplicable al lector local",
+      "limites": [
+        "Edición cerrada 2016; extractor histórico PDFKit fuera del flujo; solo certificados/unidades vigentes y precedencia/rechazos revisados"
+      ],
+      "observaciones": "No hay descarga automática en el lector."
+    }
+  ],
+  "actualizacion": {
+    "politica": "manual",
+    "red": false,
+    "frecuencia": "cerrada (informe de 2016)",
+    "renovar_dias": null,
+    "originales": "certificados2016"
+  },
+  "conjuntos": [
+    {
+      "id": "certificados2016",
+      "fuente": "certificados2016",
+      "clase": "historica",
+      "alcance": "copia-local",
+      "operacion": "integridad",
+      "intervalo_dias": null
+    }
+  ],
+  "dependencias": ["esco", "clasificaciones", "cataluna", "formacion", "agencia", "acreditacion", "perfiles"],
+  "contratos": ["lector.py:validar"],
+  "retirada": "Se mantienen los controles de admisión y reconstrucción del lector actual; no se declara una conciliación genérica de entidades ni se interpreta un fallo como baja.",
+  "conservacion": "Se conservan las rutas, originales, procedencias y revisiones actuales en var/actualizacion; este descriptor no habilita limpieza automática ni fija nuevos plazos de retención."
+}

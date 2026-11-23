@@ -1,0 +1,3848 @@
+{
+  "cita": "FUNDAE (Fundación Estatal para la Formación en el Empleo): ediciones en teleformación de la oferta de formación subvencionada para personas trabajadoras, consultadas el 15/11/2026.",
+  "consulta": "2026-11-15",
+  "buscador": "https://experienciafundae.es/formacion-subvencionada",
+  "condiciones": "https://www.fundae.es/trabajadores",
+  "ediciones": [
+    {
+      "id": "3935",
+      "especialidad": "ADGD0003",
+      "nombre": "DIRIGIR EQUIPOS DE TRABAJO EN ENTORNOS VIRTUALES",
+      "horas": 30,
+      "nivel_digital": "Básico",
+      "entidad": "CENTRO DE FORMACION PROFESIONAL CCCIII",
+      "preinscripcion": {
+        "inicio": "2026-10-01",
+        "fin": "2026-11-30"
+      },
+      "colectivos": [
+        "asalariados",
+        "autonomos",
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "INTERSECTORIAL",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/ADGD0003.pdf"
+    },
+    {
+      "id": "4126",
+      "especialidad": "ADGD0003",
+      "nombre": "DIRIGIR EQUIPOS DE TRABAJO EN ENTORNOS VIRTUALES",
+      "horas": 30,
+      "nivel_digital": "Básico",
+      "entidad": "GESTION DEL CONOCIMIENTO S.A",
+      "preinscripcion": {
+        "inicio": "2026-10-01",
+        "fin": "2026-12-31"
+      },
+      "colectivos": [
+        "asalariados",
+        "autonomos",
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "INTERSECTORIAL",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/ADGD0003.pdf"
+    },
+    {
+      "id": "4292",
+      "especialidad": "ADGD0003",
+      "nombre": "DIRIGIR EQUIPOS DE TRABAJO EN ENTORNOS VIRTUALES",
+      "horas": 30,
+      "nivel_digital": "Básico",
+      "entidad": "GRUPO FIDSOFT",
+      "preinscripcion": {
+        "inicio": "2026-10-01",
+        "fin": "2026-12-31"
+      },
+      "colectivos": [
+        "asalariados",
+        "autonomos",
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "INTERSECTORIAL",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/ADGD0003.pdf"
+    },
+    {
+      "id": "4352",
+      "especialidad": "ADGD0003",
+      "nombre": "DIRIGIR EQUIPOS DE TRABAJO EN ENTORNOS VIRTUALES",
+      "horas": 30,
+      "nivel_digital": "Intermedio",
+      "entidad": "FORMACION INTERNACIONAL VOCACIONAL Y EMPRENDIMIENTO",
+      "preinscripcion": {
+        "inicio": "2026-11-01",
+        "fin": "2026-11-30"
+      },
+      "colectivos": [
+        "asalariados",
+        "autonomos",
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "INTERSECTORIAL",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/ADGD0003.pdf"
+    },
+    {
+      "id": "4543",
+      "especialidad": "ADGD0003",
+      "nombre": "DIRIGIR EQUIPOS DE TRABAJO EN ENTORNOS VIRTUALES",
+      "horas": 30,
+      "nivel_digital": "Básico",
+      "entidad": "CONECTANDO LOCAL S.L.",
+      "preinscripcion": {
+        "inicio": "2026-11-01",
+        "fin": "2026-11-30"
+      },
+      "colectivos": [
+        "asalariados",
+        "autonomos",
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "INTERSECTORIAL",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/ADGD0003.pdf"
+    },
+    {
+      "id": "3568",
+      "especialidad": "ADGD0022",
+      "nombre": "IMPUESTO SOBRE LA RENTA DE LAS PERSONAS FÍSICAS (IRPF)",
+      "horas": 20,
+      "nivel_digital": "Intermedio",
+      "entidad": "ESCUELA PROFESIONAL IEM, SL",
+      "preinscripcion": {
+        "inicio": "2026-09-01",
+        "fin": "2026-11-30"
+      },
+      "colectivos": [
+        "asalariados",
+        "autonomos",
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "INTERSECTORIAL",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/ADGD0022.pdf"
+    },
+    {
+      "id": "1502",
+      "especialidad": "ADGD0090",
+      "nombre": "INTELIGENCIA ARTIFICIAL APLICADA A LA GESTIÓN DE RECURSOS HUMANOS",
+      "horas": 70,
+      "nivel_digital": "Básico",
+      "entidad": "TRAINING CONSULTING, S.L.",
+      "preinscripcion": {
+        "inicio": "2026-09-01",
+        "fin": "2026-12-31"
+      },
+      "colectivos": [
+        "autonomos",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "INTERSECTORIAL",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/ADGD0090.pdf"
+    },
+    {
+      "id": "3569",
+      "especialidad": "ADGD0090",
+      "nombre": "INTELIGENCIA ARTIFICIAL APLICADA A LA GESTIÓN DE RECURSOS HUMANOS",
+      "horas": 70,
+      "nivel_digital": "Intermedio",
+      "entidad": "ESCUELA PROFESIONAL IEM, SL",
+      "preinscripcion": {
+        "inicio": "2026-09-01",
+        "fin": "2026-11-30"
+      },
+      "colectivos": [
+        "autonomos",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "INTERSECTORIAL",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/ADGD0090.pdf"
+    },
+    {
+      "id": "1468",
+      "especialidad": "ADGD056PO",
+      "nombre": "CREACIÓN DE EMPRESAS ON-LINE",
+      "horas": 60,
+      "nivel_digital": "Básico",
+      "entidad": "FORMACIÓN CASTILLA Y LEÓN, S.L.",
+      "preinscripcion": {
+        "inicio": "2026-09-01",
+        "fin": "2026-12-31"
+      },
+      "colectivos": [
+        "autonomos",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "INTERSECTORIAL",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/ADGD056PO.pdf"
+    },
+    {
+      "id": "3727",
+      "especialidad": "ADGD056PO",
+      "nombre": "CREACIÓN DE EMPRESAS ON-LINE",
+      "horas": 60,
+      "nivel_digital": "Básico",
+      "entidad": "AULADIRECTA S.L.",
+      "preinscripcion": {
+        "inicio": "2026-10-01",
+        "fin": "2026-11-30"
+      },
+      "colectivos": [
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "INTERSECTORIAL",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/ADGD056PO.pdf"
+    },
+    {
+      "id": "3879",
+      "especialidad": "ADGD056PO",
+      "nombre": "CREACIÓN DE EMPRESAS ON-LINE",
+      "horas": 60,
+      "nivel_digital": "Básico",
+      "entidad": "EUROCONSULTORÍA FORMACIÓN EMPRESA S.L. (EUROFORMAC)",
+      "preinscripcion": {
+        "inicio": "2026-10-01",
+        "fin": "2026-11-30"
+      },
+      "colectivos": [
+        "autonomos",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "INTERSECTORIAL",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/ADGD056PO.pdf"
+    },
+    {
+      "id": "4082",
+      "especialidad": "ADGD056PO",
+      "nombre": "CREACIÓN DE EMPRESAS ON-LINE",
+      "horas": 60,
+      "nivel_digital": "Básico",
+      "entidad": "HEDIMA CUSTOM LEARNING SERVICES",
+      "preinscripcion": {
+        "inicio": "2026-10-01",
+        "fin": "2026-12-31"
+      },
+      "colectivos": [
+        "autonomos",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "INTERSECTORIAL",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/ADGD056PO.pdf"
+    },
+    {
+      "id": "1726",
+      "especialidad": "ADGD350PO",
+      "nombre": "PROGRAMA AVANZADO TALENTO, CULTURA Y EMPRESA DIGITAL",
+      "horas": 90,
+      "nivel_digital": "Intermedio",
+      "entidad": "INNOVACION Y COORDINACION EN ESTRATEGIAS FORMATIVAS, S.L.",
+      "preinscripcion": {
+        "inicio": "2026-09-01",
+        "fin": "2027-05-31"
+      },
+      "colectivos": [
+        "asalariados",
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "SERVICIOS MEDIOAMBIENTALES",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/ADGD350PO.pdf"
+    },
+    {
+      "id": "3875",
+      "especialidad": "ADGD350PO",
+      "nombre": "PROGRAMA AVANZADO TALENTO, CULTURA Y EMPRESA DIGITAL",
+      "horas": 90,
+      "nivel_digital": "Básico",
+      "entidad": "EUROCONSULTORÍA FORMACIÓN EMPRESA S.L. (EUROFORMAC)",
+      "preinscripcion": {
+        "inicio": "2026-10-01",
+        "fin": "2026-11-30"
+      },
+      "colectivos": [
+        "asalariados",
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "SERVICIOS MEDIOAMBIENTALES",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/ADGD350PO.pdf"
+    },
+    {
+      "id": "4079",
+      "especialidad": "ADGD350PO",
+      "nombre": "PROGRAMA AVANZADO TALENTO, CULTURA Y EMPRESA DIGITAL",
+      "horas": 90,
+      "nivel_digital": "Básico",
+      "entidad": "Hedima DN Formación, S.L.U.",
+      "preinscripcion": {
+        "inicio": "2026-10-01",
+        "fin": "2026-12-31"
+      },
+      "colectivos": [
+        "asalariados",
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "SERVICIOS MEDIOAMBIENTALES",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/ADGD350PO.pdf"
+    },
+    {
+      "id": "4086",
+      "especialidad": "ADGD56",
+      "nombre": "HABILIDADES PARA LA TRANSFORMACIÓN DIGITAL",
+      "horas": 40,
+      "nivel_digital": "Básico",
+      "entidad": "HEDIMA CUSTOM LEARNING SERVICES",
+      "preinscripcion": {
+        "inicio": "2026-10-01",
+        "fin": "2026-12-31"
+      },
+      "colectivos": [
+        "autonomos",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "INTERSECTORIAL",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/ADGD56.pdf"
+    },
+    {
+      "id": "1518",
+      "especialidad": "ADGG020PO",
+      "nombre": "EXCEL AVANZADO",
+      "horas": 20,
+      "nivel_digital": "Avanzado",
+      "entidad": "TRAINING CONSULTING, S.L.",
+      "preinscripcion": {
+        "inicio": "2026-09-01",
+        "fin": "2026-12-31"
+      },
+      "colectivos": [
+        "asalariados",
+        "autonomos",
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "INTERSECTORIAL",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/ADGG020PO.pdf"
+    },
+    {
+      "id": "1752",
+      "especialidad": "ADGG020PO",
+      "nombre": "EXCEL AVANZADO",
+      "horas": 20,
+      "nivel_digital": "Avanzado",
+      "entidad": "INNOVACIÓN Y DESARROLLO LOCAL, S.L.",
+      "preinscripcion": {
+        "inicio": "2026-09-01",
+        "fin": "2026-11-30"
+      },
+      "colectivos": [
+        "asalariados",
+        "autonomos",
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "INTERSECTORIAL",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/ADGG020PO.pdf"
+    },
+    {
+      "id": "3980",
+      "especialidad": "ADGG020PO",
+      "nombre": "EXCEL AVANZADO",
+      "horas": 20,
+      "nivel_digital": null,
+      "entidad": "CENTRO INFORMATICO PROFESIONAL CEINPRO SL",
+      "preinscripcion": {
+        "inicio": "2026-08-01",
+        "fin": "2026-11-30"
+      },
+      "colectivos": [
+        "asalariados",
+        "autonomos",
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "INTERSECTORIAL",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/ADGG020PO.pdf"
+    },
+    {
+      "id": "4067",
+      "especialidad": "ADGG020PO",
+      "nombre": "EXCEL AVANZADO",
+      "horas": 20,
+      "nivel_digital": "Avanzado",
+      "entidad": "CAPACITA FORMACION S.L.",
+      "preinscripcion": {
+        "inicio": "2026-11-01",
+        "fin": "2026-11-30"
+      },
+      "colectivos": [
+        "asalariados",
+        "autonomos",
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "INTERSECTORIAL",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/ADGG020PO.pdf"
+    },
+    {
+      "id": "3650",
+      "especialidad": "ADGG021PO",
+      "nombre": "FUNDAMENTOS EXCEL",
+      "horas": 20,
+      "nivel_digital": null,
+      "entidad": "CENTRO INFORMATICO PROFESIONAL CEINPRO SL",
+      "preinscripcion": {
+        "inicio": "2026-08-01",
+        "fin": "2026-11-30"
+      },
+      "colectivos": [
+        "asalariados",
+        "autonomos",
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "INTERSECTORIAL",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/ADGG021PO.pdf"
+    },
+    {
+      "id": "4063",
+      "especialidad": "ADGG021PO",
+      "nombre": "FUNDAMENTOS EXCEL",
+      "horas": 20,
+      "nivel_digital": "Básico",
+      "entidad": "CAPACITA FORMACION S.L.",
+      "preinscripcion": {
+        "inicio": "2026-11-01",
+        "fin": "2026-11-30"
+      },
+      "colectivos": [
+        "asalariados",
+        "autonomos",
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "INTERSECTORIAL",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/ADGG021PO.pdf"
+    },
+    {
+      "id": "1461",
+      "especialidad": "ADGG042PO",
+      "nombre": "LA TECNOLOGÍA DE LA INFORMACIÓN APLICADA A LA EMPRESA.",
+      "horas": 30,
+      "nivel_digital": "Básico",
+      "entidad": "FORMACIÓN CASTILLA Y LEÓN, S.L.",
+      "preinscripcion": {
+        "inicio": "2026-09-01",
+        "fin": "2026-12-31"
+      },
+      "colectivos": [
+        "asalariados",
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "ADMINISTRACIÓN Y GESTIÓN",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/ADGG042PO.pdf"
+    },
+    {
+      "id": "2130",
+      "especialidad": "ADGG042PO",
+      "nombre": "LA TECNOLOGÍA DE LA INFORMACIÓN APLICADA A LA EMPRESA.",
+      "horas": 30,
+      "nivel_digital": "Básico",
+      "entidad": "ALMARIR CONSULTORES,S.L",
+      "preinscripcion": {
+        "inicio": "2026-09-01",
+        "fin": "2026-11-30"
+      },
+      "colectivos": [
+        "asalariados",
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "ADMINISTRACIÓN Y GESTIÓN",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/ADGG042PO.pdf"
+    },
+    {
+      "id": "2083",
+      "especialidad": "ADGG052PO",
+      "nombre": "OFFICE: WORD, EXCEL, ACCESS Y POWER POINT",
+      "horas": 60,
+      "nivel_digital": "Básico",
+      "entidad": "FORMACION Y GESTION DE SERVICIOS SOCIALES S. COOP.",
+      "preinscripcion": {
+        "inicio": "2026-09-01",
+        "fin": "2026-12-31"
+      },
+      "colectivos": [
+        "asalariados",
+        "autonomos",
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "INTERSECTORIAL",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/ADGG052PO.pdf"
+    },
+    {
+      "id": "1506",
+      "especialidad": "ADGG055PO",
+      "nombre": "OFIMÁTICA EN LA NUBE: GOOGLE DRIVE",
+      "horas": 100,
+      "nivel_digital": "Básico",
+      "entidad": "TRAINING CONSULTING, S.L.",
+      "preinscripcion": {
+        "inicio": "2026-09-01",
+        "fin": "2026-12-31"
+      },
+      "colectivos": [
+        "autonomos",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "INTERSECTORIAL",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/ADGG055PO.pdf"
+    },
+    {
+      "id": "3572",
+      "especialidad": "ADGG055PO",
+      "nombre": "OFIMÁTICA EN LA NUBE: GOOGLE DRIVE",
+      "horas": 100,
+      "nivel_digital": "Intermedio",
+      "entidad": "ACCIONES FORMATIVAS DE CALIDAD SL",
+      "preinscripcion": {
+        "inicio": "2026-09-01",
+        "fin": "2026-12-31"
+      },
+      "colectivos": [
+        "asalariados",
+        "autonomos",
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "INTERSECTORIAL",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/ADGG055PO.pdf"
+    },
+    {
+      "id": "3645",
+      "especialidad": "ADGG055PO",
+      "nombre": "OFIMÁTICA EN LA NUBE: GOOGLE DRIVE",
+      "horas": 100,
+      "nivel_digital": "Básico",
+      "entidad": "CENTRO DE CUALIFICACIONES PROFESIONALES COREMSA ON LINE",
+      "preinscripcion": {
+        "inicio": "2026-11-01",
+        "fin": "2026-11-30"
+      },
+      "colectivos": [
+        "autonomos",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "INTERSECTORIAL",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/ADGG055PO.pdf"
+    },
+    {
+      "id": "1474",
+      "especialidad": "ADGG057PO",
+      "nombre": "OFIMÁTICA: APLICACIONES INFORMÁTICAS DE GESTIÓN",
+      "horas": 50,
+      "nivel_digital": "Básico",
+      "entidad": "FORMACIÓN CASTILLA Y LEÓN, S.L.",
+      "preinscripcion": {
+        "inicio": "2026-09-01",
+        "fin": "2026-12-31"
+      },
+      "colectivos": [
+        "autonomos",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "INTERSECTORIAL",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/ADGG057PO.pdf"
+    },
+    {
+      "id": "1507",
+      "especialidad": "ADGG057PO",
+      "nombre": "OFIMÁTICA: APLICACIONES INFORMÁTICAS DE GESTIÓN",
+      "horas": 50,
+      "nivel_digital": "Básico",
+      "entidad": "TRAINING CONSULTING, S.L.",
+      "preinscripcion": {
+        "inicio": "2026-09-01",
+        "fin": "2026-12-31"
+      },
+      "colectivos": [
+        "autonomos",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "INTERSECTORIAL",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/ADGG057PO.pdf"
+    },
+    {
+      "id": "3252",
+      "especialidad": "ADGG057PO",
+      "nombre": "OFIMÁTICA: APLICACIONES INFORMÁTICAS DE GESTIÓN",
+      "horas": 50,
+      "nivel_digital": "Básico",
+      "entidad": "System Centros de Formación S.L.",
+      "preinscripcion": {
+        "inicio": "2026-09-01",
+        "fin": "2026-11-30"
+      },
+      "colectivos": [
+        "asalariados",
+        "autonomos",
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "INTERSECTORIAL",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/ADGG057PO.pdf"
+    },
+    {
+      "id": "3937",
+      "especialidad": "ADGG057PO",
+      "nombre": "OFIMÁTICA: APLICACIONES INFORMÁTICAS DE GESTIÓN",
+      "horas": 50,
+      "nivel_digital": "Básico",
+      "entidad": "CENTRO DE FORMACION PROFESIONAL CCC",
+      "preinscripcion": {
+        "inicio": "2026-10-01",
+        "fin": "2026-11-30"
+      },
+      "colectivos": [
+        "asalariados",
+        "autonomos",
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "INTERSECTORIAL",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/ADGG057PO.pdf"
+    },
+    {
+      "id": "4056",
+      "especialidad": "ADGG057PO",
+      "nombre": "OFIMÁTICA: APLICACIONES INFORMÁTICAS DE GESTIÓN",
+      "horas": 50,
+      "nivel_digital": "Básico",
+      "entidad": "Hedima DN Formación, S.L.U.",
+      "preinscripcion": {
+        "inicio": "2026-10-01",
+        "fin": "2026-12-31"
+      },
+      "colectivos": [
+        "autonomos",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "INTERSECTORIAL",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/ADGG057PO.pdf"
+    },
+    {
+      "id": "532",
+      "especialidad": "ADGG21",
+      "nombre": "HERRAMIENTAS COLABORATIVAS OFFICCE 365",
+      "horas": 50,
+      "nivel_digital": "Básico",
+      "entidad": "CORE NETWORKS, S.L.",
+      "preinscripcion": {
+        "inicio": "2026-07-01",
+        "fin": "2026-12-31"
+      },
+      "colectivos": [
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "INTERSECTORIAL",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/ADGG21.pdf"
+    },
+    {
+      "id": "3273",
+      "especialidad": "ADGG21",
+      "nombre": "HERRAMIENTAS COLABORATIVAS OFFICCE 365",
+      "horas": 50,
+      "nivel_digital": "Básico",
+      "entidad": "AC3 EVOLUCION FORMATIVA",
+      "preinscripcion": {
+        "inicio": "2026-09-01",
+        "fin": "2026-11-30"
+      },
+      "colectivos": [
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "INTERSECTORIAL",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/ADGG21.pdf"
+    },
+    {
+      "id": "3586",
+      "especialidad": "ADGG21",
+      "nombre": "HERRAMIENTAS COLABORATIVAS OFFICCE 365",
+      "horas": 50,
+      "nivel_digital": "Básico",
+      "entidad": "ENTERPRISE FORMACIÓN CONTINUA",
+      "preinscripcion": {
+        "inicio": "2026-10-01",
+        "fin": "2026-12-31"
+      },
+      "colectivos": [
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "INTERSECTORIAL",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/ADGG21.pdf"
+    },
+    {
+      "id": "703",
+      "especialidad": "ADGN29",
+      "nombre": "INTELIGENCIA ARTIFICIAL Y SECTOR FINANCIERO",
+      "horas": 60,
+      "nivel_digital": "Básico",
+      "entidad": "CORE NETWORKS, S.L.",
+      "preinscripcion": {
+        "inicio": "2026-07-01",
+        "fin": "2026-12-31"
+      },
+      "colectivos": [
+        "asalariados",
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "FINANZAS Y SEGUROS",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/ADGN29.pdf"
+    },
+    {
+      "id": "3181",
+      "especialidad": "ADGN29",
+      "nombre": "INTELIGENCIA ARTIFICIAL Y SECTOR FINANCIERO",
+      "horas": 60,
+      "nivel_digital": "Intermedio",
+      "entidad": "EDUCACION MADRID 2016, SL",
+      "preinscripcion": {
+        "inicio": "2026-09-01",
+        "fin": "2026-11-30"
+      },
+      "colectivos": [
+        "asalariados",
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "FINANZAS Y SEGUROS",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/ADGN29.pdf"
+    },
+    {
+      "id": "1382",
+      "especialidad": "ARGG014PO",
+      "nombre": "PHOTOSHOP BÁSICO",
+      "horas": 100,
+      "nivel_digital": "Básico",
+      "entidad": "AULA FORMACION SUPERIOR S.L.",
+      "preinscripcion": {
+        "inicio": "2026-09-01",
+        "fin": "2026-11-30"
+      },
+      "colectivos": [
+        "autonomos",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "INTERSECTORIAL",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/ARGG014PO.pdf"
+    },
+    {
+      "id": "4057",
+      "especialidad": "ARGG014PO",
+      "nombre": "PHOTOSHOP BÁSICO",
+      "horas": 100,
+      "nivel_digital": "Básico",
+      "entidad": "Hedima DN Formación, S.L.U.",
+      "preinscripcion": {
+        "inicio": "2026-10-01",
+        "fin": "2026-12-31"
+      },
+      "colectivos": [
+        "autonomos",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "INTERSECTORIAL",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/ARGG014PO.pdf"
+    },
+    {
+      "id": "3612",
+      "especialidad": "COMM0079",
+      "nombre": "ANALÍTICA WEB PARA LA MEDICIÓN DE RESULTADOS DE MARKETING",
+      "horas": 30,
+      "nivel_digital": "Básico",
+      "entidad": "CENTEC RAMON Y CAJAL SL",
+      "preinscripcion": {
+        "inicio": "2026-11-01",
+        "fin": "2026-12-31"
+      },
+      "colectivos": [
+        "asalariados",
+        "autonomos",
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "INTERSECTORIAL",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/COMM0079.pdf"
+    },
+    {
+      "id": "4124",
+      "especialidad": "COMM0079",
+      "nombre": "ANALÍTICA WEB PARA LA MEDICIÓN DE RESULTADOS DE MARKETING",
+      "horas": 30,
+      "nivel_digital": "Básico",
+      "entidad": "GESTION DEL CONOCIMIENTO S.A",
+      "preinscripcion": {
+        "inicio": "2026-10-01",
+        "fin": "2026-12-31"
+      },
+      "colectivos": [
+        "asalariados",
+        "autonomos",
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "INTERSECTORIAL",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/COMM0079.pdf"
+    },
+    {
+      "id": "4372",
+      "especialidad": "COMM0079",
+      "nombre": "ANALÍTICA WEB PARA LA MEDICIÓN DE RESULTADOS DE MARKETING",
+      "horas": 30,
+      "nivel_digital": "Intermedio",
+      "entidad": "KNOWLEDGE INNOVATION WORKS S.L.",
+      "preinscripcion": {
+        "inicio": "2026-11-01",
+        "fin": "2026-11-30"
+      },
+      "colectivos": [
+        "asalariados",
+        "autonomos",
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "INTERSECTORIAL",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/COMM0079.pdf"
+    },
+    {
+      "id": "4028",
+      "especialidad": "COMM18",
+      "nombre": "INTELIGENCIA ARTIFICIAL (IA) APLICADA A MARKETING DIGITAL",
+      "horas": 200,
+      "nivel_digital": null,
+      "entidad": "CENTRO INFORMATICO PROFESIONAL CEINPRO SL",
+      "preinscripcion": {
+        "inicio": "2026-08-01",
+        "fin": "2026-11-30"
+      },
+      "colectivos": [
+        "asalariados",
+        "autonomos",
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "INTERSECTORIAL",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/COMM18.pdf"
+    },
+    {
+      "id": "4576",
+      "especialidad": "COMM18",
+      "nombre": "INTELIGENCIA ARTIFICIAL (IA) APLICADA A MARKETING DIGITAL",
+      "horas": 200,
+      "nivel_digital": "Básico",
+      "entidad": "CENTEC RAMON Y CAJAL SL",
+      "preinscripcion": {
+        "inicio": "2026-11-01",
+        "fin": "2027-01-31"
+      },
+      "colectivos": [
+        "asalariados",
+        "autonomos",
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "INTERSECTORIAL",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/COMM18.pdf"
+    },
+    {
+      "id": "4077",
+      "especialidad": "COMM33",
+      "nombre": "PROGRAMA AVANZADO PARA EL DISEÑO Y DIRECCIÓN DE PRODUCTO DIGITAL",
+      "horas": 150,
+      "nivel_digital": "Básico",
+      "entidad": "Hedima DN Formación, S.L.U.",
+      "preinscripcion": {
+        "inicio": "2026-10-01",
+        "fin": "2026-12-31"
+      },
+      "colectivos": [
+        "asalariados",
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "SERVICIOS MEDIOAMBIENTALES",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/COMM33.pdf"
+    },
+    {
+      "id": "4078",
+      "especialidad": "COMM33",
+      "nombre": "PROGRAMA AVANZADO PARA EL DISEÑO Y DIRECCIÓN DE PRODUCTO DIGITAL",
+      "horas": 150,
+      "nivel_digital": "Básico",
+      "entidad": "Hedima DN Formación, S.L.U.",
+      "preinscripcion": {
+        "inicio": "2026-10-01",
+        "fin": "2026-12-31"
+      },
+      "colectivos": [
+        "asalariados",
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "SERVICIOS MEDIOAMBIENTALES",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/COMM33.pdf"
+    },
+    {
+      "id": "4296",
+      "especialidad": "CTRD0021",
+      "nombre": "BÚSQUEDA DE INFORMACIÓN Y NAVEGACIÓN POR INTERNET - ACCESIBLE TRIPLE- A",
+      "horas": 12,
+      "nivel_digital": "Básico",
+      "entidad": "GRUPO FIDSOFT",
+      "preinscripcion": {
+        "inicio": "2026-10-01",
+        "fin": "2026-12-31"
+      },
+      "colectivos": [
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "INTERSECTORIAL",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/CTRD0021.pdf"
+    },
+    {
+      "id": "1971",
+      "especialidad": "FCOI02",
+      "nombre": "ALFABETIZACIÓN INFORMÁTICA: INFORMÁTICA E INTERNET",
+      "horas": 25,
+      "nivel_digital": "Básico",
+      "entidad": "ACCION LABORAL (PLATAFORMA IMPLANTACION PROGRAMAS INCLU",
+      "preinscripcion": {
+        "inicio": "2026-09-01",
+        "fin": "2027-02-28"
+      },
+      "colectivos": [
+        "asalariados",
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "SERVICIOS A LAS EMPRESAS",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/FCOI02.pdf"
+    },
+    {
+      "id": "3605",
+      "especialidad": "FCOI02",
+      "nombre": "ALFABETIZACIÓN INFORMÁTICA: INFORMÁTICA E INTERNET",
+      "horas": 25,
+      "nivel_digital": "Básico",
+      "entidad": "CENTRO DE FORMACION AFS,S.L.",
+      "preinscripcion": {
+        "inicio": "2026-10-01",
+        "fin": "2026-12-31"
+      },
+      "colectivos": [
+        "asalariados",
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "SERVICIOS A LAS EMPRESAS",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/FCOI02.pdf"
+    },
+    {
+      "id": "3887",
+      "especialidad": "FCOI02",
+      "nombre": "ALFABETIZACIÓN INFORMÁTICA: INFORMÁTICA E INTERNET",
+      "horas": 25,
+      "nivel_digital": "Básico",
+      "entidad": "EUROCONSULTORÍA FORMACIÓN EMPRESA S.L. (EUROFORMAC)",
+      "preinscripcion": {
+        "inicio": "2026-10-01",
+        "fin": "2026-11-30"
+      },
+      "colectivos": [
+        "asalariados",
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "SERVICIOS A LAS EMPRESAS",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/FCOI02.pdf"
+    },
+    {
+      "id": "4308",
+      "especialidad": "FCOI02",
+      "nombre": "ALFABETIZACIÓN INFORMÁTICA: INFORMÁTICA E INTERNET",
+      "horas": 25,
+      "nivel_digital": "Básico",
+      "entidad": "INSTITUTO EUROPEO DE COMUNICACION Y MARKETING SL",
+      "preinscripcion": {
+        "inicio": "2026-10-01",
+        "fin": "2026-12-31"
+      },
+      "colectivos": [
+        "asalariados",
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "SERVICIOS A LAS EMPRESAS",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/FCOI02.pdf"
+    },
+    {
+      "id": "4427",
+      "especialidad": "FCOI02",
+      "nombre": "ALFABETIZACIÓN INFORMÁTICA: INFORMÁTICA E INTERNET",
+      "horas": 25,
+      "nivel_digital": "Básico",
+      "entidad": "AULA FORMACION SUPERIOR S.L.",
+      "preinscripcion": {
+        "inicio": "2026-11-01",
+        "fin": "2027-01-31"
+      },
+      "colectivos": [
+        "asalariados",
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "SERVICIOS A LAS EMPRESAS",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/FCOI02.pdf"
+    },
+    {
+      "id": "4527",
+      "especialidad": "FCOI02",
+      "nombre": "ALFABETIZACIÓN INFORMÁTICA: INFORMÁTICA E INTERNET",
+      "horas": 25,
+      "nivel_digital": "Básico",
+      "entidad": "DATA CONTROL FORMACION SL",
+      "preinscripcion": {
+        "inicio": "2026-11-01",
+        "fin": "2026-12-31"
+      },
+      "colectivos": [
+        "asalariados",
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "SERVICIOS A LAS EMPRESAS",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/FCOI02.pdf"
+    },
+    {
+      "id": "2091",
+      "especialidad": "FCOI09",
+      "nombre": "INICIACIÓN A LA APLICACIÓN DE LAS NUEVAS TECNOLOGÍAS EN LAS EMPRESAS",
+      "horas": 12,
+      "nivel_digital": "Básico",
+      "entidad": "FORMACION Y GESTION DE SERVICIOS SOCIALES S. COOP.",
+      "preinscripcion": {
+        "inicio": "2026-09-01",
+        "fin": "2026-12-31"
+      },
+      "colectivos": [
+        "asalariados",
+        "autonomos",
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "INTERSECTORIAL",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/FCOI09.pdf"
+    },
+    {
+      "id": "4072",
+      "especialidad": "FCOI09",
+      "nombre": "INICIACIÓN A LA APLICACIÓN DE LAS NUEVAS TECNOLOGÍAS EN LAS EMPRESAS",
+      "horas": 12,
+      "nivel_digital": "Básico",
+      "entidad": "CAPACITA FORMACION S.L.",
+      "preinscripcion": {
+        "inicio": "2026-11-01",
+        "fin": "2026-11-30"
+      },
+      "colectivos": [
+        "asalariados",
+        "autonomos",
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "INTERSECTORIAL",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/FCOI09.pdf"
+    },
+    {
+      "id": "1483",
+      "especialidad": "FCOI29",
+      "nombre": "TELETRABAJO: HERRAMIENTAS Y RENTABILIDAD",
+      "horas": 30,
+      "nivel_digital": "Básico",
+      "entidad": "FORMACIÓN CASTILLA Y LEÓN, S.L.",
+      "preinscripcion": {
+        "inicio": "2026-09-01",
+        "fin": "2026-12-31"
+      },
+      "colectivos": [
+        "autonomos",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "INTERSECTORIAL",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/FCOI29.pdf"
+    },
+    {
+      "id": "1256",
+      "especialidad": "IFCD0038",
+      "nombre": "DISEÑO DE PÁGINAS WEBS PARA HOSTELERIA",
+      "horas": 100,
+      "nivel_digital": "Intermedio",
+      "entidad": "SHE HERENCIA SL",
+      "preinscripcion": {
+        "inicio": "2026-09-01",
+        "fin": "2026-11-30"
+      },
+      "colectivos": [
+        "asalariados",
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "HOSTELERÍA Y TURISMO",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/IFCD0038.pdf"
+    },
+    {
+      "id": "4436",
+      "especialidad": "IFCD0038",
+      "nombre": "DISEÑO DE PÁGINAS WEBS PARA HOSTELERIA",
+      "horas": 100,
+      "nivel_digital": "Básico",
+      "entidad": "CENTRO DE FORMACION AFS,S.L.",
+      "preinscripcion": {
+        "inicio": "2026-11-01",
+        "fin": "2027-01-31"
+      },
+      "colectivos": [
+        "asalariados",
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "HOSTELERÍA Y TURISMO",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/IFCD0038.pdf"
+    },
+    {
+      "id": "539",
+      "especialidad": "IFCD0099",
+      "nombre": "INTELIGENCIA ARTIFICIAL GENERATIVA Y MEJORA DE LA PRODUCTIVIDAD",
+      "horas": 90,
+      "nivel_digital": "Básico",
+      "entidad": "CORE NETWORKS, S.L.",
+      "preinscripcion": {
+        "inicio": "2026-07-01",
+        "fin": "2026-12-31"
+      },
+      "colectivos": [
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "INTERSECTORIAL",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/IFCD0099.pdf"
+    },
+    {
+      "id": "3836",
+      "especialidad": "IFCD0099",
+      "nombre": "INTELIGENCIA ARTIFICIAL GENERATIVA Y MEJORA DE LA PRODUCTIVIDAD",
+      "horas": 90,
+      "nivel_digital": "Intermedio",
+      "entidad": "EUROCONSULTORÍA FORMACIÓN EMPRESA S.L. (EUROFORMAC)",
+      "preinscripcion": {
+        "inicio": "2026-10-01",
+        "fin": "2026-11-30"
+      },
+      "colectivos": [
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "INTERSECTORIAL",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/IFCD0099.pdf"
+    },
+    {
+      "id": "4109",
+      "especialidad": "IFCD0099",
+      "nombre": "INTELIGENCIA ARTIFICIAL GENERATIVA Y MEJORA DE LA PRODUCTIVIDAD",
+      "horas": 90,
+      "nivel_digital": "Básico",
+      "entidad": "SERV. EMPRES. DE CONSULT. Y FORMAC. JDM SIGMA, SLU",
+      "preinscripcion": {
+        "inicio": "2026-10-01",
+        "fin": "2026-12-31"
+      },
+      "colectivos": [
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "INTERSECTORIAL",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/IFCD0099.pdf"
+    },
+    {
+      "id": "4179",
+      "especialidad": "IFCD0099",
+      "nombre": "INTELIGENCIA ARTIFICIAL GENERATIVA Y MEJORA DE LA PRODUCTIVIDAD",
+      "horas": 90,
+      "nivel_digital": "Básico",
+      "entidad": "FORO DE FORMACION Y EDICIONES, S.L.",
+      "preinscripcion": {
+        "inicio": "2026-10-01",
+        "fin": "2026-11-30"
+      },
+      "colectivos": [
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "INTERSECTORIAL",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/IFCD0099.pdf"
+    },
+    {
+      "id": "3304",
+      "especialidad": "IFCD011PO",
+      "nombre": "DESARROLLO DE PAGINAS WEB CSS Y JOOMLA",
+      "horas": 100,
+      "nivel_digital": "Básico",
+      "entidad": "CENTRO INFORMATICO COSLADA SL",
+      "preinscripcion": {
+        "inicio": "2026-09-01",
+        "fin": "2026-11-30"
+      },
+      "colectivos": [
+        "asalariados",
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "SERVICIOS MEDIOAMBIENTALES",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/IFCD011PO.pdf"
+    },
+    {
+      "id": "4200",
+      "especialidad": "IFCD011PO",
+      "nombre": "DESARROLLO DE PAGINAS WEB CSS Y JOOMLA",
+      "horas": 100,
+      "nivel_digital": "Básico",
+      "entidad": "CENTRO INFORMATICO COSLADA SL",
+      "preinscripcion": {
+        "inicio": "2026-10-01",
+        "fin": "2026-12-31"
+      },
+      "colectivos": [
+        "asalariados",
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "SERVICIOS MEDIOAMBIENTALES",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/IFCD011PO.pdf"
+    },
+    {
+      "id": "3223",
+      "especialidad": "IFCD0122",
+      "nombre": "INTRODUCCIÓN A ANGULAR",
+      "horas": 30,
+      "nivel_digital": "Básico",
+      "entidad": "AC3 EVOLUCION FORMATIVA",
+      "preinscripcion": {
+        "inicio": "2026-09-01",
+        "fin": "2026-11-30"
+      },
+      "colectivos": [
+        "asalariados",
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "TRANSPORTE Y LOGÍSTICA",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/IFCD0122.pdf"
+    },
+    {
+      "id": "4213",
+      "especialidad": "IFCD0122",
+      "nombre": "INTRODUCCIÓN A ANGULAR",
+      "horas": 30,
+      "nivel_digital": "Básico",
+      "entidad": "AC3 EVOLUCION FORMATIVA",
+      "preinscripcion": {
+        "inicio": "2026-10-01",
+        "fin": "2026-12-31"
+      },
+      "colectivos": [
+        "asalariados",
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "TRANSPORTE Y LOGÍSTICA",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/IFCD0122.pdf"
+    },
+    {
+      "id": "3890",
+      "especialidad": "IFCD0174",
+      "nombre": "PROGRAMA MACHINE LEARNING E INTELIGENCIA ARTIFICIAL",
+      "horas": 200,
+      "nivel_digital": "Avanzado",
+      "entidad": "EUROCONSULTORÍA FORMACIÓN EMPRESA S.L. (EUROFORMAC)",
+      "preinscripcion": {
+        "inicio": "2026-10-01",
+        "fin": "2026-11-30"
+      },
+      "colectivos": [
+        "asalariados",
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "TRANSPORTE Y LOGÍSTICA",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/IFCD0174.pdf"
+    },
+    {
+      "id": "1191",
+      "especialidad": "IFCD0179",
+      "nombre": "WORDPRESS",
+      "horas": 50,
+      "nivel_digital": "Intermedio",
+      "entidad": "PORTOCOLOM FORMACIÓ, S.L.",
+      "preinscripcion": {
+        "inicio": "2026-11-01",
+        "fin": "2027-01-31"
+      },
+      "colectivos": [
+        "asalariados",
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "SERVICIOS MEDIOAMBIENTALES",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/IFCD0179.pdf"
+    },
+    {
+      "id": "3322",
+      "especialidad": "IFCD0179",
+      "nombre": "WORDPRESS",
+      "horas": 50,
+      "nivel_digital": "Intermedio",
+      "entidad": "RED IMPULSA FORMACION, SL",
+      "preinscripcion": {
+        "inicio": "2026-09-01",
+        "fin": "2026-11-30"
+      },
+      "colectivos": [
+        "asalariados",
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "SERVICIOS MEDIOAMBIENTALES",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/IFCD0179.pdf"
+    },
+    {
+      "id": "3889",
+      "especialidad": "IFCD0181",
+      "nombre": "INTRODUCCIÓN A LA PROGRAMACIÓN JAVA",
+      "horas": 30,
+      "nivel_digital": "Avanzado",
+      "entidad": "EUROCONSULTORÍA FORMACIÓN EMPRESA S.L. (EUROFORMAC)",
+      "preinscripcion": {
+        "inicio": "2026-10-01",
+        "fin": "2026-11-30"
+      },
+      "colectivos": [
+        "asalariados",
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "TRANSPORTE Y LOGÍSTICA",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/IFCD0181.pdf"
+    },
+    {
+      "id": "3863",
+      "especialidad": "IFCD0186",
+      "nombre": "WORDPRESS PARA PUBLICIDAD",
+      "horas": 60,
+      "nivel_digital": "Avanzado",
+      "entidad": "EUROCONSULTORÍA FORMACIÓN EMPRESA S.L. (EUROFORMAC)",
+      "preinscripcion": {
+        "inicio": "2026-10-01",
+        "fin": "2026-11-30"
+      },
+      "colectivos": [
+        "asalariados",
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "INFORMACIÓN, COMUNICACIÓN Y ARTES GRÁFICAS",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/IFCD0186.pdf"
+    },
+    {
+      "id": "3433",
+      "especialidad": "IFCD0206",
+      "nombre": "DESARROLLO DE APLICACIONES MÓVILES CON TECNOLOGÍAS WEB",
+      "horas": 90,
+      "nivel_digital": "Intermedio",
+      "entidad": "HAZERTA, SOLUCIONES GLOBALES PARA EL EMPLEO, S.L.",
+      "preinscripcion": {
+        "inicio": "2026-09-01",
+        "fin": "2026-11-30"
+      },
+      "colectivos": [
+        "asalariados",
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "SERVICIOS MEDIOAMBIENTALES",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/IFCD0206.pdf"
+    },
+    {
+      "id": "1388",
+      "especialidad": "IFCD0209",
+      "nombre": "DESARROLLO DE SERVICIOS WEB",
+      "horas": 30,
+      "nivel_digital": "Intermedio",
+      "entidad": "ENTERPRISE FORMACIÓN CONTINUA",
+      "preinscripcion": {
+        "inicio": "2026-09-01",
+        "fin": "2026-12-31"
+      },
+      "colectivos": [
+        "asalariados",
+        "autonomos",
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "INTERSECTORIAL",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/IFCD0209.pdf"
+    },
+    {
+      "id": "3467",
+      "especialidad": "IFCD091PO",
+      "nombre": "DATA WAREHOUSING ON AWS",
+      "horas": 21,
+      "nivel_digital": "Básico",
+      "entidad": "academia colon s.a.",
+      "preinscripcion": {
+        "inicio": "2026-09-01",
+        "fin": "2026-11-30"
+      },
+      "colectivos": [
+        "asalariados",
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "SERVICIOS MEDIOAMBIENTALES",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/IFCD091PO.pdf"
+    },
+    {
+      "id": "3819",
+      "especialidad": "IFCD110",
+      "nombre": "SERVICIOS EN LA NUBE (CLOUD) CON AWS",
+      "horas": 40,
+      "nivel_digital": "Avanzado",
+      "entidad": "INICIATIVAS EUROPEAS DE FORMACIÓN S.L.",
+      "preinscripcion": {
+        "inicio": "2026-10-01",
+        "fin": "2026-11-30"
+      },
+      "colectivos": [
+        "asalariados",
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "SERVICIOS A LAS EMPRESAS",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/IFCD110.pdf"
+    },
+    {
+      "id": "3638",
+      "especialidad": "IFCD32",
+      "nombre": "PROGRAMACIÓN EN PYTHON",
+      "horas": 100,
+      "nivel_digital": "Básico",
+      "entidad": "DAVEL FORMACIÓN Y CONSULTORIA EN PREVENCION DE RIESGOS LABORALES, S.L.",
+      "preinscripcion": {
+        "inicio": "2026-11-01",
+        "fin": "2026-11-30"
+      },
+      "colectivos": [
+        "asalariados",
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "TRANSPORTE Y LOGÍSTICA",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/IFCD32.pdf"
+    },
+    {
+      "id": "3891",
+      "especialidad": "IFCD68",
+      "nombre": "INTRODUCCIÓN A LA PROGRAMACIÓN EN PYTHON",
+      "horas": 15,
+      "nivel_digital": "Avanzado",
+      "entidad": "EUROCONSULTORÍA FORMACIÓN EMPRESA S.L. (EUROFORMAC)",
+      "preinscripcion": {
+        "inicio": "2026-10-01",
+        "fin": "2026-11-30"
+      },
+      "colectivos": [
+        "asalariados",
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "TRANSPORTE Y LOGÍSTICA",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/IFCD68.pdf"
+    },
+    {
+      "id": "4210",
+      "especialidad": "IFCD77",
+      "nombre": "DESARROLLO DE APLICACIONES WEB CON ANGULAR +",
+      "horas": 60,
+      "nivel_digital": "Intermedio",
+      "entidad": "AC3 EVOLUCION FORMATIVA",
+      "preinscripcion": {
+        "inicio": "2026-10-01",
+        "fin": "2026-12-31"
+      },
+      "colectivos": [
+        "asalariados",
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "TRANSPORTE Y LOGÍSTICA",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/IFCD77.pdf"
+    },
+    {
+      "id": "3892",
+      "especialidad": "IFCD82",
+      "nombre": "JAVA SCRIPT",
+      "horas": 62,
+      "nivel_digital": "Avanzado",
+      "entidad": "EUROCONSULTORÍA FORMACIÓN EMPRESA S.L. (EUROFORMAC)",
+      "preinscripcion": {
+        "inicio": "2026-10-01",
+        "fin": "2026-11-30"
+      },
+      "colectivos": [
+        "asalariados",
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "TRANSPORTE Y LOGÍSTICA",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/IFCD82.pdf"
+    },
+    {
+      "id": "708",
+      "especialidad": "IFCD88",
+      "nombre": "GOOGLE ANALYTICS Y GOOGLE METATAGS",
+      "horas": 30,
+      "nivel_digital": "Básico",
+      "entidad": "CORE NETWORKS, S.L.",
+      "preinscripcion": {
+        "inicio": "2026-07-01",
+        "fin": "2026-12-31"
+      },
+      "colectivos": [
+        "asalariados",
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "FINANZAS Y SEGUROS",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/IFCD88.pdf"
+    },
+    {
+      "id": "3621",
+      "especialidad": "IFCD94",
+      "nombre": "HERRAMIENTAS DEL BIG DATA Y GOBIERNO DEL DATO",
+      "horas": 60,
+      "nivel_digital": "Básico",
+      "entidad": "SHE EVENTS & OTHERS SL",
+      "preinscripcion": {
+        "inicio": "2026-09-01",
+        "fin": "2026-11-30"
+      },
+      "colectivos": [
+        "asalariados",
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "COMERCIO Y MARKETING",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/IFCD94.pdf"
+    },
+    {
+      "id": "1425",
+      "especialidad": "IFCM0006",
+      "nombre": "GOOGLE Y SUS APLICACIONES",
+      "horas": 30,
+      "nivel_digital": "Básico",
+      "entidad": "Fortec, Formación y tecnologia SL",
+      "preinscripcion": {
+        "inicio": "2026-09-01",
+        "fin": "2026-11-30"
+      },
+      "colectivos": [
+        "asalariados",
+        "autonomos",
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "INTERSECTORIAL",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/IFCM0006.pdf"
+    },
+    {
+      "id": "1742",
+      "especialidad": "IFCM0006",
+      "nombre": "GOOGLE Y SUS APLICACIONES",
+      "horas": 30,
+      "nivel_digital": "Básico",
+      "entidad": "INNOVACIÓN Y DESARROLLO LOCAL, S.L.",
+      "preinscripcion": {
+        "inicio": "2026-09-01",
+        "fin": "2026-12-31"
+      },
+      "colectivos": [
+        "asalariados",
+        "autonomos",
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "INTERSECTORIAL",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/IFCM0006.pdf"
+    },
+    {
+      "id": "3404",
+      "especialidad": "IFCM0006",
+      "nombre": "GOOGLE Y SUS APLICACIONES",
+      "horas": 30,
+      "nivel_digital": "Básico",
+      "entidad": "FORO DE FORMACION Y EDICIONES, S.L.",
+      "preinscripcion": {
+        "inicio": "2026-09-01",
+        "fin": "2026-11-30"
+      },
+      "colectivos": [
+        "asalariados",
+        "autonomos",
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "INTERSECTORIAL",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/IFCM0006.pdf"
+    },
+    {
+      "id": "4128",
+      "especialidad": "IFCM0012",
+      "nombre": "GOOGLE ADS",
+      "horas": 20,
+      "nivel_digital": "Básico",
+      "entidad": "GESTION DEL CONOCIMIENTO S.A",
+      "preinscripcion": {
+        "inicio": "2026-10-01",
+        "fin": "2026-12-31"
+      },
+      "colectivos": [
+        "asalariados",
+        "autonomos",
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "INTERSECTORIAL",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/IFCM0012.pdf"
+    },
+    {
+      "id": "2025",
+      "especialidad": "IFCM0013",
+      "nombre": "DISEÑO DE REDES LAN",
+      "horas": 40,
+      "nivel_digital": "Intermedio",
+      "entidad": "ACCION LABORAL (PLATAFORMA IMPLANTACION PROGRAMAS INCLU",
+      "preinscripcion": {
+        "inicio": "2026-09-01",
+        "fin": "2027-02-28"
+      },
+      "colectivos": [
+        "asalariados",
+        "autonomos",
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "INTERSECTORIAL",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/IFCM0013.pdf"
+    },
+    {
+      "id": "639",
+      "especialidad": "IFCM04",
+      "nombre": "COMPETENCIAS DIGITALES",
+      "horas": 30,
+      "nivel_digital": "Básico",
+      "entidad": "INTERLANG SERVICIOS DE IDIOMAS SL",
+      "preinscripcion": {
+        "inicio": "2026-08-01",
+        "fin": "2026-11-30"
+      },
+      "colectivos": [
+        "asalariados",
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "SERVICIOS MEDIOAMBIENTALES",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/IFCM04.pdf"
+    },
+    {
+      "id": "4029",
+      "especialidad": "IFCT0019",
+      "nombre": "INTELIGENCIA ARTIFICIAL APLICADA A LA EMPRESA",
+      "horas": 280,
+      "nivel_digital": null,
+      "entidad": "CENTRO INFORMATICO PROFESIONAL CEINPRO SL",
+      "preinscripcion": {
+        "inicio": "2026-08-01",
+        "fin": "2026-11-30"
+      },
+      "colectivos": [
+        "asalariados",
+        "autonomos",
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "INTERSECTORIAL",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/IFCT0019.pdf"
+    },
+    {
+      "id": "4131",
+      "especialidad": "IFCT0019",
+      "nombre": "INTELIGENCIA ARTIFICIAL APLICADA A LA EMPRESA",
+      "horas": 280,
+      "nivel_digital": "Básico",
+      "entidad": "GESTION DEL CONOCIMIENTO S.A",
+      "preinscripcion": {
+        "inicio": "2026-10-01",
+        "fin": "2026-12-31"
+      },
+      "colectivos": [
+        "asalariados",
+        "autonomos",
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "INTERSECTORIAL",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/IFCT0019.pdf"
+    },
+    {
+      "id": "4448",
+      "especialidad": "IFCT0019",
+      "nombre": "INTELIGENCIA ARTIFICIAL APLICADA A LA EMPRESA",
+      "horas": 280,
+      "nivel_digital": "Básico",
+      "entidad": "TYZ FORMACIÓN S.L.",
+      "preinscripcion": {
+        "inicio": "2026-11-01",
+        "fin": "2026-12-31"
+      },
+      "colectivos": [
+        "asalariados",
+        "autonomos",
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "INTERSECTORIAL",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/IFCT0019.pdf"
+    },
+    {
+      "id": "4392",
+      "especialidad": "IFCT0021",
+      "nombre": "POSICIONAMIENTO WEB Y MARKETING DIGITAL EN BUSCADORES",
+      "horas": 100,
+      "nivel_digital": "Avanzado",
+      "entidad": "ASOCIACIÓN ANDALUCÍA EMPLEA MÁS",
+      "preinscripcion": {
+        "inicio": "2026-10-01",
+        "fin": "2027-10-31"
+      },
+      "colectivos": [
+        "asalariados",
+        "autonomos",
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "INTERSECTORIAL",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/IFCT0021.pdf"
+    },
+    {
+      "id": "231",
+      "especialidad": "IFCT0022",
+      "nombre": "BIG DATA",
+      "horas": 40,
+      "nivel_digital": "Intermedio",
+      "entidad": "SHE EVENTS & OTHERS SL",
+      "preinscripcion": {
+        "inicio": "2026-07-01",
+        "fin": "2026-11-30"
+      },
+      "colectivos": [
+        "asalariados",
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "ADMINISTRACIÓN Y GESTIÓN",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/IFCT0022.pdf"
+    },
+    {
+      "id": "3480",
+      "especialidad": "IFCT0022",
+      "nombre": "BIG DATA",
+      "horas": 40,
+      "nivel_digital": "Básico",
+      "entidad": "CENTRO INFORMATICO COSLADA SL",
+      "preinscripcion": {
+        "inicio": "2026-09-01",
+        "fin": "2026-11-30"
+      },
+      "colectivos": [
+        "asalariados",
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "SERVICIOS MEDIOAMBIENTALES",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/IFCT0022.pdf"
+    },
+    {
+      "id": "3511",
+      "especialidad": "IFCT0022",
+      "nombre": "BIG DATA",
+      "horas": 40,
+      "nivel_digital": "Básico",
+      "entidad": "EUROCONSULTORÍA FORMACIÓN EMPRESA S.L. (EUROFORMAC)",
+      "preinscripcion": {
+        "inicio": "2026-10-01",
+        "fin": "2026-11-30"
+      },
+      "colectivos": [
+        "asalariados",
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "TRANSPORTE Y LOGÍSTICA",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/IFCT0022.pdf"
+    },
+    {
+      "id": "3724",
+      "especialidad": "IFCT0022",
+      "nombre": "BIG DATA",
+      "horas": 40,
+      "nivel_digital": "Básico",
+      "entidad": "AULADIRECTA S.L.",
+      "preinscripcion": {
+        "inicio": "2026-10-01",
+        "fin": "2026-11-30"
+      },
+      "colectivos": [
+        "asalariados",
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "TRANSPORTE Y LOGÍSTICA",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/IFCT0022.pdf"
+    },
+    {
+      "id": "4065",
+      "especialidad": "IFCT0023",
+      "nombre": "CIBERSEGURIDAD",
+      "horas": 25,
+      "nivel_digital": "Básico",
+      "entidad": "CAPACITA FORMACION S.L.",
+      "preinscripcion": {
+        "inicio": "2026-11-01",
+        "fin": "2026-11-30"
+      },
+      "colectivos": [
+        "asalariados",
+        "autonomos",
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "INTERSECTORIAL",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/IFCT0023.pdf"
+    },
+    {
+      "id": "4261",
+      "especialidad": "IFCT0023",
+      "nombre": "CIBERSEGURIDAD",
+      "horas": 25,
+      "nivel_digital": "Básico",
+      "entidad": "academia colon s.a.",
+      "preinscripcion": {
+        "inicio": "2026-10-01",
+        "fin": "2026-12-31"
+      },
+      "colectivos": [
+        "asalariados",
+        "autonomos",
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "INTERSECTORIAL",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/IFCT0023.pdf"
+    },
+    {
+      "id": "709",
+      "especialidad": "IFCT0024",
+      "nombre": "CIBERSEGURIDAD PARA USUARIOS",
+      "horas": 10,
+      "nivel_digital": "Básico",
+      "entidad": "CORE NETWORKS, S.L.",
+      "preinscripcion": {
+        "inicio": "2026-07-01",
+        "fin": "2026-12-31"
+      },
+      "colectivos": [
+        "asalariados",
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "FINANZAS Y SEGUROS",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/IFCT0024.pdf"
+    },
+    {
+      "id": "653",
+      "especialidad": "IFCT0049",
+      "nombre": "CHATGPT E INTELIGENCIA ARTIFICAL",
+      "horas": 60,
+      "nivel_digital": "Intermedio",
+      "entidad": "ENTERPRISE FORMACIÓN CONTINUA",
+      "preinscripcion": {
+        "inicio": "2026-08-01",
+        "fin": "2026-12-31"
+      },
+      "colectivos": [
+        "autonomos",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "INTERSECTORIAL",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/IFCT0049.pdf"
+    },
+    {
+      "id": "1330",
+      "especialidad": "IFCT0049",
+      "nombre": "CHATGPT E INTELIGENCIA ARTIFICAL",
+      "horas": 60,
+      "nivel_digital": "Básico",
+      "entidad": "ESCUELA SUPERIOR DE DISEÑO DE VALLADOLID S.L.",
+      "preinscripcion": {
+        "inicio": "2026-09-01",
+        "fin": "2026-11-30"
+      },
+      "colectivos": [
+        "autonomos",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "INTERSECTORIAL",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/IFCT0049.pdf"
+    },
+    {
+      "id": "1384",
+      "especialidad": "IFCT0049",
+      "nombre": "CHATGPT E INTELIGENCIA ARTIFICAL",
+      "horas": 60,
+      "nivel_digital": "Intermedio",
+      "entidad": "AULA FORMACION SUPERIOR S.L.",
+      "preinscripcion": {
+        "inicio": "2026-09-01",
+        "fin": "2026-11-30"
+      },
+      "colectivos": [
+        "autonomos",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "INTERSECTORIAL",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/IFCT0049.pdf"
+    },
+    {
+      "id": "1515",
+      "especialidad": "IFCT0049",
+      "nombre": "CHATGPT E INTELIGENCIA ARTIFICAL",
+      "horas": 60,
+      "nivel_digital": "Básico",
+      "entidad": "TRAINING CONSULTING, S.L.",
+      "preinscripcion": {
+        "inicio": "2026-09-01",
+        "fin": "2026-12-31"
+      },
+      "colectivos": [
+        "autonomos",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "INTERSECTORIAL",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/IFCT0049.pdf"
+    },
+    {
+      "id": "3177",
+      "especialidad": "IFCT0049",
+      "nombre": "CHATGPT E INTELIGENCIA ARTIFICAL",
+      "horas": 60,
+      "nivel_digital": "Intermedio",
+      "entidad": "ESCUELA PROFESIONAL IEM, SL",
+      "preinscripcion": {
+        "inicio": "2026-09-01",
+        "fin": "2026-11-30"
+      },
+      "colectivos": [
+        "asalariados",
+        "autonomos",
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "INTERSECTORIAL",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/IFCT0049.pdf"
+    },
+    {
+      "id": "3646",
+      "especialidad": "IFCT0049",
+      "nombre": "CHATGPT E INTELIGENCIA ARTIFICAL",
+      "horas": 60,
+      "nivel_digital": "Básico",
+      "entidad": "CENTRO DE CUALIFICACIONES PROFESIONALES COREMSA ON LINE",
+      "preinscripcion": {
+        "inicio": "2026-11-01",
+        "fin": "2026-11-30"
+      },
+      "colectivos": [
+        "autonomos",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "INTERSECTORIAL",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/IFCT0049.pdf"
+    },
+    {
+      "id": "3877",
+      "especialidad": "IFCT0049",
+      "nombre": "CHATGPT E INTELIGENCIA ARTIFICAL",
+      "horas": 60,
+      "nivel_digital": "Intermedio",
+      "entidad": "EUROCONSULTORÍA FORMACIÓN EMPRESA S.L. (EUROFORMAC)",
+      "preinscripcion": {
+        "inicio": "2026-10-01",
+        "fin": "2026-12-31"
+      },
+      "colectivos": [
+        "autonomos",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "INTERSECTORIAL",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/IFCT0049.pdf"
+    },
+    {
+      "id": "4385",
+      "especialidad": "IFCT0049",
+      "nombre": "CHATGPT E INTELIGENCIA ARTIFICAL",
+      "horas": 60,
+      "nivel_digital": "Básico",
+      "entidad": "ASOCIACIÓN ANDALUCÍA EMPLEA MÁS",
+      "preinscripcion": {
+        "inicio": "2026-10-01",
+        "fin": "2027-10-31"
+      },
+      "colectivos": [
+        "autonomos",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "INTERSECTORIAL",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/IFCT0049.pdf"
+    },
+    {
+      "id": "4391",
+      "especialidad": "IFCT0049",
+      "nombre": "CHATGPT E INTELIGENCIA ARTIFICAL",
+      "horas": 60,
+      "nivel_digital": "Básico",
+      "entidad": "ASOCIACIÓN ANDALUCÍA EMPLEA MÁS",
+      "preinscripcion": {
+        "inicio": "2026-10-01",
+        "fin": "2027-10-31"
+      },
+      "colectivos": [
+        "asalariados",
+        "autonomos",
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "INTERSECTORIAL",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/IFCT0049.pdf"
+    },
+    {
+      "id": "4219",
+      "especialidad": "IFCT0085",
+      "nombre": "PROTECCIÓN DE EQUIPOS EN LA RED",
+      "horas": 10,
+      "nivel_digital": "Intermedio",
+      "entidad": "CENTRO INFORMATICO COSLADA SL",
+      "preinscripcion": {
+        "inicio": "2026-10-01",
+        "fin": "2026-12-31"
+      },
+      "colectivos": [
+        "asalariados",
+        "autonomos",
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "INTERSECTORIAL",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/IFCT0085.pdf"
+    },
+    {
+      "id": "3596",
+      "especialidad": "IFCT0118",
+      "nombre": "BIG DATA PARA INGENIERÍAS",
+      "horas": 100,
+      "nivel_digital": "Intermedio",
+      "entidad": "AULA INTERCULTURAL SL",
+      "preinscripcion": {
+        "inicio": "2026-09-01",
+        "fin": "2026-11-30"
+      },
+      "colectivos": [
+        "asalariados",
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "SERVICIOS MEDIOAMBIENTALES",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/IFCT0118.pdf"
+    },
+    {
+      "id": "4127",
+      "especialidad": "IFCT0133",
+      "nombre": "FUNDAMENTOS DE HERRAMIENTAS DIGITALES",
+      "horas": 100,
+      "nivel_digital": "Básico",
+      "entidad": "GESTION DEL CONOCIMIENTO S.A",
+      "preinscripcion": {
+        "inicio": "2026-10-01",
+        "fin": "2026-12-31"
+      },
+      "colectivos": [
+        "asalariados",
+        "autonomos",
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "INTERSECTORIAL",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/IFCT0133.pdf"
+    },
+    {
+      "id": "2024",
+      "especialidad": "IFCT0135",
+      "nombre": "INFOARQUITECTURA 3D CON SOFTWARE-NIVEL USUARIO",
+      "horas": 40,
+      "nivel_digital": "Básico",
+      "entidad": "ACCION LABORAL (PLATAFORMA IMPLANTACION PROGRAMAS INCLU",
+      "preinscripcion": {
+        "inicio": "2026-09-01",
+        "fin": "2027-02-28"
+      },
+      "colectivos": [
+        "asalariados",
+        "autonomos",
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "INTERSECTORIAL",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/IFCT0135.pdf"
+    },
+    {
+      "id": "115",
+      "especialidad": "IFCT0138",
+      "nombre": "INTRODUCCIÓN AL BIG DATA E INTELIGENCIA ARTIFICIAL",
+      "horas": 50,
+      "nivel_digital": "Intermedio",
+      "entidad": "SHE EVENTS & OTHERS SL",
+      "preinscripcion": {
+        "inicio": "2026-07-01",
+        "fin": "2026-11-30"
+      },
+      "colectivos": [
+        "asalariados",
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "TEXTIL, CONFECCIÓN Y PIEL",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/IFCT0138.pdf"
+    },
+    {
+      "id": "710",
+      "especialidad": "IFCT0138",
+      "nombre": "INTRODUCCIÓN AL BIG DATA E INTELIGENCIA ARTIFICIAL",
+      "horas": 50,
+      "nivel_digital": "Básico",
+      "entidad": "CORE NETWORKS, S.L.",
+      "preinscripcion": {
+        "inicio": "2026-07-01",
+        "fin": "2026-12-31"
+      },
+      "colectivos": [
+        "asalariados",
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "FINANZAS Y SEGUROS",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/IFCT0138.pdf"
+    },
+    {
+      "id": "794",
+      "especialidad": "IFCT0138",
+      "nombre": "INTRODUCCIÓN AL BIG DATA E INTELIGENCIA ARTIFICIAL",
+      "horas": 50,
+      "nivel_digital": "Intermedio",
+      "entidad": "INNOVACION Y COORDINACION EN ESTRATEGIAS FORMATIVAS, S.L.",
+      "preinscripcion": {
+        "inicio": "2026-08-01",
+        "fin": "2027-02-28"
+      },
+      "colectivos": [
+        "asalariados",
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "SERVICIOS MEDIOAMBIENTALES",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/IFCT0138.pdf"
+    },
+    {
+      "id": "1497",
+      "especialidad": "IFCT0138",
+      "nombre": "INTRODUCCIÓN AL BIG DATA E INTELIGENCIA ARTIFICIAL",
+      "horas": 50,
+      "nivel_digital": "Básico",
+      "entidad": "MENTORIZA SL",
+      "preinscripcion": {
+        "inicio": "2026-11-01",
+        "fin": "2026-12-31"
+      },
+      "colectivos": [
+        "asalariados",
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "ADMINISTRACIÓN Y GESTIÓN",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/IFCT0138.pdf"
+    },
+    {
+      "id": "1776",
+      "especialidad": "IFCT0138",
+      "nombre": "INTRODUCCIÓN AL BIG DATA E INTELIGENCIA ARTIFICIAL",
+      "horas": 50,
+      "nivel_digital": "Básico",
+      "entidad": "CORE NETWORKS, S.L.",
+      "preinscripcion": {
+        "inicio": "2026-09-01",
+        "fin": "2026-12-31"
+      },
+      "colectivos": [
+        "asalariados",
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "FINANZAS Y SEGUROS",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/IFCT0138.pdf"
+    },
+    {
+      "id": "3212",
+      "especialidad": "IFCT0138",
+      "nombre": "INTRODUCCIÓN AL BIG DATA E INTELIGENCIA ARTIFICIAL",
+      "horas": 50,
+      "nivel_digital": null,
+      "entidad": "INSTITUTO EUROPEO DE COMUNICACION Y MARKETING SL",
+      "preinscripcion": {
+        "inicio": "2026-09-01",
+        "fin": "2026-11-30"
+      },
+      "colectivos": [
+        "asalariados",
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "SERVICIOS A LAS EMPRESAS",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/IFCT0138.pdf"
+    },
+    {
+      "id": "3403",
+      "especialidad": "IFCT0138",
+      "nombre": "INTRODUCCIÓN AL BIG DATA E INTELIGENCIA ARTIFICIAL",
+      "horas": 50,
+      "nivel_digital": "Intermedio",
+      "entidad": "TECNAS, SERVICIOS INTEGRALES DE FORMACION Y DESARROLLO, S.L.L.",
+      "preinscripcion": {
+        "inicio": "2026-09-01",
+        "fin": "2026-11-30"
+      },
+      "colectivos": [
+        "asalariados",
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "ADMINISTRACIÓN Y GESTIÓN",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/IFCT0138.pdf"
+    },
+    {
+      "id": "3779",
+      "especialidad": "IFCT0138",
+      "nombre": "INTRODUCCIÓN AL BIG DATA E INTELIGENCIA ARTIFICIAL",
+      "horas": 50,
+      "nivel_digital": "Intermedio",
+      "entidad": "INICIATIVAS EUROPEAS DE FORMACIÓN S.L.",
+      "preinscripcion": {
+        "inicio": "2026-10-01",
+        "fin": "2026-11-30"
+      },
+      "colectivos": [
+        "asalariados",
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "TEXTIL, CONFECCIÓN Y PIEL",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/IFCT0138.pdf"
+    },
+    {
+      "id": "3818",
+      "especialidad": "IFCT0138",
+      "nombre": "INTRODUCCIÓN AL BIG DATA E INTELIGENCIA ARTIFICIAL",
+      "horas": 50,
+      "nivel_digital": "Intermedio",
+      "entidad": "INICIATIVAS EUROPEAS DE FORMACIÓN S.L.",
+      "preinscripcion": {
+        "inicio": "2026-10-01",
+        "fin": "2026-11-30"
+      },
+      "colectivos": [
+        "asalariados",
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "TEXTIL, CONFECCIÓN Y PIEL",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/IFCT0138.pdf"
+    },
+    {
+      "id": "4180",
+      "especialidad": "IFCT0138",
+      "nombre": "INTRODUCCIÓN AL BIG DATA E INTELIGENCIA ARTIFICIAL",
+      "horas": 50,
+      "nivel_digital": "Intermedio",
+      "entidad": "FORO DE FORMACION Y EDICIONES, S.L.",
+      "preinscripcion": {
+        "inicio": "2026-10-01",
+        "fin": "2026-11-30"
+      },
+      "colectivos": [
+        "asalariados",
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "TRANSPORTE Y LOGÍSTICA",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/IFCT0138.pdf"
+    },
+    {
+      "id": "1521",
+      "especialidad": "IFCT0141",
+      "nombre": "INTRODUCCIÓN A LA INTELIGENCIA ARTIFICIAL Y LOS ALGORITMOS",
+      "horas": 180,
+      "nivel_digital": "Básico",
+      "entidad": "TRAINING CONSULTING, S.L.",
+      "preinscripcion": {
+        "inicio": "2026-09-01",
+        "fin": "2026-12-31"
+      },
+      "colectivos": [
+        "asalariados",
+        "autonomos",
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "INTERSECTORIAL",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/IFCT0141.pdf"
+    },
+    {
+      "id": "4390",
+      "especialidad": "IFCT0141",
+      "nombre": "INTRODUCCIÓN A LA INTELIGENCIA ARTIFICIAL Y LOS ALGORITMOS",
+      "horas": 180,
+      "nivel_digital": "Avanzado",
+      "entidad": "ASOCIACIÓN ANDALUCÍA EMPLEA MÁS",
+      "preinscripcion": {
+        "inicio": "2026-10-01",
+        "fin": "2027-10-31"
+      },
+      "colectivos": [
+        "asalariados",
+        "autonomos",
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "INTERSECTORIAL",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/IFCT0141.pdf"
+    },
+    {
+      "id": "4449",
+      "especialidad": "IFCT0141",
+      "nombre": "INTRODUCCIÓN A LA INTELIGENCIA ARTIFICIAL Y LOS ALGORITMOS",
+      "horas": 180,
+      "nivel_digital": "Básico",
+      "entidad": "TYZ FORMACIÓN S.L.",
+      "preinscripcion": {
+        "inicio": "2026-11-01",
+        "fin": "2026-12-31"
+      },
+      "colectivos": [
+        "asalariados",
+        "autonomos",
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "INTERSECTORIAL",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/IFCT0141.pdf"
+    },
+    {
+      "id": "1484",
+      "especialidad": "IFCT0164",
+      "nombre": "CREACIÓN DE BLOGS Y REDES SOCIALES",
+      "horas": 60,
+      "nivel_digital": "Básico",
+      "entidad": "FORMACIÓN CASTILLA Y LEÓN, S.L.",
+      "preinscripcion": {
+        "inicio": "2026-09-01",
+        "fin": "2026-12-31"
+      },
+      "colectivos": [
+        "autonomos",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "INTERSECTORIAL",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/IFCT0164.pdf"
+    },
+    {
+      "id": "1186",
+      "especialidad": "IFCT0169",
+      "nombre": "BIG DATA EN LA NUBE",
+      "horas": 40,
+      "nivel_digital": "Avanzado",
+      "entidad": "PORTOCOLOM FORMACIÓ, S.L.",
+      "preinscripcion": {
+        "inicio": "2026-11-01",
+        "fin": "2027-01-31"
+      },
+      "colectivos": [
+        "asalariados",
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "SERVICIOS MEDIOAMBIENTALES",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/IFCT0169.pdf"
+    },
+    {
+      "id": "3316",
+      "especialidad": "IFCT0169",
+      "nombre": "BIG DATA EN LA NUBE",
+      "horas": 40,
+      "nivel_digital": "Avanzado",
+      "entidad": "RED IMPULSA FORMACION, SL",
+      "preinscripcion": {
+        "inicio": "2026-09-01",
+        "fin": "2026-11-30"
+      },
+      "colectivos": [
+        "asalariados",
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "SERVICIOS MEDIOAMBIENTALES",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/IFCT0169.pdf"
+    },
+    {
+      "id": "1187",
+      "especialidad": "IFCT0174",
+      "nombre": "HERRAMIENTAS DE GESTIÓN DE CONTENIDOS",
+      "horas": 40,
+      "nivel_digital": "Avanzado",
+      "entidad": "PORTOCOLOM FORMACIÓ, S.L.",
+      "preinscripcion": {
+        "inicio": "2026-11-01",
+        "fin": "2027-01-31"
+      },
+      "colectivos": [
+        "asalariados",
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "SERVICIOS MEDIOAMBIENTALES",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/IFCT0174.pdf"
+    },
+    {
+      "id": "3318",
+      "especialidad": "IFCT0174",
+      "nombre": "HERRAMIENTAS DE GESTIÓN DE CONTENIDOS",
+      "horas": 40,
+      "nivel_digital": "Avanzado",
+      "entidad": "RED IMPULSA FORMACION, SL",
+      "preinscripcion": {
+        "inicio": "2026-09-01",
+        "fin": "2026-11-30"
+      },
+      "colectivos": [
+        "asalariados",
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "SERVICIOS MEDIOAMBIENTALES",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/IFCT0174.pdf"
+    },
+    {
+      "id": "3432",
+      "especialidad": "IFCT0207",
+      "nombre": "GESTIÓN DE PROYECTOS DE DESARROLLO DE SOFTWARE",
+      "horas": 180,
+      "nivel_digital": "Intermedio",
+      "entidad": "HAZERTA, SOLUCIONES GLOBALES PARA EL EMPLEO, S.L.",
+      "preinscripcion": {
+        "inicio": "2026-09-01",
+        "fin": "2026-11-30"
+      },
+      "colectivos": [
+        "asalariados",
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "SERVICIOS MEDIOAMBIENTALES",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/IFCT0207.pdf"
+    },
+    {
+      "id": "1522",
+      "especialidad": "IFCT0213",
+      "nombre": "SEGURIDAD INFORMÁTICA Y FIRMA DIGITAL",
+      "horas": 50,
+      "nivel_digital": "Básico",
+      "entidad": "TRAINING CONSULTING, S.L.",
+      "preinscripcion": {
+        "inicio": "2026-09-01",
+        "fin": "2026-12-31"
+      },
+      "colectivos": [
+        "asalariados",
+        "autonomos",
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "INTERSECTORIAL",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/IFCT0213.pdf"
+    },
+    {
+      "id": "4030",
+      "especialidad": "IFCT095PO",
+      "nombre": "PYTHON Y DJANGO",
+      "horas": 40,
+      "nivel_digital": null,
+      "entidad": "CENTRO INFORMATICO PROFESIONAL CEINPRO SL",
+      "preinscripcion": {
+        "inicio": "2026-08-01",
+        "fin": "2026-11-30"
+      },
+      "colectivos": [
+        "asalariados",
+        "autonomos",
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "INTERSECTORIAL",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/IFCT095PO.pdf"
+    },
+    {
+      "id": "657",
+      "especialidad": "IFCT101",
+      "nombre": "BUSINESS INTELLIGENCE Y TRANSFORMACIÓN DIGITAL",
+      "horas": 30,
+      "nivel_digital": "Básico",
+      "entidad": "ENTERPRISE FORMACIÓN CONTINUA",
+      "preinscripcion": {
+        "inicio": "2026-08-01",
+        "fin": "2026-12-31"
+      },
+      "colectivos": [
+        "asalariados",
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "COMERCIO Y MARKETING",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/IFCT101.pdf"
+    },
+    {
+      "id": "3725",
+      "especialidad": "IFCT101",
+      "nombre": "BUSINESS INTELLIGENCE Y TRANSFORMACIÓN DIGITAL",
+      "horas": 30,
+      "nivel_digital": "Básico",
+      "entidad": "AULADIRECTA S.L.",
+      "preinscripcion": {
+        "inicio": "2026-11-01",
+        "fin": "2026-12-31"
+      },
+      "colectivos": [
+        "asalariados",
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "TRANSPORTE Y LOGÍSTICA",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/IFCT101.pdf"
+    },
+    {
+      "id": "3770",
+      "especialidad": "IFCT101",
+      "nombre": "BUSINESS INTELLIGENCE Y TRANSFORMACIÓN DIGITAL",
+      "horas": 30,
+      "nivel_digital": "Básico",
+      "entidad": "INICIATIVAS EUROPEAS DE FORMACIÓN S.L.",
+      "preinscripcion": {
+        "inicio": "2026-10-01",
+        "fin": "2026-11-30"
+      },
+      "colectivos": [
+        "asalariados",
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "TRANSPORTE Y LOGÍSTICA",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/IFCT101.pdf"
+    },
+    {
+      "id": "4291",
+      "especialidad": "IFCT102",
+      "nombre": "CIBERSEGURIDAD EN EL TELETRABAJO",
+      "horas": 15,
+      "nivel_digital": "Básico",
+      "entidad": "INSTITUTO EUROPEO DE COMUNICACION Y MARKETING SL",
+      "preinscripcion": {
+        "inicio": "2026-10-01",
+        "fin": "2026-12-31"
+      },
+      "colectivos": [
+        "asalariados",
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "INFORMACIÓN, COMUNICACIÓN Y ARTES GRÁFICAS",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/IFCT102.pdf"
+    },
+    {
+      "id": "313",
+      "especialidad": "IFCT103",
+      "nombre": "CIBERSEGURIDAD: PREVENCIÓN, ANALISIS Y RESPUESTA A INCIDENTES DE SEGURIDAD",
+      "horas": 49,
+      "nivel_digital": null,
+      "entidad": "KONECTIA SERVICIOS INTEGRALES, S.L.",
+      "preinscripcion": {
+        "inicio": "2026-08-01",
+        "fin": "2026-11-30"
+      },
+      "colectivos": [
+        "asalariados",
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "INFORMACIÓN, COMUNICACIÓN Y ARTES GRÁFICAS",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/IFCT103.pdf"
+    },
+    {
+      "id": "3771",
+      "especialidad": "IFCT103",
+      "nombre": "CIBERSEGURIDAD: PREVENCIÓN, ANALISIS Y RESPUESTA A INCIDENTES DE SEGURIDAD",
+      "horas": 49,
+      "nivel_digital": "Básico",
+      "entidad": "INICIATIVAS EUROPEAS DE FORMACIÓN S.L.",
+      "preinscripcion": {
+        "inicio": "2026-10-01",
+        "fin": "2026-11-30"
+      },
+      "colectivos": [
+        "asalariados",
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "TRANSPORTE Y LOGÍSTICA",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/IFCT103.pdf"
+    },
+    {
+      "id": "1021",
+      "especialidad": "IFCT110",
+      "nombre": "GESTIÓN DE HERRAMIENTAS AVANZADAS DE MICROSOFT 365",
+      "horas": 90,
+      "nivel_digital": null,
+      "entidad": "ABIRE ASESORES Y CONSULTORES EN FORMACION, S.L.",
+      "preinscripcion": {
+        "inicio": "2026-11-01",
+        "fin": "2026-11-30"
+      },
+      "colectivos": [
+        "autonomos",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "INTERSECTORIAL",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/IFCT110.pdf"
+    },
+    {
+      "id": "1116",
+      "especialidad": "IFCT110",
+      "nombre": "GESTIÓN DE HERRAMIENTAS AVANZADAS DE MICROSOFT 365",
+      "horas": 90,
+      "nivel_digital": null,
+      "entidad": "NORMA BÁSICA SLU",
+      "preinscripcion": {
+        "inicio": "2026-11-01",
+        "fin": "2026-11-30"
+      },
+      "colectivos": [
+        "autonomos",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "INTERSECTORIAL",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/IFCT110.pdf"
+    },
+    {
+      "id": "1424",
+      "especialidad": "IFCT110",
+      "nombre": "GESTIÓN DE HERRAMIENTAS AVANZADAS DE MICROSOFT 365",
+      "horas": 90,
+      "nivel_digital": null,
+      "entidad": "Fortec, Formación y tecnologia SL",
+      "preinscripcion": {
+        "inicio": "2026-09-01",
+        "fin": "2026-11-30"
+      },
+      "colectivos": [
+        "asalariados",
+        "autonomos",
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "INTERSECTORIAL",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/IFCT110.pdf"
+    },
+    {
+      "id": "4083",
+      "especialidad": "IFCT110",
+      "nombre": "GESTIÓN DE HERRAMIENTAS AVANZADAS DE MICROSOFT 365",
+      "horas": 90,
+      "nivel_digital": "Básico",
+      "entidad": "HEDIMA CUSTOM LEARNING SERVICES",
+      "preinscripcion": {
+        "inicio": "2026-10-01",
+        "fin": "2026-12-31"
+      },
+      "colectivos": [
+        "autonomos",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "INTERSECTORIAL",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/IFCT110.pdf"
+    },
+    {
+      "id": "698",
+      "especialidad": "IFCT115",
+      "nombre": "SEGURIDAD Y PRIVACIDAD DE LOS JÓVENES EN LA RED",
+      "horas": 20,
+      "nivel_digital": "Básico",
+      "entidad": "ENTERPRISE FORMACIÓN CONTINUA",
+      "preinscripcion": {
+        "inicio": "2026-08-01",
+        "fin": "2026-12-31"
+      },
+      "colectivos": [
+        "asalariados",
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "EDUCACIÓN",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/IFCT115.pdf"
+    },
+    {
+      "id": "1454",
+      "especialidad": "IFCT115",
+      "nombre": "SEGURIDAD Y PRIVACIDAD DE LOS JÓVENES EN LA RED",
+      "horas": 20,
+      "nivel_digital": "Básico",
+      "entidad": "FUNDACIÓN PIQUER",
+      "preinscripcion": {
+        "inicio": "2026-10-01",
+        "fin": "2026-11-30"
+      },
+      "colectivos": [
+        "asalariados",
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "EDUCACIÓN",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/IFCT115.pdf"
+    },
+    {
+      "id": "4557",
+      "especialidad": "IFCT115",
+      "nombre": "SEGURIDAD Y PRIVACIDAD DE LOS JÓVENES EN LA RED",
+      "horas": 20,
+      "nivel_digital": "Básico",
+      "entidad": "FUNDACIÓN PIQUER",
+      "preinscripcion": {
+        "inicio": "2026-10-01",
+        "fin": "2026-11-30"
+      },
+      "colectivos": [
+        "asalariados",
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "EDUCACIÓN",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/IFCT115.pdf"
+    },
+    {
+      "id": "540",
+      "especialidad": "IFCT116",
+      "nombre": "GESTIÓN DE LA SEGURIDAD INFORMATICA EN LA EMPRESA",
+      "horas": 60,
+      "nivel_digital": "Básico",
+      "entidad": "CORE NETWORKS, S.L.",
+      "preinscripcion": {
+        "inicio": "2026-07-01",
+        "fin": "2026-12-31"
+      },
+      "colectivos": [
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "INTERSECTORIAL",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/IFCT116.pdf"
+    },
+    {
+      "id": "4370",
+      "especialidad": "IFCT117",
+      "nombre": "INTRODUCCIÓN A LA INTELIGENCIA ARTIFICIAL",
+      "horas": 25,
+      "nivel_digital": "Avanzado",
+      "entidad": "COMPETENCIAS Y CUALIFICACIONES, S.L.",
+      "preinscripcion": {
+        "inicio": "2026-10-01",
+        "fin": "2027-10-31"
+      },
+      "colectivos": [
+        "asalariados",
+        "autonomos",
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "INTERSECTORIAL",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/IFCT117.pdf"
+    },
+    {
+      "id": "4375",
+      "especialidad": "IFCT117",
+      "nombre": "INTRODUCCIÓN A LA INTELIGENCIA ARTIFICIAL",
+      "horas": 25,
+      "nivel_digital": "Avanzado",
+      "entidad": "LEVEL CENTER SL",
+      "preinscripcion": {
+        "inicio": "2026-10-01",
+        "fin": "2027-10-31"
+      },
+      "colectivos": [
+        "asalariados",
+        "autonomos",
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "INTERSECTORIAL",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/IFCT117.pdf"
+    },
+    {
+      "id": "4389",
+      "especialidad": "IFCT117",
+      "nombre": "INTRODUCCIÓN A LA INTELIGENCIA ARTIFICIAL",
+      "horas": 25,
+      "nivel_digital": "Avanzado",
+      "entidad": "ASOCIACIÓN ANDALUCÍA EMPLEA MÁS",
+      "preinscripcion": {
+        "inicio": "2026-10-01",
+        "fin": "2027-10-31"
+      },
+      "colectivos": [
+        "asalariados",
+        "autonomos",
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "INTERSECTORIAL",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/IFCT117.pdf"
+    },
+    {
+      "id": "290",
+      "especialidad": "IFCT118",
+      "nombre": "SOCIAL MEDIA, REDES SOCIALES Y COMUNITY MANAGEMENT",
+      "horas": 45,
+      "nivel_digital": null,
+      "entidad": "KONECTIA SERVICIOS INTEGRALES, S.L.",
+      "preinscripcion": {
+        "inicio": "2026-08-01",
+        "fin": "2026-11-30"
+      },
+      "colectivos": [
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "INTERSECTORIAL",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/IFCT118.pdf"
+    },
+    {
+      "id": "301",
+      "especialidad": "IFCT118",
+      "nombre": "SOCIAL MEDIA, REDES SOCIALES Y COMUNITY MANAGEMENT",
+      "horas": 45,
+      "nivel_digital": "Intermedio",
+      "entidad": "ENTERPRISE FORMACIÓN CONTINUA",
+      "preinscripcion": {
+        "inicio": "2026-07-01",
+        "fin": "2026-12-31"
+      },
+      "colectivos": [
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "INTERSECTORIAL",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/IFCT118.pdf"
+    },
+    {
+      "id": "541",
+      "especialidad": "IFCT118",
+      "nombre": "SOCIAL MEDIA, REDES SOCIALES Y COMUNITY MANAGEMENT",
+      "horas": 45,
+      "nivel_digital": "Básico",
+      "entidad": "CORE NETWORKS, S.L.",
+      "preinscripcion": {
+        "inicio": "2026-07-01",
+        "fin": "2026-12-31"
+      },
+      "colectivos": [
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "INTERSECTORIAL",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/IFCT118.pdf"
+    },
+    {
+      "id": "4388",
+      "especialidad": "IFCT118",
+      "nombre": "SOCIAL MEDIA, REDES SOCIALES Y COMUNITY MANAGEMENT",
+      "horas": 45,
+      "nivel_digital": "Avanzado",
+      "entidad": "ASOCIACIÓN ANDALUCÍA EMPLEA MÁS",
+      "preinscripcion": {
+        "inicio": "2026-10-01",
+        "fin": "2027-10-31"
+      },
+      "colectivos": [
+        "asalariados",
+        "autonomos",
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "INTERSECTORIAL",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/IFCT118.pdf"
+    },
+    {
+      "id": "222",
+      "especialidad": "IFCT119",
+      "nombre": "BIG DATA Y BUSINESS INTELLIGENCE",
+      "horas": 60,
+      "nivel_digital": "Intermedio",
+      "entidad": "SHE EVENTS & OTHERS SL",
+      "preinscripcion": {
+        "inicio": "2026-07-01",
+        "fin": "2026-11-30"
+      },
+      "colectivos": [
+        "asalariados",
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "ADMINISTRACIÓN Y GESTIÓN",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/IFCT119.pdf"
+    },
+    {
+      "id": "299",
+      "especialidad": "IFCT121",
+      "nombre": "CIBERSEGURIDAD. RIESGOS Y AMENAZAS EN LA RED",
+      "horas": 10,
+      "nivel_digital": "Básico",
+      "entidad": "ENTERPRISE FORMACIÓN CONTINUA",
+      "preinscripcion": {
+        "inicio": "2026-07-01",
+        "fin": "2026-12-31"
+      },
+      "colectivos": [
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "INTERSECTORIAL",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/IFCT121.pdf"
+    },
+    {
+      "id": "542",
+      "especialidad": "IFCT121",
+      "nombre": "CIBERSEGURIDAD. RIESGOS Y AMENAZAS EN LA RED",
+      "horas": 10,
+      "nivel_digital": "Básico",
+      "entidad": "CORE NETWORKS, S.L.",
+      "preinscripcion": {
+        "inicio": "2026-07-01",
+        "fin": "2026-12-31"
+      },
+      "colectivos": [
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "INTERSECTORIAL",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/IFCT121.pdf"
+    },
+    {
+      "id": "1465",
+      "especialidad": "IFCT150",
+      "nombre": "COMPETENCIAS DIGITALES PARA LA CIUDADANÍA – BÁSICO ACCESIBLE DOBLE-A",
+      "horas": 60,
+      "nivel_digital": "Básico",
+      "entidad": "ESTUDIOS ZARAGOZA, SL",
+      "preinscripcion": {
+        "inicio": "2026-10-01",
+        "fin": "2026-11-30"
+      },
+      "colectivos": [
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "INTERSECTORIAL",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/IFCT150.pdf"
+    },
+    {
+      "id": "711",
+      "especialidad": "IFCT153",
+      "nombre": "ANÁLISIS DE DATOS CON EXCEL: POWER QUERY, POWER PIVOT Y POWER BI",
+      "horas": 60,
+      "nivel_digital": "Básico",
+      "entidad": "CORE NETWORKS, S.L.",
+      "preinscripcion": {
+        "inicio": "2026-07-01",
+        "fin": "2026-12-31"
+      },
+      "colectivos": [
+        "asalariados",
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "FINANZAS Y SEGUROS",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/IFCT153.pdf"
+    },
+    {
+      "id": "1250",
+      "especialidad": "IFCT153",
+      "nombre": "ANÁLISIS DE DATOS CON EXCEL: POWER QUERY, POWER PIVOT Y POWER BI",
+      "horas": 60,
+      "nivel_digital": "Básico",
+      "entidad": "MENTORIZA SL",
+      "preinscripcion": {
+        "inicio": "2026-09-01",
+        "fin": "2026-11-30"
+      },
+      "colectivos": [
+        "asalariados",
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "ADMINISTRACIÓN Y GESTIÓN",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/IFCT153.pdf"
+    },
+    {
+      "id": "1777",
+      "especialidad": "IFCT153",
+      "nombre": "ANÁLISIS DE DATOS CON EXCEL: POWER QUERY, POWER PIVOT Y POWER BI",
+      "horas": 60,
+      "nivel_digital": "Básico",
+      "entidad": "CORE NETWORKS, S.L.",
+      "preinscripcion": {
+        "inicio": "2026-09-01",
+        "fin": "2026-12-31"
+      },
+      "colectivos": [
+        "asalariados",
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "FINANZAS Y SEGUROS",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/IFCT153.pdf"
+    },
+    {
+      "id": "3180",
+      "especialidad": "IFCT153",
+      "nombre": "ANÁLISIS DE DATOS CON EXCEL: POWER QUERY, POWER PIVOT Y POWER BI",
+      "horas": 60,
+      "nivel_digital": "Intermedio",
+      "entidad": "EDUCACION MADRID 2016, SL",
+      "preinscripcion": {
+        "inicio": "2026-09-01",
+        "fin": "2026-12-31"
+      },
+      "colectivos": [
+        "asalariados",
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "FINANZAS Y SEGUROS",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/IFCT153.pdf"
+    },
+    {
+      "id": "3196",
+      "especialidad": "IFCT153",
+      "nombre": "ANÁLISIS DE DATOS CON EXCEL: POWER QUERY, POWER PIVOT Y POWER BI",
+      "horas": 60,
+      "nivel_digital": "Intermedio",
+      "entidad": "ESTUDIOS ZARAGOZA, SL",
+      "preinscripcion": {
+        "inicio": "2026-10-01",
+        "fin": "2026-11-30"
+      },
+      "colectivos": [
+        "asalariados",
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "ADMINISTRACIÓN Y GESTIÓN",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/IFCT153.pdf"
+    },
+    {
+      "id": "4411",
+      "especialidad": "IFCT155",
+      "nombre": "BLUE TEAM. SEGURIDAD DEFENSIVA",
+      "horas": 50,
+      "nivel_digital": "Intermedio",
+      "entidad": "Expertos en Servicios de Consultoría EXES, S.L.",
+      "preinscripcion": {
+        "inicio": "2026-10-01",
+        "fin": "2026-11-30"
+      },
+      "colectivos": [
+        "asalariados",
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "SERVICIOS MEDIOAMBIENTALES",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/IFCT155.pdf"
+    },
+    {
+      "id": "543",
+      "especialidad": "IFCT161PO",
+      "nombre": "ANÁLISIS DE DATOS Y PROGRAMACIÓN CON MICROSOFT POWER BI",
+      "horas": 120,
+      "nivel_digital": "Básico",
+      "entidad": "CORE NETWORKS, S.L.",
+      "preinscripcion": {
+        "inicio": "2026-07-01",
+        "fin": "2026-12-31"
+      },
+      "colectivos": [
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "INTERSECTORIAL",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/IFCT161PO.pdf"
+    },
+    {
+      "id": "3420",
+      "especialidad": "IFCT161PO",
+      "nombre": "ANÁLISIS DE DATOS Y PROGRAMACIÓN CON MICROSOFT POWER BI",
+      "horas": 120,
+      "nivel_digital": "Intermedio",
+      "entidad": "HAZERTA, SOLUCIONES GLOBALES PARA EL EMPLEO, S.L.",
+      "preinscripcion": {
+        "inicio": "2026-09-01",
+        "fin": "2026-11-30"
+      },
+      "colectivos": [
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "INTERSECTORIAL",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/IFCT161PO.pdf"
+    },
+    {
+      "id": "4093",
+      "especialidad": "IFCT161PO",
+      "nombre": "ANÁLISIS DE DATOS Y PROGRAMACIÓN CON MICROSOFT POWER BI",
+      "horas": 120,
+      "nivel_digital": "Básico",
+      "entidad": "SERV. EMPRES. DE CONSULT. Y FORMAC. JDM SIGMA, SLU",
+      "preinscripcion": {
+        "inicio": "2026-10-01",
+        "fin": "2026-12-31"
+      },
+      "colectivos": [
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "INTERSECTORIAL",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/IFCT161PO.pdf"
+    },
+    {
+      "id": "4541",
+      "especialidad": "IFCT38",
+      "nombre": "COMMUNITY MANAGER, HERRAMIENTAS, ANALÍTICA E INFORMES",
+      "horas": 100,
+      "nivel_digital": "Avanzado",
+      "entidad": "INSTITUTO DE FORMACION Y ESTUDIOS CAM S.L.",
+      "preinscripcion": {
+        "inicio": "2026-11-01",
+        "fin": "2026-11-30"
+      },
+      "colectivos": [
+        "asalariados",
+        "autonomos",
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "INTERSECTORIAL",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/IFCT38.pdf"
+    },
+    {
+      "id": "1418",
+      "especialidad": "IFCT45",
+      "nombre": "COMPETENCIAS DIGITALES BÁSICAS",
+      "horas": 60,
+      "nivel_digital": "Básico",
+      "entidad": "Fortec, Formación y tecnologia SL",
+      "preinscripcion": {
+        "inicio": "2026-09-01",
+        "fin": "2026-11-30"
+      },
+      "colectivos": [
+        "asalariados",
+        "autonomos",
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "INTERSECTORIAL",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/IFCT45.pdf"
+    },
+    {
+      "id": "1523",
+      "especialidad": "IFCT45",
+      "nombre": "COMPETENCIAS DIGITALES BÁSICAS",
+      "horas": 60,
+      "nivel_digital": "Básico",
+      "entidad": "TRAINING CONSULTING, S.L.",
+      "preinscripcion": {
+        "inicio": "2026-09-01",
+        "fin": "2026-12-31"
+      },
+      "colectivos": [
+        "asalariados",
+        "autonomos",
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "INTERSECTORIAL",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/IFCT45.pdf"
+    },
+    {
+      "id": "2092",
+      "especialidad": "IFCT45",
+      "nombre": "COMPETENCIAS DIGITALES BÁSICAS",
+      "horas": 60,
+      "nivel_digital": "Básico",
+      "entidad": "FORMACION Y GESTION DE SERVICIOS SOCIALES S. COOP.",
+      "preinscripcion": {
+        "inicio": "2026-09-01",
+        "fin": "2026-12-31"
+      },
+      "colectivos": [
+        "asalariados",
+        "autonomos",
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "INTERSECTORIAL",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/IFCT45.pdf"
+    },
+    {
+      "id": "3170",
+      "especialidad": "IFCT45",
+      "nombre": "COMPETENCIAS DIGITALES BÁSICAS",
+      "horas": 60,
+      "nivel_digital": "Avanzado",
+      "entidad": "ESCUELA PROFESIONAL IEM, SL",
+      "preinscripcion": {
+        "inicio": "2026-09-01",
+        "fin": "2026-11-30"
+      },
+      "colectivos": [
+        "asalariados",
+        "autonomos",
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "INTERSECTORIAL",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/IFCT45.pdf"
+    },
+    {
+      "id": "3575",
+      "especialidad": "IFCT45",
+      "nombre": "COMPETENCIAS DIGITALES BÁSICAS",
+      "horas": 60,
+      "nivel_digital": "Básico",
+      "entidad": "AULA INTERCULTURAL SL",
+      "preinscripcion": {
+        "inicio": "2026-09-01",
+        "fin": "2026-11-30"
+      },
+      "colectivos": [
+        "asalariados",
+        "autonomos",
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "INTERSECTORIAL",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/IFCT45.pdf"
+    },
+    {
+      "id": "4387",
+      "especialidad": "IFCT45",
+      "nombre": "COMPETENCIAS DIGITALES BÁSICAS",
+      "horas": 60,
+      "nivel_digital": "Básico",
+      "entidad": "ASOCIACIÓN ANDALUCÍA EMPLEA MÁS",
+      "preinscripcion": {
+        "inicio": "2026-10-01",
+        "fin": "2027-10-31"
+      },
+      "colectivos": [
+        "asalariados",
+        "autonomos",
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "INTERSECTORIAL",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/IFCT45.pdf"
+    },
+    {
+      "id": "1419",
+      "especialidad": "IFCT46",
+      "nombre": "COMPETENCIAS DIGITALES AVANZADAS",
+      "horas": 60,
+      "nivel_digital": "Intermedio",
+      "entidad": "Fortec, Formación y tecnologia SL",
+      "preinscripcion": {
+        "inicio": "2026-09-01",
+        "fin": "2026-11-30"
+      },
+      "colectivos": [
+        "asalariados",
+        "autonomos",
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "INTERSECTORIAL",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/IFCT46.pdf"
+    },
+    {
+      "id": "1524",
+      "especialidad": "IFCT46",
+      "nombre": "COMPETENCIAS DIGITALES AVANZADAS",
+      "horas": 60,
+      "nivel_digital": "Avanzado",
+      "entidad": "TRAINING CONSULTING, S.L.",
+      "preinscripcion": {
+        "inicio": "2026-09-01",
+        "fin": "2026-12-31"
+      },
+      "colectivos": [
+        "asalariados",
+        "autonomos",
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "INTERSECTORIAL",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/IFCT46.pdf"
+    },
+    {
+      "id": "2093",
+      "especialidad": "IFCT46",
+      "nombre": "COMPETENCIAS DIGITALES AVANZADAS",
+      "horas": 60,
+      "nivel_digital": "Básico",
+      "entidad": "FORMACION Y GESTION DE SERVICIOS SOCIALES S. COOP.",
+      "preinscripcion": {
+        "inicio": "2026-09-01",
+        "fin": "2026-12-31"
+      },
+      "colectivos": [
+        "asalariados",
+        "autonomos",
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "INTERSECTORIAL",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/IFCT46.pdf"
+    },
+    {
+      "id": "2107",
+      "especialidad": "IFCT46",
+      "nombre": "COMPETENCIAS DIGITALES AVANZADAS",
+      "horas": 60,
+      "nivel_digital": "Básico",
+      "entidad": "FORMACION Y GESTION DE SERVICIOS SOCIALES S. COOP.",
+      "preinscripcion": {
+        "inicio": "2026-09-01",
+        "fin": "2026-12-31"
+      },
+      "colectivos": [
+        "asalariados",
+        "autonomos",
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "INTERSECTORIAL",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/IFCT46.pdf"
+    },
+    {
+      "id": "3224",
+      "especialidad": "IFCT46",
+      "nombre": "COMPETENCIAS DIGITALES AVANZADAS",
+      "horas": 60,
+      "nivel_digital": "Avanzado",
+      "entidad": "System Centros de Formación S.L.",
+      "preinscripcion": {
+        "inicio": "2026-09-01",
+        "fin": "2026-11-30"
+      },
+      "colectivos": [
+        "asalariados",
+        "autonomos",
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "INTERSECTORIAL",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/IFCT46.pdf"
+    },
+    {
+      "id": "3263",
+      "especialidad": "IFCT85",
+      "nombre": "TECNOLOGÍAS PARA LA COMERCIALIZACIÓN Y LA GESTIÓN DEL CLIENTE EN LA ERA POST COVID",
+      "horas": 50,
+      "nivel_digital": "Básico",
+      "entidad": "GRUPO FIDSOFT",
+      "preinscripcion": {
+        "inicio": "2026-09-01",
+        "fin": "2026-11-30"
+      },
+      "colectivos": [
+        "asalariados",
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "SERVICIOS A LAS EMPRESAS",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/IFCT85.pdf"
+    },
+    {
+      "id": "3628",
+      "especialidad": "IFCT85",
+      "nombre": "TECNOLOGÍAS PARA LA COMERCIALIZACIÓN Y LA GESTIÓN DEL CLIENTE EN LA ERA POST COVID",
+      "horas": 50,
+      "nivel_digital": "Básico",
+      "entidad": "SHE EVENTS & OTHERS SL",
+      "preinscripcion": {
+        "inicio": "2026-09-01",
+        "fin": "2026-11-30"
+      },
+      "colectivos": [
+        "asalariados",
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "SERVICIOS A LAS EMPRESAS",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/IFCT85.pdf"
+    },
+    {
+      "id": "462",
+      "especialidad": "SSCE0043",
+      "nombre": "INSTRUMENTOS Y RECURSOS PARA FORMADORES",
+      "horas": 40,
+      "nivel_digital": "Intermedio",
+      "entidad": "ENTERPRISE FORMACIÓN CONTINUA",
+      "preinscripcion": {
+        "inicio": "2026-07-01",
+        "fin": "2026-12-31"
+      },
+      "colectivos": [
+        "asalariados",
+        "economia-social",
+        "administracion-publica",
+        "desempleados",
+        "erte"
+      ],
+      "sector": "ADMINISTRACIÓN Y GESTIÓN",
+      "programa": "https://www.fundae.es/docs/default-source/convocatorias-de-subvenciones/especialidades-2025/especialidades/SSCE0043.pdf"
+    }
+  ]
+}

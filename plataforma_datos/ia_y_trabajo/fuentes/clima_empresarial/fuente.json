@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "id": "clima_empresarial",
+  "tema": "ia_y_trabajo",
+  "nombre": "Idescat: IA y competencias en establecimientos de Cataluña",
+  "institucion": "Idescat",
+  "lector": "plataforma_datos.ia_y_trabajo.fuentes.clima_empresarial.lector",
+  "casa_datos": "clima-empresarial",
+  "significado": "La IA y las competencias en los establecimientos de Cataluña: Enquesta de clima empresarial del Idescat.",
+  "alcance": [
+    "El módulo de actualidad trata temas variables; algunos se repiten sin una periodicidad fija. Dos de sus ediciones alimentan Faro, con las tablas de Cataluña (columna «Total»), literales, en `f=ssv`:",
+    "- «Intel·ligència artificial» (2.º trimestre de 2024): % de establecimientos que usan alguna tecnología de IA, IA generativa, y qué trabajadores la usan (personal cualificado, directivo o poco cualificado); - «Necessitats formatives i ocupacionals» (4.º trimestre de 2025): % de establecimientos que dan «mucha» importancia a las competencias tecnológicas y digitales (la IA incluida) al contratar.",
+    "Son porcentajes de establecimientos, no de empresas ni de personas, y su universo no es el de la encuesta europea (Eurostat cuenta empresas de 10 o más personas): son de Cataluña y no se comparan con Europa. El Idescat no permite modificar sus datos: cada cifra va tal como la publica, con su fila y su columna comprobadas por su texto. Python estándar."
+  ],
+  "recursos": [
+    {
+      "id": "recurso-01",
+      "tipo": "url",
+      "ubicacion": "https://www.idescat.cat/pub/?id=clem&n=18149&lang=es&f=ssv",
+      "licencia": "Aviso legal del Idescat (https://www.idescat.cat/institut/web/?lang=es) y condiciones de uso de sus API (https://www.idescat.cat/dev/api/?lang=es): reutilización permitida citando la fuente («Fuente: elaboración propia a partir de datos del Idescat») con la fecha de la última actualización, enlazando con idescat.cat, sin modificar los datos al presentarlos y sin sugerir que el Idescat apoya el uso.",
+      "descripcion": "Idescat, Enquesta de clima empresarial, mòdul d'actualitat: Ús de tecnologies d'intel·ligència artificial. Per sector d'activitat (Catalunya. 2n trimestre del 2024)"
+    },
+    {
+      "id": "recurso-02",
+      "tipo": "url",
+      "ubicacion": "https://www.idescat.cat/pub/?id=clem&n=18162&lang=es&f=ssv",
+      "licencia": "Aviso legal del Idescat (https://www.idescat.cat/institut/web/?lang=es) y condiciones de uso de sus API (https://www.idescat.cat/dev/api/?lang=es): reutilización permitida citando la fuente («Fuente: elaboración propia a partir de datos del Idescat») con la fecha de la última actualización, enlazando con idescat.cat, sin modificar los datos al presentarlos y sin sugerir que el Idescat apoya el uso.",
+      "descripcion": "Idescat, Enquesta de clima empresarial, mòdul d'actualitat: Treballadors que fan servir tecnologies d'intel·ligència artificial a l'establiment. Per sector d'activitat (Catalunya. 2n trimestre del 2024)"
+    },
+    {
+      "id": "recurso-03",
+      "tipo": "url",
+      "ubicacion": "https://www.idescat.cat/pub/?id=clem&n=22205&lang=es&f=ssv",
+      "licencia": "Aviso legal del Idescat (https://www.idescat.cat/institut/web/?lang=es) y condiciones de uso de sus API (https://www.idescat.cat/dev/api/?lang=es): reutilización permitida citando la fuente («Fuente: elaboración propia a partir de datos del Idescat») con la fecha de la última actualización, enlazando con idescat.cat, sin modificar los datos al presentarlos y sin sugerir que el Idescat apoya el uso.",
+      "descripcion": "Idescat, Enquesta de clima empresarial, mòdul d'actualitat: Valoració de la importància de diferents habilitats o competències per realitzar contractacions de personal. Per sector d'activitat (Catalunya. 4t trimestre del 2025)"
+    }
+  ],
+  "canales": [
+    {
+      "id": "consulta",
+      "tipo": "remoto",
+      "recursos": ["recurso-01", "recurso-02", "recurso-03"],
+      "autenticacion": "El lector no configura credenciales de autenticación para estos recursos públicos; no acredita acceso a otros servicios.",
+      "limites": [
+        "Cuotas y límites oficiales de servicio no acreditados por este descriptor; rigen los límites de transporte y validación del lector.",
+        "Este descriptor no acredita la disponibilidad remota actual; una URL conservada no acredita consulta satisfactoria ni una tarea instalada.",
+        "La comprobación del recurso conocido no acredita una revisión general de ediciones o disposiciones posteriores."
+      ],
+      "observaciones": "Tablas SSV oficiales del Idescat, edición conocida, con sus rótulos y bases. La consulta del recurso no acredita que se haya descubierto una edición posterior."
+    }
+  ],
+  "actualizacion": {
+    "politica": "edición",
+    "red": true,
+    "frecuencia": "trimestral, con temas variables y sin periodicidad fija por tema (Idescat)",
+    "renovar_dias": null,
+    "originales": "clima-empresarial"
+  },
+  "conjuntos": [
+    {
+      "id": "clima_empresarial",
+      "fuente": "clima_empresarial",
+      "clase": "cambiante",
+      "alcance": "edicion-conocida",
+      "operacion": "descargar",
+      "intervalo_dias": 30
+    }
+  ],
+  "dependencias": [],
+  "contratos": ["lector.py:preparar", "lector.py:validar", "plataforma_datos/orquestacion/admision.py:exigir_admitido"],
+  "retirada": "Se conserva la admisión del conjunto y sus guardas actuales. Un fallo o una ausencia de captura no se convierte en retirada de entidades ni en disponibilidad confirmada.",
+  "conservacion": "Originales, procedencias, preparados y validaciones conservan sus casas actuales en var/actualizacion. Esta ficha no habilita limpieza automática ni cambia fechas históricas, periodos, licencias o retención."
+}

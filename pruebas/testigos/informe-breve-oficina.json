@@ -1,0 +1,20 @@
+{
+  "fuente": "Maqueta del informe breve aprobada el 20/10/2026, empleado/a de oficina 4110.1 con sus tiempos de ejemplo; cifras comprobadas en sus fuentes",
+  "exposicion": [62, 60, 65, "alta"],
+  "uso": [27, [17, 39], "cataluna"],
+  "capacidad": 21,
+  "menosExpuestas": [39, 54],
+  "contratacion": [30881, "estable", "junio de 2026"],
+  "empleo": [458200, -5.6, "sin-dato"],
+  "salario": [29919, 6.3, 13],
+  "anual": [35914, 48617, 40587, 36275, 36040, 37331],
+  "comarcas": [42, 13, 11],
+  "resto": { "comarcas": 40, "deCada100": 34 },
+  "relevo": { "grupo": 17, "conjunto": 13 },
+  "ofertas": [3, 5, "baja", "ocupacion"],
+  "comparacionContratacionDemanda": [30881, 80100, 0.38553058676654184, "estable"],
+  "metodosOficina": ["alta", "metodos", { "coinciden": 5, "total": 5, "tercio": "alto" }],
+  "confianzaCocina": ["baja", "metodos"],
+  "redondeos": [[64.49999999999999, 0, 65], [-5.55, 1, -5.6], [0.0389, 2, 0.04]],
+  "variacionPequena": 0.04
+}

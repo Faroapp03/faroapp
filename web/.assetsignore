@@ -1,0 +1,16 @@
+# Documentación, declaraciones y procedencia se conservan en el repositorio.
+.assetsignore
+*.md
+*.d.ts
+procedencia.json
+.DS_Store
+# Temporales de edición y cachés: nunca son recursos de la aplicación.
+*.tmp
+*.bak
+*~
+# La barrera se publica con su huella en el nombre (scripts/barrera-<sha256>.js); su fuente no la usa ninguna página.
+/scripts/barrera-version.js
+# El código de servidor, las pruebas y la configuración de tipos de cada carpeta se quedan en el repositorio.
+servidor/
+pruebas/
+tsconfig.json

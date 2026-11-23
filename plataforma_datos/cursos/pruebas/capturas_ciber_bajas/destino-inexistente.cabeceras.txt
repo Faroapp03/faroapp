@@ -1,0 +1,21 @@
+HTTP/2 404 
+accept-ranges: none
+alt-svc: h3=":443"; ma=2592000
+cache-control: private, pre-check=0, post-check=0, max-age=0, no-transform
+content-language: es
+content-script-type: text/javascript
+content-style-type: text/css
+content-type: text/html; charset=utf-8
+date: Sun, 15 Nov 2026 06:32:56 GMT
+expires: 
+permissions-policy: interest-cohort=()
+pragma: no-cache
+referrer-policy: no-referrer-when-downgrade
+strict-transport-security: max-age=31536000;
+vary: Accept-Language
+via: 1.1 Caddy
+x-content-type-options: nosniff
+x-frame-options: sameorigin
+x-powered-by: PHP/8.3.36
+x-ua-compatible: IE=edge
+

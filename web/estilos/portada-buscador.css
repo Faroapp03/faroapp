@@ -1,0 +1,173 @@
+/* Buscador de secciones (scripts/buscador-secciones.js): botón, diálogo, campo y resultados. El botón llega oculto
+   (hidden) y lo enseña el script: sin JavaScript no aparece. */
+
+/* La franja bajo la cabecera de la portada: solo lleva el botón de búsqueda, a la derecha. */
+.buscador-franja {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 62px;
+  margin: auto;
+}
+
+.buscador-boton {
+  position: absolute;
+  inset-inline-end: 24px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  min-height: 44px;
+  color: var(--color-tenue);
+  font: inherit;
+  font-size: 0.8rem;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
+.buscador-boton:hover {
+  color: var(--color-tinta);
+}
+
+.buscador-boton svg,
+.buscador-campo svg {
+  width: 17px;
+  height: 17px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+}
+
+.buscador {
+  width: min(590px, calc(100% - 28px));
+  max-height: calc(100svh - 48px);
+  padding: 26px 32px 30px;
+  overflow-y: auto;
+  color: var(--color-tinta);
+  background: var(--color-panel);
+  border: 1px solid var(--color-linea);
+  border-radius: 0;
+  box-shadow: var(--sombra-buscador);
+}
+
+.buscador::backdrop {
+  background: var(--velo-buscador);
+}
+
+body.buscador-abierto {
+  overflow: hidden;
+}
+
+.buscador-cabecera {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.buscador-cabecera .antetitulo {
+  margin: 0;
+}
+
+.buscador-cerrar {
+  width: 44px;
+  height: 44px;
+  color: var(--color-tinta);
+  font: 2rem var(--fuente-texto);
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
+.buscador h2 {
+  margin: 12px 0 23px;
+  font-size: clamp(1.45rem, 4.5vw, 2rem);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.04em;
+}
+
+/* El borde del campo es lo que lo señala como campo: con --color-tenue llega a 3:1 (WCAG 1.4.11) en los dos temas. */
+.buscador-campo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 16px;
+  border: 1px solid var(--color-tenue);
+}
+
+.buscador-campo:focus-within {
+  outline: 2px solid var(--color-acento);
+  outline-offset: 2px;
+}
+
+.buscador-campo svg {
+  flex-shrink: 0;
+}
+
+.buscador-campo input {
+  width: 100%;
+  min-width: 0;
+  min-height: 56px;
+  color: var(--color-tinta);
+  font: 1rem var(--fuente-texto);
+  background: transparent;
+  border: 0;
+}
+
+.buscador-campo input::placeholder {
+  color: var(--color-tenue);
+}
+
+.buscador-campo input:focus-visible {
+  outline: none;
+}
+
+.buscador-ayuda {
+  margin: 13px 0 20px;
+  color: var(--color-tenue);
+  font-size: 0.78rem;
+}
+
+.buscador-resultados {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.buscador-resultados li {
+  border-top: 1px solid var(--color-linea);
+}
+
+.buscador-resultados a {
+  display: block;
+  padding: 17px 4px;
+  color: var(--color-tinta);
+  text-decoration: none;
+}
+
+.buscador-resultados a strong {
+  display: block;
+  font-size: 0.98rem;
+  font-weight: 500;
+}
+
+.buscador-resultados a div > span {
+  display: block;
+  margin-top: 4px;
+  color: var(--color-tenue);
+  font-size: 0.78rem;
+}
+
+.buscador-resultados a:hover strong {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.buscador-vacio {
+  margin: 25px 0 5px;
+  color: var(--color-tenue);
+  font-size: 0.9rem;
+  line-height: 1.7;
+}

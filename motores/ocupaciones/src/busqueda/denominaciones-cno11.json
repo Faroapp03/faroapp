@@ -1,0 +1,2811 @@
+{
+  "fuente": "INE · Notas explicativas de la CNO-11",
+  "cita": "Fuente: INE, Clasificación Nacional de Ocupaciones 2011 (CNO-11), Notas explicativas (www.ine.es).",
+  "licencia": "Aviso legal del INE: reutilización permitida citando la fuente y sin desnaturalizar la información.",
+  "url": "https://www.ine.es/daco/daco42/clasificaciones/cno11_notas.pdf",
+  "sha256": "24dc15f91f5f5a8ea04f41017250e508e9681f794e3451903eeb52d20f1592c4",
+  "consultado": "2026-10-19",
+  "nota": "Denominaciones de «Ejemplos de ocupaciones incluidas» y de «Ocupaciones afines no incluidas» (con el código del grupo al que remiten), extraídas del PDF sin elegir ni corregir.",
+  "grupos": {
+    "0011": [
+      "Capitanes generales",
+      "Almirantes",
+      "Generales del aire",
+      "Tenientes generales",
+      "Generales de brigada",
+      "Coroneles",
+      "Comandantes",
+      "Capitanes",
+      "Tenientes",
+      "Alféreces",
+      "Capitanes de navío",
+      "Alféreces de fragata"
+    ],
+    "0012": ["Brigadas", "Sargentos"],
+    "0020": ["Cabos", "Soldados"],
+    "1111": [
+      "Presidentes del Gobierno",
+      "Ministros del gobierno",
+      "Diputados al Parlamento",
+      "Secretarios de Estado",
+      "Senadores",
+      "Miembros de los órganos de gobierno de las CC.AA",
+      "Miembros de las asambleas legislativas de las CC.AA",
+      "Concejales",
+      "Alcaldes",
+      "Presidentes de Diputación provincial, Diputación Foral del País Vasco, Cabildoinsular o Consejo insular",
+      "Diputados de Diputación provincial, Diputación Foral del País Vasco, Cabildo insular o Consejo insular",
+      "Miembros del Consejo General del Poder Judicial"
+    ],
+    "1112": ["Embajadores", "Cónsules generales", "Subsecretarios de Estado", "Directores de la función pública"],
+    "1113": [
+      "Dirigentes, partido político",
+      "Dirigentes, organización empresarial",
+      "Dirigentes, sindicato de trabajadores",
+      "Dirigentes, organización humanitaria",
+      "Dirigentes, fundación"
+    ],
+    "1120": [
+      "Directores generales, empresa privada",
+      "Directores generales, empresa pública",
+      "Presidentes ejecutivos",
+      "Rectores de universidades",
+      "Directores generales de compañías pesqueras",
+      "Directores de aeropuerto",
+      "Directores generales de empresas de transporte (grandes empresas)",
+      "Directores generales de empresas de distribución (grandes empresas)",
+      "Directores generales de empresas de construcción",
+      "Directores generales de empresas de telecomunicaciones",
+      "Directores ejecutivos de empresas de telecomunicaciones",
+      "Directores generales de empresas de TIC (grandes empresas)",
+      "Directores generales de bancos",
+      "Directores generales de empresas hoteleras",
+      "Directores de cadenas de grandes almacenes",
+      "Directores de cadenas de supermercados o grandes almacenes",
+      "Rectores de universidad"
+    ],
+    "1211": [
+      "Directores financieros",
+      "Directores de departamentos de contabilidad",
+      "Directores de departamentos de costes",
+      "Directores de departamentos de presupuestos"
+    ],
+    "1212": [
+      "Directores de departamentos de recursos humanos",
+      "Directores de departamentos de relaciones laborales",
+      "Directores de selección de personal",
+      "Directores de contratación",
+      "Directores de formación de personal"
+    ],
+    "1219": [
+      "Directores de planificación corporativa",
+      "Directores de instalaciones",
+      "Directores de departamentos de control de calidad",
+      "Directores de servicios de limpieza",
+      "Subdirectores de la Administración Pública n.c.o.p"
+    ],
+    "1221": [
+      "Directores de comercialización",
+      "Directores de comercio exterior",
+      "Directores de ventas",
+      "Directores de servicio postventa",
+      "Directores de departamentos de estudios de mercado",
+      "Directores de marketing",
+      "Directores comerciales y de ventas"
+    ],
+    "1222": ["Directores de publicidad", "Directores de relaciones públicas", "Directores de gabinetes de prensa"],
+    "1223": [
+      "Directores de desarrollo de productos",
+      "Directores de departamentos de investigación y desarrollo (I+D)"
+    ],
+    "1311": [
+      "Directores de silvicultura",
+      "Directores de explotaciones agrícolas",
+      "Directores de explotaciones ganaderas",
+      "Directores de producciones forestales",
+      "Directores/gerentes de explotaciones cerealistas",
+      "Directores/gerentes de explotaciones de cultivos industriales",
+      "Directores/gerentes de explotaciones frutícolas",
+      "Directores/gerentes de explotaciones agrarias",
+      "Directores/gerentes de empresas de jardinería",
+      "Directores de explotaciones de vacuno",
+      "Ganaderos-gerentes de explotación de vacuno",
+      "Ganaderos de reses bravas",
+      "Directores de explotaciones de ovino/caprino",
+      "Ganaderos-gerentes de explotación de ovino/caprino",
+      "Directores de explotaciones de porcino",
+      "Criadores-gerentes de explotación de ovino/caprino",
+      "Directores de explotaciones avícolas",
+      "Criadores-gerentes de explotación avícolas",
+      "Agricultores-gerentes de explotación mixtas (vegetal y animal)",
+      "Gerentes de industrias forestales",
+      "Directores de explotaciones forestales"
+    ],
+    "1312": [
+      "Directores de explotaciones acuícolas",
+      "Directores de piscifactorías",
+      "Directores de empresas pesqueras",
+      "Directores gerentes de piscifactorías",
+      "Directores de producción de granjas marinas",
+      "Armadores de pesca",
+      "Directores-gerentes empresas de pesca"
+    ],
+    "1313": [
+      "Fabricantes",
+      "Directores de industrias manufactureras",
+      "Directores de producción y operaciones (industrias manufactureras)",
+      "Directores de empresas o departamentos de tratamiento y eliminación de residuos",
+      "Directores de empresas o departamentos de valorización de residuos",
+      "Gerentes de empresas o departamentos de tratamiento y eliminación de residuos",
+      "Gerentes de empresas o departamentos de valorización de residuos"
+    ],
+    "1314": [
+      "Directores de minas",
+      "Directores de producción (minería)",
+      "Directores de producción (extracción de gas y petróleo)",
+      "Directores de producción (cantera)",
+      "Directores de canteras",
+      "Directores de explotaciones mineras"
+    ],
+    "1315": [
+      "Directores de logística",
+      "Directores de abastecimiento y distribución",
+      "Directores de cadena de suministros",
+      "Directores de compras",
+      "Directores de empresa de transportes",
+      "Directores de almacén",
+      "Jefes de estaciones de autobuses",
+      "Jefes de grandes estaciones de ferrocarril"
+    ],
+    "1316": ["Directores de departamentos de construcción", "Constructores", "Directores de empresas de construcción"],
+    "1321": [
+      "Directores de desarrollo de aplicaciones",
+      "Directores de informática",
+      "Directores de proceso de datos",
+      "Directores de desarrollo de TIC",
+      "Directores de tecnología de la información"
+    ],
+    "1322": ["Directores de centros de cuidados infantiles fuera del sistema educativo"],
+    "1323": [
+      "Directores de centros sanitarios",
+      "Administradores de instalaciones sanitarias",
+      "Jefes de enfermeros",
+      "Directores de servicios sanitarios"
+    ],
+    "1324": [
+      "Directores de servicios sociales para personas mayores",
+      "Directores de centros de día para la tercera edad",
+      "Directores de residencias"
+    ],
+    "1325": ["Directores de centros de acogida", "Directores de otros centros de servicios sociales"],
+    "1326": [
+      "Directores de centros de primaria",
+      "Directores de centros de secundaria",
+      "Directores de centros de formación profesional",
+      "Decanos de facultades",
+      "Decanos",
+      "Directores de estudios de enseñanza superior",
+      "Directores de centros educativos",
+      "Directores de estudios"
+    ],
+    "1327": [
+      "Gerentes de sucursales de servicios financieros",
+      "Directores de sucursales de banco",
+      "Directores de cajas de ahorro",
+      "Directores de cooperativas de crédito",
+      "Directores de agencias de seguros",
+      "Directores de sucursal de institución financiera"
+    ],
+    "1329": [
+      "Directores de archivos",
+      "Directores de galerías de arte",
+      "Directores de servicios jurídicos",
+      "Directores de bibliotecas",
+      "Directores de museos",
+      "Directores de establecimientos penitenciarios",
+      "Comisarios de policía",
+      "Gerentes de galerías de arte",
+      "Directores de parques natural"
+    ],
+    "1411": ["Gerentes de hoteles"],
+    "1419": [
+      "Gerentes de albergues juveniles",
+      "Gerentes de moteles",
+      "Gerentes de camping",
+      "Gerentes de camping de autocaravanas",
+      "Gerentes de pensiones (labores de gestión)"
+    ],
+    "1421": ["Gerentes de restaurantes"],
+    "1422": ["Gerentes de bares y cafeterías", "Gerentes de bares y cafetería"],
+    "1429": ["Gerentes de catering"],
+    "1431": ["Gerentes de comercios al por mayor"],
+    "1432": [
+      "Gerentes de supermercados",
+      "Gerentes de establecimiento de alimentación",
+      "Gerentes de comercios al por menor",
+      "Gerentes de establecimientos de alimentación",
+      "Gerentes de tiendas",
+      "Directores y gerentes de empresas de comercio al por menor"
+    ],
+    "1501": [
+      "Gerentes de parques de atracciones",
+      "Gerentes de parques temáticos",
+      "Gerentes de salas de billar o de juegos",
+      "Gerentes de casinos",
+      "Gerentes de salas cinematográficas",
+      "Gerentes de escuelas de equitación",
+      "Gerentes de centros deportivos",
+      "Gerentes de salas teatrales"
+    ],
+    "1509": [
+      "Gerentes de empresas de recogida de residuos",
+      "Gerentes de empresas de descontaminación",
+      "Gerentes de agencias de viajes",
+      "Gerentes de centros de conferencias",
+      "Gerentes de centros de contactos",
+      "Gerentes de centros comerciales",
+      "Directores de agencia de viajes"
+    ],
+    "2111": [
+      "Médicos de cabecera",
+      "Médicos de familia",
+      "Médicos internos residentes especializados en Medicina de Familia y Comunitaria"
+    ],
+    "2112": [
+      "Médicos especialistas",
+      "Cirujanos",
+      "Médicos especialistas, en general",
+      "Médicos internos residentes especializados (excepto médicos de familia y comunitaria)",
+      "Endocrinólogos",
+      "Oftalmólogos",
+      "Psiquiatras",
+      "Médicos especializados en rehabilitación",
+      "Cirujanos maxilofaciales",
+      "Médicos especialistas en endocrinología y nutrición",
+      "Médicos especialistas en medicina nuclear",
+      "Médicos radiólogos"
+    ],
+    "2121": [
+      "Diplomados en enfermería no especializados",
+      "Graduados en enfermería no especializados",
+      "Enfermeros",
+      "Enfermeros no especializados"
+    ],
+    "2122": [
+      "Enfermeros de geriatría",
+      "Enfermeros de pediatría",
+      "Enfermeros (enfermería de salud mental)",
+      "Enfermeros (enfermería del trabajo)",
+      "Enfermeros (enfermería familiar y comunitaria)",
+      "Enfermeros de cuidados médico-quirúrgicos"
+    ],
+    "2123": ["Enfermeros de obstetricia-ginecología", "Matronos"],
+    "2130": ["Veterinarios", "Epidemiólogos veterinarios", "Inspectores veterinarios"],
+    "2140": ["Farmacéuticos", "Farmacéuticos titulares de farmacias", "Farmacéuticos de farmacia hospitalaria"],
+    "2151": ["Estomatólogos", "Odontólogos", "Dentistas", "Médicos estomatólogos"],
+    "2152": ["Fisioterapeutas"],
+    "2153": ["Diplomados en nutrición humana y dietética"],
+    "2154": ["Logopedas"],
+    "2155": ["Ópticos-optometristas", "Optometristas", "Ópticos"],
+    "2156": ["Terapeutas ocupacionales"],
+    "2157": ["Podólogos", "Callistas", "Pedicuros callistas"],
+    "2158": [
+      "Responsables corporativos de seguridad en el trabajo",
+      "Responsables técnicos de salud ambiental urbana",
+      "Responsables de calidad y seguridad alimentaria",
+      "Epidemiólogos",
+      "Técnicos en protección radiológica en instalaciones nucleares",
+      "Profesionales de la salud y la higiene laboral y ambiental"
+    ],
+    "2159": ["Terapeutas recreativos", "Psicólogos clínicos"],
+    "2210": [
+      "Catedráticos",
+      "Profesores titulados de universidad",
+      "Profesores de titulaciones propias en universidades",
+      "Profesores de estudios superiores de música y danza",
+      "Profesores de arte dramático",
+      "Profesores de conservación y restauración de bienes culturales",
+      "Profesores de estudios superiores de artes plásticas y diseño",
+      "Profesores de universidad"
+    ],
+    "2220": [
+      "Formadores ocupacionales",
+      "Profesores de formación profesional",
+      "Maestros de taller de artes plásticas y diseño",
+      "Profesores de tecnología para la formación profesional",
+      "Profesores de formación profesional materias específicas"
+    ],
+    "2230": [
+      "Profesores de materias no específicas (matemáticas, lengua,...) en centro de formación profesional",
+      "Profesores de enseñanza secundaria",
+      "Profesores de enseñanza secundaria o formación profesional (materias no especí46 ficas)",
+      "Profesores de instituto",
+      "Profesores de enseñanza secundaria, artes"
+    ],
+    "2240": ["Maestros de enseñanza primaria", "Maestros de educación primaria"],
+    "2251": ["Maestros de educación infantil"],
+    "2252": ["Técnicos en educación infantil", "Auxiliares de educación infantil (segundo ciclo)"],
+    "2311": [
+      "Maestros de niños con dificultades auditivas, enseñanza especial",
+      "Maestros de niños con dificultades visuales, enseñanza especial",
+      "Profesores de educación especial por dificultades del aprendizaje",
+      "Profesores de apoyo al aprendizaje",
+      "Profesores de recuperación",
+      "Profesores de enseñanza para adultos",
+      "Profesores de educación especial"
+    ],
+    "2312": ["Técnicos educadores de educación especial", "Técnicos educadores de personas discapacitadas"],
+    "2321": [
+      "Inspectores escolares",
+      "Pedagogos",
+      "Especialistas en elaboración de planes de estudios",
+      "Especialistas en material didáctico",
+      "Coordinadores de planes de estudios"
+    ],
+    "2322": ["Profesores de idiomas (clases particulares o academias)", "Profesores de idiomas para inmigrantes"],
+    "2323": [
+      "Profesores de guitarra (clases particulares o academias)",
+      "Profesores de piano (clases particulares o academias)",
+      "Profesores de canto (clases particulares o academias)",
+      "Profesores de violín (clases particulares o academias)",
+      "Profesores de danza (clases particulares o academias)",
+      "Profesores de baile (clases particulares o academias)",
+      "Profesores de música (clases particulares o academias)"
+    ],
+    "2324": [
+      "Profesores de arte dramático (clases particulares o academias)",
+      "Profesores de pintura (clases particulares o academias)",
+      "Profesores de escultura (clases particulares o academias)"
+    ],
+    "2325": [
+      "Profesores de informática (clases particulares o academias)",
+      "Profesores de cursos de formación en tecnologías de la información"
+    ],
+    "2326": [
+      "Educadores ambientales",
+      "Monitores de centros de interpretación de sendas de la naturaleza",
+      "Monitores de centros de interpretación en medioambiente urbano o industrial",
+      "Monitores de aula de naturaleza permanente u otros equipamientos",
+      "Orientadores ambientales",
+      "Monitores/guías/intérpretes del patrimonio socionatural",
+      "Coordinadores de equipos de educación y formación ambiental",
+      "Formadores en educación e interpretación ambiental",
+      "Especialistas en infraestructuras o equipamientos de educación ambiental",
+      "Directores gerentes de centro de educación ambiental",
+      "Asesores de centros y programas de educación ambiental",
+      "Informadores y documentalistas de educación ambiental",
+      "Diseñadores de materiales de educación ambiental",
+      "Investigadores en educación ambiental",
+      "Profesionales de la educación ambiental"
+    ],
+    "2329": [
+      "Profesores particulares de clases de instituto",
+      "Orientadores escolares",
+      "Profesores particulares de clases de primaria",
+      "Profesores de apoyo (clases particulares o academias)"
+    ],
+    "2411": ["Astrónomos", "Médicos físicos", "Físicos nucleares", "Físicos"],
+    "2412": ["Meteorólogos", "Climatólogos", "Meteorólogos, predicción del tiempo"],
+    "2413": ["Químicos"],
+    "2414": ["Geólogos", "Oceanógrafos geológicos", "Oceanógrafos geofísicos", "Geofísicos"],
+    "2415": ["Actuarios", "Matemáticos", "Matemáticos, matemáticas aplicadas"],
+    "2416": ["Estadísticos", "Estadísticos, demografía", "Estadísticos, economía"],
+    "2421": [
+      "Investigadores biomédicos (en Biología y Zoología)",
+      "Farmacólogos",
+      "Bioquímicos",
+      "Bacteriólogos",
+      "Biotecnólogos",
+      "Botánicos",
+      "Genetistas celulares",
+      "Biólogos marinos",
+      "Microbiólogos",
+      "Biólogos moleculares",
+      "Genetistas moleculares",
+      "Zoólogos"
+    ],
+    "2422": [
+      "Agrónomos, horticultura",
+      "Edafólogos",
+      "Ingenieros en agronomía, zootecnia",
+      "Ingenieros en agronomía, fitotecnia",
+      "Ingenieros agrónomos"
+    ],
+    "2423": [
+      "Ingenieros de montes",
+      "Ingenieros de montes, explotaciones forestales",
+      "Ingenieros de montes, silvipascicultura"
+    ],
+    "2424": [
+      "Ingenieros técnicos en agronomía",
+      "Ingenieros técnicos en agronomía, hortofruticultura",
+      "Ingenieros técnicos agrícolas"
+    ],
+    "2425": [
+      "Ingenieros técnicos forestales y del medio natural",
+      "Ingenieros técnicos forestales, explotaciones forestales",
+      "Ingenieros técnicos forestales",
+      "Ingenieros forestales y del medio natural",
+      "Ingenieros forestales",
+      "Ingenieros del medio natural"
+    ],
+    "2426": [
+      "Profesionales de la protección ambiental",
+      "Ambientólogos",
+      "Analistas de la contaminación atmosférica",
+      "Funcionarios de servicio de conservación",
+      "Científicos de conservación",
+      "Consejeros medioambientales",
+      "Auditores medioambientales",
+      "Consultores medioambientales",
+      "Investigadores medioambientales",
+      "Científicos medioambientales",
+      "Analistas de la calidad del agua"
+    ],
+    "2427": ["Enólogos"],
+    "2431": [
+      "Ingenieros de organización industrial",
+      "Ingenieros industriales",
+      "Ingenieros de instalaciones industriales",
+      "Ingenieros de planificación y producción",
+      "Ingenieros industriales y de producción",
+      "Ingenieros superiores industriales y de producción"
+    ],
+    "2432": [
+      "Ingenieros agrónomos, construcciones rurales",
+      "Ingenieros en construcción y obra civil",
+      "Ingenieros, construcción/aeropuertos",
+      "Ingenieros, construcción/carreteras y autopistas",
+      "Ingenieros, construcción/edificios",
+      "Ingenieros, construcción/puentes"
+    ],
+    "2433": [
+      "Ingenieros mecánicos",
+      "Ingenieros en mecánica industrial",
+      "Ingenieros agrónomos, maquinaria agrícola",
+      "Ingenieros navales",
+      "Diseñadores de motores",
+      "Ingenieros mecánicos de motores de barco"
+    ],
+    "2434": ["Ingenieros aeronáuticos", "Ingenieros en mecánica aeronáutica"],
+    "2435": [
+      "Ingenieros químicos",
+      "Ingenieros químicos, petróleo y gas natural",
+      "Ingenieros químicos, caucho y plástico",
+      "Ingenieros en química"
+    ],
+    "2436": [
+      "Ingenieros de minas o metalúrgicos",
+      "Ingenieros en metalurgia",
+      "Ingenieros en minas",
+      "Ingenieros, extracción de petróleo y gas natural",
+      "Ingenieros en minas, metalurgia y asimilados"
+    ],
+    "2437": [
+      "Ingenieros ambientales",
+      "Ingenieros medioambientales",
+      "Analistas medioambientales",
+      "Técnicos especialistas en recuperación ambiental",
+      "Ingenieros, control de la contaminación atmosférica",
+      "Ingenieros, procesamiento de aguas residuales"
+    ],
+    "2439": [
+      "Ingenieros biomédicos",
+      "Ingenieros de explosivos",
+      "Ingenieros de materiales",
+      "Ingenieros ópticos",
+      "Ingenieros de seguridad"
+    ],
+    "2441": [
+      "Ingenieros en electricidad, iluminación",
+      "Ingenieros en electricidad, equipo electromecánico",
+      "Ingenieros en electricidad, producción de energía",
+      "Ingenieros en electricidad"
+    ],
+    "2442": ["Ingenieros electrónicos", "Ingenieros de diseño de hardware", "Ingenieros en electrónica"],
+    "2443": ["Ingenieros en telecomunicaciones", "Ingenieros de radiodifusión"],
+    "2451": ["Arquitectos", "Arquitectos de interior", "Arquitectos de interiores"],
+    "2452": ["Arquitectos paisajistas"],
+    "2453": ["Urbanistas e ingenieros de tráfico", "Urbanistas", "Ingenieros de tráfico"],
+    "2454": ["Ingenieros geógrafos", "Cartógrafos", "Ingenieros en cartografía"],
+    "2461": [
+      "Ingenieros técnicos industriales y de producción",
+      "Ingenieros técnicos de planificación y producción",
+      "Ingenieros técnicos industriales",
+      "Ingenieros técnicos de organización industrial"
+    ],
+    "2462": ["Ingenieros técnicos de obras públicas", "Ingenieros técnicos en construcción y obra civil"],
+    "2463": ["Ingenieros técnicos mecánicos", "Ingenieros técnicos navales"],
+    "2464": ["Ingenieros técnicos aeronáuticos"],
+    "2465": ["Ingenieros técnicos químicos", "Ingenieros técnicos en química"],
+    "2466": ["Ingenieros técnicos de minas y metalúrgicos", "Ingenieros técnicos en minas"],
+    "2469": [
+      "Ingenieros técnicos industriales, eficiencia",
+      "Ingenieros técnicos, estudio de tiempos y movimientos",
+      "Ingenieros técnicos, estudios de tiempos y movimientos"
+    ],
+    "2471": ["Ingenieros técnicos en electricidad"],
+    "2472": ["Ingenieros técnicos en electrónica", "Ingenieros técnicos de diseño de hardware"],
+    "2473": ["Ingenieros técnicos en telecomunicaciones"],
+    "2481": [
+      "Arquitectos técnicos",
+      "Técnicos urbanistas",
+      "Arquitectos técnicos y técnicos urbanistas",
+      "Aparejadores"
+    ],
+    "2482": [
+      "Diseñadores de ropa",
+      "Diseñadores de moda",
+      "Diseñadores industriales",
+      "Diseñadores de joyas",
+      "Diseñadores de productos y prendas"
+    ],
+    "2483": ["Ingenieros técnicos en topografía"],
+    "2484": [
+      "Animadores de imágenes",
+      "Artistas digitales",
+      "Diseñadores gráficos",
+      "Ilustradores",
+      "Diseñadores multimedia",
+      "Diseñadores de publicaciones",
+      "Diseñadores de páginas web",
+      "Diseñadores gráficos de publicidad",
+      "Diseñadores de sitios Web"
+    ],
+    "2511": ["Abogados", "Abogados del Estado"],
+    "2512": ["Fiscales"],
+    "2513": ["Presidentes de tribunales de justicia", "Jueces", "Magistrados"],
+    "2591": ["Notarios", "Registradores de la propiedad"],
+    "2592": ["Procuradores", "Procuradores, justicia"],
+    "2599": ["Secretarios judiciales", "Asesores jurídicos"],
+    "2611": ["Especialistas en contabilidad", "Auditores", "Interventores", "Asesores contables"],
+    "2612": ["Planificadores de patrimonios inmobiliarios", "Planificadores financieros", "Asesores en inversiones"],
+    "2613": [
+      "Analistas expertos en obligaciones",
+      "Asesores de inversiones en títulos valores",
+      "Analistas de inversiones"
+    ],
+    "2621": [
+      "Analistas de organización y métodos",
+      "Consultores de gestión",
+      "Técnicos en organización y administración de empresas, analistas de organización y métodos",
+      "Técnicos en organización y administración de empresas, analista de organización y métodos"
+    ],
+    "2622": ["Asesores de empresas", "Agentes de la propiedad industrial"],
+    "2623": [
+      "Administradores civiles del Estado",
+      "Controladores laborales",
+      "Funcionarios del Cuerpo Especial de Instituciones Penitenciarias",
+      "Funcionarios del Cuerpo de Gestión de la Administración Civil del Estado",
+      "Funcionarios del Grupo A o B o asimilados de la Administración Autonómica",
+      "(n.c.o.p.)",
+      "Funcionarios del Grupo A o B o asimilados de la Administración Local (n.c.o.p.)",
+      "Inspectores de Finanzas del Estado",
+      "Inspectores de Trabajo y Seguridad Social",
+      "Secretarios de Ayuntamiento",
+      "Subinspectores de Finanzas del Estado",
+      "Subinspectores de Trabajo",
+      "Inspectores de aduanas",
+      "Inspectores de Hacienda",
+      "Miembros de la escala superior, guardia civil",
+      "Miembros de la escala ejecutiva, guardia civil",
+      "Oficiales de la guardia civil",
+      "Generales de la Guardia Civil"
+    ],
+    "2624": [
+      "Técnicos superiores en administración de personal",
+      "Técnicos superiores en recursos humanos",
+      "Orientadores profesionales",
+      "Analistas del mercado laboral"
+    ],
+    "2625": [
+      "Especialistas en formación de personal en habilidades personales (como porejemplo, hablar en público)",
+      "Profesionales de la formación de personal en destrezas propias del puesto de trabajo",
+      "Técnicos en empresas turísticas",
+      "Técnicos de información turística"
+    ],
+    "2630": ["Técnicos de información turística"],
+    "2640": [
+      "Representantes (productos industriales)",
+      "Visitadores médicos",
+      "Profesionales de ventas que precisan conocimientos técnicos",
+      "Representantes técnicos"
+    ],
+    "2651": [
+      "Especialistas en publicidad",
+      "Especialistas en estudios de mercado",
+      "Especialistas en comercialización",
+      "Redactores publicitarios"
+    ],
+    "2652": [
+      "Profesionales en relaciones públicas",
+      "Profesionales en gabinete de prensa",
+      "Agentes publicistas, comunicación",
+      "Redactores de relaciones públicas",
+      "Profesionales de relaciones públicas"
+    ],
+    "2653": [
+      "Representantes de tecnologías de la información y las comunicaciones",
+      "Vendedores técnicos de equipos y material de informática",
+      "Asesores comerciales de telecomunicaciones"
+    ],
+    "2711": ["Analistas de sistemas", "Ingenieros informáticos de sistemas", "Consultores de sistemas"],
+    "2712": ["Analistas programadores", "Analistas de aplicaciones", "Ingenieros de aplicaciones"],
+    "2713": [
+      "Ingenieros informáticos (web multimedia)",
+      "Desarrolladores web y multimedia",
+      "Desarrolladores de Internet/intranets/sitios Web",
+      "Programadores de animación multimedia",
+      "Programadores de juegos de ordenador",
+      "Desarrolladores de sitios Web/Internet/Intranet"
+    ],
+    "2719": ["Analistas de calidad de sistemas informáticos", "Auditores asesores informáticos"],
+    "2721": [
+      "Ingenieros informáticos (bases de datos)",
+      "Ingenieros técnicos en informática (bases de datos)",
+      "Analistas de bases de datos",
+      "Diseñadores de bases de datos",
+      "Administradores de bases de datos"
+    ],
+    "2722": [
+      "Administradores de sistemas",
+      "Administradores de sistemas informáticos",
+      "Administradores de redes",
+      "Administradores de redes informáticas"
+    ],
+    "2723": [
+      "Ingenieros informáticos (redes)",
+      "Ingenieros técnicos en informática (redes)",
+      "Analistas de comunicaciones informáticas",
+      "Analistas de redes informáticas",
+      "Ingenieros informáticos en redes",
+      "Diseñadores de redes"
+    ],
+    "2729": [
+      "Especialistas en seguridad de las TIC",
+      "Forenses en TIC",
+      "Explotadores de bases de datos",
+      "Ingenieros informáticos (seguridad en la red)"
+    ],
+    "2810": ["Econometristas", "Asesores económicos", "Analistas económicos", "Economistas"],
+    "2821": ["Antropólogos", "Arqueólogos", "Etnólogos", "Geógrafos", "Sociólogos", "Criminólogos"],
+    "2822": ["Genealogistas", "Historiadores", "Filósofos", "Politólogos"],
+    "2823": ["Psicólogos", "Psicólogos escolares", "Psicólogos de empresa", "Psicoterapeutas", "Psicólogos deportivos"],
+    "2824": [
+      "Educadores familiares",
+      "Trabajadores sociales",
+      "Asistentes sociales",
+      "Educadores sociales",
+      "Educadores de familia",
+      "Orientadores sociolaborales",
+      "Agentes de desarrollo local",
+      "Profesionales del trabajo y la educación social"
+    ],
+    "2825": [
+      "Agentes de igualdad de oportunidades entre mujeres y hombres",
+      "Agentes de igualdad de oportunidades para mujeres y hombres"
+    ],
+    "2830": ["Bonzos", "Imanes", "Sacerdotes", "Rabinos", "Curas ecónomos"],
+    "2911": ["Archivistas", "Conservadores de galería de arte", "Conservadores de museo"],
+    "2912": ["Documentalistas", "Bibliógrafos", "Bibliotecarios"],
+    "2921": [
+      "Escritores",
+      "Coordinadores de editorial",
+      "Ensayistas",
+      "Novelistas",
+      "Dramaturgos",
+      "Poetas",
+      "Guionistas",
+      "Redactores de discursos",
+      "Redactores técnicos"
+    ],
+    "2922": [
+      "Periodistas",
+      "Redactores-jefes de prensa",
+      "Redactores deportivos",
+      "Reporteros de radio/TV",
+      "Críticos"
+    ],
+    "2923": [
+      "Intérpretes",
+      "Lexicógrafos",
+      "Filólogos",
+      "Intérpretes del lenguaje de signos",
+      "Subtituladores",
+      "Traductores",
+      "Traductores-revisores"
+    ],
+    "2931": [
+      "Artistas de artes plásticas",
+      "Dibujantes de comics",
+      "Dibujantes publicitarios",
+      "Restauradores de cuadros",
+      "Retratistas",
+      "Escultores"
+    ],
+    "2932": [
+      "Directores de banda",
+      "Compositores",
+      "Instrumentistas",
+      "Directores musicales",
+      "Músicos de salas de fiesta",
+      "Orquestadores",
+      "Cantantes",
+      "Músicos callejeros"
+    ],
+    "2933": ["Coreógrafos", "Bailarines de ballet", "Bailarines de espectáculos", "Bailarines callejeros"],
+    "2934": [
+      "Directores de documentales",
+      "Directores de cine",
+      "Directores de fotografía",
+      "Directores de escena",
+      "Directores técnicos",
+      "Realizadores de radio o TV",
+      "Productores de cine, radio y televisión"
+    ],
+    "2935": ["Actores", "Mimos", "Cuentacuentos"],
+    "2936": [
+      "Locutores de radio",
+      "Locutores de televisión",
+      "Presentadores de noticias",
+      "Locutores deportivos",
+      "Presentadores del tiempo",
+      "Informadores del estado del tráfico"
+    ],
+    "2937": ["Toreros", "Banderilleros", "Rejoneadores", "Novilleros"],
+    "2939": [
+      "Acróbatas",
+      "Equilibristas",
+      "Payasos",
+      "Hipnotizadores",
+      "Prestidigitadores",
+      "Titiriteros",
+      "Cómicos",
+      "Ventrílocuos",
+      "Domadores"
+    ],
+    "3110": ["Delineantes y dibujantes técnicos", "Delineantes", "Ilustradores técnicos"],
+    "3121": [
+      "Técnicos químicos",
+      "Técnicos geólogos",
+      "Técnicos meteorólogos",
+      "Técnicos físicos",
+      "Técnicos en ciencias químicas"
+    ],
+    "3122": [
+      "Técnicos en construcción",
+      "Técnicos de montaje de instalaciones en la construcción",
+      "Técnicos de seguridad en la construcción",
+      "Técnicos de obras públicas",
+      "Técnicos en geotecnia (construcción)",
+      "Técnicos en topografía",
+      "Técnicos de prevención de incendios en la construcción",
+      "Técnicos en instalaciones de sistemas antiincendios",
+      "Técnicos de la construcción",
+      "Inspectores de edificios"
+    ],
+    "3123": ["Técnicos en electricidad", "Técnicos en transmisión de energía eléctrica"],
+    "3124": ["Técnicos en electrónica", "Técnicos electrónicos"],
+    "3125": [
+      "Técnicos en electromedicina",
+      "Jefes de equipo de instaladores de sistemas de electromedicina",
+      "Coordinadores y supervisores de mantenimiento de sistemas de electromedicina",
+      "Especialistas en aplicaciones electromédicas",
+      "Especialistas en producto de sistemas de electromedicina",
+      "Asesores técnicos de sistemas de electromedicina"
+    ],
+    "3126": [
+      "Técnicos en mecánica",
+      "Técnicos aeronáutico",
+      "Técnicos en ingeniería naval",
+      "Técnicos en ingeniería mecánica",
+      "Técnicos aeronáuticos"
+    ],
+    "3127": [
+      "Técnicos y analistas de laboratorio en química industrial",
+      "Técnicos en química industrial",
+      "Técnicos en ingeniería química"
+    ],
+    "3128": [
+      "Técnicos en metalurgia y minas",
+      "Técnicos en ingeniería de minas",
+      "Técnicos en metalurgia/producción y refinado de metales",
+      "Técnicos en metalurgia/fundición",
+      "Técnicos en extracción/petróleo y gas natural",
+      "Inspectores de seguridad de minas",
+      "Técnicos en minería",
+      "Técnicos en minas"
+    ],
+    "3129": [
+      "Técnicos en planificación y control de la producción",
+      "Técnicos en organización industrial",
+      "Técnicos en estudios de tiempos y movimientos",
+      "Técnicos en estimación de tiempos y costes",
+      "Técnicos en robótica",
+      "Técnicos en investigación de incendios",
+      "Técnicos de artes gráficas"
+    ],
+    "3131": [
+      "Técnicos en instalaciones de producción de energía",
+      "Operadores de central eléctrica",
+      "Operadores de central hidroeléctrica",
+      "Operadores de central nuclear",
+      "Operadores de central solar",
+      "Operadores de central de generación de energía",
+      "Operadores de sistemas de energía"
+    ],
+    "3132": [
+      "Operadores de incineradora",
+      "Operadores de estación de bombeo",
+      "Operadores de tratamiento de residuos líquidos",
+      "Operadores de instalación de tratamiento de aguas residuales",
+      "Operadores de tratamiento de aguas residuales",
+      "Operadores de instalación de tratamiento de aguas"
+    ],
+    "3133": [
+      "Técnicos en control de instalaciones de procesamiento de productos químicos",
+      "Operadores de instalaciones de tratamiento químico térmico",
+      "Operadores de equipos de filtración y separación de sustancias químicas",
+      "Operadores de equipos de destilación y de reacción química",
+      "Técnicos en procesos químicos"
+    ],
+    "3134": [
+      "Operadores de instalaciones de refinación de petróleo y gas natural",
+      "Operadores de amasadoras para la refinación de petróleo y gas natural",
+      "Operadores de instalaciones de parafina",
+      "Operadores de máquinas de destilación para refinación de petróleo y gas natural",
+      "Técnicos en procesos de refinación",
+      "Operadores de procesamiento del petróleo",
+      "Operadores de instalaciones de gas natural",
+      "Técnicos de refinerías de petróleo y gas natural"
+    ],
+    "3135": [
+      "Operadores de control de tren de laminación",
+      "Fundidores de alto horno",
+      "Técnicos en control de procesos de producción de metales"
+    ],
+    "3139": [
+      "Operadores de cadena de montaje automatizada",
+      "Controladores de robótica industrial",
+      "Técnicos de control de proceso n.c.o.p"
+    ],
+    "3141": [
+      "Técnicos en ciencias biológicas",
+      "Técnicos en bacteriología",
+      "Técnicos en bioquímica",
+      "Técnicos en serología",
+      "Técnicos en cultivos de tejidos",
+      "Técnicos en zoología"
+    ],
+    "3142": [
+      "Técnicos agropecuarios",
+      "Capataces agrícolas",
+      "Trabajadores cualificado oleicultura",
+      "Trabajadores cualificado en horticultura",
+      "Trabajadores cualificados en aves de corral",
+      "Técnicos en salud y producción de las vacas lecheras",
+      "Técnicos en la industria láctea",
+      "Técnicos en fruticultura y viticultura",
+      "Técnicos en horticultura, floricultura y jardinería"
+    ],
+    "3143": [
+      "Técnicos forestales y del medio natural",
+      "Técnicos forestales",
+      "Técnicos en silvicultura",
+      "Técnicos en investigación de incendios forestales"
+    ],
+    "3151": ["Oficiales maquinistas", "Oficiales maquinistas de barcos", "Oficiales maquinista"],
+    "3152": ["Capitanes de barcos", "Oficiales de barco", "Patrones de yate", "Controladores de tráfico marítimo"],
+    "3153": [
+      "Pilotos de aeronaves",
+      "Oficiales mecánicos de vuelo",
+      "Instructores de vuelo",
+      "Oficiales navegantes de vuelo",
+      "Fumigadores aéreos de cultivos"
+    ],
+    "3154": ["Controladores de tráfico aéreo"],
+    "3155": ["Técnicos en seguridad aeronáutica"],
+    "3160": [
+      "Técnicos, control de calidad en industrias manufactureras",
+      "Técnicos, normas ISO",
+      "Técnicos, inspección técnica de vehículos",
+      "Técnicos de control de calidad de las ciencias físicas, químicas y de las ingenierías"
+    ],
+    "3201": [
+      "Supervisores de minas",
+      "Encargados o capataces de minas, canteras o salinas",
+      "Jefes de equipo de mineros",
+      "Supervisores en ingeniería de minas",
+      "Capataces de minas"
+    ],
+    "3202": [
+      "Supervisores de la construcción de edificios",
+      "Encargados, construcción de edificios",
+      "Supervisores de la construcción",
+      "Jefes de equipo de trabajadores de acabado",
+      "Maestros de obras"
+    ],
+    "3203": [
+      "Supervisores de producción de industrias alimenticias",
+      "Jefes de equipo, operadores máquina/elaboración (productos alimenticios, bebidas y tabaco)",
+      "Supervisores de industrias alimenticias y del tabaco"
+    ],
+    "3204": [
+      "Encargados de operadores de máquinas, fabricación/productos químicos",
+      "Encargados de instalaciones, tratamiento químico",
+      "Supervisores de industrias química y farmacéutica"
+    ],
+    "3205": [
+      "Jefes de equipo de operadores de máquinas de fabricación de productos de cau-cho",
+      "Jefes de equipo de operadores de máquinas de fabricación de productos de material plástico",
+      "Jefes de equipo de operadores de máquinas de fabricación de productos de resinas naturales",
+      "Supervisores de industrias de transformación de plásticos, caucho y resinas naturales"
+    ],
+    "3206": [
+      "Encargados de taller, madera/tratamiento en instalaciones",
+      "Jefes de equipo, fabricación de papel",
+      "Supervisores de industrias de la madera y pastero papeleras"
+    ],
+    "3207": [
+      "Encargados de taller, impresión/artes gráficas",
+      "Encargados de taller, encuadernación",
+      "Encargados de taller, fabricación/productos de papel",
+      "Supervisores de la producción en industrias de artes gráficas y en la fabricación de productos de papel"
+    ],
+    "3209": ["Supervisores de industrias manufactureras", "Supervisores de otras industrias manufactureras"],
+    "3311": [
+      "Técnicos en radioterapia",
+      "Técnicos en Radioterapia",
+      "Técnicos superiores en radioterapia",
+      "Técnicos especialistas en radioterapia"
+    ],
+    "3312": [
+      "Técnicos especialistas en radiología",
+      "Técnicos especialistas en medicina nuclear",
+      "Técnicos superiores en imagen para el diagnóstico",
+      "Técnicos operadores de equipos médicos de escáner",
+      "Técnicos en equipos de encefalografía",
+      "Técnicos en equipos de electrocardiografía"
+    ],
+    "3313": [
+      "Técnicos en anatomía patológica y citología",
+      "Técnicos superiores en anatomía patológica y citología",
+      "Técnicos especialistas en anatomía patológica y citología"
+    ],
+    "3314": [
+      "Técnicos de laboratorio de diagnóstico clínico",
+      "Analistas clínicos",
+      "Técnicos en laboratorio de diagnóstico clínico",
+      "Técnicos de laboratorio sanitario"
+    ],
+    "3315": ["Técnicos en ortoprótesis", "Técnicos ortoprotésicos"],
+    "3316": [
+      "Mecánicos de prótesis dentales",
+      "Mecánicos dentistas",
+      "Protésicos dentales",
+      "Técnicos en prótesis dentales"
+    ],
+    "3317": ["Técnicos especialistas audioprotesistas", "Técnicos superiores en audioprótesis"],
+    "3321": ["Técnicos superiores en higiene bucodental"],
+    "3322": ["Técnicos superiores en documentación sanitaria"],
+    "3323": ["Técnicos en dietética y nutrición", "Técnicos superiores en dietética y nutrición"],
+    "3324": ["Técnicos en optometría"],
+    "3325": [
+      "Electroterapeutas",
+      "Hidroterapeutas",
+      "Masajistas terapéuticos",
+      "Masajistas deportivos",
+      "Terapeutas de shiatsu"
+    ],
+    "3326": [
+      "Técnicos en prevención de riesgos laborales",
+      "Técnicos en salud ambiental",
+      "Técnicos en prevención de riesgos laborales y salud ambiental",
+      "Técnicos de seguridad e higiene en el trabajo",
+      "Técnicos en prevención de riesgos laborales y seguridad ambiental",
+      "Inspectores de seguridad de productos"
+    ],
+    "3327": [
+      "Ayudantes de veterinario",
+      "Capadores",
+      "Técnicos de inseminación artificial",
+      "Técnicos en inseminación artificial",
+      "Técnicos veterinarios",
+      "Ayudantes de veterinarios",
+      "Ayudantes de veterinaria",
+      "Técnicos en inseminación"
+    ],
+    "3329": ["Quiroprácticos", "Osteópatas"],
+    "3331": [
+      "Homeópatas",
+      "Acupuntores",
+      "Practicantes ayurveda",
+      "Practicantes de la medicina tradicional china",
+      "Naturópatas"
+    ],
+    "3339": ["Fitoterapeutas", "Curanderos", "Ensalmadores", "Brujos"],
+    "3401": [
+      "Agentes de cambio y bolsa",
+      "Corredores de valores",
+      "Profesionales de apoyo e intermediarios de cambio, bolsa y finanzas",
+      "Técnicos financieros",
+      "Gestores comerciales de servicios bancarios",
+      "Comerciales de banca"
+    ],
+    "3402": [
+      "Comerciantes de préstamos y créditos",
+      "Comerciales de préstamos y créditos",
+      "Responsables de créditos hipotecarios",
+      "Corredores de bolsa"
+    ],
+    "3403": ["Ayudantes de contabilidad", "Tenedores de libros", "Técnicos en Contabilidad"],
+    "3404": [
+      "Auxiliares actuariales",
+      "Inspectores de entrevistadores y encuestas",
+      "Técnicos en estadística, profesionales de apoyo",
+      "Inspectores de entrevistadores, censos y encuestas",
+      "Técnicos en estadística (profesionales de apoyo)"
+    ],
+    "3405": [
+      "Peritos tasadores",
+      "Tasadores de inmuebles",
+      "Tasadores de siniestros",
+      "Tasadores de seguros",
+      "Evaluadores de siniestros",
+      "Peritos judiciales"
+    ],
+    "3510": ["Representantes comerciales", "Agentes comerciales", "Viajantes, comercio", "Comerciales, ventas"],
+    "3521": [
+      "Mediadores y agentes de seguros",
+      "Agentes de seguros",
+      "Aseguradores",
+      "Comerciales de seguros",
+      "Corredores de seguros",
+      "Mediadores de seguros"
+    ],
+    "3522": [
+      "Jefes de compras",
+      "Agentes de compras",
+      "Técnicos en comercio exterior/compras",
+      "Técnicos en gestión de existencias y/o almacén"
+    ],
+    "3523": ["Consignatarios", "Anotadores portuario"],
+    "3531": ["Representantes de aduana", "Comisionistas de aduanas", "Agentes marítimos", "Gestores de aduanas"],
+    "3532": ["Organizadores de conferencias y eventos", "Planificadores de conferencias", "Planificadores de bodas"],
+    "3533": ["Agentes de oficinas de colocación", "Intermediarios en la contratación de mano de obra"],
+    "3534": [
+      "Agentes de la propiedad inmobiliaria",
+      "Gestores inmobiliarios",
+      "Corredores de fincas",
+      "Vendedores de inmuebles"
+    ],
+    "3535": ["Técnicos en relaciones públicas"],
+    "3539": [
+      "Agentes comerciales de publicidad",
+      "Subastadores",
+      "Agentes literarios",
+      "Agentes musicales",
+      "Agentes deportivos",
+      "Agentes teatrales",
+      "Representantes musicales",
+      "Vendedores de servicios comerciales/publicidad"
+    ],
+    "3611": ["Supervisores del personal de oficina", "Supervisores del personal de grabación de datos"],
+    "3612": ["Asistentes jurídico-legales"],
+    "3613": [
+      "Secretarios administrativos",
+      "Asistentes de dirección",
+      "Asistentes de correspondencia",
+      "Asistentes personales",
+      "Redactores de actas"
+    ],
+    "3614": ["Secretarios médicos"],
+    "3621": ["Agentes tributarios"],
+    "3622": [
+      "Profesionales de apoyo, pensiones/Administraciones Públicas",
+      "Profesionales de apoyo, prestaciones sociales/Administraciones Públicas"
+    ],
+    "3623": [
+      "Profesionales de apoyo, expedición de licencias y permisos, Administraciones Públicas",
+      "Profesionales de apoyo, expedición de pasaportes, Administraciones Públicas"
+    ],
+    "3629": ["Inspectores de precios"],
+    "3631": ["Inspectores de policía", "Subinspectores de policía", "Técnicos especialistas, policía"],
+    "3632": ["Suboficiales de la guardia civil", "Suboficiales de la Guardia Civil"],
+    "3711": [
+      "Oficiales de notaría",
+      "Auxiliares de justicia",
+      "Pasantes de abogados",
+      "Jueces de paz",
+      "Oficiales de justicia",
+      "Oficiales, notaría",
+      "Oficiales, justicia",
+      "Pasantes, abogado"
+    ],
+    "3712": ["Detectives privados"],
+    "3713": [
+      "Técnicos de apoyo al desarrollo local",
+      "Integradores sociales",
+      "Trabajadores de desarrollo comunitario",
+      "Trabajadores de apoyo a los servicios sociales",
+      "Trabajadores de servicios a menores"
+    ],
+    "3714": [
+      "Promotores de igualdad de oportunidades para mujeres y hombres",
+      "Promotores de igualdad de oportunidades entre mujeres y hombres"
+    ],
+    "3715": ["Monitores socioculturales, integración", "Animadores comunitarios", "Animadores geriátricos"],
+    "3716": ["Predicadores laicos", "Catequistas", "Predicadores, seglar", "Misioneros, seglar"],
+    "3721": [
+      "Atletas",
+      "Boxeadores",
+      "Ajedrecistas",
+      "Futbolistas",
+      "Golfistas",
+      "Esquiadores",
+      "Tenistas",
+      "Corredores deportivos de motos"
+    ],
+    "3722": [
+      "Árbitros",
+      "Entrenadores",
+      "Entrenadores deportivos",
+      "Entrenadores de esquí",
+      "Entrenadores de natación"
+    ],
+    "3723": [
+      "Instructores de educación física",
+      "Instructores de equitación",
+      "Instructores de aeróbic",
+      "Instructores de vela",
+      "Instructores de esquí",
+      "Instructores de natación",
+      "Entrenadores personal, gimnasios",
+      "Instructores de buceo"
+    ],
+    "3724": [
+      "Animadores turísticos",
+      "Animadores socioculturales, entretenimiento",
+      "Guías de actividades de aventura",
+      "Monitores de tiempo libre"
+    ],
+    "3731": [
+      "Reporteros gráficos",
+      "Fotógrafos aéreos",
+      "Fotógrafos publicitarios",
+      "Fotógrafos industriales",
+      "Fotógrafos gráficos",
+      "Fotógrafos retratistas",
+      "Fotógrafos científicos",
+      "Fotógrafos"
+    ],
+    "3732": [
+      "Decoradores y diseñadores de interior",
+      "Diseñadores de interior",
+      "Decoradores de escaparates",
+      "Decoradores de interiores",
+      "Escenógrafos",
+      "Escaparatistas",
+      "Expertos en ordenación de los puntos de venta"
+    ],
+    "3733": [
+      "Técnicos en galerías de arte",
+      "Técnicos en bibliotecas",
+      "Técnicos en museos",
+      "Taxidermistas",
+      "Técnicos en galerías de arte, museos y bibliotecas"
+    ],
+    "3734": [
+      "Chefs",
+      "Chefs ejecutivos",
+      "Jefes de cocina",
+      "Chefs pasteleros",
+      "Chefs salseros",
+      "Segundos de cocina"
+    ],
+    "3739": [
+      "Regidores",
+      "Especialistas",
+      "Figurantes",
+      "Artistas de arte corporal",
+      "Asistentes de dirección (radiodifusión)",
+      "Técnicos en iluminación",
+      "Coordinadores de programas (radiodifusión)",
+      "Apuntadores",
+      "Atrecistas (radiodifusión)",
+      "Continuistas",
+      "Técnicos en efectos especiales",
+      "Tramoyistas",
+      "Coordinadores de especialistas",
+      "Tatuadores",
+      "Técnicos de teatro",
+      "Encargados de vestuario"
+    ],
+    "3811": [
+      "Operadores de equipos informáticos",
+      "Operadores de periféricos",
+      "Controladores de ejecución de programas informáticos"
+    ],
+    "3812": [
+      "Técnicos de soporte informático",
+      "Técnicos consultores en ofimática",
+      "Técnicos instaladores de sistemas informáticos"
+    ],
+    "3813": ["Técnicos de redes informáticas", "Técnicos en redes informáticas", "Operadores de red"],
+    "3814": ["Administradores de sitios Web", "Técnicos de sitios Web", "Administradores de sitios web", "Webmasters"],
+    "3820": ["Programadores de aplicaciones", "Programadores informáticos", "Programadores de software"],
+    "3831": [
+      "Operadores de cámara",
+      "Técnicos audiovisuales",
+      "Técnicos en audiovisuales",
+      "Técnicos de grabación de sonido",
+      "Montadores de video"
+    ],
+    "3832": ["Técnicos de radiodifusión", "Operadores de equipos de radiodifusión", "Técnicos en radiodifusión"],
+    "3833": ["Técnicos en ingeniería de las telecomunicaciones", "Técnicos de telecomunicaciones"],
+    "4111": ["Auxiliares de contabilidad", "Administrativos contables", "Empleados del cálculo de costes"],
+    "4112": ["Empleados administrativos de salarios y nóminas"],
+    "4113": [
+      "Empleados de notarías",
+      "Empleados, servicios financieros",
+      "Empleados, operaciones financieras/hipotecas",
+      "Empleados administrativos de estadística",
+      "Empleados administrativos de entidades financieras",
+      "Empleados de gestión financiera de empresas",
+      "Empleados administrativos de seguros",
+      "Empleados administrativos de banco"
+    ],
+    "4121": [
+      "Empleados administrativos de almacenamiento y recepción",
+      "Almaceneros de empresas de transportes",
+      "Almaceneros de industrias",
+      "Empleados de pedidos en almacén",
+      "Empleados controladores de peso/báscula"
+    ],
+    "4122": [
+      "Empleados de oficina de servicios de producción",
+      "Empleados de oficina de servicios de apoyo a la producción",
+      "Empleados de planificación de materiales",
+      "Empleados administrativos en industria (apoyo a la producción)"
+    ],
+    "4123": [
+      "Empleados administrativos de los servicios de transporte",
+      "Agentes de logística de transportes",
+      "Transitarios",
+      "Factores de empresa de transporte",
+      "Agentes de tren",
+      "Señalistas de aviones"
+    ],
+    "4210": [
+      "Empleados de bibliotecas y archivos",
+      "Empleados administrativos de biblioteca",
+      "Empleados administrativos de archivo",
+      "Auxiliares de biblioteca",
+      "Auxiliares de archivo"
+    ],
+    "4221": [
+      "Clasificadores de correspondencia en servicios de correo",
+      "Carteros",
+      "Mensajeros de empresas de distribución privadas",
+      "Clasificadores-repartidores de correspondencia",
+      "Mensajeros de correspondencia motorizado",
+      "Conductores mensajeros",
+      "Mensajeros-motoristas",
+      "Mensajeros motorizados"
+    ],
+    "4222": ["Codificadores de datos", "Correctores de pruebas de imprenta"],
+    "4223": ["Empleados administrativos de servicios de personal"],
+    "4301": [
+      "Grabadores de datos",
+      "Grabadores de datos en ordenador",
+      "Operadores de entrada de datos",
+      "Esteneotipistas",
+      "Taquígrafos"
+    ],
+    "4309": [
+      "Agentes judiciales",
+      "Auxiliares administrativos, sin tareas de atención al público (n.c.o.p.)",
+      "Empleados administrativos de servicios postales (excepto mostrador)",
+      "Empleados administrativos en general sin tareas de atención al público",
+      "Empleados de inserción de anuncios clasificados",
+      "Empleados de publicaciones (no especializados)"
+    ],
+    "4411": [
+      "Informadores en oficina de turismo",
+      "Empleados en puntos de información",
+      "Encargados del área de atención al cliente en comercios",
+      "Empleados del área de atención al cliente en comercios",
+      "Empleados de información al usuario"
+    ],
+    "4412": [
+      "Recepcionistas médicos",
+      "Recepcionistas de oficina",
+      "Telefonistas-recepcionistas de oficina",
+      "Recepcionistas de consultorios médicos",
+      "Azafatos de información",
+      "Empleados de información de busques de pasaje",
+      "Locutores de información en estaciones de tren"
+    ],
+    "4421": [
+      "Empleados de agencias de viajes",
+      "Empleados de agencias de viaje",
+      "Técnicos de ventas en agencias de viajes",
+      "Técnicos de productos en agencias de viajes",
+      "Empleados de viajes de compañía aérea"
+    ],
+    "4422": ["Recepcionistas de hotel", "Conserjes-recepcionistas de hotel"],
+    "4423": ["Telefonistas", "Operadores de centralita telefónica"],
+    "4424": [
+      "Teleoperadores-informadores del 010",
+      "Teleoperadores (no especializados)",
+      "Operadores de central de alarmas",
+      "Operadores de central de averías",
+      "Empleados de centro de información (telefónica)de atención al cliente",
+      "Teleoperadores"
+    ],
+    "4430": ["Entrevistadores-encuestadores", "Agentes de encuestas por teléfono", "Agentes censales"],
+    "4441": ["Cajeros de banca", "Empleados de oficina de cambio", "Cajeros de banco"],
+    "4442": [
+      "Vendedores en administraciones de lotería",
+      "Vendedores de lotería en kioscos",
+      "Vendedores ambulantes de lotería",
+      "Empleados de venta de loterías y apuestas",
+      "Vendedores de loterías y apuestas",
+      "Vendedores de administración de lotería",
+      "Vendedores callejeros de lotería"
+    ],
+    "4443": [
+      "Cajeros de casino",
+      "Crupieres",
+      "Jefes de sala de bingo",
+      "Empleados en salas de juegos recreativos",
+      "Cajeros de salas de juego"
+    ],
+    "4444": ["Empleados de casas de empeños"],
+    "4445": ["Cobradores de recibos", "Cobradores de donativos", "Cobradores de deudas a morosos"],
+    "4446": ["Empleados de ventanilla de correos", "Empleados de mostrador de correos"],
+    "4500": [
+      "Auxiliares administrativos, con tareas de atención al público (n.c.o.p.)",
+      "Empleados administrativos en general con tareas de al público",
+      "Empleados administrativos en general con tareas de atención al público"
+    ],
+    "5000": [
+      "Camareros y cocineros propietarios",
+      "Camareros propietarios de bares y cafeterías",
+      "Cocineros propietarios de restaurantes",
+      "Dependientes propietarios de churrería-camioneta",
+      "Dependientes propietarios de quiosco de bocadillos calientes",
+      "Cocineros propietarios",
+      "Camareros propietarios",
+      "Dependientes propietarios de vehículos de bocadillos calientes",
+      "Cocineros-propietarios"
+    ],
+    "5110": [
+      "Cocineros",
+      "Cocineros (no propietarios)",
+      "Cocineros de comedor de empresa",
+      "Cocineros en restaurantes",
+      "Preparadores de catering",
+      "Reposteros-pasteleros",
+      "Pizzeros, restaurantes",
+      "Reposteros",
+      "Cocineros en general"
+    ],
+    "5120": [
+      "Sumilleres",
+      "Camareros de barra",
+      "Camareros de mesa",
+      "Jefes de comedor",
+      "Maitres",
+      "Dependientes en quiosco de comidas o bocadillos calientes"
+    ],
+    "5210": [
+      "Jefes de sección de tiendas y almacenes",
+      "Encargados de sección de centro comercial",
+      "Empleados encargado de tienda",
+      "Jefes de tiendas de gran superficie",
+      "Encargados de sección de tiendas y almacenes"
+    ],
+    "5220": [
+      "Dependientes en tiendas y almacenes",
+      "Dependientes de tiendas y almacenes",
+      "Dependientes empleados de comercio",
+      "Dependientes de establecimientos de comercio al por mayor",
+      "Dependientes en puestos de mercado (permanente) municipal",
+      "Carniceros (pescaderos, charcuteros...) dependientes",
+      "Dependientes en tienda de gasolinera (solo venta de artículos)",
+      "Dependientes en tiendas/almacenes"
+    ],
+    "5300": [
+      "Comerciantes propietarios de tiendas",
+      "Dependientes propietarios de comercio",
+      "Dependientes propietarios de tiendas",
+      "Dependientes propietarios de puestos de mercado permanente",
+      "Comerciantes propietario de carnicería sin elaboración propia de productos cárn icos",
+      "Comerciantes propietarios de pescadería"
+    ],
+    "5411": [
+      "Vendedores de quioscos callejero (excepto loterías)",
+      "Dependientes de quioscos",
+      "Vendedores en quioscos"
+    ],
+    "5412": [
+      "Vendedores de puesto de mercado",
+      "Vendedores de puestos de mercado o mercadillos",
+      "Vendedores de puesto de mercado ambulante",
+      "Propietarios de puestos de mercado ambulante",
+      "Dependientes de mercados ambulantes",
+      "Dependientes de mercados itinerantes",
+      "Feriantes",
+      "Vendedores de artesanía en mercadillos",
+      "Vendedores ambulantes callejeros",
+      "Vendedores ambulantes en furgoneta/camioneta (en mercadillo)"
+    ],
+    "5420": ["Vendedores por teléfono (televendedores)", "Vendedores por teléfono"],
+    "5430": [
+      "Expendedores de combustible en gasolineras",
+      "Expendedores de combustible en puerto deportivo",
+      "Operarios de lubricación, recambios y mantenimiento en estaciones de servicios de vehículos",
+      "Operadores de túnel/estación de lavado de coches",
+      "Operadores de túnel/estación de autolavado"
+    ],
+    "5491": ["Vendedores a domicilio", "Vendedores de libros a domicilio", "Vendedores por catálogo a domicilio"],
+    "5492": [
+      "Demostradores de productos en comercios",
+      "Demostradores de producto en comercio",
+      "Modelos de publicidad",
+      "Modelos artísticos",
+      "Modelos de moda",
+      "Promotores de ventas"
+    ],
+    "5499": ["Dependientes de alquiler de coches"],
+    "5500": [
+      "Cajeros de supermercado",
+      "Cajeros de gasolinera",
+      "Cajeros de supermercados",
+      "Cobradores de peajes",
+      "Cobradores de aparcamientos",
+      "Taquilleros de espectáculos",
+      "Cajeros de gasolineras"
+    ],
+    "5611": [
+      "Auxiliares de enfermería hospitalaria",
+      "Auxiliares de enfermería geriátrica",
+      "Técnicos auxiliares de clínica",
+      "Auxiliares de quirófano",
+      "Auxiliares de enfermería de geriatría",
+      "Auxiliares de enfermería de salud mental y toxicomanías",
+      "Auxiliares de clínica",
+      "Auxiliares de enfermería en geriátricos"
+    ],
+    "5612": [
+      "Auxiliares de enfermería de centros de atención primaria",
+      "Auxiliares de enfermería de consultorios médicos"
+    ],
+    "5621": ["Auxiliares de farmacia", "Técnicos auxiliares de farmacia", "Ayudantes de farmacia"],
+    "5622": ["Técnicos en emergencias sanitarias", "Ayudantes de ambulancia"],
+    "5629": ["Ayudantes de dentista", "Auxiliares de enfermería de consultorios dentales", "Celadores de hospital"],
+    "5710": [
+      "Trabajadores de los cuidados personales a domicilio",
+      "Cuidadores de personas mayores a domicilio",
+      "Cuidadores de enfermos a domicilio",
+      "Auxiliares de enfermería en el hogar (con labores de cuidador)",
+      "Auxiliares de ayuda a personas dependientes a domicilio"
+    ],
+    "5721": [
+      "Celadores de guardería",
+      "Cuidadores de niños en guarderías y centros educativos",
+      "Cuidadores de guardería infantil",
+      "Auxiliares de jardín de infancia",
+      "Auxiliares de educación infantil (primer ciclo)",
+      "Auxiliares de puericultura",
+      "Vigilantes de comedor escolar",
+      "Cuidadores-acompañantes en autobús escolar"
+    ],
+    "5722": ["Cuidadores de niños en domicilios", "Niñeros"],
+    "5811": [
+      "Peluqueros de señoras",
+      "Peluqueros de caballeros",
+      "Barberos",
+      "Peluqueros de prótesis capilares",
+      "Especialistas en cuidado del cabello",
+      "Peluqueros propietarios"
+    ],
+    "5812": [
+      "Masajistas no terapéuticos",
+      "Esteticistas",
+      "Estilistas",
+      "Maquilladores",
+      "Manicuros",
+      "Pedicuros (no callistas)",
+      "Especialistas en tratamientos de belleza"
+    ],
+    "5821": [
+      "Auxiliares de vuelo",
+      "Sobrecargos de avión",
+      "Mayordomos de barco",
+      "Camareros de barco",
+      "Camareros de tren"
+    ],
+    "5822": ["Revisores de tren", "Revisores de funicular", "Revisores de autobús"],
+    "5823": [
+      "Guías acompañantes de viaje turístico",
+      "Asistentes acompañantes de grupo turístico",
+      "Tour leaders",
+      "Guías de ruta turística"
+    ],
+    "5824": ["Azafatos de congresos", "Auxiliares congresos y exposiciones", "Auxiliares de tierra, en general"],
+    "5825": [
+      "Guías de turismo",
+      "Guías locales de turismo",
+      "Guías local de turismo",
+      "Guías de museo",
+      "Guías de parque natural"
+    ],
+    "5831": [
+      "Gobernantes de hostelería",
+      "Gobernantes de hospital",
+      "Encargados de lavandería/lencería",
+      "Gambuceros (empleados de despensa de barco)",
+      "Mayordomos de hostelería",
+      "Supervisores de mantenimiento y limpieza en oficinas, hoteles y otros establecimientos"
+    ],
+    "5832": [
+      "Mayordomos (hogares privados)",
+      "Mayordomos domésticos",
+      "Ecónomos y mayordomos",
+      "Ecónomos y mayordomos domésticos"
+    ],
+    "5833": [
+      "Conserjes",
+      "Conserjes de edificios",
+      "Conserjes de pabellón deportivo",
+      "Conserjes de hotel",
+      "Porteros de comunidad de vecinos",
+      "Bedeles",
+      "Cuidadores encargados de edificios",
+      "Sacristanes"
+    ],
+    "5840": [
+      "Trabajadores propietarios de pequeños alojamientos",
+      "Trabajadores propietarios de pensiones",
+      "Trabajadores propietarios de alojamientos de turismo rural",
+      "Gerentes de pensiones",
+      "Propietarios de pensiones (sin trabajadores o muy pocos)",
+      "Propietarios de casas de turismo rural (sin trabajadores o muy pocos)"
+    ],
+    "5891": [
+      "Asistentes-personas de compañía",
+      "Ayudantes de cámara",
+      "Doncellas",
+      "Personas de compañía (sin cuidados a enfermos o dependientes)",
+      "Asistentes personales (compañía)"
+    ],
+    "5892": ["Embalsamadores", "Empleados de pompas fúnebres"],
+    "5893": [
+      "Cuidadores de animales",
+      "Adiestradores de animales",
+      "Peluqueros caninos",
+      "Cuidadores de estética de animales",
+      "Adiestradores de perros",
+      "Peluqueros de perros",
+      "Domadores de caballos",
+      "Cuidadores de animales en parques zoológicos"
+    ],
+    "5894": ["Instructores de autoescuela", "Profesores de autoescuela"],
+    "5895": ["Astrólogos", "Adivinos", "Numerománticos", "Quirománticos"],
+    "5899": [
+      "Acompañantes sociales",
+      "Parejas para bailes",
+      "Parejas de bailes",
+      "Acompañantes en clubes nocturnos",
+      "Relaciones públicas en salas de fiestas",
+      "I Trabajadores de los servicios de protección y seguridad"
+    ],
+    "5910": ["Guardias civiles", "Cabos de la Guardia Civil", "Agentes de la Guardia Civil"],
+    "5921": ["Agentes de la Policía Nacional", "Policías nacionales"],
+    "5922": [
+      "Agentes de policía autonómico",
+      "\u00000\u0000R\u0000]\u0000R\u0000V\u0000\u0003\u0000G\u0000¶\u0000H\u0000V\u0000F\u0000X\u0000D\u0000G\u0000U\u0000D\u0000\u0003",
+      "Ertzainas",
+      "Policías autonómicos"
+    ],
+    "5923": ["Agentes municipales", "Agentes de policía local", "Policías municipales"],
+    "5931": [
+      "Bomberos (excepto forestales)",
+      "Bomberos-conductores (excepto forestales)",
+      "Bomberos de aeropuerto",
+      "Bomberos urbanos o industriales"
+    ],
+    "5932": ["Bomberos forestales", "Vigilantes bomberos forestales"],
+    "5941": [
+      "Guardas jurados",
+      "Vigilantes de seguridad habilitados para ir armados",
+      "Conductores de coche blindado habilitados para ir armados",
+      "Escoltas personales habilitados para ir armados",
+      "Guardas de seguridad habilitados para ir armados",
+      "Vigilantes (habilitados para ir armados)"
+    ],
+    "5942": [
+      "Conserjes-porteros de hotel",
+      "Porteros de hotel",
+      "Porteros-guardas de seguridad en salas de fiestas",
+      "Guardas de seguridad no habilitados para ir armados",
+      "Escoltas personales no habilitados para ir armados",
+      "Empleados-vigilantes de museo",
+      "Vigilantes de seguridad no habilitados para ir armados",
+      "Porteros de hoteles",
+      "Vigilantes (no habilitados para ir armados)",
+      "Porteros de salas de fiesta"
+    ],
+    "5991": ["Funcionarios de prisiones"],
+    "5992": ["Vigilantes-socorristas de playa", "Socorristas de piscina", "Socorristas de playa"],
+    "5993": [
+      "Vigilantes de incendios forestales",
+      "Guardas forestales",
+      "Guardas de cotos de caza y pesca",
+      "Guardas de riego",
+      "Vigilantes de incendios forestales (excepto vigilantes-bomberos)",
+      "Agentes ambientales",
+      "Celadores guardamuelles",
+      "Vigilantes de aparcamientos",
+      "Agentes de movilidad",
+      "Agentes forestales"
+    ],
+    "6110": [
+      "Cultivadores de cereales y leguminosas",
+      "Productores de cultivos industriales",
+      "Fruticultores",
+      "Viticultores",
+      "Agricultores olivareros",
+      "Agricultores de cultivos extensivos",
+      "Trabajadores cualificados en la fruticultura"
+    ],
+    "6120": [
+      "Trabajadores cualificados en huertas, invernaderos, viveros y jardines",
+      "Horticultores",
+      "Floricultores",
+      "Jardineros",
+      "Cultivadores de hongos",
+      "Cultivadores de fresas",
+      "Trabajadores cualificados en la horticultura",
+      "Jardineros cualificados"
+    ],
+    "6201": [
+      "Ganaderos de ganado vacuno de leche o carne",
+      "Cuidadores de ganado vacuno",
+      "Especialistas en ordeño de vacuno",
+      "Ganaderos en general con predominancia de vacuno",
+      "Ganaderos criadores de bovino"
+    ],
+    "6202": [
+      "Ganaderos de ganado ovino o caprino",
+      "Cuidadores de ganado ovino o caprino",
+      "Especialistas en ordeño de ovejas y cabras",
+      "Pastores de ovejas o cabras",
+      "Esquiladores",
+      "Ganaderos en general con predominancia de ovino y/o caprino",
+      "Ganaderos criadores de ovino",
+      "Pastores de ovejas"
+    ],
+    "6203": [
+      "Criadores de ganado porcino",
+      "Cuidadores de ganado porcino",
+      "Ganaderos en general con predominancia de porcino",
+      "Ganaderos criadores de porcino"
+    ],
+    "6204": ["Apicultores", "Sericultores"],
+    "6205": [
+      "Avicultores",
+      "Criadores de aves de corral",
+      "Criadores de conejos",
+      "Encargados/capataces de granja avícola",
+      "Sexadores de polluelos",
+      "Ganaderos en general con predominancia de avicultura y/o cunicultura vacuno",
+      "Criadores de aves y conejos"
+    ],
+    "6209": [
+      "Criadores de aves de caza",
+      "Criadores de avestruces",
+      "Criadores de ganado equino",
+      "Criadores de especies de interés cinegético",
+      "Criadores de perros",
+      "Criadores de gatos",
+      "Criadores de animales de peletería",
+      "Criadores caracoles",
+      "Criadores de animales para laboratorio",
+      "Criadores de animales para zoo",
+      "Criadores de perros y gatos"
+    ],
+    "6300": ["Trabajadores agropecuarios", "Agricultores de producciones mixtas (vegetal y animal)"],
+    "6410": [
+      "Trabajadores forestales cualificados",
+      "Trabajadores de explotaciones agropecuarias, mixtas",
+      "Trabajadores cualificados forestales",
+      "Encargados-capataces forestales",
+      "Extractores de corcho",
+      "Carboneros (de carbón vegetal)",
+      "Trabajadores agropecuarios cualificados"
+    ],
+    "6421": [
+      "Piscicultores",
+      "Piscicultores propietarios",
+      "Cultivadores de ostras",
+      "Acuicultores",
+      "Cultivadores de moluscos",
+      "Trabajadores cualificados en piscifactorías",
+      "Trabajadores cualificados en granjas marinas",
+      "Encargados en piscifactorías",
+      "Mejilloneros de batea",
+      "Mariscadores acuicultores",
+      "Trabajadores en granjas marinas"
+    ],
+    "6422": [
+      "Patrones de buques en aguas dulces y aguas costeras",
+      "Patrones de embarcaciones para la pesca en aguas costeras",
+      "Mariscadores recolectores, que no aplican técnicas de acuicultura",
+      "Recolectores pescadores de mejillones",
+      "Patrones de pesca de litoral",
+      "Pescadores de bajura, costa o litoral",
+      "Mariscadores recolectores",
+      "Recolectores de percebes",
+      "Pescadores de agua dulce",
+      "Patrones de pesca de bajura",
+      "Pescadores de bajura",
+      "Pescadores en aguas costeras",
+      "Mariscadores"
+    ],
+    "6423": [
+      "Patrones de pesca (altura)",
+      "Patrones de embarcaciones para la pesca de altura",
+      "Patrones de pesca de altura",
+      "Pescadores de altura",
+      "Patrones de pesca de arrastre"
+    ],
+    "6430": ["Cazadores"],
+    "7111": [
+      "Encofradores",
+      "Ferrallistas",
+      "Pavimentadores a base de hormigón",
+      "Encofradores y operarios de puesta en obra de hormigón",
+      "Trabajadores del hormigón"
+    ],
+    "7112": ["Ensambladores/montadores de prefabricados de hormigón", "Ensambladores de prefabricados de hormigón"],
+    "7121": ["Albañiles autónomos", "Albañiles", "Colocadores de piedra", "Mamposteros"],
+    "7122": [
+      "Hendedores-tronzadores piedra",
+      "Canteros de la construcción",
+      "Adornistas, piedra o mármol",
+      "Grabadores de inscripciones, piedra ó mármol a mano",
+      "Tronzadores de piedra (con herramientas manuales)",
+      "Picapedreros",
+      "Canteros",
+      "Labradores de pizarra"
+    ],
+    "7131": [
+      "Carpinteros de la construcción",
+      "Carpinteros de armar",
+      "Carpinteros de obra",
+      "Carpinteros de astilleros",
+      "Persianistas"
+    ],
+    "7132": [
+      "Instaladores de cerramientos metálicos y carpinteros metálicos",
+      "Instaladores de cerramientos metálicos",
+      "Carpinteros metálicos",
+      "Montadores de cerramientos metálicos"
+    ],
+    "7191": [
+      "Mantenedores de edificios",
+      "Operadores de mantenimiento de edificios",
+      "Trabajadores de mantenimiento de colegios"
+    ],
+    "7192": [
+      "Instaladores de fachadas técnicas",
+      "Instaladores de materiales de impermeabilización en edificios",
+      "Impermeabilizadores de terrazas"
+    ],
+    "7193": ["Instaladores de sistemas de impermeabilización en edificios"],
+    "7199": [
+      "Operarios especializados en demolición",
+      "Montadores de andamios",
+      "Operarios de construcción trabajos a gran altura",
+      "Colocadores de prefabricados ligeros (pladur)"
+    ],
+    "7211": ["Modelistas de escayola de la construcción", "Escayolistas decoradores", "Escayolistas"],
+    "7212": [
+      "Aplicadores de revestimientos de pasta y mortero",
+      "Estuquistas",
+      "Yesistas",
+      "Revocadores",
+      "Yesistas enlucidores",
+      "Estuquistas decoradores",
+      "Enfoscadores"
+    ],
+    "7221": [
+      "Instaladores de tuberías",
+      "Fontaneros",
+      "Instaladores de tuberías de ventilación",
+      "Fontaneros e instaladores de tuberías"
+    ],
+    "7222": [
+      "Montadores-instaladores de gas en edificios",
+      "Instaladores de gas",
+      "Montadores de instalaciones de gas en edificios",
+      "Instaladores de gas en edificios"
+    ],
+    "7223": [
+      "Instaladores de conducciones en obra pública",
+      "Instaladores de tubos para conducciones en zanjas en obra pública",
+      "Reparadores de grandes tuberías"
+    ],
+    "7231": [
+      "Pintores de edificios",
+      "Empapeladores",
+      "Pintores de decorados de teatro, cine y televisión",
+      "Pintores de bandas sobre vías urbanas y carreteras",
+      "Barnizadores excepto de productos manufacturados"
+    ],
+    "7232": [
+      "Pintores de productos manufacturados",
+      "Pintores de vehículos",
+      "Barnizadores de productos manufacturados",
+      "Pintores-decoradores de muebles",
+      "Pintores-decoradores de juguetería"
+    ],
+    "7240": ["Marmolistas", "Parqueteros", "Soladores", "Instaladores de moqueta", "Pavimentadores con adoquines"],
+    "7250": [
+      "Mecánicos-instaladores de refrigeración y climatización",
+      "Mecánicos de sistemas de climatización",
+      "Mecánicos de sistemas de refrigeración",
+      "Calefactores",
+      "Mecánicos de equipos de aire acondicionado"
+    ],
+    "7291": [
+      "Techadores con asfalto",
+      "Techadores con metal",
+      "Techadores con pizarra",
+      "Tejadores",
+      "Reparadores de tejados"
+    ],
+    "7292": [
+      "Instaladores de material aislante",
+      "Instaladores de material insonorizante",
+      "Instaladores de material aislante en calderas y tuberías",
+      "Instaladores de material aislante en instalaciones de refrigeración y climatización"
+    ],
+    "7293": [
+      "Cristaleros",
+      "Colocadores de cristales",
+      "Cristaleros de claraboyas",
+      "Instaladores de lunas y cristales en vehículos"
+    ],
+    "7294": [
+      "Montadores de placas de energía solar",
+      "Montadores de instalaciones solares térmicas",
+      "Instaladores de sistemas de energía solar térmica",
+      "Reparadores-mantenedores de instalaciones solares térmicas",
+      "Montadores de instalaciones solares fotovoltaicas",
+      "Instaladores de sistemas de energía solar fotovoltaica",
+      "Operadores de instalaciones solares fotovoltaicas",
+      "Reparadores",
+      "Mantenedores de instalaciones solares fotovoltaicas"
+    ],
+    "7295": ["Deshollinadores", "Limpiadores de fachadas", "Limpiadores de fachadas con chorro de arena"],
+    "7311": ["Moldeadores sobre banco, fundición de metales", "Moldeadores en suelo y fosas", "Macheros a mano"],
+    "7312": [
+      "Cobresoldadores",
+      "Oxicortadores, a mano",
+      "Soldadores, por arco eléctrico",
+      "Plomeros",
+      "Soldadores con soplete"
+    ],
+    "7313": ["Chapistas, automóviles", "Chapistas, aviones", "Caldereros"],
+    "7314": [
+      "Montadores de estructuras metálicas",
+      "Trazadores de estructuras metálicas",
+      "Remachadores de elementos metálicos",
+      "Armadores de blindaje de buques"
+    ],
+    "7315": [
+      "Instaladores de funiculares y teleféricos",
+      "Montadores-instaladores de cables, cuerdas y/o poleas",
+      "Montadores-instaladores de aparatos de elevación",
+      "Montadores-instaladores de ascensores",
+      "Instaladores de pozos y equipos de perforación de petróleo y gas"
+    ],
+    "7321": [
+      "Herreros forjadores",
+      "Rebabadores de forja",
+      "Forjadores manual",
+      "Estampadores en prensa",
+      "Forjadores, martillo pilón",
+      "Herradores"
+    ],
+    "7322": ["Matriceros", "Armeros", "Cerrajeros", "Modelistas", "Herramentistas"],
+    "7323": [
+      "Operadores de máquina cortadora de metales",
+      "Macheros a máquina",
+      "Operadores de máquina oxicortadora/metales",
+      "Operadores de máquinas-herramienta",
+      "Operadores de mandriladora",
+      "Reguladores de máquinas herramientas",
+      "Operadores de máquinas herramientas",
+      "Operadores-regulador de máquinas herramientas",
+      "Torneros de piezas de metal",
+      "Operadores de máquinas de fabricación de remaches"
+    ],
+    "7324": [
+      "Bruñidores de metales",
+      "Afiladores de herramientas",
+      "Pulidores de metales",
+      "Afiladores de cuchillería"
+    ],
+    "7401": [
+      "Mecánicos ajustadores de sistemas de frenado de automóviles",
+      "Mecánicos de motores diesel (transporte por carretera)",
+      "Ajustadores de motores (vehículos de motor)",
+      "Mecánicos de motocicletas",
+      "Mecánicos reparadores de vehículos de motor",
+      "Mecánicos y ajustadores de vehículos de motor",
+      "Reparadores de ciclomotores",
+      "Mecánicos de carritos de tres ruedas motorizados",
+      "Mecánicos de vehículos de motor"
+    ],
+    "7402": [
+      "Mecánicos y reparadores de motores de avión",
+      "Mecánicos de motores de avión",
+      "Técnicos de mantenimiento de aviones (fuselaje)",
+      "Técnicos de mantenimiento de aviones (motores)",
+      "Supervisores de mantenimiento de aviones",
+      "Mecánicos de aviación",
+      "Mecánicos de helicópteros",
+      "Mecánicos de motores a reacción",
+      "Mecánicos de componentes de motores de reacción"
+    ],
+    "7403": [
+      "Mecánicos de máquinas industriales",
+      "Mecánicos de máquinas de construcción",
+      "Reparadores de maquinaria de construcción",
+      "Reparadores de maquinaria agrícola",
+      "Mecánicos de máquinas de minería",
+      "Reparadores de máquinas de minería",
+      "Mecánicos de máquinas fijas",
+      "Reparadores de máquinas fijas"
+    ],
+    "7404": [
+      "Mecánicos de maquinaria ferroviaria",
+      "Mecánicos navales",
+      "Mecánicos de motores de tren",
+      "Reparadores de motores de tren",
+      "Reparadores de motores de barco"
+    ],
+    "7405": [
+      "Reparadores de bicicletas",
+      "Mecánicos de bicicletas",
+      "Reparadores de cochecitos de niño",
+      "Reparadores de sillas de ruedas"
+    ],
+    "7510": ["Electricistas", "Electricistas reparadores de la construcción", "Electricistas en escenario o plató"],
+    "7521": [
+      "Verificadores de aparatos y cuadros eléctricos",
+      "Mecánicos electricistas",
+      "Mecánicos-electricista",
+      "Bobinadores",
+      "Ajustadores-electricistas de dinamos",
+      "Mecánicos de ascensores",
+      "Mecánicos electricistas de aparatos electrodomésticos"
+    ],
+    "7522": [
+      "Instaladores de líneas eléctricas",
+      "Empalmadores de cables eléctricos",
+      "Instaladores reparadores de líneas eléctricas de tracción",
+      "Instaladores reparadores de líneas eléctricas subterráneas",
+      "Instaladores reparadores de líneas eléctricas, tendido aéreo"
+    ],
+    "7531": [
+      "Mecánicos y reparadores de equipos electrónicos",
+      "Mecánicos-electrónicos",
+      "Técnicos de mantenimiento de aeronaves (aviónica)",
+      "Técnicos de aviónica",
+      "Mecánicos en electrónica",
+      "Mecánicos de cajeros automáticos",
+      "Mecánicos electrónico",
+      "Reparadores de equipos electrónicos",
+      "Técnicos de fotocopiadoras",
+      "Mecánicos y reparadores de aparatos electrónicos",
+      "Mecánicos y reparadores en electrónica"
+    ],
+    "7532": [
+      "Instaladores y reparadores en electromedicina",
+      "Técnicos reparador de aparatos de electromedicina",
+      "Electrónicos-ajustadores de aparatos médicos",
+      "Técnicos reparadores de aparatos de electromedicina",
+      "Instaladores-reparadores de equipos de electromedicina",
+      "Técnicos de mantenimiento de equipos de electromedicina"
+    ],
+    "7533": [
+      "Técnicos reparadores de equipos informáticos",
+      "Instaladores y reparadores de equipos de tecnología de la información y las co-municaciones",
+      "Instaladores de teléfonos",
+      "Cableadores de datos y telecomunicaciones",
+      "Operarios de línea de telecomunicaciones",
+      "Instaladores de ordenadores",
+      "Técnicos reparadores de equipos de telecomunicaciones",
+      "Instaladores de telefonía"
+    ],
+    "7611": [
+      "Reparadores de equipos fotográficos",
+      "Mecánicos de instrumentos de meteorología",
+      "Constructores de instrumentos quirúrgicos",
+      "Constructores de relojes",
+      "Fabricantes de instrumentos de precisión"
+    ],
+    "7612": [
+      "Fabricantes de instrumentos musicales (de metal)",
+      "Fabricantes de instrumentos musicales (de cuerda)",
+      "Fabricantes de instrumentos musicales (de madera)",
+      "Afinadores de instrumentos musicales"
+    ],
+    "7613": ["Esmaltadores de joyas", "Orfebres", "Joyeros", "Engastadores de piedras preciosas", "Plateros"],
+    "7614": [
+      "Moldeadores de objetos de loza y porcelana",
+      "Modelistas de objetos de loza y porcelana",
+      "Ceramistas",
+      "Moldeadores de muelas abrasivas",
+      "Moldeadores de ladrillos, tejas y baldosas"
+    ],
+    "7615": [
+      "Pulidores de cristales",
+      "Cortadores de cristales",
+      "Biseladores de cristales",
+      "Sopladores de vidrio",
+      "Modeladores de vidrio",
+      "Cortadores de vidrio"
+    ],
+    "7616": [
+      "Pintores decorativos",
+      "Grabadores de vidrio",
+      "Grabadores al aguafuerte de vidrio",
+      "Esmaltadores de vidrio",
+      "Pintores decoradores de vidrio y cerámica",
+      "Pintores de rótulos"
+    ],
+    "7617": [
+      "Artesanos tejedores de junco",
+      "Artesanos de artículos de madera",
+      "Cesteros",
+      "Tejedores de muebles de mimbre"
+    ],
+    "7618": [
+      "Artesanos de alfombras",
+      "Artesanos del cuero",
+      "Peinadores de fibras textiles",
+      "Estiradores de fibras textiles",
+      "Ganchilleros a mano",
+      "Tejedores de telar",
+      "Rederos",
+      "Artesanos-tejedores de telas",
+      "Hilanderos artesanos",
+      "Tejedores artesanos",
+      "Artesanos de tejidos"
+    ],
+    "7619": ["Cereros", "Pirotécnicos", "Artesanos de artículos de piedra", "Artesanos de juguetes de metal"],
+    "7621": [
+      "Fotograbadores",
+      "Fotolitograbadores",
+      "Cajistas",
+      "Troqueladores, artes gráficas",
+      "Operadores de preimpresión",
+      "Montadores de pantallas de serigrafía",
+      "Confeccionadores de planchas de impresión",
+      "Confeccionadores de pantallas de serigrafía",
+      "Linotipistas"
+    ],
+    "7622": [
+      "Impresores a la plancha",
+      "Operadores de máquinas de impresión digital",
+      "Operadores de alimentación (impresión)",
+      "Operadores de prensas de flexografía",
+      "Operadores de prensas de fotograbado",
+      "Fotolitógrafos",
+      "Impresores en serigrafía",
+      "Operadores de impresoras de serigrafía",
+      "Operadores de máquinas de impresión, pequeño formato",
+      "Operadores de máquinas de impresión de bobina"
+    ],
+    "7623": [
+      "Encuadernadores",
+      "Operadores de guillotinas",
+      "Operadores de máquinas de estampación en caliente",
+      "Operadores de plegadoras",
+      "Operadores de alzadoras",
+      "Operadores de multiencuadernadoras",
+      "Operadores de encuadernadoras en rústica",
+      "Operadores de encuadernadoras con cosido por el centro",
+      "Cosedores, encuadernación",
+      "Operadores de pequeñas encuadernadoras de taller"
+    ],
+    "7701": ["Carniceros", "Despojeros", "Chacineros-charcuteros", "Preparadores, jamones", "Matarifes"],
+    "7702": ["Fileteadores de pescado", "Pescaderos", "Saladores, pescado", "Ahumadores, pescados"],
+    "7703": ["Panaderos, fabricación", "Pasteleros, fabricación", "Chocolateros", "Turroneros"],
+    "7704": ["Queseros, artesanal", "Mantequilleros, artesanal", "Heladeros, artesanal"],
+    "7705": [
+      "Elaboradores de conservas, frutas, verduras y hortalizas",
+      "Preparadores, aderezo y relleno de aceitunas",
+      "Almazareros, artesanal",
+      "Elaboradores de aceite, artesanal",
+      "Manipuladores de frutas y hortalizas"
+    ],
+    "7706": ["Cocedores de malta, cerveza", "Bodegueros de cerveza", "Sidreros"],
+    "7707": ["Bodegueros vinícolas", "Operarios en la elaboración de vinos"],
+    "7708": [
+      "Cigarreros",
+      "Operarios de fabricación de cigarrillos",
+      "Clasificadores de hojas de tabaco",
+      "Mezcladores de tabaco"
+    ],
+    "7709": [
+      "Catadores de vino",
+      "Clasificadores de alimentos",
+      "Degustadores de alimentos",
+      "Catadores de licores",
+      "Catadores de té",
+      "Catadores de vinos",
+      "Clasificadores de frutas",
+      "Clasificadores de hortalizas"
+    ],
+    "7811": [
+      "Operadores de estufas para secado de madera",
+      "Operadores de hornos para secado de madera",
+      "Operadores de secadora",
+      "Secadores de madera",
+      "Impregnadores de madera",
+      "Trabajadores del tratamiento de la madera (excepto operadores de máquinas de procesamiento)",
+      "Trabajadores del tratamiento del corcho (excepto operadores de máquinas de procesamiento)"
+    ],
+    "7812": [
+      "Ajustadores y operadores de máquinas para fabricar productos de madera",
+      "Operadores de máquinas de labra de madera",
+      "Operadores de máquinas para fabricar productos de madera",
+      "Operadores de máquinas para trabajar la madera",
+      "Operadores de máquinas de fabricación de muebles",
+      "Operadores de sierras mecánicas de precisión",
+      "Operadores de máquinas para la elaboración de productos de madera",
+      "Torneros de madera",
+      "Operadores de fresadoras de madera",
+      "Reguladores-operadores de máquinas de labra de madera"
+    ],
+    "7820": ["Ebanistas", "Carreteros", "Reparadores de muebles", "Fabricantes de ruedas", "Patronistas en madera"],
+    "7831": ["Modistos", "Peleteros", "Sastres", "Sombrereros", "Clasificadores de pieles"],
+    "7832": ["Patronistas de pieles", "Patronistas de prendas de vestir"],
+    "7833": ["Cortadores de prendas de vestir", "Cortadores de guantes"],
+    "7834": ["Bordadores", "Costureros", "Paragüeros"],
+    "7835": ["Colchoneros", "Tapiceros de muebles", "Tapiceros de vehículos", "Tapiceros de artículos de ortopedia"],
+    "7836": [
+      "Sobadores de pieles",
+      "Clasificadores de cueros y pellejos",
+      "Curtidores",
+      "Clasificadores de cueros",
+      "Tintoreros de pieles"
+    ],
+    "7837": ["Zapateros remendones", "Guarnicioneros", "Zapateros", "Zapateros ortopédicos"],
+    "7891": ["Buzos, soldadores-oxicortadores", "Hombres rana de salvamento", "Buzos"],
+    "7892": [
+      "Pegadores",
+      "Polvoristas",
+      "Grumetes encargados de la pólvora",
+      "Dinamiteros",
+      "Barrenistas y dinamiteros"
+    ],
+    "7893": [
+      "Clasificadores y probadores de productos (excluyendo alimentos, bebidas y tabaco)",
+      "Clasificadores de productos",
+      "Clasificadores de lanas"
+    ],
+    "7894": [
+      "Especialistas en tratamientos plaguicidas o herbicidas",
+      "Fumigadores",
+      "Controladores de plagas",
+      "Controladores de malas hierbas"
+    ],
+    "7899": [
+      "Arregladores de flores",
+      "Pulidores de objetivos ópticos",
+      "Moldeadores de objetivos ópticos",
+      "Oficiales, operarios y artesanos de artes mecánicas y de otros oficios no clasificados bajo otros epígrafes"
+    ],
+    "8111": [
+      "Operadores de instalaciones mineras",
+      "Mineros",
+      "Mineros y otros operadores en instalaciones mineras",
+      "Barreneros (minas)",
+      "Salineros",
+      "Estibadores de minas",
+      "Mineros del arranque del carbón",
+      "Mineros del arranque de metales",
+      "Mineros del arranque de piedras ornamentales",
+      "Operadores de máquinas perforadores en minas",
+      "Operadores de máquinas extractoras de mineral",
+      "Operadores en instalaciones mineras"
+    ],
+    "8112": [
+      "Operadores de máquinas para la labra de piedra",
+      "Operadores de máquinas quebrantadoras de piedra y roca",
+      "Operadores de máquinas quebrantadoras de mineral",
+      "Operadores de lavaderos de mineral",
+      "Operadores de máquinas del labrado de la piedra",
+      "Operadores de máquina de tratamiento de rocas"
+    ],
+    "8113": [
+      "Barreneros (pozos de petróleo o gas)",
+      "Operadores de máquinas perforadoras de pozos de petróleo y gas",
+      "Operadores de tren de sondeo/rotación (pozos de petróleo y gas)",
+      "Sondistas prospectores, pozos en explotación",
+      "Tuberistas de minas y sondeos",
+      "Sondistas de roca o carbón",
+      "Perforistas (pozos de gas o petróleo)"
+    ],
+    "8114": [
+      "Operadores de máquinas en planta de hormigones",
+      "Operadores de máquinas para elaborar prefabricados de hormigón y/o fibrocemento",
+      "Operadores de máquinas para la fabricación de piedra artificial",
+      "Operadores de máquinas de labra de piedra",
+      "Operadores de máquinas pulidoras de piedras",
+      "Operadores en instalaciones para la producción de cemento",
+      "Operadores de máquinas para elaborar yeso o escayola",
+      "Operadores de máquinas para elaborar cal",
+      "Operadores de máquina, productos prefabricados de hormigón",
+      "Operadores de máquina, fabricación de piedra artificial",
+      "Operadores de maquinas en planta de áridos",
+      "Operadores de maquinas en planta de aglomerados asfálticos",
+      "Operadores de maquinas pulidoras de piedras"
+    ],
+    "8121": [
+      "Operadores de cuchara de alto horno",
+      "Operadores de tren de laminación",
+      "Operadores de máquinas para la transformación de metales",
+      "Operadores de máquina, moldeadora/metales",
+      "Fundidores de segunda fusión (metalurgia)",
+      "Operadores de procesos de forjado de metales",
+      "Operadores de planta de obtención de aluminio",
+      "Operadores de máquina estiradora de metales",
+      "Operadores de máquina trefiladora de metales",
+      "Operadores de coquización"
+    ],
+    "8122": [
+      "Operadores de máquinas de acabado de metales",
+      "Operadores de máquinas bruñidoras de metales",
+      "Operadores de máquinas pulidoras de metales",
+      "Operadores de máquina recubridora de metales",
+      "Operadores de máquina, galvanoplastia",
+      "Operadores de máquina, pulidora/metalurgia",
+      "Operadores de máquina, recubridora/alambre"
+    ],
+    "8131": [
+      "Operadores de plantas y máquinas de productos químicos",
+      "Operadores de máquinas en plantas industriales químicas",
+      "Operadores de planta química",
+      "Operadores de instalaciones de tratamiento químico térmico de productos",
+      "Operadores de reactor, procesos químicos",
+      "Operadores de equipos de destilación y reacción química",
+      "Operadores de instalaciones para producir abonos artificiales",
+      "Operadores de maquina, fabricación de municiones",
+      "Operadores de maquina, fabricación de pinturas"
+    ],
+    "8132": [
+      "Operadores de máquina, fabricación de detergentes",
+      "Operadores de máquina, fabricación de cosméticos",
+      "Operadores de máquina, fabricación de productos farmacéuticos"
+    ],
+    "8133": [
+      "Operadores de maquina, revelado de fotografías",
+      "Operadores de maquina, revelado de películas de cine",
+      "Operadores de maquina, revelado de radiografías",
+      "Operadores de maquina, ampliación de fotografías",
+      "Operadores de maquina para fabricar cinta para películas de cine",
+      "Operadores de maquina para fabricar papel fotográfico",
+      "Operadores de maquina para fabricar película fotográfica"
+    ],
+    "8141": [
+      "Operadores de maquina de fabricación de productos de caucho",
+      "Operadores de maquina de fabricación de neumáticos",
+      "Operadores de maquina de vulcanización de neumáticos",
+      "Operadores de maquina mezcladora-amasadora de caucho",
+      "Operadores de maquina extrusora de caucho",
+      "Operadores de maquinas para fabricar sellos de caucho",
+      "Operadores de maquinas para fabricar productos derivados de resinas naturales"
+    ],
+    "8142": [
+      "Operadores de fabricación de juguetes de plástico",
+      "Operadores de máquinas para fabricar productos de plástico",
+      "Operadores de máquinas inyectoras de plásticos",
+      "Operadores de máquinas extrusoras de PVC",
+      "Operadores de máquinas soldadoras de material plástico",
+      "Operadores de máquinas metalizadoras de plástico por alto vacío",
+      "Operadores de máquinas para preparar moldes de resina"
+    ],
+    "8143": [
+      "Operadores de máquinas para fabricar artículos de cartón",
+      "Operadores de máquinas para fabricar manteles, toallitas y compresas",
+      "Operadores de máquinas cortadora/plegadora de papel y cartón",
+      "Operadores de máquina troqueladoras de papel, cartón y materiales afines",
+      "Operadores de máquinas para fabricar productos de papel y cartón"
+    ],
+    "8144": [
+      "Operadores de máquinas de procesamiento de la madera",
+      "Operadores de fabricación de laminados de madera",
+      "Operadores de máquinas tronzadoras de madera",
+      "Operadores de máquinas descortezadoras de madera",
+      "Operadores de sierras circulares (madera)",
+      "Operadores de máquinas de fabricación de aglomerados",
+      "Operadores de máquinas para fabricar chapas y tableros contrachapados",
+      "Operadores de máquinas para el tratamiento del corcho"
+    ],
+    "8145": [
+      "Operadores en instalaciones de fabricación de pasta de papel",
+      "Operadores máquinas trituradoras de pasta de papel",
+      "Operadores de máquinas lavadoras de pasta de papel",
+      "Operadores de máquinas blanqueadoras de pasta de papel",
+      "Operadores de máquinas de fabricación de papel y cartón",
+      "Operadores de máquinas calandradoras-satinadoras de papel",
+      "Operadores de máquinas cortadoras de papel"
+    ],
+    "8151": [
+      "Operadores de máquinas peinadoras de fibras textiles",
+      "Operadores de máquinas lavadoras de fibras textiles",
+      "Operadores de máquinas de hilar continua",
+      "Operadores de máquinas cardadoras de fibras",
+      "Operadores de máquinas bobinadoras y trascanadoras de hilos"
+    ],
+    "8152": [
+      "Operadores de máquinas tejedora",
+      "Operadores de telar",
+      "Preparadores-ajustadores de telares",
+      "Operadores de máquinas tejedoras en telar de calada",
+      "Operadores de máquinas urdidora-encoladora de hilos",
+      "Operadores de máquinas tejedora de redes y mallas",
+      "Operadores de máquinas remalladoras de prendas de genero de punto",
+      "Operadores de máquinas circular tejedora de genero de punto",
+      "Operadores de telares y otras máquinas tejedoras"
+    ],
+    "8153": [
+      "Operadores de máquinas de coser",
+      "Operadores de máquinas industriales de coser",
+      "Operadores de máquinas industrial de bordar"
+    ],
+    "8154": [
+      "Operadores de máquinas para el acabado de productos textiles",
+      "Operadores de máquinas de tintura de telas",
+      "Operadores de máquinas estampadoras de textiles",
+      "Operadores de máquinas planchadoras de confección industrial",
+      "Operadores de máquinas lavadoras de hilados",
+      "Operadores de máquinas de tintura de hilados y fibras"
+    ],
+    "8155": [
+      "Operadores de máquinas de curtido",
+      "Operadores de máquinas de curtido de pieles y cueros",
+      "Operadores de máquinas cortadoras (preparación de pieles y cueros)",
+      "Operadores de máquinas de planchado y grabado de curtidos",
+      "Operadores de máquinas para el curtido del cuero",
+      "Operadores de maquinas cortadoras (preparación de pieles y cueros)"
+    ],
+    "8156": [
+      "Operadores de máquinas de fabricación de calzado",
+      "Operadores de máquinas de cosido de calzado",
+      "Operadores de máquinas de cosido de marroquinería",
+      "Operadores de máquinas cortadora de piezas de calzado",
+      "Operadores de máquinas de cosido y aparado de calzado",
+      "Operadores de máquinas de acabado de calzado",
+      "Operadores de máquinas para rebajar piezas (aparado de calzado)",
+      "Operadores de máquinas automática para lijar zapatos",
+      "Montadores a máquina de talones de calzado",
+      "Montadores a máquina para confeccionar guantes",
+      "Operadores de máquinas para fabricar artículos de marroquinería",
+      "Operadores de máquinas para la fabricación del calzado"
+    ],
+    "8159": [
+      "Operadores de máquinas de fabricación de patrones para telas",
+      "Operadores de máquinas cortadoras de pieles y cueros (confección)",
+      "Operadores de máquinas para fabricar colchones",
+      "Operadores de máquinas para confeccionar sombreros",
+      "Operadores de máquinas para fabricar tiendas",
+      "Operadores de máquinas para confeccionar pasamanería",
+      "Operadores de máquinas para confeccionar telas no tejidas",
+      "Operadores de máquinas para confeccionar adornos para tocado y vestido"
+    ],
+    "8160": [
+      "Operadores de máquinas para la elaboración de productos cárnicos",
+      "Operadores de máquinas para la elaboración de productos de panadería",
+      "Operadores de máquinas para la elaboración de pan",
+      "Operadores de máquinas para la elaboración de productos de chocolate",
+      "Operadores de máquinas para la elaboración de productos lácteos",
+      "Operadores de máquinas para el tratamiento de la leche",
+      "Operadores de máquinas enlatadoras",
+      "Operadores de máquinas de fabricación de puros",
+      "Operadores de máquinas de fabricación de cigarrillos",
+      "Operadores de máquina de fabricación de productos de panadería",
+      "Operadores de máquina de fabricación de pan",
+      "Operadores de máquina de elaboración de chocolates",
+      "Operadores de máquina de fabricación de cigarrillos",
+      "Operadores de máquina de elaboración de productos lácteos",
+      "Operadores de máquina de preparación de pescado",
+      "Operadores de máquina de preparación de carne",
+      "Operadores de máquina de tratamiento de la leche",
+      "Operadores de máquinas para elaborar y envasar productos alimenticios"
+    ],
+    "8170": [
+      "Operadores de máquina de lavandería",
+      "Operadores de máquinas de planchado (no industrial)",
+      "Operadores de máquinas de tintura de prendas en lavandería",
+      "Operadores de máquinas de limpieza en seco",
+      "Operadores de máquinas de lavandería",
+      "Operadores de máquinas de planchado",
+      "Operadores de máquina de planchado"
+    ],
+    "8191": [
+      "Operadores de hornos de tejas y ladrillos",
+      "Operadores de hornos de objetos de loza y porcelana",
+      "Operadores de hornos de producción de vidrio",
+      "Operadores de máquinas de pintura decorativa de cerámica",
+      "Operadores de máquinas de pintura decorativa de vidrio",
+      "Operadores de instalaciones de productos cerámicos",
+      "Operadores de hornos de cerámica y porcelana",
+      "Operadores de máquinas de soplado de vidrio",
+      "Operadores de máquinas de mezclado de arcilla",
+      "Operadores de máquinas de mezclado de vidrio"
+    ],
+    "8192": [
+      "Operadores de máquinas de vapor y calderas",
+      "Encargados de caldera",
+      "Operadores de caldera de buque",
+      "Técnicos en equipos fijos",
+      "Operadores de máquina de vapor",
+      "Fogoneros"
+    ],
+    "8193": [
+      "Operadores de máquina enlatadora de conservas",
+      "Operadores de máquinas envasadoras de pastas alimenticias",
+      "Operadores de máquinas envasadoras de azúcar",
+      "Operadores de máquinas embotelladoras de bebidas",
+      "Embaladores envasadores de medicinas",
+      "Operadores de máquinas empaquetadoras",
+      "Operadores de máquinas etiquetadoras",
+      "Operadores de máquinas enlatadoras de conservas",
+      "Operadores de máquinas embaladoras, embotelladoras o etiquetadoras"
+    ],
+    "8199": [
+      "Operadores de máquinas empalmadoras de cabos y cables",
+      "Operadores de máquina de fabricación de chips de silicio",
+      "Operadores de máquina empalmadora de cables y cuerdas"
+    ],
+    "8201": [
+      "Ensambladores de maquinaria mecánica",
+      "Ensambladores de motores de vehículos",
+      "Ensambladores de motores de avión",
+      "Montadores de motores",
+      "Mecánicos de banco (camiones)",
+      "Montadores de vehículos",
+      "Instaladores de motores",
+      "Montadores ajustadores de elementos mecánicos de motores aeronáuticos",
+      "Ensambladores de turbinas"
+    ],
+    "8202": [
+      "Montadores de maquinaria eléctrica",
+      "Montadores de equipos electrónicos",
+      "Ensambladores de equipos eléctricos",
+      "Montadores de equipos electromecánicos",
+      "Montadores de aparatos y cuadros eléctricos",
+      "Montadores de bobinadora/motores",
+      "Montadores de aparatos electrónicos",
+      "Montadores de teléfonos",
+      "Montadores de televisores"
+    ],
+    "8209": [
+      "Ensambladores de relojes",
+      "Ensambladores de productos de madera y de materiales afines",
+      "Montadores de bicicletas",
+      "Ensambladores de municiones",
+      "Constructores de cajas",
+      "Ensambladores de bicicletas",
+      "Ensambladores de puertas",
+      "Ensambladores de monturas de gafas",
+      "Técnicos en acabado de muebles de madera",
+      "Montadores de joyas",
+      "Ensambladores de cuchillos",
+      "Ensambladores de productos de cuero",
+      "Técnicos en acabado de maletas",
+      "Ensambladores de productos de cartón",
+      "Ensambladores de plumas y bolígrafos",
+      "Ensambladores de juguetes de plástico",
+      "Ensambladores de persianas",
+      "Ensambladores de productos textiles",
+      "Ensambladores de termos",
+      "N Conductores y operadores de maquinaria móvil"
+    ],
+    "8311": ["Maquinistas de locomotoras", "Conductores de trenes"],
+    "8312": ["Guardafrenos de ferrocarriles", "Agentes de maniobras de ferrocarriles", "Guardagujas de ferrocarriles"],
+    "8321": [
+      "Tractoristas",
+      "Conductores de maquinaria agrícola",
+      "Operadores de cosechadora",
+      "Operadores de maquinaria agrícola móvil",
+      "Conductores de cosechadoras agrícolas",
+      "Operadores de maquinaría agrícola"
+    ],
+    "8322": [
+      "Operadores de maquinaria forestal móvil",
+      "Conductores de maquinaria forestal móvil",
+      "Operadores de equipos de corte de troncos",
+      "Conductores de transporte de maderas",
+      "Operadores de máquina taladora de árboles"
+    ],
+    "8331": [
+      "Operadores de máquinas de asfaltado",
+      "Operadores de maquinas de movimientos de tierras y afines",
+      "Operadores de niveladoras",
+      "Operadores de excavadoras",
+      "Operadores de máquinas explanadoras",
+      "Operadores de apisonadoras",
+      "Operadores de máquinas quitanieves",
+      "Operadores de martinetes",
+      "Operadores de máquinas asfaltadoras",
+      "Operadores de maquinaria de movimiento de tierras",
+      "Operadores de maquinaria para el movimiento de tierras"
+    ],
+    "8332": [
+      "Operadores de grúas, de aparatos elevadores y afines",
+      "Operadores de grúas",
+      "Operadores de aparatos elevadores",
+      "Operadores de grúas móviles",
+      "Operadores de grúas de torre",
+      "Operadores de teleféricos",
+      "Operadores de montacargas"
+    ],
+    "8333": ["Operadores de carretillas elevadoras", "Conductores de toro", "Carretilleros almaceneros"],
+    "8340": [
+      "Marineros",
+      "Marineros de cubierta",
+      "Contramaestres de cubierta",
+      "Marineros de cubierta de transbordadores",
+      "Marineros de cubierta de remolcadores"
+    ],
+    "8411": [
+      "Taxistas propietarios",
+      "Chóferes particulares con coche propio",
+      "Repartidores de pedidos propietarios de furgoneta",
+      "Conductores propietarios de camionetas",
+      "Conductores propietarios de automóviles, taxis y furgonetas",
+      "Vendedores ambulantes en furgoneta/camioneta (en solitario)",
+      "Repartidores en furgoneta propia",
+      "Repartidores de paquetes en furgón (autónomo)"
+    ],
+    "8412": [
+      "Conductores de ambulancia, que no prestan cuidados sanitarios",
+      "Conductores asalariados de automóviles, taxis y furgonetas",
+      "Taxistas asalariados",
+      "Chóferes particulares asalariados",
+      "Repartidores asalariados de pedidos en furgoneta",
+      "Conductores asalariados de camionetas",
+      "Repartidores en furgoneta asalariados",
+      "Repartidores de paquetes en furgón (asalariado)"
+    ],
+    "8420": ["Conductores de tranvías", "Conductores de autobús", "Conductores de microbús", "Conductores de tranvía"],
+    "8431": [
+      "Camioneros propietarios",
+      "Conductores propietarios de hormigoneras",
+      "Conductores propietarios de camiones pesados",
+      "Conductores propietarios de camión de gran tonelaje",
+      "Conductores propietarios de camión cisterna",
+      "Conductores propietarios de camión TIR (transporte internacional)",
+      "Conductores propietarios de camión de mercancías peligrosas",
+      "Conductores propietarios de camiones"
+    ],
+    "8432": [
+      "Camioneros asalariados",
+      "Conductores asalariados de hormigoneras",
+      "Conductores asalariados de camiones pesados",
+      "Conductores asalariados de camiones",
+      "Conductores asalariados de camión de gran tonelaje",
+      "Conductores asalariados de camión cisterna",
+      "Conductores asalariados de camión TIR (transporte internacional)",
+      "Conductores asalariados de camión de mercancías peligrosas",
+      "Conductores asalariados de camiones de basura"
+    ],
+    "8440": ["Motoristas repartidores (excepto mensajería)", "Motoristas, repartidores de pizzas"],
+    "9100": [
+      "Empleados del hogar",
+      "Empleados de hogar",
+      "Asistentes del servicio domésticos",
+      "Limpiadores domésticos"
+    ],
+    "9210": [
+      "Limpiadores de hoteles",
+      "Limpiadores de oficinas",
+      "Limpiadores en instituciones sanitarias",
+      "Limpiadores de colegios",
+      "Enceradores de suelos",
+      "Limpiadores de aviones",
+      "Limpiadores de trenes",
+      "Limpiadores de autobuses",
+      "Limpiadores de cocina"
+    ],
+    "9221": ["Lavanderos a mano", "Planchadores a mano", "Limpiadores en seco a mano"],
+    "9222": ["Lavacoches a mano", "Limpiadores de coches", "Limpiadores de lunas de automóviles"],
+    "9223": [
+      "Limpiadores de ventanas",
+      "Limpiadores de ventanas a grandes alturas",
+      "Limpiadores de cristales en edificios"
+    ],
+    "9229": [
+      "Limpiadores-mantenedores de piscinas",
+      "Limpiadores de pintadas",
+      "Limpiadores de piscinas",
+      "Limpiadores de alfombras y moquetas"
+    ],
+    "9310": ["Ayudantes de cocina", "Fregaplatos", "Pinches de cocina", "Marmitones", "Ayudantes de repostería"],
+    "9320": [
+      "Cocineros de comida rápida",
+      "Preparadores de pizzas (comida rápida)",
+      "Preparadores de hamburguesas",
+      "Preparadores de comidas rápidas",
+      "Churreros",
+      "Cocineros-preparadores de hamburguesas, sándwiches y bocadillos",
+      "Preparadores de kebabs"
+    ],
+    "9410": ["Vendedores callejeros"],
+    "9420": [
+      "Limpiadores callejeros de lunas de automóviles",
+      "Distribuidores de prensa gratuita",
+      "Repartidores de publicidad",
+      "Buzoneadores",
+      "Pegadores de carteles",
+      "Limpiabotas",
+      "Aparcacoches callejeros (no conductores)",
+      "Aparcacoches callejeros"
+    ],
+    "9431": ["Ascensoristas", "Ordenanzas", "Botones"],
+    "9432": ["Mozos de equipajes", "Maleteros de hotel"],
+    "9433": [
+      "Mensajeros a pie",
+      "Recaderos a pie",
+      "Recadistas",
+      "Repartidores a pie de supermercados",
+      "Repartidores de prensa a domicilio",
+      "Recadistas a pie",
+      "Repartidores, mensajeros y recadistas en bicicleta",
+      "patinete y otros medios simila-res",
+      "Repartidores a pie"
+    ],
+    "9434": [
+      "Lectores del contador de la electricidad",
+      "Lectores del contador del agua",
+      "Lectores del contador del gas",
+      "Recaudadores de máquinas recreativas",
+      "Recaudadores de máquinas expendedoras (tabaco, bebidas, golosinas, etc.)",
+      "Reponedores de máquinas expendedoras automáticas"
+    ],
+    "9441": [
+      "Peones de recolección de desechos",
+      "Basureros",
+      "Peones recogedores de basura",
+      "Peones del servicio de recogida de basura"
+    ],
+    "9442": [
+      "Recogedores selectivos de residuos urbanos",
+      "Clasificadores de desechos",
+      "Clasificadores de planta de reciclaje",
+      "Operarios de punto limpio",
+      "Recogedores de chatarra",
+      "Recogedores de cartón",
+      "Recogedores selectivos de residuos"
+    ],
+    "9443": [
+      "Barrenderos",
+      "Barrenderos de calles",
+      "Barrenderos de parques",
+      "Barrenderos de estación de tren",
+      "Barrenderos de aeropuerto",
+      "Peones limpiadores de la vía pública",
+      "Operarios mantenedores de alcantarillado"
+    ],
+    "9490": [
+      "Revisores de tickets de entrada en espectáculos",
+      "Empleados guardarropas",
+      "Revisores de parquímetros",
+      "Ayudantes aparcacoches"
+    ],
+    "9511": [
+      "Peones agrícolas (excepto en huertas, invernaderos, viveros y jardines)",
+      "Recolectores de aceitunas",
+      "Peones agrícolas en general",
+      "Peones agrícolas de la aceituna",
+      "Recolectores de frutas (naranjas, melocotones, peras...)",
+      "Vendimiadores",
+      "Recolectores de patatas (en cultivo extensivo)",
+      "Recolectores de hortalizas (en cultivo extensivo)"
+    ],
+    "9512": [
+      "Peones agrícolas en huertas, invernaderos, viveros y jardines",
+      "Recolectores de hortalizas",
+      "Recolectores de fresas",
+      "Peones de jardinería y horticultura",
+      "Recolectores de espárragos",
+      "Recolectores de hortalizas (en cultivo intensivo)",
+      "Peones agrícolas en horticultura",
+      "Peones agrícolas en jardinería",
+      "Peones agrícolas en viveros",
+      "Cortadores de césped",
+      "Peones de la horticultura y la jardinería"
+    ],
+    "9520": [
+      "Peones ganaderos",
+      "Peones ganaderos (explotaciones de bovino)",
+      "Peones ganaderos (explotaciones de ovino)",
+      "Peones ganaderos (explotaciones de porcino)",
+      "Peones en explotaciones de aves y conejos",
+      "Mozos de cuadra",
+      "Peones de limpieza y alimentación del ganado",
+      "Recogedores de huevos",
+      "Peones de granja cinegética"
+    ],
+    "9530": ["Peones agropecuarios", "Peones agrícola-ganaderos"],
+    "9541": ["Peones de la pesca"],
+    "9542": ["Peones de la acuicultura", "Peones de acuicultura"],
+    "9543": [
+      "Peones forestales",
+      "Leñadores",
+      "Monteros",
+      "Ojeadores",
+      "Limpiadores-desbrozadores de montes",
+      "Replantadores de árboles en montes"
+    ],
+    "9601": [
+      "Peones de obras públicas",
+      "Peones camineros",
+      "Peones asfaltadores",
+      "Peones de mantenimiento de carreteras",
+      "Peones de mantenimiento de diques",
+      "Preparadores de pistas de nieve (pisteros)",
+      "Peones en excavaciones arqueológicas",
+      "Sepultureros",
+      "Peones de mantenimiento de carreteras, presas y similares"
+    ],
+    "9602": [
+      "Peones de la construcción de edificios",
+      "Peones de demolición",
+      "Peones de albañil",
+      "Peones de carpintería"
+    ],
+    "9603": [
+      "Peones de minas y canteras",
+      "Peones de minas",
+      "Peones de canteras",
+      "Peones de exterior de minas",
+      "Peones de salinas"
+    ],
+    "9700": [
+      "Empacadores manuales",
+      "Peones de la industria",
+      "Peones industria alimentaria",
+      "Peones industria metalúrgica",
+      "Peones industria textil, confección y del cuero",
+      "Peones de matadero industrial",
+      "Peones manipuladores de pescado",
+      "Encajadores, envasadores y embotelladores a mano",
+      "Etiquetadores a mano",
+      "Peones manipuladores cargadores",
+      "Peones clasificadores de botellas"
+    ],
+    "9811": [
+      "Peones de carga y descarga",
+      "Mozos de almacén",
+      "Mozos de carga y descarga, mercados de abastos",
+      "Estibadores",
+      "Maleteros de carga y descarga en aeropuerto (handling)",
+      "Mozos de mudanzas"
+    ],
+    "9812": ["Cocheros, coche a caballo"],
+    "9820": ["Reponedores de hipermercados"]
+  }
+}

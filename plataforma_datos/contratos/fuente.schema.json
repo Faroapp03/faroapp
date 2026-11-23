@@ -1,0 +1,537 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Descriptor operativo de fuente Faro v1",
+  "description": "Estructura cerrada. La carga comprueba además identidades, referencias cruzadas, duplicados por ID, correspondencia con ubicación y lector estático. El esquema no ejecuta ni autoriza un adaptador.",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "type": "integer",
+      "const": 1
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9_-]*$"
+    },
+    "tema": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9_-]*$"
+    },
+    "nombre": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^[^\\x00-\\x20](?:[^\\x00-\\x1f]*[^\\x00-\\x20])?$"
+    },
+    "institucion": {
+      "anyOf": [
+        {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^[^\\x00-\\x20](?:[^\\x00-\\x1f]*[^\\x00-\\x20])?$"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "lector": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^[^\\x00-\\x20](?:[^\\x00-\\x1f]*[^\\x00-\\x20])?$"
+    },
+    "casa_datos": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^[a-z0-9][a-z0-9_-]*$"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "significado": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^[^\\x00-\\x20](?:[^\\x00-\\x1f]*[^\\x00-\\x20])?$"
+    },
+    "alcance": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "pattern": "^[^\\x00-\\x20](?:[^\\x00-\\x1f]*[^\\x00-\\x20])?$"
+      },
+      "uniqueItems": true
+    },
+    "recursos": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/recurso"
+      },
+      "minItems": 1
+    },
+    "canales": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/canal"
+      },
+      "minItems": 1
+    },
+    "actualizacion": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/politica"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "conjuntos": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/conjunto"
+      }
+    },
+    "dependencias": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z0-9][a-z0-9_-]*$"
+      },
+      "uniqueItems": true
+    },
+    "contratos": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "pattern": "^[^\\x00-\\x20](?:[^\\x00-\\x1f]*[^\\x00-\\x20])?$"
+      },
+      "uniqueItems": true
+    },
+    "retirada": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^[^\\x00-\\x20](?:[^\\x00-\\x1f]*[^\\x00-\\x20])?$"
+    },
+    "conservacion": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^[^\\x00-\\x20](?:[^\\x00-\\x1f]*[^\\x00-\\x20])?$"
+    },
+    "produccion_local": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/produccion_local"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "etapas_locales": {
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "array",
+          "items": {
+            "enum": ["descargar", "preparar", "validar"]
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        }
+      ]
+    }
+  },
+  "required": [
+    "schema_version",
+    "id",
+    "tema",
+    "nombre",
+    "institucion",
+    "lector",
+    "casa_datos",
+    "significado",
+    "alcance",
+    "recursos",
+    "canales",
+    "actualizacion",
+    "conjuntos",
+    "dependencias",
+    "contratos",
+    "retirada",
+    "conservacion"
+  ],
+  "additionalProperties": false,
+  "$defs": {
+    "politica": {
+      "type": "object",
+      "properties": {
+        "politica": {
+          "enum": ["diaria", "mensual", "edición", "fija", "manual", "redactada"]
+        },
+        "red": {
+          "type": "boolean"
+        },
+        "frecuencia": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^[^\\x00-\\x20](?:[^\\x00-\\x1f]*[^\\x00-\\x20])?$"
+        },
+        "renovar_dias": {
+          "anyOf": [
+            {
+              "type": "integer",
+              "minimum": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "originales": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^[a-z0-9][a-z0-9_-]*$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": ["politica", "red", "frecuencia", "renovar_dias", "originales"],
+      "additionalProperties": false
+    },
+    "conjunto": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9][a-z0-9_-]*$"
+        },
+        "fuente": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^[a-z0-9][a-z0-9_-]*$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "clase": {
+          "enum": ["referencia-versionada", "cambiante", "manual", "historica", "editorial", "externa", "derivada"]
+        },
+        "alcance": {
+          "enum": [
+            "copia-local",
+            "edicion-conocida",
+            "catalogo-actual",
+            "serie-abierta",
+            "descubre-edicion",
+            "contenido-actual-acotado",
+            "recurso-actual-sin-edicion",
+            "entradas-admitidas",
+            "productor-externo"
+          ]
+        },
+        "operacion": {
+          "enum": ["descargar", "revision", "integridad", "recomponer"]
+        },
+        "intervalo_dias": {
+          "anyOf": [
+            {
+              "type": "integer",
+              "minimum": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": ["id", "fuente", "clase", "alcance", "operacion", "intervalo_dias"],
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "operacion": {
+                "const": "descargar"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "intervalo_dias": {
+                "type": "integer",
+                "minimum": 1
+              }
+            }
+          },
+          "else": {
+            "properties": {
+              "intervalo_dias": {
+                "type": "null"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "recurso": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9][a-z0-9_-]*$"
+        },
+        "tipo": {
+          "enum": ["url", "archivo", "familia"]
+        },
+        "ubicacion": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "^[^\\x00-\\x20](?:[^\\x00-\\x1f]*[^\\x00-\\x20])?$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "licencia": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "^[^\\x00-\\x20](?:[^\\x00-\\x1f]*[^\\x00-\\x20])?$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "descripcion": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^[^\\x00-\\x20](?:[^\\x00-\\x1f]*[^\\x00-\\x20])?$"
+        }
+      },
+      "required": ["id", "tipo", "ubicacion", "licencia", "descripcion"],
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "tipo": {
+                "const": "url"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "ubicacion": {
+                "type": "string",
+                "pattern": "^https?://[^\\s/]+(?:/[^\\s]*)?$"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "canal": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9][a-z0-9_-]*$"
+        },
+        "tipo": {
+          "enum": ["remoto", "local", "editorial"]
+        },
+        "recursos": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "^[^\\x00-\\x20](?:[^\\x00-\\x1f]*[^\\x00-\\x20])?$"
+          },
+          "uniqueItems": true,
+          "minItems": 1
+        },
+        "autenticacion": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^[^\\x00-\\x20](?:[^\\x00-\\x1f]*[^\\x00-\\x20])?$"
+        },
+        "limites": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "^[^\\x00-\\x20](?:[^\\x00-\\x1f]*[^\\x00-\\x20])?$"
+          },
+          "uniqueItems": true
+        },
+        "observaciones": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^[^\\x00-\\x20](?:[^\\x00-\\x1f]*[^\\x00-\\x20])?$"
+        }
+      },
+      "required": ["id", "tipo", "recursos", "autenticacion", "limites", "observaciones"],
+      "additionalProperties": false
+    },
+    "produccion_local": {
+      "type": "object",
+      "properties": {
+        "generar": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "comprobar": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        }
+      },
+      "required": ["generar", "comprobar"],
+      "additionalProperties": false
+    }
+  },
+  "oneOf": [
+    {
+      "properties": {
+        "actualizacion": {
+          "type": "object"
+        },
+        "casa_datos": {
+          "type": "string"
+        },
+        "conjuntos": {
+          "minItems": 1,
+          "items": {
+            "properties": {
+              "fuente": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "produccion_local": {
+          "type": "null"
+        }
+      }
+    },
+    {
+      "properties": {
+        "actualizacion": {
+          "type": "null"
+        },
+        "casa_datos": {
+          "type": "null"
+        },
+        "conjuntos": {
+          "maxItems": 0
+        },
+        "dependencias": {
+          "maxItems": 0
+        },
+        "produccion_local": {
+          "type": "null"
+        }
+      }
+    },
+    {
+      "properties": {
+        "actualizacion": {
+          "type": "null"
+        },
+        "casa_datos": {
+          "type": "string"
+        },
+        "conjuntos": {
+          "minItems": 1,
+          "items": {
+            "properties": {
+              "fuente": {
+                "type": "null"
+              },
+              "clase": {
+                "const": "externa"
+              },
+              "alcance": {
+                "const": "productor-externo"
+              },
+              "operacion": {
+                "const": "revision"
+              },
+              "intervalo_dias": {
+                "type": "null"
+              }
+            }
+          }
+        },
+        "produccion_local": {
+          "type": "null"
+        }
+      }
+    },
+    {
+      "required": ["produccion_local"],
+      "properties": {
+        "actualizacion": {
+          "type": "null"
+        },
+        "casa_datos": {
+          "type": "null"
+        },
+        "conjuntos": {
+          "maxItems": 0
+        },
+        "dependencias": {
+          "maxItems": 0
+        },
+        "produccion_local": {
+          "$ref": "#/$defs/produccion_local"
+        }
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "if": {
+        "required": ["etapas_locales"],
+        "properties": {
+          "etapas_locales": {
+            "type": "array"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "actualizacion": {
+            "type": "object"
+          }
+        }
+      }
+    }
+  ]
+}

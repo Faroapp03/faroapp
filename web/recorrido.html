@@ -1,0 +1,743 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta name="faro-version-copia" content="0000000000000000" />
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content"
+    />
+    <meta
+      name="description"
+      content="Faro: cuéntale a Faro a qué te dedicas, elige tu ocupación, marca tus tareas y recibe tu informe sobre la IA, tarea a tarea."
+      data-texto-content="recorrido.descripcion"
+    />
+    <meta name="theme-color" content="#f4f3f0" />
+    <meta name="apple-mobile-web-app-title" content="Faro" />
+    <!-- En iPhone y iPad instalada: barra de estado opaca y negra, como el modo noche con el que abre Faro (el
+         sistema no admite una por tema; donde lo admite, el color lo pone el theme-color de arriba). -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <title data-texto="recorrido.titulo">Tu recorrido · Faro</title>
+    <link rel="icon" href="imagenes/identidad/faro-editorial-icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="imagenes/identidad/icon-180.png" />
+    <link rel="manifest" href="manifest.webmanifest" crossorigin="use-credentials" />
+    <script src="scripts/barrera-version.js"></script>
+    <script src="scripts/tema-inicial.js"></script>
+    <script src="scripts/idioma-inicial.js"></script>
+    <template data-faro-carga><link rel="stylesheet" href="estilos/tipografias.css" /></template>
+    <template data-faro-carga><link rel="stylesheet" href="estilos/tokens.css" /></template>
+    <template data-faro-carga><link rel="stylesheet" href="estilos/base.css" /></template>
+    <!-- Las hojas del informe se preparan antes del recorrido y se aplican cuando hay un informe que vestir
+         (scripts/recorrido/paso-informe.js). Su orden es el de estilos/informe/README.md. -->
+    <template data-faro-carga
+      ><link
+        rel="stylesheet"
+        href="estilos/informe/como-lo-sabemos-y-cierre.css"
+        media="print"
+        data-hoja-informe
+      /></template
+    >
+    <template data-faro-carga
+      ><link
+        rel="stylesheet"
+        href="estilos/informe/pantallas-e-impresion.css"
+        media="print"
+        data-hoja-informe
+      /></template
+    >
+    <template data-faro-carga
+      ><link rel="stylesheet" href="estilos/informe-breve.css" media="print" data-hoja-informe /></template
+    >
+    <!-- Las hojas del recorrido, en el orden de la cascada: pantallas.css, la última, para que gane a las demás. -->
+    <template data-faro-carga><link rel="stylesheet" href="estilos/recorrido/pagina.css" /></template>
+    <template data-faro-carga><link rel="stylesheet" href="estilos/recorrido/guia.css" /></template>
+    <template data-faro-carga><link rel="stylesheet" href="estilos/recorrido/conversacion.css" /></template>
+    <template data-faro-carga><link rel="stylesheet" href="estilos/recorrido/bienvenida.css" /></template>
+    <template data-faro-carga><link rel="stylesheet" href="estilos/recorrido/tarjetas.css" /></template>
+    <template data-faro-carga><link rel="stylesheet" href="estilos/recorrido/barra-de-escritura.css" /></template>
+    <template data-faro-carga><link rel="stylesheet" href="estilos/recorrido/dialogos.css" /></template>
+    <template data-faro-carga><link rel="stylesheet" href="estilos/recorrido/informe-en-la-pagina.css" /></template>
+    <template data-faro-carga><link rel="stylesheet" href="estilos/recorrido/hoja-de-ruta.css" /></template>
+    <template data-faro-carga><link rel="stylesheet" href="estilos/recorrido/controles-formacion.css" /></template>
+    <template data-faro-carga><link rel="stylesheet" href="estilos/recorrido/horarios-formacion.css" /></template>
+    <template data-faro-carga><link rel="stylesheet" href="estilos/recorrido/acreditacion-plan.css" /></template>
+    <template data-faro-carga><link rel="stylesheet" href="estilos/recorrido/entrega-documentos.css" /></template>
+    <template data-faro-carga><link rel="stylesheet" href="estilos/recorrido/documento-hoja.css" /></template>
+    <template data-faro-carga><link rel="stylesheet" href="estilos/recorrido/plan-formacion.css" /></template>
+    <template data-faro-carga><link rel="stylesheet" href="estilos/recorrido/pantallas.css" /></template>
+    <template data-faro-carga><link rel="stylesheet" href="estilos/recorrido/paleta-recorrido.css" /></template>
+    <!-- El primer módulo: saca de la dirección el código de un resultado pasado desde otro dispositivo (#pasar=…) sin
+         esperar a nada, antes que sitio.js, que espera al diccionario. -->
+    <template data-faro-carga><script type="module" src="scripts/otro-dispositivo/fragmento.js"></script></template>
+    <template data-faro-carga><script type="module" src="scripts/sitio.js"></script></template>
+    <template data-faro-carga><script type="module" src="scripts/recorrido.js"></script></template>
+    <template data-faro-carga><script type="module" src="scripts/webmcp.js"></script></template>
+    <!-- Todos los módulos del recorrido se piden a la vez: sin esto, cada nivel de importaciones espera al anterior
+         (son diez) y la barra de escritura tarda más en funcionar. web:comprobar exige la huella de cada una. -->
+    <template data-faro-carga><link rel="modulepreload" href="idiomas/cargar.js" /></template>
+    <template data-faro-carga><link rel="modulepreload" href="scripts/acceso.js" /></template>
+    <template data-faro-carga><link rel="modulepreload" href="scripts/aviso.js" /></template>
+    <template data-faro-carga><link rel="modulepreload" href="scripts/base64url.js" /></template>
+    <template data-faro-carga><link rel="modulepreload" href="scripts/aviso-de-borrado.js" /></template>
+    <template data-faro-carga><link rel="modulepreload" href="scripts/compatibilidad.js" /></template>
+    <template data-faro-carga><link rel="modulepreload" href="scripts/confianza.js" /></template>
+    <template data-faro-carga><link rel="modulepreload" href="scripts/dom.js" /></template>
+    <template data-faro-carga><link rel="modulepreload" href="scripts/idioma.js" /></template>
+    <template data-faro-carga><link rel="modulepreload" href="scripts/instalacion.js" /></template>
+    <template data-faro-carga><link rel="modulepreload" href="scripts/json.js" /></template>
+    <template data-faro-carga><link rel="modulepreload" href="scripts/protocolo-web.js" /></template>
+    <template data-faro-carga><link rel="modulepreload" href="scripts/menu.js" /></template>
+    <template data-faro-carga><link rel="modulepreload" href="scripts/motor-local/cliente.js" /></template>
+    <template data-faro-carga><link rel="modulepreload" href="scripts/paquete-sin-conexion.js" /></template>
+    <template data-faro-carga><link rel="modulepreload" href="scripts/recorrido/altura-visible.js" /></template>
+    <template data-faro-carga><link rel="modulepreload" href="scripts/recorrido/api.js" /></template>
+    <template data-faro-carga><link rel="modulepreload" href="scripts/recorrido/api/errores.js" /></template>
+    <template data-faro-carga><link rel="modulepreload" href="scripts/recorrido/api/transporte.js" /></template>
+    <template data-faro-carga><link rel="modulepreload" href="scripts/recorrido/ayudas.js" /></template>
+    <template data-faro-carga><link rel="modulepreload" href="scripts/recorrido/compositor.js" /></template>
+    <template data-faro-carga><link rel="modulepreload" href="scripts/recorrido/conversacion.js" /></template>
+    <template data-faro-carga><link rel="modulepreload" href="scripts/recorrido/datos-traducidos.js" /></template>
+    <template data-faro-carga><link rel="modulepreload" href="scripts/recorrido/enlaces-de-salida.js" /></template>
+    <template data-faro-carga><link rel="modulepreload" href="scripts/recorrido/estado.js" /></template>
+    <template data-faro-carga><link rel="modulepreload" href="scripts/recorrido/fila-tarea.js" /></template>
+    <template data-faro-carga><link rel="modulepreload" href="scripts/recorrido/flujo-ocupacion.js" /></template>
+    <template data-faro-carga><link rel="modulepreload" href="scripts/recorrido/formato.js" /></template>
+    <template data-faro-carga><link rel="modulepreload" href="scripts/recorrido/grupos-elegidos.js" /></template>
+    <template data-faro-carga><link rel="modulepreload" href="scripts/recorrido/guia.js" /></template>
+    <template data-faro-carga><link rel="modulepreload" href="scripts/recorrido/idioma-de-los-datos.js" /></template>
+    <template data-faro-carga><link rel="modulepreload" href="scripts/recorrido/lista-oficial.js" /></template>
+    <template data-faro-carga><link rel="modulepreload" href="scripts/recorrido/memoria-llamadas.js" /></template>
+    <template data-faro-carga><link rel="modulepreload" href="scripts/otro-dispositivo/formato.js" /></template>
+    <template data-faro-carga><link rel="modulepreload" href="scripts/recorrido/minimizar.js" /></template>
+    <template data-faro-carga><link rel="modulepreload" href="scripts/recorrido/mensajes-ocupacion.js" /></template>
+    <template data-faro-carga><link rel="modulepreload" href="scripts/recorrido/navegacion.js" /></template>
+    <template data-faro-carga><link rel="modulepreload" href="scripts/recorrido/pagina.js" /></template>
+    <template data-faro-carga><link rel="modulepreload" href="scripts/recorrido/paso-ocupacion.js" /></template>
+    <template data-faro-carga><link rel="modulepreload" href="scripts/recorrido/paso-tareas.js" /></template>
+    <template data-faro-carga><link rel="modulepreload" href="scripts/recorrido/saludo.js" /></template>
+    <template data-faro-carga><link rel="modulepreload" href="scripts/recorrido/tareas-libres.js" /></template>
+    <template data-faro-carga><link rel="modulepreload" href="scripts/recorrido/tarjeta-confirmar.js" /></template>
+    <template data-faro-carga><link rel="modulepreload" href="scripts/recorrido/tarjeta-explorar.js" /></template>
+    <template data-faro-carga><link rel="modulepreload" href="scripts/recorrido/traduccion-api.js" /></template>
+    <template data-faro-carga><link rel="modulepreload" href="scripts/selector-idioma.js" /></template>
+    <template data-faro-carga><link rel="modulepreload" href="scripts/tema.js" /></template>
+    <template data-faro-carga><link rel="modulepreload" href="scripts/textos.js" /></template>
+    <template data-faro-carga><link rel="modulepreload" href="scripts/marcas-del-recorrido.js" /></template>
+    <template data-faro-carga><link rel="modulepreload" href="scripts/tiempo.js" /></template>
+    <template data-faro-carga><link rel="modulepreload" href="scripts/titulo-breve.js" /></template>
+    <template data-faro-carga><link rel="modulepreload" href="scripts/version.js" /></template>
+  </head>
+  <body class="rc-cuerpo" data-paso="1">
+    <a class="salto" href="#contenido" data-texto="comun.saltar" inert>Saltar al contenido</a>
+    <div id="faro-aviso-descarga" role="alert">
+      <p>
+        No se ha podido comprobar la versión de Faro. Recarga la página con el botón de tu navegador; si sigue igual,
+        revisa la conexión.
+      </p>
+      <p lang="ca">
+        No s’ha pogut comprovar la versió de Faro. Torna a carregar la pàgina amb el botó del navegador; si continua
+        igual, revisa la connexió.
+      </p>
+    </div>
+    <header class="cabecera" inert>
+      <button
+        class="menu-boton"
+        type="button"
+        aria-label="Abrir menú"
+        data-texto-aria-label="comun.menu.abrir"
+        aria-expanded="false"
+        aria-controls="menu"
+      >
+        <span></span><span></span><span></span>
+      </button>
+      <a class="marca" href="inicio.html">
+        <span class="solo-lectores" data-texto="comun.marca.inicio">Faro, inicio</span>
+        <span class="marca-nombre" aria-hidden="true"
+          ><span class="marca-inicial"
+            >F<svg class="marca-luz" viewBox="0 0 18 8" focusable="false" aria-hidden="true"
+              ><path d="M1 4h16" /></svg
+            ></span
+          >ARO</span
+        >
+      </a>
+      <div class="cabecera-herramientas">
+        <div class="idioma" data-selector-idioma>
+          <button
+            class="idioma-boton"
+            type="button"
+            id="idioma-boton"
+            aria-label="Idioma: Castellano"
+            data-texto-aria-label="comun.idioma.boton"
+            aria-haspopup="menu"
+            aria-expanded="false"
+            aria-controls="idioma-opciones"
+          >
+            <img
+              class="idioma-bandera idioma-bandera-es"
+              src="imagenes/identidad/bandera-espana.svg"
+              alt=""
+              width="24"
+              height="16"
+            />
+            <img
+              class="idioma-bandera idioma-bandera-ca"
+              src="imagenes/identidad/bandera-catalunya.svg"
+              alt=""
+              width="24"
+              height="16"
+            />
+          </button>
+          <div class="idioma-opciones" id="idioma-opciones" role="menu" aria-labelledby="idioma-boton" hidden>
+            <button type="button" role="menuitemradio" aria-checked="true" data-cambiar-idioma="es" lang="es"
+              ><img class="idioma-bandera" src="imagenes/identidad/bandera-espana.svg" alt="" width="24" height="16" />
+              <span>Castellano</span></button
+            >
+            <button type="button" role="menuitemradio" aria-checked="false" data-cambiar-idioma="ca" lang="ca"
+              ><img
+                class="idioma-bandera"
+                src="imagenes/identidad/bandera-catalunya.svg"
+                alt=""
+                width="24"
+                height="16"
+              /><span>Català</span></button
+            >
+          </div>
+        </div>
+        <button
+          class="tema-boton"
+          type="button"
+          aria-label="Cambiar a modo día"
+          title="Modo día / noche"
+          data-texto-title="comun.tema.titulo"
+        >
+          <svg class="icono-sol" viewBox="0 0 24 24" aria-hidden="true" focusable="false"
+            ><circle cx="12" cy="12" r="4.5" />
+            <path
+              d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"
+            /></svg
+          >
+          <svg class="icono-luna" viewBox="0 0 24 24" aria-hidden="true" focusable="false"
+            ><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z" /></svg
+          >
+        </button>
+      </div>
+    </header>
+    <div class="menu-velo" id="menu-velo" hidden inert></div>
+    <nav id="menu" class="menu" hidden aria-label="Menú principal" data-texto-aria-label="comun.menu.nombre" inert>
+      <ul class="menu-lista">
+        <li
+          ><a href="inicio.html"><span class="menu-destino" data-texto="comun.seccion.inicio">Inicio</span></a></li
+        >
+        <li
+          ><a href="entender-ia.html"
+            ><span class="menu-destino" data-texto="comun.seccion.ia">Qué es la IA</span></a
+          ></li
+        >
+        <li
+          ><a href="que-es-faro.html"><span class="menu-destino">Faro</span></a></li
+        >
+        <li
+          ><a href="recorrido.html" aria-current="page"
+            ><span class="menu-destino" data-texto="comun.seccion.empezar">Empezar</span></a
+          ></li
+        >
+        <li
+          ><a href="biblioteca.html"
+            ><span class="menu-destino" data-texto="comun.seccion.biblioteca">Biblioteca</span></a
+          ></li
+        >
+        <li
+          ><a href="cursos.html"><span class="menu-destino" data-texto="comun.seccion.cursos">Cursos</span></a></li
+        >
+        <li
+          ><a href="datos-globales.html"
+            ><span class="menu-destino" data-texto="comun.seccion.datos-globales">Datos globales</span></a
+          ></li
+        >
+        <li data-pasar-entrada hidden
+          ><button type="button" class="menu-pasar" data-pasar-dispositivo
+            ><span class="menu-destino" data-texto="comun.menu.pasar">Pasar a otro dispositivo</span></button
+          ></li
+        >
+      </ul>
+    </nav>
+    <!-- Con algo que perder, los enlaces que sacan de la página se abren en otra pestaña y este texto los describe
+         (scripts/recorrido/enlaces-de-salida.js). -->
+    <p id="rc-abre-en-otra-pestana" hidden inert data-texto="recorrido.abre-en-otra-pestana"
+      >Se abre en otra pestaña: tu conversación sigue en esta.</p
+    >
+
+    <main id="contenido" class="rc-pagina" inert>
+      <h1 class="solo-lectores" data-texto="recorrido.titulo-principal">Tu recorrido con Faro</h1>
+      <div class="rc-espacio">
+        <!-- La guía: los cuatro pasos, con el que está en curso (scripts/recorrido/guia.js). En pantallas estrechas se
+             abre en un diálogo desde «Paso 1 de 4». -->
+        <aside class="rc-guia" id="rc-guia" aria-labelledby="t-guia">
+          <div class="rc-guia-cabecera">
+            <h2 id="t-guia" data-texto="recorrido.guia.titulo">Tu espacio</h2>
+            <p data-texto="recorrido.guia.lema">Un poco de claridad, paso a paso.</p>
+          </div>
+          <button type="button" class="rc-nueva" data-nueva-conversacion data-texto="recorrido.nueva.boton"
+            ><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 5v14M5 12h14" /></svg>Nueva
+            conversación</button
+          >
+          <p class="rc-rotulo" id="t-pasos" data-texto="recorrido.pasos.titulo">Tu recorrido</p>
+          <ol class="rc-pasos" aria-labelledby="t-pasos">
+            <li data-paso="1" aria-current="step"
+              ><span class="rc-paso-numero" aria-hidden="true">1</span
+              ><span class="rc-paso-textos"
+                ><strong data-texto="recorrido.paso.1.nombre">Tu día a día</strong
+                ><span data-texto="recorrido.paso.1.detalle">Cuéntame cómo trabajas</span></span
+              ></li
+            >
+            <li data-paso="2"
+              ><span class="rc-paso-numero" aria-hidden="true">2</span
+              ><span class="rc-paso-textos"
+                ><strong data-texto="recorrido.paso.2.nombre">Tu ocupación</strong
+                ><span data-texto="recorrido.paso.2.detalle">Busco dónde encaja</span></span
+              ></li
+            >
+            <li data-paso="3"
+              ><span class="rc-paso-numero" aria-hidden="true">3</span
+              ><span class="rc-paso-textos"
+                ><strong data-texto="recorrido.paso.3.nombre">Tus tareas</strong
+                ><span data-texto="recorrido.paso.3.detalle">Revisa lo que haces</span></span
+              ></li
+            >
+            <li data-paso="4"
+              ><span class="rc-paso-numero" aria-hidden="true">4</span
+              ><span class="rc-paso-textos"
+                ><strong data-texto="recorrido.paso.4.nombre">Tu informe</strong
+                ><span data-texto="recorrido.paso.4.detalle">Resultados y orientación</span></span
+              ></li
+            >
+          </ol>
+        </aside>
+
+        <div class="rc" id="recorrido">
+          <header class="rc-chat-cabecera">
+            <div class="rc-chat-identidad">
+              <button
+                type="button"
+                class="rc-icono rc-alternar-guia"
+                id="alternar-guia"
+                aria-label="Guía del recorrido"
+                aria-expanded="true"
+                aria-controls="rc-guia"
+                title="Ocultar la guía"
+                data-texto-aria-label="recorrido.guia.alternar"
+                data-texto-title="recorrido.guia.ocultar"
+                ><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"
+                  ><rect x="3" y="4" width="18" height="16" rx="3" /><path d="M9 4v16" /></svg
+                ></button
+              >
+              <a class="rc-icono rc-volver" href="inicio.html"
+                ><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m14 6-6 6 6 6" /></svg
+                ><span class="solo-lectores" data-texto="recorrido.volver-inicio">Volver al inicio de Faro</span></a
+              >
+              <span class="rc-monograma" aria-hidden="true">F</span>
+              <div class="rc-identidad-textos">
+                <p class="rc-identidad-nombre">Faro <span class="rc-marca-ia">IA</span></p>
+                <p class="rc-identidad-lema" data-texto="recorrido.identidad.lema"
+                  >Tu trabajo y la inteligencia artificial</p
+                >
+              </div>
+            </div>
+            <div class="rc-chat-herramientas">
+              <button type="button" class="rc-ver-recorrido" id="ver-recorrido" aria-haspopup="dialog"
+                ><span class="rc-paso-nombre" id="rc-paso-nombre" data-texto="recorrido.paso.1.nombre"
+                  >Tu día a día</span
+                ><span class="rc-paso-contador" id="rc-paso-cifra">Paso 1 de 4</span
+                ><svg viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="m7 4 6 6-6 6" /></svg></button
+              >
+              <button
+                type="button"
+                class="rc-icono rc-nueva-corta"
+                data-nueva-conversacion
+                aria-label="Nueva conversación"
+                title="Nueva conversación"
+                data-texto-aria-label="recorrido.nueva.titulo"
+                data-texto-title="recorrido.nueva.titulo"
+                ><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"
+                  ><path d="M12 5v14M5 12h14" /></svg
+                ></button
+              >
+            </div>
+          </header>
+          <!-- El avance: un tramo por paso, lleno hasta el que está en curso (<body data-paso>, que pone
+               navegacion.js). Es decorativo: el paso lo dice el botón «Paso N de 4», que forma parte de su nombre
+               accesible. -->
+          <div class="rc-avance" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+
+          <noscript
+            ><p class="rc-sin-js"
+              >El recorrido necesita JavaScript para hablar con Faro. Actívalo en tu navegador y vuelve a cargar la
+              página. Mientras tanto, puedes leer <a href="que-es-faro.html#como-funciona">cómo funciona Faro</a> y ver
+              un
+              <a href="informe-ejemplo.html">informe de ejemplo</a>.</p
+            ></noscript
+          >
+          <!-- Si no ha llegado ningún diccionario, Faro no tiene con qué hablar: scripts/recorrido.js copia el aviso de
+               la plantilla en la alerta. La alerta está vacía al cargar porque un lector de pantalla anuncia lo que
+               entra en ella, no lo que ya estaba (WCAG 4.1.3). -->
+          <div id="rc-sin-textos" role="alert"></div>
+          <template id="rc-sin-textos-aviso"
+            ><p class="rc-sin-js" data-texto="recorrido.sin-textos"
+              >No se han podido cargar los textos de Faro. Comprueba tu conexión y
+              <a href="recorrido.html" data-texto="recorrido.sin-textos.recargar">vuelve a cargar la página</a>.</p
+            ></template
+          >
+          <!-- Confirmaciones pequeñas para lectores de pantalla («Tarea 2 quitada»): siempre en la página y vacía
+               cuando no hay nada que decir (scripts/recorrido/pagina.js). -->
+          <p class="solo-lectores" id="rc-estado" role="status" aria-live="polite"></p>
+
+          <!-- Una sola superficie: los turnos de Faro y de la persona, y bajo ellos las tarjetas de cada paso. -->
+          <!-- biome-ignore lint/a11y/noNoninteractiveTabindex: es lo único que se desplaza; sin foco, el teclado no
+               podría volver a los mensajes anteriores (WCAG 2.1.1) -->
+          <section class="rc-conversacion" id="rc-conversacion" aria-labelledby="t-conversacion" tabindex="0">
+            <h2 class="solo-lectores" id="t-conversacion" data-texto="recorrido.conversacion.titulo"
+              >Conversación con Faro</h2
+            >
+            <!-- El principio de la conversación, como en la maqueta: que Faro es una IA y que no hace falta dar nombres,
+                 y el separador «Hoy». Solo se ven con la conversación empezada: en la bienvenida ya lo dicen la
+                 barra de escritura y su línea de privacidad (estilos/recorrido/conversacion.css). -->
+            <p class="rc-aviso-inicio" data-texto="recorrido.conversacion.aviso"
+              >Faro es una IA y puede equivocarse. No hace falta que pongas tu nombre ni el de tu empresa.</p
+            >
+            <p class="rc-fecha" data-texto="recorrido.conversacion.hoy">Hoy</p>
+            <!-- Solo mensajes: cada uno nuevo se anuncia una vez (scripts/recorrido/conversacion.js). -->
+            <div class="rc-log" id="conversacion" role="log" aria-live="polite" aria-labelledby="t-conversacion"></div>
+            <div class="rc-sugerencias" id="sugerencias" hidden></div>
+
+            <!-- Paso 2 · La ocupación: su contenido cambia con cada fase (confirmar, elegir una opción, explorar la
+                 clasificación oficial) y lo pinta scripts/recorrido/paso-ocupacion.js. -->
+            <section class="rc-tarjeta" id="tarjeta-ocupacion" aria-labelledby="t-tarjeta-ocupacion" hidden>
+              <h3 id="t-tarjeta-ocupacion" data-texto="recorrido.paso.2.nombre">Tu ocupación</h3>
+              <form id="form-ocupacion" novalidate autocomplete="off"></form>
+            </section>
+
+            <!-- Paso 3 · Las tareas: las oficiales del grupo para marcar y las que cuenta la persona -->
+            <section class="rc-tarjeta" id="tarjeta-tareas" aria-labelledby="t-tarjeta-tareas" hidden>
+              <h3 id="t-tarjeta-tareas" data-texto="recorrido.paso.3.nombre">Tus tareas</h3>
+              <p class="rc-tarjeta-subtitulo" id="ocupacion-elegida"></p>
+              <div class="rc-avisos" id="avisos-tareas"></div>
+              <p class="rc-revisar" id="revisar-ocupacion" hidden
+                ><button type="button" class="rc-boton-secundario" data-volver="2" data-texto="recorrido.tareas.revisar"
+                  >Revisar mi ocupación</button
+                ></p
+              >
+              <form id="form-tareas" novalidate autocomplete="off">
+                <div id="bloques-oficiales"></div>
+                <section class="rc-bloque" aria-labelledby="t-algo-mas">
+                  <h4 class="rc-bloque-titulo" id="t-algo-mas" data-texto="recorrido.tareas.algo-mas"
+                    >¿Haces algo más?</h4
+                  >
+                  <p class="rc-nota" data-texto="recorrido.tareas.algo-mas-nota"
+                    >Pulsa «Añadir otra tarea» y escríbelo con tus palabras. Si corresponde a una tarea oficial, elígela
+                    en su lista; si no, se conserva en tu informe sin nota.</p
+                  >
+                  <ol class="rc-tareas" id="lista-tareas"></ol>
+                  <button type="button" class="rc-boton-anadir" id="boton-anadir" data-texto="recorrido.tareas.anadir"
+                    ><svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M8 3v10M3 8h10" /></svg
+                    >Añadir otra tarea</button
+                  >
+                </section>
+                <!-- Al pie, lo que falta para confirmar (paso-tareas.js) y «Confirmar», que pide el informe y queda
+                     como «✓ Confirmado» mientras se prepara. -->
+                <div class="rc-acciones">
+                  <p class="rc-falta" id="falta-tareas"></p>
+                  <button type="button" class="rc-boton-secundario" data-volver="2" data-texto="recorrido.volver"
+                    >Volver</button
+                  >
+                  <button type="submit" class="rc-boton-principal" id="confirmar-tareas"
+                    ><span id="confirmar-marca" aria-hidden="true" hidden>✓ </span
+                    ><span id="confirmar-rotulo" data-texto="recorrido.tareas.confirmar">Confirmar</span></button
+                  >
+                </div>
+              </form>
+            </section>
+          </section>
+
+          <!-- Paso 4 · El informe, pintado por el motor de Faro, a todo el ancho bajo la conversación -->
+          <div class="rc-informe" id="paso-4" hidden>
+            <!-- El informe se escribe en el idioma en que se pidió: cambiar el de la página no lo traduce, y esta nota
+                 lo dice mientras no coincidan (scripts/recorrido/paso-informe.js). -->
+            <p
+              class="rc-nota rc-nota-informe"
+              id="nota-idioma-informe"
+              hidden
+              data-texto="recorrido.informe.otro-idioma"
+              >Tu informe está escrito en el idioma en que lo pediste: cambiar el de la página no lo traduce. Vuelve a
+              tus tareas y pídelo otra vez para leerlo en este idioma.</p
+            >
+            <div id="informe" lang="es"></div>
+            <!-- El documento de la hoja de ruta (scripts/recorrido/documento-hoja.js): se pinta al entregar la carpeta y
+                 se ve en lugar del informe con data-vista="hoja" en #paso-4. -->
+            <div id="hoja-de-ruta" class="rc-hoja-documento"></div>
+            <p class="rc-pasar" data-pasar-entrada hidden
+              ><button
+                type="button"
+                class="rc-boton-secundario"
+                id="pasar-al-final"
+                data-pasar-dispositivo
+                data-texto="recorrido.pasar.entrada"
+                >Pasar a otro dispositivo</button
+              ></p
+            >
+          </div>
+
+          <!-- La barra de escritura, al pie de la conversación; sin JavaScript no se muestra, porque no podría
+               hacer nada. -->
+          <form class="rc-compositor" id="compositor" novalidate autocomplete="off" hidden>
+            <div class="rc-compositor-interior">
+              <section class="rc-panel rc-privacidad" id="aviso-privacidad" aria-labelledby="t-privacidad" hidden>
+                <h2 id="t-privacidad" tabindex="-1" data-texto="recorrido.privacidad.titulo"
+                  >Qué hacemos con tu texto</h2
+                >
+                <p data-aviso data-texto="recorrido.privacidad.local"
+                  >Faro es un sistema de IA con modelos propios que funcionan en este dispositivo. Utiliza datos
+                  oficiales para orientarte sobre tu trabajo. Evita escribir tu nombre, el de tu empresa, datos de salud
+                  o datos de otras personas.</p
+                >
+                <p data-aviso data-texto="recorrido.privacidad.texto-2"
+                  >Lo que escribes solo vive en esta página: al cerrarla o al borrar tu informe, desaparece de Faro.</p
+                >
+                <p class="rc-privacidad-pie"
+                  ><a href="informacion-y-creditos.html#t-datos" data-texto="recorrido.privacidad.mas"
+                    >Más sobre tus datos y tus derechos</a
+                  ><button type="button" class="rc-boton-secundario" id="cerrar-privacidad" data-texto="comun.cerrar"
+                    >Cerrar</button
+                  ></p
+                >
+              </section>
+              <!-- «Ayuda»: solo comienzos de frase, nunca nombres de ocupaciones (scripts/recorrido/ayudas.js). -->
+              <section class="rc-panel rc-ayudas" id="rc-ayudas" aria-labelledby="t-ayudas" hidden>
+                <div class="rc-panel-cabecera">
+                  <h2 id="t-ayudas" data-texto="recorrido.ayudas.titulo">Ayuda para empezar</h2>
+                  <button
+                    type="button"
+                    class="rc-icono"
+                    id="cerrar-ayudas"
+                    aria-label="Cerrar la ayuda"
+                    data-texto-aria-label="recorrido.ayudas.cerrar"
+                    ><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"
+                      ><path d="M6 6l12 12M18 6 6 18" /></svg
+                    ></button
+                  >
+                </div>
+                <p class="rc-ayudas-descripcion" id="rc-ayudas-descripcion"></p>
+                <div class="rc-ayudas-opciones" id="rc-ayudas-opciones"></div>
+                <p class="rc-ayudas-nota" data-texto="recorrido.ayudas.nota"
+                  >Se añade a lo que llevas escrito. Tú decides cuándo enviarlo.</p
+                >
+              </section>
+              <div class="rc-caja">
+                <label
+                  class="rc-caja-etiqueta"
+                  for="mensaje"
+                  id="etiqueta-mensaje"
+                  data-texto="recorrido.compositor.etiqueta"
+                  >Tu mensaje para Faro</label
+                >
+                <textarea
+                  id="mensaje"
+                  rows="1"
+                  maxlength="4000"
+                  enterkeyhint="send"
+                  autocomplete="off"
+                  aria-describedby="contador-mensaje ayuda-compositor"
+                ></textarea>
+                <div class="rc-caja-barra">
+                  <div class="rc-caja-herramientas">
+                    <button
+                      type="button"
+                      class="rc-control"
+                      id="abrir-ayudas"
+                      data-texto="recorrido.ayudas.boton"
+                      aria-expanded="false"
+                      aria-controls="rc-ayudas"
+                      ><svg viewBox="0 0 20 20" aria-hidden="true" focusable="false"
+                        ><path d="M7 12c0-2-2.5-2.5-2.5-5a5.5 5.5 0 0 1 11 0c0 2.5-2.5 3-2.5 5M7 15h6M8 18h4" /></svg
+                      >Ayuda</button
+                    >
+                    <button type="button" class="rc-control" id="ampliar"
+                      ><svg viewBox="0 0 20 20" aria-hidden="true" focusable="false"
+                        ><path d="M7 3H3v4M13 3h4v4M7 17H3v-4M13 17h4v-4" /></svg
+                      ><span id="ampliar-texto" data-texto="recorrido.compositor.ampliar">Ampliar</span></button
+                    >
+                  </div>
+                  <div class="rc-caja-envio">
+                    <span class="rc-teclas" id="rc-teclas" aria-hidden="true" data-texto="recorrido.compositor.enter"
+                      >Enter para enviar</span
+                    >
+                    <button
+                      type="submit"
+                      class="rc-enviar"
+                      aria-label="Enviar a Faro"
+                      data-texto-aria-label="recorrido.compositor.enviar"
+                      ><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"
+                        ><path d="M12 19V5M5.5 11.5 12 5l6.5 6.5" /></svg
+                      ></button
+                    >
+                  </div>
+                </div>
+              </div>
+              <p class="rc-contador" id="contador-mensaje"></p>
+              <p class="rc-compositor-pie" id="ayuda-compositor"
+                ><span data-texto="recorrido.compositor.aviso-ia">Faro es una IA y puede equivocarse.</span
+                ><span class="rc-sin-nombres solo-lectores" data-texto="recorrido.compositor.sin-nombres"
+                  >No hace falta que pongas tu nombre, el de tu empresa, compañeros o clientes.</span
+                ><a
+                  class="rc-enlace rc-marca-traduccion"
+                  id="marca-traduccion"
+                  href="creditos.html#f-oit"
+                  data-texto="recorrido.compositor.traduccion"
+                  hidden
+                  >Títulos y tareas traducidos con IA</a
+                ><span class="solo-lectores" data-texto="recorrido.compositor.teclas">
+                  Enter envía y Mayúsculas más Enter hace un salto de línea; con la escritura ampliada, Enter hace un
+                  salto de línea y Control o Comando más Enter envía.
+                </span><button
+                  type="button"
+                  class="rc-enlace"
+                  id="abrir-privacidad"
+                  data-texto="recorrido.privacidad.boton"
+                  aria-expanded="false"
+                  aria-controls="aviso-privacidad"
+                  ><svg viewBox="0 0 20 20" aria-hidden="true" focusable="false"
+                    ><path d="M10 2 4 5v5c0 4 6 7 6 7s6-3 6-7V5l-6-3Z" /></svg
+                  >Privacidad</button
+                ></p
+              >
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
+
+    <footer class="pie" inert>
+      <div class="pie-fila"
+        ><nav aria-label="Información y ayuda" data-texto-aria-label="comun.pie.nombre"
+          ><a href="creditos.html" data-texto="comun.pie.creditos">Créditos</a
+          ><a href="informacion-y-creditos.html#t-datos" data-texto="comun.pie.datos">Tus datos</a
+          ><a href="accesibilidad.html" data-texto="comun.pie.accesibilidad">Accesibilidad</a
+          ><a href="verificable.html" data-texto="comun.pie.verificable">Faro verificable</a
+          ><a class="pie-doctor" href="doctor.html" data-texto="comun.pie.doctor">Comprobar Faro</a
+          ><a class="pie-instalar" href="instalar.html" data-texto="comun.pie.instalar">Instalar Faro</a></nav
+        ><p class="pie-derechos" data-texto="comun.pie.derechos">© 2026 Equipo Faro</p></div
+      >
+    </footer>
+    <!-- «Paso 1 de 4»: el recorrido en un diálogo; sus pasos son una copia de los de la guía
+         (scripts/recorrido/guia.js). -->
+    <dialog class="rc-dialogo" id="dialogo-recorrido" aria-labelledby="t-dialogo-recorrido" inert>
+      <div class="rc-dialogo-cabecera">
+        <h2 id="t-dialogo-recorrido" data-texto="recorrido.pasos.titulo">Tu recorrido</h2>
+        <button
+          type="button"
+          class="rc-icono"
+          id="cerrar-recorrido"
+          aria-label="Cerrar"
+          data-texto-aria-label="comun.cerrar"
+          ><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6 6 18" /></svg></button
+        >
+      </div>
+      <p data-texto="recorrido.dialogo.texto">Una conversación, cuatro pasos. Puedes volver atrás cuando quieras.</p>
+      <div class="rc-dialogo-pasos" id="dialogo-pasos"></div>
+      <p class="rc-pasar" data-pasar-entrada hidden
+        ><button type="button" class="rc-boton-secundario" data-pasar-dispositivo data-texto="recorrido.pasar.entrada"
+          >Pasar a otro dispositivo</button
+        ></p
+      >
+      <p class="rc-dialogo-aviso" data-texto="recorrido.dialogo.aviso"
+        >Las notas vienen de la OIT; las tareas sin referencia oficial aparecen sin nota.</p
+      >
+      <nav class="rc-dialogo-enlaces" aria-label="Más sobre Faro" data-texto-aria-label="recorrido.dialogo.enlaces"
+        ><a href="inicio.html" data-texto="comun.seccion.inicio">Inicio</a
+        ><a href="que-es-faro.html#como-funciona" data-texto="comun.seccion.como">Cómo funciona</a
+        ><a href="que-es-faro.html#resultados" data-texto="que-es-faro.enlace.informe">Cómo leer el informe</a
+        ><a href="doctor.html" data-texto="comun.pie.doctor">¿Algo no funciona? Comprobar Faro</a
+        ><a href="creditos.html" data-texto="comun.pie.creditos">Créditos</a
+        ><a href="informacion-y-creditos.html#t-datos" data-texto="comun.pie.datos">Tus datos</a
+        ><a href="accesibilidad.html" data-texto="comun.pie.accesibilidad">Accesibilidad</a
+        ><button type="button" data-cambiar-tema>Cambiar el tema</button></nav
+      >
+      <fieldset class="rc-dialogo-idioma">
+        <legend data-texto="comun.idioma.titulo">Idioma</legend>
+        <button type="button" data-cambiar-idioma="es" lang="es" aria-pressed="true"
+          ><img class="idioma-bandera" src="imagenes/identidad/bandera-espana.svg" alt="" width="24" height="16" />
+          <span>Castellano</span></button
+        >
+        <button type="button" data-cambiar-idioma="ca" lang="ca" aria-pressed="false"
+          ><img class="idioma-bandera" src="imagenes/identidad/bandera-catalunya.svg" alt="" width="24" height="16" />
+          <span>Català</span></button
+        >
+      </fieldset>
+    </dialog>
+    <dialog class="rc-dialogo rc-dialogo-pasar" id="dialogo-pasar" aria-labelledby="t-dialogo-pasar" inert>
+      <div class="rc-dialogo-cabecera">
+        <h2 id="t-dialogo-pasar" data-texto="recorrido.pasar.titulo">Pasar a otro dispositivo</h2>
+        <button
+          type="button"
+          class="rc-icono"
+          id="cerrar-pasar"
+          aria-label="Cerrar"
+          data-texto-aria-label="comun.cerrar"
+          ><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6 6 18" /></svg></button
+        >
+      </div>
+      <p data-texto="recorrido.pasar.aviso"
+        >Quien escanee el código o reciba el enlace podrá ver tu informe con tu ocupación y las tareas oficiales que has
+        elegido: el código no va cifrado. No lleva nada de lo que has escrito con tus palabras. Ese dispositivo puede
+        recordar el enlace en su historial.</p
+      >
+      <div
+        class="rc-pasar-qr"
+        id="pasar-qr"
+        role="img"
+        aria-label="Código QR con el enlace a tu informe. El mismo enlace está debajo."
+        data-texto-aria-label="recorrido.pasar.qr"
+        ><svg viewBox="0 0 1 1" shape-rendering="crispEdges" aria-hidden="true" focusable="false"
+          ><rect width="1" height="1" /><path d="" /></svg
+        ></div
+      >
+      <label for="pasar-enlace" data-texto="recorrido.pasar.enlace">O abre este enlace en el otro dispositivo</label>
+      <input id="pasar-enlace" class="rc-pasar-enlace" type="text" readonly autocomplete="off" spellcheck="false" />
+      <div class="rc-dialogo-acciones">
+        <button type="button" class="rc-boton-principal" id="pasar-copiar" data-texto="recorrido.pasar.copiar"
+          >Copiar el enlace</button
+        >
+      </div>
+      <p class="rc-pasar-estado" id="pasar-estado" role="status"></p>
+    </dialog>
+
+    <dialog
+      class="rc-dialogo"
+      id="dialogo-nueva"
+      aria-labelledby="t-dialogo-nueva"
+      aria-describedby="texto-dialogo-nueva"
+      inert
+    >
+      <form method="dialog">
+        <span class="rc-monograma" aria-hidden="true">F</span>
+        <h2 id="t-dialogo-nueva" data-texto="recorrido.nueva.titulo">Nueva conversación</h2>
+        <p id="texto-dialogo-nueva" data-texto="recorrido.nueva.texto"
+          >Se borrarán esta conversación y todo tu recorrido. Si prefieres, te quedas aquí y sigues cuando quieras.</p
+        >
+        <div class="rc-dialogo-acciones">
+          <button type="submit" value="seguir" class="rc-boton-secundario" data-texto="recorrido.nueva.seguir"
+            >Seguir aquí</button
+          >
+          <button
+            type="submit"
+            value="borrar"
+            id="confirmar-dialogo-nueva"
+            class="rc-boton-principal"
+            data-texto="recorrido.nueva.borrar"
+            >Empezar de nuevo</button
+          >
+        </div>
+      </form>
+    </dialog>
+    <section id="faro-version-aviso" role="status" aria-live="polite" hidden></section>
+  </body>
+</html>

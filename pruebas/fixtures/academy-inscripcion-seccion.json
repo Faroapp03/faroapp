@@ -1,0 +1,34 @@
+{
+  "naturaleza": "Fragmentos de prueba de la sección pública revisada; reconstruir HTML en una prueba no es una consulta ni conserva bytes HTTP originales.",
+  "url": "https://academy.claude.com/help/faq",
+  "captura_original_sha256": "8e02619fc913a7f434498b446eb33c9f6ac982e51f93b02426437587830f0ace",
+  "captura_original_utc": "2026-10-23T19:14:12.072084Z",
+  "bloques": [
+    ["h2", "Sign-in and access"],
+    ["h3", "Why can’t I sign in?"],
+    [
+      "p",
+      "Academy signs you in with your Claude account: click “Sign in”, authorize at claude.ai, and you’re back. Two common issues: (1) if you don’t have a Claude account yet, create one first at claude.ai; (2) if you have multiple Claude accounts or organizations, Academy connects to the one you’re signed in to at claude.ai when you authorize. Sign out of claude.ai, sign back in with the account you want, and try again."
+    ],
+    ["h3", "Why is Academy a separate site from Claude? Why do I have to sign in again?"],
+    [
+      "p",
+      "Academy lives at its own address, so signing in is a quick one-time authorization: we send you to claude.ai, you approve, and you’re back. Your Academy identity is your Claude account; there’s nothing separate to manage."
+    ],
+    ["h3", "I signed in with my company’s SSO, but Academy shows my personal account"],
+    [
+      "p",
+      "Academy links your learning to the Claude account, and the organization inside it, that was active when you authorized. If that was a personal account, your enrollments were recorded there. To get company-attributed learning going forward: sign out of claude.ai, sign back in through your company’s SSO, then re-authorize Academy. Enrollments and progress on the personal account stay there, and they can’t be moved to another account."
+    ],
+    ["h3", "What is Claude Academy? Is it free? Do I need a paid plan or a work account?"],
+    [
+      "p",
+      "Claude Academy is Anthropic’s home for learning, with structured courses and tutorials on AI and Claude. It’s free: you can browse the catalog without signing in at all, and signing in with a free Claude account is what saves your progress and lets you earn completion badges. You don’t need a paid plan, and you don’t need a work account. A personal Claude account works."
+    ],
+    ["h3", "Academy says I haven’t been added to my organization yet"],
+    [
+      "p",
+      "That message means your Claude account isn’t attached to your organization’s Academy access yet. It isn’t something you can fix from Academy. Ask your organization’s Claude admin to add you. Once they have, sign out of claude.ai, sign back in, and re-authorize Academy."
+    ]
+  ]
+}

@@ -1,0 +1,2000 @@
+{
+  "version": 1,
+  "registros": [
+    {
+      "unidad": {
+        "id": "cibernarium-edicion:1493484",
+        "programa_id": "cibernarium:1493484",
+        "tipo": "edicion"
+      },
+      "titulo": "ACTIC - Preparació per al certificat - curs online 1/6 - Fonaments TIC i gestió del Sistema Operatiu",
+      "contenido_sha256": "8c6ea8f963cf526a04ce7a7cd6a6da88ccefebabe64b2c4b4299be16661e69ee",
+      "captura_sha256": "4eb4e2885591d45bbb8dcfdd783762722551bd8884eab04646f5c89275e8ca9e",
+      "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=270&_cAct_INSTANCE_uhcx_end=285&_cAct_INSTANCE_uhcx_typeView=list",
+      "capturadoEl": "2026-11-18T18:14:49.135428Z",
+      "valor": "inicial",
+      "literal": "Formació tecnològica bàsica",
+      "campo": "categoria"
+    },
+    {
+      "unidad": {
+        "id": "cibernarium-edicion:1493485",
+        "programa_id": "cibernarium:1493485",
+        "tipo": "edicion"
+      },
+      "titulo": "ACTIC - Preparació per al certificat - curs online 2/6 - Internet i comunicació digital",
+      "contenido_sha256": "cdc12043037179a12c3ff3409b61986ec01eac1f3571a15ae86a91c7ba0f2795",
+      "captura_sha256": "36feb2899d135737c5925867e414c02d4a0a97819b7a0e9e975c35a584e3ec1d",
+      "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=255&_cAct_INSTANCE_uhcx_end=270&_cAct_INSTANCE_uhcx_typeView=list",
+      "capturadoEl": "2026-11-18T18:14:45.856835Z",
+      "valor": "inicial",
+      "literal": "Formació tecnològica bàsica",
+      "campo": "categoria"
+    },
+    {
+      "unidad": {
+        "id": "cibernarium-edicion:1493486",
+        "programa_id": "cibernarium:1493486",
+        "tipo": "edicion"
+      },
+      "titulo": "ACTIC - Preparació per al certificat - Curs online 3/6 - Cultura, participació i civisme digital",
+      "contenido_sha256": "e098696242392d16b73f0abe20026b777e19190eae3e7970746997c1789a9a14",
+      "captura_sha256": "36feb2899d135737c5925867e414c02d4a0a97819b7a0e9e975c35a584e3ec1d",
+      "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=255&_cAct_INSTANCE_uhcx_end=270&_cAct_INSTANCE_uhcx_typeView=list",
+      "capturadoEl": "2026-11-18T18:14:45.856835Z",
+      "valor": "inicial",
+      "literal": "Formació tecnològica bàsica",
+      "campo": "categoria"
+    },
+    {
+      "unidad": {
+        "id": "cibernarium-edicion:1493489",
+        "programa_id": "cibernarium:1493489",
+        "tipo": "edicion"
+      },
+      "titulo": "ACTIC - Preparació per al certificat - Curs online 4/6 - Tractament de la informació escrita",
+      "contenido_sha256": "64bfc28cf971f7863ad007aa36bc2dad4c48e5d66207b472ff89e98c7d5fad6f",
+      "captura_sha256": "36feb2899d135737c5925867e414c02d4a0a97819b7a0e9e975c35a584e3ec1d",
+      "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=255&_cAct_INSTANCE_uhcx_end=270&_cAct_INSTANCE_uhcx_typeView=list",
+      "capturadoEl": "2026-11-18T18:14:45.856835Z",
+      "valor": "inicial",
+      "literal": "Formació tecnològica bàsica",
+      "campo": "categoria"
+    },
+    {
+      "unidad": {
+        "id": "cibernarium-edicion:1493490",
+        "programa_id": "cibernarium:1493490",
+        "tipo": "edicion"
+      },
+      "titulo": "ACTIC - Preparació per al certificat - Curs online 5/6 -Tractament de la informació numèrica",
+      "contenido_sha256": "52651f4ef39ae89790be86b4e9d84c40f87417d4fc47216d11898ad9420b0e43",
+      "captura_sha256": "36feb2899d135737c5925867e414c02d4a0a97819b7a0e9e975c35a584e3ec1d",
+      "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=255&_cAct_INSTANCE_uhcx_end=270&_cAct_INSTANCE_uhcx_typeView=list",
+      "capturadoEl": "2026-11-18T18:14:45.856835Z",
+      "valor": "inicial",
+      "literal": "Formació tecnològica bàsica",
+      "campo": "categoria"
+    },
+    {
+      "unidad": {
+        "id": "cibernarium-edicion:1493493",
+        "programa_id": "cibernarium:1493493",
+        "tipo": "edicion"
+      },
+      "titulo": "ACTIC - Preparació per al certificat - Curs online 6/6 - Tractament de les dades i presentació de continguts",
+      "contenido_sha256": "35401a97bcabe5439385b9c32d6745e9483cf149879d2b28311422938f5f064e",
+      "captura_sha256": "36feb2899d135737c5925867e414c02d4a0a97819b7a0e9e975c35a584e3ec1d",
+      "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=255&_cAct_INSTANCE_uhcx_end=270&_cAct_INSTANCE_uhcx_typeView=list",
+      "capturadoEl": "2026-11-18T18:14:45.856835Z",
+      "valor": "inicial",
+      "literal": "Formació tecnològica bàsica",
+      "campo": "categoria"
+    },
+    {
+      "unidad": {
+        "id": "cibernarium-edicion:1511060",
+        "programa_id": "cibernarium:1511060",
+        "tipo": "edicion"
+      },
+      "titulo": "FIGMA: Disseny d'interfícies UX",
+      "contenido_sha256": "aac6872cb2dee0e4aa9eed4170ab627cd7ffae0bffbc53bff157c3e2892e9163",
+      "captura_sha256": "4eb4e2885591d45bbb8dcfdd783762722551bd8884eab04646f5c89275e8ca9e",
+      "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=270&_cAct_INSTANCE_uhcx_end=285&_cAct_INSTANCE_uhcx_typeView=list",
+      "capturadoEl": "2026-11-18T18:14:49.135428Z",
+      "valor": "inicial",
+      "literal": "per a principiants",
+      "campo": "descripcion"
+    },
+    {
+      "unidad": {
+        "id": "cibernarium-edicion:1578980",
+        "programa_id": "cibernarium:1592279",
+        "tipo": "edicion"
+      },
+      "titulo": "Gmail: Avança en l'ús del teu correu electrònic",
+      "contenido_sha256": "f224af2633beb19f49b54c8fd89fa62b3f2e2a7c735a175994a7df9ee9503430",
+      "captura_sha256": "8be4b61c99c2459b005bee17955a561d40dbc0210d6f72394d33e2a2f8e620c1",
+      "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=60&_cAct_INSTANCE_uhcx_end=75&_cAct_INSTANCE_uhcx_typeView=list",
+      "capturadoEl": "2026-11-18T18:13:59.273947Z",
+      "valor": "inicial",
+      "literal": "Formació tecnològica bàsica",
+      "campo": "categoria"
+    },
+    {
+      "unidad": {
+        "id": "cibernarium-edicion:1578982",
+        "programa_id": "cibernarium:1593890",
+        "tipo": "edicion"
+      },
+      "titulo": "Google apps: treu partit a les eines pel dia a dia",
+      "contenido_sha256": "19873d0dc2e34f67d01c5b9c48293db548f58eb10f2629f1ad4a6bab4514eec5",
+      "captura_sha256": "c2f96d285033ea4beedf75e639bdde1c4eb8e5af7c0638d5ff61fe9745267315",
+      "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=45&_cAct_INSTANCE_uhcx_end=60&_cAct_INSTANCE_uhcx_typeView=list",
+      "capturadoEl": "2026-11-18T18:13:55.112916Z",
+      "valor": "inicial",
+      "literal": "Formació tecnològica bàsica",
+      "campo": "categoria"
+    },
+    {
+      "unidad": {
+        "id": "cibernarium-edicion:1578983",
+        "programa_id": "cibernarium:1591995",
+        "tipo": "edicion"
+      },
+      "titulo": "Edita els teus vídeos fàcilment amb el mòbil",
+      "contenido_sha256": "8db76df3d414e8fde69f08dacdbd4f72f3accb4ef15ddfa9084e2b1a9087eb46",
+      "captura_sha256": "8be4b61c99c2459b005bee17955a561d40dbc0210d6f72394d33e2a2f8e620c1",
+      "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=60&_cAct_INSTANCE_uhcx_end=75&_cAct_INSTANCE_uhcx_typeView=list",
+      "capturadoEl": "2026-11-18T18:13:59.273947Z",
+      "valor": "inicial",
+      "literal": "Formació tecnològica bàsica",
+      "campo": "categoria"
+    },
+    {
+      "unidad": {
+        "id": "cibernarium-edicion:1578984",
+        "programa_id": "cibernarium:1593916",
+        "tipo": "edicion"
+      },
+      "titulo": "Navega per internet amb seguretat",
+      "contenido_sha256": "9c846b2046cc778a60723e4f37c26aac1cff5029b63bcdc1aaddd75ffb865897",
+      "captura_sha256": "08aea6fc7ddb62a608dc5975399db3dc31d8c9730213e82460c5043c9855f724",
+      "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=30&_cAct_INSTANCE_uhcx_end=45&_cAct_INSTANCE_uhcx_typeView=list",
+      "capturadoEl": "2026-11-18T18:13:50.535285Z",
+      "valor": "inicial",
+      "literal": "Formació tecnològica bàsica",
+      "campo": "categoria"
+    },
+    {
+      "unidad": {
+        "id": "cibernarium-edicion:1578985",
+        "programa_id": "cibernarium:1593803",
+        "tipo": "edicion"
+      },
+      "titulo": "Detecta notícies falses i desinformació online",
+      "contenido_sha256": "85bc33428908022fcf4d56037e3d6b929664afc20410d8234ef517469d835446",
+      "captura_sha256": "08aea6fc7ddb62a608dc5975399db3dc31d8c9730213e82460c5043c9855f724",
+      "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=30&_cAct_INSTANCE_uhcx_end=45&_cAct_INSTANCE_uhcx_typeView=list",
+      "capturadoEl": "2026-11-18T18:13:50.535285Z",
+      "valor": "inicial",
+      "literal": "Formació tecnològica bàsica",
+      "campo": "categoria"
+    },
+    {
+      "unidad": {
+        "id": "cibernarium-edicion:1578986",
+        "programa_id": "cibernarium:1592315",
+        "tipo": "edicion"
+      },
+      "titulo": "Google Chrome: comença a navegar per la xarxa",
+      "contenido_sha256": "03ce5d823a87cbc61cee88cfc006956454c82d893d4dcf3ed425729eea04bda8",
+      "captura_sha256": "9763ae803a618a421681967f303fdff916752107cebb0172530dbb1558632cd8",
+      "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=75&_cAct_INSTANCE_uhcx_end=90&_cAct_INSTANCE_uhcx_typeView=list",
+      "capturadoEl": "2026-11-18T18:14:03.488094Z",
+      "valor": "inicial",
+      "literal": "Formació tecnològica bàsica",
+      "campo": "categoria"
+    },
+    {
+      "unidad": {
+        "id": "cibernarium-edicion:1578987",
+        "programa_id": "cibernarium:1592344",
+        "tipo": "edicion"
+      },
+      "titulo": "Google i Bing: Cerca i filtra la informació a la xarxa",
+      "contenido_sha256": "1ace5e25f613e0e51e2d29773733ebcc47e1ceab484e4812a6c03c1a7507afdc",
+      "captura_sha256": "4d4d03d748f17a1d17b7f26662bf374fa864b76d84b87f10acae21e68d14bd88",
+      "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=105&_cAct_INSTANCE_uhcx_end=120&_cAct_INSTANCE_uhcx_typeView=list",
+      "capturadoEl": "2026-11-18T18:14:11.329990Z",
+      "valor": "inicial",
+      "literal": "Formació tecnològica bàsica",
+      "campo": "categoria"
+    },
+    {
+      "unidad": {
+        "id": "cibernarium-edicion:1578988",
+        "programa_id": "cibernarium:1592361",
+        "tipo": "edicion"
+      },
+      "titulo": "Instagram: aprèn a compartir moments i històries fàcilment",
+      "contenido_sha256": "8a1e210c60c0a86e04a28cbe6952b14c34ea1e3993c58a923e0ae9f13ed2df1a",
+      "captura_sha256": "ba9c9bc03623f3fac9aabe72ddee9eb08a0ed8e721e9ececeb9b69e59267b868",
+      "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=90&_cAct_INSTANCE_uhcx_end=105&_cAct_INSTANCE_uhcx_typeView=list",
+      "capturadoEl": "2026-11-18T18:14:07.379397Z",
+      "valor": "inicial",
+      "literal": "Formació tecnològica bàsica",
+      "campo": "categoria"
+    },
+    {
+      "unidad": {
+        "id": "cibernarium-edicion:1586821",
+        "programa_id": "cibernarium:1586812",
+        "tipo": "edicion"
+      },
+      "titulo": "Allibera espai al teu mòbil",
+      "contenido_sha256": "bb34ae82ac845683eaf8c4fa544a5e2826fb7788731d9734deb65997460e1c7f",
+      "captura_sha256": "c2f96d285033ea4beedf75e639bdde1c4eb8e5af7c0638d5ff61fe9745267315",
+      "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=45&_cAct_INSTANCE_uhcx_end=60&_cAct_INSTANCE_uhcx_typeView=list",
+      "capturadoEl": "2026-11-18T18:13:55.112916Z",
+      "valor": "inicial",
+      "literal": "Formació tecnològica bàsica",
+      "campo": "categoria"
+    },
+    {
+      "unidad": {
+        "id": "cibernarium-edicion:1586880",
+        "programa_id": "cibernarium:1590269",
+        "tipo": "edicion"
+      },
+      "titulo": "Apps ciutadanes: forma part del canvi",
+      "contenido_sha256": "ebbc8ade8d29af9688301abee37ea2cffd7a12ba63ba6bacaf30b27a2a0272bf",
+      "captura_sha256": "c7900cf9fd7d1a6c8495fab5a76fb60ddb9b5bef584aa484bcf83ab3766544cc",
+      "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=135&_cAct_INSTANCE_uhcx_end=150&_cAct_INSTANCE_uhcx_typeView=list",
+      "capturadoEl": "2026-11-18T18:14:18.291646Z",
+      "valor": "inicial",
+      "literal": "Formació tecnològica bàsica",
+      "campo": "categoria"
+    },
+    {
+      "unidad": {
+        "id": "cibernarium-edicion:1588744",
+        "programa_id": "cibernarium:1590279",
+        "tipo": "edicion"
+      },
+      "titulo": "Aprèn a instal·lar i eliminar aplicacions mòbils",
+      "contenido_sha256": "48ae6f2322fca56394a9431ef5039a1d28cada3543a80a3ee100cb49fc6f71de",
+      "captura_sha256": "08aea6fc7ddb62a608dc5975399db3dc31d8c9730213e82460c5043c9855f724",
+      "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=30&_cAct_INSTANCE_uhcx_end=45&_cAct_INSTANCE_uhcx_typeView=list",
+      "capturadoEl": "2026-11-18T18:13:50.535285Z",
+      "valor": "inicial",
+      "literal": "Formació tecnològica bàsica",
+      "campo": "categoria"
+    },
+    {
+      "unidad": {
+        "id": "cibernarium-edicion:1588821",
+        "programa_id": "cibernarium:1590949",
+        "tipo": "edicion"
+      },
+      "titulo": "Biblio Digital: gaudeix de llibres i cinema",
+      "contenido_sha256": "92b28b90fdcc08696b44db78d05b99113e538918536fa074c3a28b95a164d8c7",
+      "captura_sha256": "ba9c9bc03623f3fac9aabe72ddee9eb08a0ed8e721e9ececeb9b69e59267b868",
+      "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=90&_cAct_INSTANCE_uhcx_end=105&_cAct_INSTANCE_uhcx_typeView=list",
+      "capturadoEl": "2026-11-18T18:14:07.379397Z",
+      "valor": "inicial",
+      "literal": "Formació tecnològica bàsica",
+      "campo": "categoria"
+    },
+    {
+      "unidad": {
+        "id": "cibernarium-edicion:1588823",
+        "programa_id": "cibernarium:1591593",
+        "tipo": "edicion"
+      },
+      "titulo": "Cultura Digital: ràdio, podcasts i tv online",
+      "contenido_sha256": "96d4b224eab6447ece21f83bef176fd928dd75afd198a4261f6b14adc5e84fee",
+      "captura_sha256": "9763ae803a618a421681967f303fdff916752107cebb0172530dbb1558632cd8",
+      "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=75&_cAct_INSTANCE_uhcx_end=90&_cAct_INSTANCE_uhcx_typeView=list",
+      "capturadoEl": "2026-11-18T18:14:03.488094Z",
+      "valor": "inicial",
+      "literal": "Formació tecnològica bàsica",
+      "campo": "categoria"
+    },
+    {
+      "unidad": {
+        "id": "cibernarium-edicion:1588856",
+        "programa_id": "cibernarium:1593803",
+        "tipo": "edicion"
+      },
+      "titulo": "Detecta notícies falses i desinformació online",
+      "contenido_sha256": "85bc33428908022fcf4d56037e3d6b929664afc20410d8234ef517469d835446",
+      "captura_sha256": "08aea6fc7ddb62a608dc5975399db3dc31d8c9730213e82460c5043c9855f724",
+      "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=30&_cAct_INSTANCE_uhcx_end=45&_cAct_INSTANCE_uhcx_typeView=list",
+      "capturadoEl": "2026-11-18T18:13:50.535285Z",
+      "valor": "inicial",
+      "literal": "Formació tecnològica bàsica",
+      "campo": "categoria"
+    },
+    {
+      "unidad": {
+        "id": "cibernarium-edicion:1588863",
+        "programa_id": "cibernarium:1592279",
+        "tipo": "edicion"
+      },
+      "titulo": "Gmail: Avança en l'ús del teu correu electrònic",
+      "contenido_sha256": "f224af2633beb19f49b54c8fd89fa62b3f2e2a7c735a175994a7df9ee9503430",
+      "captura_sha256": "8be4b61c99c2459b005bee17955a561d40dbc0210d6f72394d33e2a2f8e620c1",
+      "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=60&_cAct_INSTANCE_uhcx_end=75&_cAct_INSTANCE_uhcx_typeView=list",
+      "capturadoEl": "2026-11-18T18:13:59.273947Z",
+      "valor": "inicial",
+      "literal": "Formació tecnològica bàsica",
+      "campo": "categoria"
+    },
+    {
+      "unidad": {
+        "id": "cibernarium-edicion:1588865",
+        "programa_id": "cibernarium:1592352",
+        "tipo": "edicion"
+      },
+      "titulo": "Google maps: planifica els teus trajectes",
+      "contenido_sha256": "03bb1b34712604151f11abfef3948eb76d6fa2298c0b30a9f3d21d41a36c5d5f",
+      "captura_sha256": "9763ae803a618a421681967f303fdff916752107cebb0172530dbb1558632cd8",
+      "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=75&_cAct_INSTANCE_uhcx_end=90&_cAct_INSTANCE_uhcx_typeView=list",
+      "capturadoEl": "2026-11-18T18:14:03.488094Z",
+      "valor": "inicial",
+      "literal": "Formació tecnològica bàsica",
+      "campo": "categoria"
+    },
+    {
+      "unidad": {
+        "id": "cibernarium-edicion:1588900",
+        "programa_id": "cibernarium:1592388",
+        "tipo": "edicion"
+      },
+      "titulo": "La Meva Salut: Aprèn a fer els tràmits online",
+      "contenido_sha256": "4250a800396ff286631a40b40926678839524c9d498a6234d005979b1da90147",
+      "captura_sha256": "ba9c9bc03623f3fac9aabe72ddee9eb08a0ed8e721e9ececeb9b69e59267b868",
+      "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=90&_cAct_INSTANCE_uhcx_end=105&_cAct_INSTANCE_uhcx_typeView=list",
+      "capturadoEl": "2026-11-18T18:14:07.379397Z",
+      "valor": "inicial",
+      "literal": "Formació tecnològica bàsica",
+      "campo": "categoria"
+    },
+    {
+      "unidad": {
+        "id": "cibernarium-edicion:1588912",
+        "programa_id": "cibernarium:1592392",
+        "tipo": "edicion"
+      },
+      "titulo": "Millora els teus hàbits saludables amb apps",
+      "contenido_sha256": "457978c48220e28c8a370719a852dacf61bb9adda5ef03b37e62c5746b83c7e2",
+      "captura_sha256": "c2f96d285033ea4beedf75e639bdde1c4eb8e5af7c0638d5ff61fe9745267315",
+      "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=45&_cAct_INSTANCE_uhcx_end=60&_cAct_INSTANCE_uhcx_typeView=list",
+      "capturadoEl": "2026-11-18T18:13:55.112916Z",
+      "valor": "inicial",
+      "literal": "Formació tecnològica bàsica",
+      "campo": "categoria"
+    },
+    {
+      "unidad": {
+        "id": "cibernarium-edicion:1588913",
+        "programa_id": "cibernarium:1592392",
+        "tipo": "edicion"
+      },
+      "titulo": "Millora els teus hàbits saludables amb apps",
+      "contenido_sha256": "457978c48220e28c8a370719a852dacf61bb9adda5ef03b37e62c5746b83c7e2",
+      "captura_sha256": "c2f96d285033ea4beedf75e639bdde1c4eb8e5af7c0638d5ff61fe9745267315",
+      "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=45&_cAct_INSTANCE_uhcx_end=60&_cAct_INSTANCE_uhcx_typeView=list",
+      "capturadoEl": "2026-11-18T18:13:55.112916Z",
+      "valor": "inicial",
+      "literal": "Formació tecnològica bàsica",
+      "campo": "categoria"
+    },
+    {
+      "unidad": {
+        "id": "cibernarium-edicion:1588918",
+        "programa_id": "cibernarium:1593916",
+        "tipo": "edicion"
+      },
+      "titulo": "Navega per internet amb seguretat",
+      "contenido_sha256": "9c846b2046cc778a60723e4f37c26aac1cff5029b63bcdc1aaddd75ffb865897",
+      "captura_sha256": "08aea6fc7ddb62a608dc5975399db3dc31d8c9730213e82460c5043c9855f724",
+      "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=30&_cAct_INSTANCE_uhcx_end=45&_cAct_INSTANCE_uhcx_typeView=list",
+      "capturadoEl": "2026-11-18T18:13:50.535285Z",
+      "valor": "inicial",
+      "literal": "Formació tecnològica bàsica",
+      "campo": "categoria"
+    },
+    {
+      "unidad": {
+        "id": "cibernarium-edicion:1588921",
+        "programa_id": "cibernarium:1592398",
+        "tipo": "edicion"
+      },
+      "titulo": "T-mobilitat: coneix les funcions de l'App",
+      "contenido_sha256": "a34021a83a48dc4254e3050d2335dcfc69ac355c3259b6479b4e60b4e2277fa0",
+      "captura_sha256": "cdd482fc7efd80aaace425e57c6a5d05bc6e0fb7a28d6aa6c611a256f47bafbb",
+      "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=120&_cAct_INSTANCE_uhcx_end=135&_cAct_INSTANCE_uhcx_typeView=list",
+      "capturadoEl": "2026-11-18T18:14:14.790093Z",
+      "valor": "inicial",
+      "literal": "Formació tecnològica bàsica",
+      "campo": "categoria"
+    },
+    {
+      "unidad": {
+        "id": "cibernarium-edicion:1588927",
+        "programa_id": "cibernarium:1593917",
+        "tipo": "edicion"
+      },
+      "titulo": "Tràmits amb l'Administració i certificats digitals",
+      "contenido_sha256": "ec6e6a5ff7f777fc1149202437b75c2ec9fb31e28b8226cd7ed6529a720ac420",
+      "captura_sha256": "9763ae803a618a421681967f303fdff916752107cebb0172530dbb1558632cd8",
+      "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=75&_cAct_INSTANCE_uhcx_end=90&_cAct_INSTANCE_uhcx_typeView=list",
+      "capturadoEl": "2026-11-18T18:14:03.488094Z",
+      "valor": "inicial",
+      "literal": "Formació tecnològica bàsica",
+      "campo": "categoria"
+    },
+    {
+      "unidad": {
+        "id": "cibernarium-edicion:1589029",
+        "programa_id": "cibernarium:1586885",
+        "tipo": "edicion"
+      },
+      "titulo": "Power BI Desktop: analitza i visualitza dades amb eficàcia",
+      "contenido_sha256": "4fdb159ba1cc900082e8971c97b6e0a22f480e892791f51e857f51f603c60a34",
+      "captura_sha256": "8be4b61c99c2459b005bee17955a561d40dbc0210d6f72394d33e2a2f8e620c1",
+      "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=60&_cAct_INSTANCE_uhcx_end=75&_cAct_INSTANCE_uhcx_typeView=list",
+      "capturadoEl": "2026-11-18T18:13:59.273947Z",
+      "valor": "inicial",
+      "literal": "per a principiants",
+      "campo": "descripcion"
+    },
+    {
+      "unidad": {
+        "id": "cibernarium-edicion:1589210",
+        "programa_id": "cibernarium:1593282",
+        "tipo": "edicion"
+      },
+      "titulo": "Aprèn a fer i editar fotos amb el mòbil",
+      "contenido_sha256": "069a01fb3c88c333cde8d5e2f73ed9800dda10d9b54756e14ba834fdadbd6f22",
+      "captura_sha256": "dbcb998b2458b05590d5d747261257adbf37a370c9db25dbb6c088c98b2a3b72",
+      "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=15&_cAct_INSTANCE_uhcx_end=30&_cAct_INSTANCE_uhcx_typeView=list",
+      "capturadoEl": "2026-11-18T18:13:46.408214Z",
+      "valor": "inicial",
+      "literal": "Formació tecnològica bàsica",
+      "campo": "categoria"
+    },
+    {
+      "unidad": {
+        "id": "cibernarium-edicion:1589216",
+        "programa_id": "cibernarium:1591995",
+        "tipo": "edicion"
+      },
+      "titulo": "Edita els teus vídeos fàcilment amb el mòbil",
+      "contenido_sha256": "8db76df3d414e8fde69f08dacdbd4f72f3accb4ef15ddfa9084e2b1a9087eb46",
+      "captura_sha256": "8be4b61c99c2459b005bee17955a561d40dbc0210d6f72394d33e2a2f8e620c1",
+      "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=60&_cAct_INSTANCE_uhcx_end=75&_cAct_INSTANCE_uhcx_typeView=list",
+      "capturadoEl": "2026-11-18T18:13:59.273947Z",
+      "valor": "inicial",
+      "literal": "Formació tecnològica bàsica",
+      "campo": "categoria"
+    },
+    {
+      "unidad": {
+        "id": "cibernarium-edicion:1589220",
+        "programa_id": "cibernarium:1593806",
+        "tipo": "edicion"
+      },
+      "titulo": "Excel: organitza el teu pressupost familiar",
+      "contenido_sha256": "ab0e8340f7e1bad4553381d558d3dab722620542c0985565bfb40843a1fe4354",
+      "captura_sha256": "8be4b61c99c2459b005bee17955a561d40dbc0210d6f72394d33e2a2f8e620c1",
+      "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=60&_cAct_INSTANCE_uhcx_end=75&_cAct_INSTANCE_uhcx_typeView=list",
+      "capturadoEl": "2026-11-18T18:13:59.273947Z",
+      "valor": "inicial",
+      "literal": "Formació tecnològica bàsica",
+      "campo": "categoria"
+    },
+    {
+      "unidad": {
+        "id": "cibernarium-edicion:1589237",
+        "programa_id": "cibernarium:1593890",
+        "tipo": "edicion"
+      },
+      "titulo": "Google apps: treu partit a les eines pel dia a dia",
+      "contenido_sha256": "19873d0dc2e34f67d01c5b9c48293db548f58eb10f2629f1ad4a6bab4514eec5",
+      "captura_sha256": "c2f96d285033ea4beedf75e639bdde1c4eb8e5af7c0638d5ff61fe9745267315",
+      "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=45&_cAct_INSTANCE_uhcx_end=60&_cAct_INSTANCE_uhcx_typeView=list",
+      "capturadoEl": "2026-11-18T18:13:55.112916Z",
+      "valor": "inicial",
+      "literal": "Formació tecnològica bàsica",
+      "campo": "categoria"
+    },
+    {
+      "unidad": {
+        "id": "cibernarium-edicion:1589241",
+        "programa_id": "cibernarium:1592704",
+        "tipo": "edicion"
+      },
+      "titulo": "Whatsapp i telegram: introducció a la missatgeria instantània",
+      "contenido_sha256": "2bf942b55d30248fc8b931031369c4fe5021a0e75d2de778f9f59a19edcbf7ee",
+      "captura_sha256": "9763ae803a618a421681967f303fdff916752107cebb0172530dbb1558632cd8",
+      "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=75&_cAct_INSTANCE_uhcx_end=90&_cAct_INSTANCE_uhcx_typeView=list",
+      "capturadoEl": "2026-11-18T18:14:03.488094Z",
+      "valor": "inicial",
+      "literal": "Formació tecnològica bàsica",
+      "campo": "categoria"
+    },
+    {
+      "unidad": {
+        "id": "cibernarium-edicion:1589243",
+        "programa_id": "cibernarium:1578850",
+        "tipo": "edicion"
+      },
+      "titulo": "Word: Escriu i dòna format als teus textos",
+      "contenido_sha256": "334fb66edfe12937c4962806ec87cbba71357ab5f7bec9f6fcd1e5a238c2e046",
+      "captura_sha256": "08aea6fc7ddb62a608dc5975399db3dc31d8c9730213e82460c5043c9855f724",
+      "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=30&_cAct_INSTANCE_uhcx_end=45&_cAct_INSTANCE_uhcx_typeView=list",
+      "capturadoEl": "2026-11-18T18:13:50.535285Z",
+      "valor": "inicial",
+      "literal": "Formació tecnològica bàsica",
+      "campo": "categoria"
+    },
+    {
+      "unidad": {
+        "id": "cibernarium-edicion:1590261",
+        "programa_id": "cibernarium:1590261",
+        "tipo": "edicion"
+      },
+      "titulo": "Activa la teva ment jugant amb tecnologia",
+      "contenido_sha256": "4a3c53d6815d14a3383a7516916d30aa7ac6e843e9e5744f5dfbbfc0e3d6172f",
+      "captura_sha256": "ba9c9bc03623f3fac9aabe72ddee9eb08a0ed8e721e9ececeb9b69e59267b868",
+      "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=90&_cAct_INSTANCE_uhcx_end=105&_cAct_INSTANCE_uhcx_typeView=list",
+      "capturadoEl": "2026-11-18T18:14:07.379397Z",
+      "valor": "inicial",
+      "literal": "Formació tecnològica bàsica",
+      "campo": "categoria"
+    },
+    {
+      "unidad": {
+        "id": "cibernarium-edicion:1590267",
+        "programa_id": "cibernarium:1586812",
+        "tipo": "edicion"
+      },
+      "titulo": "Allibera espai al teu mòbil",
+      "contenido_sha256": "bb34ae82ac845683eaf8c4fa544a5e2826fb7788731d9734deb65997460e1c7f",
+      "captura_sha256": "c2f96d285033ea4beedf75e639bdde1c4eb8e5af7c0638d5ff61fe9745267315",
+      "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=45&_cAct_INSTANCE_uhcx_end=60&_cAct_INSTANCE_uhcx_typeView=list",
+      "capturadoEl": "2026-11-18T18:13:55.112916Z",
+      "valor": "inicial",
+      "literal": "Formació tecnològica bàsica",
+      "campo": "categoria"
+    },
+    {
+      "unidad": {
+        "id": "cibernarium-edicion:1590271",
+        "programa_id": "cibernarium:1590269",
+        "tipo": "edicion"
+      },
+      "titulo": "Apps ciutadanes: forma part del canvi",
+      "contenido_sha256": "ebbc8ade8d29af9688301abee37ea2cffd7a12ba63ba6bacaf30b27a2a0272bf",
+      "captura_sha256": "c7900cf9fd7d1a6c8495fab5a76fb60ddb9b5bef584aa484bcf83ab3766544cc",
+      "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=135&_cAct_INSTANCE_uhcx_end=150&_cAct_INSTANCE_uhcx_typeView=list",
+      "capturadoEl": "2026-11-18T18:14:18.291646Z",
+      "valor": "inicial",
+      "literal": "Formació tecnològica bàsica",
+      "campo": "categoria"
+    },
+    {
+      "unidad": {
+        "id": "cibernarium-edicion:1590272",
+        "programa_id": "cibernarium:1590269",
+        "tipo": "edicion"
+      },
+      "titulo": "Apps ciutadanes: forma part del canvi",
+      "contenido_sha256": "ebbc8ade8d29af9688301abee37ea2cffd7a12ba63ba6bacaf30b27a2a0272bf",
+      "captura_sha256": "c7900cf9fd7d1a6c8495fab5a76fb60ddb9b5bef584aa484bcf83ab3766544cc",
+      "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=135&_cAct_INSTANCE_uhcx_end=150&_cAct_INSTANCE_uhcx_typeView=list",
+      "capturadoEl": "2026-11-18T18:14:18.291646Z",
+      "valor": "inicial",
+      "literal": "Formació tecnològica bàsica",
+      "campo": "categoria"
+    },
+    {
+      "unidad": {
+        "id": "cibernarium-edicion:1590280",
+        "programa_id": "cibernarium:1590279",
+        "tipo": "edicion"
+      },
+      "titulo": "Aprèn a instal·lar i eliminar aplicacions mòbils",
+      "contenido_sha256": "48ae6f2322fca56394a9431ef5039a1d28cada3543a80a3ee100cb49fc6f71de",
+      "captura_sha256": "08aea6fc7ddb62a608dc5975399db3dc31d8c9730213e82460c5043c9855f724",
+      "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=30&_cAct_INSTANCE_uhcx_end=45&_cAct_INSTANCE_uhcx_typeView=list",
+      "capturadoEl": "2026-11-18T18:13:50.535285Z",
+      "valor": "inicial",
+      "literal": "Formació tecnològica bàsica",
+      "campo": "categoria"
+    },
+    {
+      "unidad": {
+        "id": "cibernarium-edicion:1590945",
+        "programa_id": "cibernarium:1590943",
+        "tipo": "edicion"
+      },
+      "titulo": "Aprèn idiomes online",
+      "contenido_sha256": "7070d331eb1e993350836b42649f75ffff3b539644d8539df5c90d4d8509887d",
+      "captura_sha256": "c2f96d285033ea4beedf75e639bdde1c4eb8e5af7c0638d5ff61fe9745267315",
+      "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=45&_cAct_INSTANCE_uhcx_end=60&_cAct_INSTANCE_uhcx_typeView=list",
+      "capturadoEl": "2026-11-18T18:13:55.112916Z",
+      "valor": "inicial",
+      "literal": "Formació tecnològica bàsica",
+      "campo": "categoria"
+    },
+    {
+      "unidad": {
+        "id": "cibernarium-edicion:1590946",
+        "programa_id": "cibernarium:1590943",
+        "tipo": "edicion"
+      },
+      "titulo": "Aprèn idiomes online",
+      "contenido_sha256": "7070d331eb1e993350836b42649f75ffff3b539644d8539df5c90d4d8509887d",
+      "captura_sha256": "c2f96d285033ea4beedf75e639bdde1c4eb8e5af7c0638d5ff61fe9745267315",
+      "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=45&_cAct_INSTANCE_uhcx_end=60&_cAct_INSTANCE_uhcx_typeView=list",
+      "capturadoEl": "2026-11-18T18:13:55.112916Z",
+      "valor": "inicial",
+      "literal": "Formació tecnològica bàsica",
+      "campo": "categoria"
+    },
+    {
+      "unidad": {
+        "id": "cibernarium-edicion:1590950",
+        "programa_id": "cibernarium:1590949",
+        "tipo": "edicion"
+      },
+      "titulo": "Biblio Digital: gaudeix de llibres i cinema",
+      "contenido_sha256": "92b28b90fdcc08696b44db78d05b99113e538918536fa074c3a28b95a164d8c7",
+      "captura_sha256": "ba9c9bc03623f3fac9aabe72ddee9eb08a0ed8e721e9ececeb9b69e59267b868",
+      "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=90&_cAct_INSTANCE_uhcx_end=105&_cAct_INSTANCE_uhcx_typeView=list",
+      "capturadoEl": "2026-11-18T18:14:07.379397Z",
+      "valor": "inicial",
+      "literal": "Formació tecnològica bàsica",
+      "campo": "categoria"
+    },
+    {
+      "unidad": {
+        "id": "cibernarium-edicion:1590953",
+        "programa_id": "cibernarium:1590949",
+        "tipo": "edicion"
+      },
+      "titulo": "Biblio Digital: gaudeix de llibres i cinema",
+      "contenido_sha256": "92b28b90fdcc08696b44db78d05b99113e538918536fa074c3a28b95a164d8c7",
+      "captura_sha256": "ba9c9bc03623f3fac9aabe72ddee9eb08a0ed8e721e9ececeb9b69e59267b868",
+      "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=90&_cAct_INSTANCE_uhcx_end=105&_cAct_INSTANCE_uhcx_typeView=list",
+      "capturadoEl": "2026-11-18T18:14:07.379397Z",
+      "valor": "inicial",
+      "literal": "Formació tecnològica bàsica",
+      "campo": "categoria"
+    },
+    {
+      "unidad": {
+        "id": "cibernarium-edicion:1591588",
+        "programa_id": "cibernarium:1578972",
+        "tipo": "edicion"
+      },
+      "titulo": "Com protegir la teva privacitat online",
+      "contenido_sha256": "84959471fd99612a343e5310c4f151d1a92ec44db18abb162170c06468555730",
+      "captura_sha256": "cdd482fc7efd80aaace425e57c6a5d05bc6e0fb7a28d6aa6c611a256f47bafbb",
+      "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=120&_cAct_INSTANCE_uhcx_end=135&_cAct_INSTANCE_uhcx_typeView=list",
+      "capturadoEl": "2026-11-18T18:14:14.790093Z",
+      "valor": "inicial",
+      "literal": "Formació tecnològica bàsica",
+      "campo": "categoria"
+    },
+    {
+      "unidad": {
+        "id": "cibernarium-edicion:1591594",
+        "programa_id": "cibernarium:1591593",
+        "tipo": "edicion"
+      },
+      "titulo": "Cultura Digital: ràdio, podcasts i tv online",
+      "contenido_sha256": "96d4b224eab6447ece21f83bef176fd928dd75afd198a4261f6b14adc5e84fee",
+      "captura_sha256": "9763ae803a618a421681967f303fdff916752107cebb0172530dbb1558632cd8",
+      "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=75&_cAct_INSTANCE_uhcx_end=90&_cAct_INSTANCE_uhcx_typeView=list",
+      "capturadoEl": "2026-11-18T18:14:03.488094Z",
+      "valor": "inicial",
+      "literal": "Formació tecnològica bàsica",
+      "campo": "categoria"
+    },
+    {
+      "unidad": {
+        "id": "cibernarium-edicion:1591595",
+        "programa_id": "cibernarium:1591593",
+        "tipo": "edicion"
+      },
+      "titulo": "Cultura Digital: ràdio, podcasts i tv online",
+      "contenido_sha256": "96d4b224eab6447ece21f83bef176fd928dd75afd198a4261f6b14adc5e84fee",
+      "captura_sha256": "9763ae803a618a421681967f303fdff916752107cebb0172530dbb1558632cd8",
+      "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=75&_cAct_INSTANCE_uhcx_end=90&_cAct_INSTANCE_uhcx_typeView=list",
+      "capturadoEl": "2026-11-18T18:14:03.488094Z",
+      "valor": "inicial",
+      "literal": "Formació tecnològica bàsica",
+      "campo": "categoria"
+    },
+    {
+      "unidad": {
+        "id": "cibernarium-edicion:1591598",
+        "programa_id": "cibernarium:1588825",
+        "tipo": "edicion"
+      },
+      "titulo": "Descobreix el certificat actic",
+      "contenido_sha256": "bb54357a5247418358b42de5459461371c93f8b35ee025bf64790138347c8d35",
+      "captura_sha256": "9763ae803a618a421681967f303fdff916752107cebb0172530dbb1558632cd8",
+      "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=75&_cAct_INSTANCE_uhcx_end=90&_cAct_INSTANCE_uhcx_typeView=list",
+      "capturadoEl": "2026-11-18T18:14:03.488094Z",
+      "valor": "inicial",
+      "literal": "Formació tecnològica bàsica",
+      "campo": "categoria"
+    },
+    {
+      "unidad": {
+        "id": "cibernarium-edicion:1591602",
+        "programa_id": "cibernarium:1591601",
+        "tipo": "edicion"
+      },
+      "titulo": "Descobreix el teu mòbil o tauleta",
+      "contenido_sha256": "3663036a9e51b92a372ecbf03a87f95e7abc31a14cddffc57c485b0514f1c4f0",
+      "captura_sha256": "4d4d03d748f17a1d17b7f26662bf374fa864b76d84b87f10acae21e68d14bd88",
+      "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=105&_cAct_INSTANCE_uhcx_end=120&_cAct_INSTANCE_uhcx_typeView=list",
+      "capturadoEl": "2026-11-18T18:14:11.329990Z",
+      "valor": "inicial",
+      "literal": "Formació tecnològica bàsica",
+      "campo": "categoria"
+    },
+    {
+      "unidad": {
+        "id": "cibernarium-edicion:1591604",
+        "programa_id": "cibernarium:1593803",
+        "tipo": "edicion"
+      },
+      "titulo": "Detecta notícies falses i desinformació online",
+      "contenido_sha256": "85bc33428908022fcf4d56037e3d6b929664afc20410d8234ef517469d835446",
+      "captura_sha256": "08aea6fc7ddb62a608dc5975399db3dc31d8c9730213e82460c5043c9855f724",
+      "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=30&_cAct_INSTANCE_uhcx_end=45&_cAct_INSTANCE_uhcx_typeView=list",
+      "capturadoEl": "2026-11-18T18:13:50.535285Z",
+      "valor": "inicial",
+      "literal": "Formació tecnològica bàsica",
+      "campo": "categoria"
+    },
+    {
+      "unidad": {
+        "id": "cibernarium-edicion:1591605",
+        "programa_id": "cibernarium:1593803",
+        "tipo": "edicion"
+      },
+      "titulo": "Detecta notícies falses i desinformació online",
+      "contenido_sha256": "85bc33428908022fcf4d56037e3d6b929664afc20410d8234ef517469d835446",
+      "captura_sha256": "08aea6fc7ddb62a608dc5975399db3dc31d8c9730213e82460c5043c9855f724",
+      "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=30&_cAct_INSTANCE_uhcx_end=45&_cAct_INSTANCE_uhcx_typeView=list",
+      "capturadoEl": "2026-11-18T18:13:50.535285Z",
+      "valor": "inicial",
+      "literal": "Formació tecnològica bàsica",
+      "campo": "categoria"
+    },
+    {
+      "unidad": {
+        "id": "cibernarium-edicion:1591996",
+        "programa_id": "cibernarium:1591995",
+        "tipo": "edicion"
+      },
+      "titulo": "Edita els teus vídeos fàcilment amb el mòbil",
+      "contenido_sha256": "8db76df3d414e8fde69f08dacdbd4f72f3accb4ef15ddfa9084e2b1a9087eb46",
+      "captura_sha256": "8be4b61c99c2459b005bee17955a561d40dbc0210d6f72394d33e2a2f8e620c1",
+      "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=60&_cAct_INSTANCE_uhcx_end=75&_cAct_INSTANCE_uhcx_typeView=list",
+      "capturadoEl": "2026-11-18T18:13:59.273947Z",
+      "valor": "inicial",
+      "literal": "Formació tecnològica bàsica",
+      "campo": "categoria"
+    },
+    {
+      "unidad": {
+        "id": "cibernarium-edicion:1591999",
+        "programa_id": "cibernarium:1588857",
+        "tipo": "edicion"
+      },
+      "titulo": "El teu nivell digital: quin és i com millorar-lo",
+      "contenido_sha256": "43cf1ba5270e7e36d62295569e8a1adfeb207e1eed35ddd4daf4da81fbf3d632",
+      "captura_sha256": "8be4b61c99c2459b005bee17955a561d40dbc0210d6f72394d33e2a2f8e620c1",
+      "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=60&_cAct_INSTANCE_uhcx_end=75&_cAct_INSTANCE_uhcx_typeView=list",
+      "capturadoEl": "2026-11-18T18:13:59.273947Z",
+      "valor": "inicial",
+      "literal": "Formació tecnològica bàsica",
+      "campo": "categoria"
+    },
+    {
+      "unidad": {
+        "id": "cibernarium-edicion:1592001",
+        "programa_id": "cibernarium:1592000",
+        "tipo": "edicion"
+      },
+      "titulo": "Empremta digital: millora la teva imatge a internet",
+      "contenido_sha256": "02f3c8cb68b8a56fd023cac822057253b4ecb1e5f077eac5fd441d7fbdd18c31",
+      "captura_sha256": "4d4d03d748f17a1d17b7f26662bf374fa864b76d84b87f10acae21e68d14bd88",
+      "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=105&_cAct_INSTANCE_uhcx_end=120&_cAct_INSTANCE_uhcx_typeView=list",
+      "capturadoEl": "2026-11-18T18:14:11.329990Z",
+      "valor": "inicial",
+      "literal": "Formació tecnològica bàsica",
+      "campo": "categoria"
+    },
+    {
+      "unidad": {
+        "id": "cibernarium-edicion:1592002",
+        "programa_id": "cibernarium:1592000",
+        "tipo": "edicion"
+      },
+      "titulo": "Empremta digital: millora la teva imatge a internet",
+      "contenido_sha256": "02f3c8cb68b8a56fd023cac822057253b4ecb1e5f077eac5fd441d7fbdd18c31",
+      "captura_sha256": "4d4d03d748f17a1d17b7f26662bf374fa864b76d84b87f10acae21e68d14bd88",
+      "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=105&_cAct_INSTANCE_uhcx_end=120&_cAct_INSTANCE_uhcx_typeView=list",
+      "capturadoEl": "2026-11-18T18:14:11.329990Z",
+      "valor": "inicial",
+      "literal": "Formació tecnològica bàsica",
+      "campo": "categoria"
+    },
+    {
+      "unidad": {
+        "id": "cibernarium-edicion:1592099",
+        "programa_id": "cibernarium:1588858",
+        "tipo": "edicion"
+      },
+      "titulo": "Fes més fàcil el teu dia a dia amb el mòbil",
+      "contenido_sha256": "ce80176a14b18189966c0293b87596378c7f3a3812f93be3871ca59a5fbb42bc",
+      "captura_sha256": "ba9c9bc03623f3fac9aabe72ddee9eb08a0ed8e721e9ececeb9b69e59267b868",
+      "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=90&_cAct_INSTANCE_uhcx_end=105&_cAct_INSTANCE_uhcx_typeView=list",
+      "capturadoEl": "2026-11-18T18:14:07.379397Z",
+      "valor": "inicial",
+      "literal": "Formació tecnològica bàsica",
+      "campo": "categoria"
+    },
+    {
+      "unidad": {
+        "id": "cibernarium-edicion:1592276",
+        "programa_id": "cibernarium:1592897",
+        "tipo": "edicion"
+      },
+      "titulo": "Gestions bancàries i compres en línia",
+      "contenido_sha256": "a7e8bee0baf4852ad21e14d57dacab5120ceb81e37ee94cece0b2032e8c2affa",
+      "captura_sha256": "9763ae803a618a421681967f303fdff916752107cebb0172530dbb1558632cd8",
+      "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=75&_cAct_INSTANCE_uhcx_end=90&_cAct_INSTANCE_uhcx_typeView=list",
+      "capturadoEl": "2026-11-18T18:14:03.488094Z",
+      "valor": "inicial",
+      "literal": "Formació tecnològica bàsica",
+      "campo": "categoria"
+    },
+    {
+      "unidad": {
+        "id": "cibernarium-edicion:1592283",
+        "programa_id": "cibernarium:1592279",
+        "tipo": "edicion"
+      },
+      "titulo": "Gmail: Avança en l'ús del teu correu electrònic",
+      "contenido_sha256": "f224af2633beb19f49b54c8fd89fa62b3f2e2a7c735a175994a7df9ee9503430",
+      "captura_sha256": "8be4b61c99c2459b005bee17955a561d40dbc0210d6f72394d33e2a2f8e620c1",
+      "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=60&_cAct_INSTANCE_uhcx_end=75&_cAct_INSTANCE_uhcx_typeView=list",
+      "capturadoEl": "2026-11-18T18:13:59.273947Z",
+      "valor": "inicial",
+      "literal": "Formació tecnològica bàsica",
+      "campo": "categoria"
+    },
+    {
+      "unidad": {
+        "id": "cibernarium-edicion:1592299",
+        "programa_id": "cibernarium:1593776",
+        "tipo": "edicion"
+      },
+      "titulo": "Gmail: configura el teu correu electrònic des de zero",
+      "contenido_sha256": "6c7fb2be1346eceee98e0a81d78e82ddcf53ff07719328e6eb749d460a4c5b86",
+      "captura_sha256": "cdd482fc7efd80aaace425e57c6a5d05bc6e0fb7a28d6aa6c611a256f47bafbb",
+      "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=120&_cAct_INSTANCE_uhcx_end=135&_cAct_INSTANCE_uhcx_typeView=list",
+      "capturadoEl": "2026-11-18T18:14:14.790093Z",
+      "valor": "inicial",
+      "literal": "Formació tecnològica bàsica",
+      "campo": "categoria"
+    },
+    {
+      "unidad": {
+        "id": "cibernarium-edicion:1592306",
+        "programa_id": "cibernarium:1593890",
+        "tipo": "edicion"
+      },
+      "titulo": "Google apps: treu partit a les eines pel dia a dia",
+      "contenido_sha256": "19873d0dc2e34f67d01c5b9c48293db548f58eb10f2629f1ad4a6bab4514eec5",
+      "captura_sha256": "c2f96d285033ea4beedf75e639bdde1c4eb8e5af7c0638d5ff61fe9745267315",
+      "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=45&_cAct_INSTANCE_uhcx_end=60&_cAct_INSTANCE_uhcx_typeView=list",
+      "capturadoEl": "2026-11-18T18:13:55.112916Z",
+      "valor": "inicial",
+      "literal": "Formació tecnològica bàsica",
+      "campo": "categoria"
+    },
+    {
+      "unidad": {
+        "id": "cibernarium-edicion:1592308",
+        "programa_id": "cibernarium:1593890",
+        "tipo": "edicion"
+      },
+      "titulo": "Google apps: treu partit a les eines pel dia a dia",
+      "contenido_sha256": "19873d0dc2e34f67d01c5b9c48293db548f58eb10f2629f1ad4a6bab4514eec5",
+      "captura_sha256": "c2f96d285033ea4beedf75e639bdde1c4eb8e5af7c0638d5ff61fe9745267315",
+      "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=45&_cAct_INSTANCE_uhcx_end=60&_cAct_INSTANCE_uhcx_typeView=list",
+      "capturadoEl": "2026-11-18T18:13:55.112916Z",
+      "valor": "inicial",
+      "literal": "Formació tecnològica bàsica",
+      "campo": "categoria"
+    },
+    {
+      "unidad": {
+        "id": "cibernarium-edicion:1592316",
+        "programa_id": "cibernarium:1592315",
+        "tipo": "edicion"
+      },
+      "titulo": "Google Chrome: comença a navegar per la xarxa",
+      "contenido_sha256": "03ce5d823a87cbc61cee88cfc006956454c82d893d4dcf3ed425729eea04bda8",
+      "captura_sha256": "9763ae803a618a421681967f303fdff916752107cebb0172530dbb1558632cd8",
+      "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=75&_cAct_INSTANCE_uhcx_end=90&_cAct_INSTANCE_uhcx_typeView=list",
+      "capturadoEl": "2026-11-18T18:14:03.488094Z",
+      "valor": "inicial",
+      "literal": "Formació tecnològica bàsica",
+      "campo": "categoria"
+    },
+    {
+      "unidad": {
+        "id": "cibernarium-edicion:1592346",
+        "programa_id": "cibernarium:1592344",
+        "tipo": "edicion"
+      },
+      "titulo": "Google i Bing: Cerca i filtra la informació a la xarxa",
+      "contenido_sha256": "1ace5e25f613e0e51e2d29773733ebcc47e1ceab484e4812a6c03c1a7507afdc",
+      "captura_sha256": "4d4d03d748f17a1d17b7f26662bf374fa864b76d84b87f10acae21e68d14bd88",
+      "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=105&_cAct_INSTANCE_uhcx_end=120&_cAct_INSTANCE_uhcx_typeView=list",
+      "capturadoEl": "2026-11-18T18:14:11.329990Z",
+      "valor": "inicial",
+      "literal": "Formació tecnològica bàsica",
+      "campo": "categoria"
+    },
+    {
+      "unidad": {
+        "id": "cibernarium-edicion:1592354",
+        "programa_id": "cibernarium:1592352",
+        "tipo": "edicion"
+      },
+      "titulo": "Google maps: planifica els teus trajectes",
+      "contenido_sha256": "03bb1b34712604151f11abfef3948eb76d6fa2298c0b30a9f3d21d41a36c5d5f",
+      "captura_sha256": "9763ae803a618a421681967f303fdff916752107cebb0172530dbb1558632cd8",
+      "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=75&_cAct_INSTANCE_uhcx_end=90&_cAct_INSTANCE_uhcx_typeView=list",
+      "capturadoEl": "2026-11-18T18:14:03.488094Z",
+      "valor": "inicial",
+      "literal": "Formació tecnològica bàsica",
+      "campo": "categoria"
+    },
+    {
+      "unidad": {
+        "id": "cibernarium-edicion:1592365",
+        "programa_id": "cibernarium:1592361",
+        "tipo": "edicion"
+      },
+      "titulo": "Instagram: aprèn a compartir moments i històries fàcilment",
+      "contenido_sha256": "8a1e210c60c0a86e04a28cbe6952b14c34ea1e3993c58a923e0ae9f13ed2df1a",
+      "captura_sha256": "ba9c9bc03623f3fac9aabe72ddee9eb08a0ed8e721e9ececeb9b69e59267b868",
+      "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=90&_cAct_INSTANCE_uhcx_end=105&_cAct_INSTANCE_uhcx_typeView=list",
+      "capturadoEl": "2026-11-18T18:14:07.379397Z",
+      "valor": "inicial",
+      "literal": "Formació tecnològica bàsica",
+      "campo": "categoria"
+    },
+    {
+      "unidad": {
+        "id": "cibernarium-edicion:1592368",
+        "programa_id": "cibernarium:1592361",
+        "tipo": "edicion"
+      },
+      "titulo": "Instagram: aprèn a compartir moments i històries fàcilment",
+      "contenido_sha256": "8a1e210c60c0a86e04a28cbe6952b14c34ea1e3993c58a923e0ae9f13ed2df1a",
+      "captura_sha256": "ba9c9bc03623f3fac9aabe72ddee9eb08a0ed8e721e9ececeb9b69e59267b868",
+      "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=90&_cAct_INSTANCE_uhcx_end=105&_cAct_INSTANCE_uhcx_typeView=list",
+      "capturadoEl": "2026-11-18T18:14:07.379397Z",
+      "valor": "inicial",
+      "literal": "Formació tecnològica bàsica",
+      "campo": "categoria"
+    },
+    {
+      "unidad": {
+        "id": "cibernarium-edicion:1592396",
+        "programa_id": "cibernarium:1593916",
+        "tipo": "edicion"
+      },
+      "titulo": "Navega per internet amb seguretat",
+      "contenido_sha256": "9c846b2046cc778a60723e4f37c26aac1cff5029b63bcdc1aaddd75ffb865897",
+      "captura_sha256": "08aea6fc7ddb62a608dc5975399db3dc31d8c9730213e82460c5043c9855f724",
+      "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=30&_cAct_INSTANCE_uhcx_end=45&_cAct_INSTANCE_uhcx_typeView=list",
+      "capturadoEl": "2026-11-18T18:13:50.535285Z",
+      "valor": "inicial",
+      "literal": "Formació tecnològica bàsica",
+      "campo": "categoria"
+    },
+    {
+      "unidad": {
+        "id": "cibernarium-edicion:1592397",
+        "programa_id": "cibernarium:1593916",
+        "tipo": "edicion"
+      },
+      "titulo": "Navega per internet amb seguretat",
+      "contenido_sha256": "9c846b2046cc778a60723e4f37c26aac1cff5029b63bcdc1aaddd75ffb865897",
+      "captura_sha256": "08aea6fc7ddb62a608dc5975399db3dc31d8c9730213e82460c5043c9855f724",
+      "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=30&_cAct_INSTANCE_uhcx_end=45&_cAct_INSTANCE_uhcx_typeView=list",
+      "capturadoEl": "2026-11-18T18:13:50.535285Z",
+      "valor": "inicial",
+      "literal": "Formació tecnològica bàsica",
+      "campo": "categoria"
+    },
+    {
+      "unidad": {
+        "id": "cibernarium-edicion:1592399",
+        "programa_id": "cibernarium:1592398",
+        "tipo": "edicion"
+      },
+      "titulo": "T-mobilitat: coneix les funcions de l'App",
+      "contenido_sha256": "a34021a83a48dc4254e3050d2335dcfc69ac355c3259b6479b4e60b4e2277fa0",
+      "captura_sha256": "cdd482fc7efd80aaace425e57c6a5d05bc6e0fb7a28d6aa6c611a256f47bafbb",
+      "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=120&_cAct_INSTANCE_uhcx_end=135&_cAct_INSTANCE_uhcx_typeView=list",
+      "capturadoEl": "2026-11-18T18:14:14.790093Z",
+      "valor": "inicial",
+      "literal": "Formació tecnològica bàsica",
+      "campo": "categoria"
+    },
+    {
+      "unidad": {
+        "id": "cibernarium-edicion:1592400",
+        "programa_id": "cibernarium:1592398",
+        "tipo": "edicion"
+      },
+      "titulo": "T-mobilitat: coneix les funcions de l'App",
+      "contenido_sha256": "a34021a83a48dc4254e3050d2335dcfc69ac355c3259b6479b4e60b4e2277fa0",
+      "captura_sha256": "cdd482fc7efd80aaace425e57c6a5d05bc6e0fb7a28d6aa6c611a256f47bafbb",
+      "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=120&_cAct_INSTANCE_uhcx_end=135&_cAct_INSTANCE_uhcx_typeView=list",
+      "capturadoEl": "2026-11-18T18:14:14.790093Z",
+      "valor": "inicial",
+      "literal": "Formació tecnològica bàsica",
+      "campo": "categoria"
+    },
+    {
+      "unidad": {
+        "id": "cibernarium-edicion:1592667",
+        "programa_id": "cibernarium:1593917",
+        "tipo": "edicion"
+      },
+      "titulo": "Tràmits amb l'Administració i certificats digitals",
+      "contenido_sha256": "ec6e6a5ff7f777fc1149202437b75c2ec9fb31e28b8226cd7ed6529a720ac420",
+      "captura_sha256": "9763ae803a618a421681967f303fdff916752107cebb0172530dbb1558632cd8",
+      "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=75&_cAct_INSTANCE_uhcx_end=90&_cAct_INSTANCE_uhcx_typeView=list",
+      "capturadoEl": "2026-11-18T18:14:03.488094Z",
+      "valor": "inicial",
+      "literal": "Formació tecnològica bàsica",
+      "campo": "categoria"
+    },
+    {
+      "unidad": {
+        "id": "cibernarium-edicion:1592701",
+        "programa_id": "cibernarium:1593277",
+        "tipo": "edicion"
+      },
+      "titulo": "Trobar habitatge: Eines digital per millorar la cerca i gestió del teu lloguer o compra",
+      "contenido_sha256": "cbbf362096dfb573a9bdeeb4052450702084d55fc4d912ea9586b130f68e1e14",
+      "captura_sha256": "ba9c9bc03623f3fac9aabe72ddee9eb08a0ed8e721e9ececeb9b69e59267b868",
+      "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=90&_cAct_INSTANCE_uhcx_end=105&_cAct_INSTANCE_uhcx_typeView=list",
+      "capturadoEl": "2026-11-18T18:14:07.379397Z",
+      "valor": "inicial",
+      "literal": "Formació tecnològica bàsica",
+      "campo": "categoria"
+    },
+    {
+      "unidad": {
+        "id": "cibernarium-edicion:1592705",
+        "programa_id": "cibernarium:1592704",
+        "tipo": "edicion"
+      },
+      "titulo": "Whatsapp i telegram: introducció a la missatgeria instantània",
+      "contenido_sha256": "2bf942b55d30248fc8b931031369c4fe5021a0e75d2de778f9f59a19edcbf7ee",
+      "captura_sha256": "9763ae803a618a421681967f303fdff916752107cebb0172530dbb1558632cd8",
+      "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=75&_cAct_INSTANCE_uhcx_end=90&_cAct_INSTANCE_uhcx_typeView=list",
+      "capturadoEl": "2026-11-18T18:14:03.488094Z",
+      "valor": "inicial",
+      "literal": "Formació tecnològica bàsica",
+      "campo": "categoria"
+    },
+    {
+      "unidad": {
+        "id": "cibernarium-edicion:1592804",
+        "programa_id": "cibernarium:1590261",
+        "tipo": "edicion"
+      },
+      "titulo": "Activa la teva ment jugant amb tecnologia",
+      "contenido_sha256": "4a3c53d6815d14a3383a7516916d30aa7ac6e843e9e5744f5dfbbfc0e3d6172f",
+      "captura_sha256": "ba9c9bc03623f3fac9aabe72ddee9eb08a0ed8e721e9ececeb9b69e59267b868",
+      "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=90&_cAct_INSTANCE_uhcx_end=105&_cAct_INSTANCE_uhcx_typeView=list",
+      "capturadoEl": "2026-11-18T18:14:07.379397Z",
+      "valor": "inicial",
+      "literal": "Formació tecnològica bàsica",
+      "campo": "categoria"
+    },
+    {
+      "unidad": {
+        "id": "cibernarium-edicion:1592824",
+        "programa_id": "cibernarium:1592824",
+        "tipo": "edicion"
+      },
+      "titulo": "Conèixer les videotrucades: eines i funcions",
+      "contenido_sha256": "e3973cb2d2b1001a94bd40aa85a8a96023b6e4af8b360e6c8da51acf911439a1",
+      "captura_sha256": "9763ae803a618a421681967f303fdff916752107cebb0172530dbb1558632cd8",
+      "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=75&_cAct_INSTANCE_uhcx_end=90&_cAct_INSTANCE_uhcx_typeView=list",
+      "capturadoEl": "2026-11-18T18:14:03.488094Z",
+      "valor": "inicial",
+      "literal": "Formació tecnològica bàsica",
+      "campo": "categoria"
+    },
+    {
+      "unidad": {
+        "id": "cibernarium-edicion:1592834",
+        "programa_id": "cibernarium:1588825",
+        "tipo": "edicion"
+      },
+      "titulo": "Descobreix el certificat actic",
+      "contenido_sha256": "bb54357a5247418358b42de5459461371c93f8b35ee025bf64790138347c8d35",
+      "captura_sha256": "9763ae803a618a421681967f303fdff916752107cebb0172530dbb1558632cd8",
+      "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=75&_cAct_INSTANCE_uhcx_end=90&_cAct_INSTANCE_uhcx_typeView=list",
+      "capturadoEl": "2026-11-18T18:14:03.488094Z",
+      "valor": "inicial",
+      "literal": "Formació tecnològica bàsica",
+      "campo": "categoria"
+    },
+    {
+      "unidad": {
+        "id": "cibernarium-edicion:1592843",
+        "programa_id": "cibernarium:1593803",
+        "tipo": "edicion"
+      },
+      "titulo": "Detecta notícies falses i desinformació online",
+      "contenido_sha256": "85bc33428908022fcf4d56037e3d6b929664afc20410d8234ef517469d835446",
+      "captura_sha256": "08aea6fc7ddb62a608dc5975399db3dc31d8c9730213e82460c5043c9855f724",
+      "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=30&_cAct_INSTANCE_uhcx_end=45&_cAct_INSTANCE_uhcx_typeView=list",
+      "capturadoEl": "2026-11-18T18:13:50.535285Z",
+      "valor": "inicial",
+      "literal": "Formació tecnològica bàsica",
+      "campo": "categoria"
+    },
+    {
+      "unidad": {
+        "id": "cibernarium-edicion:1592848",
+        "programa_id": "cibernarium:1588857",
+        "tipo": "edicion"
+      },
+      "titulo": "El teu nivell digital: quin és i com millorar-lo",
+      "contenido_sha256": "43cf1ba5270e7e36d62295569e8a1adfeb207e1eed35ddd4daf4da81fbf3d632",
+      "captura_sha256": "8be4b61c99c2459b005bee17955a561d40dbc0210d6f72394d33e2a2f8e620c1",
+      "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=60&_cAct_INSTANCE_uhcx_end=75&_cAct_INSTANCE_uhcx_typeView=list",
+      "capturadoEl": "2026-11-18T18:13:59.273947Z",
+      "valor": "inicial",
+      "literal": "Formació tecnològica bàsica",
+      "campo": "categoria"
+    },
+    {
+      "unidad": {
+        "id": "cibernarium-edicion:1592899",
+        "programa_id": "cibernarium:1592897",
+        "tipo": "edicion"
+      },
+      "titulo": "Gestions bancàries i compres en línia",
+      "contenido_sha256": "a7e8bee0baf4852ad21e14d57dacab5120ceb81e37ee94cece0b2032e8c2affa",
+      "captura_sha256": "9763ae803a618a421681967f303fdff916752107cebb0172530dbb1558632cd8",
+      "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=75&_cAct_INSTANCE_uhcx_end=90&_cAct_INSTANCE_uhcx_typeView=list",
+      "capturadoEl": "2026-11-18T18:14:03.488094Z",
+      "valor": "inicial",
+      "literal": "Formació tecnològica bàsica",
+      "campo": "categoria"
+    },
+    {
+      "unidad": {
+        "id": "cibernarium-edicion:1592903",
+        "programa_id": "cibernarium:1588894",
+        "tipo": "edicion"
+      },
+      "titulo": "Intel·ligència artificial: aprèn a fer-la servir pas a pas (IA)",
+      "contenido_sha256": "fde8b5b097c59cdefa6f3c4640f401581e995337932f1ba7a272f850496af17f",
+      "captura_sha256": "c2f96d285033ea4beedf75e639bdde1c4eb8e5af7c0638d5ff61fe9745267315",
+      "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=45&_cAct_INSTANCE_uhcx_end=60&_cAct_INSTANCE_uhcx_typeView=list",
+      "capturadoEl": "2026-11-18T18:13:55.112916Z",
+      "valor": "inicial",
+      "literal": "Formació tecnològica bàsica",
+      "campo": "categoria"
+    },
+    {
+      "unidad": {
+        "id": "cibernarium-edicion:1592917",
+        "programa_id": "cibernarium:1592388",
+        "tipo": "edicion"
+      },
+      "titulo": "La Meva Salut: Aprèn a fer els tràmits online",
+      "contenido_sha256": "4250a800396ff286631a40b40926678839524c9d498a6234d005979b1da90147",
+      "captura_sha256": "ba9c9bc03623f3fac9aabe72ddee9eb08a0ed8e721e9ececeb9b69e59267b868",
+      "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=90&_cAct_INSTANCE_uhcx_end=105&_cAct_INSTANCE_uhcx_typeView=list",
+      "capturadoEl": "2026-11-18T18:14:07.379397Z",
+      "valor": "inicial",
+      "literal": "Formació tecnològica bàsica",
+      "campo": "categoria"
+    },
+    {
+      "unidad": {
+        "id": "cibernarium-edicion:1592919",
+        "programa_id": "cibernarium:1592392",
+        "tipo": "edicion"
+      },
+      "titulo": "Millora els teus hàbits saludables amb apps",
+      "contenido_sha256": "457978c48220e28c8a370719a852dacf61bb9adda5ef03b37e62c5746b83c7e2",
+      "captura_sha256": "c2f96d285033ea4beedf75e639bdde1c4eb8e5af7c0638d5ff61fe9745267315",
+      "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=45&_cAct_INSTANCE_uhcx_end=60&_cAct_INSTANCE_uhcx_typeView=list",
+      "capturadoEl": "2026-11-18T18:13:55.112916Z",
+      "valor": "inicial",
+      "literal": "Formació tecnològica bàsica",
+      "campo": "categoria"
+    },
+    {
+      "unidad": {
+        "id": "cibernarium-edicion:1592923",
+        "programa_id": "cibernarium:1593917",
+        "tipo": "edicion"
+      },
+      "titulo": "Tràmits amb l'Administració i certificats digitals",
+      "contenido_sha256": "ec6e6a5ff7f777fc1149202437b75c2ec9fb31e28b8226cd7ed6529a720ac420",
+      "captura_sha256": "9763ae803a618a421681967f303fdff916752107cebb0172530dbb1558632cd8",
+      "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=75&_cAct_INSTANCE_uhcx_end=90&_cAct_INSTANCE_uhcx_typeView=list",
+      "capturadoEl": "2026-11-18T18:14:03.488094Z",
+      "valor": "inicial",
+      "literal": "Formació tecnològica bàsica",
+      "campo": "categoria"
+    },
+    {
+      "unidad": {
+        "id": "cibernarium-edicion:1593141",
+        "programa_id": "cibernarium:1593141",
+        "tipo": "edicion"
+      },
+      "titulo": "Correu electrònic: ús i eines bàsiques",
+      "contenido_sha256": "f9cc3d65ce6df4601ee6d062d7ab43b5b3ac747a30b4fa4dbdf623a8e83ff3df",
+      "captura_sha256": "9763ae803a618a421681967f303fdff916752107cebb0172530dbb1558632cd8",
+      "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=75&_cAct_INSTANCE_uhcx_end=90&_cAct_INSTANCE_uhcx_typeView=list",
+      "capturadoEl": "2026-11-18T18:14:03.488094Z",
+      "valor": "inicial",
+      "literal": "Formació tecnològica bàsica",
+      "campo": "categoria"
+    },
+    {
+      "unidad": {
+        "id": "cibernarium-edicion:1593192",
+        "programa_id": "cibernarium:1593187",
+        "tipo": "edicion"
+      },
+      "titulo": "El núvol: gestió i ús de fitxers online",
+      "contenido_sha256": "6a6ae33e7ff2e2891eb3179ee48d6d347c09066b5ca0f58e2d449227dcba94a4",
+      "captura_sha256": "4d4d03d748f17a1d17b7f26662bf374fa864b76d84b87f10acae21e68d14bd88",
+      "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=105&_cAct_INSTANCE_uhcx_end=120&_cAct_INSTANCE_uhcx_typeView=list",
+      "capturadoEl": "2026-11-18T18:14:11.329990Z",
+      "valor": "inicial",
+      "literal": "Formació tecnològica bàsica",
+      "campo": "categoria"
+    },
+    {
+      "unidad": {
+        "id": "cibernarium-edicion:1593201",
+        "programa_id": "cibernarium:1593201",
+        "tipo": "edicion"
+      },
+      "titulo": "Fulls de càlcul: treballa amb dades i gràfics",
+      "contenido_sha256": "a3dc664928b52969648a3dbc1b8d7480e99141df90d7324bc761eefd02b2cc3f",
+      "captura_sha256": "ba9c9bc03623f3fac9aabe72ddee9eb08a0ed8e721e9ececeb9b69e59267b868",
+      "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=90&_cAct_INSTANCE_uhcx_end=105&_cAct_INSTANCE_uhcx_typeView=list",
+      "capturadoEl": "2026-11-18T18:14:07.379397Z",
+      "valor": "inicial",
+      "literal": "Formació tecnològica bàsica",
+      "campo": "categoria"
+    },
+    {
+      "unidad": {
+        "id": "cibernarium-edicion:1593202",
+        "programa_id": "cibernarium:1593201",
+        "tipo": "edicion"
+      },
+      "titulo": "Fulls de càlcul: treballa amb dades i gràfics",
+      "contenido_sha256": "a3dc664928b52969648a3dbc1b8d7480e99141df90d7324bc761eefd02b2cc3f",
+      "captura_sha256": "ba9c9bc03623f3fac9aabe72ddee9eb08a0ed8e721e9ececeb9b69e59267b868",
+      "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=90&_cAct_INSTANCE_uhcx_end=105&_cAct_INSTANCE_uhcx_typeView=list",
+      "capturadoEl": "2026-11-18T18:14:07.379397Z",
+      "valor": "inicial",
+      "literal": "Formació tecnològica bàsica",
+      "campo": "categoria"
+    },
+    {
+      "unidad": {
+        "id": "cibernarium-edicion:1593278",
+        "programa_id": "cibernarium:1593277",
+        "tipo": "edicion"
+      },
+      "titulo": "Trobar habitatge: Eines digital per millorar la cerca i gestió del teu lloguer o compra",
+      "contenido_sha256": "cbbf362096dfb573a9bdeeb4052450702084d55fc4d912ea9586b130f68e1e14",
+      "captura_sha256": "ba9c9bc03623f3fac9aabe72ddee9eb08a0ed8e721e9ececeb9b69e59267b868",
+      "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=90&_cAct_INSTANCE_uhcx_end=105&_cAct_INSTANCE_uhcx_typeView=list",
+      "capturadoEl": "2026-11-18T18:14:07.379397Z",
+      "valor": "inicial",
+      "literal": "Formació tecnològica bàsica",
+      "campo": "categoria"
+    },
+    {
+      "unidad": {
+        "id": "cibernarium-edicion:1593429",
+        "programa_id": "cibernarium:1590279",
+        "tipo": "edicion"
+      },
+      "titulo": "Aprèn a instal·lar i eliminar aplicacions mòbils",
+      "contenido_sha256": "48ae6f2322fca56394a9431ef5039a1d28cada3543a80a3ee100cb49fc6f71de",
+      "captura_sha256": "08aea6fc7ddb62a608dc5975399db3dc31d8c9730213e82460c5043c9855f724",
+      "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=30&_cAct_INSTANCE_uhcx_end=45&_cAct_INSTANCE_uhcx_typeView=list",
+      "capturadoEl": "2026-11-18T18:13:50.535285Z",
+      "valor": "inicial",
+      "literal": "Formació tecnològica bàsica",
+      "campo": "categoria"
+    },
+    {
+      "unidad": {
+        "id": "cibernarium-edicion:1593432",
+        "programa_id": "cibernarium:1592315",
+        "tipo": "edicion"
+      },
+      "titulo": "Google Chrome: comença a navegar per la xarxa",
+      "contenido_sha256": "03ce5d823a87cbc61cee88cfc006956454c82d893d4dcf3ed425729eea04bda8",
+      "captura_sha256": "9763ae803a618a421681967f303fdff916752107cebb0172530dbb1558632cd8",
+      "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=75&_cAct_INSTANCE_uhcx_end=90&_cAct_INSTANCE_uhcx_typeView=list",
+      "capturadoEl": "2026-11-18T18:14:03.488094Z",
+      "valor": "inicial",
+      "literal": "Formació tecnològica bàsica",
+      "campo": "categoria"
+    },
+    {
+      "unidad": {
+        "id": "cibernarium-edicion:1593771",
+        "programa_id": "cibernarium:1592352",
+        "tipo": "edicion"
+      },
+      "titulo": "Google maps: planifica els teus trajectes",
+      "contenido_sha256": "03bb1b34712604151f11abfef3948eb76d6fa2298c0b30a9f3d21d41a36c5d5f",
+      "captura_sha256": "9763ae803a618a421681967f303fdff916752107cebb0172530dbb1558632cd8",
+      "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=75&_cAct_INSTANCE_uhcx_end=90&_cAct_INSTANCE_uhcx_typeView=list",
+      "capturadoEl": "2026-11-18T18:14:03.488094Z",
+      "valor": "inicial",
+      "literal": "Formació tecnològica bàsica",
+      "campo": "categoria"
+    },
+    {
+      "unidad": {
+        "id": "cibernarium-edicion:1593773",
+        "programa_id": "cibernarium:1592392",
+        "tipo": "edicion"
+      },
+      "titulo": "Millora els teus hàbits saludables amb apps",
+      "contenido_sha256": "457978c48220e28c8a370719a852dacf61bb9adda5ef03b37e62c5746b83c7e2",
+      "captura_sha256": "c2f96d285033ea4beedf75e639bdde1c4eb8e5af7c0638d5ff61fe9745267315",
+      "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=45&_cAct_INSTANCE_uhcx_end=60&_cAct_INSTANCE_uhcx_typeView=list",
+      "capturadoEl": "2026-11-18T18:13:55.112916Z",
+      "valor": "inicial",
+      "literal": "Formació tecnològica bàsica",
+      "campo": "categoria"
+    },
+    {
+      "unidad": {
+        "id": "cibernarium-edicion:1593774",
+        "programa_id": "cibernarium:1592398",
+        "tipo": "edicion"
+      },
+      "titulo": "T-mobilitat: coneix les funcions de l'App",
+      "contenido_sha256": "a34021a83a48dc4254e3050d2335dcfc69ac355c3259b6479b4e60b4e2277fa0",
+      "captura_sha256": "cdd482fc7efd80aaace425e57c6a5d05bc6e0fb7a28d6aa6c611a256f47bafbb",
+      "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=120&_cAct_INSTANCE_uhcx_end=135&_cAct_INSTANCE_uhcx_typeView=list",
+      "capturadoEl": "2026-11-18T18:14:14.790093Z",
+      "valor": "inicial",
+      "literal": "Formació tecnològica bàsica",
+      "campo": "categoria"
+    },
+    {
+      "unidad": {
+        "id": "cibernarium-edicion:1593777",
+        "programa_id": "cibernarium:1578850",
+        "tipo": "edicion"
+      },
+      "titulo": "Word: Escriu i dòna format als teus textos",
+      "contenido_sha256": "334fb66edfe12937c4962806ec87cbba71357ab5f7bec9f6fcd1e5a238c2e046",
+      "captura_sha256": "08aea6fc7ddb62a608dc5975399db3dc31d8c9730213e82460c5043c9855f724",
+      "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=30&_cAct_INSTANCE_uhcx_end=45&_cAct_INSTANCE_uhcx_typeView=list",
+      "capturadoEl": "2026-11-18T18:13:50.535285Z",
+      "valor": "inicial",
+      "literal": "Formació tecnològica bàsica",
+      "campo": "categoria"
+    },
+    {
+      "unidad": {
+        "id": "cibernarium-edicion:1593780",
+        "programa_id": "cibernarium:1586812",
+        "tipo": "edicion"
+      },
+      "titulo": "Allibera espai al teu mòbil",
+      "contenido_sha256": "bb34ae82ac845683eaf8c4fa544a5e2826fb7788731d9734deb65997460e1c7f",
+      "captura_sha256": "c2f96d285033ea4beedf75e639bdde1c4eb8e5af7c0638d5ff61fe9745267315",
+      "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=45&_cAct_INSTANCE_uhcx_end=60&_cAct_INSTANCE_uhcx_typeView=list",
+      "capturadoEl": "2026-11-18T18:13:55.112916Z",
+      "valor": "inicial",
+      "literal": "Formació tecnològica bàsica",
+      "campo": "categoria"
+    },
+    {
+      "unidad": {
+        "id": "cibernarium-edicion:1593782",
+        "programa_id": "cibernarium:1590279",
+        "tipo": "edicion"
+      },
+      "titulo": "Aprèn a instal·lar i eliminar aplicacions mòbils",
+      "contenido_sha256": "48ae6f2322fca56394a9431ef5039a1d28cada3543a80a3ee100cb49fc6f71de",
+      "captura_sha256": "08aea6fc7ddb62a608dc5975399db3dc31d8c9730213e82460c5043c9855f724",
+      "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=30&_cAct_INSTANCE_uhcx_end=45&_cAct_INSTANCE_uhcx_typeView=list",
+      "capturadoEl": "2026-11-18T18:13:50.535285Z",
+      "valor": "inicial",
+      "literal": "Formació tecnològica bàsica",
+      "campo": "categoria"
+    },
+    {
+      "unidad": {
+        "id": "cibernarium-edicion:1593787",
+        "programa_id": "cibernarium:1593282",
+        "tipo": "edicion"
+      },
+      "titulo": "Aprèn a fer i editar fotos amb el mòbil",
+      "contenido_sha256": "069a01fb3c88c333cde8d5e2f73ed9800dda10d9b54756e14ba834fdadbd6f22",
+      "captura_sha256": "dbcb998b2458b05590d5d747261257adbf37a370c9db25dbb6c088c98b2a3b72",
+      "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=15&_cAct_INSTANCE_uhcx_end=30&_cAct_INSTANCE_uhcx_typeView=list",
+      "capturadoEl": "2026-11-18T18:13:46.408214Z",
+      "valor": "inicial",
+      "literal": "Formació tecnològica bàsica",
+      "campo": "categoria"
+    },
+    {
+      "unidad": {
+        "id": "cibernarium-edicion:1593788",
+        "programa_id": "cibernarium:1593282",
+        "tipo": "edicion"
+      },
+      "titulo": "Aprèn a fer i editar fotos amb el mòbil",
+      "contenido_sha256": "069a01fb3c88c333cde8d5e2f73ed9800dda10d9b54756e14ba834fdadbd6f22",
+      "captura_sha256": "dbcb998b2458b05590d5d747261257adbf37a370c9db25dbb6c088c98b2a3b72",
+      "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=15&_cAct_INSTANCE_uhcx_end=30&_cAct_INSTANCE_uhcx_typeView=list",
+      "capturadoEl": "2026-11-18T18:13:46.408214Z",
+      "valor": "inicial",
+      "literal": "Formació tecnològica bàsica",
+      "campo": "categoria"
+    },
+    {
+      "unidad": {
+        "id": "cibernarium-edicion:1593790",
+        "programa_id": "cibernarium:1590943",
+        "tipo": "edicion"
+      },
+      "titulo": "Aprèn idiomes online",
+      "contenido_sha256": "7070d331eb1e993350836b42649f75ffff3b539644d8539df5c90d4d8509887d",
+      "captura_sha256": "c2f96d285033ea4beedf75e639bdde1c4eb8e5af7c0638d5ff61fe9745267315",
+      "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=45&_cAct_INSTANCE_uhcx_end=60&_cAct_INSTANCE_uhcx_typeView=list",
+      "capturadoEl": "2026-11-18T18:13:55.112916Z",
+      "valor": "inicial",
+      "literal": "Formació tecnològica bàsica",
+      "campo": "categoria"
+    },
+    {
+      "unidad": {
+        "id": "cibernarium-edicion:1593793",
+        "programa_id": "cibernarium:1591591",
+        "tipo": "edicion"
+      },
+      "titulo": "Configura i protegeix el teu mòbil o tauleta",
+      "contenido_sha256": "22f5d1793b6090a2004a760a25c9f26e9ac72cd2785f1f49d81a5b6a44cebb95",
+      "captura_sha256": "47174e60ebd5a9fe62961efd0aa6e0694daf0890119d988c08aafed536751a48",
+      "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=150&_cAct_INSTANCE_uhcx_end=165&_cAct_INSTANCE_uhcx_typeView=list",
+      "capturadoEl": "2026-11-18T18:14:21.925998Z",
+      "valor": "inicial",
+      "literal": "Formació tecnològica bàsica",
+      "campo": "categoria"
+    },
+    {
+      "unidad": {
+        "id": "cibernarium-edicion:1593797",
+        "programa_id": "cibernarium:1588825",
+        "tipo": "edicion"
+      },
+      "titulo": "Descobreix el certificat actic",
+      "contenido_sha256": "bb54357a5247418358b42de5459461371c93f8b35ee025bf64790138347c8d35",
+      "captura_sha256": "9763ae803a618a421681967f303fdff916752107cebb0172530dbb1558632cd8",
+      "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=75&_cAct_INSTANCE_uhcx_end=90&_cAct_INSTANCE_uhcx_typeView=list",
+      "capturadoEl": "2026-11-18T18:14:03.488094Z",
+      "valor": "inicial",
+      "literal": "Formació tecnològica bàsica",
+      "campo": "categoria"
+    },
+    {
+      "unidad": {
+        "id": "cibernarium-edicion:1593802",
+        "programa_id": "cibernarium:1591601",
+        "tipo": "edicion"
+      },
+      "titulo": "Descobreix el teu mòbil o tauleta",
+      "contenido_sha256": "3663036a9e51b92a372ecbf03a87f95e7abc31a14cddffc57c485b0514f1c4f0",
+      "captura_sha256": "4d4d03d748f17a1d17b7f26662bf374fa864b76d84b87f10acae21e68d14bd88",
+      "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=105&_cAct_INSTANCE_uhcx_end=120&_cAct_INSTANCE_uhcx_typeView=list",
+      "capturadoEl": "2026-11-18T18:14:11.329990Z",
+      "valor": "inicial",
+      "literal": "Formació tecnològica bàsica",
+      "campo": "categoria"
+    },
+    {
+      "unidad": {
+        "id": "cibernarium-edicion:1593804",
+        "programa_id": "cibernarium:1591995",
+        "tipo": "edicion"
+      },
+      "titulo": "Edita els teus vídeos fàcilment amb el mòbil",
+      "contenido_sha256": "8db76df3d414e8fde69f08dacdbd4f72f3accb4ef15ddfa9084e2b1a9087eb46",
+      "captura_sha256": "8be4b61c99c2459b005bee17955a561d40dbc0210d6f72394d33e2a2f8e620c1",
+      "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=60&_cAct_INSTANCE_uhcx_end=75&_cAct_INSTANCE_uhcx_typeView=list",
+      "capturadoEl": "2026-11-18T18:13:59.273947Z",
+      "valor": "inicial",
+      "literal": "Formació tecnològica bàsica",
+      "campo": "categoria"
+    },
+    {
+      "unidad": {
+        "id": "cibernarium-edicion:1593809",
+        "programa_id": "cibernarium:1593806",
+        "tipo": "edicion"
+      },
+      "titulo": "Excel: organitza el teu pressupost familiar",
+      "contenido_sha256": "ab0e8340f7e1bad4553381d558d3dab722620542c0985565bfb40843a1fe4354",
+      "captura_sha256": "8be4b61c99c2459b005bee17955a561d40dbc0210d6f72394d33e2a2f8e620c1",
+      "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=60&_cAct_INSTANCE_uhcx_end=75&_cAct_INSTANCE_uhcx_typeView=list",
+      "capturadoEl": "2026-11-18T18:13:59.273947Z",
+      "valor": "inicial",
+      "literal": "Formació tecnològica bàsica",
+      "campo": "categoria"
+    },
+    {
+      "unidad": {
+        "id": "cibernarium-edicion:1593883",
+        "programa_id": "cibernarium:1588858",
+        "tipo": "edicion"
+      },
+      "titulo": "Fes més fàcil el teu dia a dia amb el mòbil",
+      "contenido_sha256": "ce80176a14b18189966c0293b87596378c7f3a3812f93be3871ca59a5fbb42bc",
+      "captura_sha256": "ba9c9bc03623f3fac9aabe72ddee9eb08a0ed8e721e9ececeb9b69e59267b868",
+      "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=90&_cAct_INSTANCE_uhcx_end=105&_cAct_INSTANCE_uhcx_typeView=list",
+      "capturadoEl": "2026-11-18T18:14:07.379397Z",
+      "valor": "inicial",
+      "literal": "Formació tecnològica bàsica",
+      "campo": "categoria"
+    },
+    {
+      "unidad": {
+        "id": "cibernarium-edicion:1593887",
+        "programa_id": "cibernarium:1592279",
+        "tipo": "edicion"
+      },
+      "titulo": "Gmail: Avança en l'ús del teu correu electrònic",
+      "contenido_sha256": "f224af2633beb19f49b54c8fd89fa62b3f2e2a7c735a175994a7df9ee9503430",
+      "captura_sha256": "8be4b61c99c2459b005bee17955a561d40dbc0210d6f72394d33e2a2f8e620c1",
+      "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=60&_cAct_INSTANCE_uhcx_end=75&_cAct_INSTANCE_uhcx_typeView=list",
+      "capturadoEl": "2026-11-18T18:13:59.273947Z",
+      "valor": "inicial",
+      "literal": "Formació tecnològica bàsica",
+      "campo": "categoria"
+    },
+    {
+      "unidad": {
+        "id": "cibernarium-edicion:1593889",
+        "programa_id": "cibernarium:1593776",
+        "tipo": "edicion"
+      },
+      "titulo": "Gmail: configura el teu correu electrònic des de zero",
+      "contenido_sha256": "6c7fb2be1346eceee98e0a81d78e82ddcf53ff07719328e6eb749d460a4c5b86",
+      "captura_sha256": "cdd482fc7efd80aaace425e57c6a5d05bc6e0fb7a28d6aa6c611a256f47bafbb",
+      "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=120&_cAct_INSTANCE_uhcx_end=135&_cAct_INSTANCE_uhcx_typeView=list",
+      "capturadoEl": "2026-11-18T18:14:14.790093Z",
+      "valor": "inicial",
+      "literal": "Formació tecnològica bàsica",
+      "campo": "categoria"
+    },
+    {
+      "unidad": {
+        "id": "cibernarium-edicion:1593893",
+        "programa_id": "cibernarium:1592315",
+        "tipo": "edicion"
+      },
+      "titulo": "Google Chrome: comença a navegar per la xarxa",
+      "contenido_sha256": "03ce5d823a87cbc61cee88cfc006956454c82d893d4dcf3ed425729eea04bda8",
+      "captura_sha256": "9763ae803a618a421681967f303fdff916752107cebb0172530dbb1558632cd8",
+      "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=75&_cAct_INSTANCE_uhcx_end=90&_cAct_INSTANCE_uhcx_typeView=list",
+      "capturadoEl": "2026-11-18T18:14:03.488094Z",
+      "valor": "inicial",
+      "literal": "Formació tecnològica bàsica",
+      "campo": "categoria"
+    },
+    {
+      "unidad": {
+        "id": "cibernarium-edicion:1593896",
+        "programa_id": "cibernarium:1592352",
+        "tipo": "edicion"
+      },
+      "titulo": "Google maps: planifica els teus trajectes",
+      "contenido_sha256": "03bb1b34712604151f11abfef3948eb76d6fa2298c0b30a9f3d21d41a36c5d5f",
+      "captura_sha256": "9763ae803a618a421681967f303fdff916752107cebb0172530dbb1558632cd8",
+      "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=75&_cAct_INSTANCE_uhcx_end=90&_cAct_INSTANCE_uhcx_typeView=list",
+      "capturadoEl": "2026-11-18T18:14:03.488094Z",
+      "valor": "inicial",
+      "literal": "Formació tecnològica bàsica",
+      "campo": "categoria"
+    },
+    {
+      "unidad": {
+        "id": "cibernarium-edicion:1593897",
+        "programa_id": "cibernarium:1592352",
+        "tipo": "edicion"
+      },
+      "titulo": "Google maps: planifica els teus trajectes",
+      "contenido_sha256": "03bb1b34712604151f11abfef3948eb76d6fa2298c0b30a9f3d21d41a36c5d5f",
+      "captura_sha256": "9763ae803a618a421681967f303fdff916752107cebb0172530dbb1558632cd8",
+      "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=75&_cAct_INSTANCE_uhcx_end=90&_cAct_INSTANCE_uhcx_typeView=list",
+      "capturadoEl": "2026-11-18T18:14:03.488094Z",
+      "valor": "inicial",
+      "literal": "Formació tecnològica bàsica",
+      "campo": "categoria"
+    },
+    {
+      "unidad": {
+        "id": "cibernarium-edicion:1593902",
+        "programa_id": "cibernarium:1588894",
+        "tipo": "edicion"
+      },
+      "titulo": "Intel·ligència artificial: aprèn a fer-la servir pas a pas (IA)",
+      "contenido_sha256": "fde8b5b097c59cdefa6f3c4640f401581e995337932f1ba7a272f850496af17f",
+      "captura_sha256": "c2f96d285033ea4beedf75e639bdde1c4eb8e5af7c0638d5ff61fe9745267315",
+      "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=45&_cAct_INSTANCE_uhcx_end=60&_cAct_INSTANCE_uhcx_typeView=list",
+      "capturadoEl": "2026-11-18T18:13:55.112916Z",
+      "valor": "inicial",
+      "literal": "Formació tecnològica bàsica",
+      "campo": "categoria"
+    },
+    {
+      "unidad": {
+        "id": "cibernarium-edicion:1593904",
+        "programa_id": "cibernarium:1592388",
+        "tipo": "edicion"
+      },
+      "titulo": "La Meva Salut: Aprèn a fer els tràmits online",
+      "contenido_sha256": "4250a800396ff286631a40b40926678839524c9d498a6234d005979b1da90147",
+      "captura_sha256": "ba9c9bc03623f3fac9aabe72ddee9eb08a0ed8e721e9ececeb9b69e59267b868",
+      "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=90&_cAct_INSTANCE_uhcx_end=105&_cAct_INSTANCE_uhcx_typeView=list",
+      "capturadoEl": "2026-11-18T18:14:07.379397Z",
+      "valor": "inicial",
+      "literal": "Formació tecnològica bàsica",
+      "campo": "categoria"
+    },
+    {
+      "unidad": {
+        "id": "cibernarium-edicion:1593905",
+        "programa_id": "cibernarium:1592388",
+        "tipo": "edicion"
+      },
+      "titulo": "La Meva Salut: Aprèn a fer els tràmits online",
+      "contenido_sha256": "4250a800396ff286631a40b40926678839524c9d498a6234d005979b1da90147",
+      "captura_sha256": "ba9c9bc03623f3fac9aabe72ddee9eb08a0ed8e721e9ececeb9b69e59267b868",
+      "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=90&_cAct_INSTANCE_uhcx_end=105&_cAct_INSTANCE_uhcx_typeView=list",
+      "capturadoEl": "2026-11-18T18:14:07.379397Z",
+      "valor": "inicial",
+      "literal": "Formació tecnològica bàsica",
+      "campo": "categoria"
+    },
+    {
+      "unidad": {
+        "id": "cibernarium-edicion:1593913",
+        "programa_id": "cibernarium:1592392",
+        "tipo": "edicion"
+      },
+      "titulo": "Millora els teus hàbits saludables amb apps",
+      "contenido_sha256": "457978c48220e28c8a370719a852dacf61bb9adda5ef03b37e62c5746b83c7e2",
+      "captura_sha256": "c2f96d285033ea4beedf75e639bdde1c4eb8e5af7c0638d5ff61fe9745267315",
+      "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=45&_cAct_INSTANCE_uhcx_end=60&_cAct_INSTANCE_uhcx_typeView=list",
+      "capturadoEl": "2026-11-18T18:13:55.112916Z",
+      "valor": "inicial",
+      "literal": "Formació tecnològica bàsica",
+      "campo": "categoria"
+    },
+    {
+      "unidad": {
+        "id": "cibernarium-edicion:1593914",
+        "programa_id": "cibernarium:1592392",
+        "tipo": "edicion"
+      },
+      "titulo": "Millora els teus hàbits saludables amb apps",
+      "contenido_sha256": "457978c48220e28c8a370719a852dacf61bb9adda5ef03b37e62c5746b83c7e2",
+      "captura_sha256": "c2f96d285033ea4beedf75e639bdde1c4eb8e5af7c0638d5ff61fe9745267315",
+      "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=45&_cAct_INSTANCE_uhcx_end=60&_cAct_INSTANCE_uhcx_typeView=list",
+      "capturadoEl": "2026-11-18T18:13:55.112916Z",
+      "valor": "inicial",
+      "literal": "Formació tecnològica bàsica",
+      "campo": "categoria"
+    },
+    {
+      "unidad": {
+        "id": "cibernarium-edicion:1593918",
+        "programa_id": "cibernarium:1592704",
+        "tipo": "edicion"
+      },
+      "titulo": "Whatsapp i telegram: introducció a la missatgeria instantània",
+      "contenido_sha256": "2bf942b55d30248fc8b931031369c4fe5021a0e75d2de778f9f59a19edcbf7ee",
+      "captura_sha256": "9763ae803a618a421681967f303fdff916752107cebb0172530dbb1558632cd8",
+      "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=75&_cAct_INSTANCE_uhcx_end=90&_cAct_INSTANCE_uhcx_typeView=list",
+      "capturadoEl": "2026-11-18T18:14:03.488094Z",
+      "valor": "inicial",
+      "literal": "Formació tecnològica bàsica",
+      "campo": "categoria"
+    },
+    {
+      "unidad": {
+        "id": "cibernarium-edicion:1593919",
+        "programa_id": "cibernarium:1592704",
+        "tipo": "edicion"
+      },
+      "titulo": "Whatsapp i telegram: introducció a la missatgeria instantània",
+      "contenido_sha256": "2bf942b55d30248fc8b931031369c4fe5021a0e75d2de778f9f59a19edcbf7ee",
+      "captura_sha256": "9763ae803a618a421681967f303fdff916752107cebb0172530dbb1558632cd8",
+      "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=75&_cAct_INSTANCE_uhcx_end=90&_cAct_INSTANCE_uhcx_typeView=list",
+      "capturadoEl": "2026-11-18T18:14:03.488094Z",
+      "valor": "inicial",
+      "literal": "Formació tecnològica bàsica",
+      "campo": "categoria"
+    },
+    {
+      "unidad": {
+        "id": "cibernarium-edicion:1593920",
+        "programa_id": "cibernarium:1592704",
+        "tipo": "edicion"
+      },
+      "titulo": "Whatsapp i telegram: introducció a la missatgeria instantània",
+      "contenido_sha256": "2bf942b55d30248fc8b931031369c4fe5021a0e75d2de778f9f59a19edcbf7ee",
+      "captura_sha256": "9763ae803a618a421681967f303fdff916752107cebb0172530dbb1558632cd8",
+      "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=75&_cAct_INSTANCE_uhcx_end=90&_cAct_INSTANCE_uhcx_typeView=list",
+      "capturadoEl": "2026-11-18T18:14:03.488094Z",
+      "valor": "inicial",
+      "literal": "Formació tecnològica bàsica",
+      "campo": "categoria"
+    },
+    {
+      "unidad": {
+        "id": "cibernarium-edicion:1593934",
+        "programa_id": "cibernarium:1578850",
+        "tipo": "edicion"
+      },
+      "titulo": "Word: Escriu i dòna format als teus textos",
+      "contenido_sha256": "334fb66edfe12937c4962806ec87cbba71357ab5f7bec9f6fcd1e5a238c2e046",
+      "captura_sha256": "08aea6fc7ddb62a608dc5975399db3dc31d8c9730213e82460c5043c9855f724",
+      "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=30&_cAct_INSTANCE_uhcx_end=45&_cAct_INSTANCE_uhcx_typeView=list",
+      "capturadoEl": "2026-11-18T18:13:50.535285Z",
+      "valor": "inicial",
+      "literal": "Formació tecnològica bàsica",
+      "campo": "categoria"
+    },
+    {
+      "unidad": {
+        "id": "cibernarium-edicion:1594604",
+        "programa_id": "cibernarium:1586885",
+        "tipo": "edicion"
+      },
+      "titulo": "Power BI Desktop: analitza i visualitza dades amb eficàcia",
+      "contenido_sha256": "4fdb159ba1cc900082e8971c97b6e0a22f480e892791f51e857f51f603c60a34",
+      "captura_sha256": "8be4b61c99c2459b005bee17955a561d40dbc0210d6f72394d33e2a2f8e620c1",
+      "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=60&_cAct_INSTANCE_uhcx_end=75&_cAct_INSTANCE_uhcx_typeView=list",
+      "capturadoEl": "2026-11-18T18:13:59.273947Z",
+      "valor": "inicial",
+      "literal": "per a principiants",
+      "campo": "descripcion"
+    },
+    {
+      "unidad": {
+        "id": "cibernarium-edicion:1596946",
+        "programa_id": "cibernarium:1596946",
+        "tipo": "edicion"
+      },
+      "titulo": "ACTIC NIVELL 1 - C4: SEGURETAT, BENESTAR I CIVISME",
+      "contenido_sha256": "03e67127ca8437ee5b418b656cc59426462c910cb2ae237a5cf0445a57b7eb69",
+      "captura_sha256": "ba9c9bc03623f3fac9aabe72ddee9eb08a0ed8e721e9ececeb9b69e59267b868",
+      "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=90&_cAct_INSTANCE_uhcx_end=105&_cAct_INSTANCE_uhcx_typeView=list",
+      "capturadoEl": "2026-11-18T18:14:07.379397Z",
+      "valor": "inicial",
+      "literal": "Formació tecnològica bàsica",
+      "campo": "categoria"
+    },
+    {
+      "unidad": {
+        "id": "cibernarium-edicion:1597288",
+        "programa_id": "cibernarium:1597282",
+        "tipo": "edicion"
+      },
+      "titulo": "ACTIC NIVELL 2: REPASSA LES COMPETÈNCIES TIC",
+      "contenido_sha256": "54fa5125ea6eeb7eb6c45ab5deb644c0ae3dfbfb318699bf4b6174ab46f958e3",
+      "captura_sha256": "4d4d03d748f17a1d17b7f26662bf374fa864b76d84b87f10acae21e68d14bd88",
+      "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=105&_cAct_INSTANCE_uhcx_end=120&_cAct_INSTANCE_uhcx_typeView=list",
+      "capturadoEl": "2026-11-18T18:14:11.329990Z",
+      "valor": "inicial",
+      "literal": "Formació tecnològica bàsica",
+      "campo": "categoria"
+    },
+    {
+      "unidad": {
+        "id": "cibernarium-edicion:1597289",
+        "programa_id": "cibernarium:1597282",
+        "tipo": "edicion"
+      },
+      "titulo": "ACTIC NIVELL 2: REPASSA LES COMPETÈNCIES TIC",
+      "contenido_sha256": "54fa5125ea6eeb7eb6c45ab5deb644c0ae3dfbfb318699bf4b6174ab46f958e3",
+      "captura_sha256": "4d4d03d748f17a1d17b7f26662bf374fa864b76d84b87f10acae21e68d14bd88",
+      "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=105&_cAct_INSTANCE_uhcx_end=120&_cAct_INSTANCE_uhcx_typeView=list",
+      "capturadoEl": "2026-11-18T18:14:11.329990Z",
+      "valor": "inicial",
+      "literal": "Formació tecnològica bàsica",
+      "campo": "categoria"
+    },
+    {
+      "unidad": {
+        "id": "cibernarium-edicion:1613564",
+        "programa_id": "cibernarium:1613563",
+        "tipo": "edicion"
+      },
+      "titulo": "Introducció a les eines digitals per a la recerca de feina",
+      "contenido_sha256": "3c92293ddae97d09fd07fbbe63a248a868a344bd88e689604e06657b104afa48",
+      "captura_sha256": "8be4b61c99c2459b005bee17955a561d40dbc0210d6f72394d33e2a2f8e620c1",
+      "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=60&_cAct_INSTANCE_uhcx_end=75&_cAct_INSTANCE_uhcx_typeView=list",
+      "capturadoEl": "2026-11-18T18:13:59.273947Z",
+      "valor": "inicial",
+      "literal": "Formació tecnològica bàsica",
+      "campo": "categoria"
+    },
+    {
+      "unidad": {
+        "id": "cibernarium-edicion:1613573",
+        "programa_id": "cibernarium:1613563",
+        "tipo": "edicion"
+      },
+      "titulo": "Introducció a les eines digitals per a la recerca de feina",
+      "contenido_sha256": "3c92293ddae97d09fd07fbbe63a248a868a344bd88e689604e06657b104afa48",
+      "captura_sha256": "8be4b61c99c2459b005bee17955a561d40dbc0210d6f72394d33e2a2f8e620c1",
+      "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=60&_cAct_INSTANCE_uhcx_end=75&_cAct_INSTANCE_uhcx_typeView=list",
+      "capturadoEl": "2026-11-18T18:13:59.273947Z",
+      "valor": "inicial",
+      "literal": "Formació tecnològica bàsica",
+      "campo": "categoria"
+    },
+    {
+      "unidad": {
+        "id": "cibernarium-edicion:1613575",
+        "programa_id": "cibernarium:1613563",
+        "tipo": "edicion"
+      },
+      "titulo": "Introducció a les eines digitals per a la recerca de feina",
+      "contenido_sha256": "3c92293ddae97d09fd07fbbe63a248a868a344bd88e689604e06657b104afa48",
+      "captura_sha256": "8be4b61c99c2459b005bee17955a561d40dbc0210d6f72394d33e2a2f8e620c1",
+      "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=60&_cAct_INSTANCE_uhcx_end=75&_cAct_INSTANCE_uhcx_typeView=list",
+      "capturadoEl": "2026-11-18T18:13:59.273947Z",
+      "valor": "inicial",
+      "literal": "Formació tecnològica bàsica",
+      "campo": "categoria"
+    },
+    {
+      "unidad": {
+        "id": "cibernarium-edicion:1619102",
+        "programa_id": "cibernarium:1619102",
+        "tipo": "edicion"
+      },
+      "titulo": "JavaScript - estructures i programació orientada a objectes (Edició a Mida)",
+      "contenido_sha256": "864c48e0547f64c76f2f86ea1281294917f6d010bdd944dd7db5ab632ed92611",
+      "captura_sha256": "cdd482fc7efd80aaace425e57c6a5d05bc6e0fb7a28d6aa6c611a256f47bafbb",
+      "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=120&_cAct_INSTANCE_uhcx_end=135&_cAct_INSTANCE_uhcx_typeView=list",
+      "capturadoEl": "2026-11-18T18:14:14.790093Z",
+      "valor": "inicial",
+      "literal": "per a principiants",
+      "campo": "descripcion"
+    },
+    {
+      "unidad": {
+        "id": "cibernarium-edicion:1620597",
+        "programa_id": "cibernarium:1620597",
+        "tipo": "edicion"
+      },
+      "titulo": "Windows: Descobreix el teu ordinador",
+      "contenido_sha256": "d2900339911f67d6b1dbf0a6e2cae1a57b52dd75c83296165e0f96c1075b7da7",
+      "captura_sha256": "47174e60ebd5a9fe62961efd0aa6e0694daf0890119d988c08aafed536751a48",
+      "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=150&_cAct_INSTANCE_uhcx_end=165&_cAct_INSTANCE_uhcx_typeView=list",
+      "capturadoEl": "2026-11-18T18:14:21.925998Z",
+      "valor": "inicial",
+      "literal": "Formació tecnològica bàsica",
+      "campo": "categoria"
+    },
+    {
+      "unidad": {
+        "id": "cibernarium-edicion:1620602",
+        "programa_id": "cibernarium:1578850",
+        "tipo": "edicion"
+      },
+      "titulo": "Word: Escriu i dòna format als teus textos",
+      "contenido_sha256": "334fb66edfe12937c4962806ec87cbba71357ab5f7bec9f6fcd1e5a238c2e046",
+      "captura_sha256": "08aea6fc7ddb62a608dc5975399db3dc31d8c9730213e82460c5043c9855f724",
+      "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=30&_cAct_INSTANCE_uhcx_end=45&_cAct_INSTANCE_uhcx_typeView=list",
+      "capturadoEl": "2026-11-18T18:13:50.535285Z",
+      "valor": "inicial",
+      "literal": "Formació tecnològica bàsica",
+      "campo": "categoria"
+    },
+    {
+      "unidad": {
+        "id": "cibernarium-edicion:1620614",
+        "programa_id": "cibernarium:1593776",
+        "tipo": "edicion"
+      },
+      "titulo": "Gmail: configura el teu correu electrònic des de zero",
+      "contenido_sha256": "6c7fb2be1346eceee98e0a81d78e82ddcf53ff07719328e6eb749d460a4c5b86",
+      "captura_sha256": "cdd482fc7efd80aaace425e57c6a5d05bc6e0fb7a28d6aa6c611a256f47bafbb",
+      "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=120&_cAct_INSTANCE_uhcx_end=135&_cAct_INSTANCE_uhcx_typeView=list",
+      "capturadoEl": "2026-11-18T18:14:14.790093Z",
+      "valor": "inicial",
+      "literal": "Formació tecnològica bàsica",
+      "campo": "categoria"
+    },
+    {
+      "unidad": {
+        "id": "cibernarium-edicion:1620616",
+        "programa_id": "cibernarium:1588894",
+        "tipo": "edicion"
+      },
+      "titulo": "Intel·ligència artificial: aprèn a fer-la servir pas a pas (IA)",
+      "contenido_sha256": "fde8b5b097c59cdefa6f3c4640f401581e995337932f1ba7a272f850496af17f",
+      "captura_sha256": "c2f96d285033ea4beedf75e639bdde1c4eb8e5af7c0638d5ff61fe9745267315",
+      "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=45&_cAct_INSTANCE_uhcx_end=60&_cAct_INSTANCE_uhcx_typeView=list",
+      "capturadoEl": "2026-11-18T18:13:55.112916Z",
+      "valor": "inicial",
+      "literal": "Formació tecnològica bàsica",
+      "campo": "categoria"
+    },
+    {
+      "unidad": {
+        "id": "cibernarium-edicion:1620617",
+        "programa_id": "cibernarium:1588825",
+        "tipo": "edicion"
+      },
+      "titulo": "Descobreix el certificat actic",
+      "contenido_sha256": "bb54357a5247418358b42de5459461371c93f8b35ee025bf64790138347c8d35",
+      "captura_sha256": "9763ae803a618a421681967f303fdff916752107cebb0172530dbb1558632cd8",
+      "url": "https://cibernarium.barcelonactiva.cat:443/ca/web/guest/formacions?p_p_id=cAct_INSTANCE_uhcx&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&_cAct_INSTANCE_uhcx_start=75&_cAct_INSTANCE_uhcx_end=90&_cAct_INSTANCE_uhcx_typeView=list",
+      "capturadoEl": "2026-11-18T18:14:03.488094Z",
+      "valor": "inicial",
+      "literal": "Formació tecnològica bàsica",
+      "campo": "categoria"
+    }
+  ]
+}

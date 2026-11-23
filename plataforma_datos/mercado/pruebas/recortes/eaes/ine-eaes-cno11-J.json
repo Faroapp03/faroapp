@@ -1,0 +1,30 @@
+[
+  {
+    "Id": 22809,
+    "FK_Variable": 456,
+    "Nombre": "Trabajadores cualificados en actividades agrícolas",
+    "Codigo": "61",
+    "FK_JerarquiaPadres": [22808]
+  },
+  {
+    "Id": 22814,
+    "FK_Variable": 456,
+    "Nombre": "Trabajadores cualificados en actividades ganaderas, (incluidas avícolas, apícolas y similares)",
+    "Codigo": "62",
+    "FK_JerarquiaPadres": [22808]
+  },
+  {
+    "Id": 22822,
+    "FK_Variable": 456,
+    "Nombre": "Trabajadores cualificados en actividades agropecuarias mixtas",
+    "Codigo": "63",
+    "FK_JerarquiaPadres": [22808]
+  },
+  {
+    "Id": 22825,
+    "FK_Variable": 456,
+    "Nombre": "Trabajadores cualificados en actividades forestales, pesqueras y cinegéticas",
+    "Codigo": "64",
+    "FK_JerarquiaPadres": [22808]
+  }
+]

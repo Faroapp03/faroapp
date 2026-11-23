@@ -1,0 +1,30 @@
+[
+  {
+    "id": 44,
+    "title": "Aprende a protegerte del grooming",
+    "status": "Disponible",
+    "area": "Nacional",
+    "format": ["A tu ritmo", "Online", "Presencial"],
+    "level": "Básico",
+    "type": "Taller",
+    "totalDuration": 60,
+    "languages": ["Español"],
+    "erased": false,
+    "activityCatalogMaterials": [
+      {
+        "id": 10059787955,
+        "type": "Autoformación",
+        "status": "Disponible",
+        "slug": "aprende-protegerte-grooming",
+        "title": "Aprende a protegerte del grooming",
+        "lang": "Español",
+        "erased": false,
+        "description": "El grooming es el engaño con el que una persona adulta se acerca a una persona menor por internet, gana su confianza y busca un fin sexual. Este curso básico te ayuda a entender cómo funciona, a reconocer las señales de alerta y a saber qué hacer si ocurre. Verás medidas sencillas de prevención, desde la privacidad en redes y videojuegos hasta las normas digitales en familia, y conocerás recursos de ayuda gratuitos.",
+        "aprenderContent": "<li>Entender qué es el grooming: Qué es, qué dice la ley en España y cómo actúa quien lo comete, incluidas la sextorsión y los montajes con inteligencia artificial.</li><li>Detectar las señales de alerta: Cómo identificar señales en las conversaciones y cambios de comportamiento, desmontar mitos frecuentes y hablar del tema en familia.</li><li>Prevenir y saber actuar: Cómo cuidar la privacidad, usar el control parental y la verificación en dos pasos, y qué hacer si ocurre: guardar pruebas, denunciar y pedir ayuda.</li>",
+        "paraTiContent": "<li>Te preocupa con quién se relacionan las personas menores de tu entorno en redes y videojuegos.</li><li>Quieres hablar de estos riesgos en familia y acordar normas digitales claras.</li><li>Quieres tener claro a quién acudir y qué hacer si ocurre un caso.</li>",
+        "descriptionContent": "<p>Un curso de nivel básico, claro y sencillo, para comprender cómo se produce el grooming y cómo proteger a niñas, niños y adolescentes en el entorno digital, y también a ti. Recorrerás cinco temas, con un ejercicio práctico al final de cada uno y un cuestionario final para comprobar lo aprendido. A lo largo de este curso aumentarás tus conocimientos sobre:</p>\n<li>El grooming: qué es, qué dice la ley en España y cómo actúa quien lo comete.</li>\n<li>Las señales de alerta y cómo hablar del tema en familia.</li>\n<li>La prevención en el entorno digital y los pasos a seguir si ocurre.</li>",
+        "moodleLink": "https://e-learning.cibervoluntarios.org/course/view.php?id=485"
+      }
+    ]
+  }
+]

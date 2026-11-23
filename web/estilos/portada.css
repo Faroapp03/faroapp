@@ -1,0 +1,49 @@
+/* Página de inicio: la apertura (la fotografía de portada con el título y «Empezar»), los accesos a las secciones
+   (cada una, una historia con su fotografía). El orden de las hojas
+   es el de la cascada: las adaptaciones por anchura van las últimas, para ganar a las demás. */
+
+@import url("./portada-apertura.css");
+@import url("./portada-secciones.css");
+@import url("./portada-adaptaciones.css");
+
+/* El contenido es visible por defecto: el efecto solo se activa con JavaScript y movimiento permitido. */
+@media (prefers-reduced-motion: no-preference) {
+  .inicio-esperar .apertura-marca,
+  .inicio-esperar .apertura-entradilla {
+    opacity: 0;
+  }
+  .inicio-abrir .apertura-marca .marca-nombre {
+    animation: inicio-aparecer 0.65s 0.25s both;
+  }
+  .inicio-abrir .apertura-entradilla {
+    animation: inicio-aparecer 0.65s 0.8s both;
+  }
+  .inicio-observar .historia {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  .inicio-observar .historia-visible {
+    animation: inicio-aparecer 0.55s both;
+  }
+  .inicio-observar .historia-visible:nth-child(2) {
+    animation-delay: 0.12s;
+  }
+  .inicio-observar .historia-visible:nth-child(3) {
+    animation-delay: 0.24s;
+  }
+  .inicio-observar .historia:focus-visible {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+  @keyframes inicio-aparecer {
+    from {
+      opacity: 0;
+      transform: translateY(18px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+}

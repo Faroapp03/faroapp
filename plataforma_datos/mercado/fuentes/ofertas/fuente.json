@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "id": "ofertas",
+  "tema": "mercado",
+  "lector": "plataforma_datos.mercado.fuentes.ofertas.lector",
+  "casa_datos": "ofertas",
+  "nombre": "Ofertas de empleo del SOC y Feina Activa",
+  "institucion": "Observatori del Treball i Model Productiu (Generalitat de Catalunya)",
+  "significado": "Puestos ofertados por el SOC y Feina Activa en Cataluña, acumulados de enero al mes vigente, por ocupación de cuatro cifras (las 50 más ofertadas), subgrupo y gran grupo de la CCO-2011, frente al mismo periodo del año anterior.",
+  "alcance": [
+    "Libro mensual Ofertes_AAAAMM.xlsx: hojas «2 OCUPACIONS_ANY», «2 GRUPS_OCUPACIÓ» y «2 CARACTERÍSTIQUES», que tienen que cuadrar entre sí.",
+    "El mes vigente se descubre consultando la dirección de cada mes, del en curso al último conocido incluido (así se ve una revisión de ese libro); el libro anterior es el del mismo mes del año anterior, elegido por su fecha.",
+    "Si no se encuentra el libro del año anterior, la fuente se detiene con su motivo, retira el libro nuevo de originales/ y conserva lo publicado; las variaciones del propio libro no se usan."
+  ],
+  "recursos": [
+    {
+      "id": "libros-mensuales",
+      "tipo": "familia",
+      "ubicacion": "https://observatoritreball.gencat.cat/web/.content/generic/documents/treball/estadistica/ofertes/",
+      "licencia": "Avís legal de la Generalitat (https://tramits.gencat.cat/ca/ajuda/avis_legal/), régimen de la Llicència oberta d'ús d'informació – Catalunya: reutilización citando la fuente y la fecha de actualización, sin desnaturalizar la información (art. 17.1 de la Ley 19/2014 y art. 8 de la Ley 37/2007). El Excel no declara licencia específica.",
+      "descripcion": "Un libro por mes en {año}/arxius/Ofertes_{AAAAMM}.xlsx, enlazado desde https://observatoritreball.gencat.cat/ca/ambits_tematics/treball/ofertes_llocs_treball/."
+    }
+  ],
+  "canales": [
+    {
+      "id": "portal",
+      "tipo": "remoto",
+      "recursos": ["libros-mensuales"],
+      "autenticacion": "No se configura autenticación de cuenta en el lector.",
+      "limites": [
+        "Solo libros XLSX del mismo origen, con respuesta 200 y un tope de 32 MB; un 404 o un 410 significa que ese mes aún no está publicado.",
+        "Una consulta por mes desde el en curso hasta el último conocido incluido, con la pausa común entre peticiones; sin calendario de publicación."
+      ],
+      "observaciones": "Portal público del Observatori del Treball."
+    }
+  ],
+  "actualizacion": {
+    "politica": "mensual",
+    "red": true,
+    "frecuencia": "mensual (Observatori del Treball)",
+    "renovar_dias": null,
+    "originales": "ofertas"
+  },
+  "conjuntos": [
+    {
+      "id": "ofertas",
+      "fuente": "ofertas",
+      "clase": "cambiante",
+      "alcance": "serie-abierta",
+      "operacion": "descargar",
+      "intervalo_dias": 7
+    }
+  ],
+  "dependencias": [],
+  "contratos": ["lector.py:validar"],
+  "retirada": "Se mantienen los controles de admisión del lector; un mes sin libro del año anterior, una respuesta que no es un libro o un mes que retrocede no autoriza una retirada ni una cifra cero: se conserva lo validado.",
+  "conservacion": "Las rutas, originales, procedencias y revisiones actuales en var/actualizacion se conservan; este descriptor no activa limpieza automática ni fija nuevos plazos de retención."
+}

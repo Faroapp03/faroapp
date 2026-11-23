@@ -1,0 +1,94 @@
+{
+  "version": 1,
+  "naturaleza": "Perfiles sintéticos de desarrollo; no examen ni referencia de utilidad verificada.",
+  "campos": {
+    "ocupacion": "ESCO e ISCO-08 comprobados contra el catálogo fijado.",
+    "necesidad.objetivo": "ia, mejorar o cambiar; el destino específico se reserva como ampliación.",
+    "necesidad.nivelIAActual": "inicial, medio, avanzado o null. El anclaje histórico no lo acredita. Los valores de n01 y n09 son intervenciones sintéticas explícitas del diseño, no datos inferidos del anclaje, del deseo ni del oficio.",
+    "necesidad.nivelIADeseado": "inicial, medio, avanzado o null (no-lo-se). Campo separado del actual y de los requisitos de entrada. En n01 y n09 permanece null en ambos miembros, para aislar el conocimiento actual.",
+    "necesidad.tareas": "Tareas oficiales con dominio cero, cuesta, domino o null; descripción sintética del anclaje.",
+    "necesidad.tareaObjetivo": "Id presente entre las tareas de este perfil.",
+    "acceso": "Situación trabaja/autonomo/paro/erte/publico o null, sector explícito o null, modalidad, territorio y horas semanales o null."
+  },
+  "adaptacion": "La integridad del banco no exige que el selector actual admita aún nivel de IA separado o dominio por tarea. El ejecutor debe declarar los campos consumidos y los no soportados; no descartarlos silenciosamente ni presentarlos como ensayados.",
+  "ampliacionesFueraDelNucleo": [
+    {
+      "campo": "destino",
+      "estado": "no incluido en los 20 perfiles",
+      "motivo": "La ocupación de destino requiere decisión de contrato y soporte explícito; este banco no obliga a implementarla."
+    },
+    {
+      "campo": "CAP",
+      "estado": "no incluido en los 20 perfiles",
+      "motivo": "Vigencia/acreditación requiere entrada estructurada y fuente de requisitos; no se deduce de ser conductor."
+    }
+  ],
+  "reglas": {
+    "nivel-ia": {
+      "dimension": "nivel",
+      "expectativa": "Conservar el conocimiento actual de IA declarado por el perfil sintético, separado del nivel deseado. No inferir ninguno del oficio, ni presentar un curso inicial como avanzado. No justificar formación básica por cuota para alguien que declara dominar su contenido. La utilidad concreta sigue pendiente de referencia persona|curso; nivel no publicado permanece desconocido.",
+      "evidenciaNecesaria": ["nivel-publicado", "requisitos-publicados"]
+    },
+    "dominio-tarea": {
+      "dimension": "necesidad",
+      "expectativa": "Conservar el dominio declarado de esta tarea, separado del oficio y del nivel de IA. No dar por demostrada una utilidad distinta sin referencia persona|curso.",
+      "evidenciaNecesaria": ["modulos-del-curso", "declaracion-de-la-persona"]
+    },
+    "tarea-objetivo": {
+      "dimension": "necesidad",
+      "expectativa": "Conservar qué tarea se quiere mejorar y justificar la relación con módulos publicados. No afirmar que menús o productos enseñan a dirigir equipos sin evidencia.",
+      "evidenciaNecesaria": ["modulos-del-curso", "tarea-oficial"]
+    },
+    "objetivo": {
+      "dimension": "necesidad",
+      "expectativa": "Conservar el objetivo explícito; no añadir IA o ciberseguridad para completar mínimos. No exigir hojas distintas si no hay alternativas adecuadas con referencia.",
+      "evidenciaNecesaria": ["objetivo-declarado", "modulos-del-curso"]
+    },
+    "empleo": {
+      "dimension": "acceso",
+      "expectativa": "Recalcular acceso con el colectivo publicado. No elegir como cursable un curso incompatible; contenido y acceso se miden por separado.",
+      "evidenciaNecesaria": ["destinatarios-y-requisitos-publicados"]
+    },
+    "modalidad": {
+      "dimension": "acceso",
+      "expectativa": "Excluir de lo cursable la modalidad publicada incompatible. Modalidad desconocida no implica compatibilidad.",
+      "evidenciaNecesaria": ["modalidad-publicada"]
+    },
+    "territorio": {
+      "dimension": "acceso",
+      "expectativa": "Recalcular acceso de presenciales según ubicación publicada y territorio. No penalizar por territorio un curso completamente a distancia. No inventar ubicación de acciones previstas.",
+      "evidenciaNecesaria": ["municipio-publicado", "tabla-idescat"]
+    },
+    "horas": {
+      "dimension": "plan",
+      "expectativa": "Verificar la carga sobre el presupuesto declarado y la política vigente, con fechas y horas publicadas. Más tiempo no obliga a añadir cursos. No inferir horas ausentes.",
+      "evidenciaNecesaria": ["horas-y-fechas-publicadas", "politica-de-carga-versionada"]
+    },
+    "nivel-ia-desconocido": {
+      "dimension": "desconocido",
+      "expectativa": "Distinguir conocimiento actual avanzado de actual desconocido. No convertir null/no-lo-se en inicial ni en una declaración inferida del deseo o de ISCO. No afirmar que el curso corresponde a un conocimiento que la persona no declaró.",
+      "evidenciaNecesaria": ["nivel-declarado-o-ausente", "nivel-publicado"]
+    },
+    "empleo-desconocido": {
+      "dimension": "desconocido",
+      "expectativa": "No convertir no-lo-se en trabaja ni paro. Si el colectivo afecta a requisitos publicados, conservar acceso pendiente o pedir la aclaración disponible.",
+      "evidenciaNecesaria": ["colectivo-publicado", "situacion-declarada-o-ausente"]
+    },
+    "sin-cuotas": {
+      "dimension": "plan",
+      "expectativa": "No exigir mínimos de tres IA o una ciberseguridad ni llenar la hoja con cursos por cuota. No exigir diferencias de ids entre personas por sí mismas.",
+      "evidenciaNecesaria": ["decision-de-producto"]
+    },
+    "incertidumbre-explicita": {
+      "dimension": "contrato",
+      "expectativa": "No transformar null/no-lo-se en hechos conocidos. Abstención sólo se evalúa si la oferta accesible tiene referencia independiente suficiente.",
+      "evidenciaNecesaria": ["referencia-de-oferta", "fuentes-publicadas"]
+    },
+    "cambio-explicable": {
+      "dimension": "contraste",
+      "expectativa": "Con oferta y configuración fijadas, conservar acceso y hechos de un candidato ante cambios irrelevantes; justificar cambios relevantes con la declaración y evidencia. Exigir cambio de selección sólo con oferta adecuada y referencia persona|curso que lo sostenga.",
+      "evidenciaNecesaria": ["referencia-de-oferta", "requisitos-y-modulos-publicados"]
+    }
+  },
+  "etiquetasUtilidad": "Vacías deliberadamente. Las expectativas objetivas anteriores no asignan P, Pa ni N."
+}

@@ -1,0 +1,30 @@
+/** Diagnòstic de la revisió editorial de la publicació construïda. */
+export const TEXTOS_CLASIFICACION = {
+  'panel.clasificacion.titulo': 'Revisió editorial de Cursos',
+  'panel.clasificacion.intro':
+    'Consulta la revisió de matèria i nivell de la publicació construïda. Aquestes incidències no són retencions de les fonts.',
+  'panel.clasificacion.consultar': 'Consultar la revisió editorial',
+  'panel.clasificacion.anterior': 'Pàgina anterior',
+  'panel.clasificacion.siguiente': 'Pàgina següent',
+  'panel.clasificacion.no-disponible': 'La revisió editorial d’aquesta publicació no està disponible.',
+  'panel.clasificacion.total':
+    'Ofertes a la publicació: {total}. Matèria acreditada: {aplicadas}. Matèria pendent: {pendientes}.',
+  'panel.clasificacion.catalogo': 'SHA-256 del catàleg',
+  'panel.clasificacion.revision': 'Revisió del catàleg',
+  'panel.clasificacion.editorial': 'SHA-256 de la revisió editorial',
+  'panel.clasificacion.materias': 'SHA-256 de la revisió de matèries',
+  'panel.clasificacion.nivel': 'Nivell',
+  'panel.clasificacion.niveles-pendientes': 'Ofertes amb nivell pendent: {cantidad}.',
+  'panel.clasificacion.pagina': 'Pàgina {actual} de {total}',
+  'panel.clasificacion.motivo.aplicada': 'Revisió aplicada',
+  'panel.clasificacion.motivo.programa-sin-revision': 'Programa sense revisió',
+  'panel.clasificacion.motivo.titulo-distinto': 'Títol diferent',
+  'panel.clasificacion.motivo.proveedor-distinto': 'Proveïdor diferent',
+  'panel.clasificacion.motivo.unidad-sin-revision': 'Unitat sense revisió',
+  'panel.clasificacion.motivo.firma-distinta': 'Signatura editorial diferent',
+  'panel.clasificacion.motivo.evidencia-nivel-ausente': 'Falta l’evidència de nivell',
+  'panel.clasificacion.motivo.nivel-por-confirmar': 'Nivell per confirmar',
+  'panel.clasificacion.motivo.contenido-distinto': 'El contingut revisat ha canviat',
+  'panel.clasificacion.motivo.materia-sin-evidencia': 'Matèria sense evidència',
+  'panel.clasificacion.motivo.identidad-materia-distinta': 'L’evidència correspon a una altra identitat',
+};

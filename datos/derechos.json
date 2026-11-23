@@ -1,0 +1,100 @@
+{
+  "citas": [
+    {
+      "id": "estatuto-23-1-d",
+      "fuente": "Estatuto de los Trabajadores, art. 23.1.d",
+      "enlace": "https://www.boe.es/buscar/act.php?id=BOE-A-2015-11430#a23",
+      "fragmentos": [
+        "A la formación necesaria para su adaptación a las modificaciones operadas en el puesto de trabajo. La misma correrá a cargo de la empresa",
+        "El tiempo destinado a la formación se considerará en todo caso tiempo de trabajo efectivo."
+      ],
+      "consultado": "2026-11-15"
+    },
+    {
+      "id": "estatuto-23-3",
+      "fuente": "Estatuto de los Trabajadores, art. 23.3",
+      "enlace": "https://www.boe.es/buscar/act.php?id=BOE-A-2015-11430#a23",
+      "fragmentos": [
+        "Los trabajadores con al menos un año de antigüedad en la empresa tienen derecho a un permiso retribuido de veinte horas anuales de formación profesional para el empleo, vinculada a la actividad de la empresa, acumulables por un periodo de hasta cinco años."
+      ],
+      "consultado": "2026-11-15"
+    },
+    {
+      "id": "rd-694-2017-29",
+      "fuente": "Real Decreto 694/2017, art. 29",
+      "enlace": "https://www.boe.es/buscar/act.php?id=BOE-A-2017-7769#a2-11",
+      "fragmentos": [
+        "El permiso individual de formación es el que la empresa autoriza a un trabajador para la realización de una acción formativa que esté reconocida mediante una titulación o acreditación oficial",
+        "La financiación de los costes salariales de cada permiso estará limitada a un máximo de 200 horas laborales por permiso y curso académico o año natural"
+      ],
+      "consultado": "2026-11-15"
+    },
+    {
+      "id": "rd-694-2017-29-solicitud",
+      "fuente": "Real Decreto 694/2017, art. 29",
+      "enlace": "https://www.boe.es/buscar/act.php?id=BOE-A-2017-7769#a2-11",
+      "fragmentos": [
+        "el modelo de solicitud de autorización del permiso individual de formación que las empresas pondrán a disposición de los trabajadores",
+        "La denegación de la autorización del permiso por parte de la empresa deberá estar motivada por razones organizativas o de producción, comunicándolo al trabajador."
+      ],
+      "consultado": "2026-11-15"
+    }
+  ],
+  "tecnologia": {
+    "citas": [
+      {
+        "id": "estatuto-64-4-d",
+        "fuente": "Estatuto de los Trabajadores, art. 64.4.d",
+        "enlace": "https://www.boe.es/buscar/act.php?id=BOE-A-2015-11430#a64",
+        "fragmentos": [
+          "El comité de empresa, con la periodicidad que proceda en cada caso, tendrá derecho a:",
+          "Ser informado por la empresa de los parámetros, reglas e instrucciones en los que se basan los algoritmos o sistemas de inteligencia artificial que afectan a la toma de decisiones que pueden incidir en las condiciones de trabajo, el acceso y mantenimiento del empleo, incluida la elaboración de perfiles."
+        ],
+        "version_consolidada": "2026-10-21",
+        "consultado": "2026-11-15"
+      },
+      {
+        "id": "lopdgdd-87",
+        "fuente": "Ley Orgánica 3/2018 (LOPDGDD), art. 87",
+        "enlace": "https://www.boe.es/buscar/act.php?id=BOE-A-2018-16673#a8-9",
+        "fragmentos": [
+          "Los trabajadores y los empleados públicos tendrán derecho a la protección de su intimidad en el uso de los dispositivos digitales puestos a su disposición por su empleador.",
+          "Los trabajadores deberán ser informados de los criterios de utilización a los que se refiere este apartado."
+        ],
+        "version_consolidada": "2025-12-27",
+        "consultado": "2026-11-15"
+      },
+      {
+        "id": "lopdgdd-88",
+        "fuente": "Ley Orgánica 3/2018 (LOPDGDD), art. 88",
+        "enlace": "https://www.boe.es/buscar/act.php?id=BOE-A-2018-16673#a8-10",
+        "fragmentos": [
+          "Los trabajadores y los empleados públicos tendrán derecho a la desconexión digital a fin de garantizar, fuera del tiempo de trabajo legal o convencionalmente establecido, el respeto de su tiempo de descanso, permisos y vacaciones, así como de su intimidad personal y familiar."
+        ],
+        "version_consolidada": "2025-12-27",
+        "consultado": "2026-11-15"
+      },
+      {
+        "id": "lopdgdd-89",
+        "fuente": "Ley Orgánica 3/2018 (LOPDGDD), art. 89",
+        "enlace": "https://www.boe.es/buscar/act.php?id=BOE-A-2018-16673#a8-11",
+        "fragmentos": [
+          "Los empleadores habrán de informar con carácter previo, y de forma expresa, clara y concisa, a los trabajadores o los empleados públicos y, en su caso, a sus representantes, acerca de esta medida.",
+          "En ningún caso se admitirá la instalación de sistemas de grabación de sonidos ni de videovigilancia en lugares destinados al descanso o esparcimiento de los trabajadores o los empleados públicos, tales como vestuarios, aseos, comedores y análogos."
+        ],
+        "version_consolidada": "2025-12-27",
+        "consultado": "2026-11-15"
+      },
+      {
+        "id": "lopdgdd-90",
+        "fuente": "Ley Orgánica 3/2018 (LOPDGDD), art. 90",
+        "enlace": "https://www.boe.es/buscar/act.php?id=BOE-A-2018-16673#a9-2",
+        "fragmentos": [
+          "Con carácter previo, los empleadores habrán de informar de forma expresa, clara e inequívoca a los trabajadores o los empleados públicos y, en su caso, a sus representantes, acerca de la existencia y características de estos dispositivos."
+        ],
+        "version_consolidada": "2025-12-27",
+        "consultado": "2026-11-15"
+      }
+    ]
+  }
+}

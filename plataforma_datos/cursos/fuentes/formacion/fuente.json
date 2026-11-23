@@ -1,0 +1,95 @@
+{
+  "schema_version": 1,
+  "id": "formacion",
+  "tema": "cursos",
+  "lector": "plataforma_datos.cursos.fuentes.formacion.lector",
+  "casa_datos": "formacion",
+  "nombre": "Formación SOC, SEPE, EURES y DigComp",
+  "institucion": "SOC; SEPE; EURES; Comisión Europea (JRC)",
+  "significado": "Relaciona ocupaciones ESCO con especialidades formativas y oferta SOC; conserva DigComp como marco con versión.",
+  "alcance": [
+    "Captura, URL, SHA y tamaño en procedencia; no metadatos remotos de catálogo completo o actualización SOC exigidos por este canal",
+    "Estado estat_curs y fechas publicados; no garantiza plazas"
+  ],
+  "recursos": [
+    {
+      "id": "soc-oferta",
+      "tipo": "url",
+      "ubicacion": "https://oficinadetreball.gencat.cat/opendata/recursos/ofertaCursos.json",
+      "licencia": null,
+      "descripcion": "Oferta pública SOC; único canal de descarga automática de este productor."
+    },
+    {
+      "id": "catalogos",
+      "tipo": "familia",
+      "ubicacion": "var/actualizacion/originales/formacion/",
+      "licencia": null,
+      "descripcion": "EURES, SOC y originales DigComp registrados por edición; fuentes y licencias diferenciadas en procedencia."
+    },
+    {
+      "id": "sepe",
+      "tipo": "familia",
+      "ubicacion": "var/actualizacion/originales/sepe/",
+      "licencia": null,
+      "descripcion": "Catálogo SEPE recibido manualmente; entrada operativa externa."
+    },
+    {
+      "id": "digcomp",
+      "tipo": "archivo",
+      "ubicacion": "var/actualizacion/originales/formacion/digcomp-3.0.jsonld",
+      "licencia": "CC BY 4.0, según la declaración conservada en el lector.",
+      "descripcion": "Marco DigComp 3.0: competencias, resultados y niveles publicados; genera el registro compartido y contrasta su revisión admitida. No atribuye niveles a personas ni cursos."
+    }
+  ],
+  "canales": [
+    {
+      "id": "soc-oferta",
+      "tipo": "remoto",
+      "recursos": ["soc-oferta"],
+      "autenticacion": "No se configura autenticación en el lector",
+      "limites": [
+        "SOC 16 MiB; JSON estricto, campos/IDs/fechas, destino final exacto; no cuota ni SLA documentado en el material leído"
+      ],
+      "observaciones": "Solo la oferta SOC se descarga automáticamente."
+    },
+    {
+      "id": "catalogos",
+      "tipo": "local",
+      "recursos": ["catalogos", "sepe", "digcomp"],
+      "autenticacion": "No aplicable al procesamiento local; este canal no acredita condiciones de acceso remoto.",
+      "limites": [
+        "Catálogos conservados por edición con comprobación de huella y formatos propios de EURES, SEPE, SOC y DigComp; no hay un límite común de tamaño o una cuota declarados para este canal local."
+      ],
+      "observaciones": "Catálogos recibidos y revisados por edición; no se descargan automáticamente."
+    }
+  ],
+  "actualizacion": {
+    "politica": "mensual",
+    "red": true,
+    "frecuencia": "oferta SOC diaria; catálogos por edición",
+    "renovar_dias": 90,
+    "originales": "formacion"
+  },
+  "conjuntos": [
+    {
+      "id": "soc-oferta",
+      "fuente": "formacion",
+      "clase": "cambiante",
+      "alcance": "catalogo-actual",
+      "operacion": "descargar",
+      "intervalo_dias": 1
+    },
+    {
+      "id": "formacion-catalogos",
+      "fuente": "formacion",
+      "clase": "manual",
+      "alcance": "copia-local",
+      "operacion": "revision",
+      "intervalo_dias": null
+    }
+  ],
+  "dependencias": ["esco"],
+  "contratos": ["lector.py:validar"],
+  "retirada": "Se mantienen los controles de admisión y reconstrucción del lector actual; no se declara una conciliación genérica de entidades ni se interpreta un fallo como baja.",
+  "conservacion": "Se conservan las rutas, originales, procedencias y revisiones actuales en var/actualizacion; este descriptor no habilita limpieza automática ni fija nuevos plazos de retención."
+}

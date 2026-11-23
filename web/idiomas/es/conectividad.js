@@ -1,0 +1,37 @@
+// Textos de conectividad pública y su estado confirmado.
+/** @type {Readonly<Record<string,string>>} */
+export const TEXTOS_CONECTIVIDAD = {
+  'conectividad.mcp.activo': 'El conector está activo.',
+  'conectividad.mcp.sin-comprobar': 'El estado aún no se ha comprobado.',
+  'conectividad.titulo': 'Conectividad · Faro',
+  'conectividad.descripcion': 'Comprueba qué servicios de consulta de Faro están activos.',
+  'conectividad.volver': 'Volver a Conectividad',
+  'conectividad.encabezado': 'Estado de los servicios de Faro',
+  'conectividad.intro': 'El estado se consulta al abrir esta página y cada vez que vuelves a comprobarlo.',
+  'conectividad.mcp': 'Asistentes de IA (MCP)',
+  'conectividad.api': 'Instituciones (API)',
+  'conectividad.a2a': 'Agentes de IA (A2A)',
+  'conectividad.activo': 'Activo',
+  'conectividad.inactivo': 'No activo',
+  'conectividad.sin-comprobar': 'Sin comprobar',
+  'conectividad.estado.consultando': 'Comprobando los servicios…',
+  'conectividad.estado.confirmado': 'Estado confirmado por Faro.',
+  'conectividad.estado.sin-conexion': 'No se puede comprobar sin conexión.',
+  'conectividad.estado.no-disponible': 'No se ha podido comprobar el estado. Vuelve a intentarlo.',
+  'conectividad.comprobado': 'Comprobado {hora}',
+  'conectividad.repetir': 'Volver a comprobar',
+  'conectividad.sin-script':
+    'Activa JavaScript para comprobar el estado actual. Esta página no deduce si un servicio está apagado.',
+  'conectividad.asistente.direccion': 'Dirección de Faro para tu asistente',
+  'conectividad.copiar': 'Copiar dirección',
+  'conectividad.copiado': 'Dirección copiada.',
+  'conectividad.copia-manual': 'Selecciona la dirección y cópiala.',
+  'conectividad.mcp.consultando': 'Comprobando si el conector está activo…',
+  'conectividad.mcp.inactivo': 'Ahora mismo no está activo.',
+  'conectividad.paso-1': 'Copia la dirección de Faro cuando esté activo.',
+  'conectividad.paso-2': 'Añade un conector personalizado. Los pasos y permisos dependen de tu cuenta u organización:',
+  'conectividad.paso-3': 'Pega la dirección, conecta sin autenticación y consulta los datos de Faro.',
+  'conectividad.privacidad':
+    'Faro devuelve datos públicos. No guarda el contenido ni los argumentos de las consultas. Registra la herramienta utilizada y un recuento diario, junto al nombre que declare el asistente; ese nombre no es una identidad verificada.',
+  'conectividad.ver-estado': 'Comprueba la conectividad',
+};

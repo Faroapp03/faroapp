@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "id": "ia_nacional_gbr",
+  "tema": "ia_y_trabajo",
+  "nombre": "Reino Unido: uso de IA en empresas, medida nacional",
+  "institucion": "Office for National Statistics (ONS)",
+  "lector": "plataforma_datos.ia_y_trabajo.fuentes.ia_nacional_gbr.lector",
+  "casa_datos": "ia-nacional-gbr",
+  "significado": "Uso de la IA por las empresas del Reino Unido (ONS, BICS, 10 o más personas): su propio módulo de actualización.",
+  "alcance": [
+    "La Office for National Statistics pregunta en su encuesta quincenal Business Insights and Conditions Survey (BICS) qué tecnologías de IA usa la empresa ahora, de una lista de seis más «Other». La serie que se lee es la de la figura 1 del artículo «Artificial intelligence in UK businesses: 2023 to 2026» (estimaciones ponderadas, solo empresas de 10 o más personas empleadas): el último período publicado. Es una estadística oficial en desarrollo («official statistics in development») y la respuesta es voluntaria. La cifra de todas las empresas (también las de 0 a 9 personas) es otra base y no se mezcla con esta: la nota de la figura que dice el universo se comprueba literal. Python estándar."
+  ],
+  "recursos": [
+    {
+      "id": "recurso-01",
+      "tipo": "url",
+      "ubicacion": "https://www.ons.gov.uk/generator?uri=/businessindustryandtrade/business/businessservices/articles/artificialintelligenceinukbusinesses/2023to2026/808491a0&format=csv",
+      "licencia": "Open Government Licence v3.0 (https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/): «Contains public sector information licensed under the Open Government Licence v3.0.» Se cita a la Office for National Statistics (ONS).",
+      "descripcion": "Office for National Statistics, BICS: empresas de 10 o más personas que usan IA, serie de la figura 1 del artículo «Artificial intelligence in UK businesses: 2023 to 2026» (CSV)"
+    },
+    {
+      "id": "recurso-02",
+      "tipo": "url",
+      "ubicacion": "https://www.ons.gov.uk/businessindustryandtrade/business/businessservices/articles/artificialintelligenceinukbusinesses/previousreleases",
+      "licencia": "Open Government Licence v3.0 (https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/): «Contains public sector information licensed under the Open Government Licence v3.0.» Se cita a la Office for National Statistics (ONS).",
+      "descripcion": "ONS, Artificial intelligence in UK businesses, ediciones publicadas"
+    }
+  ],
+  "canales": [
+    {
+      "id": "consulta",
+      "tipo": "remoto",
+      "recursos": ["recurso-01", "recurso-02"],
+      "autenticacion": "El lector no configura credenciales de autenticación para estos recursos públicos; no acredita acceso a otros servicios.",
+      "limites": [
+        "Cuotas y límites oficiales de servicio no acreditados por este descriptor; rigen los límites de transporte y validación del lector.",
+        "Este descriptor no acredita la disponibilidad remota actual; una URL conservada no acredita consulta satisfactoria ni una tarea instalada.",
+        "Medida nacional con su universo, pregunta, periodo y licencia propios; el contrato la declara no comparable entre países ni con Eurostat."
+      ],
+      "observaciones": "Catálogo de ediciones de la ONS, artículo y CSV de la figura 1. El lector valida literalmente universo, pregunta y periodo antes de admitir la serie."
+    }
+  ],
+  "actualizacion": {
+    "politica": "edición",
+    "red": true,
+    "frecuencia": "trimestral (artículo de la ONS con la serie de BICS)",
+    "renovar_dias": null,
+    "originales": "ia-nacional-gbr"
+  },
+  "conjuntos": [
+    {
+      "id": "ia_nacional_gbr",
+      "fuente": "ia_nacional_gbr",
+      "clase": "cambiante",
+      "alcance": "descubre-edicion",
+      "operacion": "descargar",
+      "intervalo_dias": 30
+    }
+  ],
+  "dependencias": [],
+  "contratos": ["lector.py:preparar", "lector.py:validar", "plataforma_datos/orquestacion/admision.py:exigir_admitido"],
+  "retirada": "Se conserva la admisión del conjunto y sus guardas actuales. Un fallo o una ausencia de captura no se convierte en retirada de entidades ni en disponibilidad confirmada.",
+  "conservacion": "Originales, procedencias, preparados y validaciones conservan sus casas actuales en var/actualizacion. Esta ficha no habilita limpieza automática ni cambia fechas históricas, periodos, licencias o retención."
+}

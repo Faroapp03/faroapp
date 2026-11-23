@@ -1,0 +1,16 @@
+[
+  {
+    "Id": 22992,
+    "FK_Variable": 456,
+    "Nombre": "Maquinistas de locomotoras, operadores de maquinaria agrícola y de equipos pesados móviles, y marineros",
+    "Codigo": "83",
+    "FK_JerarquiaPadres": [22991]
+  },
+  {
+    "Id": 23005,
+    "FK_Variable": 456,
+    "Nombre": "Conductores de vehículos para el transporte urbano o por carretera",
+    "Codigo": "84",
+    "FK_JerarquiaPadres": [22991]
+  }
+]

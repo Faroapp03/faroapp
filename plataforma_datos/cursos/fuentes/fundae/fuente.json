@@ -1,0 +1,90 @@
+{
+  "schema_version": 1,
+  "id": "fundae",
+  "tema": "cursos",
+  "lector": "plataforma_datos.cursos.fuentes.fundae.lector",
+  "casa_datos": "fundae",
+  "nombre": "FUNDAE: índices públicos y ediciones descubiertas en ellos",
+  "institucion": "FUNDAE · Fundación Estatal para la Formación en el Empleo",
+  "significado": "Los índices públicos de Digitalízate y formación subvencionada registran presencia de programas. Del índice de formación subvencionada salen las ediciones en teleformación con la preinscripción abierta de las especialidades que FUNDAE sitúa en IA o competencias digitales, cada una con su ficha consultada y su evidencia. La presencia no acredita acceso individual.",
+  "alcance": [
+    "Solo especialidades en teleformación con la inscripción abierta y del ámbito de Faro según la propia fuente: área de interés de FUNDAE «Inteligencia Artificial» (38) u «Ofimática / Competencias digitales» (46), comprobadas por su nombre en el índice, o familia profesional Informática y comunicaciones del SEPE, deducida del prefijo IFC del código porque el índice no trae la familia",
+    "Difusiones por especialidad, entidad y colectivos de cada edición abierta el día civil de España de su consulta, con cuerpo, recibo, huella y hora; contactos nunca exportados",
+    "Preinscripción publicada no garantiza plaza; inicio de clases no publicado en este conjunto"
+  ],
+  "recursos": [
+    {
+      "id": "respuestas",
+      "tipo": "familia",
+      "ubicacion": "var/actualizacion/originales/fundae/ediciones/",
+      "licencia": null,
+      "descripcion": "Fichas de la API pública de cada especialidad del índice de formación subvencionada en teleformación con la inscripción abierta: sus difusiones, y de cada edición abierta, la de su entidad y la de sus colectivos; nunca se exportan contactos."
+    },
+    {
+      "id": "buscador",
+      "tipo": "url",
+      "ubicacion": "https://experienciafundae.es/formacion-subvencionada",
+      "licencia": null,
+      "descripcion": "Referencia pública de oferta; no es un permiso para activar la descarga de la API."
+    },
+    {
+      "id": "catalogos",
+      "tipo": "familia",
+      "ubicacion": "https://agora.fundae.es/Buscador/",
+      "licencia": null,
+      "descripcion": "Tres índices públicos (espacio, Digitalízate y formación subvencionada) y el censo de Digitalízate: la lista de proveedores con su número de cursos y la ficha de cada proveedor con sus recursos. Se conservan hechos de presencia y de alta, sin reproducir contactos ni acreditar convocatorias."
+    }
+  ],
+  "canales": [
+    {
+      "id": "fundae",
+      "tipo": "remoto",
+      "recursos": ["respuestas", "buscador"],
+      "autenticacion": "Sin cuenta, cookies ni claves.",
+      "limites": [
+        "Consultas secuenciales mediante transporte central, al menos dos segundos por dominio: cada día los índices y las fichas de difusiones, empezando por una especialidad que rota con el día; las de entidad y colectivos, de ediciones nuevas o cambiadas y de las 60 reutilizadas más antiguas, con su parte del presupuesto reservada. Tope propio de 600 consultas y 30 minutos, con el plazo de red de cada consulta acotado a lo que queda; un corte queda como consulta parcial.",
+        "Una ausencia en el índice o un fallo de consulta conservan la edición con su evidencia anterior; la retirada exige que su plazo individual haya vencido o conste fuera de vigencia.",
+        "La descarga parte de las identidades FUNDAE del almacén de cursos: tras una siembra no hay consulta hasta restaurar el almacén conservado, que es lo normal: la siembra es el último recurso."
+      ],
+      "observaciones": "Un índice caído no consulta fichas: la salida anterior se conserva y la validación lo deja como consulta parcial. Cada edición publicada lleva en la validación la evidencia de su índice y sus fichas."
+    },
+    {
+      "id": "catalogos-publicos",
+      "tipo": "remoto",
+      "recursos": ["catalogos"],
+      "autenticacion": "Sin cuenta, cookies ni claves.",
+      "limites": [
+        "Consultas secuenciales mediante transporte central, al menos dos segundos por dominio: tres índices, las listas activa y de baja de proveedores de Digitalízate y una ficha por proveedor activo con cursos o recursos conocidos, y por proveedor conocido fuera de las dos listas (unas 47 al día).",
+        "Un curso de Digitalízate solo cuenta como presente por la ficha de un proveedor de la lista activa (baja falsa, tipo «Curso» y destino público). Con un censo completo se retira si esa ficha lo da de baja o de otro tipo, o si falta de las fichas activas (proveedor activo, dado de baja o que ya no existe) y el buscador del catálogo 1 de ese día tampoco lo lista; si se contradicen, queda sin noticia y avisa. Un censo parcial no da ni altas ni bajas; una presencia no acredita acceso, matrícula ni gratuidad individual."
+      ],
+      "observaciones": "Originales, preparados y admisión bajo catalogos/ dentro de la misma casa FUNDAE; un fallo conserva la versión admitida y sus fechas."
+    }
+  ],
+  "actualizacion": {
+    "politica": "diaria",
+    "red": true,
+    "frecuencia": "Consulta diaria de índices públicos y de las fichas de difusiones de las especialidades acotadas; entidad y colectivos, solo de ediciones nuevas o cambiadas.",
+    "renovar_dias": 1,
+    "originales": "fundae"
+  },
+  "conjuntos": [
+    {
+      "id": "fundae",
+      "fuente": "fundae",
+      "clase": "cambiante",
+      "alcance": "contenido-actual-acotado",
+      "operacion": "descargar",
+      "intervalo_dias": 1
+    }
+  ],
+  "dependencias": [],
+  "contratos": [
+    "lector.py:validar",
+    "ediciones.py:leer",
+    "salida.py:componer",
+    "adquisicion.py:calcular",
+    "contrato-catalogos.md"
+  ],
+  "retirada": "Una edición deja de publicarse solo con evidencia: 404 o 410 de su ficha, un plazo que su ficha ya no da por abierto o su plazo vencido; una ausencia o un fallo de consulta no la retiran.",
+  "conservacion": "Se conservan las rutas, originales, procedencias y revisiones actuales en var/actualizacion; este descriptor no habilita limpieza automática ni fija nuevos plazos de retención."
+}

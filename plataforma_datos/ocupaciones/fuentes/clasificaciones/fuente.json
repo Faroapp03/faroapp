@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "id": "clasificaciones",
+  "tema": "ocupaciones",
+  "nombre": "Clasificaciones oficiales y correspondencia CNO-11/CIUO-08",
+  "institucion": "INE y Organización Internacional del Trabajo",
+  "lector": "plataforma_datos.ocupaciones.fuentes.clasificaciones.lector",
+  "casa_datos": "clasificaciones",
+  "significado": "Clasificaciones oficiales de ocupaciones: CNO-11, su correspondencia con ISCO-08 y los títulos ISCO-08 en español.",
+  "alcance": [
+    "CNO-11 y su correspondencia con ISCO-08 son del INE; los títulos oficiales en español de ISCO-08, de la OIT. Descarga, prepara y valida. Python estándar. Depende de la validación de la OIT (grupos ISCO-08 en inglés)."
+  ],
+  "recursos": [
+    {
+      "id": "recurso-01",
+      "tipo": "url",
+      "ubicacion": "https://www.ine.es/daco/daco42/clasificaciones/cno11_estructura.xls",
+      "licencia": "Aviso legal del INE: reutilización permitida citando la fuente y sin desnaturalizar la información.",
+      "descripcion": "INE · CNO-11: estructura oficial de 1 a 4 dígitos y grupos principales"
+    },
+    {
+      "id": "recurso-02",
+      "tipo": "url",
+      "ubicacion": "https://www.ine.es/daco/daco42/clasificaciones/corr_cno11_ciuo08.xls",
+      "licencia": "Aviso legal del INE: reutilización permitida citando la fuente y sin desnaturalizar la información.",
+      "descripcion": "INE · Correspondencia oficial CNO-11 / CIUO-08 (ISCO-08) a 4 dígitos"
+    },
+    {
+      "id": "recurso-03",
+      "tipo": "url",
+      "ubicacion": "https://www.ilo.org/public/spanish/bureau/stat/isco/docs/struct08.xls",
+      "licencia": "Clasificación oficial de la OIT anterior a 2023: se usa como clasificación de referencia, citando la fuente.",
+      "descripcion": "OIT · CIUO-08 (ISCO-08): estructura oficial en español"
+    }
+  ],
+  "canales": [
+    {
+      "id": "originales",
+      "tipo": "remoto",
+      "recursos": ["recurso-01", "recurso-02", "recurso-03"],
+      "autenticacion": "No se configura una cuenta en el lector.",
+      "limites": [
+        "Se conserva el transporte común y sus controles de procedencia; no se declara una cuota publicada de la fuente."
+      ],
+      "observaciones": "Descarga de la edición conocida, sin activar aceptación automática de cambios. No acredita vigencia posterior de clasificaciones ni nuevas ediciones descubiertas."
+    }
+  ],
+  "actualizacion": {
+    "politica": "edición",
+    "red": true,
+    "frecuencia": "con cada revisión de la CNO o la CIUO",
+    "renovar_dias": null,
+    "originales": "clasificaciones"
+  },
+  "conjuntos": [
+    {
+      "id": "clasificaciones",
+      "fuente": "clasificaciones",
+      "clase": "referencia-versionada",
+      "alcance": "edicion-conocida",
+      "operacion": "descargar",
+      "intervalo_dias": 30
+    }
+  ],
+  "dependencias": ["oit"],
+  "contratos": ["lector.py:validar"],
+  "retirada": "Se conservan las guardas actuales; un fallo no acredita ausencia ni retira la última versión admitida.",
+  "conservacion": "Casas operativas y bytes del paquete conservados; no cambia modelos, motor, sello, datos ni criterios."
+}

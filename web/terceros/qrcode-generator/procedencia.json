@@ -1,0 +1,23 @@
+{
+  "paquetes": {
+    "qrcode-generator": {
+      "version": "2.0.4",
+      "integrity": "sha512-mZSiP6RnbHl4xL2Ap5HfkjLnmxfKcPWpWe/c+5XxCuetEenqmNFf1FH/ftXPCtFG5/TDobjsjz6sSNL0Sr8Z9g==",
+      "licencia": "MIT"
+    }
+  },
+  "archivos": {
+    "qrcode.js": {
+      "original": "ea91d7118a5395289170da848b7c6758b996163bfbccf312591ab65a4911b7c0",
+      "copia": "ea91d7118a5395289170da848b7c6758b996163bfbccf312591ab65a4911b7c0"
+    },
+    "qrcode.d.ts": {
+      "original": null,
+      "copia": "68dd2ef46b686e7d8b2e528ecd5f59067e3f6a9435ab0486e584ef340912efbb"
+    },
+    "LICENSE": {
+      "original": null,
+      "copia": "3a850fa5f08101db6f40676c2786e10bd2cd5fff7b12ffdf1e0c434d4e49d90c"
+    }
+  }
+}

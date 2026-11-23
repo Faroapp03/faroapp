@@ -1,0 +1,2414 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Catálogo factual público de Cursos V10, contratos 4 a 7",
+  "description": "Ofertas acreditadas exclusivamente en el corte de proyección. No contiene ediciones ocultas o diagnósticos internos. El consumidor retira la oferta cuando su reloj alcanza el límite publicado (cierra_el); los hechos conservan la fecha de su comprobación y no caducan con el reloj. La revisión lógica no sustituye el SHA externo de los bytes del recurso.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "revision", "derechos", "proveedores", "corte_proyeccion_utc", "ofertas", "cobertura"],
+  "properties": {
+    "schema_version": {
+      "enum": [4, 5, 6, 7]
+    },
+    "revision": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "derechos": {
+      "const": {
+        "alcance": "indices_y_hechos_estructurados",
+        "licencia_contenidos": null,
+        "redistribuye_contenidos": false
+      }
+    },
+    "proveedores": {
+      "type": "array",
+      "maxItems": 100000,
+      "items": {
+        "$ref": "#/$defs/proveedores"
+      }
+    },
+    "corte_proyeccion_utc": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "ofertas": {
+      "type": "array",
+      "maxItems": 100000,
+      "items": {
+        "$ref": "#/$defs/oferta"
+      }
+    },
+    "cobertura": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["recurso", "edicion"],
+      "properties": {
+        "recurso": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 100000
+        },
+        "edicion": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 100000
+        }
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": { "properties": { "schema_version": { "enum": [5, 6, 7] } } },
+      "then": { "properties": { "ofertas": { "items": { "required": ["evidencia_materia"] } } } },
+      "else": { "properties": { "ofertas": { "items": { "not": { "required": ["evidencia_materia"] } } } } }
+    },
+    {
+      "if": { "properties": { "schema_version": { "enum": [6, 7] } } },
+      "then": {
+        "properties": {
+          "ofertas": {
+            "items": {
+              "if": {
+                "anyOf": [
+                  { "properties": { "unidad": { "properties": { "id": { "pattern": "^fundae:edicion:" } } } } },
+                  {
+                    "properties": { "unidad": { "properties": { "tipo": { "const": "edicion" } } } },
+                    "anyOf": [
+                      { "properties": { "proveedor_id": { "const": "fundae:publicador:catalogo:3" } } },
+                      {
+                        "properties": {
+                          "unidad": { "properties": { "programa_id": { "pattern": "^fundae:oferta:programa:" } } }
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              "then": {
+                "required": ["preinscripcion"],
+                "properties": {
+                  "proveedor_id": { "const": "fundae:publicador:catalogo:3" },
+                  "url": { "pattern": "^https://experienciafundae\\.es/ficha-curso/oferta/2/[A-Z0-9_-]{1,40}$" },
+                  "unidad": {
+                    "properties": {
+                      "tipo": { "const": "edicion" },
+                      "id": { "pattern": "^fundae:edicion:[1-9][0-9]*$" },
+                      "programa_id": { "pattern": "^fundae:oferta:programa:[A-Z0-9_-]{1,40}$" }
+                    }
+                  }
+                }
+              },
+              "else": { "not": { "required": ["preinscripcion"] } }
+            }
+          }
+        }
+      },
+      "else": { "properties": { "ofertas": { "items": { "not": { "required": ["preinscripcion"] } } } } }
+    },
+    {
+      "$comment": "El bloque clasificacion solo existe desde la versión 7, y en ella es opcional.",
+      "if": { "properties": { "schema_version": { "const": 7 } } },
+      "else": { "properties": { "ofertas": { "items": { "not": { "required": ["clasificacion"] } } } } }
+    }
+  ],
+  "$defs": {
+    "hechos": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "idiomas_declarados",
+        "idiomas_material_observado",
+        "modalidad",
+        "sincronia",
+        "horas_publicadas",
+        "coste_formacion_tipo",
+        "coste_formacion",
+        "certificado_gratuito",
+        "coste_certificado",
+        "coste_practicas",
+        "requiere_registro_previo",
+        "requisitos_publicados",
+        "acceso_fundae",
+        "marca_comercial",
+        "nivel_entrada",
+        "nivel_salida",
+        "calendario_matricula",
+        "calendario_formacion",
+        "calendario_aula"
+      ],
+      "properties": {
+        "idiomas_declarados": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["valor", "motivo", "unidad", "moneda", "alcance"],
+          "properties": {
+            "valor": {
+              "anyOf": [
+                {
+                  "type": "array",
+                  "minItems": 1,
+                  "maxItems": 50,
+                  "items": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 2048,
+                    "pattern": "^[^\\x00-\\x1f]+$"
+                  },
+                  "uniqueItems": true
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "motivo": {
+              "enum": [
+                "conocido",
+                "no_consta_en_evidencia",
+                "no_interpretable",
+                "sin_soporte_de_campo",
+                "texto_no_redistribuido",
+                "declaraciones_contradictorias"
+              ]
+            },
+            "unidad": {
+              "const": null
+            },
+            "moneda": {
+              "type": "null"
+            },
+            "alcance": {
+              "enum": ["unidad", "edicion", "declaracion_general", "material_observado"]
+            },
+            "vigencia": {
+              "$ref": "#/$defs/vigencia_hecho"
+            }
+          },
+          "allOf": [
+            {
+              "if": {
+                "properties": {
+                  "valor": {
+                    "type": "null"
+                  }
+                }
+              },
+              "then": {
+                "properties": {
+                  "motivo": {
+                    "enum": [
+                      "no_consta_en_evidencia",
+                      "no_interpretable",
+                      "sin_soporte_de_campo",
+                      "texto_no_redistribuido",
+                      "declaraciones_contradictorias"
+                    ]
+                  }
+                }
+              },
+              "else": {
+                "properties": {
+                  "motivo": {
+                    "const": "conocido"
+                  }
+                }
+              }
+            },
+            {
+              "if": {
+                "required": ["vigencia"]
+              },
+              "then": {
+                "properties": {
+                  "valor": {
+                    "not": {
+                      "type": "null"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "idiomas_material_observado": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["valor", "motivo", "unidad", "moneda", "alcance"],
+          "properties": {
+            "valor": {
+              "anyOf": [
+                {
+                  "type": "array",
+                  "minItems": 1,
+                  "maxItems": 50,
+                  "items": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 2048,
+                    "pattern": "^[^\\x00-\\x1f]+$"
+                  },
+                  "uniqueItems": true
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "motivo": {
+              "enum": [
+                "conocido",
+                "no_consta_en_evidencia",
+                "no_interpretable",
+                "sin_soporte_de_campo",
+                "texto_no_redistribuido",
+                "declaraciones_contradictorias"
+              ]
+            },
+            "unidad": {
+              "const": null
+            },
+            "moneda": {
+              "type": "null"
+            },
+            "alcance": {
+              "enum": ["unidad", "edicion", "declaracion_general", "material_observado"]
+            },
+            "vigencia": {
+              "$ref": "#/$defs/vigencia_hecho"
+            }
+          },
+          "allOf": [
+            {
+              "if": {
+                "properties": {
+                  "valor": {
+                    "type": "null"
+                  }
+                }
+              },
+              "then": {
+                "properties": {
+                  "motivo": {
+                    "enum": [
+                      "no_consta_en_evidencia",
+                      "no_interpretable",
+                      "sin_soporte_de_campo",
+                      "texto_no_redistribuido",
+                      "declaraciones_contradictorias"
+                    ]
+                  }
+                }
+              },
+              "else": {
+                "properties": {
+                  "motivo": {
+                    "const": "conocido"
+                  }
+                }
+              }
+            },
+            {
+              "if": {
+                "required": ["vigencia"]
+              },
+              "then": {
+                "properties": {
+                  "valor": {
+                    "not": {
+                      "type": "null"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "modalidad": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["valor", "motivo", "unidad", "moneda", "alcance"],
+          "properties": {
+            "valor": {
+              "anyOf": [
+                {
+                  "enum": ["en-linea", "mixta", "presencial"]
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "motivo": {
+              "enum": [
+                "conocido",
+                "no_consta_en_evidencia",
+                "no_interpretable",
+                "sin_soporte_de_campo",
+                "texto_no_redistribuido",
+                "declaraciones_contradictorias"
+              ]
+            },
+            "unidad": {
+              "const": null
+            },
+            "moneda": {
+              "type": "null"
+            },
+            "alcance": {
+              "enum": ["unidad", "edicion", "declaracion_general", "material_observado"]
+            },
+            "vigencia": {
+              "$ref": "#/$defs/vigencia_hecho"
+            }
+          },
+          "allOf": [
+            {
+              "if": {
+                "properties": {
+                  "valor": {
+                    "type": "null"
+                  }
+                }
+              },
+              "then": {
+                "properties": {
+                  "motivo": {
+                    "enum": [
+                      "no_consta_en_evidencia",
+                      "no_interpretable",
+                      "sin_soporte_de_campo",
+                      "texto_no_redistribuido",
+                      "declaraciones_contradictorias"
+                    ]
+                  }
+                }
+              },
+              "else": {
+                "properties": {
+                  "motivo": {
+                    "const": "conocido"
+                  }
+                }
+              }
+            },
+            {
+              "if": {
+                "required": ["vigencia"]
+              },
+              "then": {
+                "properties": {
+                  "valor": {
+                    "not": {
+                      "type": "null"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "sincronia": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["valor", "motivo", "unidad", "moneda", "alcance"],
+          "properties": {
+            "valor": {
+              "anyOf": [
+                {
+                  "enum": ["asincrona", "mixta", "sincrona"]
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "motivo": {
+              "enum": [
+                "conocido",
+                "no_consta_en_evidencia",
+                "no_interpretable",
+                "sin_soporte_de_campo",
+                "texto_no_redistribuido",
+                "declaraciones_contradictorias"
+              ]
+            },
+            "unidad": {
+              "const": null
+            },
+            "moneda": {
+              "type": "null"
+            },
+            "alcance": {
+              "enum": ["unidad", "edicion", "declaracion_general", "material_observado"]
+            },
+            "vigencia": {
+              "$ref": "#/$defs/vigencia_hecho"
+            }
+          },
+          "allOf": [
+            {
+              "if": {
+                "properties": {
+                  "valor": {
+                    "type": "null"
+                  }
+                }
+              },
+              "then": {
+                "properties": {
+                  "motivo": {
+                    "enum": [
+                      "no_consta_en_evidencia",
+                      "no_interpretable",
+                      "sin_soporte_de_campo",
+                      "texto_no_redistribuido",
+                      "declaraciones_contradictorias"
+                    ]
+                  }
+                }
+              },
+              "else": {
+                "properties": {
+                  "motivo": {
+                    "const": "conocido"
+                  }
+                }
+              }
+            },
+            {
+              "if": {
+                "required": ["vigencia"]
+              },
+              "then": {
+                "properties": {
+                  "valor": {
+                    "not": {
+                      "type": "null"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "horas_publicadas": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["valor", "motivo", "unidad", "moneda", "alcance"],
+          "properties": {
+            "valor": {
+              "anyOf": [
+                {
+                  "type": "number",
+                  "minimum": 0
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "motivo": {
+              "enum": [
+                "conocido",
+                "no_consta_en_evidencia",
+                "no_interpretable",
+                "sin_soporte_de_campo",
+                "texto_no_redistribuido",
+                "declaraciones_contradictorias"
+              ]
+            },
+            "unidad": {
+              "const": "h"
+            },
+            "moneda": {
+              "type": "null"
+            },
+            "alcance": {
+              "enum": ["unidad", "edicion", "declaracion_general", "material_observado"]
+            },
+            "vigencia": {
+              "$ref": "#/$defs/vigencia_hecho"
+            }
+          },
+          "allOf": [
+            {
+              "if": {
+                "properties": {
+                  "valor": {
+                    "type": "null"
+                  }
+                }
+              },
+              "then": {
+                "properties": {
+                  "motivo": {
+                    "enum": [
+                      "no_consta_en_evidencia",
+                      "no_interpretable",
+                      "sin_soporte_de_campo",
+                      "texto_no_redistribuido",
+                      "declaraciones_contradictorias"
+                    ]
+                  }
+                }
+              },
+              "else": {
+                "properties": {
+                  "motivo": {
+                    "const": "conocido"
+                  }
+                }
+              }
+            },
+            {
+              "if": {
+                "required": ["vigencia"]
+              },
+              "then": {
+                "properties": {
+                  "valor": {
+                    "not": {
+                      "type": "null"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "coste_formacion_tipo": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["valor", "motivo", "unidad", "moneda", "alcance"],
+          "properties": {
+            "valor": {
+              "anyOf": [
+                {
+                  "enum": [
+                    "contenido_gratuito_practicas_por_confirmar",
+                    "de_pago",
+                    "gratis_formacion",
+                    "gratis_parcial",
+                    "gratis_parcial_temporal"
+                  ]
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "motivo": {
+              "enum": [
+                "conocido",
+                "no_consta_en_evidencia",
+                "no_interpretable",
+                "sin_soporte_de_campo",
+                "texto_no_redistribuido",
+                "declaraciones_contradictorias"
+              ]
+            },
+            "unidad": {
+              "const": null
+            },
+            "moneda": {
+              "type": "null"
+            },
+            "alcance": {
+              "enum": ["unidad", "edicion", "declaracion_general", "material_observado"]
+            },
+            "vigencia": {
+              "$ref": "#/$defs/vigencia_hecho"
+            }
+          },
+          "allOf": [
+            {
+              "if": {
+                "properties": {
+                  "valor": {
+                    "type": "null"
+                  }
+                }
+              },
+              "then": {
+                "properties": {
+                  "motivo": {
+                    "enum": [
+                      "no_consta_en_evidencia",
+                      "no_interpretable",
+                      "sin_soporte_de_campo",
+                      "texto_no_redistribuido",
+                      "declaraciones_contradictorias"
+                    ]
+                  }
+                }
+              },
+              "else": {
+                "properties": {
+                  "motivo": {
+                    "const": "conocido"
+                  }
+                }
+              }
+            },
+            {
+              "if": {
+                "required": ["vigencia"]
+              },
+              "then": {
+                "properties": {
+                  "valor": {
+                    "not": {
+                      "type": "null"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "coste_formacion": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["valor", "motivo", "unidad", "moneda", "alcance"],
+          "properties": {
+            "valor": {
+              "anyOf": [
+                {
+                  "type": "number",
+                  "minimum": 0
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "motivo": {
+              "enum": [
+                "conocido",
+                "no_consta_en_evidencia",
+                "no_interpretable",
+                "sin_soporte_de_campo",
+                "texto_no_redistribuido",
+                "declaraciones_contradictorias"
+              ]
+            },
+            "unidad": {
+              "const": null
+            },
+            "moneda": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "pattern": "^[A-Z]{3}$"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "alcance": {
+              "enum": ["unidad", "edicion", "declaracion_general", "material_observado"]
+            },
+            "vigencia": {
+              "$ref": "#/$defs/vigencia_hecho"
+            }
+          },
+          "allOf": [
+            {
+              "if": {
+                "properties": {
+                  "valor": {
+                    "type": "null"
+                  }
+                }
+              },
+              "then": {
+                "properties": {
+                  "motivo": {
+                    "enum": [
+                      "no_consta_en_evidencia",
+                      "no_interpretable",
+                      "sin_soporte_de_campo",
+                      "texto_no_redistribuido",
+                      "declaraciones_contradictorias"
+                    ]
+                  }
+                }
+              },
+              "else": {
+                "properties": {
+                  "motivo": {
+                    "const": "conocido"
+                  }
+                }
+              }
+            },
+            {
+              "if": {
+                "required": ["vigencia"]
+              },
+              "then": {
+                "properties": {
+                  "valor": {
+                    "not": {
+                      "type": "null"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "certificado_gratuito": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["valor", "motivo", "unidad", "moneda", "alcance"],
+          "properties": {
+            "valor": {
+              "anyOf": [
+                {
+                  "type": "boolean"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "motivo": {
+              "enum": [
+                "conocido",
+                "no_consta_en_evidencia",
+                "no_interpretable",
+                "sin_soporte_de_campo",
+                "texto_no_redistribuido",
+                "declaraciones_contradictorias"
+              ]
+            },
+            "unidad": {
+              "const": null
+            },
+            "moneda": {
+              "type": "null"
+            },
+            "alcance": {
+              "enum": ["unidad", "edicion", "declaracion_general", "material_observado"]
+            },
+            "vigencia": {
+              "$ref": "#/$defs/vigencia_hecho"
+            }
+          },
+          "allOf": [
+            {
+              "if": {
+                "properties": {
+                  "valor": {
+                    "type": "null"
+                  }
+                }
+              },
+              "then": {
+                "properties": {
+                  "motivo": {
+                    "enum": [
+                      "no_consta_en_evidencia",
+                      "no_interpretable",
+                      "sin_soporte_de_campo",
+                      "texto_no_redistribuido",
+                      "declaraciones_contradictorias"
+                    ]
+                  }
+                }
+              },
+              "else": {
+                "properties": {
+                  "motivo": {
+                    "const": "conocido"
+                  }
+                }
+              }
+            },
+            {
+              "if": {
+                "required": ["vigencia"]
+              },
+              "then": {
+                "properties": {
+                  "valor": {
+                    "not": {
+                      "type": "null"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "coste_certificado": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["valor", "motivo", "unidad", "moneda", "alcance"],
+          "properties": {
+            "valor": {
+              "anyOf": [
+                {
+                  "type": "number",
+                  "minimum": 0
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "motivo": {
+              "enum": [
+                "conocido",
+                "no_consta_en_evidencia",
+                "no_interpretable",
+                "sin_soporte_de_campo",
+                "texto_no_redistribuido",
+                "declaraciones_contradictorias"
+              ]
+            },
+            "unidad": {
+              "const": null
+            },
+            "moneda": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "pattern": "^[A-Z]{3}$"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "alcance": {
+              "enum": ["unidad", "edicion", "declaracion_general", "material_observado"]
+            },
+            "vigencia": {
+              "$ref": "#/$defs/vigencia_hecho"
+            }
+          },
+          "allOf": [
+            {
+              "if": {
+                "properties": {
+                  "valor": {
+                    "type": "null"
+                  }
+                }
+              },
+              "then": {
+                "properties": {
+                  "motivo": {
+                    "enum": [
+                      "no_consta_en_evidencia",
+                      "no_interpretable",
+                      "sin_soporte_de_campo",
+                      "texto_no_redistribuido",
+                      "declaraciones_contradictorias"
+                    ]
+                  }
+                }
+              },
+              "else": {
+                "properties": {
+                  "motivo": {
+                    "const": "conocido"
+                  }
+                }
+              }
+            },
+            {
+              "if": {
+                "required": ["vigencia"]
+              },
+              "then": {
+                "properties": {
+                  "valor": {
+                    "not": {
+                      "type": "null"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "coste_practicas": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["valor", "motivo", "unidad", "moneda", "alcance"],
+          "properties": {
+            "valor": {
+              "anyOf": [
+                {
+                  "type": "number",
+                  "minimum": 0
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "motivo": {
+              "enum": [
+                "conocido",
+                "no_consta_en_evidencia",
+                "no_interpretable",
+                "sin_soporte_de_campo",
+                "texto_no_redistribuido",
+                "declaraciones_contradictorias"
+              ]
+            },
+            "unidad": {
+              "const": null
+            },
+            "moneda": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "pattern": "^[A-Z]{3}$"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "alcance": {
+              "enum": ["unidad", "edicion", "declaracion_general", "material_observado"]
+            },
+            "vigencia": {
+              "$ref": "#/$defs/vigencia_hecho"
+            }
+          },
+          "allOf": [
+            {
+              "if": {
+                "properties": {
+                  "valor": {
+                    "type": "null"
+                  }
+                }
+              },
+              "then": {
+                "properties": {
+                  "motivo": {
+                    "enum": [
+                      "no_consta_en_evidencia",
+                      "no_interpretable",
+                      "sin_soporte_de_campo",
+                      "texto_no_redistribuido",
+                      "declaraciones_contradictorias"
+                    ]
+                  }
+                }
+              },
+              "else": {
+                "properties": {
+                  "motivo": {
+                    "const": "conocido"
+                  }
+                }
+              }
+            },
+            {
+              "if": {
+                "required": ["vigencia"]
+              },
+              "then": {
+                "properties": {
+                  "valor": {
+                    "not": {
+                      "type": "null"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "requiere_registro_previo": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["valor", "motivo", "unidad", "moneda", "alcance"],
+          "properties": {
+            "valor": {
+              "anyOf": [
+                {
+                  "type": "boolean"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "motivo": {
+              "enum": [
+                "conocido",
+                "no_consta_en_evidencia",
+                "no_interpretable",
+                "sin_soporte_de_campo",
+                "texto_no_redistribuido",
+                "declaraciones_contradictorias"
+              ]
+            },
+            "unidad": {
+              "const": null
+            },
+            "moneda": {
+              "type": "null"
+            },
+            "alcance": {
+              "enum": ["unidad", "edicion", "declaracion_general", "material_observado"]
+            },
+            "vigencia": {
+              "$ref": "#/$defs/vigencia_hecho"
+            }
+          },
+          "allOf": [
+            {
+              "if": {
+                "properties": {
+                  "valor": {
+                    "type": "null"
+                  }
+                }
+              },
+              "then": {
+                "properties": {
+                  "motivo": {
+                    "enum": [
+                      "no_consta_en_evidencia",
+                      "no_interpretable",
+                      "sin_soporte_de_campo",
+                      "texto_no_redistribuido",
+                      "declaraciones_contradictorias"
+                    ]
+                  }
+                }
+              },
+              "else": {
+                "properties": {
+                  "motivo": {
+                    "const": "conocido"
+                  }
+                }
+              }
+            },
+            {
+              "if": {
+                "required": ["vigencia"]
+              },
+              "then": {
+                "properties": {
+                  "valor": {
+                    "not": {
+                      "type": "null"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "requisitos_publicados": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["valor", "motivo", "unidad", "moneda", "alcance"],
+          "properties": {
+            "valor": {
+              "anyOf": [
+                {
+                  "type": "null"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "motivo": {
+              "enum": [
+                "conocido",
+                "no_consta_en_evidencia",
+                "no_interpretable",
+                "sin_soporte_de_campo",
+                "texto_no_redistribuido",
+                "declaraciones_contradictorias"
+              ]
+            },
+            "unidad": {
+              "const": null
+            },
+            "moneda": {
+              "type": "null"
+            },
+            "alcance": {
+              "enum": ["unidad", "edicion", "declaracion_general", "material_observado"]
+            },
+            "vigencia": {
+              "$ref": "#/$defs/vigencia_hecho"
+            }
+          },
+          "allOf": [
+            {
+              "if": {
+                "properties": {
+                  "valor": {
+                    "type": "null"
+                  }
+                }
+              },
+              "then": {
+                "properties": {
+                  "motivo": {
+                    "enum": [
+                      "no_consta_en_evidencia",
+                      "no_interpretable",
+                      "sin_soporte_de_campo",
+                      "texto_no_redistribuido",
+                      "declaraciones_contradictorias"
+                    ]
+                  }
+                }
+              },
+              "else": {
+                "properties": {
+                  "motivo": {
+                    "const": "conocido"
+                  }
+                }
+              }
+            },
+            {
+              "if": {
+                "required": ["vigencia"]
+              },
+              "then": {
+                "properties": {
+                  "valor": {
+                    "not": {
+                      "type": "null"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "acceso_fundae": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["valor", "motivo", "unidad", "moneda", "alcance"],
+          "properties": {
+            "valor": {
+              "type": "null"
+            },
+            "motivo": {
+              "const": "sin_soporte_de_campo"
+            },
+            "unidad": {
+              "type": "null"
+            },
+            "moneda": {
+              "type": "null"
+            },
+            "alcance": {
+              "enum": ["unidad", "edicion"]
+            },
+            "vigencia": {
+              "$ref": "#/$defs/vigencia_hecho"
+            }
+          },
+          "allOf": [
+            {
+              "if": {
+                "required": ["vigencia"]
+              },
+              "then": {
+                "properties": {
+                  "valor": {
+                    "not": {
+                      "type": "null"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "marca_comercial": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["valor", "motivo", "unidad", "moneda", "alcance"],
+          "properties": {
+            "valor": {
+              "type": "null"
+            },
+            "motivo": {
+              "const": "sin_soporte_de_campo"
+            },
+            "unidad": {
+              "type": "null"
+            },
+            "moneda": {
+              "type": "null"
+            },
+            "alcance": {
+              "enum": ["unidad", "edicion"]
+            },
+            "vigencia": {
+              "$ref": "#/$defs/vigencia_hecho"
+            }
+          },
+          "allOf": [
+            {
+              "if": {
+                "required": ["vigencia"]
+              },
+              "then": {
+                "properties": {
+                  "valor": {
+                    "not": {
+                      "type": "null"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "nivel_entrada": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["valor", "motivo", "unidad", "moneda", "alcance"],
+          "properties": {
+            "valor": {
+              "type": "null"
+            },
+            "motivo": {
+              "const": "sin_soporte_de_campo"
+            },
+            "unidad": {
+              "type": "null"
+            },
+            "moneda": {
+              "type": "null"
+            },
+            "alcance": {
+              "enum": ["unidad", "edicion"]
+            },
+            "vigencia": {
+              "$ref": "#/$defs/vigencia_hecho"
+            }
+          },
+          "allOf": [
+            {
+              "if": {
+                "required": ["vigencia"]
+              },
+              "then": {
+                "properties": {
+                  "valor": {
+                    "not": {
+                      "type": "null"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "nivel_salida": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["valor", "motivo", "unidad", "moneda", "alcance"],
+          "properties": {
+            "valor": {
+              "type": "null"
+            },
+            "motivo": {
+              "const": "sin_soporte_de_campo"
+            },
+            "unidad": {
+              "type": "null"
+            },
+            "moneda": {
+              "type": "null"
+            },
+            "alcance": {
+              "enum": ["unidad", "edicion"]
+            },
+            "vigencia": {
+              "$ref": "#/$defs/vigencia_hecho"
+            }
+          },
+          "allOf": [
+            {
+              "if": {
+                "required": ["vigencia"]
+              },
+              "then": {
+                "properties": {
+                  "valor": {
+                    "not": {
+                      "type": "null"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "calendario_matricula": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["valor", "motivo", "unidad", "moneda", "alcance"],
+          "properties": {
+            "valor": {
+              "anyOf": [
+                {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": ["inicio", "fin", "tipo"],
+                  "properties": {
+                    "inicio": {
+                      "anyOf": [
+                        {
+                          "type": "string",
+                          "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}(T[0-9]{2}:[0-9]{2}(:[0-9]{2}(\\.[0-9]{1,6})?)?(Z|[+-][0-9]{2}:[0-9]{2})?)?$"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "fin": {
+                      "anyOf": [
+                        {
+                          "type": "string",
+                          "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}(T[0-9]{2}:[0-9]{2}(:[0-9]{2}(\\.[0-9]{1,6})?)?(Z|[+-][0-9]{2}:[0-9]{2})?)?$"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "tipo": {
+                      "const": "matricula"
+                    }
+                  },
+                  "not": {
+                    "properties": {
+                      "inicio": {
+                        "type": "null"
+                      },
+                      "fin": {
+                        "type": "null"
+                      }
+                    }
+                  }
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "motivo": {
+              "enum": [
+                "conocido",
+                "no_consta_en_evidencia",
+                "no_interpretable",
+                "sin_soporte_de_campo",
+                "texto_no_redistribuido",
+                "declaraciones_contradictorias"
+              ]
+            },
+            "unidad": {
+              "const": null
+            },
+            "moneda": {
+              "type": "null"
+            },
+            "alcance": {
+              "enum": ["unidad", "edicion"]
+            },
+            "vigencia": {
+              "$ref": "#/$defs/vigencia_hecho"
+            }
+          },
+          "allOf": [
+            {
+              "if": {
+                "properties": {
+                  "valor": {
+                    "type": "null"
+                  }
+                }
+              },
+              "then": {
+                "properties": {
+                  "motivo": {
+                    "enum": [
+                      "no_consta_en_evidencia",
+                      "no_interpretable",
+                      "sin_soporte_de_campo",
+                      "texto_no_redistribuido",
+                      "declaraciones_contradictorias"
+                    ]
+                  }
+                }
+              },
+              "else": {
+                "properties": {
+                  "motivo": {
+                    "const": "conocido"
+                  },
+                  "alcance": {
+                    "const": "edicion"
+                  }
+                },
+                "required": ["vigencia"]
+              }
+            },
+            {
+              "if": {
+                "required": ["vigencia"]
+              },
+              "then": {
+                "properties": {
+                  "valor": {
+                    "not": {
+                      "type": "null"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "calendario_formacion": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["valor", "motivo", "unidad", "moneda", "alcance"],
+          "properties": {
+            "valor": {
+              "anyOf": [
+                {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": ["inicio", "fin", "tipo"],
+                  "properties": {
+                    "inicio": {
+                      "anyOf": [
+                        {
+                          "type": "string",
+                          "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}(T[0-9]{2}:[0-9]{2}(:[0-9]{2}(\\.[0-9]{1,6})?)?(Z|[+-][0-9]{2}:[0-9]{2})?)?$"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "fin": {
+                      "anyOf": [
+                        {
+                          "type": "string",
+                          "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}(T[0-9]{2}:[0-9]{2}(:[0-9]{2}(\\.[0-9]{1,6})?)?(Z|[+-][0-9]{2}:[0-9]{2})?)?$"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "tipo": {
+                      "const": "periodo-formativo"
+                    }
+                  },
+                  "not": {
+                    "properties": {
+                      "inicio": {
+                        "type": "null"
+                      },
+                      "fin": {
+                        "type": "null"
+                      }
+                    }
+                  }
+                },
+                {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": ["tipo", "sesiones"],
+                  "properties": {
+                    "tipo": {
+                      "const": "sesiones"
+                    },
+                    "sesiones": {
+                      "type": "array",
+                      "minItems": 1,
+                      "maxItems": 1000,
+                      "items": {
+                        "$ref": "#/$defs/periodo_calendario"
+                      }
+                    }
+                  }
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "motivo": {
+              "enum": [
+                "conocido",
+                "no_consta_en_evidencia",
+                "no_interpretable",
+                "sin_soporte_de_campo",
+                "texto_no_redistribuido",
+                "declaraciones_contradictorias"
+              ]
+            },
+            "unidad": {
+              "const": null
+            },
+            "moneda": {
+              "type": "null"
+            },
+            "alcance": {
+              "enum": ["unidad", "edicion"]
+            },
+            "vigencia": {
+              "$ref": "#/$defs/vigencia_hecho"
+            }
+          },
+          "allOf": [
+            {
+              "if": {
+                "properties": {
+                  "valor": {
+                    "type": "null"
+                  }
+                }
+              },
+              "then": {
+                "properties": {
+                  "motivo": {
+                    "enum": [
+                      "no_consta_en_evidencia",
+                      "no_interpretable",
+                      "sin_soporte_de_campo",
+                      "texto_no_redistribuido",
+                      "declaraciones_contradictorias"
+                    ]
+                  }
+                }
+              },
+              "else": {
+                "properties": {
+                  "motivo": {
+                    "const": "conocido"
+                  },
+                  "alcance": {
+                    "const": "edicion"
+                  }
+                },
+                "required": ["vigencia"]
+              }
+            },
+            {
+              "if": {
+                "required": ["vigencia"]
+              },
+              "then": {
+                "properties": {
+                  "valor": {
+                    "not": {
+                      "type": "null"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "calendario_aula": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["valor", "motivo", "unidad", "moneda", "alcance"],
+          "properties": {
+            "valor": {
+              "anyOf": [
+                {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": ["inicio", "fin", "tipo"],
+                  "properties": {
+                    "inicio": {
+                      "anyOf": [
+                        {
+                          "type": "string",
+                          "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}(T[0-9]{2}:[0-9]{2}(:[0-9]{2}(\\.[0-9]{1,6})?)?(Z|[+-][0-9]{2}:[0-9]{2})?)?$"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "fin": {
+                      "anyOf": [
+                        {
+                          "type": "string",
+                          "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}(T[0-9]{2}:[0-9]{2}(:[0-9]{2}(\\.[0-9]{1,6})?)?(Z|[+-][0-9]{2}:[0-9]{2})?)?$"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "tipo": {
+                      "const": "ventana-acceso"
+                    }
+                  },
+                  "not": {
+                    "properties": {
+                      "inicio": {
+                        "type": "null"
+                      },
+                      "fin": {
+                        "type": "null"
+                      }
+                    }
+                  }
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "motivo": {
+              "enum": [
+                "conocido",
+                "no_consta_en_evidencia",
+                "no_interpretable",
+                "sin_soporte_de_campo",
+                "texto_no_redistribuido",
+                "declaraciones_contradictorias"
+              ]
+            },
+            "unidad": {
+              "const": null
+            },
+            "moneda": {
+              "type": "null"
+            },
+            "alcance": {
+              "enum": ["unidad", "edicion"]
+            },
+            "vigencia": {
+              "$ref": "#/$defs/vigencia_hecho"
+            }
+          },
+          "allOf": [
+            {
+              "if": {
+                "properties": {
+                  "valor": {
+                    "type": "null"
+                  }
+                }
+              },
+              "then": {
+                "properties": {
+                  "motivo": {
+                    "enum": [
+                      "no_consta_en_evidencia",
+                      "no_interpretable",
+                      "sin_soporte_de_campo",
+                      "texto_no_redistribuido",
+                      "declaraciones_contradictorias"
+                    ]
+                  }
+                }
+              },
+              "else": {
+                "properties": {
+                  "motivo": {
+                    "const": "conocido"
+                  },
+                  "alcance": {
+                    "const": "edicion"
+                  }
+                },
+                "required": ["vigencia"]
+              }
+            },
+            {
+              "if": {
+                "required": ["vigencia"]
+              },
+              "then": {
+                "properties": {
+                  "valor": {
+                    "not": {
+                      "type": "null"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "referencias": {
+      "type": "array",
+      "maxItems": 100000,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["url", "fecha_referencia", "sha256", "alcance", "naturaleza_fecha", "naturaleza_documento"],
+        "properties": {
+          "url": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 2048,
+            "pattern": "^[^\\x00-\\x1f]+$",
+            "format": "uri"
+          },
+          "sha256": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          },
+          "alcance": {
+            "const": "entidad"
+          },
+          "fecha_referencia": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "naturaleza_fecha": {
+            "enum": ["no_acreditada", "declarada_historica", "recepcion_conservada"]
+          },
+          "naturaleza_documento": {
+            "enum": ["no_acreditada", "derivado_negocio"]
+          }
+        }
+      }
+    },
+    "proveedores": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "nombre"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 2048,
+          "pattern": "^[^\\x00-\\x1f]+$"
+        },
+        "nombre": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 2048,
+          "pattern": "^[^\\x00-\\x1f]+$"
+        }
+      }
+    },
+    "oferta": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "unidad",
+        "proveedor_id",
+        "titulo_programa",
+        "tipo_unidad",
+        "url",
+        "hechos",
+        "referencias",
+        "comprobado_el",
+        "cierra_el",
+        "incidencia_enlace_el",
+        "corte_evaluacion_utc"
+      ],
+      "properties": {
+        "unidad": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["tipo", "id", "programa_id"],
+          "properties": {
+            "tipo": {
+              "enum": ["recurso", "edicion"]
+            },
+            "id": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 2048
+            },
+            "programa_id": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 2048
+            }
+          }
+        },
+        "proveedor_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 2048
+        },
+        "titulo_programa": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 2048
+        },
+        "tipo_unidad": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 2048
+        },
+        "url": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 2048,
+          "format": "uri"
+        },
+        "hechos": {
+          "$ref": "#/$defs/hechos"
+        },
+        "referencias": {
+          "$ref": "#/$defs/referencias"
+        },
+        "evidencia_materia": {
+          "anyOf": [{ "type": "null" }, { "$ref": "#/$defs/evidencia_materia" }]
+        },
+        "nivel_actividad": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "valor",
+            "literal",
+            "actividad_id",
+            "material_id",
+            "url",
+            "sha256",
+            "capturado_utc",
+            "localizador"
+          ],
+          "properties": {
+            "valor": { "enum": ["inicial", "intermedio", "avanzado"] },
+            "literal": { "enum": ["Básico", "Intermedio", "Avanzado"] },
+            "actividad_id": { "type": "string", "pattern": "^[0-9]+$" },
+            "material_id": { "type": "string", "pattern": "^[0-9]+$" },
+            "url": { "type": "string", "format": "uri", "maxLength": 2048 },
+            "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+            "capturado_utc": { "type": "string", "format": "date-time" },
+            "localizador": { "type": "string", "maxLength": 2048 }
+          }
+        },
+        "idioma_programa": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["valores", "url", "sha256"],
+          "properties": {
+            "valores": { "const": ["es"] },
+            "url": { "type": "string", "format": "uri", "maxLength": 2048 },
+            "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
+          }
+        },
+        "nivel_objetivos": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "unidad_id",
+            "programa_id",
+            "titulo",
+            "url",
+            "sha256",
+            "localizador",
+            "reglas_sha256",
+            "valor",
+            "regla",
+            "version"
+          ],
+          "properties": {
+            "unidad_id": { "type": "string", "minLength": 1, "maxLength": 2048 },
+            "programa_id": { "type": "string", "minLength": 1, "maxLength": 2048 },
+            "titulo": { "type": "string", "minLength": 1, "maxLength": 2048 },
+            "url": { "type": "string", "format": "uri", "maxLength": 2048 },
+            "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+            "reglas_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+            "localizador": { "type": "string", "minLength": 1, "maxLength": 2048 },
+            "valor": { "enum": ["inicial", "intermedio", "avanzado"] },
+            "regla": { "type": "string", "minLength": 1, "maxLength": 2048 },
+            "version": { "type": "string", "minLength": 1, "maxLength": 2048 }
+          }
+        },
+        "evidencia_temas": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["unidad_id", "programa_id", "titulo", "url", "sha256", "localizador", "reglas_sha256", "temas"],
+          "properties": {
+            "unidad_id": { "type": "string", "minLength": 1, "maxLength": 2048 },
+            "programa_id": { "type": "string", "minLength": 1, "maxLength": 2048 },
+            "titulo": { "type": "string", "minLength": 1, "maxLength": 2048 },
+            "localizador": { "type": "string", "minLength": 1, "maxLength": 2048 },
+            "url": { "type": "string", "format": "uri", "maxLength": 2048 },
+            "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+            "reglas_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+            "temas": {
+              "type": "array",
+              "minItems": 1,
+              "uniqueItems": true,
+              "items": {
+                "enum": [
+                  "ia",
+                  "digital",
+                  "ofimatica",
+                  "datos",
+                  "seguridad",
+                  "empresa",
+                  "oficio",
+                  "diseno",
+                  "web",
+                  "comunicacion",
+                  "empleo",
+                  "ciudadania",
+                  "educacion",
+                  "sistemas"
+                ]
+              }
+            }
+          }
+        },
+        "nivel_itinerario": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["unidad_id", "programa_id", "titulo", "url", "sha256", "localizador", "valor", "version"],
+          "properties": {
+            "unidad_id": { "type": "string", "minLength": 1, "maxLength": 2048 },
+            "programa_id": { "type": "string", "minLength": 1, "maxLength": 2048 },
+            "titulo": { "type": "string", "minLength": 1, "maxLength": 2048 },
+            "url": { "type": "string", "format": "uri", "maxLength": 2048 },
+            "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+            "localizador": { "type": "string", "minLength": 1, "maxLength": 2048 },
+            "valor": { "enum": ["inicial", "intermedio"] },
+            "version": { "enum": ["cibernarium-itinerario-v1", "cibernarium-ficha-tareas-v1"] }
+          }
+        },
+        "preinscripcion": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["centro", "sector", "inicio", "fin", "colectivos"],
+          "properties": {
+            "centro": { "type": "string", "pattern": "\\S", "maxLength": 2048 },
+            "sector": { "type": "string", "pattern": "\\S", "maxLength": 2048 },
+            "inicio": { "type": "string", "format": "date" },
+            "fin": { "type": "string", "format": "date" },
+            "colectivos": {
+              "type": "array",
+              "minItems": 1,
+              "uniqueItems": true,
+              "items": {
+                "enum": [
+                  "asalariados",
+                  "autonomos",
+                  "economia-social",
+                  "administracion-publica",
+                  "desempleados",
+                  "erte"
+                ]
+              }
+            }
+          }
+        },
+        "clasificacion": { "$ref": "#/$defs/clasificacion" },
+        "comprobado_el": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "cierra_el": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date-time"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "incidencia_enlace_el": {
+          "description": "Fin del intento más reciente en que falló el enlace de la ficha o del catálogo después de la última respuesta válida de ese canal. Es independiente de la comprobación de la ficha (puede ser anterior a comprobado_el) y nunca posterior a corte_evaluacion_utc. Solo avisa: la oferta conserva sus datos y su fecha.",
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date-time"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "corte_evaluacion_utc": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "evidencia_materia": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "version",
+        "actividad_id",
+        "programa_id",
+        "edicion_id",
+        "vinculo",
+        "contenido",
+        "censo_ia",
+        "estado_censo"
+      ],
+      "properties": {
+        "version": { "const": 1 },
+        "actividad_id": { "$ref": "#/$defs/texto_materia" },
+        "programa_id": { "$ref": "#/$defs/texto_materia" },
+        "edicion_id": { "$ref": "#/$defs/texto_materia" },
+        "vinculo": { "$ref": "#/$defs/vinculo_materia" },
+        "contenido": { "anyOf": [{ "type": "null" }, { "$ref": "#/$defs/contenido_materia" }] },
+        "censo_ia": { "anyOf": [{ "type": "null" }, { "$ref": "#/$defs/censo_materia" }] },
+        "estado_censo": { "enum": ["completo", "parcial", "sin-evidencia"] }
+      },
+      "allOf": [
+        {
+          "if": { "properties": { "estado_censo": { "const": "sin-evidencia" } } },
+          "then": { "properties": { "censo_ia": { "type": "null" } } }
+        }
+      ]
+    },
+    "texto_materia": { "type": "string", "minLength": 1, "maxLength": 2048, "pattern": "^[^\\x00-\\x1f]+$" },
+    "sha_materia": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "vinculo_materia": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["url", "sha256", "capturado_utc", "localizador"],
+      "properties": {
+        "url": { "type": "string", "format": "uri", "minLength": 1, "maxLength": 2048 },
+        "sha256": { "$ref": "#/$defs/sha_materia" },
+        "capturado_utc": { "type": "string", "format": "date-time" },
+        "localizador": { "$ref": "#/$defs/texto_materia" }
+      }
+    },
+    "contenido_materia": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["metodo", "sha256", "url", "sha256_captura", "capturado_utc", "localizador"],
+      "dependentRequired": { "temas_sugeridos": ["reglas_sha256"], "reglas_sha256": ["temas_sugeridos"] },
+      "properties": {
+        "nivel_sugerido": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["valor", "origen", "regla"],
+          "properties": {
+            "valor": { "enum": ["inicial", "intermedio", "avanzado"] },
+            "origen": { "enum": ["categoria", "descripcion"] },
+            "regla": { "enum": ["nivel-cibernarium-v1", "nivel-cibernarium-v2", "nivel-cibernarium-v3"] }
+          }
+        },
+        "temas_sugeridos": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "ia",
+              "digital",
+              "ofimatica",
+              "datos",
+              "seguridad",
+              "empresa",
+              "oficio",
+              "diseno",
+              "web",
+              "comunicacion",
+              "empleo",
+              "ciudadania",
+              "educacion",
+              "sistemas"
+            ]
+          }
+        },
+        "reglas_sha256": { "$ref": "#/$defs/sha_materia" },
+        "metodo": { "const": "cibernarium-descripcion-api-v1" },
+        "sha256": { "$ref": "#/$defs/sha_materia" },
+        "url": { "type": "string", "format": "uri", "minLength": 1, "maxLength": 2048 },
+        "sha256_captura": { "$ref": "#/$defs/sha_materia" },
+        "capturado_utc": { "type": "string", "format": "date-time" },
+        "localizador": { "$ref": "#/$defs/texto_materia" }
+      }
+    },
+    "censo_materia": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ambito", "url", "sha256", "capturado_utc", "localizador"],
+      "properties": {
+        "ambito": { "const": "ia" },
+        "url": { "type": "string", "format": "uri", "minLength": 1, "maxLength": 2048 },
+        "sha256": { "$ref": "#/$defs/sha_materia" },
+        "capturado_utc": { "type": "string", "format": "date-time" },
+        "localizador": { "$ref": "#/$defs/texto_materia" }
+      }
+    },
+    "vigencia_hecho": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["comprobado_el"],
+      "properties": {
+        "comprobado_el": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "periodo_calendario": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["inicio", "fin"],
+      "properties": {
+        "inicio": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}(T[0-9]{2}:[0-9]{2}(:[0-9]{2}(\\.[0-9]{1,6})?)?(Z|[+-][0-9]{2}:[0-9]{2})?)?$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "fin": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}(T[0-9]{2}:[0-9]{2}(:[0-9]{2}(\\.[0-9]{1,6})?)?(Z|[+-][0-9]{2}:[0-9]{2})?)?$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "not": {
+        "properties": {
+          "inicio": {
+            "type": "null"
+          },
+          "fin": {
+            "type": "null"
+          }
+        }
+      }
+    },
+    "clasificacion": {
+      "$comment": "Idioma, nivel y materia decididos en el productor. Solo códigos: los textos los pone la web.",
+      "type": "object",
+      "additionalProperties": false,
+      "minProperties": 1,
+      "properties": {
+        "idioma": { "$ref": "#/$defs/dato_idioma" },
+        "nivel": { "$ref": "#/$defs/dato_nivel" },
+        "materia": { "$ref": "#/$defs/dato_materia" }
+      }
+    },
+    "dato_idioma": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["valores", "estado", "alcance", "certeza", "regla", "evidencias", "motivo_por_confirmar"],
+      "properties": {
+        "valores": {
+          "anyOf": [
+            { "type": "null" },
+            { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "enum": ["ca", "en", "es"] } }
+          ]
+        },
+        "estado": { "enum": ["fuente", "orientacion-faro", "por-confirmar"] },
+        "alcance": { "enum": [null, "edicion", "programa", "norma-general", "actividad"] },
+        "certeza": { "enum": [null, "alta", "media", "baja"] },
+        "regla": { "anyOf": [{ "type": "null" }, { "$ref": "#/$defs/regla_clasificacion" }] },
+        "evidencias": { "type": "array", "maxItems": 50, "items": { "$ref": "#/$defs/evidencia_clasificacion" } },
+        "motivo_por_confirmar": { "enum": [null, "fuente_no_publica", "conflicto_evidencias", "sin_captura"] }
+      },
+      "allOf": [{ "$ref": "#/$defs/estado_clasificacion_valores" }]
+    },
+    "dato_nivel": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["valor", "estado", "alcance", "certeza", "regla", "evidencias", "motivo_por_confirmar"],
+      "properties": {
+        "valor": { "anyOf": [{ "type": "null" }, { "enum": ["inicial", "intermedio", "avanzado"] }] },
+        "estado": { "enum": ["fuente", "orientacion-faro", "por-confirmar"] },
+        "alcance": { "enum": [null, "edicion", "programa", "norma-general", "actividad"] },
+        "certeza": { "enum": [null, "alta", "media", "baja"] },
+        "regla": { "anyOf": [{ "type": "null" }, { "$ref": "#/$defs/regla_clasificacion" }] },
+        "evidencias": { "type": "array", "maxItems": 50, "items": { "$ref": "#/$defs/evidencia_clasificacion" } },
+        "motivo_por_confirmar": { "enum": [null, "fuente_no_publica", "conflicto_evidencias", "sin_captura"] }
+      },
+      "allOf": [{ "$ref": "#/$defs/estado_clasificacion_valor" }]
+    },
+    "dato_materia": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["valores", "estado", "alcance", "certeza", "regla", "evidencias", "motivo_por_confirmar"],
+      "properties": {
+        "valores": {
+          "anyOf": [
+            { "type": "null" },
+            {
+              "type": "array",
+              "minItems": 1,
+              "uniqueItems": true,
+              "items": {
+                "enum": [
+                  "ciudadania",
+                  "comunicacion",
+                  "datos",
+                  "digital",
+                  "diseno",
+                  "educacion",
+                  "empleo",
+                  "empresa",
+                  "ia",
+                  "oficio",
+                  "ofimatica",
+                  "seguridad",
+                  "sistemas",
+                  "web"
+                ]
+              }
+            }
+          ]
+        },
+        "estado": { "enum": ["fuente", "orientacion-faro", "por-confirmar"] },
+        "alcance": { "enum": [null, "edicion", "programa", "norma-general", "actividad"] },
+        "certeza": { "enum": [null, "alta", "media", "baja"] },
+        "regla": { "anyOf": [{ "type": "null" }, { "$ref": "#/$defs/regla_clasificacion" }] },
+        "evidencias": { "type": "array", "maxItems": 50, "items": { "$ref": "#/$defs/evidencia_clasificacion" } },
+        "motivo_por_confirmar": { "enum": [null, "fuente_no_publica", "conflicto_evidencias", "sin_captura"] }
+      },
+      "allOf": [{ "$ref": "#/$defs/estado_clasificacion_valores" }]
+    },
+    "estado_clasificacion_valores": {
+      "$comment": "Ata el estado al valor, a su apoyo y al motivo: no hay valor sin evidencia ni regla.",
+      "allOf": [
+        {
+          "if": { "properties": { "estado": { "const": "por-confirmar" } } },
+          "then": {
+            "properties": {
+              "valores": { "type": "null" },
+              "alcance": { "type": "null" },
+              "certeza": { "type": "null" },
+              "regla": { "type": "null" },
+              "motivo_por_confirmar": { "enum": ["fuente_no_publica", "conflicto_evidencias", "sin_captura"] }
+            }
+          },
+          "else": {
+            "properties": {
+              "valores": { "not": { "type": "null" } },
+              "alcance": { "not": { "type": "null" } },
+              "certeza": { "not": { "type": "null" } },
+              "motivo_por_confirmar": { "type": "null" }
+            }
+          }
+        },
+        {
+          "if": { "properties": { "estado": { "const": "fuente" } } },
+          "then": { "properties": { "regla": { "type": "null" }, "evidencias": { "minItems": 1 } } }
+        },
+        {
+          "if": { "properties": { "estado": { "const": "orientacion-faro" } } },
+          "then": { "properties": { "regla": { "$ref": "#/$defs/regla_clasificacion" } } }
+        },
+        {
+          "if": { "properties": { "motivo_por_confirmar": { "const": "sin_captura" } } },
+          "then": { "properties": { "evidencias": { "maxItems": 0 } } }
+        },
+        {
+          "if": { "properties": { "motivo_por_confirmar": { "const": "fuente_no_publica" } } },
+          "then": { "properties": { "evidencias": { "minItems": 1 } } }
+        },
+        {
+          "if": { "properties": { "motivo_por_confirmar": { "const": "conflicto_evidencias" } } },
+          "then": { "properties": { "evidencias": { "minItems": 2 } } }
+        }
+      ]
+    },
+    "estado_clasificacion_valor": {
+      "$comment": "Ata el estado al valor, a su apoyo y al motivo: no hay valor sin evidencia ni regla.",
+      "allOf": [
+        {
+          "if": { "properties": { "estado": { "const": "por-confirmar" } } },
+          "then": {
+            "properties": {
+              "valor": { "type": "null" },
+              "alcance": { "type": "null" },
+              "certeza": { "type": "null" },
+              "regla": { "type": "null" },
+              "motivo_por_confirmar": { "enum": ["fuente_no_publica", "conflicto_evidencias", "sin_captura"] }
+            }
+          },
+          "else": {
+            "properties": {
+              "valor": { "not": { "type": "null" } },
+              "alcance": { "not": { "type": "null" } },
+              "certeza": { "not": { "type": "null" } },
+              "motivo_por_confirmar": { "type": "null" }
+            }
+          }
+        },
+        {
+          "if": { "properties": { "estado": { "const": "fuente" } } },
+          "then": { "properties": { "regla": { "type": "null" }, "evidencias": { "minItems": 1 } } }
+        },
+        {
+          "if": { "properties": { "estado": { "const": "orientacion-faro" } } },
+          "then": { "properties": { "regla": { "$ref": "#/$defs/regla_clasificacion" } } }
+        },
+        {
+          "if": { "properties": { "motivo_por_confirmar": { "const": "sin_captura" } } },
+          "then": { "properties": { "evidencias": { "maxItems": 0 } } }
+        },
+        {
+          "if": { "properties": { "motivo_por_confirmar": { "const": "fuente_no_publica" } } },
+          "then": { "properties": { "evidencias": { "minItems": 1 } } }
+        },
+        {
+          "if": { "properties": { "motivo_por_confirmar": { "const": "conflicto_evidencias" } } },
+          "then": { "properties": { "evidencias": { "minItems": 2 } } }
+        }
+      ]
+    },
+    "evidencia_clasificacion": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["url", "sha256", "capturado_utc", "localizador"],
+      "properties": {
+        "url": { "type": "string", "minLength": 1, "maxLength": 2048, "format": "uri" },
+        "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+        "capturado_utc": { "type": "string", "format": "date-time" },
+        "localizador": { "type": "string", "minLength": 1, "maxLength": 2048 }
+      }
+    },
+    "regla_clasificacion": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "version", "sha256"],
+      "properties": {
+        "id": { "type": "string", "maxLength": 80, "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+        "version": { "type": "integer", "minimum": 1 },
+        "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
+      }
+    }
+  },
+  "$comment": "Ningún texto completo de las fuentes forma parte de este DTO."
+}

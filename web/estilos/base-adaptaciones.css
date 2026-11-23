@@ -1,0 +1,98 @@
+/* Adaptaciones de la base a pantalla e impresión y a la preferencia de movimiento reducido.
+   Puntos de corte, de mayor a menor: 700 px (móvil: cabecera, menú y pie) y 600 px (el aviso flotante se parte en
+   dos filas).
+   Aquí está una de las dos excepciones de !important de la guía de estilo (la preferencia de movimiento reducido); la otra
+   es la de [hidden] en base-documento.css. */
+
+@media (width <= 700px) {
+  .cabecera {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .marca {
+    min-height: 51px;
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+  .marca-nombre {
+    font-size: var(--texto-marca-movil);
+    letter-spacing: 0.18em;
+  }
+
+  .marca-luz {
+    top: -8px;
+    width: 15px;
+  }
+
+  .menu {
+    /* Arriba, la cabecera móvil (unos 90 px) más el hueco de la muesca, y nunca menos de 100 px. */
+    padding: max(100px, env(safe-area-inset-top) + 90px) 24px max(24px, env(safe-area-inset-bottom));
+  }
+
+  .menu-lista a,
+  .menu-lista .menu-pasar {
+    gap: 15px;
+    min-height: 65px;
+    font-size: var(--texto-menu-movil);
+  }
+
+  .pie {
+    padding: 0 21px 24px;
+  }
+
+  .pie-fila {
+    flex-direction: column;
+  }
+}
+
+@media (width <= 600px) {
+  .aviso-flotante {
+    flex-wrap: wrap;
+  }
+
+  .aviso-flotante > span {
+    flex-basis: 100%;
+  }
+}
+
+/* En papel, cualquier página se imprime sobre blanco y con tinta oscura, sea cual sea el tema de la pantalla. El
+   esquema claro resuelve en día los colores de tema (light-dark) de todo lo impreso. El lienzo (html, body y el
+   contenido principal, #contenido en todas las páginas) se pinta además de blanco: la paleta de noche del recorrido no
+   usa light-dark, y su fondo saldría impreso en el espacio de la página que las hojas no ocupan. Las hojas del informe
+   y del plan declaran su propio papel y su tinta, y no cambian. */
+@media print {
+  :root,
+  :root[data-tema] {
+    color-scheme: light;
+  }
+
+  html,
+  body,
+  #contenido {
+    color: var(--tinta-sobre-claro);
+    background: var(--blanco);
+  }
+
+  .aviso-prototipo {
+    display: none;
+  }
+}
+
+/* Con movimiento reducido no hay transiciones ni animaciones. Las hojas definen animaciones de una sola pasada (la
+   entrada de la portada, el relleno de la barra de Cursos y las apariciones del recorrido), y cada hoja ya las reserva
+   para quien no pide movimiento reducido; esta regla las apaga además todas a la vez. scroll-behavior es una guarda
+   preventiva: ninguna hoja define desplazamiento suave, y esta regla lo apaga si alguna lo hace. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    /* biome-ignore lint/complexity/noImportantStyles: la preferencia de la persona manda sobre cualquier componente */
+    transition: none !important;
+    /* biome-ignore lint/complexity/noImportantStyles: la preferencia de la persona manda sobre cualquier componente */
+    animation: none !important;
+    /* biome-ignore lint/complexity/noImportantStyles: la preferencia de la persona manda sobre cualquier componente */
+    scroll-behavior: auto !important;
+  }
+}

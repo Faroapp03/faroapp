@@ -1,0 +1,69 @@
+{
+  "descripcion": "Casos que el contrato del productor (validar_publico) y el lector web (leerCatalogo) deben resolver igual sobre catalogo-cursos-publico.utf8. Cada caso cambia un valor por su ruta; «relleno» añade esa cantidad de letras «a» al final. Un catálogo que el productor admite y el lector rechaza desaparecería entero de la página.",
+  "casos": [
+    { "nombre": "fixture sin cambios", "ruta": [], "admitido": true },
+    {
+      "nombre": "campo sin proyección con alcance de edición",
+      "ruta": ["ofertas", 0, "hechos", "acceso_fundae", "alcance"],
+      "valor": "edicion",
+      "admitido": true
+    },
+    {
+      "nombre": "campo sin proyección con alcance de declaración general",
+      "ruta": ["ofertas", 0, "hechos", "acceso_fundae", "alcance"],
+      "valor": "declaracion_general",
+      "admitido": false
+    },
+    {
+      "nombre": "campo sin proyección con alcance de material observado",
+      "ruta": ["ofertas", 0, "hechos", "nivel_salida", "alcance"],
+      "valor": "material_observado",
+      "admitido": false
+    },
+    {
+      "nombre": "URL de la oferta con marca de orden de bytes",
+      "ruta": ["ofertas", 0, "url"],
+      "valor": "https://example.org/formacion/python﻿",
+      "admitido": false
+    },
+    {
+      "nombre": "URL de la oferta con salto de línea siguiente",
+      "ruta": ["ofertas", 0, "url"],
+      "valor": "https://example.org/formacion/\u0085python",
+      "admitido": false
+    },
+    {
+      "nombre": "URL de la oferta con espacio ideográfico",
+      "ruta": ["ofertas", 0, "url"],
+      "valor": "https://example.org/formacion/　python",
+      "admitido": false
+    },
+    {
+      "nombre": "URL de referencia con marca de orden de bytes",
+      "ruta": ["ofertas", 0, "referencias", 0, "url"],
+      "valor": "https://example.org/formacion/python﻿",
+      "admitido": false
+    },
+    {
+      "nombre": "URL de referencia de 2.048 caracteres",
+      "ruta": ["ofertas", 0, "referencias", 0, "url"],
+      "valor": "https://example.org/",
+      "relleno": 2028,
+      "admitido": true
+    },
+    {
+      "nombre": "URL de referencia de 2.049 caracteres",
+      "ruta": ["ofertas", 0, "referencias", 0, "url"],
+      "valor": "https://example.org/",
+      "relleno": 2029,
+      "admitido": false
+    },
+    {
+      "nombre": "URL de la oferta de 2.049 caracteres",
+      "ruta": ["ofertas", 0, "url"],
+      "valor": "https://example.org/",
+      "relleno": 2029,
+      "admitido": false
+    }
+  ]
+}
