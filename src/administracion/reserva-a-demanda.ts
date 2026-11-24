@@ -16,6 +16,7 @@ import { validarOrigenAdministrativo } from './configuracion.ts';
 import { ACCIONES_DEMANDA, type AccionDemanda, leerConfiguracionDemanda } from './configuracion-demanda.ts';
 import { crearVerificadorDemandaGitHub, type IdentidadDemandaGitHub, puedeReservar } from './oidc-demanda.ts';
 import type { ConfianzaOidcGitHub } from './oidc-github.ts';
+import { type ReconciliarSinSesion, reconciliarDentroDeSuPlazo } from './reconciliacion.ts';
 
 export const RUTA_RESERVA_A_DEMANDA = '/mantenimiento/reserva';
 export const MAX_RESERVA_A_DEMANDA_BYTES = 1024;
@@ -30,6 +31,8 @@ interface OpcionesReceptorReserva {
   /** El texto de `FARO_ACTUALIZACION_DEMANDA` tal como llega; la autoridad lo vuelve a leer con sus techos. */
   readonly configuracionDemanda: string | undefined;
   readonly almacen: AlmacenTrabajosDemanda;
+  /** Comprueba en GitHub el trabajo que ocupa, para que uno terminado sin recibo no espere a que lo reconcilie alguien. */
+  readonly reconciliar: ReconciliarSinSesion;
   readonly pedir?: typeof fetch;
   readonly ahora?: () => number;
 }
@@ -225,14 +228,18 @@ export function crearReceptorReservaADemanda(
     };
   }
   const identificar = crearIdentificador(opciones, lectura.configuracion.actores);
-  const { almacen, confianza, configuracionDemanda } = opciones;
+  const { almacen, confianza, configuracionDemanda, reconciliar } = opciones;
   const procesar = async (peticion: Request, token: string, senal: AbortSignal) => {
     const solicitante = await identificar(token);
     senal.throwIfAborted();
     const cuerpo = leerCuerpoReserva(await leerBytes(peticion, senal));
-    const resultado = await almacen.operarDemanda(
-      peticionDemanda(solicitante, cuerpo, { confianza, configuracionDemanda }),
-    );
+    const demanda = peticionDemanda(solicitante, cuerpo, { confianza, configuracionDemanda });
+    // Antes de reservar, para que la autoridad decida con el fin ya registrado y no anote un rechazo que no lo es.
+    if (demanda.operacion === 'reservar') {
+      await reconciliarDentroDeSuPlazo(reconciliar, senal, solicitante.identidad.ejecucion.runId);
+      senal.throwIfAborted();
+    }
+    const resultado = await almacen.operarDemanda(demanda);
     senal.throwIfAborted();
     return respuestaDemanda(resultado);
   };

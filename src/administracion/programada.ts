@@ -11,7 +11,7 @@ import {
   type SolicitudTrabajoProgramado,
   VENTANA_TRABAJO_PROGRAMADO_MS,
 } from './programacion-trabajos.ts';
-import type { DecisionReconciliacionProgramada } from './reconciliacion.ts';
+import { type ReconciliarSinSesion, reconciliarDentroDeSuPlazo } from './reconciliacion.ts';
 import { type AlmacenTrabajosActualizacion, exigirTrabajo } from './trabajos.ts';
 
 export interface OpcionesComprobacionProgramada {
@@ -20,27 +20,8 @@ export interface OpcionesComprobacionProgramada {
     Pick<AlmacenTrabajosActualizacion, 'anotarDespacho'>;
   readonly confianza: ConfianzaOidcGitHub;
   readonly despachar: (solicitud: SolicitudActualizacion, senal: AbortSignal) => Promise<ResultadoDespacho>;
-  /** Cierra una ejecución vencida que GitHub da por completada; después la reserva definitiva decide el resto. */
-  readonly reconciliar: (senal: AbortSignal) => Promise<DecisionReconciliacionProgramada>;
-}
-/**
- * Parte del plazo del evento que puede gastar la consulta a GitHub. El resto queda para reservar y despachar,
- * que con su propio plazo de tres segundos no debe quedar cortado por una consulta lenta.
- */
-export const PLAZO_RECONCILIACION_PROGRAMADA_MS = 1500;
-/** Una consulta que agota su parte del plazo es indeterminada: no libera nada y la reserva decide con lo que hay. */
-async function reconciliarDentroDeSuPlazo(
-  reconciliar: OpcionesComprobacionProgramada['reconciliar'],
-  senal: AbortSignal,
-): Promise<void> {
-  const limite = AbortSignal.any([senal, AbortSignal.timeout(PLAZO_RECONCILIACION_PROGRAMADA_MS)]);
-  try {
-    await reconciliar(limite);
-  } catch (causa) {
-    if (senal.aborted || !limite.aborted) {
-      throw causa;
-    }
-  }
+  /** Cierra una ejecución abierta que GitHub da por completada; después la reserva definitiva decide el resto. */
+  readonly reconciliar: ReconciliarSinSesion;
 }
 export function comprobarEventoProgramado(
   entrada: SolicitudTrabajoProgramado,

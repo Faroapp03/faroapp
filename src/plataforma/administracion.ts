@@ -26,7 +26,7 @@ import type {
   AlmacenTrabajosProgramados,
   SolicitudTrabajoProgramado,
 } from '../administracion/programacion-trabajos.ts';
-import { crearReconciliadorActualizacion } from '../administracion/reconciliacion.ts';
+import { crearReconciliadorActualizacion, crearReconciliadorSinSesion } from '../administracion/reconciliacion.ts';
 import type { AlmacenRecorrido } from '../administracion/recorrido.ts';
 import { crearReceptorResultadoActualizacion } from '../administracion/resultado-actualizacion.ts';
 import type { AlmacenSeccionesPanel } from '../administracion/secciones-almacen.ts';
@@ -186,22 +186,21 @@ async function montarActualizacion(
   }
   const ejecutor = actualizacion.configuracion();
   const transporte = actualizacion.pedir ? { pedir: actualizacion.pedir } : {};
+  const consultar = crearConsultorEjecucionGitHub({ obtenerToken: ejecutor.obtenerToken, ...transporte });
   const capacidad = {
     leer: (acceso) => trabajos.leerTrabajoDeSesion(acceso),
     solicitar: crearSolicitadorActualizacion({
       almacen: trabajos,
       confianza: ejecutor.confianza,
       despachar: crearDespachadorGitHub({ ...ejecutor, ...transporte }),
+      reconciliar: crearReconciliadorSinSesion({ almacen: trabajos, consultar }),
     }),
     recuperacion: {
       retirar: (acceso, retirada, senal) => {
         senal.throwIfAborted();
         return trabajos.retirarTrabajoDeSesion(acceso, retirada);
       },
-      reconciliar: crearReconciliadorActualizacion({
-        almacen: trabajos,
-        consultar: crearConsultorEjecucionGitHub({ obtenerToken: ejecutor.obtenerToken, ...transporte }),
-      }),
+      reconciliar: crearReconciliadorActualizacion({ almacen: trabajos, consultar }),
     },
   } satisfies CapacidadActualizacionPanel;
   const cerrarPublicacion = cerradorDelMontaje(opciones, capacidad.solicitar, {

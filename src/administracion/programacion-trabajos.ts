@@ -53,8 +53,8 @@ export interface AlmacenTrabajosProgramados {
 }
 const MINUTOS_VENTANA = 360;
 export const VENTANA_TRABAJO_PROGRAMADO_MS = MINUTOS_VENTANA * MS_POR_MINUTO;
-/** Suma de los tres jobs de actualizar.yml, uno tras otro: 325 minutos para construir, 45 para activar y 2 para avisar. */
-export const MINUTOS_LIMITE_WORKFLOW_ACTUALIZAR = 372;
+/** Suma de los tres jobs de actualizar.yml, uno tras otro: 323 minutos para construir, 45 para activar y 2 para avisar. */
+export const MINUTOS_LIMITE_WORKFLOW_ACTUALIZAR = 370;
 /** Lo que la reserva dura más que los tres jobs, para las colas de GitHub y el desfase de relojes. */
 const MINUTOS_MARGEN_RESERVA = 13;
 /** La reserva cuenta desde su creación; la prueba de contrato del presupuesto mantiene esta suma. */

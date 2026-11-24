@@ -101,11 +101,11 @@ jobs:
           .venv/bin/python -m ruff format --check .
 
       - name: Preparar los tres motores
-        timeout-minutes: 15
+        timeout-minutes: 13
         env:
           ACTIONS_ID_TOKEN_REQUEST_URL: ''
           ACTIONS_ID_TOKEN_REQUEST_TOKEN: ''
-        run: bash herramientas/mantenimiento/preparar-navegadores.sh
+        run: bash herramientas/mantenimiento/preparar-navegadores.sh chromium firefox webkit
 
       - name: Recuperar la base ESCO fijada por el manifiesto
         timeout-minutes: 10

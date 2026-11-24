@@ -15,6 +15,9 @@ import { motorPanel } from '../ayudas/persistencia-panel.ts';
 import { principalDePrueba } from '../ayudas/principal-panel.ts';
 import { sembrarSocioPersistido } from '../ayudas/registro-persistido-anterior.ts';
 
+/** GitHub no responde a la consulta del trabajo que ocupa: la reserva decide como si no se hubiera consultado. */
+const GITHUB_SIN_RESPUESTA = async () => 'indeterminada' as const;
+
 const ORIGEN = 'https://panel.example';
 const INICIO = Date.parse('2026-10-16T12:00:00Z');
 const SEGUNDO = 1000;
@@ -104,6 +107,7 @@ function routerDe(
       },
       solicitar: crearSolicitadorActualizacion({
         almacen,
+        reconciliar: GITHUB_SIN_RESPUESTA,
         confianza: CONFIANZA,
         despachar: async (_solicitud, senal) => {
           senal.throwIfAborted();

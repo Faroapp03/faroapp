@@ -13,7 +13,7 @@ import {
 } from '../../src/administracion/programacion-trabajos.ts';
 
 /** El repositorio es privado: cada job descuenta sus minutos de los 2.000 gratuitos del mes. */
-const TOPE_CANDIDATO_MINUTOS = 325;
+const TOPE_CANDIDATO_MINUTOS = 323;
 const TOPE_ACTIVACION_MINUTOS = 45;
 const TOPE_AVISO_MINUTOS = 2;
 /** GitHub corta cualquier job de un ejecutor alojado a las seis horas, diga lo que diga su timeout-minutes. */
@@ -34,7 +34,8 @@ const MINUTOS_COBRADOS = 3;
 const PLAZO_MS = 10_000;
 const INICIO = 'Anotar el inicio del job';
 const MINUTOS = 'Anunciar los minutos del job';
-const MOTORES = 'bash herramientas/mantenimiento/preparar-navegadores.sh';
+const MOTORES_CICLO = 'bash herramientas/mantenimiento/preparar-navegadores.sh chromium';
+const MOTORES_CALIDAD = 'bash herramientas/mantenimiento/preparar-navegadores.sh chromium firefox webkit';
 
 function objeto(entrada: unknown): Record<string, unknown> {
   assert.ok(entrada !== null && typeof entrada === 'object' && !Array.isArray(entrada));
@@ -180,7 +181,7 @@ test('los topes del workflow, el límite del servidor y el plazo del motor no se
 test('el ciclo instala los navegadores según una sola variable, que hoy los pide', () => {
   const { raiz, candidato } = jobsDelCiclo();
   assert.equal(objeto(raiz.env).FARO_NAVEGADORES_EN_EL_CICLO, 'si');
-  const motores = pasos(candidato).find((p) => p.run === MOTORES);
+  const motores = pasos(candidato).find((p) => p.run === MOTORES_CICLO);
   assert.ok(motores);
   for (const [valor, instala] of [
     ['si', true],
@@ -243,6 +244,6 @@ test('calidad comprueba tipos, estilo y juntas antes de preparar navegadores y b
     assert.ok(rapida.includes(orden), orden);
   }
   assert.ok(rapidas > ordenes.findIndex((o) => o.includes('preparar-runner.sh')));
-  assert.ok(rapidas < ordenes.indexOf(MOTORES));
+  assert.ok(rapidas < ordenes.indexOf(MOTORES_CALIDAD));
   assert.ok(rapidas < ordenes.findIndex((o) => o.includes('npm run verificar')));
 });

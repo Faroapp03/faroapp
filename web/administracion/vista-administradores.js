@@ -1,4 +1,5 @@
-// Vista «Administradores» del Panel de Control: la lista, el alta por correo, la retirada y su reintento en Cloudflare.
+// Vista «Administradores» del Panel de Control: la lista, el alta por correo, la retirada con su confirmación en la
+// propia fila y su reintento en Cloudflare.
 // Solo estructura semántica con clases propias y estables, y textos por claves; ningún texto se interpreta como HTML.
 // La vista no conoce el token de la sesión única: recibe una función `pedir` que ya lo añade.
 import { texto } from '../scripts/textos.js';
@@ -99,6 +100,7 @@ function celda(fila, clase, contenido) {
 function filaDe(fila, propio) {
   const linea = pieza('tr', `administradores-fila administradores-fila-${fila.estado}`);
   linea.setAttribute('data-correo', fila.correo);
+  linea.setAttribute('data-estado', fila.estado);
   const usuario = pieza('span', 'administradores-correo', fila.correo);
   if (fila.correo === propio) {
     usuario.append(pieza('span', 'administradores-propio', ` · ${t('tu')}`));
@@ -216,15 +218,75 @@ function cabecera() {
   );
   return cabeza;
 }
+/** @typedef {(accion: 'retirar'|'reintentar', correo: string) => Promise<boolean>} CambiarFila */
+
+/** Pregunta antes de retirar; una invitación pendiente se nombra como tal porque esa persona todavía no ha entrado.
+ * @param {HTMLElement} linea */
+function preguntaDeRetirada(linea) {
+  const clave = linea.getAttribute('data-estado') === 'pendiente' ? 'invitacion' : 'administrador';
+  return t(`confirmar.${clave}`, { correo: linea.getAttribute('data-correo') ?? '' });
+}
 /**
- * Cada botón de fila lleva su acción y su correo; el oyente los lee del propio botón.
- * @param {HTMLElement} listado @param {(accion: 'retirar'|'reintentar', correo: string) => Promise<void>} cambiar
+ * Confirmación en la propia fila: la pregunta y sus dos botones ocupan la fila entera y la retirada solo sale con
+ * «Confirmar», una sola vez. El foco va a «Cancelar», la opción que no cambia nada, para que una segunda pulsación
+ * involuntaria no retire a nadie. «Cancelar» y Escape devuelven la fila como estaba y el foco a su «Retirar».
+ * @param {HTMLElement} linea @param {HTMLElement} retirar @param {CambiarFila} cambiar
+ */
+function confirmarEnFila(linea, retirar, cambiar) {
+  const correo = linea.getAttribute('data-correo') ?? '';
+  const celdas = [...linea.children];
+  const pregunta = pieza('span', 'administradores-confirmacion-pregunta', preguntaDeRetirada(linea));
+  const confirmar = boton('administradores-confirmar-retirada', 'confirmar', 'confirmar', correo);
+  const cancelar = boton('administradores-cancelar-retirada', 'cancelar', 'cancelar', correo);
+  const botones = pieza('span', 'administradores-confirmacion-botones');
+  botones.append(confirmar, cancelar);
+  const grupo = pieza('div', 'administradores-confirmacion');
+  grupo.setAttribute('role', 'group');
+  grupo.setAttribute('aria-label', pregunta.textContent ?? '');
+  grupo.append(pregunta, botones);
+  const celdaGrupo = pieza('td', 'administradores-celda administradores-celda-confirmacion');
+  celdaGrupo.setAttribute('colspan', String(celdas.length));
+  celdaGrupo.append(grupo);
+  const volver = () => {
+    linea.replaceChildren(...celdas);
+    retirar.focus();
+  };
+  cancelar.addEventListener('click', volver);
+  grupo.addEventListener('keydown', (evento) => {
+    if (/** @type {KeyboardEvent} */ (evento).key === 'Escape') {
+      volver();
+    }
+  });
+  let enviada = false;
+  confirmar.addEventListener('click', async () => {
+    if (enviada) {
+      return;
+    }
+    enviada = true;
+    confirmar.setAttribute('disabled', '');
+    // Si la lista no se ha vuelto a pintar (un rechazo), la fila vuelve a su botón y el mensaje explica qué pasó.
+    if (!(await cambiar('retirar', correo))) {
+      volver();
+    }
+  });
+  linea.replaceChildren(celdaGrupo);
+  cancelar.focus();
+}
+/**
+ * Cada botón de fila lleva su acción y su correo; el oyente los lee del propio botón. «Retirar» pide antes
+ * confirmación en su fila; «Reintentar» completa una retirada ya decidida y se envía directamente.
+ * @param {HTMLElement} listado @param {CambiarFila} cambiar
  */
 function escucharFilas(listado, cambiar) {
-  for (const accion of /** @type {const} */ (['retirar', 'reintentar'])) {
-    for (const boton of listado.querySelectorAll(`.administradores-${accion}`)) {
-      boton.addEventListener('click', () => void cambiar(accion, boton.getAttribute('data-correo') ?? ''));
-    }
+  for (const retirar of listado.querySelectorAll('.administradores-retirar')) {
+    const linea = /** @type {HTMLElement} */ (retirar.closest('.administradores-fila'));
+    retirar.addEventListener('click', () => confirmarEnFila(linea, /** @type {HTMLElement} */ (retirar), cambiar));
+  }
+  for (const reintentar of listado.querySelectorAll('.administradores-reintentar')) {
+    reintentar.addEventListener(
+      'click',
+      () => void cambiar('reintentar', reintentar.getAttribute('data-correo') ?? ''),
+    );
   }
 }
 /**
@@ -271,14 +333,17 @@ export function montarAdministradores(contenedor, opciones) {
     pintar(/** @type {ListaAdministradores} */ (respuesta.cuerpo));
     return true;
   }
-  /** @param {'anadir'|'retirar'|'reintentar'} accion @param {string} correo */
+  /** @param {'anadir'|'retirar'|'reintentar'} accion @param {string} correo
+   * @returns {Promise<boolean>} si la lista se ha vuelto a pintar con la respuesta */
   async function cambiar(accion, correo) {
     const respuesta = await opciones.pedir(`${RUTA}/${accion}`, { correo });
-    if (respuesta.estado === ESTADO_CORRECTO) {
+    const pintada = respuesta.estado === ESTADO_CORRECTO;
+    if (pintada) {
       pintar(/** @type {ListaAdministradores} */ (respuesta.cuerpo));
     }
     const { clave, bien } = mensajeDe(accion, respuesta);
     avisar(clave, bien);
+    return pintada;
   }
   return { actualizar, cambiar };
 }

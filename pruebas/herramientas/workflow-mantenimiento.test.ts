@@ -6,6 +6,7 @@ import {
   existsSync,
   mkdirSync,
   mkdtempSync,
+  readdirSync,
   readFileSync,
   realpathSync,
   renameSync,
@@ -31,12 +32,13 @@ const SHA = 'a'.repeat(LONGITUD_SHA);
 const COTA_SALIDA = 131_072;
 const MODO_PRIVADO = 0o700;
 const LIMITE_RUNNER_MINUTOS = 360;
-const FASES_CONSTRUCCION = 8;
+const FASES_CONSTRUCCION = 9;
 const FASES_ACTIVACION = 5;
 /** Anotar el inicio, recuperar el commit y preparar las herramientas son idénticos en los dos jobs. */
 const FASES_COMUNES = 3;
 /** Solo el candidato pide su reserva, entre el checkout y las herramientas, y solo en un run a demanda. */
 const RESERVA_A_DEMANDA = 'Pedir la reserva a demanda';
+const CAUSA_SIN_NAVEGADORES = 'Anotar por qué el ciclo no publica';
 /** La reserva llega por las entradas si la crea el servidor y por el paso de reserva si el run la pide a demanda. */
 const RESERVA_EN_CONSTRUCCION = [
   ['FARO_SOLICITUD_ID', `\${{ inputs.a_demanda && steps.reserva.outputs.solicitud_id || inputs.solicitud_id }}`],
@@ -325,13 +327,13 @@ test('la preparación fría y caliente deja tiempo efectivo al supervisor y toda
   const salida = join(f.runner, 'presupuesto');
   // El job lee su tope de la variable del workflow, la misma que fija su timeout-minutes.
   const tope = { FARO_TOPE_CANDIDATO_MINUTOS: String(objeto(raiz.env).FARO_TOPE_CANDIDATO_MINUTOS) };
-  // Con «no» el job no instala navegadores y sus 15 minutos pasan al supervisor.
+  // Con «no» el job no instala navegadores y sus 13 minutos pasan al supervisor.
   const casos = [
     { navegadores: 'si', segundos: 10, minutos: 295 },
     { navegadores: 'si', segundos: 310, minutos: 294 },
     { navegadores: 'si', segundos: 1190, minutos: 280 },
-    { navegadores: 'no', segundos: 10, minutos: 310 },
-    { navegadores: 'no', segundos: 1190, minutos: 295 },
+    { navegadores: 'no', segundos: 10, minutos: 308 },
+    { navegadores: 'no', segundos: 1190, minutos: 293 },
   ];
   const fijos = [
     'Anotar el inicio del job',
@@ -807,9 +809,35 @@ fs.writeFileSync(${JSON.stringify(join(f.raiz, 'inputs.json'))},JSON.stringify({
   );
 }
 
-const COMANDO_MOTORES = 'bash herramientas/mantenimiento/preparar-navegadores.sh';
+const GUION_MOTORES = 'bash herramientas/mantenimiento/preparar-navegadores.sh';
 const MOTORES = ['chromium', 'firefox', 'webkit'];
-function prepararMotores(f: Fixture, fallo: string) {
+/** Calidad prueba los tres motores; el ciclo solo abre Chromium, en el humo de datos. */
+const COMANDO_CALIDAD = `${GUION_MOTORES} ${MOTORES.join(' ')}`;
+const COMANDO_CICLO = `${GUION_MOTORES} chromium`;
+/** Lo que el guion escribe para APT: la identidad generada y el archivo principal con la red, que se lee el último. */
+const MAIN_APT = /^Dir::Etc::main "([^"]+)";$/m;
+/**
+ * Un apt-config de ensayo: lee del archivo principal de APT_CONFIG los valores de la red, como el real, salvo que
+ * `pisados` simule otra configuración que gana.
+ */
+function aptConfig(f: Fixture, pisados: boolean) {
+  binario(
+    f,
+    join(f.bin, 'apt-config'),
+    'apt-config',
+    `${registrar(f, 'apt-config')}
+const red=fs.readFileSync(${MAIN_APT}.exec(fs.readFileSync(process.env.APT_CONFIG,'utf8'))[1],'utf8');
+const args=process.argv.slice(3);
+let salida='';
+for(let i=0;i<args.length;i+=2){
+  const valor=new RegExp('^'+args[i+1]+' "([^"]*)";$','m').exec(red)?.[1];
+  salida+=args[i]+"='"+(${pisados}?'120':valor)+"'\\n";
+}
+process.stdout.write(salida);`,
+  );
+}
+function prepararMotores(f: Fixture, fallo: string, { pisados = false } = {}) {
+  aptConfig(f, pisados);
   const guion = 'herramientas/mantenimiento/preparar-navegadores.sh';
   mkdirSync(join(f.workspace, guion, '..'), { recursive: true });
   writeFileSync(join(f.workspace, guion), readFileSync(new URL(`../../${guion}`, import.meta.url)));
@@ -837,7 +865,7 @@ export const chromium=motor('chromium'), firefox=motor('firefox'), webkit=motor(
     `${registrar(f, 'motor')}
 const args=process.argv.slice(2);
 if (args.includes('install-deps')) {
-  if (fs.readFileSync(process.env.APT_CONFIG,'utf8')!=='configuracion de APT')process.exit(89);
+  if (!fs.readFileSync(process.env.APT_CONFIG,'utf8').startsWith('configuracion de APT'))process.exit(89);
 } else if (args.includes('install')) {
   if (!args.includes('--require') || !args.some(a=>a.endsWith('/red/identidad-http.cjs')))process.exit(90);
   fs.mkdirSync(process.env.PLAYWRIGHT_BROWSERS_PATH,{recursive:true});
@@ -845,7 +873,7 @@ if (args.includes('install-deps')) {
 } else if (args.includes('--input-type=module')) {
   process.exit(require('node:child_process').spawnSync(process.execPath,args,{stdio:'inherit'}).status);
 } else if (args[0]!=='herramientas/red/configurar-apt.ts') process.exit(91);
-else process.stdout.write('configuracion de APT');`,
+else process.stdout.write('configuracion de APT\\n');`,
   );
 }
 
@@ -891,40 +919,48 @@ test('calidad recupera la tabla privada de la Cambra antes de los tipos y solo e
   assert.ok(pasos.every((p) => p.uses === undefined));
 });
 
-test('calidad y el candidato preparan los mismos tres motores y bibliotecas antes de verificar', () => {
+test('calidad prepara los tres motores y el ciclo solo Chromium, cada uno antes de lo que los abre', () => {
   const calidad = parseDocument(readFileSync(new URL('../../.github/workflows/calidad.yml', import.meta.url), 'utf8'));
   const pasosCalidad = objeto(objeto(objeto(calidad.toJS()).jobs).calidad).steps;
   assert.ok(Array.isArray(pasosCalidad));
   const orden = pasosCalidad.map((p) => texto(objeto(p).run));
-  assert.ok(orden.includes(COMANDO_MOTORES));
-  assert.ok(orden.indexOf(COMANDO_MOTORES) < orden.findIndex((s) => s.includes('npm run verificar')));
-  const candidato = workflow().construccion.map((p) => texto(p.run));
-  assert.ok(candidato.indexOf(COMANDO_MOTORES) > candidato.findIndex((s) => s.includes('preparar-runner.sh')));
-  assert.ok(
-    candidato.indexOf(COMANDO_MOTORES) < candidato.findIndex((s) => s.includes('ejecutar_mantenimiento ejecutar')),
-  );
+  assert.ok(orden.includes(COMANDO_CALIDAD));
+  assert.ok(orden.indexOf(COMANDO_CALIDAD) < orden.findIndex((s) => s.includes('npm run verificar')));
+  // En calidad un fallo de la preparación sí para el job: sin motores no hay batería que valga.
+  assert.ok(pasosCalidad.every((p) => objeto(p)['continue-on-error'] === undefined));
+  const construccion = workflow().construccion;
+  const candidato = construccion.map((p) => texto(p.run));
+  assert.ok(candidato.indexOf(COMANDO_CICLO) > candidato.findIndex((s) => s.includes('preparar-runner.sh')));
+  const causa = construccion.findIndex((p) => p.name === CAUSA_SIN_NAVEGADORES);
+  assert.equal(causa, candidato.indexOf(COMANDO_CICLO) + 1);
+  for (const consumidor of ['ensayo_en_runner', 'ejecutar_mantenimiento ejecutar']) {
+    assert.ok(causa < candidato.findIndex((s) => s.includes(consumidor)), consumidor);
+  }
 });
 
-for (const fallo of ['', 'webkit']) {
-  test(`la caché del candidato se exporta solo si arrancan todos los motores (fallo: ${fallo || 'ninguno'})`, () => {
+const CASOS_MOTORES = [
+  { comando: COMANDO_CALIDAD, motores: MOTORES, fallo: '' },
+  { comando: COMANDO_CALIDAD, motores: MOTORES, fallo: 'webkit' },
+  { comando: COMANDO_CICLO, motores: ['chromium'], fallo: '' },
+];
+for (const { comando, motores, fallo } of CASOS_MOTORES) {
+  test(`la caché se exporta solo si arrancan los motores pedidos (${motores.join(', ')}; fallo: ${fallo || 'ninguno'})`, () => {
     const f = fixture();
     try {
       prepararMotores(f, fallo);
       const hostil = Object.fromEntries(CLAVES_PRIVADAS.map((k) => [k, 'hostil']));
-      const r = ejecutarShell(COMANDO_MOTORES, f.workspace, { ...entorno(f), ...hostil });
+      const r = ejecutarShell(comando, f.workspace, { ...entorno(f), ...hostil });
       assert.equal(r.status === 0, !fallo, r.stderr);
       const registro = llamadas(f);
       const argumentos = registro.map((v) => v.args).filter(Array.isArray);
-      assert.ok(
-        argumentos.some((a) => a.slice(-MOTORES.length - 1).join(' ') === 'install-deps chromium firefox webkit'),
-      );
+      assert.ok(argumentos.some((a) => a.slice(-motores.length - 1).join(' ') === `install-deps ${motores.join(' ')}`));
       assert.deepEqual(
         argumentos.filter((a) => a.includes('install')).map((a) => a.at(-1)),
-        MOTORES,
+        motores,
       );
       assert.ok(registro.every((v) => Object.values(objeto(v.env)).every((presente) => !presente)));
       const cerrados = readFileSync(join(f.raiz, 'cerrados'), 'utf8').trim().split('\n');
-      assert.deepEqual(cerrados, fallo ? MOTORES.slice(0, -1) : MOTORES);
+      assert.deepEqual(cerrados, fallo ? motores.slice(0, -1) : motores);
       assert.equal(existsSync(join(f.runner, 'env')), !fallo);
       if (!fallo) {
         assert.equal(
@@ -937,6 +973,96 @@ for (const fallo of ['', 'webkit']) {
     }
   });
 }
+
+test('APT recibe sus reintentos y esperas en el archivo que lee el último y el guion comprueba que los usa', () => {
+  const f = fixture();
+  try {
+    prepararMotores(f, '');
+    const r = ejecutarShell(COMANDO_CICLO, f.workspace, entorno(f));
+    assert.equal(r.status, 0, r.stderr);
+    const privado = readdirSync(f.runner).filter((n) => n.startsWith('navegadores-entorno.'));
+    assert.equal(privado.length, 1);
+    const configuracion = readFileSync(join(f.runner, String(privado[0]), 'apt.conf'), 'utf8');
+    const principal = MAIN_APT.exec(configuracion)?.[1];
+    assert.equal(principal, join(f.runner, String(privado[0]), 'apt-red.conf'));
+    assert.match(readFileSync(String(principal), 'utf8'), /^Acquire::Retries "\d+";$/m);
+    const consultas = llamadas(f).filter((v) => v.nombre === 'apt-config');
+    assert.deepEqual(objeto(consultas[0]).args, [
+      'shell',
+      'reintentos',
+      'Acquire::Retries',
+      'espera_http',
+      'Acquire::http::Timeout',
+      'espera_https',
+      'Acquire::https::Timeout',
+    ]);
+  } finally {
+    f.limpiar();
+  }
+});
+
+test('si otra configuración pisa las esperas de APT, la preparación para antes de instalar nada', () => {
+  const f = fixture();
+  try {
+    prepararMotores(f, '', { pisados: true });
+    const r = ejecutarShell(COMANDO_CICLO, f.workspace, entorno(f));
+    assert.equal(r.status, 1);
+    assert.match(r.stderr, /APT no usa los reintentos ni las esperas/);
+    const argumentos = llamadas(f)
+      .map((v) => v.args)
+      .filter(Array.isArray);
+    assert.ok(argumentos.every((a) => !a.includes('install-deps') && !a.includes('install')));
+    assert.equal(existsSync(join(f.runner, 'env')), false);
+  } finally {
+    f.limpiar();
+  }
+});
+
+for (const motores of ['', 'chromium edge']) {
+  test(`la preparación exige motores conocidos (${motores || 'ninguno'})`, () => {
+    const f = fixture();
+    try {
+      prepararMotores(f, '');
+      const r = ejecutarShell(`${GUION_MOTORES} ${motores}`.trim(), f.workspace, entorno(f));
+      assert.equal(r.status, 2);
+      assert.deepEqual(llamadas(f), []);
+    } finally {
+      f.limpiar();
+    }
+  });
+}
+
+test('sin Chromium listo, el ciclo para sin publicar y la ejecución dice por qué', (t) => {
+  const { construccion } = workflow();
+  const navegadores = construccion.find((p) => p.id === 'navegadores');
+  assert.ok(navegadores);
+  assert.equal(navegadores.run, COMANDO_CICLO);
+  // El humo es obligatorio: un fallo de Chromium para el job, y con él la construcción y la activación.
+  assert.equal(navegadores['continue-on-error'], undefined);
+  const causa = construccion.find((p) => p.name === CAUSA_SIN_NAVEGADORES);
+  assert.ok(causa);
+  const condicion = /^\$\{\{\s*([\s\S]+?)\s*\}\}$/.exec(texto(causa.if))?.[1];
+  assert.ok(condicion);
+  for (const [fallo, resultado, anota] of [
+    [true, 'failure', true],
+    [false, 'success', false],
+    [false, 'skipped', false],
+    [true, 'skipped', false],
+  ] as const) {
+    const contexto = { failure: () => fallo, steps: { navegadores: { outcome: resultado } } };
+    assert.equal(runInNewContext(condicion, contexto), anota, `${fallo} ${resultado}`);
+  }
+  const f = fixture();
+  t.after(f.limpiar);
+  const resumen = join(f.runner, 'resumen');
+  const r = ejecutarShell(texto(causa.run), f.workspace, { ...entorno(f), GITHUB_STEP_SUMMARY: resumen });
+  assert.equal(r.status, 0, r.stderr);
+  const frase =
+    'Chromium no ha quedado listo para el humo de datos: su instalación falló o no terminó en su plazo, también ' +
+    'tras los reintentos de sus paquetes. Este ciclo no publica; el siguiente intento vuelve a prepararlo.';
+  assert.equal(r.stdout, `::error title=Ciclo sin publicar::${frase}\n`);
+  assert.equal(readFileSync(resumen, 'utf8'), `${frase}\n`);
+});
 
 function comprobarComandoSupervisor(args: unknown, f: Fixture): void {
   const trabajos = join(f.runner, 'trabajos');

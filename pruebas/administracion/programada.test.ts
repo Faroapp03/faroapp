@@ -36,7 +36,7 @@ const POLITICA: PoliticaControles = {
 };
 const senal = () => new AbortController().signal;
 /** Estas pruebas parten de un almacén sin reservas vencidas; la recuperación tiene su propia prueba. */
-const SIN_RESERVA_VENCIDA = async () => 'sin-reserva-vencida' as const;
+const SIN_EJECUCION_ABIERTA = async () => 'sin-ejecucion-abierta' as const;
 function fixture(t: TestContext) {
   const db = new DatabaseSync(':memory:');
   t.after(() => db.close());
@@ -179,7 +179,7 @@ test('repetir recuperación o recibir el diario solo permite un despacho', async
   const comprobar = crearComprobadorProgramado({
     almacen: f.almacen,
     confianza: CONFIANZA,
-    reconciliar: SIN_RESERVA_VENCIDA,
+    reconciliar: SIN_EJECUCION_ABIERTA,
     despachar: async () => {
       despachos++;
       return { estado: 'despachada', runId: '789' };
@@ -201,7 +201,7 @@ test('reserva nueva despacha una sola vez y fija acción/referencia de autoridad
   const comprobar = crearComprobadorProgramado({
     almacen: f.almacen,
     confianza: CONFIANZA,
-    reconciliar: SIN_RESERVA_VENCIDA,
+    reconciliar: SIN_EJECUCION_ABIERTA,
     despachar: async (solicitud) => {
       enviadas.push(solicitud);
       assert.equal((await f.almacen.leerTrabajoPrivado()).ultimoTrabajo?.estado, 'despacho-incierto');
@@ -227,7 +227,7 @@ test('error de despacho y cancelación durante reserva nunca recuperan permiso p
   const comprobar = crearComprobadorProgramado({
     almacen: f.almacen,
     confianza: CONFIANZA,
-    reconciliar: SIN_RESERVA_VENCIDA,
+    reconciliar: SIN_EJECUCION_ABIERTA,
     despachar: async () => {
       llamadas++;
       throw new Error('transporte interrumpido');
@@ -248,7 +248,7 @@ test('error de despacho y cancelación durante reserva nunca recuperan permiso p
       anotarDespacho: async () => assert.fail('No anotar'),
     },
     confianza: CONFIANZA,
-    reconciliar: SIN_RESERVA_VENCIDA,
+    reconciliar: SIN_EJECUCION_ABIERTA,
     despachar: async () => assert.fail('No despachar tras cancelar'),
   });
   const pendiente = cancelable(EVENTO, control.signal);

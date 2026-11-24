@@ -337,6 +337,14 @@ test('un actor que insiste recibe la misma respuesta, pero solo se anotan sus pr
   assert.equal(rechazadasDe(ACTOR.id).length, MAX_RECHAZOS_ANOTADOS_DIA + 1);
 });
 
+/**
+ * El reloj diario ante una demanda con su run fijado y sin cerrar: la autoridad pide antes consultarlo en GitHub, y el
+ * reloj vuelve con la misma solicitud marcada como reconciliada cuando GitHub lo da por en curso.
+ */
+async function programadaTrasConsultar(f: Fixture) {
+  assert.equal((await f.backend.reservarTrabajoProgramado(TICK, CONFIANZA)).estado, 'pendiente-reconciliacion');
+  return (await f.backend.reservarTrabajoProgramado({ ...TICK, reconciliada: true }, CONFIANZA)).estado;
+}
 test('convive con la programada y el panel; al terminar, todo vuelve a admitirse y sus minutos quedan anotados', async (t) => {
   const conProgramada = await fixture(t);
   assert.equal((await conProgramada.backend.reservarTrabajoProgramado(TICK, CONFIANZA)).estado, 'nueva');
@@ -350,7 +358,7 @@ test('convive con la programada y el panel; al terminar, todo vuelve a admitirse
   const f = await fixture(t);
   assert.equal((await reservar(f, '9001', { accion: 'actualizar-datos' })).estado, 'reservada');
   assert.equal(await iniciar(f, '9001'), 'aplicado');
-  assert.equal((await f.backend.reservarTrabajoProgramado(TICK, CONFIANZA)).estado, 'omitida-ocupado');
+  assert.equal(await programadaTrasConsultar(f), 'omitida-ocupado');
   assert.equal((await ultimo(f)).origen, 'demanda');
   assert.equal(await pulsar(f), 'ocupado');
   f.reloj.ahora += DURACION_CICLO_MIN * MINUTO;
@@ -378,7 +386,7 @@ test('la programada tiene prioridad sobre una demanda sin iniciar: la libera, re
   const f = await fixture(t);
   const demanda = await ultimoTrasReservar(f, '9001');
   f.reloj.ahora += ANTES_DEL_PLAZO;
-  assert.equal((await f.backend.reservarTrabajoProgramado(TICK, CONFIANZA)).estado, 'nueva');
+  assert.equal(await programadaTrasConsultar(f), 'nueva');
   assert.equal((await ultimo(f)).origen, 'programada');
   assert.deepEqual(liberaciones(f), [{ run_id: '9001', decision: 'admitida', motivo_liberacion: 'ciclo_programado' }]);
   // El run a demanda pide después su permiso: lo ve rechazado como cualquier reserva superada.
@@ -393,7 +401,7 @@ test('la programada tiene prioridad sobre una demanda sin iniciar: la libera, re
 test('la demanda liberada por la programada sigue contando en los topes del día y del mes de quien la pidió', async (t) => {
   const f = await fixture(t);
   assert.equal((await reservar(f, '9001')).estado, 'reservada');
-  assert.equal((await f.backend.reservarTrabajoProgramado(TICK, CONFIANZA)).estado, 'nueva');
+  assert.equal(await programadaTrasConsultar(f), 'nueva');
   assert.equal(liberaciones(f)[0]?.motivo_liberacion, 'ciclo_programado');
   f.reloj.ahora += 2 * HORA;
   const historial = f.sql.transaccion(() => leerHistorialDelMesSqlite(f.sql, f.reloj.ahora));

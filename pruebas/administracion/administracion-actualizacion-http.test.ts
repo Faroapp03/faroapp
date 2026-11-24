@@ -27,6 +27,9 @@ import { AlmacenPublicoSqlite } from '../../src/plataforma/acceso-publico/sqlite
 import { motorPanel } from '../ayudas/persistencia-panel.ts';
 import { principalDePrueba } from '../ayudas/principal-panel.ts';
 
+/** GitHub no responde a la consulta del trabajo que ocupa: la reserva decide como si no se hubiera consultado. */
+const GITHUB_SIN_RESPUESTA = async () => 'indeterminada' as const;
+
 const TAM_SHA = 40;
 const TAM_HUELLA_RECIBO = 64;
 const ENVIOS_DOS = 2;
@@ -72,6 +75,7 @@ async function fixture(
     leer: (acceso) => almacen.leerTrabajoDeSesion(acceso),
     solicitar: crearSolicitadorActualizacion({
       almacen,
+      reconciliar: GITHUB_SIN_RESPUESTA,
       confianza: CONFIANZA,
       despachar: async (_solicitud, senal) => {
         envios++;

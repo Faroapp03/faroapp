@@ -27,9 +27,10 @@ La prueba focal verifica firmas de llamada, una redirección HTTP→HTTPS, una C
 rechazo de esa misma CA cuando no se proporciona. Los dos PEM de esta carpeta son material público
 de prueba generado para loopback; nunca son credenciales ni una CA de una instalación real.
 
-En Ubuntu, los workflows de calidad y de actualización comparten el [preparador de navegadores](../../herramientas/mantenimiento/preparar-navegadores.sh).
-APT emplea la UA genérica. El CLI oficial de Playwright instala Chromium, Firefox y WebKit con el perfil de cuatro
-cabeceras. El preparador arranca y cierra los tres antes de registrar su caché para las pruebas del mismo job.
+En Ubuntu, los workflows de calidad y de actualización comparten el [preparador de navegadores](../../herramientas/mantenimiento/preparar-navegadores.sh),
+que instala los motores que se le piden: calidad, los tres; el ciclo, solo Chromium. APT emplea la UA genérica, con
+reintentos y una espera corta por conexión. El CLI oficial de Playwright instala cada motor con el perfil de cuatro
+cabeceras. El preparador arranca y cierra los motores pedidos antes de registrar su caché para las pruebas del mismo job.
 
 El comando ejecuta Chromium, Firefox y WebKit en orden. Cada uno recibe un proceso independiente con
 cinco minutos de plazo, mediante el ejecutor de comprobaciones existente. Cada caso cierra sus contextos,

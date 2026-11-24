@@ -375,6 +375,8 @@ test('cliente y router reales reservan una vez sin alterar controles, cuotas ni 
     leer: (acceso) => almacen.leerTrabajoDeSesion(acceso),
     solicitar: crearSolicitadorActualizacion({
       almacen,
+      // GitHub no responde a la consulta del trabajo que ocupa: la reserva decide como si no se hubiera consultado.
+      reconciliar: async () => 'indeterminada',
       confianza: {
         audiencia: 'https://mantenimiento.prueba/resultado',
         repositorioId: '101',

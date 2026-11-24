@@ -1068,7 +1068,14 @@
   width: 1%;
   white-space: nowrap;
 }
-.panel-administracion :is(.administradores-retirar, .administradores-reintentar, .administradores-alta-enviar) {
+.panel-administracion
+  :is(
+    .administradores-retirar,
+    .administradores-reintentar,
+    .administradores-alta-enviar,
+    .administradores-confirmar-retirada,
+    .administradores-cancelar-retirada
+  ) {
   min-height: 30px;
   padding: 0 12px;
   border: 1px solid var(--color-linea);
@@ -1082,6 +1089,31 @@
   border-color: var(--color-acento);
   color: var(--color-sobre-marca);
   background: var(--color-acento);
+}
+/* Confirmación de una retirada en su propia fila: la pregunta y sus dos botones ocupan la fila entera, marcada con el
+   color de fallo del panel, y «Confirmar» lleva ese mismo color porque es la acción que no se puede deshacer. */
+.panel-administracion .administradores-tabla .administradores-celda-confirmacion {
+  box-shadow: inset 3px 0 0 var(--panel-fallo);
+}
+.administradores-confirmacion {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px 16px;
+  padding-block: 7px;
+}
+.administradores-confirmacion-pregunta {
+  font-weight: 600;
+}
+.administradores-confirmacion-botones {
+  display: inline-flex;
+  gap: 8px;
+}
+.panel-administracion .administradores-confirmar-retirada {
+  border-color: var(--panel-fallo);
+  color: var(--color-sobre-marca);
+  background: var(--panel-fallo);
 }
 #vista-administradores > .administradores-alta {
   grid-row: 1 / span 6;

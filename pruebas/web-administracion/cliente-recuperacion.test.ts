@@ -101,6 +101,8 @@ function routerDe(almacen: AlmacenSesionPanelSqlite, despacho: ResultadoDespacho
       leer: (acceso) => almacen.leerTrabajoDeSesion(acceso),
       solicitar: crearSolicitadorActualizacion({
         almacen,
+        // GitHub no responde a la consulta del trabajo que ocupa: la reserva decide como si no se hubiera consultado.
+        reconciliar: async () => 'indeterminada',
         confianza: CONFIANZA,
         despachar: async () => {
           envios++;

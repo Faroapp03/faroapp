@@ -4,6 +4,8 @@
  */
 import type { ConfiguracionAdministrativa } from '../administracion/configuracion.ts';
 import type { ConfiguracionActualizacionGitHub } from '../administracion/configuracion-actualizacion.ts';
+import { crearConsultorEjecucionGitHub } from '../administracion/consulta-ejecucion-github.ts';
+import { crearReconciliadorSinSesion } from '../administracion/reconciliacion.ts';
 import { crearReceptorReservaADemanda } from '../administracion/reserva-a-demanda.ts';
 import type { AlmacenTrabajosActualizacion } from '../administracion/trabajos.ts';
 import type { AlmacenTrabajosDemanda } from './acceso-publico/trabajos-durable.ts';
@@ -15,7 +17,10 @@ export interface DemandaDelMontaje {
 }
 interface OpcionesReserva {
   readonly configuracion: ConfiguracionAdministrativa;
-  readonly trabajos?: Pick<AlmacenTrabajosActualizacion, 'prepararTrabajos'>;
+  readonly trabajos?: Pick<
+    AlmacenTrabajosActualizacion,
+    'prepararTrabajos' | 'leerTrabajoPrivado' | 'finalizarEjecucionSinRecibo'
+  >;
   readonly actualizacion?: {
     readonly configuracion: () => ConfiguracionActualizacionGitHub;
     readonly pedir?: typeof fetch;
@@ -35,14 +40,17 @@ export function reservaDelMontaje(opciones: OpcionesReserva): { readonly recibir
     if (!trabajos) {
       throw new Error('La reserva a demanda requiere un almacén durable de trabajos');
     }
-    const { confianza } = actualizacion.configuracion();
+    const { confianza, obtenerToken } = actualizacion.configuracion();
+    const transporte = actualizacion.pedir ? { pedir: actualizacion.pedir } : {};
+    const consultar = crearConsultorEjecucionGitHub({ obtenerToken, ...transporte });
     const recibir = crearReceptorReservaADemanda({
       origen: configuracion.origen,
       permitirHttpLocal: configuracion.permitirHttpLocal,
       confianza,
       configuracionDemanda: demanda.configuracion,
       almacen: demanda.almacen,
-      ...(actualizacion.pedir ? { pedir: actualizacion.pedir } : {}),
+      reconciliar: crearReconciliadorSinSesion({ almacen: trabajos, consultar }),
+      ...transporte,
     });
     await trabajos.prepararTrabajos();
     return recibir;

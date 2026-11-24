@@ -47,7 +47,7 @@ from plataforma_datos.orquestacion.procesos import ejecutar_con_plazo
 
 # Las fuentes del último ciclo real completo y el paquete medido llevado al runner lento (medidas_del_ciclo), más su
 # margen y redondeado hacia arriba a cinco minutos: (6.898 + 5.486) × 1,2 = 14.861 s, 250 minutos; lo exige
-# pruebas/test_plazo_del_motor.py. actualizar.yml concede al supervisor al menos 280 minutos (tope de 325,
+# pruebas/test_plazo_del_motor.py. actualizar.yml concede al supervisor al menos 280 minutos (tope de 323,
 # preparación en frío y navegadores) para que quepan también la descarga y la restauración de la base antes del motor
 # y, después, la lectura de la generación, la exportación y la conservación del artefacto y el recibo;
 # pruebas/herramientas/workflow-presupuesto.test.ts mantiene las cifras de acuerdo.

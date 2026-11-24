@@ -113,23 +113,32 @@ async function decidirReconciliacion(
   return consultarYRegistrar(opciones, acceso, trabajo, senal);
 }
 
-export type DecisionReconciliacionProgramada = 'sin-reserva-vencida' | 'completada' | 'en-curso' | 'indeterminada';
-interface OpcionesReconciliacionProgramada {
+export type DecisionReconciliacionSinSesion = 'sin-ejecucion-abierta' | 'completada' | 'en-curso' | 'indeterminada';
+/** `runDelSolicitante`: el run que pide la reserva no se consulta a sí mismo; sigue en curso mientras pregunta. */
+export type ReconciliarSinSesion = (
+  senal: AbortSignal,
+  runDelSolicitante?: string,
+) => Promise<DecisionReconciliacionSinSesion>;
+interface OpcionesReconciliacionSinSesion {
   readonly almacen: Pick<AlmacenTrabajosActualizacion, 'leerTrabajoPrivado' | 'finalizarEjecucionSinRecibo'>;
   readonly consultar: OpcionesReconciliacion['consultar'];
 }
 /**
- * La misma consulta que usa el panel, sin sesión, para el reloj diario: la autoridad la pide solo para una ejecución
- * conocida cuyo plazo ha vencido, y la cierra solo si GitHub la da por completada con la identidad fijada en la reserva.
- * Nunca retira, reenvía ni repite un despacho; lo que no se puede comprobar queda tal cual.
+ * La misma consulta que usa el panel, sin sesión, para quien pide una reserva mientras el último trabajo sigue abierto:
+ * el reloj diario, la petición a demanda y el botón de actualizar. Cierra la ejecución solo si GitHub la da por
+ * completada con la identidad fijada en la reserva, en el repositorio de esa reserva. Nunca retira, reenvía ni repite un
+ * despacho; lo que no se puede comprobar queda tal cual y la reserva sigue ocupada.
  */
-export function crearReconciliadorProgramado({ almacen, consultar }: OpcionesReconciliacionProgramada) {
-  return async (senal: AbortSignal): Promise<DecisionReconciliacionProgramada> => {
+export function crearReconciliadorSinSesion({
+  almacen,
+  consultar,
+}: OpcionesReconciliacionSinSesion): ReconciliarSinSesion {
+  return async (senal, runDelSolicitante) => {
     senal.throwIfAborted();
     const trabajo = leerEstadoTrabajosPrivado(await almacen.leerTrabajoPrivado()).ultimoTrabajo;
     senal.throwIfAborted();
-    if (!trabajo || trabajo.estado === 'terminado' || trabajo.runId === null) {
-      return 'sin-reserva-vencida';
+    if (!trabajo || trabajo.estado === 'terminado' || trabajo.runId === null || trabajo.runId === runDelSolicitante) {
+      return 'sin-ejecucion-abierta';
     }
     const consulta = await consultar(trabajo, senal);
     senal.throwIfAborted();
@@ -147,6 +156,27 @@ export function crearReconciliadorProgramado({ almacen, consultar }: OpcionesRec
     senal.throwIfAborted();
     return transicion.estado === 'conflicto' ? 'indeterminada' : 'completada';
   };
+}
+/**
+ * Parte del plazo de una petición que puede gastar la consulta a GitHub. El resto queda para reservar y despachar,
+ * que con su propio plazo de tres segundos no debe quedar cortado por una consulta lenta.
+ */
+export const PLAZO_RECONCILIACION_SIN_SESION_MS = 1500;
+/** Una consulta que agota su parte del plazo es indeterminada: no libera nada y la reserva decide con lo que hay. */
+export async function reconciliarDentroDeSuPlazo(
+  reconciliar: ReconciliarSinSesion,
+  senal: AbortSignal,
+  runDelSolicitante?: string,
+): Promise<DecisionReconciliacionSinSesion> {
+  const limite = AbortSignal.any([senal, AbortSignal.timeout(PLAZO_RECONCILIACION_SIN_SESION_MS)]);
+  try {
+    return await reconciliar(limite, runDelSolicitante);
+  } catch (causa) {
+    if (senal.aborted || !limite.aborted) {
+      throw causa;
+    }
+    return 'indeterminada';
+  }
 }
 
 export function crearReconciliadorActualizacion(opciones: OpcionesReconciliacion) {

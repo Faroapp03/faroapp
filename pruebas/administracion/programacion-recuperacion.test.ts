@@ -15,8 +15,11 @@ import {
   PLAZO_RESERVA_PROGRAMADA_MS,
   VENTANA_TRABAJO_PROGRAMADO_MS,
 } from '../../src/administracion/programacion-trabajos.ts';
-import { crearComprobadorProgramado, PLAZO_RECONCILIACION_PROGRAMADA_MS } from '../../src/administracion/programada.ts';
-import { crearReconciliadorProgramado } from '../../src/administracion/reconciliacion.ts';
+import { crearComprobadorProgramado } from '../../src/administracion/programada.ts';
+import {
+  crearReconciliadorSinSesion,
+  PLAZO_RECONCILIACION_SIN_SESION_MS,
+} from '../../src/administracion/reconciliacion.ts';
 import { evaluarVigilante } from '../../src/administracion/vigilante.ts';
 import { leerVigilantePanel } from '../../src/administracion/vigilante-panel.js';
 import { ESTADO_HTTP } from '../../src/comun/estados-http.ts';
@@ -29,7 +32,7 @@ import { CONFIG_VIGILANTE, CORTE_VIGILANTE, entradasVigilante, PROGRAMADA_VIGILA
 
 const SEGUNDO = 1000;
 const HORA = 60 * 60 * SEGUNDO;
-const MINUTOS_RESERVA = 385;
+const MINUTOS_RESERVA = 383;
 const DIA = 24 * HORA;
 const AHORA = Date.parse('2026-10-17T03:00:00Z');
 const CRON = '0 3 * * *';
@@ -149,7 +152,7 @@ test('el cron de recuperación sustituye una sola vez un run conocido que GitHub
     almacen: f.backend,
     confianza: CONFIANZA,
     despachar: github.despachar,
-    reconciliar: crearReconciliadorProgramado({ almacen: f.backend, consultar: remoto.consultar }),
+    reconciliar: crearReconciliadorSinSesion({ almacen: f.backend, consultar: remoto.consultar }),
   });
   const diario = tick(AHORA);
   const recuperacion = { ...diario, recuperacion: true as const };
@@ -191,7 +194,7 @@ test('un trabajo que recibió permiso de inicio conserva su reserva aunque GitHu
     almacen: f.backend,
     confianza: CONFIANZA,
     despachar: github.despachar,
-    reconciliar: crearReconciliadorProgramado({ almacen: f.backend, consultar: remoto.consultar }),
+    reconciliar: crearReconciliadorSinSesion({ almacen: f.backend, consultar: remoto.consultar }),
   });
   await comprobar(tick(AHORA), senal());
   const t0 = (await f.backend.leerTrabajoPrivado()).ultimoTrabajo;
@@ -215,7 +218,7 @@ test('un despacho incierto sin permiso de inicio se libera en el evento siguient
     almacen: f.backend,
     confianza: CONFIANZA,
     despachar: github.despachar,
-    reconciliar: crearReconciliadorProgramado({ almacen: f.backend, consultar: remoto.consultar }),
+    reconciliar: crearReconciliadorSinSesion({ almacen: f.backend, consultar: remoto.consultar }),
   });
   assert.equal(await comprobar(tick(AHORA), senal()), 'nueva');
   const incierto = (await f.backend.leerTrabajoPrivado()).ultimoTrabajo;
@@ -262,12 +265,68 @@ test('dentro del plazo una reserva sigue ocupada y no se libera ni se reenvía',
     almacen: f.backend,
     confianza: CONFIANZA,
     despachar: github.despachar,
-    reconciliar: crearReconciliadorProgramado({ almacen: f.backend, consultar: remoto.consultar }),
+    reconciliar: crearReconciliadorSinSesion({ almacen: f.backend, consultar: remoto.consultar }),
   });
   assert.equal(await comprobar(tick(f.reloj.ahora), senal()), 'omitida-ocupado');
   assert.equal(github.envios.length, 0);
   assert.deepEqual(f.eventos(), [['omitida-ocupado', 'trabajo-en-plazo']]);
   assert.equal(remoto.consultas.length, 0);
+});
+
+/** Un ciclo del panel despachado a GitHub y sin recibo, una hora antes del evento diario: sigue dentro de su plazo. */
+async function cicloDelPanelSinRecibo(f: Awaited<ReturnType<typeof fixture>>) {
+  f.reloj.ahora = AHORA + DIA - HORA;
+  await abrirSesionDePrueba(f.backend, ACCESO);
+  const manual = await f.backend.reservarTrabajoDeSesion(
+    ACCESO,
+    { solicitudId: '22222222-2222-4222-8222-222222222222', accion: 'actualizar-datos', revisionEsperada: 0 },
+    CONFIANZA,
+  );
+  assert.ok('trabajos' in manual && manual.estado === 'nueva');
+  const trabajo = manual.trabajos.ultimoTrabajo;
+  assert.ok(trabajo);
+  const referencia = { solicitudId: trabajo.solicitudId, revisionReserva: trabajo.revisionReserva };
+  assert.equal(
+    (await f.backend.anotarDespacho(referencia, { estado: 'despachada', runId: String(RUN_ID) })).estado,
+    'aplicado',
+  );
+  f.reloj.ahora = AHORA + DIA;
+}
+test('un ciclo en plazo que GitHub ya cerró sin recibo se cierra solo y el evento diario reserva el suyo', async (t) => {
+  const f = await fixture(t);
+  await cicloDelPanelSinRecibo(f);
+  const github = despachoGitHub(aceptado);
+  const remoto = ejecucionGitHub();
+  remoto.estado.remoto = () => remoto.run('completed', 'failure');
+  const comprobar = crearComprobadorProgramado({
+    almacen: f.backend,
+    confianza: CONFIANZA,
+    despachar: github.despachar,
+    reconciliar: crearReconciliadorSinSesion({ almacen: f.backend, consultar: remoto.consultar }),
+  });
+  assert.equal(await comprobar(tick(f.reloj.ahora), senal()), 'nueva');
+  assert.equal(remoto.consultas.length, 1);
+  assert.equal(github.envios.length, 1);
+  assert.deepEqual(f.eventos(), [['nueva', 'ejecucion-cerrada-sin-recibo']]);
+  assert.equal((await f.backend.leerTrabajoPrivado()).ultimoTrabajo?.accion, 'comprobar-programada');
+});
+test('un ciclo en plazo que GitHub da por en curso se omite tras una sola consulta', async (t) => {
+  const f = await fixture(t);
+  await cicloDelPanelSinRecibo(f);
+  const github = despachoGitHub(aceptado);
+  const remoto = ejecucionGitHub();
+  remoto.estado.remoto = () => remoto.run('in_progress', null);
+  const comprobar = crearComprobadorProgramado({
+    almacen: f.backend,
+    confianza: CONFIANZA,
+    despachar: github.despachar,
+    reconciliar: crearReconciliadorSinSesion({ almacen: f.backend, consultar: remoto.consultar }),
+  });
+  assert.equal(await comprobar(tick(f.reloj.ahora), senal()), 'omitida-ocupado');
+  assert.equal(remoto.consultas.length, 1);
+  assert.equal(github.envios.length, 0);
+  assert.deepEqual(f.eventos(), [['omitida-ocupado', 'trabajo-en-plazo']]);
+  assert.equal((await f.backend.leerTrabajoPrivado()).ultimoTrabajo?.runId, String(RUN_ID));
 });
 
 /** Montaje administrativo real con un único transporte a GitHub: despacho por POST y consulta por GET. */
@@ -347,7 +406,7 @@ test('una ejecución iniciada y sin cierre solo se cierra cuando GitHub la da po
     almacen: f.backend,
     confianza: CONFIANZA,
     despachar: despacho.despachar,
-    reconciliar: crearReconciliadorProgramado({ almacen: f.backend, consultar: remoto.consultar }),
+    reconciliar: crearReconciliadorSinSesion({ almacen: f.backend, consultar: remoto.consultar }),
   });
   assert.equal(await comprobar(tick(AHORA), senal()), 'nueva');
   assert.equal(remoto.consultas.length, 0);
@@ -470,7 +529,7 @@ test('el panel del vigilante entrega el historial de la programación y rechaza 
 // El horario solo admite un cron diario: una reserva que no vence antes del evento siguiente lo dejaría omitido como
 // trabajo en plazo, en vez de reconciliar la reserva que se quedó sin cerrar. La ventana de los eventos no la limita:
 // mide lo que tarda en llegar un evento, no lo que dura el trabajo anterior.
-test('la reserva dura 385 minutos, más que el límite del workflow y menos que un día, y la plantilla del horario coincide con su variable', () => {
+test('la reserva dura 383 minutos, más que el límite del workflow y menos que un día, y la plantilla del horario coincide con su variable', () => {
   assert.ok(PLAZO_RESERVA_PROGRAMADA_MS > MINUTOS_LIMITE_WORKFLOW_ACTUALIZAR * 60 * SEGUNDO);
   assert.ok(PLAZO_RESERVA_PROGRAMADA_MS < DIA);
   assert.equal(PLAZO_RESERVA_PROGRAMADA_MS, MINUTOS_RESERVA * 60 * SEGUNDO);
@@ -490,7 +549,7 @@ async function ejecucionVencida(f: Awaited<ReturnType<typeof fixture>>) {
     almacen: f.backend,
     confianza: CONFIANZA,
     despachar: despacho.despachar,
-    reconciliar: async () => 'sin-reserva-vencida',
+    reconciliar: async () => 'sin-ejecucion-abierta',
   });
   assert.equal(await comprobar(tick(AHORA), senal()), 'nueva');
   const trabajo = (await f.backend.leerTrabajoPrivado()).ultimoTrabajo;
@@ -548,7 +607,7 @@ test('una consulta lenta que acaba en completada se trata como indeterminada y d
   const referencia = { solicitudId: trabajo.solicitudId, revisionReserva: trabajo.revisionReserva };
   await f.backend.confirmarInicio({ ...referencia, accion: 'comprobar-programada' }, identidad(f.reloj.ahora));
   github.remoto = async () => {
-    await new Promise((resolver) => setTimeout(resolver, PLAZO_RECONCILIACION_PROGRAMADA_MS + RETRASO_EXTRA_MS));
+    await new Promise((resolver) => setTimeout(resolver, PLAZO_RECONCILIACION_SIN_SESION_MS + RETRASO_EXTRA_MS));
     return github.run('completed', 'success');
   };
   f.reloj.ahora += DIA;
@@ -575,7 +634,7 @@ test('el reconciliador programado no cierra una ejecución completada con otra i
     const referencia = await ejecucionVencida(f);
     const remoto = ejecucionGitHub();
     remoto.estado.remoto = () => remoto.run('completed', 'success', distinto);
-    const reconciliar = crearReconciliadorProgramado({ almacen: f.backend, consultar: remoto.consultar });
+    const reconciliar = crearReconciliadorSinSesion({ almacen: f.backend, consultar: remoto.consultar });
     assert.equal(await reconciliar(senal()), 'indeterminada');
     const actual = (await f.backend.leerTrabajoPrivado()).ultimoTrabajo;
     assert.equal(actual?.solicitudId, referencia.solicitudId);

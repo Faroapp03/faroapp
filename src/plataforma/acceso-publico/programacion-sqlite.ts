@@ -223,10 +223,13 @@ function motivoNueva(
     ? 'ejecucion-cerrada-sin-recibo'
     : 'sin-trabajo-pendiente';
 }
-/** Una ejecución conocida y vencida puede haber terminado sin recibo: solo GitHub puede decirlo. */
-function reconciliable(trabajos: EstadoTrabajosPrivado, ahora: number): boolean {
+/**
+ * Una ejecución conocida sin cerrar puede haber terminado sin recibo, también dentro de su plazo (un fallo al preparar
+ * el entorno llega antes que el supervisor): solo GitHub puede decirlo.
+ */
+function reconciliable(trabajos: EstadoTrabajosPrivado): boolean {
   const t = trabajos.ultimoTrabajo;
-  return t !== null && t.runId !== null && reservaProgramadaVencida(t, ahora);
+  return t !== null && t.estado !== 'terminado' && t.runId !== null;
 }
 function motivoOcupado(trabajos: EstadoTrabajosPrivado, ahora: number): MotivoEventoProgramado {
   const t = trabajos.ultimoTrabajo;
@@ -309,7 +312,7 @@ export function reservarProgramacionSqlite(
     return recuperarSinInicio(sql, ultimoEvento, { solicitud, confianza, trabajos, ahora });
   }
   // Sin consumir el evento: el reloj consulta a GitHub y vuelve con la misma solicitud marcada como reconciliada.
-  if (enVentana && solicitud.reconciliada !== true && reconciliable(trabajos, ahora)) {
+  if (enVentana && solicitud.reconciliada !== true && reconciliable(trabajos)) {
     return { estado: 'pendiente-reconciliacion', trabajos: estadoPublicoTrabajos(trabajos) };
   }
   // Los ticks omitidos se consumen también. Un error posterior revierte watermark, historial y reserva juntos.

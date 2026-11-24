@@ -11,7 +11,7 @@ import {
 import { TEXTOS_ADMINISTRADORES as CA } from '../../web/idiomas/ca/panel-administradores.js';
 import { TEXTOS_ADMINISTRADORES as ES } from '../../web/idiomas/es/panel-administradores.js';
 import { navegador } from '../web-controles/ayudas.js';
-import { Elemento, pulsar } from '../web-informe-lectura/dom-doble.ts';
+import { documento, Elemento, pulsar } from '../web-informe-lectura/dom-doble.ts';
 import { activarIdiomaPanel } from './idiomas.ts';
 
 const INICIO = Date.parse('2026-11-23T09:00:00Z');
@@ -144,14 +144,117 @@ test('retirar y reintentar van por su fila; un rechazo dice qué hacer', async (
   });
   await montarAdministradores(html(raiz), { pedir }).actualizar();
   pulsar(raiz.querySelectorAll('.administradores-retirar')[0] as Elemento);
+  pulsar(raiz.querySelector('.administradores-confirmar-retirada') as Elemento);
   await turno();
   assert.deepEqual(pedidos.at(-1), ['administradores/retirar', { correo: 'ana@faro.invalid' }]);
   assert.match(raiz.textContent, /No se puede retirar al último administrador activo\. Añade antes a otra persona/);
+  // Tras el rechazo, la fila vuelve a su botón «Retirar» y el foco también.
+  assert.equal(raiz.querySelector('.administradores-confirmacion'), null);
+  assert.equal(documento.activeElement, raiz.querySelectorAll('.administradores-retirar')[0]);
   pulsar(raiz.querySelector('.administradores-reintentar') as Elemento);
   await turno();
   assert.deepEqual(pedidos.at(-1), ['administradores/reintentar', { correo: 'carla@faro.invalid' }]);
   assert.match(raiz.textContent, /Cloudflare Access no ha respondido\. Puedes reintentarlo desde su fila\./);
 });
+
+/** Monta la lista de ejemplo y pulsa «Retirar» en la fila del correo dado; devuelve la fila y lo pedido. */
+async function abrirConfirmacion(t: TestContext, correo: string, idioma: 'es' | 'ca' = 'es') {
+  const raiz = dom(t, idioma);
+  const lista = { ...LISTA, sincronizacion: { estado: 'configurada' } };
+  const { pedir, pedidos } = panel({
+    'administradores/leer': { estado: CORRECTO, cuerpo: lista },
+    'administradores/retirar': { estado: CORRECTO, cuerpo: lista },
+  });
+  await montarAdministradores(html(raiz), { pedir }).actualizar();
+  const linea = raiz.querySelectorAll('.administradores-fila').find((f) => f.getAttribute('data-correo') === correo);
+  assert.ok(linea, `falta la fila de ${correo}`);
+  const retirar = linea.querySelector('.administradores-retirar') as Elemento;
+  pulsar(retirar);
+  await turno();
+  return { raiz, linea, retirar, pedidos };
+}
+const tecla = (elemento: Elemento, key: string) => elemento.dispatchEvent(Object.assign(new Event('keydown'), { key }));
+
+test('«Retirar» no envía nada: la fila pregunta y deja el foco en «Cancelar»', async (t) => {
+  const { linea, pedidos } = await abrirConfirmacion(t, 'ana@faro.invalid');
+  assert.deepEqual(pedidos, [['administradores/leer', {}]]);
+  const confirmacion = linea.querySelector('.administradores-confirmacion');
+  assert.ok(confirmacion, 'la confirmación va dentro de la propia fila');
+  assert.equal(confirmacion.getAttribute('role'), 'group');
+  const pregunta = '¿Retirar a ana@faro.invalid? Este usuario dejará de poder entrar al Panel de Control.';
+  assert.equal(linea.querySelector('.administradores-confirmacion-pregunta')?.textContent, pregunta);
+  assert.equal(confirmacion.getAttribute('aria-label'), pregunta);
+  assert.equal(linea.querySelector('.administradores-celda-confirmacion')?.getAttribute('colspan'), '5');
+  const confirmar = linea.querySelector('.administradores-confirmar-retirada');
+  const cancelar = linea.querySelector('.administradores-cancelar-retirada');
+  assert.equal(confirmar?.textContent, 'Confirmar');
+  assert.equal(confirmar?.getAttribute('aria-label'), 'Confirmar la retirada de ana@faro.invalid');
+  assert.equal(cancelar?.textContent, 'Cancelar');
+  assert.equal(cancelar?.getAttribute('aria-label'), 'Cancelar la retirada de ana@faro.invalid');
+  assert.equal(documento.activeElement, cancelar);
+  assert.equal(linea.querySelector('.administradores-retirar'), null);
+});
+
+test('una invitación pendiente se confirma con su propia pregunta', async (t) => {
+  const { linea, pedidos } = await abrirConfirmacion(t, 'berta@faro.invalid');
+  assert.equal(pedidos.length, 1);
+  assert.equal(
+    linea.querySelector('.administradores-confirmacion-pregunta')?.textContent,
+    '¿Retirar la invitación de berta@faro.invalid? Este usuario no podrá entrar al Panel de Control.',
+  );
+});
+
+test('«Cancelar» y Escape devuelven la fila como estaba, con el foco en «Retirar» y sin petición', async (t) => {
+  const { linea, retirar, pedidos } = await abrirConfirmacion(t, 'ana@faro.invalid');
+  pulsar(linea.querySelector('.administradores-cancelar-retirada') as Elemento);
+  await turno();
+  assert.equal(linea.querySelector('.administradores-confirmacion'), null);
+  assert.equal(linea.querySelector('.administradores-retirar'), retirar);
+  assert.equal(documento.activeElement, retirar);
+  pulsar(retirar);
+  const confirmacion = linea.querySelector('.administradores-confirmacion') as Elemento;
+  tecla(confirmacion, 'Enter');
+  assert.ok(linea.querySelector('.administradores-confirmacion'), 'solo Escape cancela');
+  tecla(confirmacion, 'Escape');
+  await turno();
+  assert.equal(linea.querySelector('.administradores-confirmacion'), null);
+  assert.equal(documento.activeElement, retirar);
+  assert.match(linea.textContent, /Retirar$/);
+  assert.deepEqual(pedidos, [['administradores/leer', {}]]);
+});
+
+test('«Confirmar» envía una sola retirada aunque se pulse dos veces', async (t) => {
+  const { raiz, linea, pedidos } = await abrirConfirmacion(t, 'ana@faro.invalid');
+  const confirmar = linea.querySelector('.administradores-confirmar-retirada') as Elemento;
+  pulsar(confirmar);
+  pulsar(confirmar);
+  await turno();
+  const retiradas = pedidos.filter(([ruta]) => ruta === 'administradores/retirar');
+  assert.deepEqual(retiradas, [['administradores/retirar', { correo: 'ana@faro.invalid' }]]);
+  assert.match(raiz.textContent, /Administrador retirado\. Ya no puede entrar en el Panel de Control\./);
+});
+
+test('la confirmación en catalán', async (t) => {
+  const { linea } = await abrirConfirmacion(t, 'ana@faro.invalid', 'ca');
+  assert.equal(
+    linea.querySelector('.administradores-confirmacion-pregunta')?.textContent,
+    'Vols retirar ana@faro.invalid? Aquest usuari ja no podrà entrar al Tauler de Control.',
+  );
+  const confirmar = linea.querySelector('.administradores-confirmar-retirada');
+  const cancelar = linea.querySelector('.administradores-cancelar-retirada');
+  assert.equal(confirmar?.textContent, 'Confirmar');
+  assert.equal(confirmar?.getAttribute('aria-label'), 'Confirmar la retirada de ana@faro.invalid');
+  assert.equal(cancelar?.textContent, 'Cancel·lar');
+  assert.equal(cancelar?.getAttribute('aria-label'), 'Cancel·lar la retirada de ana@faro.invalid');
+  pulsar(cancelar as Elemento);
+  pulsar(tablaDe(linea).querySelectorAll('.administradores-retirar')[1] as Elemento);
+  assert.equal(
+    tablaDe(linea).querySelector('.administradores-confirmacion-pregunta')?.textContent,
+    'Vols retirar la invitació de berta@faro.invalid? Aquest usuari no podrà entrar al Tauler de Control.',
+  );
+});
+/** La tabla que contiene una fila, para buscar en las demás filas. */
+const tablaDe = (linea: Elemento) => linea.closest('.administradores-tabla') as Elemento;
 
 test('en catalán, con la misma estructura y los mismos datos', async (t) => {
   const raiz = dom(t, 'ca');

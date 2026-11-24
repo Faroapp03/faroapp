@@ -297,9 +297,13 @@ puede retirarse con sesión y revisión vigentes. Una ejecución conocida se rec
 remota; ese cierre sin recibo nunca acredita un candidato. Cuando una actualización no termina, el Inicio dice por
 qué en «Requiere atención», con la causa y el paso en palabras y el aviso de que la web sigue con los datos
 publicados; un paso que el panel no sabe nombrar no se muestra. La causa llega en `ultimoFallo`, de una lista
-cerrada ([el cierre sin recibo](actualizacion-remota.md#el-cierre-sin-recibo)). El evento diario hace lo mismo sin sesión con una
-reserva cuyo plazo ha vencido, como explica la [programación diaria](actualizacion-remota.md#programación-diaria):
-retira la que nunca obtuvo permiso de inicio y cierra la que GitHub da por completada; lo demás queda pendiente
+cerrada ([el cierre sin recibo](actualizacion-remota.md#el-cierre-sin-recibo)). La misma consulta la hace el
+servidor sin que nadie la pida cuando una petición de reserva (el botón de actualizar, la reserva a demanda o el evento
+diario) encuentra abierto el último trabajo con su ejecución conocida: si GitHub la da por completada, la cierra igual
+y después decide; si sigue en curso o no responde, la petición recibe «ocupado» y nada cambia
+([sin esperar al botón](actualizacion-remota.md#sin-esperar-al-botón)). El evento diario, además, retira la reserva
+vencida que nunca obtuvo permiso de inicio, como explica la
+[programación diaria](actualizacion-remota.md#programación-diaria); lo vencido que no puede cerrarse queda pendiente
 de una persona y su evento se registra con el motivo `requiere-atencion`.
 El resultado del candidato tampoco acredita qué versión está activa. Las operaciones HTTP están montadas en
 Node y Workers. Su [configuración privada](actualizacion-remota.md) permanece deshabilitada por

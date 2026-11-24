@@ -12,6 +12,9 @@ import type { ResultadoDespacho, SolicitudActualizacion } from '../../src/admini
 import { crearAlmacenPublicoNode } from '../../src/plataforma/acceso-publico/node.ts';
 import { abrirSesionDePrueba } from '../ayudas/sesion-de-prueba.ts';
 
+/** GitHub no responde a la consulta del trabajo que ocupa: la reserva decide como si no se hubiera consultado. */
+const GITHUB_SIN_RESPUESTA = async () => 'indeterminada' as const;
+
 const TAM_HUELLA = 64;
 const TAM_SHA = 40;
 const INICIO = Date.parse('2026-10-16T12:00:00Z');
@@ -70,6 +73,7 @@ test('solicitudes simultáneas idénticas provocan un único despacho después d
   let llamadas = 0;
   const solicitar = crearSolicitadorActualizacion({
     almacen: f.base.trabajos,
+    reconciliar: GITHUB_SIN_RESPUESTA,
     confianza: CONFIANZA,
     despachar: async () => {
       llamadas++;
@@ -91,10 +95,20 @@ test('una respuesta perdida no recupera el permiso de envío ni después de rein
     llamadas++;
     throw new Error('transporte sintético interrumpido');
   };
-  const inicial = crearSolicitadorActualizacion({ almacen: f.base.trabajos, confianza: CONFIANZA, despachar });
+  const inicial = crearSolicitadorActualizacion({
+    almacen: f.base.trabajos,
+    confianza: CONFIANZA,
+    despachar,
+    reconciliar: GITHUB_SIN_RESPUESTA,
+  });
   await assert.rejects(inicial(ACCESO, SOLICITUD, senal()), /transporte sintético/);
   const base = f.reabrir();
-  const repetir = crearSolicitadorActualizacion({ almacen: base.trabajos, confianza: CONFIANZA, despachar });
+  const repetir = crearSolicitadorActualizacion({
+    almacen: base.trabajos,
+    confianza: CONFIANZA,
+    despachar,
+    reconciliar: GITHUB_SIN_RESPUESTA,
+  });
   const resultado = await repetir(ACCESO, SOLICITUD, senal());
   assert.equal(llamadas, 1);
   assert.equal(resultado.estado, 'activa');
@@ -108,6 +122,7 @@ test('sustituir la sesión mientras responde GitHub retira el acceso pero conser
   const f = await fixture(t);
   const solicitar = crearSolicitadorActualizacion({
     almacen: f.base.trabajos,
+    reconciliar: GITHUB_SIN_RESPUESTA,
     confianza: CONFIANZA,
     despachar: async () => {
       await abrirSesionDePrueba(f.base.sesion, { ...ACCESO, huellaSesion: 'e'.repeat(TAM_HUELLA) });
@@ -126,6 +141,7 @@ test('copias de entrada impiden cambiar identidad, acción o confianza durante u
   const enviadas: SolicitudActualizacion[] = [];
   const solicitar = crearSolicitadorActualizacion({
     almacen: f.base.trabajos,
+    reconciliar: GITHUB_SIN_RESPUESTA,
     confianza,
     despachar: async (s) => {
       enviadas.push(s);
@@ -146,6 +162,7 @@ test('un rechazo confirmado permite otra intención; un ocupado no despacha', as
   let llamadas = 0;
   const solicitar = crearSolicitadorActualizacion({
     almacen: f.base.trabajos,
+    reconciliar: GITHUB_SIN_RESPUESTA,
     confianza: CONFIANZA,
     despachar: async () => (++llamadas === 1 ? { estado: 'rechazada' } : { estado: 'incierta' }),
   });
@@ -179,6 +196,7 @@ test('cancelación previa no reserva, y una sesión sustituida nunca puede despa
   let llamadas = 0;
   const solicitar = crearSolicitadorActualizacion({
     almacen: f.base.trabajos,
+    reconciliar: GITHUB_SIN_RESPUESTA,
     confianza: CONFIANZA,
     despachar: async () => {
       llamadas++;
@@ -198,6 +216,7 @@ test('el lector público de solicitud rechaza confianza privada, decisiones desc
   const f = await fixture(t);
   const solicitar = crearSolicitadorActualizacion({
     almacen: f.base.trabajos,
+    reconciliar: GITHUB_SIN_RESPUESTA,
     confianza: CONFIANZA,
     despachar: async () => ({ estado: 'incierta' }),
   });

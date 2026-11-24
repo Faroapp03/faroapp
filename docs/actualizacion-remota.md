@@ -46,7 +46,8 @@ consultas cuya configuración es válida. No se reemplaza un trabajo corrupto po
 
 `POST /administracion/api/datos/actualizar` exige Access, origen, sesión administrativa y revisión
 vigentes. La acción es `actualizar-datos` o `reintentar-pendientes`. Un trabajo nuevo en curso devuelve
-`202`; un conflicto de revisión o trabajo ocupado, `409`. Repetir la misma intención consulta su
+`202`; un conflicto de revisión o trabajo ocupado, `409`. Antes de responder «ocupado», el servidor comprueba en
+GitHub si el trabajo que ocupa ya terminó ([sin esperar al botón](#sin-esperar-al-botón)). Repetir la misma intención consulta su
 resultado sin volver a despachar. `POST /administracion/api/datos/trabajo`, con cuerpo `{}`, permite
 consultar el estado. Ninguna de estas respuestas confirma una versión activa.
 
@@ -124,18 +125,19 @@ La reserva consume el instante lógico del evento en la misma transacción que e
 monotónica impide repetirlo después de un reinicio, de otro trabajo o de una respuesta perdida. Los eventos
 de más de seis horas se omiten; no se ejecuta una cola de días atrasados. Solo una reserva nueva autoriza un despacho.
 
-Cada evento comprueba antes de omitirse si el último trabajo ha dejado de estar en plazo. La reserva dura 385
-minutos desde su creación. Los tres jobs (construcción, activación y aviso) pueden sumar hasta 372 minutos de
+Cada evento comprueba antes de omitirse si el último trabajo ha dejado de estar en plazo. La reserva dura 383
+minutos desde su creación. Los tres jobs (construcción, activación y aviso) pueden sumar hasta 370 minutos de
 ejecución y quedan 13 minutos de margen para las colas de GitHub y el desfase de relojes.
 
 - Una reserva vencida sin permiso de inicio, como la de un despacho incierto por un 5xx o un tiempo agotado,
   se retira en la misma transacción que reserva el trabajo nuevo. El motor solo arranca con un permiso de inicio
   autenticado con la identidad fijada; la retirada deniega además cualquier permiso tardío para esa reserva.
-- Para una reserva vencida cuyo identificador de ejecución se conoce, el reloj consulta en GitHub el intento 1 con
-  la reconciliación del panel. GitHub conserva ese intento por separado cuando se vuelve a ejecutar el workflow.
-  Solo `completed` con la misma ejecución, repositorio, propietario, código y workflow la cierra como
-  `ejecucion-sin-recibo`. Si sigue en curso, no responde o no puede comprobarse, el trabajo no se libera.
-- Lo que no puede liberarse así queda ocupado con el motivo `requiere-atencion` en el historial.
+- Para un trabajo sin cerrar cuyo identificador de ejecución se conoce, esté o no en plazo, el reloj consulta en
+  GitHub el intento 1 con la reconciliación del panel. GitHub conserva ese intento por separado cuando se vuelve a
+  ejecutar el workflow. Solo `completed` con la misma ejecución, repositorio, propietario, código y workflow la cierra
+  como `ejecucion-sin-recibo`. Si sigue en curso, no responde o no puede comprobarse, el trabajo no se libera.
+- Lo que no puede liberarse así queda ocupado: con el motivo `requiere-atencion` si su reserva ha vencido y con
+  `trabajo-en-plazo` si no.
 
 Ningún caso reenvía el despacho anterior: la reserva nueva lleva su propio identificador.
 
@@ -273,7 +275,7 @@ otro cuerpo responde `400 solicitud_invalida`.
 | Operación | Respuesta |
 |---|---|
 | `reservar`, admitida | `200 {estado: 'reservada' \| 'repetida', solicitudId, revisionReserva}`. Una sola reserva por run: repetir la petición devuelve `repetida` y la misma reserva |
-| `reservar`, no admitida | `409 {error}` con el motivo exacto: `ocupado`, `activacion_pendiente`, `candidato_en_plazo`, `separacion`, `tope_dia`, `tope_mes` o `presupuesto` |
+| `reservar`, no admitida | `409 {error}` con el motivo exacto: `ocupado`, `activacion_pendiente`, `candidato_en_plazo`, `separacion`, `tope_dia`, `tope_mes` o `presupuesto`. Antes de pedir la reserva, el receptor comprueba en GitHub si el trabajo abierto de otro run ya terminó ([sin esperar al botón](#sin-esperar-al-botón)) |
 | `consultar` | Desde cualquier intento del mismo run: `200 {estado: 'reservada', solicitudId, revisionReserva}`, o `404 {error: 'sin_reserva'}` si ese run no tiene reserva. Nunca crea una |
 | La autoridad no responde | `503 no_disponible` o `504 plazo_agotado`, como en el permiso de inicio |
 
@@ -312,8 +314,29 @@ Estas operaciones requieren la misma identidad, origen y sesión administrativa 
 Si GitHub sigue ejecutando, no responde o no permite comprobar esos datos, el trabajo no se libera.
 Un `404`, una petición de cancelación o un timeout no demuestran terminación. Un recibo admitido
 durante la consulta no se sobrescribe. Las respuestas al navegador contienen solo el estado público.
-No se renueva la sesión por sondear ni se reenvía el despacho automáticamente. La
-[programación diaria](#programación-diaria) aplica estas mismas reglas, sin sesión, a una reserva vencida.
+No se renueva la sesión por sondear ni se reenvía el despacho automáticamente.
+
+### Sin esperar al botón
+
+Un trabajo que terminó en GitHub sin dejar recibo (se agotó el plazo del motor, o falló al preparar el entorno antes
+de que el supervisor pudiera cerrarlo) seguiría ocupando hasta que alguien pulsara «Comprobar cómo terminó». Para que
+no dependa de eso, cada petición de reserva que encuentra el último trabajo abierto con su ejecución conocida hace
+ella misma esa consulta, con la misma pieza, la misma identidad y la misma lista cerrada de resultados:
+
+- **Botón de actualizar.** Si la autoridad responde «ocupado», el servidor consulta el run. Si GitHub lo da por
+  completado, registra `ejecucion-sin-recibo` (con `ultimoFallo` `sin-resultado`) y vuelve a pedir la reserva una
+  sola vez, con la revisión siguiente: si entre medias cambió algo más que ese cierre, la respuesta es un conflicto y
+  la persona vuelve a ver el estado antes de decidir. Repetir después la petición original responde `repetida` con
+  la misma reserva, sin despachar otra vez.
+- **Reserva a demanda.** El receptor consulta antes de pedir la reserva, para que la autoridad decida con el fin ya
+  registrado y no anote un rechazo que no lo es. No consulta el run que pide, que sigue en curso mientras pregunta.
+- **Evento diario.** La autoridad pide la consulta antes de consumir el evento, como explica la
+  [programación diaria](#programación-diaria).
+
+Es un solo GET por petición, sin reintentos, y gasta como mucho 1,5 segundos del plazo de la petición; el resto queda
+para reservar y despachar. Si el run sigue en curso, GitHub no responde, tarda más o la identidad no coincide, la
+petición recibe «ocupado» como siempre y nada cambia. El trabajo se consulta siempre en el repositorio y con la
+identidad fijados en su propia reserva, también si la configuración ha migrado a otro repositorio después.
 
 El documento privado de trabajos pasa a versión 2. La preparación migra los documentos válidos de
 versión 1 conservando su revisión, trabajo y reloj. Esos trabajos se identifican como anteriores al
@@ -384,7 +407,8 @@ de código siguen en `npm run verificar`, que es lo que exige publicar una revis
 
 Con `FARO_HUMO_CHROMIUM` distinto de `0` (por omisión), la orden abre además el humo de datos en Chromium
 (`pruebas/web-publicacion/humo-de-datos.test.ts`): Cursos pinta los cursos vigentes del catálogo, la búsqueda filtra y
-el informe de ejemplo se abre, sin errores de consola. Sin Chromium instalado, el ciclo lo apaga con `0`.
+el informe de ejemplo se abre, sin errores de consola. En el ciclo el humo es obligatorio: si Chromium no queda
+listo, el job para antes del supervisor, no publica y la ejecución anota la causa en sus avisos y en su resumen.
 
 | Lo que ejecuta `npm run verificar` | En cada ciclo | Al publicar | Por qué es seguro |
 | --- | --- | --- | --- |
@@ -515,10 +539,16 @@ controlan la exclusión entre trabajos. Los runs a demanda y los ensayos compart
 `faro-actualizar-manual`, que impide que se solapen entre sí; los runs que despacha el servidor van cada uno en su
 propio grupo y nunca esperan ni se cancelan por él. El repositorio es privado y cada job descuenta sus minutos de la cuota
 gratuita mensual de GitHub, así que cada uno tiene un tope acorde con ese presupuesto. El job del candidato
-dispone de hasta 325 minutos, fijados en la variable `FARO_TOPE_CANDIDATO_MINUTOS` del workflow. El checkout
-admite dos minutos, las dependencias veinte y los navegadores quince; los navegadores solo se instalan si la
-variable `FARO_NAVEGADORES_EN_EL_CICLO` del workflow vale `si`. El supervisor dispone de 280 a 295 minutos según el
-tiempo consumido al preparar las dependencias, y de 295 a 310 sin navegadores. Ese plazo incluye la descarga y la
+dispone de hasta 323 minutos, fijados en la variable `FARO_TOPE_CANDIDATO_MINUTOS` del workflow. El checkout
+admite dos minutos, las dependencias veinte y Chromium trece; Chromium solo se instala si la variable
+`FARO_NAVEGADORES_EN_EL_CICLO` del workflow vale `si`. El ciclo instala solo Chromium, el único motor que abre (en el
+humo de datos); calidad instala los tres. Los trece minutos son la preparación con éxito más lenta medida (643
+segundos de 39, con mediana de 66) con el margen del 20 %, y `pruebas/herramientas/preparar-navegadores-medidas.test.ts`
+los deriva de esa medida. APT corta en 4 segundos una conexión que deja de enviar datos y reintenta cada paquete
+hasta seis veces: en el ciclo del 24/11/2026, que agotó el paso con un espejo lento, cada conexión atascada esperaba 30
+segundos y la siguiente descarga empezaba en 2,6 como mucho, y 14 de 65 descargas fallaron. El preparador comprueba
+con `apt-config` que APT usa esos valores antes de instalar nada. El supervisor dispone de 280 a 295 minutos según el
+tiempo consumido al preparar las dependencias, y de 293 a 308 sin navegadores. Ese plazo incluye la descarga y la
 restauración de la generación base (hasta 10 minutos), el motor (hasta 250 minutos), la lectura de la generación, la
 exportación del artefacto y su conservación (hasta cinco minutos cada una) y el recibo (hasta cinco). Los plazos
 salen de medidas, en `plataforma_datos/orquestacion/medidas_del_ciclo.py`, con un margen del 20 %. La base y las
@@ -1096,7 +1126,7 @@ pasa:
    cierra la intención como `abandonada` (motivo `a-mano`) solo si cada Worker sirve otra vez lo anterior. Si no, la
    intención sigue en su fase, la solicitud queda usada con lo observado y el panel lo dice.
 
-La solicitud de cierre caduca 372 minutos después de anotarse. Solo puede cumplirla la ejecución a la que
+La solicitud de cierre caduca 370 minutos después de anotarse. Solo puede cumplirla la ejecución a la que
 se concedió. El panel dice que el cierre está en curso solo mientras su
 ejecución puede cumplirlo: la activación sigue en la revisión en que se anotó y el último trabajo es el despachado, sin
 terminar. Cuando esa ejecución ha registrado su recibo y terminado, su paso de activación pudo cumplirlo justo

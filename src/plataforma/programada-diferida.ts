@@ -15,7 +15,7 @@ import {
 import { PLAZO_PANEL_MS } from '../administracion/http.ts';
 import type { SolicitudTrabajoProgramado } from '../administracion/programacion-trabajos.ts';
 import { comprobarEventoProgramado, crearComprobadorProgramado } from '../administracion/programada.ts';
-import { crearReconciliadorProgramado } from '../administracion/reconciliacion.ts';
+import { crearReconciliadorSinSesion } from '../administracion/reconciliacion.ts';
 import { dentroDelPlazo } from '../api/plazo.ts';
 import type { OpcionesMontajeAdministrativo } from './administracion.ts';
 
@@ -40,7 +40,7 @@ function comprobadorConFases(
   const ejecutor = actualizacion.configuracion();
   const transporte = actualizacion.pedir ? { pedir: actualizacion.pedir } : {};
   const despachar = crearDespachadorGitHub({ ...ejecutor, ...transporte });
-  const reconciliar = crearReconciliadorProgramado({
+  const reconciliar = crearReconciliadorSinSesion({
     almacen: trabajos,
     consultar: crearConsultorEjecucionGitHub({ obtenerToken: ejecutor.obtenerToken, ...transporte }),
   });

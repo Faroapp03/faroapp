@@ -8,20 +8,29 @@ import { readFileSync } from 'node:fs';
 import { DatabaseSync } from 'node:sqlite';
 import test, { type TestContext } from 'node:test';
 import { ACCIONES_DEMANDA } from '../../src/administracion/configuracion-demanda.ts';
+import { crearConsultorEjecucionGitHub } from '../../src/administracion/consulta-ejecucion-github.ts';
+import type { PoliticaControles } from '../../src/administracion/controles.ts';
 import type { ConfianzaOidcGitHub } from '../../src/administracion/oidc-github.ts';
+import { crearReconciliadorSinSesion } from '../../src/administracion/reconciliacion.ts';
 import { crearReceptorReservaADemanda } from '../../src/administracion/reserva-a-demanda.ts';
 import type { VariablesDelEntorno } from '../../src/comun/entorno.ts';
 import { ESTADO_HTTP } from '../../src/comun/estados-http.ts';
 import { MS_POR_SEGUNDO } from '../../src/comun/tiempo.ts';
 import { AccesoPublicoDurable, type EstadoAccesoPublicoDurable } from '../../src/plataforma/acceso-publico/durable.ts';
 import { MOTIVOS_SOLICITUD } from '../../src/plataforma/acceso-publico/solicitudes-sqlite.ts';
-import type { ValorSql } from '../../src/plataforma/acceso-publico/sqlite.ts';
+import {
+  AlmacenPublicoSqlite,
+  type SqlAccesoPublico,
+  type ValorSql,
+} from '../../src/plataforma/acceso-publico/sqlite.ts';
+import { AlmacenSesionDemandaSqlite } from '../../src/plataforma/acceso-publico/trabajos-demanda-sqlite.ts';
 import type { PeticionDemanda, ResultadoDemanda } from '../../src/plataforma/acceso-publico/trabajos-durable.ts';
 import { esCanalDeMaquina } from '../../src/plataforma/cloudflare/canales-portal.ts';
 import worker from '../../src/plataforma/cloudflare/worker.ts';
 import { variablesDelServicio } from '../../src/plataforma/variables-del-servicio.ts';
 import { alarmaDurableDePrueba } from '../ayudas/alarma-durable.ts';
 import { objeto } from '../ayudas/objeto-json.ts';
+import { abrirSesionDePrueba } from '../ayudas/sesion-de-prueba.ts';
 
 const ORIGEN = 'https://panel.example';
 const RUTA = '/mantenimiento/reserva';
@@ -392,6 +401,7 @@ async function receptorConDoble(
     confianza: CONFIANZA,
     configuracionDemanda: JSON.stringify(DEMANDA),
     almacen: { operarDemanda: operar },
+    reconciliar: async () => 'indeterminada',
     pedir,
   });
 }
@@ -490,4 +500,137 @@ test('la ruta es un canal de máquina solo por POST, y la variable es del servic
   assert.deepEqual(variablesDelServicio({ FARO_ACTUALIZACION_DEMANDA: JSON.stringify(DEMANDA) }), {
     FARO_ACTUALIZACION_DEMANDA: JSON.stringify(DEMANDA),
   });
+});
+
+const HORA_MS = 60 * 60 * MS_POR_SEGUNDO;
+const RUN_COLGADO = '4242';
+const TAM_HUELLA = 64;
+const ACCESO_PANEL = { huellaSesion: 'e'.repeat(TAM_HUELLA), huellaPrincipal: 'f'.repeat(TAM_HUELLA) };
+const POLITICA: PoliticaControles = { version: 2, api: 'deshabilitada', mcp: false, a2a: false };
+/** SQL real en memoria, con la transacción inmediata de la autoridad. */
+function sqlEnMemoria(t: TestContext) {
+  const db = new DatabaseSync(':memory:');
+  t.after(() => db.close());
+  const sql: SqlAccesoPublico = {
+    filas: (sentencia, ...valores) => db.prepare(sentencia).all(...valores),
+    ejecutar: (sentencia, ...valores) => {
+      db.prepare(sentencia).run(...valores);
+    },
+    transaccion: <T>(accion: () => T): T => {
+      db.exec('BEGIN IMMEDIATE');
+      try {
+        const resultado = accion();
+        db.exec('COMMIT');
+        return resultado;
+      } catch (error) {
+        db.exec('ROLLBACK');
+        throw error;
+      }
+    },
+  };
+  return { db, sql };
+}
+/** La autoridad real con un ciclo del panel despachado hace dos horas y sin recibo: dentro de su plazo, ocupa. */
+async function autoridadConCicloColgado(sql: SqlAccesoPublico) {
+  const reloj = { ahora: Date.now() - 2 * HORA_MS };
+  new AlmacenPublicoSqlite(sql, { maxClientes: 1, ahora: () => reloj.ahora });
+  const backend = new AlmacenSesionDemandaSqlite(sql, {
+    ahora: () => reloj.ahora,
+    cubrir: async (_fecha, escribir) => escribir(),
+  });
+  await backend.prepararPanel(POLITICA);
+  await backend.prepararTrabajos();
+  await backend.prepararActivacion();
+  await abrirSesionDePrueba(backend, ACCESO_PANEL);
+  const solicitud = { solicitudId: crypto.randomUUID(), accion: 'actualizar-datos', revisionEsperada: 0 } as const;
+  const reserva = await backend.reservarTrabajoDeSesion(ACCESO_PANEL, solicitud, CONFIANZA);
+  assert.ok('trabajos' in reserva && reserva.trabajos.ultimoTrabajo);
+  const { revisionReserva } = reserva.trabajos.ultimoTrabajo;
+  const despacho = await backend.anotarDespacho(
+    { solicitudId: solicitud.solicitudId, revisionReserva },
+    { estado: 'despachada', runId: RUN_COLGADO },
+  );
+  assert.equal(despacho.estado, 'aplicado');
+  // El reloj de la autoridad vuelve al de los tokens que firma la prueba.
+  reloj.ahora = Date.now();
+  return backend;
+}
+/** Doble del GET del run colgado en GitHub: responde lo que diga la prueba y guarda cada dirección pedida. */
+function githubDelColgado() {
+  const github = { consultas: [] as string[], responder: (): Response => new Response(null, { status: 502 }) };
+  const run = (status: string, conclusion: string | null) =>
+    Response.json({
+      id: Number(RUN_COLGADO),
+      run_attempt: 1,
+      event: 'workflow_dispatch',
+      head_sha: CONFIANZA.sha,
+      path: '.github/workflows/actualizar.yml',
+      status,
+      conclusion,
+      repository: { id: Number(CONFIANZA.repositorioId), owner: { id: Number(CONFIANZA.propietarioId) } },
+    });
+  const consultar = crearConsultorEjecucionGitHub({
+    obtenerToken: async () => 'secreto-sintetico',
+    pedir: async (entrada) => {
+      assert.ok(entrada instanceof Request);
+      github.consultas.push(entrada.url);
+      return github.responder();
+    },
+  });
+  return { github, run, consultar };
+}
+/** El receptor con la autoridad real y la consulta a GitHub montada como en producción. */
+async function receptorConCicloColgado(t: TestContext) {
+  const { db, sql } = sqlEnMemoria(t);
+  const backend = await autoridadConCicloColgado(sql);
+  const { github, run, consultar } = githubDelColgado();
+  const { jwk } = await GITHUB;
+  const recibir = crearReceptorReservaADemanda({
+    origen: ORIGEN,
+    confianza: CONFIANZA,
+    configuracionDemanda: JSON.stringify(DEMANDA),
+    almacen: backend,
+    reconciliar: crearReconciliadorSinSesion({ almacen: backend, consultar }),
+    pedir: async () => Response.json({ keys: [jwk] }),
+  });
+  const decisiones = () =>
+    db
+      .prepare("SELECT decision, motivo FROM administracion_solicitudes WHERE origen='demanda'")
+      .all()
+      .map((fila) => ({ ...fila }));
+  return { backend, recibir, github, run, decisiones };
+}
+const URL_DEL_COLGADO = `https://api.github.com/repos/equipo/fuente/actions/runs/${RUN_COLGADO}/attempts/1`;
+
+test('un ciclo que GitHub ya cerró sin recibo se cierra antes de decidir y la demanda se admite sin rechazo anotado', async (t) => {
+  const f = await receptorConCicloColgado(t);
+  f.github.responder = () => f.run('completed', 'failure');
+  const respuesta = await json(await f.recibir(peticion(await (await GITHUB).firmar())));
+  assert.equal(respuesta.estado, ESTADO_HTTP.correcto);
+  assert.equal(respuesta.cuerpo.estado, 'reservada');
+  assert.deepEqual(f.github.consultas, [URL_DEL_COLGADO]);
+  assert.deepEqual(f.decisiones(), [{ decision: 'admitida', motivo: null }]);
+  assert.equal((await f.backend.leerTrabajoPrivado()).ultimoTrabajo?.runId, RUN);
+});
+
+test('un ciclo que GitHub da por en curso, o del que GitHub no responde, sigue ocupando sin cambiar nada', async (t) => {
+  const f = await receptorConCicloColgado(t);
+  const antes = await f.backend.leerTrabajoPrivado();
+  f.github.responder = () => f.run('in_progress', null);
+  const ocupado = { estado: ESTADO_HTTP.conflicto, cuerpo: { error: 'ocupado' } };
+  assert.deepEqual(await json(await f.recibir(peticion(await (await GITHUB).firmar()))), ocupado);
+  f.github.responder = () => new Response(null, { status: 502 });
+  assert.deepEqual(await json(await f.recibir(peticion(await (await GITHUB).firmar()))), ocupado);
+  assert.deepEqual(f.github.consultas, [URL_DEL_COLGADO, URL_DEL_COLGADO]);
+  assert.deepEqual(await f.backend.leerTrabajoPrivado(), antes);
+});
+
+test('el run que pide no se consulta a sí mismo: su repetición responde la misma reserva sin preguntar a GitHub', async (t) => {
+  const f = await receptorConCicloColgado(t);
+  f.github.responder = () => f.run('completed', 'failure');
+  const { firmar } = await GITHUB;
+  assert.equal((await f.recibir(peticion(await firmar()))).status, ESTADO_HTTP.correcto);
+  const repetida = await json(await f.recibir(peticion(await firmar())));
+  assert.equal(repetida.cuerpo.estado, 'repetida');
+  assert.deepEqual(f.github.consultas, [URL_DEL_COLGADO]);
 });

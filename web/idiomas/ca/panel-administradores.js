@@ -35,6 +35,14 @@ export const TEXTOS_ADMINISTRADORES = {
   'panel.administradores.entrada.sin-segundo-factor': 'sense segon factor',
   'panel.administradores.retirar': 'Retirar',
   'panel.administradores.retirar-a': 'Retirar {correo}',
+  'panel.administradores.confirmar.administrador':
+    'Vols retirar {correo}? Aquest usuari ja no podrà entrar al Tauler de Control.',
+  'panel.administradores.confirmar.invitacion':
+    'Vols retirar la invitació de {correo}? Aquest usuari no podrà entrar al Tauler de Control.',
+  'panel.administradores.confirmar': 'Confirmar',
+  'panel.administradores.confirmar-a': 'Confirmar la retirada de {correo}',
+  'panel.administradores.cancelar': 'Cancel·lar',
+  'panel.administradores.cancelar-a': 'Cancel·lar la retirada de {correo}',
   'panel.administradores.reintentar': 'Tornar a provar',
   'panel.administradores.reintentar-a': 'Tornar a provar a Cloudflare la retirada de {correo}',
   'panel.administradores.aviso.vacia':
