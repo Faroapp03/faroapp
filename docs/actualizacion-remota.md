@@ -125,8 +125,8 @@ La reserva consume el instante lógico del evento en la misma transacción que e
 monotónica impide repetirlo después de un reinicio, de otro trabajo o de una respuesta perdida. Los eventos
 de más de seis horas se omiten; no se ejecuta una cola de días atrasados. Solo una reserva nueva autoriza un despacho.
 
-Cada evento comprueba antes de omitirse si el último trabajo ha dejado de estar en plazo. La reserva dura 383
-minutos desde su creación. Los tres jobs (construcción, activación y aviso) pueden sumar hasta 370 minutos de
+Cada evento comprueba antes de omitirse si el último trabajo ha dejado de estar en plazo. La reserva dura 376
+minutos desde su creación. Los tres jobs (construcción, activación y aviso) pueden sumar hasta 363 minutos de
 ejecución y quedan 13 minutos de margen para las colas de GitHub y el desfase de relojes.
 
 - Una reserva vencida sin permiso de inicio, como la de un despacho incierto por un 5xx o un tiempo agotado,
@@ -1126,7 +1126,7 @@ pasa:
    cierra la intención como `abandonada` (motivo `a-mano`) solo si cada Worker sirve otra vez lo anterior. Si no, la
    intención sigue en su fase, la solicitud queda usada con lo observado y el panel lo dice.
 
-La solicitud de cierre caduca 370 minutos después de anotarse. Solo puede cumplirla la ejecución a la que
+La solicitud de cierre caduca 363 minutos después de anotarse. Solo puede cumplirla la ejecución a la que
 se concedió. El panel dice que el cierre está en curso solo mientras su
 ejecución puede cumplirlo: la activación sigue en la revisión en que se anotó y el último trabajo es el despachado, sin
 terminar. Cuando esa ejecución ha registrado su recibo y terminado, su paso de activación pudo cumplirlo justo

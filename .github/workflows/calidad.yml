@@ -101,7 +101,7 @@ jobs:
           .venv/bin/python -m ruff format --check .
 
       - name: Preparar los tres motores
-        timeout-minutes: 13
+        timeout-minutes: 6
         env:
           ACTIONS_ID_TOKEN_REQUEST_URL: ''
           ACTIONS_ID_TOKEN_REQUEST_TOKEN: ''

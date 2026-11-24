@@ -327,13 +327,13 @@ test('la preparación fría y caliente deja tiempo efectivo al supervisor y toda
   const salida = join(f.runner, 'presupuesto');
   // El job lee su tope de la variable del workflow, la misma que fija su timeout-minutes.
   const tope = { FARO_TOPE_CANDIDATO_MINUTOS: String(objeto(raiz.env).FARO_TOPE_CANDIDATO_MINUTOS) };
-  // Con «no» el job no instala navegadores y sus 13 minutos pasan al supervisor.
+  // Con «no» el job no instala navegadores y sus 6 minutos pasan al supervisor.
   const casos = [
     { navegadores: 'si', segundos: 10, minutos: 295 },
     { navegadores: 'si', segundos: 310, minutos: 294 },
     { navegadores: 'si', segundos: 1190, minutos: 280 },
-    { navegadores: 'no', segundos: 10, minutos: 308 },
-    { navegadores: 'no', segundos: 1190, minutos: 293 },
+    { navegadores: 'no', segundos: 10, minutos: 301 },
+    { navegadores: 'no', segundos: 1190, minutos: 286 },
   ];
   const fijos = [
     'Anotar el inicio del job',
@@ -836,13 +836,20 @@ for(let i=0;i<args.length;i+=2){
 process.stdout.write(salida);`,
   );
 }
-function prepararMotores(f: Fixture, fallo: string, { pisados = false } = {}) {
+/**
+ * Un runner de ensayo: `fallo` no arranca nunca; los motores de `sinBibliotecas` arrancan solo después de que
+ * install-deps les instale sus bibliotecas; los demás, en cuanto se descargan.
+ */
+function prepararMotores(f: Fixture, fallo: string, { pisados = false, sinBibliotecas = [] as string[] } = {}) {
   aptConfig(f, pisados);
-  const guion = 'herramientas/mantenimiento/preparar-navegadores.sh';
-  mkdirSync(join(f.workspace, guion, '..'), { recursive: true });
-  writeFileSync(join(f.workspace, guion), readFileSync(new URL(`../../${guion}`, import.meta.url)));
+  for (const guion of ['preparar-navegadores.sh', 'apt-con-tope.sh'].map((n) => `herramientas/mantenimiento/${n}`)) {
+    mkdirSync(join(f.workspace, guion, '..'), { recursive: true });
+    writeFileSync(join(f.workspace, guion), readFileSync(new URL(`../../${guion}`, import.meta.url)));
+  }
   ejecutable(join(f.bin, 'sudo'), '#!/bin/sh\nexec "$@"\n');
   ejecutable(join(f.bin, 'sleep'), '#!/bin/sh\ntest "$1" = 2\n');
+  ejecutable(join(f.bin, 'dpkg'), '#!/bin/sh\ntest "$1" = --print-architecture && echo amd64\n');
+  const bibliotecas = JSON.stringify(join(f.raiz, 'bibliotecas-'));
   const modulo = join(f.workspace, 'node_modules/playwright-core');
   mkdirSync(modulo, { recursive: true });
   writeFileSync(join(modulo, 'package.json'), JSON.stringify({ type: 'module', exports: './index.js' }));
@@ -851,7 +858,8 @@ function prepararMotores(f: Fixture, fallo: string, { pisados = false } = {}) {
     `import { existsSync, appendFileSync } from 'node:fs';
 import { join } from 'node:path';
 function motor(nombre) { return { async launch() {
-  if (!existsSync(join(process.env.PLAYWRIGHT_BROWSERS_PATH, nombre)) || nombre === ${JSON.stringify(fallo)}) {
+  const sinBibliotecas = ${JSON.stringify(sinBibliotecas)}.includes(nombre) && !existsSync(${bibliotecas} + nombre);
+  if (!existsSync(join(process.env.PLAYWRIGHT_BROWSERS_PATH, nombre)) || nombre === ${JSON.stringify(fallo)} || sinBibliotecas) {
     throw Error('No arranca ' + nombre);
   }
   return { close: async () => appendFileSync(${JSON.stringify(join(f.raiz, 'cerrados'))}, nombre+'\\n') };
@@ -866,6 +874,7 @@ export const chromium=motor('chromium'), firefox=motor('firefox'), webkit=motor(
 const args=process.argv.slice(2);
 if (args.includes('install-deps')) {
   if (!fs.readFileSync(process.env.APT_CONFIG,'utf8').startsWith('configuracion de APT'))process.exit(89);
+  for (const motor of args.slice(args.indexOf('install-deps') + 1)) fs.writeFileSync(${bibliotecas} + motor, '');
 } else if (args.includes('install')) {
   if (!args.includes('--require') || !args.some(a=>a.endsWith('/red/identidad-http.cjs')))process.exit(90);
   fs.mkdirSync(process.env.PLAYWRIGHT_BROWSERS_PATH,{recursive:true});
@@ -873,7 +882,11 @@ if (args.includes('install-deps')) {
 } else if (args.includes('--input-type=module')) {
   process.exit(require('node:child_process').spawnSync(process.execPath,args,{stdio:'inherit'}).status);
 } else if (args[0]!=='herramientas/red/configurar-apt.ts') process.exit(91);
-else process.stdout.write('configuracion de APT\\n');`,
+else if (args[1]==='identidad') process.stdout.write('configuracion de APT\\n');
+else if (args[1]==='fuentes' && args[4]==='amd64') {
+  fs.writeFileSync(args[2],'fuentes oficiales\\n');
+  process.stdout.write('Dir::Etc::sourcelist "'+args[2]+'";\\nDir::Etc::sourceparts "'+args[3]+'";\\n');
+} else process.exit(92);`,
   );
 }
 
@@ -938,29 +951,72 @@ test('calidad prepara los tres motores y el ciclo solo Chromium, cada uno antes 
   }
 });
 
+/**
+ * `bibliotecas`: los motores para los que se piden bibliotecas a APT, que son solo los que no arrancan tras
+ * descargarse. `cerrados`: los motores que se abrieron y cerraron, en orden: primero la prueba de arranque y, si hizo
+ * falta APT, la comprobación estricta de todos, que para en el primero que siga sin arrancar.
+ */
 const CASOS_MOTORES = [
-  { comando: COMANDO_CALIDAD, motores: MOTORES, fallo: '' },
-  { comando: COMANDO_CALIDAD, motores: MOTORES, fallo: 'webkit' },
-  { comando: COMANDO_CICLO, motores: ['chromium'], fallo: '' },
+  { comando: COMANDO_CALIDAD, motores: MOTORES, fallo: '', sinBibliotecas: [], bibliotecas: [], cerrados: MOTORES },
+  {
+    comando: COMANDO_CALIDAD,
+    motores: MOTORES,
+    fallo: '',
+    sinBibliotecas: ['firefox', 'webkit'],
+    bibliotecas: ['firefox', 'webkit'],
+    cerrados: ['chromium', ...MOTORES],
+  },
+  {
+    comando: COMANDO_CALIDAD,
+    motores: MOTORES,
+    fallo: 'webkit',
+    sinBibliotecas: [],
+    bibliotecas: ['webkit'],
+    cerrados: ['chromium', 'firefox', 'chromium', 'firefox'],
+  },
+  {
+    comando: COMANDO_CICLO,
+    motores: ['chromium'],
+    fallo: '',
+    sinBibliotecas: [],
+    bibliotecas: [],
+    cerrados: ['chromium'],
+  },
+  {
+    comando: COMANDO_CICLO,
+    motores: ['chromium'],
+    fallo: '',
+    sinBibliotecas: ['chromium'],
+    bibliotecas: ['chromium'],
+    cerrados: ['chromium'],
+  },
 ];
-for (const { comando, motores, fallo } of CASOS_MOTORES) {
-  test(`la caché se exporta solo si arrancan los motores pedidos (${motores.join(', ')}; fallo: ${fallo || 'ninguno'})`, () => {
+for (const { comando, motores, fallo, sinBibliotecas, bibliotecas, cerrados } of CASOS_MOTORES) {
+  const caso = `${motores.join(', ')}; sin bibliotecas: ${sinBibliotecas.join(', ') || 'ninguno'}; fallo: ${fallo || 'ninguno'}`;
+  test(`APT entra solo para los motores que no arrancan y la caché se exporta solo si arrancan todos (${caso})`, () => {
     const f = fixture();
     try {
-      prepararMotores(f, fallo);
+      prepararMotores(f, fallo, { sinBibliotecas });
       const hostil = Object.fromEntries(CLAVES_PRIVADAS.map((k) => [k, 'hostil']));
       const r = ejecutarShell(comando, f.workspace, { ...entorno(f), ...hostil });
       assert.equal(r.status === 0, !fallo, r.stderr);
       const registro = llamadas(f);
       const argumentos = registro.map((v) => v.args).filter(Array.isArray);
-      assert.ok(argumentos.some((a) => a.slice(-motores.length - 1).join(' ') === `install-deps ${motores.join(' ')}`));
+      const dependencias = argumentos.filter((a) => a.includes('install-deps'));
+      assert.deepEqual(
+        dependencias.map((a) => a.slice(a.indexOf('install-deps') + 1)),
+        bibliotecas.length > 0 ? [bibliotecas] : [],
+      );
+      assert.equal(
+        registro.some((v) => v.nombre === 'apt-config'),
+        bibliotecas.length > 0,
+      );
       assert.deepEqual(
         argumentos.filter((a) => a.includes('install')).map((a) => a.at(-1)),
         motores,
       );
       assert.ok(registro.every((v) => Object.values(objeto(v.env)).every((presente) => !presente)));
-      const cerrados = readFileSync(join(f.raiz, 'cerrados'), 'utf8').trim().split('\n');
-      assert.deepEqual(cerrados, fallo ? motores.slice(0, -1) : motores);
+      assert.deepEqual(readFileSync(join(f.raiz, 'cerrados'), 'utf8').trim().split('\n'), cerrados);
       assert.equal(existsSync(join(f.runner, 'env')), !fallo);
       if (!fallo) {
         assert.equal(
@@ -974,10 +1030,10 @@ for (const { comando, motores, fallo } of CASOS_MOTORES) {
   });
 }
 
-test('APT recibe sus reintentos y esperas en el archivo que lee el último y el guion comprueba que los usa', () => {
+test('APT recibe reintentos, esperas y solo las fuentes oficiales en el archivo que lee el último, y se comprueba', () => {
   const f = fixture();
   try {
-    prepararMotores(f, '');
+    prepararMotores(f, '', { sinBibliotecas: ['chromium'] });
     const r = ejecutarShell(COMANDO_CICLO, f.workspace, entorno(f));
     assert.equal(r.status, 0, r.stderr);
     const privado = readdirSync(f.runner).filter((n) => n.startsWith('navegadores-entorno.'));
@@ -985,7 +1041,14 @@ test('APT recibe sus reintentos y esperas en el archivo que lee el último y el 
     const configuracion = readFileSync(join(f.runner, String(privado[0]), 'apt.conf'), 'utf8');
     const principal = MAIN_APT.exec(configuracion)?.[1];
     assert.equal(principal, join(f.runner, String(privado[0]), 'apt-red.conf'));
-    assert.match(readFileSync(String(principal), 'utf8'), /^Acquire::Retries "\d+";$/m);
+    const red = readFileSync(String(principal), 'utf8');
+    assert.match(red, /^Acquire::Retries "\d+";$/m);
+    // Ni la lista ni las piezas del sistema: una lista propia con el archivo oficial y una carpeta de piezas vacía.
+    const lista = join(f.runner, String(privado[0]), 'fuentes-oficiales.list');
+    const piezas = join(f.runner, String(privado[0]), 'fuentes.d');
+    assert.match(red, new RegExp(`^Dir::Etc::sourcelist "${lista}";\\nDir::Etc::sourceparts "${piezas}";$`, 'm'));
+    assert.equal(readFileSync(lista, 'utf8'), 'fuentes oficiales\n');
+    assert.deepEqual(readdirSync(piezas), []);
     const consultas = llamadas(f).filter((v) => v.nombre === 'apt-config');
     assert.deepEqual(objeto(consultas[0]).args, [
       'shell',
@@ -995,23 +1058,27 @@ test('APT recibe sus reintentos y esperas en el archivo que lee el último y el 
       'Acquire::http::Timeout',
       'espera_https',
       'Acquire::https::Timeout',
+      'fuentes',
+      'Dir::Etc::sourcelist',
+      'piezas',
+      'Dir::Etc::sourceparts',
     ]);
   } finally {
     f.limpiar();
   }
 });
 
-test('si otra configuración pisa las esperas de APT, la preparación para antes de instalar nada', () => {
+test('si otra configuración pisa las esperas o las fuentes de APT, la preparación para sin pedirle nada', () => {
   const f = fixture();
   try {
-    prepararMotores(f, '', { pisados: true });
+    prepararMotores(f, '', { pisados: true, sinBibliotecas: ['chromium'] });
     const r = ejecutarShell(COMANDO_CICLO, f.workspace, entorno(f));
     assert.equal(r.status, 1);
-    assert.match(r.stderr, /APT no usa los reintentos ni las esperas/);
+    assert.match(r.stderr, /APT no usa los reintentos, las esperas ni las fuentes/);
     const argumentos = llamadas(f)
       .map((v) => v.args)
       .filter(Array.isArray);
-    assert.ok(argumentos.every((a) => !a.includes('install-deps') && !a.includes('install')));
+    assert.ok(argumentos.every((a) => !a.includes('install-deps')));
     assert.equal(existsSync(join(f.runner, 'env')), false);
   } finally {
     f.limpiar();

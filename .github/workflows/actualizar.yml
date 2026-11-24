@@ -51,8 +51,8 @@ env:
   # Tope del job del candidato: lo que el supervisor necesita para el último ciclo completo medido, con su margen, más
   # la preparación del job. La prueba de contrato del presupuesto lo deriva del plazo del motor y de él saca el límite
   # del servidor; de él sale aquí el plazo del supervisor.
-  FARO_TOPE_CANDIDATO_MINUTOS: &tope_candidato 323
-  # Instala Chromium para el humo de datos del ciclo («si» o «no»); con «no» el supervisor recupera sus 13 minutos.
+  FARO_TOPE_CANDIDATO_MINUTOS: &tope_candidato 316
+  # Instala Chromium para el humo de datos del ciclo («si» o «no»); con «no» el supervisor recupera sus 6 minutos.
   FARO_NAVEGADORES_EN_EL_CICLO: si
 
 jobs:
@@ -153,17 +153,17 @@ jobs:
           ACTIONS_ID_TOKEN_REQUEST_TOKEN: ''
         run: |
           bash herramientas/mantenimiento/preparar-runner.sh
-          # Del tope del candidato se reservan 1 minuto para anotar el inicio, 2 para Git, 13 para Chromium si se
+          # Del tope del candidato se reservan 1 minuto para anotar el inicio, 2 para Git, 6 para Chromium si se
           # instala, 1 para anunciar los minutos y 6 para el propio runner y la salida. La causa de un fallo de Chromium
           # se anota solo cuando el supervisor ya no va a correr, así que usa sus minutos.
-          # Con 323 y el bootstrap completo quedan 280 minutos (293 sin navegadores); una caché caliente devuelve hasta 15.
+          # Con 316 y el bootstrap completo quedan 280 minutos (286 sin navegadores); una caché caliente devuelve hasta 15.
           # Un run a demanda toma de esos 6 minutos, como mucho, el que tiene para pedir su reserva.
           if [[ ! "$FARO_NAVEGADORES_EN_EL_CICLO" =~ ^(si|no)$ ]]; then
             echo 'FARO_NAVEGADORES_EN_EL_CICLO solo admite «si» o «no».' >&2
             exit 1
           fi
           navegadores=0
-          if [[ "$FARO_NAVEGADORES_EN_EL_CICLO" == si ]]; then navegadores=13; fi
+          if [[ "$FARO_NAVEGADORES_EN_EL_CICLO" == si ]]; then navegadores=6; fi
           base=$((FARO_TOPE_CANDIDATO_MINUTOS - 1 - 2 - navegadores - 1 - 6))
           disponibles=$((base - (SECONDS + 59) / 60))
           printf 'minutos_supervisor=%d\n' "$((disponibles < base - 5 ? disponibles : base - 5))" >> "$GITHUB_OUTPUT"
@@ -172,7 +172,7 @@ jobs:
       - name: Preparar Chromium para el humo de datos
         id: navegadores
         if: ${{ env.FARO_NAVEGADORES_EN_EL_CICLO == 'si' }}
-        timeout-minutes: 13
+        timeout-minutes: 6
         env:
           ACTIONS_ID_TOKEN_REQUEST_URL: ''
           ACTIONS_ID_TOKEN_REQUEST_TOKEN: ''

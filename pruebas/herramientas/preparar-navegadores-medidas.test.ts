@@ -1,16 +1,27 @@
 // Los números de la preparación de los navegadores salen de registros reales de GitHub Actions, con el margen del
-// proyecto: el plazo del paso, la reserva del job para él y la espera y los reintentos de APT.
+// proyecto: el plazo del paso, la reserva del job para él, el tope y los intentos de las bibliotecas y la espera y los
+// reintentos de APT por conexión.
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import test from 'node:test';
 import { parseDocument } from 'yaml';
 
 /**
- * La preparación con éxito más lenta de las 39 medidas entre el 18/11/2026 y el 23/11/2026 en Faroapp03/faro y
- * Faroapp03/faroapp (calidad y ciclo, los tres motores): run 44686779200, calidad, 20/11/2026 a las 06:19 UTC.
- * La mediana fue de 66 segundos. Instalar solo Chromium es una parte de ese trabajo, así que el mismo plazo le basta.
+ * Los 45 intentos de install-deps entre el 18/11/2026 y el 24/11/2026 en Faroapp03/faro y Faroapp03/faroapp (calidad
+ * y ciclo, los tres motores), desde «Installing dependencies...» hasta la primera descarga de un motor. Con el espejo
+ * sano, 36 terminaron en 59,0 segundos como mucho (run 44385368994, calidad, 18/11/2026 a las 19:55 UTC). Los otros 9
+ * no tuvieron un espejo que enviara a ritmo útil: 5 terminaron entre 244,8 y 619,3 segundos y 4 agotaron el plazo
+ * del paso, el último mudo durante 790 segundos (run 45335611971, 24/11/2026).
  */
-const PREPARACION_MAS_LENTA_S = 643;
+const INSTALL_DEPS_SANO_MAS_LENTO_S = 59;
+const INTENTOS_MEDIDOS = 45;
+const INTENTOS_SIN_ESPEJO_UTIL = 9;
+/**
+ * Lo demás del paso, desde esa primera descarga hasta el final: instalar los motores y arrancarlos. Lo más lento de
+ * los 41 pasos con éxito fueron 74,1 segundos (run 44973031893, ciclo, 22/11/2026). Instalar solo Chromium es una
+ * parte de ese trabajo, así que el mismo plazo le basta.
+ */
+const MOTORES_MAS_LENTO_S = 74.1;
 /**
  * En el ciclo que agotó el paso (run 45325245279, 24/11/2026), cada conexión atascada esperó 30 segundos hasta que APT
  * la dio por perdida (30,04 a 30,29 s, cuatro veces). Tras cada corte, la siguiente descarga empezó en 2,6 segundos
@@ -22,7 +33,7 @@ const ARRANQUE_TRAS_UN_CORTE_S = 2.6;
 const DESCARGAS_FALLIDAS = 14;
 const DESCARGAS_PEDIDAS = 65;
 const PAQUETES_DE_LOS_TRES_MOTORES = 187;
-/** Regla: que algún paquete agote todos sus intentos debe tener menos de un 1 % de probabilidad. */
+/** Regla: que algún paquete, o la instalación entera, agote todos sus intentos debe tener menos de un 1 % de probabilidad. */
 const PROBABILIDAD_ADMITIDA = 0.01;
 const SEGUNDOS_POR_MINUTO = 60;
 const POR_CIENTO = 100;
@@ -54,8 +65,26 @@ function pasoDelGuion(workflow: string, job: string): Record<string, unknown> {
   return pasos[0] as Record<string, unknown>;
 }
 
-test('el plazo de la preparación es la más lenta medida con el margen del proyecto, en calidad y en el ciclo', () => {
-  const plazo = Math.ceil((PREPARACION_MAS_LENTA_S * margen()) / SEGUNDOS_POR_MINUTO);
+function valor(nombre: string): number {
+  return entero(leer(GUION), new RegExp(`^${nombre}=(\\d+)$`, 'm'), nombre);
+}
+
+test('cada intento de las bibliotecas tiene de tope el más lento con el espejo sano, con el margen del proyecto', () => {
+  assert.equal(valor('tope_intento_apt_s'), Math.ceil(INSTALL_DEPS_SANO_MAS_LENTO_S * margen()));
+});
+
+test('las bibliotecas se intentan lo bastante para que agotar los intentos tenga menos de un 1 % con lo medido', () => {
+  const intentos = valor('intentos_apt');
+  const sinEspejo = INTENTOS_SIN_ESPEJO_UTIL / INTENTOS_MEDIDOS;
+  assert.ok(sinEspejo ** intentos < PROBABILIDAD_ADMITIDA);
+  assert.ok(sinEspejo ** (intentos - 1) >= PROBABILIDAD_ADMITIDA);
+});
+
+test('el plazo de la preparación suma los intentos cortados y los motores, en calidad y en el ciclo', () => {
+  // Un intento cortado dura su tope, la gracia tras TERM y, si hace falta, otra tras KILL.
+  const intento = valor('tope_intento_apt_s') + 2 * valor('gracia_apt_s');
+  const segundos = valor('intentos_apt') * intento + MOTORES_MAS_LENTO_S * margen();
+  const plazo = Math.ceil(segundos / SEGUNDOS_POR_MINUTO);
   assert.equal(pasoDelGuion('calidad', 'calidad')['timeout-minutes'], plazo);
   assert.equal(pasoDelGuion('actualizar', 'candidato')['timeout-minutes'], plazo);
 });

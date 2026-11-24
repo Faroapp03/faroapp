@@ -23,7 +23,8 @@ no lee ni modifica configuraciones personales. La fuente mensual no activa autom
 `identidad-http.cjs` se precarga exclusivamente en los instaladores npm y Playwright. Conserva opciones,
 destinos, cuerpo, llamadas de retorno y verificación TLS de `http`/`https`; sobrescribe las cuatro cabeceras antes del
 primer envío. Los procesos hijos de Playwright heredan el preload por `execArgv`. APT recibe únicamente
-una UA genérica mediante `configurar-apt.ts`: no se le atribuye soporte de las tres pistas.
+una UA genérica mediante `configurar-apt.ts`: no se le atribuye soporte de las tres pistas. El mismo archivo le da
+solo las fuentes del archivo oficial de Ubuntu para las bibliotecas de los navegadores.
 
 `identidad-wrangler.cjs` se precarga solo al lanzar el CLI privado. Antes de cargarlo comprueba la versión
 y los SHA del lanzador y del paquete construido, fijados en `compatibilidad-wrangler.json`. La implementación comprobada

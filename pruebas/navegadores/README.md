@@ -28,9 +28,12 @@ rechazo de esa misma CA cuando no se proporciona. Los dos PEM de esta carpeta so
 de prueba generado para loopback; nunca son credenciales ni una CA de una instalación real.
 
 En Ubuntu, los workflows de calidad y de actualización comparten el [preparador de navegadores](../../herramientas/mantenimiento/preparar-navegadores.sh),
-que instala los motores que se le piden: calidad, los tres; el ciclo, solo Chromium. APT emplea la UA genérica, con
-reintentos y una espera corta por conexión. El CLI oficial de Playwright instala cada motor con el perfil de cuatro
-cabeceras. El preparador arranca y cierra los motores pedidos antes de registrar su caché para las pruebas del mismo job.
+que instala los motores que se le piden: calidad, los tres; el ciclo, solo Chromium. El CLI oficial de Playwright
+instala cada motor con el perfil de cuatro cabeceras, y el preparador prueba a arrancarlo. APT solo entra para los
+motores que no arrancan: pide sus bibliotecas al archivo oficial de Ubuntu, sin las demás fuentes del sistema, con la
+UA genérica, reintentos y una espera corta por conexión, y cada intento tiene un tope propio: si lo pasa, se corta con
+todo su grupo de procesos, se comprueba que APT y dpkg quedan libres y se repite. El preparador arranca y cierra los
+motores pedidos antes de registrar su caché para las pruebas del mismo job.
 
 El comando ejecuta Chromium, Firefox y WebKit en orden. Cada uno recibe un proceso independiente con
 cinco minutos de plazo, mediante el ejecutor de comprobaciones existente. Cada caso cierra sus contextos,

@@ -32,7 +32,7 @@ import { CONFIG_VIGILANTE, CORTE_VIGILANTE, entradasVigilante, PROGRAMADA_VIGILA
 
 const SEGUNDO = 1000;
 const HORA = 60 * 60 * SEGUNDO;
-const MINUTOS_RESERVA = 383;
+const MINUTOS_RESERVA = 376;
 const DIA = 24 * HORA;
 const AHORA = Date.parse('2026-10-17T03:00:00Z');
 const CRON = '0 3 * * *';
@@ -529,7 +529,7 @@ test('el panel del vigilante entrega el historial de la programación y rechaza 
 // El horario solo admite un cron diario: una reserva que no vence antes del evento siguiente lo dejaría omitido como
 // trabajo en plazo, en vez de reconciliar la reserva que se quedó sin cerrar. La ventana de los eventos no la limita:
 // mide lo que tarda en llegar un evento, no lo que dura el trabajo anterior.
-test('la reserva dura 383 minutos, más que el límite del workflow y menos que un día, y la plantilla del horario coincide con su variable', () => {
+test('la reserva dura 376 minutos, más que el límite del workflow y menos que un día, y la plantilla del horario coincide con su variable', () => {
   assert.ok(PLAZO_RESERVA_PROGRAMADA_MS > MINUTOS_LIMITE_WORKFLOW_ACTUALIZAR * 60 * SEGUNDO);
   assert.ok(PLAZO_RESERVA_PROGRAMADA_MS < DIA);
   assert.equal(PLAZO_RESERVA_PROGRAMADA_MS, MINUTOS_RESERVA * 60 * SEGUNDO);
