@@ -406,8 +406,10 @@ jobs:
             repetido=$(printf 'El ciclo del %s ha vuelto a fallar.\n\n%s\n\nEjecución: %s' "$momento" "$quien" "$enlace")
           elif [[ "$RESULTADO_CICLO" == rechazado ]]; then
             titulo="La actualización de datos terminó sin publicar datos nuevos ($fecha)"
-            nuevo=$(printf 'La actualización del %s terminó sin publicar datos nuevos.\n\nEl motivo consta en el diario de la ejecución: %s\n\nEsta incidencia se cierra sola cuando un ciclo posterior termina bien.' "$momento" "$enlace")
-            repetido=$(printf 'La actualización del %s ha vuelto a terminar sin publicar datos nuevos.\n\nEl motivo consta en el diario de la ejecución: %s' "$momento" "$enlace")
+            # El aviso no sabe por qué se rechazó: dice solo dónde mirarlo y que puede no constar, nunca que consta.
+            motivo='El diario de la ejecución y su resumen dicen por qué se rechazó el ciclo cuando lo dejó registrado: en «retenciones», el paso del paquete en rojo o sus alarmas (paquete), la generación que no se conservó (generacion) o el error del candidato (candidato) y, en «fuentes», las fuentes en ámbar. La consola del job nombra solo una parte, y no siempre. Si ninguno de esos apartados trae nada, el motivo no quedó registrado.'
+            nuevo=$(printf 'La actualización del %s terminó sin publicar datos nuevos.\n\n%s\n\nEjecución: %s\n\nEsta incidencia se cierra sola cuando un ciclo posterior termina bien.' "$momento" "$motivo" "$enlace")
+            repetido=$(printf 'La actualización del %s ha vuelto a terminar sin publicar datos nuevos.\n\n%s\n\nEjecución: %s' "$momento" "$motivo" "$enlace")
           elif [[ "$RESULTADO_CICLO" == validado || "$RESULTADO_CICLO" == sin-pendientes ]]; then
             if [[ -n "$abierta" ]]; then
               gh issue close "$abierta" --comment "El ciclo del $fecha terminó bien."

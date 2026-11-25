@@ -23,6 +23,8 @@ from plataforma_datos.orquestacion.actualizar import (
     EXPORTAR_EL_PAQUETE,
 )
 from plataforma_datos.orquestacion.estado_de_la_actualizacion import VERDE
+from plataforma_datos.orquestacion.fallo_del_paso import CLASES_DE_ERROR
+from plataforma_datos.orquestacion.fallo_del_paso import leer as leer_fallo_del_paso
 from plataforma_datos.orquestacion.hora_limite_del_motor import CAUSA as CAUSA_SIN_TIEMPO
 from plataforma_datos.orquestacion.hora_limite_del_motor import MOTIVO as MOTIVO_SIN_TIEMPO
 from plataforma_datos.orquestacion.modulos import PAQUETE
@@ -72,19 +74,6 @@ CAUSAS_DE_LA_GENERACION = {
     "admitidos": "admision-no-verificable",
 }
 CAUSAS_DE_LA_GENERACION_NO_CONSERVADA = (*sorted(set(CAUSAS_DE_LA_GENERACION.values())), "comprobacion-fallida")
-CLASES_DE_ERROR = (
-    "GeneracionInvalida",
-    "HuellaIncorrecta",
-    "FormatoInesperado",
-    "ErrorFuente",
-    "ActualizacionEnCurso",
-    "FileNotFoundError",
-    "PermissionError",
-    "OSError",
-    "ValueError",
-    "KeyError",
-    "TypeError",
-)
 
 
 def _documento(raiz: Path, relativa: str) -> Any:  # noqa: ANN401 - JSON del candidato, validado por quien lo usa.
@@ -94,10 +83,18 @@ def _documento(raiz: Path, relativa: str) -> Any:  # noqa: ANN401 - JSON del can
     return json.loads(ruta.read_bytes())
 
 
-def _paso_en_rojo(pasos: list[dict[str, Any]]) -> tuple[str, int | None] | None:
+def _paso_en_rojo(pasos: list[dict[str, Any]]) -> tuple[str, int | None, dict[str, str]] | None:
+    """El último paso del paquete que no quedó en verde, con lo que dice su línea de fallo (`fallo_del_paso`).
+
+    Returns:
+        Su nombre cerrado, su código acotado y el tramo, la clase, el errno y el motivo del almacén que su diagnóstico
+        deja en la línea de fallo (vacío si no la trae); None si ningún paso del paquete quedó en rojo.
+    """
     for paso in reversed(pasos):
         if paso.get("nombre") in PASOS_DEL_PAQUETE and type(paso.get("codigo")) is int and paso["codigo"] != 0:
-            return PASOS_DEL_PAQUETE[paso["nombre"]], max(-255, min(255, paso["codigo"]))
+            diagnostico = paso.get("diagnostico")
+            fallo = leer_fallo_del_paso(diagnostico) if isinstance(diagnostico, str) else None
+            return PASOS_DEL_PAQUETE[paso["nombre"]], max(-255, min(255, paso["codigo"])), fallo or {}
     return None
 
 
@@ -119,6 +116,7 @@ def causas_del_paquete(candidato: Path) -> dict[str, Any] | None:
 
     Returns:
         El paso en rojo con su código y las alarmas, o None si el paquete de este ciclo quedó en verde o no se ejecutó.
+        Si el paso en rojo dejó su línea de fallo, también `tramo`, `clase`, `errno` y `motivoAlmacen` (los que trae).
 
     Raises:
         ValueError: Si el estado o el informe del candidato no tienen la forma que escribe la actualización.
@@ -140,9 +138,10 @@ def causas_del_paquete(candidato: Path) -> dict[str, Any] | None:
         rojo = (
             "sustituir" if motivo.startswith("no se pudo sustituir") else "sin-empezar" if sin_empezar else "otro",
             None,
+            {},
         )
-    paso, codigo = rojo or (None, None)
-    return {"paso": paso, "codigo": codigo, "alarmas": alarmas}
+    paso, codigo, fallo = rojo or (None, None, {})
+    return {"paso": paso, "codigo": codigo, "alarmas": alarmas, **fallo}
 
 
 def registrar_paquete(candidato: Path, resultado: str) -> None:

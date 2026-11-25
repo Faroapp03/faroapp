@@ -15,7 +15,7 @@ from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any
 
-from plataforma_datos.orquestacion import fallo_del_candidato
+from plataforma_datos.orquestacion import fallo_del_candidato, fallo_del_paso
 from plataforma_datos.orquestacion.almacen_generaciones import (
     AlmacenGeneracionesInvalido,
     AlmacenGeneracionesNoDisponible,
@@ -52,8 +52,19 @@ CAUSAS_POR_MENSAJE = {
 # identidad de la ejecución (solicitud, reserva, revisión), las huellas, los cursos y el detalle de un error solo van
 # al diario privado, que se archiva en el almacén.
 CAMPOS_DE_CONSOLA = ("fase", "estado", "causa", "fuente", "etapa", "paso", "pasoDeOrigen")
+# Lo que dijo la línea de fallo del paso del paquete en rojo (`fallo_del_paso`): solo sale en el evento `paquete`. Los
+# demás eventos con una `clase` (la del candidato, la de la generación) la dejan en el diario privado.
+FASE_DEL_FALLO_DEL_PASO = "paquete"
+CAMPOS_DEL_FALLO_EN_CONSOLA = ("tramo", "clase", "errno", "motivoAlmacen")
 # Un valor de la consola es siempre un nombre del código; cualquier otro texto se queda en el diario privado.
 VALOR_DE_CONSOLA = re.compile(r"[a-z0-9][a-z0-9_-]{0,63}")
+# Cada campo del fallo del paso solo entra si es un valor de su lista cerrada (la clase y el errno llevan mayúsculas).
+VALORES_CERRADOS_DE_CONSOLA = {
+    "tramo": frozenset((*fallo_del_paso.TRAMOS, fallo_del_paso.OTRA)),
+    "clase": frozenset((*fallo_del_paso.CLASES, fallo_del_paso.OTRA)),
+    "errno": frozenset((*fallo_del_paso.ERRNOS, fallo_del_paso.OTRA)),
+    "motivoAlmacen": frozenset((*fallo_del_paso.MOTIVOS_DEL_ALMACEN, fallo_del_paso.OTRA)),
+}
 
 
 @dataclass(frozen=True)
@@ -128,17 +139,31 @@ def _minutos(inicio: object, fin: object) -> float | None:
     return round(segundos / 60, 1) if segundos >= 0 else None
 
 
+def _de_consola(campo: str, valor: str) -> bool:
+    admitidos = VALORES_CERRADOS_DE_CONSOLA.get(campo)
+    return valor in admitidos if admitidos is not None else VALOR_DE_CONSOLA.fullmatch(valor) is not None
+
+
+def _campos_de_consola(evento: dict[str, object]) -> tuple[str, ...]:
+    return (
+        (*CAMPOS_DE_CONSOLA, *CAMPOS_DEL_FALLO_EN_CONSOLA)
+        if evento.get("fase") == FASE_DEL_FALLO_DEL_PASO
+        else CAMPOS_DE_CONSOLA
+    )
+
+
 def linea_de_consola(evento: dict[str, object]) -> str:
     """Resume un evento del diario para la consola pública del job.
 
     Returns:
-        Una línea JSON con solo los campos de `CAMPOS_DE_CONSOLA` cuyo valor es un nombre del código y, si el evento
-        dice cuándo empezó y terminó, sus minutos.
+        Una línea JSON con solo los campos de `CAMPOS_DE_CONSOLA` cuyo valor es un nombre del código (y, en el evento
+        `paquete`, los de `CAMPOS_DEL_FALLO_EN_CONSOLA` que son de su lista cerrada) y, si el evento dice cuándo empezó
+        y terminó, sus minutos.
     """
     publico: dict[str, object] = {
         campo: valor
-        for campo in CAMPOS_DE_CONSOLA
-        if isinstance(valor := evento.get(campo), str) and VALOR_DE_CONSOLA.fullmatch(valor)
+        for campo in _campos_de_consola(evento)
+        if isinstance(valor := evento.get(campo), str) and _de_consola(campo, valor)
     }
     minutos = _minutos(evento.get("inicio"), evento.get("fin"))
     if minutos is not None:

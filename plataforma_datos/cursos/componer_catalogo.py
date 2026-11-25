@@ -25,9 +25,9 @@ from plataforma_datos.cursos import (
     materia_cibernarium,
     operacion_fuente,
     publicar_catalogo,
-    reevaluar_registros,
     registro_vigencia,
 )
+from plataforma_datos.cursos.aplicar_fuentes_catalogo import Aplicaciones, aplicar_las_fuentes
 from plataforma_datos.cursos.fallos_almacen import AUSENTE, ILEGIBLE, VACIO
 from plataforma_datos.cursos.fuentes.barcelonactiva import actualizacion as cibernarium
 from plataforma_datos.cursos.fuentes.cibervoluntarios import actualizacion as ciber
@@ -35,12 +35,12 @@ from plataforma_datos.cursos.fuentes.claude_academy import actualizacion as acad
 from plataforma_datos.cursos.fuentes.fundae import actualizacion as fundae
 from plataforma_datos.cursos.fuentes.fundae import adquisicion as adquisicion_fundae
 from plataforma_datos.cursos.fuentes.fundae import conocidos as conocidos_fundae
-from plataforma_datos.cursos.fuentes.fundae import preinscripcion
 from plataforma_datos.cursos.fuentes.fundae.conocidos import PUBLICADORES as PUBLICADORES_FUNDAE
 from plataforma_datos.cursos.fuentes.hp_life import actualizacion as hp
 from plataforma_datos.cursos.fuentes.hp_life import altas as altas_hp
 from plataforma_datos.cursos.fuentes.hp_life.recepciones import fecha_utc
 from plataforma_datos.orquestacion import sustitucion
+from plataforma_datos.orquestacion.fallo_del_paso import tramo
 from plataforma_datos.orquestacion.ordenes import con_motivo
 
 SEMBRAR = "python -m plataforma_datos.cursos.sembrar_almacen"
@@ -395,21 +395,24 @@ def _publicar_candidata(raiz: Path, nueva: Path, externo: Path, corte: str, sin_
     Returns:
         Referencia pública preparada para la candidata.
     """
-    admision_final = almacen.solicitud(nueva)
-    _exigir_cursos(admision_final.snapshot.ruta, sin_identidades)
-    proyeccion = entrega.SolicitudEntrega(
-        admision=admision_final,
-        instalacion=raiz,
-        sha256_admision=_sha(admision_final.validacion_destino),
-        area=externo / "proyeccion",
-        corte_utc=materia_cibernarium.corte_proyeccion(
-            admision_final, _corte(admision_final.snapshot.ruta, corte), corte
-        ),
-    )
-    entrega.preparar(proyeccion)
-    entrega.validar(proyeccion)
-    referencia = publicar_catalogo.publicar(proyeccion, web=raiz / "web")
-    return referencia
+    with tramo("proyeccion"):
+        admision_final = almacen.solicitud(nueva)
+        _exigir_cursos(admision_final.snapshot.ruta, sin_identidades)
+        proyeccion = entrega.SolicitudEntrega(
+            admision=admision_final,
+            instalacion=raiz,
+            sha256_admision=_sha(admision_final.validacion_destino),
+            area=externo / "proyeccion",
+            corte_utc=materia_cibernarium.corte_proyeccion(
+                admision_final, _corte(admision_final.snapshot.ruta, corte), corte
+            ),
+        )
+    with tramo("entrega-preparar"):
+        entrega.preparar(proyeccion)
+    with tramo("entrega-validar"):
+        entrega.validar(proyeccion)
+    with tramo("publicar"):
+        return publicar_catalogo.publicar(proyeccion, web=raiz / "web")
 
 
 def componer(*, raiz: Path = RAIZ, corte_utc: str | None = None) -> dict:
@@ -417,7 +420,8 @@ def componer(*, raiz: Path = RAIZ, corte_utc: str | None = None) -> dict:
 
     Sin recepción nueva conserva el corte registrado y los bytes de la instantánea;
     proyectar o copiar no renueva la comprobación de una fuente. El consumidor
-    solo retira una oferta al alcanzar su límite publicado.
+    solo retira una oferta al alcanzar su límite publicado. Cada tramo marca el error
+    que sale de él (`fallo_del_paso.tramo`), para la línea de fallo del paso.
 
     Returns:
         Referencia pública y estado de los productores, sin afirmar activación real.
@@ -427,49 +431,44 @@ def componer(*, raiz: Path = RAIZ, corte_utc: str | None = None) -> dict:
         sustitucion.RecuperacionIncompleta: Si debe conservarse la candidata para recuperación.
     """
     base = raiz / almacen.RUTA
-    # Sin corte pedido, el instante único del ciclo si se fijó (el ensayo con datos grabados) o la hora real.
-    corte = corte_utc or instante_del_ciclo.fijado() or datetime.now(UTC).isoformat().replace("+00:00", "Z")
-    fecha_utc(corte)
-    sin_identidades = _sin_identidades(_almacen_admitido(base).snapshot.ruta)
-    retenidos = [m for m in [fundae_conservado_sin_aplicar(raiz, base)] if m]
-    temporales = raiz / DATOS_RELATIVOS / "preparados"
-    temporales.mkdir(parents=True, exist_ok=True)
-    local = Path(tempfile.mkdtemp(dir=temporales, prefix=".componer-cursos-"))
-    externo = Path(tempfile.mkdtemp(prefix="componer-cursos-", dir=Path(tempfile.gettempdir()).resolve(strict=True)))
+    with tramo("corte"):
+        # Sin corte pedido, el instante único del ciclo si se fijó (el ensayo con datos grabados) o la hora real.
+        corte = corte_utc or instante_del_ciclo.fijado() or datetime.now(UTC).isoformat().replace("+00:00", "Z")
+        fecha_utc(corte)
+    with tramo("almacen-admitido"):
+        sin_identidades = _sin_identidades(_almacen_admitido(base).snapshot.ruta)
+    with tramo("fundae-retenido"):
+        retenidos = [m for m in [fundae_conservado_sin_aplicar(raiz, base)] if m]
+    with tramo("temporales"):
+        temporales = raiz / DATOS_RELATIVOS / "preparados"
+        temporales.mkdir(parents=True, exist_ok=True)
+        local = Path(tempfile.mkdtemp(dir=temporales, prefix=".componer-cursos-"))
+        externo = Path(
+            tempfile.mkdtemp(prefix="componer-cursos-", dir=Path(tempfile.gettempdir()).resolve(strict=True))
+        )
     conservar = False
     try:
-        nueva = (
-            base
-            if "hp_life" in sin_identidades
-            else _aplicar_hp(raiz, base, externo, local / "hp" / almacen.RUTA, corte)
+        aplicaciones = Aplicaciones(
+            hp=_aplicar_hp,
+            por_fuente={
+                "cibervoluntarios": _aplicar_ciber,
+                "claude_academy": _aplicar_academy,
+                "fundae": partial(_aplicar_fundae, inicial=base, retenidos=retenidos),
+                "barcelonactiva": _aplicar_cibernarium,
+            },
         )
-        for fuente, nombre, aplicar in (
-            ("cibervoluntarios", "ciber", _aplicar_ciber),
-            ("claude_academy", "academy", _aplicar_academy),
-            ("fundae", "fundae", partial(_aplicar_fundae, inicial=base, retenidos=retenidos)),
-            ("barcelonactiva", "cibernarium", _aplicar_cibernarium),
-        ):
-            if fuente in sin_identidades:
-                continue
-            # Los ciclos admitidos sin catálogo instalado van antes, cada uno con su corte y sus auxiliares.
-            for numero, (propio, pendiente) in enumerate(operacion_fuente.leer_pendientes(fuente, raiz)):
-                destino = local / f"{nombre}-pendiente-{numero}" / almacen.RUTA
-                if fuente == "barcelonactiva":
-                    nueva = _aplicar_cibernarium(raiz, nueva, destino, propio, (pendiente, corte))
-                else:
-                    nueva = aplicar(raiz, nueva, destino, propio, pendiente)
-            nueva = aplicar(raiz, nueva, local / nombre / almacen.RUTA, corte)
-        nueva = preinscripcion.aplicar_si_cambia(raiz, nueva, local / "fundae-ediciones" / almacen.RUTA, corte)
-        nueva = reevaluar_registros.aplicar_si_cambia(nueva, local / "reevaluacion" / almacen.RUTA, corte)
+        nueva = aplicar_las_fuentes(raiz, (local, externo), corte, sin_identidades, aplicaciones)
         if nueva != base:
-            final = local / "raiz" / almacen.RUTA
-            final.parent.mkdir(parents=True, exist_ok=True)
-            shutil.move(nueva, final)
-            nueva = final
+            with tramo("candidata"):
+                final = local / "raiz" / almacen.RUTA
+                final.parent.mkdir(parents=True, exist_ok=True)
+                shutil.move(nueva, final)
+                nueva = final
         referencia = _publicar_candidata(raiz, nueva, externo, corte, sin_identidades)
         if nueva != base:
-            # Es una candidata sin tráfico; la entrega común promueve SQLite y web juntas después del gate.
-            sustitucion.sustituir(raiz, local / "raiz", (almacen.RUTA.as_posix(),), diario=local / "diario.json")
+            with tramo("sustituir"):
+                # Es una candidata sin tráfico; la entrega común promueve SQLite y web juntas después del gate.
+                sustitucion.sustituir(raiz, local / "raiz", (almacen.RUTA.as_posix(),), diario=local / "diario.json")
         return {
             "estado": "candidata_preparada",
             # Fuentes que no aportan hasta tener identidades admitidas; el panel las ve en ámbar por su módulo.
@@ -486,21 +485,23 @@ def componer(*, raiz: Path = RAIZ, corte_utc: str | None = None) -> dict:
         raise
     finally:
         if not conservar:
-            shutil.rmtree(local)
-            shutil.rmtree(externo)
+            with tramo("limpieza"):
+                shutil.rmtree(local)
+                shutil.rmtree(externo)
 
 
 def main() -> int:
     """Entrada fijada por el ciclo común, sobre su propia copia de trabajo.
 
     Returns:
-        Código con motivo legible; no instala ni activa una generación.
+        Código con motivo legible y, si falla, la línea cerrada de `fallo_del_paso`; no instala ni activa una
+        generación.
     """
 
     def ejecutar() -> None:
         print(json.dumps(componer(), ensure_ascii=False))
 
-    return con_motivo(ejecutar)
+    return con_motivo(ejecutar, linea_de_fallo=True)
 
 
 if __name__ == "__main__":

@@ -182,8 +182,16 @@ ciclo y en su resumen archivado (`diarios-resumen/…`), siempre con palabras de
   con `paso` (`exportar`, `componer-catalogo`, `incorporar-globales`, `preparar-globales`, `preparar-biblioteca`,
   `preparar-informe`, `cotejar-web`, `comprobar-datos`, `sustituir` u `otro`), su `codigo` y la lista `alarmas`. Cada
   alarma tiene `tipo` (`desaparece`, `entrada-fijada-cambia`, `vectores-desfasados` u `otra`) y el `archivo` del
-  paquete al que afecta. En el resumen está en `retenciones.paquete`. `estado: ilegible` quiere decir que el estado o
-  el informe del candidato no se pudieron leer.
+  paquete al que afecta. Si el paso en rojo es una orden del paquete en Python (`exportar`, `componer-catalogo`,
+  `incorporar-globales`), su salida termina con una línea fija, `fallo-paso tramo=… clase=… errno=… motivoAlmacen=…`,
+  y el diario copia de ella, con valores de listas cerradas (`fallo_del_paso`), `tramo` (el tramo de
+  `componer-catalogo` en que saltó el error: `almacen-admitido`, `hp_life`, `fundae`, `proyeccion`, `publicar`…),
+  `clase` (`AlmacenNoDisponible`, `sqlite3.OperationalError`, `OSError`… u `otra`), `errno` (solo de un `OSError`,
+  por su nombre: `ENOSPC`, `EACCES`…) y `motivoAlmacen` (`almacen-ausente`, `almacen-ilegible` o `almacen-vacio`).
+  Un valor fuera de su lista llega como `otra`; un campo que el paso no dejó no se anota. La consola del job, que es
+  pública, enseña estos cuatro solo en este evento (`fase: paquete`) y solo si el valor es de su lista cerrada; la
+  `clase` del candidato o de la generación se queda en el diario privado. En el resumen está en `retenciones.paquete`, con esos cuatro campos a `null` si no constan.
+  `estado: ilegible` quiere decir que el estado o el informe del candidato no se pudieron leer.
 - Una fuente en ámbar: cada etapa se anota como `etapa-fuente` con su `causa` (por ejemplo `http-503`,
   `plazo-agotado` o `pagina-de-comprobacion`, la de una web que responde con una página HTML de comprobación en lugar
   de datos). En el resumen está en `fuentes`.

@@ -144,7 +144,17 @@ class PruebaCicloQueSeRecupera(unittest.TestCase):
         self.assertEqual(
             resumen["retenciones"],
             {
-                "paquete": {"paso": "exportar", "codigo": 1, "alarmas": [], "legible": True},
+                # Sin línea de fallo en el diagnóstico del paso, el resumen no inventa tramo ni clase.
+                "paquete": {
+                    "paso": "exportar",
+                    "codigo": 1,
+                    "alarmas": [],
+                    "legible": True,
+                    "tramo": None,
+                    "clase": None,
+                    "errno": None,
+                    "motivoAlmacen": None,
+                },
                 "generacion": {
                     "clase": "GeneracionInvalida",
                     "comprobacion": "sin_recuperacion",

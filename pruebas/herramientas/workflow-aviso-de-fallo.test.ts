@@ -13,6 +13,15 @@ const PERMISOS_EJECUTABLE = 0o755;
 const PASO = 'Abrir, comentar o cerrar la incidencia del ciclo';
 const PASO_RESUMEN = 'Anotar en el resumen que el aviso ha fallado';
 const ENLACE = 'https://github.com/propietario/repositorio/actions/runs/987654';
+// El aviso de un ciclo rechazado no afirma que el motivo conste: dice dónde mirarlo y que puede no haber quedado
+// (test_fallo_del_paso.py comprueba que cada apartado que nombra es el que de verdad lo recoge).
+const MOTIVO = (
+  'El diario de la ejecución y su resumen dicen por qué se rechazó el ciclo cuando lo dejó registrado: ' +
+  'en «retenciones», el paso del paquete en rojo o sus alarmas (paquete), la generación que no se ' +
+  'conservó (generacion) o el error del candidato (candidato) y, en «fuentes», las fuentes en ámbar. La ' +
+  'consola del job nombra solo una parte, y no siempre. Si ninguno de esos apartados trae nada, el ' +
+  'motivo no quedó registrado.'
+).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 const SEPARADOR_ARGUMENTO = '\u001f';
 const SEPARADOR_ORDEN = '\u001e';
 
@@ -259,7 +268,7 @@ test('un ciclo rechazado, aunque ningún trabajo falle, abre una incidencia con 
     argumento(r, 'issue create', '--body'),
     new RegExp(
       `^La actualización del \\d{4}-\\d{2}-\\d{2} a las \\d{2}:\\d{2} UTC terminó sin publicar datos nuevos\\.\\n\\n` +
-        `El motivo consta en el diario de la ejecución: ${ENLACE}\\n\\n` +
+        `${MOTIVO}\\n\\nEjecución: ${ENLACE}\\n\\n` +
         `Esta incidencia se cierra sola cuando un ciclo posterior termina bien\\.$`,
     ),
   );
@@ -275,7 +284,7 @@ test('un ciclo rechazado con una incidencia abierta añade un comentario y no ab
     argumento(r, 'issue comment', '--body'),
     new RegExp(
       `^La actualización del .+ UTC ha vuelto a terminar sin publicar datos nuevos\\.\\n\\n` +
-        `El motivo consta en el diario de la ejecución: ${ENLACE}$`,
+        `${MOTIVO}\\n\\nEjecución: ${ENLACE}$`,
     ),
   );
 });
@@ -359,7 +368,12 @@ test('el texto de la incidencia solo usa la fecha, qué pasó y el enlace: nada 
   assert.deepEqual(cuerpos, [
     '"$momento" "$quien" "$enlace"',
     '"$momento" "$quien" "$enlace"',
-    '"$momento" "$enlace"',
-    '"$momento" "$enlace"',
+    '"$momento" "$motivo" "$enlace"',
+    '"$momento" "$motivo" "$enlace"',
   ]);
+  // El motivo es un literal fijo entre comillas simples: no expande nada del run.
+  assert.deepEqual(
+    [...orden.matchAll(/^\s*motivo=(.*)$/gm)].map((m) => /^'[^'$`\\]*'$/.test(m[1] ?? '')),
+    [true],
+  );
 });

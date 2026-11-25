@@ -290,7 +290,7 @@ las claves sea el de las ejecuciones. Ocupa como mucho 64 KiB (con todas las fue
 | `respuestasRechazadas` | `servicio` (`oidc` o `autoridad`) y código HTTP de cada respuesta que el servidor no confirmó, por ejemplo `autoridad`, 401. |
 | `identidadOidc` | Lo que el runner observó en su último token: `audienciaEsperada` (sí o no) y si `referenciaDeJob` y `revisionDeJob` coinciden con las del workflow (`coincide`, `distinto` o `ausente`). Es `null` si la ejecución no llegó a pedir el token. Una revisión `distinto` explica un 401 de la autoridad. |
 | `salud` | El parte de salud de la base de datos de ese día (siguiente apartado). |
-| `retenciones` | Por qué no se admitió o no se conservó lo del ciclo, con palabras de listas cerradas: `paquete` (el paso en rojo, su código y las alarmas), `generacion` (la `clase` del error, la `comprobacion` que la rechazó y su `causa`) y `candidato` (el `error` del recibo de un candidato rechazado y, si lo detuvo una excepción, su `clase` y la `funcion` del motor donde saltó). Cada uno es `null` si no pasó. |
+| `retenciones` | Por qué no se admitió o no se conservó lo del ciclo, con palabras de listas cerradas: `paquete` (el paso en rojo, su código, las alarmas y, si el paso dejó su línea de fallo, `tramo`, `clase`, `errno` y `motivoAlmacen`; `null` los que no), `generacion` (la `clase` del error, la `comprobacion` que la rechazó y su `causa`) y `candidato` (el `error` del recibo de un candidato rechazado y, si lo detuvo una excepción, su `clase` y la `funcion` del motor donde saltó). Cada uno es `null` si no pasó. |
 | `recorte` | `aplicado` y, por lista, cuántas entradas se omitieron. |
 
 Cada campo se copia solo si tiene la forma que espera el contrato; el resumen no lleva direcciones, rutas,

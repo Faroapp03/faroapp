@@ -2,7 +2,7 @@
 
 El informe cuenta los pasos, la comparación con lo vigente (piezas_de_la_actualizacion.py) y la fecha de las fuentes
 manuales. De cada paso fallido conserva el final de su salida, saneado y acotado por paso y en total, en el Markdown y
-en el JSON. Python estándar.
+en el JSON; la línea cerrada de fallo del paso (`fallo_del_paso`) se conserva aunque el total se agote. Python estándar.
 """
 
 import getpass
@@ -14,6 +14,8 @@ from typing import TYPE_CHECKING, NamedTuple
 
 from plataforma_datos.comun.entrada_salida import escribir_entero, guardar_json
 from plataforma_datos.comun.textos_y_cifras import numero_es
+from plataforma_datos.orquestacion.fallo_del_paso import LINEA as LINEA_DE_FALLO
+from plataforma_datos.orquestacion.fallo_del_paso import PREFIJO as PREFIJO_DE_FALLO
 from plataforma_datos.orquestacion.piezas_de_la_actualizacion import (
     CARPETA_DE_INFORMES,
     IGUAL,
@@ -195,11 +197,22 @@ def _cola(salida: str) -> str:
     return cola[salto + 1 :] if salto >= 0 else cola
 
 
+def _linea_de_fallo(texto: str) -> list[str]:
+    """La última línea de fallo de un diagnóstico (`fallo_del_paso.LINEA`), si encaja entera.
+
+    Returns:
+        Una lista con esa línea, o vacía si el diagnóstico no la trae.
+    """
+    propias = [fila for fila in texto.splitlines() if fila.startswith(f"{PREFIJO_DE_FALLO} ")]
+    return propias[-1:] if propias and LINEA_DE_FALLO.fullmatch(propias[-1]) else []
+
+
 def diagnosticos(pasos: list["Paso"]) -> list[str | None]:
     """El diagnóstico de cada paso fallido, saneado y acotado; None para los pasos en verde.
 
     Cada uno se limita a MAX_DIAGNOSTICO_POR_PASO y los que llevan detalle, juntos, a MAX_DIAGNOSTICOS_BYTES: cuando
-    el total se agota, los siguientes fallos constan con SIN_DETALLE, de modo que ninguno desaparece del informe.
+    el total se agota, los siguientes fallos constan con SIN_DETALLE, de modo que ninguno desaparece del informe. Tras
+    SIN_DETALLE sigue la línea de fallo del paso, si la trae entera: su forma la acota y no cuenta para el total.
 
     Returns:
         Una entrada por paso, en su orden.
@@ -213,7 +226,7 @@ def diagnosticos(pasos: list["Paso"]) -> list[str | None]:
         texto = _ultimas_lineas(sanear(_cola(paso.salida)), maximo=MAX_DIAGNOSTICO_POR_PASO)
         tamano = len(texto.encode())
         if tamano > restante:
-            texto, tamano = SIN_DETALLE, 0
+            texto, tamano = "\n".join([SIN_DETALLE, *_linea_de_fallo(texto)]), 0
         restante -= tamano
         resultado.append(texto)
     return resultado

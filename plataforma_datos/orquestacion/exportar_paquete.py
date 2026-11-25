@@ -540,7 +540,10 @@ def main(argv: list[str] | None = None) -> int:
         help="retirar el nombre antiguo de cada archivo renombrado; solo lo pasa el ciclo operativo",
     )
     argumentos = analizador.parse_args(argv)
-    return con_motivo(lambda: exportar_y_contar(argumentos.destino, completar_renombres=argumentos.completar_renombres))
+    return con_motivo(
+        lambda: exportar_y_contar(argumentos.destino, completar_renombres=argumentos.completar_renombres),
+        linea_de_fallo=True,
+    )
 
 
 if __name__ == "__main__":

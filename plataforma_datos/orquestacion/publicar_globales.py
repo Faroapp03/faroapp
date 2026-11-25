@@ -79,7 +79,7 @@ def main(argv: list[str] | None = None) -> int:
         0 si se publicó; 1 con motivo si falta una entrada o no está admitida.
     """
     argparse.ArgumentParser(description=__doc__).parse_args(argv)
-    return con_motivo(lambda: publicar_globales(RAIZ))
+    return con_motivo(lambda: publicar_globales(RAIZ), linea_de_fallo=True)
 
 
 if __name__ == "__main__":

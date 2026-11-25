@@ -9,11 +9,13 @@ import argparse
 import contextlib
 import io
 import sys
+import traceback
 from collections.abc import Callable, Sequence
 from contextvars import ContextVar
 
 from plataforma_datos.comun.nucleo import ACCIONES, ERRORES_CON_MOTIVO, ETAPAS, TODO, ErrorFuente, exigir
 from plataforma_datos.comun.observacion_remota import contexto_descarga
+from plataforma_datos.orquestacion import fallo_del_paso
 
 COMPROBAR_ORDEN = "--comprobar-orden"
 MAX_MOTIVO_DE_RECHAZO = 300  # caracteres del error del intérprete que se conservan en el motivo
@@ -67,18 +69,25 @@ def interfaz_con_descarga(descripcion: str) -> argparse.ArgumentParser:
     return analizador
 
 
-def con_motivo(orden: Callable[[], None], depurar: bool = False) -> int:
+def con_motivo(orden: Callable[[], None], depurar: bool = False, *, linea_de_fallo: bool = False) -> int:
     """Ejecuta una orden de la línea de órdenes; si falla, escribe «Error: <motivo>» sin traza.
+
+    Con `linea_de_fallo` (las órdenes del paquete), la salida de errores termina además con la línea cerrada de
+    `fallo_del_paso`, también ante un error que no es de ERRORES_CON_MOTIVO: ese sale con su traza, como saldría sin
+    capturar, y con el mismo código 1.
 
     Args:
         orden: Lo que se ejecuta.
         depurar: Con la opción --depurar, el error se relanza con su traza completa para diagnosticarlo.
+        linea_de_fallo: Si al fallar se escribe la línea cerrada que el supervisor lee del informe.
 
     Returns:
-        El código de salida: 0 si va bien y 1 si falla con un error de ERRORES_CON_MOTIVO.
+        El código de salida: 0 si va bien y 1 si falla con un error de ERRORES_CON_MOTIVO (con `linea_de_fallo`, con
+        cualquier `Exception`).
 
     Raises:
         ERRORES_CON_MOTIVO: Con `depurar`, el error de la orden tal cual, con su traza.
+        Exception: Sin `linea_de_fallo` o con `depurar`, el error que no es de ERRORES_CON_MOTIVO, tal cual.
     """
     try:
         orden()
@@ -86,6 +95,14 @@ def con_motivo(orden: Callable[[], None], depurar: bool = False) -> int:
         if depurar:
             raise
         print(f"Error: {error}", file=sys.stderr)
+        if linea_de_fallo:
+            print(fallo_del_paso.linea(error), file=sys.stderr, flush=True)
+        return 1
+    except Exception as error:
+        if depurar or not linea_de_fallo:
+            raise
+        traceback.print_exc()
+        print(fallo_del_paso.linea(error), file=sys.stderr, flush=True)
         return 1
     return 0
 

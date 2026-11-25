@@ -653,8 +653,11 @@ resumen no trae uno de ellos, la salida queda vacía.
   y el enlace a la ejecución. El repositorio es público: no incluye salidas de pasos, datos del run ni nombres de personas.
 - **Todos terminaron bien pero el resultado es `rechazado`**: el workflow termina en verde, pero no se ha publicado
   ningún dato nuevo. Abre (o comenta en la abierta) una incidencia con el título «La actualización de datos terminó sin
-  publicar datos nuevos» y la fecha. El texto dice solo eso, la fecha y la hora en UTC y el enlace a la ejecución, en cuyo
-  diario consta el motivo.
+  publicar datos nuevos» y la fecha. El texto dice solo eso, la fecha y la hora en UTC, el enlace a la ejecución y un
+  párrafo fijo: el diario de la ejecución y su resumen dicen por qué se rechazó el ciclo cuando lo dejó registrado (en
+  «retenciones»: el paso del paquete en rojo o sus alarmas, la generación que no se conservó o el error del candidato; en
+  «fuentes», las fuentes en ámbar); la consola del job nombra solo una parte, y no siempre; si ninguno de esos apartados
+  trae nada, el motivo no quedó registrado. El aviso no sabe por qué se rechazó el ciclo, así que no afirma que conste.
 - **Todos terminaron bien y el resultado es `validado` o `sin-pendientes`** y hay una incidencia abierta con esa
   etiqueta: la comenta («El ciclo del `<fecha>` terminó bien.») y la cierra.
 - **Todos terminaron bien pero el resultado no consta** (vacío o fuera de la lista, o no se ejecutó el candidato): no

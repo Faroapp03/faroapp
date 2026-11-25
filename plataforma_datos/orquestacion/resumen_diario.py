@@ -23,6 +23,8 @@ from plataforma_datos.orquestacion.causas_del_ciclo import (
 from plataforma_datos.orquestacion.ejecucion_observada import ETAPAS
 from plataforma_datos.orquestacion.estado_de_la_actualizacion import AMBAR, ROJO, VERDE
 from plataforma_datos.orquestacion.fallo_del_candidato import CLASES, ERRORES_DEL_RECIBO, FUNCION, OTRA
+from plataforma_datos.orquestacion.fallo_del_paso import CLASES as CLASES_DEL_PASO
+from plataforma_datos.orquestacion.fallo_del_paso import ERRNOS, MOTIVOS_DEL_ALMACEN, TRAMOS
 from plataforma_datos.orquestacion.formas_del_diario import (
     CURSO,
     MAX_RESUMEN,
@@ -39,6 +41,8 @@ from plataforma_datos.orquestacion.salud_del_resumen import parte_de_salud
 # presencia de campo no se rompe. Ningún lector debe decidir por el número de versión.
 VERSION = 2
 MAX_MUESTRA = 50
+# Los campos de la línea de fallo del paso del paquete en rojo, con la lista de cada uno (más `otra`).
+FALLO_DEL_PASO = {"tramo": TRAMOS, "clase": CLASES_DEL_PASO, "errno": ERRNOS, "motivoAlmacen": MOTIVOS_DEL_ALMACEN}
 # Un cambio de curso nombra como mucho los cinco campos que compara la proyección de cursos.
 MAX_CAMPOS = 5
 # Reserva para que los recuentos de lo omitido quepan aunque crezcan sus cifras al recortar.
@@ -260,7 +264,13 @@ class _Composicion:
 
     def _paquete(self, estado: str, evento: dict[str, Any]) -> None:
         if _de_lista(estado, ("retenido", "ilegible")) == "ilegible":
-            self.retenciones["paquete"] = {"paso": None, "codigo": None, "alarmas": [], "legible": False}
+            self.retenciones["paquete"] = {
+                "paso": None,
+                "codigo": None,
+                "alarmas": [],
+                "legible": False,
+                **dict.fromkeys(FALLO_DEL_PASO),
+            }
             return
         alarmas = evento.get("alarmas")
         _exigir(isinstance(alarmas, list) and len(alarmas) <= MAX_ALARMAS)
@@ -269,6 +279,11 @@ class _Composicion:
             "codigo": None if evento.get("codigo") is None else _entero(evento["codigo"], -255, 255),
             "alarmas": [_alarma(alarma) for alarma in alarmas],
             "legible": True,
+            # Lo que dijo la línea de fallo del paso en rojo (`fallo_del_paso`); None si no la dejó.
+            **{
+                campo: None if evento.get(campo) is None else _de_lista(evento[campo], (*admitidos, OTRA))
+                for campo, admitidos in FALLO_DEL_PASO.items()
+            },
         }
 
     def _generacion(self, estado: str, evento: dict[str, Any]) -> None:
