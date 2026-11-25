@@ -190,6 +190,25 @@ ciclo y en su resumen archivado (`diarios-resumen/…`), siempre con palabras de
 - Una generación que no se pudo conservar: `fase: generacion`, `estado: no-conservada`, con `clase` (la clase del
   error), `comprobacion` (la función de `generacion_operativa` que lo rechazó) y `causa` (por ejemplo
   `paquete-cita-otros-originales`). En el resumen está en `retenciones.generacion`.
+- Un candidato rechazado sin estado: el recibo dice su `error` (`actualizacion_no_completada`,
+  `actualizacion_no_admitida` o `candidato_no_verificable`), que el diario copia en `fase: candidato`,
+  `estado: resultado`. Si lo detuvo una excepción, el diario lleva además `fase: candidato`, `estado: excepcion`, con
+  `clase` (la de la excepción, de una lista cerrada, u `otra`) y `funcion` (la función de `candidato` o de
+  `actualizar` donde saltó, u `otra`); nunca su mensaje. En el resumen está en `retenciones.candidato`, con `error`,
+  `clase` y `funcion`.
+- Un paso que pidió al almacén un objeto que no existe (un 404): se anota con la causa `objeto-ausente` y no se
+  reintenta, porque repetir no lo hace aparecer. Una caída o un plazo agotado del almacén es `almacen-no-disponible`,
+  y esos pasos sí se repiten.
+
+Un archivo del paquete renombrado a propósito (`SUCESORES` en `piezas_de_la_actualizacion.py`, hoy `cambra.json` →
+`exposicion-cambra.json`) solo deja de estar en `datos/` cuando exporta el ciclo operativo: su base sale del almacén y
+aún publicaba el nombre antiguo. El ciclo se reconoce por su señal propia, `FARO_COMPLETAR_RENOMBRES=si`, que solo
+fija el ejecutor privado en el entorno de su candidato. Se ignora si llega heredada del runner, y ninguna otra orden la
+recibe. Con ella, la orden de exportar lleva `--completar-renombres` y retira el nombre antiguo solo si el manifiesto
+vigente lo nombra con la misma huella. Sin ella (en el Mac o en cualquier instalación de trabajo) nunca se retira nada,
+así que la tabla privada `datos/cambra.json` queda intacta aunque se restaure a mano un manifiesto anterior. El
+ensayo grabado que quiera reproducir el ciclo operativo debe fijar `FARO_COMPLETAR_RENOMBRES=si` en el entorno del
+candidato.
 
 ## Levantar el bloqueo operativo
 
@@ -224,7 +243,9 @@ inventario y admisión. Después vuelve a leer la referencia y, si no ha cambiad
 `desbloqueos/<solicitudId>/<revisionReserva>/<runId>.json` con creación condicional; solo entonces escribe la
 referencia con `If-Match` del ETag de su propia lectura y la confirma por lectura exacta. La referencia nueva es la
 anterior con `bloqueoOperativo` a `false`: mismas bases, misma `ultimaValidada`, misma revisión y mismo trabajo. No
-borra ni cambia recibos, índices ni generaciones, no reintenta una escritura en conflicto y no activa datos.
+borra ni cambia recibos, índices ni generaciones, no reintenta una escritura en conflicto y no activa datos. Si el
+almacén no responde a una escritura y la lectura posterior no la confirma, la orden termina sin resultado (código 1)
+y pide repetirla: la repetición reutiliza el acta y escribe la referencia con el `If-Match` de su nueva lectura.
 
 El acta tiene forma cerrada: `version`, `instante` (UTC), `trabajo` (la tupla del trabajo bloqueado),
 `sha256ReferenciaAnterior` y `sha256ReferenciaNueva` (de los bytes exactos de cada referencia), `generacion` (la base

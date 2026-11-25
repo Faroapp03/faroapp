@@ -132,7 +132,9 @@ def exportar_biblioteca_de_prueba(destino: Path) -> Path:
 class PruebaExportacion(unittest.TestCase):
     """La exportación escribe aparte, sustituye, registra cada huella y quita lo que ya no se exporta."""
 
-    def exportar(self, carpeta: Path, construidos: dict[str, exportar_paquete.Paquete]) -> dict[str, object]:
+    def exportar(
+        self, carpeta: Path, construidos: dict[str, exportar_paquete.Paquete], **opciones: bool
+    ) -> dict[str, object]:
         """Exporta en `carpeta` unos paquetes dados, sin leer datos/ ni lo de las herramientas.
 
         Returns:
@@ -147,7 +149,7 @@ class PruebaExportacion(unittest.TestCase):
             mock.patch.object(exportar_paquete, "entrada_escrita_por_herramienta", return_value=None),
             mock.patch.object(exportar_paquete, "enlaces_publicados", return_value=None),
         ):
-            return exportar_paquete.exportar(carpeta)
+            return exportar_paquete.exportar(carpeta, **opciones)
 
     def test_manifiesto_con_huellas_y_sin_lo_obsoleto(self) -> None:
         """Cada archivo escrito tiene su huella en el manifiesto; lo de PREPARADOS_SIN_USO desaparece."""

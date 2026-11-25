@@ -100,6 +100,10 @@ def configuracion_ejecucion(
     workspace = entorno.get("GITHUB_WORKSPACE", "")
     if not workspace or Path(workspace).resolve(strict=True) != checkout or checkout != RAIZ.resolve():
         raise ValueError(ERROR_GENERICO)
+    # Solo «si» descarga las fuentes en paralelo; cualquier otro valor, o ninguno, deja la serie. La lista de fuentes
+    # que se quedan en serie (separadas por comas) solo cuenta con el paralelo: en serie se ignora, aunque exista.
+    en_paralelo = entorno.get("FARO_FUENTES_EN_PARALELO") == "si"
+    en_serie = entorno.get("FARO_FUENTES_EN_SERIE", "") if en_paralelo else ""
     configuracion = ConfiguracionEjecutorOperativo(
         checkout=checkout,
         directorio_trabajo=directorio_trabajo,
@@ -112,6 +116,8 @@ def configuracion_ejecucion(
         variante_cloudflare=variante,
         recuperacion_activacion=recuperacion,
         revisar_paquete_pendiente=entorno.get("FARO_REVISAR_PAQUETE_PENDIENTE") == "si",
+        en_paralelo=en_paralelo,
+        fuentes_en_serie=tuple(fuente.strip() for fuente in en_serie.split(",") if fuente.strip()),
     )
     _checkout_limpio(checkout, revision)
     return configuracion

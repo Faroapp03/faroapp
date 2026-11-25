@@ -150,6 +150,7 @@ class PruebaCicloQueSeRecupera(unittest.TestCase):
                     "comprobacion": "sin_recuperacion",
                     "causa": "recuperacion-pendiente",
                 },
+                "candidato": None,
             },
         )
 

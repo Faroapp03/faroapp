@@ -22,6 +22,7 @@ from plataforma_datos.orquestacion.causas_del_ciclo import (
 )
 from plataforma_datos.orquestacion.ejecucion_observada import ETAPAS
 from plataforma_datos.orquestacion.estado_de_la_actualizacion import AMBAR, ROJO, VERDE
+from plataforma_datos.orquestacion.fallo_del_candidato import CLASES, ERRORES_DEL_RECIBO, FUNCION, OTRA
 from plataforma_datos.orquestacion.formas_del_diario import (
     CURSO,
     MAX_RESUMEN,
@@ -129,8 +130,9 @@ class _Composicion:
         }
         self.respuestas: list[dict[str, Any]] = []
         self.identidad_oidc: dict[str, Any] | None = None
-        # Por qué se retuvo el paquete y por qué no se conservó la generación del intento, si pasó en este ciclo.
-        self.retenciones: dict[str, Any] = {"paquete": None, "generacion": None}
+        # Por qué se retuvo el paquete, por qué no se conservó la generación del intento y con qué error y qué
+        # excepción se rechazó el candidato, si pasó en este ciclo.
+        self.retenciones: dict[str, Any] = {"paquete": None, "generacion": None, "candidato": None}
 
     def _identidad(self, evento: dict[str, Any]) -> None:
         # Algunos hechos reutilizan «operacion» o «intento» para su propio dato; la ejecución la fijan run,
@@ -168,8 +170,19 @@ class _Composicion:
             self.resultado["faseFinal"] = _opcional(evento.get("faseFinal"), NOMBRE)
         elif (fase, estado) == ("candidato", "resultado"):
             self.resultado["candidato"] = _opcional(evento.get("resultado"), NOMBRE)
+            if evento.get("error") is not None:
+                self._candidato()["error"] = _de_lista(evento["error"], (*ERRORES_DEL_RECIBO, OTRA))
+        elif (fase, estado) == ("candidato", "excepcion"):
+            funcion = OTRA if evento.get("funcion") == OTRA else _texto(evento.get("funcion"), FUNCION)
+            self._candidato().update(clase=_de_lista(evento.get("clase"), (*CLASES, OTRA)), funcion=funcion)
         else:
             self._fase(fase, estado, _causa(evento.get("causa")), utc)
+
+    def _candidato(self) -> dict[str, str | None]:
+        # El error llega con el recibo y la excepción, antes, al terminar el motor: los dos van a la misma retención.
+        if self.retenciones["candidato"] is None:
+            self.retenciones["candidato"] = {"error": None, "clase": None, "funcion": None}
+        return self.retenciones["candidato"]
 
     def _fase(self, fase: str, estado: str, causa: str | None, utc: str) -> None:
         # Un paso abierto recoge sus reintentos y su cierre; el resto de hechos iguales y seguidos se cuentan.

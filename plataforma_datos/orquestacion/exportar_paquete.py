@@ -11,7 +11,8 @@ Los datos globales se publican aparte. Nombres y derechos se exportan, aunque no
 Las entradas de herramientas se copian solo si conservan bytes y procedencia local comprobable.
 Los recursos históricos fijados se cotejan además con su captura admitida; no se regeneran embeddings ni peticiones.
 
-Uso: python3 -m plataforma_datos.orquestacion.exportar_paquete [--destino <carpeta>] (por defecto, datos/).
+Uso: python3 -m plataforma_datos.orquestacion.exportar_paquete [--destino <carpeta>] [--completar-renombres]
+(por defecto, datos/). `--completar-renombres` solo lo pasa el ciclo operativo (ordenes_de_la_actualizacion).
 """
 
 import argparse
@@ -49,6 +50,7 @@ from plataforma_datos.orquestacion.exportacion.mercado import paquete_mercado
 from plataforma_datos.orquestacion.exportacion.metodos import paquete_metodos
 from plataforma_datos.orquestacion.exportacion.validados import paquete_validado
 from plataforma_datos.orquestacion.ordenes import con_motivo
+from plataforma_datos.orquestacion.piezas_de_la_actualizacion import SUCESORES
 
 # El formato de cada paquete se conserva; los grandes van compactos, sin salto final.
 COMPACTOS = (
@@ -352,6 +354,57 @@ def _entrada_vigente(nombre: str) -> dict[str, Any] | None:
     return entrada if isinstance(entrada, dict) else None
 
 
+def renombres_por_completar(carpeta: Path, manifiesto: dict[str, Any]) -> list[str]:
+    """Los nombres antiguos de SUCESORES que el paquete de `carpeta` publicaba y el nuevo sustituye por su sucesor.
+
+    Un archivo renombrado a propósito deja de publicarse con su nombre antiguo; si siguiera en la carpeta, el paquete
+    tendría un archivo que su manifiesto no nombra. Solo se retira si es el archivo que publicaba el paquete: el
+    manifiesto vigente de esa misma carpeta lo nombra y sus bytes tienen la huella que ese manifiesto registra. Si no,
+    el archivo es ajeno y no se toca: así ocurre con la tabla privada de la Cambra (`tabla_privada`), que lleva el
+    nombre antiguo en las instalaciones cuyo manifiesto ya publica el sucesor, y también si alguien restaura a mano un
+    manifiesto antiguo junto a la tabla privada.
+
+    Args:
+        carpeta: Carpeta del paquete, todavía con su manifiesto vigente.
+        manifiesto: El manifiesto nuevo.
+
+    Returns:
+        Los nombres antiguos que hay que retirar con la exportación.
+    """
+    vigente = _manifiesto_vigente(carpeta)
+    return [
+        antiguo
+        for antiguo, sucesor in SUCESORES.items()
+        if antiguo not in manifiesto
+        and sucesor in manifiesto
+        and _es_el_publicado(carpeta / antiguo, vigente.get(antiguo))
+    ]
+
+
+def _manifiesto_vigente(carpeta: Path) -> dict[str, Any]:
+    """El manifiesto vigente de una carpeta.
+
+    Returns:
+        Sus entradas por nombre; ninguna si no hay manifiesto o no se puede leer.
+    """
+    try:
+        vigente = json.loads((carpeta / "manifiesto.json").read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        return {}
+    return vigente if isinstance(vigente, dict) else {}
+
+
+def _es_el_publicado(ruta: Path, entrada: object) -> bool:
+    """Si un archivo es el que registra una entrada del manifiesto: propio y con su misma huella.
+
+    Returns:
+        Verdadero solo si la entrada existe y los bytes del archivo tienen su huella.
+    """
+    return (
+        isinstance(entrada, dict) and ruta.is_file() and not ruta.is_symlink() and sha256(ruta) == entrada.get("sha256")
+    )
+
+
 def _restaurar(carpeta: Path, respaldo: Path, afectados: list[str]) -> None:
     """Restaura únicamente los nombres intentados, conservando las copias de respaldo."""
     for nombre in reversed(afectados):
@@ -401,11 +454,13 @@ def _limpiar_tras_error(temporal: Path, error: BaseException) -> None:
         print(aviso, file=sys.stderr)
 
 
-def exportar(carpeta: Path = PAQUETE) -> dict[str, Any]:
+def exportar(carpeta: Path = PAQUETE, *, completar_renombres: bool = False) -> dict[str, Any]:
     """Prepara todo, respalda y sustituye solo archivos gestionados, con recuperación ante excepciones observadas.
 
     Args:
         carpeta: Carpeta del paquete; ningún archivo ajeno se elimina.
+        completar_renombres: Retirar también el nombre antiguo de cada renombre (`renombres_por_completar`); solo en
+            el ciclo operativo.
 
     Returns:
         El manifiesto completo escrito, con las huellas de salidas y sus orígenes.
@@ -445,7 +500,7 @@ def exportar(carpeta: Path = PAQUETE) -> dict[str, Any]:
                 ENLACES_COMPROBADOS,
             )
             if nombre not in manifiesto
-        ]
+        ] + (renombres_por_completar(carpeta, manifiesto) if completar_renombres else [])
         carpeta.mkdir(exist_ok=True)
         _promover(
             carpeta,
@@ -465,9 +520,9 @@ def exportar(carpeta: Path = PAQUETE) -> dict[str, Any]:
         return manifiesto
 
 
-def exportar_y_contar(carpeta: Path = PAQUETE) -> None:
+def exportar_y_contar(carpeta: Path = PAQUETE, *, completar_renombres: bool = False) -> None:
     """Exporta el paquete y muestra el tamaño de cada archivo registrado."""
-    for nombre in exportar(carpeta):
+    for nombre in exportar(carpeta, completar_renombres=completar_renombres):
         print(nombre, (carpeta / nombre).stat().st_size, "bytes")
 
 
@@ -479,8 +534,13 @@ def main(argv: list[str] | None = None) -> int:
     """
     analizador = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     analizador.add_argument("--destino", type=Path, default=PAQUETE, help="carpeta del paquete (datos/)")
-    destino = analizador.parse_args(argv).destino
-    return con_motivo(lambda: exportar_y_contar(destino))
+    analizador.add_argument(
+        "--completar-renombres",
+        action="store_true",
+        help="retirar el nombre antiguo de cada archivo renombrado; solo lo pasa el ciclo operativo",
+    )
+    argumentos = analizador.parse_args(argv)
+    return con_motivo(lambda: exportar_y_contar(argumentos.destino, completar_renombres=argumentos.completar_renombres))
 
 
 if __name__ == "__main__":

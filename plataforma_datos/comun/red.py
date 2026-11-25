@@ -2,7 +2,7 @@
 
 import time
 from collections.abc import Callable, Iterator, Mapping
-from contextlib import contextmanager
+from contextlib import ExitStack, contextmanager
 from contextvars import ContextVar
 from functools import partial
 from http.client import HTTPConnection, HTTPResponse, HTTPSConnection
@@ -44,6 +44,7 @@ from plataforma_datos.comun.observacion_remota import observar, observar_origina
 from plataforma_datos.comun.respuesta_http import LimiteDescargaExcedido as LimiteDescargaExcedido
 from plataforma_datos.comun.respuesta_http import conexion_con_plazo as _conexion_acotada
 from plataforma_datos.comun.respuesta_http import leer_cuerpo, vigilar_lectura
+from plataforma_datos.comun.turnos_entre_procesos import TurnosEntreProcesos, turnos_del_entorno
 
 # ---------------------------------------------------------------------------------------------------------------------
 # Descargas
@@ -115,12 +116,21 @@ class PausasPorDominio:
     """Serializa consultas del proceso y separa dos intentos al mismo hostname al menos dos segundos.
 
     El reloj y la espera se inyectan: con `PausasPorDominio(lambda: 0.0, lambda _segundos: None)` una prueba
-    conserva los turnos y su orden sin esperar de verdad.
+    conserva los turnos y su orden sin esperar de verdad. Con `turnos`, cada consulta toma además el turno de su
+    servidor entre procesos (turnos_entre_procesos) y lo suelta al cerrarse o al saltar a otro servidor: nunca tiene
+    dos a la vez, así que dos procesos no pueden quedar esperándose el uno al otro.
     """
 
-    def __init__(self, reloj: Callable[[], float] | None = None, dormir: Callable[[float], None] | None = None) -> None:
+    def __init__(
+        self,
+        reloj: Callable[[], float] | None = None,
+        dormir: Callable[[float], None] | None = None,
+        turnos: TurnosEntreProcesos | None = None,
+    ) -> None:
         self._reloj = reloj if reloj is not None else lambda: time.monotonic()
         self._dormir = dormir if dormir is not None else lambda segundos: time.sleep(segundos)
+        self._turnos = turnos
+        self._turno_abierto = ExitStack()  # el turno entre procesos de la consulta en curso, si hay turnos
         self._ultimas: dict[str, float] = {}
         self._cerrojo = RLock()
         self._visitados: ContextVar[set[str] | None] = ContextVar("dominios_de_la_consulta", default=None)
@@ -132,6 +142,8 @@ class PausasPorDominio:
         anterior = self._ultimas.get(dominio)
         if anterior is not None and (espera := anterior + PAUSA_ENTRE_PETICIONES_S - ahora) > 0:
             self._dormir(espera)
+        if self._turnos is not None:
+            self._turno_abierto.enter_context(self._turnos.turno(dominio, PAUSA_ENTRE_PETICIONES_S))
         self._ultimas[dominio] = self._reloj()
         visitados = self._visitados.get()
         if visitados is not None:
@@ -156,10 +168,13 @@ class PausasPorDominio:
                 self._esperar(url)
                 yield
             finally:
-                fin = self._reloj()
-                for dominio in visitados:
-                    self._ultimas[dominio] = fin
-                self._visitados.reset(anterior)
+                try:
+                    fin = self._reloj()
+                    for dominio in visitados:
+                        self._ultimas[dominio] = fin
+                    self._turno_abierto.close()
+                finally:
+                    self._visitados.reset(anterior)  # aunque soltar el turno falle, la siguiente consulta puede abrirse
 
     def redireccion(self, origen: str, destino: str) -> None:
         """Registra el cierre anterior y reserva el siguiente intento dentro de una consulta propia.
@@ -172,12 +187,14 @@ class PausasPorDominio:
             raise FormatoInesperado("La siguiente petición exige un turno activo que incluya su origen.")
         with self._cerrojo:
             self._ultimas[_dominio(origen)] = self._reloj()
+            self._turno_abierto.close()  # el origen ya respondió: su turno se suelta antes de pedir el del destino
             self._esperar(destino)
 
 
-# Pausas compartidas por todas las descargas del proceso. Una prueba puede sustituirlas por otras con su propio
-# reloj y su propia espera (`patch.object(red, "PAUSAS", ...)`).
-PAUSAS = PausasPorDominio()
+# Pausas compartidas por todas las descargas del proceso y, si el ciclo descarga varias fuentes a la vez, con los
+# procesos hermanos (turnos_entre_procesos.VARIABLE). Una prueba puede sustituirlas por otras con su propio reloj y su
+# propia espera (`patch.object(red, "PAUSAS", ...)`).
+PAUSAS = PausasPorDominio(turnos=turnos_del_entorno())
 
 
 @contextmanager

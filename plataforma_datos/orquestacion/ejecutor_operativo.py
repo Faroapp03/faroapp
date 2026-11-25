@@ -43,6 +43,8 @@ from plataforma_datos.orquestacion.fin_del_motor import MotorSinRecibo, exigir_r
 from plataforma_datos.orquestacion.generacion_operativa import REVISION, exportar_generacion
 from plataforma_datos.orquestacion.generacion_operativa import SHA256 as HUELLA
 from plataforma_datos.orquestacion.hora_limite_del_motor import VARIABLE as HORA_LIMITE
+from plataforma_datos.orquestacion.ordenes_de_la_actualizacion import COMPLETAR_RENOMBRES, SI
+from plataforma_datos.orquestacion.piezas_de_la_actualizacion import FUENTES
 from plataforma_datos.orquestacion.procesos import ejecutar_con_plazo
 
 # Las fuentes del último ciclo real completo y el paquete medido llevado al runner lento (medidas_del_ciclo), más su
@@ -91,6 +93,8 @@ class ConfiguracionEjecutorOperativo:
     variante_cloudflare: str
     recuperacion_activacion: bool = False
     revisar_paquete_pendiente: bool = False
+    en_paralelo: bool = False  # descargar las fuentes en paralelo (variable FARO_FUENTES_EN_PARALELO); si no, en serie
+    fuentes_en_serie: tuple[str, ...] = ()  # con en_paralelo, las que se quedan en serie (FARO_FUENTES_EN_SERIE)
 
     def __post_init__(self) -> None:
         _exigir(isinstance(self.checkout, Path) and isinstance(self.directorio_trabajo, Path))
@@ -99,7 +103,9 @@ class ConfiguracionEjecutorOperativo:
         _exigir(type(self.revision_reserva) is int and 0 < self.revision_reserva <= MAX_ENTERO)
         _exigir(isinstance(self.run_id, str) and RUN.fullmatch(self.run_id) is not None)
         _exigir(type(self.recuperacion_activacion) is bool)
-        _exigir(type(self.revisar_paquete_pendiente) is bool)
+        _exigir(type(self.revisar_paquete_pendiente) is bool and type(self.en_paralelo) is bool)
+        _exigir(type(self.fuentes_en_serie) is tuple and all(fuente in FUENTES for fuente in self.fuentes_en_serie))
+        _exigir(self.en_paralelo or not self.fuentes_en_serie)  # la lista solo acompaña al paralelo
         _exigir(
             not self.revisar_paquete_pendiente
             or (self.accion == "comprobar-programada" and not self.recuperacion_activacion)
@@ -213,13 +219,16 @@ def _candidato(configuracion: ConfiguracionEjecutorOperativo, directorio: Path, 
             configuracion.accion,
             str(raiz),
             *(["--revisar-paquete-pendiente"] if configuracion.revisar_paquete_pendiente else []),
+            *(["--en-paralelo"] if configuracion.en_paralelo else []),
+            *(opcion for fuente in configuracion.fuentes_en_serie for opcion in ("--fuente-en-serie", fuente)),
             "--recibo",
             str(recibo),
         ],
         raiz,
         PLAZO_CANDIDATO_S,
         # La hora a la que se cortará el motor, para que no empiece lo que ya no cabe (`hora_limite_del_motor`).
-        {**entorno, HORA_LIMITE: str(int(time.time()) + PLAZO_CANDIDATO_S)},
+        # Y que es el ciclo operativo: su exportación completa los renombres del paquete (ordenes_del_paquete).
+        {**entorno, HORA_LIMITE: str(int(time.time()) + PLAZO_CANDIDATO_S), COMPLETAR_RENOMBRES: SI},
     )
     exigir_recibo(resultado.returncode, recibo.exists() or recibo.is_symlink(), ERROR)
     contenido = _json(_leer_archivo(recibo))
@@ -428,16 +437,12 @@ def ejecutar_trabajo(
     if contenido["resultado"] == "validado" and generacion:
         with diario.paso("conservar-inventario"):
             movimientos_de_cursos.guardar(almacen, generacion, despues)
-    with diario.paso("conservar-recibo"):
-        conservar_trabajo(
-            recibo,
-            configuracion.run_id,
-            configuracion.revision_codigo,
-            referencia,
-            generacion,
-            artefacto=artefacto,
-            almacen=almacen,
-        )
+    # Sin el recibo conservado se perdería el trabajo del motor: se repite si el almacén no responde. Repetirlo no
+    # duplica ni revierte nada (`conservar_trabajo` reconoce el índice ya escrito y avanza la referencia con su CAS).
+    trabajo = (recibo, configuracion.run_id, configuracion.revision_codigo, referencia, generacion)
+    diario.conservar_con_reintento(
+        "conservar-recibo", lambda: conservar_trabajo(*trabajo, artefacto=artefacto, almacen=almacen)
+    )
     with diario.paso("confirmar-resultado"):
         resumen = _resumen(configuracion, recibo, cliente.enviar_resultado(recibo))
     if contenido["resultado"] == "rechazado":

@@ -13,6 +13,8 @@ MOTIVOS_NO_CALCULADO = ("sin-almacen", "almacen-ilegible")
 # Causas que el supervisor anota con su propio código, además de las de cada etapa de fuente.
 CAUSAS_DEL_DIARIO = (
     "almacen-no-disponible",
+    # El almacén respondió que el objeto pedido no existe (404): no es una indisponibilidad y no se reintenta.
+    "objeto-ausente",
     "integridad-generacion",
     "censo-cibernarium-no-reproducible",
     "archivo-ediciones-ausente",

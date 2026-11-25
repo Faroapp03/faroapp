@@ -7,7 +7,7 @@ de una orden (`actualizar.TOPE_POR_ORDEN`), que es también el de las órdenes d
 """
 
 import sys
-from collections.abc import Sequence
+from collections.abc import Mapping, Sequence
 from typing import NamedTuple
 
 from plataforma_datos.comun.nucleo import DATOS_RELATIVOS
@@ -57,12 +57,37 @@ ENSAMBLADO = (
 )
 COTEJO_DE_ARTEFACTOS = Orden("Construir la web local y comprobar sus artefactos", ("npm", "run", "web:preparar"))
 ORDENES_DEL_PAQUETE = (EXPORTAR_EL_PAQUETE, COMPONER_EL_CATALOGO, *ENSAMBLADO, COTEJO_DE_ARTEFACTOS, *COMPROBACIONES)
+# En el ciclo operativo, la exportación completa además los renombres del paquete
+# (exportar_paquete.renombres_por_completar): su base sale del almacén y publicaba el nombre antiguo. Solo allí: en una
+# instalación de trabajo, un archivo con el nombre antiguo puede ser la tabla privada de la Cambra, aunque alguien haya
+# restaurado a mano un manifiesto anterior. La señal la fija solo el supervisor del ejecutor privado en el entorno de su
+# candidato (ejecutor_operativo); no está en actualizar.ENTORNO_HEREDADO, así que ninguna orden la hereda. Un ensayo
+# que quiera reproducir el ciclo operativo debe fijarla también.
+COMPLETAR_RENOMBRES = "FARO_COMPLETAR_RENOMBRES"
+SI = "si"
+EXPORTAR_EN_EL_CICLO_OPERATIVO = EXPORTAR_EL_PAQUETE._replace(
+    orden=(*EXPORTAR_EL_PAQUETE.orden, "--completar-renombres")
+)
 RUTAS_DE_LA_ENTREGA = (
     CARPETA_DEL_PAQUETE,
     "web",
     f"{DATOS_RELATIVOS.as_posix()}/validados/catalogo-cursos",
 )
 _TOPES = {tuple(o.orden): o.tope for o in (REVALIDAR_EL_CATALOGO, *ORDENES_DEL_PAQUETE) if o.tope is not None}
+
+
+def ordenes_del_paquete(entorno: Mapping[str, str]) -> tuple[Orden, ...]:
+    """Las órdenes del paquete en este entorno.
+
+    El ciclo operativo se reconoce por su señal propia, `COMPLETAR_RENOMBRES` con el valor `SI`, que solo fija el
+    supervisor del ejecutor privado para su candidato; una ejecución en el Mac no la tiene.
+
+    Returns:
+        `ORDENES_DEL_PAQUETE`, con la exportación que completa los renombres si es el ciclo operativo.
+    """
+    if entorno.get(COMPLETAR_RENOMBRES) != SI:
+        return ORDENES_DEL_PAQUETE
+    return (EXPORTAR_EN_EL_CICLO_OPERATIVO, *ORDENES_DEL_PAQUETE[1:])
 
 
 def tope_de(orden: Sequence[str], general: int) -> int:

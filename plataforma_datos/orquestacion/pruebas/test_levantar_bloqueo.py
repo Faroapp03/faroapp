@@ -17,6 +17,7 @@ from botocore.response import StreamingBody
 from plataforma_datos.comun import perfil_web, red
 from plataforma_datos.orquestacion import levantar_bloqueo as levantar
 from plataforma_datos.orquestacion.almacen_generaciones import AlmacenGeneracionesNoDisponible, guardar_generacion
+from plataforma_datos.orquestacion.almacen_s3 import AlmacenS3NoDisponible
 from plataforma_datos.orquestacion.almacen_trabajos import (
     REFERENCIA,
     conservar_trabajo,
@@ -273,6 +274,27 @@ class PruebaLevantarBloqueo(unittest.TestCase):
         self.almacen.corte = None
         with mock.patch.object(levantar, "_instante_utc", return_value="2026-11-15T04:00:00Z"):
             self.assertEqual(self.levantar(), "levantado")
+        self.assertEqual(self.almacen.objetos[ACTA], acta)
+        self.assertFalse(leer_referencia(self.almacen)["bloqueoOperativo"])
+
+    def test_un_put_de_la_referencia_sin_respuesta_pide_repetir_y_repetir_levanta(self) -> None:
+        """Sin respuesta del almacén al escribir la referencia, la orden no afirma un conflicto: pide repetirla."""
+        guardar = self.almacen.guardar_control
+        pendiente = [True]
+
+        def sin_respuesta(clave: str, contenido: bytes, etag: str | None) -> bool:
+            if clave == REFERENCIA and pendiente[0]:
+                pendiente[0] = False
+                raise AlmacenS3NoDisponible("Almacén privado no disponible.")
+            return guardar(clave, contenido, etag)
+
+        self.almacen.guardar_control = sin_respuesta
+        with self.assertRaises(AlmacenS3NoDisponible) as contexto:
+            self.levantar()
+        self.assertNotIsInstance(contexto.exception, levantar.EscrituraNoConfirmada)
+        acta = self.almacen.objetos[ACTA]
+        self.assertTrue(leer_referencia(self.almacen)["bloqueoOperativo"])
+        self.assertEqual(self.levantar(), "levantado")
         self.assertEqual(self.almacen.objetos[ACTA], acta)
         self.assertFalse(leer_referencia(self.almacen)["bloqueoOperativo"])
 

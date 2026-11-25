@@ -9,7 +9,8 @@ from typing import NamedTuple
 
 from plataforma_datos.orquestacion import diario_mantenimiento as diario
 from plataforma_datos.orquestacion import resumen_diario
-from plataforma_datos.orquestacion.almacen_trabajos import RUN, AlmacenTrabajos, escribir_confirmado
+from plataforma_datos.orquestacion.almacen_trabajos import RUN, AlmacenTrabajos
+from plataforma_datos.orquestacion.controles_confirmados import escribir_confirmado
 from plataforma_datos.orquestacion.formas_del_diario import MAX_RESUMEN, OPERACIONES
 
 MAX_DIARIO = 8 * 1024 * 1024

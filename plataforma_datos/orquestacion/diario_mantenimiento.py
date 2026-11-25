@@ -15,15 +15,17 @@ from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any
 
+from plataforma_datos.orquestacion import fallo_del_candidato
 from plataforma_datos.orquestacion.almacen_generaciones import (
     AlmacenGeneracionesInvalido,
     AlmacenGeneracionesNoDisponible,
 )
-from plataforma_datos.orquestacion.almacen_s3 import AlmacenS3NoDisponible
+from plataforma_datos.orquestacion.almacen_s3 import AlmacenS3Ausente, AlmacenS3NoDisponible
 from plataforma_datos.orquestacion.detalle_del_error import detalle, origen
 from plataforma_datos.orquestacion.fin_del_motor import MotorSinRecibo
 from plataforma_datos.orquestacion.formas_del_diario import CAUSA_DE_ETAPA
 from plataforma_datos.orquestacion.hora_limite_del_motor import leer_parada
+from plataforma_datos.orquestacion.huellas_de_lo_descargado import huella_o_nada
 from plataforma_datos.orquestacion.notas_de_la_sombra import CICLO_CORTADO, EN_CURSO
 from plataforma_datos.orquestacion.notas_de_la_sombra import FASE as FASE_DE_LA_SOMBRA
 from plataforma_datos.orquestacion.notas_de_la_sombra import leer as leer_notas_de_la_sombra
@@ -34,6 +36,12 @@ PAUSAS = (2, 4)
 FASE_DE_LA_PARADA = "parada-del-motor"
 # La causa de un fallo que nadie esperaba; solo ese fallo lleva su mensaje saneado al diario.
 CAUSA_POR_OMISION = "comprobacion-fallida"
+# Fallos del almacén por su clase, de la más concreta a la más general: un 404 es una respuesta, no una caída.
+CAUSAS_DEL_ALMACEN = (
+    (AlmacenS3Ausente, "objeto-ausente"),
+    ((AlmacenGeneracionesNoDisponible, AlmacenS3NoDisponible), "almacen-no-disponible"),
+    (AlmacenGeneracionesInvalido, "integridad-generacion"),
+)
 # Fallos que se reconocen por su mensaje, fijo en el código que los lanza.
 CAUSAS_POR_MENSAJE = {
     "Censo Cibernàrium admitido distinto de sus pruebas": "censo-cibernarium-no-reproducible",
@@ -144,10 +152,9 @@ def _causa(error: Exception) -> str:
         return "plazo-agotado"
     if isinstance(error, MotorSinRecibo):
         return error.causa
-    if isinstance(error, (AlmacenGeneracionesNoDisponible, AlmacenS3NoDisponible)):
-        return "almacen-no-disponible"
-    if isinstance(error, AlmacenGeneracionesInvalido):
-        return "integridad-generacion"
+    for clases, causa in CAUSAS_DEL_ALMACEN:
+        if isinstance(error, clases):
+            return causa
     if str(error) in CAUSAS_POR_MENSAJE:
         return CAUSAS_POR_MENSAJE[str(error)]
     return "entrada-salida" if isinstance(error, OSError) else CAUSA_POR_OMISION
@@ -187,16 +194,40 @@ def leer_con_reintento[T](fase: str, leer: Callable[[], T]) -> T:
 
     Raises:
         AlmacenGeneracionesNoDisponible: Al agotar el plazo de recuperación de la base.
+        AlmacenS3Ausente: Si el objeto pedido no existe; no se repite.
         AlmacenS3NoDisponible: Al agotar los intentos de acceso al almacén.
     """
+    return _con_reintento(fase, leer)
+
+
+def conservar_con_reintento[T](fase: str, conservar: Callable[[], T]) -> T:
+    """Repite una conservación repetible sin daño ante una indisponibilidad, con los mismos intentos que las lecturas.
+
+    Solo vale para una operación que, repetida tras un intento a medias, no cambia lo que el primero dejó confirmado:
+    escrituras condicionadas y comprobadas por lectura (`almacen_trabajos.conservar_trabajo`).
+
+    Returns:
+        Lo que devuelve la conservación confirmada.
+
+    Raises:
+        AlmacenS3Ausente: Si un objeto que necesita no existe; no se repite.
+        AlmacenS3NoDisponible: Al agotar los intentos de acceso al almacén.
+    """
+    return _con_reintento(fase, conservar)
+
+
+def _con_reintento[T](fase: str, operacion: Callable[[], T]) -> T:
     with paso(fase):
         for intento, pausa in enumerate(PAUSAS, 1):
             try:
-                return leer()
+                return operacion()
+            except AlmacenS3Ausente:
+                # El almacén ha respondido que el objeto no existe: repetir no lo hace aparecer.
+                raise
             except (AlmacenGeneracionesNoDisponible, AlmacenS3NoDisponible):
                 anotar(fase, "reintento", causa="almacen-no-disponible", intento=intento + 1, esperaSegundos=pausa)
                 time.sleep(pausa)
-        return leer()
+        return operacion()
 
 
 def _registrar_calendarios_soc(candidato: Path) -> None:
@@ -245,12 +276,29 @@ def registrar_intentos(candidato: Path) -> None:
             fin=dato["fin_utc"],
             codigo=dato["codigo"],
             causa=causa,
+            # Lo recibido sin horas, para comparar dos ciclos (comparar_ciclos); None si no hubo recibo.
+            recepcion=huella_o_nada(dato.get("recibo")),
         )
     if formacion_validada:
         _registrar_calendarios_soc(candidato)
     _registrar_sombra(candidato)
     _registrar_pasos_del_ciclo(candidato)
     _registrar_parada(candidato)
+    _registrar_fallo_del_candidato(candidato)
+
+
+def _registrar_fallo_del_candidato(candidato: Path) -> None:
+    """Copia al diario la clase y la función de la excepción que detuvo al candidato (`fallo_del_candidato`).
+
+    Es telemetría, como la parada: un archivo ilegible se anota como un problema y no detiene al supervisor.
+    """
+    try:
+        fallo = fallo_del_candidato.leer(candidato)
+    except (OSError, ValueError) as error:
+        anotar(fallo_del_candidato.FASE, "problema", motivo="fallo-ilegible", tipo=type(error).__name__)
+        return
+    if fallo is not None:
+        anotar(fallo_del_candidato.FASE, fallo_del_candidato.ESTADO, **fallo)
 
 
 def _registrar_parada(candidato: Path) -> None:
@@ -310,4 +358,10 @@ def registrar_recibo(recibo: dict[str, Any]) -> None:
         anotar(
             "modulo", "observado", **{k: modulo[k] for k in ("id", "veredicto", "ultimoIntento", "proximoReintento")}
         )
-    anotar("candidato", "resultado", resultado=recibo["resultado"], huellaPaquete=recibo["huellaPaquete"])
+    anotar(
+        "candidato",
+        "resultado",
+        resultado=recibo["resultado"],
+        huellaPaquete=recibo["huellaPaquete"],
+        error=fallo_del_candidato.error_del_recibo(recibo.get("error")),
+    )

@@ -6,6 +6,10 @@ orden la deja a mano de una persona. Lo levanta únicamente si la referencia blo
 `baseOperativa` se recupera y verifica entera. La referencia nueva es la anterior con el bloqueo apagado: no mueve
 bases, revisión ni trabajo, no toca recibos ni índices y no activa datos. Antes de moverla deja un acta inmutable por
 trabajo bloqueado; si se corta entre las dos escrituras, repetirla reutiliza el acta y termina el levantamiento.
+
+Si el almacén no responde a una escritura y la lectura posterior no la confirma (un PUT sin respuesta), la orden
+termina sin resultado, con el código 1 y el aviso de repetirla: repetirla reutiliza el acta y escribe la referencia
+con el If-Match de su nueva lectura, así que nunca duplica ni revierte nada.
 """
 
 import argparse

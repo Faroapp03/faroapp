@@ -22,12 +22,13 @@ from pathlib import Path
 from typing import Any, Literal
 
 from plataforma_datos.comun.nucleo import ErrorFuente
-from plataforma_datos.orquestacion import actualizar
+from plataforma_datos.orquestacion import actualizar, fallo_del_candidato
 from plataforma_datos.orquestacion.almacen_trabajos import ACCIONES, VERSION_RECIBO_CONSERVADOS, conservados_del_estado
+from plataforma_datos.orquestacion.descargas_en_paralelo import TODAS_EN_SERIE, ModoDeLasFuentes
 from plataforma_datos.orquestacion.estado_de_la_actualizacion import ROJO, VERDE
 from plataforma_datos.orquestacion.estado_panel import EstadoPanelInvalido, estado_panel
 from plataforma_datos.orquestacion.modulos import PAQUETE
-from plataforma_datos.orquestacion.piezas_de_la_actualizacion import CARPETA_DE_INFORMES
+from plataforma_datos.orquestacion.piezas_de_la_actualizacion import CARPETA_DE_INFORMES, FUENTES
 from plataforma_datos.orquestacion.seleccion_por_tema import MODULOS_DE_CURSOS_DIARIOS
 
 MAX_INFORME_BYTES = 256 * 1024
@@ -105,11 +106,14 @@ def _identidad(raiz: Path, ejecutor: actualizar.Ejecutor) -> str:
     return version
 
 
-def opciones_de_la_accion(accion: Accion, revisar_paquete_pendiente: bool = False) -> actualizar.Opciones:
+def opciones_de_la_accion(
+    accion: Accion, revisar_paquete_pendiente: bool = False, fuentes: ModoDeLasFuentes = TODAS_EN_SERIE
+) -> actualizar.Opciones:
     """Traduce una acción cerrada del trabajo a las opciones de la actualización.
 
     «comprobar-vencidas» selecciona lo mismo que la programada y solo cambia cómo se anota el ciclo.
     «actualizar-cursos» es la búsqueda forzada de «actualizar-datos» acotada a los cursos que se leen a diario.
+    `fuentes` solo cambia cómo se descargan (descargas_en_paralelo); por omisión, todas en serie.
 
     Returns:
         Las opciones con que el motor ejecuta la acción.
@@ -121,13 +125,19 @@ def opciones_de_la_accion(accion: Accion, revisar_paquete_pendiente: bool = Fals
         solo=MODULOS_DE_CURSOS_DIARIOS if accion == "actualizar-cursos" else None,
         revisar_paquete_pendiente=revisar_paquete_pendiente,
         forzar_comprobaciones=accion in ("actualizar-datos", "actualizar-cursos"),
+        en_paralelo=fuentes.en_paralelo,
+        fuentes_en_serie=fuentes.en_serie,
     )
 
 
 def _ejecutar(
-    raiz: Path, accion: Accion, ejecutor: actualizar.Ejecutor, revisar_paquete_pendiente: bool
+    raiz: Path,
+    accion: Accion,
+    ejecutor: actualizar.Ejecutor,
+    revisar_paquete_pendiente: bool,
+    fuentes: ModoDeLasFuentes,
 ) -> dict[str, Any]:
-    opciones = opciones_de_la_accion(accion, revisar_paquete_pendiente)
+    opciones = opciones_de_la_accion(accion, revisar_paquete_pendiente, fuentes)
     intento = actualizar.actualizar_con_resultado(raiz, opciones, ejecutor, comprobar_entrada=estado_panel)
     if (
         (opciones.programada or opciones.reintentar_pendientes)
@@ -158,6 +168,7 @@ def ejecutar_candidato(
     ejecutor: actualizar.Ejecutor = actualizar.ejecutar_orden,
     *,
     revisar_paquete_pendiente: bool = False,
+    fuentes: ModoDeLasFuentes = TODAS_EN_SERIE,
 ) -> dict[str, Any]:
     """Actualiza solo la raíz candidata explícita y entrega un recibo saneado.
 
@@ -166,6 +177,7 @@ def ejecutar_candidato(
         accion: Una de las operaciones cerradas.
         ejecutor: Ejecutor de órdenes fijadas; permite dobles sin red en pruebas.
         revisar_paquete_pendiente: Recompone la generación privada si un trabajo anterior quedó sin activar.
+        fuentes: Si las fuentes se descargan en paralelo y cuáles se quedan en serie; por omisión, todas en serie.
 
     Returns:
         Recibo v4 con estado, módulos conservados y proyección privada admitida; no acredita una publicación
@@ -179,18 +191,26 @@ def ejecutar_candidato(
             redirect_stdout(diagnostico),
             redirect_stderr(diagnostico),
         ):
-            recibo = _ejecutar(raiz_candidata.resolve(), accion, ejecutor, revisar_paquete_pendiente)
+            recibo = _ejecutar(raiz_candidata.resolve(), accion, ejecutor, revisar_paquete_pendiente, fuentes)
             if recibo["estado"] is not None:
                 from plataforma_datos.cursos.panel_catalogo import crear
 
                 recibo["catalogo"] = crear(raiz_candidata.resolve(), corte_utc=_utc(datetime.now(UTC)))
             recibo["terminadoEn"] = _utc(datetime.now(UTC))
             return recibo
-    except (ErrorFuente, OSError, ValueError, TypeError, KeyError, OverflowError, RecursionError):
+    except (ErrorFuente, OSError, ValueError, TypeError, KeyError, OverflowError, RecursionError) as error:
+        # El recibo solo dice su error; la clase y la función de la excepción van al diario (fallo_del_candidato).
+        fallo_del_candidato.guardar(raiz_candidata, error)
         return {**_recibo(accion, "rechazado", None), "error": "candidato_no_verificable"}
 
 
-def _crear_recibo(ruta: Path, raiz: Path, accion: Accion, revisar_paquete_pendiente: bool = False) -> dict[str, Any]:
+def _crear_recibo(
+    ruta: Path,
+    raiz: Path,
+    accion: Accion,
+    revisar_paquete_pendiente: bool = False,
+    fuentes: ModoDeLasFuentes = TODAS_EN_SERIE,
+) -> dict[str, Any]:
     """Reserva el temporal antes de ejecutar y publica bytes completos sin sobrescribir.
 
     El enlace atómico es no-clobber en macOS/Linux; el temporal pertenece al mismo sistema de archivos.
@@ -204,7 +224,9 @@ def _crear_recibo(ruta: Path, raiz: Path, accion: Accion, revisar_paquete_pendie
     ) as archivo:
         temporal = Path(archivo.name)
         try:
-            recibo = ejecutar_candidato(raiz, accion, revisar_paquete_pendiente=revisar_paquete_pendiente)
+            recibo = ejecutar_candidato(
+                raiz, accion, revisar_paquete_pendiente=revisar_paquete_pendiente, fuentes=fuentes
+            )
             json.dump(recibo, archivo, ensure_ascii=False, separators=(",", ":"))
             archivo.write("\n")
             archivo.flush()
@@ -229,12 +251,22 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("raiz", type=Path)
     parser.add_argument("--recibo", type=Path, required=True)
     parser.add_argument("--revisar-paquete-pendiente", action="store_true")
+    parser.add_argument(
+        "--en-paralelo", action="store_true", help="descargar las fuentes en paralelo (por omisión, serie)"
+    )
+    parser.add_argument(
+        "--fuente-en-serie", action="append", default=[], choices=sorted(FUENTES), help="con --en-paralelo, en serie"
+    )
     argumentos = parser.parse_args(argv)
     try:
         _exigir(not argumentos.recibo.resolve().is_relative_to(argumentos.raiz.resolve()))
         _exigir(not argumentos.recibo.exists() and not argumentos.recibo.is_symlink())
         recibo = _crear_recibo(
-            argumentos.recibo, argumentos.raiz, argumentos.accion, argumentos.revisar_paquete_pendiente
+            argumentos.recibo,
+            argumentos.raiz,
+            argumentos.accion,
+            argumentos.revisar_paquete_pendiente,
+            ModoDeLasFuentes(argumentos.en_paralelo, tuple(argumentos.fuente_en_serie)),
         )
     except (OSError, ValueError):
         print("No se pudo preparar el recibo del candidato.", file=sys.stderr)

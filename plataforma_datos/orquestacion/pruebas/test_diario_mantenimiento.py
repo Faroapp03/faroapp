@@ -19,6 +19,7 @@ from plataforma_datos.orquestacion.almacen_generaciones import (
     AlmacenGeneracionesInvalido,
     AlmacenGeneracionesNoDisponible,
 )
+from plataforma_datos.orquestacion.almacen_s3 import AlmacenS3Ausente
 from plataforma_datos.orquestacion.movimientos_de_cursos import comparar
 from plataforma_datos.orquestacion.salud_mantenimiento import diagnostico
 from plataforma_datos.orquestacion.simular_mantenimiento import PermisoLocal
@@ -93,6 +94,28 @@ class DiarioPruebas(unittest.TestCase):
             self.assertEqual(archivo_diario.leer(self.almacen, "123", "1", "ejecutar"), texto)
         with self.assertRaises(FileNotFoundError):
             archivo_diario.leer(self.almacen, "124", "1", "ejecutar")
+
+    def test_un_objeto_ausente_no_se_reintenta_y_lleva_su_propia_causa(self) -> None:
+        """Un 404 es una respuesta del almacén: ni la lectura ni la conservación lo repiten, y no es «no disponible»."""
+        for fase, repetir in (
+            ("descargar-base", diario.leer_con_reintento),
+            ("conservar-recibo", diario.conservar_con_reintento),
+        ):
+            with self.subTest(fase=fase):
+                ausente = Mock(side_effect=AlmacenS3Ausente("El objeto pedido no existe en el almacén privado."))
+                ruta = self.carpeta / f"{fase}.jsonl"
+                with (
+                    diario.abrir(ruta, {"run": "123"}, consola=False),
+                    patch.object(diario.time, "sleep") as pausa,
+                    self.assertRaises(AlmacenS3Ausente),
+                ):
+                    repetir(fase, ausente)
+                ausente.assert_called_once()
+                pausa.assert_not_called()
+                eventos = [json.loads(linea) for linea in ruta.read_text().splitlines()]
+                self.assertEqual(
+                    [(e["estado"], e.get("causa")) for e in eventos], [("inicio", None), ("error", "objeto-ausente")]
+                )
 
     def test_agotamiento_se_detiene_e_intencion_local_solo_permite_un_motor(self) -> None:
         """Agotar las lecturas no concede un permiso ni convierte un acuse incierto en una segunda ejecución."""

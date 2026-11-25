@@ -217,6 +217,10 @@ jobs:
           FARO_REVISION_RESERVA: ${{ inputs.a_demanda && steps.reserva.outputs.revision_reserva || inputs.revision_reserva }}
           FARO_ACCION: ${{ inputs.accion }}
           FARO_REVISAR_PAQUETE_PENDIENTE: ${{ inputs.revisar_paquete_pendiente && vars.FARO_ACTIVACION_AUTOMATICA == 'si' && 'si' || 'no' }}
+          # Solo «si» en la variable del repositorio descarga las fuentes en paralelo; sin ella o con otro valor, en serie.
+          FARO_FUENTES_EN_PARALELO: ${{ vars.FARO_FUENTES_EN_PARALELO == 'si' && 'si' || 'no' }}
+          # Con el paralelo, las fuentes que se quedan en serie, separadas por comas; vacía por omisión.
+          FARO_FUENTES_EN_SERIE: ${{ vars.FARO_FUENTES_EN_SERIE }}
           FARO_ACTUALIZACION_ORIGEN: ${{ vars.FARO_ACTUALIZACION_ORIGEN }}
           FARO_CLOUDFLARE_VARIANTE: ${{ vars.FARO_CLOUDFLARE_VARIANTE }}
           FARO_ALMACEN_S3: ${{ secrets.FARO_ALMACEN_S3 }}
@@ -224,6 +228,12 @@ jobs:
           FARO_ALMACEN_SECRET_ACCESS_KEY: ${{ secrets.FARO_ALMACEN_SECRET_ACCESS_KEY }}
         run: |
           umask 077
+          # El modo queda en el registro del job; la salida estándar es solo el resumen del supervisor.
+          if [[ "${FARO_FUENTES_EN_PARALELO:-no}" == si ]]; then
+            echo "Fuentes del ciclo: en paralelo, una cola por servidor; en serie: ${FARO_FUENTES_EN_SERIE:-ninguna}." >&2
+          else
+            echo "Fuentes del ciclo: en serie." >&2
+          fi
           mkdir "$RUNNER_TEMP/trabajos"
           .venv/bin/python -m plataforma_datos.orquestacion.ejecutar_mantenimiento ejecutar \
             "$GITHUB_WORKSPACE" "$RUNNER_TEMP/trabajos" --registro "$RUNNER_TEMP/trabajos/candidato.jsonl" |

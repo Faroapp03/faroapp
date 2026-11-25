@@ -14,13 +14,15 @@ import boto3
 import botocore.configloader
 import botocore.credentials
 from botocore.awsrequest import AWSResponse
-from botocore.exceptions import EndpointConnectionError
+from botocore.exceptions import EndpointConnectionError, ReadTimeoutError
 from botocore.response import StreamingBody
 from botocore.stub import ANY, Stubber
 from urllib3.response import HTTPResponse
 
 from plataforma_datos.comun import perfil_web, red
 from plataforma_datos.orquestacion import almacen_s3 as s3
+from plataforma_datos.orquestacion import cliente_s3
+from plataforma_datos.orquestacion import diario_mantenimiento as diario
 from plataforma_datos.orquestacion.configuracion_almacen_s3 import AlmacenS3Invalido, ConfiguracionAlmacenS3
 
 AGENTE_PRUEBA = (
@@ -372,7 +374,7 @@ class PruebaAlmacenS3(unittest.TestCase):
     def test_identidad_invalida_no_crea_sdk(self) -> None:
         """Una configuración existente inválida no cae al defecto ni abre transporte."""
         self.identidad.write_text('user-agent = "AgentePrivado"\n')
-        with mock.patch.object(s3, "_cliente") as crear, self.assertRaises(AlmacenS3Invalido):
+        with mock.patch.object(s3, "crear_cliente") as crear, self.assertRaises(AlmacenS3Invalido):
             s3.AlmacenS3(configuracion())
         crear.assert_not_called()
 
@@ -598,7 +600,7 @@ class PruebaAlmacenS3(unittest.TestCase):
             {"secret_access_key": ""},
             {"secret_access_key": None},
         ):
-            with self.subTest(cambio=cambio), mock.patch.object(s3, "_cliente") as crear:
+            with self.subTest(cambio=cambio), mock.patch.object(s3, "crear_cliente") as crear:
                 with self.assertRaises(AlmacenS3Invalido):
                     s3.AlmacenS3(configuracion(**cambio))
                 crear.assert_not_called()
@@ -611,7 +613,7 @@ class PruebaAlmacenS3(unittest.TestCase):
             ruta = Path(nombre) / "no-crear.log"
             with (
                 mock.patch.dict(os.environ, {"SSLKEYLOGFILE": str(ruta)}),
-                mock.patch.object(s3.botocore.session, "Session") as sesion,
+                mock.patch.object(cliente_s3.botocore.session, "Session") as sesion,
                 self.assertRaisesRegex(AlmacenS3Invalido, "SSLKEYLOGFILE"),
             ):
                 s3.AlmacenS3(configuracion())
@@ -651,7 +653,8 @@ class PruebaAlmacenS3(unittest.TestCase):
             self.assertEqual(almacen._cliente.meta.endpoint_url, "https://almacen.example")
             self.assertEqual(almacen._cliente.meta.region_name, "auto")
             self.assertEqual(almacen._cliente.meta.config.proxies, {})
-            self.assertEqual(almacen._cliente._endpoint.http_session._verify, str(s3.ruta_ca_runtime_verificada()))
+            autoridad = str(cliente_s3.ruta_ca_runtime_verificada())
+            self.assertEqual(almacen._cliente._endpoint.http_session._verify, autoridad)
 
     def test_http_preparado_real_ua_exacto_firma_sdk_y_put_condicional_seguido_de_get(self) -> None:
         """El borde HTTP real del SDK solo recibe la identidad configurada, sin prefijos ni telemetría añadida."""
@@ -1002,6 +1005,91 @@ class PruebaAlmacenS3(unittest.TestCase):
             ):
                 self.almacen.guardar_control(s3.REFERENCIA, b"{}", etag)
             enviar.assert_not_called()
+
+    def test_tras_el_reposo_del_motor_la_peticion_abre_una_conexion_nueva(self) -> None:
+        """Tras más de REPOSO_MAXIMO_S sin uso se vacía el conjunto de conexiones; entre peticiones seguidas, no."""
+        reloj = {"ahora": 1000.0}
+        sesion = self.almacen._cliente._endpoint.http_session
+        eventos: list[str] = []
+
+        def enviar(request: object) -> AWSResponse:
+            eventos.append("enviar")
+            return http(request, 200, CONTENIDO)
+
+        with (
+            mock.patch.object(s3.time, "monotonic", side_effect=lambda: reloj["ahora"]),
+            mock.patch.object(sesion, "send", side_effect=enviar),
+            mock.patch.object(sesion, "close", side_effect=lambda: eventos.append("vaciar")),
+            mock.patch.object(StreamingBody, "set_socket_timeout"),
+        ):
+            self.almacen.recuperar(CLAVE, self.temporal / "primera", HUELLA, len(CONTENIDO))
+            reloj["ahora"] += s3.REPOSO_MAXIMO_S
+            self.almacen.recuperar(CLAVE, self.temporal / "seguida", HUELLA, len(CONTENIDO))
+            # Las 2 h 22 min del motor del ciclo del 24/11/2026.
+            reloj["ahora"] += 2 * 3600 + 22 * 60
+            self.almacen.recuperar(CLAVE, self.temporal / "tras el motor", HUELLA, len(CONTENIDO))
+        self.assertEqual(eventos, ["enviar", "enviar", "vaciar", "enviar"])
+
+    def conservar_recibo(self, enviar: object) -> tuple[list[str], list[dict]]:
+        """Conserva un objeto como el paso del recibo, con su reintento, sobre un transporte dado.
+
+        Returns:
+            Los eventos del transporte («vaciar» cuando se vacía el conjunto de conexiones) y los del diario.
+        """
+        sesion = self.almacen._cliente._endpoint.http_session
+        eventos: list[str] = []
+        self.transporte = eventos
+        ruta = self.temporal / "diario.jsonl"
+        try:
+            with (
+                diario.abrir(ruta, {"run": "1"}, consola=False),
+                mock.patch.object(diario, "PAUSAS", (0, 0)),
+                mock.patch.object(sesion, "send", side_effect=lambda request: enviar(request, eventos)),
+                mock.patch.object(sesion, "close", side_effect=lambda: eventos.append("vaciar")),
+                mock.patch.object(StreamingBody, "set_socket_timeout"),
+            ):
+                diario.conservar_con_reintento(
+                    "conservar-recibo", lambda: self.almacen.guardar(CLAVE, self.origen, HUELLA, len(CONTENIDO))
+                )
+        finally:
+            self.diario = [json.loads(linea) for linea in ruta.read_text(encoding="utf-8").splitlines()]
+        return eventos, self.diario
+
+    def test_un_recibo_sin_respuesta_se_reintenta_con_una_conexion_nueva_y_se_conserva(self) -> None:
+        """La conexión que no responde agota su plazo; el reintento abre otra, guarda y comprueba por lectura."""
+
+        def enviar(request: object, eventos: list[str]) -> AWSResponse:
+            if not eventos:
+                eventos.append("sin-respuesta")
+                raise ReadTimeoutError(endpoint_url=request.url)
+            eventos.append(request.method)
+            return http(request, 200, CONTENIDO if request.method == "GET" else b"")
+
+        eventos, anotados = self.conservar_recibo(enviar)
+        self.assertEqual(eventos, ["sin-respuesta", "vaciar", "PUT", "GET"])
+        self.assertEqual(
+            [(evento["fase"], evento["estado"], evento.get("causa")) for evento in anotados],
+            [
+                ("conservar-recibo", "inicio", None),
+                ("conservar-recibo", "reintento", "almacen-no-disponible"),
+                ("conservar-recibo", "confirmado", None),
+            ],
+        )
+
+    def test_un_almacen_caido_sigue_sin_disponible_tras_los_intentos(self) -> None:
+        """Si ninguna conexión responde, tras sus tres intentos el paso falla con almacen-no-disponible."""
+
+        def enviar(request: object, eventos: list[str]) -> AWSResponse:
+            eventos.append("sin-respuesta")
+            raise ReadTimeoutError(endpoint_url=request.url)
+
+        with self.assertRaises(s3.AlmacenS3NoDisponible):
+            self.conservar_recibo(enviar)
+        self.assertEqual(self.transporte, ["sin-respuesta", "vaciar", "sin-respuesta", "vaciar", "sin-respuesta"])
+        self.assertEqual(
+            [(evento["estado"], evento["causa"]) for evento in self.diario[1:]],
+            [("reintento", "almacen-no-disponible")] * 2 + [("error", "almacen-no-disponible")],
+        )
 
 
 if __name__ == "__main__":

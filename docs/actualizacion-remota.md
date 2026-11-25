@@ -431,6 +431,8 @@ El contexto del job proporciona los argumentos del despacho mediante variables d
 | `ACTIONS_ID_TOKEN_REQUEST_URL`, `ACTIONS_ID_TOKEN_REQUEST_TOKEN` | Runner con permiso `id-token: write`; no son secretos permanentes de Faro |
 | `FARO_SOLICITUD_ID`, `FARO_REVISION_RESERVA`, `FARO_ACCION` | Los inputs `solicitud_id`, `revision_reserva` y `accion` del despacho |
 | `FARO_REVISAR_PAQUETE_PENDIENTE` | El despacho diario puede pedir la revalidación del paquete. El workflow la habilita únicamente con activación automática y el supervisor exige una acción programada. |
+| `FARO_FUENTES_EN_PARALELO` | Variable del repositorio: `si` descarga las fuentes en paralelo; cualquier otro valor, o ninguno, en serie ([fuentes en serie o en paralelo](#fuentes-en-serie-o-en-paralelo)) |
+| `FARO_FUENTES_EN_SERIE` | Variable del repositorio: con el paralelo, las fuentes que se quedan en serie, separadas por comas; vacía por omisión |
 | `FARO_ACTUALIZACION_ORIGEN` | Origen HTTPS administrativo autorizado, sin ruta ni barra final |
 | `FARO_CLOUDFLARE_VARIANTE` | Variable del repositorio: variante de Cloudflare de la instalación, `oficial` o `privado`; producción usa `oficial` |
 | `FARO_ALMACEN_S3` y sus dos credenciales | Tres secretos del repositorio: [configuración privada del almacén](almacenamiento-datos.md) |
@@ -480,6 +482,50 @@ cuerpos acotados y no siguen redirecciones ni reintentos automáticos. El client
 de 15 segundos por fase, con conexión y lectura de socket limitadas a cinco segundos; una operación
 ya iniciada de DNS o del sistema puede añadir margen. El job debe imponer también un plazo global.
 Un error no imprime cuerpos, rutas privadas ni credenciales, ni se interpreta como permiso o éxito.
+
+### Fuentes en serie o en paralelo
+
+Por omisión el ciclo descarga las fuentes una tras otra, en el orden del registro. Con la variable del repositorio
+`FARO_FUENTES_EN_PARALELO` en `si`, adelanta las descargas de las fuentes con red en una cola por servidor mientras
+prepara, valida y publica en serie como siempre (`plataforma_datos/orquestacion/descargas_en_paralelo.py`). Cada
+descarga espera a que estén resueltas las fuentes de las que depende, y la pausa de 2 segundos por servidor se
+mantiene también entre procesos. Cualquier otro valor, o la variable ausente, deja la serie. El registro del job dice
+en qué modo corrió.
+
+- **Activarlo:** `FARO_FUENTES_EN_PARALELO=si` en las variables del repositorio. Vale para el siguiente ciclo, sin
+  cambiar código ni desplegar.
+- **Volver a la serie:** la variable a `no`, o borrarla.
+- **Dejar fuentes en serie dentro del paralelo:** `FARO_FUENTES_EN_SERIE` con sus nombres separados por comas (por
+  ejemplo `fundae`). Está vacía por omisión. Esas fuentes las descarga la serie al llegar a ellas, con su pausa. Un
+  nombre que no es una fuente del registro detiene el ciclo antes de empezar.
+
+Cada descarga deja la huella de lo que recibió (recurso y cuerpo de cada respuesta, sin horas) en el campo `recepcion`
+de su evento `etapa-fuente`, en el diario del supervisor. Cada ejecución archiva ese diario entero en el almacén
+privado, en `diarios/<run>/<intento>/ejecutar.json`. La huella no viaja en la generación, que conserva su forma y su
+versión. Es telemetría: si falta o no se entiende, nada se detiene, y la comparación da esa fuente por
+`sin-evidencia`. Con la generación y el diario de cada ciclo se comparan dos ciclos del mismo día:
+
+```sh
+.venv/bin/python -m plataforma_datos.orquestacion.comparar_ciclos ciclo-en-serie ciclo-en-paralelo \
+  --eventos-a diario-serie.json --eventos-b diario-paralelo.json
+```
+
+Las dos carpetas son las generaciones recuperadas de cada ciclo, y los diarios son los archivados de cada ejecución.
+Sobre una raíz candidata, sin diario, la huella sale de sus intentos técnicos. Para cada fuente da uno de estos
+veredictos:
+
+- `igual`: las dos descargas se admitieron, hay huella comparable de lo descargado y lo validado coincide.
+- `difiere-justificado`: cambió lo validado porque cambió lo descargado.
+- `difiere-sin-justificar`: cambió lo validado sin que cambiara lo descargado.
+- `sin-evidencia`: falta lo validado, una descarga falló, solo un ciclo descargó o no hay huella comparable.
+- `sin-descarga`: ninguno de los dos descargó la fuente y lo validado coincide.
+- `en-serie`: la fuente va en `--en-serie-en-b fuente,…` porque el estreno la descargó en serie (las mismas de
+  `FARO_FUENTES_EN_SERIE`).
+
+Las dos últimas no dicen nada del paralelo: no cuentan como conformes ni como fallo, y el resumen las lista aparte.
+También dice si dos descargas al mismo servidor quedaron a menos de su pausa. Termina con 0 solo si no hay ninguna
+`difiere-sin-justificar`, ninguna `sin-evidencia` y ninguna pausa incumplida. Si una fuente difiere sin que cambiara lo
+descargado, se vuelve a la serie y se investiga.
 
 ## Workflow de GitHub
 

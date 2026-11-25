@@ -7,6 +7,7 @@ import sys
 import tempfile
 import time
 import unittest
+from collections.abc import Callable
 from dataclasses import replace
 from pathlib import Path
 from unittest import mock
@@ -16,23 +17,27 @@ from plataforma_datos.orquestacion import diario_mantenimiento as diario
 from plataforma_datos.orquestacion import ejecutor_operativo as ejecutor
 from plataforma_datos.orquestacion.actualizar import ENTORNO_HEREDADO
 from plataforma_datos.orquestacion.almacen_generaciones import guardar_generacion, recuperar_generacion
+from plataforma_datos.orquestacion.almacen_s3 import AlmacenS3NoDisponible
 from plataforma_datos.orquestacion.almacen_trabajos import (
     REFERENCIA,
-    escribir_confirmado,
     inicializar_referencia,
     leer_referencia,
 )
 from plataforma_datos.orquestacion.cliente_mantenimiento import ErrorMantenimiento
 from plataforma_datos.orquestacion.contrato_de_trabajos import _bytes
+from plataforma_datos.orquestacion.controles_confirmados import escribir_confirmado
 from plataforma_datos.orquestacion.generacion_operativa import ESTADO, exportar_generacion, restaurar_generacion
 from plataforma_datos.orquestacion.hora_limite_del_motor import ARCHIVO as PARADA
 from plataforma_datos.orquestacion.hora_limite_del_motor import VARIABLE as HORA_LIMITE
 from plataforma_datos.orquestacion.levantar_bloqueo import levantar_bloqueo
+from plataforma_datos.orquestacion.ordenes_de_la_actualizacion import COMPLETAR_RENOMBRES, SI
 from plataforma_datos.orquestacion.pruebas.test_almacen_artefactos import serializar, sha
 from plataforma_datos.orquestacion.pruebas.test_almacen_trabajos import SOLICITUD, Memoria, snapshot
 from plataforma_datos.orquestacion.pruebas.test_aprovisionar_candidato import git
 from plataforma_datos.orquestacion.pruebas.test_generacion_operativa import preparar
 from plataforma_datos.orquestacion.salud_mantenimiento import diagnostico
+
+INDICE = f"trabajos/{SOLICITUD}/1/123.json"
 
 REVISION_BASE = "b" * 40
 
@@ -162,8 +167,10 @@ class PruebaEjecutorOperativo(unittest.TestCase):
             return self.proceso_real(orden, cwd, plazo, entorno)
         self.motores.append(cwd)
         self.assertEqual(plazo, ejecutor.PLAZO_CANDIDATO_S)
-        # Solo llega la hora límite que el supervisor declara para el motor: la de ahora más su plazo.
-        self.assertEqual(privadas(entorno, ("FARO_", "AWS_", "ACTIONS_")), [HORA_LIMITE])
+        # Solo llegan las dos señales que el supervisor declara para el motor: la hora límite (la de ahora más su
+        # plazo) y la del ciclo operativo, con su valor propio aunque el runner trajera otra.
+        self.assertEqual(privadas(entorno, ("FARO_", "AWS_", "ACTIONS_")), [HORA_LIMITE, COMPLETAR_RENOMBRES])
+        self.assertEqual(entorno[COMPLETAR_RENOMBRES], SI)
         self.assertLessEqual(abs(int(entorno[HORA_LIMITE]) - time.time() - ejecutor.PLAZO_CANDIDATO_S), 5)
         self.assertTrue(Path(entorno["HOME"]).is_relative_to(self.config.directorio_trabajo))
         self.assertNotIn("SECRETO-SENTINELA", json.dumps(orden + list(entorno.values())))
@@ -311,6 +318,123 @@ class PruebaEjecutorOperativo(unittest.TestCase):
         self.assertEqual(artefacto["revisionCodigo"], self.config.revision_codigo)
         self.assertEqual(artefacto["huellaPaquete"], json.loads(self.cliente.recibos[0])["huellaPaquete"])
         self.assertIn(f"artefactos/{artefacto['sha256Artefacto']}.json", self.almacen.objetos)
+
+    def sin_respuesta_tras_el_motor(self, fallos: int) -> None:
+        """El almacén no responde a las primeras `fallos` lecturas de trabajos que llegan después del motor."""
+        leer = self.almacen.leer_control
+        pendientes = [fallos]
+
+        def leer_control(clave: str, bytes_maximos: int) -> tuple[bytes, str] | None:
+            if self.motores and clave.startswith("trabajos/") and pendientes[0] > 0:
+                pendientes[0] -= 1
+                raise AlmacenS3NoDisponible("Almacén privado no disponible.")
+            return leer(clave, bytes_maximos)
+
+        self.almacen.leer_control = leer_control
+
+    def recibo_en_el_diario(self) -> tuple[dict, list[tuple[str, str | None]]]:
+        """Ejecuta el trabajo con el diario abierto, sin las pausas de los reintentos.
+
+        Returns:
+            El resumen y los estados del paso «conservar-recibo» con su causa.
+        """
+        ruta = self.raiz / "diario.jsonl"
+        try:
+            with diario.abrir(ruta, {"run": "1"}, consola=False), mock.patch.object(diario, "PAUSAS", (0, 0)):
+                resumen = self.ejecutar()
+        finally:
+            eventos = [json.loads(linea) for linea in ruta.read_text(encoding="utf-8").splitlines()]
+            self.recibo = [(e["estado"], e.get("causa")) for e in eventos if e["fase"] == "conservar-recibo"]
+        return resumen, self.recibo
+
+    def test_un_recibo_sin_respuesta_tras_el_motor_se_reintenta_y_se_conserva(self) -> None:
+        """La primera petición tras el motor no responde: el paso se repite y el recibo queda conservado una vez."""
+        self.sin_respuesta_tras_el_motor(1)
+        resumen, recibo = self.recibo_en_el_diario()
+        self.assertEqual(resumen["resultado"], "validado")
+        self.assertEqual(recibo, [("inicio", None), ("reintento", "almacen-no-disponible"), ("confirmado", None)])
+        self.assertEqual(leer_referencia(self.almacen)["revisionReserva"], 1)
+        self.assertEqual(len(self.cliente.recibos), 1)
+        self.assertEqual(len(self.motores), 1)
+
+    def test_un_almacen_caido_tras_el_motor_no_confirma_el_recibo(self) -> None:
+        """Si el almacén sigue sin responder tras los intentos, el paso falla y no se llama al servidor."""
+        self.sin_respuesta_tras_el_motor(10)
+        with self.assertRaises(AlmacenS3NoDisponible):
+            self.recibo_en_el_diario()
+        self.assertEqual(self.recibo[-1], ("error", "almacen-no-disponible"))
+        self.assertEqual([estado for estado, _ in self.recibo].count("reintento"), 2)
+        self.assertEqual(self.cliente.recibos, [])
+        self.assertEqual(leer_referencia(self.almacen), self.inicial)
+
+    def no_disponible_una_vez(self, metodo: str, cuando: Callable[[str], bool], *, tras_escribir: bool = False) -> None:
+        """La primera llamada de `metodo` del almacén que cumple `cuando` tras el motor no obtiene respuesta.
+
+        Con `tras_escribir`, la escritura sí llega al almacén y solo se pierde su respuesta.
+        """
+        original = getattr(self.almacen, metodo)
+        pendiente = [True]
+
+        def llamada(clave: str, *argumentos: object) -> object:
+            if not (self.motores and pendiente[0] and cuando(clave)):
+                return original(clave, *argumentos)
+            pendiente[0] = False
+            if tras_escribir:
+                original(clave, *argumentos)
+            raise AlmacenS3NoDisponible("Almacén privado no disponible.")
+
+        setattr(self.almacen, metodo, llamada)
+
+    def referencia_avanzada(self) -> bool:
+        """Si la referencia del almacén ya apunta a este trabajo.
+
+        Returns:
+            Verdadero tras la CAS del trabajo de la reserva 1.
+        """
+        return json.loads(self.almacen.objetos[REFERENCIA])["revisionReserva"] == 1
+
+    def confirmado_una_vez(self) -> None:
+        """Tras el reintento: el recibo se conservó con un solo índice, una CAS y una sola llamada al servidor."""
+        self.assertEqual(self.recibo, [("inicio", None), ("reintento", "almacen-no-disponible"), ("confirmado", None)])
+        self.assertEqual(leer_referencia(self.almacen)["revisionReserva"], 1)
+        self.assertEqual([clave for clave in self.almacen.objetos if clave.startswith("trabajos/")], [INDICE])
+        self.assertEqual(len(self.cliente.recibos), 1)
+        self.assertEqual(len(self.motores), 1)
+
+    def test_la_cas_sin_respuesta_que_no_llego_se_reintenta_y_se_conserva(self) -> None:
+        """El PUT de la referencia no obtiene respuesta ni se escribe: es indisponibilidad, no conflicto."""
+        self.no_disponible_una_vez("guardar_control", lambda clave: clave == REFERENCIA)
+        self.recibo_en_el_diario()
+        self.confirmado_una_vez()
+
+    def test_sin_respuesta_tras_escribir_el_indice_se_repite_sin_duplicar(self) -> None:
+        """El índice ya está escrito cuando el almacén deja de responder: el reintento lo reconoce y avanza la CAS."""
+        self.no_disponible_una_vez("leer_control", lambda clave: clave == REFERENCIA and INDICE in self.almacen.objetos)
+        self.recibo_en_el_diario()
+        self.confirmado_una_vez()
+
+    def test_el_indice_que_llega_sin_respuesta_se_confirma_por_lectura_sin_repetir(self) -> None:
+        """El PUT del índice llega al almacén y su respuesta se pierde: la relectura lo confirma, sin reintento."""
+        self.no_disponible_una_vez("guardar_control", lambda clave: clave == INDICE, tras_escribir=True)
+        self.recibo_en_el_diario()
+        self.assertEqual(self.recibo, [("inicio", None), ("confirmado", None)])
+        self.assertEqual(leer_referencia(self.almacen)["revisionReserva"], 1)
+        self.assertEqual([clave for clave in self.almacen.objetos if clave.startswith("trabajos/")], [INDICE])
+        self.assertEqual(len(self.cliente.recibos), 1)
+
+    def test_sin_respuesta_en_la_relectura_de_la_cas_se_repite_sin_duplicar(self) -> None:
+        """La CAS ya se escribió y falla su relectura: el reintento la encuentra avanzada y no escribe nada más."""
+        self.no_disponible_una_vez("leer_control", lambda clave: clave == REFERENCIA and self.referencia_avanzada())
+        self.recibo_en_el_diario()
+        self.confirmado_una_vez()
+
+    def test_la_senal_del_ciclo_operativo_heredada_del_runner_se_ignora(self) -> None:
+        """Solo el candidato recibe la señal, con el valor del supervisor; el resto de órdenes no la ven nunca."""
+        with mock.patch.dict(os.environ, {COMPLETAR_RENOMBRES: "heredada"}):
+            self.assertEqual(self.ejecutar()["resultado"], "validado")
+        # El arnés (proceso y exportar_artefacto) ya comprobó el entorno de cada orden.
+        self.assertEqual(len(self.motores), 1)
+        self.assertEqual(len(self.exportaciones), 1)
 
     def test_callback_incierto_reanuda_bytes_exactos_sin_inicio_ni_motor(self) -> None:
         """El índice durable permite reenvío literal desde otra carpeta sin volver a pedir inicio."""

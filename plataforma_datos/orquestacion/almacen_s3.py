@@ -21,19 +21,14 @@ from types import TracebackType
 from typing import BinaryIO
 from urllib.parse import urlsplit
 
-import boto3.session
-import botocore.session
 from botocore.awsrequest import AWSPreparedRequest, AWSRequest, AWSResponse
-from botocore.client import BaseClient
-from botocore.config import Config
-from botocore.configprovider import ConfigValueStore
 from botocore.exceptions import BotoCoreError, ClientError
 from urllib3.response import HTTPResponse
 
-from plataforma_datos.comun.confianza_tls import ruta_ca_runtime_verificada
 from plataforma_datos.comun.nucleo import FormatoInesperado
 from plataforma_datos.comun.perfil_web import cabeceras_identidad
 from plataforma_datos.comun.red import registrar_redireccion, turno_por_dominio
+from plataforma_datos.orquestacion.cliente_s3 import SOCKET_S, crear_cliente
 from plataforma_datos.orquestacion.configuracion_almacen_s3 import (
     ERROR_INVALIDO,
     AlmacenS3Invalido,
@@ -44,8 +39,10 @@ from plataforma_datos.orquestacion.formas_del_diario import CLAVE_RESUMEN, MAX_R
 
 MAX_OBJETO_BYTES = 4 * 1024**3
 TAM_BLOQUE = 64 * 1024
-CONEXION_S = 5
-SOCKET_S = 10
+# Una conexión que lleva más de un minuto sin usarse no se reutiliza. El proveedor o un intermediario pueden haberla
+# cerrado sin avisar, y entonces la primera petición agota SOCKET_S antes de fallar: le pasó al recibo de un ciclo tras
+# las dos horas del motor. Abrir una conexión nueva cuesta un saludo TLS; reutilizar una muerta cuesta la petición.
+REPOSO_MAXIMO_S = 60
 PLAZO_LECTURA_S = 300
 PLAZO_SUBIDA_S = 300
 SHA256 = re.compile(r"[0-9a-f]{64}")
@@ -82,6 +79,10 @@ class _ControlAusente(Exception):
     """Solo un GET404 de un control cerrado significa inexistencia."""
 
 
+# Lo que una petición lanza cuando el almacén ha respondido: no dice nada malo de la conexión.
+RESPUESTAS_DEL_ALMACEN = (_ObjetoExistente, _ControlAusente, AlmacenS3Ausente)
+
+
 def _comprobar_plazo(plazo: float) -> None:
     if time.monotonic() >= plazo:
         raise AlmacenS3NoDisponible(ERROR_DISPONIBILIDAD)
@@ -107,39 +108,6 @@ class _CopiaConPlazo(io.BufferedReader):
 def _exigir(condicion: bool) -> None:
     if not condicion:
         raise AlmacenS3Invalido(ERROR_INVALIDO)
-
-
-def _cliente(configuracion: ConfiguracionAlmacenS3, agente: str) -> BaseClient:
-    if os.environ.get("SSLKEYLOGFILE"):
-        raise AlmacenS3Invalido("No se admite SSLKEYLOGFILE en el cliente de almacenamiento.")
-    sesion = botocore.session.Session()
-    valores = ConfigValueStore()
-    # Valores por defecto del SDK, sin sus proveedores de entorno, perfiles, punto de acceso o credenciales.
-    for nombre, definicion in sesion.SESSION_VARIABLES.items():
-        valores.set_config_variable(nombre, definicion[2])
-    valores.set_config_variable("config_file", os.devnull)
-    valores.set_config_variable("credentials_file", os.devnull)
-    sesion.register_component("config_store", valores)
-    sesion.set_credentials(configuracion.access_key_id, configuracion.secret_access_key)
-    sdk = boto3.session.Session(botocore_session=sesion)
-    return sdk.client(
-        "s3",
-        endpoint_url=configuracion.endpoint,
-        region_name=configuracion.region,
-        verify=str(ruta_ca_runtime_verificada()),
-        config=Config(
-            signature_version="s3v4",
-            user_agent=agente,
-            proxies={},
-            connect_timeout=CONEXION_S,
-            read_timeout=SOCKET_S,
-            retries={"mode": "standard", "total_max_attempts": 1},
-            request_checksum_calculation="when_required",
-            response_checksum_validation="when_required",
-            ignore_configured_endpoint_urls=True,
-            s3={"addressing_style": "path", "use_accelerate_endpoint": False, "payload_signing_enabled": True},
-        ),
-    )
 
 
 def _limite(valor: int) -> None:
@@ -217,7 +185,10 @@ class AlmacenS3:
         self._ultimo_envio: str | None = None
         self._ultima_respuesta: AWSResponse | None = None
         self._plazo_peticion: float | None = None
-        self._cliente = _cliente(configuracion, self._agente)
+        # Cuándo terminó la última petición y si falló por algo que no es una respuesta del almacén.
+        self._fin_ultima_peticion: float | None = None
+        self._ultima_fallida = False
+        self._cliente = crear_cliente(configuracion, self._agente)
         self._cliente.meta.events.register_last("before-sign.s3", self._identificar)
         self._cliente.meta.events.register_first("before-send.s3", self._enviar)
         self._cliente.meta.events.register_first("needs-retry.s3", _sin_reenvio)
@@ -244,7 +215,12 @@ class AlmacenS3:
             self._plazo_peticion = plazo
             try:
                 _comprobar_plazo(plazo)
+                self._conexiones_para_la_peticion()
                 yield
+            except BaseException as error:
+                # Un objeto existente o ausente es una respuesta del almacén: la conexión ha funcionado.
+                self._ultima_fallida = not isinstance(error, RESPUESTAS_DEL_ALMACEN)
+                raise
             finally:
                 try:
                     if self._ultima_respuesta is not None:
@@ -253,7 +229,20 @@ class AlmacenS3:
                     self._ultimo_envio = None
                     self._ultima_respuesta = None
                     self._plazo_peticion = None
+                    self._fin_ultima_peticion = time.monotonic()
             _comprobar_plazo(plazo)
+
+    def _conexiones_para_la_peticion(self) -> None:
+        """Vacía el conjunto de conexiones si la petición anterior falló o lleva más de REPOSO_MAXIMO_S en reposo.
+
+        Así la petición abre una conexión nueva en lugar de reutilizar una que el otro extremo puede haber cerrado.
+        """
+        en_reposo = (
+            self._fin_ultima_peticion is not None and time.monotonic() - self._fin_ultima_peticion > REPOSO_MAXIMO_S
+        )
+        if self._ultima_fallida or en_reposo:
+            self._cliente._endpoint.http_session.close()
+        self._ultima_fallida = False
 
     def _identificar(self, request: AWSRequest, **_opciones: object) -> None:
         """Fija la identidad antes de firmar; las pistas quedan incluidas en SigV4."""

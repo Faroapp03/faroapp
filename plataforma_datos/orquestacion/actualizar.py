@@ -2,13 +2,15 @@
 
 1. Copia el producto a un área externa sin perfiles, registros ni secretos; enlaza las dependencias instaladas.
 2. Módulo por módulo, en el orden del registro: descarga según la política de cada fuente (FUENTES), en serie y con
-   una pausa antes de cada fuente con red, prepara y valida. Si todo el módulo queda en verde, publica sus carpetas
-   operativas de una vez, con su propio diario (sustitucion.py); la primera publicación de una carpeta declarada es
-   automática y un corte la retira entera, y solo pide a una persona una carpeta publicada que el módulo ya no
-   produce o que cambia entre archivo y carpeta (rutas_a_publicar.py). Si falla una orden o supera su plazo, conserva su
-   última versión buena publicada: sus carpetas del área vuelven a ser las publicadas, de
-   modo que los módulos siguientes solo leen versiones publicadas. Si un módulo conservado lee de otro que acaba de
-   publicar una versión nueva, o conserva un rojo previo, se valida otra vez con sus entradas actuales.
+   una pausa antes de cada fuente con red, prepara y valida. Con --en-paralelo, las descargas con red se adelantan en
+   una cola por servidor mientras la serie sigue igual (descargas_en_paralelo.py); --en-serie es el modo por omisión.
+   Si todo el módulo queda en verde, publica sus carpetas operativas de una vez, con su propio diario
+   (sustitucion.py); la primera publicación de una carpeta declarada es automática y un corte la retira entera, y solo
+   pide a una persona una carpeta publicada que el módulo ya no produce o que cambia entre archivo y carpeta
+   (rutas_a_publicar.py). Si falla una orden o supera su plazo, conserva su última versión buena publicada: sus
+   carpetas del área vuelven a ser las publicadas, de modo que los módulos siguientes solo leen versiones publicadas.
+   Si un módulo conservado lee de otro que acaba de publicar una versión nueva, o conserva un rojo previo, se valida
+   otra vez con sus entradas actuales.
 3. El módulo final exporta los datos y compara el paquete nuevo con el vigente. Un archivo que pierde más del 20 % de
    sus entradas o de sus cursos SOC queda en cuarentena: él y los que salen de sus mismas entradas conservan su versión
    publicada, y el resto sigue (cuarentena_del_paquete.elegir_cuarentena). Compone, coteja la web construida y comprueba
@@ -42,7 +44,7 @@ Las órdenes del área heredan solo las variables de ENTORNO_HEREDADO, incluida 
 red de npm y, en Linux, la biblioteca de Python. Las claves y los perfiles no llegan a las descargas ni a las pruebas.
 
 Uso: python3 -m plataforma_datos.orquestacion.actualizar [--ensayo] [--pendientes] [--area DIR]
-         [--conservar-area] [--pausa S]
+         [--conservar-area] [--pausa S] [--en-serie | --en-paralelo]
          [--sin-descargar FUENTE]...
      python3 -m plataforma_datos.orquestacion.actualizar --programada | --buscar-actualizaciones
      python3 -m plataforma_datos.orquestacion.actualizar --aceptar-cuarentena ARCHIVO...
@@ -77,6 +79,7 @@ from plataforma_datos.orquestacion.cuarentena_del_paquete import (
     poner_en_cuarentena,
     registrar_cuarentena,
 )
+from plataforma_datos.orquestacion.descargas_en_paralelo import PlanDeDescargas, Ronda, adelantar_descargas
 from plataforma_datos.orquestacion.ejecucion_observada import etapa_de_fuente, recepcion_de_orden
 from plataforma_datos.orquestacion.estado_de_la_actualizacion import (
     AMBAR,
@@ -105,7 +108,7 @@ from plataforma_datos.orquestacion.modulos import (
     carpetas,
     comprobar_registro,
 )
-from plataforma_datos.orquestacion.ordenes_de_la_actualizacion import COMPONER_EL_CATALOGO, ORDENES_DEL_PAQUETE, tope_de
+from plataforma_datos.orquestacion.ordenes_de_la_actualizacion import COMPONER_EL_CATALOGO, ordenes_del_paquete, tope_de
 from plataforma_datos.orquestacion.ordenes_de_la_actualizacion import COMPROBACIONES as COMPROBACIONES
 from plataforma_datos.orquestacion.ordenes_de_la_actualizacion import COMPROBAR_LOS_DATOS as COMPROBAR_LOS_DATOS
 from plataforma_datos.orquestacion.ordenes_de_la_actualizacion import COTEJO_DE_ARTEFACTOS as COTEJO_DE_ARTEFACTOS
@@ -176,6 +179,7 @@ ENTORNO_HEREDADO = (
     "PLAYWRIGHT_BROWSERS_PATH",
     "FARO_HUMO_CHROMIUM",
     "FARO_HOY",
+    "FARO_TURNOS_ENTRE_PROCESOS",  # la carpeta de turnos por servidor de las descargas en paralelo
 )
 
 
@@ -296,6 +300,8 @@ class Opciones(NamedTuple):
     forzar_comprobaciones: bool = False
     reintentar_pendientes: bool = False
     revisar_paquete_pendiente: bool = False
+    en_paralelo: bool = False  # adelantar las descargas con red, una cola por servidor; por omisión, en serie
+    fuentes_en_serie: tuple[str, ...] = ()  # con en_paralelo, las que descarga la serie como siempre
 
 
 class ResultadoActualizacion(NamedTuple):
@@ -782,6 +788,19 @@ def _diagnosticar_error(
 def ejecutar_modulos(
     raiz: Path, area: Path, ejecutor: Ejecutor, opciones: Opciones, seguimiento: Seguimiento | None = None
 ) -> tuple[list[Paso], dict[str, ResultadoDelModulo]]:
+    """Recorre los módulos en serie; con `opciones.en_paralelo`, sus descargas con red llegan ya adelantadas.
+
+    Returns:
+        Los pasos de todos los módulos y el resultado de cada uno (_ejecutar_modulos).
+    """
+    plan = PlanDeDescargas(MODULOS, exigir_ordenes_del_modulo)
+    with adelantar_descargas(plan, area, ejecutor, opciones) as ronda:
+        return _ejecutar_modulos(raiz, area, ronda, ronda.opciones, seguimiento)
+
+
+def _ejecutar_modulos(
+    raiz: Path, area: Path, ronda: Ronda, opciones: Opciones, seguimiento: Seguimiento | None
+) -> tuple[list[Paso], dict[str, ResultadoDelModulo]]:
     """Ejecuta la selección y recompone consumidores de entradas publicadas nuevas, en orden del registro.
 
     Los consumidores omitidos preparan y validan sus originales conservados, sin descargar. Solo una publicación
@@ -793,7 +812,7 @@ def ejecutar_modulos(
     Args:
         raiz: La raíz del repositorio.
         area: El área de ensayo.
-        ejecutor: Lo que ejecuta cada orden.
+        ronda: Lo que ejecuta cada orden y el aviso de cada módulo al que se llega (descargas_en_paralelo).
         opciones: Cómo se ejecuta la actualización (`solo`: la selección inicial, None para todos).
         seguimiento: Registro de consultas, cerrado solo después de admitir o conservar cada módulo.
 
@@ -803,11 +822,13 @@ def ejecutar_modulos(
     Raises:
         RondaInterrumpida: Si la restauración o el diagnóstico no permiten continuar con seguridad.
     """
+    ejecutor = ronda.ejecutar
     previos = leer_estado(raiz)
     incompatibles = {modulo.id for modulo in MODULOS if previos.get(modulo.id, {}).get("veredicto") == ROJO}
     pasos: list[Paso] = []
     resultados: dict[str, ResultadoDelModulo] = {}
     for modulo in MODULOS:
+        ronda.llega(modulo.id, incompatibles)  # los anteriores ya están resueltos: sus descargas dependientes, también
         nuevas = [entrada for entrada in modulo.entradas if resultados.get(entrada, ResultadoDelModulo("")).publicado]
         entradas_rojas = _entradas_incompatibles(modulo, incompatibles)
         opciones_modulo = opciones
@@ -883,7 +904,7 @@ def ejecutar_paquete(
     """
     if not queda_tiempo(raiz, PAQUETE):
         return [], Comparacion(None, [], []), ResultadoDelModulo(AMBAR, MOTIVO_SIN_TIEMPO)
-    ordenes = list(ORDENES_DEL_PAQUETE)
+    ordenes = list(ordenes_del_paquete(os.environ))
     pasos = ejecutar_pasos(area, ejecutor, ordenes[:1], opciones)
     exportado = bool(pasos) and pasos[0].en_verde
     try:
@@ -1260,6 +1281,10 @@ def main(argv: list[str] | None = None) -> int:
     )
     analizador.add_argument("--area", type=Path, help="carpeta (que no exista) para el área de ensayo")
     analizador.add_argument("--conservar-area", action="store_true", help="no borrar el área al terminar")
+    modo = analizador.add_mutually_exclusive_group()
+    # Las dos opciones comparten destino y argparse toma el valor por omisión de la primera: por eso va explícito.
+    modo.add_argument("--en-serie", dest="en_paralelo", action="store_false", default=False, help="por omisión")
+    modo.add_argument("--en-paralelo", action="store_true", help="adelantar las descargas, una cola por servidor")
     analizador.add_argument(
         "--pausa", type=_pausa_de_la_cli, default=PAUSA_ENTRE_FUENTES, help="segundos entre fuentes"
     )
@@ -1295,6 +1320,7 @@ def main(argv: list[str] | None = None) -> int:
         reintentar_pendientes=argumentos.pendientes,
         programada=argumentos.programada,
         forzar_comprobaciones=argumentos.buscar_actualizaciones,
+        en_paralelo=argumentos.en_paralelo,
     )
     return actualizar(RAIZ, opciones)
 

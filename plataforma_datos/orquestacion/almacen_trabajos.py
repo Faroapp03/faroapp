@@ -13,7 +13,6 @@ import os
 import re
 import stat
 import tempfile
-from contextlib import suppress
 from pathlib import Path
 from typing import Any, Protocol
 
@@ -31,6 +30,12 @@ from plataforma_datos.orquestacion.contrato_de_trabajos import (
     instante,
     objeto,
 )
+from plataforma_datos.orquestacion.controles_confirmados import (
+    MAX_CONTROL_BYTES,
+    AlmacenDeControles,
+    ConflictoReferencia,
+    escribir_confirmado,
+)
 from plataforma_datos.orquestacion.generacion_operativa import (
     MAX_MANIFIESTO_BYTES,
     REVISION,
@@ -43,7 +48,6 @@ VERSION_INDICE = 2
 VERSION_INDICE_COMPACTO = 3
 MAX_PIEZA_CATALOGO_BYTES = 4 * 1024 * 1024
 MAX_SOBRE_RECIBO_BYTES = 132 * 1024
-MAX_CONTROL_BYTES = 8192
 VERSION_RECIBO_CATALOGO = 3
 # Desde la v4 el recibo lista los módulos que conservan su versión anterior y admite validar un candidato en ámbar.
 VERSION_RECIBO_CONSERVADOS = 4
@@ -58,20 +62,8 @@ ACCIONES = (*ACCIONES_V1, "comprobar-programada", "comprobar-vencidas", "actuali
 SIN_PENDIENTES = ("reintentar-pendientes", "comprobar-programada", "comprobar-vencidas")
 
 
-class ConflictoReferencia(AlmacenTrabajoInvalido):
-    """Otro valor confirmado impide avanzar esta referencia; nunca se revierte."""
-
-
-class AlmacenTrabajos(AlmacenGeneraciones, Protocol):
+class AlmacenTrabajos(AlmacenGeneraciones, AlmacenDeControles, Protocol):
     """Solo los controles cerrados permiten descubrir contenido sin conocer previamente su hash."""
-
-    def leer_control(self, clave: str, bytes_maximos: int) -> tuple[bytes, str] | None:
-        """Lee íntegro y acotado; None significa exclusivamente objeto inexistente, no fallo de transporte."""
-        ...
-
-    def guardar_control(self, clave: str, contenido: bytes, etag_esperado: str | None) -> bool:
-        """PUT condicional: None crea con IfNoneMatch; ETag compara con IfMatch; False solo ante 412."""
-        ...
 
 
 def _generacion(valor: object) -> dict[str, Any]:
@@ -375,21 +367,6 @@ def _conservacion(descriptor: dict[str, Any], recibo: dict[str, Any], almacen: A
             artefacto["revisionCodigo"], artefacto["huellaPaquete"], artefacto["sha256Artefacto"], almacen
         )
         exigir(manifiesto["manifiestoPaqueteSha256"] == contenido["sha256ManifiestoPaquete"])
-
-
-def escribir_confirmado(clave: str, contenido: bytes, etag: str | None, almacen: AlmacenTrabajos) -> None:
-    """Escribe un control condicionalmente: crea si `etag` es None y, si no, exige ese ETag (If-Match).
-
-    Una respuesta perdida no implica fallo de la escritura; solo la lectura exacta posterior la confirma.
-
-    Raises:
-        ConflictoReferencia: Si después de escribir la clave no contiene exactamente esos bytes.
-    """
-    with suppress(OSError):
-        almacen.guardar_control(clave, contenido, etag)
-    lectura = almacen.leer_control(clave, MAX_CONTROL_BYTES)
-    if lectura is None or lectura[0] != contenido:
-        raise ConflictoReferencia(ERROR)
 
 
 def inicializar_referencia(base: dict[str, Any], almacen: AlmacenTrabajos) -> dict[str, Any]:

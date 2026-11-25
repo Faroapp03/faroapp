@@ -283,13 +283,14 @@ las claves sea el de las ejecuciones. Ocupa como mucho 64 KiB (con todas las fue
 | `identidad` | `operacion`, `run`, `intento`, `revisionCodigo` y `reserva` de la ejecución. |
 | `periodo` | Instante del primer y del último hecho del diario (`desde`, `hasta`). |
 | `resultado` | `estado` (`terminado`, `fallido` o `sin-cierre`), el resultado de la operación, su fase final y el resultado del candidato. |
-| `fases` | Cada fase con su `estado`, su `causa` (de la lista cerrada del diario), `inicio`, `fin` y el número de hechos que reúne. |
+| `fases` | Cada fase con su `estado`, su `causa` (de la lista cerrada del diario; por ejemplo `almacen-no-disponible`, que se reintenta, u `objeto-ausente`, un objeto que el almacén dice que no existe y que no se reintenta), `inicio`, `fin` y el número de hechos que reúne. |
 | `fuentes` | Cada etapa de cada fuente: `fuente`, `etapa`, `intentoFuente`, `estado`, `inicio`, `fin`, `codigo` y `causa`. |
 | `modulos` | `id`, `veredicto`, `ultimoIntento` y `proximoReintento` de cada módulo del recibo. |
 | `cursos` | Si hubo comparación, el tamaño antes y después, las altas, retiradas y modificaciones, y una muestra de como mucho 50 cursos con su identidad del diario y los campos cambiados. |
 | `respuestasRechazadas` | `servicio` (`oidc` o `autoridad`) y código HTTP de cada respuesta que el servidor no confirmó, por ejemplo `autoridad`, 401. |
 | `identidadOidc` | Lo que el runner observó en su último token: `audienciaEsperada` (sí o no) y si `referenciaDeJob` y `revisionDeJob` coinciden con las del workflow (`coincide`, `distinto` o `ausente`). Es `null` si la ejecución no llegó a pedir el token. Una revisión `distinto` explica un 401 de la autoridad. |
 | `salud` | El parte de salud de la base de datos de ese día (siguiente apartado). |
+| `retenciones` | Por qué no se admitió o no se conservó lo del ciclo, con palabras de listas cerradas: `paquete` (el paso en rojo, su código y las alarmas), `generacion` (la `clase` del error, la `comprobacion` que la rechazó y su `causa`) y `candidato` (el `error` del recibo de un candidato rechazado y, si lo detuvo una excepción, su `clase` y la `funcion` del motor donde saltó). Cada uno es `null` si no pasó. |
 | `recorte` | `aplicado` y, por lista, cuántas entradas se omitieron. |
 
 Cada campo se copia solo si tiene la forma que espera el contrato; el resumen no lleva direcciones, rutas,

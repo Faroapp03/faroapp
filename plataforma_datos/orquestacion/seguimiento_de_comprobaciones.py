@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import hashlib
 import re
+import threading
 from datetime import date, datetime, timedelta
 from pathlib import Path
 from typing import TYPE_CHECKING
@@ -302,7 +303,13 @@ def _es_oferta_soc(peticion: dict) -> bool:
 
 
 class Seguimiento:
-    """Observa etapas del ejecutor y solo confirma una fuente después de admitir su módulo completo."""
+    """Observa etapas del ejecutor y solo confirma una fuente después de admitir su módulo completo.
+
+    Las descargas adelantadas (descargas_en_paralelo) lo llaman desde varios hilos a la vez. El registro de
+    comprobaciones es un solo archivo que se lee, se cambia y se reescribe: cada escritura, y la hora que lleva, se
+    hacen bajo un mismo cerrojo, para que ninguna pise a otra ni la hora del registro retroceda. La etapa en sí se
+    ejecuta fuera del cerrojo; su intento técnico tiene su propia carpeta.
+    """
 
     def __init__(self, raiz: Path, ciclo: str, ejecutor: Ejecutor, reloj: Callable[[], datetime]) -> None:
         self.raiz = raiz
@@ -311,6 +318,7 @@ class Seguimiento:
         self.reloj = reloj
         self.etapas: dict[str, dict[str, Resultado]] = {}
         self.remotas: dict[str, bool] = {}
+        self._cerrojo = threading.Lock()
         # Los pasos que no son etapas de fuente dejan su hora real: si el ciclo se corta, se sabe en cuál iba.
         self.pasos = pasos_del_ciclo.observar(raiz, ejecutor, lambda resultado: resultado.codigo)
 
@@ -324,29 +332,32 @@ class Seguimiento:
         if identificada is None:
             return self.pasos(orden, area)
         fuente, etapa = identificada
-        if fuente not in self.etapas:
-            remota = etapa == "descargar" and FUENTES[fuente].red
-            registro.iniciar_fuente(
-                self.raiz,
-                self.ciclo,
-                fuente,
-                tuple(conjunto.id for conjunto in CONJUNTOS if conjunto.fuente == fuente),
-                self.reloj(),
-                remoto=remota,
-            )
-            self.etapas[fuente] = {}
-            self.remotas[fuente] = remota
+        with self._cerrojo:
+            if fuente not in self.etapas:
+                remota = etapa == "descargar" and FUENTES[fuente].red
+                registro.iniciar_fuente(
+                    self.raiz,
+                    self.ciclo,
+                    fuente,
+                    tuple(conjunto.id for conjunto in CONJUNTOS if conjunto.fuente == fuente),
+                    self.reloj(),
+                    remoto=remota,
+                )
+                self.etapas[fuente] = {}
+                self.remotas[fuente] = remota
         with intento_de_fuente(self.raiz, self.ciclo, fuente, etapa) as intento:
             resultado = self.ejecutor(orden, area)
             intento.terminar(resultado.codigo, resultado.evidencia, resultado.salida)
-        self.etapas[fuente][etapa] = resultado
+        with self._cerrojo:
+            self.etapas[fuente][etapa] = resultado
         return resultado
 
     def terminar_modulo(self, modulo: Modulo, resultado: ResultadoDelModulo) -> None:
         """Conserva la consulta aunque falle el paquete posterior; no la confunde con activación."""
-        for fuente in modulo.fuentes:
-            if fuente in self.etapas:
-                self._terminar_fuente(fuente, resultado.veredicto == VERDE)
+        with self._cerrojo:
+            for fuente in modulo.fuentes:
+                if fuente in self.etapas:
+                    self._terminar_fuente(fuente, resultado.veredicto == VERDE)
 
     def _terminar_fuente(self, fuente: str, admitida: bool) -> None:
         etapas = self.etapas[fuente]

@@ -8,6 +8,7 @@ import selectors
 import signal
 import subprocess
 import sys
+import threading
 import time
 from collections.abc import Mapping, Sequence
 from pathlib import Path
@@ -17,6 +18,10 @@ from pathlib import Path
 MAX_SALIDA_BYTES = 16 * 1024 * 1024
 BLOQUE_SALIDA_BYTES = 64 * 1024
 AVISO_TRUNCADO = "[Salida truncada: se conserva el final del canal]\n"
+# Los grupos de procesos que este proceso tiene en marcha, para detenerlos si se interrumpe (detener_grupos_vivos).
+_GRUPOS_VIVOS: set[int] = set()
+_CERROJO_GRUPOS = threading.Lock()
+_CANCELADOS = threading.Event()  # tras detener_grupos_vivos, un grupo que llega tarde se detiene al nacer
 
 
 class _ColaDeSalida:
@@ -131,10 +136,44 @@ def ejecutar_con_plazo(
         env=entorno,
         start_new_session=True,
     ) as proceso:
+        with _CERROJO_GRUPOS:
+            _GRUPOS_VIVOS.add(proceso.pid)
+            if _CANCELADOS.is_set():
+                with contextlib.suppress(ProcessLookupError):
+                    os.killpg(proceso.pid, signal.SIGKILL)
         try:
             salida, errores = _drenar(proceso, orden, plazo)
         finally:
             # Nunca se buscan procesos por nombre: este grupo pertenece al Popen anterior.
             with contextlib.suppress(ProcessLookupError):
                 os.killpg(proceso.pid, signal.SIGKILL)
+            with _CERROJO_GRUPOS:
+                _GRUPOS_VIVOS.discard(proceso.pid)
         return subprocess.CompletedProcess(orden, proceso.returncode, salida, errores)
+
+
+def detener_grupos_vivos() -> int:
+    """Detiene todos los grupos de procesos que este proceso tiene en marcha, desde cualquier hilo.
+
+    Sirve cuando una interrupción corta a quien espera: cada grupo es una sesión propia (`start_new_session`), así
+    que Ctrl-C no le llega y seguiría trabajando sin nadie que lo espere. Su hilo recoge después el proceso detenido.
+
+    Hasta `admitir_grupos`, un grupo que se registre después también se detiene en el acto: un hilo que estaba a punto
+    de lanzar su proceso no lo deja corriendo.
+
+    Returns:
+        Cuántos grupos se han detenido.
+    """
+    with _CERROJO_GRUPOS:
+        _CANCELADOS.set()
+        grupos = sorted(_GRUPOS_VIVOS)
+    for grupo in grupos:
+        with contextlib.suppress(ProcessLookupError):
+            os.killpg(grupo, signal.SIGKILL)
+    return len(grupos)
+
+
+def admitir_grupos() -> None:
+    """Vuelve a admitir procesos tras una cancelación, cuando ya no queda nadie que pudiera lanzarlos tarde."""
+    with _CERROJO_GRUPOS:
+        _CANCELADOS.clear()
