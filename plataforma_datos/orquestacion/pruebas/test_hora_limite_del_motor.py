@@ -50,7 +50,7 @@ class HoraLimitePruebas(unittest.TestCase):
         self.assertFalse(self._queda(PAQUETE, 590))
         self.assertEqual(
             hora.leer_parada(self.raiz),
-            {"causa": "plazo-insuficiente", "paso": "formacion", "quedanSegundos": 600, "necesariosSegundos": 6584},
+            {"causa": "plazo-insuficiente", "paso": "formacion", "quedanSegundos": 600, "necesariosSegundos": 7006},
         )
 
     def test_una_hora_limite_o_una_parada_sin_su_forma_no_se_admiten(self) -> None:

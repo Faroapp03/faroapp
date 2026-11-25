@@ -43,10 +43,11 @@ Su fila de seguimiento manual usa la fecha más antigua de esos originales y del
 la oferta SOC no rejuvenece esa fecha. Si falta evidencia de alguno, la fecha queda desconocida.
 Una descarga o una reconstrucción correcta no acredita por sí sola la vigencia de todas las fuentes.
 
-El coordinador trabaja en serie, con una pausa de 5 segundos antes de cada fuente que descarga de
-la red, incluida la primera. Una descarga fallida se reintenta una vez tras 60 segundos.
-Las órdenes tienen un límite de 45 minutos; `procesos.py` cierra el grupo de procesos que ha creado
-al terminar o agotar el plazo. Cada fuente puede aplicar además sus propios límites y pausas.
+El coordinador trabaja en serie por omisión, con una pausa de 2 segundos antes de cada fuente que
+descarga de la red, incluida la primera. Una descarga fallida se reintenta una vez tras 60 segundos.
+El límite general por orden es de 45 minutos. Componer Cursos dispone de 60 minutos y las comprobaciones
+de los datos nuevos de 85. `procesos.py` cierra el grupo de procesos que ha creado al terminar o agotar el
+plazo. Cada fuente puede aplicar además sus propios límites y pausas.
 No se terminan procesos ajenos por su nombre. Las órdenes reciben un entorno explícito que excluye
 claves de IA, selección de perfiles y programas de aviso.
 

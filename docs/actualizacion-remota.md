@@ -125,8 +125,8 @@ La reserva consume el instante lógico del evento en la misma transacción que e
 monotónica impide repetirlo después de un reinicio, de otro trabajo o de una respuesta perdida. Los eventos
 de más de seis horas se omiten; no se ejecuta una cola de días atrasados. Solo una reserva nueva autoriza un despacho.
 
-Cada evento comprueba antes de omitirse si el último trabajo ha dejado de estar en plazo. La reserva dura 376
-minutos desde su creación. Los tres jobs (construcción, activación y aviso) pueden sumar hasta 363 minutos de
+Cada evento comprueba antes de omitirse si el último trabajo ha dejado de estar en plazo. La reserva dura 384
+minutos desde su creación. Los tres jobs (construcción, activación y aviso) pueden sumar hasta 371 minutos de
 ejecución y quedan 13 minutos de margen para las colas de GitHub y el desfase de relojes.
 
 - Una reserva vencida sin permiso de inicio, como la de un despacho incierto por un 5xx o un tiempo agotado,
@@ -406,8 +406,10 @@ cambia. Lo nuevo son los datos, y el ciclo comprueba todo lo que los lee. Cada m
 Después, el paquete nuevo se compara con el vigente y pasa por la cuarentena. La web local se construye con él y se
 cotejan sus artefactos (`npm run web:preparar`). Por último, `npm run verificar:datos` (scripts/verificar-datos.ts)
 ejecuta la comprobación de la base ESCO, los controles que leen `datos/` o `web/datos/` y las pruebas de Node y de
-Python que abren el paquete real, el almacén validado o la web construida con él. No abre navegadores y tiene el plazo
-de 45 minutos de cada orden. Un dato corrompido detiene el ciclo igual que detendría la batería completa:
+Python que abren el paquete real, el almacén validado o la web construida con él. El paso dispone de 85 minutos.
+En el ciclo programado, la comprobación de humo de los datos abre Chromium. Componer Cursos dispone de 60 minutos
+y el tope general de las órdenes es de 45.
+Un dato corrompido detiene el ciclo igual que detendría la batería completa:
 `pruebas/herramientas/verificar-datos.test.ts` lo comprueba con un archivo alterado. Las pruebas de navegador y las
 de código siguen en `npm run verificar`, que es lo que exige publicar una revisión.
 
@@ -571,10 +573,10 @@ La secuencia es:
    conserva los paquetes opcionales de plataforma y no ejecuta scripts de instalación. Una transformación
    mínima de esbuild confirma que su binario está disponible. Python descarga únicamente las ruedas del lock,
    coteja tamaño y SHA-256 e instala con pip sin índices, resolución ni red; después ejecuta `pip check`.
-3. En el intento `1`, instalar las bibliotecas de Linux y las versiones de Chromium, Firefox y WebKit fijadas por
-   `playwright-core`. El preparador arranca y cierra cada motor antes de registrar `PLAYWRIGHT_BROWSERS_PATH`.
-   El candidato no abre navegadores: sus comprobaciones son las de los datos (ver «Qué comprueba el ciclo»). El
-   workflow de calidad comparte este preparador y sus pruebas de navegador usan esa caché.
+3. En el intento `1`, el candidato instala las bibliotecas de Linux y la versión de Chromium fijada por
+   `playwright-core` para la comprobación de humo de los datos. El preparador arranca y cierra el motor antes de
+   registrar `PLAYWRIGHT_BROWSERS_PATH`. El workflow de calidad usa el mismo preparador para Chromium, Firefox
+   y WebKit, con la caché correspondiente a los tres motores.
 4. Solo en el intento `1`, invocar el supervisor con los inputs como variables de entorno,
    la identidad OIDC del job y los secretos S3. El candidato y sus órdenes reciben un entorno filtrado.
    En Linux, la biblioteca de Python se deriva de la instalación del intérprete, sin heredar rutas
@@ -610,18 +612,21 @@ segundos de 39, con mediana de 66) con el margen del 20 %, y `pruebas/herramient
 los deriva de esa medida. APT corta en 4 segundos una conexión que deja de enviar datos y reintenta cada paquete
 hasta seis veces: en el ciclo del 24/11/2026, que agotó el paso con un espejo lento, cada conexión atascada esperaba 30
 segundos y la siguiente descarga empezaba en 2,6 como mucho, y 14 de 65 descargas fallaron. El preparador comprueba
-con `apt-config` que APT usa esos valores antes de instalar nada. El supervisor dispone de 280 a 295 minutos según el
-tiempo consumido al preparar las dependencias, y de 293 a 308 sin navegadores. Ese plazo incluye la descarga y la
-restauración de la generación base (hasta 10 minutos), el motor (hasta 250 minutos), la lectura de la generación, la
-exportación del artefacto y su conservación (hasta cinco minutos cada una) y el recibo (hasta cinco). Los plazos
-salen de medidas, en `plataforma_datos/orquestacion/medidas_del_ciclo.py`, con un margen del 20 %. La base y las
-fuentes del motor, del último ciclo real completo (8,0 y 115,0 minutos el 22/11/2026); las fuentes esperan sobre todo
-a la red y se cuentan tal cual. El paquete es cálculo: se midió en un Mac con el código vigente (42,9 minutos) y se
-lleva al runner de GitHub más lento medido con el factor de cada tipo de trabajo, medido con la misma batería en las
-dos máquinas: 2,03 para Python (componer el catálogo y sus pruebas) y 3,44 para Node. En ese runner son 91,4 minutos.
-El motor tiene así (115,0 + 91,4) × 1,2 minutos, redondeados hacia arriba a cinco: 250. Antes de cada módulo y antes
-del paquete, el motor comprueba que le queden al menos 91,4 × 1,2 = 110 minutos hasta su hora límite; si no le
-quedan, no empieza el paquete y para en orden con la causa `plazo-insuficiente`. Dos pruebas de
+con `apt-config` que APT usa esos valores antes de instalar nada. El supervisor dispone de 288 a 303 minutos según el
+tiempo consumido al preparar las dependencias, y de 294 a 309 sin navegadores. El presupuesto reserva 13 minutos
+antes del motor, principalmente para descargar y restaurar la base, y hasta 255 para el motor. Cuenta otros
+20 minutos repartidos en cinco para lectura de la generación, cinco para exportar el artefacto, cinco para
+conservarlo y cinco para el recibo. En R2, los plazos del adaptador se aplican a las operaciones sobre cada objeto.
+El plazo total del supervisor engloba todas estas fases. Los plazos
+salen de `plataforma_datos/orquestacion/medidas_del_ciclo.py`, con un margen del 20 %. Antes del motor se midieron
+10 minutos y 33 segundos en el ciclo 45698389914, el 25/11/2026. Las fuentes del último ciclo real completo
+tardaron 115,0 minutos el 22/11/2026. Esperan sobre todo a la red y se cuentan tal cual. Para el paquete se usan
+las medidas en el Mac, con 23,95 minutos para componer Cursos en el ensayo integrado del 25/11/2026. El cálculo
+lleva cada fase al runner de GitHub más lento medido con su factor: 2,03 para Python y 3,44 para Node. En ese runner
+la composición proyecta 48,6 minutos y el
+paquete 97,3. Con el margen del 20 % y redondeo hacia arriba a cinco minutos, el tope de composición es 60
+y el del motor 255. Antes de cada módulo y antes del paquete, el motor exige 7.006 segundos para el paquete.
+Si queda menos tiempo, para en orden con la causa `plazo-insuficiente`. Dos pruebas de
 contrato derivan de ahí el tope del workflow, el límite del servidor y la reserva, y
 exigen que ningún job pase de las seis horas que GitHub concede a un ejecutor alojado. El job de activación dispone de otros 45 minutos, incluidos su checkout, sus dependencias y
 hasta veinte minutos para recuperar y publicar el artefacto. El job de aviso dispone de otros 2 minutos. Al terminar, incluso tras un fallo, los jobs de construcción y de activación dejan
@@ -1205,7 +1210,7 @@ pasa:
    cierra la intención como `abandonada` (motivo `a-mano`) solo si cada Worker sirve otra vez lo anterior. Si no, la
    intención sigue en su fase, la solicitud queda usada con lo observado y el panel lo dice.
 
-La solicitud de cierre caduca 363 minutos después de anotarse. Solo puede cumplirla la ejecución a la que
+La solicitud de cierre caduca 371 minutos después de anotarse. Solo puede cumplirla la ejecución a la que
 se concedió. El panel dice que el cierre está en curso solo mientras su
 ejecución puede cumplirlo: la activación sigue en la revisión en que se anotó y el último trabajo es el despachado, sin
 terminar. Cuando esa ejecución ha registrado su recibo y terminado, su paso de activación pudo cumplirlo justo

@@ -1,9 +1,9 @@
 """Las órdenes fijas de la actualización: revalidar el catálogo antes de las fuentes y los pasos del paquete.
 
 Cada orden lleva su tope: lo que puede tardar antes de que la actualización la corte y la dé por agotada. El de las
-comprobaciones de los datos cubre la suma de los plazos que `npm run verificar:datos` se da por dentro
-(`pruebas/test_ordenes_de_la_actualizacion.py` lo exige); las demás no declaran el suyo y se quedan en el tope general
-de una orden (`actualizar.TOPE_POR_ORDEN`), que es también el de las órdenes de las fuentes.
+comprobaciones de los datos cubre la suma de los plazos de `npm run verificar:datos`. El de componer Cursos cubre
+su medida llevada al runner lento con margen. Las órdenes que no declaran un tope propio, incluidas las de las
+fuentes, usan `actualizar.TOPE_POR_ORDEN`.
 """
 
 import sys
@@ -18,6 +18,9 @@ PYTHON = sys.executable
 # Python 45, que es el de cada uno de sus procesos y corren a la vez, y el humo 5); los cinco de más son para arrancar
 # Node y leer la base ESCO antes del primer plazo.
 TOPE_DE_LAS_COMPROBACIONES = 85 * 60
+# Ensayo integrado del 25/11: 23,95 min en el Mac × 2,03 en el runner lento × 1,2 de margen = 58,4 min.
+# Se redondea hacia arriba a cinco minutos, como para el motor.
+TOPE_DE_COMPONER_EL_CATALOGO = 60 * 60
 
 
 class Orden(NamedTuple):
@@ -48,7 +51,9 @@ EXPORTAR_EL_PAQUETE = Orden(
     "Exportar el paquete del motor", (PYTHON, "-m", "plataforma_datos.orquestacion.exportar_paquete")
 )
 COMPONER_EL_CATALOGO = Orden(
-    "Componer el catálogo admitido de Cursos", (PYTHON, "-m", "plataforma_datos.cursos.componer_catalogo")
+    "Componer el catálogo admitido de Cursos",
+    (PYTHON, "-m", "plataforma_datos.cursos.componer_catalogo"),
+    tope=TOPE_DE_COMPONER_EL_CATALOGO,
 )
 ENSAMBLADO = (
     Orden("Incorporar datos globales admitidos", (PYTHON, "-m", "plataforma_datos.orquestacion.publicar_globales")),

@@ -25,8 +25,8 @@ from plataforma_datos.orquestacion.piezas_de_la_actualizacion import CARPETA_DE_
 # Segundos desde 1970 (UTC) a los que el supervisor cortará el motor.
 VARIABLE = "FARO_HORA_LIMITE_DEL_MOTOR"
 CAUSA = "plazo-insuficiente"
-# El paquete es cálculo y tarda más en un runner lento: 42,9 minutos en el Mac, 91,4 llevado al más lento medido. Con
-# el mismo margen que el plazo del motor: 5.486 × 1,2 = 6.584 segundos (110 minutos).
+# El paquete es cálculo y tarda más en un runner lento: 45,8 minutos en el Mac, 97,3 llevado al más lento medido.
+# Con el mismo margen que el plazo del motor, el paquete necesita 7.006 segundos (116,8 minutos).
 MARGEN = 1 + MARGEN_POR_CIENTO / 100
 NECESARIO_S = round(PAQUETE_EN_EL_RUNNER_LENTO_S * MARGEN)
 ARCHIVO = f"{CARPETA_DE_INFORMES}/parada-del-motor.json"

@@ -1,5 +1,6 @@
 """Cada orden del paquete tiene su tope, y el de las comprobaciones de los datos cubre sus plazos internos."""
 
+import math
 import re
 import subprocess
 import unittest
@@ -7,7 +8,7 @@ from pathlib import Path
 from unittest import mock
 
 from plataforma_datos.comun.nucleo import RAIZ
-from plataforma_datos.orquestacion import actualizar
+from plataforma_datos.orquestacion import actualizar, medidas_del_ciclo
 from plataforma_datos.orquestacion import ordenes_de_la_actualizacion as ordenes
 
 VERIFICAR = RAIZ / "scripts" / "verificar.ts"
@@ -53,11 +54,22 @@ class TopesDeLasOrdenesPruebas(unittest.TestCase):
         self.assertEqual(tuple(comprobaciones.orden), ("npm", "run", "verificar:datos"))
         self.assertGreater(comprobaciones.tope, plazos_internos_de_verificar_datos())
 
+    def test_componer_cubre_su_medida_en_el_runner_lento_con_margen(self) -> None:
+        """El tope propio de componer sale de la medida de ese paso y el mismo redondeo que el motor."""
+        m = medidas_del_ciclo
+        medido = m.COMPONER_EN_EL_MAC_S * m.PYTHON_EN_EL_RUNNER_LENTO
+        con_margen = medido * (100 + m.MARGEN_POR_CIENTO) / 100
+        redondeo = 5 * 60
+        esperado = math.ceil(con_margen / redondeo) * redondeo
+        self.assertEqual(ordenes.COMPONER_EL_CATALOGO.tope, esperado)
+        self.assertGreater(esperado, actualizar.TOPE_POR_ORDEN)
+
     def test_cada_orden_del_paquete_se_ejecuta_con_su_tope(self) -> None:
         """La actualización corta cada orden con el tope que declara; la de una fuente, con el general."""
         casos = [(orden.orden, orden.tope or actualizar.TOPE_POR_ORDEN) for orden in ordenes.ORDENES_DEL_PAQUETE]
         casos.append(([actualizar.PYTHON, "-m", "plataforma_datos.cursos.fuentes.formacion", "descargar"], 45 * 60))
         self.assertIn((ordenes.COMPROBAR_LOS_DATOS, 85 * 60), casos)
+        self.assertIn((ordenes.COMPONER_EL_CATALOGO.orden, 60 * 60), casos)
         for orden, tope in casos:
             with (
                 self.subTest(orden=orden),

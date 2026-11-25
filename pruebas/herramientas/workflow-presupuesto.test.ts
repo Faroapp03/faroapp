@@ -13,7 +13,7 @@ import {
 } from '../../src/administracion/programacion-trabajos.ts';
 
 /** El repositorio es privado: cada job descuenta sus minutos de los 2.000 gratuitos del mes. */
-const TOPE_CANDIDATO_MINUTOS = 316;
+const TOPE_CANDIDATO_MINUTOS = 324;
 const TOPE_ACTIVACION_MINUTOS = 45;
 const TOPE_AVISO_MINUTOS = 2;
 /** GitHub corta cualquier job de un ejecutor alojado a las seis horas, diga lo que diga su timeout-minutes. */

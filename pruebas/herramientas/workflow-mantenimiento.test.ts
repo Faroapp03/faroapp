@@ -329,11 +329,11 @@ test('la preparación fría y caliente deja tiempo efectivo al supervisor y toda
   const tope = { FARO_TOPE_CANDIDATO_MINUTOS: String(objeto(raiz.env).FARO_TOPE_CANDIDATO_MINUTOS) };
   // Con «no» el job no instala navegadores y sus 6 minutos pasan al supervisor.
   const casos = [
-    { navegadores: 'si', segundos: 10, minutos: 295 },
-    { navegadores: 'si', segundos: 310, minutos: 294 },
-    { navegadores: 'si', segundos: 1190, minutos: 280 },
-    { navegadores: 'no', segundos: 10, minutos: 301 },
-    { navegadores: 'no', segundos: 1190, minutos: 286 },
+    { navegadores: 'si', segundos: 10, minutos: 303 },
+    { navegadores: 'si', segundos: 310, minutos: 302 },
+    { navegadores: 'si', segundos: 1190, minutos: 288 },
+    { navegadores: 'no', segundos: 10, minutos: 309 },
+    { navegadores: 'no', segundos: 1190, minutos: 294 },
   ];
   const fijos = [
     'Anotar el inicio del job',
