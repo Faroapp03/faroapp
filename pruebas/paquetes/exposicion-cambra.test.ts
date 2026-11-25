@@ -1,20 +1,19 @@
 // El permiso del ODEE y la Cambra cubre mostrar el nivel de exposición agregado, no repartir su tabla. Guardia: lo
 // que se empaqueta y se publica de la Cambra es solo su parte pública, con un contrato cerrado. Igualdad: para todas
-// las ocupaciones, el informe da con ella lo mismo que con la tabla completa, si la instalación la tiene.
+// las ocupaciones, el informe da con ella lo mismo que con la tabla completa. La tabla está en datos/cambra.json o, en
+// el ciclo de actualización, en su conjunto validado (tabla-privada-cambra.ts); si no está en ninguno, la prueba falla.
 
 import assert from 'node:assert/strict';
-import { existsSync, readFileSync } from 'node:fs';
+import { readFileSync } from 'node:fs';
 import { test } from 'node:test';
 import { esObjeto } from '../../src/comun/json.ts';
-import { exposicionDelGrupo } from '../../src/dominio/informe-breve-contexto.ts';
-import type { DatosCambra } from '../../src/dominio/tipos-paquete.ts';
 import {
   ARCHIVO_DE_CADA_PARTE,
   ARCHIVOS_DEL_PRIMER_ANALISIS,
   MANIFIESTO,
 } from '../../src/plataforma/archivos-del-paquete.ts';
 import { ARCHIVOS_DEL_PRIMER_ANALISIS as DEL_SERVICE_WORKER } from '../../src/service-worker/primer-analisis.js';
-import { datosMinimos } from '../fixtures/datos-referencias-grupos.ts';
+import { compararConLaTablaCompleta } from './tabla-privada-cambra.ts';
 
 const CARPETA = new URL('../../datos/', import.meta.url);
 const PUBLICA = 'exposicion-cambra.json';
@@ -93,29 +92,6 @@ test('la parte pública solo lleva campos de su lista cerrada', () => {
   );
 });
 
-test('con la parte pública, el informe da lo mismo que con la tabla completa en todas las ocupaciones', (t) => {
-  if (!existsSync(new URL(TABLA_PRIVADA, CARPETA))) {
-    // En una copia pública no hay tabla con que comparar: la integración continua la recupera y la compara.
-    t.skip('no está la tabla privada (datos/README.md, «exposicion-cambra.json»)');
-    return;
-  }
-  const completa = leer(TABLA_PRIVADA) as DatosCambra;
-  const publica = leer(PUBLICA) as DatosCambra;
-  const codigos = Object.keys(completa.ocupaciones_cno3 ?? {});
-  assert.ok(codigos.length > 0);
-  assert.deepEqual(Object.keys(publica.ocupaciones_cno3 ?? {}), codigos);
-  for (const idioma of ['es', 'ca'] as const) {
-    for (const cno of codigos) {
-      const conLaTabla = exposicionDelGrupo([`${cno}0`], datosMinimos({ cambra: completa }), idioma);
-      const conLaPublica = exposicionDelGrupo([`${cno}0`], datosMinimos({ cambra: publica }), idioma);
-      assert.ok(conLaTabla, cno);
-      assert.deepEqual(conLaPublica, conLaTabla, cno);
-    }
-  }
-  assert.equal(publica.fuente, completa.fuente);
-  assert.deepEqual(publica.genero, {
-    mujeres_exposicion_media_o_alta: completa.genero.mujeres_exposicion_media_o_alta,
-    hombres_exposicion_media_o_alta: completa.genero.hombres_exposicion_media_o_alta,
-    pagina_impresa: completa.genero.pagina_impresa,
-  });
+test('con la parte pública, el informe da lo mismo que con la tabla completa en todas las ocupaciones', () => {
+  assert.ok(compararConLaTablaCompleta() > 0);
 });

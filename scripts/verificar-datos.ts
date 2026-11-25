@@ -226,19 +226,35 @@ async function comprobarLosDatos(raiz: string): Promise<void> {
   const admitidas = Object.fromEntries(Object.entries(todas).filter(([ruta]) => elegidas.has(ruta)));
   exigirPruebasEjecutadas(salida, { raiz, archivos, admitidas });
   console.log(`Pruebas Node de los datos: ${archivos.length} archivos`);
-  // La misma guardia sin red que la batería completa (scripts/pruebas_python.py), heredada por sitecustomize.py.
-  const pruebasPython: Paso = {
-    nombre: 'Pruebas Python de los datos',
-    comando: join(raiz, '.venv/bin/python'),
-    argumentos: ['-m', 'unittest', ...python],
-    entorno: { PYTHONPATH: join(raiz, 'scripts/sin_red'), FARO_PRUEBAS_SIN_RED: '1' },
-  };
-  const pythonSalida = await ejecutarPaso(pruebasPython, raiz, PLAZO_PYTHON_MS);
+  const pythonSalida = await ejecutarPaso(pasoPruebasPythonDeDatos(raiz, python), raiz, PLAZO_PYTHON_MS);
   exigirPythonSinOmisiones(pythonSalida);
   console.log(pythonSalida.trim());
   if (process.env.FARO_HUMO_CHROMIUM !== '0') {
     await probarElHumo(raiz);
   }
+}
+
+/**
+ * El reloj con que el ensayo con datos grabados fija su ciclo (plataforma_datos/comun/instante_del_ciclo.py). Las
+ * pruebas fijan el suyo: sin estas variables corren como en producción, donde nunca están.
+ */
+export const RELOJ_DEL_ENSAYO: readonly string[] = ['FARO_HOY', 'FARO_INSTANTE'];
+
+/**
+ * Las pruebas Python que abren el paquete, con la misma guardia sin red que la batería completa
+ * (scripts/pruebas_python.py, heredada por sitecustomize.py) y sin el reloj del ensayo.
+ * @param raiz - La raíz del repositorio.
+ * @param modulos - Los módulos de pruebas, con puntos.
+ * @returns El paso que las ejecuta.
+ */
+export function pasoPruebasPythonDeDatos(raiz: string, modulos: readonly string[]): Paso {
+  return {
+    nombre: 'Pruebas Python de los datos',
+    comando: join(raiz, '.venv/bin/python'),
+    argumentos: ['-m', 'unittest', ...modulos],
+    entorno: { PYTHONPATH: join(raiz, 'scripts/sin_red'), FARO_PRUEBAS_SIN_RED: '1' },
+    excluir: RELOJ_DEL_ENSAYO,
+  };
 }
 
 /** El humo en un solo motor, en serie; el ciclo lo apaga con FARO_HUMO_CHROMIUM=0 si no instala Chromium. */

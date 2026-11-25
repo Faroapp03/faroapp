@@ -1,11 +1,12 @@
 // Las rutas que citan las guías de entrada existen en el árbol. Una guía que nombra un archivo movido o retirado
 // engaña a quien la sigue, así que cada ruta entre comillas invertidas y cada enlace relativo de README.md, docs/*.md
 // y el README.md de cada carpeta de primer nivel tiene que apuntar a algo que exista. Las carpetas que crea la
-// instalación (var/, dist/…) no están en Git y no se comprueban; las rutas citadas a propósito como inexistentes van
-// en una lista cerrada con su motivo.
+// instalación (var/, dist/…) no están en Git y no se comprueban, ni los archivos privados que solo tiene una instalación
+// autorizada; las rutas citadas a propósito como inexistentes van en una lista cerrada con su motivo.
 
 import assert from 'node:assert/strict';
-import { existsSync, readdirSync, readFileSync } from 'node:fs';
+import { existsSync, mkdtempSync, readdirSync, readFileSync, rmSync } from 'node:fs';
+import { tmpdir } from 'node:os';
 import { dirname, join, posix } from 'node:path';
 import { test } from 'node:test';
 import { fileURLToPath } from 'node:url';
@@ -14,6 +15,12 @@ const RAIZ = fileURLToPath(new URL('../../', import.meta.url));
 
 /** Carpetas que crean la instalación o la construcción: no están en el árbol de Git. */
 const CREADAS_POR_LA_INSTALACION = ['var/', 'dist/', '.venv/', '.web-local/', 'node_modules/'];
+
+/**
+ * Archivos privados fuera de Git: los tiene una instalación autorizada y no los tienen el ciclo ni una copia pública.
+ * La tabla completa del estudio de la Cambra: el ciclo operativo retira su nombre del paquete (exportar_paquete).
+ */
+const PRIVADOS_FUERA_DE_GIT = ['datos/cambra.json'];
 
 /** Lo que convierte un texto entre comillas invertidas en un patrón o una orden, no en una ruta concreta. */
 const SIGNOS_DE_PATRON = /[<>*${}|…]/u;
@@ -119,6 +126,9 @@ function existe(cita: Cita, raiz: string): boolean {
   if (CREADAS_POR_LA_INSTALACION.some((prefijo) => cita.ruta.startsWith(prefijo))) {
     return true;
   }
+  if (PRIVADOS_FUERA_DE_GIT.includes(cita.ruta)) {
+    return true;
+  }
   if (CITADAS_SIN_EXISTIR.some(({ archivo, ruta }) => archivo === cita.archivo && ruta === cita.ruta)) {
     return true;
   }
@@ -163,4 +173,15 @@ test('la guardia reconoce rutas, enlaces y patrones, y deja fuera los bloques de
     rotas.map(({ ruta }) => ruta),
     ['pruebas/ayudas/no-existe.py'],
   );
+});
+
+test('un archivo privado fuera de Git puede faltar, como en el ciclo operativo; otro del paquete, no', () => {
+  const sinPrivados = mkdtempSync(join(tmpdir(), 'rutas-citadas-'));
+  try {
+    const cita = (ruta: string): Cita => ({ archivo: 'README.md', linea: 1, ruta });
+    assert.equal(existe(cita('datos/cambra.json'), sinPrivados), true);
+    assert.equal(existe(cita('datos/exposicion-cambra.json'), sinPrivados), false);
+  } finally {
+    rmSync(sinPrivados, { recursive: true, force: true });
+  }
 });

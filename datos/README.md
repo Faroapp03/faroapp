@@ -102,6 +102,12 @@ contenido:
 .venv/bin/python -m plataforma_datos.ia_y_trabajo.fuentes.cambra.tabla_privada recuperar
 ```
 
+**Dónde la buscan las pruebas:** en `datos/cambra.json` y, si no está o no tiene la huella, en su conjunto validado
+(`var/actualizacion/validados/cambra/cambra.json`): es lo que tiene el ciclo de actualización, que ya no publica la tabla
+en el paquete. La regla es una sola, la de `tabla_privada`: las pruebas Python la leen con él y las de Node le piden la
+ruta con la orden `ruta`. Si no está en ninguno de los dos sitios, las pruebas que la necesitan fallan con el motivo; no
+se omiten.
+
 ## textos.json
 
 **Fuente y versión:** Equipo Faro, textos castellanos sobre tareas oficiales de la OIT

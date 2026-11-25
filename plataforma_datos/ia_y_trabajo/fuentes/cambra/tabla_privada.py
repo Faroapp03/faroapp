@@ -4,9 +4,13 @@ El permiso del ODEE y la Cambra cubre mostrar en Faro el nivel de exposición ag
 solo lleva esa parte pública (`exposicion-cambra.json`, exportacion.py); la tabla completa solo la necesitan las pruebas
 que comprueban los cálculos del estudio. No está en Git: quien las ejecuta la recibe aparte y la comprueba contra la
 huella que el manifiesto versionado (`datos/manifiesto.json`) registra como origen de la parte pública. La integración
-continua la recupera del almacén privado, donde cada generación guarda sus archivos por contenido.
+continua la recupera del almacén privado, donde cada generación guarda sus archivos por contenido. En el ciclo de
+actualización no hay copia aparte: vale el conjunto validado que la cadena acaba de admitir, por la misma huella.
 
-Uso: python3 -m plataforma_datos.ia_y_trabajo.fuentes.cambra.tabla_privada {comprobar,recuperar}
+Esta es la única regla para encontrarla: las pruebas Python la leen con `leer` y las de Node piden su ruta con la orden
+`ruta` (pruebas/paquetes/tabla-privada-cambra.ts).
+
+Uso: python3 -m plataforma_datos.ia_y_trabajo.fuentes.cambra.tabla_privada {comprobar,recuperar,ruta} [--raiz RAIZ]
 """
 
 import argparse
@@ -28,6 +32,8 @@ RUTA = Path("datos") / ARCHIVO
 MANIFIESTO = Path("datos") / "manifiesto.json"
 # Así registra el manifiesto el conjunto validado del que sale la parte pública: su huella es la de la tabla completa.
 ORIGEN = "var/actualizacion/validados/cambra/cambra.json"
+# Dónde se busca, por este orden: la copia recibida aparte y, si no vale o no está, el conjunto validado.
+CANDIDATAS = (RUTA, Path(ORIGEN))
 # La tabla ocupa unas decenas de kilobytes: un objeto mayor no es ella.
 MAX_BYTES = 1024**2
 SHA256 = re.compile(r"[0-9a-f]{64}")
@@ -42,11 +48,11 @@ ERROR_MANIFIESTO = "No se pudo leer datos/manifiesto.json: es el archivo version
 
 
 class TablaPrivadaAusente(ErrorFuente):
-    """Falta `datos/cambra.json` en la instalación."""
+    """No están ni `datos/cambra.json` ni el conjunto validado del que sale la parte pública."""
 
 
 class TablaPrivadaDistinta(ErrorFuente):
-    """`datos/cambra.json` no es el archivo que fija el manifiesto."""
+    """Ninguna de las tablas presentes es el archivo que fija el manifiesto."""
 
 
 def huella_fijada(raiz: Path) -> str:
@@ -78,18 +84,21 @@ def comprobar(raiz: Path) -> Path:
     """
     # La copia recibida aparte o, donde la cadena de datos acaba de admitirla (el ciclo de actualización), el propio
     # conjunto validado: es el origen que nombra el manifiesto, y su huella decide igual.
-    presentes = [raiz / candidata for candidata in (RUTA, Path(ORIGEN)) if (raiz / candidata).is_file()]
+    presentes = [candidata for candidata in CANDIDATAS if (raiz / candidata).is_file()]
     if not presentes:
         raise TablaPrivadaAusente(
-            f"Falta {RUTA}, la tabla del ODEE y la Cambra de Comerç de Barcelona. {COMO_OBTENERLA}"
+            f"Falta {RUTA}, la tabla del ODEE y la Cambra de Comerç de Barcelona, y tampoco está su conjunto validado "
+            f"({ORIGEN}). {COMO_OBTENERLA}"
         )
     huella = huella_fijada(raiz)
     for ruta in presentes:
-        if sha256(ruta) == huella:
-            return ruta
+        if sha256(raiz / ruta) == huella:
+            return raiz / ruta
+    nombres = " ni ".join(ruta.as_posix() for ruta in presentes)
+    verbo = "es" if len(presentes) == 1 else "son"
     raise TablaPrivadaDistinta(
-        f"{RUTA} no es la tabla que fija {MANIFIESTO} (su huella es otra). Sustitúyela por la copia verificada. "
-        f"{COMO_OBTENERLA}"
+        f"{nombres} no {verbo} la tabla que fija {MANIFIESTO} (su huella es otra). Sustitúyela por la copia "
+        f"verificada. {COMO_OBTENERLA}"
     )
 
 
@@ -122,26 +131,30 @@ def recuperar(raiz: Path, entorno: dict[str, str]) -> None:
 
 
 def main(argv: list[str] | None = None) -> int:
-    """CLI: comprobar la tabla de la instalación o recuperarla del almacén. Nunca imprime su contenido.
+    """CLI: comprobar la tabla de la instalación, recuperarla del almacén o dar su ruta. Nunca imprime su contenido.
+
+    `ruta` escribe solo la ruta comprobada, relativa a la raíz: así la leen las pruebas de Node, con esta misma regla.
 
     Returns:
         Cero si la instalación queda con la tabla fijada; uno en otro caso.
     """
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("accion", choices=("comprobar", "recuperar"))
-    accion = parser.parse_args(argv).accion
+    parser.add_argument("accion", choices=("comprobar", "recuperar", "ruta"))
+    parser.add_argument("--raiz", type=Path, default=None, help="la instalación; por omisión, la de este repositorio")
+    argumentos = parser.parse_args(argv)
+    accion = argumentos.accion
+    raiz = argumentos.raiz or RAIZ
     try:
-        if accion == "comprobar":
-            comprobar(RAIZ)
-        else:
-            recuperar(RAIZ, dict(os.environ))
+        if accion == "recuperar":
+            recuperar(raiz, dict(os.environ))
+        ruta = comprobar(raiz).relative_to(raiz).as_posix()
     except ErrorFuente as error:
         print(error, file=sys.stderr)
         return 1
     except (OSError, ValueError):
         print(ERROR_ALMACEN if accion == "recuperar" else ERROR_MANIFIESTO, file=sys.stderr)
         return 1
-    print(f"{RUTA}: es la tabla fijada por {MANIFIESTO}.")
+    print(ruta if accion == "ruta" else f"{ruta}: es la tabla fijada por {MANIFIESTO}.")
     return 0
 
 

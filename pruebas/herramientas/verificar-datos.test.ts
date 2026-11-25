@@ -34,6 +34,7 @@ import {
   exigirPythonSinOmisiones,
   HUMO_DE_DATOS,
   leeLosDatosDelPaquete,
+  pasoPruebasPythonDeDatos,
   pasosDeDatos,
   pruebasNodeDeDatos,
   pruebasPythonDeDatos,
@@ -204,6 +205,14 @@ test('un curso sin identificador o con un valor fuera de vocabulario detiene el 
     0,
     `Un tipo de unidad fuera de su vocabulario lo detiene ${CONTRATO_PYTHON} (contrato_entrega_catalogo.validar_publico)`,
   );
+});
+
+test('las pruebas Python de los datos corren sin el reloj del ensayo, como en producción', () => {
+  // Con FARO_INSTANTE, el motor anota el instante fijado en vez del reloj que congela cada prueba.
+  const paso = pasoPruebasPythonDeDatos('/raiz', ['plataforma_datos.orquestacion.pruebas.test_actualizar']);
+  assert.deepEqual([...(paso.excluir ?? [])].sort(), ['FARO_HOY', 'FARO_INSTANTE']);
+  assert.deepEqual(paso.entorno, { PYTHONPATH: '/raiz/scripts/sin_red', FARO_PRUEBAS_SIN_RED: '1' });
+  assert.deepEqual(paso.argumentos, ['-m', 'unittest', 'plataforma_datos.orquestacion.pruebas.test_actualizar']);
 });
 
 test('las pruebas Python de los datos no pasan por buenas si omiten casos o no ejecutan ninguno', () => {

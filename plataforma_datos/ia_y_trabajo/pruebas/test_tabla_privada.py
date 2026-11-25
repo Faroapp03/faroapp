@@ -8,7 +8,7 @@ import io
 import json
 import tempfile
 import unittest
-from contextlib import redirect_stderr
+from contextlib import redirect_stderr, redirect_stdout
 from pathlib import Path
 from unittest import mock
 
@@ -65,11 +65,12 @@ class PruebaTablaPrivada(unittest.TestCase):
         self.assertEqual(tabla.leer(self.raiz), json.loads(SINTETICA))
 
     def test_sin_la_tabla_el_fallo_nombra_el_archivo_y_como_obtenerlo(self) -> None:
-        """Sin el archivo, el fallo dice cuál falta y con qué orden se obtiene."""
+        """Sin el archivo, el fallo dice cuál falta, que tampoco está el validado y con qué orden se obtiene."""
         _instalacion(self.raiz, None)
         with self.assertRaises(tabla.TablaPrivadaAusente) as error:
             tabla.leer(self.raiz)
         self.assertIn("Falta datos/cambra.json", str(error.exception))
+        self.assertIn(f"tampoco está su conjunto validado ({tabla.ORIGEN})", str(error.exception))
         self.assertIn("tabla_privada recuperar", str(error.exception))
 
     def test_una_tabla_con_otra_huella_se_rechaza(self) -> None:
@@ -104,6 +105,37 @@ class PruebaTablaPrivada(unittest.TestCase):
         _instalacion(self.raiz, SINTETICA + b" ")
         validado = self._validado(SINTETICA)
         self.assertEqual(tabla.comprobar(self.raiz), validado)
+
+    def test_si_ninguna_de_las_dos_es_la_fijada_el_fallo_nombra_las_dos(self) -> None:
+        """Con la copia y el conjunto validado presentes y los dos distintos, el motivo nombra ambos."""
+        _instalacion(self.raiz, SINTETICA + b" ")
+        self._validado(SINTETICA + b"  ")
+        with self.assertRaises(tabla.TablaPrivadaDistinta) as error:
+            tabla.comprobar(self.raiz)
+        self.assertIn(f"datos/cambra.json ni {tabla.ORIGEN} no son la tabla que fija", str(error.exception))
+
+    def _cli(self, *argumentos: str) -> tuple[int, str, str]:
+        salida, errores = io.StringIO(), io.StringIO()
+        with redirect_stdout(salida), redirect_stderr(errores):
+            codigo = tabla.main([*argumentos, "--raiz", str(self.raiz)])
+        return codigo, salida.getvalue(), errores.getvalue()
+
+    def test_la_orden_ruta_da_solo_la_ruta_comprobada(self) -> None:
+        """Las pruebas de Node leen la tabla por esta orden: una línea con la ruta, relativa a la instalación."""
+        _instalacion(self.raiz, SINTETICA)
+        self.assertEqual(self._cli("ruta"), (0, "datos/cambra.json\n", ""))
+        (self.raiz / tabla.RUTA).unlink()
+        self._validado(SINTETICA)
+        self.assertEqual(self._cli("ruta"), (0, f"{tabla.ORIGEN}\n", ""))
+        self.assertEqual(self._cli("comprobar")[1], f"{tabla.ORIGEN}: es la tabla fijada por datos/manifiesto.json.\n")
+
+    def test_la_orden_ruta_sin_tabla_falla_con_el_motivo(self) -> None:
+        """Sin tabla en ningún sitio no escribe ninguna ruta: sale con uno y el motivo."""
+        _instalacion(self.raiz, None)
+        codigo, salida, errores = self._cli("ruta")
+        self.assertEqual((codigo, salida), (1, ""))
+        self.assertIn("Falta datos/cambra.json", errores)
+        self.assertIn(tabla.ORIGEN, errores)
 
     def test_la_huella_fijada_es_la_del_origen_de_la_parte_publica(self) -> None:
         """La tabla es el origen de la parte pública; la huella de la parte pública no la fija."""
