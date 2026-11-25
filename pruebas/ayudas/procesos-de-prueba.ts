@@ -1,8 +1,14 @@
 // Procesos que lanza una prueba (sus dobles). El doble escribe la identidad de sus procesos (PID y hora de inicio, tal
 // como los ve `ps`) mientras están vivos; al final, la prueba termina solo los que siguen siendo los mismos. Sin una
 // identidad anotada con el proceso vivo no se señala nada: así nunca se alcanza un PID reutilizado por otro proceso.
+//
+// Aparte, la recogida sin `ps` (registrarProceso, leerRegistro, terminarGrupos, gruposVivos): el doble anota el PID de
+// cada proceso que lanza, en su propio grupo, en cuanto lo lanza; al final la prueba termina esos grupos (SIGTERM y,
+// tras una gracia, SIGKILL) y comprueba que ninguno queda. Solo usa señales a un PID o a su grupo, así que funciona
+// donde `ps` falla (un sandbox con `spawnSync ps EPERM`). Un grupo no se reutiliza mientras tenga miembros; los
+// doble ignoran SIGTERM y no terminan solos, de modo que su PID no se libera hasta que los termina esta recogida.
 
-import { renameSync, writeFileSync } from 'node:fs';
+import { appendFileSync, readFileSync, renameSync, writeFileSync } from 'node:fs';
 import { readFile } from 'node:fs/promises';
 import { listarConPs, type Proceso } from '../../scripts/detener-arbol.ts';
 
@@ -135,4 +141,119 @@ export async function limpiarEnOrden(pasos: readonly (() => unknown)[]): Promise
     const motivos = fallos.map((fallo) => (fallo instanceof Error ? fallo.message : String(fallo)));
     throw new AggregateError(fallos, `la limpieza falló en ${fallos.length} pasos: ${motivos.join('; ')}`);
   }
+}
+
+/** Lo que se espera tras SIGTERM, antes de SIGKILL, y lo que se espera tras SIGKILL a que el grupo desaparezca. */
+const GRACIA_POR_OMISION_MS = 250;
+const ESPERA_TRAS_SIGKILL_MS = 3000;
+const PAUSA_DE_COMPROBACION_MS = 20;
+
+/**
+ * Anota, en una línea del registro, el PID de un proceso que el doble acaba de lanzar en su propio grupo. Se escribe
+ * de forma síncrona justo después de lanzarlo: así consta aunque el doble muera enseguida.
+ *
+ * @param archivo - El registro (texto, un PID por línea).
+ * @param pid - El PID del proceso lanzado, líder de su grupo.
+ * @throws {Error} Si `pid` no es un PID anotable.
+ */
+export function registrarProceso(archivo: string, pid: number | undefined): void {
+  if (!pidAnotable(pid)) {
+    throw new Error(`el PID ${String(pid)} no es anotable en el registro de procesos`);
+  }
+  appendFileSync(archivo, `${pid}\n`);
+}
+
+/**
+ * Los PID del registro, sin repetir y solo los senalables. Un registro que no existe (el doble no llegó a lanzar nada)
+ * no tiene ninguno.
+ *
+ * @param archivo - El registro de `registrarProceso`.
+ * @returns Los PID anotados.
+ */
+export function leerRegistro(archivo: string): number[] {
+  let texto: string;
+  try {
+    texto = readFileSync(archivo, 'utf8');
+  } catch (error) {
+    if (error instanceof Error && 'code' in error && error.code === 'ENOENT') {
+      return [];
+    }
+    throw error;
+  }
+  return pidsDeLineas(texto.split('\n'));
+}
+
+/** Los PID senalables de las líneas de un texto con un PID cada una, sin repetir. */
+export function pidsDeLineas(lineas: readonly string[]): number[] {
+  const pids = lineas.filter((linea) => /^\d+$/u.test(linea)).map(Number);
+  return [...new Set(pids)].filter(pidSenalable);
+}
+
+/** Si el PID o su grupo (si fuera líder de uno) tienen algún miembro: una señal 0 no mata y dice si existe. */
+function existe(pid: number): boolean {
+  for (const destino of [-pid, pid]) {
+    try {
+      process.kill(destino, 0);
+      return true;
+    } catch (error) {
+      // EPERM: existe pero no es nuestro; solo ESRCH dice que no hay nada.
+      if (!(error instanceof Error && 'code' in error && error.code === 'ESRCH')) {
+        return true;
+      }
+    }
+  }
+  return false;
+}
+
+/**
+ * Los de `pids` cuyo proceso o grupo siguen existiendo, sin consultar `ps`. Un PID no señalable no cuenta.
+ *
+ * @param pids - Los PID de los dobles (cada uno, líder de su grupo).
+ * @returns Los que siguen vivos.
+ */
+export function gruposVivos(pids: readonly number[]): number[] {
+  return pids.filter((pid) => pidSenalable(pid) && existe(pid));
+}
+
+/** Envía `senal` al grupo de cada PID de `pids` y al propio PID; un destino que ya no existe no es un problema. */
+function senalarGrupos(pids: readonly number[], senal: NodeJS.Signals): void {
+  for (const pid of pids) {
+    for (const destino of [-pid, pid]) {
+      try {
+        process.kill(destino, senal);
+      } catch (error) {
+        if (!(error instanceof Error && 'code' in error && error.code === 'ESRCH')) {
+          throw error;
+        }
+      }
+    }
+  }
+}
+
+/** Espera, como mucho `ms`, a que ninguno de `pids` exista; devuelve los que siguen. */
+async function esperarQueDesaparezcan(pids: readonly number[], ms: number): Promise<number[]> {
+  const limite = Date.now() + ms;
+  let quedan = gruposVivos(pids);
+  while (quedan.length && Date.now() < limite) {
+    await new Promise((ok) => setTimeout(ok, PAUSA_DE_COMPROBACION_MS));
+    quedan = gruposVivos(pids);
+  }
+  return quedan;
+}
+
+/**
+ * Termina los grupos de `pids`, sin `ps`: SIGTERM a cada grupo y a cada PID, una gracia para que salgan y SIGKILL a lo
+ * que siga. Nunca señala un PID no señalable (0, 1, el propio proceso).
+ *
+ * @param pids - Los PID de los dobles, cada uno líder de su grupo.
+ * @param graciaMs - Lo que se espera tras SIGTERM.
+ * @returns Los PID cuyo grupo sigue existiendo tras SIGKILL y su espera (vacío si todo terminó).
+ * @throws {Error} Si una señal se rechaza por otro motivo que no existir el destino.
+ */
+export async function terminarGrupos(pids: readonly number[], graciaMs = GRACIA_POR_OMISION_MS): Promise<number[]> {
+  const senalables = pids.filter(pidSenalable);
+  senalarGrupos(senalables, 'SIGTERM');
+  const resistentes = await esperarQueDesaparezcan(senalables, graciaMs);
+  senalarGrupos(resistentes, 'SIGKILL');
+  return esperarQueDesaparezcan(resistentes, ESPERA_TRAS_SIGKILL_MS);
 }

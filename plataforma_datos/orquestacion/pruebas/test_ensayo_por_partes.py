@@ -29,9 +29,19 @@ from plataforma_datos.orquestacion.ordenes_de_la_actualizacion import (
     SI,
     ordenes_del_paquete,
 )
-from plataforma_datos.orquestacion.repeticion_del_tramo import repetir
+from plataforma_datos.orquestacion.repeticion_del_tramo import orden_del_tramo, repetir
 
 RELOJ = {"hoy": "2026-11-24", "instante": "2026-11-24T23:59:59Z"}
+GUARDIA_DOBLE = ["guardia-doble"]
+
+
+def _guardia_doble(orden: Sequence[str]) -> list[str]:
+    """Envuelve la orden como la guardia, sin depender del sistema donde corre la prueba.
+
+    Returns:
+        La orden tras GUARDIA_DOBLE.
+    """
+    return [*GUARDIA_DOBLE, *orden]
 
 
 def _git(repositorio: Path, *orden: str) -> str:
@@ -80,7 +90,12 @@ def _lanzar(orden: list[str], **_opciones: object) -> subprocess.CompletedProces
 
     Returns:
         El proceso terminado, con el código del tramo.
+
+    Raises:
+        AssertionError: Si la orden no llega envuelta en la guardia.
     """
+    if orden[: len(GUARDIA_DOBLE)] != GUARDIA_DOBLE:
+        raise AssertionError(f"el tramo no llega envuelto en la guardia: {orden}")
     argumentos = dict(zip(orden[::1], orden[1::1], strict=False))
     repeticion = Path(argumentos["--repeticion"])
     codigo = ensayo_por_partes.tramo(repeticion, argumentos["--desde"], argumentos.get("--hasta"), _paso, _cerrar)
@@ -137,7 +152,13 @@ class EnsayoPorPartesPruebas(unittest.TestCase):
         """
         with redirect_stdout(io.StringIO()):
             codigo = repetir(
-                self.salida, desde, hasta, raiz=self.raiz, entorno={"PATH": "/usr/bin:/bin"}, lanzar=_lanzar
+                self.salida,
+                desde,
+                hasta,
+                raiz=self.raiz,
+                entorno={"PATH": "/usr/bin:/bin"},
+                lanzar=_lanzar,
+                guardia=_guardia_doble,
             )
         repeticion = sorted((self.salida / "repeticiones").iterdir())[-1]
         recibo = json.loads((repeticion / "recibo.json").read_text())
@@ -238,6 +259,48 @@ class EnsayoPorPartesPruebas(unittest.TestCase):
         self.assertIn("no vale para aceptar", consola.getvalue())
 
 
+class ClonarPruebas(unittest.TestCase):
+    """El clon de un área: el mismo árbol, con sus enlaces, sus permisos y su huella, en macOS y en Linux."""
+
+    def setUp(self) -> None:
+        """Prepara un área con un archivo, un ejecutable, una subcarpeta y un enlace relativo."""
+        self.carpeta = Path(tempfile.mkdtemp())
+        self.addCleanup(shutil.rmtree, self.carpeta)
+        self.origen = self.carpeta / "origen"
+        (self.origen / "datos").mkdir(parents=True)
+        (self.origen / "datos" / "registro.txt").write_text("uno\n")
+        (self.origen / "ejecutable").write_text("#!/bin/sh\n")
+        (self.origen / "ejecutable").chmod(0o755)
+        (self.origen / "enlace").symlink_to("datos/registro.txt")
+
+    def test_el_clon_de_este_sistema_conserva_el_arbol_los_enlaces_y_la_huella(self) -> None:
+        """El clon con la orden de este sistema tiene la misma huella, el enlace tal cual y el ejecutable ejecutable."""
+        destino = self.carpeta / "clones" / "area"
+        ensayo_por_partes.clonar(self.origen, destino)
+        self.assertEqual(ensayo_por_partes.huella_del_arbol(destino), ensayo_por_partes.huella_del_arbol(self.origen))
+        self.assertTrue((destino / "enlace").is_symlink())
+        self.assertEqual((destino / "enlace").readlink(), Path("datos/registro.txt"))
+        self.assertTrue((destino / "ejecutable").stat().st_mode & 0o100)
+        (destino / "datos" / "registro.txt").write_text("cambiado\n")
+        self.assertEqual((self.origen / "datos" / "registro.txt").read_text(), "uno\n")
+
+    def test_cada_sistema_clona_con_su_orden(self) -> None:
+        """En macOS, clon APFS; en Linux, copia con reflink donde se pueda que conserva enlaces y permisos."""
+        destino = self.carpeta / "clones" / "area"
+        esperadas = {
+            "darwin": ["cp", "-c", "-R", str(self.origen), str(destino)],
+            "linux": ["cp", "-a", "--reflink=auto", str(self.origen), str(destino)],
+        }
+        for sistema, esperada in esperadas.items():
+            with self.subTest(sistema=sistema), patch.object(ensayo_por_partes.subprocess, "run") as ejecutar:
+                ensayo_por_partes.clonar(self.origen, destino, sistema)
+                ejecutar.assert_called_once_with(esperada, check=True)
+        self.assertEqual(
+            ensayo_por_partes.orden_de_clonado(self.origen, destino), esperadas.get(sys.platform, esperadas["linux"])
+        )
+        self.assertTrue(destino.parent.is_dir())
+
+
 class OrdenPruebas(unittest.TestCase):
     """Los límites de la orden por partes."""
 
@@ -267,6 +330,35 @@ class OrdenPruebas(unittest.TestCase):
             self.assertEqual(ensayo_grabado.main([*base, "--desde", "web", "--hasta", "comprobaciones"]), 0)
         self.assertEqual(repetir_doble.call_args.args, (Path("/no/existe"), "web", "comprobaciones"))
         self.assertIn("sirve para trabajar, no para aceptar", consola.getvalue())
+
+    def test_por_omision_el_tramo_va_en_la_guardia_real_y_sin_ella_no_hay_orden(self) -> None:
+        """Sin guardia inyectada, la orden del tramo es la de `con_guardia`; sin `sandbox-exec`, no hay orden."""
+        repeticion = Path("/no/existe")
+        propia = orden_del_tramo(repeticion, "web", "comprobaciones", list)
+        self.assertEqual(
+            propia[1:],
+            [
+                "-m",
+                "plataforma_datos.orquestacion.ensayo_por_partes",
+                "tramo",
+                "--repeticion",
+                str(repeticion),
+                "--desde",
+                "web",
+                "--hasta",
+                "comprobaciones",
+            ],
+        )
+        if sys.platform == "darwin" and shutil.which("sandbox-exec") is not None:
+            self.assertEqual(orden_del_tramo(repeticion, "web", "comprobaciones"), guardia_sin_red.con_guardia(propia))
+        else:
+            with self.assertRaisesRegex(guardia_sin_red.SinGuardiaDeRed, "solo se ejecuta en macOS"):
+                orden_del_tramo(repeticion, "web", "comprobaciones")
+        with (
+            patch.object(guardia_sin_red.shutil, "which", return_value=None),
+            self.assertRaisesRegex(guardia_sin_red.SinGuardiaDeRed, "solo se ejecuta en macOS"),
+        ):
+            orden_del_tramo(repeticion, "web", "comprobaciones")
 
     def test_el_tramo_no_empieza_fuera_de_la_guardia(self) -> None:
         """La suborden del tramo no empieza si no está bajo la guardia de red."""

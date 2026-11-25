@@ -31,7 +31,7 @@ from plataforma_datos.orquestacion.ensayo_por_partes import (
     reutilizados,
 )
 from plataforma_datos.orquestacion.entorno_del_ensayo import entorno_del_ciclo
-from plataforma_datos.orquestacion.guardia_sin_red import con_guardia
+from plataforma_datos.orquestacion.guardia_sin_red import Guardia, con_guardia
 
 Lanzar = Callable[..., subprocess.CompletedProcess]
 
@@ -51,8 +51,14 @@ def _nueva_repeticion(salida: Path) -> Path:
     return carpeta / f"{numero:02d}"
 
 
-def orden_del_tramo(repeticion: Path, desde: str, hasta: str | None) -> list[str]:
+def orden_del_tramo(repeticion: Path, desde: str, hasta: str | None, guardia: Guardia = con_guardia) -> list[str]:
     """La orden del tramo con el intérprete del área de la repetición, envuelta en la guardia de red.
+
+    Args:
+        repeticion: La carpeta de la repetición.
+        desde: El paso repetible desde el que se empieza.
+        hasta: El último paso repetible del tramo, o None.
+        guardia: Cómo se envuelve la orden en la guardia de red.
 
     Returns:
         La orden, lista para lanzarse con `cwd` en el área.
@@ -60,7 +66,7 @@ def orden_del_tramo(repeticion: Path, desde: str, hasta: str | None) -> list[str
     interprete = repeticion / "area" / ".venv" / "bin" / "python"
     propia = [str(interprete), "-m", "plataforma_datos.orquestacion.ensayo_por_partes", "tramo"]
     propia += ["--repeticion", str(repeticion), "--desde", desde, *(["--hasta", hasta] if hasta else [])]
-    return con_guardia(propia)
+    return guardia(propia)
 
 
 def _repetidos(tramo: dict[str, Any]) -> list[dict[str, Any]]:
@@ -72,7 +78,7 @@ def _repetidos(tramo: dict[str, Any]) -> list[dict[str, Any]]:
     return filas
 
 
-def repetir(  # noqa: PLR0913 - El reloj, la raíz, el entorno y el lanzador llegan como dato para probarlos.
+def repetir(  # noqa: PLR0913 - El reloj, la raíz, el entorno, el lanzador y la guardia llegan como dato para probarlos.
     salida: Path,
     desde: str,
     hasta: str | None = None,
@@ -80,6 +86,7 @@ def repetir(  # noqa: PLR0913 - El reloj, la raíz, el entorno y el lanzador lle
     raiz: Path = RAIZ,
     entorno: Mapping[str, str] = os.environ,
     lanzar: Lanzar = subprocess.run,
+    guardia: Guardia = con_guardia,
 ) -> int:
     """Repite un tramo del paquete y deja su recibo y sus huellas.
 
@@ -90,6 +97,7 @@ def repetir(  # noqa: PLR0913 - El reloj, la raíz, el entorno y el lanzador lle
         raiz: El repositorio cuyo código se repite; tiene que estar sin cambios sin confirmar.
         entorno: El entorno de quien ejecuta.
         lanzar: Cómo se lanza la orden del tramo.
+        guardia: Cómo se envuelve la orden del tramo en la guardia de red.
 
     Returns:
         Cero si el tramo terminó bien; uno si no.
@@ -110,7 +118,7 @@ def repetir(  # noqa: PLR0913 - El reloj, la raíz, el entorno y el lanzador lle
     aplicado = [] if mismo else aplicar_codigo(repeticion / "area", antes["revision"], ahora["revision"], raiz)
     _escribir(repeticion / CARPETA_DE_PASOS / CODIGO, ahora)
     reloj = _leer(salida / "reloj.json")
-    orden = orden_del_tramo(repeticion, desde, hasta)
+    orden = orden_del_tramo(repeticion, desde, hasta, guardia)
     proceso = lanzar(orden, cwd=repeticion / "area", env=entorno_del_ciclo(entorno, reloj, repeticion), check=False)
     vacio = {"pasos": [], "huellas": {}, "generacion": None}
     tramo = _leer(repeticion / "tramo.json") if (repeticion / "tramo.json").exists() else vacio

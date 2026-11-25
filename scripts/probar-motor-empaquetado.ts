@@ -9,6 +9,7 @@
  */
 import { resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { comprobarControladorDeVideo } from './controlador-de-video.ts';
 import { VARIABLES_EXCLUIDAS } from './entorno-firefox.ts';
 import { FalloDeComprobacion } from './fallo-de-comprobacion.ts';
 import { aprobadasPorArchivo, exigirPruebasEjecutadas } from './resumen-pruebas.ts';
@@ -52,6 +53,7 @@ async function principal(): Promise<void> {
       codigo: CODIGO_USO_INVALIDO,
     });
   }
+  comprobarControladorDeVideo();
   const salida = await ejecutarPaso(pasoMotorEmpaquetado(construccion), RAIZ, PLAZO_MS);
   console.log(salida.trim());
   exigirPruebasEjecutadas(salida, { raiz: RAIZ, archivos: [PRUEBA], admitidas: {} });

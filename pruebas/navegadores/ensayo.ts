@@ -7,6 +7,7 @@ import { join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { parseArgs } from 'node:util';
 import { type Browser, type BrowserContext, chromium, firefox, webkit } from 'playwright-core';
+import { comprobarControladorDeVideo } from '../../scripts/controlador-de-video.ts';
 import { ejecutarPaso } from '../../scripts/verificar.ts';
 import { IDENTIDAD_WEB } from '../../src/comun/identidad-web.ts';
 import { type Artefacto, cargarArtefacto, destinoDeLaConstruccion, RAIZ } from './artefacto.ts';
@@ -326,6 +327,7 @@ async function principal(): Promise<void> {
       artefacto: { type: 'string' },
     },
   });
+  comprobarControladorDeVideo();
   const directorio = values.artefacto ? resolve(values.artefacto) : join(RAIZ, 'dist');
   // El modo sale del destino de la construcción: la que no se ensaya aquí se rechaza antes de lanzar nada.
   modoDelEnsayo(destinoDeLaConstruccion(directorio));

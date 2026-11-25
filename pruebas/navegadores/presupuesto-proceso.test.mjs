@@ -6,7 +6,10 @@
 // termina; y que, si termina normal, el JSON queda con la medida completa y el proceso sale con 0. En los tres casos,
 // sin ningún proceso ni servidor del hijo vivo al acabar. Si el caso acaba antes que el hijo, su after detiene el hijo,
 // toma su árbol de procesos con `ps` y lo mata; cuando ha leído su salida entera, termina con su grupo los procesos
-// tercos que anotó (los que dijo y los de ese árbol), aunque no hayan llegado a anunciarse. Con dos construcciones,
+// tercos que anotó (los que dijo y los de ese árbol), aunque no hayan llegado a anunciarse. Antes, y sin depender de
+// `ps`, recoge los dobles por su PID y su grupo (los que anotan los dobles en su registro y los que dice el hijo): mata
+// al hijo con su grupo, termina los grupos (SIGTERM y, tras una gracia, SIGKILL) y, al final, comprueba que ninguno
+// queda; corre también si el caso falla y aunque `ps` no esté disponible. Con dos construcciones,
 // las dos se preparan antes de medir ninguna y cada documento lleva solo su fase; y los JSON y resúmenes, también los
 // parciales, se escriben en un temporal de su misma carpeta y se renombran, sin escribir nunca a medias sobre el
 // archivo final.
@@ -21,7 +24,14 @@ import { dirname, join } from 'node:path';
 import { test } from 'node:test';
 import { fileURLToPath } from 'node:url';
 import { detenerArbol, listarConPs } from '../../scripts/detener-arbol.ts';
-import { limpiarEnOrden, terminarSiSiguen } from '../ayudas/procesos-de-prueba.ts';
+import {
+  gruposVivos,
+  leerRegistro,
+  limpiarEnOrden,
+  pidsDeLineas,
+  terminarGrupos,
+  terminarSiSiguen,
+} from '../ayudas/procesos-de-prueba.ts';
 import { ESTADO, SALIDA_POR_CIERRE_FORZADO } from './presupuesto-plazo.mjs';
 import { ahora } from './presupuesto-servidor.mjs';
 
@@ -178,12 +188,17 @@ function procesosTercos(hijo) {
  * último que escribió podría leerse después de terminar los tercos.
  */
 async function terminarElHijo(hijo, tercos, cerrado) {
+  /** @type {unknown} */
+  let sinArbol;
   if (hijo.exitCode === null && hijo.signalCode === null) {
     hijo.kill('SIGSTOP');
     try {
       tercos.anotarArbol();
+    } catch (error) {
+      // Sin `ps` no se conoce su árbol, pero el hijo se mata igual (con su grupo) y se espera su cierre.
+      sinArbol = error;
     } finally {
-      hijo.kill('SIGKILL');
+      matarAlHijo(hijo);
     }
   }
   /** @type {ReturnType<typeof setTimeout> | undefined} */
@@ -199,25 +214,81 @@ async function terminarElHijo(hijo, tercos, cerrado) {
   } finally {
     clearTimeout(temporizador);
   }
+  if (sinArbol) {
+    throw sinArbol;
+  }
+}
+
+/** Mata con SIGKILL al hijo, sin recoger, y a su grupo (lanzar() lo lanza en el suyo), sin depender de `ps`. */
+function matarAlHijo(hijo) {
+  try {
+    process.kill(-hijo.pid, 'SIGKILL');
+  } catch {
+    // El hijo no lidera un grupo (otros hijos de prueba) o ya no hay nadie en él.
+  }
+  hijo.kill('SIGKILL');
+}
+
+/** Los PID de las líneas `<marca> <pid>` de la salida del hijo, sin repetir; una línea a medio leer no cuenta. */
+const pidsDe = (texto, marca) => pidsDeLineas(lineasCon(texto.slice(0, texto.lastIndexOf('\n') + 1), marca));
+/** Los PID de los procesos que dice la salida del hijo (`PROCESO <pid>`). */
+const pidsAnunciados = (texto) => pidsDe(texto, 'PROCESO');
+
+/**
+ * Los grupos de procesos que quedan vivos de `pids()` (el registro de los dobles y lo que dijo el hijo): el último
+ * paso de la limpieza, sin `ps`, falla si queda alguno.
+ */
+function comprobarSinGrupos(pids) {
+  const quedan = gruposVivos(pids());
+  if (quedan.length) {
+    throw new Error(`Quedan vivos los grupos de procesos ${quedan.join(', ')} del hijo y sus dobles`);
+  }
 }
 
 /**
- * El after del caso `prueba`: termina el hijo si sigue vivo (terminarElHijo), después sus procesos tercos
- * (procesosTercos) y retira las `carpetas` del hijo, cada paso aunque falle otro (limpiarEnOrden). Se llama justo
- * después de lanzar el hijo, para no perder su `close`.
+ * La limpieza del caso (`hijo`, sus `tercos`, el `cerrado` de su salida, sus `pids` y sus `carpetas`): termina el hijo si sigue vivo (terminarElHijo, que lo mata con su grupo) y, sin depender de
+ * `ps`, los grupos de `pids()` (terminarGrupos: SIGTERM y, tras una gracia, SIGKILL); después sus procesos tercos
+ * según `ps` (procesosTercos, que cubre lo que nadie anotó), retira las `carpetas` del hijo (después de leer su
+ * registro) y comprueba por última vez, sin `ps`, que ningún grupo queda vivo. Cada paso se hace aunque falle otro
+ * (limpiarEnOrden), así que sin `ps` la limpieza informa de ello pero no deja procesos.
  */
-function limpiarAlAcabar(prueba, hijo, tercos, carpetas) {
+function limpiar({ hijo, tercos, cerrado, pids, carpetas }) {
+  return limpiarEnOrden([
+    () => terminarElHijo(hijo, tercos, cerrado),
+    async () => {
+      const quedan = await terminarGrupos(pids());
+      if (quedan.length) {
+        throw new Error(`No se han podido terminar los grupos de procesos ${quedan.join(', ')}`);
+      }
+    },
+    tercos.terminar,
+    () => comprobarSinGrupos(pids),
+    ...carpetas.map((carpeta) => () => rmSync(carpeta, { recursive: true, force: true })),
+  ]);
+}
+
+/**
+ * El after del caso `prueba` (node:test lo ejecuta también si el caso falla): `limpiar` el hijo, sus tercos y sus
+ * `carpetas`; `pids()` da los PID de los dobles que recoge sin `ps`. Se llama justo después de lanzar el hijo, para no
+ * perder su `close`.
+ */
+function limpiarAlAcabar(prueba, { hijo, tercos, pids, carpetas }) {
   const cerrado = new Promise((ok) => {
     hijo.once('close', ok);
   });
-  prueba.after(() =>
-    limpiarEnOrden([
-      () => terminarElHijo(hijo, tercos, cerrado),
-      tercos.terminar,
-      ...carpetas.map((carpeta) => () => rmSync(carpeta, { recursive: true, force: true })),
-    ]),
-  );
+  prueba.after(() => limpiar({ hijo, tercos, cerrado, pids, carpetas }));
 }
+
+/** Las variables con que el hijo configura sus dobles: el modo, los límites, su registro de PID y sus carpetas. */
+const entornoDeLosDobles = ({ modo, registro, temporal, salida }) => ({
+  PRESUPUESTO_DOBLE_MODO: modo,
+  PRESUPUESTO_DOBLE_LIMITE_MS: String(LIMITE_MS),
+  PRESUPUESTO_DOBLE_MARGEN_MS: String(MARGEN_MS),
+  PRESUPUESTO_DOBLE_REGISTRO: registro,
+  TMPDIR: temporal,
+  // Si un desvío de los dobles dejara de aplicarse, el arranque real no encontraría ningún navegador y fallaría.
+  PLAYWRIGHT_BROWSERS_PATH: join(salida, 'sin-navegadores'),
+});
 
 /**
  * Lanza el arnés en un hijo con los dobles en `modo` y su salida en una carpeta nueva. `hito` se cumple con el puerto
@@ -228,28 +299,24 @@ function limpiarAlAcabar(prueba, hijo, tercos, carpetas) {
  * siguen siendo los mismos (procesosTercos, que devuelve en `tercos`), porque matar al hijo con SIGKILL impide que su
  * vigilante lo haga; y retira la carpeta de salida y la temporal del hijo (su TMPDIR: lo que deja al morir con
  * SIGKILL, como la construcción sintética, que retiraría al salir, se retira con ella). `texto()` es la salida del hijo
- * hasta ahora.
+ * hasta ahora y `pids()`, los PID de sus dobles (los del registro que anotan y los que dice), con los que se recogen
+ * sin `ps`.
  */
 function lanzar(modo, prueba, { nombres = [NOMBRE], entorno = {} } = {}) {
   const salida = mkdtempSync(join(tmpdir(), 'faro-presupuesto-proceso-'));
   const temporal = mkdtempSync(join(tmpdir(), 'faro-presupuesto-proceso-tmp-'));
+  const registro = join(temporal, 'procesos-de-los-dobles.txt');
   const hijo = spawn(process.execPath, ordenDelHijo(salida, nombres), {
     cwd: RAIZ,
-    env: {
-      ...process.env,
-      ...entorno,
-      PRESUPUESTO_DOBLE_MODO: modo,
-      PRESUPUESTO_DOBLE_LIMITE_MS: String(LIMITE_MS),
-      PRESUPUESTO_DOBLE_MARGEN_MS: String(MARGEN_MS),
-      TMPDIR: temporal,
-      // Si un desvío de los dobles dejara de aplicarse, el arranque real no encontraría ningún navegador y fallaría.
-      PLAYWRIGHT_BROWSERS_PATH: join(salida, 'sin-navegadores'),
-    },
+    // En su propio grupo: matar el grupo mata también a sus descendientes que no se hayan ido a otro, sin `ps`.
+    detached: true,
+    env: { ...process.env, ...entorno, ...entornoDeLosDobles({ modo, registro, temporal, salida }) },
     stdio: ['ignore', 'pipe', 'pipe'],
   });
   const tercos = procesosTercos(hijo);
-  limpiarAlAcabar(prueba, hijo, tercos, [salida, temporal]);
   let texto = '';
+  const pids = () => [...new Set([...leerRegistro(registro), ...pidsAnunciados(texto)])];
+  limpiarAlAcabar(prueba, { hijo, tercos, pids, carpetas: [salida, temporal] });
   let errores = '';
   let avisar;
   const hito = new Promise((ok) => {
@@ -277,7 +344,7 @@ function lanzar(modo, prueba, { nombres = [NOMBRE], entorno = {} } = {}) {
       ok({ codigo, senal, t: ahora(), matado, texto, errores });
     });
   });
-  return { hijo, hito, fin, salida, tercos, texto: () => texto };
+  return { hijo, hito, fin, salida, temporal, tercos, pids, texto: () => texto };
 }
 
 /** El documento JSON que el arnés ha escrito para la construcción `nombre`, y la medida del escenario. */
@@ -421,6 +488,58 @@ test('si el caso acaba antes que el hijo, su after termina también los procesos
   }
 });
 
+/** Espera, como mucho `ms`, a que se cumpla `condicion`, sin `ps`; si no, falla con `descripcion`. */
+async function esperarA(condicion, ms, descripcion) {
+  const limite = ahora() + ms;
+  while (!condicion()) {
+    if (ahora() > limite) {
+      throw new Error(`Sin ${descripcion} en ${ms} ms`);
+    }
+    await new Promise((ok) => setTimeout(ok, PAUSA_DE_COMPROBACION_MS));
+  }
+}
+
+test('si el caso falla a mitad y ps no está disponible, su after recoge los dobles por su PID y su grupo', async (prueba) => {
+  const sinPs = mkdtempSync(join(tmpdir(), 'faro-presupuesto-proceso-sin-ps-'));
+  /** @type {(() => unknown)[]} */
+  const despues = [];
+  // Un caso que solo guarda su after: se ejecuta tras fallar, como node:test lo ejecuta tras un caso fallido.
+  const lanzado = lanzar('colgado', { after: (paso) => despues.push(paso) });
+  // Red de seguridad, también sin `ps`: si el after del caso no los terminara, no quedarían vivos al acabar esta prueba.
+  prueba.after(() => limpiarEnOrden([() => terminarGrupos(lanzado.pids()), () => rmSync(sinPs, { recursive: true })]));
+  /** @type {number[]} */
+  let pids = [];
+  await assert.rejects(async () => {
+    await esperarA(
+      () => gruposVivos(lanzado.pids()).length === 2,
+      TOPE_DEL_HIJO_MS,
+      'el navegador simulado y su nieto',
+    );
+    pids = lanzado.pids();
+    assert.fail('el caso falla a propósito a mitad, con los dobles vivos');
+  }, /falla a propósito/u);
+  assert.equal(pids.length, 2, 'Constan el navegador simulado y su nieto');
+  assert.deepEqual(gruposVivos(pids), pids, 'Antes de la limpieza, los dos siguen vivos');
+  assert.ok(leerRegistro(join(lanzado.temporal, 'procesos-de-los-dobles.txt')).length >= 1, 'El doble los anotó');
+  const puertos = lineasCon(lanzado.texto(), 'PUERTO').map(Number);
+  assert.equal(puertos.length, 2, 'Constan los servidores de los dos procesos tercos');
+  const PATH = process.env.PATH;
+  process.env.PATH = sinPs;
+  try {
+    assert.throws(listarConPs, /ps no se puede ejecutar/u, 'Sin PATH, ps no se puede ejecutar');
+    assert.equal(despues.length, 1, 'El caso dejó su after');
+    // Sin `ps` la limpieza informa de que no pudo usarlo, pero no deja procesos.
+    await assert.rejects(despues[0], /ps no se puede ejecutar/u);
+  } finally {
+    process.env.PATH = PATH;
+  }
+  assert.deepEqual(gruposVivos(pids), [], 'Ningún proceso ni grupo de los dobles sigue vivo');
+  assert.equal(vivo(lanzado.hijo.pid), false, 'El hijo ya no existe');
+  for (const puerto of puertos) {
+    assert.equal(await escuchando(puerto), false, `El servidor del puerto ${puerto} ya no escucha`);
+  }
+});
+
 /** Un proceso que ignora SIGTERM y no termina nunca. */
 const TERCO_MUDO = "process.on('SIGTERM', () => undefined); setInterval(() => undefined, 1000);";
 /**
@@ -494,32 +613,74 @@ async function esperarQueTerminen(vistos, ms) {
 /** El nieto mudo del líder, el terco suelto y el retenedor de la salida. */
 const MUDOS_DEL_HIJO = 3;
 
+/** La red de seguridad de la prueba de los mudos: sus `OCULTO` por PID y grupo (sin `ps`) y lo anotado por identidad. */
+function terminarLosMudos(texto, mudos, tercos) {
+  return limpiarEnOrden([
+    () => terminarGrupos(pidsDe(texto(), 'OCULTO')),
+    () => terminarSiSiguen([...mudos, ...(tercos()?.lista ?? [])]),
+  ]);
+}
+
+/** Si el hijo ya ha dicho todos sus procesos: sin `ps`, todos sus `OCULTO`; con `ps`, todos los anotados. */
+function hijoLoHaDichoTodo(texto, { sinPs, mudos, anotados }) {
+  if (sinPs) {
+    return pidsDe(texto, 'OCULTO').length === MUDOS_DEL_HIJO;
+  }
+  return mudos.length === MUDOS_DEL_HIJO && anotados.lista.length === 1;
+}
+
+/**
+ * Espera a que `hijo` haya dicho todos sus procesos: anota con `ps` los mudos en `mudos` y el líder en `anotados`, y
+ * avisa con `alLeer` de lo leído hasta ahora. Sin `ps` no se pueden anotar: falla con ese motivo, pero cuando el hijo ya
+ * ha dicho todos sus `OCULTO`, para que el after del caso los recoja sin `ps`.
+ */
+function esperarALosProcesosDelHijo(hijo, anotados, mudos, alLeer) {
+  return new Promise((ok, mal) => {
+    let texto = '';
+    /** @type {unknown} */
+    let sinPs;
+    const tope = setTimeout(() => mal(new Error(`Sin los procesos del hijo: ${texto}`)), TOPE_DEL_HIJO_MS);
+    hijo.once('exit', () => mal(new Error(`El hijo terminó antes de tiempo: ${texto}`)));
+    hijo.stdout.on('data', (trozo) => {
+      texto += trozo;
+      alLeer(texto);
+      try {
+        anotados.leer(texto);
+        anotarMudos(texto, mudos);
+      } catch (error) {
+        sinPs ??= error;
+      }
+      if (hijoLoHaDichoTodo(texto, { sinPs: sinPs !== undefined, mudos, anotados })) {
+        clearTimeout(tope);
+        return sinPs ? mal(sinPs) : ok(undefined);
+      }
+    });
+  });
+}
+
 test('el after termina también lo que el hijo no llegó a anunciar: su árbol y el grupo de un terco anotado', async (prueba) => {
   /** @type {import('../../scripts/detener-arbol.ts').Proceso[]} */
   const mudos = [];
   /** @type {ReturnType<typeof procesosTercos> | undefined} */
   let tercos;
-  // Si el after del caso no los termina, se terminan aquí, para no dejarlos vivos.
-  prueba.after(() => terminarSiSiguen([...mudos, ...(tercos?.lista ?? [])]));
+  let texto = '';
+  // Si el after del caso no los termina, se terminan aquí, para no dejarlos vivos: primero, sin `ps`, por su PID y su
+  // grupo (también los `OCULTO`, que el after del caso no lee), y después por su identidad (`ps`).
+  prueba.after(() =>
+    terminarLosMudos(
+      () => texto,
+      mudos,
+      () => tercos,
+    ),
+  );
   await prueba.test('el caso que acaba antes que el hijo', async (caso) => {
     const { NODE_OPTIONS: _opciones, NODE_TEST_CONTEXT: _contexto, ...env } = process.env;
     const hijo = spawn(process.execPath, ['-e', HIJO_CON_MUDOS], { env, stdio: ['ignore', 'pipe', 'ignore'] });
     tercos = procesosTercos(hijo);
-    limpiarAlAcabar(caso, hijo, tercos, []);
+    limpiarAlAcabar(caso, { hijo, tercos, pids: () => pidsAnunciados(texto), carpetas: [] });
     const anotados = tercos;
-    let texto = '';
-    await new Promise((ok, mal) => {
-      const tope = setTimeout(() => mal(new Error(`Sin los procesos del hijo: ${texto}`)), TOPE_DEL_HIJO_MS);
-      hijo.once('exit', () => mal(new Error(`El hijo terminó antes de tiempo: ${texto}`)));
-      hijo.stdout.on('data', (trozo) => {
-        texto += trozo;
-        anotados.leer(texto);
-        anotarMudos(texto, mudos);
-        if (mudos.length === MUDOS_DEL_HIJO && anotados.lista.length === 1) {
-          clearTimeout(tope);
-          ok();
-        }
-      });
+    await esperarALosProcesosDelHijo(hijo, anotados, mudos, (leido) => {
+      texto = leido;
     });
     // El líder anotado termina por sí mismo: su nieto queda sin padre, y solo su grupo lo alcanza.
     assert.deepEqual(await esperarQueTerminen(anotados.lista, TOPE_DEL_HIJO_MS), [], 'El líder anotado ha terminado');

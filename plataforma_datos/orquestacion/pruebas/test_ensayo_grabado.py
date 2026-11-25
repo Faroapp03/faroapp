@@ -4,8 +4,10 @@ import io
 import json
 import shutil
 import subprocess
+import sys
 import tempfile
 import unittest
+from collections.abc import Sequence
 from contextlib import redirect_stderr, redirect_stdout
 from datetime import UTC, datetime
 from pathlib import Path
@@ -36,6 +38,16 @@ from plataforma_datos.orquestacion.piezas_de_la_actualizacion import ETAPA_DE_DE
 from plataforma_datos.orquestacion.reconstruir import etapas
 
 RELOJ = {"hoy": "2026-11-24", "instante": "2026-11-24T10:06:07Z"}
+GUARDIA_DOBLE = ["guardia-doble"]
+
+
+def _guardia_doble(orden: Sequence[str]) -> list[str]:
+    """Envuelve la orden como la guardia, sin depender del sistema donde corre la prueba.
+
+    Returns:
+        La orden tras GUARDIA_DOBLE.
+    """
+    return [*GUARDIA_DOBLE, *orden]
 
 
 def _sin_comprobar_la_guardia() -> None:
@@ -204,10 +216,25 @@ class CicloPruebas(unittest.TestCase):
 
     def test_el_ciclo_corre_con_el_interprete_del_candidato(self) -> None:
         """La orden del ciclo usa el intérprete del candidato, envuelta en la guardia."""
-        orden = ensayo_grabado.orden_del_ciclo(self.salida, "a" * 40)
-        self.assertEqual(orden[:3], guardia_sin_red.con_guardia([]))
-        self.assertEqual(orden[3], str(self.salida / "candidato" / ".venv" / "bin" / "python"))
-        self.assertEqual(orden[4:8], ["-m", "plataforma_datos.orquestacion.ensayo_grabado", "ciclo", "--salida"])
+        orden = ensayo_grabado.orden_del_ciclo(self.salida, "a" * 40, _guardia_doble)
+        self.assertEqual(orden[:1], GUARDIA_DOBLE)
+        self.assertEqual(orden[1], str(self.salida / "candidato" / ".venv" / "bin" / "python"))
+        self.assertEqual(orden[2:6], ["-m", "plataforma_datos.orquestacion.ensayo_grabado", "ciclo", "--salida"])
+        self.assertEqual(orden[6:], [str(self.salida), "--revision", "a" * 40])
+
+    def test_por_omision_el_ciclo_va_en_la_guardia_real_y_sin_ella_no_hay_orden(self) -> None:
+        """Sin guardia inyectada, la orden es la de `con_guardia`; donde no hay `sandbox-exec`, no hay orden."""
+        propia = ensayo_grabado.orden_del_ciclo(self.salida, "a" * 40, list)
+        if sys.platform == "darwin" and shutil.which("sandbox-exec") is not None:
+            self.assertEqual(ensayo_grabado.orden_del_ciclo(self.salida, "a" * 40), guardia_sin_red.con_guardia(propia))
+        else:
+            with self.assertRaisesRegex(guardia_sin_red.SinGuardiaDeRed, "solo se ejecuta en macOS"):
+                ensayo_grabado.orden_del_ciclo(self.salida, "a" * 40)
+        with (
+            patch.object(guardia_sin_red.shutil, "which", return_value=None),
+            self.assertRaisesRegex(guardia_sin_red.SinGuardiaDeRed, "solo se ejecuta en macOS"),
+        ):
+            ensayo_grabado.orden_del_ciclo(self.salida, "a" * 40)
 
 
 class ReutilizarValidadoPruebas(unittest.TestCase):
@@ -263,7 +290,8 @@ class EjecutarPruebas(unittest.TestCase):
             redirect_stdout(io.StringIO()) as consola,
         ):
             lanzar.return_value.returncode = 1
-            self.assertEqual(ensayo_grabado.ejecutar(salida, self.carpeta, RELOJ), 1)
+            self.assertEqual(ensayo_grabado.ejecutar(salida, self.carpeta, RELOJ, guardia=_guardia_doble), 1)
+        self.assertEqual(lanzar.call_args.args[0], ensayo_grabado.orden_del_ciclo(salida, "a" * 40, _guardia_doble))
         self.assertEqual(lanzar.call_args.kwargs["cwd"], salida / "candidato")
         entorno = lanzar.call_args.kwargs["env"]
         self.assertFalse({"GH_TOKEN", "CLOUDFLARE_API_TOKEN", "HTTPS_PROXY"} & set(entorno))

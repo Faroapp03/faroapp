@@ -59,7 +59,7 @@ from plataforma_datos.orquestacion.ensayo_por_partes import (
 )
 from plataforma_datos.orquestacion.entorno_del_ensayo import entorno_del_ciclo, reloj_del_ensayo
 from plataforma_datos.orquestacion.generacion_del_ensayo import exportar_en_local, supervisor_se_detiene
-from plataforma_datos.orquestacion.guardia_sin_red import con_guardia, exigir_sin_red
+from plataforma_datos.orquestacion.guardia_sin_red import Guardia, con_guardia, exigir_sin_red
 from plataforma_datos.orquestacion.piezas_de_la_actualizacion import FUENTES
 from plataforma_datos.orquestacion.repeticion_del_tramo import repetir
 from plataforma_datos.orquestacion.transferir_generacion import configuracion_privada
@@ -72,18 +72,23 @@ ACCION = "actualizar-datos"  # la acción del ciclo completo: todos los módulos
 INTERPRETE_DEL_CANDIDATO = Path(".venv/bin/python")
 
 
-def orden_del_ciclo(salida: Path, revision: str) -> list[str]:
+def orden_del_ciclo(salida: Path, revision: str, guardia: Guardia = con_guardia) -> list[str]:
     """La orden que ejecuta el ciclo con el intérprete del candidato, ya envuelta en la guardia de red.
 
     Se lanza desde la carpeta del candidato, como hace el ejecutor de producción: así el motor que corre es el del
     commit del candidato, no el del árbol de quien ejecuta el ensayo.
+
+    Args:
+        salida: La salida del ensayo.
+        revision: La revisión del candidato.
+        guardia: Cómo se envuelve la orden en la guardia de red.
 
     Returns:
         La orden, lista para `subprocess.run` con `cwd` en el candidato.
     """
     interprete = salida / "candidato" / INTERPRETE_DEL_CANDIDATO
     propia = [str(interprete), "-m", "plataforma_datos.orquestacion.ensayo_grabado", "ciclo", "--salida", str(salida)]
-    return con_guardia([*propia, "--revision", revision])
+    return guardia([*propia, "--revision", revision])
 
 
 @contextmanager
@@ -175,6 +180,7 @@ def ejecutar(
     base: Path | None,
     reloj: dict[str, str],
     abrir_almacen: Callable[[], AlmacenSoloLectura] = _abrir_almacen,
+    guardia: Guardia = con_guardia,
 ) -> int:
     """Ejecuta el ensayo entero en una salida nueva y deja en ella las huellas y los minutos de cada paso.
 
@@ -183,6 +189,7 @@ def ejecutar(
         base: Carpeta base ya descargada, o None para leerla del almacén privado.
         reloj: El reloj único del ensayo (`reloj_del_ensayo`).
         abrir_almacen: Cómo se abre el almacén en solo lectura.
+        guardia: Cómo se envuelve el ciclo en la guardia de red.
 
     Returns:
         Cero si el recibo es «validado» y las huellas quedaron escritas; uno si no.
@@ -206,7 +213,7 @@ def ejecutar(
     with _medir(minutos, "componer el candidato"):
         preparar_candidato(base.resolve(), salida / "candidato", revision)
     entorno = entorno_del_ciclo(os.environ, reloj, salida)
-    orden = orden_del_ciclo(salida, revision)
+    orden = orden_del_ciclo(salida, revision, guardia)
     codigo = subprocess.run(orden, cwd=salida / "candidato", env=entorno, check=False).returncode
     if not (salida / "minutos-del-ciclo.json").exists():
         print(f"El ciclo se cortó sin dejar su recibo (código {codigo}). El candidato queda en {salida}/candidato.")

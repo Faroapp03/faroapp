@@ -5,8 +5,8 @@ se sube ni se publica sin la verificación completa, y el ensayo completo sigue 
 ensayo por partes nunca publica nada: repite las órdenes del tramo en una copia propia del área.
 
 Durante el ensayo completo, antes de cada paso repetible del paquete (PASOS_REPETIBLES) se conserva un clon del área
-(APFS, sin duplicar bytes) con la huella de su entrada; al terminar el paso se anota la de su salida y el código que
-lo produjo (la revisión y su árbol en git). Para repetir un tramo:
+(en APFS, o con reflink donde se pueda, sin duplicar bytes) con la huella de su entrada; al terminar el paso se anota la
+de su salida y el código que lo produjo (la revisión y su árbol en git). Para repetir un tramo:
 
 - **Datos:** el clon del paso desde el que se empieza tiene que coincidir con su huella. Si no coincide, la orden se
   niega y dice desde qué paso conservado se puede empezar (o que hace falta el ensayo completo).
@@ -103,10 +103,29 @@ def huella_del_arbol(carpeta: Path) -> str:
     return resumen.hexdigest()
 
 
-def clonar(origen: Path, destino: Path) -> None:
-    """Clona una carpeta en APFS (`cp -c`): una copia propia que no duplica bytes; los enlaces se copian tal cual."""
+def orden_de_clonado(origen: Path, destino: Path, sistema: str = sys.platform) -> list[str]:
+    """La orden que clona una carpeta: los enlaces se copian tal cual, con su destino, y los archivos con su contenido.
+
+    En macOS, `cp -c -R` (clon APFS, sin duplicar bytes). En otro sistema, `cp -a --reflink=auto`: clona donde el
+    sistema de archivos lo admite y, si no, copia; conserva además permisos y fechas.
+
+    Args:
+        origen: La carpeta que se clona.
+        destino: La carpeta nueva.
+        sistema: El sistema operativo, con los nombres de `sys.platform`.
+
+    Returns:
+        La orden, lista para `subprocess.run`.
+    """
+    if sistema == "darwin":
+        return ["cp", "-c", "-R", str(origen), str(destino)]
+    return ["cp", "-a", "--reflink=auto", str(origen), str(destino)]
+
+
+def clonar(origen: Path, destino: Path, sistema: str = sys.platform) -> None:
+    """Clona una carpeta en una copia propia que no duplica bytes donde el sistema de archivos lo admite."""
     destino.parent.mkdir(parents=True, exist_ok=True)
-    subprocess.run(["cp", "-c", "-R", str(origen), str(destino)], check=True)
+    subprocess.run(orden_de_clonado(origen, destino, sistema), check=True)
 
 
 def codigo_de(revision: str, raiz: Path = RAIZ) -> dict[str, str]:

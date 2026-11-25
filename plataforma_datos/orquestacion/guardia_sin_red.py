@@ -36,6 +36,10 @@ MENSAJE_SIN_GUARDIA = (
 )
 
 
+# Cómo se envuelve una orden en la guardia: `con_guardia`, salvo en las pruebas que solo miran la orden construida.
+Guardia = Callable[[Sequence[str]], list[str]]
+
+
 class SinGuardiaDeRed(RuntimeError):
     """El ensayo no puede asegurar que no sale a la red, así que no se ejecuta."""
 

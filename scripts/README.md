@@ -31,6 +31,11 @@
   (solo `node_modules` y `.venv` van enlazados) y ejecuta en ella `npm run web:preparar` y `npm run verificar:datos`
   sin el humo. Falla si la comprobación del ciclo rechaza alguna; unos dos minutos por variante. Es una orden propia,
   fuera de la batería de unidad.
+- `controlador-de-video.ts` (`comprobarControladorDeVideo`) corre, solo leyendo, antes de cada batería de navegadores
+  (`verificar.ts`, `pruebas/navegadores/ensayo.ts`, `probar-motor-empaquetado.ts`): en macOS, y solo si existe
+  `AppleVideoToolboxParavirtualizationUserClient`, cuenta con `ioreg` sus conexiones, que cada proceso de navegador deja
+  abiertas hasta reiniciar la máquina virtual. Por encima de 900 (el límite observado ronda las 1020, y WebKit deja de
+  pintar) para y pide reiniciar la máquina; por debajo, en Linux o sin el controlador no dice nada.
 - `entorno-firefox.ts` crea para cada ejecución de la suite de navegador (una vez por batería, no por caso) las
   carpetas absolutas de `MOZ_APP_DATA` y `MOZ_LOCAL_APP_DATA`, sin las que Firefox no arranca en macOS; las heredan
   todos los procesos hijos y se retiran al terminar. Un fallo de la batería conserva su código y uno de la limpieza se

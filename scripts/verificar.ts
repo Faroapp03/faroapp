@@ -8,6 +8,7 @@ import { join, relative, resolve, sep } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { EXTENSIONES } from '../src/plataforma/extensiones.ts';
 import { comprobarBaseEsco, resumenDeLaBaseEsco } from './base-esco.ts';
+import { comprobarControladorDeVideo } from './controlador-de-video.ts';
 import { ejecutarPaso as ejecutarConPlazo, type Paso } from './ejecucion-del-paso.ts';
 import { conFirefox, type EntornoFirefox, VARIABLES_EXCLUIDAS } from './entorno-firefox.ts';
 import { codigoDeSalida, FalloDeComprobacion } from './fallo-de-comprobacion.ts';
@@ -279,6 +280,7 @@ async function probarNavegador(raiz: string, navegador: readonly string[]): Prom
   if (!navegador.length) {
     throw new FalloDeComprobacion('No hay pruebas de navegador');
   }
+  comprobarControladorDeVideo();
   // Un fallo de la batería conserva su código; uno de la limpieza se informa aparte y nunca pasa por correcto.
   await conFirefox(tmpdir(), async (entorno) => {
     const salida = await ejecutarPaso(pasoPruebasNavegador(navegador, entorno), raiz, PLAZO_SUITE_NAVEGADOR_MS);

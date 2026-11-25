@@ -15,12 +15,17 @@
 //   PRESUPUESTO_DOBLE_MODO=normal|colgado|colgado-preparacion|colgado-arranque|colgado-cierre
 //   PRESUPUESTO_DOBLE_LIMITE_MS=<ms> PRESUPUESTO_DOBLE_MARGEN_MS=<ms>
 //   [PRESUPUESTO_DOBLE_PREPARACION_MS=<ms>] [PRESUPUESTO_DOBLE_ARRANQUE_MS=<ms>] [PRESUPUESTO_DOBLE_ESCRITURAS=1]
+//   [PRESUPUESTO_DOBLE_REGISTRO=<archivo>]
+//
+// Con PRESUPUESTO_DOBLE_REGISTRO, cada proceso terco que lanza el doble (líder de su grupo, con su nieto en él) anota su
+// PID en ese archivo, de forma síncrona, en cuanto lo lanza: la prueba recoge así sus grupos sin depender de `ps`.
 import { spawn } from 'node:child_process';
 import fs, { readdirSync, readFileSync } from 'node:fs';
 import { createServer } from 'node:http';
 import { registerHooks, syncBuiltinESMExports } from 'node:module';
 import { join } from 'node:path';
 import { ESTADO_HTTP } from '../../src/comun/estados-http.ts';
+import { registrarProceso } from '../ayudas/procesos-de-prueba.ts';
 import { CONDICIONES as CONDICIONES_REALES } from './presupuesto-condiciones.mjs';
 import { ESTADO } from './presupuesto-plazo.mjs';
 import { construccionPrivadaSintetica } from './presupuesto-privado-sintetico.mjs';
@@ -63,6 +68,7 @@ if (process.env.PRESUPUESTO_DOBLE_ESCRITURAS === '1') {
 }
 
 const MODO = process.env.PRESUPUESTO_DOBLE_MODO ?? 'normal';
+const REGISTRO = process.env.PRESUPUESTO_DOBLE_REGISTRO;
 const LIMITE_MS = Number(process.env.PRESUPUESTO_DOBLE_LIMITE_MS);
 const MARGEN_MS = Number(process.env.PRESUPUESTO_DOBLE_MARGEN_MS);
 if (!(LIMITE_MS > 0 && MARGEN_MS > 0)) {
@@ -110,6 +116,9 @@ function lanzarTerco() {
     env,
     stdio: ['ignore', 'pipe', 'ignore'],
   });
+  if (REGISTRO) {
+    registrarProceso(REGISTRO, proceso.pid);
+  }
   proceso.stdout.on('data', (trozo) => process.stdout.write(trozo));
   return new Promise((ok) => proceso.stdout.once('data', () => ok(proceso)));
 }
