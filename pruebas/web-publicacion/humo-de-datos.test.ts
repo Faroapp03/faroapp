@@ -7,7 +7,8 @@
 
 import { strict as assert } from 'node:assert';
 import { type ChildProcess, spawn } from 'node:child_process';
-import { readdirSync, readFileSync } from 'node:fs';
+import { mkdtempSync, readdirSync, readFileSync, rmSync } from 'node:fs';
+import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { type TestContext, test } from 'node:test';
 import { fileURLToPath } from 'node:url';
@@ -46,10 +47,11 @@ function vigentes(catalogo: EntregaCatalogo, ahora: number): number {
 }
 
 /** Arranca el servidor local del producto y espera a que diga que escucha; si no lo dice, falla con lo que escribió. */
-async function arrancarServidor(): Promise<ChildProcess> {
+async function arrancarServidor(registro: string): Promise<ChildProcess> {
   const servidor = spawn(process.execPath, [SERVIDOR], {
     cwd: RAIZ,
-    env: { ...process.env, FARO_PUERTO: String(PUERTO) },
+    // El almacén privado del servidor, en la carpeta propia de la prueba: nada se escribe bajo la raíz.
+    env: { ...process.env, FARO_PUERTO: String(PUERTO), FARO_REGISTRO_DE_PRUEBA: registro },
     stdio: ['ignore', 'pipe', 'pipe'],
   });
   let escrito = '';
@@ -113,7 +115,11 @@ function numeros(texto: string): number[] {
 }
 
 async function conChromium(t: TestContext, uso: (contexto: BrowserContext) => Promise<void>): Promise<void> {
-  const servidor = await arrancarServidor();
+  const registro = mkdtempSync(join(tmpdir(), 'faro-registro-humo-'));
+  const servidor = await arrancarServidor(registro).catch((error: unknown) => {
+    rmSync(registro, { recursive: true, force: true });
+    throw error;
+  });
   try {
     const recursos = recursosDelCaso(t);
     const navegador = await lanzarConPlazo(chromium, { headless: true }, t.name, { recursos });
@@ -130,6 +136,7 @@ async function conChromium(t: TestContext, uso: (contexto: BrowserContext) => Pr
     }
   } finally {
     await pararServidor(servidor);
+    rmSync(registro, { recursive: true, force: true });
   }
 }
 

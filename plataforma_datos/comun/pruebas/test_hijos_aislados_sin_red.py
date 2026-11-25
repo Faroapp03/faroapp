@@ -46,6 +46,10 @@ SIN_GUARDIA = {
     "plataforma_datos/comun/pruebas/test_hijos_aislados_sin_red.py": (
         "Esta prueba: sus hijos -I llevan la guardia o, los de control, solo miran si está puesta, sin conectar."
     ),
+    "plataforma_datos/orquestacion/pruebas/test_guardia_sin_red.py": (
+        "Sus hijos -I corren bajo sandbox-exec (guardia_sin_red), que niega toda salida salvo el bucle local: es lo "
+        "que la prueba comprueba, en macOS; en otro sistema no se lanza ninguno."
+    ),
     "plataforma_datos/orquestacion/pruebas/test_preparar_dependencias.py": (
         "Solo comprueba que la orden lleva -I: `ejecutar_con_plazo` está sustituido y no se lanza ningún hijo."
     ),

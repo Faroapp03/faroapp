@@ -40,8 +40,9 @@ con los fallos registrados, los cambios y la fecha de las fuentes manuales: dice
 Los errores al preparar el área, leer la comparación o escribir el informe pueden interrumpir ese registro.
 Python estándar.
 
-Las órdenes del área heredan solo las variables de ENTORNO_HEREDADO, incluida FARO_HOY. Se añade la política de
-red de npm y, en Linux, la biblioteca de Python. Las claves y los perfiles no llegan a las descargas ni a las pruebas.
+Las órdenes del área heredan solo las variables de ENTORNO_HEREDADO, incluidas FARO_HOY y FARO_INSTANTE, con la
+política de red de npm y, en Linux, la biblioteca de Python (`herencia_del_entorno`). Las claves y los perfiles no
+llegan a las descargas ni a las pruebas.
 
 Uso: python3 -m plataforma_datos.orquestacion.actualizar [--ensayo] [--pendientes] [--area DIR]
          [--conservar-area] [--pausa S] [--en-serie | --en-paralelo]
@@ -65,9 +66,9 @@ from datetime import UTC, datetime
 from pathlib import Path
 from typing import Literal, NamedTuple
 
+from plataforma_datos.comun import instante_del_ciclo
 from plataforma_datos.comun.entrada_salida import temporal_hermano
 from plataforma_datos.comun.nucleo import ERRORES_CON_MOTIVO, RAIZ
-from plataforma_datos.comun.red import agente_de_usuario
 from plataforma_datos.cursos.fallos_almacen import codigo_en
 from plataforma_datos.orquestacion import comprobaciones_remotas, errores_de_actualizacion, ordenes, sustitucion
 from plataforma_datos.orquestacion.area_de_ensayo import NO_SE_COPIA as NO_SE_COPIA
@@ -93,6 +94,8 @@ from plataforma_datos.orquestacion.estado_de_la_actualizacion import (
     pendientes,
     registrar_estado,
 )
+from plataforma_datos.orquestacion.herencia_del_entorno import ENTORNO_HEREDADO as ENTORNO_HEREDADO
+from plataforma_datos.orquestacion.herencia_del_entorno import entorno_de_las_ordenes
 from plataforma_datos.orquestacion.hora_limite_del_motor import MOTIVO as MOTIVO_SIN_TIEMPO
 from plataforma_datos.orquestacion.hora_limite_del_motor import queda_tiempo
 from plataforma_datos.orquestacion.informe_de_la_actualizacion import Resumen, escribir_informe
@@ -127,7 +130,7 @@ from plataforma_datos.orquestacion.piezas_de_la_actualizacion import (
     estado_de_las_manuales,
     parametros_de_etapa,
 )
-from plataforma_datos.orquestacion.procesos import bibliotecas_de_python, ejecutar_con_plazo
+from plataforma_datos.orquestacion.procesos import ejecutar_con_plazo
 from plataforma_datos.orquestacion.reconstruir import FUENTES_EN_ORDEN, ORDEN, etapas
 from plataforma_datos.orquestacion.restauracion_del_area import devolver_a_lo_publicado
 from plataforma_datos.orquestacion.retiradas_explicadas import retiradas_explicadas
@@ -152,35 +155,6 @@ TOPE_POR_ORDEN = 45 * 60  # segundos; la acreditación del BOE es la más lenta
 # GNU coreutils) y 127 si no se puede ejecutar (el de la shell POSIX para una orden que no encuentra).
 CODIGO_TIEMPO_AGOTADO = 124
 CODIGO_NO_EJECUTABLE = 127
-# Lo que heredan las órdenes del área del entorno de quien ejecuta: encontrar programas, su carpeta personal y su
-# caché, el idioma, la zona horaria, la carpeta temporal y, si los hay, el proxy y los certificados para salir a la
-# red. FARO_HOY permite reproducir la fecha de validación. No se heredan perfiles, claves ni programas de aviso.
-ENTORNO_HEREDADO = (
-    "PATH",
-    "HOME",
-    "USER",
-    "LOGNAME",
-    "SHELL",
-    "TERM",
-    "LANG",
-    "LC_ALL",
-    "LC_CTYPE",
-    "TZ",
-    "TMPDIR",
-    "HTTP_PROXY",
-    "HTTPS_PROXY",
-    "NO_PROXY",
-    "http_proxy",
-    "https_proxy",
-    "no_proxy",
-    "SSL_CERT_FILE",
-    "SSL_CERT_DIR",
-    "NODE_EXTRA_CA_CERTS",
-    "PLAYWRIGHT_BROWSERS_PATH",
-    "FARO_HUMO_CHROMIUM",
-    "FARO_HOY",
-    "FARO_TURNOS_ENTRE_PROCESOS",  # la carpeta de turnos por servidor de las descargas en paralelo
-)
 
 
 class Resultado(NamedTuple):
@@ -249,7 +223,9 @@ def exigir_orden_admitida(orden: Orden) -> None:
         raise OrdenNoAdmitida(f"{orden.nombre}: «{' '.join(orden.orden[3:])}» no es la orden de su etapa")
 
 
-def exigir_ordenes_del_modulo(modulo: Modulo, sin_descargar: tuple[str, ...]) -> dict[str, list[Orden]]:
+def exigir_ordenes_del_modulo(
+    modulo: Modulo, sin_descargar: tuple[str, ...], reutilizar_validado: tuple[str, ...] = ()
+) -> dict[str, list[Orden]]:
     """Construye y comprueba todas las órdenes de un módulo antes de ejecutar ninguna.
 
     Returns:
@@ -258,7 +234,7 @@ def exigir_ordenes_del_modulo(modulo: Modulo, sin_descargar: tuple[str, ...]) ->
     Raises:
         OrdenNoAdmitida: Si alguna orden de cualquiera de sus fuentes no es admitida.
     """
-    por_fuente = {fuente: ordenes_de_la_fuente(fuente, sin_descargar) for fuente in modulo.fuentes}
+    por_fuente = {f: ordenes_de_la_fuente(f, sin_descargar, reutilizar_validado) for f in modulo.fuentes}
     for orden in (orden for lista in por_fuente.values() for orden in lista):
         exigir_orden_admitida(orden)
     return por_fuente
@@ -293,6 +269,8 @@ class Opciones(NamedTuple):
     conservar_area: bool = False
     pausa: float = PAUSA_ENTRE_FUENTES
     sin_descargar: tuple[str, ...] = ()
+    # Solo el ensayo con datos grabados: fuentes cuya base no trae sus originales y que validan su versión vigente.
+    reutilizar_validado: tuple[str, ...] = ()
     reintento: float = PAUSA_ANTES_DE_REINTENTAR
     solo: tuple[str, ...] | None = None  # selección inicial; sus publicaciones nuevas arrastran consumidores
     programada: bool = False
@@ -311,24 +289,6 @@ class ResultadoActualizacion(NamedTuple):
     comienzo: datetime | None
     informe: Path | None
     resultados: dict[str, ResultadoDelModulo]
-
-
-def entorno_de_las_ordenes(entorno: Mapping[str, str]) -> dict[str, str]:
-    """Filtra el entorno que heredan las órdenes del área.
-
-    Args:
-        entorno: El entorno del proceso que actualiza.
-
-    Returns:
-        Variables admitidas, política de npm y biblioteca del runtime; nunca una ruta ambiental.
-    """
-    filtrado = {nombre: valor for nombre, valor in entorno.items() if nombre in ENTORNO_HEREDADO}
-    return {
-        **filtrado,
-        **bibliotecas_de_python(),
-        "npm_config_user_agent": agente_de_usuario(),
-        "npm_config_update_notifier": "false",
-    }
 
 
 def _ejecutar_proceso(orden: Sequence[str], area: Path, entorno: Mapping[str, str]) -> Resultado:
@@ -374,16 +334,21 @@ def ejecutar_orden(orden: Sequence[str], area: Path) -> Resultado:
 # ---------------------------------------------------------------------------------------------------------------------
 
 
-def ordenes_de_la_fuente(nombre: str, sin_descargar: tuple[str, ...] = ()) -> list[Orden]:
+def ordenes_de_la_fuente(
+    nombre: str, sin_descargar: tuple[str, ...] = (), reutilizar_validado: tuple[str, ...] = ()
+) -> list[Orden]:
     """Construye las órdenes de las etapas de una fuente.
 
     Los parámetros de cada etapa son los de piezas_de_la_actualizacion.parametros_de_etapa. Una fuente de
     `sin_descargar` no se descarga esta vez: se prepara y se valida con su copia vigente. Las etapas de cada fuente
-    son las de la reconstrucción (reconstruir.etapas).
+    son las de la reconstrucción (reconstruir.etapas). Una fuente de `reutilizar_validado` solo valida su versión
+    vigente, la misma comprobación que `revalidar` aplica a una versión conservada: es la del ensayo con datos
+    grabados para una fuente cuya base no trae sus originales (`ensayo_grabado`).
 
     Args:
         nombre: La fuente, clave de FUENTES.
         sin_descargar: Las fuentes que esta vez no se descargan.
+        reutilizar_validado: Las fuentes que esta vez no se preparan.
 
     Returns:
         Una orden por etapa, en orden, con su fuente y su etapa.
@@ -391,7 +356,7 @@ def ordenes_de_la_fuente(nombre: str, sin_descargar: tuple[str, ...] = ()) -> li
     modulo = dict(FUENTES_EN_ORDEN)[nombre].__name__
     return [
         Orden(f"{nombre} · {etapa}", [PYTHON, "-m", modulo, etapa, *parametros_de_etapa(nombre, etapa)], nombre, etapa)
-        for etapa in etapas(nombre not in sin_descargar, nombre)
+        for etapa in etapas(nombre not in sin_descargar, nombre)[-1 if nombre in reutilizar_validado else 0 :]
     ]
 
 
@@ -676,7 +641,7 @@ def ejecutar_modulo(
     rutas = carpetas(modulo)
     try:
         # Todas las órdenes del módulo se comprueban antes de la primera: un rechazo no deja una descarga a medias.
-        por_fuente = exigir_ordenes_del_modulo(modulo, opciones.sin_descargar)
+        por_fuente = exigir_ordenes_del_modulo(modulo, opciones.sin_descargar, opciones.reutilizar_validado)
         for fuente, ordenes in por_fuente.items():
             if fuente in FUENTES_CON_CATALOGO and ordenes[0].etapa == ETAPA_DE_DESCARGA:
                 # Una consulta fallida sigue siendo historia: conserva originales, no cambia el negocio admitido.
@@ -1029,7 +994,8 @@ def actualizar_con_resultado(
         return ResultadoActualizacion(CODIGO_ROJO, None, None, {})
     try:
         with sustitucion.cerrojo(raiz):
-            comienzo = datetime.now(UTC)
+            # El instante fijado del ensayo, si lo hay: así lo anotado no queda después del instante del panel.
+            comienzo = instante_del_ciclo.ahora()
             recuperados = recuperar_todo(raiz)
             if recuperados:
                 print(f"Sustituciones cortadas, ya resueltas: {', '.join(recuperados)}. Lo publicado está entero.")
@@ -1048,7 +1014,7 @@ def actualizar_con_resultado(
             if not seleccion.ensayo:
                 comprobaciones_remotas.migrar_registro(raiz)
                 ciclo = comprobaciones_remotas.iniciar_ciclo(raiz, comienzo, modo_del_ciclo(seleccion))
-                seguimiento = Seguimiento(raiz, ciclo, ejecutor, lambda: datetime.now(UTC))
+                seguimiento = Seguimiento(raiz, ciclo, ejecutor, instante_del_ciclo.ahora)
                 ejecutor = seguimiento.ejecutar
             with en_sombra(raiz, ensayo=seleccion.ensayo):
                 return _actualizar(raiz, seleccion, ejecutor, comienzo, seguimiento)
@@ -1063,7 +1029,7 @@ def _cerrar_seguimiento(seguimiento: Seguimiento | None, raiz: Path, resultados:
         comprobaciones_remotas.cerrar_ciclo(
             raiz,
             seguimiento.ciclo,
-            datetime.now(UTC),
+            seguimiento.reloj(),
             resultado="preparado" if preparado else "fallo",
             paquete_preparado=preparado,
         )
@@ -1080,7 +1046,8 @@ def _actualizar(
         raiz: La raíz del repositorio.
         opciones: Cómo se ejecuta.
         ejecutor: Lo que ejecuta cada orden.
-        comienzo: Instante real anterior a la recuperación y a cualquier efecto sobre datos.
+        comienzo: Instante del ciclo (`instante_del_ciclo.ahora`) anterior a la recuperación y a cualquier efecto
+            sobre datos.
         seguimiento: Ciclo registrado, o None si es un ensayo.
 
     Returns:
@@ -1226,6 +1193,8 @@ def _comprobar_opciones(opciones: Opciones) -> None:
         ValueError: Si la configuración externa combina modos o una segunda selección.
     """
     _comprobar_esperas(opciones)
+    if not set(opciones.reutilizar_validado) <= set(opciones.sin_descargar):
+        raise ValueError("una fuente que reutiliza su validado no se descarga")
     if type(opciones.revisar_paquete_pendiente) is not bool or (
         opciones.revisar_paquete_pendiente and not opciones.programada
     ):

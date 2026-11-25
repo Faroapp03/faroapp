@@ -15,7 +15,7 @@ from unittest import mock
 from plataforma_datos.comun.nucleo import RAIZ
 from plataforma_datos.orquestacion import diario_mantenimiento as diario
 from plataforma_datos.orquestacion import ejecutor_operativo as ejecutor
-from plataforma_datos.orquestacion.actualizar import ENTORNO_HEREDADO
+from plataforma_datos.orquestacion.actualizar import ENTORNO_HEREDADO, entorno_de_las_ordenes
 from plataforma_datos.orquestacion.almacen_generaciones import guardar_generacion, recuperar_generacion
 from plataforma_datos.orquestacion.almacen_s3 import AlmacenS3NoDisponible
 from plataforma_datos.orquestacion.almacen_trabajos import (
@@ -427,6 +427,25 @@ class PruebaEjecutorOperativo(unittest.TestCase):
         self.no_disponible_una_vez("leer_control", lambda clave: clave == REFERENCIA and self.referencia_avanzada())
         self.recibo_en_el_diario()
         self.confirmado_una_vez()
+
+    def test_el_reloj_del_ensayo_no_llega_a_un_ciclo_de_produccion(self) -> None:
+        """FARO_HOY y FARO_INSTANTE heredados del runner no llegan al motor: producción usa la hora real."""
+        reloj = {"FARO_HOY": "2026-11-24", "FARO_INSTANTE": "2026-11-24T23:59:59Z"}
+        entornos: list[dict[str, str]] = []
+
+        def anotar(heredado: dict[str, str]) -> dict[str, str]:
+            # El ejecutor completa este mismo diccionario: lo anotado es el entorno que recibe cada orden.
+            entornos.append(entorno_de_las_ordenes(heredado))
+            return entornos[-1]
+
+        with (
+            mock.patch.dict(os.environ, reloj),
+            mock.patch.object(ejecutor, "entorno_de_las_ordenes", side_effect=anotar),
+        ):
+            resumen = self.ejecutar()
+        self.assertEqual(resumen["resultado"], "validado")
+        self.assertTrue(entornos)
+        self.assertTrue(all(not set(reloj) & set(entorno) and "HOME" in entorno for entorno in entornos))
 
     def test_la_senal_del_ciclo_operativo_heredada_del_runner_se_ignora(self) -> None:
         """Solo el candidato recibe la señal, con el valor del supervisor; el resto de órdenes no la ven nunca."""

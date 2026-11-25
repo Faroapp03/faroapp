@@ -15,7 +15,8 @@ from plataforma_datos.orquestacion.modulos import CARPETA_DEL_PAQUETE
 
 PYTHON = sys.executable
 # Los plazos internos de verificar:datos suman 80 minutos (seis comprobaciones de 2, las pruebas de unidad 18, las de
-# Python 45 y el humo 5); los cinco de más son para arrancar Node y leer la base ESCO antes del primer plazo.
+# Python 45, que es el de cada uno de sus procesos y corren a la vez, y el humo 5); los cinco de más son para arrancar
+# Node y leer la base ESCO antes del primer plazo.
 TOPE_DE_LAS_COMPROBACIONES = 85 * 60
 
 

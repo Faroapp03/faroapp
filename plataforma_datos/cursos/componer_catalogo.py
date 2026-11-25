@@ -15,6 +15,7 @@ from datetime import UTC, datetime, timedelta
 from functools import partial
 from pathlib import Path
 
+from plataforma_datos.comun import instante_del_ciclo
 from plataforma_datos.comun.entrada_salida import guardar_json
 from plataforma_datos.comun.nucleo import DATOS_RELATIVOS, RAIZ, ErrorFuente
 from plataforma_datos.cursos import admision_catalogo as admision
@@ -426,7 +427,8 @@ def componer(*, raiz: Path = RAIZ, corte_utc: str | None = None) -> dict:
         sustitucion.RecuperacionIncompleta: Si debe conservarse la candidata para recuperación.
     """
     base = raiz / almacen.RUTA
-    corte = corte_utc or datetime.now(UTC).isoformat().replace("+00:00", "Z")
+    # Sin corte pedido, el instante único del ciclo si se fijó (el ensayo con datos grabados) o la hora real.
+    corte = corte_utc or instante_del_ciclo.fijado() or datetime.now(UTC).isoformat().replace("+00:00", "Z")
     fecha_utc(corte)
     sin_identidades = _sin_identidades(_almacen_admitido(base).snapshot.ruta)
     retenidos = [m for m in [fundae_conservado_sin_aplicar(raiz, base)] if m]

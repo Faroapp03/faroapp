@@ -7,7 +7,8 @@
 // Con FARO_HUMO_CHROMIUM distinto de 0 (por omisión, activado) abre además el humo de datos en Chromium.
 // Uso: node scripts/verificar-datos.ts [--medir]
 
-import { existsSync, readFileSync } from 'node:fs';
+import { existsSync, mkdirSync, mkdtempSync, readFileSync, rmSync } from 'node:fs';
+import { tmpdir } from 'node:os';
 import { dirname, join, posix, relative, resolve, sep } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { EXTENSIONES } from '../src/plataforma/extensiones.ts';
@@ -22,6 +23,13 @@ import {
   medirPruebasDeDatos,
   modulosDePruebasPython,
 } from './medir-pruebas-de-datos.ts';
+import {
+  DURACIONES_PYTHON,
+  type LoteDePython,
+  leerDuracionesPython,
+  PROCESOS_DE_PYTHON,
+  repartirPruebasPython,
+} from './reparto-de-pruebas-python.ts';
 import { OMISIONES_DE_LA_GLOBAL, OMISIONES_SIN_EXTENSIONES } from './resumen-pruebas.ts';
 import {
   ejecutarPaso,
@@ -35,8 +43,9 @@ import {
 } from './verificar.ts';
 
 const RAIZ = fileURLToPath(new URL('../', import.meta.url));
-// Las pruebas Python que leen el paquete tardan unos 17 minutos en serie (medido: 882 casos en 1.039 s); el plazo deja
-// margen para un runner más lento sin dejar colgado el ciclo.
+// Las pruebas Python que leen el paquete tardan unos 17,6 minutos en serie en el Mac (medido: 1.054 s; los 892 casos de sus 86 módulos, contados con unittest) y se
+// reparten en procesos que corren a la vez, cada uno con este plazo: el de la etapa sigue siendo uno solo. Con menos CPU
+// que procesos se turnan y terminan como en serie, 36 minutos con el runner más lento medido (2,03 veces el Mac).
 const PLAZO_PYTHON_MS = 2_700_000;
 /** El humo de datos en Chromium: el catálogo de Cursos, una búsqueda y el informe de ejemplo con el paquete nuevo. */
 export const HUMO_DE_DATOS = 'pruebas/web-publicacion/humo-de-datos.test.ts';
@@ -48,6 +57,8 @@ const CARPETAS_DEL_PAQUETE = ['datos/', 'web/datos/', 'web/recursos/', 'var/actu
 const CARPETAS_DE_DATOS = CARPETAS_DEL_PAQUETE.filter((carpeta) => carpeta !== 'web/recursos/');
 /** El resumen final de unittest cuando todo pasa sin omitir nada: «Ran N tests» y «OK», sin «skipped». */
 const PYTHON_EN_VERDE = /^Ran ([1-9]\d*) tests? in [\d.]+s\s+OK$/m;
+/** Las variables de los temporales: cada proceso de Python tiene los suyos y no comparte ninguno con los demás. */
+const VARIABLES_DE_TEMPORALES = ['TMPDIR', 'TEMP', 'TMP'] as const;
 
 /** Las comprobaciones de scripts/verificar.ts que leen datos/ o web/datos/; las demás solo leen código o web/. */
 export function pasosDeDatos(): readonly Paso[] {
@@ -201,37 +212,12 @@ export function pruebasPythonDeDatos(raiz: string): readonly string[] {
  * @param salida - Lo que escribió unittest.
  * @throws {FalloDeComprobacion} Si no hay casos ejecutados o alguno se omitió.
  */
-export function exigirPythonSinOmisiones(salida: string): void {
-  if (!PYTHON_EN_VERDE.test(salida)) {
+export function exigirPythonSinOmisiones(salida: string): number {
+  const casos = PYTHON_EN_VERDE.exec(salida)?.[1];
+  if (casos === undefined) {
     throw new FalloDeComprobacion('Las pruebas Python de los datos no se ejecutaron todas o omitieron alguna');
   }
-}
-
-/** Ejecuta las comprobaciones de datos y las pruebas que abren el paquete; cualquier fallo detiene la orden. */
-async function comprobarLosDatos(raiz: string): Promise<void> {
-  exigirVersionNode(process.versions.node);
-  console.log(resumenDeLaBaseEsco(await comprobarBaseEsco(raiz)));
-  for (const paso of pasosDeDatos()) {
-    const salida = await ejecutarPaso(paso, raiz);
-    console.log(`${paso.nombre}: correcto${salida.trim() ? `\n${salida.trim()}` : ''}`);
-  }
-  const archivos = pruebasNodeDeDatos(raiz);
-  const python = pruebasPythonDeDatos(raiz);
-  if (!archivos.length || !python.length) {
-    throw new FalloDeComprobacion('No hay pruebas que abran el paquete de datos');
-  }
-  const salida = await ejecutarPaso(pasoPruebasDeUnidad(archivos), raiz, PLAZO_SUITE_UNIDAD_MS);
-  const todas = EXTENSIONES.length ? OMISIONES_DE_LA_GLOBAL : OMISIONES_SIN_EXTENSIONES;
-  const elegidas = new Set(archivos.map((archivo) => relative(raiz, archivo).split(sep).join('/')));
-  const admitidas = Object.fromEntries(Object.entries(todas).filter(([ruta]) => elegidas.has(ruta)));
-  exigirPruebasEjecutadas(salida, { raiz, archivos, admitidas });
-  console.log(`Pruebas Node de los datos: ${archivos.length} archivos`);
-  const pythonSalida = await ejecutarPaso(pasoPruebasPythonDeDatos(raiz, python), raiz, PLAZO_PYTHON_MS);
-  exigirPythonSinOmisiones(pythonSalida);
-  console.log(pythonSalida.trim());
-  if (process.env.FARO_HUMO_CHROMIUM !== '0') {
-    await probarElHumo(raiz);
-  }
+  return Number(casos);
 }
 
 /**
@@ -255,6 +241,120 @@ export function pasoPruebasPythonDeDatos(raiz: string, modulos: readonly string[
     entorno: { PYTHONPATH: join(raiz, 'scripts/sin_red'), FARO_PRUEBAS_SIN_RED: '1' },
     excluir: RELOJ_DEL_ENSAYO,
   };
+}
+
+/**
+ * Un proceso de Python con su lote de módulos: el paso de las pruebas de los datos (guardia sin red, sin el reloj del
+ * ensayo) y su carpeta de temporales propia.
+ */
+export function pasoDePython(raiz: string, lote: LoteDePython, numero: number, temporal: string): Paso {
+  const paso = pasoPruebasPythonDeDatos(raiz, lote.modulos);
+  return {
+    ...paso,
+    nombre: `${paso.nombre}, proceso ${numero}`,
+    entorno: {
+      ...paso.entorno,
+      ...Object.fromEntries(VARIABLES_DE_TEMPORALES.map((variable) => [variable, temporal])),
+    },
+  };
+}
+
+/**
+ * Combina los procesos como si fueran uno: todos deben terminar bien y sin omisiones. Si alguno falla, la orden falla
+ * con la salida completa de cada proceso que falló.
+ *
+ * @param resultados - Lo que devolvió cada proceso, en el orden de los lotes.
+ * @returns Los casos ejecutados entre todos.
+ * @throws {FalloDeComprobacion} Con la salida de cada proceso que falló u omitió casos.
+ */
+export function concluirProcesosDePython(resultados: readonly PromiseSettledResult<string>[]): number {
+  const fallos: string[] = [];
+  let casos = 0;
+  resultados.forEach((resultado, indice) => {
+    const titulo = `Pruebas Python de los datos, proceso ${indice + 1} de ${resultados.length}`;
+    if (resultado.status === 'rejected') {
+      fallos.push(`${titulo}:\n${resultado.reason instanceof Error ? resultado.reason.message : resultado.reason}`);
+      return;
+    }
+    try {
+      casos += exigirPythonSinOmisiones(resultado.value);
+    } catch (error) {
+      fallos.push(`${titulo}: ${(error as Error).message}\n${resultado.value.trim()}`);
+    }
+  });
+  if (fallos.length) {
+    throw new FalloDeComprobacion(fallos.join('\n\n'));
+  }
+  return casos;
+}
+
+/**
+ * Ejecuta los módulos repartidos en procesos a la vez (scripts/reparto-de-pruebas-python.ts) y espera a todos, para
+ * informar de cada fallo. Cada proceso tiene su carpeta de temporales, que se retira al terminar.
+ *
+ * @param raiz - Raíz del producto.
+ * @param modulos - Los módulos, en el orden de un solo proceso.
+ * @param procesos - Cuántos procesos a la vez; el ciclo usa el tope, PROCESOS_DE_PYTHON.
+ * @returns Los casos ejecutados entre todos.
+ */
+export async function probarPythonEnProcesos(
+  raiz: string,
+  modulos: readonly string[],
+  procesos = PROCESOS_DE_PYTHON,
+): Promise<number> {
+  const reparto = repartirPruebasPython(modulos, leerDuracionesPython(raiz).segundos, procesos);
+  if (reparto.sinDuracion.length) {
+    console.warn(
+      `Aviso: ${reparto.sinDuracion.join(', ')} no tiene duración medida en ${DURACIONES_PYTHON}; ` +
+        `se reparte con la mediana (${reparto.mediana} s). Mídelo y añádelo.`,
+    );
+  }
+  const area = mkdtempSync(join(tmpdir(), 'faro-pruebas-python-de-datos-'));
+  try {
+    const resultados = await Promise.allSettled(
+      reparto.lotes.map((lote, indice) => {
+        const temporal = join(area, `proceso-${indice + 1}`);
+        mkdirSync(temporal);
+        console.log(
+          `Pruebas Python de los datos, proceso ${indice + 1} de ${reparto.lotes.length}: ` +
+            `${lote.modulos.length} módulos, ${lote.segundos} s medidos`,
+        );
+        return ejecutarPaso(pasoDePython(raiz, lote, indice + 1, temporal), raiz, PLAZO_PYTHON_MS);
+      }),
+    );
+    const casos = concluirProcesosDePython(resultados);
+    console.log(
+      `Pruebas Python de los datos: ${casos} casos de ${modulos.length} módulos en ${reparto.lotes.length} procesos, sin omisiones`,
+    );
+    return casos;
+  } finally {
+    rmSync(area, { recursive: true, force: true });
+  }
+}
+
+/** Ejecuta las comprobaciones de datos y las pruebas que abren el paquete; cualquier fallo detiene la orden. */
+async function comprobarLosDatos(raiz: string): Promise<void> {
+  exigirVersionNode(process.versions.node);
+  console.log(resumenDeLaBaseEsco(await comprobarBaseEsco(raiz)));
+  for (const paso of pasosDeDatos()) {
+    const salida = await ejecutarPaso(paso, raiz);
+    console.log(`${paso.nombre}: correcto${salida.trim() ? `\n${salida.trim()}` : ''}`);
+  }
+  const archivos = pruebasNodeDeDatos(raiz);
+  const python = pruebasPythonDeDatos(raiz);
+  if (!archivos.length || !python.length) {
+    throw new FalloDeComprobacion('No hay pruebas que abran el paquete de datos');
+  }
+  const salida = await ejecutarPaso(pasoPruebasDeUnidad(archivos), raiz, PLAZO_SUITE_UNIDAD_MS);
+  const todas = EXTENSIONES.length ? OMISIONES_DE_LA_GLOBAL : OMISIONES_SIN_EXTENSIONES;
+  const elegidas = new Set(archivos.map((archivo) => relative(raiz, archivo).split(sep).join('/')));
+  const admitidas = Object.fromEntries(Object.entries(todas).filter(([ruta]) => elegidas.has(ruta)));
+  exigirPruebasEjecutadas(salida, { raiz, archivos, admitidas });
+  console.log(`Pruebas Node de los datos: ${archivos.length} archivos`);
+  await probarPythonEnProcesos(raiz, python);
+  if (process.env.FARO_HUMO_CHROMIUM !== '0') {
+    await probarElHumo(raiz);
+  }
 }
 
 /** El humo en un solo motor, en serie; el ciclo lo apaga con FARO_HUMO_CHROMIUM=0 si no instala Chromium. */

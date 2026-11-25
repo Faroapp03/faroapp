@@ -16,6 +16,7 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
 
+from plataforma_datos.comun import instante_del_ciclo
 from plataforma_datos.comun.nucleo import RAIZ, ErrorFuente
 from plataforma_datos.orquestacion import diario_mantenimiento as diario
 from plataforma_datos.orquestacion import movimientos_de_cursos, recuperar_ediciones, ultimo_fallo
@@ -157,11 +158,18 @@ def _escribir_exclusivo(ruta: Path, contenido: bytes) -> None:
             temporal.unlink()
 
 
+# Las variables con que el ensayo fija su reloj (FARO_HOY y FARO_INSTANTE): nunca llegan a un ciclo de producción.
+RELOJ_DEL_ENSAYO = ("FARO_HOY", instante_del_ciclo.VARIABLE)
+
+
 def _entorno(directorio: Path) -> dict[str, str]:
     hogar, temporal = directorio / "hogar", directorio / "temporales"
     hogar.mkdir()
     temporal.mkdir()
     entorno = entorno_de_las_ordenes(os.environ)
+    # El reloj fijo es del ensayo con datos grabados: un ciclo de producción usa siempre la fecha y la hora reales.
+    for variable in RELOJ_DEL_ENSAYO:
+        entorno.pop(variable, None)
     entorno["HOME"] = str(hogar)
     entorno["TMPDIR"] = str(temporal)
     entorno.setdefault("PATH", os.defpath)

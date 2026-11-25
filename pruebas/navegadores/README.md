@@ -200,8 +200,8 @@ runtime compatible y comprobar la candidata desplegada. Los resultados no contie
 
 Estos ensayos no forman parte de `npm run verificar` ni de `npm run probar:navegadores`. Se ejecutan a mano,
 con los motores de Playwright ya instalados, cuando cambia lo que comprueban; cada uno, salvo
-`arranque-bloqueado.test.mjs`, escribe su resultado, y todos terminan con salida 1 si algún motor falla. Son nueve, los
-de esta sección:
+`arranque-bloqueado.test.mjs` e `instalacion-con-carga.test.mjs`, escribe su resultado, y todos terminan con salida 1
+si algún motor falla. Son diez, los de esta sección:
 
 1. `portal-oficial-miniflare.mjs`
 2. `portal-remoto-oficial.mjs`
@@ -212,6 +212,7 @@ de esta sección:
 7. `actualizacion-sw.mjs`
 8. `csp-del-panel.ts`
 9. `arranque-bloqueado.test.mjs`
+10. `instalacion-con-carga.test.mjs`
 
 `presupuesto-rendimiento.mjs` (`npm run probar:presupuesto`) también se lanza a mano, pero no entra en esta cuenta:
 mide en vez de aprobar o suspender un ensayo de la entrega, y se describe aparte, en «Presupuesto de rendimiento».
@@ -327,6 +328,17 @@ Con un HOME aislado para los demás motores, WebKit se ejecuta aparte:
 npm run probar:arranque-bloqueado -- --motor chromium --motor firefox   # HOME aislado admitido
 npm run probar:arranque-bloqueado -- --motor webkit                     # con el HOME habitual
 ```
+
+`instalacion-con-carga.test.mjs` (`npm run probar:instalacion-con-carga`) mide la instalación del service worker de
+`instalarServiceWorker` (`paquete-comun.mjs`) con la máquina cargada. Esa espera atiende al evento real: la versión que
+se instala se toma del registro que devuelve `register()`, en el mismo `evaluate`, y se espera su `statechange` hasta
+`activated`; si queda `redundant`, falla en cuanto ocurre (lo prueba `recorrido-en-la-copia.test.mjs` con un worker
+roto). Su tope, `TOPE_DE_INSTALACION_MS`, sigue en 30 s, con su origen escrito; si vence, el error lo distingue de una
+instalación fallida y lleva el ciclo de estados y el registro. El ensayo lanza un proceso al 100 % de CPU por núcleo,
+termina cada uno por su PID, ejecuta entero `recorrido-en-la-copia.test.mjs` y exige que pase y que cada una de sus 12
+instalaciones quede dentro de lo medido (`PEOR_INSTALACION_MEDIDA_MS` con su margen); escribe lo que tardó cada una y
+la peor. Necesita la web local construida (`npm run web:preparar`) y dura menos de dos minutos. No escribe ningún
+archivo de resultado.
 
 Los resultados se crean por defecto en una carpeta temporal nueva fuera del producto y se indica su ruta.
 Para conservarlos en otro destino, utilizar `npm run probar:navegadores -- --salida "/ruta/nueva"`.

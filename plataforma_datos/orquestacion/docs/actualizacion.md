@@ -164,6 +164,115 @@ paquete en el Mac y ver qué paso pesa más antes de lanzar un ciclo real. El pl
 de esa medida, llevada al runner de GitHub más lento medido con el factor de cada tipo de trabajo
 (`medidas_del_ciclo.py`).
 
+### Ensayo con datos grabados
+
+El ensayo con datos grabados ejecuta el ciclo entero sobre la base conservada, sin descargar nada y sin esperar a
+ningún servidor: es el banco de pruebas de cualquier cambio del ciclo. Cada mejora se demuestra comparando sus huellas
+con las de un ensayo anterior.
+
+```sh
+.venv/bin/python -m plataforma_datos.orquestacion.ensayo_grabado ejecutar --base CARPETA --salida CARPETA
+.venv/bin/python -m plataforma_datos.orquestacion.ensayo_grabado ejecutar --desde-r2 --salida CARPETA
+.venv/bin/python -m plataforma_datos.orquestacion.ensayo_grabado huellas --salida CARPETA
+.venv/bin/python -m plataforma_datos.orquestacion.ensayo_grabado comparar HUELLAS_A HUELLAS_B
+```
+
+`ejecutar` hace lo mismo que el ciclo real de la acción «actualizar-datos», en este orden:
+
+1. Restaura la base: de una carpeta ya descargada (`--base`) o de la base operativa vigente del almacén privado
+   (`--desde-r2`, con la configuración de `transferir_generacion.configuracion_privada`). El almacén se abre con
+   `AlmacenSoloLectura`, que solo deja leer: cualquier escritura se rechaza antes de llegar a él. La base leída queda
+   en `SALIDA/base` y sirve de `--base` para repetir el ensayo sin volver a leer el almacén.
+2. Compone el candidato con el commit actual y esa base (`aprovisionar_candidato`), como el ejecutor de mantenimiento.
+   El árbol de trabajo tiene que estar sin cambios sin confirmar: así las huellas son exactamente las de ese commit.
+3. Ejecuta el ciclo del candidato (`candidato.ejecutar_candidato`) con el intérprete del candidato y desde su carpeta,
+   como el ejecutor de producción, y con todas las fuentes sin descargar: cada fuente se prepara y se valida con su
+   copia conservada. Una fuente cuyo lote de originales con procedencia propia no viene en la base (las ediciones de
+   FUNDAE, el censo de IA del Cibernàrium y la edición vigente de la TIC-H: `base_del_ensayo.lotes_con_procedencia`)
+   no se puede volver a preparar: reutiliza su validado vigente y solo pasa su validación, la misma comprobación que el
+   ciclo aplica a una versión conservada (`revalidar`). Es la opción `reutilizar_validado`, que solo usa el ensayo; sin
+   ella, el ciclo prepara cada fuente como siempre. Siguen el paquete con todas sus comprobaciones, la sombra de la
+   retirada y el recibo del candidato.
+4. Como el supervisor tras el recibo (`ejecutor_operativo._conservar_generacion`), exporta la generación del intento
+   con `generacion_operativa.exportar_generacion`, siempre salvo «sin-pendientes» y también con el recibo rechazado,
+   pero a una carpeta local de la salida: nunca al almacén (`generacion_del_ensayo.py`). El recibo del ensayo lo dice en
+   `generacionDelEnsayo`: «conservada» con la huella de su manifiesto, o «no-conservada» con la comprobación y la causa
+   de las listas cerradas de `causas_del_ciclo` (por ejemplo, `datos` y `paquete-incoherente`), y qué haría el
+   supervisor (dejar la base como estaba o detenerse, si el recibo validó lo que no se puede conservar).
+   Si el supervisor se detendría, el ensayo devuelve el código 1 aunque el recibo sea «validado»; lo mismo hace un
+   tramo que llega a la generación.
+5. Escribe en la salida `huellas.json` y `minutos.json` (los minutos de cada fase y de cada paso del ciclo).
+
+El ensayo se ejecuta en macOS, bajo `sandbox-exec` (`guardia_sin_red.py`); en otro sistema se niega y dice por qué.
+El perfil niega toda conexión saliente salvo el bucle local, que hace falta porque el humo de datos sirve la web con el
+servidor local del producto en 127.0.0.1, y niega también toda conexión a un socket unix por su ruta, entre ellas la
+del resolvedor de nombres. La guardia se prueba con una conexión externa, la resolución de un nombre externo y un
+proceso nieto, que fallan, y con `ps` y un servidor local, que funcionan. Dentro del sandbox no se ejecutan programas
+con setuid, y `ps` lo es: como las comprobaciones leen la tabla de procesos, `ps` (que no usa la red) corre fuera del
+sandbox. La suborden `ciclo` no empieza si una conexión externa no se niega.
+
+El entorno del ciclo es el de las órdenes de producción (`actualizar.entorno_de_las_ordenes`), con su carpeta personal
+y su carpeta temporal dentro de la salida, sin ninguna variable de proxy y sin las credenciales del almacén. Nada se
+escribe en el almacén, en los Workers ni en GitHub.
+
+Todas las piezas del ciclo leen un mismo reloj (`entorno_del_ensayo.reloj_del_ensayo`): el día de validación
+(`FARO_HOY`) y el instante único del ciclo (`FARO_INSTANTE`, `comun/instante_del_ciclo.py`), que usan la composición
+del catálogo de Cursos, el comienzo del intento, el seguimiento de las comprobaciones, el estado del panel y el
+catálogo del recibo (`instante_del_ciclo.ahora`). Por omisión el instante es el comienzo del ensayo: queda en el pasado
+para las comprobaciones que leen el catálogo con la hora real, que no admiten un corte posterior a ella, y queda en
+las huellas. Un día de validación que no es el del comienzo necesita su `--instante`. Para comparar con otro ensayo hay
+que repetir su reloj con `--reloj-de HUELLAS`, que no admite a la vez `--hoy` ni `--instante`: con otro día cambian las
+vigencias. El ciclo de producción no fija el reloj: el ejecutor de mantenimiento quita `FARO_HOY` y `FARO_INSTANTE`
+del entorno que hereda, y cada pieza usa la hora real.
+
+El recibo del ensayo añade al del candidato `coberturaDelEnsayo`, y las huellas la repiten en `datos › cobertura`:
+por cada fuente, si se preparó desde sus originales, si reutilizó su validado vigente o si solo se valida, como en
+cada ciclo. Así el banco no aparenta cubrir lo que no cubre.
+
+Las huellas (`huellas_del_ensayo.py`) tienen dos partes. Las de datos se exigen iguales byte a byte: cada archivo del
+paquete (`datos/`) y de la generación exportada (con los JSON sin sus firmas de código; un enlace simbólico cuenta por
+su destino), el catálogo de Cursos y el recibo, detallado hasta cada módulo de su estado. Las de código son las firmas
+del código que produjo cada dato (`CAMPOS_DE_CODIGO` y la huella de la regla de retirada) y las huellas compuestas que
+las incluyen (la versión del paquete, el manifiesto y cada archivo tal cual): un cambio de código las cambia por
+diseño, así que `comparar` las informa sin exigirlas iguales. Un campo con nombre de firma de código que no esté
+clasificado detiene el cálculo de las huellas: hay que decir si es una firma o un dato. Del catálogo y del recibo no
+cuentan los campos con la hora real en que el proceso hizo algo (`CAMPOS_DE_HORA`, uno a uno con su motivo); los
+instantes que siguen el reloj del ensayo sí cuentan. `comparar` empieza diciendo qué excluye y por qué, sigue con una
+línea por campo que difiere y termina con «Las huellas de datos son iguales.» (código 0) o «Las huellas de datos son
+distintas.» (código 1).
+
+#### Ensayo por partes
+
+El ensayo por partes sirve para trabajar, no para aceptar: nada se junta, se sube ni se publica sin la verificación
+completa, y el ensayo completo es la prueba final del ciclo. Repite solo un tramo del paquete sobre lo que conservó un
+ensayo completo en su salida, para arreglar algo y volver a probarlo en minutos:
+
+```sh
+.venv/bin/python -m plataforma_datos.orquestacion.ensayo_grabado ejecutar --desde PASO [--hasta PASO] --salida CARPETA
+```
+
+Los pasos repetibles (`ensayo_por_partes.PASOS_REPETIBLES`) son `exportar` (el paquete entero, con su cuarentena y
+sus alarmas, como `actualizar.ejecutar_paquete`), `componer` (componer el catálogo de Cursos),
+`ensamblado` (los datos globales, la Biblioteca y el informe de ejemplo), `web` (construir la web y cotejar sus
+artefactos) y `comprobaciones` (las comprobaciones de los datos nuevos). Durante el ensayo completo, antes de cada uno
+(y, antes de `exportar`, también del candidato) se conserva un clon del área (APFS, sin duplicar bytes) con la huella de su entrada, y al terminar se anotan la huella
+de su salida y el código que lo produjo: la revisión y su árbol en git, que cambia con cualquier archivo.
+
+- **Datos:** antes de repetir, el clon del paso desde el que se empieza tiene que coincidir con su huella. Si no
+  coincide, la orden se niega y dice desde qué paso conservado e intacto se puede empezar, o que hace falta el ensayo
+  completo.
+- **Código:** si cambió desde el ensayo, el tramo se repite con el código actual (se aplican al clon los archivos que
+  cambiaron entre las dos revisiones, salvo `datos/` y `var/`). El recibo y las huellas dicen en cada paso reutilizado
+  «reutilizado con código distinto», y la ejecución queda marcada como que no vale para aceptar: `comparar` se niega
+  a usar sus huellas como referencia (código 2).
+
+El tramo corre como el ciclo: bajo la guardia de red, con el entorno de producción y el reloj de su ensayo, y con las
+mismas órdenes y topes. Nunca publica fuera de su repetición: trabaja en clones propios, en
+`SALIDA/repeticiones/NN/`, donde deja `recibo.json` y `huellas.json`. Un tramo que llega al final del paquete publica
+en su clon del candidato y exporta la generación como el ensayo completo, y la dice en `generacionDelEnsayo`; uno que
+termina antes (`--hasta`) no llega a la generación. Los dos dicen qué pasos se repitieron (con la huella de su entrada y de su salida) y
+cuáles se reutilizaron (con sus huellas y si su código es el actual).
+
 ### Consultas periódicas contra las fuentes
 
 `--programada` selecciona consultas oficiales vencidas; `--buscar-actualizaciones` permite comprobarlas

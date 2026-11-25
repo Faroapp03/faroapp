@@ -8,6 +8,12 @@
   los controles que leen `datos/` o `web/datos/` y las pruebas de Node y de Python que abren el paquete real o la web
   local construida con él, sin navegadores. Las elige por lo que leen, no por una lista escrita a mano. No sustituye a
   `verificar.ts`, que es la batería que exige publicar el código.
+- `reparto-de-pruebas-python.ts` reparte los módulos Python de `verificar-datos.ts` en tres procesos a la vez, cada
+  uno con su carpeta de temporales: el más largo primero al proceso menos cargado, según la duración medida de cada
+  módulo en `duraciones-pruebas-python.json`, que dice de dónde salen sus cifras. La orden suma los casos de todos y
+  falla con la salida de cada proceso que falle u omita casos. `pruebas/herramientas/reparto-de-pruebas-python.test.ts`
+  exige una duración para cada módulo que ejecuta el ciclo; si aun así falta una, ese módulo pesa la mediana y la
+  orden lo avisa.
 - `medir-pruebas-de-datos.ts` (`npm run verificar:datos -- --medir`) ejecuta la batería de unidad de Node y cada
   módulo Python con la traza (`traza-de-datos.ts`, precarga de Node, y `traza_datos/sitecustomize.py`, gancho de
   auditoría de Python) y escribe en `pruebas-que-leen-datos.json` qué pruebas abren lo que produce la cadena de datos.

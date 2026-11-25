@@ -98,6 +98,13 @@ class ComponerCatalogoPruebas(unittest.TestCase):
         self.assertIsNone(fuente.leer_validado("cibervoluntarios", self.raiz))
         self.assertIsNone(fuente.leer_validado("claude_academy", self.raiz))
 
+    def test_sin_corte_pedido_usa_el_instante_unico_del_ciclo(self) -> None:
+        """El ensayo con datos grabados fija un instante para todo el ciclo: componer no toma su propia hora."""
+        with patch.dict(os.environ, {"FARO_INSTANTE": "2026-10-23T04:00:00Z"}):
+            resultado = componer.componer(raiz=self.raiz)
+        dto = json.loads((self.raiz / "web" / resultado["referencia"]["ruta"]).read_bytes())
+        self.assertEqual(dto["corte_proyeccion_utc"], "2026-10-23T04:00:00Z")
+
     def test_error_de_otro_proveedor_no_pisa_salida_de_hp(self) -> None:
         """Un original fallido de Ciber no modifica la última admisión ni la entrega HP."""
         componer.componer(raiz=self.raiz, corte_utc="2026-10-23T04:00:00Z")

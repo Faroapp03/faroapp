@@ -266,32 +266,26 @@ export async function contextoDelRecorrido(navegador, origen, otras = {}) {
 }
 
 /**
- * Instala el service worker de `origen` desde inicio.html: lo registra, espera a que esté listo, recarga y espera a que
- * controle la página. Cada espera tiene `plazoMs` (menor que el del caso) y un mensaje que dice en qué paso se quedó;
- * con `peticiones`, también lo que ha visto el servidor hasta entonces.
+ * Instala el service worker de `origen` desde inicio.html: lo registra, espera al evento real de su instalación
+ * terminada (instalacionVigilada: `activated`, o `redundant` si falla, con TOPE_DE_INSTALACION_MS), recarga y espera a
+ * que controle la página. Las demás esperas tienen `plazoMs` (menor que el del caso) y cada una un mensaje que dice en
+ * qué paso se quedó; con `peticiones`, también lo que ha visto el servidor hasta entonces. Devuelve lo que tardó la
+ * instalación, en ms.
  *
  * @param {import('playwright-core').Page} pagina - La página.
  * @param {string} origen - La base de la web servida, terminada en «/».
- * @param {number} plazoMs - El plazo de cada espera.
+ * @param {number} plazoMs - El plazo de cada espera, salvo la de la instalación.
  * @param {() => string} [peticiones] - Las peticiones que ha recibido y respondido el servidor, en una línea.
+ * @returns {Promise<number>} Lo que tardó la instalación, del registro al estado `activated`, en ms.
  */
 export async function instalarServiceWorker(pagina, origen, plazoMs, peticiones) {
   try {
     await pagina.goto(`${origen}inicio.html`, { timeout: plazoMs });
-    await conPlazo(
-      pagina.evaluate(() =>
-        navigator.serviceWorker.register('service-worker.js', { updateViaCache: 'none' }).then(() => true),
-      ),
-      plazoMs,
-      'el service worker no se pudo registrar',
-    );
-    await conPlazo(
-      pagina.evaluate(() => navigator.serviceWorker.ready.then(() => true)),
-      plazoMs,
-      'el service worker no llegó a estar listo (navigator.serviceWorker.ready): su instalación no terminó',
-    );
+    await conPlazo(pagina.evaluate(instalacionVigilada), plazoMs, 'el service worker no se pudo registrar');
+    const instalacionMs = await esperarInstalacionTerminada(pagina);
     await pagina.reload({ timeout: plazoMs });
     await pagina.waitForFunction(() => Boolean(navigator.serviceWorker.controller), null, { timeout: plazoMs });
+    return instalacionMs;
   } catch (error) {
     if (!peticiones) {
       throw error;
@@ -301,16 +295,143 @@ export async function instalarServiceWorker(pagina, origen, plazoMs, peticiones)
   }
 }
 
-/** Espera a que la página tenga un service worker activado y devuelve su estado. */
+/**
+ * En la página: registra service-worker.js y, en el mismo evaluate, toma la versión que se instala del registro que
+ * devuelve register() y anota cada `statechange` con su ms desde el registro. Deja en
+ * `__faroInstalacionTerminada` una promesa que se cumple con el primer estado final (`activated` o `redundant`), sus ms
+ * y el ciclo anotado. Si la versión ya no se está instalando al devolver register(), se toma su estado tal cual.
+ */
+async function instalacionVigilada() {
+  const inicio = performance.now();
+  const ciclo = [];
+  globalThis.__faroCicloDelServiceWorker = ciclo;
+  const registro = await navigator.serviceWorker.register('service-worker.js', { updateViaCache: 'none' });
+  const trabajador = registro.installing ?? registro.waiting ?? registro.active;
+  const anotar = () => ciclo.push(`${trabajador.state} a los ${Math.round(performance.now() - inicio)} ms`);
+  anotar();
+  globalThis.__faroInstalacionTerminada = new Promise((terminar) => {
+    const mirar = () => {
+      if (trabajador.state === 'activated' || trabajador.state === 'redundant') {
+        terminar({ estado: trabajador.state, ms: performance.now() - inicio, ciclo });
+      }
+    };
+    trabajador.addEventListener('statechange', () => {
+      anotar();
+      mirar();
+    });
+    mirar();
+  });
+  return true;
+}
+
+/**
+ * Espera la instalación que vigila instalacionVigilada como mucho TOPE_DE_INSTALACION_MS y devuelve lo que tardó en
+ * ms. El error distingue la instalación fallida (`redundant`, en cuanto ocurre) del tope agotado, y lleva el ciclo
+ * anotado y el estado del registro.
+ *
+ * @param {import('playwright-core').Page} pagina - La página que registró el service worker con instalacionVigilada.
+ */
+export async function esperarInstalacionTerminada(pagina) {
+  let final;
+  try {
+    final = await conPlazo(
+      pagina.evaluate(() => globalThis.__faroInstalacionTerminada),
+      TOPE_DE_INSTALACION_MS,
+      'tope agotado',
+    );
+  } catch (error) {
+    const motivo = error instanceof Error ? error.message.split('\n')[0] : String(error);
+    throw new Error(
+      `la instalación del service worker no terminó: ${motivo} sin activated ni redundant; ` +
+        `${await cicloYRegistro(pagina)}`,
+      { cause: error },
+    );
+  }
+  if (final.estado === 'redundant') {
+    throw new Error(
+      `la instalación del service worker falló: quedó redundant a los ${Math.round(final.ms)} ms, sin agotar el ` +
+        `tope de ${TOPE_DE_INSTALACION_MS} ms; ciclo: ${final.ciclo.join(', ')}`,
+    );
+  }
+  return final.ms;
+}
+
+/** Lo que se espera, como mucho, a leer el estado del registro para el mensaje de una instalación que no terminó. */
+const PLAZO_DEL_DIAGNOSTICO_MS = 2_000;
+
+/**
+ * El ciclo anotado por instalacionVigilada (si lo hay) y el estado del registro del service worker de la página, en
+ * una línea: el de la versión que se instala, la que espera y la activa. Si no se puede leer, lo dice.
+ *
+ * @param {import('playwright-core').Page} pagina - La página.
+ */
+async function cicloYRegistro(pagina) {
+  try {
+    return await conPlazo(
+      pagina.evaluate(async () => {
+        const ciclo = globalThis.__faroCicloDelServiceWorker;
+        const anotado = ciclo ? `ciclo: ${ciclo.join(', ')}; ` : '';
+        const registro = await navigator.serviceWorker.getRegistration();
+        if (!registro) {
+          return `${anotado}registro: ninguno`;
+        }
+        const { installing, waiting, active } = registro;
+        return `${anotado}registro: instalándose ${installing?.state ?? 'ninguno'}, en espera ${waiting?.state ?? 'ninguno'}, activo ${active?.state ?? 'ninguno'}`;
+      }),
+      PLAZO_DEL_DIAGNOSTICO_MS,
+      'el estado del registro no se pudo leer',
+    );
+  } catch (error) {
+    return error instanceof Error ? error.message.split('\n')[0] : String(error);
+  }
+}
+
+/**
+ * Lo más que tardó la instalación de instalarServiceWorker (catálogos de unas pocas páginas), del registro al estado
+ * `activated`, medido el 2026-11-25 en el Mac de desarrollo (10 núcleos) con recorrido-en-la-copia, instalacion-cuota y
+ * paso-a-privada en los tres motores: en reposo, 165 ms (Chromium); con 3, 10 y 20 procesos al 100 % de CPU, y con 10
+ * más dos de esas pruebas a la vez, 354 ms (WebKit, con 10 procesos). Es una medida con carga artificial, no del
+ * escenario que falló (la verificación completa), que no se ha podido medir. instalacion-con-carga.test.mjs la repite.
+ */
+export const PEOR_INSTALACION_MEDIDA_MS = 354;
+/**
+ * El tope de la espera de la instalación: los 30 s que tenía antes. No se baja: en dos verificaciones completas de
+ * 2026-11-25 la instalación de Firefox no terminó en 30 s y la causa no se conoce; las medidas con carga artificial
+ * (PEOR_INSTALACION_MEDIDA_MS) no reproducen ese escenario, así que no sirven para acotarlo. Si vence, el error dice
+ * el ciclo anotado y el estado del registro (esperarInstalacionTerminada), para conocer la causa.
+ */
+export const TOPE_DE_INSTALACION_MS = 30_000;
+
+/**
+ * En la página: espera al evento real de un service worker activado, el `statechange` del activo del registro hasta
+ * `activated`, para una página que lo registra ella misma.
+ */
+async function servicioActivado() {
+  for (;;) {
+    const { active } = await navigator.serviceWorker.ready;
+    if (active?.state === 'activated') {
+      return true;
+    }
+    await new Promise((seguir) => active?.addEventListener('statechange', seguir, { once: true }));
+  }
+}
+
+/**
+ * Espera a que la página tenga un service worker activado, por el evento real (servicioActivado), y devuelve su
+ * estado. waitForFunction la vuelve a esperar si la página se recarga mientras (instalacion.js recarga al tomar el
+ * control una versión nueva). El tope es PLAZO_MS, el común de los ensayos del paquete: la web que instalan es la
+ * construcción entera.
+ */
 export async function esperarServiceWorkerActivado(pagina) {
-  await pagina.waitForFunction(
-    async () => {
-      const registro = await navigator.serviceWorker.ready;
-      return registro.active?.state === 'activated';
-    },
-    undefined,
-    { timeout: PLAZO_MS, polling: 100 },
-  );
+  try {
+    await pagina.waitForFunction(servicioActivado, undefined, { timeout: PLAZO_MS, polling: 100 });
+  } catch (error) {
+    const motivo = error instanceof Error ? error.message.split('\n')[0] : String(error);
+    throw new Error(
+      `el service worker no llegó a activarse: tope agotado (${PLAZO_MS} ms); ${await cicloYRegistro(pagina)}: ${motivo}`,
+      { cause: error },
+    );
+  }
   return 'activated';
 }
 

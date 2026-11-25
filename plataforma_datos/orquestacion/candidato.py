@@ -21,6 +21,7 @@ from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any, Literal
 
+from plataforma_datos.comun import instante_del_ciclo
 from plataforma_datos.comun.nucleo import ErrorFuente
 from plataforma_datos.orquestacion import actualizar, fallo_del_candidato
 from plataforma_datos.orquestacion.almacen_trabajos import ACCIONES, VERSION_RECIBO_CONSERVADOS, conservados_del_estado
@@ -85,7 +86,7 @@ def _informe(raiz: Path, intento: actualizar.ResultadoActualizacion) -> None:
 
 def _estado_del_intento(raiz: Path, intento: actualizar.ResultadoActualizacion) -> dict[str, Any]:
     _informe(raiz, intento)
-    snapshot = estado_panel(raiz, datetime.now(UTC))
+    snapshot = estado_panel(raiz, instante_del_ciclo.ahora())
     modulos = {modulo["id"]: modulo for modulo in snapshot["modulos"]}
     _exigir(intento.comienzo is not None)
     for nombre, resultado in intento.resultados.items():
@@ -131,13 +132,8 @@ def opciones_de_la_accion(
 
 
 def _ejecutar(
-    raiz: Path,
-    accion: Accion,
-    ejecutor: actualizar.Ejecutor,
-    revisar_paquete_pendiente: bool,
-    fuentes: ModoDeLasFuentes,
+    raiz: Path, accion: Accion, ejecutor: actualizar.Ejecutor, opciones: actualizar.Opciones
 ) -> dict[str, Any]:
-    opciones = opciones_de_la_accion(accion, revisar_paquete_pendiente, fuentes)
     intento = actualizar.actualizar_con_resultado(raiz, opciones, ejecutor, comprobar_entrada=estado_panel)
     if (
         (opciones.programada or opciones.reintentar_pendientes)
@@ -148,7 +144,7 @@ def _ejecutar(
         and type(intento.resultados) is dict
         and not intento.resultados
     ):
-        return _recibo(accion, "sin-pendientes", estado_panel(raiz, datetime.now(UTC)))
+        return _recibo(accion, "sin-pendientes", estado_panel(raiz, instante_del_ciclo.ahora()))
     if intento.comienzo is None or intento.informe is None:
         return {**_recibo(accion, "rechazado", None), "error": "actualizacion_no_completada"}
     snapshot = _estado_del_intento(raiz, intento)
@@ -162,13 +158,17 @@ def _ejecutar(
     return {**_recibo(accion, "validado", snapshot, veredicto), "huellaPaquete": version}
 
 
-def ejecutar_candidato(
+# Los parámetros con nombre dicen cómo se descargan las fuentes y, solo en el ensayo con datos grabados, cuáles no se
+# descargan ni se preparan.
+def ejecutar_candidato(  # noqa: PLR0913
     raiz_candidata: Path,
     accion: Accion,
     ejecutor: actualizar.Ejecutor = actualizar.ejecutar_orden,
     *,
     revisar_paquete_pendiente: bool = False,
     fuentes: ModoDeLasFuentes = TODAS_EN_SERIE,
+    sin_descargar: tuple[str, ...] = (),
+    reutilizar_validado: tuple[str, ...] = (),
 ) -> dict[str, Any]:
     """Actualiza solo la raíz candidata explícita y entrega un recibo saneado.
 
@@ -178,6 +178,10 @@ def ejecutar_candidato(
         ejecutor: Ejecutor de órdenes fijadas; permite dobles sin red en pruebas.
         revisar_paquete_pendiente: Recompone la generación privada si un trabajo anterior quedó sin activar.
         fuentes: Si las fuentes se descargan en paralelo y cuáles se quedan en serie; por omisión, todas en serie.
+        sin_descargar: Fuentes que esta vez se preparan y validan con su copia conservada, sin descargar; el ensayo
+            con datos grabados (`ensayo_grabado`) las pasa todas.
+        reutilizar_validado: Fuentes que esta vez solo validan su versión vigente, sin preparar; solo las pasa el
+            ensayo con datos grabados, para las que su base no trae originales.
 
     Returns:
         Recibo v4 con estado, módulos conservados y proyección privada admitida; no acredita una publicación
@@ -191,11 +195,14 @@ def ejecutar_candidato(
             redirect_stdout(diagnostico),
             redirect_stderr(diagnostico),
         ):
-            recibo = _ejecutar(raiz_candidata.resolve(), accion, ejecutor, revisar_paquete_pendiente, fuentes)
+            opciones = opciones_de_la_accion(accion, revisar_paquete_pendiente, fuentes)._replace(
+                sin_descargar=sin_descargar, reutilizar_validado=reutilizar_validado
+            )
+            recibo = _ejecutar(raiz_candidata.resolve(), accion, ejecutor, opciones)
             if recibo["estado"] is not None:
                 from plataforma_datos.cursos.panel_catalogo import crear
 
-                recibo["catalogo"] = crear(raiz_candidata.resolve(), corte_utc=_utc(datetime.now(UTC)))
+                recibo["catalogo"] = crear(raiz_candidata.resolve(), corte_utc=_utc(instante_del_ciclo.ahora()))
             recibo["terminadoEn"] = _utc(datetime.now(UTC))
             return recibo
     except (ErrorFuente, OSError, ValueError, TypeError, KeyError, OverflowError, RecursionError) as error:

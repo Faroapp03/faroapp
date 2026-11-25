@@ -34,6 +34,7 @@
     "probar:webmcp-paquete": "node pruebas/navegadores/webmcp-paquete.mjs",
     "probar:actualizacion-sw": "node pruebas/navegadores/actualizacion-sw.mjs",
     "probar:arranque-bloqueado": "node pruebas/navegadores/arranque-bloqueado.test.mjs",
+    "probar:instalacion-con-carga": "node pruebas/navegadores/instalacion-con-carga.test.mjs",
     "probar:presupuesto": "node pruebas/navegadores/presupuesto-rendimiento.mjs",
     "probar:motor-empaquetado": "node scripts/probar-motor-empaquetado.ts",
     "test": "node scripts/verificar.ts --pruebas",

@@ -21,6 +21,7 @@ from pathlib import Path
 from types import SimpleNamespace
 from unittest import mock
 
+from plataforma_datos.comun import instante_del_ciclo
 from plataforma_datos.comun.turnos_entre_procesos import VARIABLE as CARPETA_DE_TURNOS
 from plataforma_datos.orquestacion import (
     actualizar,
@@ -211,6 +212,8 @@ class PruebaDescargasEnParalelo(unittest.TestCase):
             mock.patch.object(actualizar, "MODULOS", REGISTRO),
             mock.patch.object(actualizar, "ejecutar_paquete", return_value=paquete),
             mock.patch.object(actualizar, "datetime", reloj),
+            # El comienzo del intento y el seguimiento leen el reloj del ciclo, la hora real sin FARO_INSTANTE.
+            mock.patch.object(instante_del_ciclo, "datetime", reloj),
             mock.patch.object(actualizar, "time", relojes),
             mock.patch.object(pasos_del_ciclo, "datetime", reloj),
             mock.patch.object(informe_de_la_actualizacion, "datetime", reloj),

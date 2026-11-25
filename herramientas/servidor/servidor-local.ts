@@ -126,6 +126,16 @@ function crearApiLocal(arranque: Arranque, datos: Datos): ReturnType<typeof crea
   });
 }
 
+/**
+ * El almacén privado de la instalación: el de siempre (registro/acceso-publico/clientes.sqlite) salvo que el entorno del
+ * proceso (no el perfil) traiga FARO_REGISTRO_DE_PRUEBA, una carpeta propia de una prueba que no debe escribir bajo la
+ * raíz.
+ */
+function archivoDelAlmacen(): string | undefined {
+  const carpeta = process.env.FARO_REGISTRO_DE_PRUEBA;
+  return carpeta ? join(carpeta, 'clientes.sqlite') : undefined;
+}
+
 /** Sirve la web y la API en el puerto, y dice la línea de arranque cuando escucha. */
 function escuchar(
   arranque: Arranque,
@@ -134,7 +144,9 @@ function escuchar(
   administracion?: AdministracionMontada,
 ): void {
   const { puerto, web, variables, delEntorno, huellaMapaModulos } = arranque;
+  const almacen = archivoDelAlmacen();
   const servidor = crearServidor({
+    ...(almacen ? { archivoAutoridadSecciones: almacen } : {}),
     ...(huellaMapaModulos === undefined ? {} : { huellaMapaModulos }),
     api,
     plazoMs: delEntorno.plazoMs,
@@ -228,7 +240,9 @@ async function iniciarServidorAdministrado(perfil: PerfilAdministradoNode, puert
   const datos = cargarDatos(RUTAS.paquete);
   const servida = await webQueSeSirve();
   const arranque: Arranque = { puerto, ...servida, variables, delEntorno };
+  const almacen = archivoDelAlmacen();
   const preparado = await montarAdministracionNode({
+    ...(almacen ? { archivo: almacen } : {}),
     perfil,
     datos,
     datosGlobales: cargarDatosGlobalesDeLaWeb(servida.web),

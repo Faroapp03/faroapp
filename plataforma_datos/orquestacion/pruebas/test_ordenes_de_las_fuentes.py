@@ -20,6 +20,7 @@ from pathlib import Path
 from types import SimpleNamespace
 from unittest import mock
 
+from plataforma_datos.comun import instante_del_ciclo
 from plataforma_datos.comun.nucleo import ETAPAS
 from plataforma_datos.cursos import operacion_fuente
 from plataforma_datos.orquestacion import actualizar, ordenes, reconstruir
@@ -64,7 +65,7 @@ def reloj_en(instante: datetime) -> Iterator[None]:
         def now(cls, tz: object = None) -> datetime:
             return instante
 
-    with mock.patch.object(actualizar, "datetime", Reloj):
+    with mock.patch.object(actualizar, "datetime", Reloj), mock.patch.object(instante_del_ciclo, "datetime", Reloj):
         yield
 
 

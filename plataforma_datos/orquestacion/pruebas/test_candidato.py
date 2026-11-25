@@ -13,6 +13,7 @@ from datetime import UTC, datetime, timedelta
 from pathlib import Path
 from unittest import mock
 
+from plataforma_datos.comun import instante_del_ciclo
 from plataforma_datos.orquestacion import actualizar, candidato, comprobaciones_remotas, sustitucion
 from plataforma_datos.orquestacion import almacen_trabajos as trabajos
 from plataforma_datos.orquestacion import informe_de_la_actualizacion as informe_fechado
@@ -23,7 +24,7 @@ from plataforma_datos.orquestacion.estado_de_la_actualizacion import (
     pendientes,
 )
 from plataforma_datos.orquestacion.modulos import IDS
-from plataforma_datos.orquestacion.piezas_de_la_actualizacion import CARPETA_DE_INFORMES
+from plataforma_datos.orquestacion.piezas_de_la_actualizacion import CARPETA_DE_INFORMES, FUENTES
 from plataforma_datos.orquestacion.planificacion_de_comprobaciones import CONJUNTOS, Plan, planificar
 from plataforma_datos.orquestacion.pruebas.test_actualizacion_por_modulos import EjecutorDeModulos, montar
 from plataforma_datos.orquestacion.pruebas.test_contrato_recibo_mantenimiento import leer_en_typescript
@@ -173,6 +174,71 @@ class PruebaCandidato(unittest.TestCase):
             if (etapa := etapa_de_fuente(orden)) is not None and etapa[1] == "descargar"
         }
         self.assertEqual(descargadas, esperadas)
+
+    def test_ensayo_con_datos_grabados_valida_sin_descargar_y_con_un_solo_instante(self) -> None:
+        """Con todas las fuentes sin descargar, el ciclo entero valida sin ninguna orden de descarga.
+
+        Como en el ensayo, el instante es su comienzo, ya pasado. El comienzo del intento, el seguimiento de las
+        comprobaciones, el estado del panel y el catálogo del recibo llevan ese instante, no la hora en que ocurren:
+        si el intento anotara la hora real, el panel lo vería después de su instante y no validaría.
+        """
+        ejecutor = EjecutorCandidato()
+        momento = (datetime.now(UTC) - timedelta(hours=1)).replace(microsecond=0)
+        instante = momento.isoformat().replace("+00:00", "Z")
+        with (
+            mock.patch.dict(os.environ, {"FARO_INSTANTE": instante}),
+            mock.patch("plataforma_datos.cursos.panel_catalogo.crear", return_value=None) as crear,
+            mock.patch.object(candidato, "estado_panel", wraps=candidato.estado_panel) as panel,
+        ):
+            recibo = candidato.ejecutar_candidato(self.raiz, "actualizar-datos", ejecutor, sin_descargar=tuple(FUENTES))
+        self.assertEqual(recibo["resultado"], "validado")
+        etapas = {etapa[1] for orden in ejecutor.ordenes if (etapa := etapa_de_fuente(orden)) is not None}
+        self.assertTrue(etapas)
+        self.assertNotIn("descargar", etapas)
+        self.assertEqual(crear.call_args.kwargs["corte_utc"], instante)
+        # La comprobación de entrada (con el comienzo del intento) y el estado del recibo, con el instante fijado.
+        self.assertEqual({llamada.args[1] for llamada in panel.call_args_list}, {momento})
+        self.assertEqual(recibo["estado"]["observadoEn"], instante)
+        self.assertEqual({modulo["ultimoIntento"] for modulo in recibo["estado"]["modulos"]}, {instante})
+        registro = comprobaciones_remotas.leer_registro(self.raiz)
+        ciclo = registro["ultimo_ciclo"]
+        self.assertEqual((registro["reloj_utc"], ciclo["inicio_utc"], ciclo["fin_utc"]), (instante,) * 3)
+        self.assertEqual({fila["fin_utc"] for fila in registro["fuentes"].values()}, {instante})
+
+    def test_sin_instante_fijado_el_intento_anota_la_hora_real(self) -> None:
+        """En producción no hay instante fijado: el comienzo del intento y su seguimiento llevan la hora real."""
+        self.assertNotIn("FARO_INSTANTE", os.environ)
+        antes = datetime.now(UTC).replace(microsecond=0)
+        recibo = candidato.ejecutar_candidato(self.raiz, "actualizar-datos", EjecutorCandidato())
+        despues = datetime.now(UTC)
+        self.assertEqual(recibo["resultado"], "validado")
+        registro = comprobaciones_remotas.leer_registro(self.raiz)
+        anotados = [
+            registro["ultimo_ciclo"]["inicio_utc"],
+            registro["ultimo_ciclo"]["fin_utc"],
+            *(modulo["ultimoIntento"] for modulo in recibo["estado"]["modulos"]),
+        ]
+        for anotado in anotados:
+            self.assertTrue(antes <= datetime.fromisoformat(anotado.replace("Z", "+00:00")) <= despues, anotado)
+
+    def test_ensayo_que_reutiliza_un_validado_no_lo_prepara_y_valida(self) -> None:
+        """Una fuente sin originales en la base solo valida su versión vigente, y el ciclo sigue validando."""
+        preparadas = {
+            etapa[0]
+            for orden in self._ensayo(EjecutorCandidato(), ())[1].ordenes
+            if (etapa := etapa_de_fuente(orden)) is not None and etapa[1] == "preparar"
+        }
+        fuente = sorted(preparadas)[0]
+        recibo, ejecutor = self._ensayo(EjecutorCandidato(), (fuente,))
+        self.assertEqual(recibo["resultado"], "validado")
+        etapas = [e[1] for orden in ejecutor.ordenes if (e := etapa_de_fuente(orden)) is not None and e[0] == fuente]
+        self.assertEqual(etapas, ["validar"])
+
+    def _ensayo(self, ejecutor: EjecutorCandidato, reutilizar: tuple[str, ...]) -> tuple[dict, EjecutorCandidato]:
+        recibo = candidato.ejecutar_candidato(
+            self.raiz, "actualizar-datos", ejecutor, sin_descargar=tuple(FUENTES), reutilizar_validado=reutilizar
+        )
+        return recibo, ejecutor
 
     def test_demanda_recompone_pendiente_local_sin_descargar(self) -> None:
         """Reintenta una entrada manual desde su copia conservada, sin conceder descarga remota."""
@@ -481,8 +547,9 @@ class PruebaCandidato(unittest.TestCase):
             mock.patch.object(actualizar, "datetime", wraps=datetime) as reloj_motor,
             mock.patch.object(informe_fechado, "datetime", wraps=datetime) as reloj_informe,
             mock.patch.object(candidato, "datetime", wraps=datetime) as reloj_recibo,
+            mock.patch.object(instante_del_ciclo, "datetime", wraps=datetime) as reloj_del_ciclo,
         ):
-            for reloj in (reloj_motor, reloj_informe, reloj_recibo):
+            for reloj in (reloj_motor, reloj_informe, reloj_recibo, reloj_del_ciclo):
                 reloj.now.return_value = momento
             primero = candidato.ejecutar_candidato(self.raiz, "actualizar-datos", EjecutorCandidato())
             registro_primero = comprobaciones_remotas.leer_registro(self.raiz)

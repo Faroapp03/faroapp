@@ -45,9 +45,12 @@ const PRUEBAS_MJS_UNIDAD = new Set([
  * descubrimiento de `verificar.ts` exige que la orden exista y ejecute el archivo (ordenDelEnsayo).
  * - arranque-bloqueado: espera de verdad el plazo de la clave (15 s) y el del Worker (120 s) en cada motor; unos 140 s
  *   por motor.
+ * - instalacion-con-carga: satura la CPU (un proceso al 100 % por núcleo) mientras corre recorrido-en-la-copia entera,
+ *   para medir y demostrar el tope de la instalación del service worker; no puede compartir la máquina con la batería.
  */
 const ENSAYOS_CON_ORDEN: ReadonlyMap<string, string> = new Map([
   ['pruebas/navegadores/arranque-bloqueado.test.mjs', 'probar:arranque-bloqueado'],
+  ['pruebas/navegadores/instalacion-con-carga.test.mjs', 'probar:instalacion-con-carga'],
 ]);
 
 /**

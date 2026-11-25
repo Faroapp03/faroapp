@@ -207,8 +207,9 @@ fija el ejecutor privado en el entorno de su candidato. Se ignora si llega hered
 recibe. Con ella, la orden de exportar lleva `--completar-renombres` y retira el nombre antiguo solo si el manifiesto
 vigente lo nombra con la misma huella. Sin ella (en el Mac o en cualquier instalación de trabajo) nunca se retira nada,
 así que la tabla privada `datos/cambra.json` queda intacta aunque se restaure a mano un manifiesto anterior. El
-ensayo grabado que quiera reproducir el ciclo operativo debe fijar `FARO_COMPLETAR_RENOMBRES=si` en el entorno del
-candidato.
+ensayo grabado reproduce el ciclo operativo: fija `FARO_COMPLETAR_RENOMBRES=si` en el entorno de su candidato, que es
+una copia propia dentro de su salida (`entorno_del_ensayo.entorno_del_ciclo`), y su ensayo por partes repite la misma
+exportación.
 
 ## Levantar el bloqueo operativo
 

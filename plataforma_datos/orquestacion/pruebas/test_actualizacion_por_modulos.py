@@ -19,6 +19,7 @@ from pathlib import Path
 from typing import Any
 from unittest import mock
 
+from plataforma_datos.comun import instante_del_ciclo
 from plataforma_datos.comun.nucleo import FormatoInesperado
 from plataforma_datos.orquestacion import actualizar, modulos, sustitucion
 from plataforma_datos.orquestacion import estado_de_la_actualizacion as estado
@@ -313,6 +314,7 @@ class ReintentosYAvisos(Base):
             fallos = {"tich": "codigo"} if numero < RONDAS_CON_FALLO else {}
             with ExitStack() as pila:
                 pila.enter_context(mock.patch.object(actualizar, "datetime")).now.return_value = comienzo
+                pila.enter_context(mock.patch.object(instante_del_ciclo, "datetime")).now.return_value = comienzo
                 pila.enter_context(mock.patch.object(actualizar, "registrar_estado", self.registrar(avisos)))
                 pila.enter_context(mock.patch.object(actualizar, "revalidar", return_value=True))
                 self.actualizar(EjecutorDeModulos(fallos), solo=("tich",) if numero else None)

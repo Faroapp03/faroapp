@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import { createHash } from 'node:crypto';
-import { mkdtempSync, readFileSync, writeFileSync } from 'node:fs';
+import { mkdtempSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { describe, it } from 'node:test';
@@ -175,8 +175,9 @@ describe('líneas con solo espacios', () => {
     assert.doesNotMatch(una, SOLO_ESPACIOS);
   });
 
-  it('rechaza quitarlas si están dentro de una cadena de plantilla', async () => {
+  it('rechaza quitarlas si están dentro de una cadena de plantilla', async (t) => {
     const carpeta = mkdtempSync(join(tmpdir(), 'faro-solo-espacios-'));
+    t.after(() => rmSync(carpeta, { recursive: true, force: true }));
     const entrada = join(carpeta, 'servicio.js');
     writeFileSync(
       entrada,

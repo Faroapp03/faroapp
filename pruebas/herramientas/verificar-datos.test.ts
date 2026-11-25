@@ -34,6 +34,7 @@ import {
   exigirPythonSinOmisiones,
   HUMO_DE_DATOS,
   leeLosDatosDelPaquete,
+  pasoDePython,
   pasoPruebasPythonDeDatos,
   pasosDeDatos,
   pruebasNodeDeDatos,
@@ -213,6 +214,21 @@ test('las pruebas Python de los datos corren sin el reloj del ensayo, como en pr
   assert.deepEqual([...(paso.excluir ?? [])].sort(), ['FARO_HOY', 'FARO_INSTANTE']);
   assert.deepEqual(paso.entorno, { PYTHONPATH: '/raiz/scripts/sin_red', FARO_PRUEBAS_SIN_RED: '1' });
   assert.deepEqual(paso.argumentos, ['-m', 'unittest', 'plataforma_datos.orquestacion.pruebas.test_actualizar']);
+});
+
+test('cada proceso de las pruebas Python corre sin el reloj del ensayo y con su temporal propio', () => {
+  const modulos = ['plataforma_datos.orquestacion.pruebas.test_actualizar'];
+  const paso = pasoDePython('/raiz', { modulos, segundos: 1 }, 2, '/tmp/proceso-2');
+  assert.deepEqual([...(paso.excluir ?? [])].sort(), ['FARO_HOY', 'FARO_INSTANTE']);
+  assert.deepEqual(paso.entorno, {
+    PYTHONPATH: '/raiz/scripts/sin_red',
+    FARO_PRUEBAS_SIN_RED: '1',
+    TMPDIR: '/tmp/proceso-2',
+    TEMP: '/tmp/proceso-2',
+    TMP: '/tmp/proceso-2',
+  });
+  assert.deepEqual(paso.argumentos, ['-m', 'unittest', ...modulos]);
+  assert.equal(paso.nombre, 'Pruebas Python de los datos, proceso 2');
 });
 
 test('las pruebas Python de los datos no pasan por buenas si omiten casos o no ejecutan ninguno', () => {

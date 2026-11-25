@@ -27,6 +27,7 @@ import {
   MOTORES,
   OPCIONES_DE_CONTEXTO,
   PLAZO_DE_ARRANQUE_MS,
+  TOPE_DE_INSTALACION_MS,
 } from './paquete-comun.mjs';
 import { abrirNavegador, cerrarServidor, conPlazo, recursosDelCaso } from './recursos-del-caso.mjs';
 
@@ -64,6 +65,15 @@ const HTTP_CORRECTO = 200;
 const HTTP_NO_ENCONTRADO = 404;
 const HTTP_NO_DISPONIBLE = 503;
 const BASES = ['/', '/Mis%20documentos/A%C3%B1o%202026/'];
+/** Un service worker roto: su instalación falla siempre, así que queda `redundant`. */
+const TRABAJADOR_ROTO =
+  "self.addEventListener('install', (evento) => evento.waitUntil(Promise.reject(new Error('worker roto de la prueba'))));";
+/**
+ * Lo que puede tardar, como mucho, en fallar la instalación del worker roto, desde que se abre inicio.html: un tercio
+ * de TOPE_DE_INSTALACION_MS. Si tarda más, la espera no ha visto el `redundant` y ha agotado (o casi) el tope.
+ */
+const PARTE_DEL_TOPE = 3;
+const FALLO_EN_EL_ACTO_MS = TOPE_DE_INSTALACION_MS / PARTE_DEL_TOPE;
 
 /** El service worker publicado con su catálogo y su paquete sustituidos. */
 function trabajador() {
@@ -134,12 +144,12 @@ function responderElRecorrido(recorrido, respuesta) {
 
 /**
  * Un servidor propio en un puerto efímero. `estado.recorrido` es lo que da recorrido.html (responderElRecorrido);
- * con `estado.sinRed`, corta cada conexión a la web. Los módulos de la página se sirven siempre: no son de la web, sino
+ * con `estado.sinRed`, corta cada conexión a la web; con `roto`, sirve TRABAJADOR_ROTO como service-worker.js. Los módulos de la página se sirven siempre: no son de la web, sino
  * de la prueba.
  */
-async function abrirServidor(base, recorrido) {
+async function abrirServidor(base, recorrido, roto = false) {
   const estado = { recorrido, sinRed: false, peticionesDelRecorrido: 0 };
-  const codigo = trabajador();
+  const codigo = roto ? TRABAJADOR_ROTO : trabajador();
   const servidor = createServer((peticion, respuesta) => {
     const archivo = archivoDe(peticion, base);
     const modulo = MODULOS[archivo.slice('modulos/'.length)];
@@ -265,14 +275,31 @@ async function conLaSesionTemporal({ motor, base, estado, origen }, pagina) {
 }
 
 /**
+ * Con el worker roto, la instalación queda `redundant` y la espera lo dice en cuanto ocurre, distinto de un tope
+ * agotado y con el ciclo de estados, mucho antes de TOPE_DE_INSTALACION_MS.
+ */
+async function conElWorkerRoto({ motor, base, origen }, pagina) {
+  const inicio = performance.now();
+  await assert.rejects(instalarServiceWorker(pagina, origen, PLAZO_MS), (error) => {
+    assert.match(error.message, /^la instalación del service worker falló: quedó redundant a los \d+ ms, sin agotar/u);
+    assert.match(error.message, /ciclo: installing a los \d+ ms, .*redundant a los \d+ ms$/u);
+    assert.doesNotMatch(error.message, /tope agotado/u);
+    return true;
+  });
+  const ms = Math.round(performance.now() - inicio);
+  assert.ok(ms < FALLO_EN_EL_ACTO_MS, `el fallo tardó ${ms} ms: más de ${FALLO_EN_EL_ACTO_MS} ms`);
+  console.log(`${motor} ${base}: con el worker roto, la instalación falla en ${ms} ms, sin agotar el tope`);
+}
+
+/**
  * El ensayo de `motor` en `base`, con lo que da recorrido.html y la `fase` indicada. El servidor, la carpeta y el perfil se registran en los
  * recursos del caso `t`: se cierran al terminar, también si el caso vence con el cuerpo colgado.
  */
-async function ensayo(t, { motor, base, recorrido }, fase) {
+async function ensayo(t, { motor, base, recorrido, roto = false }, fase) {
   const recursos = recursosDelCaso(t);
   const { estado, origen } = await recursos.abrir(
     'el servidor de ensayo',
-    () => abrirServidor(base, recorrido),
+    () => abrirServidor(base, recorrido, roto),
     ({ servidor }) => cerrarServidor(servidor),
   );
   const carpeta = await recursos.abrir(
@@ -285,7 +312,12 @@ async function ensayo(t, { motor, base, recorrido }, fase) {
   const perfil = await abrirPerfil(recursos, motor, carpeta);
   const pagina =
     perfil.pages()[0] ?? (await conPlazo(perfil.newPage(), PLAZO_MS, 'no se pudo abrir una pestaña nueva'));
-  await instalarServiceWorker(pagina, origen, PLAZO_MS);
+  if (roto) {
+    await fase({ motor, base, estado, origen }, pagina);
+    return;
+  }
+  const instalacionMs = await instalarServiceWorker(pagina, origen, PLAZO_MS);
+  console.log(`${motor} ${base}: el service worker se instaló en ${Math.round(instalacionMs)} ms`);
   await fase({ motor, base, estado, origen }, pagina);
 }
 
@@ -300,4 +332,6 @@ for (const [nombre, motor] of [
     test(`${nombre}: la página de la sesión temporal no entra en la copia (${base})`, (t) =>
       ensayo(t, { motor, base, recorrido: 'temporal' }, conLaSesionTemporal));
   }
+  test(`${nombre}: con un worker roto, la instalación falla en el acto y lo dice (redundant, no tope)`, (t) =>
+    ensayo(t, { motor, base: BASES[0], recorrido: 'real', roto: true }, conElWorkerRoto));
 }

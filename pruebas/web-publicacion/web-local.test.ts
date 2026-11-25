@@ -123,7 +123,10 @@ async function servirLaConstruida(
   web: string,
   huellaMapaModulos: string,
 ): Promise<{ url: string; cerrar: () => Promise<void> }> {
+  const registro = mkdtempSync(join(tmpdir(), 'faro-registro-construida-'));
   const servidor = crearServidor({
+    // El almacén privado, en una carpeta propia de la prueba: nada se escribe bajo la raíz.
+    archivoAutoridadSecciones: join(registro, 'clientes.sqlite'),
     api: async () => new Response(null, { status: AUSENTE }),
     web,
     puerto: 0,
@@ -141,6 +144,7 @@ async function servirLaConstruida(
       servidor.close();
       servidor.closeAllConnections();
       await cerrado;
+      rmSync(registro, { recursive: true, force: true });
     },
   };
 }
@@ -155,6 +159,8 @@ async function arrancarServir(t: TestContext, destino: string, webDePrueba?: str
       TMPDIR: tmpdir(),
       FARO_PUERTO: String(puerto),
       FARO_WEB_LOCAL_DE_PRUEBA: destino,
+      // El almacén privado del servidor, en una carpeta propia que se retira: nada se escribe bajo la raíz.
+      FARO_REGISTRO_DE_PRUEBA: carpeta(t, 'faro-registro-web-local-'),
       ...(webDePrueba === undefined ? {} : { FARO_WEB_DE_PRUEBA: webDePrueba }),
     },
     stdio: ['ignore', 'pipe', 'pipe'],
