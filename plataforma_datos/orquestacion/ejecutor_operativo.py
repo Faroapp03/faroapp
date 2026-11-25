@@ -369,7 +369,10 @@ def _reanudar(
         artefacto=descriptor.get("artefacto"),
         almacen=almacen,
     )
-    return _resumen(configuracion, recibo, cliente.enviar_resultado(recibo))
+    resumen = _resumen(configuracion, recibo, cliente.enviar_resultado(recibo))
+    trabajo = configuracion.directorio_trabajo / f"run-{configuracion.run_id}-1"
+    ultimo_fallo.cerrar_rechazo(cliente, configuracion, trabajo, resumen["resultado"])
+    return resumen
 
 
 def ejecutar_trabajo(
@@ -453,9 +456,7 @@ def ejecutar_trabajo(
     )
     with diario.paso("confirmar-resultado"):
         resumen = _resumen(configuracion, recibo, cliente.enviar_resultado(recibo))
-    if contenido["resultado"] == "rechazado":
-        # Tras el recibo confirmado, el servidor sabe también si lo rechazó el tiempo (`ultimo_fallo`).
-        ultimo_fallo.cerrar(cliente, configuracion, ultimo_fallo.fallo_del_rechazo(directorio / "candidato"))
+    ultimo_fallo.cerrar_rechazo(cliente, configuracion, directorio, resumen["resultado"])
     return resumen
 
 

@@ -2,6 +2,9 @@
 
 No verifica criptografía, conserva JWT, reintenta peticiones ni ejecuta el motor. El presupuesto monotónico
 rechaza confirmaciones tardías; DNS y una operación del SDK/SO ya iniciada pueden añadir margen al cierre.
+
+Un fallo dice de qué clase es: sin respuesta (`ServidorSinRespuesta`, lo enviado pudo quedar hecho y repetirlo es
+seguro), rechazo con respuesta (`RechazoDelServidor`) o respuesta ilegible (`ErrorMantenimiento`).
 """
 
 from __future__ import annotations
@@ -12,6 +15,8 @@ import json
 import re
 import ssl
 import time
+from collections.abc import Iterator
+from contextlib import contextmanager
 from http import HTTPStatus
 from types import TracebackType
 from typing import Any, Literal
@@ -28,6 +33,11 @@ from plataforma_datos.comun.perfil_web import cabeceras_identidad
 from plataforma_datos.comun.red import turno_por_dominio
 from plataforma_datos.orquestacion import diario_mantenimiento as diario
 from plataforma_datos.orquestacion.almacen_trabajos import ACCIONES
+from plataforma_datos.orquestacion.errores_mantenimiento import (
+    ErrorMantenimiento,
+    RechazoDelServidor,
+    ServidorSinRespuesta,
+)
 
 MAX_INICIO_BYTES = 4096
 MAX_RESULTADO_BYTES = 132 * 1024 + 4 * 1024 * 1024
@@ -41,25 +51,31 @@ RUTA_ACTIVACION = "/mantenimiento/activacion"
 MAX_URL_BYTES = 8192
 MAX_AUDIENCIA_BYTES = 256
 MAX_REVISION = 2**53 - 1
-PLAZO_FASE_S = 15
 PUERTO_HTTPS = 443
 MAX_DIGITOS_LONGITUD = 10
 CONEXION_S = 5
-LECTURA_S = 5
+# Lo que tarda como mucho el receptor más lento del servidor (`PLAZOS_RECEPTORES_MANTENIMIENTO_MS` en
+# `src/administracion/plazos-mantenimiento.ts`); una prueba de contrato lo coteja con el código del servidor.
+PLAZO_SERVIDOR_S = 15
+# El servidor empieza a contar cuando su receptor recibe la petición, después de montar el panel; su respuesta, aunque
+# sea «plazo agotado», cruza luego la red. Esperar lo mismo que él cortaría justo cuando va a contestar.
+MARGEN_SOBRE_EL_SERVIDOR_S = 5
+LECTURA_S = PLAZO_SERVIDOR_S + MARGEN_SOBRE_EL_SERVIDOR_S
+# Cada fase pide el token OIDC y luego llama al servidor: dos conexiones y dos esperas completas.
+PLAZO_FASE_S = 2 * (CONEXION_S + LECTURA_S)
 TAM_BLOQUE = 4096
 RUTA_INICIO = "/mantenimiento/inicio"
 RUTA_RESULTADO = "/mantenimiento/resultado"
 RUTA_CONSTRUCCION = "/mantenimiento/construccion"
+RUTA_PRUEBA_MANIFIESTO = RUTA_CONSTRUCCION + "?prueba=manifiesto"
+RUTA_MANIFIESTO_WEB = "/firmas/manifiesto.json"
 UUID = re.compile(r"[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}")
+SHA256 = re.compile(r"[0-9a-f]{64}")
 VERSION_ID = re.compile(r"[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}")
 JWT = re.compile(r"[A-Za-z0-9_-]+\.[A-Za-z0-9_-]+\.[A-Za-z0-9_-]+")
 TIPO_JSON = re.compile(r"application/json(?:;\s*charset=utf-8)?", re.IGNORECASE)
 ERROR_GENERICO = "No se ha confirmado la operación de mantenimiento."
 type Confirmacion = Literal["aplicado", "repetido"]
-
-
-class ErrorMantenimiento(ValueError):
-    """Un fallo o una respuesta ambigua no conceden permiso para ejecutar el motor."""
 
 
 def _exigir(condicion: bool) -> None:
@@ -75,8 +91,32 @@ def _comparar_claim(claims: dict, nombre: str, esperado: str) -> str:
 
 def _restante(plazo: float) -> float:
     restante = plazo - time.monotonic()
-    _exigir(restante > 0)
+    if restante <= 0:
+        # Una respuesta que no llega dentro de la fase es una falta de respuesta, no un rechazo.
+        raise ServidorSinRespuesta(ERROR_GENERICO)
     return restante
+
+
+@contextmanager
+def _solo_errores_cerrados() -> Iterator[None]:
+    """Deja salir cada fallo como su clase cerrada, sin el texto ni la cadena del error original.
+
+    Yields:
+        La operación con el servidor.
+
+    Raises:
+        ServidorSinRespuesta: Si no hubo respuesta a tiempo, la conexión se cortó o el servidor respondió un 5xx.
+        ErrorMantenimiento: Si el servidor rechazó lo enviado (`RechazoDelServidor`) o respondió algo ilegible.
+    """
+    try:
+        yield
+    except ErrorMantenimiento as error:
+        raise type(error)(ERROR_GENERICO) from None
+    except (HTTPError, OSError):
+        # Plazo de conexión o de lectura agotado, conexión cortada o TLS fallido: no hubo respuesta que leer.
+        raise ServidorSinRespuesta(ERROR_GENERICO) from None
+    except (ValueError, TypeError, RecursionError):
+        raise ErrorMantenimiento(ERROR_GENERICO) from None
 
 
 def _url_https(valor: str) -> None:
@@ -139,7 +179,11 @@ def _json(cuerpo: bytes) -> dict[str, Any]:
 
 
 def _leer(respuesta: HTTPResponse, limite: int, plazo: float) -> dict[str, Any]:
-    _exigir(respuesta.status == HTTPStatus.OK)
+    if respuesta.status >= HTTPStatus.INTERNAL_SERVER_ERROR:
+        # Un 5xx (también el 504 «plazo agotado» del propio receptor) no dice si lo enviado quedó hecho.
+        raise ServidorSinRespuesta(ERROR_GENERICO)
+    if respuesta.status != HTTPStatus.OK:
+        raise RechazoDelServidor(ERROR_GENERICO)
     _exigir(TIPO_JSON.fullmatch(respuesta.headers.get("content-type", "")) is not None)
     _exigir(respuesta.headers.get("content-encoding", "identity").lower() == "identity")
     longitud = respuesta.headers.get("content-length")
@@ -222,7 +266,10 @@ class ClienteMantenimientoGitHub:
                 _restante(plazo)
                 try:
                     return _leer(respuesta, limite, plazo)
-                except ValueError:
+                except ValueError as error:
+                    if isinstance(error, ServidorSinRespuesta) and respuesta.status == HTTPStatus.OK:
+                        # Un 200 cuyo cuerpo no terminó de llegar dentro de la fase no es un rechazo.
+                        raise
                     diario.anotar(
                         "respuesta-http",
                         "rechazada",
@@ -257,7 +304,7 @@ class ClienteMantenimientoGitHub:
         return token
 
     def _confirmar(self, ruta: str, cuerpo: bytes) -> Confirmacion:
-        try:
+        with _solo_errores_cerrados():
             plazo = time.monotonic() + PLAZO_FASE_S
             with diario.paso("identidad-oidc"):
                 token = self._token(plazo)
@@ -265,8 +312,6 @@ class ClienteMantenimientoGitHub:
             _exigir(set(confirmacion) == {"estado"} and confirmacion["estado"] in ("aplicado", "repetido"))
             _restante(plazo)
             return confirmacion["estado"]
-        except (HTTPError, OSError, ValueError, TypeError, RecursionError):
-            raise ErrorMantenimiento(ERROR_GENERICO) from None
 
     def confirmar_inicio(self, solicitud_id: str, revision_reserva: int, accion: str) -> Confirmacion:
         """Obtiene permiso solo tras una respuesta confirmada para la reserva explícita.
@@ -300,7 +345,7 @@ class ClienteMantenimientoGitHub:
         Raises:
             ErrorMantenimiento: Si no se confirma la identidad dentro del plazo y el contrato cerrados.
         """
-        try:
+        with _solo_errores_cerrados():
             plazo = time.monotonic() + PLAZO_FASE_S
             with diario.paso("identidad-oidc"):
                 token = self._token(plazo)
@@ -314,8 +359,6 @@ class ClienteMantenimientoGitHub:
             )
             _restante(plazo)
             return respuesta["versionId"]
-        except (HTTPError, OSError, ValueError, TypeError, RecursionError):
-            raise ErrorMantenimiento(ERROR_GENERICO) from None
 
     def activacion(self, operacion: str, solicitud: dict[str, Any] | None = None) -> dict[str, Any]:
         """Transfiere una operación privada cerrada con OIDC nuevo, sin reintentar.
@@ -335,7 +378,7 @@ class ClienteMantenimientoGitHub:
         if solicitud is not None:
             _exigir(type(solicitud) is dict)
             documento["solicitud"] = solicitud
-        try:
+        with _solo_errores_cerrados():
             cuerpo = json.dumps(documento, separators=(",", ":"), allow_nan=False).encode()
             _exigir(0 < len(cuerpo) <= MAX_ACTIVACION_BYTES)
             plazo = time.monotonic() + PLAZO_FASE_S
@@ -355,61 +398,81 @@ class ClienteMantenimientoGitHub:
             _exigir(type(respuesta["activacion"]) is dict)
             _restante(plazo)
             return respuesta
-        except (HTTPError, OSError, ValueError, TypeError, RecursionError):
-            raise ErrorMantenimiento(ERROR_GENERICO) from None
 
-    def comprobar_manifiesto_web(self, origen: str, sha256: str) -> None:
-        """Coteja los bytes públicos exactos mediante HTTPS sin enviar credencial OIDC.
+    def _huella_manifiesto_publico(self, origen: str, plazo: float) -> str | None:
+        url = origen + RUTA_MANIFIESTO_WEB
+        with turno_por_dominio(url):
+            restante = _restante(plazo)
+            respuesta = self._http.request(
+                "GET",
+                url,
+                headers={**self._identidad, "Accept-Encoding": "identity", "Cache-Control": "no-cache"},
+                redirect=False,
+                retries=False,
+                preload_content=False,
+                decode_content=False,
+                timeout=Timeout(total=restante, connect=min(CONEXION_S, restante), read=min(LECTURA_S, restante)),
+                pool_timeout=restante,
+            )
+            try:
+                _restante(plazo)
+                if respuesta.status == HTTPStatus.FORBIDDEN and respuesta.headers.get("x-faro-portal") == "privado":
+                    return None
+                _exigir(respuesta.status == HTTPStatus.OK)
+                _exigir(respuesta.headers.get("content-encoding", "identity").lower() == "identity")
+                longitud = respuesta.headers.get("content-length")
+                if longitud is not None:
+                    _exigir(re.fullmatch(r"0|[1-9][0-9]{0,9}", longitud) is not None)
+                    _exigir(int(longitud) <= MAX_MANIFIESTO_WEB_BYTES)
+                huella, total = hashlib.sha256(), 0
+                while True:
+                    restante = _restante(plazo)
+                    conexion = respuesta.connection
+                    if conexion is not None and conexion.sock is not None:
+                        conexion.sock.settimeout(min(LECTURA_S, restante))
+                    bloque = respuesta.read1(
+                        min(TAM_BLOQUE, MAX_MANIFIESTO_WEB_BYTES - total + 1), decode_content=False
+                    )
+                    _restante(plazo)
+                    if not bloque:
+                        break
+                    total += len(bloque)
+                    _exigir(total <= MAX_MANIFIESTO_WEB_BYTES)
+                    huella.update(bloque)
+                _exigir(total > 0 and (longitud is None or total == int(longitud)))
+                return huella.hexdigest()
+            finally:
+                respuesta.close()
+                respuesta.release_conn()
+
+    def comprobar_manifiesto_web(self, origen: str, sha256: str, *, version_id: str | None = None) -> None:
+        """Coteja la huella de los bytes públicos o, si los protege el portal de la autoridad, pide su prueba OIDC.
 
         Raises:
-            ErrorMantenimiento: Si los bytes o el transporte no confirman la expectativa.
+            ErrorMantenimiento: Si la huella, la versión o el transporte no confirman la expectativa.
         """
-        try:
+        with _solo_errores_cerrados():
             _exigir(not self._cerrado)
             validar_origen_publico(origen)
-            _exigir(isinstance(sha256, str) and re.fullmatch(r"[0-9a-f]{64}", sha256) is not None)
+            _exigir(isinstance(sha256, str) and SHA256.fullmatch(sha256) is not None)
+            _exigir(
+                version_id is None or (isinstance(version_id, str) and VERSION_ID.fullmatch(version_id) is not None)
+            )
+            huella_publica = self._huella_manifiesto_publico(origen, time.monotonic() + PLAZO_FASE_S)
+            if huella_publica is not None:
+                _exigir(huella_publica == sha256)
+                return
+
+            _exigir(origen == self._origen and version_id is not None)
             plazo = time.monotonic() + PLAZO_FASE_S
-            with turno_por_dominio(origen + "/firmas/manifiesto.json"):
-                restante = _restante(plazo)
-                respuesta = self._http.request(
-                    "GET",
-                    origen + "/firmas/manifiesto.json",
-                    headers={**self._identidad, "Accept-Encoding": "identity", "Cache-Control": "no-cache"},
-                    redirect=False,
-                    retries=False,
-                    preload_content=False,
-                    decode_content=False,
-                    timeout=Timeout(total=restante, connect=min(CONEXION_S, restante), read=min(LECTURA_S, restante)),
-                    pool_timeout=restante,
-                )
-                try:
-                    _exigir(respuesta.status == HTTPStatus.OK)
-                    _exigir(respuesta.headers.get("content-encoding", "identity").lower() == "identity")
-                    longitud = respuesta.headers.get("content-length")
-                    if longitud is not None:
-                        _exigir(re.fullmatch(r"0|[1-9][0-9]{0,9}", longitud) is not None)
-                        _exigir(int(longitud) <= MAX_MANIFIESTO_WEB_BYTES)
-                    huella, total = hashlib.sha256(), 0
-                    while True:
-                        restante = _restante(plazo)
-                        conexion = respuesta.connection
-                        if conexion is not None and conexion.sock is not None:
-                            conexion.sock.settimeout(min(LECTURA_S, restante))
-                        bloque = respuesta.read1(
-                            min(TAM_BLOQUE, MAX_MANIFIESTO_WEB_BYTES - total + 1), decode_content=False
-                        )
-                        _restante(plazo)
-                        if not bloque:
-                            break
-                        total += len(bloque)
-                        _exigir(total <= MAX_MANIFIESTO_WEB_BYTES)
-                        huella.update(bloque)
-                    _exigir(total > 0 and (longitud is None or total == int(longitud)) and huella.hexdigest() == sha256)
-                finally:
-                    respuesta.close()
-                    respuesta.release_conn()
-        except (HTTPError, OSError, ValueError, TypeError, RecursionError):
-            raise ErrorMantenimiento(ERROR_GENERICO) from None
+            with diario.paso("identidad-oidc"):
+                token = self._token(plazo)
+            prueba = self._pedir(self._origen + RUTA_PRUEBA_MANIFIESTO, token, plazo, limite_get=MAX_CONSTRUCCION_BYTES)
+            _exigir(
+                type(prueba.get("version")) is int
+                and prueba == {"version": 1, "versionId": version_id, "sha256ManifiestoWeb": sha256}
+            )
+            _restante(plazo)
 
     def close(self) -> None:
         """Cierra las conexiones una sola vez y retira la credencial de la instancia."""

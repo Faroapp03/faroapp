@@ -8,6 +8,7 @@ import { RUTA_RESERVA_A_DEMANDA } from '../../administracion/reserva-a-demanda.t
 import { RUTA_RESULTADO_ACTUALIZACION } from '../../administracion/resultado-actualizacion.ts';
 import { ESTADO_HTTP } from '../../comun/estados-http.ts';
 import type { AdministracionMontada } from '../administracion.ts';
+import type { AlmacenDeArchivos } from './activos-publicos.ts';
 import { crearLectorConstruccionServida, RUTA_CONSTRUCCION_SERVIDA } from './construccion-servida.ts';
 
 type Receptor = (peticion: Request) => Promise<Response>;
@@ -16,6 +17,7 @@ export interface EntornoMantenimiento {
   readonly administrado: boolean;
   readonly variables: Record<string, string>;
   readonly metadatosVersion: unknown;
+  readonly assets: AlmacenDeArchivos;
   readonly obtenerPanel: () => Promise<AdministracionMontada>;
   readonly registrarNoDisponible: (error: unknown) => void;
 }
@@ -48,7 +50,7 @@ export async function responderMantenimiento(
   segundo?: EnSegundoPlano,
 ): Promise<Response> {
   if (url.pathname === RUTA_CONSTRUCCION_SERVIDA) {
-    return leerConstruccionServida(peticion, entorno.variables, entorno.metadatosVersion);
+    return leerConstruccionServida(peticion, entorno.variables, entorno.metadatosVersion, entorno.assets);
   }
   const elegir = RECEPTORES.get(url.pathname);
   if (!entorno.administrado || !elegir) {

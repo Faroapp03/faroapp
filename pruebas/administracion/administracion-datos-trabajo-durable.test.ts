@@ -235,6 +235,35 @@ test('pérdida de respuesta tras commit permite reintento exacto sin sustituir d
   assert.deepEqual(await m.cliente.leerDatosDelUltimoTrabajo(), antes);
 });
 
+test('el binding conserva datos y admite repetir el recibo rechazado tras añadir el motivo', async (t) => {
+  const m = montaje(t);
+  await preparar(m);
+  const rechazado = {
+    ...recibo(),
+    resultado: 'rechazado',
+    veredicto: 'rojo',
+    huellaPaquete: null,
+    error: 'actualizacion_no_admitida',
+  } as const;
+  const estado = datos(rechazado.terminadoEn);
+  const id = identidad();
+  assert.equal((await m.cliente.registrarRecibo(rechazado, HUELLA, id, estado)).estado, 'aplicado');
+  const cierre = { ...INICIO, ultimoFallo: { causa: 'plazo-insuficiente', paso: 'paquete' } } as const;
+  assert.equal((await m.cliente.cerrarSinRecibo(cierre, id)).estado, 'aplicado');
+  m.reiniciar();
+  const observacion = { version: 1, recibo: rechazado, huellaRecibo: HUELLA, datos: estado };
+  assert.deepEqual(await m.cliente.leerDatosDelPanel(), { observacion, deLaActualizacionAnterior: false });
+  const repetido = await m.cliente.registrarRecibo(rechazado, HUELLA, id, estado);
+  assert.equal(repetido.estado, 'repetido');
+  assert.deepEqual(repetido.trabajos.ultimoTrabajo?.resultado?.ultimoFallo, cierre.ultimoFallo);
+  assert.equal(
+    (await m.cliente.registrarRecibo({ ...rechazado, veredicto: 'ámbar' }, HUELLA, id, estado)).estado,
+    'conflicto',
+  );
+  const distinto = leerEstadoDatosPanel({ ...estado, fuentes: estado.fuentes.map((f) => ({ ...f, fecha: null })) });
+  assert.equal((await m.cliente.registrarRecibo(rechazado, HUELLA, id, distinto)).estado, 'conflicto');
+});
+
 test('recibo antiguo sin estado sigue válido; null explícito exige rechazo admisible', async (t) => {
   const m = montaje(t);
   await preparar(m);

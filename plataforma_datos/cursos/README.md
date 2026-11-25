@@ -299,8 +299,18 @@ lista), sin texto libre ni rutas; sin ese fallo la fila conserva su forma anteri
 
 `almacen-ilegible` cubre lo que falla al abrir el almacén antes de aplicar las fuentes: un directorio sin control,
 un control alterado, un archivo que no es SQLite, otro esquema o una instantánea cuya huella no coincide con la
-admitida. Un fallo posterior, al aplicar una fuente o al proyectar la entrega, también deja el paso en rojo y no
-publica, pero sin código de almacén: su motivo llega al informe.
+admitida. Un fallo posterior de integridad, coherencia o proyección deja el paso en rojo y conserva el paquete
+vigente. El motivo llega al informe.
+
+Si los documentos de evidencia nuevos de una fuente rebasan su cota y la base contiene una versión admitida de
+esa fuente, se descarta su aplicación completa, incluidas las salidas parciales de sus pendientes. Las demás
+fuentes siguen y la composición siguiente vuelve a intentar los conjuntos. El panel muestra el motivo, cuándo
+empezó la retención y la fecha de la versión que sigue aplicada.
+
+Cuando el motor también publica un archivo de la fuente retenida, conserva el archivo anterior con su origen
+verificado antes de ensamblar la web. Si el productor ya sustituyó el origen y el manifiesto previo prueba que
+sus bytes eran idénticos al archivo publicado, ese origen se conserva por SHA en el catálogo privado. Si la
+versión previa no se puede verificar o comparte entradas con otra salida, se conserva el paquete vigente entero.
 
 `hp_life`, `cibervoluntarios`, `claude_academy`, `fundae` y `barcelonactiva`
 son módulos independientes del ciclo común,

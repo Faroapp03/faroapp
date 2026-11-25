@@ -212,6 +212,7 @@ function mantenimientoDelEntorno(env: Entorno) {
     administrado: modoAdministrado(env),
     variables: variablesDeTexto(env),
     metadatosVersion: env.CF_VERSION_METADATA,
+    assets: env.ASSETS,
     obtenerPanel: async () => (await panelDelEntorno(env)).obtenerPanel(),
     registrarNoDisponible: registrarAdministracionNoDisponible,
   };

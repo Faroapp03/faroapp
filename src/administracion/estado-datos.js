@@ -24,7 +24,8 @@
  * @typedef {Readonly<{motivos:readonly MotivoSalidaParcialDatos[],descartadas:number,aRevisar:number}>} SalidaParcialDatos
  * @typedef {'censo-con-copias-fijadas'|'indices-sin-censo'} MotivoCoberturaLimitadaDatos
  * @typedef {Readonly<{comprobados:number,ocultos:number,sinComprobar:number}>} EnlacesDatos
- * @typedef {Readonly<{fuente:string,ultimoIntento:OperacionFuenteDatos|null,incidenciasPendientes:readonly IncidenciaRemotaDatos[],fallosSeguidos?:number,proximaConsultaEn?:string|null,consultaParcial?:ConsultaParcialDatos|null,coberturaLimitada?:MotivoCoberturaLimitadaDatos|null,salidaParcial?:SalidaParcialDatos,enlaces?:EnlacesDatos,retirada?:import('./retirada-datos.js').RetiradaDatos,retiradaAmplia?:import('./retirada-datos.js').RetiradaAmpliaDatos}>} SeguimientoRemotoDatos
+ * @typedef {Readonly<{fuente:string,ultimoIntento:OperacionFuenteDatos|null,incidenciasPendientes:readonly IncidenciaRemotaDatos[],fallosSeguidos?:number,proximaConsultaEn?:string|null,consultaParcial?:ConsultaParcialDatos|null,coberturaLimitada?:MotivoCoberturaLimitadaDatos|null,salidaParcial?:SalidaParcialDatos,enlaces?:EnlacesDatos,retirada?:import('./retirada-datos.js').RetiradaDatos,retiradaAmplia?:import('./retirada-datos.js').RetiradaAmpliaDatos,retencionComposicion?:RetencionComposicionDatos}>} SeguimientoRemotoDatos
+ * @typedef {Readonly<{motivo:'documento-excesivo',desde:string,versionEn:string}>} RetencionComposicionDatos
  * @typedef {Readonly<EstadoDatosComun & {version:3,fuentes:readonly FuenteEstadoDatosV2[],comprobaciones:ComprobacionesDatos,seguimientoRemoto:readonly SeguimientoRemotoDatos[]}>} EstadoDatosPanelV3
  * @typedef {'cursos'|'ocupaciones'|'ia_y_trabajo'|'mercado'|'derechos'|'biblioteca'|'comun'|'derivados'} TemaFuenteDatos
  * @typedef {'operativa'|'candidata'|'lectura-candidata'|'productor-externo'|'productor-local'} ModalidadFuenteDatos
@@ -36,6 +37,7 @@
  * @typedef {EstadoDatosPanelV1|EstadoDatosPanelV2|EstadoDatosPanelV3|EstadoDatosPanelV4|EstadoDatosPanelV5|EstadoDatosPanelV6} EstadoDatosPanel
  * @typedef {(senal:AbortSignal)=>Promise<EstadoDatosPanel>} LectorEstadoDatosPanel
  */
+import { leerEnlaces, leerRetencionComposicion } from './avisos-catalogo-datos.js';
 import { clavesDeFuenteV2, conEdicionNueva, observadaAntesDe, sinEdicion } from './edicion-nueva-datos.js';
 
 /** Proyección de mantenimiento para el panel: datos cerrados, sin rutas, motivos ni registros técnicos. */
@@ -437,24 +439,14 @@ function salidaParcial(entrada) {
   exigir(motivos.length > 0 || descartadas > 0 || aRevisar > 0);
   return Object.freeze({ motivos: Object.freeze(motivos), descartadas, aRevisar });
 }
-/** Los enlaces de la formación que la comprobación dice haber comprobado, ocultado y dejado sin comprobar: solo viaja con valor.
- * @param {unknown} entrada @returns {EnlacesDatos}
- */
-function enlaces(entrada) {
-  const valor = objeto(entrada, ['comprobados', 'ocultos', 'sinComprobar']);
-  const comprobados = entero(valor.comprobados);
-  const ocultos = entero(valor.ocultos);
-  const sinComprobar = entero(valor.sinComprobar);
-  exigir(ocultos <= comprobados + sinComprobar);
-  return Object.freeze({ comprobados, ocultos, sinComprobar });
-}
 /** Las claves del seguimiento que solo viajan con valor, como `motivoAlmacen`, y cómo se lee cada una.
  * @type {readonly (readonly [string, (dato: unknown) => object])[]} */
 const OPCIONALES_SEGUIMIENTO = Object.freeze([
   ['salidaParcial', salidaParcial],
-  ['enlaces', enlaces],
+  ['enlaces', leerEnlaces],
   ['retirada', leerRetirada],
   ['retiradaAmplia', leerRetiradaAmplia],
+  ['retencionComposicion', leerRetencionComposicion],
 ]);
 /** Las observaciones guardadas antes de los avisos o de la cobertura conservan su forma cerrada anterior.
  * @param {unknown} entrada @returns {SeguimientoRemotoDatos}

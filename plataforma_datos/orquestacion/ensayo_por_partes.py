@@ -30,6 +30,7 @@ from pathlib import Path
 from typing import Any
 
 from plataforma_datos.comun.nucleo import RAIZ
+from plataforma_datos.orquestacion import retencion_paquete_cursos
 from plataforma_datos.orquestacion.actualizar import (
     Ejecutor,
     Opciones,
@@ -40,6 +41,7 @@ from plataforma_datos.orquestacion.actualizar import (
     ejecutar_pasos,
     publicar,
 )
+from plataforma_datos.orquestacion.cuarentena_del_paquete import CuarentenaImposible
 from plataforma_datos.orquestacion.estado_de_la_actualizacion import VERDE
 from plataforma_datos.orquestacion.generacion_del_ensayo import exportar_en_local, supervisor_se_detiene
 from plataforma_datos.orquestacion.guardia_sin_red import exigir_sin_red
@@ -56,6 +58,7 @@ from plataforma_datos.orquestacion.ordenes_de_la_actualizacion import (
     Orden,
     ordenes_del_paquete,
 )
+from plataforma_datos.orquestacion.piezas_de_la_actualizacion import Comparacion
 
 # Los pasos del paquete desde los que se puede repetir, con el nombre corto de la orden.
 PASOS_REPETIBLES = {
@@ -318,6 +321,27 @@ def _paquete_entero(repeticion: Path, registro: RegistroDePasos) -> tuple[list[P
     return pasos, resultado.veredicto == VERDE
 
 
+def _paquete_parcial(repeticion: Path, registro: RegistroDePasos, ordenes: list[Orden]) -> tuple[list[Paso], bool]:
+    """Ejecuta solo las órdenes elegidas y conserva la salida de Cursos si repitió la composición.
+
+    Returns:
+        Los pasos ejecutados y si se completó el tramo, incluida la conservación tras componer.
+    """
+    area = repeticion / "area"
+    opciones = Opciones()
+    corte = ordenes.index(COMPONER_EL_CATALOGO) + 1 if COMPONER_EL_CATALOGO in ordenes else None
+    pasos = ejecutar_pasos(area, registro, ordenes[:corte], opciones)
+    if corte is not None and len(pasos) == corte and pasos[-1].en_verde:
+        # El candidato fue clonado antes del paquete. Al empezar desde ensamblado, el área ya trae este ajuste.
+        try:
+            retencion_paquete_cursos.conservar(repeticion / "candidato", area, Comparacion(None, [], []))
+        except CuarentenaImposible as error:
+            print(f"No se puede conservar la salida de Cursos: {error}", flush=True)
+            return pasos, False
+        pasos += ejecutar_pasos(area, registro, ordenes[corte:], opciones)
+    return pasos, len(pasos) == len(ordenes) and all(p.en_verde for p in pasos)
+
+
 def tramo(
     repeticion: Path,
     desde: str,
@@ -329,8 +353,9 @@ def tramo(
 
     Las órdenes, sus topes y su entorno son los del ciclo (`actualizar.ejecutar_pasos`); se detiene en la primera
     que falla, como el paquete. Desde «exportar» repite el paquete entero con `actualizar.ejecutar_paquete`, con su
-    cuarentena y sus alarmas. Un tramo que llega al final del paquete publica en el clon del candidato y exporta la
-    generación (`cerrar`); uno que termina antes (`hasta`) no llega a la generación.
+    cuarentena y sus alarmas. Tras componer, un tramo parcial conserva la salida anterior de las fuentes retenidas,
+    incluso si termina justo ahí. Un tramo que llega al final del paquete publica en el clon del candidato y exporta
+    la generación (`cerrar`); uno que termina antes (`hasta`) no llega a la generación.
 
     Returns:
         Cero si todas las órdenes del tramo terminaron bien y su generación, si llega a ella, se conservaría; uno si
@@ -343,8 +368,7 @@ def tramo(
         pasos, en_verde = _paquete_entero(repeticion, registro)
         generacion = cerrar(repeticion, en_verde) if (repeticion / "candidato").exists() else None
     else:
-        pasos = ejecutar_pasos(repeticion / "area", registro, ordenes, Opciones())
-        en_verde = len(pasos) == len(ordenes) and all(p.en_verde for p in pasos)
+        pasos, en_verde = _paquete_parcial(repeticion, registro, ordenes)
         generacion = cerrar(repeticion, en_verde) if al_final and (repeticion / "candidato").exists() else None
     _escribir(
         repeticion / "tramo.json",

@@ -20,6 +20,9 @@ from plataforma_datos.orquestacion.almacen_generaciones import (
     AlmacenGeneracionesNoDisponible,
 )
 from plataforma_datos.orquestacion.almacen_s3 import AlmacenS3Ausente
+from plataforma_datos.orquestacion.cliente_mantenimiento import ERROR_GENERICO
+from plataforma_datos.orquestacion.errores_mantenimiento import RechazoDelServidor, ServidorSinRespuesta
+from plataforma_datos.orquestacion.formas_del_diario import es_causa
 from plataforma_datos.orquestacion.movimientos_de_cursos import comparar
 from plataforma_datos.orquestacion.salud_mantenimiento import diagnostico
 from plataforma_datos.orquestacion.simular_mantenimiento import PermisoLocal
@@ -151,6 +154,28 @@ class DiarioPruebas(unittest.TestCase):
         self.assertEqual(movimientos[1]["nueva"]["tema"], "b")
         with self.assertRaises(ValueError):
             diagnostico(eventos + [eventos[-1].replace("123", "124")])
+
+    def test_confirmar_sin_respuesta_se_reenvia_y_un_rechazo_no(self) -> None:
+        """El diario distingue el servidor que no respondió del que rechazó, y solo lo primero se reenvía."""
+        for error, causa, accion in (
+            (ServidorSinRespuesta(ERROR_GENERICO), "servidor-sin-respuesta", "reenviar-recibo-conservado"),
+            (RechazoDelServidor(ERROR_GENERICO), "servidor-rechaza", "revisar"),
+        ):
+            with self.subTest(causa=causa):
+                ruta = self.carpeta / f"{causa}.jsonl"
+                with (
+                    diario.abrir(ruta, {"run": "123"}, consola=False),
+                    self.assertRaises(type(error)),
+                    diario.paso("supervisor"),
+                    diario.paso("confirmar-resultado"),
+                ):
+                    raise error
+                eventos = ruta.read_text().splitlines()
+                fallo = {clave: json.loads(eventos[2])[clave] for clave in ("fase", "estado", "causa")}
+                self.assertEqual(fallo, {"fase": "confirmar-resultado", "estado": "error", "causa": causa})
+                self.assertTrue(es_causa(causa))
+                resumen = diagnostico(eventos)
+                self.assertEqual((resumen["fase"], resumen["accion"]), ("confirmar-resultado", accion))
 
     def test_el_diario_identifica_el_calendario_pendiente_de_una_fuente_validada(self) -> None:
         """El resumen permite localizar la edición sin exponer el contenido de la ficha."""

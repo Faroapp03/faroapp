@@ -93,6 +93,9 @@ export const TEXTOS_AVISOS_DATOS = {
     'Digitalízate llista més proveïdors dels que Faro consulta en un dia: avui no hi ha altes ni baixes dels seus cursos. Què cal fer: avisa l’equip tècnic.',
   'panel.datos.salida-parcial.motivo.censo-digitalizate-contradice-al-indice':
     'Les fitxes dels proveïdors de Digitalízate i el seu cercador no coincideixen en algun curs: val el que diuen les fitxes dels proveïdors actius i el que és dubtós es queda com estava.',
+  'panel.datos.retencion-composicion': 'Es conserva la versió aplicada {v0}. La retenció va començar {v1}.',
+  'panel.datos.retencion-composicion.documento-excesivo':
+    'La versió nova va superar la mida màxima d’un document d’evidència del catàleg.',
   'panel.datos.salida-parcial.motivo.fundae-conjunto-sin-aplicar':
     'Hi ha una actualització de FUNDAE preparada amb un catàleg de cursos diferent de l’actual: no s’ha aplicat i es conserva. Què cal fer: demana a l’equip tècnic que la revisi.',
   'panel.datos.salida-parcial.motivo.dominio-con-limite':

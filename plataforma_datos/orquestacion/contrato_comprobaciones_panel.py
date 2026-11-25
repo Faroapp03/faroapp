@@ -263,12 +263,20 @@ def validar_retirada_amplia(valor: object) -> None:
     instante_panel(aviso["en"])
 
 
+def validar_retencion_composicion(entrada: object) -> None:
+    """Comprueba la cronología y el motivo cerrado de la retención de una fuente."""
+    aviso = _objeto(entrada, "motivo,desde,versionEn")
+    _exigir(aviso["motivo"] == "documento-excesivo")
+    _exigir(instante_panel(aviso["versionEn"]) <= instante_panel(aviso["desde"]))
+
+
 # Las claves del seguimiento de una fuente que solo viajan con valor, y cómo se valida cada una.
 OPCIONALES_SEGUIMIENTO = (
     ("salidaParcial", validar_salida_parcial),
     ("enlaces", validar_recuento_de_enlaces),
     ("retirada", validar_aviso_de_la_retirada),
     ("retiradaAmplia", validar_retirada_amplia),
+    ("retencionComposicion", validar_retencion_composicion),
 )
 
 

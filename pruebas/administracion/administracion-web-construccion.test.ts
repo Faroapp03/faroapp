@@ -79,6 +79,7 @@ const MODULOS = [
   'vista-retenidos.js',
   'vista-fuentes.js',
   'avisos-datos.js',
+  'avisos-catalogo-datos.js',
   'vista-trabajos.js',
   'vista-activacion.js',
   'vista-cierre.js',

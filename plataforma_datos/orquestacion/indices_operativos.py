@@ -10,6 +10,7 @@ import stat
 import zipfile
 from pathlib import Path
 
+from plataforma_datos.orquestacion import retencion_paquete_cursos
 from plataforma_datos.orquestacion.archivos_de_generacion import (
     ERROR_GENERICO,
     GeneracionInvalida,
@@ -17,6 +18,7 @@ from plataforma_datos.orquestacion.archivos_de_generacion import (
     _exigir,
     _json,
 )
+from plataforma_datos.orquestacion.cuarentena_del_paquete import CuarentenaImposible
 
 # La captura conserva como registro la comprobación de enlaces de la forma sin versión, que sirve de punto de partida
 # a la fuente `enlaces` y no se publica desde la captura. Solo los vectores son recursos fijados del paquete.
@@ -32,6 +34,10 @@ def comprobar_indices_operativos(raiz: Path, manifiesto: dict, carpetas: set[str
     Raises:
         GeneracionInvalida: Si un índice no coincide o la captura de los recursos fijados no se puede verificar.
     """
+    try:
+        retencion_paquete_cursos.comprobar(raiz, manifiesto)
+    except CuarentenaImposible as error:
+        raise GeneracionInvalida(ERROR_GENERICO) from error
     for carpeta, salida in (("vectores-movil", "vectores-movil.json"),):
         if carpeta in carpetas:
             origenes = manifiesto[salida]["origenes"]

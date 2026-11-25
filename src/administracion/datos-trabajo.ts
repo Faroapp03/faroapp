@@ -1,7 +1,13 @@
 /** Observación privada de datos correlacionada con el recibo; nunca activa una generación. */
 import { type CatalogoPrivado, leerCatalogoPrivado, MAX_CATALOGO_PRIVADO_BYTES } from './catalogo-privado.js';
 import { type EstadoDatosPanel, leerEstadoDatosPanel } from './estado-datos.js';
-import { exigirTrabajo, leerReciboTrabajo, objetoTrabajo, type ReciboTrabajo } from './trabajos.ts';
+import {
+  exigirTrabajo,
+  leerReciboTrabajo,
+  objetoTrabajo,
+  type ReciboTrabajo,
+  type ResultadoTrabajo,
+} from './trabajos.ts';
 
 export const MAX_DATOS_TRABAJO_BYTES = 131_072;
 const MAX_OBSERVACION_ANTERIOR_BYTES = 135_168;
@@ -14,6 +20,18 @@ export interface ObservacionDatosTrabajo {
   readonly huellaRecibo: string;
   readonly datos: EstadoDatosPanel;
   readonly catalogo?: CatalogoPrivado | null;
+}
+export function resultadoDelRecibo(recibo: ReciboTrabajo) {
+  const { solicitudId: _id, accion: _accion, revisionReserva: _revision, ...resultado } = recibo;
+  return resultado;
+}
+/** El cierre puede explicar el rechazo después de admitir el recibo. La explicación no forma parte de sus bytes. */
+export function resultadoCoincideConRecibo(resultado: ResultadoTrabajo | null, recibo: ReciboTrabajo): boolean {
+  if (resultado === null) {
+    return false;
+  }
+  const { ultimoFallo: _fallo, ...resultadoRecibido } = resultado;
+  return JSON.stringify(resultadoRecibido) === JSON.stringify(resultadoDelRecibo(recibo));
 }
 function comprobarTamano(valor: EstadoDatosPanel | ObservacionDatosTrabajo, maximo: number): void {
   // Solo se serializan copias cerradas por los lectores: ningún accesor o toJSON de la entrada.

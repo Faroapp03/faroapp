@@ -247,7 +247,13 @@ que no envió ni recibo ni cierre, el servidor lo cierra con `ultimoFallo: {"cau
 El campo solo acompaña a un resultado `rechazado` o `ejecucion-sin-recibo`, y el trabajo siguiente lo sustituye: uno
 correcto ya no lo lleva.
 
-El receptor admite como máximo 132 KiB y tiene un plazo de cinco segundos. El espacio de rutas
+El receptor admite el recibo y su copia fijada del catálogo (132 KiB más 4 MiB como mucho) y tiene un plazo de 15
+segundos (`PLAZO_RESULTADO_MS`, `src/administracion/plazos-mantenimiento.ts`): en serie, una lectura del almacén y un
+registro (hasta 3 s cada uno), la descarga de las claves OIDC cuando no están en caché (hasta 5 s), y leer y validar
+el cuerpo. Con cinco segundos, un recibo de 3 MiB con las claves frías no cabía. Pasado el plazo responde
+`504 plazo_agotado`, que no es un rechazo: el registro puede haber quedado hecho. Reenviar los mismos bytes lo registra
+o, si ya lo estaba, responde `repetido`. Un recibo distinto sobre el mismo trabajo, o uno para un trabajo ya cerrado de otra forma, es `409
+conflicto`. El espacio de rutas
 `/mantenimiento` no sirve archivos estáticos, incluso con la capacidad deshabilitada. El enlace del entorno
 de almacenamiento usa rutas internas que no se exponen en la API pública.
 
@@ -478,10 +484,21 @@ puede reanudar un motor cuya ejecución es incierta; corresponde comprobar la te
 y conciliar el trabajo mediante el protocolo anterior.
 
 Cada fase obtiene un JWT nuevo para la audiencia fijada. Las peticiones usan TLS, el perfil genérico central (UA y tres pistas),
-cuerpos acotados y no siguen redirecciones ni reintentos automáticos. El cliente aplica un presupuesto
-de 15 segundos por fase, con conexión y lectura de socket limitadas a cinco segundos; una operación
-ya iniciada de DNS o del sistema puede añadir margen. El job debe imponer también un plazo global.
+cuerpos acotados y no siguen redirecciones ni reintentos automáticos. La conexión se
+limita a cinco segundos. La lectura espera 20 segundos: el plazo del receptor más lento (15 s) y cinco de margen para
+el montaje del panel y la red. Si esperara lo mismo que el servidor, cortaría justo cuando este va a contestar y no
+sabría si fue un plazo o un rechazo; una prueba de contrato coteja ese plazo con el del código del servidor. Cada fase
+tiene un presupuesto de 50 segundos, el de dos conexiones y dos lecturas (el token OIDC y la llamada); una operación ya
+iniciada de DNS o del sistema puede añadir margen. El job debe imponer también un plazo global.
 Un error no imprime cuerpos, rutas privadas ni credenciales, ni se interpreta como permiso o éxito.
+
+Un fallo dice de qué clase es, y el diario lo anota como causa del paso:
+
+| Causa | Qué pasó | Qué hace el supervisor si falla `confirmar-resultado` |
+|---|---|---|
+| `servidor-sin-respuesta` | Plazo de lectura o de fase agotado, conexión cortada o un 5xx (también el `504 plazo_agotado` del receptor). Lo enviado pudo quedar hecho | Reenvía el recibo conservado: si ya estaba registrado, el servidor responde `repetido` |
+| `servidor-rechaza` | El servidor respondió con un 4xx: no admitió lo enviado | No reenvía: la acción es `revisar` (o `revisar-identidad-del-runner` con un 401 o un 403) |
+| `comprobacion-fallida` | Respuesta 200 con una forma que no es la del contrato | Reenvía, como hasta ahora |
 
 ### Fuentes en serie o en paralelo
 
@@ -735,15 +752,23 @@ configurada. Admite el intento `1` y los posteriores válidamente firmados; comp
 fijada de repositorio, workflow y revisión. Esa lectura no concede permiso de recuperación.
 Una sesión humana de Access o una clave pública de consulta no sustituyen esa identidad.
 
-La lectura exige el origen y la ruta exactos, sin consulta ni cuerpo, y responde con `no-store`.
-No utiliza IA, SQL ni recursos estáticos; tampoco reserva trabajos, modifica estado o autoriza
-una activación. Un enlace ausente o inválido no se sustituye por una etiqueta del despliegue,
-por el último trabajo ni por el número de versión de `/api/salud`.
+La consulta de versión exige el origen y la ruta exactos, sin parámetros ni cuerpo, y responde con
+`no-store`. Comprueba el enlace de Cloudflare sin leer los archivos estáticos. El modo
+`GET /mantenimiento/construccion?prueba=manifiesto` utiliza la misma autoridad y devuelve
+`{version: 1, versionId: "<UUID>", sha256ManifiestoWeb: "<SHA-256>"}`. El Worker toma el UUID de
+sus metadatos y calcula la huella de los bytes de `/firmas/manifiesto.json` en el enlace `ASSETS`
+de esa misma versión. Pide esa ruta fija mediante una solicitud nueva, sin JWT ni cookies, y lee hasta
+8 MiB dentro de un plazo total de 10 segundos, incluidas la autenticación y la huella. La consulta de versión
+conserva su plazo de 5 segundos.
 
-`ClienteMantenimientoGitHub.observar_construccion()` obtiene un JWT nuevo para esa lectura y
-valida la respuesta cerrada de hasta 1 KiB. Conserva TLS, el perfil genérico central (UA y tres pistas), ausencia de redirecciones y
-reintentos, y el plazo de fase de 15 segundos. No guarda ni imprime el JWT. El adaptador Node no
-declara una identidad de Cloudflare y no ofrece esta ruta.
+Las dos lecturas responden con `no-store` y prescinden de IA y SQL. Carecen de permiso para
+reservar trabajos, cambiar estado o autorizar una activación. Si el enlace de versión falta o es inválido,
+la consulta falla. En el modo de prueba también falla si el archivo falta, excede el límite o no se puede leer.
+
+El cliente obtiene un JWT nuevo para cada consulta y valida su respuesta cerrada de hasta 1 KiB.
+Usa TLS y el perfil genérico central (UA y tres pistas) y rechaza redirecciones. La consulta anónima tiene su
+propio plazo. Si procede la consulta privada, comparte un plazo de fase entre pedir el JWT y recibir la prueba.
+El adaptador Node carece del enlace de identidad de Cloudflare.
 
 El identificador observado acredita qué versión atendió esa petición. Para confirmar una activación
 también hacen falta la asociación privada entre artefacto conservado y versión subida, el estado del
@@ -859,8 +884,13 @@ Los pasos son:
    la fase de despliegue sin desplegar y confirma por lo observado.
 6. Confirmar únicamente cuando Cursos siga sirviendo la versión de la intención, sola y al 100 % (el despliegue
    puede ser otro que el anotado si se ha vuelto a desplegar a mano esa misma versión), y coincidan el despliegue
-   oficial del principal de una sola versión, la identidad servida por `/mantenimiento/construccion` y los
-   bytes de `/firmas/manifiesto.json` de la web. La consulta pública del manifiesto no recibe el JWT privado.
+   oficial del principal de una sola versión, la identidad servida por `/mantenimiento/construccion` y la
+   huella esperada del manifiesto. El cliente pide primero `/firmas/manifiesto.json` sin credenciales al origen
+   web configurado. Si recibe el archivo, coteja sus bytes directamente, incluso cuando la web pública tiene
+   un origen distinto. Si el portal del mismo origen de la autoridad devuelve `403` con
+   `x-faro-portal: privado`, el cliente pide la prueba OIDC y confirma solo si la respuesta acredita
+   tanto el UUID previsto como la huella del artefacto conservado. Una versión anterior que carezca de esa
+   consulta no puede acreditar el manifiesto por la vía privada.
 
 Una activación guardada con la forma de un servicio, sin los campos `versionIdCursos` y `deploymentIdCursos`,
 se sigue leyendo y se termina o se recupera por su camino de siempre (`preparada → subiendo → … →

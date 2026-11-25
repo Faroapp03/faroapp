@@ -5,6 +5,7 @@ import { ESTADO_HTTP } from '../comun/estados-http.ts';
 import { cabecerasDeDesafio } from '../seguridad/desafio-http.ts';
 import { validarOrigenAdministrativo } from './configuracion.ts';
 import { type ConfianzaOidcGitHub, crearClasificadorOidcGitHub, type IdentidadEjecucionGitHub } from './oidc-github.ts';
+import { PLAZO_RECEPTOR_MANTENIMIENTO_MS } from './plazos-mantenimiento.ts';
 import {
   type AlmacenTrabajosActualizacion,
   type InicioTrabajo,
@@ -18,7 +19,6 @@ import {
 export const RUTA_INICIO_ACTUALIZACION = '/mantenimiento/inicio';
 export const MAX_INICIO_ACTUALIZACION_BYTES = 4096;
 const MS_SEGUNDO = 1000;
-const PLAZO_MS = 5000;
 const MAX_TOKEN = 16_384;
 /** Mantiene viva una tarea después de responder (en Cloudflare, `waitUntil` de la petición). */
 export type EnSegundoPlano = (tarea: Promise<unknown>) => void;
@@ -240,7 +240,7 @@ export function crearReceptorInicioActualizacion({
       const token = frontera(peticion, origen);
       return await dentroDelPlazo(
         (senal) => procesar(peticion, token, senal, enSegundoPlano),
-        PLAZO_MS,
+        PLAZO_RECEPTOR_MANTENIMIENTO_MS,
         peticion.signal,
       );
     } catch (error) {

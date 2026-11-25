@@ -756,6 +756,37 @@ class PruebaEjecutorOperativo(unittest.TestCase):
             ],
         )
 
+    def test_reanudar_rechazo_recupera_el_aviso_del_candidato_del_run(self) -> None:
+        """El recibo se reenvía literalmente; el aviso se recupera si aún está el candidato de ese run."""
+        self.resultado = "rechazado"
+        self.parada = "paquete"
+        self.cliente.perder = True
+        with self.assertRaisesRegex(OSError, "respuesta incierta"):
+            self.ejecutar()
+        self.assertEqual(self.cliente.cierres, [])
+
+        self.cliente.perder = False
+        self.assertEqual(self.ejecutar(reanudar=True)["resultado"], "rechazado")
+        self.assertEqual(
+            self.cliente.cierres,
+            [
+                {
+                    "solicitudId": SOLICITUD,
+                    "revisionReserva": 1,
+                    "accion": self.config.accion,
+                    "ultimoFallo": {"causa": "plazo-insuficiente", "paso": "paquete"},
+                }
+            ],
+        )
+        nueva = self.raiz / "reanudar aparte"
+        nueva.mkdir()
+        self.config = replace(self.config, directorio_trabajo=nueva)
+        self.assertEqual(self.ejecutar(reanudar=True)["resultado"], "rechazado")
+        self.assertEqual(len(self.cliente.cierres), 1)
+        self.assertEqual(self.cliente.recibos, [self.cliente.recibos[0]] * 3)
+        self.assertEqual(len(self.motores), 1)
+        self.assertEqual(len(self.cliente.inicios), 1)
+
     def test_plazo_motor_no_callback_ni_segundo_intento_local(self) -> None:
         """El marcador se conserva después del timeout y el mismo directorio no autoriza otro comienzo."""
         with (

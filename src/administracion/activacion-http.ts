@@ -23,12 +23,12 @@ import { type ConsultarFinEjecucion, cumplirCierre } from './cierre-activacion-h
 import { validarOrigenAdministrativo } from './configuracion.ts';
 import type { ResultadoConsultaIntentoActivacion } from './consulta-ejecucion-github.ts';
 import { type ConfianzaOidcGitHub, crearVerificadorOidcGitHub, type IdentidadEjecucionGitHub } from './oidc-github.ts';
+import { PLAZO_RECEPTOR_MANTENIMIENTO_MS } from './plazos-mantenimiento.ts';
 import type { TrabajoPrivado } from './trabajos.ts';
 import { objetoTrabajo } from './trabajos.ts';
 
 export const RUTA_ACTIVACION = '/mantenimiento/activacion';
 export const MAX_ACTIVACION_BYTES = 16_384;
-const PLAZO_MS = 5000;
 const MAX_TOKEN = 16_384;
 interface OpcionesReceptorActivacion {
   readonly origen: string;
@@ -304,7 +304,7 @@ export function crearReceptorActivacion({
       const token = frontera(peticion, origen);
       return await dentroDelPlazo(
         (senal) => procesarActivacion(peticion, token, contexto, senal),
-        PLAZO_MS,
+        PLAZO_RECEPTOR_MANTENIMIENTO_MS,
         peticion.signal,
       );
     } catch (error) {

@@ -6,6 +6,7 @@ import {
   leerCatalogoDeRecibo,
   leerDatosDeRecibo,
   MAX_OBSERVACION_DATOS_BYTES,
+  resultadoCoincideConRecibo,
 } from '../../administracion/datos-trabajo.ts';
 import type { ResultadoDespacho } from '../../administracion/ejecutor-github.ts';
 import { leerFalloProgramado } from '../../administracion/fallo-programado.ts';
@@ -358,9 +359,9 @@ export function leerTransicionReciboDurable(
   const resultado = leerTransicionDurable(entrada, recibo);
   if (resultado.estado !== 'conflicto') {
     const t = resultado.trabajos.ultimoTrabajo;
-    const { solicitudId: _id, accion: _accion, revisionReserva: _revision, ...resumen } = recibo;
     exigirTrabajo(t?.runId === identidad.runId && t.accion === recibo.accion && t.estado === 'terminado');
-    exigirTrabajo(JSON.stringify(t.resultado) === JSON.stringify(resumen));
+    exigirTrabajo(resultadoCoincideConRecibo(t.resultado, recibo));
+    exigirTrabajo(resultado.estado === 'repetido' || t.resultado?.ultimoFallo === undefined);
   }
   return resultado;
 }

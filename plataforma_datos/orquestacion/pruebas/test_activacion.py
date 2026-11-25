@@ -456,7 +456,9 @@ class ActivacionTest(unittest.TestCase):
         self.assertEqual(
             self.cliente.pasos, ["reservar", "preparar", "subiendo", "subida", "promoviendo", "confirmada"]
         )
-        self.cliente.comprobar_manifiesto_web.assert_called_once_with("https://publico.example", self.web_sha)
+        self.cliente.comprobar_manifiesto_web.assert_called_once_with(
+            "https://publico.example", self.web_sha, version_id=NUEVA
+        )
         self.assertEqual(self.almacen.objetos[REFERENCIA], self.base_conservada)
         self.assertFalse(any(evento[0] in ("control", "guardar") for evento in self.almacen.eventos))
         self.assertEqual(self.ejecutar()["fase"], "confirmada")

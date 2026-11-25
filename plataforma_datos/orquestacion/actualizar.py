@@ -70,11 +70,18 @@ from plataforma_datos.comun import instante_del_ciclo
 from plataforma_datos.comun.entrada_salida import temporal_hermano
 from plataforma_datos.comun.nucleo import ERRORES_CON_MOTIVO, RAIZ
 from plataforma_datos.cursos.fallos_almacen import codigo_en
-from plataforma_datos.orquestacion import comprobaciones_remotas, errores_de_actualizacion, ordenes, sustitucion
+from plataforma_datos.orquestacion import (
+    comprobaciones_remotas,
+    errores_de_actualizacion,
+    ordenes,
+    retencion_paquete_cursos,
+    sustitucion,
+)
 from plataforma_datos.orquestacion.area_de_ensayo import NO_SE_COPIA as NO_SE_COPIA
 from plataforma_datos.orquestacion.area_de_ensayo import comprobar_area, preparar_area
 from plataforma_datos.orquestacion.area_de_ensayo import es_secreto as es_secreto
 from plataforma_datos.orquestacion.cuarentena_del_paquete import (
+    CuarentenaImposible,
     aceptar_desde_la_cli,
     motivo_del_paquete,
     poner_en_cuarentena,
@@ -846,6 +853,25 @@ def _ejecutar_ronda(
         return error.pasos, error.resultados, True
 
 
+def _motivo_del_paso_fallido(paso: Paso) -> ResultadoDelModulo:
+    motivo = f"{paso.nombre} en rojo (código {paso.codigo})"
+    # El código del almacén de Cursos llega al panel como valor cerrado (estado_panel); el resto, al informe.
+    fallo = codigo_en(paso.salida) if paso.nombre == COMPONER_EL_CATALOGO.nombre else None
+    return ResultadoDelModulo(AMBAR, motivo if fallo is None else f"{motivo}: {fallo}")
+
+
+def _comparar_exportacion(raiz: Path, area: Path, exportado: bool) -> Comparacion:
+    try:
+        return comparar(raiz, area, exportado, retiradas_explicadas(raiz, area) if exportado else None)
+    except Exception as error:
+        if not exportado:
+            # La comparación no debe borrar los respaldos que pudo dejar el subproceso fallido.
+            raise sustitucion.RecuperacionIncompleta(
+                f"la exportación y su diagnóstico fallaron; conservar el área {area}: {error}"
+            ) from error
+        raise
+
+
 def ejecutar_paquete(
     raiz: Path, area: Path, ejecutor: Ejecutor, opciones: Opciones
 ) -> tuple[list[Paso], Comparacion, ResultadoDelModulo]:
@@ -872,24 +898,20 @@ def ejecutar_paquete(
     ordenes = list(ordenes_del_paquete(os.environ))
     pasos = ejecutar_pasos(area, ejecutor, ordenes[:1], opciones)
     exportado = bool(pasos) and pasos[0].en_verde
-    try:
-        # Lo que la regla de retirada activa quitó con su evidencia no es una pérdida sin explicar.
-        comparacion = comparar(raiz, area, exportado, retiradas_explicadas(raiz, area) if exportado else None)
-    except Exception as error:
-        if not exportado:
-            # La comparación no debe borrar los respaldos que pudo dejar el subproceso fallido.
-            raise sustitucion.RecuperacionIncompleta(
-                f"la exportación y su diagnóstico fallaron; conservar el área {area}: {error}"
-            ) from error
-        raise
+    comparacion = _comparar_exportacion(raiz, area, exportado)
     if exportado:
         comparacion = poner_en_cuarentena(raiz, area, comparacion)
-        pasos += ejecutar_pasos(area, ejecutor, ordenes[1:], opciones)
+        pasos += ejecutar_pasos(area, ejecutor, ordenes[1:2], opciones)
+        if pasos[-1].en_verde:
+            try:
+                comparacion = retencion_paquete_cursos.conservar(raiz, area, comparacion)
+            except CuarentenaImposible as error:
+                motivo = f"No se puede conservar la salida de Cursos: {error}"
+                comparacion.alarmas.append(motivo)
+                return pasos, comparacion, ResultadoDelModulo(AMBAR, motivo)
+            pasos += ejecutar_pasos(area, ejecutor, ordenes[2:], opciones)
     if len(pasos) < len(ordenes) or not pasos[-1].en_verde:
-        motivo = f"{pasos[-1].nombre} en rojo (código {pasos[-1].codigo})"
-        # El código del almacén de Cursos llega al panel como valor cerrado (estado_panel); el resto, al informe.
-        fallo = codigo_en(pasos[-1].salida) if pasos[-1].nombre == COMPONER_EL_CATALOGO.nombre else None
-        return pasos, comparacion, ResultadoDelModulo(AMBAR, motivo if fallo is None else f"{motivo}: {fallo}")
+        return pasos, comparacion, _motivo_del_paso_fallido(pasos[-1])
     if comparacion.alarmas:
         return pasos, comparacion, ResultadoDelModulo(AMBAR, "; ".join(comparacion.alarmas))
     try:

@@ -4,6 +4,8 @@ import {
   leerCatalogoDeRecibo,
   leerDatosDeRecibo,
   type ObservacionDatosTrabajo,
+  resultadoCoincideConRecibo,
+  resultadoDelRecibo,
 } from '../../administracion/datos-trabajo.ts';
 import { leerResultadoDespacho, type ResultadoDespacho } from '../../administracion/ejecutor-github.ts';
 import type { EstadoDatosPanel } from '../../administracion/estado-datos.js';
@@ -33,7 +35,6 @@ import {
   leerObservacionDelPanelSqlite,
   type ObservacionDelPanel,
   prepararDatosTrabajoSqlite,
-  resultadoDelRecibo,
 } from './datos-trabajo-sqlite.ts';
 import { prepararSolicitudesSqlite, registrarTransicionSqlite, type SolicitudReservada } from './solicitudes-sqlite.ts';
 import type { SqlAccesoPublico } from './sqlite.ts';
@@ -267,7 +268,7 @@ function reciboRepetido(
   return (
     t.runId === entrada.identidad.runId &&
     t.huellaRecibo === entrada.huellaRecibo &&
-    JSON.stringify(t.resultado) === JSON.stringify(resultadoDelRecibo(entrada.recibo))
+    resultadoCoincideConRecibo(t.resultado, entrada.recibo)
   );
 }
 interface EntradaRecibo {

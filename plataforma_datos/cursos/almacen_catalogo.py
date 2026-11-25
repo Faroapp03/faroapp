@@ -32,6 +32,10 @@ class EntradaCatalogo:
     sha256_admision: str
 
 
+class DocumentoArchivadoExcesivo(ErrorEntregaCatalogo):
+    """Una parte de un documento nuevo excede la cota del almacén."""
+
+
 def _sha(ruta: Path) -> str:
     with ruta.open("rb") as archivo:
         return hashlib.file_digest(archivo, "sha256").hexdigest()
@@ -85,6 +89,16 @@ def leer_evidencia(ruta: Path, sha256: str, motivo: str) -> bytes:
         return trozos_catalogo.leer(ruta, sha256, limite=admision.MAX_ENTRADA)
     except trozos_catalogo.ErrorTrozos as error:
         raise ErrorEntregaCatalogo(motivo) from error
+
+
+def _leer_parte_documento(referencia: admision.ReferenciaArchivo) -> bytes:
+    admision.exigir_ruta_sin_enlaces(referencia.ruta)
+    exigir(referencia.ruta.is_file(), "Referencia ausente o no regular")
+    exigir(referencia.ruta.stat().st_nlink == 1, "Documento con alias duro")
+    try:
+        return trozos_catalogo.leer(referencia.ruta, referencia.sha256, limite=admision.MAX_DOCUMENTO)
+    except trozos_catalogo.ErrorTrozos as error:
+        raise ErrorEntregaCatalogo(str(error)) from error
 
 
 def _copiar_snapshot(referencia: admision.ReferenciaArchivo, destino: Path) -> None:
@@ -171,19 +185,12 @@ def solicitud(area: Path) -> admision.SolicitudAdmision:
         if archivo.startswith("evidencias/eventos/"):
             exigir(archivo == "evidencias/eventos/" + sha + ".json", "Ruta de evento no canónica")
             ruta_evento = ruta_relativa(area, archivo)
-            admision.comprobar_archivo_referenciado(
-                admision.ReferenciaArchivo(ruta=ruta_evento, sha256=sha), admision.MAX_INFORME
-            )
-            evento = recibos_compartidos.leer_json(ruta_evento.read_bytes())
-            exigir(
-                isinstance(evento, dict)
-                and isinstance(evento.get("metadatos_sha256"), str)
-                and re.fullmatch("[0-9a-f]{64}", evento["metadatos_sha256"]),
-                "Evento con referencia de metadatos incompatible",
-            )
-            metadatos = "evidencias/metadatos/" + evento["metadatos_sha256"] + ".json"
-            exigir(inventario.get(metadatos) == evento["metadatos_sha256"], "Evento sin metadatos inventariados")
-            leer_documento(area, {"archivo": archivo, "sha256": sha})
+            contenido_evento = _leer_parte_documento(admision.ReferenciaArchivo(ruta=ruta_evento, sha256=sha))
+            sha_metadatos = _huella_metadatos(recibos_compartidos.leer_json(contenido_evento))
+            metadatos = "evidencias/metadatos/" + sha_metadatos + ".json"
+            exigir(inventario.get(metadatos) == sha_metadatos, "Evento sin metadatos inventariados")
+            meta = admision.ReferenciaArchivo(ruta=ruta_relativa(area, metadatos), sha256=sha_metadatos)
+            recibos_compartidos.reconstruir(contenido_evento, _leer_parte_documento(meta))
     referencias["control-catalogo"] = admision.ReferenciaArchivo(
         ruta=ruta, sha256=hashlib.sha256(contenido).hexdigest()
     )
@@ -306,26 +313,36 @@ def archivar_documento(contenido: bytes, destino: Path, pruebas: dict, *, campos
     """Conserva un evento y una sola copia de sus metadatos en candidata privada.
 
     Returns:
-        Referencia física del evento; ambos archivos quedan en el inventario admitido.
+        Referencia del evento por SHA de su cuerpo; ambas partes quedan en el inventario admitido.
+
+    Raises:
+        DocumentoArchivadoExcesivo: Si el evento o los metadatos rebasan su cota.
+        ErrorEntregaCatalogo: Si la evidencia existente no coincide.
     """
     metadatos, evento = recibos_compartidos.separar(contenido, campos_evento=campos_evento)
+    # La misma cota con que se relee (`solicitud`, `leer_documento`): lo que se archiva se puede volver a leer.
+    if max(len(metadatos), len(evento)) > admision.MAX_DOCUMENTO:
+        raise DocumentoArchivadoExcesivo("Documento archivado excede su cota")
     salida = None
     for cuerpo, prefijo in ((metadatos, "evidencias/metadatos/"), (evento, "evidencias/eventos/")):
         sha = hashlib.sha256(cuerpo).hexdigest()
         relativa = prefijo + sha + ".json"
         ruta = ruta_relativa(destino, relativa)
         if ruta.exists():
-            exigir(
-                ruta.is_file() and ruta.stat().st_nlink == 1 and ruta.read_bytes() == cuerpo, "Colisión de documento"
-            )
-        else:
-            ruta.parent.mkdir(parents=True, exist_ok=True)
-            # Solo candidata nueva; cualquier interrupción descarta toda esta candidata.
-            with ruta.open("xb") as archivo:
-                archivo.write(cuerpo)
+            exigir(ruta.is_file() and ruta.stat().st_nlink == 1, "Colisión de documento")
+        try:
+            trozos_catalogo.conservar(ruta, cuerpo, sha)
+        except trozos_catalogo.ErrorTrozos as error:
+            raise ErrorEntregaCatalogo("Colisión de documento") from error
         pruebas[relativa] = sha
         salida = {"archivo": relativa, "sha256": sha}
     return salida
+
+
+def _huella_metadatos(evento: dict) -> str:
+    sha = evento.get("metadatos_sha256") if isinstance(evento, dict) else None
+    exigir(isinstance(sha, str) and re.fullmatch("[0-9a-f]{64}", sha), "Referencia de metadatos incompatible")
+    return sha
 
 
 def leer_documento_indexado(referencia: admision.ReferenciaArchivo, referencias: dict) -> dict:
@@ -335,15 +352,13 @@ def leer_documento_indexado(referencia: admision.ReferenciaArchivo, referencias:
         Documento íntegro. Los metadatos deben estar en el índice admitido; no se
         deducen rutas históricas ni se buscan alternativas por contenido parecido.
     """
-    admision.comprobar_archivo_referenciado(referencia, admision.MAX_INFORME)
-    contenido = referencia.ruta.read_bytes()
+    contenido = _leer_parte_documento(referencia)
     dato = recibos_compartidos.leer_json(contenido)
     if "formato_recibo" in dato:
-        meta = referencias.get(dato.get("metadatos_sha256"))
+        meta = referencias.get(_huella_metadatos(dato))
         exigir(meta is not None, "Metadatos actuales fuera del índice admitido")
-        admision.comprobar_archivo_referenciado(meta, admision.MAX_INFORME)
-        contenido = recibos_compartidos.reconstruir(contenido, meta.ruta.read_bytes())
-    return recibos_compartidos.leer_json(contenido)
+        dato = recibos_compartidos.leer_json(recibos_compartidos.reconstruir(contenido, _leer_parte_documento(meta)))
+    return dato
 
 
 def leer_documento(area: Path, referencia: dict) -> dict:
@@ -354,20 +369,12 @@ def leer_documento(area: Path, referencia: dict) -> dict:
     """
     ruta = ruta_relativa(area, referencia["archivo"])
     ref = admision.ReferenciaArchivo(ruta=ruta, sha256=referencia["sha256"])
-    admision.comprobar_archivo_referenciado(ref, admision.MAX_INFORME)
-    contenido = ruta.read_bytes()
+    contenido = _leer_parte_documento(ref)
     dato = recibos_compartidos.leer_json(contenido)
     if "formato_recibo" in dato:
-        exigir(
-            isinstance(dato.get("metadatos_sha256"), str) and re.fullmatch("[0-9a-f]{64}", dato["metadatos_sha256"]),
-            "Referencia de metadatos incompatible",
-        )
-        meta = ruta_relativa(area, "evidencias/metadatos/" + dato["metadatos_sha256"] + ".json")
-        admision.comprobar_archivo_referenciado(
-            admision.ReferenciaArchivo(ruta=meta, sha256=dato["metadatos_sha256"]), admision.MAX_INFORME
-        )
-        contenido = recibos_compartidos.reconstruir(contenido, meta.read_bytes())
-        dato = recibos_compartidos.leer_json(contenido)
+        sha = _huella_metadatos(dato)
+        meta = admision.ReferenciaArchivo(ruta=ruta_relativa(area, f"evidencias/metadatos/{sha}.json"), sha256=sha)
+        dato = recibos_compartidos.leer_json(recibos_compartidos.reconstruir(contenido, _leer_parte_documento(meta)))
     return dato
 
 

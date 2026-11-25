@@ -1,6 +1,6 @@
 import { fechaIso, partesEnZona } from '../scripts/fechas.js';
 import { texto as textoPanel } from '../scripts/textos.js';
-import { diaPanel } from './fechas-panel.js';
+import { diaPanel, fechaPanel } from './fechas-panel.js';
 import { ESTADOS_SALUD } from './salud-datos.js';
 
 /** Avisos del estado de los datos que no son el resultado de una consulta: la edición que una encuesta ha publicado,
@@ -85,6 +85,14 @@ export function avisosDeFuente(destino, fuente) {
   avisosDeEdicion(destino, fuente);
   avisosDeSalidaParcial(destino, fuente);
   avisosDeEnlaces(destino, fuente);
+  if (fuente.retencionComposicion !== null) {
+    const { motivo, desde, versionEn } = fuente.retencionComposicion;
+    linea(
+      destino,
+      textoPanel('panel.datos.retencion-composicion', { v0: fechaPanel(versionEn), v1: fechaPanel(desde) }),
+    );
+    linea(destino, textoPanel(`panel.datos.retencion-composicion.${motivo}`));
+  }
 }
 /** Un aviso de la instalación que pide atención: un bloque con su título, con la forma y el tono de «Necesita atención».
  * @param {HTMLElement} destino @param {string} clave

@@ -119,6 +119,19 @@ def cerrar(cliente: ClienteMantenimientoGitHub, reserva: Reserva, fallo: dict[st
         enviar(cliente, cuerpo_del_cierre(reserva.solicitud_id, reserva.revision_reserva, reserva.accion, fallo))
 
 
+def cerrar_rechazo(cliente: ClienteMantenimientoGitHub, reserva: Reserva, trabajo: Path, resultado: str) -> None:
+    """Tras confirmar el recibo, explica el rechazo si todavía se puede leer el candidato del run."""
+    if resultado != "rechazado":
+        return
+    candidato = trabajo / "candidato"
+    try:
+        if trabajo.is_symlink() or candidato.is_symlink():
+            return
+    except OSError:
+        return
+    cerrar(cliente, reserva, fallo_del_rechazo(candidato))
+
+
 def enviar(cliente: ClienteMantenimientoGitHub, cuerpo: bytes) -> None:
     """Envía el cierre; un envío fallido queda en el diario y no detiene al supervisor.
 

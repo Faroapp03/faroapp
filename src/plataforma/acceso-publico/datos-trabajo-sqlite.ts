@@ -3,13 +3,9 @@ import {
   leerObservacionDatosTrabajo,
   MAX_OBSERVACION_DATOS_BYTES,
   type ObservacionDatosTrabajo,
+  resultadoCoincideConRecibo,
 } from '../../administracion/datos-trabajo.ts';
-import {
-  type EstadoTrabajosPrivado,
-  exigirTrabajo,
-  objetoTrabajo,
-  type ReciboTrabajo,
-} from '../../administracion/trabajos.ts';
+import { type EstadoTrabajosPrivado, exigirTrabajo, objetoTrabajo } from '../../administracion/trabajos.ts';
 import { prepararCandidatoPendiente } from './candidato-pendiente-sqlite.ts';
 import type { SqlAccesoPublico } from './sqlite.ts';
 
@@ -75,7 +71,7 @@ export function leerDatosTrabajoSqlite(
       observacion.recibo.accion === t.accion &&
       observacion.huellaRecibo === t.huellaRecibo &&
       sha === t.confianza.sha &&
-      JSON.stringify(resultadoDelRecibo(observacion.recibo)) === JSON.stringify(t.resultado),
+      resultadoCoincideConRecibo(t.resultado, observacion.recibo),
   );
   return observacion;
 }
@@ -109,9 +105,4 @@ export function guardarDatosTrabajoSqlite(
   const comprobada = leerObservacionDatosTrabajo(observacion);
   exigirTrabajo(/^[0-9a-f]{40}$/.test(sha));
   sql.ejecutar('UPDATE administracion_datos_trabajo SET documento=?,sha=? WHERE id=1', JSON.stringify(comprobada), sha);
-}
-
-export function resultadoDelRecibo(recibo: ReciboTrabajo) {
-  const { solicitudId: _id, accion: _accion, revisionReserva: _revision, ...resultado } = recibo;
-  return resultado;
 }

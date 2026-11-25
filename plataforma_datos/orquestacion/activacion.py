@@ -120,7 +120,9 @@ def _confirmar(consumidor: Consumidor, adaptador: AdaptadorVersiones) -> None:
     exigir(version_unica(observado) == actual["versionId"])
     exigir(consumidor.cliente.observar_construccion() == actual["versionId"])
     web_sha = actual["evidencia"]["sha256ManifiestoWeb"]
-    consumidor.cliente.comprobar_manifiesto_web(consumidor.configuracion.origen_publico, web_sha)
+    consumidor.cliente.comprobar_manifiesto_web(
+        consumidor.configuracion.origen_publico, web_sha, version_id=actual["versionId"]
+    )
     consumidor.transicion(
         "paso",
         {

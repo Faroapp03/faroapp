@@ -10,6 +10,10 @@ from collections.abc import Callable
 OPERACIONES = ("ejecutar", "reanudar", "activar", "recuperar", "reconciliar")
 # Por qué el parte de salud del resumen no se pudo calcular; el diario lo anota con la misma palabra.
 MOTIVOS_NO_CALCULADO = ("sin-almacen", "almacen-ilegible")
+# El servidor del mantenimiento no respondió a tiempo, cortó o dijo que no pudo terminar: lo enviado pudo quedar hecho.
+CAUSA_SERVIDOR_SIN_RESPUESTA = "servidor-sin-respuesta"
+# El servidor respondió y no admitió lo enviado: repetirlo no cambia la respuesta.
+CAUSA_SERVIDOR_RECHAZA = "servidor-rechaza"
 # Causas que el supervisor anota con su propio código, además de las de cada etapa de fuente.
 CAUSAS_DEL_DIARIO = (
     "almacen-no-disponible",
@@ -32,6 +36,8 @@ CAUSAS_DEL_DIARIO = (
     # El motor murió por una señal o terminó sin recibo (`fin_del_motor`).
     "motor-terminado-por-senal",
     "motor-sin-recibo",
+    CAUSA_SERVIDOR_SIN_RESPUESTA,
+    CAUSA_SERVIDOR_RECHAZA,
     *MOTIVOS_NO_CALCULADO,
 )
 # Única causa que una etapa de fuente puede llevar al diario; cualquier otra se anota como etapa rechazada.

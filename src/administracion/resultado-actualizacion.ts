@@ -10,6 +10,7 @@ import { validarOrigenAdministrativo } from './configuracion.ts';
 import { leerCatalogoDeRecibo, leerDatosDeRecibo, MAX_OBSERVACION_DATOS_BYTES } from './datos-trabajo.ts';
 import type { EstadoDatosPanel } from './estado-datos.js';
 import { type ConfianzaOidcGitHub, crearVerificadorOidcGitHub } from './oidc-github.ts';
+import { PLAZO_RESULTADO_MS } from './plazos-mantenimiento.ts';
 import {
   type AlmacenTrabajosActualizacion,
   leerEstadoTrabajosPrivado,
@@ -25,7 +26,6 @@ export const MAX_RESULTADO_ACTUALIZACION_BYTES = MAX_OBSERVACION_DATOS_BYTES;
 const VERSION_CON_CATALOGO = 3;
 /** Desde la v4 el recibo lista los módulos que conservan su versión anterior y admite validar en ámbar. */
 const VERSION_CON_CONSERVADOS = 4;
-const PLAZO_MS = 5000;
 const MAX_TOKEN = 16_384;
 interface OpcionesReceptorResultado {
   readonly origen: string;
@@ -285,7 +285,7 @@ export function crearReceptorResultadoActualizacion({
   return async (peticion) => {
     try {
       const token = frontera(peticion, origen);
-      return await dentroDelPlazo((senal) => procesar(peticion, token, senal), PLAZO_MS, peticion.signal);
+      return await dentroDelPlazo((senal) => procesar(peticion, token, senal), PLAZO_RESULTADO_MS, peticion.signal);
     } catch (error) {
       return respuestaDelError(error, peticion);
     } finally {

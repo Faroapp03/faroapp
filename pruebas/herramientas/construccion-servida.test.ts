@@ -1,16 +1,22 @@
 /** Identidad servida con JWT/JWKS reales locales; no red, construcción, SQL ni activación. */
 import assert from 'node:assert/strict';
+import { createHash } from 'node:crypto';
 import test from 'node:test';
 import type { ConfianzaOidcGitHub } from '../../src/administracion/oidc-github.ts';
+import { PLAZO_PRUEBA_MANIFIESTO_MS } from '../../src/administracion/plazos-mantenimiento.ts';
 import { IDENTIDAD_WEB } from '../../src/comun/identidad-web.ts';
 import {
   crearLectorConstruccionServida,
   RUTA_CONSTRUCCION_SERVIDA,
 } from '../../src/plataforma/cloudflare/construccion-servida.ts';
 import worker from '../../src/plataforma/cloudflare/worker.ts';
+import workerOficial from '../../src/plataforma/cloudflare/worker-oficial.ts';
 
 const ORIGEN = 'https://construccion.example';
 const URL = `${ORIGEN}${RUTA_CONSTRUCCION_SERVIDA}`;
+const PRUEBA = `${URL}?prueba=manifiesto`;
+const MANIFIESTO = `${ORIGEN}/firmas/manifiesto.json`;
+const MAX_MANIFIESTO_BYTES = 8_388_608;
 const MS_SEGUNDO = 1000;
 const AHORA = Math.floor(Date.now() / MS_SEGUNDO) * MS_SEGUNDO;
 const VIDA_JWT = 300;
@@ -22,6 +28,8 @@ const CONFIGURACIONES_DISTINTAS = 3;
 const OK = 200;
 const INVALIDO = 400;
 const SIN_AUTENTICAR = 401;
+const PROHIBIDO = 403;
+const REDIRECCION = 302;
 const AUSENTE = 404;
 const METODO = 405;
 const INDISPONIBLE = 503;
@@ -347,4 +355,160 @@ test('Worker consulta versiones por petición sin SQL, IA, Access humano ni ASSE
     assert.equal(respuesta.status, AUSENTE);
     assert.equal(respuesta.headers.get('cache-control'), 'no-store');
   }
+});
+
+test('el portal protege el archivo y acredita con OIDC la huella de los bytes ASSETS de su versión', async (t) => {
+  const f = await fixture();
+  t.mock.method(globalThis, 'fetch', f.pedir);
+  const bytes = Buffer.from(' { "fixture": "à" }\r\n');
+  let lecturas = 0;
+  const env = {
+    ...VARIABLES,
+    FARO_CLAVE_GENERAL: 'clave-general-sintetica',
+    FARO_SESION_PORTAL: 'firma-sintetica-independiente-de-mas-de-32-bytes',
+    FARO_LIMITE_PORTAL: 'limite-sintetico-independiente-de-mas-de-32-bytes',
+    ASSETS: {
+      async fetch(solicitud: Request) {
+        lecturas++;
+        assert.equal(solicitud.url, MANIFIESTO);
+        assert.equal(solicitud.method, 'GET');
+        assert.equal(solicitud.credentials, 'omit');
+        assert.equal(solicitud.redirect, 'manual');
+        assert.deepEqual(Object.fromEntries(solicitud.headers), { 'accept-encoding': 'identity' });
+        return new Response(bytes, { headers: { 'content-length': String(bytes.byteLength) } });
+      },
+    },
+  };
+  const bloqueado = await workerOficial.fetch(new Request(MANIFIESTO), env);
+  assert.equal(bloqueado.status, PROHIBIDO);
+  assert.equal(bloqueado.headers.get('x-faro-portal'), 'privado');
+  assert.equal(await bloqueado.text(), '');
+  await comprobarError(await workerOficial.fetch(peticion('', PRUEBA), env), SIN_AUTENTICAR);
+  assert.equal(lecturas, 0);
+  const token = await f.firmar();
+  const autenticada = () =>
+    peticion(token, PRUEBA, {
+      headers: { authorization: `Bearer ${token}`, cookie: 'sesion=sintetica', 'if-none-match': '*' },
+    });
+  const sha256ManifiestoWeb = createHash('sha256').update(bytes).digest('hex');
+  for (const id of [VERSION_A, VERSION_B]) {
+    const respuesta = await workerOficial.fetch(autenticada(), { ...env, CF_VERSION_METADATA: { id, tag: PRIVADO } });
+    assert.equal(respuesta.status, OK);
+    assert.equal(respuesta.headers.get('cache-control'), 'no-store');
+    assert.deepEqual(await respuesta.json(), { version: 1, versionId: id, sha256ManifiestoWeb });
+  }
+  assert.equal(lecturas, 2);
+});
+
+test('la prueba admite solo el origen y la consulta exactos y exige ASSETS y metadata válidos', async () => {
+  const f = await fixture();
+  const leer = f.crear();
+  const token = await f.firmar();
+  const assets = { fetch: async () => assert.fail('No ASSETS fuera de la frontera') };
+  for (const url of [
+    `${PRUEBA}&ruta=/inicio.html`,
+    `${PRUEBA}&prueba=manifiesto`,
+    `https://otro.example${RUTA_CONSTRUCCION_SERVIDA}?prueba=manifiesto`,
+  ]) {
+    await comprobarError(await leer(peticion(token, url), VARIABLES, { id: VERSION_A }, assets), AUSENTE);
+  }
+  await comprobarError(
+    await leer(peticion(token, PRUEBA, { method: 'HEAD' }), VARIABLES, { id: VERSION_A }, assets),
+    METODO,
+  );
+  await comprobarError(await leer(peticion(token, PRUEBA), VARIABLES, undefined, assets), INDISPONIBLE);
+  await comprobarError(await leer(peticion(token, PRUEBA), VARIABLES, { id: VERSION_A }), INDISPONIBLE);
+  await comprobarError(
+    await leer(peticion(await f.firmar({ repository_id: '999' }), PRUEBA), VARIABLES, { id: VERSION_A }, assets),
+    SIN_AUTENTICAR,
+  );
+});
+
+test('la prueba rechaza archivos ausentes, redirecciones, longitudes falsas y cuerpos excesivos', async () => {
+  const f = await fixture();
+  const leer = f.crear();
+  const token = await f.firmar();
+  const cuerposInvalidos = [
+    new Response('ausente', { status: AUSENTE }),
+    Response.redirect('https://ajeno.example/firmas/manifiesto.json', REDIRECCION),
+    new Response(),
+    new Response(''),
+    new Response('{}', { headers: { 'content-length': '1' } }),
+    new Response('{}', { headers: { 'content-length': '3' } }),
+    new Response('{}', { headers: { 'content-length': String(MAX_MANIFIESTO_BYTES + 1) } }),
+    new Response('{}', { headers: { 'content-encoding': 'gzip' } }),
+    new Response(new Uint8Array(MAX_MANIFIESTO_BYTES + 1)),
+  ];
+  for (const archivo of cuerposInvalidos) {
+    await comprobarError(
+      await leer(peticion(token, PRUEBA), VARIABLES, { id: VERSION_A }, { fetch: async () => archivo }),
+      INDISPONIBLE,
+    );
+  }
+});
+
+test('la prueba admite una lectura válida de ASSETS después de un JWKS frío lento', async (t) => {
+  const f = await fixture();
+  const esperandoClaves = Promise.withResolvers<void>();
+  const entregarClaves = Promise.withResolvers<void>();
+  const esperandoAssets = Promise.withResolvers<void>();
+  const entregarAssets = Promise.withResolvers<Response>();
+  const leer = f.crear(async (url, init) => {
+    esperandoClaves.resolve();
+    await entregarClaves.promise;
+    return f.pedir(url, init);
+  });
+  const token = await f.firmar();
+  t.mock.timers.enable({ apis: ['setTimeout'] });
+  const assets = {
+    fetch() {
+      esperandoAssets.resolve();
+      return entregarAssets.promise;
+    },
+  };
+  const pendiente = leer(peticion(token, PRUEBA), VARIABLES, { id: VERSION_A }, assets);
+  await esperandoClaves.promise;
+  t.mock.timers.tick(PLAZO_MS - 1);
+  entregarClaves.resolve();
+  await esperandoAssets.promise;
+  t.mock.timers.tick(PLAZO_MS);
+  entregarAssets.resolve(new Response('{}'));
+  const respuesta = await pendiente;
+  assert.equal(respuesta.status, OK);
+  assert.deepEqual(await respuesta.json(), {
+    version: 1,
+    versionId: VERSION_A,
+    sha256ManifiestoWeb: createHash('sha256').update('{}').digest('hex'),
+  });
+});
+
+test('el plazo de la autoridad corta la lectura del manifiesto', async (t) => {
+  const f = await fixture();
+  const leer = f.crear();
+  const token = await f.firmar();
+  const leyendo = Promise.withResolvers<void>();
+  const cancelado = Promise.withResolvers<void>();
+  const assets = {
+    async fetch() {
+      return new Response(
+        new ReadableStream(
+          {
+            pull() {
+              leyendo.resolve();
+            },
+            cancel() {
+              cancelado.resolve();
+            },
+          },
+          { highWaterMark: 0 },
+        ),
+      );
+    },
+  };
+  t.mock.timers.enable({ apis: ['setTimeout'] });
+  const pendiente = leer(peticion(token, PRUEBA), VARIABLES, { id: VERSION_A }, assets);
+  await leyendo.promise;
+  t.mock.timers.tick(PLAZO_PRUEBA_MANIFIESTO_MS);
+  await comprobarError(await pendiente, PLAZO);
+  await cancelado.promise;
 });

@@ -50,6 +50,7 @@ async function instalacion(
   for (const ruta of [
     'src/plataforma/node/estado-datos.ts',
     'src/plataforma/node/rutas.ts',
+    'src/administracion/avisos-catalogo-datos.js',
     'src/administracion/estado-datos.js',
     'src/administracion/lectura-estricta.js',
     'src/administracion/retenidos-datos.js',

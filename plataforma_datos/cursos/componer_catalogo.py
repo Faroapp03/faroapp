@@ -26,6 +26,7 @@ from plataforma_datos.cursos import (
     operacion_fuente,
     publicar_catalogo,
     registro_vigencia,
+    retencion_composicion,
 )
 from plataforma_datos.cursos.aplicar_fuentes_catalogo import Aplicaciones, aplicar_las_fuentes
 from plataforma_datos.cursos.fallos_almacen import AUSENTE, ILEGIBLE, VACIO
@@ -456,8 +457,9 @@ def componer(*, raiz: Path = RAIZ, corte_utc: str | None = None) -> dict:
                 "fundae": partial(_aplicar_fundae, inicial=base, retenidos=retenidos),
                 "barcelonactiva": _aplicar_cibernarium,
             },
+            fundae_sin_aplicar=lambda: bool(retenidos),
         )
-        nueva = aplicar_las_fuentes(raiz, (local, externo), corte, sin_identidades, aplicaciones)
+        nueva, avisos = aplicar_las_fuentes(raiz, (local, externo), corte, sin_identidades, aplicaciones)
         if nueva != base:
             with tramo("candidata"):
                 final = local / "raiz" / almacen.RUTA
@@ -465,8 +467,9 @@ def componer(*, raiz: Path = RAIZ, corte_utc: str | None = None) -> dict:
                 shutil.move(nueva, final)
                 nueva = final
         referencia = _publicar_candidata(raiz, nueva, externo, corte, sin_identidades)
-        if nueva != base:
-            with tramo("sustituir"):
+        with tramo("sustituir"):
+            retencion_composicion.guardar(nueva, avisos)
+            if nueva != base:
                 # Es una candidata sin tráfico; la entrega común promueve SQLite y web juntas después del gate.
                 sustitucion.sustituir(raiz, local / "raiz", (almacen.RUTA.as_posix(),), diario=local / "diario.json")
         return {
@@ -475,6 +478,7 @@ def componer(*, raiz: Path = RAIZ, corte_utc: str | None = None) -> dict:
             "sin_identidades": list(sin_identidades),
             # Un pendiente de FUNDAE que se conserva sin aplicar (por ejemplo, de antes de una siembra): por qué.
             **({"fundae_sin_aplicar": retenidos[0]} if retenidos else {}),
+            **({"fuentes_retenidas": avisos} if avisos else {}),
             "referencia": referencia,
             "snapshot_sha256": _sha(base / "catalogo.sqlite3"),
             "publicacion_confirmada": None,

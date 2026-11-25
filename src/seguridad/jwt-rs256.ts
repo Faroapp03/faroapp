@@ -17,7 +17,7 @@ const VIGENCIA_CLAVES_MS = 60 * MS_POR_MINUTO;
 /** Lo mínimo entre dos descargas: una clave desconocida no puede provocar una descarga por petición. */
 const MIN_ENTRE_DESCARGAS_MS = MS_POR_MINUTO;
 /** Lo que se espera al servicio de claves JWKS: cinco segundos. */
-const ESPERA_CLAVES_MS = 5000;
+export const ESPERA_CLAVES_MS = 5000;
 
 /** Transporte de claves públicas; las pruebas lo sustituyen sin red. */
 export type PeticionHttpJwt = typeof fetch;

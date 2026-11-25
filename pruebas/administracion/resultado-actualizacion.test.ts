@@ -7,6 +7,7 @@ import { join } from 'node:path';
 import test, { type TestContext } from 'node:test';
 import { crearReceptorInicioActualizacion } from '../../src/administracion/inicio-actualizacion.ts';
 import type { ConfianzaOidcGitHub } from '../../src/administracion/oidc-github.ts';
+import { PLAZO_RESULTADO_MS } from '../../src/administracion/plazos-mantenimiento.ts';
 import {
   crearReceptorResultadoActualizacion,
   MAX_RESULTADO_ACTUALIZACION_BYTES,
@@ -15,7 +16,9 @@ import type { AlmacenTrabajosActualizacion } from '../../src/administracion/trab
 import { ESTADO_HTTP } from '../../src/comun/estados-http.ts';
 import { IDENTIDAD_WEB } from '../../src/comun/identidad-web.ts';
 import { MS_POR_SEGUNDO } from '../../src/comun/tiempo.ts';
+import { PLAZO_CLIENTE_MS } from '../../src/plataforma/acceso-publico/durable-limites.ts';
 import { crearAlmacenPublicoNode } from '../../src/plataforma/acceso-publico/node.ts';
+import { ESPERA_CLAVES_MS } from '../../src/seguridad/jwt-rs256.ts';
 import { catalogoPrivado } from '../ayudas/catalogo-privado.ts';
 import { conDesafio } from '../ayudas/desafio.ts';
 import { AHORA_OIDC, afirmacionesOidc } from '../ayudas/oidc-mantenimiento.ts';
@@ -260,6 +263,75 @@ test('retry con mismo cuerpo es idempotente; cambiar texto o instantánea no reu
   assert.deepEqual(await f.base.trabajos.leerTrabajoPrivado(), antes);
   assert.deepEqual(await f.base.trabajos.leerDatosDelUltimoTrabajo(), datosAntes);
   assert.equal(f.contador.jwks, 1);
+});
+
+test('el plazo del receptor cubre sus propias esperas: el almacén y las claves lentos no agotan un envío válido', async (t) => {
+  // Lo que puede esperar en serie: una lectura y un registro en el almacén y la descarga de las claves.
+  assert.ok(PLAZO_RESULTADO_MS > 2 * PLAZO_CLIENTE_MS + ESPERA_CLAVES_MS);
+  const f = await fixture(t);
+  // Ninguna espera llega a su tope, pero juntas pasan de los 5 s que tenía el receptor (ciclo 45636333502).
+  const ESPERA_MS = 2600;
+  const esperar = () => new Promise<void>((resolve) => setTimeout(resolve, ESPERA_MS));
+  const almacen = new Proxy(f.base.trabajos, {
+    get(objeto, clave) {
+      const valor = Reflect.get(objeto, clave);
+      if (clave === 'leerTrabajoPrivado') {
+        return async () => {
+          await esperar();
+          return objeto.leerTrabajoPrivado();
+        };
+      }
+      return typeof valor === 'function' ? valor.bind(objeto) : valor;
+    },
+  });
+  const pedirLento: typeof fetch = async (url, opciones) => {
+    await esperar();
+    return f.pedir(url, opciones);
+  };
+  const recibir = crearReceptorResultadoActualizacion({
+    origen: ORIGEN,
+    almacen,
+    pedir: pedirLento,
+    ahora: () => AHORA,
+  });
+  const rechazado = { ...RECIBO, resultado: 'rechazado', veredicto: 'rojo', huellaPaquete: null };
+  const texto = JSON.stringify({ ...rechazado, error: 'actualizacion_no_admitida' });
+  const respuesta = await recibir(peticion(await f.firmar(), texto));
+  assert.equal(respuesta.status, ESTADO_HTTP.correcto);
+  assert.deepEqual(await respuesta.json(), { estado: 'aplicado' });
+  // Si esa respuesta no llega al job, reenviar los mismos bytes se reconoce, no se rechaza.
+  assert.deepEqual(await (await f.crear()(peticion(await f.firmar(), texto))).json(), { estado: 'repetido' });
+});
+
+test('recibo OIDC rechazado con datos conserva la observación y admite reenvío tras el cierre explicativo', async (t) => {
+  const f = await fixture(t);
+  const recibir = f.crear();
+  const token = await f.firmar();
+  const rechazado = {
+    ...RECIBO,
+    resultado: 'rechazado',
+    veredicto: 'rojo',
+    huellaPaquete: null,
+    error: 'actualizacion_no_admitida',
+  };
+  const texto = JSON.stringify(rechazado);
+  assert.deepEqual(await (await recibir(peticion(token, texto))).json(), { estado: 'aplicado' });
+  const observacion = await f.base.trabajos.leerDatosDelUltimoTrabajo();
+  assert.deepEqual(observacion?.datos, ESTADO);
+  const cierre = {
+    solicitudId: ID,
+    revisionReserva: RECIBO.revisionReserva,
+    accion: RECIBO.accion,
+    ultimoFallo: { causa: 'plazo-insuficiente', paso: 'paquete' },
+  };
+  assert.deepEqual(await (await recibir(peticion(token, cierre))).json(), { estado: 'aplicado' });
+  const lectura = await f.base.trabajos.leerTrabajoDeSesion(ACCESO);
+  assert.equal(lectura.estado, 'activa');
+  assert.deepEqual(lectura.trabajos.ultimoTrabajo?.resultado?.ultimoFallo, cierre.ultimoFallo);
+  assert.deepEqual(await f.base.sesion.leerDatosDelPanel(), { observacion, deLaActualizacionAnterior: false });
+  assert.deepEqual(await (await recibir(peticion(token, texto))).json(), { estado: 'repetido' });
+  assert.equal((await recibir(peticion(token, { ...rechazado, veredicto: 'ámbar' }))).status, ESTADO_HTTP.conflicto);
+  assert.equal((await recibir(peticion(token, ` ${texto}`))).status, ESTADO_HTTP.conflicto);
 });
 
 test('formas de candidato sin-pendientes y rechazado conservan su semántica exacta', async (t) => {

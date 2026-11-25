@@ -7,6 +7,7 @@ from collections.abc import Iterable
 from pathlib import Path
 
 from plataforma_datos.orquestacion.archivo_diario import MAX_DIARIO
+from plataforma_datos.orquestacion.formas_del_diario import CAUSA_SERVIDOR_RECHAZA
 
 
 def _eventos(lineas: Iterable[str]) -> Iterable[dict]:
@@ -37,7 +38,9 @@ def _accion_ante_error(fase: str, causa: str | None, respuesta: dict) -> str:
     if causa == "archivo-ediciones-ausente":
         return "recuperar-originales-del-archivo-sellado"
     if fase == "confirmar-resultado":
-        return "reenviar-recibo-conservado"
+        # Reenviar los mismos bytes solo sirve si el servidor no llegó a responder: lo ya aplicado vuelve como
+        # `repetido`. Un rechazo con respuesta se repetiría igual.
+        return "revisar" if causa == CAUSA_SERVIDOR_RECHAZA else "reenviar-recibo-conservado"
     if causa == "almacen-no-disponible" and fase in ("referencia", "buscar-recibo", "descargar-base"):
         return "revisar-acceso-almacen"
     return "revisar"

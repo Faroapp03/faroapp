@@ -35,7 +35,12 @@ MAX_SQLITE = 512 * 1024 * 1024
 # Cota de cada cuerpo, entero o reconstruido desde sus trozos.
 MAX_ENTRADA = trozos_catalogo.MAX_CUERPO
 MAX_TOTAL_ENTRADAS = 256 * 1024 * 1024
+# Cota del informe de admisión (`validacion.json`), que se escribe y se relee entero.
 MAX_INFORME = 1024 * 1024
+# Cota lógica por evento o metadatos del almacén, también al reconstruir por trozos. Los controles por
+# edición crecen con el catálogo: el evento de materia de Cibernàrium midió 1.069.653 bytes con 763 ediciones.
+# Los 16 MiB dejan más de 15 veces ese volumen y acotan la memoria de las lecturas JSON.
+MAX_DOCUMENTO = 16 * 1024 * 1024
 MAX_REFERENCIAS = 256
 TAMANO_BLOQUE = 1024 * 1024
 CONTROLES = (

@@ -7,13 +7,23 @@ import subprocess
 import sys
 import tempfile
 import unittest
-from collections.abc import Sequence
+from collections.abc import Callable, Sequence
 from contextlib import redirect_stderr, redirect_stdout
+from functools import partial
 from pathlib import Path
 from unittest.mock import patch
 
-from plataforma_datos.orquestacion import ensayo_grabado, ensayo_por_partes, guardia_sin_red
-from plataforma_datos.orquestacion.actualizar import Resultado
+from plataforma_datos.comun.entrada_salida import guardar_json, sha256
+from plataforma_datos.comun.nucleo import DATOS_RELATIVOS
+from plataforma_datos.cursos import almacen_catalogo, retencion_composicion
+from plataforma_datos.orquestacion import (
+    actualizar,
+    ensayo_grabado,
+    ensayo_por_partes,
+    guardia_sin_red,
+    retencion_paquete_cursos,
+)
+from plataforma_datos.orquestacion.actualizar import Ejecutor, Opciones, Resultado
 from plataforma_datos.orquestacion.ensayo_por_partes import (
     PASOS_REPETIBLES,
     RegistroDePasos,
@@ -23,16 +33,42 @@ from plataforma_datos.orquestacion.ensayo_por_partes import (
 from plataforma_datos.orquestacion.huellas_del_ensayo import comparar
 from plataforma_datos.orquestacion.ordenes_de_la_actualizacion import (
     COMPLETAR_RENOMBRES,
+    COMPONER_EL_CATALOGO,
+    ENSAMBLADO,
     EXPORTAR_EL_PAQUETE,
     EXPORTAR_EN_EL_CICLO_OPERATIVO,
     ORDENES_DEL_PAQUETE,
     SI,
     ordenes_del_paquete,
 )
-from plataforma_datos.orquestacion.repeticion_del_tramo import orden_del_tramo, repetir
+from plataforma_datos.orquestacion.repeticion_del_tramo import Lanzar, orden_del_tramo, repetir
 
 RELOJ = {"hoy": "2026-11-24", "instante": "2026-11-24T23:59:59Z"}
 GUARDIA_DOBLE = ["guardia-doble"]
+ORIGEN_BARCELONA = DATOS_RELATIVOS / "validados/barcelonactiva/barcelonactiva.json"
+DATOS_BARCELONA = Path("datos/barcelonactiva.json")
+OTROS_DATOS = Path("datos/otro.json")
+MANIFIESTO = Path("datos/manifiesto.json")
+RETENCION = {
+    "barcelonactiva": {
+        "motivo": "documento-excesivo",
+        "versionEn": "2026-11-22T10:00:00Z",
+        "desde": "2026-11-24T10:00:00Z",
+    },
+}
+
+
+def _guardar_paquete(raiz: Path, version: str) -> None:
+    guardar_json(raiz / DATOS_BARCELONA, {"ocupaciones": [], "consulta": version})
+    guardar_json(raiz / OTROS_DATOS, {"hecho": version})
+    huella = sha256(raiz / DATOS_BARCELONA)
+    guardar_json(
+        raiz / MANIFIESTO,
+        {
+            DATOS_BARCELONA.name: {"sha256": huella, "origenes": {ORIGEN_BARCELONA.as_posix(): huella}},
+            OTROS_DATOS.name: {"sha256": sha256(raiz / OTROS_DATOS), "origenes": {}},
+        },
+    )
 
 
 def _guardia_doble(orden: Sequence[str]) -> list[str]:
@@ -85,7 +121,13 @@ def _cerrar(repeticion: Path, en_verde: bool) -> dict:
     return GENERACION_DEL_CIERRE[0]
 
 
-def _lanzar(orden: list[str], **_opciones: object) -> subprocess.CompletedProcess:
+def _lanzar(
+    orden: list[str],
+    *,
+    ejecutar: Ejecutor = _paso,
+    cerrar: Callable[[Path, bool], dict] = _cerrar,
+    **_opciones: object,
+) -> subprocess.CompletedProcess:
     """Lanza el tramo en este mismo proceso, con el paso doble, en vez de bajo la guardia.
 
     Returns:
@@ -98,7 +140,7 @@ def _lanzar(orden: list[str], **_opciones: object) -> subprocess.CompletedProces
         raise AssertionError(f"el tramo no llega envuelto en la guardia: {orden}")
     argumentos = dict(zip(orden[::1], orden[1::1], strict=False))
     repeticion = Path(argumentos["--repeticion"])
-    codigo = ensayo_por_partes.tramo(repeticion, argumentos["--desde"], argumentos.get("--hasta"), _paso, _cerrar)
+    codigo = ensayo_por_partes.tramo(repeticion, argumentos["--desde"], argumentos.get("--hasta"), ejecutar, cerrar)
     return subprocess.CompletedProcess(orden, codigo)
 
 
@@ -144,7 +186,7 @@ class EnsayoPorPartesPruebas(unittest.TestCase):
         _git(self.raiz, "commit", "-q", "-m", "segunda")
         return _git(self.raiz, "rev-parse", "HEAD")
 
-    def repetir(self, desde: str, hasta: str | None = None) -> tuple[int, dict, dict]:
+    def repetir(self, desde: str, hasta: str | None = None, *, lanzar: Lanzar = _lanzar) -> tuple[int, dict, dict]:
         """Repite un tramo con el paso doble.
 
         Returns:
@@ -157,7 +199,7 @@ class EnsayoPorPartesPruebas(unittest.TestCase):
                 hasta,
                 raiz=self.raiz,
                 entorno={"PATH": "/usr/bin:/bin"},
-                lanzar=_lanzar,
+                lanzar=lanzar,
                 guardia=_guardia_doble,
             )
         repeticion = sorted((self.salida / "repeticiones").iterdir())[-1]
@@ -225,6 +267,96 @@ class EnsayoPorPartesPruebas(unittest.TestCase):
         self.assertEqual(CIERRES, [])
         self.assertIsNone(recibo["generacionDelEnsayo"])
         self.assertIsNone(huellas["datos"]["estadoDeLaGeneracion"])
+
+    def _orden_con_retencion(self, orden: Sequence[str], area: Path) -> Resultado:
+        if tuple(orden) in (EXPORTAR_EL_PAQUETE.orden, EXPORTAR_EN_EL_CICLO_OPERATIVO.orden):
+            _guardar_paquete(area, "nueva")
+        if tuple(orden) == COMPONER_EL_CATALOGO.orden:
+            retencion_composicion.guardar(area / almacen_catalogo.RUTA, RETENCION)
+        if tuple(orden) == ENSAMBLADO[0].orden:
+            self._comprobar_paquete_con_retenida(area)
+        return _paso(orden, area)
+
+    def _comprobar_paquete_con_retenida(self, raiz: Path) -> None:
+        self.assertEqual(json.loads((raiz / DATOS_BARCELONA).read_bytes())["consulta"], "previa")
+        self.assertEqual(json.loads((raiz / OTROS_DATOS).read_bytes())["hecho"], "nueva")
+        manifiesto = json.loads((raiz / MANIFIESTO).read_bytes())
+        origen = next(iter(manifiesto[DATOS_BARCELONA.name]["origenes"]))
+        self.assertNotEqual(Path(origen), ORIGEN_BARCELONA)
+        self.assertEqual((raiz / origen).read_bytes(), (raiz / DATOS_BARCELONA).read_bytes())
+        retencion_paquete_cursos.comprobar(raiz, manifiesto)
+
+    def _preparar_ensayo_con_retencion(self) -> None:
+        anterior = self.salida
+        self.salida = self.carpeta / "salida-retencion"
+        (self.salida / "pasos").mkdir(parents=True)
+        shutil.copyfile(anterior / "pasos/codigo.json", self.salida / "pasos/codigo.json")
+        shutil.copyfile(anterior / "reloj.json", self.salida / "reloj.json")
+        candidato = self.salida / "candidato"
+        area = self.carpeta / "area"
+        _guardar_paquete(candidato, "previa")
+        (candidato / DATOS_RELATIVOS / "ejecuciones").mkdir(parents=True)
+        for raiz in (candidato, area):
+            # El productor ya tiene la siguiente versión, pero la composición la rechaza.
+            (raiz / almacen_catalogo.RUTA).mkdir(parents=True)
+            guardar_json(raiz / ORIGEN_BARCELONA, {"ocupaciones": [], "consulta": "nueva"})
+        registro = RegistroDePasos(self.salida, self._orden_con_retencion)
+        with redirect_stdout(io.StringIO()):
+            _, _, resultado = actualizar.ejecutar_paquete(candidato, area, registro, Opciones())
+        self.assertEqual(resultado.veredicto, actualizar.VERDE, resultado.motivo)
+        self._comprobar_paquete_con_retenida(candidato)
+
+    def test_componer_con_retencion_termina_en_la_misma_entrada_que_ensamblado(self) -> None:
+        """El corte tras componer entrega los bytes conservados, sin repetir el ensamblado ni cerrar el paquete."""
+        self._preparar_ensayo_con_retencion()
+        lanzar = partial(_lanzar, ejecutar=self._orden_con_retencion)
+        codigo, recibo, _ = self.repetir("componer", "componer", lanzar=lanzar)
+        self.assertEqual(codigo, 0)
+        self.assertIsNone(recibo["generacionDelEnsayo"])
+        pasos = recibo["porPartes"]["repetidos"]
+        self.assertEqual([p["paso"] for p in pasos], [COMPONER_EL_CATALOGO.nombre])
+        area = self.salida / "repeticiones/01/area"
+        self._comprobar_paquete_con_retenida(area)
+        indice = json.loads((self.salida / "pasos/indice.json").read_bytes())
+        self.assertEqual(pasos[0]["salida"], indice["componer"]["salida"])
+        self.assertEqual(ensayo_por_partes.huella_del_arbol(area), indice["ensamblado"]["entrada"])
+
+    def test_la_publicacion_local_del_tramo_conserva_el_paquete_de_ambos_cortes(self) -> None:
+        """Desde componer se restaura la fuente una vez y desde ensamblado se reutiliza su salida conservada."""
+        self._preparar_ensayo_con_retencion()
+        lanzar = partial(_lanzar, ejecutar=self._orden_con_retencion, cerrar=ensayo_por_partes.publicar_y_exportar)
+        conservar = retencion_paquete_cursos.conservar
+        for desde, llamadas in (("componer", 1), ("ensamblado", 0)):
+            with (
+                self.subTest(desde=desde),
+                patch.object(retencion_paquete_cursos, "conservar", wraps=conservar) as retener,
+                patch.object(ensayo_por_partes, "exportar_en_local", return_value=GENERACION_CONSERVADA) as exportar,
+            ):
+                codigo, recibo, _ = self.repetir(desde, lanzar=lanzar)
+                self.assertEqual((codigo, recibo["resultado"]), (0, "validado"))
+                self.assertEqual(retener.call_count, llamadas)
+                self.assertEqual(
+                    [p["paso"] for p in recibo["porPartes"]["repetidos"]],
+                    [p.nombre for p in ordenes_del_tramo(desde, None)],
+                )
+                exportar.assert_called_once()
+                candidato, _, _, resultado = exportar.call_args.args
+                self.assertEqual(resultado, "validado")
+                self._comprobar_paquete_con_retenida(candidato)
+        anterior = self.salida / "pasos/exportar/candidato"
+        self.assertEqual(json.loads((anterior / OTROS_DATOS).read_bytes())["hecho"], "previa")
+        self.assertEqual(retencion_composicion.leer(anterior / almacen_catalogo.RUTA), {})
+
+    def test_una_salida_previa_alterada_rechaza_el_tramo_antes_de_ensamblar(self) -> None:
+        """Un candidato con una copia previa no acreditada no da paso al ensamblado ni publica en su clon."""
+        self._preparar_ensayo_con_retencion()
+        candidato = self.salida / "pasos/exportar/candidato"
+        guardar_json(candidato / DATOS_BARCELONA, {"ocupaciones": [], "consulta": "alterada"})
+        lanzar = partial(_lanzar, ejecutar=self._orden_con_retencion)
+        codigo, recibo, _ = self.repetir("componer", lanzar=lanzar)
+        self.assertEqual((codigo, recibo["resultado"]), (1, "rechazado"))
+        self.assertEqual([p["paso"] for p in recibo["porPartes"]["repetidos"]], [COMPONER_EL_CATALOGO.nombre])
+        self.assertFalse(CIERRES[-1][1])
 
     def test_un_byte_alterado_en_lo_conservado_se_niega_y_dice_desde_donde(self) -> None:
         """Un byte alterado en lo conservado: se niega y dice desde qué paso conservado e intacto empezar."""

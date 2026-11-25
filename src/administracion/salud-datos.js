@@ -3,7 +3,7 @@
 /** @typedef {Readonly<{id:string,nombre:string,tema:string,modalidad:import('./estado-datos.js').ModalidadFuenteDatos}>} IdentidadFuente */
 /** @typedef {import('./estado-datos.js').ConjuntoComprobacionDatos} Conjunto */
 /** @typedef {'atencion'|'incidencia'|'pendiente'|'revision'|'sin-observacion'|'local'|'comprobada'|'candidata'|'externa'|'productor-local'} EstadoSalud */
-/** @typedef {Readonly<{id:string,nombre:string,tema:string,modalidad:string,estado:EstadoSalud,mensaje:string,accion:string,atencionPorAviso:boolean,ultimaConsulta:string|null,resultadoConsulta:import('./estado-datos.js').ResultadoOperacionDatos|null,comprobaciones:readonly Readonly<{id:string,fecha:string|null}>[],proximasConsultas:readonly Readonly<{id:string,fecha:string|null}>[],proximoReintento:string|null,proximaConsulta:string|null,fallosSeguidos:number,consultaParcial:import('./estado-datos.js').ConsultaParcialDatos|null,coberturaLimitada:import('./estado-datos.js').MotivoCoberturaLimitadaDatos|null,revisionPendiente:RevisionPendiente|null,edicionNueva:import('./edicion-nueva-datos.js').EdicionNuevaDatos|null,avisoEdicion:import('./edicion-nueva-datos.js').AvisoEdicionDatos|null,gruposEnSuGranGrupo:number|null,gruposSinClase:number|null,salidaParcial:import('./estado-datos.js').SalidaParcialDatos|null,enlaces:import('./estado-datos.js').EnlacesDatos|null,retirada:import('./retirada-datos.js').RetiradaDatos|null,retiradaAmplia:import('./retirada-datos.js').RetiradaAmpliaDatos|null}>} SaludFuente */
+/** @typedef {Readonly<{id:string,nombre:string,tema:string,modalidad:string,estado:EstadoSalud,mensaje:string,accion:string,atencionPorAviso:boolean,ultimaConsulta:string|null,resultadoConsulta:import('./estado-datos.js').ResultadoOperacionDatos|null,comprobaciones:readonly Readonly<{id:string,fecha:string|null}>[],proximasConsultas:readonly Readonly<{id:string,fecha:string|null}>[],proximoReintento:string|null,proximaConsulta:string|null,fallosSeguidos:number,consultaParcial:import('./estado-datos.js').ConsultaParcialDatos|null,coberturaLimitada:import('./estado-datos.js').MotivoCoberturaLimitadaDatos|null,revisionPendiente:RevisionPendiente|null,edicionNueva:import('./edicion-nueva-datos.js').EdicionNuevaDatos|null,avisoEdicion:import('./edicion-nueva-datos.js').AvisoEdicionDatos|null,gruposEnSuGranGrupo:number|null,gruposSinClase:number|null,salidaParcial:import('./estado-datos.js').SalidaParcialDatos|null,enlaces:import('./estado-datos.js').EnlacesDatos|null,retirada:import('./retirada-datos.js').RetiradaDatos|null,retiradaAmplia:import('./retirada-datos.js').RetiradaAmpliaDatos|null,retencionComposicion:import('./estado-datos.js').RetencionComposicionDatos|null}>} SaludFuente */
 /** @typedef {Readonly<{fecha:string,vencida:boolean}>} RevisionPendiente */
 
 /** Texto, forma y tono siempre viajan juntos; no hay animación ni significado concedido solo al color. */
@@ -123,6 +123,7 @@ function avisos(seguimiento) {
     // Propiedad de la fuente, no resultado de una consulta: se informa y nunca es una incidencia.
     coberturaLimitada: seguimiento?.coberturaLimitada ?? null,
     salidaParcial: seguimiento?.salidaParcial ?? null,
+    retencionComposicion: seguimiento?.retencionComposicion ?? null,
     enlaces: seguimiento?.enlaces ?? null,
     // El cambio de modo de la regla de retirada: un aviso que pide atención, nunca una incidencia de la consulta.
     retirada: seguimiento?.retirada ?? null,
@@ -159,7 +160,11 @@ function siguienteConsulta(conjunto, consulta) {
  */
 function gravedadPropia(h) {
   const gravedades = (h.salidaParcial?.motivos ?? []).map((motivo) => gravedadDeMotivo(motivo, h.fuente?.id ?? ''));
-  if (h.edicionNueva?.estado === 'detenida-por-controles' || gravedades.includes('atencion')) {
+  if (
+    h.retencionComposicion ||
+    h.edicionNueva?.estado === 'detenida-por-controles' ||
+    gravedades.includes('atencion')
+  ) {
     return 'atencion';
   }
   return gravedades.includes('incidencia') ? 'incidencia' : null;
@@ -296,6 +301,7 @@ function resumirFuente(datos, identidad, relojEvaluacion) {
     gruposEnSuGranGrupo: h.gruposEnSuGranGrupo,
     gruposSinClase: h.gruposSinClase,
     salidaParcial: h.salidaParcial,
+    retencionComposicion: h.retencionComposicion,
     enlaces: h.enlaces,
     retirada: h.retirada,
     retiradaAmplia: h.retiradaAmplia,

@@ -86,7 +86,9 @@ class ActivacionCatalogoCompacto(unittest.TestCase):
         self.assertEqual(self.caso.ejecutar()["fase"], "confirmada")
         self.assertEqual(self.caso.efectos, ["subir", "desplegar"])
         self.assertEqual(self.caso.almacen.objetos, antes)
-        self.caso.cliente.comprobar_manifiesto_web.assert_called_with("https://publico.example", self.caso.web_sha)
+        self.caso.cliente.comprobar_manifiesto_web.assert_called_with(
+            "https://publico.example", self.caso.web_sha, version_id=activacion.NUEVA
+        )
 
     def test_pieza_alterada_no_llega_al_proveedor(self) -> None:
         """Una pieza conservada bajo otra huella impide reservar o publicar."""

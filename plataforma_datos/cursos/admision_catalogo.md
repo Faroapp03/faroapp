@@ -98,6 +98,11 @@ archivos indexados con enlaces duros. El destino no puede sustituir ninguna evid
 Límites: 256 referencias lógicas contando índices; cada índice como máximo 16 MiB; como máximo 100.000
 archivos indexados en toda la solicitud; 128 MiB por archivo; 256 MiB acumulados COMPARTIDOS entre referencias,
 índices y cuerpos/recibos; informe de admisión 1 MiB y SQLite 512 MiB. No se reinicia el presupuesto por índice.
+Los documentos que el almacén archiva (`almacen_catalogo.archivar_documento`: controles y recibos de cada fuente)
+tienen su propia cota lógica, 16 MiB por evento y por metadatos (`MAX_DOCUMENTO`), al archivar y al reconstruir.
+El ensayo de composición midió 1.069.653 bytes para el evento de materia de Cibernàrium con 763 ediciones y
+14 bytes para sus metadatos. La cota del documento admite más de 15 veces el volumen medido por evento y
+acota la memoria de lectura. El informe de admisión conserva su cota de 1 MiB.
 Una referencia repetida entre los metadatos planos y el índice consume ambos espacios declarados; no se
 fusionan identidades de consultas por compartir bytes. Los cuerpos pueden reutilizar una única ruta por SHA.
 
@@ -117,7 +122,9 @@ original y `--originales-de <raíz>` los migra comprobando que la validación y 
 
 Al componer cada candidata, las páginas y los cuerpos web de su archivo de evidencias de entre 32 KiB y 4 MiB
 usan trozos de hasta 32 KiB. Varias fichas o ediciones pueden compartir su plantilla HTML. Cada edición conserva
-su recibo y su SHA-256 sobre el cuerpo entero. Los controles JSON conservan su representación original.
+su recibo y su SHA-256 sobre el cuerpo entero. Los eventos y metadatos JSON se fragmentan a partir de 4 MiB.
+Las referencias conservan el SHA-256 de los bytes JSON originales y los lectores también admiten los documentos
+históricos guardados enteros.
 
 La historia no se borra para cumplir una cota. Al alcanzar capacidad se rechaza la nueva preparación sin
 promoverla ni reemplazar la última admisión válida. El error identifica una cota local, no un fallo o cierre

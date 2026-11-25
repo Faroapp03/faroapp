@@ -94,6 +94,9 @@ export const TEXTOS_AVISOS_DATOS = {
     'Digitalízate lista más proveedores de los que Faro consulta en un día: hoy no se dan altas ni bajas de sus cursos. Qué hacer: avisa al equipo técnico.',
   'panel.datos.salida-parcial.motivo.censo-digitalizate-contradice-al-indice':
     'Las fichas de los proveedores de Digitalízate y su buscador no coinciden en algún curso: vale lo que dicen las fichas de los proveedores activos y lo dudoso se queda como estaba.',
+  'panel.datos.retencion-composicion': 'Se conserva la versión aplicada {v0}. La retención empezó {v1}.',
+  'panel.datos.retencion-composicion.documento-excesivo':
+    'La nueva versión superó el tamaño máximo de un documento de evidencia del catálogo.',
   'panel.datos.salida-parcial.motivo.fundae-conjunto-sin-aplicar':
     'Hay una actualización de FUNDAE preparada con un catálogo de cursos distinto del actual: no se ha aplicado y se conserva. Qué hacer: pide al equipo técnico que la revise.',
   'panel.datos.salida-parcial.motivo.dominio-con-limite':

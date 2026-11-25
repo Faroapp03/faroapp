@@ -3,6 +3,8 @@
 import io
 import json
 import os
+import shutil
+import subprocess
 import tempfile
 import unittest
 from pathlib import Path
@@ -12,10 +14,11 @@ from urllib.parse import parse_qsl, urlencode
 
 from urllib3.connection import HTTPConnection
 from urllib3.connectionpool import HTTPConnectionPool
-from urllib3.exceptions import ReadTimeoutError
+from urllib3.exceptions import ProtocolError, ReadTimeoutError
 from urllib3.response import HTTPResponse
 
 from plataforma_datos.comun import perfil_web, red
+from plataforma_datos.comun.nucleo import RAIZ
 from plataforma_datos.orquestacion import cliente_mantenimiento as cliente
 
 AGENTE_PRUEBA = (
@@ -497,6 +500,38 @@ class PruebaClienteMantenimiento(unittest.TestCase):
         self.fallo()
         self.assertEqual(len(self.peticiones), 1)
 
+    def test_espera_al_servidor_mas_que_su_propio_plazo(self) -> None:
+        """Esperar lo mismo que el servidor cortaría justo cuando va a responder, aunque sea «plazo agotado»."""
+        self.exito()
+        self.assertEqual(self.instancia.enviar_resultado(RECIBO), "aplicado")
+        lectura = self.peticiones[1]["timeout"].read_timeout
+        self.assertGreaterEqual(lectura, cliente.PLAZO_SERVIDOR_S + cliente.MARGEN_SOBRE_EL_SERVIDOR_S)
+        self.assertGreaterEqual(cliente.PLAZO_FASE_S, 2 * (cliente.CONEXION_S + cliente.LECTURA_S))
+
+    def test_sin_respuesta_rechazo_y_respuesta_ilegible_son_fallos_distintos(self) -> None:
+        """Solo un plazo, un corte o un 5xx dejan la operación incierta; un 4xx es un rechazo con respuesta."""
+        casos = [
+            (ReadTimeoutError(None, None, CREDENCIAL), cliente.ServidorSinRespuesta),
+            (ProtocolError("conexión cortada"), cliente.ServidorSinRespuesta),
+            *((status, cliente.ServidorSinRespuesta) for status in (500, 502, 503, 504)),
+            *((status, cliente.RechazoDelServidor) for status in (400, 401, 403, 409, 413)),
+        ]
+        for paso, clase in casos:
+            with self.subTest(paso=paso):
+                respuesta = paso if isinstance(paso, Exception) else (paso, documento({"error": "x"}), {})
+                self.pasos = [(200, documento({"value": JWT_UNO}), {}), respuesta]
+                self.peticiones.clear()
+                with self.assertRaisesRegex(clase, f"^{cliente.ERROR_GENERICO}$") as fallo:
+                    self.instancia.enviar_resultado(RECIBO)
+                self.assertIs(type(fallo.exception), clase)
+                self.assertIsNone(fallo.exception.__cause__)
+                self.assertEqual(len(self.peticiones), 2)
+        self.pasos = [(200, documento({"value": JWT_UNO}), {}), (200, documento({"estado": "otro"}), {})]
+        self.peticiones.clear()
+        with self.assertRaises(cliente.ErrorMantenimiento) as fallo:
+            self.instancia.enviar_resultado(RECIBO)
+        self.assertIs(type(fallo.exception), cliente.ErrorMantenimiento)
+
     def test_presupuesto_agotado_antes_post_y_confirmacion_tardia(self) -> None:
         """Una respuesta después del plazo jamás concede permiso al motor."""
         for fase in ("token", "confirmacion"):
@@ -573,7 +608,9 @@ class PruebaClienteMantenimiento(unittest.TestCase):
         """Los recursos estáticos públicos reciben únicamente la identidad configurada y se cotejan bytes exactos."""
         contenido = b' {"fixture": true}\n'
         self.pasos = [(200, contenido, {"content-type": "application/octet-stream"})]
-        self.instancia.comprobar_manifiesto_web("https://publico.test", cliente.hashlib.sha256(contenido).hexdigest())
+        self.instancia.comprobar_manifiesto_web(
+            "https://publico.test", cliente.hashlib.sha256(contenido).hexdigest(), version_id=VERSION_ID
+        )
         self.assertEqual(len(self.peticiones), 1)
         peticion = self.peticiones[0]
         self.assertEqual(peticion["host"], "publico.test")
@@ -589,7 +626,7 @@ class PruebaClienteMantenimiento(unittest.TestCase):
             self.pasos, self.peticiones = [paso], []
             with self.subTest(paso=paso[0]), self.assertRaises(cliente.ErrorMantenimiento):
                 self.instancia.comprobar_manifiesto_web(
-                    "https://publico.test", cliente.hashlib.sha256(contenido).hexdigest()
+                    ORIGEN, cliente.hashlib.sha256(contenido).hexdigest(), version_id=VERSION_ID
                 )
             self.assertEqual(len(self.peticiones), 1)
         for origen in ("http://publico.test", "https://publico.test/", "https://publico.test?q=x"):
@@ -597,6 +634,84 @@ class PruebaClienteMantenimiento(unittest.TestCase):
             with self.assertRaises(cliente.ErrorMantenimiento):
                 self.instancia.comprobar_manifiesto_web(origen, "a" * 64)
             self.assertEqual(self.peticiones, [])
+
+    def test_portal_del_mismo_origen_exige_prueba_oidc_de_bytes_y_version(self) -> None:
+        """La prueba usa un JWT nuevo de la audiencia fijada, solo en la autoridad y nunca en el archivo."""
+        huella = "a" * 64
+        self.pasos = [
+            (403, b"", {"x-faro-portal": "privado"}),
+            (200, documento({"value": JWT_DOS}), {}),
+            (200, documento({"version": 1, "versionId": VERSION_ID, "sha256ManifiestoWeb": huella}), {}),
+        ]
+
+        def lento(*args: object, **opciones: object) -> HTTPResponse:
+            respuesta = self.atender(*args, **opciones)
+            if len(self.peticiones) == 1:
+                self.instante = cliente.PLAZO_FASE_S - 1
+            return respuesta
+
+        self.http.side_effect = lento
+        with mock.patch.object(cliente.time, "monotonic", side_effect=lambda: self.instante):
+            self.instancia.comprobar_manifiesto_web(ORIGEN, huella, version_id=VERSION_ID)
+        self.assertGreater(self.instante, cliente.PLAZO_FASE_S)
+        publico, oidc, prueba = self.peticiones
+        self.assertEqual(publico["url"], cliente.RUTA_MANIFIESTO_WEB)
+        self.assertNotIn("Authorization", publico["headers"])
+        self.assertEqual(oidc["host"], "pipelines.example.test")
+        self.assertEqual(dict(parse_qsl(oidc["url"].split("?", 1)[1]))["audience"], ORIGEN + cliente.RUTA_RESULTADO)
+        self.assertEqual(oidc["headers"]["Authorization"], f"Bearer {CREDENCIAL}")
+        self.assertEqual(prueba["host"], publico["host"])
+        self.assertEqual(prueba["url"], cliente.RUTA_PRUEBA_MANIFIESTO)
+        self.assertEqual(prueba["metodo"], "GET")
+        self.assertIsNone(prueba["body"])
+        self.assertEqual(prueba["headers"]["Authorization"], f"Bearer {JWT_DOS}")
+        self.assertTrue(all(cuerpo.closed for cuerpo in self.cuerpos))
+
+    def test_403_solo_habilita_pedir_prueba_en_el_origen_de_la_autoridad(self) -> None:
+        """Un 403 genérico, otro origen o una llamada sin versión esperada cierran el cotejo."""
+        for origen, version_id, cabeceras in (
+            (ORIGEN, VERSION_ID, {}),
+            ("https://publico.test", VERSION_ID, {"x-faro-portal": "privado"}),
+            (ORIGEN, None, {"x-faro-portal": "privado"}),
+        ):
+            self.pasos, self.peticiones = [(403, b"", cabeceras)], []
+            with self.subTest(origen=origen, cabeceras=cabeceras), self.assertRaises(cliente.ErrorMantenimiento):
+                self.instancia.comprobar_manifiesto_web(origen, "a" * 64, version_id=version_id)
+            self.assertEqual(len(self.peticiones), 1)
+            self.assertNotIn("Authorization", self.peticiones[0]["headers"])
+
+    def test_la_prueba_del_manifiesto_rechaza_respuestas_sin_la_huella_y_version_exactas(self) -> None:
+        """Una prueba ausente, equivocada, ambigua o excesiva deja la publicación sin confirmar."""
+        huella = "a" * 64
+        prueba = {"version": 1, "versionId": VERSION_ID, "sha256ManifiestoWeb": huella}
+        for respuesta in (
+            (200, documento({"version": 1, "versionId": VERSION_ID}), {}),
+            (200, documento(prueba | {"version": True}), {}),
+            (200, documento(prueba | {"versionId": ID}), {}),
+            (200, documento(prueba | {"sha256ManifiestoWeb": "b" * 64}), {}),
+            (200, documento(prueba | {"otro": True}), {}),
+            (200, b"x" * (cliente.MAX_CONSTRUCCION_BYTES + 1), {}),
+            (403, b"", {}),
+            (307, b"", {"location": "https://ajeno.test"}),
+        ):
+            self.pasos = [(403, b"", {"x-faro-portal": "privado"}), (200, documento({"value": JWT_DOS}), {}), respuesta]
+            self.peticiones.clear()
+            with self.subTest(respuesta=respuesta[0]), self.assertRaises(cliente.ErrorMantenimiento):
+                self.instancia.comprobar_manifiesto_web(ORIGEN, huella, version_id=VERSION_ID)
+            self.assertEqual(len(self.peticiones), 3)
+            self.assertTrue(all(cuerpo.closed for cuerpo in self.cuerpos))
+
+    def test_prueba_privada_tardia_no_extiende_su_plazo_de_fase(self) -> None:
+        """La consulta al emisor y la pausa antes de volver al portal consumen el mismo plazo."""
+        self.pasos = [(403, b"", {"x-faro-portal": "privado"}), (200, documento({"value": JWT_DOS}), {})]
+        with (
+            mock.patch.object(cliente.time, "monotonic", side_effect=lambda: self.instante),
+            mock.patch.object(cliente, "PLAZO_FASE_S", 1),
+            self.assertRaises(cliente.ServidorSinRespuesta),
+        ):
+            self.instancia.comprobar_manifiesto_web(ORIGEN, "a" * 64, version_id=VERSION_ID)
+        self.assertEqual(len(self.peticiones), 2)
+        self.assertTrue(all(cuerpo.closed for cuerpo in self.cuerpos))
 
     def test_close_idempotente_contexto_y_operaciones_cerradas(self) -> None:
         """Cerrar retira la credencial de la instancia y no la reabre al reutilizarla."""
@@ -613,6 +728,36 @@ class PruebaClienteMantenimiento(unittest.TestCase):
         with self.assertRaises(cliente.ErrorMantenimiento):
             self.instancia.__enter__()
         self.assertEqual(self.peticiones, [])
+
+
+class ContratoPlazosConElServidor(unittest.TestCase):
+    """El plazo que el cliente atribuye al servidor es el del código del servidor, no una copia que pueda envejecer."""
+
+    def test_el_plazo_del_servidor_es_el_mayor_de_sus_receptores(self) -> None:
+        """Lee los plazos de los receptores en TypeScript y los coteja con la espera del cliente.
+
+        Raises:
+            AssertionError: Si no hay Node para leer el código del servidor.
+        """
+        nodo = shutil.which("node")
+        if nodo is None:
+            raise AssertionError("Node es necesario para comprobar el contrato de plazos")
+        programa = (
+            "import { PLAZOS_RECEPTORES_MANTENIMIENTO_MS } from './src/administracion/plazos-mantenimiento.ts';"
+            "console.log(JSON.stringify(PLAZOS_RECEPTORES_MANTENIMIENTO_MS));"
+        )
+        resultado = subprocess.run(
+            [nodo, "--input-type=module", "--eval", programa],
+            cwd=RAIZ,
+            env={"PATH": os.environ.get("PATH", os.defpath)},
+            capture_output=True,
+            check=True,
+            text=True,
+            timeout=30,
+        )
+        plazos_ms = json.loads(resultado.stdout)
+        self.assertEqual(cliente.PLAZO_SERVIDOR_S * 1000, max(plazos_ms))
+        self.assertGreater(cliente.LECTURA_S, cliente.PLAZO_SERVIDOR_S)
 
 
 if __name__ == "__main__":

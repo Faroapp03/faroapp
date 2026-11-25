@@ -27,6 +27,7 @@ export const PUBLICACIONES_COMUNES = {
   'src/comun/sobre-dsse.ts': 'web/scripts/firmas/sobre-dsse.js',
   'src/administracion/vigilante-panel.js': 'web/administracion/vigilante-panel.js',
   'src/administracion/estado-datos.js': 'web/administracion/estado-datos.js',
+  'src/administracion/avisos-catalogo-datos.js': 'web/administracion/avisos-catalogo-datos.js',
   'src/administracion/lectura-estricta.js': 'web/administracion/lectura-estricta.js',
   'src/administracion/retenidos-datos.js': 'web/administracion/retenidos-datos.js',
   'src/administracion/retirada-datos.js': 'web/administracion/retirada-datos.js',

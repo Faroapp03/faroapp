@@ -16,7 +16,7 @@ from typing import Any
 
 from plataforma_datos.comun.nucleo import DATOS_RELATIVOS, RAIZ, ErrorFuente
 from plataforma_datos.contratos.fuentes import cargar_descriptores
-from plataforma_datos.cursos import almacen_catalogo
+from plataforma_datos.cursos import almacen_catalogo, retencion_composicion
 from plataforma_datos.cursos.componer_catalogo import CONJUNTO_SIN_APLICAR, fundae_conservado_sin_aplicar
 from plataforma_datos.cursos.fallos_almacen import codigo_en
 from plataforma_datos.orquestacion import comprobaciones_remotas
@@ -377,6 +377,7 @@ def _seguimiento_remoto(raiz: Path, registro: dict[str, object], ahora: datetime
         motivo de cobertura limitada.
     """
     filas = []
+    retenidas = retencion_composicion.leer(raiz / almacen_catalogo.RUTA)
     for fuente in FUENTES:
         seguimiento = registro["seguimiento_remoto"].get(fuente, {})
         pendientes = seguimiento.get("incidencias_pendientes", {})
@@ -398,6 +399,7 @@ def _seguimiento_remoto(raiz: Path, registro: dict[str, object], ahora: datetime
                 **({"enlaces": enlaces} if (enlaces := recuento_de_enlaces(raiz, fuente)) is not None else {}),
                 **({"retirada": aviso} if (aviso := aviso_de_la_retirada(raiz, fuente, ahora)) is not None else {}),
                 **({"retiradaAmplia": amplia} if (amplia := retirada_amplia(raiz, fuente)) is not None else {}),
+                **({"retencionComposicion": retenidas[fuente]} if fuente in retenidas else {}),
             }
         )
     return filas

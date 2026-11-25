@@ -22,6 +22,7 @@ from plataforma_datos.orquestacion.almacen_generaciones import (
 )
 from plataforma_datos.orquestacion.almacen_s3 import AlmacenS3Ausente, AlmacenS3NoDisponible
 from plataforma_datos.orquestacion.detalle_del_error import detalle, origen
+from plataforma_datos.orquestacion.errores_mantenimiento import ErrorMantenimiento
 from plataforma_datos.orquestacion.fin_del_motor import MotorSinRecibo
 from plataforma_datos.orquestacion.formas_del_diario import CAUSA_DE_ETAPA
 from plataforma_datos.orquestacion.hora_limite_del_motor import leer_parada
@@ -176,6 +177,9 @@ def _causa(error: Exception) -> str:
     if isinstance(origen(error), subprocess.TimeoutExpired):
         return "plazo-agotado"
     if isinstance(error, MotorSinRecibo):
+        return error.causa
+    # El servidor del mantenimiento no respondió o rechazó: no es lo mismo, y la recuperación depende de cuál fue.
+    if isinstance(error, ErrorMantenimiento) and error.causa is not None:
         return error.causa
     for clases, causa in CAUSAS_DEL_ALMACEN:
         if isinstance(error, clases):
