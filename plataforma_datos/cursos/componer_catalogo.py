@@ -40,6 +40,7 @@ from plataforma_datos.cursos.fuentes.fundae.conocidos import PUBLICADORES as PUB
 from plataforma_datos.cursos.fuentes.hp_life import actualizacion as hp
 from plataforma_datos.cursos.fuentes.hp_life import altas as altas_hp
 from plataforma_datos.cursos.fuentes.hp_life.recepciones import fecha_utc
+from plataforma_datos.cursos.migracion_admisiones_censos import sellar_legados
 from plataforma_datos.orquestacion import sustitucion
 from plataforma_datos.orquestacion.fallo_del_paso import tramo
 from plataforma_datos.orquestacion.ordenes import con_motivo
@@ -438,6 +439,7 @@ def componer(*, raiz: Path = RAIZ, corte_utc: str | None = None) -> dict:
         fecha_utc(corte)
     with tramo("almacen-admitido"):
         sin_identidades = _sin_identidades(_almacen_admitido(base).snapshot.ruta)
+        sellar_legados(raiz)
     with tramo("fundae-retenido"):
         retenidos = [m for m in [fundae_conservado_sin_aplicar(raiz, base)] if m]
     with tramo("temporales"):
@@ -503,7 +505,8 @@ def main() -> int:
     """
 
     def ejecutar() -> None:
-        print(json.dumps(componer(), ensure_ascii=False))
+        with sustitucion.cerrojo(RAIZ):
+            print(json.dumps(componer(), ensure_ascii=False))
 
     return con_motivo(ejecutar, linea_de_fallo=True)
 

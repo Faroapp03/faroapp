@@ -248,7 +248,7 @@
       "motivo": "utilidad-comun"
     },
     "plataforma_datos/cursos/operacion_fuente.py": {
-      "techo": 719,
+      "techo": 715,
       "motivo": "operacion-de-fuentes"
     },
     "plataforma_datos/cursos/panel_catalogo.py": {
@@ -332,7 +332,7 @@
       "motivo": "lector-de-fuente"
     },
     "plataforma_datos/orquestacion/actualizar.py": {
-      "techo": 789,
+      "techo": 774,
       "motivo": "orquestacion"
     },
     "plataforma_datos/orquestacion/almacen_trabajos.py": {

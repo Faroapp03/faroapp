@@ -6,12 +6,15 @@ detiene sin red, por una excepción y sin ella, y se leen el diario y el resumen
 """
 
 import json
+import subprocess
+import sys
 import tempfile
 import unittest
 from json import JSONDecodeError
 from pathlib import Path
 from unittest import mock
 
+from plataforma_datos.comun.nucleo import RAIZ
 from plataforma_datos.orquestacion import actualizar, candidato, resumen_diario
 from plataforma_datos.orquestacion import diario_mantenimiento as diario
 from plataforma_datos.orquestacion import fallo_del_candidato as fallo
@@ -79,6 +82,43 @@ class FalloDelCandidato(unittest.TestCase):
         eventos, retencion = self.supervisor(recibo)
         self.assertEqual([e["estado"] for e in eventos], ["resultado"])
         self.assertEqual(retencion, {"error": "actualizacion_no_completada", "clase": None, "funcion": None})
+
+    def test_la_cli_identifica_el_cotejo_posterior_al_motor(self) -> None:
+        """El módulo que se ejecuta como __main__ conserva el origen cerrado de un rechazo posterior."""
+        recibo = self.ruta.parent / "recibo.json"
+        guion = """
+import json
+import runpy
+import sys
+from datetime import UTC, datetime
+from pathlib import Path
+from unittest.mock import patch
+
+from plataforma_datos.orquestacion import actualizar
+
+raiz, recibo = map(Path, sys.argv[1:])
+comienzo = datetime.now(UTC)
+informe = raiz / actualizar.CARPETA_DE_INFORMES / "intento.md"
+informe.parent.mkdir(parents=True)
+informe.with_suffix(".json").write_text(json.dumps({
+    "utc": comienzo.isoformat(),
+    "veredicto": "contradice el resultado",
+}))
+resultado = actualizar.ResultadoActualizacion(0, comienzo, informe, {})
+sys.argv = ["candidato", "actualizar-datos", str(raiz), "--recibo", str(recibo)]
+with patch.object(actualizar, "actualizar_con_resultado", return_value=resultado):
+    runpy.run_module("plataforma_datos.orquestacion.candidato", run_name="__main__", alter_sys=True)
+"""
+        resultado = subprocess.run(
+            [sys.executable, "-B", "-c", guion, str(self.raiz), str(recibo)],
+            cwd=RAIZ,
+            capture_output=True,
+            timeout=10,
+            check=False,
+        )
+        self.assertEqual(resultado.returncode, 1, resultado.stderr)
+        self.assertEqual(json.loads(recibo.read_bytes())["error"], "candidato_no_verificable")
+        self.assertEqual(fallo.leer(self.raiz), {"clase": "EstadoPanelInvalido", "funcion": "candidato.informe"})
 
     def test_un_archivo_fuera_de_su_forma_se_anota_como_problema(self) -> None:
         """Una función que no es un nombre del motor no llega al diario: se anota que el archivo es ilegible."""

@@ -235,6 +235,23 @@ class PruebaAlmacenS3(unittest.TestCase):
                 self.almacen.recuperar(CLAVE, self.temporal / "vencida", HUELLA, len(CONTENIDO))
         enviar.assert_called_once()
 
+    def test_presupuesto_del_lote_acota_turnos_y_no_se_renueva(self) -> None:
+        """El plazo monotónico se comparte y se restablece al salir del contexto."""
+        with (
+            mock.patch.object(
+                self.almacen._cliente._endpoint.http_session, "send", side_effect=lambda r: http(r, 200, CONTENIDO)
+            ) as enviar,
+            mock.patch.object(StreamingBody, "set_socket_timeout"),
+            mock.patch.object(s3.time, "monotonic", side_effect=lambda: self.instante),
+        ):
+            with self.almacen.limitar_hasta(1):
+                self.almacen.recuperar(CLAVE, self.destino, HUELLA, len(CONTENIDO))
+                with self.almacen.limitar_hasta(20), self.assertRaises(s3.AlmacenS3NoDisponible):
+                    self.almacen.recuperar(CLAVE, self.temporal / "vencida", HUELLA, len(CONTENIDO))
+            enviar.assert_called_once()
+            self.almacen.recuperar(CLAVE, self.temporal / "otro-lote", HUELLA, len(CONTENIDO))
+            self.assertEqual(enviar.call_count, 2)
+
     def test_control_tardio_no_confirma_200_404_412_ni_ausencia(self) -> None:
         """Respuesta o cierre al vencer el plazo significan resultado incierto, nunca éxito/ausencia/CAS."""
         for estado, metodo in ((200, "PUT"), (404, "GET"), (412, "PUT")):

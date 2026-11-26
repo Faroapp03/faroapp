@@ -12,23 +12,23 @@ import stat
 import subprocess
 import tempfile
 import time
-from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
 
 from plataforma_datos.comun import instante_del_ciclo
 from plataforma_datos.comun.nucleo import RAIZ, ErrorFuente
 from plataforma_datos.orquestacion import diario_mantenimiento as diario
-from plataforma_datos.orquestacion import movimientos_de_cursos, recuperar_ediciones, ultimo_fallo
+from plataforma_datos.orquestacion import (
+    movimientos_de_cursos,
+    reanudacion_de_entradas,
+    recuperar_ediciones,
+    ultimo_fallo,
+)
 from plataforma_datos.orquestacion.actualizar import entorno_de_las_ordenes
 from plataforma_datos.orquestacion.almacen_artefactos import guardar_artefacto
 from plataforma_datos.orquestacion.almacen_generaciones import guardar_generacion, recuperar_generacion
 from plataforma_datos.orquestacion.almacen_trabajos import (
-    ACCIONES,
-    MAX_ENTERO,
     MAX_RECIBO_BYTES,
-    RUN,
-    UUID,
     VERSION_RECIBO_CATALOGO,
     VERSION_RECIBO_CONSERVADOS,
     AlmacenTrabajos,
@@ -40,12 +40,26 @@ from plataforma_datos.orquestacion.aprovisionar_candidato import aprovisionar_ca
 from plataforma_datos.orquestacion.bloqueo_al_empezar import levantar_al_empezar
 from plataforma_datos.orquestacion.causas_del_ciclo import registrar_generacion_no_conservada, registrar_paquete
 from plataforma_datos.orquestacion.cliente_mantenimiento import ClienteMantenimientoGitHub
+from plataforma_datos.orquestacion.configuracion_ejecutor_operativo import (
+    ERROR as ERROR,
+)
+from plataforma_datos.orquestacion.configuracion_ejecutor_operativo import (
+    VARIANTES_CLOUDFLARE as VARIANTES_CLOUDFLARE,
+)
+from plataforma_datos.orquestacion.configuracion_ejecutor_operativo import (
+    ConfiguracionEjecutorOperativo as ConfiguracionEjecutorOperativo,
+)
+from plataforma_datos.orquestacion.configuracion_ejecutor_operativo import (
+    ErrorEjecucionOperativa as ErrorEjecucionOperativa,
+)
+from plataforma_datos.orquestacion.configuracion_ejecutor_operativo import (
+    _exigir,
+)
 from plataforma_datos.orquestacion.fin_del_motor import MotorSinRecibo, exigir_recibo
-from plataforma_datos.orquestacion.generacion_operativa import REVISION, exportar_generacion
 from plataforma_datos.orquestacion.generacion_operativa import SHA256 as HUELLA
+from plataforma_datos.orquestacion.generacion_operativa import exportar_generacion
 from plataforma_datos.orquestacion.hora_limite_del_motor import VARIABLE as HORA_LIMITE
 from plataforma_datos.orquestacion.ordenes_de_la_actualizacion import COMPLETAR_RENOMBRES, SI
-from plataforma_datos.orquestacion.piezas_de_la_actualizacion import FUENTES
 from plataforma_datos.orquestacion.procesos import ejecutar_con_plazo
 
 # Las fuentes del último ciclo real completo y el paquete medido llevado al runner lento (medidas_del_ciclo), más su
@@ -58,64 +72,9 @@ PLAZO_CANDIDATO_S = 255 * 60
 PLAZO_VALIDACION_S = 30
 PLAZO_ARTEFACTO_S = 300
 MAX_RESUMEN_ARTEFACTO_BYTES = 4096
-ERROR = "No se ha completado la ejecución de mantenimiento."
 CAMPOS_RECIBO = {"version", "accion", "resultado", "veredicto", "terminadoEn", "estado", "huellaPaquete", "error"}
 VALIDADOR = "herramientas/mantenimiento/comprobar-recibo.ts"
 EXPORTADOR = "herramientas/web/construir.ts"
-# Cada variante lleva su propio Worker principal: solo la oficial atiende el disparador horario (scheduled).
-VARIANTES_CLOUDFLARE = ("privado", "oficial")
-
-
-class ErrorEjecucionOperativa(ValueError):
-    """Fallo cerrado: no autoriza repetir el motor ni afirma activación o conservación."""
-
-
-def _exigir(condicion: bool) -> None:
-    if not condicion:
-        raise ErrorEjecucionOperativa(ERROR)
-
-
-@dataclass(frozen=True, kw_only=True)
-class ConfiguracionEjecutorOperativo:
-    """Expectativas privadas del workflow; ninguna contiene credenciales u órdenes recibidas por HTTP.
-
-    `variante_cloudflare` es la de la instalación: el artefacto se exporta con ella y la activación exige que coincida.
-    No tiene valor por omisión, porque exportar otra variante sustituiría el Worker de la instalación por otro.
-    """
-
-    checkout: Path
-    directorio_trabajo: Path
-    revision_codigo: str
-    solicitud_id: str
-    revision_reserva: int
-    run_id: str
-    run_attempt: str
-    accion: str
-    variante_cloudflare: str
-    recuperacion_activacion: bool = False
-    revisar_paquete_pendiente: bool = False
-    en_paralelo: bool = False  # descargar las fuentes en paralelo (variable FARO_FUENTES_EN_PARALELO); si no, en serie
-    fuentes_en_serie: tuple[str, ...] = ()  # con en_paralelo, las que se quedan en serie (FARO_FUENTES_EN_SERIE)
-
-    def __post_init__(self) -> None:
-        _exigir(isinstance(self.checkout, Path) and isinstance(self.directorio_trabajo, Path))
-        _exigir(isinstance(self.revision_codigo, str) and REVISION.fullmatch(self.revision_codigo) is not None)
-        _exigir(isinstance(self.solicitud_id, str) and UUID.fullmatch(self.solicitud_id) is not None)
-        _exigir(type(self.revision_reserva) is int and 0 < self.revision_reserva <= MAX_ENTERO)
-        _exigir(isinstance(self.run_id, str) and RUN.fullmatch(self.run_id) is not None)
-        _exigir(type(self.recuperacion_activacion) is bool)
-        _exigir(type(self.revisar_paquete_pendiente) is bool and type(self.en_paralelo) is bool)
-        _exigir(type(self.fuentes_en_serie) is tuple and all(fuente in FUENTES for fuente in self.fuentes_en_serie))
-        _exigir(self.en_paralelo or not self.fuentes_en_serie)  # la lista solo acompaña al paralelo
-        _exigir(
-            not self.revisar_paquete_pendiente
-            or (self.accion == "comprobar-programada" and not self.recuperacion_activacion)
-        )
-        _exigir(isinstance(self.variante_cloudflare, str) and self.variante_cloudflare in VARIANTES_CLOUDFLARE)
-        _exigir(isinstance(self.run_attempt, str) and RUN.fullmatch(self.run_attempt) is not None)
-        intento = int(self.run_attempt)
-        _exigir(int(self.run_id) <= MAX_ENTERO and intento <= MAX_ENTERO and self.accion in ACCIONES)
-        _exigir(intento > 1 if self.recuperacion_activacion else intento == 1)
 
 
 def _pares(pares: list[tuple[str, Any]]) -> dict[str, Any]:
@@ -183,7 +142,7 @@ def _validar_recibo(raiz_codigo: Path, ruta: Path, entorno: dict[str, str]) -> N
     _exigir(resultado.returncode == 0)
 
 
-def _proceso(orden: list[str], raiz: Path, plazo: int, entorno: dict[str, str]) -> subprocess.CompletedProcess[str]:
+def _proceso(orden: list[str], raiz: Path, plazo: float, entorno: dict[str, str]) -> subprocess.CompletedProcess[str]:
     try:
         return ejecutar_con_plazo(orden, raiz, plazo, entorno)
     except (OSError, subprocess.SubprocessError) as error:
@@ -215,6 +174,11 @@ def _candidato(configuracion: ConfiguracionEjecutorOperativo, directorio: Path, 
     raiz = directorio / "candidato"
     _dependencias(configuracion.checkout, raiz)
     recibo = directorio / "recibo-candidato.json"
+    limite = entorno.get(HORA_LIMITE)
+    plazo = max(0.0, int(limite) - time.time()) if limite is not None else PLAZO_CANDIDATO_S
+    _exigir(plazo > 0)
+    entradas = directorio / reanudacion_de_entradas.CARPETA
+    recuperar_entradas = ["--entradas-recuperadas", str(entradas)] if configuracion.reanudar_entradas else []
     with (directorio / "motor-iniciado").open("xb") as marcador:
         marcador.write(b"1\n")
         marcador.flush()
@@ -229,14 +193,16 @@ def _candidato(configuracion: ConfiguracionEjecutorOperativo, directorio: Path, 
             *(["--revisar-paquete-pendiente"] if configuracion.revisar_paquete_pendiente else []),
             *(["--en-paralelo"] if configuracion.en_paralelo else []),
             *(opcion for fuente in configuracion.fuentes_en_serie for opcion in ("--fuente-en-serie", fuente)),
+            *recuperar_entradas,
+            "--guardar-entradas",
             "--recibo",
             str(recibo),
         ],
         raiz,
-        PLAZO_CANDIDATO_S,
+        plazo,
         # La hora a la que se cortará el motor, para que no empiece lo que ya no cabe (`hora_limite_del_motor`).
         # Y que es el ciclo operativo: su exportación completa los renombres del paquete (ordenes_del_paquete).
-        {**entorno, HORA_LIMITE: str(int(time.time()) + PLAZO_CANDIDATO_S), COMPLETAR_RENOMBRES: SI},
+        {**entorno, HORA_LIMITE: limite or str(int(time.time()) + PLAZO_CANDIDATO_S), COMPLETAR_RENOMBRES: SI},
     )
     exigir_recibo(resultado.returncode, recibo.exists() or recibo.is_symlink(), ERROR)
     contenido = _json(_leer_archivo(recibo))
@@ -375,6 +341,16 @@ def _reanudar(
     return resumen
 
 
+def _entorno_del_motor(
+    configuracion: ConfiguracionEjecutorOperativo, directorio: Path, referencia: dict, almacen: AlmacenTrabajos
+) -> dict[str, str]:
+    entorno = _entorno(directorio)
+    if configuracion.reanudar_entradas:
+        entorno[HORA_LIMITE] = str(int(time.time()) + PLAZO_CANDIDATO_S)
+        reanudacion_de_entradas.preparar_si_pedida(configuracion, directorio, referencia, almacen)
+    return entorno
+
+
 def ejecutar_trabajo(
     configuracion: ConfiguracionEjecutorOperativo,
     cliente: ClienteMantenimientoGitHub,
@@ -428,8 +404,11 @@ def ejecutar_trabajo(
             buscar_apoyo=lambda raiz, destino: recuperar_ediciones.descargar(raiz, destino, almacen),
             apoyo=apoyo_fundae,
         )
-    with diario.paso("motor"):
-        entorno = _entorno(directorio)
+    with (
+        diario.paso("motor"),
+        reanudacion_de_entradas.conservar_antes_del_paquete(configuracion, directorio, base, almacen),
+    ):
+        entorno = _entorno_del_motor(configuracion, directorio, referencia, almacen)
         antes = movimientos_de_cursos.anterior(almacen, referencia, configuracion.checkout, entorno)
         recibo = _motor(configuracion, directorio, entorno, cliente)
         contenido = _json(recibo)

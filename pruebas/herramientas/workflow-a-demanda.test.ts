@@ -91,9 +91,12 @@ test('el primer paso detiene un run a demanda con reserva del servidor o con ens
   assert.deepEqual(publicacion[0], inicio);
   assert.deepEqual(envDelPaso(inicio), {
     ENTRADA_A_DEMANDA: `\${{ inputs.a_demanda }}`,
+    ENTRADA_ACCION: `\${{ inputs.accion }}`,
     ENTRADA_ENSAYO: `\${{ inputs.ensayo }}`,
+    ENTRADA_REANUDAR: `\${{ inputs.reanudar_entradas }}`,
     ENTRADA_SOLICITUD_ID: `\${{ inputs.solicitud_id }}`,
     ENTRADA_REVISION_RESERVA: `\${{ inputs.revision_reserva }}`,
+    REPOSITORIO_EN_PARALELO: `\${{ vars.FARO_FUENTES_EN_PARALELO }}`,
     ...SIN_OIDC,
   });
   const runner = carpeta(t, 'primer paso');
@@ -115,6 +118,7 @@ test('el primer paso detiene un run a demanda con reserva del servidor o con ens
       PATH: '/usr/bin:/bin',
       RUNNER_TEMP: runner,
       ENTRADA_A_DEMANDA: String(entradas.a_demanda),
+      ENTRADA_REANUDAR: 'false',
       ENTRADA_ENSAYO: entradas.ensayo,
       ENTRADA_SOLICITUD_ID: entradas.solicitud_id,
       ENTRADA_REVISION_RESERVA: entradas.revision_reserva,

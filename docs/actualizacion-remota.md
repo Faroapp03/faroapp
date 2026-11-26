@@ -548,8 +548,35 @@ descargado, se vuelve a la serie y se investiga.
 
 ## Workflow de GitHub
 
+### Recuperar las entradas de otro ciclo de hoy
+
+Después de admitir las fuentes y antes de exportar el paquete, el candidato espera el sello del lote privado. El
+supervisor conserva los originales, preparados y validados elegibles con su fecha, el lector y las huellas de las
+entradas declaradas. Una admisión con etapa válida y sin peticiones registradas usa su hora de cierre; eso no
+renueva la comprobación de un conjunto. El almacén agrupa los bytes nuevos y aprovecha los del sello base que ya verificó. Una vez
+confirmado el lote, se vuelve al camino normal del paquete. Si el motor se corta durante Componer o después, el
+lote ya está disponible aunque el trabajo no haya emitido recibo. Una incidencia en la conservación detiene el
+candidato antes del paquete. El lote usa hasta ocho minutos del plazo del motor. Antes de empezar el paquete,
+el motor vuelve a exigir su reserva ordinaria.
+Una ronda que solo admite módulos sin originales remotos elegibles sigue al paquete y deja constancia en el diario.
+
+Con las fuentes en serie, el operador puede pedir `actualizar-datos` a demanda con `reanudar_entradas=true`.
+El nuevo run pide su propia reserva. El supervisor busca solo el último lote de otra reserva del mismo día UTC y de la misma
+base operativa sellada. Reutiliza una fuente cuando coinciden el lector y todas sus entradas al llegar al módulo.
+Si el rechazo anterior conservó su generación y avanzó la base operativa, su recibo e índice acreditan qué base
+usó el lote de ese mismo run. El supervisor verifica esa base dentro del mismo plazo de recuperación del lote.
+Cuando faltan entradas o cambia el contrato, los módulos afectados siguen su camino ordinario. Si el lote no
+contiene ningún lector compatible, el supervisor se detiene antes de descargar fuentes. La reutilización conserva las fechas de
+las recepciones. El panel y el planificador recuperan la observación y la cobertura acreditadas del ciclo original,
+sin reemplazar una consulta posterior. El ciclo nuevo no registra otra consulta por esos bytes.
+
+El lote queda fuera de los recibos de publicación. La reanudación ejecuta la exportación, la comparación, la
+composición, las comprobaciones, la conservación y la activación por sus controles ordinarios. Para repetir solo
+la llamada de retorno o la activación de un run ya acreditado se mantienen sus vías de recuperación propias.
+
 El producto incluye `.github/workflows/actualizar.yml`. Se ejecuta solo por `workflow_dispatch`,
-con los tres argumentos obligatorios y el indicador opcional de revalidación de paquete.
+con la acción, las credenciales de reserva cuando las aporta el servidor y los indicadores opcionales de
+revalidación del paquete y reanudación de entradas.
 El intento original construye el candidato; los posteriores solo recuperan una activación existente
 y requieren que siga habilitada esa capacidad. El servidor debe reservar el trabajo antes del despacho.
 Una ejecución manual sin una reserva autorizada no obtiene permiso para iniciar el motor, salvo que se lance

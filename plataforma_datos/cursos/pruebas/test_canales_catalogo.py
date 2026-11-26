@@ -7,7 +7,9 @@ import unittest
 from unittest.mock import patch
 
 from plataforma_datos.comun.entrada_salida import guardar_json
-from plataforma_datos.comun.nucleo import ValidacionFallida
+from plataforma_datos.comun.huella_json import sha256_json
+from plataforma_datos.comun.nucleo import FormatoInesperado, ValidacionFallida
+from plataforma_datos.cursos import identidades_de_admision
 from plataforma_datos.cursos import operacion_fuente as operacion
 from plataforma_datos.cursos.pruebas import test_cibernarium_adquisicion as ejemplo_cibernarium
 from plataforma_datos.cursos.pruebas import test_fundae_operacion_catalogos as ejemplo_fundae
@@ -52,6 +54,15 @@ class CanalesCatalogoPruebas(unittest.TestCase):
             for ref in operacion.referencias_de_captura(captura):
                 self.assertEqual(enlaces.get("catalogos/" + ref["archivo"]), ref["sha256"])
 
+    def test_material_con_enlace_mal_formado_se_conserva_sin_destino(self) -> None:
+        """Un enlace publicado ilegible no impide guardar la identidad del programa censado."""
+        programa = {"id": "presente", "datos": {"material_publicado": {"moodleLink": "https://[incompleto"}}}
+        informe = identidades_de_admision.sellar("cibervoluntarios", [programa])
+        self.assertEqual(
+            identidades_de_admision.leer("cibervoluntarios", informe),
+            [{"id": "presente", "datos": {"material_publicado": {"moodleLink": None}}}],
+        )
+
     def admitir(self) -> dict:
         """Ejecuta las dos etapas del canal y su lectura admitida.
 
@@ -85,6 +96,39 @@ class CanalesCatalogoPruebas(unittest.TestCase):
         guardar_json(self.original / "procedencia.json", documento)
         self.assertEqual(operacion.leer_validado("fundae", self.raiz), admitido)
         self.assertEqual({p: p.read_bytes() for p in self.previos}, self.previos)
+
+    def test_el_censo_se_reproduce_con_las_identidades_de_la_admision(self) -> None:
+        """Una composición posterior puede cambiar los programas que se conocían al consultar."""
+        admitido = self.admitir()
+        with patch.object(operacion, "conocidos", side_effect=AssertionError("Lectura del catálogo posterior")):
+            self.assertEqual(operacion.leer_validado("fundae", self.raiz), admitido)
+
+        informe = json.loads((self.validado / "validacion.json").read_bytes())
+        informe["identidades_del_calculo"]["programas"]["programas"].pop()
+        guardar_json(self.validado / "validacion.json", informe)
+        with self.assertRaises(FormatoInesperado):
+            operacion.leer_validado("fundae", self.raiz)
+
+    def test_un_contexto_ajeno_o_malformado_no_admite_el_censo(self) -> None:
+        """Incluso una huella correcta debe identificar los programas del tipo y fuente declarados."""
+        for fuente, indebido in (("fundae", []), ("barcelonactiva", {}), ("cibervoluntarios", {})):
+            with self.subTest(fuente=fuente), self.assertRaises(FormatoInesperado):
+                contexto = {"version": 1, "fuente": fuente, "programas": indebido}
+                informe = {"identidades_del_calculo": contexto, "identidades_sha256": sha256_json(contexto)}
+                identidades_de_admision.leer(fuente, informe)
+        sello = identidades_de_admision.sellar("barcelonactiva", [])
+        with self.assertRaises(FormatoInesperado):
+            identidades_de_admision.leer("cibervoluntarios", sello)
+
+    def test_la_admision_historica_se_relee_con_el_contrato_original(self) -> None:
+        """En el formato previo el informe aún no citaba las identidades del cálculo."""
+        admitido = self.admitir()
+        ruta = self.validado / "validacion.json"
+        informe = json.loads(ruta.read_bytes())
+        del informe["identidades_sha256"]
+        del informe["identidades_del_calculo"]
+        guardar_json(ruta, informe)
+        self.assertEqual(operacion.leer_validado("fundae", self.raiz), admitido)
 
     def test_controles_incompletos_no_admiten_el_canal(self) -> None:
         """Tres canales declarados no equivalen a tres respuestas válidas."""
@@ -143,6 +187,12 @@ class CanalCibernariumPruebas(unittest.TestCase):
         guardar_json(self.original / "procedencia.json", {"fallo": "posterior"})
         self.assertEqual(operacion.leer_validado("barcelonactiva", self.raiz), admitido)
         self.assertEqual({p: p.read_bytes() for p in self.previos}, self.previos)
+
+    def test_el_censo_admitido_conserva_su_lista_de_programas(self) -> None:
+        """Las altas posteriores conservan la cobertura histórica del censo de Cibernàrium."""
+        admitido = self.admitir()
+        with patch.object(operacion, "conocidos", return_value=[]):
+            self.assertEqual(operacion.leer_validado("barcelonactiva", self.raiz), admitido)
 
     def test_censo_incompleto_no_se_admite(self) -> None:
         """Una extracción parcial no se convierte en una versión válida del canal."""

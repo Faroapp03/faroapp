@@ -213,6 +213,7 @@ function comprobarInputs(evento: Record<string, unknown>): void {
     'a_demanda',
     'accion',
     'ensayo',
+    'reanudar_entradas',
     'revisar_paquete_pendiente',
     'revision_reserva',
     'solicitud_id',
@@ -223,6 +224,8 @@ function comprobarInputs(evento: Record<string, unknown>): void {
   }
   assert.equal(objeto(inputs.ensayo).default, 'ninguno');
   assert.deepEqual(objeto(inputs.ensayo).options, ['ninguno', 'preparar', 'simular']);
+  assert.equal(objeto(inputs.reanudar_entradas).type, 'boolean');
+  assert.equal(objeto(inputs.reanudar_entradas).default, false);
   assert.equal(objeto(inputs.revisar_paquete_pendiente).type, 'boolean');
   assert.equal(objeto(inputs.revisar_paquete_pendiente).default, false);
   assert.equal(objeto(inputs.a_demanda).type, 'boolean');
@@ -235,6 +238,38 @@ function comprobarInputs(evento: Record<string, unknown>): void {
     'comprobar-vencidas',
   ]);
 }
+
+test('la solicitud de reanudar exige una nueva reserva a demanda con las fuentes en serie', (t) => {
+  const { construccion } = workflow();
+  const inicio = construccion[0];
+  assert.ok(inicio, 'El trabajo de construcción debe declarar su paso de inicio');
+  const supervisor = paso('ejecutar_mantenimiento ejecutar', construccion);
+  const pasarBandera = objeto(supervisor.env).FARO_REANUDAR_ENTRADAS;
+  assert.equal(pasarBandera, `\${{ inputs.reanudar_entradas && (inputs.a_demanda && 'si' || 'invalido') || 'no' }}`);
+  const f = fixture();
+  t.after(f.limpiar);
+  for (const [job, reanudar, aDemanda, accion, paralelo, resultado] of [
+    ['candidato', 'true', 'true', 'actualizar-datos', 'no', 0],
+    ['candidato', 'true', 'false', 'actualizar-datos', 'no', 1],
+    ['candidato', 'true', 'true', 'actualizar-cursos', 'no', 1],
+    ['candidato', 'true', 'true', 'actualizar-datos', 'si', 1],
+    ['candidato', 'false', 'false', 'comprobar-programada', 'si', 0],
+    ['activacion', 'true', 'true', 'actualizar-datos', 'si', 0],
+  ] as const) {
+    const r = ejecutarShell(texto(inicio.run), f.workspace, {
+      ...entorno(f),
+      ENTRADA_ACCION: accion,
+      ENTRADA_A_DEMANDA: aDemanda,
+      ENTRADA_REANUDAR: reanudar,
+      ENTRADA_ENSAYO: 'ninguno',
+      ENTRADA_SOLICITUD_ID: '',
+      ENTRADA_REVISION_RESERVA: '',
+      GITHUB_JOB: job,
+      REPOSITORIO_EN_PARALELO: paralelo,
+    });
+    assert.equal(r.status, resultado, r.stderr);
+  }
+});
 
 test('workflow separa construcción y activación optativa, con inputs cerrados y sin cola que pierda reservas', () => {
   const { raiz, candidato, activacion, construccion, publicacion, pasos } = workflow();
@@ -397,7 +432,7 @@ test('dispatcher y workflow acuerdan el despacho ordinario y la revalidación pr
     Object.keys(objeto(objeto(cuerpo).inputs)).sort(),
     // El servidor nunca pide un run a demanda: sus despachos dejan `a_demanda` en falso.
     Object.keys(inputs)
-      .filter((k) => k !== 'ensayo' && k !== 'a_demanda')
+      .filter((k) => k !== 'ensayo' && k !== 'a_demanda' && k !== 'reanudar_entradas')
       .sort(),
   );
   assert.equal(objeto(objeto(cuerpo).inputs).revisar_paquete_pendiente, 'true');

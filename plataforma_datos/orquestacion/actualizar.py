@@ -68,18 +68,21 @@ from typing import Literal, NamedTuple
 
 from plataforma_datos.comun import instante_del_ciclo
 from plataforma_datos.comun.entrada_salida import temporal_hermano
-from plataforma_datos.comun.nucleo import ERRORES_CON_MOTIVO, RAIZ
+from plataforma_datos.comun.nucleo import ERRORES_CON_MOTIVO, RAIZ, FormatoInesperado
 from plataforma_datos.cursos.fallos_almacen import codigo_en
+from plataforma_datos.cursos.migracion_admisiones_censos import sellar_legados
 from plataforma_datos.orquestacion import (
     comprobaciones_remotas,
     errores_de_actualizacion,
     ordenes,
+    reanudacion_de_entradas,
     retencion_paquete_cursos,
     sustitucion,
 )
 from plataforma_datos.orquestacion.area_de_ensayo import NO_SE_COPIA as NO_SE_COPIA
 from plataforma_datos.orquestacion.area_de_ensayo import comprobar_area, preparar_area
 from plataforma_datos.orquestacion.area_de_ensayo import es_secreto as es_secreto
+from plataforma_datos.orquestacion.argumentos_de_actualizacion import analizador_de_actualizacion
 from plataforma_datos.orquestacion.cuarentena_del_paquete import (
     CuarentenaImposible,
     aceptar_desde_la_cli,
@@ -285,6 +288,8 @@ class Opciones(NamedTuple):
     forzar_comprobaciones: bool = False
     reintentar_pendientes: bool = False
     revisar_paquete_pendiente: bool = False
+    entradas_recuperadas: Path | None = None
+    punto_de_corte_entradas: Path | None = None
     en_paralelo: bool = False  # adelantar las descargas con red, una cola por servidor; por omisión, en serie
     fuentes_en_serie: tuple[str, ...] = ()  # con en_paralelo, las que descarga la serie como siempre
 
@@ -684,6 +689,17 @@ def ejecutar_modulo(
     return pasos, ResultadoDelModulo(AMBAR, motivo)
 
 
+def _reutilizar_o_ejecutar(
+    raiz: Path, area: Path, modulo: Modulo, ejecutor: Ejecutor, opciones: Opciones
+) -> tuple[list[Paso], ResultadoDelModulo]:
+    if opciones.entradas_recuperadas is not None:
+        recuperada = reanudacion_de_entradas.aplicar_entrada(opciones.entradas_recuperadas, raiz, area, modulo)
+        if recuperada is not None:
+            resultado, observada = recuperada
+            return [Paso(f"{modulo.id} · reutilizar entradas admitidas", 0, 0, observada)], resultado
+    return ejecutar_modulo(raiz, area, modulo, ejecutor, opciones)
+
+
 def revalidar(area: Path, modulo: Modulo, ejecutor: Ejecutor, rutas: tuple[str, ...], raiz: Path) -> bool:
     """Valida otra vez la versión publicada de un módulo con las entradas que acaban de cambiar; deja el área igual.
 
@@ -817,7 +833,7 @@ def _ejecutar_modulos(
             # Lo ya hecho queda registrado; lo que falta no empieza, y el paquete tampoco (`ejecutar_paquete`).
             break
         try:
-            hechos, resultado = ejecutar_modulo(raiz, area, modulo, ejecutor, opciones_modulo)
+            hechos, resultado = _reutilizar_o_ejecutar(raiz, area, modulo, ejecutor, opciones_modulo)
             if (
                 resultado.veredicto == AMBAR
                 and (nuevas or previos.get(modulo.id, {}).get("veredicto") == ROJO)
@@ -848,9 +864,11 @@ def _ejecutar_ronda(
 ) -> tuple[list[Paso], dict[str, ResultadoDelModulo], bool]:
     try:
         pasos, resultados = ejecutar_modulos(raiz, area, ejecutor, opciones, seguimiento)
-        return pasos, resultados, False
     except RondaInterrumpida as error:
         return error.pasos, error.resultados, True
+    if opciones.punto_de_corte_entradas is not None:
+        reanudacion_de_entradas.marcar_y_esperar(opciones.punto_de_corte_entradas, resultados)
+    return pasos, resultados, False
 
 
 def _motivo_del_paso_fallido(paso: Paso) -> ResultadoDelModulo:
@@ -870,6 +888,31 @@ def _comparar_exportacion(raiz: Path, area: Path, exportado: bool) -> Comparacio
                 f"la exportación y su diagnóstico fallaron; conservar el área {area}: {error}"
             ) from error
         raise
+
+
+def publicar_paquete(raiz: Path, area: Path, *, ensayo: bool) -> ResultadoDelModulo:
+    """Instala el paquete dejando los informes de la raíz ligados al catálogo con el que se admitieron.
+
+    Componer sella sus informes dentro del área. El paquete sustituye el catálogo de la raíz, que conserva sus
+    propios informes de fuente. Estos se sellan aquí, mientras la raíz aún conserva las identidades de partida.
+    Ni el registro de los módulos ni las rutas cuya huella representa el paquete cambian por este sellado.
+
+    Returns:
+        El resultado de publicar el paquete con sus rutas habituales.
+
+    Raises:
+        RecuperacionIncompleta: Si la sustitución requiere conservar el área y el diario.
+    """
+    try:
+        if not ensayo:
+            sellar_legados(raiz)
+        return publicar(raiz, area, PAQUETE, RUTAS_DE_LA_ENTREGA, ensayo)
+    except sustitucion.RecuperacionIncompleta:
+        raise
+    except FormatoInesperado as error:
+        return ResultadoDelModulo(AMBAR, f"admisión de censo no reproducible: {error}")
+    except OSError as error:
+        return ResultadoDelModulo(AMBAR, f"no se pudo sustituir: {error}")
 
 
 def ejecutar_paquete(
@@ -914,13 +957,10 @@ def ejecutar_paquete(
         return pasos, comparacion, _motivo_del_paso_fallido(pasos[-1])
     if comparacion.alarmas:
         return pasos, comparacion, ResultadoDelModulo(AMBAR, "; ".join(comparacion.alarmas))
-    try:
-        resultado = publicar(raiz, area, PAQUETE, RUTAS_DE_LA_ENTREGA, opciones.ensayo)
-    except sustitucion.RecuperacionIncompleta:
-        raise
-    except OSError as error:
-        return pasos, comparacion, ResultadoDelModulo(AMBAR, f"no se pudo sustituir: {error}")
-    return pasos, comparacion, motivo_del_paquete(resultado, comparacion)
+    resultado = publicar_paquete(raiz, area, ensayo=opciones.ensayo)
+    if resultado.veredicto == VERDE:
+        resultado = motivo_del_paquete(resultado, comparacion)
+    return pasos, comparacion, resultado
 
 
 # ---------------------------------------------------------------------------------------------------------------------
@@ -1215,6 +1255,8 @@ def _comprobar_opciones(opciones: Opciones) -> None:
         ValueError: Si la configuración externa combina modos o una segunda selección.
     """
     _comprobar_esperas(opciones)
+    if opciones.entradas_recuperadas is not None and (opciones.ensayo or opciones.en_paralelo):
+        raise ValueError("la recuperación de entradas requiere una actualización real en serie")
     if not set(opciones.reutilizar_validado) <= set(opciones.sin_descargar):
         raise ValueError("una fuente que reutiliza su validado no se descarga")
     if type(opciones.revisar_paquete_pendiente) is not bool or (
@@ -1260,43 +1302,7 @@ def main(argv: list[str] | None = None) -> int:
     Returns:
         El código de salida de la actualización; 0 si con --pendientes no hay ningún módulo vencido.
     """
-    analizador = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    analizador.add_argument("--ensayo", action="store_true", help="hacerlo todo menos sustituir lo vigente")
-    seleccion = analizador.add_mutually_exclusive_group()
-    seleccion.add_argument("--pendientes", action="store_true", help="solo los módulos cuyo reintento ha vencido")
-    seleccion.add_argument("--programada", action="store_true", help="consultas oficiales cuya cadencia ha vencido")
-    seleccion.add_argument(
-        "--buscar-actualizaciones",
-        action="store_true",
-        help="comprobar las fuentes automáticas sin esperar su cadencia",
-    )
-    analizador.add_argument("--area", type=Path, help="carpeta (que no exista) para el área de ensayo")
-    analizador.add_argument("--conservar-area", action="store_true", help="no borrar el área al terminar")
-    modo = analizador.add_mutually_exclusive_group()
-    # Las dos opciones comparten destino y argparse toma el valor por omisión de la primera: por eso va explícito.
-    modo.add_argument("--en-serie", dest="en_paralelo", action="store_false", default=False, help="por omisión")
-    modo.add_argument("--en-paralelo", action="store_true", help="adelantar las descargas, una cola por servidor")
-    analizador.add_argument(
-        "--pausa", type=_pausa_de_la_cli, default=PAUSA_ENTRE_FUENTES, help="segundos entre fuentes"
-    )
-    analizador.add_argument(
-        "--sin-descargar",
-        action="append",
-        default=[],
-        choices=ORDEN,
-        metavar="FUENTE",
-        help="no descargar esta fuente esta vez (se usa su copia vigente); se puede repetir",
-    )
-    seleccion.add_argument(
-        "--aceptar-cuarentena",
-        action="append",
-        default=[],
-        metavar="ARCHIVO",
-        help=(
-            "aceptar que un archivo en cuarentena baje hasta las cifras vistas: una ejecución posterior lo publica si "
-            "su versión publicada es la misma, no trae menos entradas ni otra pérdida; no actualiza ahora"
-        ),
-    )
+    analizador = analizador_de_actualizacion(__doc__, PAUSA_ENTRE_FUENTES, _pausa_de_la_cli, ORDEN)
     argumentos = analizador.parse_args(argv)
     if argumentos.aceptar_cuarentena:
         if argumentos.ensayo or argumentos.area or argumentos.conservar_area or argumentos.sin_descargar:

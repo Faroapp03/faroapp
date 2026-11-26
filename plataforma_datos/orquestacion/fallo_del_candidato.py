@@ -10,6 +10,7 @@ función es siempre una función de los dos módulos del motor (`MODULOS_DEL_MOT
 import json
 import re
 import traceback
+from importlib.machinery import ModuleSpec
 from pathlib import Path
 
 from plataforma_datos.comun.entrada_salida import escribir_bytes_entero
@@ -63,15 +64,20 @@ def clase(error: BaseException) -> str:
 def funcion(error: BaseException) -> str:
     """La función del motor más interna de la traza en la que saltó la excepción.
 
-    Un marco cuenta si su código es el de una función definida en uno de `MODULOS_DEL_MOTOR`: las funciones anidadas,
-    el código de otros módulos y los ayudantes que solo lanzan no cuentan.
+    Un marco cuenta si su código es el de una función definida en uno de `MODULOS_DEL_MOTOR`. En la CLI con `-m`,
+    `__main__` conserva el nombre del módulo en su especificación. Las funciones anidadas, el código de otros
+    módulos y los ayudantes que solo lanzan no cuentan.
 
     Returns:
         `modulo.funcion`, sin el guion bajo inicial, u `OTRA` si ningún marco es del motor.
     """
     nombre = OTRA
     for marco, _linea in traceback.walk_tb(error.__traceback__):
-        modulo = MODULOS_DEL_MOTOR.get(marco.f_globals.get("__name__", ""))
+        identidad = marco.f_globals.get("__name__")
+        especificacion = marco.f_globals.get("__spec__")
+        if identidad == "__main__" and isinstance(especificacion, ModuleSpec):
+            identidad = especificacion.name
+        modulo = MODULOS_DEL_MOTOR.get(identidad)
         propia = marco.f_globals.get(marco.f_code.co_name)
         if modulo and getattr(propia, "__code__", None) is marco.f_code and marco.f_code.co_name not in AYUDANTES:
             nombre = f"{modulo}.{marco.f_code.co_name.lstrip('_')}"

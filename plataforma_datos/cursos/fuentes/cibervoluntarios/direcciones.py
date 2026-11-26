@@ -42,7 +42,10 @@ def destino_del_material(valor: object) -> str | None:
     """
     if not isinstance(valor, str):
         return None
-    partes = urlsplit(valor)
+    try:
+        partes = urlsplit(valor)
+    except ValueError:
+        return None
     curso = _DESTINO.fullmatch(partes.query)
     seccion = not partes.fragment or _SECCION.fullmatch(partes.fragment) is not None
     if partes.scheme != "https" or partes.netloc != SERVIDOR_DE_CURSOS or partes.path != "/course/view.php":

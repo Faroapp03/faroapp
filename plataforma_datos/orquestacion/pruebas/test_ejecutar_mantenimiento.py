@@ -52,6 +52,20 @@ class EjecutarMantenimientoTest(unittest.TestCase):
         self.assertEqual(config.variante_cloudflare, "oficial")
         comprobar.assert_called_once_with(self.checkout, "a" * 40)
 
+    def test_reanudacion_de_entradas_explicita_y_solo_para_actualizar_datos(self) -> None:
+        """El workflow puede pedir reanudación; el supervisor conserva cerrados los demás modos."""
+        with patch.object(cli, "_checkout_limpio"):
+            self.assertFalse(cli.configuracion_ejecucion(self.checkout, self.trabajo, self.entorno).reanudar_entradas)
+            opciones = self.entorno | {"FARO_REANUDAR_ENTRADAS": "si", "FARO_ACCION": "actualizar-datos"}
+            self.assertTrue(cli.configuracion_ejecucion(self.checkout, self.trabajo, opciones).reanudar_entradas)
+            for campo in (
+                {"FARO_REANUDAR_ENTRADAS": "invalido"},
+                {"FARO_ACCION": "comprobar-programada"},
+                {"FARO_FUENTES_EN_PARALELO": "si"},
+            ):
+                with self.subTest(campo=campo), self.assertRaises(ValueError):
+                    cli.configuracion_ejecucion(self.checkout, self.trabajo, opciones | campo)
+
     def test_la_raiz_del_ciclo_es_el_candidato_que_crea_el_ejecutor(self) -> None:
         """La instalación donde quedan las lecturas es la misma que el ejecutor prepara para el motor."""
         with patch.object(cli, "_checkout_limpio"):

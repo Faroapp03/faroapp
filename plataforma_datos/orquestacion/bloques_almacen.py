@@ -116,10 +116,18 @@ def _clave_indice(marcador: str) -> str:
     return "agrupaciones/v1/" + marcador.removesuffix(".json") + ".sha256"
 
 
-def guardar_archivos(base: Path, archivos: list[dict[str, Any]], marcador: str, almacen: AlmacenGeneraciones) -> None:
+def guardar_archivos(
+    base: Path,
+    archivos: list[dict[str, Any]],
+    marcador: str,
+    almacen: AlmacenGeneraciones,
+    *,
+    desde_contenidos: int | None = None,
+) -> None:
     """Conserva los bloques y el índice antes de que el llamador publique el marcador original."""
     contenidos = _contenidos(archivos)
-    if len(contenidos) < DESDE_CONTENIDOS or not isinstance(almacen, IndicesInmutables):
+    minimo = DESDE_CONTENIDOS if desde_contenidos is None else desde_contenidos
+    if len(contenidos) < minimo or not isinstance(almacen, IndicesInmutables):
         for c in contenidos:
             almacen.guardar(f"blobs/{c.sha256}", base / c.rutas[0], c.sha256, c.tamano)
         return
@@ -183,10 +191,18 @@ def _leer_indice(origen: Path, texto: bytes, grupos: int, almacen: AlmacenGenera
     return origen.read_bytes()
 
 
-def recuperar_archivos(base: Path, archivos: list[dict[str, Any]], marcador: str, almacen: AlmacenGeneraciones) -> None:
+def recuperar_archivos(
+    base: Path,
+    archivos: list[dict[str, Any]],
+    marcador: str,
+    almacen: AlmacenGeneraciones,
+    *,
+    desde_contenidos: int | None = None,
+) -> None:
     """Recupera usando solo rutas del inventario validado; únicamente un control ausente permite recurrir al legado."""
     contenidos = _contenidos(archivos)
-    if len(contenidos) < DESDE_CONTENIDOS or not isinstance(almacen, IndicesInmutables):
+    minimo = DESDE_CONTENIDOS if desde_contenidos is None else desde_contenidos
+    if len(contenidos) < minimo or not isinstance(almacen, IndicesInmutables):
         _recuperar_legado(base, contenidos, almacen)
         return
     lectura = almacen.leer_control(_clave_indice(marcador), BYTES_SHA * 2)

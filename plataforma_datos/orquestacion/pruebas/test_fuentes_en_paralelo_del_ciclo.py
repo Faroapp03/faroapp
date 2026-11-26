@@ -2,7 +2,7 @@
 
 `FARO_FUENTES_EN_PARALELO=si` en el paso del candidato llega al supervisor (ejecutar_mantenimiento), que pasa
 `--en-paralelo` a la orden del candidato; el candidato lo traduce a `Opciones(en_paralelo=True)`. Sin la variable, o
-con cualquier otro valor, la orden del candidato es exactamente la de siempre. `FARO_FUENTES_EN_SERIE` (vacía por
+con cualquier otro valor, el candidato guarda las entradas y descarga en serie. `FARO_FUENTES_EN_SERIE` (vacía por
 omisión) deja algunas fuentes en serie dentro de un ciclo en paralelo: llega como `--fuente-en-serie`.
 """
 
@@ -76,8 +76,8 @@ class PruebaFuentesEnParaleloDelCiclo(unittest.TestCase):
         orden = del_candidato[0]
         return orden, caso.config.accion, Path(orden[4]), Path(orden[-1])
 
-    def test_sin_la_variable_la_orden_del_candidato_es_la_de_siempre(self) -> None:
-        """En serie: python -m candidato ACCION RAIZ --recibo RECIBO, sin ninguna opción más."""
+    def test_sin_la_variable_la_orden_del_candidato_guarda_entradas_en_serie(self) -> None:
+        """El candidato guarda las entradas también cuando descarga en serie."""
         orden, accion, raiz, recibo = self.orden_del_candidato(en_paralelo=False)
         self.assertEqual(
             orden,
@@ -87,6 +87,7 @@ class PruebaFuentesEnParaleloDelCiclo(unittest.TestCase):
                 "plataforma_datos.orquestacion.candidato",
                 accion,
                 str(raiz),
+                "--guardar-entradas",
                 "--recibo",
                 str(recibo),
             ],
@@ -95,7 +96,7 @@ class PruebaFuentesEnParaleloDelCiclo(unittest.TestCase):
     def test_con_la_variable_la_orden_lleva_en_paralelo(self) -> None:
         """En paralelo, la misma orden con --en-paralelo antes del recibo."""
         orden, accion, raiz, recibo = self.orden_del_candidato(en_paralelo=True)
-        self.assertEqual(orden[3:], [accion, str(raiz), "--en-paralelo", "--recibo", str(recibo)])
+        self.assertEqual(orden[3:], [accion, str(raiz), "--en-paralelo", "--guardar-entradas", "--recibo", str(recibo)])
 
     def test_sin_el_paralelo_la_configuracion_no_admite_fuentes_en_serie(self) -> None:
         """La lista solo acompaña al paralelo: así la orden en serie es siempre la de hoy."""
@@ -111,7 +112,7 @@ class PruebaFuentesEnParaleloDelCiclo(unittest.TestCase):
         self.assertEqual(
             orden[3:],
             [accion, str(raiz), "--en-paralelo", "--fuente-en-serie", "fundae", "--fuente-en-serie", "tich"]
-            + ["--recibo", str(recibo)],
+            + ["--guardar-entradas", "--recibo", str(recibo)],
         )
 
     def test_solo_si_activa_el_paralelo_en_el_supervisor(self) -> None:

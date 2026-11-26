@@ -30,7 +30,7 @@ from pathlib import Path
 from typing import Any
 
 from plataforma_datos.comun.nucleo import RAIZ
-from plataforma_datos.orquestacion import retencion_paquete_cursos
+from plataforma_datos.orquestacion import retencion_paquete_cursos, sustitucion
 from plataforma_datos.orquestacion.actualizar import (
     Ejecutor,
     Opciones,
@@ -39,13 +39,12 @@ from plataforma_datos.orquestacion.actualizar import (
     ejecutar_orden,
     ejecutar_paquete,
     ejecutar_pasos,
-    publicar,
+    publicar_paquete,
 )
 from plataforma_datos.orquestacion.cuarentena_del_paquete import CuarentenaImposible
 from plataforma_datos.orquestacion.estado_de_la_actualizacion import VERDE
 from plataforma_datos.orquestacion.generacion_del_ensayo import exportar_en_local, supervisor_se_detiene
 from plataforma_datos.orquestacion.guardia_sin_red import exigir_sin_red
-from plataforma_datos.orquestacion.modulos import PAQUETE
 from plataforma_datos.orquestacion.ordenes_de_la_actualizacion import (
     COMPONER_EL_CATALOGO,
     COMPROBACIONES,
@@ -54,7 +53,6 @@ from plataforma_datos.orquestacion.ordenes_de_la_actualizacion import (
     EXPORTAR_EL_PAQUETE,
     EXPORTAR_EN_EL_CICLO_OPERATIVO,
     ORDENES_DEL_PAQUETE,
-    RUTAS_DE_LA_ENTREGA,
     Orden,
     ordenes_del_paquete,
 )
@@ -300,10 +298,16 @@ def publicar_y_exportar(repeticion: Path, en_verde: bool) -> dict[str, Any]:
 
     Returns:
         El resultado de la exportación (`generacion_del_ensayo.exportar_en_local`).
+
+    Raises:
+        OSError: Si el paquete no se pudo instalar en el clon candidato.
     """
     candidato = repeticion / "candidato"
     if en_verde:
-        publicar(candidato, repeticion / "area", PAQUETE, RUTAS_DE_LA_ENTREGA, False)
+        with sustitucion.cerrojo(candidato):
+            resultado = publicar_paquete(candidato, repeticion / "area", ensayo=False)
+        if resultado.veredicto != VERDE:
+            raise OSError(resultado.motivo)
     revision = _leer(repeticion / CARPETA_DE_PASOS / CODIGO)["revision"]
     destino = repeticion / "generacion-resultado"
     return exportar_en_local(candidato, destino, revision, "validado" if en_verde else "rechazado")

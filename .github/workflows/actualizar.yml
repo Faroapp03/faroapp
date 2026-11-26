@@ -34,6 +34,10 @@ on:
         description: El propio run pide su reserva al servidor (sin solicitud_id ni revision_reserva y sin ensayo)
         type: boolean
         default: false
+      reanudar_entradas:
+        description: En «actualizar-datos» a demanda, recuperar entradas del último lote compatible del mismo día UTC
+        type: boolean
+        default: false
       revisar_paquete_pendiente:
         description: Revalidar el paquete si quedó un recibo sin intención de publicación
         type: boolean
@@ -80,13 +84,20 @@ jobs:
         timeout-minutes: 1
         env:
           ENTRADA_A_DEMANDA: ${{ inputs.a_demanda }}
+          ENTRADA_ACCION: ${{ inputs.accion }}
           ENTRADA_ENSAYO: ${{ inputs.ensayo }}
+          ENTRADA_REANUDAR: ${{ inputs.reanudar_entradas }}
           ENTRADA_SOLICITUD_ID: ${{ inputs.solicitud_id }}
           ENTRADA_REVISION_RESERVA: ${{ inputs.revision_reserva }}
+          REPOSITORIO_EN_PARALELO: ${{ vars.FARO_FUENTES_EN_PARALELO }}
           ACTIONS_ID_TOKEN_REQUEST_URL: ''
           ACTIONS_ID_TOKEN_REQUEST_TOKEN: ''
         run: |
           date +%s > "$RUNNER_TEMP/inicio-del-job"
+          if [[ "${GITHUB_JOB:-}" == candidato && "$ENTRADA_REANUDAR" == true && ( "$ENTRADA_A_DEMANDA" != true || "$ENTRADA_ACCION" != actualizar-datos || "$REPOSITORIO_EN_PARALELO" == si ) ]]; then
+            echo '::error title=Faro · entradas::Para reanudar las entradas solicita «actualizar-datos» a demanda con las fuentes en serie.'
+            exit 1
+          fi
           if [[ "$ENTRADA_A_DEMANDA" == true ]]; then
             if [[ -n "$ENTRADA_SOLICITUD_ID$ENTRADA_REVISION_RESERVA" || ( -n "$ENTRADA_ENSAYO" && "$ENTRADA_ENSAYO" != ninguno ) ]]; then
               echo '::error title=Faro · entradas::Un run a demanda pide él mismo su reserva: lánzalo sin solicitud_id ni revision_reserva y con el ensayo «ninguno».'
@@ -216,6 +227,7 @@ jobs:
           FARO_SOLICITUD_ID: ${{ inputs.a_demanda && steps.reserva.outputs.solicitud_id || inputs.solicitud_id }}
           FARO_REVISION_RESERVA: ${{ inputs.a_demanda && steps.reserva.outputs.revision_reserva || inputs.revision_reserva }}
           FARO_ACCION: ${{ inputs.accion }}
+          FARO_REANUDAR_ENTRADAS: ${{ inputs.reanudar_entradas && (inputs.a_demanda && 'si' || 'invalido') || 'no' }}
           FARO_REVISAR_PAQUETE_PENDIENTE: ${{ inputs.revisar_paquete_pendiente && vars.FARO_ACTIVACION_AUTOMATICA == 'si' && 'si' || 'no' }}
           # Solo «si» en la variable del repositorio descarga las fuentes en paralelo; sin ella o con otro valor, en serie.
           FARO_FUENTES_EN_PARALELO: ${{ vars.FARO_FUENTES_EN_PARALELO == 'si' && 'si' || 'no' }}

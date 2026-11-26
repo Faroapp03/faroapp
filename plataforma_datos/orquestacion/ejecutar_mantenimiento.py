@@ -28,6 +28,7 @@ from plataforma_datos.orquestacion.ejecutor_operativo import (
     ConfiguracionEjecutorOperativo,
     ejecutar_trabajo,
 )
+from plataforma_datos.orquestacion.reanudacion_de_entradas import ReanudacionNoDisponible
 from plataforma_datos.orquestacion.salud_mantenimiento import diagnostico
 from plataforma_datos.orquestacion.transferir_generacion import configuracion_privada
 
@@ -104,6 +105,9 @@ def configuracion_ejecucion(
     # que se quedan en serie (separadas por comas) solo cuenta con el paralelo: en serie se ignora, aunque exista.
     en_paralelo = entorno.get("FARO_FUENTES_EN_PARALELO") == "si"
     en_serie = entorno.get("FARO_FUENTES_EN_SERIE", "") if en_paralelo else ""
+    reanudar_entradas = entorno.get("FARO_REANUDAR_ENTRADAS", "no")
+    if reanudar_entradas not in ("si", "no"):
+        raise ValueError(ERROR_GENERICO)
     configuracion = ConfiguracionEjecutorOperativo(
         checkout=checkout,
         directorio_trabajo=directorio_trabajo,
@@ -116,6 +120,7 @@ def configuracion_ejecucion(
         variante_cloudflare=variante,
         recuperacion_activacion=recuperacion,
         revisar_paquete_pendiente=entorno.get("FARO_REVISAR_PAQUETE_PENDIENTE") == "si",
+        reanudar_entradas=reanudar_entradas == "si",
         en_paralelo=en_paralelo,
         fuentes_en_serie=tuple(fuente.strip() for fuente in en_serie.split(",") if fuente.strip()),
     )
@@ -263,7 +268,7 @@ def main(argv: list[str] | None = None) -> int:
                     identidad[campo] = valor
             with diario.abrir(argumentos.registro, identidad):
                 resumen = _ejecutar(argumentos, os.environ)
-    except (VarianteNoDeclarada, RechazoSinEfecto) as error:
+    except (VarianteNoDeclarada, RechazoSinEfecto, ReanudacionNoDisponible) as error:
         # Su texto solo nombra la variable que falta o el motivo del rechazo: no contiene rutas, cuerpos ni secretos.
         print(error, file=sys.stderr)
         return 1

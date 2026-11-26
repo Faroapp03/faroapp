@@ -23,7 +23,7 @@ from typing import Any, Literal
 
 from plataforma_datos.comun import instante_del_ciclo
 from plataforma_datos.comun.nucleo import ErrorFuente
-from plataforma_datos.orquestacion import actualizar, fallo_del_candidato
+from plataforma_datos.orquestacion import actualizar, fallo_del_candidato, reanudacion_de_entradas
 from plataforma_datos.orquestacion.almacen_trabajos import ACCIONES, VERSION_RECIBO_CONSERVADOS, conservados_del_estado
 from plataforma_datos.orquestacion.descargas_en_paralelo import TODAS_EN_SERIE, ModoDeLasFuentes
 from plataforma_datos.orquestacion.estado_de_la_actualizacion import ROJO, VERDE
@@ -169,6 +169,8 @@ def ejecutar_candidato(  # noqa: PLR0913
     fuentes: ModoDeLasFuentes = TODAS_EN_SERIE,
     sin_descargar: tuple[str, ...] = (),
     reutilizar_validado: tuple[str, ...] = (),
+    entradas_recuperadas: Path | None = None,
+    punto_de_corte_entradas: Path | None = None,
 ) -> dict[str, Any]:
     """Actualiza solo la raíz candidata explícita y entrega un recibo saneado.
 
@@ -182,6 +184,8 @@ def ejecutar_candidato(  # noqa: PLR0913
             con datos grabados (`ensayo_grabado`) las pasa todas.
         reutilizar_validado: Fuentes que esta vez solo validan su versión vigente, sin preparar; solo las pasa el
             ensayo con datos grabados, para las que su base no trae originales.
+        entradas_recuperadas: Kits privados recuperados por el supervisor.
+        punto_de_corte_entradas: Vínculo local entre las admisiones de la ronda y sus bytes.
 
     Returns:
         Recibo v4 con estado, módulos conservados y proyección privada admitida; no acredita una publicación
@@ -196,7 +200,10 @@ def ejecutar_candidato(  # noqa: PLR0913
             redirect_stderr(diagnostico),
         ):
             opciones = opciones_de_la_accion(accion, revisar_paquete_pendiente, fuentes)._replace(
-                sin_descargar=sin_descargar, reutilizar_validado=reutilizar_validado
+                sin_descargar=sin_descargar,
+                reutilizar_validado=reutilizar_validado,
+                entradas_recuperadas=entradas_recuperadas,
+                punto_de_corte_entradas=punto_de_corte_entradas,
             )
             recibo = _ejecutar(raiz_candidata.resolve(), accion, ejecutor, opciones)
             if recibo["estado"] is not None:
@@ -211,12 +218,15 @@ def ejecutar_candidato(  # noqa: PLR0913
         return {**_recibo(accion, "rechazado", None), "error": "candidato_no_verificable"}
 
 
-def _crear_recibo(
+def _crear_recibo(  # noqa: PLR0913 - El recibo recibe las mismas opciones explícitas que el candidato.
     ruta: Path,
     raiz: Path,
     accion: Accion,
     revisar_paquete_pendiente: bool = False,
     fuentes: ModoDeLasFuentes = TODAS_EN_SERIE,
+    *,
+    entradas_recuperadas: Path | None = None,
+    punto_de_corte_entradas: Path | None = None,
 ) -> dict[str, Any]:
     """Reserva el temporal antes de ejecutar y publica bytes completos sin sobrescribir.
 
@@ -232,7 +242,12 @@ def _crear_recibo(
         temporal = Path(archivo.name)
         try:
             recibo = ejecutar_candidato(
-                raiz, accion, revisar_paquete_pendiente=revisar_paquete_pendiente, fuentes=fuentes
+                raiz,
+                accion,
+                revisar_paquete_pendiente=revisar_paquete_pendiente,
+                fuentes=fuentes,
+                entradas_recuperadas=entradas_recuperadas,
+                punto_de_corte_entradas=punto_de_corte_entradas,
             )
             json.dump(recibo, archivo, ensure_ascii=False, separators=(",", ":"))
             archivo.write("\n")
@@ -258,6 +273,8 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("raiz", type=Path)
     parser.add_argument("--recibo", type=Path, required=True)
     parser.add_argument("--revisar-paquete-pendiente", action="store_true")
+    parser.add_argument("--entradas-recuperadas", type=Path)
+    parser.add_argument("--guardar-entradas", action="store_true")
     parser.add_argument(
         "--en-paralelo", action="store_true", help="descargar las fuentes en paralelo (por omisión, serie)"
     )
@@ -268,12 +285,20 @@ def main(argv: list[str] | None = None) -> int:
     try:
         _exigir(not argumentos.recibo.resolve().is_relative_to(argumentos.raiz.resolve()))
         _exigir(not argumentos.recibo.exists() and not argumentos.recibo.is_symlink())
+        if argumentos.entradas_recuperadas is not None:
+            _exigir(argumentos.accion == "actualizar-datos" and not argumentos.en_paralelo)
+            _exigir(argumentos.entradas_recuperadas == argumentos.recibo.parent / reanudacion_de_entradas.CARPETA)
+        punto_de_corte = (
+            argumentos.recibo.parent / reanudacion_de_entradas.PUNTO_DE_CORTE if argumentos.guardar_entradas else None
+        )
         recibo = _crear_recibo(
             argumentos.recibo,
             argumentos.raiz,
             argumentos.accion,
             argumentos.revisar_paquete_pendiente,
             ModoDeLasFuentes(argumentos.en_paralelo, tuple(argumentos.fuente_en_serie)),
+            entradas_recuperadas=argumentos.entradas_recuperadas,
+            punto_de_corte_entradas=punto_de_corte,
         )
     except (OSError, ValueError):
         print("No se pudo preparar el recibo del candidato.", file=sys.stderr)

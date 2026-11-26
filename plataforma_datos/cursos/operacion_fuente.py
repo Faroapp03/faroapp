@@ -22,11 +22,16 @@ from plataforma_datos.comun.observacion_remota import observar_original
 from plataforma_datos.cursos import (
     admision_catalogo,
     almacen_catalogo,
+    identidades_de_admision,
     recepciones_catalogo,
     recibos_compartidos,
     registro_vigencia,
     trozos_catalogo,
 )
+from plataforma_datos.cursos.controles_de_recepcion import CODIGOS_FALLO_CONSULTA as CODIGOS_FALLO_CONSULTA
+from plataforma_datos.cursos.controles_de_recepcion import FALLOS_POR_UNIDAD, fallo_de_consulta
+from plataforma_datos.cursos.controles_de_recepcion import codigo_de_fallo as codigo_de_fallo
+from plataforma_datos.cursos.controles_de_recepcion import respuestas_interpretables as _respuestas_interpretables
 from plataforma_datos.cursos.fuentes.cibervoluntarios import bajas as bajas_ciber
 from plataforma_datos.cursos.fuentes.cibervoluntarios import direcciones
 from plataforma_datos.cursos.fuentes.cibervoluntarios import lector as ciber
@@ -60,43 +65,8 @@ PENDIENTES_POR_CONJUNTO = frozenset({"claude_academy", "fundae", "cibervoluntari
 # FUNDAE lo trae con el censo de Digitalízate. HP LIFE también da altas y bajas con su índice, pero parte de los cursos
 # ya admitidos: un almacén sin ninguno suyo no se aplica hasta restaurar el almacén conservado.
 CENSO_PROPIO = frozenset({"barcelonactiva", "cibervoluntarios", "claude_academy", "fundae"})
-# Fuentes cuya consulta es una URL por unidad: el fallo de una no anula a las demás.
-FALLOS_POR_UNIDAD = frozenset({"hp_life", "claude_academy"})
 # Fuentes que dicen en su informe de validación qué bajas no han podido confirmar o contradice la evidencia.
 AVISOS = {"hp_life": bajas.avisos, "cibervoluntarios": bajas_ciber.avisos}
-# Respuestas que no contradicen la oferta: el evaluador común las trata como fallo de consulta.
-CODIGOS_FALLO_CONSULTA = frozenset(
-    {
-        HTTPStatus.UNAUTHORIZED,
-        HTTPStatus.FORBIDDEN,
-        HTTPStatus.PROXY_AUTHENTICATION_REQUIRED,
-        HTTPStatus.REQUEST_TIMEOUT,
-        HTTPStatus.TOO_MANY_REQUESTS,
-    }
-)
-
-
-def codigo_de_fallo(http: int | None) -> bool:
-    """Indica si un código HTTP (o su ausencia) es un fallo de consulta, no un hecho de la oferta.
-
-    Returns:
-        True ante transporte sin respuesta, 3xx, 5xx o bloqueos de autenticación o ritmo.
-    """
-    return (
-        http is None
-        or http in CODIGOS_FALLO_CONSULTA
-        or http >= HTTPStatus.INTERNAL_SERVER_ERROR
-        or HTTPStatus.MULTIPLE_CHOICES <= http < HTTPStatus.BAD_REQUEST
-    )
-
-
-def fallo_de_consulta(lectura: ObjetoJson) -> bool:
-    """Clasifica una lectura de unidad como fallo de su consulta.
-
-    Returns:
-        True si no hubo respuesta, fue incompleta o su código es un fallo de consulta.
-    """
-    return "fallo" in lectura or lectura["completo"] is not True or codigo_de_fallo(lectura["http"])
 
 
 def limite_cuerpo(fuente: str) -> int:
@@ -604,7 +574,9 @@ def _unidades_esperadas(
     return nativos, None, None
 
 
-def calcular_recepciones_de_fuente(fuente: str, raiz: Path) -> ObjetoJson:
+def calcular_recepciones_de_fuente(
+    fuente: str, raiz: Path, *, programas: list[ObjetoJson] | ObjetoJson | None = None
+) -> ObjetoJson:
     """Recalcula las recepciones y la procedencia de una fuente a partir de su carpeta de originales.
 
     Returns:
@@ -613,6 +585,12 @@ def calcular_recepciones_de_fuente(fuente: str, raiz: Path) -> ObjetoJson:
     Raises:
         FormatoInesperado: Si la procedencia está vacía o es de otra fuente.
     """
+    if programas is None:
+        programas = conocidos(fuente, raiz)
+    return _calcular_con_identidades(fuente, raiz, programas)
+
+
+def _calcular_con_identidades(fuente: str, raiz: Path, programas: list[ObjetoJson] | ObjetoJson) -> ObjetoJson:
     original, _, _ = rutas_de_la_fuente(fuente, raiz)
     documento = leer_json(original / "procedencia.json")
     exigir(
@@ -622,7 +600,6 @@ def calcular_recepciones_de_fuente(fuente: str, raiz: Path) -> ObjetoJson:
         "Procedencia vacía o ajena",
         FormatoInesperado,
     )
-    programas = conocidos(fuente, raiz)
     if fuente == "barcelonactiva":
         from plataforma_datos.cursos.fuentes.barcelonactiva import adquisicion
 
@@ -694,42 +671,13 @@ def preparar(fuente: str, *, raiz: Path = RAIZ) -> None:
     guardar_json(preparado / "recepciones.json", calcular_recepciones_de_fuente(fuente, raiz))
 
 
-def _respuestas_interpretables(fuente: str, conjunto: ObjetoJson) -> bool:
-    # Un censo incompleto solo se admite como consulta parcial declarada: lo no visto no se lee como ausencia.
-    if fuente == "barcelonactiva" and conjunto.get("censo_completo") is not True and "consulta_parcial" not in conjunto:
-        return False
-    if fuente == "fundae":
-        # Un índice caído no anula los otros: queda como fallo de consulta de sus unidades.
-        caidos = {f["canal"] for f in conjunto["fallos"]}
-        return (
-            all(f["http"] == HTTPStatus.OK or codigo_de_fallo(f["http"]) for f in conjunto["fallos"])
-            and bool(caidos) == ("consulta_parcial" in conjunto)
-            and not caidos & set(conjunto["cobertura"])
-            and set(conjunto["cobertura"]) | caidos == {"catalogos", "digitalizate", "subvencionada"}
-            and all(type(n) is int and n > 0 for n in conjunto["cobertura"].values())
-            and bool({"digitalizate", "subvencionada"} & set(conjunto["cobertura"]))
-            # Tras una siembra no hay entidades que observar: entonces bastan las altas del censo completo.
-            and bool(conjunto["observaciones_catalogo"] or conjunto.get("censo", {}).get("altas"))
-        )
-    # Solo HP tiene un puente revisado para la retirada explícita por 404/410.
-    # Una denegación o redirección no es una comprobación válida de ninguna fuente.
-    admitidos = (HTTPStatus.OK, HTTPStatus.NOT_FOUND, HTTPStatus.GONE) if fuente == "hp_life" else (HTTPStatus.OK,)
-    filas = [*conjunto.get("pendientes", []), *conjunto["recepciones"]]
-    validas = [
-        f["lectura"]["completo"] is True and f["lectura"]["http"] in admitidos and "fallo" not in f["lectura"]
-        for f in filas
-    ]
-    if fuente in FALLOS_POR_UNIDAD:
-        # Un fallo de consulta es la observación de fallo de su unidad, no una lectura inválida.
-        fallos = [fallo_de_consulta(f["lectura"]) for f in filas]
-        return any(validas) and all(v or f for v, f in zip(validas, fallos, strict=True))
-    return bool(validas) and all(validas)
-
-
 def validar(fuente: str, *, raiz: Path = RAIZ) -> None:
     """Ejecuta controles reales y admite su conjunto; no evalúa disponibilidad."""
     original, preparado, validado = rutas_de_la_fuente(fuente, raiz)
-    calculado = calcular_recepciones_de_fuente(fuente, raiz)
+    programas = conocidos(fuente, raiz)
+    if fuente in identidades_de_admision.FUENTES:
+        programas = identidades_de_admision.proyectar(fuente, programas)
+    calculado = calcular_recepciones_de_fuente(fuente, raiz, programas=programas)
     controles = Controles()
     controles.comprobar(
         calculado == leer_json(preparado / "recepciones.json"), "Extracción reproducida desde cuerpos y recibos"
@@ -753,6 +701,8 @@ def validar(fuente: str, *, raiz: Path = RAIZ) -> None:
     exigir(raiz == RAIZ, "Validación operativa requiere el módulo de esa copia", FormatoInesperado)
     if controles.admitido:
         _apartar_anterior(fuente, raiz, calculado)
+        if fuente in identidades_de_admision.FUENTES:
+            informe.update(identidades_de_admision.sellar(fuente, programas))
         ref = {"archivo": "procedencia.json", "sha256": calculado["procedencia_sha256"]}
         contenido = leer_conservado(original, ref)
         # Solo la última admisión necesita su índice exacto. Los recibos/intentos
@@ -925,12 +875,42 @@ def validado_sin_instalar(fuente: str, raiz: Path) -> ObjetoJson | None:
     )
 
 
+def sellar_identidades_historicas(fuente: str, raiz: Path) -> bool:
+    """Reproduce una admisión histórica con el catálogo de partida y conserva su contexto y sus fechas.
+
+    El llamador tiene el cerrojo de la actualización o la exclusividad del área candidata.
+
+    Returns:
+        Verdadero si se amplió el informe tras reproducir el conjunto y comprobar los originales.
+    """
+    exigir(fuente in identidades_de_admision.FUENTES, "Fuente sin contexto de censo", FormatoInesperado)
+    _, _, validado = rutas_de_la_fuente(fuente, raiz)
+    ruta = validado / "validacion.json"
+    if not ruta.exists():
+        return False
+    informe = exigir_admitido(fuente, ruta=ruta)
+    if identidades_de_admision.leer(fuente, informe) is not None:
+        return False
+    programas = identidades_de_admision.proyectar(fuente, conocidos(fuente, raiz))
+    _leer_validado(fuente, raiz, programas)
+    from plataforma_datos.cursos.migracion_admisiones_censos import exigir_informe_fuera_del_paquete
+
+    exigir_informe_fuera_del_paquete(raiz, ruta)
+    ampliado = {**informe, **identidades_de_admision.sellar(fuente, programas)}
+    escribir_atomico(ruta, json.dumps(ampliado, ensure_ascii=False, indent=2) + "\n")
+    return True
+
+
 def leer_validado(fuente: str, raiz: Path) -> ObjetoJson | None:
     """Lee el último conjunto admitido; ausencia no se transforma en una oferta vacía.
 
     Returns:
         Conjunto privado o None si nunca se admitió esa fuente.
     """
+    return _leer_validado(fuente, raiz, None)
+
+
+def _leer_validado(fuente: str, raiz: Path, historicas: identidades_de_admision.Programas | None) -> ObjetoJson | None:
     original, _, validado = rutas_de_la_fuente(fuente, raiz)
     if not (validado / "validacion.json").exists():
         return None
@@ -949,18 +929,24 @@ def leer_validado(fuente: str, raiz: Path) -> ObjetoJson | None:
     procedencia = leer_conservado(
         validado, {"archivo": "procedencia-admitida.json", "sha256": dato["procedencia_sha256"]}
     )
+    if fuente in identidades_de_admision.FUENTES:
+        programas = identidades_de_admision.leer(fuente, informe)
+        if programas is None:
+            programas = conocidos(fuente, raiz) if historicas is None else historicas
     if fuente == "barcelonactiva":
         from plataforma_datos.cursos.fuentes.barcelonactiva import lectura_censo
 
         documento = recibos_compartidos.leer_json(procedencia)
-        coincide = lectura_censo.reproduce(original, documento, conocidos(fuente, raiz), dato)
+        coincide = lectura_censo.reproduce(original, documento, programas, dato)
         exigir(coincide, "Censo Cibernàrium admitido distinto de sus pruebas", FormatoInesperado)
         return dato
     if fuente == "fundae":
         from plataforma_datos.cursos.fuentes.fundae import adquisicion
 
         reproducido = adquisicion.calcular(
-            original, recibos_compartidos.leer_json(procedencia), conocidos(fuente, raiz)
+            original,
+            recibos_compartidos.leer_json(procedencia),
+            programas,
         )
         reproducido["procedencia_sha256"] = dato["procedencia_sha256"]
         exigir(reproducido == dato, "Catálogos FUNDAE admitidos distintos de sus pruebas", FormatoInesperado)
@@ -969,7 +955,9 @@ def leer_validado(fuente: str, raiz: Path) -> ObjetoJson | None:
         from plataforma_datos.cursos.fuentes.cibervoluntarios import adquisicion
 
         reproducido = adquisicion.calcular(
-            original, recibos_compartidos.leer_json(procedencia), conocidos(fuente, raiz)
+            original,
+            recibos_compartidos.leer_json(procedencia),
+            programas,
         )
         # La selección admitida conserva su índice propio, aunque originales ya
         # contenga un intento posterior fallido. Los cuerpos/recibos siguen íntegros.

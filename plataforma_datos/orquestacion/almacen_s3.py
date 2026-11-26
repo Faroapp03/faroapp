@@ -8,8 +8,8 @@ from __future__ import annotations
 
 import hashlib
 import io
+import math
 import os
-import re
 import stat
 import tempfile
 import time
@@ -28,6 +28,32 @@ from urllib3.response import HTTPResponse
 from plataforma_datos.comun.nucleo import FormatoInesperado
 from plataforma_datos.comun.perfil_web import cabeceras_identidad
 from plataforma_datos.comun.red import registrar_redireccion, turno_por_dominio
+from plataforma_datos.orquestacion.claves_almacen_s3 import (
+    CLAVE,
+    CLAVE_CONTROL,
+    CLAVE_ULTIMO_LOTE,
+    REFERENCIA,
+    _clave,
+    _control,
+    _etag,
+    _exigir,
+    _limite,
+)
+from plataforma_datos.orquestacion.claves_almacen_s3 import (
+    CLAVE_ENTRADA as CLAVE_ENTRADA,
+)
+from plataforma_datos.orquestacion.claves_almacen_s3 import (
+    MAX_CONTROL_BYTES as MAX_CONTROL_BYTES,
+)
+from plataforma_datos.orquestacion.claves_almacen_s3 import (
+    MAX_ETAG as MAX_ETAG,
+)
+from plataforma_datos.orquestacion.claves_almacen_s3 import (
+    MAX_OBJETO_BYTES as MAX_OBJETO_BYTES,
+)
+from plataforma_datos.orquestacion.claves_almacen_s3 import (
+    SHA256 as SHA256,
+)
 from plataforma_datos.orquestacion.cliente_s3 import SOCKET_S, crear_cliente
 from plataforma_datos.orquestacion.configuracion_almacen_s3 import (
     ERROR_INVALIDO,
@@ -35,9 +61,7 @@ from plataforma_datos.orquestacion.configuracion_almacen_s3 import (
     ConfiguracionAlmacenS3,
     comprobar_configuracion,
 )
-from plataforma_datos.orquestacion.formas_del_diario import CLAVE_RESUMEN, MAX_RESUMEN
 
-MAX_OBJETO_BYTES = 4 * 1024**3
 TAM_BLOQUE = 64 * 1024
 # Una conexión que lleva más de un minuto sin usarse no se reutiliza. El proveedor o un intermediario pueden haberla
 # cerrado sin avisar, y entonces la primera petición agota SOCKET_S antes de fallar: le pasó al recibo de un ciclo tras
@@ -45,20 +69,6 @@ TAM_BLOQUE = 64 * 1024
 REPOSO_MAXIMO_S = 60
 PLAZO_LECTURA_S = 300
 PLAZO_SUBIDA_S = 300
-SHA256 = re.compile(r"[0-9a-f]{64}")
-CLAVE = re.compile(r"(?:blobs/([0-9a-f]{64})|(?:generaciones|artefactos)/([0-9a-f]{64})\.json)")
-MAX_CONTROL_BYTES = 8192
-MAX_ETAG = 1024
-REFERENCIA = "referencias/mantenimiento.json"
-CLAVE_CONTROL = re.compile(
-    r"(?:referencias/mantenimiento\.json|agrupaciones/v1/(?:generaciones|artefactos)/[0-9a-f]{64}\.sha256|"
-    r"diarios/[1-9][0-9]{0,15}/[1-9][0-9]{0,15}/(?:ejecutar|reanudar|activar|recuperar|reconciliar)\.json|"
-    rf"{CLAVE_RESUMEN.pattern}|"
-    r"inventarios/cursos/v1/[0-9a-f]{64}\.json|evidencias/fundae/v1/[0-9a-f]{64}\.sha256|"
-    r"(?:trabajos|desbloqueos)/"
-    r"[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}/"
-    r"[1-9][0-9]{0,15}/[1-9][0-9]{0,15}\.json)"
-)
 ERROR_DISPONIBILIDAD = "Almacén privado no disponible."
 ERROR_AUSENTE = "El objeto pedido no existe en el almacén privado."
 
@@ -103,36 +113,6 @@ class _CopiaConPlazo(io.BufferedReader):
         bloque = super().read(size)
         _comprobar_plazo(self.plazo)
         return bloque
-
-
-def _exigir(condicion: bool) -> None:
-    if not condicion:
-        raise AlmacenS3Invalido(ERROR_INVALIDO)
-
-
-def _limite(valor: int) -> None:
-    _exigir(type(valor) is int and 0 <= valor <= MAX_OBJETO_BYTES)
-
-
-def _clave(clave: str, sha256: str) -> None:
-    _exigir(isinstance(sha256, str) and SHA256.fullmatch(sha256) is not None)
-    coincidencia = CLAVE.fullmatch(clave) if isinstance(clave, str) else None
-    _exigir(coincidencia is not None and sha256 in coincidencia.groups())
-
-
-def _control(clave: str) -> int:
-    _exigir(isinstance(clave, str) and CLAVE_CONTROL.fullmatch(clave) is not None)
-    if clave.startswith(("trabajos/", "desbloqueos/")):
-        _exigir(all(int(valor) <= 2**53 - 1 for valor in clave.removesuffix(".json").split("/")[2:]))
-    # Solo el resumen del diario supera el tope común de los controles.
-    return MAX_RESUMEN if CLAVE_RESUMEN.fullmatch(clave) else MAX_CONTROL_BYTES
-
-
-def _etag(valor: object) -> None:
-    # Una entidad fuerte única: '*' y listas alterarían la semántica de IfMatch, aunque sean ASCII.
-    _exigir(
-        isinstance(valor, str) and len(valor) <= MAX_ETAG and re.fullmatch(r'"[\x21\x23-\x7e]*"', valor) is not None
-    )
 
 
 def _sin_reenvio(response: tuple | None = None, caught_exception: Exception | None = None, **_opciones: object) -> None:
@@ -185,6 +165,7 @@ class AlmacenS3:
         self._ultimo_envio: str | None = None
         self._ultima_respuesta: AWSResponse | None = None
         self._plazo_peticion: float | None = None
+        self._plazo_lote: float | None = None
         # Cuándo terminó la última petición y si falló por algo que no es una respuesta del almacén.
         self._fin_ultima_peticion: float | None = None
         self._ultima_fallida = False
@@ -202,12 +183,35 @@ class AlmacenS3:
         return f"{prefijo}/{clave}" if prefijo else clave
 
     @contextmanager
+    def limitar_hasta(self, plazo_monotonico: float) -> Iterator[None]:
+        """Acota las operaciones de un lote sin elevar el límite de ninguna de ellas.
+
+        El límite se comprueba antes de tomar turno y de enviar, y se aplica al cuerpo. Una llamada de socket
+        iniciada por el SDK todavía puede consumir su propio timeout.
+
+        Yields:
+            El contexto temporal del mismo cliente y sus guardas de identidad, integridad y cadencia.
+        """
+        _exigir(math.isfinite(plazo_monotonico))
+        anterior = self._plazo_lote
+        self._plazo_lote = min(plazo_monotonico, anterior) if anterior is not None else plazo_monotonico
+        try:
+            yield
+        finally:
+            self._plazo_lote = anterior
+
+    def _plazo_de_operacion(self, segundos: float) -> float:
+        plazo = time.monotonic() + segundos
+        return min(plazo, self._plazo_lote) if self._plazo_lote is not None else plazo
+
+    @contextmanager
     def _peticion(self, clave: str, plazo: float) -> Iterator[None]:
         """Mantiene el turno común hasta cerrar el cuerpo, incluso si falla el parser del SDK.
 
         Yields:
             Permiso para una operación del SDK con todos sus intentos HTTP instrumentados.
         """
+        _comprobar_plazo(plazo)
         url = f"{self._configuracion.endpoint}/{self._configuracion.bucket}/{self._nombre(clave)}"
         with turno_por_dominio(url):
             self._ultimo_envio = None
@@ -301,13 +305,13 @@ class AlmacenS3:
         )
 
     def _descargar(self, clave: str, sha256: str, limite: int, salida: BinaryIO | None) -> int:
-        comienzo = time.monotonic()
-        with self._peticion(clave, comienzo + PLAZO_LECTURA_S):
+        plazo = self._plazo_de_operacion(PLAZO_LECTURA_S)
+        with self._peticion(clave, plazo):
             respuesta = self._cliente.get_object(Bucket=self._configuracion.bucket, Key=self._nombre(clave))
-            return self._leer_respuesta(respuesta, comienzo, limite, salida, sha256)
+            return self._leer_respuesta(respuesta, plazo, limite, salida, sha256)
 
     def _leer_respuesta(
-        self, respuesta: dict, comienzo: float, limite: int, salida: BinaryIO | None, sha256: str | None = None
+        self, respuesta: dict, plazo: float, limite: int, salida: BinaryIO | None, sha256: str | None = None
     ) -> int:
         cuerpo = respuesta["Body"]
         try:
@@ -316,7 +320,7 @@ class AlmacenS3:
             huella = hashlib.sha256()
             total = 0
             while True:
-                restante = comienzo + PLAZO_LECTURA_S - time.monotonic()
+                restante = plazo - time.monotonic()
                 if restante <= 0:
                     raise AlmacenS3NoDisponible(ERROR_DISPONIBILIDAD)
                 # Al llegar a Content-Length, urllib3 puede haber devuelto el socket al pool.
@@ -324,8 +328,7 @@ class AlmacenS3:
                 if total < longitud:
                     cuerpo.set_socket_timeout(min(SOCKET_S, restante))
                 bloque = cuerpo.read(min(TAM_BLOQUE, limite - total + 1))
-                if time.monotonic() - comienzo >= PLAZO_LECTURA_S:
-                    raise AlmacenS3NoDisponible(ERROR_DISPONIBILIDAD)
+                _comprobar_plazo(plazo)
                 if not bloque:
                     break
                 total += len(bloque)
@@ -351,9 +354,9 @@ class AlmacenS3:
         self._comprobar_abierto()
         tope = _control(clave)
         _exigir(type(bytes_maximos) is int and 0 < bytes_maximos <= tope)
-        comienzo = time.monotonic()
+        plazo = self._plazo_de_operacion(PLAZO_LECTURA_S)
         try:
-            with self._peticion(clave, comienzo + PLAZO_LECTURA_S):
+            with self._peticion(clave, plazo):
                 respuesta = self._cliente.get_object(Bucket=self._configuracion.bucket, Key=self._nombre(clave))
                 try:
                     etag = respuesta.get("ETag")
@@ -362,7 +365,7 @@ class AlmacenS3:
                     respuesta["Body"].close()
                     raise
                 with io.BytesIO() as salida:
-                    self._leer_respuesta(respuesta, comienzo, bytes_maximos, salida)
+                    self._leer_respuesta(respuesta, plazo, bytes_maximos, salida)
                     return salida.getvalue(), etag
         except _ControlAusente:
             return None
@@ -383,12 +386,12 @@ class AlmacenS3:
         _exigir(type(contenido) is bytes and 0 < len(contenido) <= tope)
         condicion = {"IfNoneMatch": "*"}
         if etag_esperado is not None:
-            _exigir(clave == REFERENCIA)
+            _exigir(clave == REFERENCIA or CLAVE_ULTIMO_LOTE.fullmatch(clave) is not None)
             _etag(etag_esperado)
             condicion = {"IfMatch": etag_esperado}
         try:
             with (
-                _CopiaConPlazo(io.BytesIO(contenido), time.monotonic() + PLAZO_SUBIDA_S) as cuerpo,
+                _CopiaConPlazo(io.BytesIO(contenido), self._plazo_de_operacion(PLAZO_SUBIDA_S)) as cuerpo,
                 self._peticion(clave, cuerpo.plazo),
             ):
                 self._cliente.put_object(
@@ -417,7 +420,7 @@ class AlmacenS3:
         self._comprobar_abierto()
         _clave(clave, sha256)
         _limite(bytes_esperados)
-        plazo = time.monotonic() + PLAZO_SUBIDA_S
+        plazo = self._plazo_de_operacion(PLAZO_SUBIDA_S)
         try:
             with tempfile.TemporaryFile() as copia:
                 _copiar_origen(origen, copia, sha256, bytes_esperados, plazo)

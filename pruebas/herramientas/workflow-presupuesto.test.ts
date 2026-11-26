@@ -213,6 +213,7 @@ test('el aviso de minutos redondea hacia arriba la duración del job', (t) => {
     RUNNER_TEMP: runner,
     GITHUB_JOB: 'candidato',
     ENTRADA_A_DEMANDA: 'false',
+    ENTRADA_REANUDAR: 'false',
     ENTRADA_ENSAYO: 'ninguno',
     ENTRADA_SOLICITUD_ID: '12345678-1234-4234-8234-123456789abc',
     ENTRADA_REVISION_RESERVA: '7',
