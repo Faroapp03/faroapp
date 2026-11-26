@@ -20,7 +20,7 @@ from plataforma_datos.cursos.fuentes.claude_academy import condiciones_publicada
 from plataforma_datos.cursos.fuentes.hp_life.recepciones import fecha_utc
 from plataforma_datos.cursos.tipos_json import ObjetoJson
 
-METODO = "academy-oferta-publicada-continua:6"
+METODO = "academy-oferta-publicada-continua:7"
 METODO_FALLO = "academy-oferta-publicada-continua:4"
 MUESTRA = re.compile(
     r"^(?:This is|You are viewing) (?:a )?(?:free )?(?:preview|sample) of (?:a |the )?(?:paid )?course\b", re.I
@@ -67,6 +67,54 @@ def _localizador_indice(cuerpo: bytes, meta: ObjetoJson, url: str) -> str:
     )
 
 
+def _precio_formacion(precio: str, publicada: bool, oferta_general: bool) -> bool | None:
+    if precio == "pago":
+        return False
+    if publicada and precio != "incierto" and (precio == "gratis" or oferta_general):
+        return True
+    return None
+
+
+def _formacion(
+    ficha: lector.FichaAcademy,
+    pagina: tuple[bytes, ObjetoJson],
+    indice: tuple[bytes, ObjetoJson],
+    portada: tuple[bytes, ObjetoJson],
+    condiciones: comercio.CondicionesAcademy,
+) -> tuple[ObjetoJson, list[ObjetoJson]]:
+    cuerpo, meta = pagina
+    publicada = ficha.url in acceso.extraer_indice(*indice).urls
+    declaracion = acceso.declaracion_gratuidad(*portada) if publicada else None
+    oferta_general = declaracion is not None and declaracion.texto == acceso.DECLARACION
+    pruebas = [_apoyo(meta, 'link[rel="canonical"]', "identidad"), _apoyo(meta, "main")]
+    gratuita = _precio_formacion(condiciones.precio, publicada, oferta_general)
+    muestra = any(MUESTRA.search(b.texto) for b in ficha.bloques)
+    completo = False if muestra else None
+    indices_curso, indices_precio = [], []
+    if muestra:
+        indices_curso.append(1)
+    elif publicada and condiciones.inscripcion != "incierta":
+        inicio = acceso.enlace_inicio(ficha)
+        temario = acceso.temario_publicado(cuerpo, meta, ficha, inicio) if inicio and not oferta_general else ()
+        if temario or oferta_general:
+            completo = True
+            pruebas.append(_apoyo(indice[1], _localizador_indice(*indice, ficha.url)))
+            indices_curso.extend((1, len(pruebas) - 1))
+            for selector in temario:
+                pruebas.append(_apoyo(meta, selector))
+                indices_curso.append(len(pruebas) - 1)
+    if declaracion is not None and (gratuita is True or (completo and oferta_general)):
+        pruebas.append(_apoyo(portada[1], declaracion.localizador))
+        if gratuita is True:
+            indices_precio.append(len(pruebas) - 1)
+        if completo and oferta_general:
+            indices_curso.append(len(pruebas) - 1)
+    return {
+        "curso_completo": _criterio(completo, indices_curso),
+        "formacion_gratuita": _criterio(gratuita, indices_precio),
+    }, pruebas
+
+
 def construir(original: Path, fila: ObjetoJson, auxiliares: ObjetoJson) -> tuple[lector.FichaAcademy, ObjetoJson]:
     """Construye una comprobación compuesta con cada captura y su fecha propias.
 
@@ -76,37 +124,24 @@ def construir(original: Path, fila: ObjetoJson, auxiliares: ObjetoJson) -> tuple
     """
     cuerpo, meta = comun.pagina_academy(original, fila)
     ficha = lector.extraer_ficha(cuerpo, meta, url_esperada=meta["url_solicitada"])
-    indice = acceso.extraer_indice(*comun.pagina_academy(original, auxiliares["indice"]))
-    portada_cuerpo, portada_meta = comun.pagina_academy(original, auxiliares["portada"])
-    declaracion = acceso.declaracion_gratuidad(portada_cuerpo, portada_meta)
+    condiciones = comercio.examinar(cuerpo, ficha)
+    criterios, pruebas = _formacion(
+        ficha,
+        (cuerpo, meta),
+        comun.pagina_academy(original, auxiliares["indice"]),
+        comun.pagina_academy(original, auxiliares["portada"]),
+        condiciones,
+    )
     inicio = acceso.enlace_inicio(ficha)
     leccion = adquisicion.interpretar_leccion(original, fila, ficha)
-    pruebas = [_apoyo(meta, 'link[rel="canonical"]', "identidad"), _apoyo(meta, "main")]
-    condiciones = comercio.examinar(cuerpo, ficha)
-    precio = True if condiciones.precio == "pago" else None if condiciones.precio == "incierto" else False
-    muestra = any(MUESTRA.search(b.texto) for b in ficha.bloques)
-    cierre_dudoso = condiciones.inscripcion == "incierta"
-    publicada = ficha.url in indice.urls
-    positiva = declaracion is not None and publicada
-    criterios = {
-        "curso_completo": _criterio(False if muestra else True if positiva and not cierre_dudoso else None, [1]),
-        "formacion_gratuita": _criterio(
-            False if precio is True else True if positiva and precio is False else None, [1]
-        ),
-        "cta_identificado": _criterio(True if inicio is not None else None, [1]),
-        "destino_identificado": _criterio(True if leccion is not None else None, []),
-        "destinatarios_constatados": _criterio(True if ficha.destinatarios is not None else None, []),
-        "requisitos_constatados": _criterio(True if ficha.requisitos is not None else None, []),
-    }
-    if positiva:
-        indice_cuerpo, indice_meta = comun.pagina_academy(original, auxiliares["indice"])
-        pruebas.append(_apoyo(indice_meta, _localizador_indice(indice_cuerpo, indice_meta, ficha.url)))
-        criterios["curso_completo"]["apoyos"].append(len(pruebas) - 1)
-        pruebas.append(_apoyo(portada_meta, declaracion.localizador))
-        if precio is False:
-            criterios["formacion_gratuita"]["apoyos"] = [len(pruebas) - 1]
-        if not muestra:
-            criterios["curso_completo"]["apoyos"].append(len(pruebas) - 1)
+    criterios.update(
+        {
+            "cta_identificado": _criterio(True if inicio is not None else None, [1]),
+            "destino_identificado": _criterio(True if leccion is not None else None, []),
+            "destinatarios_constatados": _criterio(True if ficha.destinatarios is not None else None, []),
+            "requisitos_constatados": _criterio(True if ficha.requisitos is not None else None, []),
+        }
+    )
     if inicio is not None:
         pruebas.append(_apoyo(meta, inicio.localizador))
         criterios["cta_identificado"]["apoyos"] = [len(pruebas) - 1]
@@ -122,8 +157,6 @@ def construir(original: Path, fila: ObjetoJson, auxiliares: ObjetoJson) -> tuple
             pruebas.append(_apoyo(meta, bloque.localizador))
             criterios[nombre]["apoyos"].append(len(pruebas) - 1)
     _apoyos_comerciales(meta, condiciones, pruebas, criterios)
-    # El índice sirve para descubrir; una ausencia no se convierte en cierre.
-    comun.exigir(bool(indice.urls), "Índice Academy sin identidades")
     capturas = [fila, auxiliares["indice"], auxiliares["portada"]]
     if isinstance(fila.get("leccion"), dict):
         capturas.append(fila["leccion"])
@@ -161,7 +194,9 @@ def _apoyos_comerciales(
         if apoyo not in pruebas:
             pruebas.append(apoyo)
         indice = pruebas.index(apoyo)
-        if declaracion["campo"] == "precio" and condiciones.precio in ("pago", "incierto"):
+        if declaracion["campo"] == "precio" and (
+            condiciones.precio in ("pago", "incierto") or criterios["formacion_gratuita"]["valor"] is True
+        ):
             indices = criterios["formacion_gratuita"]["apoyos"]
             if indice not in indices:
                 indices.append(indice)

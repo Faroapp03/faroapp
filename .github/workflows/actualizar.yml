@@ -55,7 +55,9 @@ env:
   # Tope del job del candidato: lo que el supervisor necesita para el último ciclo completo medido, con su margen, más
   # la preparación del job. La prueba de contrato del presupuesto lo deriva del plazo del motor y de él saca el límite
   # del servidor; de él sale aquí el plazo del supervisor.
-  FARO_TOPE_CANDIDATO_MINUTOS: &tope_candidato 324
+  # Con el motor de 290 minutos: 13 antes del motor, 290 del motor, 20 después y 36 de preparación, 359; GitHub corta
+  # cualquier job a los 360.
+  FARO_TOPE_CANDIDATO_MINUTOS: &tope_candidato 359
   # Instala Chromium para el humo de datos del ciclo («si» o «no»); con «no» el supervisor recupera sus 6 minutos.
   FARO_NAVEGADORES_EN_EL_CICLO: si
 
@@ -167,7 +169,7 @@ jobs:
           # Del tope del candidato se reservan 1 minuto para anotar el inicio, 2 para Git, 6 para Chromium si se
           # instala, 1 para anunciar los minutos y 6 para el propio runner y la salida. La causa de un fallo de Chromium
           # se anota solo cuando el supervisor ya no va a correr, así que usa sus minutos.
-          # Con 324 y el bootstrap completo quedan 288 minutos (294 sin navegadores). Una caché caliente devuelve hasta 15.
+          # Con 359 y el bootstrap completo quedan 323 minutos (329 sin navegadores). Una caché caliente devuelve hasta 15.
           # Un run a demanda toma de esos 6 minutos, como mucho, el que tiene para pedir su reserva.
           if [[ ! "$FARO_NAVEGADORES_EN_EL_CICLO" =~ ^(si|no)$ ]]; then
             echo 'FARO_NAVEGADORES_EN_EL_CICLO solo admite «si» o «no».' >&2

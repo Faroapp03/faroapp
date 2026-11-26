@@ -3,6 +3,7 @@
 import contextlib
 import io
 import json
+import math
 import os
 import tempfile
 import time
@@ -13,6 +14,7 @@ from unittest import mock
 from plataforma_datos.orquestacion import actualizar, candidato, medidas_del_ciclo
 from plataforma_datos.orquestacion import diario_mantenimiento as diario
 from plataforma_datos.orquestacion import hora_limite_del_motor as hora
+from plataforma_datos.orquestacion import ordenes_de_la_actualizacion as ordenes
 from plataforma_datos.orquestacion.modulos import MODULOS, PAQUETE
 from plataforma_datos.orquestacion.pruebas.test_candidato import EjecutorCandidato, preparar
 
@@ -20,7 +22,7 @@ AHORA = 1_800_000_000.0
 
 
 class HoraLimitePruebas(unittest.TestCase):
-    """Lo que queda se compara con lo medido para el paquete, con su margen."""
+    """Lo que queda se compara con la reserva del paquete."""
 
     def setUp(self) -> None:
         """Una raíz vacía donde anotar la parada."""
@@ -38,11 +40,19 @@ class HoraLimitePruebas(unittest.TestCase):
         self.assertTrue(hora.queda_tiempo(self.raiz, "formacion", entorno={}))
         self.assertIsNone(hora.leer_parada(self.raiz))
 
-    def test_lo_necesario_es_el_paquete_medido_en_el_runner_lento_con_su_margen(self) -> None:
-        """Con lo justo para el paquete en el runner lento y su margen empieza; con un segundo menos, no."""
-        self.assertEqual(hora.NECESARIO_S, round(medidas_del_ciclo.PAQUETE_EN_EL_RUNNER_LENTO_S * hora.MARGEN))
+    def test_lo_necesario_es_la_reserva_del_paquete(self) -> None:
+        """Con lo justo para la reserva del paquete empieza; con un segundo menos, no."""
+        self.assertEqual(hora.NECESARIO_S, math.ceil(medidas_del_ciclo.RESERVA_DEL_PAQUETE_S))
         self.assertTrue(self._queda("formacion", hora.NECESARIO_S))
         self.assertFalse(self._queda("formacion", hora.NECESARIO_S - 1))
+
+    def test_empieza_solo_si_caben_componer_hasta_su_tope_y_las_otras_fases_con_su_margen(self) -> None:
+        """La guardia aplica la misma reserva que el plazo del motor: el tope entero de componer y lo demás medido."""
+        m = medidas_del_ciclo
+        peor_caso = ordenes.COMPONER_EL_CATALOGO.tope + m.OTRAS_FASES_EN_EL_RUNNER_LENTO_S * m.MARGEN
+        self.assertTrue(self._queda(PAQUETE, math.ceil(peor_caso)))
+        self.assertFalse(self._queda(PAQUETE, math.ceil(peor_caso) - 1))
+        self.assertEqual(hora.leer_parada(self.raiz)["necesariosSegundos"], math.ceil(peor_caso))
 
     def test_la_primera_parada_es_la_que_se_conserva(self) -> None:
         """El módulo que no empezó es la parada; el paquete, que tampoco empieza después, no la sustituye."""
@@ -50,7 +60,7 @@ class HoraLimitePruebas(unittest.TestCase):
         self.assertFalse(self._queda(PAQUETE, 590))
         self.assertEqual(
             hora.leer_parada(self.raiz),
-            {"causa": "plazo-insuficiente", "paso": "formacion", "quedanSegundos": 600, "necesariosSegundos": 7006},
+            {"causa": "plazo-insuficiente", "paso": "formacion", "quedanSegundos": 600, "necesariosSegundos": 8904},
         )
 
     def test_una_hora_limite_o_una_parada_sin_su_forma_no_se_admiten(self) -> None:

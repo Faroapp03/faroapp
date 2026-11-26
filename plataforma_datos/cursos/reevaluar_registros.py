@@ -140,7 +140,13 @@ def _reproduce_ficha(db: sqlite3.Connection, obs: dict, oferta: dict, cuerpo: by
     if not (detalle["url_final"] == obs["url_consultada"] == url and _vinculo_programa(programa, oferta, historial)):
         return False
     try:
-        lectura = ficha_edicion.contrastar(cuerpo, id=id, titulo=programa["titulo"], edicion=edicion)
+        lectura = ficha_edicion.contrastar(
+            cuerpo,
+            id=id,
+            titulo=programa["titulo"],
+            edicion=edicion,
+            historica=obs["id"].startswith(contraste_ediciones.PREFIJO_ANTERIOR),
+        )
     except (UnicodeDecodeError, FormatoInesperado):
         return False
     if not lectura.identificada:
@@ -179,7 +185,7 @@ class _Soportes:
 
     def fallo_transitorio(self, obs: dict, oferta: dict) -> bool:
         if (
-            not obs["id"].startswith(contraste_ediciones.PREFIJO)
+            not obs["id"].startswith(contraste_ediciones.PREFIJOS)
             or obs["detalle"].get("motivo") != "ficha_individual_sin_respuesta_valida"
             or len(obs["evidencias"]) != 1
             or obs["url_consultada"] != ficha_edicion.url(oferta["id"].removeprefix("cibernarium-edicion:"))
@@ -222,7 +228,7 @@ class _Soportes:
             if len(huellas) != 1:
                 return False
             cuerpo = self.cuerpo(next(iter(huellas)))
-            if o["id"].startswith(contraste_ediciones.PREFIJO):
+            if o["id"].startswith(contraste_ediciones.PREFIJOS):
                 if not _reproduce_ficha(db, o, oferta, cuerpo, observaciones):
                     return False
             elif not _reproduce_matricula(o, oferta, cuerpo):

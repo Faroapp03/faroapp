@@ -158,12 +158,21 @@ class _Lector(HTMLParser):
         self.fragmentos: list[str] = []
         self.bloques: list[_Bloque] = []
         self.regiones: list[_Bloque] = []
+        self.inactivos: set[str] = set()
         self.articulos: list[_Bloque] = []
         self.titulos: list[str] = []
         self.canonical: list[str | None] = []
         self.identidades: list[str | None] = []
         self.rutas_de_curso: list[str | None] = []
         self.cierres: set[str] = set()
+
+    def disponible(self, bloque: _Bloque) -> bool:
+        """Comprueba si el enlace o control pertenece a un elemento inactivo.
+
+        Returns:
+            True si el propio nodo y sus ancestros permiten usar el control.
+        """
+        return not any((bloque.ruta + "/").startswith(ruta + "/") for ruta in self.inactivos)
 
     def _cabecera(self, tag: str, atributos: dict[str, str | None]) -> None:
         if tag == "link" and "canonical" in (atributos.get("rel") or "").split():
@@ -185,6 +194,13 @@ class _Lector(HTMLParser):
             numero = padre.hijos.get(tag, 0) + 1
             padre.hijos[tag] = numero
         ruta = f"{padre.ruta if padre else ''}/{tag}[{numero}]"
+        if (
+            tag in IGNORADOS
+            or {"hidden", "inert", "disabled"}.intersection(atributos)
+            or (atributos.get("aria-hidden") or "").casefold() == "true"
+            or (atributos.get("aria-disabled") or "").casefold() == "true"
+        ):
+            self.inactivos.add(ruta)
         if tag in SEPARADORES and self._dentro(frozenset({"main"})):
             self.fragmentos.append("\n")
         if tag not in VACIOS:
@@ -209,7 +225,9 @@ class _Lector(HTMLParser):
         dentro = self._dentro(frozenset({"main"}))
         while self.pila:
             marco = self.pila.pop()
-            if dentro and (marco.atributos.get("id") or marco.tag == "details" or "itemscope" in marco.atributos):
+            if dentro and (
+                marco.atributos.get("id") or marco.tag in {"details", "nav"} or "itemscope" in marco.atributos
+            ):
                 self.regiones.append(
                     _Bloque(marco.tag, marco.atributos, marco.ruta, marco.inicio, len(self.fragmentos), marco.posicion)
                 )
@@ -403,7 +421,7 @@ def extraer_ficha(cuerpo: bytes, metadatos: Mapping[str, object], *, url_esperad
     enlaces = tuple(
         EnlaceAcademy(_plano("".join(lector.fragmentos[b.inicio : b.fin])), b.atributos["href"], _localizador(b))
         for b in bloques
-        if b.tag == "a" and b.atributos.get("href")
+        if b.tag == "a" and b.atributos.get("href") and lector.disponible(b)
     )
     evidencias = tuple(
         _evidencia(_plano("".join(lector.fragmentos[b.inicio : b.fin])), b) for b in bloques if b.tag != "a"

@@ -196,6 +196,38 @@ class ReevaluacionPruebas(unittest.TestCase):
                 with self.subTest(campo=campo):
                     self.assertFalse(soportes.reproducibles([alterada], oferta, db))
 
+    def test_el_mismo_recibo_reproduce_la_lectura_sellada_y_la_nueva_sin_mezclarlas(self) -> None:
+        """Una ficha releída cambia de interpretación conservando su anterior identidad y selectores."""
+        from plataforma_datos.cursos.fuentes.barcelonactiva import contraste_ediciones, ficha_edicion
+
+        b = barcelona.AplicacionCibernarium()
+        b.setUp()
+        self.addCleanup(b.doCleanups)
+        url = ficha_edicion.url("456")
+        cuerpo = (
+            f'<meta property="og:url" content="{url}"><meta property="og:title" content="Activitat 123">'
+            '<div id="edicionesList"><div class="item-ediciones izq item1">'
+            '<li class="activity-session-date">Diumenge 25 d’octubre, 10:00h - 12:00h</li>'
+            '<div class="dates">Dates: del 25/10/2026 al 25/10/2026</div>'
+            '<span class="no-places">Sense places</span></div></div>'
+        ).encode()
+        cap = barcelona.rx._captura(b.original, url, cuerpo, id="cibernarium-edicion:456")
+        _, nueva = contraste_ediciones.observar(b.original, cap, b.programa["titulo"], b.edicion)
+        self.assertEqual(nueva["detalle"]["datos_edicion"]["estado_inscripcion"], "sin-plazas")
+        antigua = deepcopy(nueva)
+        antigua["id"] = nueva["id"].replace(contraste_ediciones.PREFIJO, contraste_ediciones.PREFIJO_ANTERIOR, 1)
+        self.assertNotEqual(antigua["id"], nueva["id"])
+        antigua["detalle"]["datos_edicion"] = None
+        antigua["evidencias"].pop()
+        antigua["evidencias"][-1]["localizador"]["valor"] = "#edicionesList .item-ediciones.izq.item1"
+        refs = {cap["cuerpo"]["sha256"]: b.ref(b.original / cap["cuerpo"]["archivo"])}
+        oferta = {"fuente_id": "barcelonactiva", "id": b.edicion["id"], "url": b.programa["url"]}
+        soportes = reevaluar_registros._Soportes(refs)
+        with catalogo.abrir_lectura(b.base) as db:
+            self.assertTrue(soportes.reproducibles([antigua, nueva], oferta, db))
+            antigua["detalle"]["datos_edicion"] = nueva["detalle"]["datos_edicion"]
+            self.assertFalse(soportes.reproducibles([antigua], oferta, db))
+
     def test_toma_tambien_un_cierre_recuperado_en_un_corte_anterior(self) -> None:
         """Un hecho llegado tarde al registro cuenta aunque falte en la última lista firmada."""
         self.registrar()

@@ -105,7 +105,8 @@ def declaracion_gratuidad(cuerpo: bytes, meta: Mapping[str, object]) -> lector.E
     """Reconoce una declaración completa del proveedor, sin buscar una mera subcadena.
 
     Returns:
-        Prueba de gratuidad declarada de formación, o None si la declaración cambió.
+        Declaración general o resumen público reconocido, con su texto literal.
+        El resumen requiere una declaración de precio en la ficha del curso.
         No acredita precio de prácticas, productos, certificados o admisión personal.
     """
     pagina, _prueba = _documento(cuerpo, meta, PORTADA)
@@ -117,7 +118,78 @@ def declaracion_gratuidad(cuerpo: bytes, meta: Mapping[str, object]) -> lector.E
     precios_formacion = [b for b in bloques if PRECIO.search(b.texto) and FORMACION.search(b.texto)]
     if any(b.texto not in (DECLARACION, RESUMEN_GRATUIDAD) for b in precios_formacion):
         return None
-    return next((b for b in precios_formacion if b.texto == DECLARACION), None)
+    return next(
+        (b for b in precios_formacion if b.texto == DECLARACION), precios_formacion[0] if precios_formacion else None
+    )
+
+
+def _numero_de_entradas(pagina: lector._Lector, titulo: str) -> tuple[int, str] | None:
+    patron = re.compile(
+        r"Show course lessons\. "
+        + re.escape(titulo)
+        + r" — ([1-9]\d{0,3}) lessons?(?: · ([1-9]\d{0,3}) (?:quiz|quizzes))?"
+    )
+    botones = [
+        (m, lector._localizador(b))
+        for b in pagina.bloques
+        if b.tag == "button"
+        and (m := patron.fullmatch(b.atributos.get("aria-label") or ""))
+        and pagina.disponible(b)
+        and lector._parrafo_del_curso(pagina, b)
+    ]
+    if len(botones) != 1:
+        return None
+    cuenta, selector = botones[0]
+    return int(cuenta[1]) + int(cuenta[2] or 0), selector
+
+
+def _destinos_del_temario(pagina: lector._Lector, temario: lector._Bloque, url: str) -> set[str]:
+    destinos = set()
+    for b in pagina.bloques:
+        if b.tag != "a" or not b.ruta.startswith(temario.ruta + "/"):
+            continue
+        href = b.atributos.get("href")
+        if not href or not pagina.disponible(b):
+            return set()
+        try:
+            destino = urljoin(url, href)
+        except ValueError:
+            return set()
+        if not re.fullmatch(re.escape(url) + r"/[a-z0-9]+(?:-[a-z0-9]+)*", destino):
+            return set()
+        texto = lector._plano("".join(pagina.fragmentos[b.inicio : b.fin]))
+        etiqueta = "".join(c for c in texto if unicodedata.category(c) != "Co").strip()
+        if (destino, etiqueta) in (
+            (url + "/badge", "Completion badge"),
+            (url + "/complete", "Course complete"),
+        ):
+            continue
+        if not etiqueta or destino in destinos:
+            return set()
+        destinos.add(destino)
+    return destinos
+
+
+def temario_publicado(
+    cuerpo: bytes, meta: Mapping[str, object], ficha: lector.FichaAcademy, inicio: lector.EnlaceAcademy
+) -> tuple[str, ...]:
+    """Acredita el temario que ofrece la ficha con la cuenta y los enlaces del mismo curso.
+
+    Returns:
+        Localizadores del recuento y el programa si coinciden, o una tupla vacía ante una duda.
+    """
+    pagina, _ = _documento(cuerpo, meta, ficha.url)
+    cuenta = _numero_de_entradas(pagina, ficha.titulo)
+    temarios = [r for r in pagina.regiones if r.tag == "nav" and r.atributos.get("aria-label") == "Course outline"]
+    if cuenta is None or len(temarios) != 1:
+        return ()
+    if not pagina.disponible(temarios[0]) or not lector._parrafo_del_curso(pagina, temarios[0]):
+        return ()
+    temario = temarios[0]
+    destinos = _destinos_del_temario(pagina, temario, ficha.url)
+    if len(destinos) != cuenta[0] or inicio.href not in destinos:
+        return ()
+    return cuenta[1], lector._localizador(temario)
 
 
 def enlace_inicio(ficha: lector.FichaAcademy) -> lector.EnlaceAcademy | None:
@@ -131,8 +203,11 @@ def enlace_inicio(ficha: lector.FichaAcademy) -> lector.EnlaceAcademy | None:
         texto = "".join(c for c in enlace.texto if unicodedata.category(c) != "Co").strip()
         if texto != "Start course":
             continue
-        url = urljoin(ficha.url, enlace.href)
-        partes = urlsplit(url)
+        try:
+            url = urljoin(ficha.url, enlace.href)
+            partes = urlsplit(url)
+        except ValueError:
+            continue
         ruta = LECCION.fullmatch(partes.path)
         if (
             partes.scheme == "https"

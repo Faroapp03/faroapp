@@ -125,8 +125,8 @@ La reserva consume el instante lógico del evento en la misma transacción que e
 monotónica impide repetirlo después de un reinicio, de otro trabajo o de una respuesta perdida. Los eventos
 de más de seis horas se omiten; no se ejecuta una cola de días atrasados. Solo una reserva nueva autoriza un despacho.
 
-Cada evento comprueba antes de omitirse si el último trabajo ha dejado de estar en plazo. La reserva dura 384
-minutos desde su creación. Los tres jobs (construcción, activación y aviso) pueden sumar hasta 371 minutos de
+Cada evento comprueba antes de omitirse si el último trabajo ha dejado de estar en plazo. La reserva dura 419
+minutos desde su creación. Los tres jobs (construcción, activación y aviso) pueden sumar hasta 406 minutos de
 ejecución y quedan 13 minutos de margen para las colas de GitHub y el desfase de relojes.
 
 - Una reserva vencida sin permiso de inicio, como la de un despacho incierto por un 5xx o un tiempo agotado,
@@ -407,7 +407,7 @@ Después, el paquete nuevo se compara con el vigente y pasa por la cuarentena. L
 cotejan sus artefactos (`npm run web:preparar`). Por último, `npm run verificar:datos` (scripts/verificar-datos.ts)
 ejecuta la comprobación de la base ESCO, los controles que leen `datos/` o `web/datos/` y las pruebas de Node y de
 Python que abren el paquete real, el almacén validado o la web construida con él. El paso dispone de 85 minutos.
-En el ciclo programado, la comprobación de humo de los datos abre Chromium. Componer Cursos dispone de 60 minutos
+En el ciclo programado, la comprobación de humo de los datos abre Chromium. Componer Cursos dispone de 90 minutos
 y el tope general de las órdenes es de 45.
 Un dato corrompido detiene el ciclo igual que detendría la batería completa:
 `pruebas/herramientas/verificar-datos.test.ts` lo comprueba con un archivo alterado. Las pruebas de navegador y las
@@ -629,9 +629,8 @@ Los jobs de construcción y de activación conceden `contents: read` e `id-token
 [abajo](#aviso-cuando-la-actualización-falla-o-termina-sin-publicar), solo `issues: write`. La reserva y el permiso de inicio del servidor
 controlan la exclusión entre trabajos. Los runs a demanda y los ensayos comparten además el grupo de concurrencia
 `faro-actualizar-manual`, que impide que se solapen entre sí; los runs que despacha el servidor van cada uno en su
-propio grupo y nunca esperan ni se cancelan por él. El repositorio es privado y cada job descuenta sus minutos de la cuota
-gratuita mensual de GitHub, así que cada uno tiene un tope acorde con ese presupuesto. El job del candidato
-dispone de hasta 323 minutos, fijados en la variable `FARO_TOPE_CANDIDATO_MINUTOS` del workflow. El checkout
+propio grupo y nunca esperan ni se cancelan por él. Cada job tiene su propio tope. El job del candidato
+dispone de hasta 359 minutos, fijados en la variable `FARO_TOPE_CANDIDATO_MINUTOS` del workflow. El checkout
 admite dos minutos, las dependencias veinte y Chromium trece; Chromium solo se instala si la variable
 `FARO_NAVEGADORES_EN_EL_CICLO` del workflow vale `si`. El ciclo instala solo Chromium, el único motor que abre (en el
 humo de datos); calidad instala los tres. Los trece minutos son la preparación con éxito más lenta medida (643
@@ -639,20 +638,19 @@ segundos de 39, con mediana de 66) con el margen del 20 %, y `pruebas/herramient
 los deriva de esa medida. APT corta en 4 segundos una conexión que deja de enviar datos y reintenta cada paquete
 hasta seis veces: en el ciclo del 24/11/2026, que agotó el paso con un espejo lento, cada conexión atascada esperaba 30
 segundos y la siguiente descarga empezaba en 2,6 como mucho, y 14 de 65 descargas fallaron. El preparador comprueba
-con `apt-config` que APT usa esos valores antes de instalar nada. El supervisor dispone de 288 a 303 minutos según el
-tiempo consumido al preparar las dependencias, y de 294 a 309 sin navegadores. El presupuesto reserva 13 minutos
-antes del motor, principalmente para descargar y restaurar la base, y hasta 255 para el motor. Cuenta otros
+con `apt-config` que APT usa esos valores antes de instalar nada. El supervisor dispone de 323 a 338 minutos según el
+tiempo consumido al preparar las dependencias, y de 329 a 344 sin navegadores. El presupuesto reserva 13 minutos
+antes del motor, principalmente para descargar y restaurar la base, y hasta 290 para el motor. Cuenta otros
 20 minutos repartidos en cinco para lectura de la generación, cinco para exportar el artefacto, cinco para
 conservarlo y cinco para el recibo. En R2, los plazos del adaptador se aplican a las operaciones sobre cada objeto.
 El plazo total del supervisor engloba todas estas fases. Los plazos
 salen de `plataforma_datos/orquestacion/medidas_del_ciclo.py`, con un margen del 20 %. Antes del motor se midieron
 10 minutos y 33 segundos en el ciclo 45698389914, el 25/11/2026. Las fuentes del último ciclo real completo
-tardaron 115,0 minutos el 22/11/2026. Esperan sobre todo a la red y se cuentan tal cual. Para el paquete se usan
-las medidas en el Mac, con 23,95 minutos para componer Cursos en el ensayo integrado del 25/11/2026. El cálculo
-lleva cada fase al runner de GitHub más lento medido con su factor: 2,03 para Python y 3,44 para Node. En ese runner
-la composición proyecta 48,6 minutos y el
-paquete 97,3. Con el margen del 20 % y redondeo hacia arriba a cinco minutos, el tope de composición es 60
-y el del motor 255. Antes de cada módulo y antes del paquete, el motor exige 7.006 segundos para el paquete.
+tardaron 115,0 minutos el 22/11/2026. Esperan sobre todo a la red y se cuentan tal cual. La composición tardó 56 minutos y 45 segundos en el ciclo 45859673175 del 26/11/2026.
+El paquete reserva los 90 minutos completos de composición y 48,7 minutos proyectados para sus demás fases,
+con un margen del 20 % sobre estas últimas. La proyección usa los factores medidos del ejecutor lento de GitHub,
+2,03 para Python y 3,44 para Node. Antes de cada módulo y antes del paquete, el motor exige 8.904 segundos
+para el paquete. El tope del motor, redondeado hacia arriba a cinco minutos, es de 290 minutos.
 Si queda menos tiempo, para en orden con la causa `plazo-insuficiente`. Dos pruebas de
 contrato derivan de ahí el tope del workflow, el límite del servidor y la reserva, y
 exigen que ningún job pase de las seis horas que GitHub concede a un ejecutor alojado. El job de activación dispone de otros 45 minutos, incluidos su checkout, sus dependencias y
@@ -1237,7 +1235,7 @@ pasa:
    cierra la intención como `abandonada` (motivo `a-mano`) solo si cada Worker sirve otra vez lo anterior. Si no, la
    intención sigue en su fase, la solicitud queda usada con lo observado y el panel lo dice.
 
-La solicitud de cierre caduca 371 minutos después de anotarse. Solo puede cumplirla la ejecución a la que
+La solicitud de cierre caduca 406 minutos después de anotarse. Solo puede cumplirla la ejecución a la que
 se concedió. El panel dice que el cierre está en curso solo mientras su
 ejecución puede cumplirlo: la activación sigue en la revisión en que se anotó y el último trabajo es el despachado, sin
 terminar. Cuando esa ejecución ha registrado su recibo y terminado, su paso de activación pudo cumplirlo justo

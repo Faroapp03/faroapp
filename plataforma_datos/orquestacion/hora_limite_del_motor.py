@@ -2,16 +2,18 @@
 
 El supervisor corta el motor cuando se agota su plazo (`ejecutor_operativo.PLAZO_CANDIDATO_S`). Un corte deja el ciclo
 a medias y sin decir dónde, así que el supervisor le pasa al motor, por el entorno, la hora a la que lo cortará. Antes
-de cada módulo y antes del paquete, el motor mira si lo que queda cubre lo que tardaría el paquete medido en el runner
-más lento medido (`medidas_del_ciclo.PAQUETE_EN_EL_RUNNER_LENTO_S`), con un margen. Si
-no lo cubre, no lo empieza: lo ya hecho se queda registrado, el paquete no se ejecuta (el recibo sale «rechazado») y
-la parada se anota, con la causa `plazo-insuficiente` y el paso que no empezó, en un archivo de las ejecuciones que el
-supervisor copia a su diario.
+de cada módulo y antes del paquete, el motor mira si lo que queda cubre la reserva del paquete
+(`medidas_del_ciclo.RESERVA_DEL_PAQUETE_S`): el plazo entero de componer Cursos y las otras fases medidas en el runner
+más lento medido, con su margen. Es la misma reserva con que se fija el plazo del motor. Si no la cubre, no lo empieza:
+lo ya hecho se queda registrado, el paquete no se ejecuta (el recibo sale «rechazado») y la parada se anota, con la
+causa `plazo-insuficiente` y el paso que no empezó, en un archivo de las ejecuciones que el supervisor copia a su
+diario.
 
 Sin hora límite en el entorno (un ensayo, una ejecución en el Mac) no hay nada que comprobar.
 """
 
 import json
+import math
 import os
 import re
 import time
@@ -19,16 +21,17 @@ from collections.abc import Callable, Mapping
 from pathlib import Path
 
 from plataforma_datos.comun.entrada_salida import escribir_bytes_entero
-from plataforma_datos.orquestacion.medidas_del_ciclo import MARGEN_POR_CIENTO, PAQUETE_EN_EL_RUNNER_LENTO_S
+from plataforma_datos.orquestacion.medidas_del_ciclo import MARGEN as MARGEN
+from plataforma_datos.orquestacion.medidas_del_ciclo import RESERVA_DEL_PAQUETE_S
 from plataforma_datos.orquestacion.piezas_de_la_actualizacion import CARPETA_DE_INFORMES
 
 # Segundos desde 1970 (UTC) a los que el supervisor cortará el motor.
 VARIABLE = "FARO_HORA_LIMITE_DEL_MOTOR"
 CAUSA = "plazo-insuficiente"
-# El paquete es cálculo y tarda más en un runner lento: 45,8 minutos en el Mac, 97,3 llevado al más lento medido.
-# Con el mismo margen que el plazo del motor, el paquete necesita 7.006 segundos (116,8 minutos).
-MARGEN = 1 + MARGEN_POR_CIENTO / 100
-NECESARIO_S = round(PAQUETE_EN_EL_RUNNER_LENTO_S * MARGEN)
+# Lo que el paquete necesita, en segundos enteros y redondeado hacia arriba para no quedar nunca por debajo de la
+# reserva: los 90 minutos de componer y las otras fases en el runner lento con su margen, 8.904 segundos (148,4
+# minutos). Así, aunque componer agote su tope, las otras fases caben antes del corte.
+NECESARIO_S = math.ceil(RESERVA_DEL_PAQUETE_S)
 ARCHIVO = f"{CARPETA_DE_INFORMES}/parada-del-motor.json"
 MOTIVO = "no se ejecuta: no queda tiempo para el paquete antes de la hora límite del motor"
 MAX_BYTES = 1024

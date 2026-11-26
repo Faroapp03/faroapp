@@ -12,8 +12,11 @@ import {
   PLAZO_RESERVA_PROGRAMADA_MS,
 } from '../../src/administracion/programacion-trabajos.ts';
 
-/** El repositorio es privado: cada job descuenta sus minutos de los 2.000 gratuitos del mes. */
-const TOPE_CANDIDATO_MINUTOS = 324;
+/**
+ * El repositorio es privado: cada job descuenta sus minutos de los 2.000 gratuitos del mes. El del candidato cubre el
+ * motor de 290 minutos, que reserva 90 para componer Cursos, y lo que hace el supervisor antes y después.
+ */
+const TOPE_CANDIDATO_MINUTOS = 359;
 const TOPE_ACTIVACION_MINUTOS = 45;
 const TOPE_AVISO_MINUTOS = 2;
 /** GitHub corta cualquier job de un ejecutor alojado a las seis horas, diga lo que diga su timeout-minutes. */

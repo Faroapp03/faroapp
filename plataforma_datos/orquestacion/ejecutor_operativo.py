@@ -62,13 +62,14 @@ from plataforma_datos.orquestacion.hora_limite_del_motor import VARIABLE as HORA
 from plataforma_datos.orquestacion.ordenes_de_la_actualizacion import COMPLETAR_RENOMBRES, SI
 from plataforma_datos.orquestacion.procesos import ejecutar_con_plazo
 
-# Las fuentes del último ciclo real completo y el paquete medido llevado al runner lento (medidas_del_ciclo), más su
-# margen y redondeado hacia arriba a cinco minutos: (6.898 + 5.838) × 1,2 ≈ 15.284 s, 255 minutos. Lo exige
-# pruebas/test_plazo_del_motor.py. actualizar.yml concede al supervisor al menos 288 minutos (job de hasta 324,
-# preparación en frío y navegadores) para que quepan también la descarga y la restauración de la base antes del motor
-# y, después, la lectura de la generación, la exportación y la conservación del artefacto y el recibo;
-# pruebas/herramientas/workflow-presupuesto.test.ts mantiene las cifras de acuerdo.
-PLAZO_CANDIDATO_S = 255 * 60
+# Las fuentes del último ciclo real completo con su margen y la reserva del paquete (medidas_del_ciclo: los 90 minutos
+# de componer y las otras fases en el runner lento con su margen), redondeado hacia arriba a cinco minutos:
+# 6.898 × 1,2 + 8.903,9 ≈ 17.181 s, 286,4 minutos, 290. Lo exige pruebas/test_plazo_del_motor.py. actualizar.yml concede
+# al supervisor al menos 323 minutos (job de hasta 359, preparación en frío y navegadores) para que quepan también la
+# descarga y la restauración de la base antes del motor y, después, la lectura de la generación, la exportación y la
+# conservación del artefacto y el recibo; pruebas/herramientas/workflow-presupuesto.test.ts mantiene las cifras de
+# acuerdo.
+PLAZO_CANDIDATO_S = 290 * 60
 PLAZO_VALIDACION_S = 30
 PLAZO_ARTEFACTO_S = 300
 MAX_RESUMEN_ARTEFACTO_BYTES = 4096

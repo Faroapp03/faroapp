@@ -12,7 +12,9 @@ from plataforma_datos.cursos.fallo_de_consulta import observacion_de_fallo
 from plataforma_datos.cursos.fuentes.barcelonactiva import ficha_edicion, negocio_actual
 from plataforma_datos.cursos.fuentes.barcelonactiva import robot_cibernarium as robot
 
-PREFIJO = "cibernarium-ficha-edicion-1:"
+PREFIJO_ANTERIOR = "cibernarium-ficha-edicion-1:"
+PREFIJO = "cibernarium-ficha-edicion-2:"
+PREFIJOS = (PREFIJO, PREFIJO_ANTERIOR)
 CAMPO = "fichas_de_ediciones"
 MAX_POR_CONSULTA = 20
 PLAZO_FICHAS_S = 5 * 60

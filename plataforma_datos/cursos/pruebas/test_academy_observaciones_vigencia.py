@@ -3,7 +3,13 @@
 import unittest
 from dataclasses import replace
 
-from plataforma_datos.cursos import oferta_continua, politicas_vigencia, recepciones_catalogo
+from plataforma_datos.cursos import (
+    contenido_academy,
+    hechos_entrega_catalogo,
+    oferta_continua,
+    politicas_vigencia,
+    recepciones_catalogo,
+)
 from plataforma_datos.cursos import operacion_fuente as fuente
 from plataforma_datos.cursos.fuentes.claude_academy import acceso_publico as acceso
 from plataforma_datos.cursos.fuentes.claude_academy import observaciones_vigencia as puente
@@ -22,6 +28,7 @@ class AcademyObservacionesPruebas(fixtures.AcademyCicloRecepcionesPruebas):
         self.condiciones += "<h2>Prerequisites</h2><p>No prior experience is required.</p>"
         self.cta_ajeno = False
         self.portada_gratuita = True
+        self.resumen_portada = False
 
     def recibir(self, url: str, **opciones: object) -> recepciones_catalogo.RespuestaCatalogo:
         """Inyecta solo HTML adversario, conservando el transporte y sus fechas.
@@ -35,6 +42,8 @@ class AcademyObservacionesPruebas(fixtures.AcademyCicloRecepcionesPruebas):
             cuerpo = cuerpo.replace(b"</main>", (self.condiciones + self.extra + "</main>").encode())
             if self.cta_ajeno:
                 cuerpo = cuerpo.replace(b'/inicio">Start course', b'-ajeno/inicio">Start course')
+        if url == acceso.PORTADA and self.resumen_portada:
+            cuerpo = cuerpo.replace(acceso.DECLARACION.encode(), acceso.RESUMEN_GRATUIDAD.encode())
         if url == acceso.PORTADA and not self.portada_gratuita:
             cuerpo = cuerpo.replace(acceso.DECLARACION.encode(), b"Explore courses and tutorials.")
         return replace(rx, cuerpo=cuerpo)
@@ -71,6 +80,89 @@ class AcademyObservacionesPruebas(fixtures.AcademyCicloRecepcionesPruebas):
         self.assertTrue(
             all(c["valor"] is True for c in observacion["detalle"][oferta_continua.CAMPO]["criterios"].values())
         )
+
+    def test_la_portada_breve_conserva_el_recibo_admitido(self) -> None:
+        """Releer el resumen conserva la representación histórica de los auxiliares."""
+        self.resumen_portada = True
+        conjunto = self.ciclo()
+        self.assertIsNone(conjunto["auxiliares"]["portada"]["lectura"]["gratuidad_formacion_declarada"])
+        self.assertEqual(fuente.leer_validado("claude_academy", self.raiz), conjunto)
+
+    def test_el_precio_de_la_ficha_llega_al_catalogo_y_rechaza_una_huella_ajena(self) -> None:
+        """Entrega el precio en la unidad cuando ficha, observación y selector concuerdan."""
+        self.extra = (
+            '<script type="application/ld+json">{"@type":"Course","url":"https://academy.claude.com/courses/nuevo",'
+            '"isAccessibleForFree":true}</script>'
+        )
+        conjunto = self.ciclo()
+        original, _, _ = fuente.rutas_de_la_fuente("claude_academy", self.raiz)
+        fila = next(f for f in conjunto["recepciones"] if f["id"] == "claude-academy:nuevo")
+        ficha, observacion = puente.construir(original, fila, conjunto["auxiliares"])
+        cuerpo, _ = fuente.pagina_academy(original, fila)
+        formacion = contenido_academy._gratuidad(observacion, ficha, cuerpo)
+        self.assertIsNotNone(formacion)
+        temario = contenido_academy.TemarioAcademy(
+            ficha=ficha,
+            cuerpo_html=cuerpo.decode(),
+            idioma=None,
+            comprobado_el=ficha.capturado_utc,
+            formacion=formacion,
+        )
+        condiciones = contenido_academy.datos_para_entrega(temario, ficha.capturado_utc)
+        coste = hechos_entrega_catalogo.proyectar_hechos(
+            {}, alcance="unidad", proveedor_id="anthropic", condiciones_actuales=condiciones
+        )["coste_formacion_tipo"]
+        self.assertEqual((coste["valor"], coste["alcance"]), ("gratis_formacion", "unidad"))
+        formacion["evidencia"]["sha256"] = "1" * 64
+        self.assertIsNone(contenido_academy._gratuidad(observacion, ficha, cuerpo))
+
+    def test_portada_breve_con_precio_propio_y_temario_integro(self) -> None:
+        """Una oferta del curso y su temario completo tienen pruebas propias en la ficha."""
+        self.resumen_portada = True
+        oferta = (
+            '<script type="application/ld+json">{"@type":"Course","url":"https://academy.claude.com/courses/nuevo",'
+            '"isAccessibleForFree":true,"offers":[{"@type":"Offer","category":"Free"}]}</script>'
+        )
+        self.extra = oferta
+        observada = self.observar()
+        criterios = observada["detalle"][oferta_continua.CAMPO]["criterios"]
+        self.assertIs(criterios["formacion_gratuita"]["valor"], True)
+        self.assertIsNone(criterios["curso_completo"]["valor"])
+        self.assertNotEqual(self.evaluar(observada)["estado"], "disponible-publicamente")
+        titulo = "Curso nuevo"
+        boton = f'<button aria-label="Show course lessons. {titulo} — 2 lessons">Contents</button>'
+        temario = (
+            '<nav aria-label="Course outline"><ul><li><a href="/courses/nuevo/inicio">Introduction</a></li>'
+            '<li><a href="/courses/nuevo/practica">Practice</a></li>'
+            '<li><a href="/courses/nuevo/complete">\ue071Course complete</a></li></ul></nav>'
+        )
+        self.extra = oferta + boton + temario
+        observada = self.observar()
+        self.assertEqual(self.evaluar(observada)["estado"], "disponible-publicamente")
+        criterios = observada["detalle"][oferta_continua.CAMPO]["criterios"]
+        apoyos_precio = [observada["evidencias"][i] for i in criterios["formacion_gratuita"]["apoyos"]]
+        self.assertTrue(any("ld+json" in a["localizador"]["valor"] for a in apoyos_precio))
+        apoyos_curso = [observada["evidencias"][i] for i in criterios["curso_completo"]["apoyos"]]
+        self.assertTrue(any("/nav[" in a["localizador"]["valor"] for a in apoyos_curso))
+        for parcial in (
+            "<div hidden>" + temario + "</div>",
+            "<template>" + temario + "</template>",
+            temario.replace('<li><a href="/courses/nuevo/practica"', '<li inert><a href="/courses/nuevo/practica"'),
+            temario.replace("/courses/nuevo/practica", "https://[invalid"),
+            temario.replace("/nuevo/practica", "/otro/practica"),
+            temario.replace("/nuevo/practica", "/nuevo/inicio"),
+            temario.replace('aria-label="Course outline"', 'aria-label="Related courses"'),
+            temario.replace('href="/courses/nuevo/practica"', 'aria-disabled="true" href="/courses/nuevo/practica"'),
+        ):
+            with self.subTest(temario=parcial):
+                self.extra = oferta + boton + parcial
+                self.assertNotEqual(self.evaluar(self.observar())["estado"], "disponible-publicamente")
+        self.extra = boton + temario
+        sin_precio = self.observar()["detalle"][oferta_continua.CAMPO]["criterios"]
+        self.assertIsNone(sin_precio["formacion_gratuita"]["valor"])
+        self.assertIs(sin_precio["curso_completo"]["valor"], True)
+        self.extra = oferta + boton + temario + "<p>This is a free preview of a paid course.</p>"
+        self.assertNotEqual(self.evaluar(self.observar())["estado"], "disponible-publicamente")
 
     def test_muestra_de_pago_no_se_convierte_en_curso_gratuito(self) -> None:
         """La declaración general no tapa una muestra o un precio del curso concreto."""

@@ -69,6 +69,7 @@ def interpretar_auxiliares(original: Path, auxiliares: ObjetoJson) -> ObjetoJson
     )
     indice = acceso.extraer_indice(*comun.pagina_academy(original, auxiliares["indice"]))
     declaracion = acceso.declaracion_gratuidad(*comun.pagina_academy(original, auxiliares["portada"]))
+    general = declaracion if declaracion is not None and declaracion.texto == acceso.DECLARACION else None
     salida = {
         "indice": {
             **auxiliares["indice"],
@@ -77,7 +78,7 @@ def interpretar_auxiliares(original: Path, auxiliares: ObjetoJson) -> ObjetoJson
         "portada": {
             **auxiliares["portada"],
             "lectura": {
-                "gratuidad_formacion_declarada": declaracion._asdict() if declaracion is not None else None,
+                "gratuidad_formacion_declarada": general._asdict() if general is not None else None,
             },
         },
     }

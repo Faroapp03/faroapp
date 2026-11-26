@@ -30,7 +30,9 @@ _BOTON = re.compile(
     r"javascript:_com_davinci_ba_ciber_activity_record_CibernariumActivityRecordPortlet_INSTANCE_"
     r"[A-Za-z0-9]+_setRedirect\(([1-9]\d*),\s*([1-9]\d*)\);?"
 )
-_ESTADOS = {("code-DISP2", "inscripció tancada."): "cerrada", ("code-DISP3", "sense places."): "sin-plazas"}
+# El punto final del literal varía entre versiones de la ficha; código y texto siguen exigiéndose juntos.
+_ESTADOS = {("code-DISP2", "inscripció tancada"): "cerrada", ("code-DISP3", "sense places"): "sin-plazas"}
+_MARCAS = ("next-edition", "no-places")
 
 
 def url(id: str) -> str:
@@ -65,6 +67,8 @@ class _Bloque:
 
 
 class _Ficha(HTMLParser):
+    omitir_plantillas = True
+
     def __init__(self) -> None:
         super().__init__(convert_charrefs=True)
         self.urls: set[str] = set()
@@ -77,6 +81,7 @@ class _Ficha(HTMLParser):
         _, lista, bloque, campo, excluido = self.pila[-1] if self.pila else ("", False, None, None, False)
         excluido = (
             excluido
+            or (self.omitir_plantillas and tag == "template")
             or bool({"hidden", "disabled", "inert"} & atributos.keys())
             or any(atributos.get(k, "").strip().lower() == "true" for k in ("aria-hidden", "aria-disabled"))
         )
@@ -116,6 +121,7 @@ class _Ficha(HTMLParser):
             ("li", "activity-session-date"),
             ("div", "dates"),
             ("span", "next-edition"),
+            ("span", "no-places"),
             ("a", "botonRosaDerecha"),
         ):
             if tag == etiqueta and clase in clases:
@@ -135,6 +141,16 @@ class _Ficha(HTMLParser):
             if self.pila[i][0] == tag:
                 del self.pila[i:]
                 return
+
+
+class _FichaHistorica(_Ficha):
+    # Solo para reproducir una observación sellada por la versión anterior.
+    omitir_plantillas = False
+
+    @staticmethod
+    def _tipo(tag: str, clases: set[str]) -> str:
+        tipo = _Ficha._tipo(tag, clases)
+        return "" if tipo == "no-places" else tipo
 
 
 @dataclass(frozen=True)
@@ -185,13 +201,32 @@ def _calendario(bloque: _Bloque, esperadas: list[tuple[str, datetime]]) -> tuple
     return True, None
 
 
-def contrastar(cuerpo: bytes, *, id: str, titulo: str, edicion: dict) -> LecturaFicha:
+def _estado(marca: _Campo, *, historica: bool) -> tuple[str, str] | None:
+    """Traduce la única marca de matrícula del bloque cuando su clase y su literal concuerdan.
+
+    Returns:
+        Estado y localizador relativo al bloque, o None si la marca es desconocida o contradictoria.
+    """
+    codigos = sorted(c for c in marca.clases if c.startswith("code-"))
+    if historica and not marca.texto.endswith("."):
+        return None
+    texto = marca.texto.removesuffix(".")
+    if marca.tipo == "next-edition":
+        estado = _ESTADOS.get((codigos[0], texto)) if len(codigos) == 1 else None
+        return (estado, ".next-edition." + codigos[0]) if estado else None
+    # La marca sin código solo afirma la falta de plazas; un código de otro estado la contradice.
+    if texto == "sense places" and set(codigos) <= {"code-DISP3"}:
+        return "sin-plazas", "span.no-places"
+    return None
+
+
+def contrastar(cuerpo: bytes, *, id: str, titulo: str, edicion: dict, historica: bool = False) -> LecturaFicha:
     """Coteja título, URL y el horario completo antes de atribuir un botón o un estado de matrícula.
 
     Returns:
         Estado del bloque inequívoco. Las fechas de otra edición nunca acreditan la solicitada.
     """
-    lector = _Ficha()
+    lector = _FichaHistorica() if historica else _Ficha()
     lector.feed(cuerpo.decode("utf-8"))
     lector.close()
     if lector.urls != {url(id)} or _texto(titulo) not in lector.titulos or not lector.bloques:
@@ -209,7 +244,7 @@ def contrastar(cuerpo: bytes, *, id: str, titulo: str, edicion: dict) -> Lectura
         return LecturaFicha("otra-edicion" if not candidatas else "sin-contraste", "#edicionesList")
     bloque, ano = candidatas[0]
     botones = [f for f in bloque.campos if f.tipo == "botonRosaDerecha"]
-    estados = [f for f in bloque.campos if f.tipo == "next-edition"]
+    estados = [f for f in bloque.campos if f.tipo in _MARCAS]
     if (
         ano is not None
         and len(botones) == 1
@@ -219,8 +254,7 @@ def contrastar(cuerpo: bytes, *, id: str, titulo: str, edicion: dict) -> Lectura
         and botones[0].texto == "inscriure'm"
     ):
         return LecturaFicha("boton-de-inscripcion", bloque.selector + " a.botonRosaDerecha")
-    if ano and len(estados) == 1 and not botones:
-        codigos = [c for c in estados[0].clases if c.startswith("code-")]
-        if len(codigos) == 1 and (estado := _ESTADOS.get((codigos[0], estados[0].texto))):
-            return LecturaFicha(estado, bloque.selector + " .next-edition." + codigos[0])
+    # Solo una marca dentro del bloque cuyo calendario completo coincide; dos marcas se tratan como conflicto.
+    if ano and len(estados) == 1 and not botones and (marca := _estado(estados[0], historica=historica)):
+        return LecturaFicha(marca[0], bloque.selector + " " + marca[1])
     return LecturaFicha("sin-contraste", bloque.selector)

@@ -1,9 +1,9 @@
 """Las órdenes fijas de la actualización: revalidar el catálogo antes de las fuentes y los pasos del paquete.
 
 Cada orden lleva su tope: lo que puede tardar antes de que la actualización la corte y la dé por agotada. El de las
-comprobaciones de los datos cubre la suma de los plazos de `npm run verificar:datos`. El de componer Cursos cubre
-su medida llevada al runner lento con margen. Las órdenes que no declaran un tope propio, incluidas las de las
-fuentes, usan `actualizar.TOPE_POR_ORDEN`.
+comprobaciones de los datos cubre la suma de los plazos de `npm run verificar:datos`. El de componer Cursos es el
+plazo que le reserva el paquete (`medidas_del_ciclo.PLAZO_DE_COMPONER_S`), que cubre con margen sus medidas. Las
+órdenes que no declaran un tope propio, incluidas las de las fuentes, usan `actualizar.TOPE_POR_ORDEN`.
 """
 
 import sys
@@ -11,6 +11,7 @@ from collections.abc import Mapping, Sequence
 from typing import NamedTuple
 
 from plataforma_datos.comun.nucleo import DATOS_RELATIVOS
+from plataforma_datos.orquestacion.medidas_del_ciclo import PLAZO_DE_COMPONER_S
 from plataforma_datos.orquestacion.modulos import CARPETA_DEL_PAQUETE
 
 PYTHON = sys.executable
@@ -18,9 +19,9 @@ PYTHON = sys.executable
 # Python 45, que es el de cada uno de sus procesos y corren a la vez, y el humo 5); los cinco de más son para arrancar
 # Node y leer la base ESCO antes del primer plazo.
 TOPE_DE_LAS_COMPROBACIONES = 85 * 60
-# Ensayo integrado del 25/11: 23,95 min en el Mac × 2,03 en el runner lento × 1,2 de margen = 58,4 min.
-# Se redondea hacia arriba a cinco minutos, como para el motor.
-TOPE_DE_COMPONER_EL_CATALOGO = 60 * 60
+# Los 90 minutos que el paquete reserva a componer: la ejecución 45859673175 gastó 3.404,630 s de los 3.600 del tope
+# anterior. Una sola cifra para el tope de la orden y para la reserva del motor, que así no pueden separarse.
+TOPE_DE_COMPONER_EL_CATALOGO = PLAZO_DE_COMPONER_S
 
 
 class Orden(NamedTuple):

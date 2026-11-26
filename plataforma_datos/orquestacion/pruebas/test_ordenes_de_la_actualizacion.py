@@ -54,22 +54,35 @@ class TopesDeLasOrdenesPruebas(unittest.TestCase):
         self.assertEqual(tuple(comprobaciones.orden), ("npm", "run", "verificar:datos"))
         self.assertGreater(comprobaciones.tope, plazos_internos_de_verificar_datos())
 
-    def test_componer_cubre_su_medida_en_el_runner_lento_con_margen(self) -> None:
-        """El tope propio de componer sale de la medida de ese paso y el mismo redondeo que el motor."""
+    def test_componer_tiene_el_plazo_que_le_reserva_el_paquete(self) -> None:
+        """El tope de la orden es la cifra que reserva el motor: si una cambia sin la otra, el paquete no cabe."""
+        self.assertEqual(ordenes.COMPONER_EL_CATALOGO.tope, medidas_del_ciclo.PLAZO_DE_COMPONER_S)
+        self.assertEqual(ordenes.COMPONER_EL_CATALOGO.tope, 90 * 60)
+        self.assertGreater(ordenes.COMPONER_EL_CATALOGO.tope, actualizar.TOPE_POR_ORDEN)
+
+    def test_componer_cubre_cada_medida_con_su_margen(self) -> None:
+        """La medida del runner se toma tal cual; la del Mac, llevada al runner lento. Las dos, con el margen.
+
+        Una medida nueva que tarde más se anota en `medidas_del_ciclo` y esta prueba exige revisar el plazo antes de
+        que la orden se corte en el ciclo real, como estuvo a punto de pasar en la ejecución 45859673175.
+        """
         m = medidas_del_ciclo
-        medido = m.COMPONER_EN_EL_MAC_S * m.PYTHON_EN_EL_RUNNER_LENTO
-        con_margen = medido * (100 + m.MARGEN_POR_CIENTO) / 100
         redondeo = 5 * 60
-        esperado = math.ceil(con_margen / redondeo) * redondeo
-        self.assertEqual(ordenes.COMPONER_EL_CATALOGO.tope, esperado)
-        self.assertGreater(esperado, actualizar.TOPE_POR_ORDEN)
+        for nombre, medido in (
+            ("runner", m.COMPONER_EN_EL_RUNNER_S),
+            ("Mac en el runner lento", m.COMPONER_EN_EL_MAC_S * m.PYTHON_EN_EL_RUNNER_LENTO),
+        ):
+            with self.subTest(medida=nombre):
+                self.assertGreater(medido, 0)
+                necesario = math.ceil(medido * m.MARGEN / redondeo) * redondeo
+                self.assertGreaterEqual(ordenes.COMPONER_EL_CATALOGO.tope, necesario)
 
     def test_cada_orden_del_paquete_se_ejecuta_con_su_tope(self) -> None:
         """La actualización corta cada orden con el tope que declara; la de una fuente, con el general."""
         casos = [(orden.orden, orden.tope or actualizar.TOPE_POR_ORDEN) for orden in ordenes.ORDENES_DEL_PAQUETE]
         casos.append(([actualizar.PYTHON, "-m", "plataforma_datos.cursos.fuentes.formacion", "descargar"], 45 * 60))
         self.assertIn((ordenes.COMPROBAR_LOS_DATOS, 85 * 60), casos)
-        self.assertIn((ordenes.COMPONER_EL_CATALOGO.orden, 60 * 60), casos)
+        self.assertIn((ordenes.COMPONER_EL_CATALOGO.orden, 90 * 60), casos)
         for orden, tope in casos:
             with (
                 self.subTest(orden=orden),

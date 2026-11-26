@@ -13,6 +13,7 @@ from plataforma_datos.cursos import operacion_fuente as fuente
 from plataforma_datos.cursos.contrato_entrega_catalogo import exigir
 from plataforma_datos.cursos.fuentes.claude_academy import acceso_publico, control_actual, idioma_curso, lector
 from plataforma_datos.cursos.fuentes.claude_academy import condiciones_formacion as condiciones
+from plataforma_datos.cursos.fuentes.claude_academy import condiciones_publicadas as comercio
 from plataforma_datos.cursos.fuentes.hp_life import actualizacion as hp
 from plataforma_datos.cursos.fuentes.hp_life.recepciones import fecha_utc
 
@@ -91,20 +92,34 @@ def _acreditada(prueba: dict, actual: TemarioAcademy, corte: str) -> bool:
     return actual.comprobado_el is not None and fecha_utc(prueba["capturado_utc"]) <= fecha_utc(corte)
 
 
-def _gratuidad(observacion: dict, identidad: str) -> dict | None:
+def _gratuidad(observacion: dict, ficha: lector.FichaAcademy, cuerpo: bytes) -> dict | None:
     detalle = observacion["detalle"]
     if not oferta_continua.acreditada(detalle):
         return None
     declaracion = detalle[oferta_continua.CAMPO]
-    if declaracion["curso_id"] != identidad:
+    if declaracion["curso_id"] != "claude-academy:" + ficha.id:
         return None
     indices = declaracion["criterios"]["formacion_gratuita"]["apoyos"]
-    if len(indices) != 1:
+    apoyos = [observacion["evidencias"][i] for i in indices]
+    precio = comercio.examinar(cuerpo, ficha)
+    if precio.precio == "gratis":
+        selectores = {
+            d["localizador"] for d in precio.declaraciones if d["campo"] == "precio" and d["interpretacion"] == "gratis"
+        }
+        for apoyo in apoyos:
+            if (
+                (apoyo["url"], apoyo["capturado_utc"], apoyo["sha256"])
+                == (ficha.url, ficha.capturado_utc, ficha.sha256_captura)
+                and apoyo["localizador"]["tipo"] == "selector"
+                and apoyo["localizador"]["valor"] in selectores
+            ):
+                return {"valor": "gratis_formacion", "alcance": "unidad", "evidencia": apoyo}
         return None
-    evidencia = observacion["evidencias"][indices[0]]
-    if evidencia["url"] != acceso_publico.PORTADA or evidencia["localizador"]["tipo"] != "selector":
-        return None
-    return {"valor": "gratis_formacion", "alcance": "declaracion_general", "evidencia": evidencia}
+    if precio.precio == "sin_declaracion" and len(apoyos) == 1:
+        general = apoyos[0]
+        if general["url"] == acceso_publico.PORTADA and general["localizador"]["tipo"] == "selector":
+            return {"valor": "gratis_formacion", "alcance": "declaracion_general", "evidencia": general}
+    return None
 
 
 def _referencia(prueba: dict) -> dict:
@@ -215,7 +230,7 @@ def actuales(solicitud: admision.SolicitudAdmision, ids: set[str], referencias: 
                 comprobado_el=evaluacion["resultado"]["comprobado_el"],
                 inscripcion=_inscripcion(faq, ficha),
                 modalidad=modo,
-                formacion=_gratuidad(seleccionada, identidad),
+                formacion=_gratuidad(seleccionada, ficha, cuerpo),
                 idioma_curso=lengua_curso,
             )
     return salida

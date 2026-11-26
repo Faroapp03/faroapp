@@ -364,11 +364,11 @@ test('la preparación fría y caliente deja tiempo efectivo al supervisor y toda
   const tope = { FARO_TOPE_CANDIDATO_MINUTOS: String(objeto(raiz.env).FARO_TOPE_CANDIDATO_MINUTOS) };
   // Con «no» el job no instala navegadores y sus 6 minutos pasan al supervisor.
   const casos = [
-    { navegadores: 'si', segundos: 10, minutos: 303 },
-    { navegadores: 'si', segundos: 310, minutos: 302 },
-    { navegadores: 'si', segundos: 1190, minutos: 288 },
-    { navegadores: 'no', segundos: 10, minutos: 309 },
-    { navegadores: 'no', segundos: 1190, minutos: 294 },
+    { navegadores: 'si', segundos: 10, reserva: 21 },
+    { navegadores: 'si', segundos: 310, reserva: 22 },
+    { navegadores: 'si', segundos: 1190, reserva: 36 },
+    { navegadores: 'no', segundos: 10, reserva: 15 },
+    { navegadores: 'no', segundos: 1190, reserva: 30 },
   ];
   const fijos = [
     'Anotar el inicio del job',
@@ -376,7 +376,8 @@ test('la preparación fría y caliente deja tiempo efectivo al supervisor y toda
     RESERVA_A_DEMANDA,
     'Anunciar los minutos del job',
   ].reduce((total, nombre) => total + Number(construccion.find((p) => p.name === nombre)?.['timeout-minutes']), 0);
-  for (const { navegadores, segundos, minutos } of casos) {
+  for (const { navegadores, segundos, reserva } of casos) {
+    const minutos = Number(candidato['timeout-minutes']) - reserva;
     const guion = texto(herramientas.run).replace(
       'bash herramientas/mantenimiento/preparar-runner.sh',
       `SECONDS=${segundos}`,

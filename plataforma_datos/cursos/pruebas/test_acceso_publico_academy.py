@@ -79,6 +79,8 @@ class AccesoPublicoAcademyPruebas(unittest.TestCase):
     def test_gratuidad_solo_con_declaracion_completa_no_negada_ni_contradictoria(self) -> None:
         """Conserva incertidumbre ante prosa distinta; no busca una palabra free."""
         for textos, reconocida in (
+            ([acceso.RESUMEN_GRATUIDAD], True),
+            ([acceso.RESUMEN_GRATUIDAD, "Some courses are paid."], False),
             ([acceso.DECLARACION], True),
             ([acceso.DECLARACION, "Free courses on Claude and AI, from Anthropic."], True),
             (["Free courses on Claude and AI, from Anthropic.", acceso.DECLARACION], True),
@@ -97,7 +99,9 @@ class AccesoPublicoAcademyPruebas(unittest.TestCase):
             declaracion = acceso.declaracion_gratuidad(body, meta)
             self.assertEqual(declaracion is not None, reconocida)
             if declaracion is not None:
-                self.assertEqual(declaracion.texto, acceso.DECLARACION)
+                self.assertEqual(
+                    declaracion.texto, acceso.DECLARACION if acceso.DECLARACION in textos else acceso.RESUMEN_GRATUIDAD
+                )
 
     def test_inicio_literal_del_mismo_curso_sin_aceptar_subcadenas(self) -> None:
         """Un CTA negado, ambiguo o de otro curso no autoriza acceso."""
